@@ -1,15 +1,15 @@
 from distutils.core import setup
 setup(
-  name = 'art',
-  packages = ['art'],
-  version = '0.7',
-  description = 'ASCII Art Collection In Python',
-  long_description='ASCII Art Collection In Python',
+  name = 'pycm',
+  packages = ['pycm'],
+  version = '0.1',
+  description = 'Confusion Matrix In Python',
+  long_description='Confusion Matrix In Python',
   author = 'Sepand Haghighi',
   author_email = 'sepand@qpage.ir',
-  url = 'https://github.com/sepandhaghighi/art',
-  download_url = 'https://github.com/sepandhaghighi/art/tarball/v0.7',
-  keywords = ['ascii', 'art', 'python3','python','text'],
+  url = 'https://github.com/sepandhaghighi/pycm',
+  download_url = 'https://github.com/sepandhaghighi/pycm/tarball/v0.1',
+  keywords = ['confusion-matrix', 'python3','python'],
   install_requires=[
 	  'codecov',
       ],

@@ -229,7 +229,7 @@ def class_statistic(TP,TN,FP,FN):
     FDR = {}
     FOR = {}
     ACC = {}
-    F1 = {}
+    F1_SCORE = {}
     MCC = {}
     BM = {}
     MK = {}
@@ -246,13 +246,13 @@ def class_statistic(TP,TN,FP,FN):
         FDR[i]=FXR_calc(PPV[i])
         FOR[i]=FXR_calc(NPV[i])
         ACC[i]=ACC_calc(TP[i],TN[i],FP[i],FN[i])
-        F1[i]=F1_calc(TP[i],FP[i],FN[i])
+        F1_SCORE[i]=F1_calc(TP[i],FP[i],FN[i])
         MCC[i]=MCC_calc(TP[i],TN[i],FP[i],FN[i])
         BM[i]=MK_BM_calc(TPR[i],TNR[i])
         MK[i]=MK_BM_calc(PPV[i],NPV[i])
         PLR[i]=LR_calc(TPR[i],FPR[i])
         NLR[i]=LR_calc(FNR[i],TNR[i])
         DOR[i]=LR_calc(PLR[i],NLR[i])
-    result={"TPR":TPR,"TNR":TNR,"PPV":PPV,"NPV":NPV,"FNR":FNR,"FPR":FPR,"FDR":FDR,"FOR":FOR,"ACC":ACC,"F1":F1,"MCC":MCC,
+    result={"TPR":TPR,"TNR":TNR,"PPV":PPV,"NPV":NPV,"FNR":FNR,"FPR":FPR,"FDR":FDR,"FOR":FOR,"ACC":ACC,"F1":F1_SCORE,"MCC":MCC,
     "BM":BM,"MK":MK,"LR+":PLR,"LR-":NLR,"DOR":DOR,"TP":TP,"TN":TN,"FP":FP,"FN":FN}
     return result

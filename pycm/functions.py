@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import math
-
+from art import tprint
+VERSION="0.1"
 PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate","TNR":"specificity or true negative rate",
                    "PPV":"precision or positive predictive value","NPV":"negative predictive value",
                    "FNR":"miss rate or false negative rate","FPR":"fall-out or false positive rate",
@@ -11,6 +12,15 @@ PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate"
                     "TN":"true negative/correct rejection","FP":"false positive/Type I error/false alarm",
                     "FN":"false negative/miss/Type II error"}
 
+
+def pycm_help():
+    '''
+    This function print pycm details
+    :return: None
+    '''
+    tprint("pycm")
+    tprint("V:"+VERSION)
+    print("Repo : https://github.com/sepandhaghighi/pycm")
 
 
 def table_print(classes,table):

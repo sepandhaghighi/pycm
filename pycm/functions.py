@@ -76,22 +76,22 @@ def LR_Calc(Item1,Item2):
 
 
 def ClassStatistic(TP,TN,FP,FN):
-    TPR=TP.copy()
-    TNR = TP.copy()
-    PPV = TP.copy()
-    NPV = TP.copy()
-    FNR = TP.copy()
-    FPR = TP.copy()
-    FDR = TP.copy()
-    FOR = TP.copy()
-    ACC = TP.copy()
-    F1 = TP.copy()
-    MCC = TP.copy()
-    BM = TP.copy()
-    MK = TP.copy()
-    PLR=TP.copy()
-    NLR=TP.copy()
-    DOR=TP.copy()
+    TPR={}
+    TNR = {}
+    PPV = {}
+    NPV = {}
+    FNR = {}
+    FPR = {}
+    FDR = {}
+    FOR = {}
+    ACC = {}
+    F1 = {}
+    MCC = {}
+    BM = {}
+    MK = {}
+    PLR={}
+    NLR={}
+    DOR={}
     for i in TP.keys():
         TPR[i]=TTPN_Calc(TP[i],FN[i])
         TNR[i]=TTPN_Calc(TN[i],FP[i])

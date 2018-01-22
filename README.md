@@ -11,6 +11,7 @@
 </a>
 <a class="badge-align" href="https://www.codacy.com/app/sepand-haghighi/pycm?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/pycm&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/5d9463998a0040d09afc2b80c389365c"/></a>
 <a href="https://badge.fury.io/py/pycm"><img src="https://badge.fury.io/py/pycm.svg" alt="PyPI version" height="18"></a>
+<a href="https://zenodo.org/badge/latestdoi/118506495"><img src="https://zenodo.org/badge/118506495.svg" alt="DOI"></a>
 
 </div>
 
@@ -123,6 +124,30 @@ You can fork the repository, improve or fix some part of it and then send the pu
 
 Remember to write a few tests for your code before sending pull requests. 
 
+Sepand Haghighi. “Pycm : Multi Class Confusion Matrix Library in Python”. Zenodo, January 22, 2018. doi:10.5281/zenodo.1157173.
+
+
+## Cite
+
+If you use pycm in your research , please cite this :
+
+<pre>
+Sepand Haghighi. “Pycm : Multi Class Confusion Matrix Library in Python”. Zenodo, January 22, 2018. doi:10.5281/zenodo.1157173.
+</pre>
+<pre>
+
+@misc{https://doi.org/10.5281/zenodo.1157173,
+  doi = {10.5281/zenodo.1157173},
+  author = {Sepand Haghighi},
+  keywords = {Machine Learning, statistics, confusion-matrix, statistical-analysis, matrices, matrix},
+  title = {Pycm : Multi Class Confusion Matrix Library in Python},
+  pages = {--},
+  publisher = {Zenodo},
+  year = {2018}
+}
+
+
+</pre>
 
 
 ## License

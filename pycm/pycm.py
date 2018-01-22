@@ -39,6 +39,8 @@ class ConfusionMatrix():
         for key in KeyList:
             result+=key+" "*(17-len(key))+"%-14s"*len(self.classes)%tuple(map(str,self.StatisticResult[key].values()))+"\n"
         return result
+    def __repr__(self):
+        return "pycm.ConfusionMatrix("+str(self.classes)+")"
 
 
 

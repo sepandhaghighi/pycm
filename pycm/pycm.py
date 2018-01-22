@@ -34,7 +34,9 @@ class ConfusionMatrix():
             result+=str(key)+" "*(17-len(str(key)))+"%-5s"*len(self.classes)%tuple(map(str,list(self.table[key].values())))+"\n"
         result+="\n"*4
         result+="Classes"+10*" "+"%-14s"*len(self.classes)%tuple(map(str,self.classes))+"\n"
-        for key in self.StatisticResult.keys():
+        KeyList=list(self.StatisticResult.keys())
+        KeyList.sort()
+        for key in KeyList:
             result+=key+" "*(17-len(key))+"%-14s"*len(self.classes)%tuple(map(str,self.StatisticResult[key].values()))+"\n"
         return result
 

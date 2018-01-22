@@ -77,6 +77,12 @@ TPR(sensitivity, recall, hit rate, or true positive rate)        1.0            
 
 For more information visit [here](Document.ipynb "Document")
 
+<div align="center">
+
+<a href="https://asciinema.org/a/158541" target="_blank"><img src="https://asciinema.org/a/158541.png" /></a>
+
+</div>
+
 ## Issues & Bug Reports			
 
 Just fill an issue and describe it. We'll check it ASAP!							

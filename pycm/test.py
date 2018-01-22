@@ -41,6 +41,14 @@ TNR(specificity or true negative rate)                           0.77778        
 TP(true positive/hit)                                            3                       1                       3
 TPR(sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5
 <BLANKLINE>
+>>> cm_2 = ConfusionMatrix(y_actu, 2)
+Traceback (most recent call last):
+        ...
+pycm.pycm.pycmError: Input Vectors Must Be List
+>>> cm_3 = ConfusionMatrix(y_actu, [1,2])
+Traceback (most recent call last):
+        ...
+pycm.pycm.pycmError: Input Vectors Must Be The Same Length
 >>> pycm_help()
 <BLANKLINE>
  _ __   _   _   ___  _ __ ___

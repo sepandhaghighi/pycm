@@ -4,40 +4,33 @@ from .functions import *
 class ConfusionMatrix():
 
     def __init__(self,actual_vector,predict_vector):
-        matrix_param=MatrixParams(actual_vector,predict_vector)
+        matrix_param=matrix_params_calc(actual_vector,predict_vector)
         self.classes=matrix_param[0]
         self.table=matrix_param[1]
         self.TP=matrix_param[2]
         self.TN=matrix_param[3]
         self.FP=matrix_param[4]
         self.FN=matrix_param[5]
-        StatisticResult=ClassStatistic(TP=matrix_param[2],TN=matrix_param[3],FP=matrix_param[4],FN=matrix_param[5])
-        self.StatisticResult=StatisticResult
-        self.TPR=StatisticResult["TPR"]
-        self.TNR=StatisticResult["TNR"]
-        self.PPV = StatisticResult["PPV"]
-        self.NPV = StatisticResult["NPV"]
-        self.FNR = StatisticResult["FNR"]
-        self.FPR = StatisticResult["FPR"]
-        self.FDR = StatisticResult["FDR"]
-        self.FOR = StatisticResult["FOR"]
-        self.ACC = StatisticResult["ACC"]
-        self.F1 = StatisticResult["F1"]
-        self.MCC = StatisticResult["MCC"]
-        self.BM = StatisticResult["BM"]
-        self.MK = StatisticResult["MK"]
+        statistic_result=class_statistic(TP=matrix_param[2],TN=matrix_param[3],FP=matrix_param[4],FN=matrix_param[5])
+        self.statistic_result=statistic_result
+        self.TPR=statistic_result["TPR"]
+        self.TNR=statistic_result["TNR"]
+        self.PPV = statistic_result["PPV"]
+        self.NPV = statistic_result["NPV"]
+        self.FNR = statistic_result["FNR"]
+        self.FPR = statistic_result["FPR"]
+        self.FDR = statistic_result["FDR"]
+        self.FOR = statistic_result["FOR"]
+        self.ACC = statistic_result["ACC"]
+        self.F1 = statistic_result["F1"]
+        self.MCC = statistic_result["MCC"]
+        self.BM = statistic_result["BM"]
+        self.MK = statistic_result["MK"]
 
     def __str__(self):
-        result="Predict"+10*" "+"%-5s"*len(self.classes)%tuple(map(str,self.classes))+"\n"
-        result=result+"Actual\n"
-        for key in self.classes:
-            result+=str(key)+" "*(17-len(str(key)))+"%-5s"*len(self.classes)%tuple(map(str,list(self.table[key].values())))+"\n"
+        result=table_print(self.classes,self.table)
         result+="\n"*4
-        result+="Classes"+10*" "+"%-14s"*len(self.classes)%tuple(map(str,self.classes))+"\n"
-        KeyList=list(self.StatisticResult.keys())
-        KeyList.sort()
-        for key in KeyList:
-            result+=key+" "*(17-len(key))+"%-14s"*len(self.classes)%tuple(map(str,self.StatisticResult[key].values()))+"\n"
+        result+=params_print(self.classes,self.statistic_result)
         return result
     def __repr__(self):
         return "pycm.ConfusionMatrix("+str(self.classes)+")"

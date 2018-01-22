@@ -76,6 +76,33 @@ Just fill an issue and describe it. We'll check it ASAP!
 or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir"). 
 
 
+## TODO		
+
+- [x] Class Statistics
+  - [x] ACC
+  - [x] BM
+  - [x] DOR
+  - [x] F1-Score
+  - [x] FDR
+  - [x] FNR
+  - [x] FOR
+  - [x] FPR
+  - [x] LR+
+  - [x] LR-
+  - [x] MCC
+  - [x] MK
+  - [x] NPV
+  - [x] PPV
+  - [x] TNR
+  - [x] TPR
+- [ ] Outputs
+  - [ ] CSV File
+  - [ ] HTML File
+  - [x] Table
+- [ ] Overall Statistics
+  - [ ] Kappa
+  - [ ] 95% CI
+
 
 ## Contribution			
 

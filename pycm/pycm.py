@@ -5,6 +5,9 @@ from .functions import *
 class pycmError(Exception):
     pass
 class ConfusionMatrix():
+    '''
+    Main Class Of ConfusionMatrix
+    '''
     def __init__(self,actual_vector,predict_vector):
         if not isinstance(actual_vector,list) or not isinstance(predict_vector,list):
             raise pycmError("Input Vectors Must Be List")

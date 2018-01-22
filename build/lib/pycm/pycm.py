@@ -28,10 +28,10 @@ class ConfusionMatrix():
         self.MK = StatisticResult["MK"]
 
     def __str__(self):
-        result="predicted "+" ".join(list(map(str,self.classes)))+"\n"
+        result="Predict"+10*" "+"%-5s"*len(self.classes)%tuple(map(str,self.classes))+"\n"
         result=result+"Actual\n"
         for key in self.classes:
-            result=result+str(key)+" "*11+" ".join(list(map(str,list(self.table[key].values()))))+"\n"
+            result+=str(key)+" "*(17-len(str(key)))+"%-5s"*len(self.classes)%tuple(map(str,list(self.table[key].values())))+"\n"
         result+="\n"*4
         result+="Classes"+10*" "+"%-14s"*len(self.classes)%tuple(map(str,self.classes))+"\n"
         for key in self.StatisticResult.keys():

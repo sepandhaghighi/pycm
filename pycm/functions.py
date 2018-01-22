@@ -7,7 +7,9 @@ PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate"
                    "FDR":"false discovery rate","FOR":"false omission rate","ACC":"accuracy",
                    "F1":"F1 Score - harmonic mean of precision and sensitivity","MCC":"Matthews correlation coefficient",
                    "BM":"Informedness or Bookmaker Informedness","MK":"Markedness","LR+":"Positive likelihood ratio",
-                   "LR-":"Negative likelihood ratio","DOR":"Diagnostic odds ratio"}
+                   "LR-":"Negative likelihood ratio","DOR":"Diagnostic odds ratio","TP":"true positive/hit",
+                    "TN":"true negative/correct rejection","FP":"false positive/Type I error/false alarm",
+                    "FN":"false negative/miss/Type II error"}
 
 
 
@@ -242,5 +244,5 @@ def class_statistic(TP,TN,FP,FN):
         NLR[i]=LR_calc(FNR[i],TNR[i])
         DOR[i]=LR_calc(PLR[i],NLR[i])
     result={"TPR":TPR,"TNR":TNR,"PPV":PPV,"NPV":NPV,"FNR":FNR,"FPR":FPR,"FDR":FDR,"FOR":FOR,"ACC":ACC,"F1":F1,"MCC":MCC,
-    "BM":BM,"MK":MK,"LR+":PLR,"LR-":NLR,"DOR":DOR}
+    "BM":BM,"MK":MK,"LR+":PLR,"LR-":NLR,"DOR":DOR,"TP":TP,"TN":TN,"FP":FP,"FN":FN}
     return result

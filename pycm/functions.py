@@ -12,6 +12,14 @@ PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate"
 
 
 def table_print(classes,table):
+    '''
+    This function print confusion matrix
+    :param classes: classes list
+    :type classes:list
+    :param table: table
+    :type table:dict
+    :return: printable table as str
+    '''
     classes_len=len(classes)
     result = "Predict" + 10 * " " + "%-5s" * classes_len % tuple(map(str,classes)) + "\n"
     result = result + "Actual\n"
@@ -21,6 +29,14 @@ def table_print(classes,table):
     return result
 
 def params_print(classes,statistic_result):
+    '''
+    This function print statistics
+    :param classes: classes list
+    :type classes:list
+    :param statistic_result: statistic result for each class
+    :type statistic_result:dict
+    :return: printable result as str
+    '''
     shift = max(map(len, PARAMS_DESCRIPTION.values())) + 5
     classes_len=len(classes)
     result = "Classes" + shift * " " + "%-24s" * classes_len % tuple(map(str, classes)) + "\n"
@@ -33,6 +49,14 @@ def params_print(classes,statistic_result):
     return result
 
 def matrix_params_calc(actual_vector,predict_vector):
+    '''
+    This function calculate TP,TN,FP,FN for each class
+    :param actual_vector: actual values
+    :type actual_vector : list
+    :param predict_vector: predict value
+    :type predict_vector : list
+    :return: [classes_list,TP,TN,FP,FN]
+    '''
     classes=list(set(actual_vector).intersection(set(predict_vector)))
     map_dict={k:0 for k in classes}
     TP_dict=map_dict.copy()
@@ -56,6 +80,14 @@ def matrix_params_calc(actual_vector,predict_vector):
 
 
 def TTPN_calc(Item1,Item2):
+    '''
+    This function calculate TPR,TNR,PPV,NPV
+    :param Item1: Item1 in fractional expression
+    :type Item1 : int
+    :param Item2: Item2 in fractional expression
+    :type Item2: int
+    :return: result as float (5 Decimal Precision)
+    '''
     try:
         result=round(Item1/ (Item1 + Item2), 5)
         return result
@@ -63,6 +95,12 @@ def TTPN_calc(Item1,Item2):
         return "inf"
 
 def FXR_calc(Item1):
+    '''
+    This function calculate FNR,FPR,FDR,FOR
+    :param Item1: Item In Expression
+    :type Item1:float
+    :return: result as float (5 Decimal Precision)
+    '''
     try:
         result=round(1 - Item1, 5)
         return result
@@ -70,6 +108,18 @@ def FXR_calc(Item1):
         return "None"
 
 def ACC_calc(TP,TN,FP,FN):
+    '''
+    This functuon caclculate Accuracy
+    :param TP: True Positive
+    :type TP : int
+    :param TN: True Negative
+    :type TN : int
+    :param FP: False Positive
+    :type FP : int
+    :param FN: False Negative
+    :type FN : int
+    :return: Accuracy as float
+    '''
     try:
         result=round((TP + TN) / (TP + TN + FN + FP), 5)
         return result
@@ -77,6 +127,16 @@ def ACC_calc(TP,TN,FP,FN):
         return "inf"
 
 def F1_calc(TP,FP,FN):
+    '''
+    This function calculate F1 Score
+    :param TP: True Positive
+    :type TP : int
+    :param FP: False Positive
+    :type FP : int
+    :param FN: False Negative
+    :type FN : int
+    :return: F1 Score as float
+    '''
     try:
         result=round((2*TP)/(2*TP+FP+FN),5)
         return result
@@ -84,6 +144,18 @@ def F1_calc(TP,FP,FN):
         return "inf"
 
 def MCC_calc(TP,TN,FP,FN):
+    '''
+    This function calculate Matthews correlation coefficient (MCC)
+    :param TP: True Positive
+    :type TP : int
+    :param TN: True Negative
+    :type TN : int
+    :param FP: False Positive
+    :type FP : int
+    :param FN: False Negative
+    :type FN : int
+    :return: MCC as float
+    '''
     try:
         result=round((TP*TN-FP*FN)/(math.sqrt((TP+FP)*(TP+FN)*(TN+FP)*(TN+FN))),5)
         return result
@@ -91,6 +163,14 @@ def MCC_calc(TP,TN,FP,FN):
         return "inf"
 
 def MK_BM_calc(Item1,Item2):
+    '''
+    This function calculate Informedness or Bookmaker Informedness (BM) and Markedness (MK)
+    :param Item1: Item1 in expression
+    :type Item1:float
+    :param Item2: Item2 in expression
+    :type Item2:float
+    :return: MK and BM as float
+    '''
     try:
         result=round(Item1+Item2-1,5)
         return result
@@ -98,6 +178,14 @@ def MK_BM_calc(Item1,Item2):
         return "None"
 
 def LR_calc(Item1,Item2):
+    '''
+    This function calculate likelihood ratio
+    :param Item1: Item1 in expression
+    :type Item1:float
+    :param Item2: Item2 in expression
+    :type Item2:float
+    :return: LR+ and LR- as float
+    '''
     try:
         result=round(Item1/Item2,5)
         return result
@@ -108,6 +196,18 @@ def LR_calc(Item1,Item2):
 
 
 def class_statistic(TP,TN,FP,FN):
+    '''
+    This function return all statistics
+    ::param TP: True Positive
+    :type TP : int
+    :param TN: True Negative
+    :type TN : int
+    :param FP: False Positive
+    :type FP : int
+    :param FN: False Negative
+    :type FN : int
+    :return: result as dict
+    '''
     TPR={}
     TNR = {}
     PPV = {}

@@ -200,14 +200,14 @@ def LR_calc(Item1,Item2):
 def class_statistic(TP,TN,FP,FN):
     '''
     This function return all statistics
-    ::param TP: True Positive
-    :type TP : int
-    :param TN: True Negative
-    :type TN : int
-    :param FP: False Positive
-    :type FP : int
-    :param FN: False Negative
-    :type FN : int
+    ::param TP: True Positive Dict For All Classes
+    :type TP : dict
+    :param TN: True Negative Dict For All Classes
+    :type TN : dict
+    :param FP: False Positive Dict For All Classes
+    :type FP : dict
+    :param FN: False Negative Dict For All Classes
+    :type FN : dict
     :return: result as dict
     '''
     TPR={}

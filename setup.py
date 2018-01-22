@@ -9,9 +9,10 @@ setup(
   author_email = 'sepand@qpage.ir',
   url = 'https://github.com/sepandhaghighi/pycm',
   download_url = 'https://github.com/sepandhaghighi/pycm/tarball/v0.1',
-  keywords = ['confusion-matrix', 'python3','python'],
+  keywords = ['confusion-matrix', 'python3','python','machine learning','ML'],
   install_requires=[
 	  'codecov',
+      'art',
       ],
   classifiers=[
       'Development Status :: 4 - Beta',

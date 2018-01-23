@@ -10,7 +10,8 @@ PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate"
                    "BM":"Informedness or Bookmaker Informedness","MK":"Markedness","LR+":"Positive likelihood ratio",
                    "LR-":"Negative likelihood ratio","DOR":"Diagnostic odds ratio","TP":"true positive/hit",
                     "TN":"true negative/correct rejection","FP":"false positive/Type I error/false alarm",
-                    "FN":"false negative/miss/Type II error"}
+                    "FN":"false negative/miss/Type II error","P":"Condition positive","N":"Condition negative",
+                    "TOP":"Test outcome positive","TON":"Test outcome negative","POP":"Population"}
 
 
 def pycm_help():
@@ -236,7 +237,17 @@ def class_statistic(TP,TN,FP,FN):
     PLR={}
     NLR={}
     DOR={}
+    POP={}
+    P={}
+    N={}
+    TOP={}
+    TON={}
     for i in TP.keys():
+        POP[i]=TP[i]+TN[i]+FP[i]+FN[i]
+        P[i]=TP[i]+FN[i]
+        N[i]=TN[i]+FP[i]
+        TOP[i]=TP[i]+FP[i]
+        TON[i]=TN[i]+FN[i]
         TPR[i]=TTPN_calc(TP[i],FN[i])
         TNR[i]=TTPN_calc(TN[i],FP[i])
         PPV[i]=TTPN_calc(TP[i],FP[i])
@@ -254,5 +265,6 @@ def class_statistic(TP,TN,FP,FN):
         NLR[i]=LR_calc(FNR[i],TNR[i])
         DOR[i]=LR_calc(PLR[i],NLR[i])
     result={"TPR":TPR,"TNR":TNR,"PPV":PPV,"NPV":NPV,"FNR":FNR,"FPR":FPR,"FDR":FDR,"FOR":FOR,"ACC":ACC,"F1":F1_SCORE,"MCC":MCC,
-    "BM":BM,"MK":MK,"LR+":PLR,"LR-":NLR,"DOR":DOR,"TP":TP,"TN":TN,"FP":FP,"FN":FN}
+    "BM":BM,"MK":MK,"LR+":PLR,"LR-":NLR,"DOR":DOR,"TP":TP,"TN":TN,"FP":FP,"FN":FN,"POP":POP,"P":P,
+            "N":N,"TOP":TOP,"TON":TON}
     return result

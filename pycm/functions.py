@@ -35,11 +35,28 @@ def table_print(classes,table):
     :return: printable table as str
     '''
     classes_len=len(classes)
-    result = "Predict" + 10 * " " + "%-5s" * classes_len % tuple(map(str,classes)) + "\n"
+    result = "Predict" + 10 * " " + "%-9s" * classes_len % tuple(map(str,classes)) + "\n"
     result = result + "Actual\n"
     for key in classes:
-        result += str(key) + " " * (17 - len(str(key))) + "%-5s" * classes_len % tuple(
+        result += str(key) + " " * (17 - len(str(key))) + "%-9s" * classes_len % tuple(
             map(str, list(table[key].values()))) + "\n"
+    return result
+
+def normalized_table_print(classes,table):
+    '''
+    This function print normalized confusion matrix
+    :param classes: classes list
+    :type classes:list
+    :param table: table
+    :type table:dict
+    :return: printable table as str
+    '''
+    classes_len=len(classes)
+    result = "Predict" + 10 * " " + "%-15s" * classes_len % tuple(map(str,classes)) + "\n"
+    result = result + "Actual\n"
+    for key in classes:
+        result += str(key) + " " * (17 - len(str(key))) + "%-15s" * classes_len % tuple(
+            map(lambda x:str(round(x/sum(table[key].values()),5)), list(table[key].values()))) + "\n"
     return result
 
 def params_print(classes,statistic_result):

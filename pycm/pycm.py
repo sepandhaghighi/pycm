@@ -48,6 +48,12 @@ class ConfusionMatrix():
         self.TON=statistic_result["TON"]
         self.PRE=statistic_result["PRE"]
         self.G=statistic_result["G"]
+    def matrix(self):
+        print(table_print(self.classes,self.table))
+    def normalized_matrix(self):
+        print(normalized_table_print(self.classes,self.table))
+    def params(self):
+        print(params_print(self.classes,self.statistic_result))
     def __str__(self):
         result=table_print(self.classes,self.table)
         result+="\n"*4

@@ -119,6 +119,7 @@ or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir").
   - [x] TNR
   - [x] TPR
   - [ ] Prevalence
+  - [ ] G-measure
 - [ ] Outputs
   - [ ] CSV File
   - [ ] HTML File

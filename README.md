@@ -91,16 +91,16 @@ or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir").
 
 
 ## TODO		
-- [ ] Basic
+- [x] Basic
   - [x] TP
   - [x] FP
   - [x] FN
   - [x] TN
-  - [ ] Population
-  - [ ] Condition positive
-  - [ ] Condition negative 
-  - [ ] Test outcome positive
-  - [ ] Test outcome negative
+  - [x] Population
+  - [x] Condition positive
+  - [x] Condition negative 
+  - [x] Test outcome positive
+  - [x] Test outcome negative
 - [ ] Class Statistics
   - [x] ACC
   - [x] BM

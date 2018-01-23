@@ -11,7 +11,8 @@ PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate"
                    "LR-":"Negative likelihood ratio","DOR":"Diagnostic odds ratio","TP":"true positive/hit",
                     "TN":"true negative/correct rejection","FP":"false positive/Type I error/false alarm",
                     "FN":"false negative/miss/Type II error","P":"Condition positive","N":"Condition negative",
-                    "TOP":"Test outcome positive","TON":"Test outcome negative","POP":"Population","PRE":"Prevalence"}
+                    "TOP":"Test outcome positive","TON":"Test outcome negative","POP":"Population","PRE":"Prevalence",
+                    "G":"G-measure geometric mean of precision and sensitivity"}
 
 
 def pycm_help():
@@ -206,6 +207,37 @@ def LR_calc(Item1,Item2):
         return "None"
 
 
+def PRE_calc(P,POP):
+    '''
+    This function calculate prevalence
+    :param P: Condition positive
+    :type P : int
+    :param POP: Population
+    :type POP : int
+    :return: prevalence as float
+    '''
+    try:
+        result=round(P/ POP, 5)
+        return result
+    except Exception:
+        return "None"
+
+
+def G_calc(PPV,TPR):
+    '''
+    This function calculate G-measure
+    :param PPV:  precision or positive predictive value
+    :type PPV : float
+    :param TPR: sensitivity, recall, hit rate, or true positive rate
+    :type TPR : float
+    :return: G-measure as float
+    '''
+    try:
+        result=round(math.sqrt(PPV*TPR),5)
+        return result
+    except Exception:
+        return "None"
+
 
 
 def class_statistic(TP,TN,FP,FN):
@@ -243,6 +275,7 @@ def class_statistic(TP,TN,FP,FN):
     TOP={}
     TON={}
     PRE={}
+    G={}
     for i in TP.keys():
         POP[i]=TP[i]+TN[i]+FP[i]+FN[i]
         P[i]=TP[i]+FN[i]
@@ -265,8 +298,9 @@ def class_statistic(TP,TN,FP,FN):
         PLR[i]=LR_calc(TPR[i],FPR[i])
         NLR[i]=LR_calc(FNR[i],TNR[i])
         DOR[i]=LR_calc(PLR[i],NLR[i])
-        PRE[i]=round(P[i]/POP[i],5)
+        PRE[i]= PRE_calc(P[i],POP[i])
+        G[i]=G_calc(PPV[i],TPR[i])
     result={"TPR":TPR,"TNR":TNR,"PPV":PPV,"NPV":NPV,"FNR":FNR,"FPR":FPR,"FDR":FDR,"FOR":FOR,"ACC":ACC,"F1":F1_SCORE,"MCC":MCC,
     "BM":BM,"MK":MK,"LR+":PLR,"LR-":NLR,"DOR":DOR,"TP":TP,"TN":TN,"FP":FP,"FN":FN,"POP":POP,"P":P,
-            "N":N,"TOP":TOP,"TON":TON,"PRE":PRE}
+            "N":N,"TOP":TOP,"TON":TON,"PRE":PRE,"G":G}
     return result

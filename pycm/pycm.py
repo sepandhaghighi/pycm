@@ -46,6 +46,7 @@ class ConfusionMatrix():
         self.N=statistic_result["N"]
         self.TOP=statistic_result["TOP"]
         self.TON=statistic_result["TON"]
+        self.PRE=statistic_result["PRE"]
     def __str__(self):
         result=table_print(self.classes,self.table)
         result+="\n"*4

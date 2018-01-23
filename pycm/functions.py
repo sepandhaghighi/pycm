@@ -11,7 +11,7 @@ PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate"
                    "LR-":"Negative likelihood ratio","DOR":"Diagnostic odds ratio","TP":"true positive/hit",
                     "TN":"true negative/correct rejection","FP":"false positive/Type I error/false alarm",
                     "FN":"false negative/miss/Type II error","P":"Condition positive","N":"Condition negative",
-                    "TOP":"Test outcome positive","TON":"Test outcome negative","POP":"Population"}
+                    "TOP":"Test outcome positive","TON":"Test outcome negative","POP":"Population","PRE":"Prevalence"}
 
 
 def pycm_help():
@@ -242,6 +242,7 @@ def class_statistic(TP,TN,FP,FN):
     N={}
     TOP={}
     TON={}
+    PRE={}
     for i in TP.keys():
         POP[i]=TP[i]+TN[i]+FP[i]+FN[i]
         P[i]=TP[i]+FN[i]
@@ -264,7 +265,8 @@ def class_statistic(TP,TN,FP,FN):
         PLR[i]=LR_calc(TPR[i],FPR[i])
         NLR[i]=LR_calc(FNR[i],TNR[i])
         DOR[i]=LR_calc(PLR[i],NLR[i])
+        PRE[i]=round(P[i]/POP[i],5)
     result={"TPR":TPR,"TNR":TNR,"PPV":PPV,"NPV":NPV,"FNR":FNR,"FPR":FPR,"FDR":FDR,"FOR":FOR,"ACC":ACC,"F1":F1_SCORE,"MCC":MCC,
     "BM":BM,"MK":MK,"LR+":PLR,"LR-":NLR,"DOR":DOR,"TP":TP,"TN":TN,"FP":FP,"FN":FN,"POP":POP,"P":P,
-            "N":N,"TOP":TOP,"TON":TON}
+            "N":N,"TOP":TOP,"TON":TON,"PRE":PRE}
     return result

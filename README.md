@@ -91,8 +91,17 @@ or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir").
 
 
 ## TODO		
-
-- [x] Class Statistics
+- [ ] Basic
+  - [x] TP
+  - [x] FP
+  - [x] FN
+  - [x] TN
+  - [ ] Population
+  - [ ] Condition positive
+  - [ ] Condition negative 
+  - [ ] Test outcome positive
+  - [ ] Test outcome negative
+- [ ] Class Statistics
   - [x] ACC
   - [x] BM
   - [x] DOR
@@ -109,6 +118,7 @@ or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir").
   - [x] PPV
   - [x] TNR
   - [x] TPR
+  - [ ] Prevalence
 - [ ] Outputs
   - [ ] CSV File
   - [ ] HTML File

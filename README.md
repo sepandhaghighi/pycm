@@ -101,7 +101,7 @@ or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir").
   - [x] Condition negative 
   - [x] Test outcome positive
   - [x] Test outcome negative
-- [ ] Class Statistics
+- [x] Class Statistics
   - [x] ACC
   - [x] BM
   - [x] DOR
@@ -119,7 +119,7 @@ or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir").
   - [x] TNR
   - [x] TPR
   - [x] Prevalence
-  - [ ] G-measure
+  - [x] G-measure
 - [ ] Outputs
   - [ ] CSV File
   - [ ] HTML File

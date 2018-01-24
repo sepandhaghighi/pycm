@@ -124,7 +124,7 @@ or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir").
   - [ ] CSV File
   - [ ] HTML File
   - [x] Table
-  - [ ] Normalized Table
+  - [x] Normalized Table
 - [ ] Overall Statistics
   - [ ] Kappa
   - [ ] 95% CI

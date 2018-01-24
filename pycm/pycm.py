@@ -49,17 +49,37 @@ class ConfusionMatrix():
         self.PRE=statistic_result["PRE"]
         self.G=statistic_result["G"]
     def matrix(self):
+        '''
+        This method print confusion matrix
+        :return:
+        '''
         print(table_print(self.classes,self.table))
     def normalized_matrix(self):
+        '''
+        This method print normalized confusion matrix
+        :return:
+        '''
         print(normalized_table_print(self.classes,self.table))
     def params(self):
+        '''
+        This method print statistical measures table
+        :return: None
+        '''
         print(params_print(self.classes,self.statistic_result))
     def __str__(self):
+        '''
+        ConfusionMatrix object string representation method
+        :return: representation as str (matrix + params)
+        '''
         result=table_print(self.classes,self.table)
         result+="\n"*4
         result+=params_print(self.classes,self.statistic_result)
         return result
     def __repr__(self):
+        '''
+        ConfusionMatrix object representation method
+        :return: representation as str
+        '''
         return "pycm.ConfusionMatrix(classes: "+str(self.classes)+")"
 
 

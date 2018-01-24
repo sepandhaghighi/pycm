@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import math
 from art import tprint
-VERSION="0.1"
+VERSION="0.2"
 PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate","TNR":"specificity or true negative rate",
                    "PPV":"precision or positive predictive value","NPV":"negative predictive value",
                    "FNR":"miss rate or false negative rate","FPR":"fall-out or false positive rate",

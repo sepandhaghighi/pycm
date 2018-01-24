@@ -138,7 +138,7 @@ For more information visit [here](Document.ipynb "Document")
 
 <div align="center">
 
-<a href="https://asciinema.org/a/158541" target="_blank"><img src="https://asciinema.org/a/158541.png" /></a>
+<a href="https://asciinema.org/a/158952" target="_blank"><img src="https://asciinema.org/a/158952.png" /></a>
 
 </div>
 

@@ -60,7 +60,7 @@ class ConfusionMatrix():
         result+=params_print(self.classes,self.statistic_result)
         return result
     def __repr__(self):
-        return "pycm.ConfusionMatrix("+str(self.classes)+")"
+        return "pycm.ConfusionMatrix(classes: "+str(self.classes)+")"
 
 
 

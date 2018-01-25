@@ -48,6 +48,7 @@ class ConfusionMatrix():
         self.TON=statistic_result["TON"]
         self.PRE=statistic_result["PRE"]
         self.G=statistic_result["G"]
+        self.K=statistic_result["K"]
     def matrix(self):
         '''
         This method print confusion matrix

@@ -12,7 +12,7 @@ PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate"
                     "TN":"true negative/correct rejection","FP":"false positive/Type I error/false alarm",
                     "FN":"false negative/miss/Type II error","P":"Condition positive","N":"Condition negative",
                     "TOP":"Test outcome positive","TON":"Test outcome negative","POP":"Population","PRE":"Prevalence",
-                    "G":"G-measure geometric mean of precision and sensitivity","K":"Kappa"}
+                    "G":"G-measure geometric mean of precision and sensitivity","K":"Kappa","RACC":"Random Accuracy"}
 
 
 def pycm_help():
@@ -120,7 +120,7 @@ def TTPN_calc(Item1,Item2):
     :return: result as float (5 Decimal Precision)
     '''
     try:
-        result=round(Item1/ (Item1 + Item2), 5)
+        result=Item1/ (Item1 + Item2)
         return result
     except ZeroDivisionError:
         return "inf"
@@ -133,7 +133,7 @@ def FXR_calc(Item1):
     :return: result as float (5 Decimal Precision)
     '''
     try:
-        result=round(1 - Item1, 5)
+        result=1 - Item1
         return result
     except Exception:
         return "None"
@@ -152,7 +152,7 @@ def ACC_calc(TP,TN,FP,FN):
     :return: Accuracy as float
     '''
     try:
-        result=round((TP + TN) / (TP + TN + FN + FP), 5)
+        result=(TP + TN) / (TP + TN + FN + FP)
         return result
     except ZeroDivisionError:
         return "inf"
@@ -169,7 +169,7 @@ def F1_calc(TP,FP,FN):
     :return: F1 Score as float
     '''
     try:
-        result=round((2*TP)/(2*TP+FP+FN),5)
+        result=(2*TP)/(2*TP+FP+FN)
         return result
     except ZeroDivisionError:
         return "inf"
@@ -188,7 +188,7 @@ def MCC_calc(TP,TN,FP,FN):
     :return: MCC as float
     '''
     try:
-        result=round((TP*TN-FP*FN)/(math.sqrt((TP+FP)*(TP+FN)*(TN+FP)*(TN+FN))),5)
+        result=(TP*TN-FP*FN)/(math.sqrt((TP+FP)*(TP+FN)*(TN+FP)*(TN+FN)))
         return result
     except ZeroDivisionError:
         return "inf"
@@ -203,7 +203,7 @@ def MK_BM_calc(Item1,Item2):
     :return: MK and BM as float
     '''
     try:
-        result=round(Item1+Item2-1,5)
+        result=Item1+Item2-1
         return result
     except Exception:
         return "None"
@@ -218,7 +218,7 @@ def LR_calc(Item1,Item2):
     :return: LR+ and LR- as float
     '''
     try:
-        result=round(Item1/Item2,5)
+        result=Item1/Item2
         return result
     except Exception:
         return "None"
@@ -234,7 +234,7 @@ def PRE_calc(P,POP):
     :return: prevalence as float
     '''
     try:
-        result=round(P/ POP, 5)
+        result=P/ POP
         return result
     except Exception:
         return "None"
@@ -250,15 +250,17 @@ def G_calc(PPV,TPR):
     :return: G-measure as float
     '''
     try:
-        result=round(math.sqrt(PPV*TPR),5)
+        result=math.sqrt(PPV*TPR)
         return result
     except Exception:
         return "None"
 
-def KAPPA_calc(TON,TOP,P,N,POP,ACC):
-    random_accuracy=((TON*N)+(TOP*P))/(POP)**2
-    result=(ACC-random_accuracy)/(1-random_accuracy)
-    result=round(result,5)
+def RACC_calc(TON,TOP,P,N,POP):
+    result = ((TON * N) + (TOP * P)) / (POP) ** 2
+    return result
+def KAPPA_calc(RACC,ACC):
+
+    result=(ACC-RACC)/(1-RACC)
     return result
 
 def class_statistic(TP,TN,FP,FN):
@@ -298,6 +300,7 @@ def class_statistic(TP,TN,FP,FN):
     PRE={}
     G={}
     KAPPA={}
+    RACC={}
     for i in TP.keys():
         POP[i]=TP[i]+TN[i]+FP[i]+FN[i]
         P[i]=TP[i]+FN[i]
@@ -322,8 +325,9 @@ def class_statistic(TP,TN,FP,FN):
         DOR[i]=LR_calc(PLR[i],NLR[i])
         PRE[i]= PRE_calc(P[i],POP[i])
         G[i]=G_calc(PPV[i],TPR[i])
-        KAPPA[i]=KAPPA_calc(TON[i],TOP[i],P[i],N[i],POP[i],ACC[i])
+        RACC[i]=RACC_calc(TON[i],TOP[i],P[i],N[i],POP[i])
+        KAPPA[i]=KAPPA_calc(RACC,ACC[i])
     result={"TPR":TPR,"TNR":TNR,"PPV":PPV,"NPV":NPV,"FNR":FNR,"FPR":FPR,"FDR":FDR,"FOR":FOR,"ACC":ACC,"F1":F1_SCORE,"MCC":MCC,
     "BM":BM,"MK":MK,"LR+":PLR,"LR-":NLR,"DOR":DOR,"TP":TP,"TN":TN,"FP":FP,"FN":FN,"POP":POP,"P":P,
-            "N":N,"TOP":TOP,"TON":TON,"PRE":PRE,"G":G,"K":KAPPA}
+            "N":N,"TOP":TOP,"TON":TON,"PRE":PRE,"G":G,"K":KAPPA,"RACC":RACC}
     return result

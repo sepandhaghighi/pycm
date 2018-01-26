@@ -12,8 +12,7 @@ PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate"
                     "TN":"true negative/correct rejection","FP":"false positive/Type I error/false alarm",
                     "FN":"false negative/miss/Type II error","P":"Condition positive","N":"Condition negative",
                     "TOP":"Test outcome positive","TON":"Test outcome negative","POP":"Population","PRE":"Prevalence",
-                    "G":"G-measure geometric mean of precision and sensitivity","K":"Kappa","RACC":"Random Accuracy",
-                    "SOA":"Strength of Agreemen"}
+                    "G":"G-measure geometric mean of precision and sensitivity","K":"Kappa","RACC":"Random Accuracy"}
 
 
 def isfloat(value):
@@ -278,27 +277,10 @@ def RACC_calc(TON,TOP,P,N,POP):
     result = ((TON * N) + (TOP * P)) / (POP) ** 2
     return result
 def KAPPA_calc(RACC,ACC):
+
     result=(ACC-RACC)/(1-RACC)
     return result
 
-def KAPPA_analysis(kappa):
-    try:
-        if kappa<0:
-            return "Poor"
-        elif kappa>0 and kappa<0.2:
-            return "Slight"
-        elif kappa>0.21 and kappa<0.4:
-            return "Fair"
-        elif kappa>0.41 and kappa<0.6:
-            return "Moderate"
-        elif kappa>0.61 and kappa<0.8:
-            return "Substantial"
-        elif kappa>0.81 and kappa<=1:
-            return "Almost Perfect"
-        else:
-            return "None"
-    except Exception:
-        return "None"
 def class_statistic(TP,TN,FP,FN):
     '''
     This function return all statistics
@@ -337,7 +319,6 @@ def class_statistic(TP,TN,FP,FN):
     G={}
     KAPPA={}
     RACC={}
-    SOA={}
     for i in TP.keys():
         POP[i]=TP[i]+TN[i]+FP[i]+FN[i]
         P[i]=TP[i]+FN[i]
@@ -364,9 +345,8 @@ def class_statistic(TP,TN,FP,FN):
         G[i]=G_calc(PPV[i],TPR[i])
         RACC[i]=RACC_calc(TON[i],TOP[i],P[i],N[i],POP[i])
         KAPPA[i]=KAPPA_calc(RACC[i],ACC[i])
-        SOA[i]=KAPPA_analysis(KAPPA[i])
     print(sum(KAPPA.values())/3)
     result={"TPR":TPR,"TNR":TNR,"PPV":PPV,"NPV":NPV,"FNR":FNR,"FPR":FPR,"FDR":FDR,"FOR":FOR,"ACC":ACC,"F1":F1_SCORE,"MCC":MCC,
     "BM":BM,"MK":MK,"LR+":PLR,"LR-":NLR,"DOR":DOR,"TP":TP,"TN":TN,"FP":FP,"FN":FN,"POP":POP,"P":P,
-            "N":N,"TOP":TOP,"TON":TON,"PRE":PRE,"G":G,"K":KAPPA,"RACC":RACC,"SOA":SOA}
+            "N":N,"TOP":TOP,"TON":TON,"PRE":PRE,"G":G,"K":KAPPA,"RACC":RACC}
     return result

@@ -1,0 +1,311 @@
+@font-face {
+    font-family: "baloo";
+    src: url("../fonts/Baloo.ttf");
+}
+@font-face {
+    font-family: "consola";
+    src: url("../fonts/consola.ttf");
+}
+
+
+.citation{
+    text-align: center;
+    
+}
+.version{
+    color: darkorange;
+}
+.note{
+    text-align: left;
+    display: inline-block;
+}
+.logo{
+    vertical-align: middle;
+    margin: auto;
+    padding: auto;
+    margin-top: 10px;
+}
+
+.consola{
+    font-family: "consola";
+    text-align: left;
+    display: inline-block;
+    font-size: 20px;
+    border :1px solid black;
+    padding: 4px;
+}
+body{
+    background-color:white;
+    font-family: "baloo";
+    margin: 0;
+    
+}
+li { list-style-position: inside }
+.PYCM_image{
+    height: 350px;
+    width: 350px;
+    opacity: 0.7;
+}
+
+.moduland{
+    color: red;
+}
+
+.button{
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+
+a{
+  opacity: 1; 
+  transition: opacity 3s;
+  -webkit-transition: opacity 3s;
+}
+
+a:hover{
+    opacity: 0.3;
+}
+hr{
+    border-color: black;
+    border-style: groove;
+}
+.fork-pc{
+    top: 0;
+    border: 0;
+    left: 0;
+    position: absolute;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+
+#login-footer p{
+    font-family: "baloo";
+    vertical-align: center;
+    margin:auto;
+}
+#login-footer{
+    color: white;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    background-color: #f2b56b;
+    position:fixed;
+    font-size: 17px;
+    margin-top: 100px;
+    height: auto;
+}
+
+.header{
+    text-align: center;
+}
+.header h1{
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 40px;
+}
+
+.help {
+    width: 80%;
+    margin: auto;
+    font-size: 33px;
+    text-align: justify;
+    font-size-adjust: auto;
+    hyphens: auto;
+    
+}
+.main_text{
+    width: 80%;
+    margin: auto;
+    font-size: 33px;
+    text-align: center;
+    font-size-adjust: auto;
+    hyphens: auto;
+}
+.functions{
+    width: 80%;
+    margin: auto;
+    font-size: 33px;
+    text-align: center;
+    font-size-adjust: auto;
+    hyphens: auto;
+}
+.fomart-title{
+    font-size: 33px;
+}
+.help h3{
+    text-align: center;
+}
+
+
+.button_section{
+    text-align: center;
+}
+
+button {
+    display: inline;
+    margin: 7px;
+    margin-bottom: 5px;
+    position: relative;
+    height: 45px;
+    width: 170px;
+    padding: 5px 5px;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: #383736;
+    border: 2px #383736 solid;
+    border-radius: 4px;
+    text-transform: uppercase;
+    outline: 0;
+    overflow: hidden;
+    background: none;
+    z-index: 1;
+    cursor: pointer;
+    transition: 0.08s ease-in;
+    -o-transition: 0.08s ease-in;
+    -ms-transition: 0.08s ease-in;
+    -moz-transition: 0.08s ease-in;
+    -webkit-transition: 0.08s ease-in;
+}
+
+#back a:hover {
+    cursor: pointer;
+}
+
+.donate_image{
+    width: 80%;
+    height: auto;
+}   
+
+
+.reset {
+    -webkit-transition: all 150ms cubic-bezier(0.445, 0.050, 0.550, 0.950);
+}
+.reset:before {
+    position: absolute;
+    content: "";
+    background: url(https://f.cl.ly/items/3H3A0D1N281a2T280F3o/heist.svg) no-repeat center center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    -webkit-transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+}
+.reset:after {
+    content: "";
+    position: absolute;
+    background: #202026;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: -2;
+    -webkit-transition: all 500ms cubic-bezier(0.230, 1.000, 0.320, 1.000);
+}
+.reset:hover {
+    color: white;
+}
+.reset:hover:before {
+    opacity: .8;
+}
+.reset:hover:after {
+    top: 0;
+}
+#login-footer p {
+    vertical-align: center;
+    margin: auto;
+    color: #fafafa;
+}
+#login-footer p {
+    color: #fafafa;
+}
+#login-footer {
+    background: transparent;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    background-color: #202026;
+    position: relative;
+    font-size: 17px;
+    margin-right: 0px;
+    height: auto;
+    width: 100%;
+    margin-top: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: "sacramento";
+    font-size: 25px;
+}
+#particles-js{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    background-image: url('');
+    background-size: cover; 
+    background-repeat: no-repeat;
+  }
+.siteWrapper {
+    position: fixed;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+}
+@media all and (max-width: 1024px) {
+    .consola{
+        font-size: 13px;
+    }
+  #login-footer {
+        position: relative;
+        display: none;
+        font-size: 30px;
+        height: auto;
+    }
+    #login-footer p {
+        margin: auto;
+        padding: auto;
+    }
+.donate_image{
+    width: 90%;
+    height: 50%;
+}
+    .PYCM_image{
+    width: 90%;
+    height: 50%;
+}
+
+.help {
+        width: 95%;
+        font-size: 28px;
+        text-align: center;
+        hyphens: auto;
+    }
+
+    .main_text{
+           width: 95%;
+        font-size: 28px;
+        text-align: center;
+        hyphens: auto;
+    }
+    .functions{
+            width: 95%;
+        font-size: 28px;
+        hyphens: auto;
+    }
+    .format-title{
+        font-size: 35px;
+    }
+    
+button{
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .button{
+        margin-bottom: 60px;
+    }
+}

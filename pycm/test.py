@@ -138,6 +138,24 @@ __     __     ___      _____
 <BLANKLINE>
 <BLANKLINE>
 Repo : https://github.com/sepandhaghighi/pycm
+>>> TTPN_calc(0,0)
+'inf'
+>>> FXR_calc(None)
+'None'
+>>> ACC_calc(0,0,0,0)
+'inf'
+>>> MCC_calc(0,2,0,2)
+'inf'
+>>> MK_BM_calc(2,"None")
+'None'
+>>> PRE_calc(None,2)
+'None'
+>>> G_calc(None,2)
+'None'
+>>> KAPPA_calc(1,None)
+'None'
+>>> KAPPA_analysis(None)
+'None'
 >>> cov.stop()
 >>> cov.save()
 

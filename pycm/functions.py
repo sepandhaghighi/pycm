@@ -30,6 +30,14 @@ def isfloat(value):
         return False
 
 def rounder(input_number,digit=5):
+    '''
+    This function round input number
+    :param input_number: input number
+    :type input_number : float
+    :param digit: precision
+    :type digit : int
+    :return: round number as float
+    '''
     if isfloat(input_number)==True:
         return str(round(input_number,digit))
     else:
@@ -83,8 +91,10 @@ def stat_print(classes,class_stat,overall_stat):
     This function print statistics
     :param classes: classes list
     :type classes:list
-    :param statistic_result: statistic result for each class
-    :type statistic_result:dict
+    :param class_stat: statistic result for each class
+    :type class_stat:dict
+    :param overall_stat : overall statistic result
+    :type overall_stat:dict
     :return: printable result as str
     '''
     shift = max(map(len, PARAMS_DESCRIPTION.values())) + 5
@@ -281,14 +291,38 @@ def G_calc(PPV,TPR):
     except Exception:
         return "None"
 
-def RACC_calc(TON,TOP,P,N,POP):
+def RACC_calc(TOP,P,POP):
+    '''
+    This function calculate random Accuracy
+    :param TOP: Test outcome positive
+    :type TOP : int
+    :param P:  Condition positive
+    :type P : int
+    :param POP: Population
+    :type POP:int
+    :return: RACC as float
+    '''
     result =(TOP * P) /((POP)** 2)
     return result
 def KAPPA_calc(RACC,ACC):
+    '''
+    This function calculate kappa
+    :param RACC: random accuracy
+    :type RACC : float
+    :param ACC: accuracy
+    :type ACC : float
+    :return: kappa as float
+    '''
     result=(ACC-RACC)/(1-RACC)
     return result
 
 def KAPPA_analysis(kappa):
+    '''
+    This function analysis kappa number with Koch benchmark
+    :param kappa: kappa number
+    :type kappa : float
+    :return: Strength of Agreement as str
+    '''
     try:
         if kappa<0:
             return "Poor"
@@ -308,13 +342,21 @@ def KAPPA_analysis(kappa):
         return "None"
 
 def overall_statistics(ACC,RACC):
+    '''
+    This function return overall statistics
+    :param ACC: accuracy
+    :type ACC : float
+    :param RACC: random accuracy
+    :type RACC : float
+    :return: overall statistics as dict
+    '''
     overall_accuracy=min(ACC.values())
     overall_random_accuracy=sum(RACC.values())
     overall_kappa=KAPPA_calc(overall_random_accuracy,overall_accuracy)
     return {"Overall_ACC":overall_accuracy,"Overall_Kappa":overall_kappa,"Strength_Of_Agreement":KAPPA_analysis(overall_kappa)}
 def class_statistics(TP,TN,FP,FN):
     '''
-    This function return all statistics
+    This function return all class statistics
     ::param TP: True Positive Dict For All Classes
     :type TP : dict
     :param TN: True Negative Dict For All Classes
@@ -375,7 +417,7 @@ def class_statistics(TP,TN,FP,FN):
         DOR[i]=LR_calc(PLR[i],NLR[i])
         PRE[i]= PRE_calc(P[i],POP[i])
         G[i]=G_calc(PPV[i],TPR[i])
-        RACC[i]=RACC_calc(TON[i],TOP[i],P[i],N[i],POP[i])
+        RACC[i]=RACC_calc(TOP[i],P[i],POP[i])
         KAPPA[i]=KAPPA_calc(RACC[i],ACC[i])
         SOA[i]=KAPPA_analysis(KAPPA[i])
     result={"TPR":TPR,"TNR":TNR,"PPV":PPV,"NPV":NPV,"FNR":FNR,"FPR":FPR,"FDR":FDR,"FOR":FOR,"ACC":ACC,"F1":F1_SCORE,"MCC":MCC,

@@ -222,6 +222,17 @@ Remember to write a few tests for your code before sending pull requests.
 Sepand Haghighi. “Pycm : Multi Class Confusion Matrix Library in Python”. Zenodo, January 22, 2018. doi:10.5281/zenodo.1157173.
 
 
+## Reference
+
+<blockquote>1- Landis JR, Koch GG. The measurement of observer agreement for categorical data. Biometrics 1977; 33:159–174 </blockquote>
+
+<blockquote>2- Powers, D. M. W. (2011). Evaluation: from precision, recall and f-measure to roc, informedness, markedness & correlation. Journal of Machine Learning Technologies.</blockquote>
+
+
+<blockquote>3-  C. Sammut, G. Webb, Encyclopedia of Machine Learning. Springer, 2011. Springer reference.</blockquote>
+
+
+
 ## Cite
 
 If you use pycm in your research , please cite this :
@@ -233,9 +244,9 @@ Sepand Haghighi. “Pycm : Multi Class Confusion Matrix Library in Python”. Ze
 
 @misc{https://doi.org/10.5281/zenodo.1157173,
   doi = {10.5281/zenodo.1157173},
-  author = {Sepand Haghighi},
-  keywords = {Machine Learning, statistics, confusion-matrix, statistical-analysis, matrices, matrix},
-  title = {Pycm : Multi Class Confusion Matrix Library in Python},
+  author = {{Sepand Haghighi}},
+  keywords = {Machine Learning,  statistics,  confusion-matrix,  statistical-analysis,  matrices,  matrix},
+  title = {Pycm : Multi Class Confusion Matrix Library In Python},
   pages = {--},
   publisher = {Zenodo},
   year = {2018}

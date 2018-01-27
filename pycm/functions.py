@@ -13,7 +13,7 @@ PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate"
                     "FN":"false negative/miss/Type II error","P":"Condition positive","N":"Condition negative",
                     "TOP":"Test outcome positive","TON":"Test outcome negative","POP":"Population","PRE":"Prevalence",
                     "G":"G-measure geometric mean of precision and sensitivity","K":"Kappa","RACC":"Random Accuracy",
-                    "SOA":"Strength of Agreemen"}
+                    "SOA":"Strength of Agreement"}
 
 
 def isfloat(value):
@@ -78,7 +78,7 @@ def normalized_table_print(classes,table):
             map(lambda x:str(round(x/sum(table[key].values()),5)), list(table[key].values()))) + "\n"
     return result
 
-def params_print(classes,statistic_result):
+def stat_print(classes,class_stat,overall_stat):
     '''
     This function print statistics
     :param classes: classes list
@@ -89,13 +89,20 @@ def params_print(classes,statistic_result):
     '''
     shift = max(map(len, PARAMS_DESCRIPTION.values())) + 5
     classes_len=len(classes)
-    result = "Classes" + shift * " " + "%-24s" * classes_len % tuple(map(str, classes)) + "\n"
-    KeyList = list(statistic_result.keys())
-    KeyList.sort()
-    for key in KeyList:
+    result = "Overall Statistics : "+"\n\n"
+    overall_stat_keys = list(overall_stat.keys())
+    overall_stat_keys.sort()
+    for key in overall_stat_keys:
+        result += key + " " * (
+        shift - len(key) + 7) + rounder(overall_stat[key]) + "\n"
+    result +="\nClass Statistics :\n\n"
+    result += "Classes" + shift * " " + "%-24s" * classes_len % tuple(map(str, classes)) + "\n"
+    class_stat_keys = list(class_stat.keys())
+    class_stat_keys.sort()
+    for key in class_stat_keys:
         result += key + "(" + PARAMS_DESCRIPTION[key] + ")" + " " * (
         shift - len(key) - len(PARAMS_DESCRIPTION[key]) + 5) + "%-24s" * classes_len % tuple(
-            map(rounder,statistic_result[key].values())) + "\n"
+            map(rounder,class_stat[key].values())) + "\n"
     return result
 
 def matrix_params_calc(actual_vector,predict_vector):
@@ -275,7 +282,7 @@ def G_calc(PPV,TPR):
         return "None"
 
 def RACC_calc(TON,TOP,P,N,POP):
-    result = ((TON * N) + (TOP * P)) / (POP) ** 2
+    result =(TOP * P) /((POP)** 2)
     return result
 def KAPPA_calc(RACC,ACC):
     result=(ACC-RACC)/(1-RACC)
@@ -299,7 +306,13 @@ def KAPPA_analysis(kappa):
             return "None"
     except Exception:
         return "None"
-def class_statistic(TP,TN,FP,FN):
+
+def overall_statistics(ACC,RACC):
+    overall_accuracy=min(ACC.values())
+    overall_random_accuracy=sum(RACC.values())
+    overall_kappa=KAPPA_calc(overall_random_accuracy,overall_accuracy)
+    return {"Overall_ACC":overall_accuracy,"Overall_Kappa":overall_kappa,"Strength_Of_Agreement":KAPPA_analysis(overall_kappa)}
+def class_statistics(TP,TN,FP,FN):
     '''
     This function return all statistics
     ::param TP: True Positive Dict For All Classes
@@ -365,7 +378,6 @@ def class_statistic(TP,TN,FP,FN):
         RACC[i]=RACC_calc(TON[i],TOP[i],P[i],N[i],POP[i])
         KAPPA[i]=KAPPA_calc(RACC[i],ACC[i])
         SOA[i]=KAPPA_analysis(KAPPA[i])
-    print(sum(KAPPA.values())/3)
     result={"TPR":TPR,"TNR":TNR,"PPV":PPV,"NPV":NPV,"FNR":FNR,"FPR":FPR,"FDR":FDR,"FOR":FOR,"ACC":ACC,"F1":F1_SCORE,"MCC":MCC,
     "BM":BM,"MK":MK,"LR+":PLR,"LR-":NLR,"DOR":DOR,"TP":TP,"TN":TN,"FP":FP,"FN":FN,"POP":POP,"P":P,
             "N":N,"TOP":TOP,"TON":TON,"PRE":PRE,"G":G,"K":KAPPA,"RACC":RACC,"SOA":SOA}

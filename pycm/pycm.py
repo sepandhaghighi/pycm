@@ -22,9 +22,10 @@ class ConfusionMatrix():
         self.TN=matrix_param[3]
         self.FP=matrix_param[4]
         self.FN=matrix_param[5]
-        statistic_result=class_statistic(TP=matrix_param[2],TN=matrix_param[3],FP=matrix_param[4],
+        statistic_result=class_statistics(TP=matrix_param[2],TN=matrix_param[3],FP=matrix_param[4],
                                          FN=matrix_param[5])
-        self.statistic_result=statistic_result
+        self.class_stat=statistic_result
+        self.overall_stat=overall_statistics(statistic_result["ACC"],statistic_result["RACC"])
         self.TPR=statistic_result["TPR"]
         self.TNR=statistic_result["TNR"]
         self.PPV = statistic_result["PPV"]
@@ -49,6 +50,8 @@ class ConfusionMatrix():
         self.PRE=statistic_result["PRE"]
         self.G=statistic_result["G"]
         self.K=statistic_result["K"]
+        self.RACC=statistic_result["RACC"]
+        self.SOA=statistic_result["SOA"]
     def matrix(self):
         '''
         This method print confusion matrix
@@ -61,12 +64,12 @@ class ConfusionMatrix():
         :return:
         '''
         print(normalized_table_print(self.classes,self.table))
-    def params(self):
+    def stat(self):
         '''
         This method print statistical measures table
         :return: None
         '''
-        print(params_print(self.classes,self.statistic_result))
+        print(stat_print(self.classes,self.class_stat,self.overall_stat))
     def __str__(self):
         '''
         ConfusionMatrix object string representation method
@@ -74,7 +77,7 @@ class ConfusionMatrix():
         '''
         result=table_print(self.classes,self.table)
         result+="\n"*4
-        result+=params_print(self.classes,self.statistic_result)
+        result+=stat_print(self.classes,self.class_stat,self.overall_stat)
         return result
     def __repr__(self):
         '''

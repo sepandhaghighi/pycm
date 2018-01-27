@@ -313,8 +313,11 @@ def KAPPA_calc(RACC,ACC):
     :type ACC : float
     :return: kappa as float
     '''
-    result=(ACC-RACC)/(1-RACC)
-    return result
+    try:
+        result=(ACC-RACC)/(1-RACC)
+        return result
+    except Exception:
+        return "None"
 
 def KAPPA_analysis(kappa):
     '''

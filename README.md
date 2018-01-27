@@ -41,8 +41,10 @@ pycm(python confusion matrix) is a multi class confusion matrix library in pytho
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu, y_pred)
->>> cm.statistic_result
-{'FDR': {0: 0.4, 1: 0.5, 2: 0.4}, 'PPV': {0: 0.6, 1: 0.5, 2: 0.6}, 'TNR': {0: 0.77778, 1: 0.88889, 2: 0.66667}, 'POP': {0: 12, 1: 12, 2: 12}, 'TPR': {0: 1.0, 1: 0.33333, 2: 0.5}, 'F1': {0: 0.75, 1: 0.4, 2: 0.54545}, 'TOP': {0: 5, 1: 2, 2: 5}, 'MCC': {0: 0.68313, 1: 0.2582, 2: 0.16903}, 'P': {0: 3, 1: 3, 2: 6}, 'G': {0: 0.7746, 1: 0.40825, 2: 0.54772}, 'LR+': {0: 4.50005, 1: 3.0, 2: 1.50002}, 'TN': {0: 7, 1: 8, 2: 4}, 'FOR': {0: 0.0, 1: 0.2, 2: 0.42857}, 'FPR': {0: 0.22222, 1: 0.11111, 2: 0.33333}, 'BM': {0: 0.77778, 1: 0.22222, 2: 0.16667}, 'ACC': {0: 0.83333, 1: 0.75, 2: 0.58333}, 'DOR': {0: 'None', 1: 4.0, 2: 2.00003}, 'FN': {0: 0, 1: 2, 2: 3}, 'TP': {0: 3, 1: 1, 2: 3}, 'FNR': {0: 0.0, 1: 0.66667, 2: 0.5}, 'N': {0: 9, 1: 9, 2: 6}, 'LR-': {0: 0.0, 1: 0.75, 2: 0.75}, 'NPV': {0: 1.0, 1: 0.8, 2: 0.57143}, 'TON': {0: 7, 1: 10, 2: 7}, 'MK': {0: 0.6, 1: 0.3, 2: 0.17143}, 'PRE': {0: 0.25, 1: 0.25, 2: 0.5}, 'FP': {0: 2, 1: 1, 2: 2}}
+>>> cm.class_stat
+{'PPV': {0: 0.6, 1: 0.5, 2: 0.6}, 'DOR': {0: 'None', 1: 3.999999999999998, 2: 1.9999999999999998}, 'LR+': {0: 4.5, 1: 2.9999999999999987, 2: 1.4999999999999998}, 'FP': {0: 2, 1: 1, 2: 2}, 'FOR': {0: 0.0, 1: 0.19999999999999996, 2: 0.4285714285714286}, 'FPR': {0: 0.2222222222222222, 1: 0.11111111111111116, 2: 0.33333333333333337}, 'SOA': {0: 'Almost Perfect', 1: 'Substantial', 2: 'Moderate'}, 'F1': {0: 0.75, 1: 0.4, 2: 0.5454545454545454}, 'NPV': {0: 1.0, 1: 0.8, 2: 0.5714285714285714}, 'MK': {0: 0.6000000000000001, 1: 0.30000000000000004, 2: 0.17142857142857126}, 'RACC': {0: 0.10416666666666667, 1: 0.041666666666666664, 2: 0.20833333333333334}, 'ACC': {0: 0.8333333333333334, 1: 0.75, 2: 0.5833333333333334}, 'G': {0: 0.7745966692414834, 1: 0.408248290463863, 2: 0.5477225575051661}, 'LR-': {0: 0.0, 1: 0.7500000000000001, 2: 0.75}, 'TON': {0: 7, 1: 10, 2: 7}, 'TP': {0: 3, 1: 1, 2: 3}, 'FNR': {0: 0.0, 1: 0.6666666666666667, 2: 0.5}, 'FDR': {0: 0.4, 1: 0.5, 2: 0.4}, 'K': {0: 0.813953488372093, 1: 0.7391304347826088, 2: 0.4736842105263158}, 'N': {0: 9, 1: 9, 2: 6}, 'TPR': {0: 1.0, 1: 0.3333333333333333, 2: 0.5}, 'PRE': {0: 0.25, 1: 0.25, 2: 0.5}, 'TN': {0: 7, 1: 8, 2: 4}, 'POP': {0: 12, 1: 12, 2: 12}, 'BM': {0: 0.7777777777777777, 1: 0.2222222222222221, 2: 0.16666666666666652}, 'TOP': {0: 5, 1: 2, 2: 5}, 'MCC': {0: 0.6831300510639732, 1: 0.25819888974716115, 2: 0.1690308509457033}, 'P': {0: 3, 1: 3, 2: 6}, 'TNR': {0: 0.7777777777777778, 1: 0.8888888888888888, 2: 0.6666666666666666}, 'FN': {0: 0, 1: 2, 2: 3}}
+>>> cm.overall_stat
+{'Strength_Of_Agreement': 'Fair', 'Overall_Kappa': 0.35483870967741943, 'Overall_ACC': 0.5833333333333334}
 >>> cm.classes
 [0, 1, 2]
 >>> cm.table
@@ -57,10 +59,18 @@ Actual
 
 
 
+Overall Statistics : 
+
+Overall_ACC                                                      0.58333
+Overall_Kappa                                                    0.35484
+Strength_Of_Agreement                                            Fair
+
+Class Statistics :
+
 Classes                                                          0                       1                       2                       
 ACC(accuracy)                                                    0.83333                 0.75                    0.58333                 
 BM(Informedness or Bookmaker Informedness)                       0.77778                 0.22222                 0.16667                 
-DOR(Diagnostic odds ratio)                                       None                    4.0                     2.00003                 
+DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0                     
 F1(F1 Score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545                 
 FDR(false discovery rate)                                        0.4                     0.5                     0.4                     
 FN(false negative/miss/Type II error)                            0                       2                       3                       
@@ -69,7 +79,8 @@ FOR(false omission rate)                                         0.0            
 FP(false positive/Type I error/false alarm)                      2                       1                       2                       
 FPR(fall-out or false positive rate)                             0.22222                 0.11111                 0.33333                 
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772                 
-LR+(Positive likelihood ratio)                                   4.50005                 3.0                     1.50002                 
+K(Kappa)                                                         0.81395                 0.73913                 0.47368                 
+LR+(Positive likelihood ratio)                                   4.5                     3.0                     1.5                     
 LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.75                    
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903                 
 MK(Markedness)                                                   0.6                     0.3                     0.17143                 
@@ -79,12 +90,14 @@ P(Condition positive)                                            3              
 POP(Population)                                                  12                      12                      12                      
 PPV(precision or positive predictive value)                      0.6                     0.5                     0.6                     
 PRE(Prevalence)                                                  0.25                    0.25                    0.5                     
+RACC(Random Accuracy)                                            0.10417                 0.04167                 0.20833                 
+SOA(Strength of Agreement)                                       Almost Perfect          Substantial             Moderate                
 TN(true negative/correct rejection)                              7                       8                       4                       
 TNR(specificity or true negative rate)                           0.77778                 0.88889                 0.66667                 
 TON(Test outcome negative)                                       7                       10                      7                       
 TOP(Test outcome positive)                                       5                       2                       5                       
 TP(true positive/hit)                                            3                       1                       3                       
-TPR(sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5    
+TPR(sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                     
 
 >>> cm.matrix()
 Predict          0        1        2        
@@ -100,11 +113,19 @@ Actual
 1                0.0            0.33333        0.66667        
 2                0.33333        0.16667        0.5            
 
->>> cm.params()
+>>> cm.stat()
+Overall Statistics : 
+
+Overall_ACC                                                      0.58333
+Overall_Kappa                                                    0.35484
+Strength_Of_Agreement                                            Fair
+
+Class Statistics :
+
 Classes                                                          0                       1                       2                       
 ACC(accuracy)                                                    0.83333                 0.75                    0.58333                 
 BM(Informedness or Bookmaker Informedness)                       0.77778                 0.22222                 0.16667                 
-DOR(Diagnostic odds ratio)                                       None                    4.0                     2.00003                 
+DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0                     
 F1(F1 Score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545                 
 FDR(false discovery rate)                                        0.4                     0.5                     0.4                     
 FN(false negative/miss/Type II error)                            0                       2                       3                       
@@ -113,7 +134,8 @@ FOR(false omission rate)                                         0.0            
 FP(false positive/Type I error/false alarm)                      2                       1                       2                       
 FPR(fall-out or false positive rate)                             0.22222                 0.11111                 0.33333                 
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772                 
-LR+(Positive likelihood ratio)                                   4.50005                 3.0                     1.50002                 
+K(Kappa)                                                         0.81395                 0.73913                 0.47368                 
+LR+(Positive likelihood ratio)                                   4.5                     3.0                     1.5                     
 LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.75                    
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903                 
 MK(Markedness)                                                   0.6                     0.3                     0.17143                 
@@ -123,13 +145,14 @@ P(Condition positive)                                            3              
 POP(Population)                                                  12                      12                      12                      
 PPV(precision or positive predictive value)                      0.6                     0.5                     0.6                     
 PRE(Prevalence)                                                  0.25                    0.25                    0.5                     
+RACC(Random Accuracy)                                            0.10417                 0.04167                 0.20833                 
+SOA(Strength of Agreement)                                       Almost Perfect          Substantial             Moderate                
 TN(true negative/correct rejection)                              7                       8                       4                       
 TNR(specificity or true negative rate)                           0.77778                 0.88889                 0.66667                 
 TON(Test outcome negative)                                       7                       10                      7                       
 TOP(Test outcome positive)                                       5                       2                       5                       
 TP(true positive/hit)                                            3                       1                       3                       
-TPR(sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                     
-
+TPR(sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5     
 
 ```
 				

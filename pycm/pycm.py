@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from .functions import *
-
+import os
 class pycmError(Exception):
     pass
 class ConfusionMatrix():
@@ -79,6 +79,17 @@ class ConfusionMatrix():
         result+="\n"*4
         result+=stat_print(self.classes,self.class_stat,self.overall_stat)
         return result
+    def save_stat(self,name):
+        try:
+            file = open(name + ".pycm", "w")
+            stat=stat_print(self.classes,self.class_stat,self.overall_stat)
+            file.write(stat)
+            file.close()
+            return {"Status":True,"Message":os.path.join(os.getcwd(),name+".pycm")}
+        except Exception as e:
+            if file.closed==False:
+                file.close()
+            return {"Status":False,"Message":str(e)}
     def __repr__(self):
         '''
         ConfusionMatrix object representation method

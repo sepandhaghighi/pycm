@@ -156,6 +156,7 @@ Repo : https://github.com/sepandhaghighi/pycm
 'None'
 >>> KAPPA_analysis(None)
 'None'
+>>> cm.save_stat("test")
 >>> cov.stop()
 >>> cov.save()
 

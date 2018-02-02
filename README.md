@@ -247,6 +247,13 @@ Sepand Haghighi. “Pycm : Multi Class Confusion Matrix Library in Python”. Ze
 
 <blockquote>3-  C. Sammut, G. Webb, Encyclopedia of Machine Learning. Springer, 2011. Springer reference.</blockquote>
 
+<blockquote>4- Fleiss, J. L. (1971). Measuring nominal scale agreement among many raters. Psychological Bulletin, 76(5), 378-382.
+http://dx.doi.org/10.1037/h0031619</blockquote>
+
+<blockquote>5- Altman D.G. 1991. Practical Statistics for Medical Research.
+Chapman and Hall, London.</blockquote>
+
+
 
 
 ## Cite

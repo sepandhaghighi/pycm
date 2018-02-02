@@ -142,14 +142,15 @@ pycm.pycm.pycmError: Input Vectors Must Be The Same Length
 | .__/  \__, | \___||_| |_| |_|
 |_|     |___/
 <BLANKLINE>
-__     __     ___      _____
-\ \   / / _  / _ \    |___ /
- \ \ / / (_)| | | |     |_ \
-  \ V /   _ | |_| | _  ___) |
-   \_/   (_) \___/ (_)|____/
+__     __     ___      _  _
+\ \   / / _  / _ \    | || |
+ \ \ / / (_)| | | |   | || |_
+  \ V /   _ | |_| | _ |__   _|
+   \_/   (_) \___/ (_)   |_|
 <BLANKLINE>
 <BLANKLINE>
 Repo : https://github.com/sepandhaghighi/pycm
+Webpage : http://pycm.shaghighi.ir
 >>> TTPN_calc(0,0)
 'inf'
 >>> FXR_calc(None)
@@ -174,8 +175,9 @@ Repo : https://github.com/sepandhaghighi/pycm
 'None'
 >>> F_calc(TP=0,FP=0,FN=0,Beta=1)
 'inf'
->>> cm.save_stat("test",address=False)
-{'Status': True, 'Message': None}
+>>> save_stat=cm.save_stat("test",address=False)
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> cov.stop()
 >>> cov.save()
 

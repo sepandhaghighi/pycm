@@ -178,6 +178,11 @@ Webpage : http://pycm.shaghighi.ir
 >>> save_stat=cm.save_stat("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=cm.save_stat("/asdasd,qweqwe.eo/",address=True)
+>>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.pycm'"}
+True
+>>> cm.F_beta(4)
+{0: 0.9622641509433962, 1: 0.34, 2: 0.504950495049505}
 >>> cov.stop()
 >>> cov.save()
 

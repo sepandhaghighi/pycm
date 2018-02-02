@@ -94,8 +94,6 @@ class ConfusionMatrix():
                 message=os.path.join(os.getcwd(),name+".pycm")
             return {"Status":True,"Message":message}
         except Exception as e:
-            if file.closed==False:
-                file.close()
             return {"Status":False,"Message":str(e)}
     def F_beta(self,Beta):
         try:

@@ -13,7 +13,9 @@ PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate"
                     "FN":"false negative/miss/Type II error","P":"Condition positive","N":"Condition negative",
                     "TOP":"Test outcome positive","TON":"Test outcome negative","POP":"Population","PRE":"Prevalence",
                     "G":"G-measure geometric mean of precision and sensitivity","K":"Kappa","RACC":"Random Accuracy",
-                    "SOA":"Strength of Agreement","F0.5":"F0.5 Score","F2":"F2 Score"}
+                    "SOA1":"Strength of Agreement,Landis and Koch",
+                    "SOA2":"Strength of Agreement,Fleiss",
+                    "SOA3":"Strength of Agreement,Altman","F0.5":"F0.5 Score","F2":"F2 Score"}
 
 
 def isfloat(value):
@@ -306,7 +308,7 @@ def RACC_calc(TOP,P,POP):
     '''
     result =(TOP * P) /((POP)** 2)
     return result
-def KAPPA_calc(RACC,ACC):
+def kappa_calc(RACC,ACC):
     '''
     This function calculate kappa
     :param RACC: random accuracy
@@ -321,9 +323,9 @@ def KAPPA_calc(RACC,ACC):
     except Exception:
         return "None"
 
-def KAPPA_analysis(kappa):
+def kappa_analysis_koch(kappa):
     '''
-    This function analysis kappa number with Koch benchmark
+    This function analysis kappa number with Landis-Koch benchmark
     :param kappa: kappa number
     :type kappa : float
     :return: Strength of Agreement as str
@@ -331,16 +333,58 @@ def KAPPA_analysis(kappa):
     try:
         if kappa<0:
             return "Poor"
-        elif kappa>0 and kappa<0.2:
+        elif kappa>=0 and kappa<0.2:
             return "Slight"
-        elif kappa>0.21 and kappa<0.4:
+        elif kappa>=0.21 and kappa<0.4:
             return "Fair"
-        elif kappa>0.41 and kappa<0.6:
+        elif kappa>=0.41 and kappa<0.6:
             return "Moderate"
-        elif kappa>0.61 and kappa<0.8:
+        elif kappa>=0.61 and kappa<0.8:
             return "Substantial"
-        elif kappa>0.81 and kappa<=1:
+        elif kappa>=0.81 and kappa<=1:
             return "Almost Perfect"
+        else:
+            return "None"
+    except Exception:
+        return "None"
+
+def kappa_analysis_fleiss(kappa):
+    '''
+    This function analysis kappa number with Fleiss benchmark
+    :param kappa: kappa number
+    :type kappa : float
+    :return: Strength of Agreement as str
+    '''
+    try:
+        if kappa<0.4:
+            return "Poor"
+        elif kappa>=0.4 and kappa<0.75:
+            return "Intermediate to Good"
+        elif kappa>=0.75 :
+            return "Excellent"
+        else:
+            return "None"
+    except Exception:
+        return "None"
+
+def kappa_analysis_altman(kappa):
+    '''
+    This function analysis kappa number with  Altman benchmark
+    :param kappa: kappa number
+    :type kappa : float
+    :return: Strength of Agreement as str
+    '''
+    try:
+        if kappa<0.2:
+            return "Poor"
+        elif kappa>=0.21 and kappa<0.4:
+            return "Fair"
+        elif kappa>=0.41 and kappa<0.6:
+            return "Moderate"
+        elif kappa>=0.61 and kappa<0.8:
+            return "Good"
+        elif kappa>=0.81 and kappa<=1:
+            return "Very Good"
         else:
             return "None"
     except Exception:
@@ -357,8 +401,11 @@ def overall_statistics(ACC,RACC):
     '''
     overall_accuracy=min(ACC.values())
     overall_random_accuracy=sum(RACC.values())
-    overall_kappa=KAPPA_calc(overall_random_accuracy,overall_accuracy)
-    return {"Overall_ACC":overall_accuracy,"Overall_Kappa":overall_kappa,"Strength_Of_Agreement":KAPPA_analysis(overall_kappa)}
+    overall_kappa=kappa_calc(overall_random_accuracy,overall_accuracy)
+    return {"Overall_ACC":overall_accuracy,"Overall_Kappa":overall_kappa,
+            "Strength_Of_Agreement(Landis and Koch)":kappa_analysis_koch(overall_kappa),
+            "Strength_Of_Agreement(Fleiss)":kappa_analysis_fleiss(overall_kappa),
+            "Strength_Of_Agreement(Altman)":kappa_analysis_altman(overall_kappa)}
 def class_statistics(TP,TN,FP,FN):
     '''
     This function return all class statistics
@@ -397,9 +444,11 @@ def class_statistics(TP,TN,FP,FN):
     G={}
     KAPPA={}
     RACC={}
-    SOA={}
     F05_Score={}
     F2_Score={}
+    SOA1={}
+    SOA2={}
+    SOA3={}
     for i in TP.keys():
         POP[i]=TP[i]+TN[i]+FP[i]+FN[i]
         P[i]=TP[i]+FN[i]
@@ -427,9 +476,12 @@ def class_statistics(TP,TN,FP,FN):
         PRE[i]= PRE_calc(P[i],POP[i])
         G[i]=G_calc(PPV[i],TPR[i])
         RACC[i]=RACC_calc(TOP[i],P[i],POP[i])
-        KAPPA[i]=KAPPA_calc(RACC[i],ACC[i])
-        SOA[i]=KAPPA_analysis(KAPPA[i])
+        KAPPA[i]=kappa_calc(RACC[i],ACC[i])
+        SOA1[i]=kappa_analysis_koch(KAPPA[i])
+        SOA2[i] = kappa_analysis_fleiss(KAPPA[i])
+        SOA3[i] = kappa_analysis_altman(KAPPA[i])
     result={"TPR":TPR,"TNR":TNR,"PPV":PPV,"NPV":NPV,"FNR":FNR,"FPR":FPR,"FDR":FDR,"FOR":FOR,"ACC":ACC,"F1":F1_SCORE,"MCC":MCC,
     "BM":BM,"MK":MK,"LR+":PLR,"LR-":NLR,"DOR":DOR,"TP":TP,"TN":TN,"FP":FP,"FN":FN,"POP":POP,"P":P,
-            "N":N,"TOP":TOP,"TON":TON,"PRE":PRE,"G":G,"K":KAPPA,"RACC":RACC,"SOA":SOA,"F0.5":F05_Score,"F2":F2_Score}
+            "N":N,"TOP":TOP,"TON":TON,"PRE":PRE,"G":G,"K":KAPPA,"RACC":RACC,"SOA1":SOA1,"SOA2":SOA2,"SOA3":SOA3,
+            "F0.5":F05_Score,"F2":F2_Score}
     return result

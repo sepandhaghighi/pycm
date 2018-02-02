@@ -31,7 +31,9 @@ Classes                                                          0              
 ACC(accuracy)                                                    0.83333                 0.75                    0.58333
 BM(Informedness or Bookmaker Informedness)                       0.77778                 0.22222                 0.16667
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
+F0.5(F0.5 Score)                                                 0.65217                 0.45455                 0.57692
 F1(F1 Score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545
+F2(F2 Score)                                                     0.88235                 0.35714                 0.51724
 FDR(false discovery rate)                                        0.4                     0.5                     0.4
 FN(false negative/miss/Type II error)                            0                       2                       3
 FNR(miss rate or false negative rate)                            0.0                     0.66667                 0.5
@@ -86,7 +88,9 @@ Classes                                                          0              
 ACC(accuracy)                                                    0.83333                 0.75                    0.58333
 BM(Informedness or Bookmaker Informedness)                       0.77778                 0.22222                 0.16667
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
+F0.5(F0.5 Score)                                                 0.65217                 0.45455                 0.57692
 F1(F1 Score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545
+F2(F2 Score)                                                     0.88235                 0.35714                 0.51724
 FDR(false discovery rate)                                        0.4                     0.5                     0.4
 FN(false negative/miss/Type II error)                            0                       2                       3
 FNR(miss rate or false negative rate)                            0.0                     0.66667                 0.5
@@ -156,6 +160,8 @@ Repo : https://github.com/sepandhaghighi/pycm
 'None'
 >>> KAPPA_analysis(None)
 'None'
+>>> F_calc(TP=0,FP=0,FN=0,Beta=1)
+'inf'
 >>> cm.save_stat("test")
 >>> cov.stop()
 >>> cov.save()

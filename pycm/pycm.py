@@ -93,10 +93,13 @@ class ConfusionMatrix():
                 file.close()
             return {"Status":False,"Message":str(e)}
     def F_score(self,Beta):
-        F_Dict = {}
-        for i in self.TP.keys():
-            F_Dict[i]=F_calc(TP=self.TP[i],FP=self.FP[i],FN=self.FN[i],Beta=Beta)
-        return F_Dict
+        try:
+            F_Dict = {}
+            for i in self.TP.keys():
+                F_Dict[i]=F_calc(TP=self.TP[i],FP=self.FP[i],FN=self.FN[i],Beta=Beta)
+            return F_Dict
+        except Exception:
+            return {}
 
     def __repr__(self):
         '''

@@ -174,7 +174,8 @@ Repo : https://github.com/sepandhaghighi/pycm
 'None'
 >>> F_calc(TP=0,FP=0,FN=0,Beta=1)
 'inf'
->>> cm.save_stat("test")
+>>> cm.save_stat("test",address=False)
+{'Status': True, 'Message': None}
 >>> cov.stop()
 >>> cov.save()
 

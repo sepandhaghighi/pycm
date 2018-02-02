@@ -83,13 +83,16 @@ class ConfusionMatrix():
         result+="\n"*4
         result+=stat_print(self.classes,self.class_stat,self.overall_stat)
         return result
-    def save_stat(self,name):
+    def save_stat(self,name,address=True):
         try:
+            message=None
             file = open(name + ".pycm", "w")
             stat=stat_print(self.classes,self.class_stat,self.overall_stat)
             file.write(stat)
             file.close()
-            return {"Status":True,"Message":os.path.join(os.getcwd(),name+".pycm")}
+            if address==True:
+                message=os.path.join(os.getcwd(),name+".pycm")
+            return {"Status":True,"Message":message}
         except Exception as e:
             if file.closed==False:
                 file.close()

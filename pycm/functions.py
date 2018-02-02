@@ -13,7 +13,7 @@ PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate"
                     "FN":"false negative/miss/Type II error","P":"Condition positive","N":"Condition negative",
                     "TOP":"Test outcome positive","TON":"Test outcome negative","POP":"Population","PRE":"Prevalence",
                     "G":"G-measure geometric mean of precision and sensitivity","K":"Kappa","RACC":"Random Accuracy",
-                    "SOA":"Strength of Agreement"}
+                    "SOA":"Strength of Agreement","F0.5":"F0.5 Score","F2":"F2 Score"}
 
 
 def isfloat(value):
@@ -193,19 +193,21 @@ def ACC_calc(TP,TN,FP,FN):
     except ZeroDivisionError:
         return "inf"
 
-def F1_calc(TP,FP,FN):
+def F_calc(TP,FP,FN,Beta):
     '''
-    This function calculate F1 Score
+    This function calculate F Score
     :param TP: True Positive
     :type TP : int
     :param FP: False Positive
     :type FP : int
     :param FN: False Negative
     :type FN : int
-    :return: F1 Score as float
+    :param Beta : coefficient
+    :type Beta : float
+    :return: F Score as float
     '''
     try:
-        result=(2*TP)/(2*TP+FP+FN)
+        result=((1+(Beta)**2)*TP)/((1+(Beta)**2)*TP+FP+(Beta**2)*FN)
         return result
     except ZeroDivisionError:
         return "inf"
@@ -396,6 +398,8 @@ def class_statistics(TP,TN,FP,FN):
     KAPPA={}
     RACC={}
     SOA={}
+    F05_Score={}
+    F2_Score={}
     for i in TP.keys():
         POP[i]=TP[i]+TN[i]+FP[i]+FN[i]
         P[i]=TP[i]+FN[i]
@@ -411,7 +415,9 @@ def class_statistics(TP,TN,FP,FN):
         FDR[i]=FXR_calc(PPV[i])
         FOR[i]=FXR_calc(NPV[i])
         ACC[i]=ACC_calc(TP[i],TN[i],FP[i],FN[i])
-        F1_SCORE[i]=F1_calc(TP[i],FP[i],FN[i])
+        F1_SCORE[i]=F_calc(TP[i],FP[i],FN[i],1)
+        F05_Score[i]=F_calc(TP[i],FP[i],FN[i],0.5)
+        F2_Score[i]=F_calc(TP[i],FP[i],FN[i],2)
         MCC[i]=MCC_calc(TP[i],TN[i],FP[i],FN[i])
         BM[i]=MK_BM_calc(TPR[i],TNR[i])
         MK[i]=MK_BM_calc(PPV[i],NPV[i])
@@ -425,5 +431,5 @@ def class_statistics(TP,TN,FP,FN):
         SOA[i]=KAPPA_analysis(KAPPA[i])
     result={"TPR":TPR,"TNR":TNR,"PPV":PPV,"NPV":NPV,"FNR":FNR,"FPR":FPR,"FDR":FDR,"FOR":FOR,"ACC":ACC,"F1":F1_SCORE,"MCC":MCC,
     "BM":BM,"MK":MK,"LR+":PLR,"LR-":NLR,"DOR":DOR,"TP":TP,"TN":TN,"FP":FP,"FN":FN,"POP":POP,"P":P,
-            "N":N,"TOP":TOP,"TON":TON,"PRE":PRE,"G":G,"K":KAPPA,"RACC":RACC,"SOA":SOA}
+            "N":N,"TOP":TOP,"TON":TON,"PRE":PRE,"G":G,"K":KAPPA,"RACC":RACC,"SOA":SOA,"F0.5":F05_Score,"F2":F2_Score}
     return result

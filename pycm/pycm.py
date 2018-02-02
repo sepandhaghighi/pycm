@@ -52,6 +52,8 @@ class ConfusionMatrix():
         self.K=statistic_result["K"]
         self.RACC=statistic_result["RACC"]
         self.SOA=statistic_result["SOA"]
+        self.F2=statistic_result["F2"]
+        self.F05=statistic_result["F0.5"]
     def matrix(self):
         '''
         This method print confusion matrix
@@ -90,6 +92,12 @@ class ConfusionMatrix():
             if file.closed==False:
                 file.close()
             return {"Status":False,"Message":str(e)}
+    def F_score(self,Beta):
+        F_Dict = {}
+        for i in self.TP.keys():
+            F_Dict[i]=F_calc(TP=self.TP[i],FP=self.FP[i],FN=self.FN[i],Beta=Beta)
+        return F_Dict
+
     def __repr__(self):
         '''
         ConfusionMatrix object representation method

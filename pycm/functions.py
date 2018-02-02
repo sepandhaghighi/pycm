@@ -335,13 +335,13 @@ def kappa_analysis_koch(kappa):
             return "Poor"
         elif kappa>=0 and kappa<0.2:
             return "Slight"
-        elif kappa>=0.21 and kappa<0.4:
+        elif kappa>=0.20 and kappa<0.4:
             return "Fair"
-        elif kappa>=0.41 and kappa<0.6:
+        elif kappa>=0.40 and kappa<0.6:
             return "Moderate"
-        elif kappa>=0.61 and kappa<0.8:
+        elif kappa>=0.60 and kappa<0.8:
             return "Substantial"
-        elif kappa>=0.81 and kappa<=1:
+        elif kappa>=0.80 and kappa<=1:
             return "Almost Perfect"
         else:
             return "None"
@@ -377,13 +377,13 @@ def kappa_analysis_altman(kappa):
     try:
         if kappa<0.2:
             return "Poor"
-        elif kappa>=0.21 and kappa<0.4:
+        elif kappa>=0.20 and kappa<0.4:
             return "Fair"
-        elif kappa>=0.41 and kappa<0.6:
+        elif kappa>=0.40 and kappa<0.6:
             return "Moderate"
-        elif kappa>=0.61 and kappa<0.8:
+        elif kappa>=0.60 and kappa<0.8:
             return "Good"
-        elif kappa>=0.81 and kappa<=1:
+        elif kappa>=0.80 and kappa<=1:
             return "Very Good"
         else:
             return "None"

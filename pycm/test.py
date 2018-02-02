@@ -23,7 +23,9 @@ Overall Statistics :
 <BLANKLINE>
 Overall_ACC                                                      0.58333
 Overall_Kappa                                                    0.35484
-Strength_Of_Agreement                                            Fair
+Strength_Of_Agreement(Altman)                                    Fair
+Strength_Of_Agreement(Fleiss)                                    Poor
+Strength_Of_Agreement(Landis and Koch)                           Fair
 <BLANKLINE>
 Class Statistics :
 <BLANKLINE>
@@ -53,7 +55,9 @@ POP(Population)                                                  12             
 PPV(precision or positive predictive value)                      0.6                     0.5                     0.6
 PRE(Prevalence)                                                  0.25                    0.25                    0.5
 RACC(Random Accuracy)                                            0.10417                 0.04167                 0.20833
-SOA(Strength of Agreement)                                       Almost Perfect          Substantial             Moderate
+SOA1(Strength of Agreement,Landis and Koch)                      Almost Perfect          Substantial             Moderate
+SOA2(Strength of Agreement,Fleiss)                               Excellent               Intermediate to Good    Intermediate to Good
+SOA3(Strength of Agreement,Altman)                               Very Good               Good                    Moderate
 TN(true negative/correct rejection)                              7                       8                       4
 TNR(specificity or true negative rate)                           0.77778                 0.88889                 0.66667
 TON(Test outcome negative)                                       7                       10                      7
@@ -80,7 +84,9 @@ Overall Statistics :
 <BLANKLINE>
 Overall_ACC                                                      0.58333
 Overall_Kappa                                                    0.35484
-Strength_Of_Agreement                                            Fair
+Strength_Of_Agreement(Altman)                                    Fair
+Strength_Of_Agreement(Fleiss)                                    Poor
+Strength_Of_Agreement(Landis and Koch)                           Fair
 <BLANKLINE>
 Class Statistics :
 <BLANKLINE>
@@ -110,7 +116,9 @@ POP(Population)                                                  12             
 PPV(precision or positive predictive value)                      0.6                     0.5                     0.6
 PRE(Prevalence)                                                  0.25                    0.25                    0.5
 RACC(Random Accuracy)                                            0.10417                 0.04167                 0.20833
-SOA(Strength of Agreement)                                       Almost Perfect          Substantial             Moderate
+SOA1(Strength of Agreement,Landis and Koch)                      Almost Perfect          Substantial             Moderate
+SOA2(Strength of Agreement,Fleiss)                               Excellent               Intermediate to Good    Intermediate to Good
+SOA3(Strength of Agreement,Altman)                               Very Good               Good                    Moderate
 TN(true negative/correct rejection)                              7                       8                       4
 TNR(specificity or true negative rate)                           0.77778                 0.88889                 0.66667
 TON(Test outcome negative)                                       7                       10                      7
@@ -156,9 +164,13 @@ Repo : https://github.com/sepandhaghighi/pycm
 'None'
 >>> G_calc(None,2)
 'None'
->>> KAPPA_calc(1,None)
+>>> kappa_calc(1,None)
 'None'
->>> KAPPA_analysis(None)
+>>> kappa_analysis_koch(None)
+'None'
+>>> kappa_analysis_fleiss(None)
+'None'
+>>> kappa_analysis_altman(None)
 'None'
 >>> F_calc(TP=0,FP=0,FN=0,Beta=1)
 'inf'

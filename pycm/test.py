@@ -68,7 +68,7 @@ TPR(sensitivity, recall, hit rate, or true positive rate)        1.0            
 <BLANKLINE>
 >>> cm.stat()
 Overall Statistics :
-
+<BLANKLINE>
 Overall_ACC                                                      0.58333
 Overall_Kappa                                                    0.35484
 PPV_Macro                                                        0.56667

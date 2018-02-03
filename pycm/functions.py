@@ -402,13 +402,43 @@ def kappa_analysis_altman(kappa):
     except Exception:
         return "None"
 
-def overall_statistics(ACC,RACC):
+def micro_calc(TP,item):
+    '''
+    This function calculate PPV_Micro and TPR_Micro
+    :param TP: True Positive
+    :type TP:dict
+    :param item: FN or FP
+    :type item : dict
+    :return: PPV_Micro or TPR_Micro as float
+    '''
+    try:
+        TP_sum=sum(TP.values())
+        item_sum=sum(item.values())
+        return TP_sum/(TP_sum+item_sum)
+    except Exception:
+        return "None"
+
+def macro_calc(item):
+    '''
+    This function calculate PPV_Macro and TPR_Macro
+    :param item: PPV or TPR
+    :type item:dict
+    :return: PPV_Macro or TPR_Macro as float
+    '''
+    try:
+        item_sum=sum(item.values())
+        item_len=len(item.values())
+        return item_sum/item_len
+    except Exception:
+        return "None"
+
+def overall_statistics(ACC,RACC,TPR,PPV,TP,FN,FP):
     '''
     This function return overall statistics
     :param ACC: accuracy
-    :type ACC : float
+    :type ACC : dict
     :param RACC: random accuracy
-    :type RACC : float
+    :type RACC : dict
     :return: overall statistics as dict
     '''
     overall_accuracy=min(ACC.values())
@@ -417,7 +447,8 @@ def overall_statistics(ACC,RACC):
     return {"Overall_ACC":overall_accuracy,"Overall_Kappa":overall_kappa,
             "Strength_Of_Agreement(Landis and Koch)":kappa_analysis_koch(overall_kappa),
             "Strength_Of_Agreement(Fleiss)":kappa_analysis_fleiss(overall_kappa),
-            "Strength_Of_Agreement(Altman)":kappa_analysis_altman(overall_kappa)}
+            "Strength_Of_Agreement(Altman)":kappa_analysis_altman(overall_kappa),"TPR_Macro":macro_calc(TPR),
+            "PPV_Macro":macro_calc(PPV),"TPR_Micro":micro_calc(TP=TP,item=FN),"PPV_Micro":micro_calc(TP=TP,item=FP)}
 def class_statistics(TP,TN,FP,FN):
     '''
     This function return all class statistics

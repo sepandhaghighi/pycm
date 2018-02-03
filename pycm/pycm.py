@@ -25,7 +25,10 @@ class ConfusionMatrix():
         statistic_result=class_statistics(TP=matrix_param[2],TN=matrix_param[3],FP=matrix_param[4],
                                          FN=matrix_param[5])
         self.class_stat=statistic_result
-        self.overall_stat=overall_statistics(statistic_result["ACC"],statistic_result["RACC"])
+        self.overall_stat=overall_statistics(ACC=statistic_result["ACC"],RACC=statistic_result["RACC"],
+                                             TPR=statistic_result["TPR"],PPV=statistic_result["PPV"],
+                                             TP=statistic_result["TP"],FN=statistic_result["FN"],
+                                             FP=statistic_result["FP"])
         self.TPR=statistic_result["TPR"]
         self.TNR=statistic_result["TNR"]
         self.PPV = statistic_result["PPV"]

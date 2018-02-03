@@ -12,10 +12,8 @@ PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate"
                     "TN":"true negative/correct rejection","FP":"false positive/Type I error/false alarm",
                     "FN":"false negative/miss/Type II error","P":"Condition positive","N":"Condition negative",
                     "TOP":"Test outcome positive","TON":"Test outcome negative","POP":"Population","PRE":"Prevalence",
-                    "G":"G-measure geometric mean of precision and sensitivity","K":"Kappa","RACC":"Random Accuracy",
-                    "SOA1":"Strength of Agreement,Landis and Koch",
-                    "SOA2":"Strength of Agreement,Fleiss",
-                    "SOA3":"Strength of Agreement,Altman","F0.5":"F0.5 Score","F2":"F2 Score","ERR":"Error Rate"}
+                    "G":"G-measure geometric mean of precision and sensitivity","RACC":"Random Accuracy",
+                    "F0.5":"F0.5 Score","F2":"F2 Score","ERR":"Error Rate"}
 
 
 def isfloat(value):
@@ -456,13 +454,9 @@ def class_statistics(TP,TN,FP,FN):
     TON={}
     PRE={}
     G={}
-    KAPPA={}
     RACC={}
     F05_Score={}
     F2_Score={}
-    SOA1={}
-    SOA2={}
-    SOA3={}
     ERR={}
     for i in TP.keys():
         POP[i]=TP[i]+TN[i]+FP[i]+FN[i]
@@ -491,13 +485,8 @@ def class_statistics(TP,TN,FP,FN):
         PRE[i]= PRE_calc(P[i],POP[i])
         G[i]=G_calc(PPV[i],TPR[i])
         RACC[i]=RACC_calc(TOP[i],P[i],POP[i])
-        KAPPA[i]=kappa_calc(RACC[i],ACC[i])
-        SOA1[i]=kappa_analysis_koch(KAPPA[i])
-        SOA2[i] = kappa_analysis_fleiss(KAPPA[i])
-        SOA3[i] = kappa_analysis_altman(KAPPA[i])
         ERR[i]= ERR_calc(ACC[i])
     result={"TPR":TPR,"TNR":TNR,"PPV":PPV,"NPV":NPV,"FNR":FNR,"FPR":FPR,"FDR":FDR,"FOR":FOR,"ACC":ACC,"F1":F1_SCORE,"MCC":MCC,
     "BM":BM,"MK":MK,"LR+":PLR,"LR-":NLR,"DOR":DOR,"TP":TP,"TN":TN,"FP":FP,"FN":FN,"POP":POP,"P":P,
-            "N":N,"TOP":TOP,"TON":TON,"PRE":PRE,"G":G,"K":KAPPA,"RACC":RACC,"SOA1":SOA1,"SOA2":SOA2,"SOA3":SOA3,
-            "F0.5":F05_Score,"F2":F2_Score,"ERR":ERR}
+            "N":N,"TOP":TOP,"TON":TON,"PRE":PRE,"G":G,"RACC":RACC,"F0.5":F05_Score,"F2":F2_Score,"ERR":ERR}
     return result

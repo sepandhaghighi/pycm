@@ -235,7 +235,6 @@ You can fork the repository, improve or fix some part of it and then send the pu
 
 Remember to write a few tests for your code before sending pull requests. 
 
-Sepand Haghighi. “Pycm : Multi Class Confusion Matrix Library in Python”. Zenodo, January 22, 2018. doi:10.5281/zenodo.1157173.
 
 
 ## References

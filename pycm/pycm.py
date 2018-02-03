@@ -56,6 +56,15 @@ class ConfusionMatrix():
         self.F2=statistic_result["F2"]
         self.F05=statistic_result["F0.5"]
         self.ERR=statistic_result["ERR"]
+        self.SOA1=self.overall_stat["Strength_Of_Agreement(Landis and Koch)"]
+        self.SOA2=self.overall_stat["Strength_Of_Agreement(Fleiss)"]
+        self.SOA3=self.overall_stat["Strength_Of_Agreement(Altman)"]
+        self.Kappa=self.overall_stat["Overall_Kappa"]
+        self.Overall_ACC=self.overall_stat["Overall_ACC"]
+        self.TPR_Macro=self.overall_stat["TPR_Macro"]
+        self.PPV_Macro=self.overall_stat["PPV_Macro"]
+        self.TPR_Micro=self.overall_stat["TPR_Micro"]
+        self.PPV_Micro=self.overall_stat["PPV_Micro"]
     def matrix(self):
         '''
         This method print confusion matrix

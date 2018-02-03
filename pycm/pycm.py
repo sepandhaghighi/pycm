@@ -56,6 +56,7 @@ class ConfusionMatrix():
         self.SOA3 = statistic_result["SOA3"]
         self.F2=statistic_result["F2"]
         self.F05=statistic_result["F0.5"]
+        self.ERR=statistic_result["ERR"]
     def matrix(self):
         '''
         This method print confusion matrix

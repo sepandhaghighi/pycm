@@ -33,6 +33,7 @@ Classes                                                          0              
 ACC(accuracy)                                                    0.83333                 0.75                    0.58333
 BM(Informedness or Bookmaker Informedness)                       0.77778                 0.22222                 0.16667
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
+ERR(Error Rate)                                                  0.16667                 0.25                    0.41667
 F0.5(F0.5 Score)                                                 0.65217                 0.45455                 0.57692
 F1(F1 Score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545
 F2(F2 Score)                                                     0.88235                 0.35714                 0.51724
@@ -65,20 +66,6 @@ TOP(Test outcome positive)                                       5              
 TP(true positive/hit)                                            3                       1                       3
 TPR(sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5
 <BLANKLINE>
->>> cm.matrix()
-Predict          0        1        2
-Actual
-0                3        0        0
-1                0        1        2
-2                2        1        3
-<BLANKLINE>
->>> cm.normalized_matrix()
-Predict          0              1              2
-Actual
-0                1.0            0.0            0.0
-1                0.0            0.33333        0.66667
-2                0.33333        0.16667        0.5
-<BLANKLINE>
 >>> cm.stat()
 Overall Statistics :
 <BLANKLINE>
@@ -94,6 +81,7 @@ Classes                                                          0              
 ACC(accuracy)                                                    0.83333                 0.75                    0.58333
 BM(Informedness or Bookmaker Informedness)                       0.77778                 0.22222                 0.16667
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
+ERR(Error Rate)                                                  0.16667                 0.25                    0.41667
 F0.5(F0.5 Score)                                                 0.65217                 0.45455                 0.57692
 F1(F1 Score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545
 F2(F2 Score)                                                     0.88235                 0.35714                 0.51724
@@ -181,6 +169,8 @@ True
 >>> save_stat=cm.save_stat("/asdasd,qweqwe.eo/",address=True)
 >>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.pycm'"}
 True
+>>> ERR_calc(None)
+'None'
 >>> cm.F_beta(4)
 {0: 0.9622641509433962, 1: 0.34, 2: 0.504950495049505}
 >>> cov.stop()

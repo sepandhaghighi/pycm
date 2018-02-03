@@ -15,7 +15,7 @@ PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate"
                     "G":"G-measure geometric mean of precision and sensitivity","K":"Kappa","RACC":"Random Accuracy",
                     "SOA1":"Strength of Agreement,Landis and Koch",
                     "SOA2":"Strength of Agreement,Fleiss",
-                    "SOA3":"Strength of Agreement,Altman","F0.5":"F0.5 Score","F2":"F2 Score"}
+                    "SOA3":"Strength of Agreement,Altman","F0.5":"F0.5 Score","F2":"F2 Score","ERR":"Error Rate"}
 
 
 def isfloat(value):
@@ -195,6 +195,19 @@ def ACC_calc(TP,TN,FP,FN):
         return result
     except ZeroDivisionError:
         return "inf"
+
+
+def ERR_calc(ACC):
+    '''
+    This function calculate Error Rate
+    :param ACC: Accuracy
+    :type ACC: float
+    :return: Error Rate as float
+    '''
+    try:
+        return 1-ACC
+    except Exception:
+        return "None"
 
 def F_calc(TP,FP,FN,Beta):
     '''
@@ -450,6 +463,7 @@ def class_statistics(TP,TN,FP,FN):
     SOA1={}
     SOA2={}
     SOA3={}
+    ERR={}
     for i in TP.keys():
         POP[i]=TP[i]+TN[i]+FP[i]+FN[i]
         P[i]=TP[i]+FN[i]
@@ -481,8 +495,9 @@ def class_statistics(TP,TN,FP,FN):
         SOA1[i]=kappa_analysis_koch(KAPPA[i])
         SOA2[i] = kappa_analysis_fleiss(KAPPA[i])
         SOA3[i] = kappa_analysis_altman(KAPPA[i])
+        ERR[i]= ERR_calc(ACC[i])
     result={"TPR":TPR,"TNR":TNR,"PPV":PPV,"NPV":NPV,"FNR":FNR,"FPR":FPR,"FDR":FDR,"FOR":FOR,"ACC":ACC,"F1":F1_SCORE,"MCC":MCC,
     "BM":BM,"MK":MK,"LR+":PLR,"LR-":NLR,"DOR":DOR,"TP":TP,"TN":TN,"FP":FP,"FN":FN,"POP":POP,"P":P,
             "N":N,"TOP":TOP,"TON":TON,"PRE":PRE,"G":G,"K":KAPPA,"RACC":RACC,"SOA1":SOA1,"SOA2":SOA2,"SOA3":SOA3,
-            "F0.5":F05_Score,"F2":F2_Score}
+            "F0.5":F05_Score,"F2":F2_Score,"ERR":ERR}
     return result

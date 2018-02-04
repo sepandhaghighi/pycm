@@ -57,8 +57,9 @@ Actual
 
 Overall Statistics : 
 
+Kappa                                                            0.35484
 Overall_ACC                                                      0.58333
-Overall_Kappa                                                    0.35484
+Overall_RACC                                                     0.35417
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
 Strength_Of_Agreement(Altman)                                    Fair

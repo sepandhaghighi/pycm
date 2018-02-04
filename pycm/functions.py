@@ -444,7 +444,7 @@ def overall_statistics(ACC,RACC,TPR,PPV,TP,FN,FP):
     overall_accuracy=min(ACC.values())
     overall_random_accuracy=sum(RACC.values())
     overall_kappa=kappa_calc(overall_random_accuracy,overall_accuracy)
-    return {"Overall_ACC":overall_accuracy,"Overall_Kappa":overall_kappa,
+    return {"Overall_ACC":overall_accuracy,"Kappa":overall_kappa,"Overall_RACC":overall_random_accuracy,
             "Strength_Of_Agreement(Landis and Koch)":kappa_analysis_koch(overall_kappa),
             "Strength_Of_Agreement(Fleiss)":kappa_analysis_fleiss(overall_kappa),
             "Strength_Of_Agreement(Altman)":kappa_analysis_altman(overall_kappa),"TPR_Macro":macro_calc(TPR),

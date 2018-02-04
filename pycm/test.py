@@ -21,8 +21,9 @@ Actual
 <BLANKLINE>
 Overall Statistics :
 <BLANKLINE>
+Kappa                                                            0.35484
 Overall_ACC                                                      0.58333
-Overall_Kappa                                                    0.35484
+Overall_RACC                                                     0.35417
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
 Strength_Of_Agreement(Altman)                                    Fair
@@ -69,8 +70,9 @@ TPR(sensitivity, recall, hit rate, or true positive rate)        1.0            
 >>> cm.stat()
 Overall Statistics :
 <BLANKLINE>
+Kappa                                                            0.35484
 Overall_ACC                                                      0.58333
-Overall_Kappa                                                    0.35484
+Overall_RACC                                                     0.35417
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
 Strength_Of_Agreement(Altman)                                    Fair
@@ -187,8 +189,9 @@ Actual
 <BLANKLINE>
 Overall Statistics :
 <BLANKLINE>
+Kappa                                                            0.33333
 Overall_ACC                                                      0.66667
-Overall_Kappa                                                    0.33333
+Overall_RACC                                                     0.5
 PPV_Macro                                                        0.8
 PPV_Micro                                                        0.66667
 Strength_Of_Agreement(Altman)                                    Fair

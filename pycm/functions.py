@@ -33,13 +33,13 @@ def rounder(input_number,digit=5):
     '''
     This function round input number
     :param input_number: input number
-    :type input_number : float
+    :type input_number : anything
     :param digit: precision
     :type digit : int
     :return: round number as float
     '''
     if isfloat(input_number)==True:
-        return str(round(input_number,digit))
+        return str(round(float(input_number),digit))
     else:
         return input_number
 def pycm_help():
@@ -65,9 +65,11 @@ def table_print(classes,table):
     classes_len=len(classes)
     result = "Predict" + 10 * " " + "%-9s" * classes_len % tuple(map(str,classes)) + "\n"
     result = result + "Actual\n"
+    classes.sort()
     for key in classes:
+        row=[table[key][i] for i in classes]
         result += str(key) + " " * (17 - len(str(key))) + "%-9s" * classes_len % tuple(
-            map(str, list(table[key].values()))) + "\n"
+            map(str, row)) + "\n"
     return result
 
 def normalized_table_print(classes,table):
@@ -82,9 +84,11 @@ def normalized_table_print(classes,table):
     classes_len=len(classes)
     result = "Predict" + 10 * " " + "%-15s" * classes_len % tuple(map(str,classes)) + "\n"
     result = result + "Actual\n"
+    classes.sort()
     for key in classes:
+        row=[table[key][i] for i in classes]
         result += str(key) + " " * (17 - len(str(key))) + "%-15s" * classes_len % tuple(
-            map(lambda x:str(round(x/sum(table[key].values()),5)), list(table[key].values()))) + "\n"
+            map(lambda x:str(round(x/sum(row),5)), row)) + "\n"
     return result
 
 def stat_print(classes,class_stat,overall_stat):
@@ -110,10 +114,12 @@ def stat_print(classes,class_stat,overall_stat):
     result += "Classes" + shift * " " + "%-24s" * classes_len % tuple(map(str, classes)) + "\n"
     class_stat_keys = list(class_stat.keys())
     class_stat_keys.sort()
+    classes.sort()
     for key in class_stat_keys:
+        row=[class_stat[key][i] for i in classes]
         result += key + "(" + PARAMS_DESCRIPTION[key] + ")" + " " * (
         shift - len(key) - len(PARAMS_DESCRIPTION[key]) + 5) + "%-24s" * classes_len % tuple(
-            map(rounder,class_stat[key].values())) + "\n"
+            map(rounder,row)) + "\n"
     return result
 
 def matrix_params_calc(actual_vector,predict_vector):
@@ -125,7 +131,8 @@ def matrix_params_calc(actual_vector,predict_vector):
     :type predict_vector : list
     :return: [classes_list,TP,TN,FP,FN]
     '''
-    classes=list(set(actual_vector).intersection(set(predict_vector)))
+    classes=list(set(actual_vector).union(set(predict_vector)))
+    classes.sort()
     map_dict={k:0 for k in classes}
     TP_dict=map_dict.copy()
     TN_dict=map_dict.copy()

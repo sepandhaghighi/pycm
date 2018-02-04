@@ -439,7 +439,7 @@ def macro_calc(item):
     except Exception:
         return "None"
 
-def overall_statistics(ACC,RACC,TPR,PPV,TP,FN,FP):
+def overall_statistics(ACC,RACC,TPR,PPV,TP,FN,FP,POP):
     '''
     This function return overall statistics
     :param ACC: accuracy
@@ -448,7 +448,7 @@ def overall_statistics(ACC,RACC,TPR,PPV,TP,FN,FP):
     :type RACC : dict
     :return: overall statistics as dict
     '''
-    overall_accuracy=min(ACC.values())
+    overall_accuracy=sum(TP.values())/list(POP.values())[0]
     overall_random_accuracy=sum(RACC.values())
     overall_kappa=kappa_calc(overall_random_accuracy,overall_accuracy)
     return {"Overall_ACC":overall_accuracy,"Kappa":overall_kappa,"Overall_RACC":overall_random_accuracy,

@@ -39,7 +39,7 @@ def rounder(input_number,digit=5):
     :return: round number as float
     '''
     if isfloat(input_number)==True:
-        return str(round(float(input_number),digit))
+        return str(round(input_number,digit))
     else:
         return input_number
 def pycm_help():
@@ -87,8 +87,11 @@ def normalized_table_print(classes,table):
     classes.sort()
     for key in classes:
         row=[table[key][i] for i in classes]
+        div=sum(row)
+        if sum(row)==0:
+            div=1
         result += str(key) + " " * (17 - len(str(key))) + "%-15s" * classes_len % tuple(
-            map(lambda x:str(round(x/sum(row),5)), row)) + "\n"
+        map(lambda x:str(round(x/div,5)), row)) + "\n"
     return result
 
 def stat_print(classes,class_stat,overall_stat):
@@ -167,7 +170,7 @@ def TTPN_calc(Item1,Item2):
         result=Item1/ (Item1 + Item2)
         return result
     except ZeroDivisionError:
-        return "inf"
+        return "None"
 
 def FXR_calc(Item1):
     '''
@@ -199,7 +202,7 @@ def ACC_calc(TP,TN,FP,FN):
         result=(TP + TN) / (TP + TN + FN + FP)
         return result
     except ZeroDivisionError:
-        return "inf"
+        return "None"
 
 
 def ERR_calc(ACC):
@@ -231,7 +234,7 @@ def F_calc(TP,FP,FN,Beta):
         result=((1+(Beta)**2)*TP)/((1+(Beta)**2)*TP+FP+(Beta**2)*FN)
         return result
     except ZeroDivisionError:
-        return "inf"
+        return "None"
 
 def MCC_calc(TP,TN,FP,FN):
     '''
@@ -250,7 +253,7 @@ def MCC_calc(TP,TN,FP,FN):
         result=(TP*TN-FP*FN)/(math.sqrt((TP+FP)*(TP+FN)*(TN+FP)*(TN+FN)))
         return result
     except ZeroDivisionError:
-        return "inf"
+        return "None"
 
 def MK_BM_calc(Item1,Item2):
     '''

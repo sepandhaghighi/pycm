@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import math
 from art import tprint
+from __future__ import division
 VERSION="0.4"
 PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate","TNR":"specificity or true negative rate",
                    "PPV":"precision or positive predictive value","NPV":"negative predictive value",

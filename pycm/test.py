@@ -254,6 +254,40 @@ Actual
 500              1        1        1        0
 600              1        0        0        0
 <BLANKLINE>
+>>> kappa_analysis_koch(-0.1)
+'Poor'
+>>> kappa_analysis_koch(0)
+'Slight'
+>>> kappa_analysis_koch(0.2)
+'Fair'
+>>> kappa_analysis_koch(0.4)
+'Moderate'
+>>> kappa_analysis_koch(0.6)
+'Substantial'
+>>> kappa_analysis_koch(0.8)
+'Almost Perfect'
+>>> kappa_analysis_koch(1.2)
+'None'
+>>> kappa_analysis_fleiss(0.4)
+'Intermediate to Good'
+>>> kappa_analysis_fleiss(0.75)
+'Excellent'
+>>> kappa_analysis_fleiss(1.2)
+'Excellent'
+>>> kappa_analysis_altman(-0.2)
+'Poor'
+>>> kappa_analysis_altman(0.2)
+'Fair'
+>>> kappa_analysis_altman(0.4)
+'Moderate'
+>>> kappa_analysis_altman(0.6)
+'Good'
+>>> kappa_analysis_altman(0.8)
+'Very Good'
+>>> kappa_analysis_altman(1.2)
+'None'
+>>> kappa_analysis_fleiss(0.2)
+'Poor'
 >>> cov.stop()
 >>> cov.save()
 

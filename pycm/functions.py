@@ -485,10 +485,24 @@ def PC_AC1_calc(P,TOP,POP):
 def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP):
     '''
     This function return overall statistics
-    :param ACC: accuracy
-    :type ACC : dict
     :param RACC: random accuracy
     :type RACC : dict
+    :param TPR: sensitivity, recall, hit rate, or true positive rate
+    :type TPR : dict
+    :param PPV: precision or positive predictive value
+    :type PPV : dict
+    :param TP: True Positive
+    :type TP : dict
+    :param FN: False Negative
+    :type FN : dict
+    :param FP: False Positive
+    :type FP: dict
+    :param POP: Population
+    :type POP:dict
+    :param P: Condition positive
+    :type P : dict
+    :param POP: Population
+    :type POP:dict
     :return: overall statistics as dict
     '''
     overall_accuracy=sum(TP.values())/list(POP.values())[0]

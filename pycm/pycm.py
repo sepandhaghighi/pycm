@@ -69,6 +69,7 @@ class ConfusionMatrix():
         self.Overall_RACC=self.overall_stat["Overall_RACC"]
         self.PI=self.overall_stat["Scott_PI"]
         self.AC1=self.overall_stat["Gwet_AC1"]
+        self.S=self.overall_stat["Bennett_S"]
     def matrix(self):
         '''
         This method print confusion matrix

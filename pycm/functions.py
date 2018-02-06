@@ -331,14 +331,14 @@ def RACC_calc(TOP,P,POP):
     '''
     result =(TOP * P) /((POP)** 2)
     return result
-def kappa_calc(RACC,ACC):
+def reliability_calc(RACC,ACC):
     '''
-    This function calculate kappa
+    This function calculate Reliability
     :param RACC: random accuracy
     :type RACC : float
     :param ACC: accuracy
     :type ACC : float
-    :return: kappa as float
+    :return: Reliability as float
     '''
     try:
         result=(ACC-RACC)/(1-RACC)
@@ -442,16 +442,16 @@ def macro_calc(item):
         return item_sum/item_len
     except Exception:
         return "None"
-def JP_PI_calc(P,TOP,POP):
+def PC_PI_calc(P,TOP,POP):
     '''
-    This function calculate Joint Proportion for Scott's Pi
+    This function calculate percent chance agreement for Scott's Pi
     :param P: Condition positive
     :type P : dict
     :param TOP: Test outcome positive
     :type TOP : dict
     :param POP: Population
     :type POP:dict
-    :return: JP as float
+    :return: percent chance agreement as float
     '''
     try:
         result=0
@@ -461,7 +461,17 @@ def JP_PI_calc(P,TOP,POP):
     except Exception:
         return "None"
 
-def JP_AC1_calc(P,TOP,POP):
+def PC_AC1_calc(P,TOP,POP):
+    '''
+    This function calculate percent chance agreement for Gwet's AC1
+    :param P: Condition positive
+    :type P : dict
+    :param TOP: Test outcome positive
+    :type TOP : dict
+    :param POP: Population
+    :type POP:dict
+    :return: percent chance agreement as float
+    '''
     try:
         result=0
         classes=list(P.keys())
@@ -483,17 +493,19 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP):
     '''
     overall_accuracy=sum(TP.values())/list(POP.values())[0]
     overall_random_accuracy=sum(RACC.values())
-    overall_kappa=kappa_calc(overall_random_accuracy,overall_accuracy)
-    JP_PI=JP_PI_calc(P,TOP,POP)
-    JP_AC1=JP_AC1_calc(P,TOP,POP)
-    PI=kappa_calc(JP_PI,overall_accuracy)
-    AC1=kappa_calc(JP_AC1,overall_accuracy)
+    overall_kappa=reliability_calc(overall_random_accuracy,overall_accuracy)
+    PC_PI=PC_PI_calc(P,TOP,POP)
+    PC_AC1=PC_AC1_calc(P,TOP,POP)
+    PC_S=1/(len(list(P.keys())))
+    PI=reliability_calc(PC_PI,overall_accuracy)
+    AC1=reliability_calc(PC_AC1,overall_accuracy)
+    S=reliability_calc(PC_S,overall_accuracy)
     return {"Overall_ACC":overall_accuracy,"Kappa":overall_kappa,"Overall_RACC":overall_random_accuracy,
             "Strength_Of_Agreement(Landis and Koch)":kappa_analysis_koch(overall_kappa),
             "Strength_Of_Agreement(Fleiss)":kappa_analysis_fleiss(overall_kappa),
             "Strength_Of_Agreement(Altman)":kappa_analysis_altman(overall_kappa),"TPR_Macro":macro_calc(TPR),
             "PPV_Macro":macro_calc(PPV),"TPR_Micro":micro_calc(TP=TP,item=FN),"PPV_Micro":micro_calc(TP=TP,item=FP),
-            "Scott_PI":PI,"Gwet_AC1":AC1}
+            "Scott_PI":PI,"Gwet_AC1":AC1,"Bennett_S":S}
 def class_statistics(TP,TN,FP,FN):
     '''
     This function return all class statistics

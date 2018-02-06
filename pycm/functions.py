@@ -442,8 +442,25 @@ def macro_calc(item):
         return item_sum/item_len
     except Exception:
         return "None"
-
-def overall_statistics(ACC,RACC,TPR,PPV,TP,FN,FP,POP):
+def JP_calc(P,TOP,POP):
+    '''
+    This function calculate Joint Proportion for Scott's Pi
+    :param P: Condition positive
+    :type P : dict
+    :param TOP: Test outcome positive
+    :type TOP : dict
+    :param POP: Population
+    :type POP:dict
+    :return: JP as float
+    '''
+    try:
+        result=0
+        for i in P.keys():
+            result+=((P[i]+TOP[i])/(2*POP[i]))**2
+        return result
+    except Exception:
+        return "None"
+def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP):
     '''
     This function return overall statistics
     :param ACC: accuracy
@@ -455,11 +472,14 @@ def overall_statistics(ACC,RACC,TPR,PPV,TP,FN,FP,POP):
     overall_accuracy=sum(TP.values())/list(POP.values())[0]
     overall_random_accuracy=sum(RACC.values())
     overall_kappa=kappa_calc(overall_random_accuracy,overall_accuracy)
+    JP=JP_calc(P,TOP,POP)
+    PI=kappa_calc(JP,overall_accuracy)
     return {"Overall_ACC":overall_accuracy,"Kappa":overall_kappa,"Overall_RACC":overall_random_accuracy,
             "Strength_Of_Agreement(Landis and Koch)":kappa_analysis_koch(overall_kappa),
             "Strength_Of_Agreement(Fleiss)":kappa_analysis_fleiss(overall_kappa),
             "Strength_Of_Agreement(Altman)":kappa_analysis_altman(overall_kappa),"TPR_Macro":macro_calc(TPR),
-            "PPV_Macro":macro_calc(PPV),"TPR_Micro":micro_calc(TP=TP,item=FN),"PPV_Micro":micro_calc(TP=TP,item=FP)}
+            "PPV_Macro":macro_calc(PPV),"TPR_Micro":micro_calc(TP=TP,item=FN),"PPV_Micro":micro_calc(TP=TP,item=FP),
+            "PI":PI}
 def class_statistics(TP,TN,FP,FN):
     '''
     This function return all class statistics

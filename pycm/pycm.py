@@ -25,10 +25,11 @@ class ConfusionMatrix():
         statistic_result=class_statistics(TP=matrix_param[2],TN=matrix_param[3],FP=matrix_param[4],
                                          FN=matrix_param[5])
         self.class_stat=statistic_result
-        self.overall_stat=overall_statistics(ACC=statistic_result["ACC"],RACC=statistic_result["RACC"],
+        self.overall_stat=overall_statistics(RACC=statistic_result["RACC"],
                                              TPR=statistic_result["TPR"],PPV=statistic_result["PPV"],
                                              TP=statistic_result["TP"],FN=statistic_result["FN"],
-                                             FP=statistic_result["FP"],POP=statistic_result["POP"])
+                                             FP=statistic_result["FP"],POP=statistic_result["POP"],
+                                             P=statistic_result["P"],TOP=statistic_result["TOP"])
         self.TPR=statistic_result["TPR"]
         self.TNR=statistic_result["TNR"]
         self.PPV = statistic_result["PPV"]
@@ -66,6 +67,7 @@ class ConfusionMatrix():
         self.TPR_Micro=self.overall_stat["TPR_Micro"]
         self.PPV_Micro=self.overall_stat["PPV_Micro"]
         self.Overall_RACC=self.overall_stat["Overall_RACC"]
+        self.PI=self.overall_stat["PI"]
     def matrix(self):
         '''
         This method print confusion matrix

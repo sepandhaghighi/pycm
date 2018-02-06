@@ -67,7 +67,8 @@ class ConfusionMatrix():
         self.TPR_Micro=self.overall_stat["TPR_Micro"]
         self.PPV_Micro=self.overall_stat["PPV_Micro"]
         self.Overall_RACC=self.overall_stat["Overall_RACC"]
-        self.PI=self.overall_stat["PI"]
+        self.PI=self.overall_stat["Scott_PI"]
+        self.AC1=self.overall_stat["Gwet_AC1"]
     def matrix(self):
         '''
         This method print confusion matrix

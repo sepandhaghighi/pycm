@@ -16,7 +16,26 @@ PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate"
                     "G":"G-measure geometric mean of precision and sensitivity","RACC":"Random Accuracy",
                     "F0.5":"F0.5 Score","F2":"F2 Score","ERR":"Error Rate"}
 
-
+def html_creator(name,classes,table):
+    html_file=open(name+".html","w")
+    html_file.write("<html>\n")
+    html_file.write('<table style="margin:auto;">\n')
+    html_file.write('<tr  align="center">'+"\n")
+    html_file.write('<td>Actual</td>\n')
+    html_file.write('<td>Predict\n')
+    html_file.write('<table style="border:1px solid black;margin:auto;border-collapse: collapse;">\n')
+    classes.sort()
+    html_file.write('<tr align="center">\n<td></td>\n')
+    for i in classes:
+        html_file.write('<td style="border:1px solid black;padding:4px;">'+str(i)+'</td>\n')
+    html_file.write('</tr>\n')
+    for i in classes:
+        html_file.write('<tr align="center">\n')
+        html_file.write('<td style="border:1px solid black;padding:4px;">'+str(i)+'</td>\n')
+        for j in classes:
+            html_file.write('<td>'+str(table[i][j])+'</td>\n')
+        html_file.write("</tr>\n")
+    html_file.write("</table>\n</td>\n</tr>\n</table>\n</html>")
 def isfloat(value):
     '''
     This function check input for float conversion

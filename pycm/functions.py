@@ -68,6 +68,7 @@ def html_class_stat(classes,class_stat):
     result +='<tr align="center">\n<td>Class</td>\n'
     for i in classes:
         result +='<td style="border:1px solid black;padding:4px;border-collapse: collapse;">' + str(i) + '</td>\n'
+    result += '<td>Description</td>\n'
     result +='</tr>\n'
     for i in class_stat.keys():
         result +='<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n'
@@ -75,6 +76,8 @@ def html_class_stat(classes,class_stat):
         for j in classes:
             result +='<td style="border:1px solid black;padding:4px;border-collapse: collapse;">' + rounder(
                 class_stat[i][j]) + '</td>\n'
+        result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">' + \
+                  PARAMS_DESCRIPTION[i] + '</td>\n'
         result +="</tr>\n"
     result+="</table>\n"
     return result
@@ -92,9 +95,6 @@ def html_maker(name,classes,table,overall_stat,class_stat):
     html_file.write(html_overall_stat(overall_stat))
     html_file.write(html_class_stat(classes,class_stat))
     html_file.write(html_end(VERSION))
-
-
-
 
 def isfloat(value):
     '''

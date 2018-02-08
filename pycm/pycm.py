@@ -110,7 +110,7 @@ class ConfusionMatrix():
         except Exception as e:
             return {"Status":False,"Message":str(e)}
     def save_html(self,name):
-        html_creator(name,self.classes,self.table)
+        html_maker(name,self.classes,self.table,self.overall_stat,self.class_stat)
     def F_beta(self,Beta):
         try:
             F_Dict = {}

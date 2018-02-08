@@ -16,26 +16,82 @@ PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate"
                     "G":"G-measure geometric mean of precision and sensitivity","RACC":"Random Accuracy",
                     "F0.5":"F0.5 Score","F2":"F2 Score","ERR":"Error Rate"}
 
-def html_creator(name,classes,table):
-    html_file=open(name+".html","w")
-    html_file.write("<html>\n")
-    html_file.write('<table style="margin:auto;">\n')
-    html_file.write('<tr  align="center">'+"\n")
-    html_file.write('<td>Actual</td>\n')
-    html_file.write('<td>Predict\n')
-    html_file.write('<table style="border:1px solid black;margin:auto;border-collapse: collapse;">\n')
+def html_init(name):
+    result=""
+    result+="<html>\n"
+    result+="<head>\n"
+    result+="<title>"+str(name)+"</title>\n"
+    result+="</head>\n"
+    result+="<body>\n"
+    return result
+
+def html_table(classes,table):
+    result=""
+    result+='<table>\n'
+    result +='<tr  align="center">' + "\n"
+    result +='<td>Actual</td>\n'
+    result +='<td>Predict\n'
+    result +='<table style="border:1px solid black;border-collapse: collapse;">\n'
     classes.sort()
-    html_file.write('<tr align="center">\n<td></td>\n')
+    result +='<tr align="center">\n<td></td>\n'
+    part_2=""
     for i in classes:
-        html_file.write('<td style="border:1px solid black;padding:4px;">'+str(i)+'</td>\n')
-    html_file.write('</tr>\n')
-    for i in classes:
-        html_file.write('<tr align="center">\n')
-        html_file.write('<td style="border:1px solid black;padding:4px;">'+str(i)+'</td>\n')
+        result += '<td style="border:1px solid black;padding:10px;">' + str(i) + '</td>\n'
+        part_2+='<tr align="center">\n'
+        part_2 +='<td style="border:1px solid black;padding:10px;">' + str(i) + '</td>\n'
         for j in classes:
-            html_file.write('<td>'+str(table[i][j])+'</td>\n')
-        html_file.write("</tr>\n")
-    html_file.write("</table>\n</td>\n</tr>\n</table>\n</html>")
+            part_2 +='<td>' + str(table[i][j]) + '</td>\n'
+        part_2 +="</tr>\n"
+    result += '</tr>\n'
+    part_2 +="</table>\n</td>\n</tr>\n</table>\n"
+    result+=part_2
+    return result
+
+def html_overall_stat(overall_stat):
+    result=""
+    result+="<h2>Overall Statistics : </h2>\n"
+    result +='<table style="border:1px solid black;border-collapse: collapse;">\n'
+    for i in overall_stat.keys():
+        result +='<tr align="center">\n'
+        result +='<td style="border:1px solid black;padding:4px;">' + str(i) + '</td>\n'
+        result +='<td style="border:1px solid black;padding:4px;">' + rounder(overall_stat[i]) + '</td>\n'
+        result +="</tr>\n"
+    result +="</table>\n"
+    return result
+
+def html_class_stat(classes,class_stat):
+    result=""
+    result+="<h2>Class Statistics : </h2>\n"
+    result +='<table style="border:1px solid black;border-collapse: collapse;">\n'
+    result +='<tr align="center">\n<td>Class</td>\n'
+    for i in classes:
+        result +='<td style="border:1px solid black;padding:4px;border-collapse: collapse;">' + str(i) + '</td>\n'
+    result +='</tr>\n'
+    for i in class_stat.keys():
+        result +='<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n'
+        result +='<td style="border:1px solid black;padding:4px;border-collapse: collapse;">' + str(i) + '</td>\n'
+        for j in classes:
+            result +='<td style="border:1px solid black;padding:4px;border-collapse: collapse;">' + rounder(
+                class_stat[i][j]) + '</td>\n'
+        result +="</tr>\n"
+    result+="</table>\n"
+    return result
+
+def html_end():
+    result="</body>\n"
+    result+="</html>"
+    return result
+def html_maker(name,classes,table,overall_stat,class_stat):
+    html_file=open(name+".html","w")
+    html_file.write(html_init(name))
+    html_file.write(html_table(classes,table))
+    html_file.write(html_overall_stat(overall_stat))
+    html_file.write(html_class_stat(classes,class_stat))
+    html_file.write(html_end())
+
+
+
+
 def isfloat(value):
     '''
     This function check input for float conversion

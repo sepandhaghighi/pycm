@@ -301,6 +301,12 @@ Actual
 'None'
 >>> PC_AC1_calc(1,1,1)
 'None'
+>>> save_stat=cm.save_html("test",address=False)
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_html("/asdasd,qweqwe.eo/",address=True)
+>>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.html'"}
+True
 >>> cov.stop()
 >>> cov.save()
 

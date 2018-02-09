@@ -110,7 +110,7 @@ Webpage : http://pycm.shaghighi.ir
 'None'
 >>> G_calc(None,2)
 'None'
->>> kappa_calc(1,None)
+>>> reliability_calc(1,None)
 'None'
 >>> kappa_analysis_koch(None)
 'None'
@@ -151,7 +151,6 @@ Gwet_AC1                                                         0.19505
 Kappa                                                            0.07801
 Overall_ACC                                                      0.35
 Overall_RACC                                                     0.295
-PI                                                               -0.12554
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Scott_PI                                                         -0.12554
@@ -300,7 +299,7 @@ Actual
 'Poor'
 >>> PC_PI_calc(1,1,1)
 'None'
->>> PC_AC1_calc
+>>> PC_AC1_calc(1,1,1)
 'None'
 >>> cov.stop()
 >>> cov.save()

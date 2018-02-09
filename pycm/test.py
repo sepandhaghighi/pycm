@@ -21,12 +21,14 @@ Actual
 <BLANKLINE>
 Overall Statistics :
 <BLANKLINE>
+Bennett_S                                                        0.375
+Gwet_AC1                                                         0.38931
 Kappa                                                            0.35484
 Overall_ACC                                                      0.58333
 Overall_RACC                                                     0.35417
-PI                                                               0.34426
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
+Scott_PI                                                         0.34426
 Strength_Of_Agreement(Altman)                                    Fair
 Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Fair
@@ -144,12 +146,15 @@ Actual
 <BLANKLINE>
 Overall Statistics :
 <BLANKLINE>
+Bennett_S                                                        0.13333
+Gwet_AC1                                                         0.19505
 Kappa                                                            0.07801
 Overall_ACC                                                      0.35
 Overall_RACC                                                     0.295
 PI                                                               -0.12554
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
+Scott_PI                                                         -0.12554
 Strength_Of_Agreement(Altman)                                    Poor
 Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Slight
@@ -194,11 +199,14 @@ TPR(sensitivity, recall, hit rate, or true positive rate)        None           
 >>> cm.stat()
 Overall Statistics :
 <BLANKLINE>
+Bennett_S                                                        0.13333
+Gwet_AC1                                                         0.19505
 Kappa                                                            0.07801
 Overall_ACC                                                      0.35
 Overall_RACC                                                     0.295
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
+Scott_PI                                                         -0.12554
 Strength_Of_Agreement(Altman)                                    Poor
 Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Slight
@@ -290,7 +298,9 @@ Actual
 'None'
 >>> kappa_analysis_fleiss(0.2)
 'Poor'
->>> JP_calc(1,1,1)
+>>> PC_PI_calc(1,1,1)
+'None'
+>>> PC_AC1_calc
 'None'
 >>> cov.stop()
 >>> cov.save()

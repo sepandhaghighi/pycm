@@ -3,7 +3,7 @@
 import doctest
 import sys
 from .pycm import *
-from .functions import *
+from .pycm_output import *
 
 
 if __name__=="__main__":

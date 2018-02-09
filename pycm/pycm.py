@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from .functions import *
+from .pycm_func import *
+from .pycm_output import *
 import os
 class pycmError(Exception):
     pass

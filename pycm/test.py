@@ -98,28 +98,62 @@ Repo : https://github.com/sepandhaghighi/pycm
 Webpage : http://pycm.shaghighi.ir
 >>> TTPN_calc(0,0)
 'None'
+>>> TTPN_calc(1,4)
+0.2
 >>> FXR_calc(None)
 'None'
+>>> FXR_calc(0.2)
+0.8
 >>> ACC_calc(0,0,0,0)
 'None'
+>>> ACC_calc(1,1,3,4)
+0.2222222222222222
 >>> MCC_calc(0,2,0,2)
+'None'
+>>> MCC_calc(1,2,3,4)
+-0.408248290463863
+>>> LR_calc(1,2)
+0.5
+>>> LR_calc(1,0)
 'None'
 >>> MK_BM_calc(2,"None")
 'None'
+>>> MK_BM_calc(1,2)
+2
 >>> PRE_calc(None,2)
+'None'
+>>> PRE_calc(1,5)
+0.2
+>>> PRE_calc(1,0)
 'None'
 >>> G_calc(None,2)
 'None'
+>>> G_calc(1,2)
+1.4142135623730951
+>>> RACC_calc(2,3,4)
+0.375
 >>> reliability_calc(1,None)
 'None'
+>>> reliability_calc(2,0.3)
+1.7
 >>> kappa_analysis_koch(None)
 'None'
 >>> kappa_analysis_fleiss(None)
 'None'
 >>> kappa_analysis_altman(None)
 'None'
+>>> micro_calc({1:2,2:3},{1:1,2:4})
+0.5
+>>> micro_calc({1:2,2:3},None)
+'None'
+>>> macro_calc(None)
+'None'
+>>> macro_calc({1:2,2:3})
+2.5
 >>> F_calc(TP=0,FP=0,FN=0,Beta=1)
 'None'
+>>> F_calc(TP=3,FP=2,FN=1,Beta=5)
+0.7428571428571429
 >>> save_stat=cm.save_stat("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
@@ -128,6 +162,8 @@ True
 True
 >>> ERR_calc(None)
 'None'
+>>> ERR_calc(0.1)
+0.9
 >>> cm.F_beta(4)
 {0: 0.9622641509433962, 1: 0.34, 2: 0.504950495049505}
 >>> y_test = [600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200]
@@ -299,8 +335,12 @@ Actual
 'Poor'
 >>> PC_PI_calc(1,1,1)
 'None'
+>>> PC_PI_calc({1:12},{1:6},{1:45})
+0.04000000000000001
 >>> PC_AC1_calc(1,1,1)
 'None'
+>>> PC_AC1_calc({1:123,2:2},{1:120,2:5},{1:125,2:125})
+0.05443200000000002
 >>> save_stat=cm.save_html("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True

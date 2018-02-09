@@ -168,12 +168,18 @@ or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir").
   - [x] RACC
 - [ ] Outputs
   - [ ] CSV File
-  - [ ] HTML File
+  - [x] HTML File
   - [x] Output File
   - [x] Table
   - [x] Normalized Table
 - [x] Overall Statistics
   - [x] Kappa
+  - [ ] Aickin's alpha
+  - [x] Bennett S score
+  - [x] Gwet's AC1
+  - [x] Scott's pi
+  - [ ] Krippendorff's alpha
+  - [ ] Weighting-scheme
   - [x] Overall ACC
   - [x] Strength of Agreement
     - [x] Landis and Koch
@@ -191,7 +197,7 @@ Remember to write a few tests for your code before sending pull requests.
 e
 
 
-## References
+## References			
 
 <blockquote>1- Landis JR, Koch GG. The measurement of observer agreement for categorical data. Biometrics 1977; 33:159–174 </blockquote>
 
@@ -205,6 +211,13 @@ http://dx.doi.org/10.1037/h0031619</blockquote>
 
 <blockquote>5- Altman D.G. 1991. Practical Statistics for Medical Research.
 Chapman and Hall, London.</blockquote>
+
+<blockquote>6- Gwet, K. L. (2008). Computing inter-rater reliability and its variance in the presence of high agreement. The British Journal of Mathematical and Statistical Psychology, 61(1), 29–48.</blockquote>
+
+<blockquote>7- Scott, W. A. (1955). Reliability of content analysis: The case of nominal scaling. Public Opinion Quarterly, 19(3), 321–325.</blockquote>
+
+<blockquote>8- Bennett, E. M., Alpert, R., & Goldstein, A. C. (1954). Communication through limited response questioning. The Public Opinion Quarterly, 18(3), 303–308.</blockquote>
+
 
 
 

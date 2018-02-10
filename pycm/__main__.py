@@ -2,7 +2,7 @@
 
 import doctest
 import sys
-from .pycm import *
+from .pycm_obj import *
 from .pycm_output import *
 
 

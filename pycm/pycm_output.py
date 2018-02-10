@@ -28,7 +28,7 @@ def html_init(name):
     result+="<title>"+str(name)+"</title>\n"
     result+="</head>\n"
     result+="<body>\n"
-    result+='<h1 style="border-bottom:1px solid black;text-align:center;">Report</h1>'
+    result+='<h1 style="border-bottom:1px solid black;text-align:center;">PYCM Report</h1>'
     return result
 
 def html_table(classes,table):

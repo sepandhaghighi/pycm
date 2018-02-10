@@ -24,7 +24,7 @@ pycm(python confusion matrix) is a multi class confusion matrix library in pytho
 ## Installation		
 
 ### Source Code
-- Download [Version 0.4](https://github.com/sepandhaghighi/pycm/archive/v0.4.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/master.zip)
+- Download [Version 0.5](https://github.com/sepandhaghighi/pycm/archive/v0.5.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/master.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -57,11 +57,14 @@ Actual
 
 Overall Statistics : 
 
+Bennett_S                                                        0.375
+Gwet_AC1                                                         0.38931
 Kappa                                                            0.35484
 Overall_ACC                                                      0.58333
 Overall_RACC                                                     0.35417
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
+Scott_PI                                                         0.34426
 Strength_Of_Agreement(Altman)                                    Fair
 Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Fair

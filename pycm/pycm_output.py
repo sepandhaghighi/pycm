@@ -72,7 +72,9 @@ def html_overall_stat(overall_stat):
     result=""
     result+="<h2>Overall Statistics : </h2>\n"
     result +='<table style="border:1px solid black;border-collapse: collapse;">\n'
-    for i in overall_stat.keys():
+    overall_stat_keys=list(overall_stat.keys())
+    overall_stat_keys.sort()
+    for i in overall_stat_keys:
         result +='<tr align="center">\n'
         result +='<td style="border:1px solid black;padding:4px;">' + str(i) + '</td>\n'
         result +='<td style="border:1px solid black;padding:4px;">' + rounder(overall_stat[i]) + '</td>\n'
@@ -97,7 +99,9 @@ def html_class_stat(classes,class_stat):
         result +='<td style="border:1px solid black;padding:4px;border-collapse: collapse;">' + str(i) + '</td>\n'
     result += '<td>Description</td>\n'
     result +='</tr>\n'
-    for i in class_stat.keys():
+    class_stat_keys=list(class_stat.keys())
+    class_stat_keys.sort()
+    for i in class_stat_keys :
         result +='<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n'
         result +='<td style="border:1px solid black;padding:4px;border-collapse: collapse;">' + str(i) + '</td>\n'
         for j in classes:

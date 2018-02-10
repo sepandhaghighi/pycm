@@ -74,11 +74,11 @@ TPR(sensitivity, recall, hit rate, or true positive rate)        1.0            
 >>> cm_2 = ConfusionMatrix(y_actu, 2)
 Traceback (most recent call last):
         ...
-pycm.pycm.pycmError: Input Vectors Must Be List
+pycm.pycm_obj.pycmError: Input Vectors Must Be List
 >>> cm_3 = ConfusionMatrix(y_actu, [1,2])
 Traceback (most recent call last):
         ...
-pycm.pycm.pycmError: Input Vectors Must Be The Same Length
+pycm.pycm_obj.pycmError: Input Vectors Must Be The Same Length
 >>> pycm_help()
 <BLANKLINE>
  _ __   _   _   ___  _ __ ___
@@ -87,15 +87,17 @@ pycm.pycm.pycmError: Input Vectors Must Be The Same Length
 | .__/  \__, | \___||_| |_| |_|
 |_|     |___/
 <BLANKLINE>
-__     __     ___      _  _
-\ \   / / _  / _ \    | || |
- \ \ / / (_)| | | |   | || |_
-  \ V /   _ | |_| | _ |__   _|
-   \_/   (_) \___/ (_)   |_|
+__     __     ___      ____
+\ \   / / _  / _ \    | ___|
+ \ \ / / (_)| | | |   |___ \
+  \ V /   _ | |_| | _  ___) |
+   \_/   (_) \___/ (_)|____/
 <BLANKLINE>
 <BLANKLINE>
 Repo : https://github.com/sepandhaghighi/pycm
 Webpage : http://pycm.shaghighi.ir
+<BLANKLINE>
+<BLANKLINE>
 >>> TTPN_calc(0,0)
 'None'
 >>> TTPN_calc(1,4)

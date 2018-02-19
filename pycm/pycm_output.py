@@ -18,6 +18,18 @@ def html_init(name):
     result+="<body>\n"
     result+='<h1 style="border-bottom:1px solid black;text-align:center;">PYCM Report</h1>'
     return result
+def html_table_color(row,item):
+    '''
+    This function return background color of each cell of table
+    :param row: row dictionary
+    :type row : dict
+    :param item: cell number
+    :type item : int
+    :return: background color as int (0-255)
+    '''
+    back_color = 255 - int((item / (sum(list(row.values())) + 1)) * 255)
+    return back_color
+
 
 def html_table(classes,table):
     '''
@@ -43,7 +55,14 @@ def html_table(classes,table):
         part_2+='<tr align="center">\n'
         part_2 +='<td style="border:1px solid black;padding:10px;">' + str(i) + '</td>\n'
         for j in classes:
-            part_2 +='<td>' + str(table[i][j]) + '</td>\n'
+            item=table[i][j]
+            color="black;"
+            back_color=html_table_color(table[i],item)
+            if back_color<128:
+                color="white"
+            part_2 +='<td style="background-color:	rgb({0},{0},{0});color:{1};">'.format(str(back_color)
+                                                                                                        ,color) \
+                     + str(item) + '</td>\n'
         part_2 +="</tr>\n"
     result += '</tr>\n'
     part_2 +="</table>\n</td>\n</tr>\n</table>\n"

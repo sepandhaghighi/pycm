@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [0.6] - 2018-02-17
+### Added
+- CSV report
+- Changelog
+
+### Changed
+- Confusion matrix color in HTML report
+- Parameters description link in HTML report
+
 ## [0.5] - 2018-02-17
 ### Added
 - Scott's pi
@@ -24,7 +33,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - F2
 - Fleiss benchmark
 - Altman benchmark
-- Output bile(.pycm)
+- Output file(.pycm)
 
 
 ### Changed
@@ -81,7 +90,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and README
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v0.5...HEAD
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v0.6...HEAD
+[0.6]: https://github.com/sepandhaghighi/pycm/compare/v0.5...v0.6
 [0.5]: https://github.com/sepandhaghighi/pycm/compare/v0.4...v0.5
 [0.4]: https://github.com/sepandhaghighi/pycm/compare/v0.3...v0.4
 [0.3]: https://github.com/sepandhaghighi/pycm/compare/v0.2...v0.3

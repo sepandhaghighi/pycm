@@ -169,8 +169,8 @@ or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir").
   - [x] Prevalence
   - [x] G-measure
   - [x] RACC
-- [ ] Outputs
-  - [ ] CSV File
+- [x] Outputs
+  - [x] CSV File
   - [x] HTML File
   - [x] Output File
   - [x] Table

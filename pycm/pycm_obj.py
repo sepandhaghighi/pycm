@@ -121,6 +121,18 @@ class ConfusionMatrix():
             return {"Status":True,"Message":message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}
+    def save_csv(self,name,address=True):
+        try:
+            message=None
+            csv_file = open(name+ ".csv", "w")
+            csv_data=csv_print(self.classes,self.class_stat)
+            csv_file.write(csv_data)
+            if address==True:
+                message = os.path.join(os.getcwd(), name + ".csv")
+            return {"Status":True,"Message":message}
+        except Exception as e:
+            print(str(e))
+            return {"Status": False, "Message": str(e)}
     def F_beta(self,Beta):
         try:
             F_Dict = {}

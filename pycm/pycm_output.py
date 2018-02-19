@@ -233,6 +233,29 @@ def normalized_table_print(classes,table):
         result += str(key) + " " * (17 - len(str(key))) + "%-15s" * classes_len % tuple(
         map(lambda x:str(round(x/div,5)), row)) + "\n"
     return result
+def csv_print(classes,class_stat):
+    '''
+    This function return csv file data
+    :param classes: classes list
+    :type classes:list
+    :param class_stat: statistic result for each class
+    :type class_stat:dict
+    :return: csv file data as str
+    '''
+    result="Class"
+    classes.sort()
+    for item in classes:
+        result+=',"'+str(item)+'"'
+    result+="\n"
+    class_stat_keys = list(class_stat.keys())
+    class_stat_keys.sort()
+    for key in class_stat_keys:
+        row = [rounder(class_stat[key][i]) for i in classes]
+        result+=key+","+",".join(row)
+        result+="\n"
+    return result
+
+
 
 def stat_print(classes,class_stat,overall_stat):
     '''

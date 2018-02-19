@@ -83,11 +83,11 @@ def html_overall_stat(overall_stat):
     overall_stat_keys.sort()
     for i in overall_stat_keys:
         result +='<tr align="center">\n'
-        result +='<td style="border:1px solid black;padding:4px;">'+ str(i) + '</td>\n'
+        result +='<td style="border:1px solid black;padding:4px;"><a href="'+PARAMS_LINK[i]+ '">'+ str(i) +\
+                 '</a></td>\n'
         result +='<td style="border:1px solid black;padding:4px;">' + rounder(overall_stat[i]) + '</td>\n'
         result +="</tr>\n"
     result +="</table>\n"
-    result +='<p> For more information visit <a href="'+PARAMS_LINK["Overall"]+'">here</a>\n'
     return result
 
 def html_class_stat(classes,class_stat):

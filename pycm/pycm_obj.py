@@ -131,7 +131,6 @@ class ConfusionMatrix():
                 message = os.path.join(os.getcwd(), name + ".csv")
             return {"Status":True,"Message":message}
         except Exception as e:
-            print(str(e))
             return {"Status": False, "Message": str(e)}
     def F_beta(self,Beta):
         try:

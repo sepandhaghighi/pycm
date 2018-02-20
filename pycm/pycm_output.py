@@ -83,8 +83,8 @@ def html_overall_stat(overall_stat):
     overall_stat_keys.sort()
     for i in overall_stat_keys:
         result +='<tr align="center">\n'
-        result +='<td style="border:1px solid black;padding:4px;text-align:left;"><a href="'+PARAMS_LINK[i]+ '">'+ str(i) +\
-                 '</a></td>\n'
+        result +='<td style="border:1px solid black;padding:4px;text-align:left;"><a href="'+PARAMS_LINK[i]+\
+                 '" style="text-decoration:None;">'+ str(i) +'</a></td>\n'
         result +='<td style="border:1px solid black;padding:4px;">' + rounder(overall_stat[i]) + '</td>\n'
         result +="</tr>\n"
     result +="</table>\n"
@@ -112,12 +112,12 @@ def html_class_stat(classes,class_stat):
     for i in class_stat_keys :
         result +='<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n'
         result +='<td style="border:1px solid black;padding:4px;border-collapse: collapse;"><a href="' +PARAMS_LINK[i]+\
-                 '">'+ str(i) + '</a></td>\n'
+                 '" style="text-decoration:None;">'+ str(i) + '</a></td>\n'
         for j in classes:
             result +='<td style="border:1px solid black;padding:4px;border-collapse: collapse;">' + rounder(
                 class_stat[i][j]) + '</td>\n'
-        result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">' + \
-                  PARAMS_DESCRIPTION[i] + '</td>\n'
+        result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;text-align:left;">' + \
+                  PARAMS_DESCRIPTION[i].capitalize() + '</td>\n'
         result +="</tr>\n"
     result+="</table>\n"
     return result

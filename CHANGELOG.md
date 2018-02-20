@@ -10,10 +10,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - CSV report
 - Changelog
+- digit parameter to ConfusionMatrix object
 
 ### Changed
 - Confusion matrix color in HTML report
 - Parameters description link in HTML report
+- Capitalize descriptions
 
 ## [0.5] - 2018-02-17
 ### Added

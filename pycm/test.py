@@ -86,11 +86,11 @@ pycm.pycm_obj.pycmError: Input Vectors Must Be The Same Length
 | .__/  \__, | \___||_| |_| |_|
 |_|     |___/
 <BLANKLINE>
-__     __     ___      ____
-\ \   / / _  / _ \    | ___|
- \ \ / / (_)| | | |   |___ \
-  \ V /   _ | |_| | _  ___) |
-   \_/   (_) \___/ (_)|____/
+__     __     ___       __
+\ \   / / _  / _ \     / /_
+ \ \ / / (_)| | | |   | '_ \
+  \ V /   _ | |_| | _ | (_) |
+   \_/   (_) \___/ (_) \___/
 <BLANKLINE>
 <BLANKLINE>
 Repo : https://github.com/sepandhaghighi/pycm

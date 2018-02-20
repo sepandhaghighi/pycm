@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-VERSION="0.5"
+VERSION="0.6"
 
 PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate","TNR":"specificity or true negative rate",
                    "PPV":"precision or positive predictive value","NPV":"negative predictive value",

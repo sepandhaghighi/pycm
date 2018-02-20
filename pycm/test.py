@@ -46,10 +46,10 @@ F0.5(F0.5 score)                                                 0.65217        
 F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545
 F2(F2 score)                                                     0.88235                 0.35714                 0.51724
 FDR(False discovery rate)                                        0.4                     0.5                     0.4
-FN(False negative/miss/type ii error)                            0                       2                       3
+FN(False negative/miss/type 2 error)                            0                       2                       3
 FNR(Miss rate or false negative rate)                            0.0                     0.66667                 0.5
 FOR(False omission rate)                                         0.0                     0.2                     0.42857
-FP(False positive/type i error/false alarm)                      2                       1                       2
+FP(False positive/type 1 error/false alarm)                      2                       1                       2
 FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
 LR+(Positive likelihood ratio)                                   4.5                     3.0                     1.5
@@ -208,10 +208,10 @@ F0.5(F0.5 score)                                                 0.0            
 F1(F1 score - harmonic mean of precision and sensitivity)        0.0                     0.52174                 0.4                     0.0
 F2(F2 score)                                                     0.0                     0.42254                 0.35714                 0.0
 FDR(False discovery rate)                                        1.0                     0.14286                 0.5                     None
-FN(False negative/miss/type ii error)                            0                       10                      2                       1
+FN(False negative/miss/type 2 error)                            0                       10                      2                       1
 FNR(Miss rate or false negative rate)                            None                    0.625                   0.66667                 1.0
 FOR(False omission rate)                                         0.0                     0.76923                 0.11111                 0.05
-FP(False positive/type i error/false alarm)                      11                      1                       1                       0
+FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
 LR+(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
@@ -260,10 +260,10 @@ F0.5(F0.5 score)                                                 0.0            
 F1(F1 score - harmonic mean of precision and sensitivity)        0.0                     0.52174                 0.4                     0.0
 F2(F2 score)                                                     0.0                     0.42254                 0.35714                 0.0
 FDR(False discovery rate)                                        1.0                     0.14286                 0.5                     None
-FN(False negative/miss/type ii error)                            0                       10                      2                       1
+FN(False negative/miss/type 2 error)                            0                       10                      2                       1
 FNR(Miss rate or false negative rate)                            None                    0.625                   0.66667                 1.0
 FOR(False omission rate)                                         0.0                     0.76923                 0.11111                 0.05
-FP(False positive/type i error/false alarm)                      11                      1                       1                       0
+FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
 LR+(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None

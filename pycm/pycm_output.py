@@ -75,7 +75,7 @@ def html_overall_stat(overall_stat,digit=5):
     This function return report file overall stat
     :param overall_stat: overall stat
     :type overall_stat : dict
-    :param digit: precision
+    :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
     :return: html_overall_stat as str
     '''
@@ -100,7 +100,7 @@ def html_class_stat(classes,class_stat,digit=5):
     :type classes: list
     :param class_stat: class stat
     :type class_stat:dict
-    :param digit: precision
+    :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
     :return: html_class_stat as str
     '''
@@ -155,7 +155,7 @@ def html_maker(html_file,name,classes,table,overall_stat,class_stat,digit=5):
     :type overall_stat: dict
     :param class_stat: class stat
     :type class_stat: dict
-    :param digit: precision
+    :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
     :return: None
     '''
@@ -183,7 +183,7 @@ def rounder(input_number,digit=5):
     This function round input number
     :param input_number: input number
     :type input_number : anything
-    :param digit: precision
+    :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
     :return: round number as float
     '''
@@ -249,7 +249,7 @@ def csv_print(classes,class_stat,digit=5):
     :type classes:list
     :param class_stat: statistic result for each class
     :type class_stat:dict
-    :param digit: precision
+    :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
     :return: csv file data as str
     '''
@@ -277,7 +277,7 @@ def stat_print(classes,class_stat,overall_stat,digit=5):
     :type class_stat:dict
     :param overall_stat : overall statistic result
     :type overall_stat:dict
-    :param digit: precision
+    :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
     :return: printable result as str
     '''

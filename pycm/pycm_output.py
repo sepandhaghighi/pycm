@@ -285,7 +285,7 @@ def stat_print(classes,class_stat,overall_stat):
     classes.sort()
     for key in class_stat_keys:
         row=[class_stat[key][i] for i in classes]
-        result += key + "(" + PARAMS_DESCRIPTION[key] + ")" + " " * (
+        result += key + "(" + PARAMS_DESCRIPTION[key].capitalize() + ")" + " " * (
         shift - len(key) - len(PARAMS_DESCRIPTION[key]) + 5) + "%-24s" * classes_len % tuple(
             map(rounder,row)) + "\n"
     return result

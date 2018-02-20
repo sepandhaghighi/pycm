@@ -11779,7 +11779,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Version-:-0.5">Version : 0.5<a class="anchor-link" href="#Version-:-0.5">&#182;</a></h3><hr>
+<h3 id="Version-:-0.6">Version : 0.6<a class="anchor-link" href="#Version-:-0.6">&#182;</a></h3><hr>
 
 </div>
 </div>
@@ -11816,13 +11816,25 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_actu</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_actu</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span><span class="n">digit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Notice :  digit (the number of digits to the right of the decimal point in a number) is new in version 0.6 (default valaue : 5)</li>
+<li>Only for print and save</li>
+</ul>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -14485,7 +14497,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="TPR_Micro">TPR_Micro<a class="anchor-link" href="#TPR_Micro">&#182;</a></h3>
+<h3 id="TPR_Macro">TPR_Macro<a class="anchor-link" href="#TPR_Macro">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -14608,37 +14620,37 @@ TPR_Micro                                                        0.58333
 Class Statistics :
 
 Classes                                                          0                       1                       2                       
-ACC(accuracy)                                                    0.83333                 0.75                    0.58333                 
-BM(Informedness or Bookmaker Informedness)                       0.77778                 0.22222                 0.16667                 
+ACC(Accuracy)                                                    0.83333                 0.75                    0.58333                 
+BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667                 
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0                     
-ERR(Error Rate)                                                  0.16667                 0.25                    0.41667                 
-F0.5(F0.5 Score)                                                 0.65217                 0.45455                 0.57692                 
-F1(F1 Score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545                 
-F2(F2 Score)                                                     0.88235                 0.35714                 0.51724                 
-FDR(false discovery rate)                                        0.4                     0.5                     0.4                     
-FN(false negative/miss/Type II error)                            0                       2                       3                       
-FNR(miss rate or false negative rate)                            0.0                     0.66667                 0.5                     
-FOR(false omission rate)                                         0.0                     0.2                     0.42857                 
-FP(false positive/Type I error/false alarm)                      2                       1                       2                       
-FPR(fall-out or false positive rate)                             0.22222                 0.11111                 0.33333                 
+ERR(Error rate)                                                  0.16667                 0.25                    0.41667                 
+F0.5(F0.5 score)                                                 0.65217                 0.45455                 0.57692                 
+F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545                 
+F2(F2 score)                                                     0.88235                 0.35714                 0.51724                 
+FDR(False discovery rate)                                        0.4                     0.5                     0.4                     
+FN(False negative/miss/type 2 error)                             0                       2                       3                       
+FNR(Miss rate or false negative rate)                            0.0                     0.66667                 0.5                     
+FOR(False omission rate)                                         0.0                     0.2                     0.42857                 
+FP(False positive/type 1 error/false alarm)                      2                       1                       2                       
+FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333                 
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772                 
 LR+(Positive likelihood ratio)                                   4.5                     3.0                     1.5                     
 LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.75                    
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903                 
 MK(Markedness)                                                   0.6                     0.3                     0.17143                 
 N(Condition negative)                                            9                       9                       6                       
-NPV(negative predictive value)                                   1.0                     0.8                     0.57143                 
+NPV(Negative predictive value)                                   1.0                     0.8                     0.57143                 
 P(Condition positive)                                            3                       3                       6                       
 POP(Population)                                                  12                      12                      12                      
-PPV(precision or positive predictive value)                      0.6                     0.5                     0.6                     
+PPV(Precision or positive predictive value)                      0.6                     0.5                     0.6                     
 PRE(Prevalence)                                                  0.25                    0.25                    0.5                     
-RACC(Random Accuracy)                                            0.10417                 0.04167                 0.20833                 
-TN(true negative/correct rejection)                              7                       8                       4                       
-TNR(specificity or true negative rate)                           0.77778                 0.88889                 0.66667                 
+RACC(Random accuracy)                                            0.10417                 0.04167                 0.20833                 
+TN(True negative/correct rejection)                              7                       8                       4                       
+TNR(Specificity or true negative rate)                           0.77778                 0.88889                 0.66667                 
 TON(Test outcome negative)                                       7                       10                      7                       
 TOP(Test outcome positive)                                       5                       2                       5                       
-TP(true positive/hit)                                            3                       1                       3                       
-TPR(sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                     
+TP(True positive/hit)                                            3                       1                       3                       
+TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                     
 
 </pre>
 </div>
@@ -14785,37 +14797,37 @@ TPR_Micro                                                        0.58333
 Class Statistics :
 
 Classes                                                          0                       1                       2                       
-ACC(accuracy)                                                    0.83333                 0.75                    0.58333                 
-BM(Informedness or Bookmaker Informedness)                       0.77778                 0.22222                 0.16667                 
+ACC(Accuracy)                                                    0.83333                 0.75                    0.58333                 
+BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667                 
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0                     
-ERR(Error Rate)                                                  0.16667                 0.25                    0.41667                 
-F0.5(F0.5 Score)                                                 0.65217                 0.45455                 0.57692                 
-F1(F1 Score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545                 
-F2(F2 Score)                                                     0.88235                 0.35714                 0.51724                 
-FDR(false discovery rate)                                        0.4                     0.5                     0.4                     
-FN(false negative/miss/Type II error)                            0                       2                       3                       
-FNR(miss rate or false negative rate)                            0.0                     0.66667                 0.5                     
-FOR(false omission rate)                                         0.0                     0.2                     0.42857                 
-FP(false positive/Type I error/false alarm)                      2                       1                       2                       
-FPR(fall-out or false positive rate)                             0.22222                 0.11111                 0.33333                 
+ERR(Error rate)                                                  0.16667                 0.25                    0.41667                 
+F0.5(F0.5 score)                                                 0.65217                 0.45455                 0.57692                 
+F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545                 
+F2(F2 score)                                                     0.88235                 0.35714                 0.51724                 
+FDR(False discovery rate)                                        0.4                     0.5                     0.4                     
+FN(False negative/miss/type 2 error)                             0                       2                       3                       
+FNR(Miss rate or false negative rate)                            0.0                     0.66667                 0.5                     
+FOR(False omission rate)                                         0.0                     0.2                     0.42857                 
+FP(False positive/type 1 error/false alarm)                      2                       1                       2                       
+FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333                 
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772                 
 LR+(Positive likelihood ratio)                                   4.5                     3.0                     1.5                     
 LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.75                    
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903                 
 MK(Markedness)                                                   0.6                     0.3                     0.17143                 
 N(Condition negative)                                            9                       9                       6                       
-NPV(negative predictive value)                                   1.0                     0.8                     0.57143                 
+NPV(Negative predictive value)                                   1.0                     0.8                     0.57143                 
 P(Condition positive)                                            3                       3                       6                       
 POP(Population)                                                  12                      12                      12                      
-PPV(precision or positive predictive value)                      0.6                     0.5                     0.6                     
+PPV(Precision or positive predictive value)                      0.6                     0.5                     0.6                     
 PRE(Prevalence)                                                  0.25                    0.25                    0.5                     
-RACC(Random Accuracy)                                            0.10417                 0.04167                 0.20833                 
-TN(true negative/correct rejection)                              7                       8                       4                       
-TNR(specificity or true negative rate)                           0.77778                 0.88889                 0.66667                 
+RACC(Random accuracy)                                            0.10417                 0.04167                 0.20833                 
+TN(True negative/correct rejection)                              7                       8                       4                       
+TNR(Specificity or true negative rate)                           0.77778                 0.88889                 0.66667                 
 TON(Test outcome negative)                                       7                       10                      7                       
 TOP(Test outcome positive)                                       5                       2                       5                       
-TP(true positive/hit)                                            3                       1                       3                       
-TPR(sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                     
+TP(True positive/hit)                                            3                       1                       3                       
+TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                     
 
 </pre>
 </div>
@@ -15022,13 +15034,100 @@ TPR(sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Input-Errors">Input Errors<a class="anchor-link" href="#Input-Errors">&#182;</a></h2>
+<h3 id="CSV">CSV<a class="anchor-link" href="#CSV">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s2">&quot;cm1&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[64]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;Message&#39;: &#39;C:\\Users\\Sepkjaer\\Desktop\\Desktop\\JupyterNotebooks\\cm1.csv&#39;,
+ &#39;Status&#39;: True}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[65]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;Message&#39;: &#34;[Errno 2] No such file or directory: &#39;cm1asdasd/.csv&#39;&#34;,
+ &#39;Status&#39;: False}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Notice :  new in version 0.6</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Input-Errors">Input Errors<a class="anchor-link" href="#Input-Errors">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_actu</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -15051,11 +15150,11 @@ TPR(sensitivity, recall, hit rate, or true positive rate)        1.0            
 <pre>
 <span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
 <span class="ansi-red-intense-fg ansi-bold">pycmError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-64-572bf15e689d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-66-572bf15e689d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
 <span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>cm2<span class="ansi-yellow-intense-fg ansi-bold">=</span>ConfusionMatrix<span class="ansi-yellow-intense-fg ansi-bold">(</span>y_actu<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-cyan-intense-fg ansi-bold">2</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
 
-<span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm\pycm_obj.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-intense-fg ansi-bold">(self, actual_vector, predict_vector)</span>
-<span class="ansi-green-fg">     12</span>     <span class="ansi-green-intense-fg ansi-bold">def</span> __init__<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">,</span>actual_vector<span class="ansi-yellow-intense-fg ansi-bold">,</span>predict_vector<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
+<span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm\pycm_obj.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-intense-fg ansi-bold">(self, actual_vector, predict_vector, digit)</span>
+<span class="ansi-green-fg">     12</span>     <span class="ansi-green-intense-fg ansi-bold">def</span> __init__<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">,</span>actual_vector<span class="ansi-yellow-intense-fg ansi-bold">,</span>predict_vector<span class="ansi-yellow-intense-fg ansi-bold">,</span>digit<span class="ansi-yellow-intense-fg ansi-bold">=</span><span class="ansi-cyan-intense-fg ansi-bold">5</span><span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
 <span class="ansi-green-fg">     13</span>         <span class="ansi-green-intense-fg ansi-bold">if</span> <span class="ansi-green-intense-fg ansi-bold">not</span> isinstance<span class="ansi-yellow-intense-fg ansi-bold">(</span>actual_vector<span class="ansi-yellow-intense-fg ansi-bold">,</span>list<span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-green-intense-fg ansi-bold">or</span> <span class="ansi-green-intense-fg ansi-bold">not</span> isinstance<span class="ansi-yellow-intense-fg ansi-bold">(</span>predict_vector<span class="ansi-yellow-intense-fg ansi-bold">,</span>list<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
 <span class="ansi-green-intense-fg ansi-bold">---&gt; 14</span><span class="ansi-yellow-intense-fg ansi-bold">             </span><span class="ansi-green-intense-fg ansi-bold">raise</span> pycmError<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#34;Input Vectors Must Be List&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
 <span class="ansi-green-fg">     15</span>         <span class="ansi-green-intense-fg ansi-bold">if</span> len<span class="ansi-yellow-intense-fg ansi-bold">(</span>actual_vector<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">!=</span>len<span class="ansi-yellow-intense-fg ansi-bold">(</span>predict_vector<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
@@ -15071,7 +15170,7 @@ TPR(sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_actu</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
@@ -15094,15 +15193,15 @@ TPR(sensitivity, recall, hit rate, or true positive rate)        1.0            
 <pre>
 <span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
 <span class="ansi-red-intense-fg ansi-bold">pycmError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-65-fe0a030b981a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-67-fe0a030b981a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
 <span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>cm3<span class="ansi-yellow-intense-fg ansi-bold">=</span>ConfusionMatrix<span class="ansi-yellow-intense-fg ansi-bold">(</span>y_actu<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-cyan-intense-fg ansi-bold">1</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-cyan-intense-fg ansi-bold">2</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-cyan-intense-fg ansi-bold">3</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
 
-<span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm\pycm_obj.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-intense-fg ansi-bold">(self, actual_vector, predict_vector)</span>
+<span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm\pycm_obj.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-intense-fg ansi-bold">(self, actual_vector, predict_vector, digit)</span>
 <span class="ansi-green-fg">     14</span>             <span class="ansi-green-intense-fg ansi-bold">raise</span> pycmError<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#34;Input Vectors Must Be List&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
 <span class="ansi-green-fg">     15</span>         <span class="ansi-green-intense-fg ansi-bold">if</span> len<span class="ansi-yellow-intense-fg ansi-bold">(</span>actual_vector<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">!=</span>len<span class="ansi-yellow-intense-fg ansi-bold">(</span>predict_vector<span class="ansi-yellow-intense-fg ansi-bold">)</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
 <span class="ansi-green-intense-fg ansi-bold">---&gt; 16</span><span class="ansi-yellow-intense-fg ansi-bold">             </span><span class="ansi-green-intense-fg ansi-bold">raise</span> pycmError<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-blue-intense-fg ansi-bold">&#34;Input Vectors Must Be The Same Length&#34;</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
 <span class="ansi-green-fg">     17</span>         matrix_param<span class="ansi-yellow-intense-fg ansi-bold">=</span>matrix_params_calc<span class="ansi-yellow-intense-fg ansi-bold">(</span>actual_vector<span class="ansi-yellow-intense-fg ansi-bold">,</span>predict_vector<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">     18</span>         self<span class="ansi-yellow-intense-fg ansi-bold">.</span>actual_vector<span class="ansi-yellow-intense-fg ansi-bold">=</span>actual_vector
+<span class="ansi-green-fg">     18</span>         self<span class="ansi-yellow-intense-fg ansi-bold">.</span>digit<span class="ansi-yellow-intense-fg ansi-bold">=</span>digit
 
 <span class="ansi-red-intense-fg ansi-bold">pycmError</span>: Input Vectors Must Be The Same Length</pre>
 </div>

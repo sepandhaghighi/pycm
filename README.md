@@ -193,7 +193,7 @@ or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir").
 
 ## Outputs	
 
-1. [HTML](Otherfiles/test.html)
+1. [HTML](http://www.shaghighi.ir/pycm/test.html)
 2. [CSV](Otherfiles/test.csv)
 3. [PYCM](Otherfiles/test.pycm)			
 

@@ -9,12 +9,13 @@ class ConfusionMatrix():
     '''
     Main Class Of ConfusionMatrix
     '''
-    def __init__(self,actual_vector,predict_vector):
+    def __init__(self,actual_vector,predict_vector,digit=5):
         if not isinstance(actual_vector,list) or not isinstance(predict_vector,list):
             raise pycmError("Input Vectors Must Be List")
         if len(actual_vector)!=len(predict_vector):
             raise pycmError("Input Vectors Must Be The Same Length")
         matrix_param=matrix_params_calc(actual_vector,predict_vector)
+        self.digit=digit
         self.actual_vector=actual_vector
         self.predict_vector=predict_vector
         self.classes=matrix_param[0]
@@ -88,7 +89,7 @@ class ConfusionMatrix():
         This method print statistical measures table
         :return: None
         '''
-        print(stat_print(self.classes,self.class_stat,self.overall_stat))
+        print(stat_print(self.classes,self.class_stat,self.overall_stat,self.digit))
     def __str__(self):
         '''
         ConfusionMatrix object string representation method
@@ -96,13 +97,13 @@ class ConfusionMatrix():
         '''
         result=table_print(self.classes,self.table)
         result+="\n"*4
-        result+=stat_print(self.classes,self.class_stat,self.overall_stat)
+        result+=stat_print(self.classes,self.class_stat,self.overall_stat,self.digit)
         return result
     def save_stat(self,name,address=True):
         try:
             message=None
             file = open(name + ".pycm", "w")
-            stat=stat_print(self.classes,self.class_stat,self.overall_stat)
+            stat=stat_print(self.classes,self.class_stat,self.overall_stat,self.digit)
             file.write(stat)
             file.close()
             if address==True:
@@ -114,7 +115,7 @@ class ConfusionMatrix():
         try:
             message = None
             html_file = open(name + ".html", "w")
-            html_maker(html_file,name,self.classes,self.table,self.overall_stat,self.class_stat)
+            html_maker(html_file,name,self.classes,self.table,self.overall_stat,self.class_stat,self.digit)
             html_file.close()
             if address==True:
                 message = os.path.join(os.getcwd(), name + ".html")
@@ -125,7 +126,7 @@ class ConfusionMatrix():
         try:
             message=None
             csv_file = open(name+ ".csv", "w")
-            csv_data=csv_print(self.classes,self.class_stat)
+            csv_data=csv_print(self.classes,self.class_stat,self.digit)
             csv_file.write(csv_data)
             if address==True:
                 message = os.path.join(os.getcwd(), name + ".csv")

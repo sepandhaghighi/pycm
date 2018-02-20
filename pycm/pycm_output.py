@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 from art import tprint
+from functools import partial
 from .pycm_param import *
 
 def html_init(name):
@@ -69,11 +70,13 @@ def html_table(classes,table):
     result+=part_2
     return result
 
-def html_overall_stat(overall_stat):
+def html_overall_stat(overall_stat,digit=5):
     '''
     This function return report file overall stat
     :param overall_stat: overall stat
     :type overall_stat : dict
+    :param digit: precision
+    :type digit : int
     :return: html_overall_stat as str
     '''
     result=""
@@ -85,18 +88,20 @@ def html_overall_stat(overall_stat):
         result +='<tr align="center">\n'
         result +='<td style="border:1px solid black;padding:4px;text-align:left;"><a href="'+PARAMS_LINK[i]+\
                  '" style="text-decoration:None;">'+ str(i) +'</a></td>\n'
-        result +='<td style="border:1px solid black;padding:4px;">' + rounder(overall_stat[i]) + '</td>\n'
+        result +='<td style="border:1px solid black;padding:4px;">' + rounder(overall_stat[i],digit) + '</td>\n'
         result +="</tr>\n"
     result +="</table>\n"
     return result
 
-def html_class_stat(classes,class_stat):
+def html_class_stat(classes,class_stat,digit=5):
     '''
     This function return report file class_stat
     :param classes: matrix classes
     :type classes: list
     :param class_stat: class stat
     :type class_stat:dict
+    :param digit: precision
+    :type digit : int
     :return: html_class_stat as str
     '''
     result=""
@@ -115,7 +120,7 @@ def html_class_stat(classes,class_stat):
                  '" style="text-decoration:None;">'+ str(i) + '</a></td>\n'
         for j in classes:
             result +='<td style="border:1px solid black;padding:4px;border-collapse: collapse;">' + rounder(
-                class_stat[i][j]) + '</td>\n'
+                class_stat[i][j],digit) + '</td>\n'
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;text-align:left;">' + \
                   PARAMS_DESCRIPTION[i].capitalize() + '</td>\n'
         result +="</tr>\n"
@@ -135,7 +140,7 @@ def html_end(version):
             '<a href="http://pycm.shaghighi.ir">PYCM</a> Version '+version+'</p>'
     return result
 
-def html_maker(html_file,name,classes,table,overall_stat,class_stat):
+def html_maker(html_file,name,classes,table,overall_stat,class_stat,digit=5):
     '''
     This function create html report
     :param html_file : file object of html
@@ -150,12 +155,14 @@ def html_maker(html_file,name,classes,table,overall_stat,class_stat):
     :type overall_stat: dict
     :param class_stat: class stat
     :type class_stat: dict
+    :param digit: precision
+    :type digit : int
     :return: None
     '''
     html_file.write(html_init(name))
     html_file.write(html_table(classes,table))
-    html_file.write(html_overall_stat(overall_stat))
-    html_file.write(html_class_stat(classes,class_stat))
+    html_file.write(html_overall_stat(overall_stat,digit))
+    html_file.write(html_class_stat(classes,class_stat,digit))
     html_file.write(html_end(VERSION))
 
 def isfloat(value):
@@ -235,13 +242,15 @@ def normalized_table_print(classes,table):
         result += str(key) + " " * (17 - len(str(key))) + "%-15s" * classes_len % tuple(
         map(lambda x:str(round(x/div,5)), row)) + "\n"
     return result
-def csv_print(classes,class_stat):
+def csv_print(classes,class_stat,digit=5):
     '''
     This function return csv file data
     :param classes: classes list
     :type classes:list
     :param class_stat: statistic result for each class
     :type class_stat:dict
+    :param digit: precision
+    :type digit : int
     :return: csv file data as str
     '''
     result="Class"
@@ -252,14 +261,14 @@ def csv_print(classes,class_stat):
     class_stat_keys = list(class_stat.keys())
     class_stat_keys.sort()
     for key in class_stat_keys:
-        row = [rounder(class_stat[key][i]) for i in classes]
+        row = [rounder(class_stat[key][i],digit) for i in classes]
         result+=key+","+",".join(row)
         result+="\n"
     return result
 
 
 
-def stat_print(classes,class_stat,overall_stat):
+def stat_print(classes,class_stat,overall_stat,digit=5):
     '''
     This function print statistics
     :param classes: classes list
@@ -268,6 +277,8 @@ def stat_print(classes,class_stat,overall_stat):
     :type class_stat:dict
     :param overall_stat : overall statistic result
     :type overall_stat:dict
+    :param digit: precision
+    :type digit : int
     :return: printable result as str
     '''
     shift = max(map(len, PARAMS_DESCRIPTION.values())) + 5
@@ -277,15 +288,16 @@ def stat_print(classes,class_stat,overall_stat):
     overall_stat_keys.sort()
     for key in overall_stat_keys:
         result += key + " " * (
-        shift - len(key) + 7) + rounder(overall_stat[key]) + "\n"
+        shift - len(key) + 7) + rounder(overall_stat[key],digit) + "\n"
     result +="\nClass Statistics :\n\n"
     result += "Classes" + shift * " " + "%-24s" * classes_len % tuple(map(str, classes)) + "\n"
     class_stat_keys = list(class_stat.keys())
     class_stat_keys.sort()
     classes.sort()
+    rounder_map=partial(rounder,digit=digit)
     for key in class_stat_keys:
         row=[class_stat[key][i] for i in classes]
         result += key + "(" + PARAMS_DESCRIPTION[key].capitalize() + ")" + " " * (
         shift - len(key) - len(PARAMS_DESCRIPTION[key]) + 5) + "%-24s" * classes_len % tuple(
-            map(rounder,row)) + "\n"
+            map(rounder_map,row)) + "\n"
     return result

@@ -50,7 +50,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.3] - 2018-01-29
 ### Added
 - Kappa
-- Random Accuracy
+- Random accuracy
 - Landis and Koch benchmark
 - overall_stat
 
@@ -91,7 +91,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - PPV
 - TNR
 - TPR
-- documents and README
+- documents and README.md
 
 [Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v0.6...HEAD
 [0.6]: https://github.com/sepandhaghighi/pycm/compare/v0.5...v0.6

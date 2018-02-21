@@ -222,7 +222,26 @@ def reliability_calc(RACC,ACC):
         return result
     except Exception:
         return "None"
-
+def kappa_analysis_cicchetti(kappa):
+    '''
+    This function analysis kappa number with Cicchetti benchmark
+    :param kappa: kappa number
+    :type kappa : float
+    :return: Strength of Agreement as str
+    '''
+    try:
+        if kappa<0.4:
+            return "Poor"
+        elif kappa>=0.4 and kappa<0.59:
+            return "Fair"
+        elif kappa>=0.59 and kappa<0.74:
+            return "Good"
+        elif kappa>=0.74 and kappa<=1:
+            return "Excellent"
+        else :
+            return "None"
+    except Exception:
+        return "None"
 def kappa_analysis_koch(kappa):
     '''
     This function analysis kappa number with Landis-Koch benchmark
@@ -394,7 +413,9 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP):
     return {"Overall_ACC":overall_accuracy,"Kappa":overall_kappa,"Overall_RACC":overall_random_accuracy,
             "Strength_Of_Agreement(Landis and Koch)":kappa_analysis_koch(overall_kappa),
             "Strength_Of_Agreement(Fleiss)":kappa_analysis_fleiss(overall_kappa),
-            "Strength_Of_Agreement(Altman)":kappa_analysis_altman(overall_kappa),"TPR_Macro":macro_calc(TPR),
+            "Strength_Of_Agreement(Altman)":kappa_analysis_altman(overall_kappa),
+            "Strength_Of_Agreement(Cicchetti)":kappa_analysis_cicchetti(overall_kappa),
+            "TPR_Macro":macro_calc(TPR),
             "PPV_Macro":macro_calc(PPV),"TPR_Micro":micro_calc(TP=TP,item=FN),"PPV_Micro":micro_calc(TP=TP,item=FP),
             "Scott_PI":PI,"Gwet_AC1":AC1,"Bennett_S":S}
 def class_statistics(TP,TN,FP,FN):

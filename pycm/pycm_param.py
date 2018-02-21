@@ -55,6 +55,7 @@ PARAMS_LINK={"TPR":"https://en.wikipedia.org/wiki/Sensitivity_and_specificity",
                                              "-:-Fleiss%E2%80%99-benchmark)",
              "Strength_Of_Agreement(Altman)":"http://www.shaghighi.ir/pycm/doc/#SOA3-(Strength-of-Agreement,"
                                              "-Altman%E2%80%99s-benchmark)",
+             "Strength_Of_Agreement(Cicchetti)":"",
              "TPR_Macro":"http://www.shaghighi.ir/pycm/doc/#TPR_Macro",
              "PPV_Macro":"http://www.shaghighi.ir/pycm/doc/#PPV_Macro",
              "TPR_Micro":"http://www.shaghighi.ir/pycm/doc/#TPR_Micro",
@@ -64,3 +65,6 @@ PARAMS_LINK={"TPR":"https://en.wikipedia.org/wiki/Sensitivity_and_specificity",
              "Bennett_S":"http://www.shaghighi.ir/pycm/doc/#Bennett-et-al.'s-S-score-(Nominal)"
 
              }
+
+BENCHMARK_COLOR={"Poor":"Red","Fair":"Orange","Good":"Green","Excellent":"Green","Intermediate to Good":"Orange",
+                 "Substantial":"Green","Almost Perfect":"Green","Moderate":"Green","Slight":"Orange"}

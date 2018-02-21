@@ -62,6 +62,7 @@ class ConfusionMatrix():
         self.SOA1=self.overall_stat["Strength_Of_Agreement(Landis and Koch)"]
         self.SOA2=self.overall_stat["Strength_Of_Agreement(Fleiss)"]
         self.SOA3=self.overall_stat["Strength_Of_Agreement(Altman)"]
+        self.SOA4=self.overall_stat["Strength_Of_Agreement(Cicchetti)"]
         self.Kappa=self.overall_stat["Kappa"]
         self.Overall_ACC=self.overall_stat["Overall_ACC"]
         self.TPR_Macro=self.overall_stat["TPR_Macro"]

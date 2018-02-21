@@ -84,11 +84,17 @@ def html_overall_stat(overall_stat,digit=5):
     result +='<table style="border:1px solid black;border-collapse: collapse;">\n'
     overall_stat_keys=list(overall_stat.keys())
     overall_stat_keys.sort()
+    background_color=None
     for i in overall_stat_keys:
         result +='<tr align="center">\n'
         result +='<td style="border:1px solid black;padding:4px;text-align:left;"><a href="'+PARAMS_LINK[i]+\
                  '" style="text-decoration:None;">'+ str(i) +'</a></td>\n'
-        result +='<td style="border:1px solid black;padding:4px;">' + rounder(overall_stat[i],digit) + '</td>\n'
+        if i.find("Strength_Of_Agreement")!=-1:
+            background_color=BENCHMARK_COLOR[overall_stat[i]]
+            result += '<td style="border:1px solid black;padding:4px;background-color:{};">'.format(background_color)
+        else:
+            result += '<td style="border:1px solid black;padding:4px;">'
+        result+= rounder(overall_stat[i],digit) + '</td>\n'
         result +="</tr>\n"
     result +="</table>\n"
     return result

@@ -34,6 +34,10 @@ pycm(python confusion matrix) is a multi class confusion matrix library in pytho
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
 - Run `pip install pycm` or `pip3 install pycm` (Need root access)
 
+### Easy Install
+
+- Run `easy_install --upgrade pycm` (Need root access)
+
 ## Usage
 
 ```python

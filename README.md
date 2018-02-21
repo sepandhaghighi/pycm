@@ -188,10 +188,11 @@ or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir").
   - [ ] Krippendorff's alpha
   - [ ] Weighting-scheme
   - [x] Overall ACC
-  - [x] Strength of Agreement
+  - [ ] Strength of Agreement
     - [x] Landis and Koch
     - [x] Fleiss
     - [x] Altman
+    - [ ] Cicchetti 
   - [x] TPR Micro/Macro
   - [x] PPV Micro/Macro
 

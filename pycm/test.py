@@ -30,6 +30,7 @@ PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
 Scott_PI                                                         0.34426
 Strength_Of_Agreement(Altman)                                    Fair
+Strength_Of_Agreement(Cicchetti)                                 Poor
 Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Fair
 TPR_Macro                                                        0.61111
@@ -192,6 +193,7 @@ PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Scott_PI                                                         -0.12554
 Strength_Of_Agreement(Altman)                                    Poor
+Strength_Of_Agreement(Cicchetti)                                 Poor
 Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Slight
 TPR_Macro                                                        None
@@ -244,6 +246,7 @@ PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Scott_PI                                                         -0.12554
 Strength_Of_Agreement(Altman)                                    Poor
+Strength_Of_Agreement(Cicchetti)                                 Poor
 Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Slight
 TPR_Macro                                                        None
@@ -334,6 +337,14 @@ Actual
 'None'
 >>> kappa_analysis_fleiss(0.2)
 'Poor'
+>>> kappa_analysis_cicchetti(0.3)
+'Poor'
+>>> kappa_analysis_cicchetti(0.5)
+'Fair'
+>>> kappa_analysis_cicchetti(0.65)
+'Good'
+>>> kappa_analysis_cicchetti(0.8)
+'Excellent'
 >>> PC_PI_calc(1,1,1)
 'None'
 >>> PC_PI_calc({1:12},{1:6},{1:45})

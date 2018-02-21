@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
-## [0.6] - 2018-02-17
+## [0.6] - 2018-02-21
 ### Added
 - CSV report
 - Changelog
@@ -25,7 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Bennett S score
 - HTML report 
 
-## [0.4] - 2018-02-06
+## [0.4] - 2018-02-05
 ### Added
 - TPR Micro/Macro
 - PPV Micro/Macro
@@ -47,7 +47,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Kappa and SOA for each class
 
 
-## [0.3] - 2018-01-29
+## [0.3] - 2018-01-27
 ### Added
 - Kappa
 - Random accuracy
@@ -55,7 +55,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - overall_stat
 
 
-## [0.2] - 2018-01-26
+## [0.2] - 2018-01-24
 ### Added
 - Population
 - Condition positive
@@ -73,7 +73,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
  - statistic_result to class_stat
  - params() to stat()
 
-## [0.1] - 2018-01-24
+## [0.1] - 2018-01-22
 ### Added
 - ACC
 - BM

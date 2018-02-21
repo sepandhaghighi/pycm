@@ -70,6 +70,7 @@ PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
 Scott_PI                                                         0.34426
 Strength_Of_Agreement(Altman)                                    Fair
+Strength_Of_Agreement(Cicchetti)                                 Poor
 Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Fair
 TPR_Macro                                                        0.61111

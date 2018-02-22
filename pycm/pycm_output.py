@@ -181,7 +181,7 @@ def isfloat(value):
     try:
         float(value)
         return True
-    except ValueError:
+    except Exception:
         return False
 
 def rounder(input_number,digit=5):
@@ -196,7 +196,7 @@ def rounder(input_number,digit=5):
     if isfloat(input_number)==True:
         return str(round(input_number,digit))
     else:
-        return input_number
+        return str(input_number)
 def pycm_help():
     '''
     This function print pycm details

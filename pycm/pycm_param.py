@@ -62,7 +62,9 @@ PARAMS_LINK={"TPR":"https://en.wikipedia.org/wiki/Sensitivity_and_specificity",
              "PPV_Micro":"http://www.shaghighi.ir/pycm/doc/#PPV_Micro",
              "Scott_PI":"http://www.shaghighi.ir/pycm/doc/#Scott's-pi-(Nominal)",
              "Gwet_AC1":"http://www.shaghighi.ir/pycm/doc/#Gwet's-AC1",
-             "Bennett_S":"http://www.shaghighi.ir/pycm/doc/#Bennett-et-al.'s-S-score-(Nominal)"
+             "Bennett_S":"http://www.shaghighi.ir/pycm/doc/#Bennett-et-al.'s-S-score-(Nominal)",
+             "Kappa CI 95%":"",
+             "Kappa Standard Error":""
 
              }
 

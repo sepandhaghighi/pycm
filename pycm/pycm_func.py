@@ -308,6 +308,21 @@ def kappa_analysis_altman(kappa):
     except Exception:
         return "None"
 
+def kappa_se_calc(PA,PE,POP):
+    try:
+        result=math.sqrt((PA*(1-PA))/(POP*((1-PE)**2)))
+        return result
+    except Exception:
+        return "None"
+
+def CI_calc(mean,SE,CV=1.96):
+    try:
+        CI_down=mean-CV*SE
+        CI_up=mean+CV*SE
+        return (CI_down,CI_up)
+    except Exception:
+        return ("None","None")
+
 def micro_calc(TP,item):
     '''
     This function calculate PPV_Micro and TPR_Micro
@@ -409,6 +424,8 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP):
     PI=reliability_calc(PC_PI,overall_accuracy)
     AC1=reliability_calc(PC_AC1,overall_accuracy)
     S=reliability_calc(PC_S,overall_accuracy)
+    kappa_SE=kappa_se_calc(overall_accuracy,overall_random_accuracy,list(POP.values())[0])
+    kappa_CI=CI_calc(overall_kappa,kappa_SE)
     return {"Overall_ACC":overall_accuracy,"Kappa":overall_kappa,"Overall_RACC":overall_random_accuracy,
             "Strength_Of_Agreement(Landis and Koch)":kappa_analysis_koch(overall_kappa),
             "Strength_Of_Agreement(Fleiss)":kappa_analysis_fleiss(overall_kappa),
@@ -416,7 +433,7 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP):
             "Strength_Of_Agreement(Cicchetti)":kappa_analysis_cicchetti(overall_kappa),
             "TPR_Macro":macro_calc(TPR),
             "PPV_Macro":macro_calc(PPV),"TPR_Micro":micro_calc(TP=TP,item=FN),"PPV_Micro":micro_calc(TP=TP,item=FP),
-            "Scott_PI":PI,"Gwet_AC1":AC1,"Bennett_S":S}
+            "Scott_PI":PI,"Gwet_AC1":AC1,"Bennett_S":S,"Kappa Standard Error":kappa_SE,"Kappa CI 95%":kappa_CI}
 def class_statistics(TP,TN,FP,FN):
     '''
     This function return all class statistics

@@ -193,7 +193,16 @@ def rounder(input_number,digit=5):
     :type digit : int
     :return: round number as float
     '''
-    if isfloat(input_number)==True:
+    if isinstance(input_number,tuple)==True:
+        tuple_list=list(input_number)
+        tuple_str=[]
+        for i in tuple_list:
+            if isfloat(i)==True:
+                tuple_str.append(str(round(i,digit)))
+            else:
+                tuple_str.append(str(i))
+        return "("+",".join(tuple_str)+")"
+    elif isfloat(input_number)==True:
         return str(round(input_number,digit))
     else:
         return str(input_number)

@@ -66,5 +66,6 @@ PARAMS_LINK={"TPR":"https://en.wikipedia.org/wiki/Sensitivity_and_specificity",
 
              }
 
-BENCHMARK_COLOR={"Poor":"Red","Fair":"Orange","Good":"Green","Excellent":"Green","Intermediate to Good":"Orange",
-                 "Substantial":"Green","Almost Perfect":"Green","Moderate":"Green","Slight":"Orange"}
+BENCHMARK_COLOR={"Poor":"Red","Fair":"Orange","Good":"Green","Excellent":"Green","Intermediate to Good":"Green",
+                 "Substantial":"Green","Almost Perfect":"Green","Moderate":"Green","Slight":"Orange","None":"White",
+                 "Very Good":"Green"}

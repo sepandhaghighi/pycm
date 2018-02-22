@@ -61,7 +61,7 @@ def html_table(classes,table):
             back_color=html_table_color(table[i],item)
             if back_color<128:
                 color="white"
-            part_2 +='<td style="background-color:	rgb({0},{0},{0});color:{1};">'.format(str(back_color)
+            part_2 +='<td style="background-color:	rgb({0},{0},{0});color:{1};padding:10px">'.format(str(back_color)
                                                                                                         ,color) \
                      + str(item) + '</td>\n'
         part_2 +="</tr>\n"

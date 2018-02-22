@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 import math
-from art import tprint
 
 def matrix_params_calc(actual_vector,predict_vector):
     '''

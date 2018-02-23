@@ -67,7 +67,8 @@ PARAMS_LINK={"TPR":"https://en.wikipedia.org/wiki/Sensitivity_and_specificity",
              "Kappa Standard Error":"",
              "Chi-Squared":"",
              "Phi-Squared":"",
-             "Cramer_V":""
+             "Cramer_V":"",
+             "Chi-Squared DF":""
 
              }
 

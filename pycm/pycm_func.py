@@ -63,6 +63,12 @@ def cramers_V_calc(phi_square,classes):
         return math.sqrt((phi_square/(len(classes)-1)))
     except Exception:
         return "None"
+
+def DF_calc(classes):
+    try:
+        return (len(classes)-1)**2
+    except Exception:
+        return "None"
 def TTPN_calc(Item1,Item2):
     '''
     This function calculate TPR,TNR,PPV,NPV
@@ -458,6 +464,7 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
     chi_squared=chi_square_calc(classes,table,TOP,P,POP)
     phi_squared=phi_square_calc(chi_squared,POP)
     cramer_V=cramers_V_calc(phi_squared,classes)
+    DF=DF_calc(classes)
     return {"Overall_ACC":overall_accuracy,"Kappa":overall_kappa,"Overall_RACC":overall_random_accuracy,
             "Strength_Of_Agreement(Landis and Koch)":kappa_analysis_koch(overall_kappa),
             "Strength_Of_Agreement(Fleiss)":kappa_analysis_fleiss(overall_kappa),
@@ -466,7 +473,7 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
             "TPR_Macro":macro_calc(TPR),
             "PPV_Macro":macro_calc(PPV),"TPR_Micro":micro_calc(TP=TP,item=FN),"PPV_Micro":micro_calc(TP=TP,item=FP),
             "Scott_PI":PI,"Gwet_AC1":AC1,"Bennett_S":S,"Kappa Standard Error":kappa_SE,"Kappa CI 95%":kappa_CI,
-            "Chi-Squared":chi_squared,"Phi-Squared":phi_squared,"Cramer_V":cramer_V}
+            "Chi-Squared":chi_squared,"Phi-Squared":phi_squared,"Cramer_V":cramer_V,"Chi-Squared DF":DF}
 def class_statistics(TP,TN,FP,FN):
     '''
     This function return all class statistics

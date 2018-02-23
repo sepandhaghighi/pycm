@@ -55,7 +55,7 @@ def chi_square_calc(classes,table,TOP,P,POP):
 
 def phi_square_calc(chi_square,POP):
     try:
-        return chi_square/POP[0]
+        return chi_square/(list(POP.values())[0])
     except Exception:
         return "None"
 def cramers_V_calc(phi_square,classes):
@@ -358,6 +358,12 @@ def CI_calc(mean,SE,CV=1.96):
     except Exception:
         return ("None","None")
 
+def dev_calc(overall_accuracy,POP):
+    try:
+        return math.sqrt((overall_accuracy*(1-overall_accuracy))/(list(POP.values())[0]))
+    except Exception:
+        return "None"
+
 def micro_calc(TP,item):
     '''
     This function calculate PPV_Micro and TPR_Micro
@@ -461,6 +467,8 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
     S=reliability_calc(PC_S,overall_accuracy)
     kappa_SE=kappa_se_calc(overall_accuracy,overall_random_accuracy,list(POP.values())[0])
     kappa_CI=CI_calc(overall_kappa,kappa_SE)
+    overall_accuracy_dev=dev_calc(overall_accuracy,POP)
+    overall_accuracy_CI=CI_calc(overall_accuracy,overall_accuracy_dev)
     chi_squared=chi_square_calc(classes,table,TOP,P,POP)
     phi_squared=phi_square_calc(chi_squared,POP)
     cramer_V=cramers_V_calc(phi_squared,classes)
@@ -473,7 +481,8 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
             "TPR_Macro":macro_calc(TPR),
             "PPV_Macro":macro_calc(PPV),"TPR_Micro":micro_calc(TP=TP,item=FN),"PPV_Micro":micro_calc(TP=TP,item=FP),
             "Scott_PI":PI,"Gwet_AC1":AC1,"Bennett_S":S,"Kappa Standard Error":kappa_SE,"Kappa CI 95%":kappa_CI,
-            "Chi-Squared":chi_squared,"Phi-Squared":phi_squared,"Cramer_V":cramer_V,"Chi-Squared DF":DF}
+            "Chi-Squared":chi_squared,"Phi-Squared":phi_squared,"Cramer_V":cramer_V,"Chi-Squared DF":DF,
+            "CI 95%":overall_accuracy_CI}
 def class_statistics(TP,TN,FP,FN):
     '''
     This function return all class statistics

@@ -68,7 +68,8 @@ PARAMS_LINK={"TPR":"https://en.wikipedia.org/wiki/Sensitivity_and_specificity",
              "Chi-Squared":"",
              "Phi-Squared":"",
              "Cramer_V":"",
-             "Chi-Squared DF":""
+             "Chi-Squared DF":"",
+             "CI 95%":""
 
              }
 

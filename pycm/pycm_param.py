@@ -64,7 +64,10 @@ PARAMS_LINK={"TPR":"https://en.wikipedia.org/wiki/Sensitivity_and_specificity",
              "Gwet_AC1":"http://www.shaghighi.ir/pycm/doc/#Gwet's-AC1",
              "Bennett_S":"http://www.shaghighi.ir/pycm/doc/#Bennett-et-al.'s-S-score-(Nominal)",
              "Kappa CI 95%":"",
-             "Kappa Standard Error":""
+             "Kappa Standard Error":"",
+             "Chi-Squared":"",
+             "Phi-Squared":"",
+             "Cramer_V":""
 
              }
 

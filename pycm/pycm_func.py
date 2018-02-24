@@ -35,12 +35,18 @@ def matrix_params_calc(actual_vector,predict_vector):
 
 def chi_square_calc(classes,table,TOP,P,POP):
     '''
-    :param classes:
-    :param table:
-    :param TOP:
-    :param P:
-    :param POP:
-    :return:
+    This function calculate chi-squared
+    :param classes: confusion matrix classes
+    :type classes : list
+    :param table: confusion matrix table
+    :type table : dict
+    :param TOP: Test outcome positive
+    :type TOP : dict
+    :param P: Condition positive
+    :type P : dict
+    :param POP: Population
+    :type POP : dict
+    :return: chi_squared as float
     '''
     try:
         result=0
@@ -54,17 +60,39 @@ def chi_square_calc(classes,table,TOP,P,POP):
         return "None"
 
 def phi_square_calc(chi_square,POP):
+    '''
+    This function calculate phi_squared
+    :param chi_square: chi_squared
+    :type chi_square : float
+    :param POP: Population
+    :type POP : dict
+    :return: phi_squared as float
+    '''
     try:
         return chi_square/(list(POP.values())[0])
     except Exception:
         return "None"
 def cramers_V_calc(phi_square,classes):
+    '''
+    This function calculate Cramer's V
+    :param phi_square: phi_squared
+    :type phi_square : float
+    :param classes: confusion matrix classes
+    :type classes : list
+    :return: phi_squared as float
+    '''
     try:
         return math.sqrt((phi_square/(len(classes)-1)))
     except Exception:
         return "None"
 
 def DF_calc(classes):
+    '''
+    This function calculate chi squared degree of freedom
+    :param classes: confusion matrix classes
+    :type classes : list
+    :return: DF as int
+    '''
     try:
         return (len(classes)-1)**2
     except Exception:
@@ -344,6 +372,16 @@ def kappa_analysis_altman(kappa):
         return "None"
 
 def kappa_se_calc(PA,PE,POP):
+    '''
+    This function calculate kappa standard error
+    :param PA: observed agreement among raters (overall accuracy)
+    :type PA : float
+    :param PE:  hypothetical probability of chance agreement (random accuracy)
+    :type PE : float
+    :param POP: Population
+    :type POP:int
+    :return: kappa standard error as float
+    '''
     try:
         result=math.sqrt((PA*(1-PA))/(POP*((1-PE)**2)))
         return result
@@ -351,6 +389,16 @@ def kappa_se_calc(PA,PE,POP):
         return "None"
 
 def CI_calc(mean,SE,CV=1.96):
+    '''
+    This function calculate confidence interval
+    :param mean: mean of data
+    :type mean : float
+    :param SE: standarad error of data
+    :type SE : float
+    :param CV: critical value:
+    :type CV:float
+    :return: confidence interval as tuple
+    '''
     try:
         CI_down=mean-CV*SE
         CI_up=mean+CV*SE
@@ -359,6 +407,14 @@ def CI_calc(mean,SE,CV=1.96):
         return ("None","None")
 
 def dev_calc(overall_accuracy,POP):
+    '''
+    This function calculate deviation
+    :param overall_accuracy: overall accuracy
+    :type  overall_accuracy : float
+    :type PE : float
+    :param POP: Population
+    :return: deviation as float
+    '''
     try:
         return math.sqrt((overall_accuracy*(1-overall_accuracy))/(list(POP.values())[0]))
     except Exception:

@@ -237,6 +237,12 @@ Chapman and Hall, London.</blockquote>
 
 <blockquote>8- Bennett, E. M., Alpert, R., & Goldstein, A. C. (1954). Communication through limited response questioning. The Public Opinion Quarterly, 18(3), 303–308.</blockquote>
 
+<blockquote>9- Cicchetti, Domenic V. (1994). "Guidelines, criteria, and rules of thumb for evaluating normed and standardized assessment instruments in psychology". Psychological Assessment. 6 (4): 284–290.
+ doi:10.1037/1040-3590.6.4.284</blockquote>
+
+<blockquote>10- Davies, R.B. (1980). "Algorithm AS155: The Distributions of a Linear Combination of χ2 Random Variables". Journal of the Royal Statistical Society. 29 (3): 323–333.
+ doi:10.2307/2346911.</blockquote>
+
 
 
 

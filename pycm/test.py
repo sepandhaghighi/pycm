@@ -22,13 +22,21 @@ Actual
 Overall Statistics :
 <BLANKLINE>
 Bennett_S                                                        0.375
+CI 95%                                                           (0.30439,0.86228)
+Chi-Squared                                                      6.6
+Chi-Squared DF                                                   4
+Cramer_V                                                         0.5244
 Gwet_AC1                                                         0.38931
 Kappa                                                            0.35484
+Kappa CI 95%                                                     (-0.07708,0.78675)
+Kappa Standard Error                                             0.22036
 Overall_ACC                                                      0.58333
 Overall_RACC                                                     0.35417
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
+Phi-Squared                                                      0.55
 Scott_PI                                                         0.34426
+Standard Error                                                   0.14232
 Strength_Of_Agreement(Altman)                                    Fair
 Strength_Of_Agreement(Cicchetti)                                 Poor
 Strength_Of_Agreement(Fleiss)                                    Poor
@@ -185,13 +193,21 @@ Actual
 Overall Statistics :
 <BLANKLINE>
 Bennett_S                                                        0.13333
+CI 95%                                                           (0.14096,0.55904)
+Chi-Squared                                                      None
+Chi-Squared DF                                                   9
+Cramer_V                                                         None
 Gwet_AC1                                                         0.19505
 Kappa                                                            0.07801
+Kappa CI 95%                                                     (-0.2185,0.37453)
+Kappa Standard Error                                             0.15128
 Overall_ACC                                                      0.35
 Overall_RACC                                                     0.295
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
+Phi-Squared                                                      None
 Scott_PI                                                         -0.12554
+Standard Error                                                   0.10665
 Strength_Of_Agreement(Altman)                                    Poor
 Strength_Of_Agreement(Cicchetti)                                 Poor
 Strength_Of_Agreement(Fleiss)                                    Poor
@@ -238,13 +254,21 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        None           
 Overall Statistics :
 <BLANKLINE>
 Bennett_S                                                        0.13333
+CI 95%                                                           (0.14096,0.55904)
+Chi-Squared                                                      None
+Chi-Squared DF                                                   9
+Cramer_V                                                         None
 Gwet_AC1                                                         0.19505
 Kappa                                                            0.07801
+Kappa CI 95%                                                     (-0.2185,0.37453)
+Kappa Standard Error                                             0.15128
 Overall_ACC                                                      0.35
 Overall_RACC                                                     0.295
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
+Phi-Squared                                                      None
 Scott_PI                                                         -0.12554
+Standard Error                                                   0.10665
 Strength_Of_Agreement(Altman)                                    Poor
 Strength_Of_Agreement(Cicchetti)                                 Poor
 Strength_Of_Agreement(Fleiss)                                    Poor

@@ -181,6 +181,10 @@ or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir").
   - [x] Table
   - [x] Normalized Table
 - [x] Overall Statistics
+  - [x] CI
+  - [x] Chi-Squared
+  - [x] Phi-Squared
+  - [x] Cramer's V
   - [x] Kappa
   - [ ] Aickin's alpha
   - [x] Bennett S score
@@ -193,7 +197,7 @@ or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir").
     - [x] Landis and Koch
     - [x] Fleiss
     - [x] Altman
-    - [ ] Cicchetti 
+    - [x] Cicchetti 
   - [x] TPR Micro/Macro
   - [x] PPV Micro/Macro
 

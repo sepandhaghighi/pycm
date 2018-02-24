@@ -406,14 +406,14 @@ def CI_calc(mean,SE,CV=1.96):
     except Exception:
         return ("None","None")
 
-def dev_calc(overall_accuracy,POP):
+def se_calc(overall_accuracy,POP):
     '''
-    This function calculate deviation
+    This function calculate standard error with binomial distribution
     :param overall_accuracy: overall accuracy
     :type  overall_accuracy : float
     :type PE : float
     :param POP: Population
-    :return: deviation as float
+    :return: standard error as float
     '''
     try:
         return math.sqrt((overall_accuracy*(1-overall_accuracy))/(list(POP.values())[0]))
@@ -523,7 +523,7 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
     S=reliability_calc(PC_S,overall_accuracy)
     kappa_SE=kappa_se_calc(overall_accuracy,overall_random_accuracy,list(POP.values())[0])
     kappa_CI=CI_calc(overall_kappa,kappa_SE)
-    overall_accuracy_dev=dev_calc(overall_accuracy,POP)
+    overall_accuracy_dev=se_calc(overall_accuracy,POP)
     overall_accuracy_CI=CI_calc(overall_accuracy,overall_accuracy_dev)
     chi_squared=chi_square_calc(classes,table,TOP,P,POP)
     phi_squared=phi_square_calc(chi_squared,POP)

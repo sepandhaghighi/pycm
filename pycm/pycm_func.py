@@ -536,9 +536,9 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
             "Strength_Of_Agreement(Cicchetti)":kappa_analysis_cicchetti(overall_kappa),
             "TPR_Macro":macro_calc(TPR),
             "PPV_Macro":macro_calc(PPV),"TPR_Micro":micro_calc(TP=TP,item=FN),"PPV_Micro":micro_calc(TP=TP,item=FP),
-            "Scott_PI":PI,"Gwet_AC1":AC1,"Bennett_S":S,"Kappa Standard Error":kappa_SE,"Kappa CI 95%":kappa_CI,
+            "Scott_PI":PI,"Gwet_AC1":AC1,"Bennett_S":S,"Kappa Standard Error":kappa_SE,"Kappa 95% CI":kappa_CI,
             "Chi-Squared":chi_squared,"Phi-Squared":phi_squared,"Cramer_V":cramer_V,"Chi-Squared DF":DF,
-            "CI 95%":overall_accuracy_CI,"Standard Error":overall_accuracy_se}
+            "95% CI":overall_accuracy_CI,"Standard Error":overall_accuracy_se}
 def class_statistics(TP,TN,FP,FN):
     '''
     This function return all class statistics

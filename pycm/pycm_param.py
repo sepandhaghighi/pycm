@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-VERSION="0.6"
+VERSION="0.7"
 
 PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate","TNR":"specificity or true negative rate",
                    "PPV":"precision or positive predictive value","NPV":"negative predictive value",
@@ -63,13 +63,13 @@ PARAMS_LINK={"TPR":"https://en.wikipedia.org/wiki/Sensitivity_and_specificity",
              "Scott_PI":"http://www.shaghighi.ir/pycm/doc/#Scott's-pi-(Nominal)",
              "Gwet_AC1":"http://www.shaghighi.ir/pycm/doc/#Gwet's-AC1",
              "Bennett_S":"http://www.shaghighi.ir/pycm/doc/#Bennett-et-al.'s-S-score-(Nominal)",
-             "Kappa CI 95%":"https://en.wikipedia.org/wiki/Confidence_interval",
+             "Kappa 95% CI":"https://en.wikipedia.org/wiki/Confidence_interval",
              "Kappa Standard Error":"https://en.wikipedia.org/wiki/Standard_error",
              "Chi-Squared":"https://en.wikipedia.org/wiki/Chi-squared_test",
              "Phi-Squared":"https://en.wikipedia.org/wiki/Phi_coefficient",
              "Cramer_V":"https://en.wikipedia.org/wiki/Cram%C3%A9r%27s_V",
              "Chi-Squared DF":"https://en.wikipedia.org/wiki/Chi-squared_distribution",
-             "CI 95%":"https://en.wikipedia.org/wiki/Confidence_interval",
+             "95% CI":"https://en.wikipedia.org/wiki/Confidence_interval",
              "Standard Error":"https://en.wikipedia.org/wiki/Standard_error"
 
              }

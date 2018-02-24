@@ -21,14 +21,14 @@ Actual
 <BLANKLINE>
 Overall Statistics :
 <BLANKLINE>
+95% CI                                                           (0.30439,0.86228)
 Bennett_S                                                        0.375
-CI 95%                                                           (0.30439,0.86228)
 Chi-Squared                                                      6.6
 Chi-Squared DF                                                   4
 Cramer_V                                                         0.5244
 Gwet_AC1                                                         0.38931
 Kappa                                                            0.35484
-Kappa CI 95%                                                     (-0.07708,0.78675)
+Kappa 95% CI                                                     (-0.07708,0.78675)
 Kappa Standard Error                                             0.22036
 Overall_ACC                                                      0.58333
 Overall_RACC                                                     0.35417
@@ -95,11 +95,11 @@ pycm.pycm_obj.pycmError: Input Vectors Must Be The Same Length
 | .__/  \__, | \___||_| |_| |_|
 |_|     |___/
 <BLANKLINE>
-__     __     ___       __
-\ \   / / _  / _ \     / /_
- \ \ / / (_)| | | |   | '_ \
-  \ V /   _ | |_| | _ | (_) |
-   \_/   (_) \___/ (_) \___/
+__     __     ___      _____
+\ \   / / _  / _ \    |___  |
+ \ \ / / (_)| | | |      / /
+  \ V /   _ | |_| | _   / /
+   \_/   (_) \___/ (_) /_/
 <BLANKLINE>
 <BLANKLINE>
 Repo : https://github.com/sepandhaghighi/pycm
@@ -192,14 +192,14 @@ Actual
 <BLANKLINE>
 Overall Statistics :
 <BLANKLINE>
+95% CI                                                           (0.14096,0.55904)
 Bennett_S                                                        0.13333
-CI 95%                                                           (0.14096,0.55904)
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
 Cramer_V                                                         None
 Gwet_AC1                                                         0.19505
 Kappa                                                            0.07801
-Kappa CI 95%                                                     (-0.2185,0.37453)
+Kappa 95% CI                                                     (-0.2185,0.37453)
 Kappa Standard Error                                             0.15128
 Overall_ACC                                                      0.35
 Overall_RACC                                                     0.295
@@ -253,14 +253,14 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        None           
 >>> cm.stat()
 Overall Statistics :
 <BLANKLINE>
+95% CI                                                           (0.14096,0.55904)
 Bennett_S                                                        0.13333
-CI 95%                                                           (0.14096,0.55904)
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
 Cramer_V                                                         None
 Gwet_AC1                                                         0.19505
 Kappa                                                            0.07801
-Kappa CI 95%                                                     (-0.2185,0.37453)
+Kappa 95% CI                                                     (-0.2185,0.37453)
 Kappa Standard Error                                             0.15128
 Overall_ACC                                                      0.35
 Overall_RACC                                                     0.295

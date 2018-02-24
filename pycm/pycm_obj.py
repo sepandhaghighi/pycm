@@ -75,12 +75,12 @@ class ConfusionMatrix():
         self.AC1=self.overall_stat["Gwet_AC1"]
         self.S=self.overall_stat["Bennett_S"]
         self.Kappa_SE=self.overall_stat["Kappa Standard Error"]
-        self.Kappa_CI=self.overall_stat["Kappa CI 95%"]
+        self.Kappa_CI=self.overall_stat["Kappa 95% CI"]
         self.Chi_Squared=self.overall_stat["Chi-Squared"]
         self.Phi_Squared=self.overall_stat["Phi-Squared"]
         self.V=self.overall_stat["Cramer_V"]
         self.DF=self.overall_stat["Chi-Squared DF"]
-        self.CI=self.overall_stat["CI 95%"]
+        self.CI=self.overall_stat["95% CI"]
     def matrix(self):
         '''
         This method print confusion matrix

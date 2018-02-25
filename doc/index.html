@@ -11779,7 +11779,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Version-:-0.6">Version : 0.6<a class="anchor-link" href="#Version-:-0.6">&#182;</a></h3><hr>
+<h3 id="Version-:-0.7">Version : 0.7<a class="anchor-link" href="#Version-:-0.7">&#182;</a></h3><hr>
 
 </div>
 </div>
@@ -12072,15 +12072,24 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Bennett_S&#39;: 0.37500000000000006,
+<pre>{&#39;95% CI&#39;: (0.30438856248221097, 0.8622781041844558),
+ &#39;Bennett_S&#39;: 0.37500000000000006,
+ &#39;Chi-Squared&#39;: 6.6,
+ &#39;Chi-Squared DF&#39;: 4,
+ &#39;Cramer_V&#39;: 0.5244044240850757,
  &#39;Gwet_AC1&#39;: 0.3893129770992367,
  &#39;Kappa&#39;: 0.35483870967741943,
+ &#39;Kappa 95% CI&#39;: (-0.07707577422109269, 0.7867531935759315),
+ &#39;Kappa Standard Error&#39;: 0.2203645326012817,
  &#39;Overall_ACC&#39;: 0.5833333333333334,
  &#39;Overall_RACC&#39;: 0.3541666666666667,
  &#39;PPV_Macro&#39;: 0.5666666666666668,
  &#39;PPV_Micro&#39;: 0.5833333333333334,
+ &#39;Phi-Squared&#39;: 0.5499999999999999,
  &#39;Scott_PI&#39;: 0.34426229508196726,
+ &#39;Standard Error&#39;: 0.14231876063832777,
  &#39;Strength_Of_Agreement(Altman)&#39;: &#39;Fair&#39;,
+ &#39;Strength_Of_Agreement(Cicchetti)&#39;: &#39;Poor&#39;,
  &#39;Strength_Of_Agreement(Fleiss)&#39;: &#39;Poor&#39;,
  &#39;Strength_Of_Agreement(Landis and Koch)&#39;: &#39;Fair&#39;,
  &#39;TPR_Macro&#39;: 0.611111111111111,
@@ -13727,6 +13736,465 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Kappa-95%-CI">Kappa 95% CI<a class="anchor-link" href="#Kappa-95%-CI">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$SE_{Kappa}=\sqrt{\frac{ACC_{Overall}(1-RACC_{Overall})}{(1-RACC_{Overall})^2}}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Kappa \pm 1.96\times SE_{Kappa}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Kappa_SE</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[44]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.2203645326012817</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Kappa_CI</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[45]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(-0.07707577422109269, 0.7867531935759315)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Notice :  new in version 0.7</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Chi-Squared">Chi-Squared<a class="anchor-link" href="#Chi-Squared">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$\chi^2=\sum_{i=1}^n\frac{(O_i-E_i)^2}{E_i}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$E_i=\frac{TOP_i\times P_i}{Population}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Chi_Squared</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[46]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>6.6</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Notice :  new in version 0.7</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Chi-Squared-DF">Chi-Squared DF<a class="anchor-link" href="#Chi-Squared-DF">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$DF=(|Classes|-1)^2$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">DF</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[47]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>4</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Notice :  new in version 0.7</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Phi-Squared">Phi-Squared<a class="anchor-link" href="#Phi-Squared">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$\phi^2=\frac{\chi^2}{Population}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Phi_Squared</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[48]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.5499999999999999</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Notice :  new in version 0.7</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Cramer's-V">Cramer's V<a class="anchor-link" href="#Cramer's-V">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$V=\sqrt{\frac{\phi^2}{|Classes|-1}}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">V</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[49]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.5244044240850757</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Notice :  new in version 0.7</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="95%-CI">95% CI<a class="anchor-link" href="#95%-CI">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$SE_{ACC}=\sqrt{\frac{ACC\times (1-ACC)}{Population}}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$ACC \pm 1.96\times SE_{ACC}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CI</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[50]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(0.30438856248221097, 0.8622781041844558)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SE</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[51]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.14231876063832777</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Notice :  new in version 0.7</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Bennett-et-al.'s-S-score-(Nominal)">Bennett et al.'s S score (Nominal)<a class="anchor-link" href="#Bennett-et-al.'s-S-score-(Nominal)">&#182;</a></h3>
 </div>
 </div>
@@ -13751,7 +14219,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">S</span>
@@ -13767,7 +14235,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[44]:</div>
+<div class="prompt output_prompt">Out[52]:</div>
 
 
 
@@ -13821,7 +14289,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PI</span>
@@ -13837,7 +14305,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[45]:</div>
+<div class="prompt output_prompt">Out[53]:</div>
 
 
 
@@ -13900,7 +14368,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AC1</span>
@@ -13916,7 +14384,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[46]:</div>
+<div class="prompt output_prompt">Out[54]:</div>
 
 
 
@@ -13991,7 +14459,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA1</span>
@@ -14007,7 +14475,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[47]:</div>
+<div class="prompt output_prompt">Out[55]:</div>
 
 
 
@@ -14070,7 +14538,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA2</span>
@@ -14086,7 +14554,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[48]:</div>
+<div class="prompt output_prompt">Out[56]:</div>
 
 
 
@@ -14157,7 +14625,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA3</span>
@@ -14173,7 +14641,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[49]:</div>
+<div class="prompt output_prompt">Out[57]:</div>
 
 
 
@@ -14203,6 +14671,89 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="SOA4-(Strength-of-Agreement,-Cicchetti&#8217;s-benchmark)">SOA4 (Strength of Agreement, Cicchetti&#8217;s benchmark)<a class="anchor-link" href="#SOA4-(Strength-of-Agreement,-Cicchetti&#8217;s-benchmark)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+       <tr>
+           <td style="text-align:center">Kappa</td>
+           <td style="text-align:center">Strength of Agreement</td>
+       </tr>
+        <tr>
+           <td style="text-align:center"> 0.4 ></td>
+           <td style="text-align:center">Poor</td>
+       </tr>
+        <tr>
+           <td style="text-align:center">0.4 – 0.59</td>
+           <td style="text-align:center">Fair</td>
+       </tr>
+        <tr>
+           <td style="text-align:center">0.6 – 0.74</td>
+           <td style="text-align:center">Good</td>
+       </tr>
+       <tr>
+           <td style="text-align:center">0.74 – 1.00</td>
+           <td style="text-align:center">Excellent</td>
+       </tr>
+
+
+</table>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA4</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[58]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Poor&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Notice :  new in version 0.7</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Overall_ACC">Overall_ACC<a class="anchor-link" href="#Overall_ACC">&#182;</a></h3>
 </div>
 </div>
@@ -14218,7 +14769,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_ACC</span>
@@ -14234,7 +14785,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[50]:</div>
+<div class="prompt output_prompt">Out[59]:</div>
 
 
 
@@ -14279,7 +14830,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_RACC</span>
@@ -14295,7 +14846,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[51]:</div>
+<div class="prompt output_prompt">Out[60]:</div>
 
 
 
@@ -14329,7 +14880,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PPV_Micro</span>
@@ -14345,7 +14896,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[52]:</div>
+<div class="prompt output_prompt">Out[61]:</div>
 
 
 
@@ -14390,7 +14941,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TPR_Micro</span>
@@ -14406,7 +14957,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[53]:</div>
+<div class="prompt output_prompt">Out[62]:</div>
 
 
 
@@ -14451,7 +15002,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PPV_Macro</span>
@@ -14467,7 +15018,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[54]:</div>
+<div class="prompt output_prompt">Out[63]:</div>
 
 
 
@@ -14512,7 +15063,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TPR_Macro</span>
@@ -14528,7 +15079,7 @@ div#notebook {
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[55]:</div>
+<div class="prompt output_prompt">Out[64]:</div>
 
 
 
@@ -14572,7 +15123,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
@@ -14603,15 +15154,24 @@ Actual
 
 Overall Statistics : 
 
+95% CI                                                           (0.30439,0.86228)
 Bennett_S                                                        0.375
+Chi-Squared                                                      6.6
+Chi-Squared DF                                                   4
+Cramer_V                                                         0.5244
 Gwet_AC1                                                         0.38931
 Kappa                                                            0.35484
+Kappa 95% CI                                                     (-0.07708,0.78675)
+Kappa Standard Error                                             0.22036
 Overall_ACC                                                      0.58333
 Overall_RACC                                                     0.35417
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
+Phi-Squared                                                      0.55
 Scott_PI                                                         0.34426
+Standard Error                                                   0.14232
 Strength_Of_Agreement(Altman)                                    Fair
+Strength_Of_Agreement(Cicchetti)                                 Poor
 Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Fair
 TPR_Macro                                                        0.61111
@@ -14670,7 +15230,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">matrix</span><span class="p">()</span>
@@ -14714,7 +15274,7 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">normalized_matrix</span><span class="p">()</span>
@@ -14758,7 +15318,7 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span>
@@ -14780,15 +15340,24 @@ Actual
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Overall Statistics : 
 
+95% CI                                                           (0.30439,0.86228)
 Bennett_S                                                        0.375
+Chi-Squared                                                      6.6
+Chi-Squared DF                                                   4
+Cramer_V                                                         0.5244
 Gwet_AC1                                                         0.38931
 Kappa                                                            0.35484
+Kappa 95% CI                                                     (-0.07708,0.78675)
+Kappa Standard Error                                             0.22036
 Overall_ACC                                                      0.58333
 Overall_RACC                                                     0.35417
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
+Phi-Squared                                                      0.55
 Scott_PI                                                         0.34426
+Standard Error                                                   0.14232
 Strength_Of_Agreement(Altman)                                    Fair
+Strength_Of_Agreement(Cicchetti)                                 Poor
 Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Fair
 TPR_Macro                                                        0.61111
@@ -14866,7 +15435,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="s2">&quot;cm1&quot;</span><span class="p">)</span>
@@ -14882,14 +15451,13 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[60]:</div>
+<div class="prompt output_prompt">Out[69]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;C:\\Users\\Sepkjaer\\Desktop\\Desktop\\JupyterNotebooks\\cm1.pycm&#39;,
- &#39;Status&#39;: True}</pre>
+<pre>{&#39;Message&#39;: &#39;C:\\Users\\Sepkjaer\\Desktop\\cm1.pycm&#39;, &#39;Status&#39;: True}</pre>
 </div>
 
 </div>
@@ -14900,7 +15468,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -14916,7 +15484,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[61]:</div>
+<div class="prompt output_prompt">Out[70]:</div>
 
 
 
@@ -14953,7 +15521,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="s2">&quot;cm1&quot;</span><span class="p">)</span>
@@ -14969,14 +15537,13 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[62]:</div>
+<div class="prompt output_prompt">Out[71]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;C:\\Users\\Sepkjaer\\Desktop\\Desktop\\JupyterNotebooks\\cm1.html&#39;,
- &#39;Status&#39;: True}</pre>
+<pre>{&#39;Message&#39;: &#39;C:\\Users\\Sepkjaer\\Desktop\\cm1.html&#39;, &#39;Status&#39;: True}</pre>
 </div>
 
 </div>
@@ -14987,7 +15554,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -15003,7 +15570,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[63]:</div>
+<div class="prompt output_prompt">Out[72]:</div>
 
 
 
@@ -15040,7 +15607,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s2">&quot;cm1&quot;</span><span class="p">)</span>
@@ -15056,14 +15623,13 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[64]:</div>
+<div class="prompt output_prompt">Out[73]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;C:\\Users\\Sepkjaer\\Desktop\\Desktop\\JupyterNotebooks\\cm1.csv&#39;,
- &#39;Status&#39;: True}</pre>
+<pre>{&#39;Message&#39;: &#39;C:\\Users\\Sepkjaer\\Desktop\\cm1.csv&#39;, &#39;Status&#39;: True}</pre>
 </div>
 
 </div>
@@ -15074,7 +15640,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -15090,7 +15656,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[65]:</div>
+<div class="prompt output_prompt">Out[74]:</div>
 
 
 
@@ -15127,7 +15693,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_actu</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
@@ -15150,7 +15716,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 <pre>
 <span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
 <span class="ansi-red-intense-fg ansi-bold">pycmError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-66-572bf15e689d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-75-572bf15e689d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
 <span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>cm2<span class="ansi-yellow-intense-fg ansi-bold">=</span>ConfusionMatrix<span class="ansi-yellow-intense-fg ansi-bold">(</span>y_actu<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-cyan-intense-fg ansi-bold">2</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
 
 <span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm\pycm_obj.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-intense-fg ansi-bold">(self, actual_vector, predict_vector, digit)</span>
@@ -15170,7 +15736,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_actu</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
@@ -15193,7 +15759,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 <pre>
 <span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
 <span class="ansi-red-intense-fg ansi-bold">pycmError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-67-fe0a030b981a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
+<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-76-fe0a030b981a&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-intense-fg ansi-bold">()</span>
 <span class="ansi-green-intense-fg ansi-bold">----&gt; 1</span><span class="ansi-yellow-intense-fg ansi-bold"> </span>cm3<span class="ansi-yellow-intense-fg ansi-bold">=</span>ConfusionMatrix<span class="ansi-yellow-intense-fg ansi-bold">(</span>y_actu<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">[</span><span class="ansi-cyan-intense-fg ansi-bold">1</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-cyan-intense-fg ansi-bold">2</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-cyan-intense-fg ansi-bold">3</span><span class="ansi-yellow-intense-fg ansi-bold">]</span><span class="ansi-yellow-intense-fg ansi-bold">)</span>
 
 <span class="ansi-green-intense-fg ansi-bold">~\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm\pycm_obj.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-intense-fg ansi-bold">(self, actual_vector, predict_vector, digit)</span>
@@ -15225,7 +15791,9 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 <div class="text_cell_render border-box-sizing rendered_html">
 <blockquote>1- Landis JR, Koch GG. The measurement of observer agreement for categorical data. Biometrics 1977; 33:159–174 </blockquote><blockquote>2- Powers, D. M. W. (2011). Evaluation: from precision, recall and f-measure to roc, informedness, markedness & correlation. Journal of Machine Learning Technologies.</blockquote><blockquote>3-  C. Sammut, G. Webb, Encyclopedia of Machine Learning. Springer, 2011. Springer reference.</blockquote><blockquote>4- Fleiss, J. L. (1971). Measuring nominal scale agreement among many raters. Psychological Bulletin, 76(5), 378-382.
 http://dx.doi.org/10.1037/h0031619</blockquote><blockquote>5- Altman D.G. 1991. Practical Statistics for Medical Research.
-Chapman and Hall, London.</blockquote><blockquote>6- Gwet, K. L. (2008). Computing inter-rater reliability and its variance in the presence of high agreement. The British Journal of Mathematical and Statistical Psychology, 61(1), 29–48.</blockquote><blockquote>7- Scott, W. A. (1955). Reliability of content analysis: The case of nominal scaling. Public Opinion Quarterly, 19(3), 321–325.</blockquote><blockquote>8- Bennett, E. M., Alpert, R., & Goldstein, A. C. (1954). Communication through limited response questioning. The Public Opinion Quarterly, 18(3), 303–308.</blockquote>
+Chapman and Hall, London.</blockquote><blockquote>6- Gwet, K. L. (2008). Computing inter-rater reliability and its variance in the presence of high agreement. The British Journal of Mathematical and Statistical Psychology, 61(1), 29–48.</blockquote><blockquote>7- Scott, W. A. (1955). Reliability of content analysis: The case of nominal scaling. Public Opinion Quarterly, 19(3), 321–325.</blockquote><blockquote>8- Bennett, E. M., Alpert, R., & Goldstein, A. C. (1954). Communication through limited response questioning. The Public Opinion Quarterly, 18(3), 303–308.</blockquote><blockquote>9- Cicchetti, Domenic V. (1994). "Guidelines, criteria, and rules of thumb for evaluating normed and standardized assessment instruments in psychology". Psychological Assessment. 6 (4): 284–290.
+ doi:10.1037/1040-3590.6.4.284</blockquote><blockquote>10- Davies, R.B. (1980). "Algorithm AS155: The Distributions of a Linear Combination of χ2 Random Variables". Journal of the Royal Statistical Society. 29 (3): 323–333.
+ doi:10.2307/2346911.</blockquote>
 </div>
 </div>
 </div>

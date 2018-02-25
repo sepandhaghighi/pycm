@@ -61,14 +61,14 @@ Actual
 
 Overall Statistics : 
 
+95% CI                                                           (0.30439,0.86228)
 Bennett_S                                                        0.375
-CI 95%                                                           (0.30439,0.86228)
 Chi-Squared                                                      6.6
 Chi-Squared DF                                                   4
 Cramer_V                                                         0.5244
 Gwet_AC1                                                         0.38931
 Kappa                                                            0.35484
-Kappa CI 95%                                                     (-0.07708,0.78675)
+Kappa 95% CI                                                     (-0.07708,0.78675)
 Kappa Standard Error                                             0.22036
 Overall_ACC                                                      0.58333
 Overall_RACC                                                     0.35417
@@ -117,7 +117,8 @@ TNR(Specificity or true negative rate)                           0.77778        
 TON(Test outcome negative)                                       7                       10                      7                       
 TOP(Test outcome positive)                                       5                       2                       5                       
 TP(True positive/hit)                                            3                       1                       3                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5
+TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                     
+
 
 >>> cm.matrix()
 Predict          0        1        2        

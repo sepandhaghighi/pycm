@@ -81,6 +81,7 @@ class ConfusionMatrix():
         self.V=self.overall_stat["Cramer_V"]
         self.DF=self.overall_stat["Chi-Squared DF"]
         self.CI=self.overall_stat["95% CI"]
+        self.SE=self.overall_stat["Standard Error"]
     def matrix(self):
         '''
         This method print confusion matrix

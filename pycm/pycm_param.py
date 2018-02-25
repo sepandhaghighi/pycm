@@ -55,7 +55,8 @@ PARAMS_LINK={"TPR":"https://en.wikipedia.org/wiki/Sensitivity_and_specificity",
                                              "-:-Fleiss%E2%80%99-benchmark)",
              "Strength_Of_Agreement(Altman)":"http://www.shaghighi.ir/pycm/doc/#SOA3-(Strength-of-Agreement,"
                                              "-Altman%E2%80%99s-benchmark)",
-             "Strength_Of_Agreement(Cicchetti)":"",
+             "Strength_Of_Agreement(Cicchetti)":"http://www.shaghighi.ir/pycm/doc/#SOA4-(Strength-of-Agreement,"
+                                                "-Cicchetti%E2%80%99s-benchmark)",
              "TPR_Macro":"http://www.shaghighi.ir/pycm/doc/#TPR_Macro",
              "PPV_Macro":"http://www.shaghighi.ir/pycm/doc/#PPV_Macro",
              "TPR_Micro":"http://www.shaghighi.ir/pycm/doc/#TPR_Micro",

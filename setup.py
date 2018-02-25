@@ -2,13 +2,13 @@ from distutils.core import setup
 setup(
   name = 'pycm',
   packages = ['pycm'],
-  version = '0.6',
+  version = '0.7',
   description = 'Confusion Matrix In Python',
   long_description='Confusion Matrix In Python',
   author = 'Sepand Haghighi',
   author_email = 'sepand@qpage.ir',
   url = 'https://github.com/sepandhaghighi/pycm',
-  download_url = 'https://github.com/sepandhaghighi/pycm/tarball/v0.6',
+  download_url = 'https://github.com/sepandhaghighi/pycm/tarball/v0.7',
   keywords = ['confusion-matrix', 'python3','python','machine learning','ML'],
   install_requires=[
 	  'codecov',

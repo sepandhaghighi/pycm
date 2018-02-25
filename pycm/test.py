@@ -377,6 +377,27 @@ Actual
 'None'
 >>> PC_AC1_calc({1:123,2:2},{1:120,2:5},{1:125,2:125})
 0.05443200000000002
+>>> y_act=[0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2]
+>>> y_pre=[0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,1,1,1,1,2,0,1,2,2,2,2]
+>>> cm2=ConfusionMatrix(y_act,y_pre)
+>>> chi_squared=chi_square_calc(cm2.classes,cm2.table,cm2.TOP,cm2.P,cm2.POP)
+>>> chi_squared
+15.525641025641026
+>>> phi_squared=phi_square_calc(chi_squared,cm2.POP)
+>>> phi_squared
+0.5750237416904084
+>>> V=cramers_V_calc(phi_squared,cm2.classes)
+>>> V
+0.5362013342441477
+>>> DF=DF_calc(cm2.classes)
+>>> DF
+4
+>>> SE=se_calc(cm2.Overall_ACC,cm2.POP)
+>>> SE
+0.09072184232530289
+>>> CI=CI_calc(cm2.Overall_ACC,SE)
+>>> CI
+(0.48885185570907297, 0.8444814776242603)
 >>> save_stat=cm.save_html("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True

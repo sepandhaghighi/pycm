@@ -200,9 +200,13 @@ or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir").
   - [x] Gwet's AC1
   - [x] Scott's pi
   - [ ] Krippendorff's alpha
+  - [ ] Goodman and Kruskal's lambda A
+  - [ ] Goodman and Kruskal's lambda B
+  - [ ] Kullback-Liebler divergence
+  - [ ] Entropy
   - [ ] Weighting-scheme
   - [x] Overall ACC
-  - [ ] Strength of Agreement
+  - [x] Strength of Agreement
     - [x] Landis and Koch
     - [x] Fleiss
     - [x] Altman

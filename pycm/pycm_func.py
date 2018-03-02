@@ -71,8 +71,7 @@ def joint_entropy_calc(classes,table,POP):
                 if p_prime!=0:
                     result+=p_prime*math.log(p_prime,2)
         return -result
-    except Exception as e:
-        print(str(e))
+    except Exception :
         return "None"
 
 def conditional_entropy_calc(classes,table,P,POP):

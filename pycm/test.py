@@ -25,16 +25,24 @@ Overall Statistics :
 Bennett_S                                                        0.375
 Chi-Squared                                                      6.6
 Chi-Squared DF                                                   4
+Conditional Entropy                                              0.95915
 Cramer_V                                                         0.5244
+Cross Entropy                                                    1.59352
 Gwet_AC1                                                         0.38931
+Joint Entropy                                                    2.45915
+KL Divergence                                                    0.09352
 Kappa                                                            0.35484
 Kappa 95% CI                                                     (-0.07708,0.78675)
 Kappa Standard Error                                             0.22036
+Lambda A                                                         0.16667
+Lambda B                                                         0.42857
 Overall_ACC                                                      0.58333
 Overall_RACC                                                     0.35417
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
 Phi-Squared                                                      0.55
+Reference Entropy                                                1.5
+Response Entropy                                                 1.48336
 Scott_PI                                                         0.34426
 Standard Error                                                   0.14232
 Strength_Of_Agreement(Altman)                                    Fair
@@ -196,16 +204,24 @@ Overall Statistics :
 Bennett_S                                                        0.13333
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
+Conditional Entropy                                              None
 Cramer_V                                                         None
+Cross Entropy                                                    None
 Gwet_AC1                                                         0.19505
+Joint Entropy                                                    None
+KL Divergence                                                    None
 Kappa                                                            0.07801
 Kappa 95% CI                                                     (-0.2185,0.37453)
 Kappa Standard Error                                             0.15128
+Lambda A                                                         None
+Lambda B                                                         None
 Overall_ACC                                                      0.35
 Overall_RACC                                                     0.295
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
+Reference Entropy                                                None
+Response Entropy                                                 None
 Scott_PI                                                         -0.12554
 Standard Error                                                   0.10665
 Strength_Of_Agreement(Altman)                                    Poor
@@ -257,16 +273,24 @@ Overall Statistics :
 Bennett_S                                                        0.13333
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
+Conditional Entropy                                              None
 Cramer_V                                                         None
+Cross Entropy                                                    None
 Gwet_AC1                                                         0.19505
+Joint Entropy                                                    None
+KL Divergence                                                    None
 Kappa                                                            0.07801
 Kappa 95% CI                                                     (-0.2185,0.37453)
 Kappa Standard Error                                             0.15128
+Lambda A                                                         None
+Lambda B                                                         None
 Overall_ACC                                                      0.35
 Overall_RACC                                                     0.295
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
+Reference Entropy                                                None
+Response Entropy                                                 None
 Scott_PI                                                         -0.12554
 Standard Error                                                   0.10665
 Strength_Of_Agreement(Altman)                                    Poor

@@ -643,7 +643,7 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
             "Chi-Squared":chi_squared,"Phi-Squared":phi_squared,"Cramer_V":cramer_V,"Chi-Squared DF":DF,
             "95% CI":overall_accuracy_CI,"Standard Error":overall_accuracy_se,"Response Entropy":response_entropy,
             "Reference Entropy":reference_entropy,"Cross Entropy":cross_entropy,"Joint Entropy":join_entropy,
-            "Conditional Entropy":conditional_entropy,"Kullback-Liebler Divergence":kl_divergence,"Lambda B":lambda_B,
+            "Conditional Entropy":conditional_entropy,"KL Divergence":kl_divergence,"Lambda B":lambda_B,
             "Lambda A":lambda_A}
 def class_statistics(TP,TN,FP,FN):
     '''

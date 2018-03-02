@@ -71,7 +71,15 @@ PARAMS_LINK={"TPR":"https://en.wikipedia.org/wiki/Sensitivity_and_specificity",
              "Cramer_V":"https://en.wikipedia.org/wiki/Cram%C3%A9r%27s_V",
              "Chi-Squared DF":"https://en.wikipedia.org/wiki/Chi-squared_distribution",
              "95% CI":"https://en.wikipedia.org/wiki/Confidence_interval",
-             "Standard Error":"https://en.wikipedia.org/wiki/Standard_error"
+             "Standard Error":"https://en.wikipedia.org/wiki/Standard_error",
+             "Response Entropy":"",
+             "Reference Entropy":"",
+             "Cross Entropy":"",
+             "Joint Entropy":"",
+             "Conditional Entropy":"",
+             "KL Divergence":"",
+             "Lambda B":"",
+             "Lambda A":""
 
              }
 

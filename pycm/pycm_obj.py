@@ -85,6 +85,11 @@ class ConfusionMatrix():
         self.ReferenceEntropy=self.overall_stat["Reference Entropy"]
         self.ResponseEntropy=self.overall_stat["Response Entropy"]
         self.CrossEntropy=self.overall_stat["Cross Entropy"]
+        self.JointEntropy=self.overall_stat["Joint Entropy"]
+        self.ConditionalEntropy=self.overall_stat["Conditional Entropy"]
+        self.KL=self.overall_stat["KL Divergence"]
+        self.LambdaB=self.overall_stat["Lambda B"]
+        self.LambdaA=self.overall_stat["Lambda A"]
     def matrix(self):
         '''
         This method print confusion matrix

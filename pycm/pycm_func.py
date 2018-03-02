@@ -35,7 +35,6 @@ def matrix_params_calc(actual_vector,predict_vector):
 def entropy_calc(item,POP):
     '''
     This function calculate reference and response likelihood
-    param TOP: Test outcome positive
     :param item : TOP or P
     :type item : dict
     :param POP: Population
@@ -51,6 +50,16 @@ def entropy_calc(item,POP):
     except Exception:
         return "None"
 def cross_entropy_calc(TOP,P,POP):
+    '''
+    This function calculate cross entropy
+    :param TOP: Test outcome positive
+    :type TOP : dict
+    :param P: Condition positive
+    :type P : dict
+    :param POP: Population
+    :type POP : dict
+    :return: cross entropy as float
+    '''
     try:
         result=0
         for i in TOP.keys():
@@ -62,6 +71,16 @@ def cross_entropy_calc(TOP,P,POP):
         return "None"
 
 def joint_entropy_calc(classes,table,POP):
+    '''
+    This function calculate joint entropy
+    :param classes: confusion matrix classes
+    :type classes : list
+    :param table: confusion matrix table
+    :type table : dict
+    :param POP: Population
+    :type POP : dict
+    :return: joint entropy as float
+    '''
     try:
         result=0
         classes.sort()
@@ -75,6 +94,18 @@ def joint_entropy_calc(classes,table,POP):
         return "None"
 
 def conditional_entropy_calc(classes,table,P,POP):
+    '''
+    This function calculate conditional entropy
+    :param classes: confusion matrix classes
+    :type classes : list
+    :param table: confusion matrix table
+    :type table : dict
+    :param P: Condition positive
+    :type P : dict
+    :param POP: Population
+    :type POP : dict
+    :return: conditional entropy as float
+    '''
     try:
         result=0
         classes.sort()
@@ -89,6 +120,16 @@ def conditional_entropy_calc(classes,table,P,POP):
     except Exception:
         return "None"
 def kl_divergence_calc(P,TOP,POP):
+    '''
+    This function calculate Kullback-Liebler (KL) divergence
+    :param P: Condition positive
+    :type P : dict
+    :param TOP: Test outcome positive
+    :type TOP : dict
+    :param POP: Population
+    :type POP : dict
+    :return: Kullback-Liebler (KL) divergence as float
+    '''
     try:
         result=0
         for i in TOP.keys():
@@ -100,6 +141,18 @@ def kl_divergence_calc(P,TOP,POP):
         return "None"
 
 def lambda_B_calc(classes,table,TOP,POP):
+    '''
+    This function calculate  Goodman and Kruskal's lambda B
+    :param classes: confusion matrix classes
+    :type classes : list
+    :param table: confusion matrix table
+    :type table : dict
+    :param TOP: Test outcome positive
+    :type TOP : dict
+    :param POP: Population
+    :type POP : dict
+    :return: Goodman and Kruskal's lambda B as float
+    '''
     try:
         result=0
         classes.sort()
@@ -112,6 +165,18 @@ def lambda_B_calc(classes,table,TOP,POP):
         return "None"
 
 def lambda_A_calc(classes,table,P,POP):
+    '''
+    This function calculate Goodman and Kruskal's lambda A
+    :param classes: confusion matrix classes
+    :type classes : list
+    :param table: confusion matrix table
+    :type table : dict
+    :param P: Condition positive
+    :type P : dict
+    :param POP: Population
+    :type POP : dict
+    :return: Goodman and Kruskal's lambda A as float
+    '''
     try:
         result=0
         classes.sort()

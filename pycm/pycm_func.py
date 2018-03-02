@@ -32,7 +32,34 @@ def matrix_params_calc(actual_vector,predict_vector):
                     TN_dict[i] += 1
     return [classes,table,TP_dict,TN_dict,FP_dict,FN_dict]
 
-
+def entropy_calc(item,POP):
+    '''
+    This function calculate reference and response likelihood
+    param TOP: Test outcome positive
+    :param item : TOP or POP
+    :type item : dict
+    :param POP: Population
+    :type POP : dict
+    :return: reference or response likelihood
+    '''
+    try:
+        result=0
+        for i in item.keys():
+            likelihood = item[i]/POP[i]
+            result+=likelihood*math.log(likelihood,2)
+        return -result
+    except Exception:
+        return "None"
+def cross_entropy_calc(TOP,P,POP):
+    try:
+        result=0
+        for i in TOP.keys():
+            reference_likelihood= P[i]/POP[i]
+            response_likelihood=TOP[i]/POP[i]
+            result+=reference_likelihood*math.log(response_likelihood,2)
+        return -result
+    except Exception :
+        return "None"
 def chi_square_calc(classes,table,TOP,P,POP):
     '''
     This function calculate chi-squared
@@ -528,6 +555,9 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
     chi_squared=chi_square_calc(classes,table,TOP,P,POP)
     phi_squared=phi_square_calc(chi_squared,POP)
     cramer_V=cramers_V_calc(phi_squared,classes)
+    response_entropy=entropy_calc(TOP,POP)
+    reference_entropy=entropy_calc(P,POP)
+    cross_entropy = cross_entropy_calc(TOP,P,POP)
     DF=DF_calc(classes)
     return {"Overall_ACC":overall_accuracy,"Kappa":overall_kappa,"Overall_RACC":overall_random_accuracy,
             "Strength_Of_Agreement(Landis and Koch)":kappa_analysis_koch(overall_kappa),
@@ -538,7 +568,8 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
             "PPV_Macro":macro_calc(PPV),"TPR_Micro":micro_calc(TP=TP,item=FN),"PPV_Micro":micro_calc(TP=TP,item=FP),
             "Scott_PI":PI,"Gwet_AC1":AC1,"Bennett_S":S,"Kappa Standard Error":kappa_SE,"Kappa 95% CI":kappa_CI,
             "Chi-Squared":chi_squared,"Phi-Squared":phi_squared,"Cramer_V":cramer_V,"Chi-Squared DF":DF,
-            "95% CI":overall_accuracy_CI,"Standard Error":overall_accuracy_se}
+            "95% CI":overall_accuracy_CI,"Standard Error":overall_accuracy_se,"Response Entropy":response_entropy,
+            "Reference Entropy":reference_entropy,"Cross Entropy":cross_entropy}
 def class_statistics(TP,TN,FP,FN):
     '''
     This function return all class statistics

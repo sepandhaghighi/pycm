@@ -82,6 +82,9 @@ class ConfusionMatrix():
         self.DF=self.overall_stat["Chi-Squared DF"]
         self.CI=self.overall_stat["95% CI"]
         self.SE=self.overall_stat["Standard Error"]
+        self.ReferenceEntropy=self.overall_stat["Reference Entropy"]
+        self.ResponseEntropy=self.overall_stat["Response Entropy"]
+        self.CrossEntropy=self.overall_stat["Cross Entropy"]
     def matrix(self):
         '''
         This method print confusion matrix

@@ -422,6 +422,30 @@ Actual
 >>> CI=CI_calc(cm2.Overall_ACC,SE)
 >>> CI
 (0.48885185570907297, 0.8444814776242603)
+>>> response_entropy=entropy_calc(cm2.TOP,cm2.POP)
+>>> response_entropy
+1.486565953154142
+>>> reference_entropy=entropy_calc(cm2.P,cm2.POP)
+>>> reference_entropy
+1.5304930567574824
+>>> cross_entropy = cross_entropy_calc(cm2.TOP,cm2.P,cm2.POP)
+>>> cross_entropy
+1.5376219392005763
+>>> join_entropy = joint_entropy_calc(cm2.classes,cm2.table,cm2.POP)
+>>> join_entropy
+2.619748965432189
+>>> conditional_entropy = conditional_entropy_calc(cm2.classes,cm2.table,cm2.P,cm2.POP)
+>>> conditional_entropy
+1.089255908674706
+>>> kl_divergence=kl_divergence_calc(cm2.P,cm2.TOP,cm2.POP)
+>>> kl_divergence
+0.007128882443093773
+>>> lambda_B=lambda_B_calc(cm2.classes,cm2.table,cm2.TOP,cm2.POP)
+>>> lambda_B
+0.35714285714285715
+>>> lambda_A=lambda_A_calc(cm2.classes,cm2.table,cm2.P,cm2.POP)
+>>> lambda_A
+0.4
 >>> save_stat=cm.save_html("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True

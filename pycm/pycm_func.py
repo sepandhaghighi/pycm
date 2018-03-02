@@ -36,7 +36,7 @@ def entropy_calc(item,POP):
     '''
     This function calculate reference and response likelihood
     param TOP: Test outcome positive
-    :param item : TOP or POP
+    :param item : TOP or P
     :type item : dict
     :param POP: Population
     :type POP : dict

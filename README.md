@@ -65,16 +65,24 @@ Overall Statistics :
 Bennett_S                                                        0.375
 Chi-Squared                                                      6.6
 Chi-Squared DF                                                   4
+Conditional Entropy                                              0.95915
 Cramer_V                                                         0.5244
+Cross Entropy                                                    1.59352
 Gwet_AC1                                                         0.38931
+Joint Entropy                                                    2.45915
+KL Divergence                                                    0.09352
 Kappa                                                            0.35484
 Kappa 95% CI                                                     (-0.07708,0.78675)
 Kappa Standard Error                                             0.22036
+Lambda A                                                         0.16667
+Lambda B                                                         0.42857
 Overall_ACC                                                      0.58333
 Overall_RACC                                                     0.35417
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
 Phi-Squared                                                      0.55
+Reference Entropy                                                1.5
+Response Entropy                                                 1.48336
 Scott_PI                                                         0.34426
 Standard Error                                                   0.14232
 Strength_Of_Agreement(Altman)                                    Fair
@@ -118,8 +126,7 @@ TON(Test outcome negative)                                       7              
 TOP(Test outcome positive)                                       5                       2                       5                       
 TP(True positive/hit)                                            3                       1                       3                       
 TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                     
-
-
+                     
 >>> cm.matrix()
 Predict          0        1        2        
 Actual
@@ -200,10 +207,10 @@ or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir").
   - [x] Gwet's AC1
   - [x] Scott's pi
   - [ ] Krippendorff's alpha
-  - [ ] Goodman and Kruskal's lambda A
-  - [ ] Goodman and Kruskal's lambda B
-  - [ ] Kullback-Liebler divergence
-  - [ ] Entropy
+  - [x] Goodman and Kruskal's lambda A
+  - [x] Goodman and Kruskal's lambda B
+  - [x] Kullback-Liebler divergence
+  - [x] Entropy
   - [ ] Weighting-scheme
   - [x] Overall ACC
   - [x] Strength of Agreement
@@ -255,6 +262,13 @@ Chapman and Hall, London.</blockquote>
 
 <blockquote>10- Davies, R.B. (1980). "Algorithm AS155: The Distributions of a Linear Combination of χ2 Random Variables". Journal of the Royal Statistical Society. 29 (3): 323–333.
  doi:10.2307/2346911.</blockquote>
+
+<blockquote>11-  Kullback, S.; Leibler, R.A. (1951). "On information and sufficiency". Annals of Mathematical Statistics. 22 (1): 79–86. doi:10.1214/aoms/1177729694</blockquote>
+
+<blockquote>12- Goodman, Leo A.; Kruskal, William H. (1972). "Measures of Association for Cross Classifications, IV: Simplification of Asymptotic Variances". Journal of the American Statistical Association. 67 (338): 415–421. doi:10.1080/01621459.1972.10482401</blockquote>
+
+<blockquote>13- Goodman, L.A., Kruskal, W.H. (1963) "Measures of Association for Cross Classifications III: Approximate Sampling Theory", Journal of the American Statistical Association,
+ 58, 310–364. JSTOR 2283271 doi:10.1080/01621459.1963.10500850 </blockquote>
 
 
 

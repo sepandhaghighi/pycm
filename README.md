@@ -23,6 +23,7 @@
    * [Issues & Bug Reports](#issues--bug-reports)
    * [TODO](#todo)
    * [Outputs](#outputs)
+   * [Dependencies][#dependencies]
    * [Contribution](#contribution)
    * [Reference](#reference)
    * [Cite](#cite)
@@ -240,6 +241,10 @@ or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir").
 2. [CSV](Otherfiles/test.csv)
 3. [PYCM](Otherfiles/test.pycm)			
 
+
+## Dependencies
+
+<a href="https://requires.io/github/sepandhaghighi/pycm/requirements/?branch=dev"><img src="https://requires.io/github/sepandhaghighi/pycm/requirements.svg?branch=dev" alt="Requirements Status" /></a>
 
 ## Contribution			
 

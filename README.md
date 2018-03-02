@@ -16,6 +16,19 @@
 </div>
 
 ----------
+## Table of contents					
+   * [Overview](#overview)
+   * [Installation](#installation)
+   * [Usage](#usage)
+   * [Issues & Bug Reports](#issues--bug-reports)
+   * [TODO](#todo)
+   * [Outputs](#outputs)
+   * [Contribution](#contribution)
+   * [Reference](#reference)
+   * [Cite](#cite)
+   * [Authors](AUTHORS.md)
+   * [License](#license)
+   * [Donate](#donate-to-our-project)
 
 ## Overview	
 In the field of machine learning and specifically the problem of statistical classification, a confusion matrix, also known as an error matrix, is a specific table layout that allows visualization of the performance of an algorithm, typically a supervised learning one (in unsupervised learning it is usually called a matching matrix). Each row of the matrix represents the instances in a predicted class while each column represents the instances in an actual class (or vice versa)		
@@ -230,7 +243,7 @@ or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir").
 
 ## Contribution			
 
-You can fork the repository, improve or fix some part of it and then send the pull requests back if you want to see them here. I really appreciate that. ❤️			
+Changes and improvements are more than welcome! ❤️ Feel free to fork and open a pull request. Please make your changes in a specific branch and request to pull into `dev` 			
 
 Remember to write a few tests for your code before sending pull requests. 
 

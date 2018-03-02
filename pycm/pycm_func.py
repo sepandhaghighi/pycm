@@ -100,6 +100,17 @@ def kl_divergence_calc(P,TOP,POP):
     except Exception:
         return "None"
 
+def lambda_B_calc(classes,table,TOP,POP):
+    try:
+        result=0
+        classes.sort()
+        maxresponse=max(list(TOP.values()))
+        for i in classes:
+            result+=max(list(table[i].values()))
+        result=(result-maxresponse)/(POP[0]-maxresponse)
+        return result
+    except Exception:
+        return "None"
 def chi_square_calc(classes,table,TOP,P,POP):
     '''
     This function calculate chi-squared
@@ -601,6 +612,7 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
     join_entropy = joint_entropy_calc(classes,table,POP)
     conditional_entropy = conditional_entropy_calc(classes,table,P,POP)
     kl_divergence=kl_divergence_calc(P,TOP,POP)
+    lambda_B=lambda_B_calc(classes,table,TOP,POP)
     DF=DF_calc(classes)
     return {"Overall_ACC":overall_accuracy,"Kappa":overall_kappa,"Overall_RACC":overall_random_accuracy,
             "Strength_Of_Agreement(Landis and Koch)":kappa_analysis_koch(overall_kappa),
@@ -613,7 +625,7 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
             "Chi-Squared":chi_squared,"Phi-Squared":phi_squared,"Cramer_V":cramer_V,"Chi-Squared DF":DF,
             "95% CI":overall_accuracy_CI,"Standard Error":overall_accuracy_se,"Response Entropy":response_entropy,
             "Reference Entropy":reference_entropy,"Cross Entropy":cross_entropy,"Joint Entropy":join_entropy,
-            "Conditional Entropy":conditional_entropy,"Kullback-Liebler Divergence":kl_divergence}
+            "Conditional Entropy":conditional_entropy,"Kullback-Liebler Divergence":kl_divergence,"Lambda B":lambda_B}
 def class_statistics(TP,TN,FP,FN):
     '''
     This function return all class statistics

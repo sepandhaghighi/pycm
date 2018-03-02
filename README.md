@@ -23,7 +23,7 @@
    * [Issues & Bug Reports](#issues--bug-reports)
    * [TODO](#todo)
    * [Outputs](#outputs)
-   * [Dependencies][#dependencies]
+   * [Dependencies](#dependencies)
    * [Contribution](#contribution)
    * [Reference](#reference)
    * [Cite](#cite)

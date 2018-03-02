@@ -5,6 +5,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [0.8] - 2018-03-03
+### Added
+- Goodman and Kruskal's lambda B
+- Goodman and Kruskal's lambda A 
+- Cross Entropy
+- Conditional Entropy
+- Joint Entropy
+- Reference Entropy 
+- Response Entropy
+- Kullback-Liebler divergence
+
 ## [0.7] - 2018-02-26
 ### Added
 - Cramer's V
@@ -110,7 +121,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and README.md
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v0.7...HEAD
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v0.8...HEAD
+[0.8]: https://github.com/sepandhaghighi/pycm/compare/v0.7...v0.8
 [0.7]: https://github.com/sepandhaghighi/pycm/compare/v0.6...v0.7
 [0.6]: https://github.com/sepandhaghighi/pycm/compare/v0.5...v0.6
 [0.5]: https://github.com/sepandhaghighi/pycm/compare/v0.4...v0.5

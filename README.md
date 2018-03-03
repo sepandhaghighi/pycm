@@ -291,6 +291,8 @@ Chapman and Hall, London.</blockquote>
 <blockquote>13- Goodman, L.A., Kruskal, W.H. (1963) "Measures of Association for Cross Classifications III: Approximate Sampling Theory", Journal of the American Statistical Association,
  58, 310–364. JSTOR 2283271 doi:10.1080/01621459.1963.10500850 </blockquote>
 
+<blockquote>14- Byrt, Ted, Janet Bishop and John B. Carlin. 1993. Bias, prevalence, and kappa. Journal of Clinical Epidemiology 46(5):423-429. </blockquote>
+
 
 
 

@@ -87,6 +87,7 @@ class ConfusionMatrix():
         self.Chi_Squared=self.overall_stat["Chi-Squared"]
         self.Phi_Squared=self.overall_stat["Phi-Squared"]
         self.KappaUnbiased=self.overall_stat["Kappa Unbiased"]
+        self.KappaNoPrevalence=self.overall_stat["Kappa No Prevalence"]
         self.V=self.overall_stat["Cramer_V"]
         self.DF=self.overall_stat["Chi-Squared DF"]
         self.CI=self.overall_stat["95% CI"]

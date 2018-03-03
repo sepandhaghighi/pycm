@@ -9,12 +9,18 @@ class ConfusionMatrix():
     '''
     Main Class Of ConfusionMatrix
     '''
-    def __init__(self,actual_vector,predict_vector,digit=5):
-        if not isinstance(actual_vector,list) or not isinstance(predict_vector,list):
-            raise pycmError("Input Vectors Must Be List")
-        if len(actual_vector)!=len(predict_vector):
-            raise pycmError("Input Vectors Must Be The Same Length")
-        matrix_param=matrix_params_calc(actual_vector,predict_vector)
+    def __init__(self,actual_vector=None,predict_vector=None,matrix=None,digit=5):
+        if isinstance(matrix,dict)==True:
+            if matrix_check(matrix)==True:
+                matrix_param=matrix_params_from_table(matrix)
+            else:
+                raise pycmError("Input Confusion Matrix Format Error")
+        else:
+            if not isinstance(actual_vector, list) or not isinstance(predict_vector, list):
+                raise pycmError("Input Vectors Must Be List")
+            if len(actual_vector) != len(predict_vector):
+                raise pycmError("Input Vectors Must Be The Same Length")
+            matrix_param=matrix_params_calc(actual_vector,predict_vector)
         self.digit=digit
         self.actual_vector=actual_vector
         self.predict_vector=predict_vector

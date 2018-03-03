@@ -1,6 +1,50 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 import math
+def vector_check(vector):
+    '''
+    This function check input vector items type
+    :param vector: input vector
+    :type vector : list
+    :return: bool
+    '''
+    for i in vector:
+        if isinstance(i,int)==False:
+            return False
+    return True
+def matrix_check(table):
+    '''
+    This function check input matrix format
+    :param table: input matrix
+    :type table : dict
+    :return: bool
+    '''
+    for i in table.keys():
+        if table.keys()!=table[i].keys() or vector_check(list(table[i].values()))==False:
+            return False
+    return True
+def matrix_params_from_table(table):
+    '''
+    This function calculate TP,TN,FP,FN from confusion matrix
+    :param table: input matrix
+    :type table : dict
+    :return: [classes_list,table,TP,TN,FP,FN]
+    '''
+    classes=list(table.keys())
+    classes.sort()
+    map_dict = {k: 0 for k in classes}
+    TP_dict = map_dict.copy()
+    TN_dict = map_dict.copy()
+    FP_dict = map_dict.copy()
+    FN_dict = map_dict.copy()
+    for i in classes:
+        TP_dict[i]=table[i][i]
+        for j in classes:
+            if j!=i:
+                FN_dict[i]+=table[i][j]
+                FP_dict[j]+=table[i][j]
+                TN_dict[j]+=sum(list(table[i].values()))-table[i][j]
+    return [classes,table,TP_dict,TN_dict,FP_dict,FN_dict]
 
 def matrix_params_calc(actual_vector,predict_vector):
     '''
@@ -9,7 +53,7 @@ def matrix_params_calc(actual_vector,predict_vector):
     :type actual_vector : list
     :param predict_vector: predict value
     :type predict_vector : list
-    :return: [classes_list,TP,TN,FP,FN]
+    :return: [classes_list,table,TP,TN,FP,FN]
     '''
     classes=list(set(actual_vector).union(set(predict_vector)))
     classes.sort()

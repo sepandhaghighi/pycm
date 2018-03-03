@@ -33,7 +33,7 @@ class ConfusionMatrix():
         statistic_result=class_statistics(TP=matrix_param[2],TN=matrix_param[3],FP=matrix_param[4],
                                          FN=matrix_param[5])
         self.class_stat=statistic_result
-        self.overall_stat=overall_statistics(RACC=statistic_result["RACC"],
+        self.overall_stat=overall_statistics(RACC=statistic_result["RACC"],RACCU=statistic_result["RACCU"],
                                              TPR=statistic_result["TPR"],PPV=statistic_result["PPV"],
                                              TP=statistic_result["TP"],FN=statistic_result["FN"],
                                              FP=statistic_result["FP"],POP=statistic_result["POP"],
@@ -63,6 +63,7 @@ class ConfusionMatrix():
         self.PRE=statistic_result["PRE"]
         self.G=statistic_result["G"]
         self.RACC=statistic_result["RACC"]
+        self.RACCU=statistic_result["RACCU"]
         self.F2=statistic_result["F2"]
         self.F05=statistic_result["F0.5"]
         self.ERR=statistic_result["ERR"]
@@ -84,6 +85,7 @@ class ConfusionMatrix():
         self.Kappa_CI=self.overall_stat["Kappa 95% CI"]
         self.Chi_Squared=self.overall_stat["Chi-Squared"]
         self.Phi_Squared=self.overall_stat["Phi-Squared"]
+        self.KappaUnbiased=self.overall_stat["Kappa Unbiased"]
         self.V=self.overall_stat["Cramer_V"]
         self.DF=self.overall_stat["Chi-Squared DF"]
         self.CI=self.overall_stat["95% CI"]

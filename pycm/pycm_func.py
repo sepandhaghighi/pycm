@@ -464,6 +464,9 @@ def G_calc(PPV,TPR):
         return result
     except Exception:
         return "None"
+def RACCU_calc(TOP,P,POP):
+    result = ((TOP+P)/(2*POP))**2
+    return result
 
 def RACC_calc(TOP,P,POP):
     '''
@@ -697,7 +700,7 @@ def PC_AC1_calc(P,TOP,POP):
         return result
     except Exception:
         return "None"
-def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
+def overall_statistics(RACC,RACCU,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
     '''
     This function return overall statistics
     :param RACC: random accuracy
@@ -721,6 +724,7 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
     :return: overall statistics as dict
     '''
     overall_accuracy=sum(TP.values())/list(POP.values())[0]
+    overall_random_accuracy_unbiased=sum(RACCU.values())
     overall_random_accuracy=sum(RACC.values())
     overall_kappa=reliability_calc(overall_random_accuracy,overall_accuracy)
     PC_PI=PC_PI_calc(P,TOP,POP)
@@ -730,6 +734,7 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
     AC1=reliability_calc(PC_AC1,overall_accuracy)
     S=reliability_calc(PC_S,overall_accuracy)
     kappa_SE=kappa_se_calc(overall_accuracy,overall_random_accuracy,list(POP.values())[0])
+    kappa_unbiased=reliability_calc(overall_random_accuracy_unbiased,overall_accuracy)
     kappa_CI=CI_calc(overall_kappa,kappa_SE)
     overall_accuracy_se=se_calc(overall_accuracy,POP)
     overall_accuracy_CI=CI_calc(overall_accuracy,overall_accuracy_se)
@@ -757,7 +762,7 @@ def overall_statistics(RACC,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
             "95% CI":overall_accuracy_CI,"Standard Error":overall_accuracy_se,"Response Entropy":response_entropy,
             "Reference Entropy":reference_entropy,"Cross Entropy":cross_entropy,"Joint Entropy":join_entropy,
             "Conditional Entropy":conditional_entropy,"KL Divergence":kl_divergence,"Lambda B":lambda_B,
-            "Lambda A":lambda_A}
+            "Lambda A":lambda_A,"Kappa Unbiased":kappa_unbiased,"Overall_RACCU":overall_random_accuracy_unbiased}
 def class_statistics(TP,TN,FP,FN):
     '''
     This function return all class statistics
@@ -798,6 +803,7 @@ def class_statistics(TP,TN,FP,FN):
     F05_Score={}
     F2_Score={}
     ERR={}
+    RACCU={}
     for i in TP.keys():
         POP[i]=TP[i]+TN[i]+FP[i]+FN[i]
         P[i]=TP[i]+FN[i]
@@ -826,7 +832,8 @@ def class_statistics(TP,TN,FP,FN):
         G[i]=G_calc(PPV[i],TPR[i])
         RACC[i]=RACC_calc(TOP[i],P[i],POP[i])
         ERR[i]= ERR_calc(ACC[i])
+        RACCU[i]=RACCU_calc(TOP[i],P[i],POP[i])
     result={"TPR":TPR,"TNR":TNR,"PPV":PPV,"NPV":NPV,"FNR":FNR,"FPR":FPR,"FDR":FDR,"FOR":FOR,"ACC":ACC,"F1":F1_SCORE,"MCC":MCC,
     "BM":BM,"MK":MK,"LR+":PLR,"LR-":NLR,"DOR":DOR,"TP":TP,"TN":TN,"FP":FP,"FN":FN,"POP":POP,"P":P,
-            "N":N,"TOP":TOP,"TON":TON,"PRE":PRE,"G":G,"RACC":RACC,"F0.5":F05_Score,"F2":F2_Score,"ERR":ERR}
+            "N":N,"TOP":TOP,"TON":TON,"PRE":PRE,"G":G,"RACC":RACC,"F0.5":F05_Score,"F2":F2_Score,"ERR":ERR,"RACCU":RACCU}
     return result

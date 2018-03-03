@@ -13,7 +13,7 @@ PARAMS_DESCRIPTION={"TPR":"sensitivity, recall, hit rate, or true positive rate"
                     "FN":"false negative/miss/Type 2 error","P":"Condition positive","N":"Condition negative",
                     "TOP":"Test outcome positive","TON":"Test outcome negative","POP":"Population","PRE":"Prevalence",
                     "G":"G-measure geometric mean of precision and sensitivity","RACC":"Random Accuracy",
-                    "F0.5":"F0.5 Score","F2":"F2 Score","ERR":"Error Rate"}
+                    "F0.5":"F0.5 Score","F2":"F2 Score","ERR":"Error Rate","RACCU":"Random Accuracy Unbiased"}
 
 PARAMS_LINK={"TPR":"https://en.wikipedia.org/wiki/Sensitivity_and_specificity",
              "TNR":"https://en.wikipedia.org/wiki/Sensitivity_and_specificity",
@@ -45,6 +45,7 @@ PARAMS_LINK={"TPR":"https://en.wikipedia.org/wiki/Sensitivity_and_specificity",
              "G":"https://en.wikipedia.org/wiki/F1_score#G-measure",
              "ERR":"http://www.shaghighi.ir/pycm/doc/#ERR(Error-rate)",
              "RACC":"http://www.shaghighi.ir/pycm/doc/#RACC(Random-accuracy)",
+             "RACCU":"",
              "PRE":"https://en.wikipedia.org/wiki/Prevalence",
              "Overall_ACC":"http://www.shaghighi.ir/pycm/doc/#Overall_ACC",
              "Kappa":"http://www.shaghighi.ir/pycm/doc/#Kappa-(Nominal)",
@@ -79,7 +80,9 @@ PARAMS_LINK={"TPR":"https://en.wikipedia.org/wiki/Sensitivity_and_specificity",
              "Conditional Entropy":"",
              "KL Divergence":"",
              "Lambda B":"",
-             "Lambda A":""
+             "Lambda A":"",
+             "Kappa Unbiased":"",
+             "Overall_RACCU":""
 
              }
 

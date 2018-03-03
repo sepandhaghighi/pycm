@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
   name = 'pycm',
   packages = ['pycm'],
-  version = '0.7',
+  version = '0.8',
   description = 'Confusion Matrix In Python',
   long_description='''In the field of machine learning and specifically the problem of statistical classification,
    a confusion matrix, also known as an error matrix, is a specific table layout that allows visualization of
@@ -14,7 +14,7 @@ setup(
   author = 'Sepand Haghighi',
   author_email = 'sepand@qpage.ir',
   url = 'https://github.com/sepandhaghighi/pycm',
-  download_url = 'https://github.com/sepandhaghighi/pycm/tarball/v0.7',
+  download_url = 'https://github.com/sepandhaghighi/pycm/tarball/v0.8',
   keywords = "confusion-matrix python3 python machine_learning ML",
   project_urls={
     'Webpage': 'http://pycm.shaghighi.ir',

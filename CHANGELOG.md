@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Reference Entropy 
 - Response Entropy
 - Kullback-Liebler divergence
+- Direct ConfusionMatrix
 
 ## [0.7] - 2018-02-26
 ### Added

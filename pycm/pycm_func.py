@@ -19,10 +19,15 @@ def matrix_check(table):
     :type table : dict
     :return: bool
     '''
-    for i in table.keys():
-        if table.keys()!=table[i].keys() or vector_check(list(table[i].values()))==False:
+    try:
+        if len(table.keys())==0:
             return False
-    return True
+        for i in table.keys():
+            if table.keys()!=table[i].keys() or vector_check(list(table[i].values()))==False:
+                return False
+        return True
+    except Exception :
+        return False
 def matrix_params_from_table(table):
     '''
     This function calculate TP,TN,FP,FN from confusion matrix

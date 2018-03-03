@@ -446,6 +446,39 @@ Actual
 >>> lambda_A=lambda_A_calc(cm2.classes,cm2.table,cm2.P,cm2.POP)
 >>> lambda_A
 0.4
+>>> cm3=ConfusionMatrix(matrix=cm2.table)
+>>> cm3
+pycm.ConfusionMatrix(classes: [0, 1, 2])
+>>> cm3.CI
+(0.48885185570907297, 0.8444814776242603)
+>>> cm3.Chi_Squared
+15.525641025641026
+>>> cm3.Phi_Squared
+0.5750237416904084
+>>> cm3.V
+0.5362013342441477
+>>> cm3.DF
+4
+>>> cm3.ResponseEntropy
+1.486565953154142
+>>> cm3.ReferenceEntropy
+1.5304930567574824
+>>> cm3.CrossEntropy
+1.5376219392005763
+>>> cm3.JointEntropy
+2.619748965432189
+>>> cm3.ConditionalEntropy
+1.089255908674706
+>>> cm3.KL
+0.007128882443093773
+>>> cm3.LambdaA
+0.4
+>>> cm3.LambdaB
+0.35714285714285715
+>>> cm3=ConfusionMatrix(matrix={})
+Traceback (most recent call last):
+        ...
+pycm.pycm_obj.pycmError: Input Confusion Matrix Format Error
 >>> save_stat=cm.save_html("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True

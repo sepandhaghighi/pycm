@@ -25,7 +25,7 @@
    * [Outputs](#outputs)
    * [Dependencies](#dependencies)
    * [Contribution](#contribution)
-   * [Reference](#reference)
+   * [References](#references)
    * [Cite](#cite)
    * [Authors](AUTHORS.md)
    * [License](#license)

@@ -33,11 +33,14 @@ Joint Entropy                                                    2.45915
 KL Divergence                                                    0.09352
 Kappa                                                            0.35484
 Kappa 95% CI                                                     (-0.07708,0.78675)
+Kappa No Prevalence                                              0.16667
 Kappa Standard Error                                             0.22036
+Kappa Unbiased                                                   0.34426
 Lambda A                                                         0.16667
 Lambda B                                                         0.42857
 Overall_ACC                                                      0.58333
 Overall_RACC                                                     0.35417
+Overall_RACCU                                                    0.36458
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
 Phi-Squared                                                      0.55
@@ -80,6 +83,7 @@ POP(Population)                                                  12             
 PPV(Precision or positive predictive value)                      0.6                     0.5                     0.6
 PRE(Prevalence)                                                  0.25                    0.25                    0.5
 RACC(Random accuracy)                                            0.10417                 0.04167                 0.20833
+RACCU(Random accuracy unbiased)                                  0.11111                 0.0434                  0.21007
 TN(True negative/correct rejection)                              7                       8                       4
 TNR(Specificity or true negative rate)                           0.77778                 0.88889                 0.66667
 TON(Test outcome negative)                                       7                       10                      7
@@ -212,11 +216,14 @@ Joint Entropy                                                    None
 KL Divergence                                                    None
 Kappa                                                            0.07801
 Kappa 95% CI                                                     (-0.2185,0.37453)
+Kappa No Prevalence                                              -0.3
 Kappa Standard Error                                             0.15128
+Kappa Unbiased                                                   -0.12554
 Lambda A                                                         None
 Lambda B                                                         None
 Overall_ACC                                                      0.35
 Overall_RACC                                                     0.295
+Overall_RACCU                                                    0.4225
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
@@ -259,6 +266,7 @@ POP(Population)                                                  20             
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None
 PRE(Prevalence)                                                  0.0                     0.8                     0.15                    0.05
 RACC(Random accuracy)                                            0.0                     0.28                    0.015                   0.0
+RACCU(Random accuracy unbiased)                                  0.07563                 0.33062                 0.01562                 0.00063
 TN(True negative/correct rejection)                              9                       3                       16                      19
 TNR(Specificity or true negative rate)                           0.45                    0.75                    0.94118                 1.0
 TON(Test outcome negative)                                       9                       13                      18                      20
@@ -281,11 +289,14 @@ Joint Entropy                                                    None
 KL Divergence                                                    None
 Kappa                                                            0.07801
 Kappa 95% CI                                                     (-0.2185,0.37453)
+Kappa No Prevalence                                              -0.3
 Kappa Standard Error                                             0.15128
+Kappa Unbiased                                                   -0.12554
 Lambda A                                                         None
 Lambda B                                                         None
 Overall_ACC                                                      0.35
 Overall_RACC                                                     0.295
+Overall_RACCU                                                    0.4225
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
@@ -328,6 +339,7 @@ POP(Population)                                                  20             
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None
 PRE(Prevalence)                                                  0.0                     0.8                     0.15                    0.05
 RACC(Random accuracy)                                            0.0                     0.28                    0.015                   0.0
+RACCU(Random accuracy unbiased)                                  0.07563                 0.33062                 0.01562                 0.00063
 TN(True negative/correct rejection)                              9                       3                       16                      19
 TNR(Specificity or true negative rate)                           0.45                    0.75                    0.94118                 1.0
 TON(Test outcome negative)                                       9                       13                      18                      20
@@ -446,6 +458,10 @@ Actual
 >>> lambda_A=lambda_A_calc(cm2.classes,cm2.table,cm2.P,cm2.POP)
 >>> lambda_A
 0.4
+>>> kappa_no_prevalence_calc(cm2.Overall_ACC)
+0.33333333333333326
+>>> reliability_calc(cm2.Overall_RACC,cm2.Overall_ACC)
+0.4740259740259741
 >>> cm3=ConfusionMatrix(matrix=cm2.table)
 >>> cm3
 pycm.ConfusionMatrix(classes: [0, 1, 2])

@@ -82,7 +82,8 @@ PARAMS_LINK={"TPR":"https://en.wikipedia.org/wiki/Sensitivity_and_specificity",
              "Lambda B":"",
              "Lambda A":"",
              "Kappa Unbiased":"",
-             "Overall_RACCU":""
+             "Overall_RACCU":"",
+             "Kappa No Prevalence":""
 
              }
 

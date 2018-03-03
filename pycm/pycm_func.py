@@ -98,6 +98,13 @@ def entropy_calc(item,POP):
         return -result
     except Exception:
         return "None"
+
+def kappa_no_prevalence_calc(overall_accuracy):
+    try:
+        result=2*overall_accuracy-1
+        return result
+    except Exception:
+        return "None"
 def cross_entropy_calc(TOP,P,POP):
     '''
     This function calculate cross entropy
@@ -700,6 +707,20 @@ def PC_AC1_calc(P,TOP,POP):
         return result
     except Exception:
         return "None"
+
+def overall_accuracy_calc(TP,POP):
+    try:
+        overall_accuracy = sum(TP.values()) / list(POP.values())[0]
+        return overall_accuracy
+    except Exception:
+        return None
+def overall_random_accuracy_calc(item):
+    try:
+        return sum(item.values())
+    except Exception:
+        return "None"
+
+
 def overall_statistics(RACC,RACCU,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
     '''
     This function return overall statistics
@@ -723,9 +744,9 @@ def overall_statistics(RACC,RACCU,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
     :type POP:dict
     :return: overall statistics as dict
     '''
-    overall_accuracy=sum(TP.values())/list(POP.values())[0]
-    overall_random_accuracy_unbiased=sum(RACCU.values())
-    overall_random_accuracy=sum(RACC.values())
+    overall_accuracy=overall_accuracy_calc(TP,POP)
+    overall_random_accuracy_unbiased=overall_random_accuracy_calc(RACCU)
+    overall_random_accuracy=overall_random_accuracy_calc(RACC)
     overall_kappa=reliability_calc(overall_random_accuracy,overall_accuracy)
     PC_PI=PC_PI_calc(P,TOP,POP)
     PC_AC1=PC_AC1_calc(P,TOP,POP)
@@ -735,6 +756,7 @@ def overall_statistics(RACC,RACCU,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
     S=reliability_calc(PC_S,overall_accuracy)
     kappa_SE=kappa_se_calc(overall_accuracy,overall_random_accuracy,list(POP.values())[0])
     kappa_unbiased=reliability_calc(overall_random_accuracy_unbiased,overall_accuracy)
+    kappa_no_prevalence=kappa_no_prevalence_calc(overall_accuracy)
     kappa_CI=CI_calc(overall_kappa,kappa_SE)
     overall_accuracy_se=se_calc(overall_accuracy,POP)
     overall_accuracy_CI=CI_calc(overall_accuracy,overall_accuracy_se)
@@ -762,7 +784,8 @@ def overall_statistics(RACC,RACCU,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
             "95% CI":overall_accuracy_CI,"Standard Error":overall_accuracy_se,"Response Entropy":response_entropy,
             "Reference Entropy":reference_entropy,"Cross Entropy":cross_entropy,"Joint Entropy":join_entropy,
             "Conditional Entropy":conditional_entropy,"KL Divergence":kl_divergence,"Lambda B":lambda_B,
-            "Lambda A":lambda_A,"Kappa Unbiased":kappa_unbiased,"Overall_RACCU":overall_random_accuracy_unbiased}
+            "Lambda A":lambda_A,"Kappa Unbiased":kappa_unbiased,"Overall_RACCU":overall_random_accuracy_unbiased,
+            "Kappa No Prevalence":kappa_no_prevalence}
 def class_statistics(TP,TN,FP,FN):
     '''
     This function return all class statistics

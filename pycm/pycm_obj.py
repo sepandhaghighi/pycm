@@ -78,6 +78,7 @@ class ConfusionMatrix():
         self.TPR_Micro=self.overall_stat["TPR_Micro"]
         self.PPV_Micro=self.overall_stat["PPV_Micro"]
         self.Overall_RACC=self.overall_stat["Overall_RACC"]
+        self.Overall_RACCU=self.overall_stat["Overall_RACCU"]
         self.PI=self.overall_stat["Scott_PI"]
         self.AC1=self.overall_stat["Gwet_AC1"]
         self.S=self.overall_stat["Bennett_S"]

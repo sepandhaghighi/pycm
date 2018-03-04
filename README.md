@@ -262,7 +262,7 @@ For more information visit [here](Document.ipynb "Document")
 ## Issues & Bug Reports			
 
 Just fill an issue and describe it. We'll check it ASAP!							
-or send an email to [sepand@qpage.ir](mailto:sepand@qpage.ir "sepand@qpage.ir"). 
+or send an email to [shaghighi@ce.sharif.edu](mailto:shaghighi@ce.sharif.edu "shaghighi@ce.sharif.edu"). 
 
 
 ## TODO		

@@ -1,4 +1,6 @@
-# Core Developers #
+# Authors #
 
 ----------
-- Sepand Haghighi - Sharif University Of Technology/Moduland Co - ([http://github.com/sepandhaghighi](http://github.com/sepandhaghighi)) ([sepand@qpage.ir](mailto:sepand@qpage.ir))
+- Sepand Haghighi - Sharif University Of Technology ([shaghighi@ce.sharif.edu](mailto:shaghighi@ce.sharif.edu))
+- Masoomeh Jasemi - Sharif University Of Technology ([jasemi@ce.sharif.edu](mailto:jasemi@ce.sharif.edu))
+- Shaahin Hessabi - Sharif University Of Technology ([hessabi@sharif.edu](mailto:hessabi@sharif.edu))

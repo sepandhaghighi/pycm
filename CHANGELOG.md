@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-## [0.8] - 2018-03-04
+## [0.8] - 2018-03-05
 ### Added
 - Goodman and Kruskal's lambda B
 - Goodman and Kruskal's lambda A 
@@ -19,6 +19,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Kappa Unbiased
 - Kappa No Prevalence
 - Random Accuracy Unbiased
+
+### Changed
+- Notebook file updated
 
 ## [0.7] - 2018-02-26
 ### Added

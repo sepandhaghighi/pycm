@@ -100,6 +100,12 @@ def entropy_calc(item,POP):
         return "None"
 
 def kappa_no_prevalence_calc(overall_accuracy):
+    '''
+    This function calulate Kappa No Prevalence
+    :param overall_accuracy: overall accuracy
+    :type overall_accuracy : float
+    :return: Kappa No Prevalence as float
+    '''
     try:
         result=2*overall_accuracy-1
         return result
@@ -709,12 +715,26 @@ def PC_AC1_calc(P,TOP,POP):
         return "None"
 
 def overall_accuracy_calc(TP,POP):
+    '''
+    This function calculate overall accuracy
+    :param TP: True Positive
+    :type TP : dict
+    :param POP: Population
+    :type POP:dict
+    :return: overall_accuracy as float
+    '''
     try:
         overall_accuracy = sum(TP.values()) / list(POP.values())[0]
         return overall_accuracy
     except Exception:
         return None
 def overall_random_accuracy_calc(item):
+    '''
+    This function calculate overall random accuracy
+    :param item: RACC or RACCU
+    :type item : dict
+    :return: overall random accuracy as float
+    '''
     try:
         return sum(item.values())
     except Exception:

@@ -384,6 +384,10 @@ Chapman and Hall, London.</blockquote>
 
 <blockquote>14- Byrt, Ted, Janet Bishop and John B. Carlin. 1993. Bias, prevalence, and kappa. Journal of Clinical Epidemiology 46(5):423-429. </blockquote>
 
+<blockquote>15- Shepperd, M., Bowes, D. and Hall, T. (2014). Researcher Bias: The Use of Machine Learning in Software Defect Prediction. IEEE Transactions on Software Engineering, 40(6), pp.603-616.</blockquote>
+
+<blockquote>16- Deng, X., Liu, Q., Deng, Y. and Mahadevan, S. (2016). An improved method to construct basic probability assignment based on the confusion matrix for classification problem. Information Sciences, 340-341, pp.250-261.</blockquote>
+
 
 
 

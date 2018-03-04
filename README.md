@@ -54,6 +54,7 @@ pycm(python confusion matrix) is a multi class confusion matrix library in pytho
 
 ## Usage
 
+### From Vector
 ```python
 >>> from pycm import *
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
@@ -63,9 +64,6 @@ pycm(python confusion matrix) is a multi class confusion matrix library in pytho
 [0, 1, 2]
 >>> cm.table
 {0: {0: 3, 1: 0, 2: 0}, 1: {0: 0, 1: 1, 2: 2}, 2: {0: 2, 1: 1, 2: 3}}
->>> cm2 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":2}, "Class2": {"Class1": 0, "Class2": 5}}) # Create CM Directly
->>> cm2
-pycm.ConfusionMatrix(classes: ['Class1', 'Class2'])
 >>> print(cm)
 Predict          0        1        2        
 Actual
@@ -161,6 +159,94 @@ Actual
 0                1.0            0.0            0.0            
 1                0.0            0.33333        0.66667        
 2                0.33333        0.16667        0.5            
+
+```
+### Direct CM
+```python
+>>> from pycm import *
+>>> cm2 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":2}, "Class2": {"Class1": 0, "Class2": 5}}) # Create CM Directly
+>>> cm2
+pycm.ConfusionMatrix(classes: ['Class1', 'Class2'])
+>>> print(cm2)
+Predict          Class1   Class2   
+Actual
+Class1           1        2        
+Class2           0        5        
+
+
+
+
+Overall Statistics : 
+
+95% CI                                                           (0.44994,1.05006)
+Bennett_S                                                        0.5
+Chi-Squared                                                      None
+Chi-Squared DF                                                   1
+Conditional Entropy                                              None
+Cramer_V                                                         None
+Cross Entropy                                                    1.2454
+Gwet_AC1                                                         0.6
+Joint Entropy                                                    None
+KL Divergence                                                    0.29097
+Kappa                                                            0.38462
+Kappa 95% CI                                                     (-0.354,1.12323)
+Kappa No Prevalence                                              0.5
+Kappa Standard Error                                             0.37684
+Kappa Unbiased                                                   0.33333
+Lambda A                                                         None
+Lambda B                                                         None
+Overall_ACC                                                      0.75
+Overall_RACC                                                     0.59375
+Overall_RACCU                                                    0.625
+PPV_Macro                                                        0.85714
+PPV_Micro                                                        0.75
+Phi-Squared                                                      None
+Reference Entropy                                                0.95443
+Response Entropy                                                 0.54356
+Scott_PI                                                         0.33333
+Standard Error                                                   0.15309
+Strength_Of_Agreement(Altman)                                    Fair
+Strength_Of_Agreement(Cicchetti)                                 Poor
+Strength_Of_Agreement(Fleiss)                                    Poor
+Strength_Of_Agreement(Landis and Koch)                           Fair
+TPR_Macro                                                        0.66667
+TPR_Micro                                                        0.75
+
+Class Statistics :
+
+Classes                                                          Class1                  Class2                  
+ACC(Accuracy)                                                    0.75                    0.75                    
+BM(Informedness or bookmaker informedness)                       0.33333                 0.33333                 
+DOR(Diagnostic odds ratio)                                       None                    None                    
+ERR(Error rate)                                                  0.25                    0.25                    
+F0.5(F0.5 score)                                                 0.71429                 0.75758                 
+F1(F1 score - harmonic mean of precision and sensitivity)        0.5                     0.83333                 
+F2(F2 score)                                                     0.38462                 0.92593                 
+FDR(False discovery rate)                                        0.0                     0.28571                 
+FN(False negative/miss/type 2 error)                             2                       0                       
+FNR(Miss rate or false negative rate)                            0.66667                 0.0                     
+FOR(False omission rate)                                         0.28571                 0.0                     
+FP(False positive/type 1 error/false alarm)                      0                       2                       
+FPR(Fall-out or false positive rate)                             0.0                     0.66667                 
+G(G-measure geometric mean of precision and sensitivity)         0.57735                 0.84515                 
+LR+(Positive likelihood ratio)                                   None                    1.5                     
+LR-(Negative likelihood ratio)                                   0.66667                 0.0                     
+MCC(Matthews correlation coefficient)                            0.48795                 0.48795                 
+MK(Markedness)                                                   0.71429                 0.71429                 
+N(Condition negative)                                            5                       3                       
+NPV(Negative predictive value)                                   0.71429                 1.0                     
+P(Condition positive)                                            3                       5                       
+POP(Population)                                                  8                       8                       
+PPV(Precision or positive predictive value)                      1.0                     0.71429                 
+PRE(Prevalence)                                                  0.375                   0.625                   
+RACC(Random accuracy)                                            0.04688                 0.54688                 
+RACCU(Random accuracy unbiased)                                  0.0625                  0.5625                  
+TN(True negative/correct rejection)                              5                       1                       
+TNR(Specificity or true negative rate)                           1.0                     0.33333                 
+TON(Test outcome negative)                                       7                       1                       
+TOP(Test outcome positive)                                       1                       7                       
+TP(True positive/hit)                                            1                       5                       
+TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0                     
 
 ```
 				

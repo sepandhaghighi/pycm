@@ -1,6 +1,15 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 import math
+
+def vector_filter(actual_vector,predict_vector):
+    temp=[]
+    temp.extend(actual_vector)
+    temp.extend(predict_vector)
+    for i in temp:
+        if type(i)!=type(temp[0]):
+            return [list(map(str,actual_vector)),list(map(str,predict_vector))]
+    return [actual_vector,predict_vector]
 def vector_check(vector):
     '''
     This function check input vector items type
@@ -713,6 +722,17 @@ def PC_AC1_calc(P,TOP,POP):
         return result
     except Exception:
         return "None"
+def PC_S_calc(classes):
+    '''
+    This function calculate percent chance agreement for Bennett-et-al.'s-S-score
+    :param classes: confusion matrix classes
+    :type classes : list
+    :return: percent chance agreement as float
+    '''
+    try:
+        return 1/(len(classes))
+    except Exception:
+        return "None"
 
 def overall_accuracy_calc(TP,POP):
     '''
@@ -762,6 +782,12 @@ def overall_statistics(RACC,RACCU,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
     :type P : dict
     :param POP: Population
     :type POP:dict
+    :param TOP: Test outcome positive
+    :type TOP : dict
+    :param classes: confusion matrix classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
     :return: overall statistics as dict
     '''
     overall_accuracy=overall_accuracy_calc(TP,POP)
@@ -770,7 +796,7 @@ def overall_statistics(RACC,RACCU,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
     overall_kappa=reliability_calc(overall_random_accuracy,overall_accuracy)
     PC_PI=PC_PI_calc(P,TOP,POP)
     PC_AC1=PC_AC1_calc(P,TOP,POP)
-    PC_S=1/(len(list(P.keys())))
+    PC_S=PC_S_calc(classes)
     PI=reliability_calc(PC_PI,overall_accuracy)
     AC1=reliability_calc(PC_AC1,overall_accuracy)
     S=reliability_calc(PC_S,overall_accuracy)

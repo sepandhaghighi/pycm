@@ -20,6 +20,9 @@ class ConfusionMatrix():
                 raise pycmError("Input Vectors Must Be List")
             if len(actual_vector) != len(predict_vector):
                 raise pycmError("Input Vectors Must Be The Same Length")
+            if len(actual_vector)==0 or len(predict_vector)==0:
+                raise pycmError("Input Vectors Are Empty")
+            [actual_vector,predict_vector]=vector_filter(actual_vector,predict_vector)
             matrix_param=matrix_params_calc(actual_vector,predict_vector)
         self.digit=digit
         self.actual_vector=actual_vector

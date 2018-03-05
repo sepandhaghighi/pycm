@@ -3,6 +3,14 @@ from __future__ import division
 import math
 
 def vector_filter(actual_vector,predict_vector):
+    '''
+    This function convert different type of items in vectors to str
+    :param actual_vector: actual values
+    :type actual_vector : list
+    :param predict_vector: predict value
+    :type predict_vector : list
+    :return: new actual and predict vector
+    '''
     temp=[]
     temp.extend(actual_vector)
     temp.extend(predict_vector)
@@ -23,6 +31,12 @@ def vector_check(vector):
     return True
 
 def class_check(vector):
+    '''
+    This function check different items in matrix classes
+    :param vector: input vector
+    :type vector : list
+    :return: bool
+    '''
     for i in vector:
         if type(i)!=vector[0]:
             return False

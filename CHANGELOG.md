@@ -19,9 +19,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Kappa Unbiased
 - Kappa No Prevalence
 - Random Accuracy Unbiased
+- pycmVectorError class
+- pycmMatrixError class
 
 ### Changed
 - Notebook file updated
+
+### Removed
+- pycmError class
 
 ## [0.7] - 2018-02-26
 ### Added

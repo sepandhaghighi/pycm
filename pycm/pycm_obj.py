@@ -12,7 +12,10 @@ class ConfusionMatrix():
     def __init__(self,actual_vector=None,predict_vector=None,matrix=None,digit=5):
         if isinstance(matrix,dict)==True:
             if matrix_check(matrix)==True:
-                matrix_param=matrix_params_from_table(matrix)
+                if class_check(list(matrix.keys()))==False:
+                    raise pycmError("Input Matrix Classes Must Be Same Type")
+                else:
+                    matrix_param=matrix_params_from_table(matrix)
             else:
                 raise pycmError("Input Confusion Matrix Format Error")
         else:

@@ -21,6 +21,12 @@ def vector_check(vector):
         if isinstance(i,int)==False:
             return False
     return True
+
+def class_check(vector):
+    for i in vector:
+        if type(i)!=vector[0]:
+            return False
+    return True
 def matrix_check(table):
     '''
     This function check input matrix format

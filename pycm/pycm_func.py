@@ -38,7 +38,7 @@ def class_check(vector):
     :return: bool
     '''
     for i in vector:
-        if type(i)!=vector[0]:
+        if type(i)!=type(vector[0]):
             return False
     return True
 def matrix_check(table):

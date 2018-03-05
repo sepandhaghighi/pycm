@@ -94,11 +94,19 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 >>> cm_2 = ConfusionMatrix(y_actu, 2)
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmError: Input Vectors Must Be List
+pycm.pycm_obj.pycmMatrixError: Input Vectors Must Be List
 >>> cm_3 = ConfusionMatrix(y_actu, [1,2])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmError: Input Vectors Must Be The Same Length
+pycm.pycm_obj.pycmMatrixError: Input Vectors Must Be The Same Length
+>>> cm_4 = ConfusionMatrix([], [])
+Traceback (most recent call last):
+        ...
+pycm.pycm_obj.pycmMatrixError: Input Vectors Are Empty
+>>> cm_5 = ConfusionMatrix([1,1,1,], [1,1,1,1])
+Traceback (most recent call last):
+        ...
+pycm.pycm_obj.pycmMatrixError: Input Vectors Must Be The Same Length
 >>> pycm_help()
 <BLANKLINE>
  _ __   _   _   ___  _ __ ___
@@ -494,7 +502,15 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 >>> cm3=ConfusionMatrix(matrix={})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmError: Input Confusion Matrix Format Error
+pycm.pycm_obj.pycmMatrixError: Input Confusion Matrix Format Error
+>>> cm_4=ConfusionMatrix(matrix={1:{1:2,"1":2},"1":{1:2,"1":3}})
+Traceback (most recent call last):
+        ...
+pycm.pycm_obj.pycmMatrixError: Input Matrix Classes Must Be Same Type
+>>> cm_5=ConfusionMatrix(matrix={1:{1:2}})
+Traceback (most recent call last):
+        ...
+pycm.pycm_obj.pycmVectorError: Number Of Classes < 2
 >>> save_stat=cm.save_html("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True

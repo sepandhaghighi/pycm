@@ -3,7 +3,9 @@
 from .pycm_func import *
 from .pycm_output import *
 import os
-class pycmError(Exception):
+class pycmVectorError(Exception):
+    pass
+class pycmMatrixError(Exception):
     pass
 class ConfusionMatrix():
     '''
@@ -13,20 +15,22 @@ class ConfusionMatrix():
         if isinstance(matrix,dict)==True:
             if matrix_check(matrix)==True:
                 if class_check(list(matrix.keys()))==False:
-                    raise pycmError("Input Matrix Classes Must Be Same Type")
+                    raise pycmMatrixError("Input Matrix Classes Must Be Same Type")
                 else:
                     matrix_param=matrix_params_from_table(matrix)
             else:
-                raise pycmError("Input Confusion Matrix Format Error")
+                raise pycmMatrixError("Input Confusion Matrix Format Error")
         else:
             if not isinstance(actual_vector, list) or not isinstance(predict_vector, list):
-                raise pycmError("Input Vectors Must Be List")
+                raise pycmMatrixError("Input Vectors Must Be List")
             if len(actual_vector) != len(predict_vector):
-                raise pycmError("Input Vectors Must Be The Same Length")
+                raise pycmMatrixError("Input Vectors Must Be The Same Length")
             if len(actual_vector)==0 or len(predict_vector)==0:
-                raise pycmError("Input Vectors Are Empty")
+                raise pycmMatrixError("Input Vectors Are Empty")
             [actual_vector,predict_vector]=vector_filter(actual_vector,predict_vector)
             matrix_param=matrix_params_calc(actual_vector,predict_vector)
+        if len(matrix_param[0])<2:
+            raise pycmVectorError("Number Of Classes < 2")
         self.digit=digit
         self.actual_vector=actual_vector
         self.predict_vector=predict_vector

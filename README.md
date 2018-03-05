@@ -397,13 +397,13 @@ Chapman and Hall, London.</blockquote>
 If you use pycm in your research , please cite this :
 
 <pre>
-Sepand Haghighi. “Pycm : Multi Class Confusion Matrix Library in Python”. Zenodo, January 22, 2018. doi:10.5281/zenodo.1157173.
+Sepand Haghighi, Masoomeh Jasemi, and Shaahin Hessabi. “Pycm : Multi Class Confusion Matrix Library in Python”. Zenodo, January 22, 2018. doi:10.5281/zenodo.1157173.
 </pre>
 <pre>
 
 @misc{https://doi.org/10.5281/zenodo.1157173,
   doi = {10.5281/zenodo.1157173},
-  author = {{Sepand Haghighi}},
+  author = {{Sepand Haghighi} and Jasemi,  Masoomeh and {Shaahin Hessabi}},
   keywords = {Machine Learning,  statistics,  confusion-matrix,  statistical-analysis,  matrices,  matrix},
   title = {Pycm : Multi Class Confusion Matrix Library In Python},
   pages = {--},

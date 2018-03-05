@@ -94,19 +94,19 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 >>> cm_2 = ConfusionMatrix(y_actu, 2)
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmMatrixError: Input Vectors Must Be List
+pycm.pycm_obj.pycmVectorError: Input Vectors Must Be List
 >>> cm_3 = ConfusionMatrix(y_actu, [1,2])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmMatrixError: Input Vectors Must Be The Same Length
+pycm.pycm_obj.pycmVectorError: Input Vectors Must Be The Same Length
 >>> cm_4 = ConfusionMatrix([], [])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmMatrixError: Input Vectors Are Empty
+pycm.pycm_obj.pycmVectorError: Input Vectors Are Empty
 >>> cm_5 = ConfusionMatrix([1,1,1,], [1,1,1,1])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmMatrixError: Input Vectors Must Be The Same Length
+pycm.pycm_obj.pycmVectorError: Input Vectors Must Be The Same Length
 >>> pycm_help()
 <BLANKLINE>
  _ __   _   _   ___  _ __ ___

@@ -22,11 +22,11 @@ class ConfusionMatrix():
                 raise pycmMatrixError("Input Confusion Matrix Format Error")
         else:
             if not isinstance(actual_vector, list) or not isinstance(predict_vector, list):
-                raise pycmMatrixError("Input Vectors Must Be List")
+                raise pycmVectorError("Input Vectors Must Be List")
             if len(actual_vector) != len(predict_vector):
-                raise pycmMatrixError("Input Vectors Must Be The Same Length")
+                raise pycmVectorError("Input Vectors Must Be The Same Length")
             if len(actual_vector)==0 or len(predict_vector)==0:
-                raise pycmMatrixError("Input Vectors Are Empty")
+                raise pycmVectorError("Input Vectors Are Empty")
             [actual_vector,predict_vector]=vector_filter(actual_vector,predict_vector)
             matrix_param=matrix_params_calc(actual_vector,predict_vector)
         if len(matrix_param[0])<2:

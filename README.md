@@ -3,7 +3,7 @@
 <br/>
 <br/>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
-<a href="Document.ipynb"><img src="https://img.shields.io/badge/doc-latest-orange.svg"></a>
+<a href="/Document"><img src="https://img.shields.io/badge/doc-latest-orange.svg"></a>
 <a href="https://travis-ci.org/sepandhaghighi/pycm"><img src="https://travis-ci.org/sepandhaghighi/pycm.svg?branch=master"></a>
 <a href="https://ci.appveyor.com/project/sepandhaghighi/pycm"><img src="https://ci.appveyor.com/api/projects/status/nbe96d7gk2693ju0?svg=true"></a>
 <a href="https://codecov.io/gh/sepandhaghighi/pycm">

@@ -257,7 +257,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333        
 ```
 				
 
-For more information visit [here](Document.ipynb "Document")
+For more information visit [here](/Document "Document")
 
 <div align="center">
 

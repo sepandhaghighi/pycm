@@ -99,6 +99,7 @@ Kappa Standard Error                                             0.22036
 Kappa Unbiased                                                   0.34426
 Lambda A                                                         0.16667
 Lambda B                                                         0.42857
+Mutual Information                                               0.52421
 Overall_ACC                                                      0.58333
 Overall_RACC                                                     0.35417
 Overall_RACCU                                                    0.36458
@@ -201,6 +202,7 @@ Kappa Standard Error                                             0.37684
 Kappa Unbiased                                                   0.33333
 Lambda A                                                         None
 Lambda B                                                         None
+Mutual Information                                               None
 Overall_ACC                                                      0.75
 Overall_RACC                                                     0.59375
 Overall_RACCU                                                    0.625

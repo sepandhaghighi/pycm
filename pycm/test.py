@@ -109,23 +109,15 @@ Traceback (most recent call last):
 pycm.pycm_obj.pycmVectorError: Input Vectors Must Be The Same Length
 >>> pycm_help()
 <BLANKLINE>
- _ __   _   _   ___  _ __ ___
-| '_ \ | | | | / __|| '_ ` _ \
-| |_) || |_| || (__ | | | | | |
-| .__/  \__, | \___||_| |_| |_|
-|_|     |___/
-<BLANKLINE>
-__     __     ___       ___
-\ \   / / _  / _ \     ( _ )
- \ \ / / (_)| | | |    / _ \
-  \ V /   _ | |_| | _ | (_) |
-   \_/   (_) \___/ (_) \___/
+In the field of machine learning and specifically the problem of statistical classification, a confusion matrix,
+also known as an error matrix, is a specific table layout that allows visualization of the performance of an algorithm,
+typically a supervised learning one (in unsupervised learning it is usually called a matching matrix). Each row of
+the matrix represents the instances in a predicted class while each column represents the instances in an actual class
+(or vice versa) pycm(python confusion matrix) is a multi-class confusion matrix library in python.
 <BLANKLINE>
 <BLANKLINE>
 Repo : https://github.com/sepandhaghighi/pycm
 Webpage : http://pycm.shaghighi.ir
-<BLANKLINE>
-<BLANKLINE>
 >>> TTPN_calc(0,0)
 'None'
 >>> TTPN_calc(1,4)

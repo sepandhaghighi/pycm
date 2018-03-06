@@ -211,8 +211,7 @@ def pycm_help():
     This function print pycm details
     :return: None
     '''
-    tprint("pycm")
-    tprint("V:"+VERSION)
+    print(OVERVIEW)
     print("Repo : https://github.com/sepandhaghighi/pycm")
     print("Webpage : http://pycm.shaghighi.ir")
 

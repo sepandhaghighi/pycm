@@ -211,6 +211,14 @@ def conditional_entropy_calc(classes,table,P,POP):
     except Exception:
         return "None"
 def mutual_information_calc(response_entropy,conditional_entropy):
+    '''
+    This function calculate mutual information
+    :param response_entropy:  resposne entropy
+    :type response_entropy : float
+    :param conditional_entropy:  conditional entropy
+    :type conditional_entropy : float
+    :return: mutual information as float
+    '''
     try:
         return response_entropy-conditional_entropy
     except Exception:

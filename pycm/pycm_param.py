@@ -94,7 +94,7 @@ PARAMS_LINK={"TPR":"http://www.shaghighi.ir/pycm/doc/index.html#TPR--(sensitivit
              "Kappa Unbiased":"http://www.shaghighi.ir/pycm/doc/index.html#Kappa-Unbiased",
              "Overall_RACCU":"http://www.shaghighi.ir/pycm/doc/index.html#Overall_RACCU",
              "Kappa No Prevalence":"http://www.shaghighi.ir/pycm/doc/index.html#Kappa-No-Prevalence",
-             "Mutual Information":""
+             "Mutual Information":"http://www.shaghighi.ir/pycm/doc/#Mutual-Information"
 
              }
 

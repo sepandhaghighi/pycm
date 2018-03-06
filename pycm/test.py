@@ -38,6 +38,7 @@ Kappa Standard Error                                             0.22036
 Kappa Unbiased                                                   0.34426
 Lambda A                                                         0.16667
 Lambda B                                                         0.42857
+Mutual Information                                               0.52421
 Overall_ACC                                                      0.58333
 Overall_RACC                                                     0.35417
 Overall_RACCU                                                    0.36458
@@ -221,6 +222,7 @@ Kappa Standard Error                                             0.15128
 Kappa Unbiased                                                   -0.12554
 Lambda A                                                         None
 Lambda B                                                         None
+Mutual Information                                               None
 Overall_ACC                                                      0.35
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
@@ -294,6 +296,7 @@ Kappa Standard Error                                             0.15128
 Kappa Unbiased                                                   -0.12554
 Lambda A                                                         None
 Lambda B                                                         None
+Mutual Information                                               None
 Overall_ACC                                                      0.35
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
@@ -462,6 +465,8 @@ Actual
 0.33333333333333326
 >>> reliability_calc(cm2.Overall_RACC,cm2.Overall_ACC)
 0.4740259740259741
+>>> mutual_information_calc(cm2.ResponseEntropy,cm2.ConditionalEntropy)
+0.39731004447943596
 >>> cm3=ConfusionMatrix(matrix=cm2.table)
 >>> cm3
 pycm.ConfusionMatrix(classes: [0, 1, 2])

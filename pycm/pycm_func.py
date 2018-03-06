@@ -210,6 +210,11 @@ def conditional_entropy_calc(classes,table,P,POP):
         return -result
     except Exception:
         return "None"
+def mutual_information_calc(response_entropy,conditional_entropy):
+    try:
+        return response_entropy-conditional_entropy
+    except Exception:
+        return "None"
 def kl_divergence_calc(P,TOP,POP):
     '''
     This function calculate Kullback-Liebler (KL) divergence
@@ -834,6 +839,7 @@ def overall_statistics(RACC,RACCU,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
     cross_entropy = cross_entropy_calc(TOP,P,POP)
     join_entropy = joint_entropy_calc(classes,table,POP)
     conditional_entropy = conditional_entropy_calc(classes,table,P,POP)
+    mutual_information = mutual_information_calc(response_entropy,conditional_entropy)
     kl_divergence=kl_divergence_calc(P,TOP,POP)
     lambda_B=lambda_B_calc(classes,table,TOP,POP)
     lambda_A=lambda_A_calc(classes,table,P,POP)
@@ -851,7 +857,7 @@ def overall_statistics(RACC,RACCU,TPR,PPV,TP,FN,FP,POP,P,TOP,classes,table):
             "Reference Entropy":reference_entropy,"Cross Entropy":cross_entropy,"Joint Entropy":join_entropy,
             "Conditional Entropy":conditional_entropy,"KL Divergence":kl_divergence,"Lambda B":lambda_B,
             "Lambda A":lambda_A,"Kappa Unbiased":kappa_unbiased,"Overall_RACCU":overall_random_accuracy_unbiased,
-            "Kappa No Prevalence":kappa_no_prevalence}
+            "Kappa No Prevalence":kappa_no_prevalence,"Mutual Information":mutual_information}
 def class_statistics(TP,TN,FP,FN):
     '''
     This function return all class statistics

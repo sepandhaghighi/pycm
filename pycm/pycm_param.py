@@ -93,7 +93,8 @@ PARAMS_LINK={"TPR":"http://www.shaghighi.ir/pycm/doc/index.html#TPR--(sensitivit
              "Lambda A":"http://www.shaghighi.ir/pycm/doc/index.html#Goodman-and-Kruskal's-lambda-A",
              "Kappa Unbiased":"http://www.shaghighi.ir/pycm/doc/index.html#Kappa-Unbiased",
              "Overall_RACCU":"http://www.shaghighi.ir/pycm/doc/index.html#Overall_RACCU",
-             "Kappa No Prevalence":"http://www.shaghighi.ir/pycm/doc/index.html#Kappa-No-Prevalence"
+             "Kappa No Prevalence":"http://www.shaghighi.ir/pycm/doc/index.html#Kappa-No-Prevalence",
+             "Mutual Information":""
 
              }
 

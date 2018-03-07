@@ -22,7 +22,7 @@
    * [Installation](#installation)
    * [Usage](#usage)
    * [Issues & Bug Reports](#issues--bug-reports)
-   * [TODO](#todo)
+   * [Todo](#todo)
    * [Outputs](#outputs)
    * [Dependencies](#dependencies)
    * [Contribution](#contribution)
@@ -31,7 +31,7 @@
    * [Authors](AUTHORS.md)
    * [License](#license)
    * [Donate](#donate-to-our-project)
-   * [CHANGELOG](CHANGELOG.md)
+   * [Changelog](CHANGELOG.md)
 
 ## Overview	
 In the field of machine learning and specifically the problem of statistical classification, a confusion matrix, also known as an error matrix, is a specific table layout that allows visualization of the performance of an algorithm, typically a supervised learning one (in unsupervised learning it is usually called a matching matrix). Each row of the matrix represents the instances in a predicted class while each column represents the instances in an actual class (or vice versa)		
@@ -275,7 +275,7 @@ Just fill an issue and describe it. We'll check it ASAP!
 or send an email to [shaghighi@ce.sharif.edu](mailto:shaghighi@ce.sharif.edu "shaghighi@ce.sharif.edu"). 
 
 
-## TODO		
+## Todo	
 - [x] Basic
   - [x] TP
   - [x] FP

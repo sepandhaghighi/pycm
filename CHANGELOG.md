@@ -22,9 +22,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - pycmVectorError class
 - pycmMatrixError class
 - Mutual Information
+- Support numpy arrays
 
 ### Changed
 - Notebook file updated
+
 
 ### Removed
 - pycmError class

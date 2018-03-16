@@ -23,6 +23,7 @@ setup(
   install_requires=[
 	  'codecov',
       'art',
+      'numpy',
       ],
   python_requires='>=2.7',
   classifiers=[

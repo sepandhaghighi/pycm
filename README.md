@@ -63,8 +63,8 @@ pycm(python confusion matrix) is a multi-class confusion matrix library in pytho
 ### From Vector
 ```python
 >>> from pycm import *
->>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
->>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
+>>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2] # or y_actu = numpy.array([2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2])
+>>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2] # or y_pred = numpy.array([0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2])
 >>> cm = ConfusionMatrix(y_actu, y_pred) # Create CM From Data
 >>> cm.classes
 [0, 1, 2]

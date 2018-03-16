@@ -3,6 +3,8 @@
 from .pycm_func import *
 from .pycm_output import *
 import os
+import numpy
+
 class pycmVectorError(Exception):
     pass
 class pycmMatrixError(Exception):
@@ -21,7 +23,8 @@ class ConfusionMatrix():
             else:
                 raise pycmMatrixError("Input Confusion Matrix Format Error")
         else:
-            if not isinstance(actual_vector, list) or not isinstance(predict_vector, list):
+            if not isinstance(actual_vector, (list,numpy.ndarray)) or not\
+                    isinstance(predict_vector, (list,numpy.ndarray)):
                 raise pycmVectorError("Input Vectors Must Be List")
             if len(actual_vector) != len(predict_vector):
                 raise pycmVectorError("Input Vectors Must Be The Same Length")

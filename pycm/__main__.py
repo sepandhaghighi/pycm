@@ -4,6 +4,7 @@ import doctest
 import sys
 from .pycm_obj import *
 from .pycm_output import *
+from art import tprint
 
 
 if __name__=="__main__":

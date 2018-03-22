@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
   name = 'pycm',
   packages = ['pycm'],
-  version = '0.8',
+  version = '0.8.1',
   description = 'Multiclass confusion matrix library in python',
   long_description='''
    In the field of machine learning and specifically the problem of statistical classification,
@@ -15,7 +15,7 @@ setup(
   author = 'Sepand Haghighi',
   author_email = 'sepand@qpage.ir',
   url = 'https://github.com/sepandhaghighi/pycm',
-  download_url = 'https://github.com/sepandhaghighi/pycm/tarball/v0.8',
+  download_url = 'https://github.com/sepandhaghighi/pycm/tarball/v0.8.1',
   keywords = "confusion-matrix python3 python machine_learning ML",
   project_urls={
     'Webpage': 'http://pycm.shaghighi.ir',

@@ -19,6 +19,7 @@
    * [Overview](#overview)
    * [Installation](#installation)
    * [Usage](#usage)
+   * [Document](/Document/)
    * [Issues & Bug Reports](#issues--bug-reports)
    * [Todo](#todo)
    * [Outputs](#outputs)

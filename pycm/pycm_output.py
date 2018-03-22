@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
-from art import tprint
 from functools import partial
 from .pycm_param import *
 

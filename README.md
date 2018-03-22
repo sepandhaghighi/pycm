@@ -268,8 +268,7 @@ For more information visit [here](/Document "Document")
 
 <div align="center">
 
-<a href="https://asciinema.org/a/163517" target="_blank"><img src="https://asciinema.org/a/163517.png" /></a>
-
+<a href="https://asciinema.org/a/171863" target="_blank"><img src="https://asciinema.org/a/171863.png" /></a>
 </div>
 
 ## Issues & Bug Reports			

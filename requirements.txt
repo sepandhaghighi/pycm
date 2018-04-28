@@ -1,5 +1,5 @@
-art
-numpy
-codecov
+art>0.7
+numpy==1.14.3
+codecov==2.0.15
 
 

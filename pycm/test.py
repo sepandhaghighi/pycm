@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 '''
->>> import coverage
 >>> from pycm import *
->>> cov=coverage.Coverage()
->>> cov.start()
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu, y_pred)
@@ -518,7 +515,5 @@ True
 >>> save_stat=cm.save_html("/asdasd,qweqwe.eo/",address=True)
 >>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.html'"}
 True
->>> cov.stop()
->>> cov.save()
 
 '''

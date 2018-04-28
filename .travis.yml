@@ -14,6 +14,6 @@ install:
   - python setup.py install
 
 script:
-  - python -m pycm test
+  - python -m pytest pycm/ --cov=pycm --cov-report=term
 after_success:
   - codecov

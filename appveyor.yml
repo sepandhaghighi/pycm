@@ -37,4 +37,4 @@ install:
   - "%PYTHON%/python.exe setup.py install"
 
 test_script:
-  - "%PYTHON%/python.exe -m pycm test"
+  - "%PYTHON%/python.exe -m pytest pycm/ --cov=pycm --cov-report=term"

@@ -3,7 +3,7 @@ from setuptools import setup
 
 def get_requires():
     requirements = open("requirements.txt","r").read()
-    return list(filter(lambda x: x!="",requirements))
+    return list(filter(lambda x: x!="",requirements.split()))
 
 setup(
   name = 'pycm',

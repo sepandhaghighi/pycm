@@ -1,1 +1,15 @@
 include LICENSE
+include *.md
+include *.spec
+include *.txt
+include *.yml
+include *.ini
+recursive-include Documents *.ipynb
+recursive-include Documents *.md
+recursive-include Otherfiles *.csv
+recursive-include Otherfiles *.pycm
+recursive-include Otherfiles *.html
+recursive-include Otherfiles *.png
+recursive-include Otherfiles *.jpg
+recursive-include paper *.bib
+recursive-include paper *.md

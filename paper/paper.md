@@ -40,10 +40,12 @@ We can categorize these statistics in 3 sections :
 2. Class Statistics			
 3. Overall Statistics
 
+![PyCM Block Diagram](../Otherfiles/block_diagram.jpg) 
+
 PyCM is also capable of generating report in HTML, CSV and .pycm formats.
 
 
-![PyCM Block Diagram](../Otherfiles/block_diagram.jpg) 
+
 
 
 

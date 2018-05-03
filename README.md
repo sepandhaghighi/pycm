@@ -427,7 +427,7 @@ Download [PYCM.bib](http://www.shaghighi.ir/pycm/PYCM.bib)
 
 ## License
 
-<a href="https://github.com/sepandhaghighi/pycm/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg"/></a>
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsepandhaghighi%2Fpycm.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsepandhaghighi%2Fpycm?ref=badge_large)
 
 
 ## Donate to our project

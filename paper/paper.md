@@ -30,7 +30,7 @@ bibliography: paper.bib
 			
 In the field of machine learning, and specifically for statistical classification, a confusion matrix, also known as error matrix, is a specific table layout that allows visualization of the algorithm performance, and is mostly used in supervised learning. Each row of the matrix represents the instances in an actual class, while each column represents the instances in a predict class (or vice versa)[@Powers2011; @Sammut2010; @Shepperd2014; @Deng2016] .			
 
-![PyCM Block Diagram](../Otherfiles/block_diagram.jpg) 				
+![PyCM Block Diagram](../Otherfiles/block_diagram.png) 				
 
 PyCM is a multi-class confusion matrix library written in python that supports both input data vectors and direct matrix.			
 

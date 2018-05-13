@@ -17,6 +17,17 @@ class pycmMatrixError(Exception):
 class ConfusionMatrix():
     '''
     Main Class Of ConfusionMatrix
+    >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
+    >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
+    >>> cm = ConfusionMatrix(y_actu, y_pred
+    >>> cm.classes
+    [0, 1, 2]
+    >>> cm.table
+    {0: {0: 3, 1: 0, 2: 0}, 1: {0: 0, 1: 1, 2: 2}, 2: {0: 2, 1: 1, 2: 3}}
+    >>> cm2 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":2},
+    "Class2": {"Class1": 0, "Class2": 5}}) # Create CM Directly
+    >>> cm2
+    pycm.ConfusionMatrix(classes: ['Class1', 'Class2'])
     '''
 
     def __init__(
@@ -25,6 +36,17 @@ class ConfusionMatrix():
             predict_vector=None,
             matrix=None,
             digit=5):
+        '''
+        :param actual_vector: Actual Vector
+        :type actual_vector: python list or numpy ndarray of any objects
+        :param predict_vector: Predicted Vector
+        :type predict_vector: python list or numpy ndarray of any objects
+        :param matrix: direct matrix
+        :type matrix: dictionary
+        :type matrix: dict
+        :param digit: precision digit (default value : 5)
+        :type digit : int
+        '''
         if isinstance(matrix, dict):
             if matrix_check(matrix):
                 if class_check(list(matrix.keys())) == False:

@@ -19,7 +19,7 @@ class ConfusionMatrix():
     Main Class Of ConfusionMatrix
     >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
     >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
-    >>> cm = ConfusionMatrix(y_actu, y_pred
+    >>> cm = ConfusionMatrix(y_actu, y_pred)
     >>> cm.classes
     [0, 1, 2]
     >>> cm.table

@@ -65,12 +65,13 @@ pycm(python confusion matrix) is a multi-class confusion matrix library in pytho
 
 ## Usage
 
+		
 ### From Vector
 ```python
 >>> from pycm import *
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2] # or y_actu = numpy.array([2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2])
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2] # or y_pred = numpy.array([0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2])
->>> cm = ConfusionMatrix(y_actu, y_pred) # Create CM From Data
+>>> cm = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred) # Create CM From Data
 >>> cm.classes
 [0, 1, 2]
 >>> cm.table
@@ -262,6 +263,17 @@ TP(True positive/hit)                                            1              
 TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0                     
 
 ```
+
+### Acceptable Data Types			
+1. `actual_vector` : python `list` or numpy `ndarray` of any objects
+2. `predict_vector` : python `list` or numpy `ndarray` of any objects
+3. `matrix` : `dict`
+4. `digit`: `int`			
+
+* run `help(ConfusionMatrix)` for more information
+
+
+
 				
 
 For more information visit [here](/Document "Document")

@@ -42,7 +42,7 @@ We can categorize these statistics in 3 sections:
 
 PyCM is also capable of generating report in HTML, CSV and .pycm formats.
 
-To sum it up, PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scientists that need a broad array of metrics for predictive models and an accurate evaluation of large variety of classifiers.	
+To sum it up, PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scientists that need a broad array of metrics for predictive models and an accurate evaluation of large variety of classifiers.[@Haghighi2018]	
 
 
 

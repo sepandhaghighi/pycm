@@ -42,7 +42,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 <div align="center">
 <img src="Otherfiles/block_diagram.jpg">
-<p>Fig1. PYCM Block Diagram</p>
+<p>Fig1. PyCM Block Diagram</p>
 </div>
 
 
@@ -357,7 +357,7 @@ or send an email to [shaghighi@ce.sharif.edu](mailto:shaghighi@ce.sharif.edu "sh
 
 1. [HTML](http://www.shaghighi.ir/pycm/test.html)
 2. [CSV](Otherfiles/test.csv)
-3. [PYCM](Otherfiles/test.pycm)			
+3. [PyCM](Otherfiles/test.pycm)			
 
 
 ## Dependencies
@@ -413,7 +413,7 @@ Remember to write a few tests for your code before sending pull requests.
 
 ## Cite
 
-If you use pycm in your research , please cite this :
+If you use PyCM in your research , please cite this :
 
 <pre>
 Sepand Haghighi, Masoomeh Jasemi, and Shaahin Hessabi. “Pycm : Multi Class Confusion Matrix Library in Python”. Zenodo, January 22, 2018. doi:10.5281/zenodo.1157173.

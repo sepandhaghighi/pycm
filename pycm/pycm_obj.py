@@ -37,9 +37,9 @@ class ConfusionMatrix():
             digit=5):
         '''
         :param actual_vector: Actual Vector
-        :type actual_vector: python list or numpy ndarray of any objects
+        :type actual_vector: python list or numpy array of any objects
         :param predict_vector: Predicted Vector
-        :type predict_vector: python list or numpy ndarray of any objects
+        :type predict_vector: python list or numpy array of any objects
         :param matrix: direct matrix
         :type matrix: dictionary
         :type matrix: dict

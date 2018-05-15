@@ -265,8 +265,8 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333        
 ```
 
 ### Acceptable Data Types			
-1. `actual_vector` : python `list` or numpy `ndarray` of any objects
-2. `predict_vector` : python `list` or numpy `ndarray` of any objects
+1. `actual_vector` : python `list` or numpy `array` of any objects
+2. `predict_vector` : python `list` or numpy `array` of any objects
 3. `matrix` : `dict`
 4. `digit`: `int`			
 

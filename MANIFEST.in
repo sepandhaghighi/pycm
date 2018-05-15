@@ -5,6 +5,7 @@ include *.txt
 include *.yml
 include *.ini
 recursive-include Documents *.ipynb
+recursive-include Documents *.html
 recursive-include Documents *.md
 recursive-include Otherfiles *.csv
 recursive-include Otherfiles *.pycm

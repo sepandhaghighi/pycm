@@ -41,8 +41,8 @@ PyCM is a multi-class confusion matrix library written in python that supports b
 
 We can categorize these statistics in 3 sections: 			
 
-1. Basic 
-2. Class Statistics			
+1. Basic
+2. Class Statistics
 3. Overall Statistics
 
 PyCM is also capable of generating report in HTML, CSV and .pycm formats.

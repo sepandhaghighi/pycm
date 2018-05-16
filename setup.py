@@ -11,9 +11,9 @@ setup(
     name='pycm',
     packages=['pycm'],
     version='0.8.1',
-    description='Multi-class confusion matrix library in python',
+    description='Multi-class confusion matrix library in Python',
     long_description='''
-   PyCM is a multi-class confusion matrix library written in python that
+   PyCM is a multi-class confusion matrix library written in Python that
    supports both input data vectors and direct matrix, and a proper tool for
    post-classification model evaluation that supports most classes and overall
    statistics parameters.

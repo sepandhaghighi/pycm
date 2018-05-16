@@ -8,6 +8,7 @@ tags:
   - analysis
   - machine-learning
   - data-analysis
+  - python
 authors:p
  - name: Sepand Haghighi
    orcid: 0000-0001-9450-2375

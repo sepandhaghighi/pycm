@@ -1,5 +1,5 @@
 ---
-title: 'PyCM: Multiclass confusion matrix library in python'
+title: 'PyCM: Multiclass confusion matrix library in Python'
 tags:
   - confusion-matrix
   - classification
@@ -8,7 +8,7 @@ tags:
   - analysis
   - machine-learning
   - data-analysis
-authors:
+authors:p
  - name: Sepand Haghighi
    orcid: 0000-0001-9450-2375
    affiliation: 1
@@ -37,7 +37,7 @@ bibliography: paper.bib
 In the field of machine learning and specifically for statistical classification a confusion matrix - also known as error matrix - is a specific table layout that allows visualization of the algorithm performance, and is mostly used in supervised learning. Each row of the matrix represents the instances in an actual class, while each column represents the instances in a predict class (or vice versa)[@Powers2011; @Sammut2010; @Shepperd2014; @Deng2016].			
 			
 
-PyCM is a multi-class confusion matrix library written in python that supports both input data vectors and direct matrix, and a proper tool for post-classification model evaluation that supports most classes and overall statistics parameters [@Landis1977; @Fleiss1971; @Altman1990; @Gwet2008; @Scott1955; @Bennett1954; @Cicchetti1994; @Davies1980; @Kullback1951; @Goodman1972; @Goodman1963; @Byrt1993].			
+PyCM is a multi-class confusion matrix library written in Python that supports both input data vectors and direct matrix, and a proper tool for post-classification model evaluation that supports most classes and overall statistics parameters [@Landis1977; @Fleiss1971; @Altman1990; @Gwet2008; @Scott1955; @Bennett1954; @Cicchetti1994; @Davies1980; @Kullback1951; @Goodman1972; @Goodman1963; @Byrt1993].			
 
 We can categorize these statistics in 3 sections: 			
 

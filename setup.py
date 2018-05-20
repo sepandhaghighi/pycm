@@ -6,20 +6,32 @@ def get_requires():
     requirements = open("requirements.txt", "r").read()
     return list(filter(lambda x: x != "", requirements.split()))
 
-
-setup(
-    name='pycm',
-    packages=['pycm'],
-    version='0.8.1',
-    description='Multi-class confusion matrix library in Python',
-    long_description='''
+def read_description():
+    try:
+        with open("README.md") as r :
+            description = "\n"
+            description += r.read()
+        with open("CHANGELOG.md") as c:
+            description += "\n"
+            description += c.read()
+        return description
+    except Exception:
+        return '''
    PyCM is a multi-class confusion matrix library written in Python that
    supports both input data vectors and direct matrix, and a proper tool for
    post-classification model evaluation that supports most classes and overall
    statistics parameters.
    PyCM is the swiss-army knife of confusion matrices, targeted mainly at
    data scientists that need a broad array of metrics for predictive models
-   and an accurate evaluation of large variety of classifiers.''',
+   and an accurate evaluation of large variety of classifiers.'''
+
+setup(
+    name='pycm',
+    packages=['pycm'],
+    version='0.8.1',
+    description='Multi-class confusion matrix library in Python',
+    long_description=read_description(),
+    long_description_content_type='text/markdown',
     author='Sepand Haghighi',
     author_email='sepand@qpage.ir',
     url='https://github.com/sepandhaghighi/pycm',

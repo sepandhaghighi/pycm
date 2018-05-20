@@ -1,5 +1,5 @@
 <div align="center">
-<img src="Otherfiles/logo.png" width=250px height=250px>
+<img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/logo.png" width=250px height=250px>
 <br/>
 <br/>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
@@ -16,21 +16,21 @@
 
 ----------
 ## Table of contents					
-   * [Overview](#overview)
-   * [Installation](#installation)
-   * [Usage](#usage)
-   * [Document](/Document/)
-   * [Issues & Bug Reports](#issues--bug-reports)
-   * [Todo](#todo)
-   * [Outputs](#outputs)
-   * [Dependencies](#dependencies)
-   * [Contribution](#contribution)
-   * [References](#references)
-   * [Cite](#cite)
-   * [Authors](AUTHORS.md)
-   * [License](#license)
-   * [Donate](#donate-to-our-project)
-   * [Changelog](CHANGELOG.md)
+   * [Overview](https://github.com/sepandhaghighi/pycm#overview)
+   * [Installation](https://github.com/sepandhaghighi/pycm#installation)
+   * [Usage](https://github.com/sepandhaghighi/pycm#usage)
+   * [Document](https://github.com/sepandhaghighi/pycm/tree/master/Document)
+   * [Issues & Bug Reports](https://github.com/sepandhaghighi/pycm#issues--bug-reports)
+   * [Todo](https://github.com/sepandhaghighi/pycm#todo)
+   * [Outputs](https://github.com/sepandhaghighi/pycm#outputs)
+   * [Dependencies](https://github.com/sepandhaghighi/pycm#dependencies)
+   * [Contribution](https://github.com/sepandhaghighi/pycm#contribution)
+   * [References](https://github.com/sepandhaghighi/pycm#references)
+   * [Cite](https://github.com/sepandhaghighi/pycm#cite)
+   * [Authors](https://github.com/sepandhaghighi/pycm/blob/master/AUTHORS.md)
+   * [License](https://github.com/sepandhaghighi/pycm#license)
+   * [Donate](https://github.com/sepandhaghighi/pycm#donate-to-our-project)
+   * [Changelog](https://github.com/sepandhaghighi/pycm/blob/master/CHANGELOG.md)
 
 ## Overview
 
@@ -41,7 +41,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 </p>
 
 <div align="center">
-<img src="Otherfiles/block_diagram.jpg">
+<img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/block_diagram.jpg">
 <p>Fig1. PyCM Block Diagram</p>
 </div>
 
@@ -49,7 +49,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ## Installation		
 
 ### Source Code
-- Download [Version 0.8.1](https://github.com/sepandhaghighi/pycm/archive/v0.8.1.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 0.8.5](https://github.com/sepandhaghighi/pycm/archive/v0.8.5.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -276,7 +276,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333        
 
 				
 
-For more information visit [here](/Document "Document")
+For more information visit [here](https://github.com/sepandhaghighi/pycm/tree/master/Document "Document")
 
 <div align="center">
 
@@ -356,8 +356,8 @@ or send an email to [shaghighi@ce.sharif.edu](mailto:shaghighi@ce.sharif.edu "sh
 ## Outputs	
 
 1. [HTML](http://www.shaghighi.ir/pycm/test.html)
-2. [CSV](Otherfiles/test.csv)
-3. [PyCM](Otherfiles/test.pycm)			
+2. [CSV](https://github.com/sepandhaghighi/pycm/blob/master/Otherfiles/test.csv)
+3. [PyCM](https://github.com/sepandhaghighi/pycm/blob/master/Otherfiles/test.pycm)			
 
 
 ## Dependencies

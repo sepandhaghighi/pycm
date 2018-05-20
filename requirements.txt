@@ -3,6 +3,5 @@ numpy==1.14.3
 codecov==2.0.15
 pytest==3.5.1
 pytest-cov==2.5.1
-setuptools==39.2.0
 
 

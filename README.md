@@ -265,12 +265,12 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333        
 ```
 
 ### Acceptable Data Types			
-1. `actual_vector` : python `list` or numpy `array` of any objects
-2. `predict_vector` : python `list` or numpy `array` of any objects
+1. `actual_vector` : python `list` or numpy `array` of any stringable objects
+2. `predict_vector` : python `list` or numpy `array` of any stringable objects
 3. `matrix` : `dict`
 4. `digit`: `int`			
 
-* run `help(ConfusionMatrix)` for more information
+* run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
 
 
 

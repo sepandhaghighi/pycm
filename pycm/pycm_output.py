@@ -220,7 +220,7 @@ def rounder(input_number, digit=5):
         tuple_str = []
         for i in tuple_list:
             if isfloat(i):
-                tuple_str.append(str(float(round(i, digit))))
+                tuple_str.append(str(round(i, digit)))
             else:
                 tuple_str.append(str(i))
         return "(" + ",".join(tuple_str) + ")"

@@ -49,7 +49,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ## Installation		
 
 ### Source Code
-- Download [Version 0.8.5](https://github.com/sepandhaghighi/pycm/archive/v0.8.5.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 0.8.6](https://github.com/sepandhaghighi/pycm/archive/v0.8.6.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -265,12 +265,12 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333        
 ```
 
 ### Acceptable Data Types			
-1. `actual_vector` : python `list` or numpy `array` of any objects
-2. `predict_vector` : python `list` or numpy `array` of any objects
+1. `actual_vector` : python `list` or numpy `array` of any stringable objects
+2. `predict_vector` : python `list` or numpy `array` of any stringable objects
 3. `matrix` : `dict`
 4. `digit`: `int`			
 
-* run `help(ConfusionMatrix)` for more information
+* run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
 
 
 
@@ -413,29 +413,33 @@ Remember to write a few tests for your code before sending pull requests.
 
 ## Cite
 
-If you use PyCM in your research , please cite this :
+If you use PyCM in your research , please cite this paper :
 
 <pre>
-Sepand Haghighi, Masoomeh Jasemi, and Shaahin Hessabi. “Pycm : Multi Class Confusion Matrix Library in Python”. Zenodo, January 22, 2018. doi:10.5281/zenodo.1157173.
+Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A. (2018). PyCM: Multiclass confusion matrix library in Python. Journal of Open Source Software, 3(25), p.729.
 </pre>
 <pre>
 
-@misc{https://doi.org/10.5281/zenodo.1157173,
-  doi = {10.5281/zenodo.1157173},
-  author = {{Sepand Haghighi} and Jasemi,  Masoomeh and {Shaahin Hessabi}},
-  keywords = {Machine Learning,  statistics,  confusion-matrix,  statistical-analysis,  matrices,  matrix},
-  title = {Pycm : Multi Class Confusion Matrix Library In Python},
-  pages = {--},
-  publisher = {Zenodo},
-  year = {2018}
+@article{Haghighi2018,
+  doi = {10.21105/joss.00729},
+  url = {https://doi.org/10.21105/joss.00729},
+  year  = {2018},
+  month = {may},
+  publisher = {The Open Journal},
+  volume = {3},
+  number = {25},
+  pages = {729},
+  author = {Sepand Haghighi and Masoomeh Jasemi and Shaahin Hessabi and Alireza Zolanvari},
+  title = {{PyCM}: Multiclass confusion matrix library in Python},
+  journal = {Journal of Open Source Software}
 }
 
 
 </pre>
 
-Download [PYCM.bib](http://www.shaghighi.ir/pycm/PYCM.bib)						
+Download [PyCM.bib](http://www.shaghighi.ir/pycm/PYCM.bib)						
 
-<a href="https://zenodo.org/badge/latestdoi/118506495"><img src="https://zenodo.org/badge/118506495.svg" alt="DOI"></a>
+[![DOI](http://joss.theoj.org/papers/10.21105/joss.00729/status.svg)](https://doi.org/10.21105/joss.00729)
 
 ## License
 

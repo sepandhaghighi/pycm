@@ -2,7 +2,7 @@
 from __future__ import division
 from functools import partial
 from .pycm_param import *
-
+import numpy
 
 def html_init(name):
     '''
@@ -220,12 +220,12 @@ def rounder(input_number, digit=5):
         tuple_str = []
         for i in tuple_list:
             if isfloat(i):
-                tuple_str.append(str(round(i, digit)))
+                tuple_str.append(str(numpy.around(i, digit)))
             else:
                 tuple_str.append(str(i))
         return "(" + ",".join(tuple_str) + ")"
     elif isfloat(input_number):
-        return str(round(input_number, digit))
+        return str(numpy.around(input_number, digit))
     else:
         return str(input_number)
 
@@ -281,7 +281,7 @@ def normalized_table_print(classes, table):
         if sum(row) == 0:
             div = 1
         result += str(key) + " " * (17 - len(str(key))) + "%-15s" * classes_len % tuple(
-            map(lambda x: str(round(x / div, 5)), row)) + "\n"
+            map(lambda x: str(numpy.around(x / div, 5)), row)) + "\n"
     return result
 
 

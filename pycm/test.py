@@ -159,11 +159,11 @@ Webpage : http://pycm.shaghighi.ir
 'None'
 >>> reliability_calc(2,0.3)
 1.7
->>> kappa_analysis_koch(None)
+>>> kappa_analysis_koch("None")
 'None'
->>> kappa_analysis_fleiss(None)
+>>> kappa_analysis_fleiss("None")
 'None'
->>> kappa_analysis_altman(None)
+>>> kappa_analysis_altman("None")
 'None'
 >>> micro_calc({1:2,2:3},{1:1,2:4})
 0.5

@@ -5,14 +5,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-## [0.8.6] - 2018-05-29
+## [0.8.6] - 2018-05-30
 ### Added
 - Example section in document
+- Python 2.7 CI
 - JOSS paper pdf
 
 ### Changed
 - Cite section
 - ConfusionMatrix docstring
+- round function changed to numpy.around
 - README.md
 
 ## [0.8.5] - 2018-05-21

@@ -7,6 +7,14 @@
     src: url("../fonts/consola.ttf");
 }
 
+.note{
+    text-align: left;
+    display: inline-block;
+}
+
+.justify{
+    text-align: justify;
+}
 
 .citation{
     text-align: center;
@@ -14,10 +22,6 @@
 }
 .version{
     color: darkorange;
-}
-.note{
-    text-align: left;
-    display: inline-block;
 }
 .logo{
     vertical-align: middle;
@@ -257,6 +261,9 @@ button {
     height: 100%;
 }
 @media all and (max-width: 1024px) {
+    .justify{
+    text-align: center;
+}
     .consola{
         font-size: 13px;
     }

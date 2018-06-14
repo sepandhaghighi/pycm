@@ -46,6 +46,8 @@ class ConfusionMatrix():
         :type matrix: dict
         :param digit: precision digit (default value : 5)
         :type digit : int
+        :param threshold : activation threshold function
+        :type threshold : FunctionType (function or lambda)
         '''
         if isinstance(matrix, dict):
             if matrix_check(matrix):

@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
-from setuptools import setup
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
 
 def get_requires():

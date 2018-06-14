@@ -512,5 +512,17 @@ True
 >>> save_stat=cm.save_html("/asdasd,qweqwe.eo/",address=True)
 >>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.html'"}
 True
+>>> def activation(i):
+...	    if i<0.7:
+...		    return 1
+...	    else:
+...		    return 0
+>>> cm = ConfusionMatrix([0,0,1,0],[0.87,0.34,0.9,0.12],threshold=activation)
+>>> cm.matrix()
+Predict          0        1
+Actual
+0                1        2
+1                1        0
+
 
 '''

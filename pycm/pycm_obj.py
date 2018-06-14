@@ -3,6 +3,7 @@
 from .pycm_func import *
 from .pycm_output import *
 import os
+import types
 import numpy
 
 
@@ -34,7 +35,7 @@ class ConfusionMatrix():
             actual_vector=None,
             predict_vector=None,
             matrix=None,
-            digit=5):
+            digit=5,threshold=None):
         '''
         :param actual_vector: Actual Vector
         :type actual_vector: python list or numpy array of any stringable objects
@@ -56,6 +57,8 @@ class ConfusionMatrix():
             else:
                 raise pycmMatrixError("Input Confusion Matrix Format Error")
         else:
+            if isinstance(threshold,types.FunctionType):
+                predict_vector = list(map(threshold,predict_vector))
             if not isinstance(actual_vector, (list, numpy.ndarray)) or not\
                     isinstance(predict_vector, (list, numpy.ndarray)):
                 raise pycmVectorError("Input Vectors Must Be List")

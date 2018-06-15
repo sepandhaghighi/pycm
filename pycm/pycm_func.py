@@ -825,6 +825,12 @@ def PC_S_calc(classes):
     except Exception:
         return "None"
 
+def Jaccard_index_calc(TP,TOP,P):
+    try:
+        return TP/(TOP+P-TP)
+    except Exception:
+        return "None"
+
 
 def overall_accuracy_calc(TP, POP):
     '''
@@ -1014,6 +1020,7 @@ def class_statistics(TP, TN, FP, FN):
     F2_Score = {}
     ERR = {}
     RACCU = {}
+    Jaccrd_Index = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1043,6 +1050,7 @@ def class_statistics(TP, TN, FP, FN):
         RACC[i] = RACC_calc(TOP[i], P[i], POP[i])
         ERR[i] = ERR_calc(ACC[i])
         RACCU[i] = RACCU_calc(TOP[i], P[i], POP[i])
+        Jaccrd_Index[i] = Jaccard_index_calc(TP[i],TOP[i],P[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1075,5 +1083,6 @@ def class_statistics(TP, TN, FP, FN):
         "F0.5": F05_Score,
         "F2": F2_Score,
         "ERR": ERR,
-        "RACCU": RACCU}
+        "RACCU": RACCU,
+        "J":Jaccrd_Index}
     return result

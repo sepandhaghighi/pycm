@@ -36,6 +36,7 @@ Kappa Unbiased                                                   0.34426
 Lambda A                                                         0.16667
 Lambda B                                                         0.42857
 Mutual Information                                               0.52421
+Overall Jaccard Index                                            0.40833
 Overall_ACC                                                      0.58333
 Overall_RACC                                                     0.35417
 Overall_RACCU                                                    0.36458
@@ -70,6 +71,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      2                       1                       2
 FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
+J(Jaccard index)                                                 0.6                     0.25                    0.375
 LR+(Positive likelihood ratio)                                   4.5                     3.0                     1.5
 LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.75
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903
@@ -218,6 +220,7 @@ Kappa Unbiased                                                   -0.12554
 Lambda A                                                         None
 Lambda B                                                         None
 Mutual Information                                               None
+Overall Jaccard Index                                            0.15074
 Overall_ACC                                                      0.35
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
@@ -252,6 +255,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
+J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 LR+(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
 LR-(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None

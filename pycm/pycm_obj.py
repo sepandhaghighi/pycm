@@ -99,6 +99,7 @@ class ConfusionMatrix():
             POP=statistic_result["POP"],
             P=statistic_result["P"],
             TOP=statistic_result["TOP"],
+            jaccard_list=statistic_result["J"],
             classes=self.classes,
             table=self.table)
         self.TPR = statistic_result["TPR"]
@@ -129,6 +130,8 @@ class ConfusionMatrix():
         self.F2 = statistic_result["F2"]
         self.F05 = statistic_result["F0.5"]
         self.ERR = statistic_result["ERR"]
+        self.J = statistic_result["J"]
+        self.Overall_J = self.overall_stat["Overall Jaccard Index"]
         self.SOA1 = self.overall_stat["Strength_Of_Agreement(Landis and Koch)"]
         self.SOA2 = self.overall_stat["Strength_Of_Agreement(Fleiss)"]
         self.SOA3 = self.overall_stat["Strength_Of_Agreement(Altman)"]

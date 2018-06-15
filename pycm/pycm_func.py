@@ -831,6 +831,12 @@ def Jaccard_index_calc(TP,TOP,P):
     except Exception:
         return "None"
 
+def overall_jaccard_index_calc(jaccard_list):
+    try:
+        return sum(jaccard_list)/len(jaccard_list)
+    except Exception:
+        return "None"
+
 
 def overall_accuracy_calc(TP, POP):
     '''
@@ -872,6 +878,7 @@ def overall_statistics(
         POP,
         P,
         TOP,
+        jaccard_list,
         classes,
         table):
     '''
@@ -938,6 +945,8 @@ def overall_statistics(
     lambda_B = lambda_B_calc(classes, table, TOP, POP)
     lambda_A = lambda_A_calc(classes, table, P, POP)
     DF = DF_calc(classes)
+    overall_jaccard_index = overall_jaccard_index_calc(list(
+        jaccard_list.values()))
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -976,7 +985,8 @@ def overall_statistics(
         "Kappa Unbiased": kappa_unbiased,
         "Overall_RACCU": overall_random_accuracy_unbiased,
         "Kappa No Prevalence": kappa_no_prevalence,
-        "Mutual Information": mutual_information}
+        "Mutual Information": mutual_information,
+        "Overall Jaccard Index" : overall_jaccard_index}
 
 
 def class_statistics(TP, TN, FP, FN):

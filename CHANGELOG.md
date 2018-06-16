@@ -5,6 +5,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [0.9] - 2018-06-17
+### Added
+- Activation Threshold
+- Example-3
+- Jaccard index
+- Overall Jaccard index
+
+### Changed
+- README.md
+
 ## [0.8.6] - 2018-05-31
 ### Added
 - Example section in document
@@ -160,7 +170,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and README.md
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v0.8.6...HEAD
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v0.9...HEAD
+[0.9]: https://github.com/sepandhaghighi/pycm/compare/v0.8.6...v0.9
 [0.8.6]: https://github.com/sepandhaghighi/pycm/compare/v0.8.5...v0.8.6
 [0.8.5]: https://github.com/sepandhaghighi/pycm/compare/v0.8.1...v0.8.5
 [0.8.1]: https://github.com/sepandhaghighi/pycm/compare/v0.7...v0.8.1

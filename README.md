@@ -107,6 +107,7 @@ Lambda A                                                         0.16667
 Lambda B                                                         0.42857
 Mutual Information                                               0.52421
 Overall_ACC                                                      0.58333
+Overall_J                                                        (1.225,0.40833)
 Overall_RACC                                                     0.35417
 Overall_RACCU                                                    0.36458
 PPV_Macro                                                        0.56667
@@ -140,6 +141,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      2                       1                       2                       
 FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333                 
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772                 
+J(Jaccard index)                                                 0.6                     0.25                    0.375                   
 LR+(Positive likelihood ratio)                                   4.5                     3.0                     1.5                     
 LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.75                    
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903                 
@@ -157,8 +159,8 @@ TNR(Specificity or true negative rate)                           0.77778        
 TON(Test outcome negative)                                       7                       10                      7                       
 TOP(Test outcome positive)                                       5                       2                       5                       
 TP(True positive/hit)                                            3                       1                       3                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5  
-
+TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5     
+                
 >>> cm.matrix()
 Predict          0        1        2        
 Actual
@@ -210,6 +212,7 @@ Lambda A                                                         None
 Lambda B                                                         None
 Mutual Information                                               None
 Overall_ACC                                                      0.75
+Overall_J                                                        (1.04762,0.52381)
 Overall_RACC                                                     0.59375
 Overall_RACCU                                                    0.625
 PPV_Macro                                                        0.85714
@@ -243,6 +246,7 @@ FOR(False omission rate)                                         0.28571        
 FP(False positive/type 1 error/false alarm)                      0                       2                       
 FPR(Fall-out or false positive rate)                             0.0                     0.66667                 
 G(G-measure geometric mean of precision and sensitivity)         0.57735                 0.84515                 
+J(Jaccard index)                                                 0.33333                 0.71429                 
 LR+(Positive likelihood ratio)                                   None                    1.5                     
 LR-(Negative likelihood ratio)                                   0.66667                 0.0                     
 MCC(Matthews correlation coefficient)                            0.48795                 0.48795                 
@@ -260,7 +264,7 @@ TNR(Specificity or true negative rate)                           1.0            
 TON(Test outcome negative)                                       7                       1                       
 TOP(Test outcome positive)                                       1                       7                       
 TP(True positive/hit)                                            1                       5                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0                     
+TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0                                  
 
 ```
 

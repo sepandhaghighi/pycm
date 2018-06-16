@@ -120,8 +120,8 @@ PARAMS_LINK = {
     "Kappa No Prevalence": "http://www.shaghighi.ir/pycm/doc/index.html#Kappa-No-Prevalence",
     "Mutual Information": "http://www.shaghighi.ir/pycm/doc/#Mutual"
                           "-Information",
-    "J":"",
-    "Overall_J":""}
+    "J":"http://www.shaghighi.ir/pycm/doc/J-(Jaccard-index)",
+    "Overall_J":"http://www.shaghighi.ir/pycm/doc/#Overall_J"}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

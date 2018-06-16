@@ -20,6 +20,11 @@
 - [Jupyter Notebook](https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Example2.ipynb)
 - [HTML](http://www.shaghighi.ir/pycm/doc/Example2.html)
 
+## Example-3 (Activation Threshold)
+
+- [Jupyter Notebook](https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Example3.ipynb)
+- [HTML](http://www.shaghighi.ir/pycm/doc/Example3.html)
+
 
 
 

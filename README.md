@@ -356,6 +356,7 @@ or send an email to [shaghighi@ce.sharif.edu](mailto:shaghighi@ce.sharif.edu "sh
     - [x] Cicchetti 
   - [x] TPR Micro/Macro
   - [x] PPV Micro/Macro
+  - [x] Jaccard Index
 
 ## Outputs	
 

@@ -36,8 +36,8 @@ Kappa Unbiased                                                   0.34426
 Lambda A                                                         0.16667
 Lambda B                                                         0.42857
 Mutual Information                                               0.52421
-Overall_J                                                        (1.225,0.40833)
 Overall_ACC                                                      0.58333
+Overall_J                                                        (1.225,0.40833)
 Overall_RACC                                                     0.35417
 Overall_RACCU                                                    0.36458
 PPV_Macro                                                        0.56667
@@ -220,8 +220,8 @@ Kappa Unbiased                                                   -0.12554
 Lambda A                                                         None
 Lambda B                                                         None
 Mutual Information                                               None
-Overall_J                                                        (0.60294,0.15074)
 Overall_ACC                                                      0.35
+Overall_J                                                        (0.60294,0.15074)
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
 PPV_Macro                                                        None
@@ -296,8 +296,8 @@ Kappa Unbiased                                                   -0.12554
 Lambda A                                                         None
 Lambda B                                                         None
 Mutual Information                                               None
-Overall_J                                                        (0.60294,0.15074)
 Overall_ACC                                                      0.35
+Overall_J                                                        (0.60294,0.15074)
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
 PPV_Macro                                                        None

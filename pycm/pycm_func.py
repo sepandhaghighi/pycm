@@ -833,7 +833,9 @@ def jaccard_index_calc(TP,TOP,P):
 
 def overall_jaccard_index_calc(jaccard_list):
     try:
-        return sum(jaccard_list)/len(jaccard_list)
+        jaccard_sum = sum(jaccard_list)
+        jaccard_mean = jaccard_sum/len(jaccard_list)
+        return (jaccard_sum,jaccard_mean)
     except Exception:
         return "None"
 
@@ -986,7 +988,7 @@ def overall_statistics(
         "Overall_RACCU": overall_random_accuracy_unbiased,
         "Kappa No Prevalence": kappa_no_prevalence,
         "Mutual Information": mutual_information,
-        "Overall Jaccard Index" : overall_jaccard_index}
+        "Overall_J" : overall_jaccard_index}
 
 
 def class_statistics(TP, TN, FP, FN):

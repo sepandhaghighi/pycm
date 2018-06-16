@@ -131,7 +131,7 @@ class ConfusionMatrix():
         self.F05 = statistic_result["F0.5"]
         self.ERR = statistic_result["ERR"]
         self.J = statistic_result["J"]
-        self.Overall_J = self.overall_stat["Overall Jaccard Index"]
+        self.Overall_J = self.overall_stat["Overall_J"]
         self.SOA1 = self.overall_stat["Strength_Of_Agreement(Landis and Koch)"]
         self.SOA2 = self.overall_stat["Strength_Of_Agreement(Fleiss)"]
         self.SOA3 = self.overall_stat["Strength_Of_Agreement(Altman)"]

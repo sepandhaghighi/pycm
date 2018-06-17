@@ -825,7 +825,8 @@ def PC_S_calc(classes):
     except Exception:
         return "None"
 
-def jaccard_index_calc(TP,TOP,P):
+
+def jaccard_index_calc(TP, TOP, P):
     '''
     This function calculate jaccard index for each class
     :param TP: True Positive
@@ -837,9 +838,10 @@ def jaccard_index_calc(TP,TOP,P):
     :return: Jaccard index as float
     '''
     try:
-        return TP/(TOP+P-TP)
+        return TP / (TOP + P - TP)
     except Exception:
         return "None"
+
 
 def overall_jaccard_index_calc(jaccard_list):
     '''
@@ -850,8 +852,8 @@ def overall_jaccard_index_calc(jaccard_list):
     '''
     try:
         jaccard_sum = sum(jaccard_list)
-        jaccard_mean = jaccard_sum/len(jaccard_list)
-        return (jaccard_sum,jaccard_mean)
+        jaccard_mean = jaccard_sum / len(jaccard_list)
+        return (jaccard_sum, jaccard_mean)
     except Exception:
         return "None"
 
@@ -1006,7 +1008,7 @@ def overall_statistics(
         "Overall_RACCU": overall_random_accuracy_unbiased,
         "Kappa No Prevalence": kappa_no_prevalence,
         "Mutual Information": mutual_information,
-        "Overall_J" : overall_jaccard_index}
+        "Overall_J": overall_jaccard_index}
 
 
 def class_statistics(TP, TN, FP, FN):
@@ -1080,7 +1082,7 @@ def class_statistics(TP, TN, FP, FN):
         RACC[i] = RACC_calc(TOP[i], P[i], POP[i])
         ERR[i] = ERR_calc(ACC[i])
         RACCU[i] = RACCU_calc(TOP[i], P[i], POP[i])
-        Jaccrd_Index[i] = jaccard_index_calc(TP[i],TOP[i],P[i])
+        Jaccrd_Index[i] = jaccard_index_calc(TP[i], TOP[i], P[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1114,5 +1116,5 @@ def class_statistics(TP, TN, FP, FN):
         "F2": F2_Score,
         "ERR": ERR,
         "RACCU": RACCU,
-        "J":Jaccrd_Index}
+        "J": Jaccrd_Index}
     return result

@@ -4,6 +4,7 @@ from functools import partial
 from .pycm_param import *
 import numpy
 
+
 def html_init(name):
     '''
     This function return report  file first lines
@@ -332,8 +333,7 @@ def stat_print(classes, class_stat, overall_stat, digit=5):
     result += "\nClass Statistics :\n\n"
     result += "Classes" + shift * " " + "%-24s" * \
         classes_len % tuple(map(str, classes)) + "\n"
-    class_stat_keys = list(class_stat.keys())
-    class_stat_keys.sort()
+    class_stat_keys = sorted(class_stat.keys())
     classes.sort()
     rounder_map = partial(rounder, digit=digit)
     for key in class_stat_keys:

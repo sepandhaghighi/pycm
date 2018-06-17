@@ -9,9 +9,10 @@ def get_requires():
     requirements = open("requirements.txt", "r").read()
     return list(filter(lambda x: x != "", requirements.split()))
 
+
 def read_description():
     try:
-        with open("README.md") as r :
+        with open("README.md") as r:
             description = "\n"
             description += r.read()
         with open("CHANGELOG.md") as c:
@@ -27,6 +28,7 @@ def read_description():
    PyCM is the swiss-army knife of confusion matrices, targeted mainly at
    data scientists that need a broad array of metrics for predictive models
    and an accurate evaluation of large variety of classifiers.'''
+
 
 setup(
     name='pycm',

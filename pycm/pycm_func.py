@@ -826,12 +826,28 @@ def PC_S_calc(classes):
         return "None"
 
 def jaccard_index_calc(TP,TOP,P):
+    '''
+    This function calculate jaccard index for each class
+    :param TP: True Positive
+    :type TP : int
+    :param TOP: Test outcome positive
+    :type TOP : int
+    :param P:  Condition positive
+    :type P : int
+    :return: Jaccard index as float
+    '''
     try:
         return TP/(TOP+P-TP)
     except Exception:
         return "None"
 
 def overall_jaccard_index_calc(jaccard_list):
+    '''
+    This function calculate overall jaccard index
+    :param jaccard_list : list of jaccard index for each class
+    :type jaccard_list : list
+    :return: (jaccard_sum , jaccard_mean) as tuple
+    '''
     try:
         jaccard_sum = sum(jaccard_list)
         jaccard_mean = jaccard_sum/len(jaccard_list)
@@ -905,6 +921,8 @@ def overall_statistics(
     :type POP:dict
     :param TOP: Test outcome positive
     :type TOP : dict
+    :param jaccard_list : list of jaccard index for each class
+    :type jaccard_list : list
     :param classes: confusion matrix classes
     :type classes : list
     :param table: input matrix

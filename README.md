@@ -268,7 +268,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333        
 
 ```
 ### Activation Threshold
-`threshold` argument added in `Version 0.9` for real value prediction.			
+`threshold` added in `Version 0.9` for real value prediction.			
 						
 vist [Example3](http://www.shaghighi.ir/pycm/doc/Example3.html "Example3")
 

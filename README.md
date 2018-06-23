@@ -268,9 +268,9 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333        
 
 ```
 ### Activation Threshold
-`threshold` added in `Version 0.9` for real value prediction.			
+`threshold` is added in `Version 0.9` for real value prediction.			
 						
-vist [Example3](http://www.shaghighi.ir/pycm/doc/Example3.html "Example3")
+For more information visit [Example3](http://www.shaghighi.ir/pycm/doc/Example3.html "Example3")
 
 ### Acceptable Data Types			
 1. `actual_vector` : python `list` or numpy `array` of any stringable objects

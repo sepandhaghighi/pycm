@@ -826,6 +826,38 @@ def PC_S_calc(classes):
         return "None"
 
 
+def jaccard_index_calc(TP, TOP, P):
+    '''
+    This function calculate jaccard index for each class
+    :param TP: True Positive
+    :type TP : int
+    :param TOP: Test outcome positive
+    :type TOP : int
+    :param P:  Condition positive
+    :type P : int
+    :return: Jaccard index as float
+    '''
+    try:
+        return TP / (TOP + P - TP)
+    except Exception:
+        return "None"
+
+
+def overall_jaccard_index_calc(jaccard_list):
+    '''
+    This function calculate overall jaccard index
+    :param jaccard_list : list of jaccard index for each class
+    :type jaccard_list : list
+    :return: (jaccard_sum , jaccard_mean) as tuple
+    '''
+    try:
+        jaccard_sum = sum(jaccard_list)
+        jaccard_mean = jaccard_sum / len(jaccard_list)
+        return (jaccard_sum, jaccard_mean)
+    except Exception:
+        return "None"
+
+
 def overall_accuracy_calc(TP, POP):
     '''
     This function calculate overall accuracy
@@ -866,6 +898,7 @@ def overall_statistics(
         POP,
         P,
         TOP,
+        jaccard_list,
         classes,
         table):
     '''
@@ -890,6 +923,8 @@ def overall_statistics(
     :type POP:dict
     :param TOP: Test outcome positive
     :type TOP : dict
+    :param jaccard_list : list of jaccard index for each class
+    :type jaccard_list : list
     :param classes: confusion matrix classes
     :type classes : list
     :param table: input matrix
@@ -932,6 +967,8 @@ def overall_statistics(
     lambda_B = lambda_B_calc(classes, table, TOP, POP)
     lambda_A = lambda_A_calc(classes, table, P, POP)
     DF = DF_calc(classes)
+    overall_jaccard_index = overall_jaccard_index_calc(list(
+        jaccard_list.values()))
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -970,7 +1007,8 @@ def overall_statistics(
         "Kappa Unbiased": kappa_unbiased,
         "Overall_RACCU": overall_random_accuracy_unbiased,
         "Kappa No Prevalence": kappa_no_prevalence,
-        "Mutual Information": mutual_information}
+        "Mutual Information": mutual_information,
+        "Overall_J": overall_jaccard_index}
 
 
 def class_statistics(TP, TN, FP, FN):
@@ -1014,6 +1052,7 @@ def class_statistics(TP, TN, FP, FN):
     F2_Score = {}
     ERR = {}
     RACCU = {}
+    Jaccrd_Index = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1043,6 +1082,7 @@ def class_statistics(TP, TN, FP, FN):
         RACC[i] = RACC_calc(TOP[i], P[i], POP[i])
         ERR[i] = ERR_calc(ACC[i])
         RACCU[i] = RACCU_calc(TOP[i], P[i], POP[i])
+        Jaccrd_Index[i] = jaccard_index_calc(TP[i], TOP[i], P[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1075,5 +1115,6 @@ def class_statistics(TP, TN, FP, FN):
         "F0.5": F05_Score,
         "F2": F2_Score,
         "ERR": ERR,
-        "RACCU": RACCU}
+        "RACCU": RACCU,
+        "J": Jaccrd_Index}
     return result

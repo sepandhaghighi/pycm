@@ -1,14 +1,18 @@
 # -*- coding: utf-8 -*-
-from setuptools import setup
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 
 
 def get_requires():
     requirements = open("requirements.txt", "r").read()
     return list(filter(lambda x: x != "", requirements.split()))
 
+
 def read_description():
     try:
-        with open("README.md") as r :
+        with open("README.md") as r:
             description = "\n"
             description += r.read()
         with open("CHANGELOG.md") as c:
@@ -25,17 +29,18 @@ def read_description():
    data scientists that need a broad array of metrics for predictive models
    and an accurate evaluation of large variety of classifiers.'''
 
+
 setup(
     name='pycm',
     packages=['pycm'],
-    version='0.8.6',
+    version='0.9',
     description='Multi-class confusion matrix library in Python',
     long_description=read_description(),
     long_description_content_type='text/markdown',
     author='Sepand Haghighi',
     author_email='sepand@qpage.ir',
     url='https://github.com/sepandhaghighi/pycm',
-    download_url='https://github.com/sepandhaghighi/pycm/tarball/v0.8.6',
+    download_url='https://github.com/sepandhaghighi/pycm/tarball/v0.9',
     keywords="confusion-matrix python3 python machine_learning ML",
     project_urls={
         'Webpage': 'http://pycm.shaghighi.ir',

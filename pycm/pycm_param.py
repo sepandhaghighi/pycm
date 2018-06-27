@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-VERSION = "0.8.6"
+VERSION = "0.9"
 
 
 OVERVIEW = '''
@@ -45,7 +45,8 @@ PARAMS_DESCRIPTION = {
     "F0.5": "F0.5 Score",
     "F2": "F2 Score",
     "ERR": "Error Rate",
-    "RACCU": "Random Accuracy Unbiased"}
+    "RACCU": "Random Accuracy Unbiased",
+    "J": "Jaccard index"}
 
 PARAMS_LINK = {
     "TPR": "http://www.shaghighi.ir/pycm/doc/index.html#TPR--(sensitivity,-recall,-hit-rate,-or-true-positive-rate)",
@@ -117,7 +118,10 @@ PARAMS_LINK = {
     "Kappa Unbiased": "http://www.shaghighi.ir/pycm/doc/index.html#Kappa-Unbiased",
     "Overall_RACCU": "http://www.shaghighi.ir/pycm/doc/index.html#Overall_RACCU",
     "Kappa No Prevalence": "http://www.shaghighi.ir/pycm/doc/index.html#Kappa-No-Prevalence",
-    "Mutual Information": "http://www.shaghighi.ir/pycm/doc/#Mutual-Information"}
+    "Mutual Information": "http://www.shaghighi.ir/pycm/doc/#Mutual"
+                          "-Information",
+    "J": "http://www.shaghighi.ir/pycm/doc/#J-(Jaccard-index)",
+    "Overall_J": "http://www.shaghighi.ir/pycm/doc/#Overall_J"}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

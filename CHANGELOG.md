@@ -5,6 +5,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [0.9] - 2018-06-28
+### Added
+- Activation Threshold
+- Example-3
+- Jaccard index
+- Overall Jaccard index
+
+### Changed
+- `README.md` modified
+- `setup.py` modified
+
 ## [0.8.6] - 2018-05-31
 ### Added
 - Example section in document
@@ -15,7 +26,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Cite section
 - ConfusionMatrix docstring
 - round function changed to numpy.around
-- README.md
+- `README.md` modified
 
 ## [0.8.5] - 2018-05-21
 ### Added
@@ -27,7 +38,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Table size in HTML report
 - Test system
-- README.md
+- `README.md` modified
 
 ## [0.8.1] - 2018-03-22
 ### Added
@@ -43,17 +54,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Kappa Unbiased
 - Kappa No Prevalence
 - Random Accuracy Unbiased
-- pycmVectorError class
-- pycmMatrixError class
+- `pycmVectorError` class
+- `pycmMatrixError` class
 - Mutual Information
-- Support numpy arrays
+- Support `numpy` arrays
 
 ### Changed
 - Notebook file updated
 
 
 ### Removed
-- pycmError class
+- `pycmError` class
 
 ## [0.7] - 2018-02-26
 ### Added
@@ -78,7 +89,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - CSV report
 - Changelog
 - Output files
-- digit parameter to ConfusionMatrix object
+- `digit` parameter to `ConfusionMatrix` object
 
 ### Changed
 - Confusion matrix color in HTML report
@@ -119,7 +130,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Kappa
 - Random accuracy
 - Landis and Koch benchmark
-- overall_stat
+- `overall_stat`
 
 
 ## [0.2] - 2018-01-24
@@ -137,8 +148,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 
 ### Changed
- - statistic_result to class_stat
- - params() to stat()
+ - `statistic_result` to `class_stat`
+ - `params` to `stat`
 
 ## [0.1] - 2018-01-22
 ### Added
@@ -158,9 +169,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - PPV
 - TNR
 - TPR
-- documents and README.md
+- documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v0.8.6...HEAD
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v0.9...HEAD
+[0.9]: https://github.com/sepandhaghighi/pycm/compare/v0.8.6...v0.9
 [0.8.6]: https://github.com/sepandhaghighi/pycm/compare/v0.8.5...v0.8.6
 [0.8.5]: https://github.com/sepandhaghighi/pycm/compare/v0.8.1...v0.8.5
 [0.8.1]: https://github.com/sepandhaghighi/pycm/compare/v0.7...v0.8.1

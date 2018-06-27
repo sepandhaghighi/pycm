@@ -3,6 +3,7 @@
 from .pycm_func import *
 from .pycm_output import *
 import os
+import types
 import numpy
 
 
@@ -34,7 +35,7 @@ class ConfusionMatrix():
             actual_vector=None,
             predict_vector=None,
             matrix=None,
-            digit=5):
+            digit=5, threshold=None):
         '''
         :param actual_vector: Actual Vector
         :type actual_vector: python list or numpy array of any stringable objects
@@ -45,6 +46,8 @@ class ConfusionMatrix():
         :type matrix: dict
         :param digit: precision digit (default value : 5)
         :type digit : int
+        :param threshold : activation threshold function
+        :type threshold : FunctionType (function or lambda)
         '''
         if isinstance(matrix, dict):
             if matrix_check(matrix):
@@ -56,6 +59,8 @@ class ConfusionMatrix():
             else:
                 raise pycmMatrixError("Input Confusion Matrix Format Error")
         else:
+            if isinstance(threshold, types.FunctionType):
+                predict_vector = list(map(threshold, predict_vector))
             if not isinstance(actual_vector, (list, numpy.ndarray)) or not\
                     isinstance(predict_vector, (list, numpy.ndarray)):
                 raise pycmVectorError("Input Vectors Must Be List")
@@ -94,6 +99,7 @@ class ConfusionMatrix():
             POP=statistic_result["POP"],
             P=statistic_result["P"],
             TOP=statistic_result["TOP"],
+            jaccard_list=statistic_result["J"],
             classes=self.classes,
             table=self.table)
         self.TPR = statistic_result["TPR"]
@@ -124,6 +130,8 @@ class ConfusionMatrix():
         self.F2 = statistic_result["F2"]
         self.F05 = statistic_result["F0.5"]
         self.ERR = statistic_result["ERR"]
+        self.J = statistic_result["J"]
+        self.Overall_J = self.overall_stat["Overall_J"]
         self.SOA1 = self.overall_stat["Strength_Of_Agreement(Landis and Koch)"]
         self.SOA2 = self.overall_stat["Strength_Of_Agreement(Fleiss)"]
         self.SOA3 = self.overall_stat["Strength_Of_Agreement(Altman)"]

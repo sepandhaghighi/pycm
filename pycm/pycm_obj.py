@@ -3,6 +3,7 @@
 from .pycm_func import *
 from .pycm_output import *
 import os
+import json
 import types
 import numpy
 
@@ -248,6 +249,19 @@ class ConfusionMatrix():
             csv_file.write(csv_data)
             if address:
                 message = os.path.join(os.getcwd(), name + ".csv")
+            return {"Status": True, "Message": message}
+        except Exception as e:
+            return {"Status": False, "Message": str(e)}
+
+    def save_obj(self, name, address=True):
+        try:
+            message = None
+            obj_file = open(name + ".obj", "w")
+            json.dump({"Actual-Vector":self.actual_vector,
+                       "Predict-Vector":self.predict_vector,
+                       "Matrix":self.table},obj_file)
+            if address:
+                message = os.path.join(os.getcwd(), name + ".obj")
             return {"Status": True, "Message": message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}

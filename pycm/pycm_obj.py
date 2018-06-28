@@ -4,6 +4,7 @@ from .pycm_func import *
 from .pycm_output import *
 import os
 import json
+import io
 import types
 import numpy
 
@@ -36,7 +37,7 @@ class ConfusionMatrix():
             actual_vector=None,
             predict_vector=None,
             matrix=None,
-            digit=5, threshold=None):
+            digit=5, threshold=None, file=None):
         '''
         :param actual_vector: Actual Vector
         :type actual_vector: python list or numpy array of any stringable objects
@@ -50,7 +51,14 @@ class ConfusionMatrix():
         :param threshold : activation threshold function
         :type threshold : FunctionType (function or lambda)
         '''
-        if isinstance(matrix, dict):
+        if isinstance(file,io.IOBase):
+            obj_data = json.load(file)
+            if obj_data["Matrix"]!=None:
+                matrix_param = matrix_params_from_table(obj_data["Matrix"])
+            else:
+                matrix_param = matrix_params_calc(obj_data["Actual-Vector"],
+                                                  obj_data["Predict-Vector"])
+        elif isinstance(matrix, dict):
             if matrix_check(matrix):
                 if class_check(list(matrix.keys())) == False:
                     raise pycmMatrixError(

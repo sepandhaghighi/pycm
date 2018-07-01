@@ -51,13 +51,21 @@ class ConfusionMatrix():
         :param threshold : activation threshold function
         :type threshold : FunctionType (function or lambda)
         '''
+        self.actual_vector = actual_vector
+        self.predict_vector = predict_vector
         if isinstance(file,io.IOBase):
             obj_data = json.load(file)
-            if obj_data["Matrix"]!=None:
-                matrix_param = matrix_params_from_table(obj_data["Matrix"])
+            if obj_data["Actual-Vector"]!=None and obj_data[
+                "Predict-Vector"]!=None:
+                matrix_param = matrix_params_calc(obj_data[
+                                                      "Actual-Vector"],
+                                                  obj_data[
+                                                      "Predict-Vector"])
+                self.actual_vector = obj_data["Actual-Vector"]
+                self.predict_vector = obj_data["Predict-Vector"]
             else:
-                matrix_param = matrix_params_calc(obj_data["Actual-Vector"],
-                                                  obj_data["Predict-Vector"])
+                matrix_param = matrix_params_from_table(obj_data[
+                                                                 "Matrix"])
         elif isinstance(matrix, dict):
             if matrix_check(matrix):
                 if class_check(list(matrix.keys())) == False:
@@ -83,8 +91,6 @@ class ConfusionMatrix():
         if len(matrix_param[0]) < 2:
             raise pycmVectorError("Number Of Classes < 2")
         self.digit = digit
-        self.actual_vector = actual_vector
-        self.predict_vector = predict_vector
         self.classes = matrix_param[0]
         self.table = matrix_param[1]
         self.TP = matrix_param[2]

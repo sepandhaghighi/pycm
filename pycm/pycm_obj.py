@@ -53,6 +53,7 @@ class ConfusionMatrix():
         '''
         self.actual_vector = actual_vector
         self.predict_vector = predict_vector
+        self.digit = digit
         if isinstance(file,io.IOBase):
             obj_data = json.load(file)
             if obj_data["Actual-Vector"]!=None and obj_data[
@@ -66,6 +67,7 @@ class ConfusionMatrix():
             else:
                 matrix_param = matrix_params_from_table(obj_data[
                                                                  "Matrix"])
+            self.digit = obj_data["Digit"]
         elif isinstance(matrix, dict):
             if matrix_check(matrix):
                 if class_check(list(matrix.keys())) == False:
@@ -90,7 +92,6 @@ class ConfusionMatrix():
             matrix_param = matrix_params_calc(actual_vector, predict_vector)
         if len(matrix_param[0]) < 2:
             raise pycmVectorError("Number Of Classes < 2")
-        self.digit = digit
         self.classes = matrix_param[0]
         self.table = matrix_param[1]
         self.TP = matrix_param[2]
@@ -273,7 +274,8 @@ class ConfusionMatrix():
             obj_file = open(name + ".obj", "w")
             json.dump({"Actual-Vector":self.actual_vector,
                        "Predict-Vector":self.predict_vector,
-                       "Matrix":self.table},obj_file)
+                       "Matrix":self.table,
+                       "Digit":self.digit},obj_file)
             if address:
                 message = os.path.join(os.getcwd(), name + ".obj")
             return {"Status": True, "Message": message}

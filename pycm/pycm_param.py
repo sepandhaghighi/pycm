@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-VERSION = "0.9"
+VERSION = "0.9.5"
 
 
 OVERVIEW = '''

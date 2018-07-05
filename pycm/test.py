@@ -628,5 +628,10 @@ Predict          0        1
 Actual
 0                1        2
 1                1        0
+>>> os.remove("test.csv")
+>>> os.remove("test.html")
+>>> os.remove("test.obj")
+>>> os.remove("test2.obj")
+>>> os.remove("test.pycm")
 
 '''

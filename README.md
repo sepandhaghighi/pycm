@@ -283,7 +283,7 @@ For more information visit [Example4](http://www.shaghighi.ir/pycm/doc/Example4.
 3. `matrix` : `dict`
 4. `digit`: `int`	
 5. `threshold` : `FunctionType (function or lambda)`	
-6. `file` : `File object (io.IOBase)`
+6. `file` : `File object`
 
 * run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
 

@@ -50,13 +50,13 @@ class ConfusionMatrix():
         :type digit : int
         :param threshold : activation threshold function
         :type threshold : FunctionType (function or lambda)
-        :param file : saved confusion matrix file
-        :type file : io.IOBase
+        :param file : saved confusion matrix file object
+        :type file : (io.IOBase & file)
         '''
         self.actual_vector = actual_vector
         self.predict_vector = predict_vector
         self.digit = digit
-        if isinstance(file,io.IOBase):
+        if isfile(file):
             obj_data = json.load(file)
             if obj_data["Actual-Vector"]!=None and obj_data[
                 "Predict-Vector"]!=None:

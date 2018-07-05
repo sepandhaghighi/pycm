@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 import math
+import sys
 import numpy
+
+def isfile(f):
+    return isinstance(f,file) if sys.version_info[0] == 2 else hasattr(f, 'read')
 
 def vector_filter(actual_vector, predict_vector):
     '''

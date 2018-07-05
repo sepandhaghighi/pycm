@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 import math
-
+import numpy
 
 def vector_filter(actual_vector, predict_vector):
     '''
@@ -99,6 +99,10 @@ def matrix_params_calc(actual_vector, predict_vector):
     :type predict_vector : list
     :return: [classes_list,table,TP,TN,FP,FN]
     '''
+    if isinstance(actual_vector,numpy.ndarray):
+        actual_vector = actual_vector.tolist()
+    if isinstance(predict_vector,numpy.ndarray):
+        predict_vector = predict_vector.tolist()
     classes = sorted(set(actual_vector).union(set(predict_vector)))
     map_dict = {k: 0 for k in classes}
     TP_dict = map_dict.copy()

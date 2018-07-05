@@ -272,8 +272,14 @@ class ConfusionMatrix():
         try:
             message = None
             obj_file = open(name + ".obj", "w")
-            json.dump({"Actual-Vector":self.actual_vector,
-                       "Predict-Vector":self.predict_vector,
+            actual_vector_temp = self.actual_vector
+            predict_vector_temp = self.predict_vector
+            if isinstance(actual_vector_temp,numpy.ndarray):
+                actual_vector_temp = actual_vector_temp.tolist()
+            if isinstance(predict_vector_temp,numpy.ndarray):
+                predict_vector_temp = predict_vector_temp.tolist()
+            json.dump({"Actual-Vector":actual_vector_temp,
+                       "Predict-Vector":predict_vector_temp,
                        "Matrix":self.table,
                        "Digit":self.digit},obj_file)
             if address:

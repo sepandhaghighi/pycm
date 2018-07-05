@@ -619,5 +619,14 @@ TOP(Test outcome positive)                                       11             
 TP(True positive/hit)                                            0                       6                       1                       0
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0
 <BLANKLINE>
+>>> save_obj=cm_6.save_obj("test2",address=False)
+>>> save_obj=={'Status': True, 'Message': None}
+True
+>>> cm_file_2=ConfusionMatrix(file=open("test2.obj","r"))
+>>> cm_file_2.matrix()
+Predict          0        1
+Actual
+0                1        2
+1                1        0
 
 '''

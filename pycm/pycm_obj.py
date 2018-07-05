@@ -80,6 +80,7 @@ class ConfusionMatrix():
         else:
             if isinstance(threshold, types.FunctionType):
                 predict_vector = list(map(threshold, predict_vector))
+                self.predict_vector = predict_vector
             if not isinstance(actual_vector, (list, numpy.ndarray)) or not\
                     isinstance(predict_vector, (list, numpy.ndarray)):
                 raise pycmVectorError("Input Vectors Must Be List")

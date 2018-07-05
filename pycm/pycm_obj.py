@@ -50,6 +50,8 @@ class ConfusionMatrix():
         :type digit : int
         :param threshold : activation threshold function
         :type threshold : FunctionType (function or lambda)
+        :param file : saved confusion matrix file
+        :type file : io.IOBase
         '''
         self.actual_vector = actual_vector
         self.predict_vector = predict_vector

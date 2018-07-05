@@ -272,12 +272,18 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333        
 						
 For more information visit [Example3](http://www.shaghighi.ir/pycm/doc/Example3.html "Example3")
 
+### File			
+`file` is added in `Version 0.9.5`
+
+For more information visit [Example4](http://www.shaghighi.ir/pycm/doc/Example4.html "Example4")
+
 ### Acceptable Data Types			
 1. `actual_vector` : python `list` or numpy `array` of any stringable objects
 2. `predict_vector` : python `list` or numpy `array` of any stringable objects
 3. `matrix` : `dict`
 4. `digit`: `int`	
 5. `threshold` : `FunctionType (function or lambda)`	
+6. `file` : `File object (io.IOBase)`
 
 * run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
 

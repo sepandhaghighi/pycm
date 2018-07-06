@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-## [0.9.5] - 2018-07-05
+## [0.9.5] - 2018-07-06
 ### Added
 - Obj load
 - Obj save
@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 - `README.md` modified
+- Block diagram updated
 
 ## [0.9] - 2018-06-28
 ### Added

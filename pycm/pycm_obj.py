@@ -4,7 +4,6 @@ from .pycm_func import *
 from .pycm_output import *
 import os
 import json
-import io
 import types
 import numpy
 

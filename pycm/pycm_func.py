@@ -1,7 +1,17 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 import math
+import sys
+import numpy
 
+def isfile(f):
+    '''
+    This function check file object in python 2.7 & 3.x
+    :param f: input object
+    :type f : file object
+    :return: file type check as boolean
+    '''
+    return isinstance(f,file) if sys.version_info[0] == 2 else hasattr(f, 'read')
 
 def vector_filter(actual_vector, predict_vector):
     '''
@@ -99,6 +109,10 @@ def matrix_params_calc(actual_vector, predict_vector):
     :type predict_vector : list
     :return: [classes_list,table,TP,TN,FP,FN]
     '''
+    if isinstance(actual_vector,numpy.ndarray):
+        actual_vector = actual_vector.tolist()
+    if isinstance(predict_vector,numpy.ndarray):
+        predict_vector = predict_vector.tolist()
     classes = sorted(set(actual_vector).union(set(predict_vector)))
     map_dict = {k: 0 for k in classes}
     TP_dict = map_dict.copy()

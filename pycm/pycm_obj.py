@@ -3,6 +3,8 @@
 from .pycm_func import *
 from .pycm_output import *
 import os
+import json
+import io
 import types
 import numpy
 
@@ -35,7 +37,7 @@ class ConfusionMatrix():
             actual_vector=None,
             predict_vector=None,
             matrix=None,
-            digit=5, threshold=None):
+            digit=5, threshold=None, file=None):
         '''
         :param actual_vector: Actual Vector
         :type actual_vector: python list or numpy array of any stringable objects
@@ -48,8 +50,27 @@ class ConfusionMatrix():
         :type digit : int
         :param threshold : activation threshold function
         :type threshold : FunctionType (function or lambda)
+        :param file : saved confusion matrix file object
+        :type file : (io.IOBase & file)
         '''
-        if isinstance(matrix, dict):
+        self.actual_vector = actual_vector
+        self.predict_vector = predict_vector
+        self.digit = digit
+        if isfile(file):
+            obj_data = json.load(file)
+            if obj_data["Actual-Vector"]!=None and obj_data[
+                "Predict-Vector"]!=None:
+                matrix_param = matrix_params_calc(obj_data[
+                                                      "Actual-Vector"],
+                                                  obj_data[
+                                                      "Predict-Vector"])
+                self.actual_vector = obj_data["Actual-Vector"]
+                self.predict_vector = obj_data["Predict-Vector"]
+            else:
+                matrix_param = matrix_params_from_table(obj_data[
+                                                                 "Matrix"])
+            self.digit = obj_data["Digit"]
+        elif isinstance(matrix, dict):
             if matrix_check(matrix):
                 if class_check(list(matrix.keys())) == False:
                     raise pycmMatrixError(
@@ -61,6 +82,7 @@ class ConfusionMatrix():
         else:
             if isinstance(threshold, types.FunctionType):
                 predict_vector = list(map(threshold, predict_vector))
+                self.predict_vector = predict_vector
             if not isinstance(actual_vector, (list, numpy.ndarray)) or not\
                     isinstance(predict_vector, (list, numpy.ndarray)):
                 raise pycmVectorError("Input Vectors Must Be List")
@@ -73,9 +95,6 @@ class ConfusionMatrix():
             matrix_param = matrix_params_calc(actual_vector, predict_vector)
         if len(matrix_param[0]) < 2:
             raise pycmVectorError("Number Of Classes < 2")
-        self.digit = digit
-        self.actual_vector = actual_vector
-        self.predict_vector = predict_vector
         self.classes = matrix_param[0]
         self.table = matrix_param[1]
         self.TP = matrix_param[2]
@@ -248,6 +267,26 @@ class ConfusionMatrix():
             csv_file.write(csv_data)
             if address:
                 message = os.path.join(os.getcwd(), name + ".csv")
+            return {"Status": True, "Message": message}
+        except Exception as e:
+            return {"Status": False, "Message": str(e)}
+
+    def save_obj(self, name, address=True):
+        try:
+            message = None
+            obj_file = open(name + ".obj", "w")
+            actual_vector_temp = self.actual_vector
+            predict_vector_temp = self.predict_vector
+            if isinstance(actual_vector_temp,numpy.ndarray):
+                actual_vector_temp = actual_vector_temp.tolist()
+            if isinstance(predict_vector_temp,numpy.ndarray):
+                predict_vector_temp = predict_vector_temp.tolist()
+            json.dump({"Actual-Vector":actual_vector_temp,
+                       "Predict-Vector":predict_vector_temp,
+                       "Matrix":self.table,
+                       "Digit":self.digit},obj_file)
+            if address:
+                message = os.path.join(os.getcwd(), name + ".obj")
             return {"Status": True, "Message": message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}

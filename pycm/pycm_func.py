@@ -5,6 +5,12 @@ import sys
 import numpy
 
 def isfile(f):
+    '''
+    This function check file object in python 2.7 & 3.x
+    :param f: input object
+    :type f : file object
+    :return: file type check as boolean
+    '''
     return isinstance(f,file) if sys.version_info[0] == 2 else hasattr(f, 'read')
 
 def vector_filter(actual_vector, predict_vector):

@@ -14,3 +14,4 @@ recursive-include Otherfiles *.png
 recursive-include Otherfiles *.jpg
 recursive-include paper *.bib
 recursive-include paper *.md
+recursive-include paper *.pdf

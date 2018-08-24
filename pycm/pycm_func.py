@@ -13,6 +13,20 @@ def isfile(f):
     '''
     return isinstance(f,file) if sys.version_info[0] == 2 else hasattr(f, 'read')
 
+def hamming_calc(TP,actual_vector):
+    '''
+    This function calculate hamming_loss
+    :param TP: True Positive
+    :type TP : dict
+    :param actual_vector: actual values
+    :type actual_vector : list
+    :return: hamming loss as float
+    '''
+    try:
+        length = len(actual_vector)
+        return (1/length)*(length-sum(TP.values()))
+    except Exception:
+        return "None"
 def vector_filter(actual_vector, predict_vector):
     '''
     This function convert different type of items in vectors to str

@@ -96,6 +96,7 @@ Conditional Entropy                                              0.95915
 Cramer_V                                                         0.5244
 Cross Entropy                                                    1.59352
 Gwet_AC1                                                         0.38931
+Hamming Loss                                                     0.41667
 Joint Entropy                                                    2.45915
 KL Divergence                                                    0.09352
 Kappa                                                            0.35484
@@ -159,7 +160,7 @@ TNR(Specificity or true negative rate)                           0.77778        
 TON(Test outcome negative)                                       7                       10                      7                       
 TOP(Test outcome positive)                                       5                       2                       5                       
 TP(True positive/hit)                                            3                       1                       3                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5     
+TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                          
                 
 >>> cm.matrix()
 Predict          0        1        2        
@@ -201,6 +202,7 @@ Conditional Entropy                                              None
 Cramer_V                                                         None
 Cross Entropy                                                    1.2454
 Gwet_AC1                                                         0.6
+Hamming Loss                                                     0.25
 Joint Entropy                                                    None
 KL Divergence                                                    0.29097
 Kappa                                                            0.38462
@@ -264,7 +266,7 @@ TNR(Specificity or true negative rate)                           1.0            
 TON(Test outcome negative)                                       7                       1                       
 TOP(Test outcome positive)                                       1                       7                       
 TP(True positive/hit)                                            1                       5                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0                                  
+TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0                             
 
 ```
 ### Activation Threshold
@@ -368,6 +370,7 @@ or send an email to [shaghighi@ce.sharif.edu](mailto:shaghighi@ce.sharif.edu "sh
   - [x] TPR Micro/Macro
   - [x] PPV Micro/Macro
   - [x] Jaccard Index
+  - [x] Hamming Loss
 
 ## Outputs	
 

@@ -121,7 +121,8 @@ PARAMS_LINK = {
     "Mutual Information": "http://www.shaghighi.ir/pycm/doc/#Mutual"
                           "-Information",
     "J": "http://www.shaghighi.ir/pycm/doc/#J-(Jaccard-index)",
-    "Overall_J": "http://www.shaghighi.ir/pycm/doc/#Overall_J"}
+    "Overall_J": "http://www.shaghighi.ir/pycm/doc/#Overall_J",
+    "Hamming Loss":""}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

@@ -13,17 +13,17 @@ def isfile(f):
     '''
     return isinstance(f,file) if sys.version_info[0] == 2 else hasattr(f, 'read')
 
-def hamming_calc(TP,actual_vector):
+def hamming_calc(TP,POP):
     '''
     This function calculate hamming_loss
     :param TP: True Positive
     :type TP : dict
-    :param actual_vector: actual values
-    :type actual_vector : list
+    :param POP: Population
+    :type POP : dict
     :return: hamming loss as float
     '''
     try:
-        length = len(actual_vector)
+        length = list(POP.values())[0]
         return (1/length)*(length-sum(TP.values()))
     except Exception:
         return "None"
@@ -997,6 +997,9 @@ def overall_statistics(
     DF = DF_calc(classes)
     overall_jaccard_index = overall_jaccard_index_calc(list(
         jaccard_list.values()))
+    hamming_loss = hamming_calc(TP,POP)
+
+
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1036,7 +1039,8 @@ def overall_statistics(
         "Overall_RACCU": overall_random_accuracy_unbiased,
         "Kappa No Prevalence": kappa_no_prevalence,
         "Mutual Information": mutual_information,
-        "Overall_J": overall_jaccard_index}
+        "Overall_J": overall_jaccard_index,
+        "Hamming Loss":hamming_loss}
 
 
 def class_statistics(TP, TN, FP, FN):

@@ -4,6 +4,7 @@ import math
 import sys
 import numpy
 
+
 def isfile(f):
     '''
     This function check file object in python 2.7 & 3.x
@@ -11,9 +12,12 @@ def isfile(f):
     :type f : file object
     :return: file type check as boolean
     '''
-    return isinstance(f,file) if sys.version_info[0] == 2 else hasattr(f, 'read')
+    return isinstance(
+        f, file) if sys.version_info[0] == 2 else hasattr(
+        f, 'read')
 
-def hamming_calc(TP,POP):
+
+def hamming_calc(TP, POP):
     '''
     This function calculate hamming_loss
     :param TP: True Positive
@@ -24,9 +28,11 @@ def hamming_calc(TP,POP):
     '''
     try:
         length = list(POP.values())[0]
-        return (1/length)*(length-sum(TP.values()))
+        return (1 / length) * (length - sum(TP.values()))
     except Exception:
         return "None"
+
+
 def vector_filter(actual_vector, predict_vector):
     '''
     This function convert different type of items in vectors to str
@@ -123,9 +129,9 @@ def matrix_params_calc(actual_vector, predict_vector):
     :type predict_vector : list
     :return: [classes_list,table,TP,TN,FP,FN]
     '''
-    if isinstance(actual_vector,numpy.ndarray):
+    if isinstance(actual_vector, numpy.ndarray):
         actual_vector = actual_vector.tolist()
-    if isinstance(predict_vector,numpy.ndarray):
+    if isinstance(predict_vector, numpy.ndarray):
         predict_vector = predict_vector.tolist()
     classes = sorted(set(actual_vector).union(set(predict_vector)))
     map_dict = {k: 0 for k in classes}
@@ -997,8 +1003,7 @@ def overall_statistics(
     DF = DF_calc(classes)
     overall_jaccard_index = overall_jaccard_index_calc(list(
         jaccard_list.values()))
-    hamming_loss = hamming_calc(TP,POP)
-
+    hamming_loss = hamming_calc(TP, POP)
 
     return {
         "Overall_ACC": overall_accuracy,
@@ -1040,7 +1045,7 @@ def overall_statistics(
         "Kappa No Prevalence": kappa_no_prevalence,
         "Mutual Information": mutual_information,
         "Overall_J": overall_jaccard_index,
-        "Hamming Loss":hamming_loss}
+        "Hamming Loss": hamming_loss}
 
 
 def class_statistics(TP, TN, FP, FN):

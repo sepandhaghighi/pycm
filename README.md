@@ -474,9 +474,25 @@ Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A. (2018). PyCM: Multiclass
 
 </pre>
 
-Download [PyCM.bib](http://www.shaghighi.ir/pycm/PYCM.bib)						
+Download [PyCM.bib](http://www.shaghighi.ir/pycm/PYCM.bib)	
 
-[![DOI](http://joss.theoj.org/papers/10.21105/joss.00729/status.svg)](https://doi.org/10.21105/joss.00729)
+<html>
+<table>
+	<tr> 
+		<td align="center">JOSS</td>
+		<td align="center"><a href="https://doi.org/10.21105/joss.00729"><img src="http://joss.theoj.org/papers/10.21105/joss.00729/status.svg"></a></td>	
+	</tr>
+	<tr>
+		<td align="center">Zenodo</td>
+		<td align="center"><a href="https://doi.org/10.5281/zenodo.1157173"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1157173.svg" alt="DOI"></a></td>
+	</tr>
+	<tr>
+		<td align="center">Researchgate</td>
+		<td align="center"><a href="https://www.researchgate.net/project/PYCM-python-confusion-matrix"><img src="https://img.shields.io/badge/Researchgate-PyCM-yellow.svg"></a></td>
+	</tr>
+</table>
+</html>					
+
 
 ## License
 

@@ -11,7 +11,6 @@
 </a>
 <a class="badge-align" href="https://www.codacy.com/app/sepand-haghighi/pycm?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/pycm&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/5d9463998a0040d09afc2b80c389365c"/></a>
 <a href="https://badge.fury.io/py/pycm"><img src="https://badge.fury.io/py/pycm.svg" alt="PyPI version" height="18"></a>
-<a href="https://www.openhub.net/p/pycm"><img src="https://www.openhub.net/p/pycm/widgets/project_thin_badge.gif"></a>
 </div>
 
 ----------
@@ -46,10 +45,28 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 </div>
 
 
+<html>
+<table>
+	<tr> 
+		<td align="center">Open Hub</td>
+		<td align="center"><a href="https://www.openhub.net/p/pycm"><img src="https://www.openhub.net/p/pycm/widgets/project_thin_badge.gif"></a></td>	
+	</tr>
+	<tr>
+		<td align="center">PyPI Counter</td>
+		<td align="center"><a href="http://pepy.tech/count/pycm"><img src="http://pepy.tech/badge/pycm"></a></td>
+	</tr>
+	<tr>
+		<td align="center">Github Stars</td>
+		<td align="center"><a href="https://github.com/sepandhaghighi/pycm"><img src="https://img.shields.io/github/stars/sepandhaghighi/pycm.svg?style=social&label=Stars"></a></td>
+	</tr>
+</table>
+</html>
+
+
 ## Installation		
 
 ### Source Code
-- Download [Version 0.9.5](https://github.com/sepandhaghighi/pycm/archive/v0.9.5.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 1.0](https://github.com/sepandhaghighi/pycm/archive/v1.0.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -96,6 +113,7 @@ Conditional Entropy                                              0.95915
 Cramer_V                                                         0.5244
 Cross Entropy                                                    1.59352
 Gwet_AC1                                                         0.38931
+Hamming Loss                                                     0.41667
 Joint Entropy                                                    2.45915
 KL Divergence                                                    0.09352
 Kappa                                                            0.35484
@@ -159,7 +177,7 @@ TNR(Specificity or true negative rate)                           0.77778        
 TON(Test outcome negative)                                       7                       10                      7                       
 TOP(Test outcome positive)                                       5                       2                       5                       
 TP(True positive/hit)                                            3                       1                       3                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5     
+TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                          
                 
 >>> cm.matrix()
 Predict          0        1        2        
@@ -201,6 +219,7 @@ Conditional Entropy                                              None
 Cramer_V                                                         None
 Cross Entropy                                                    1.2454
 Gwet_AC1                                                         0.6
+Hamming Loss                                                     0.25
 Joint Entropy                                                    None
 KL Divergence                                                    0.29097
 Kappa                                                            0.38462
@@ -264,7 +283,7 @@ TNR(Specificity or true negative rate)                           1.0            
 TON(Test outcome negative)                                       7                       1                       
 TOP(Test outcome positive)                                       1                       7                       
 TP(True positive/hit)                                            1                       5                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0                                  
+TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0                             
 
 ```
 ### Activation Threshold
@@ -368,6 +387,7 @@ or send an email to [shaghighi@ce.sharif.edu](mailto:shaghighi@ce.sharif.edu "sh
   - [x] TPR Micro/Macro
   - [x] PPV Micro/Macro
   - [x] Jaccard Index
+  - [x] Hamming Loss
 
 ## Outputs	
 
@@ -430,7 +450,7 @@ Remember to write a few tests for your code before sending pull requests.
 
 ## Cite
 
-If you use PyCM in your research , please cite this paper :
+If you use PyCM in your research , please cite this JOSS paper :
 
 <pre>
 Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A. (2018). PyCM: Multiclass confusion matrix library in Python. Journal of Open Source Software, 3(25), p.729.
@@ -454,9 +474,25 @@ Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A. (2018). PyCM: Multiclass
 
 </pre>
 
-Download [PyCM.bib](http://www.shaghighi.ir/pycm/PYCM.bib)						
+Download [PyCM.bib](http://www.shaghighi.ir/pycm/PYCM.bib)	
 
-[![DOI](http://joss.theoj.org/papers/10.21105/joss.00729/status.svg)](https://doi.org/10.21105/joss.00729)
+<html>
+<table>
+	<tr> 
+		<td align="center">JOSS</td>
+		<td align="center"><a href="https://doi.org/10.21105/joss.00729"><img src="http://joss.theoj.org/papers/10.21105/joss.00729/status.svg"></a></td>	
+	</tr>
+	<tr>
+		<td align="center">Zenodo</td>
+		<td align="center"><a href="https://doi.org/10.5281/zenodo.1157173"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1157173.svg" alt="DOI"></a></td>
+	</tr>
+	<tr>
+		<td align="center">Researchgate</td>
+		<td align="center"><a href="https://www.researchgate.net/project/PYCM-python-confusion-matrix"><img src="https://img.shields.io/badge/Researchgate-PyCM-yellow.svg"></a></td>
+	</tr>
+</table>
+</html>					
+
 
 ## License
 

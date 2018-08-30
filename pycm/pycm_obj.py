@@ -57,17 +57,17 @@ class ConfusionMatrix():
         self.digit = digit
         if isfile(file):
             obj_data = json.load(file)
-            if obj_data["Actual-Vector"]!=None and obj_data[
-                "Predict-Vector"]!=None:
+            if obj_data["Actual-Vector"] is not None and obj_data[
+                    "Predict-Vector"] is not None:
                 matrix_param = matrix_params_calc(obj_data[
-                                                      "Actual-Vector"],
-                                                  obj_data[
-                                                      "Predict-Vector"])
+                    "Actual-Vector"],
+                    obj_data[
+                    "Predict-Vector"])
                 self.actual_vector = obj_data["Actual-Vector"]
                 self.predict_vector = obj_data["Predict-Vector"]
             else:
                 matrix_param = matrix_params_from_table(obj_data[
-                                                                 "Matrix"])
+                    "Matrix"])
             self.digit = obj_data["Digit"]
         elif isinstance(matrix, dict):
             if matrix_check(matrix):
@@ -184,6 +184,7 @@ class ConfusionMatrix():
         self.KL = self.overall_stat["KL Divergence"]
         self.LambdaB = self.overall_stat["Lambda B"]
         self.LambdaA = self.overall_stat["Lambda A"]
+        self.HammingLoss = self.overall_stat["Hamming Loss"]
 
     def matrix(self):
         '''
@@ -276,14 +277,14 @@ class ConfusionMatrix():
             obj_file = open(name + ".obj", "w")
             actual_vector_temp = self.actual_vector
             predict_vector_temp = self.predict_vector
-            if isinstance(actual_vector_temp,numpy.ndarray):
+            if isinstance(actual_vector_temp, numpy.ndarray):
                 actual_vector_temp = actual_vector_temp.tolist()
-            if isinstance(predict_vector_temp,numpy.ndarray):
+            if isinstance(predict_vector_temp, numpy.ndarray):
                 predict_vector_temp = predict_vector_temp.tolist()
-            json.dump({"Actual-Vector":actual_vector_temp,
-                       "Predict-Vector":predict_vector_temp,
-                       "Matrix":self.table,
-                       "Digit":self.digit},obj_file)
+            json.dump({"Actual-Vector": actual_vector_temp,
+                       "Predict-Vector": predict_vector_temp,
+                       "Matrix": self.table,
+                       "Digit": self.digit}, obj_file)
             if address:
                 message = os.path.join(os.getcwd(), name + ".obj")
             return {"Status": True, "Message": message}

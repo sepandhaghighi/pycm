@@ -11779,7 +11779,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Version-:-0.9.5">Version : 0.9.5<a class="anchor-link" href="#Version-:-0.9.5">&#182;</a></h3><hr>
+<h3 id="Version-:-1.0">Version : 1.0<a class="anchor-link" href="#Version-:-1.0">&#182;</a></h3><hr>
 
 </div>
 </div>
@@ -11826,7 +11826,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Source-Code">Source Code<a class="anchor-link" href="#Source-Code">&#182;</a></h3><ul>
-<li>Download <a href="https://github.com/sepandhaghighi/pycm/archive/v0.9.5.zip">Version 0.9.5</a> or <a href="https://github.com/sepandhaghighi/pycm/archive/dev.zip">Latest Source </a></li>
+<li>Download <a href="https://github.com/sepandhaghighi/pycm/archive/v1.0.zip">Version 1.0</a> or <a href="https://github.com/sepandhaghighi/pycm/archive/dev.zip">Latest Source </a></li>
 <li>Run <code>pip install -r requirements.txt</code> or <code>pip3 install -r requirements.txt</code> (Need root access)</li>
 <li>Run <code>python3 setup.py install</code> or <code>python setup.py install</code> (Need root access)</li>
 </ul>
@@ -12173,6 +12173,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
  &#39;Cramer_V&#39;: 0.5244044240850757,
  &#39;Cross Entropy&#39;: 1.5935164295556343,
  &#39;Gwet_AC1&#39;: 0.3893129770992367,
+ &#39;Hamming Loss&#39;: 0.41666666666666663,
  &#39;Joint Entropy&#39;: 2.4591479170272446,
  &#39;KL Divergence&#39;: 0.09351642955563438,
  &#39;Kappa&#39;: 0.35483870967741943,
@@ -12554,6 +12555,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
  &#39;Cramer_V&#39;: 0.5244044240850757,
  &#39;Cross Entropy&#39;: 1.5935164295556343,
  &#39;Gwet_AC1&#39;: 0.3893129770992367,
+ &#39;Hamming Loss&#39;: 0.41666666666666663,
  &#39;Joint Entropy&#39;: 2.4591479170272446,
  &#39;KL Divergence&#39;: 0.09351642955563438,
  &#39;Kappa&#39;: 0.35483870967741943,
@@ -17225,6 +17227,76 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Hamming-Loss">Hamming Loss<a class="anchor-link" href="#Hamming-Loss">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The hamming_loss computes the average Hamming loss or Hamming distance between two sets of samples</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$J_{Mean}=\frac{1}{Population}\sum_{i=1}^{|P|}1(y_i \neq \widehat{y}_i)$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">HammingLoss</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[91]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.41666666666666663</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Notice :  new in version 1.0</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Print">Print<a class="anchor-link" href="#Print">&#182;</a></h2>
 </div>
 </div>
@@ -17239,7 +17311,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
@@ -17278,6 +17350,7 @@ Conditional Entropy                                              0.95915
 Cramer_V                                                         0.5244
 Cross Entropy                                                    1.59352
 Gwet_AC1                                                         0.38931
+Hamming Loss                                                     0.41667
 Joint Entropy                                                    2.45915
 KL Divergence                                                    0.09352
 Kappa                                                            0.35484
@@ -17361,7 +17434,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="prompt input_prompt">In&nbsp;[93]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">matrix</span><span class="p">()</span>
@@ -17405,7 +17478,7 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[93]:</div>
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">normalized_matrix</span><span class="p">()</span>
@@ -17449,7 +17522,7 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[95]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span>
@@ -17479,6 +17552,7 @@ Conditional Entropy                                              0.95915
 Cramer_V                                                         0.5244
 Cross Entropy                                                    1.59352
 Gwet_AC1                                                         0.38931
+Hamming Loss                                                     0.41667
 Joint Entropy                                                    2.45915
 KL Divergence                                                    0.09352
 Kappa                                                            0.35484
@@ -17581,7 +17655,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[95]:</div>
+<div class="prompt input_prompt">In&nbsp;[96]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="s2">&quot;cm1&quot;</span><span class="p">)</span>
@@ -17597,7 +17671,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[95]:</div>
+<div class="prompt output_prompt">Out[96]:</div>
 
 
 
@@ -17615,7 +17689,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[96]:</div>
+<div class="prompt input_prompt">In&nbsp;[97]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -17631,7 +17705,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[96]:</div>
+<div class="prompt output_prompt">Out[97]:</div>
 
 
 
@@ -17668,7 +17742,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[97]:</div>
+<div class="prompt input_prompt">In&nbsp;[98]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="s2">&quot;cm1&quot;</span><span class="p">)</span>
@@ -17684,7 +17758,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[97]:</div>
+<div class="prompt output_prompt">Out[98]:</div>
 
 
 
@@ -17702,7 +17776,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="prompt input_prompt">In&nbsp;[99]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -17718,7 +17792,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[98]:</div>
+<div class="prompt output_prompt">Out[99]:</div>
 
 
 
@@ -17755,7 +17829,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="prompt input_prompt">In&nbsp;[100]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s2">&quot;cm1&quot;</span><span class="p">)</span>
@@ -17771,7 +17845,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[99]:</div>
+<div class="prompt output_prompt">Out[100]:</div>
 
 
 
@@ -17789,7 +17863,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[100]:</div>
+<div class="prompt input_prompt">In&nbsp;[101]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -17805,7 +17879,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[100]:</div>
+<div class="prompt output_prompt">Out[101]:</div>
 
 
 
@@ -17842,7 +17916,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[101]:</div>
+<div class="prompt input_prompt">In&nbsp;[102]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_obj</span><span class="p">(</span><span class="s2">&quot;cm1&quot;</span><span class="p">)</span>
@@ -17858,7 +17932,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[101]:</div>
+<div class="prompt output_prompt">Out[102]:</div>
 
 
 
@@ -17876,7 +17950,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="prompt input_prompt">In&nbsp;[103]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_obj</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -17892,7 +17966,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[102]:</div>
+<div class="prompt output_prompt">Out[103]:</div>
 
 
 
@@ -17929,7 +18003,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="prompt input_prompt">In&nbsp;[104]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -17963,7 +18037,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[104]:</div>
+<div class="prompt input_prompt">In&nbsp;[105]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -17997,7 +18071,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="prompt input_prompt">In&nbsp;[106]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -18031,7 +18105,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[106]:</div>
+<div class="prompt input_prompt">In&nbsp;[107]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -18065,7 +18139,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[107]:</div>
+<div class="prompt input_prompt">In&nbsp;[108]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -18099,7 +18173,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[108]:</div>
+<div class="prompt input_prompt">In&nbsp;[109]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -18133,7 +18207,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[109]:</div>
+<div class="prompt input_prompt">In&nbsp;[110]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>

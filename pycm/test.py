@@ -80,7 +80,7 @@ MCC(Matthews correlation coefficient)                            0.68313        
 MK(Markedness)                                                   0.6                     0.3                     0.17143
 N(Condition negative)                                            9                       9                       6
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143
-P(Condition positive)                                            3                       3                       6
+P(Condition positive or Support)                                            3                       3                       6
 POP(Population)                                                  12                      12                      12
 PPV(Precision or positive predictive value)                      0.6                     0.5                     0.6
 PRE(Prevalence)                                                  0.25                    0.25                    0.5
@@ -265,7 +265,7 @@ MCC(Matthews correlation coefficient)                            None           
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
 N(Condition negative)                                            20                      4                       17                      19
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
-P(Condition positive)                                            0                       16                      3                       1
+P(Condition positive or Support)                                            0                       16                      3                       1
 POP(Population)                                                  20                      20                      20                      20
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None
 PRE(Prevalence)                                                  0.0                     0.8                     0.15                    0.05
@@ -342,7 +342,7 @@ MCC(Matthews correlation coefficient)                            None           
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
 N(Condition negative)                                            20                      4                       17                      19
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
-P(Condition positive)                                            0                       16                      3                       1
+P(Condition positive or Support)                                            0                       16                      3                       1
 POP(Population)                                                  20                      20                      20                      20
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None
 PRE(Prevalence)                                                  0.0                     0.8                     0.15                    0.05
@@ -611,7 +611,7 @@ MCC(Matthews correlation coefficient)                            None           
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
 N(Condition negative)                                            20                      4                       17                      19
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
-P(Condition positive)                                            0                       16                      3                       1
+P(Condition positive or Support)                                            0                       16                      3                       1
 POP(Population)                                                  20                      20                      20                      20
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None
 PRE(Prevalence)                                                  0.0                     0.8                     0.15                    0.05

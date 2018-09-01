@@ -1019,7 +1019,7 @@ def overall_statistics(
     overall_jaccard_index = overall_jaccard_index_calc(list(
         jaccard_list.values()))
     hamming_loss = hamming_calc(TP, POP)
-
+    zero_one_loss = zero_one_loss_calc(TP, POP)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1060,7 +1060,8 @@ def overall_statistics(
         "Kappa No Prevalence": kappa_no_prevalence,
         "Mutual Information": mutual_information,
         "Overall_J": overall_jaccard_index,
-        "Hamming Loss": hamming_loss}
+        "Hamming Loss": hamming_loss,
+        "Zero-one Loss": zero_one_loss}
 
 
 def class_statistics(TP, TN, FP, FN):

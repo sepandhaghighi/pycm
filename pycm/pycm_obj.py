@@ -185,6 +185,7 @@ class ConfusionMatrix():
         self.LambdaB = self.overall_stat["Lambda B"]
         self.LambdaA = self.overall_stat["Lambda A"]
         self.HammingLoss = self.overall_stat["Hamming Loss"]
+        self.ZeroOneLoss = self.overall_stat["Zero-one Loss"]
 
     def matrix(self):
         '''

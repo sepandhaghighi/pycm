@@ -32,6 +32,7 @@ def hamming_calc(TP, POP):
     except Exception:
         return "None"
 
+
 def zero_one_loss_calc(TP, POP):
     '''
     This function zero_one_loss

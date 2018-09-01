@@ -55,6 +55,7 @@ Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Fair
 TPR_Macro                                                        0.61111
 TPR_Micro                                                        0.58333
+Zero-one Loss                                                    5
 <BLANKLINE>
 Class Statistics :
 <BLANKLINE>
@@ -240,6 +241,7 @@ Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Slight
 TPR_Macro                                                        None
 TPR_Micro                                                        0.35
+Zero-one Loss                                                    13
 <BLANKLINE>
 Class Statistics :
 <BLANKLINE>
@@ -317,6 +319,7 @@ Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Slight
 TPR_Macro                                                        None
 TPR_Micro                                                        0.35
+Zero-one Loss                                                    13
 <BLANKLINE>
 Class Statistics :
 <BLANKLINE>
@@ -586,6 +589,7 @@ Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Slight
 TPR_Macro                                                        None
 TPR_Micro                                                        0.35
+Zero-one Loss                                                    13
 <BLANKLINE>
 Class Statistics :
 <BLANKLINE>

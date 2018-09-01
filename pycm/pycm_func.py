@@ -32,6 +32,21 @@ def hamming_calc(TP, POP):
     except Exception:
         return "None"
 
+def zero_one_loss_calc(TP, POP):
+    '''
+    This function zero_one_loss
+    :param TP: True Positive
+    :type TP : dict
+    :param POP: Population
+    :type POP : dict
+    :return: zero_one loss as integer
+    '''
+    try:
+        length = list(POP.values())[0]
+        return (length - sum(TP.values()))
+    except Exception:
+        return "None"
+
 
 def vector_filter(actual_vector, predict_vector):
     '''

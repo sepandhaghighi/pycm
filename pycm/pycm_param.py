@@ -34,7 +34,7 @@ PARAMS_DESCRIPTION = {
     "TN": "true negative/correct rejection",
     "FP": "false positive/Type 1 error/false alarm",
     "FN": "false negative/miss/Type 2 error",
-    "P": "Condition positive",
+    "P": "Condition positive or Support",
     "N": "Condition negative",
     "TOP": "Test outcome positive",
     "TON": "Test outcome negative",

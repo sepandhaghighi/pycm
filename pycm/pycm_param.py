@@ -123,7 +123,7 @@ PARAMS_LINK = {
     "J": "http://www.shaghighi.ir/pycm/doc/#J-(Jaccard-index)",
     "Overall_J": "http://www.shaghighi.ir/pycm/doc/#Overall_J",
     "Hamming Loss": "http://www.shaghighi.ir/pycm/doc/#Hamming-Loss",
-    "Zero-one Loss": ""}
+    "Zero-one Loss": "http://www.shaghighi.ir/pycm/doc/#Zero-one-Loss"}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

@@ -642,78 +642,80 @@ Please choose one parameter :
 <BLANKLINE>
 Example : online_help("J") or online_help(2)
 <BLANKLINE>
-1-FN
-2-Zero-one Loss
-3-Kappa
-4-J
-5-Hamming Loss
-6-FPR
-7-Kappa Standard Error
-8-FOR
-9-F2
-10-Kappa Unbiased
-11-NPV
-12-TOP
-13-RACCU
-14-Strength_Of_Agreement(Cicchetti)
-15-F0.5
-16-TPR_Micro
-17-RACC
-18-ERR
-19-Cramer_V
-20-Kappa 95% CI
-21-FP
-22-LR-
-23-Gwet_AC1
-24-Chi-Squared
-25-Cross Entropy
-26-Response Entropy
-27-PRE
-28-KL Divergence
-29-Overall_J
-30-PPV
-31-TPR
-32-FDR
-33-Strength_Of_Agreement(Altman)
-34-Overall_RACCU
-35-LR+
-36-PPV_Micro
-37-Overall_RACC
-38-TNR
-39-PPV_Macro
-40-Scott_PI
-41-Conditional Entropy
-42-POP
-43-Strength_Of_Agreement(Landis and Koch)
-44-Strength_Of_Agreement(Fleiss)
-45-TP
-46-BM
-47-DOR
-48-Bennett_S
-49-TON
-50-F1
-51-MK
-52-Lambda A
-53-FNR
-54-TN
-55-Chi-Squared DF
-56-P
+1-95% CI
+2-ACC
+3-BM
+4-Bennett_S
+5-Chi-Squared
+6-Chi-Squared DF
+7-Conditional Entropy
+8-Cramer_V
+9-Cross Entropy
+10-DOR
+11-ERR
+12-F0.5
+13-F1
+14-F2
+15-FDR
+16-FN
+17-FNR
+18-FOR
+19-FP
+20-FPR
+21-G
+22-Gwet_AC1
+23-Hamming Loss
+24-J
+25-Joint Entropy
+26-KL Divergence
+27-Kappa
+28-Kappa 95% CI
+29-Kappa No Prevalence
+30-Kappa Standard Error
+31-Kappa Unbiased
+32-LR+
+33-LR-
+34-Lambda A
+35-Lambda B
+36-MCC
+37-MK
+38-Mutual Information
+39-N
+40-NPV
+41-Overall_ACC
+42-Overall_J
+43-Overall_RACC
+44-Overall_RACCU
+45-P
+46-POP
+47-PPV
+48-PPV_Macro
+49-PPV_Micro
+50-PRE
+51-Phi-Squared
+52-RACC
+53-RACCU
+54-Reference Entropy
+55-Response Entropy
+56-Scott_PI
 57-Standard Error
-58-ACC
-59-Phi-Squared
-60-Overall_ACC
-61-Lambda B
-62-Joint Entropy
-63-95% CI
-64-MCC
-65-Mutual Information
-66-TPR_Macro
-67-N
-68-Reference Entropy
-69-G
-70-Kappa No Prevalence
+58-Strength_Of_Agreement(Altman)
+59-Strength_Of_Agreement(Cicchetti)
+60-Strength_Of_Agreement(Fleiss)
+61-Strength_Of_Agreement(Landis and Koch)
+62-TN
+63-TNR
+64-TON
+65-TOP
+66-TP
+67-TPR
+68-TPR_Macro
+69-TPR_Micro
+70-Zero-one Loss
 >>> online_help("J")
+...
 >>> online_help(1)
+...
 >>> os.remove("test.csv")
 >>> os.remove("test.html")
 >>> os.remove("test.obj")

@@ -353,6 +353,7 @@ def online_help(param=None):
     '''
     try:
         PARAMS_LINK_KEYS = list(PARAMS_LINK.keys())
+        PARAMS_LINK_KEYS.sort()
         if param in PARAMS_LINK_KEYS :
             webbrowser.open_new_tab(PARAMS_LINK[param])
         elif param in range(1,len(PARAMS_LINK_KEYS)+1):
@@ -360,7 +361,7 @@ def online_help(param=None):
         else:
             print("Please choose one parameter : \n")
             print('Example : online_help("J") or online_help(2)\n')
-            for index,item in enumerate(list(PARAMS_LINK.keys())):
+            for index,item in enumerate(PARAMS_LINK_KEYS):
                 print(str(index+1)+"-"+item)
     except Exception:
         print("Error in online help")

@@ -20,7 +20,7 @@
    * [Usage](https://github.com/sepandhaghighi/pycm#usage)
    * [Document](https://github.com/sepandhaghighi/pycm/tree/master/Document)
    * [Issues & Bug Reports](https://github.com/sepandhaghighi/pycm#issues--bug-reports)
-   * [Todo](https://github.com/sepandhaghighi/pycm#todo)
+   * [Todo](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
    * [Outputs](https://github.com/sepandhaghighi/pycm#outputs)
    * [Dependencies](https://github.com/sepandhaghighi/pycm#dependencies)
    * [Contribution](https://github.com/sepandhaghighi/pycm#contribution)
@@ -324,70 +324,8 @@ or send an email to [shaghighi@ce.sharif.edu](mailto:shaghighi@ce.sharif.edu "sh
 
 
 ## Todo	
-- [x] Basic
-  - [x] TP
-  - [x] FP
-  - [x] FN
-  - [x] TN
-  - [x] Population
-  - [x] Condition positive
-  - [x] Condition negative 
-  - [x] Test outcome positive
-  - [x] Test outcome negative
-- [x] Class Statistics
-  - [x] ACC
-  - [x] ERR
-  - [x] BM
-  - [x] DOR
-  - [x] F1-Score
-  - [x] FDR
-  - [x] FNR
-  - [x] FOR
-  - [x] FPR
-  - [x] LR+
-  - [x] LR-
-  - [x] MCC
-  - [x] MK
-  - [x] NPV
-  - [x] PPV
-  - [x] TNR
-  - [x] TPR
-  - [x] Prevalence
-  - [x] G-measure
-  - [x] RACC
-- [x] Outputs
-  - [x] CSV File
-  - [x] HTML File
-  - [x] Output File
-  - [x] Table
-  - [x] Normalized Table
-- [x] Overall Statistics
-  - [x] CI
-  - [x] Chi-Squared
-  - [x] Phi-Squared
-  - [x] Cramer's V
-  - [x] Kappa
-  - [x] Kappa Unbiased
-  - [x] Kappa No Prevalence
-  - [ ] Aickin's alpha
-  - [x] Bennett S score
-  - [x] Gwet's AC1
-  - [x] Scott's pi
-  - [ ] Krippendorff's alpha
-  - [x] Goodman and Kruskal's lambda A
-  - [x] Goodman and Kruskal's lambda B
-  - [x] Kullback-Liebler divergence
-  - [x] Entropy
-  - [x] Overall ACC
-  - [x] Strength of Agreement
-    - [x] Landis and Koch
-    - [x] Fleiss
-    - [x] Altman
-    - [x] Cicchetti 
-  - [x] TPR Micro/Macro
-  - [x] PPV Micro/Macro
-  - [x] Jaccard Index
-  - [x] Hamming Loss
+
+Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
 
 ## Outputs	
 

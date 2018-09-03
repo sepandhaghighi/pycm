@@ -344,6 +344,7 @@ def stat_print(classes, class_stat, overall_stat, digit=5):
             map(rounder_map, row)) + "\n"
     return result
 
+
 def online_help(param=None):
     '''
     This function open online document
@@ -352,16 +353,15 @@ def online_help(param=None):
     :return: None
     '''
     try:
-        PARAMS_LINK_KEYS = list(PARAMS_LINK.keys())
-        PARAMS_LINK_KEYS.sort()
-        if param in PARAMS_LINK_KEYS :
+        PARAMS_LINK_KEYS = sorted(PARAMS_LINK.keys())
+        if param in PARAMS_LINK_KEYS:
             webbrowser.open_new_tab(PARAMS_LINK[param])
-        elif param in range(1,len(PARAMS_LINK_KEYS)+1):
-            webbrowser.open_new_tab(PARAMS_LINK[PARAMS_LINK_KEYS[param-1]])
+        elif param in range(1, len(PARAMS_LINK_KEYS) + 1):
+            webbrowser.open_new_tab(PARAMS_LINK[PARAMS_LINK_KEYS[param - 1]])
         else:
             print("Please choose one parameter : \n")
             print('Example : online_help("J") or online_help(2)\n')
-            for index,item in enumerate(PARAMS_LINK_KEYS):
-                print(str(index+1)+"-"+item)
+            for index, item in enumerate(PARAMS_LINK_KEYS):
+                print(str(index + 1) + "-" + item)
     except Exception:
         print("Error in online help")

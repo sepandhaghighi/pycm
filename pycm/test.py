@@ -637,6 +637,83 @@ Predict          0        1
 Actual
 0                1        2
 1                1        0
+>>> online_help(param=None)
+Please choose one parameter :
+<BLANKLINE>
+Example : online_help("J") or online_help(2)
+<BLANKLINE>
+1-FN
+2-Zero-one Loss
+3-Kappa
+4-J
+5-Hamming Loss
+6-FPR
+7-Kappa Standard Error
+8-FOR
+9-F2
+10-Kappa Unbiased
+11-NPV
+12-TOP
+13-RACCU
+14-Strength_Of_Agreement(Cicchetti)
+15-F0.5
+16-TPR_Micro
+17-RACC
+18-ERR
+19-Cramer_V
+20-Kappa 95% CI
+21-FP
+22-LR-
+23-Gwet_AC1
+24-Chi-Squared
+25-Cross Entropy
+26-Response Entropy
+27-PRE
+28-KL Divergence
+29-Overall_J
+30-PPV
+31-TPR
+32-FDR
+33-Strength_Of_Agreement(Altman)
+34-Overall_RACCU
+35-LR+
+36-PPV_Micro
+37-Overall_RACC
+38-TNR
+39-PPV_Macro
+40-Scott_PI
+41-Conditional Entropy
+42-POP
+43-Strength_Of_Agreement(Landis and Koch)
+44-Strength_Of_Agreement(Fleiss)
+45-TP
+46-BM
+47-DOR
+48-Bennett_S
+49-TON
+50-F1
+51-MK
+52-Lambda A
+53-FNR
+54-TN
+55-Chi-Squared DF
+56-P
+57-Standard Error
+58-ACC
+59-Phi-Squared
+60-Overall_ACC
+61-Lambda B
+62-Joint Entropy
+63-95% CI
+64-MCC
+65-Mutual Information
+66-TPR_Macro
+67-N
+68-Reference Entropy
+69-G
+70-Kappa No Prevalence
+>>> online_help("J")
+>>> online_help(1)
 >>> os.remove("test.csv")
 >>> os.remove("test.html")
 >>> os.remove("test.obj")

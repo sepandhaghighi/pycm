@@ -454,14 +454,10 @@ Download [PyCM.bib](http://www.shaghighi.ir/pycm/PYCM.bib)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsepandhaghighi%2Fpycm.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsepandhaghighi%2Fpycm?ref=badge_large)
 
 
-## Donate to our project
-								
-<h3>Bitcoin :</h3>					
+## Donate to our project		
 
-```12Xm1qL4MXYWiY9sRMoa3VpfTfw6su3vNq```			
+If you do like our project and we hope that you do, can you please support us? Our project is not and is never going to be working for profit. We need the money just so we can continue doing what we do ;-) .
+
+<a href="http://www.shaghighi.ir/pycm/donate.html" target="_blank"><img src="http://www.shaghighi.ir/pycm/images/Donate-Button.png" height="90px" width="270px" alt="PyCM Donation"></a>
 
 
-
-<h3>Payping (For Iranian citizens) :</h3>
-
-<a href="http://www.payping.net/sepandhaghighi" target="__blank"><img src="http://www.qpage.ir/images/payping.png" height=100px width=100px></a>

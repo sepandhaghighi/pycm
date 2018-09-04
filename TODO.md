@@ -64,3 +64,4 @@
   - [x] PPV Micro/Macro
   - [x] Jaccard Index
   - [x] Hamming Loss
+  - [x] Zero-One Loss

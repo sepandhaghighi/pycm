@@ -252,14 +252,16 @@ def table_print(classes, table):
     :return: printable table as str
     '''
     classes_len = len(classes)
-    result = "Predict" + 10 * " " + "%-9s" * \
+    class_max_length = max(map(len,map(str,classes)))
+    shift = "%-"+str(4+class_max_length)+"s"
+    result = "Predict" + 10 * " " + shift * \
         classes_len % tuple(map(str, classes)) + "\n"
     result = result + "Actual\n"
     classes.sort()
     for key in classes:
         row = [table[key][i] for i in classes]
         result += str(key) + " " * (17 - len(str(key))) + \
-            "%-9s" * classes_len % tuple(map(str, row)) + "\n"
+            shift * classes_len % tuple(map(str, row)) + "\n"
     return result
 
 
@@ -273,7 +275,9 @@ def normalized_table_print(classes, table):
     :return: printable table as str
     '''
     classes_len = len(classes)
-    result = "Predict" + 10 * " " + "%-15s" * \
+    class_max_length = max(map(len, map(str, classes)))
+    shift = "%-" + str(4 + class_max_length) + "s"
+    result = "Predict" + 10 * " " + shift * \
         classes_len % tuple(map(str, classes)) + "\n"
     result = result + "Actual\n"
     classes.sort()
@@ -282,7 +286,8 @@ def normalized_table_print(classes, table):
         div = sum(row)
         if sum(row) == 0:
             div = 1
-        result += str(key) + " " * (17 - len(str(key))) + "%-15s" * classes_len % tuple(
+        result += str(key) + " " * (17 - len(str(key))) + shift * classes_len\
+                                                          % tuple(
             map(lambda x: str(numpy.around(x / div, 5)), row)) + "\n"
     return result
 

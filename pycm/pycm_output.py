@@ -252,8 +252,8 @@ def table_print(classes, table):
     :return: printable table as str
     '''
     classes_len = len(classes)
-    class_max_length = max(map(len,map(str,classes)))
-    shift = "%-"+str(4+class_max_length)+"s"
+    class_max_length = max(map(len, map(str, classes)))
+    shift = "%-" + str(4 + class_max_length) + "s"
     result = "Predict" + 10 * " " + shift * \
         classes_len % tuple(map(str, classes)) + "\n"
     result = result + "Actual\n"
@@ -287,7 +287,7 @@ def normalized_table_print(classes, table):
         if sum(row) == 0:
             div = 1
         result += str(key) + " " * (17 - len(str(key))) + shift * classes_len\
-                                                          % tuple(
+            % tuple(
             map(lambda x: str(numpy.around(x / div, 5)), row)) + "\n"
     return result
 

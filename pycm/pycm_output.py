@@ -276,7 +276,7 @@ def normalized_table_print(classes, table):
     '''
     classes_len = len(classes)
     class_max_length = max(map(len, map(str, classes)))
-    shift = "%-" + str(4 + class_max_length) + "s"
+    shift = "%-" + str(15 + class_max_length) + "s"
     result = "Predict" + 10 * " " + shift * \
         classes_len % tuple(map(str, classes)) + "\n"
     result = result + "Actual\n"

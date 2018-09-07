@@ -52,27 +52,30 @@ def html_table(classes, table):
     result += '<tr  align="center">' + "\n"
     result += '<td>Actual</td>\n'
     result += '<td>Predict\n'
-    table_size = str((len(classes) + 1) * 95) + "px"
+    table_size = str((len(classes) + 1) * 7) + "em"
     result += '<table style="border:1px solid black;border-collapse: collapse;height:{0};width:{0};">\n'\
         .format(table_size)
     classes.sort()
     result += '<tr align="center">\n<td></td>\n'
     part_2 = ""
     for i in classes:
+        class_name = str(i)
+        if len(class_name)>6:
+            class_name = class_name[:4]+"..."
         result += '<td style="border:1px solid ' \
-                  'black;padding:10px;height:95px;width:95px;">' + \
-            str(i) + '</td>\n'
+                  'black;padding:10px;height:7em;width:7em;">' + \
+            class_name + '</td>\n'
         part_2 += '<tr align="center">\n'
         part_2 += '<td style="border:1px solid ' \
-                  'black;padding:10px;height:95px;width:95px;">' + \
-            str(i) + '</td>\n'
+                  'black;padding:10px;height:7em;width:7em;">' + \
+            class_name + '</td>\n'
         for j in classes:
             item = table[i][j]
             color = "black;"
             back_color = html_table_color(table[i], item)
             if back_color < 128:
                 color = "white"
-            part_2 += '<td style="background-color:	rgb({0},{0},{0});color:{1};padding:10px;height:95px;width:95px;">'.format(
+            part_2 += '<td style="background-color:	rgb({0},{0},{0});color:{1};padding:10px;height:7em;width:7em;">'.format(
                 str(back_color), color) + str(item) + '</td>\n'
         part_2 += "</tr>\n"
     result += '</tr>\n'

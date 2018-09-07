@@ -60,8 +60,8 @@ def html_table(classes, table):
     part_2 = ""
     for i in classes:
         class_name = str(i)
-        if len(class_name)>6:
-            class_name = class_name[:4]+"..."
+        if len(class_name) > 6:
+            class_name = class_name[:4] + "..."
         result += '<td style="border:1px solid ' \
                   'black;padding:10px;height:7em;width:7em;">' + \
             class_name + '</td>\n'

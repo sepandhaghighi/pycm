@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-VERSION = "1.0"
+VERSION = "1.1"
 
 
 OVERVIEW = '''
@@ -34,7 +34,7 @@ PARAMS_DESCRIPTION = {
     "TN": "true negative/correct rejection",
     "FP": "false positive/Type 1 error/false alarm",
     "FN": "false negative/miss/Type 2 error",
-    "P": "Condition positive",
+    "P": "Condition positive or Support",
     "N": "Condition negative",
     "TOP": "Test outcome positive",
     "TON": "Test outcome negative",
@@ -122,7 +122,8 @@ PARAMS_LINK = {
                           "-Information",
     "J": "http://www.shaghighi.ir/pycm/doc/#J-(Jaccard-index)",
     "Overall_J": "http://www.shaghighi.ir/pycm/doc/#Overall_J",
-    "Hamming Loss": "http://www.shaghighi.ir/pycm/doc/#Hamming-Loss"}
+    "Hamming Loss": "http://www.shaghighi.ir/pycm/doc/#Hamming-Loss",
+    "Zero-one Loss": "http://www.shaghighi.ir/pycm/doc/#Zero-one-Loss"}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

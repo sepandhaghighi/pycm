@@ -36,6 +36,7 @@ Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Fair
 TPR_Macro                                                        0.61111
 TPR_Micro                                                        0.58333
+Zero-one Loss                                                    5
 
 Class Statistics :
 
@@ -61,7 +62,7 @@ MCC(Matthews correlation coefficient)                            0.68313        
 MK(Markedness)                                                   0.6                     0.3                     0.17143                 
 N(Condition negative)                                            9                       9                       6                       
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143                 
-P(Condition positive)                                            3                       3                       6                       
+P(Condition positive or support)                                 3                       3                       6                       
 POP(Population)                                                  12                      12                      12                      
 PPV(Precision or positive predictive value)                      0.6                     0.5                     0.6                     
 PRE(Prevalence)                                                  0.25                    0.25                    0.5                     

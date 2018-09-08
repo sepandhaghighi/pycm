@@ -20,7 +20,7 @@
    * [Usage](https://github.com/sepandhaghighi/pycm#usage)
    * [Document](https://github.com/sepandhaghighi/pycm/tree/master/Document)
    * [Issues & Bug Reports](https://github.com/sepandhaghighi/pycm#issues--bug-reports)
-   * [Todo](https://github.com/sepandhaghighi/pycm#todo)
+   * [Todo](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
    * [Outputs](https://github.com/sepandhaghighi/pycm#outputs)
    * [Dependencies](https://github.com/sepandhaghighi/pycm#dependencies)
    * [Contribution](https://github.com/sepandhaghighi/pycm#contribution)
@@ -66,7 +66,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ## Installation		
 
 ### Source Code
-- Download [Version 1.0](https://github.com/sepandhaghighi/pycm/archive/v1.0.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 1.1](https://github.com/sepandhaghighi/pycm/archive/v1.1.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -141,6 +141,7 @@ Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Fair
 TPR_Macro                                                        0.61111
 TPR_Micro                                                        0.58333
+Zero-one Loss                                                    5
 
 Class Statistics :
 
@@ -166,7 +167,7 @@ MCC(Matthews correlation coefficient)                            0.68313        
 MK(Markedness)                                                   0.6                     0.3                     0.17143                 
 N(Condition negative)                                            9                       9                       6                       
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143                 
-P(Condition positive)                                            3                       3                       6                       
+P(Condition positive or support)                                 3                       3                       6                       
 POP(Population)                                                  12                      12                      12                      
 PPV(Precision or positive predictive value)                      0.6                     0.5                     0.6                     
 PRE(Prevalence)                                                  0.25                    0.25                    0.5                     
@@ -177,8 +178,8 @@ TNR(Specificity or true negative rate)                           0.77778        
 TON(Test outcome negative)                                       7                       10                      7                       
 TOP(Test outcome positive)                                       5                       2                       5                       
 TP(True positive/hit)                                            3                       1                       3                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                          
-                
+TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                     
+                               
 >>> cm.matrix()
 Predict          0        1        2        
 Actual
@@ -247,6 +248,7 @@ Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Fair
 TPR_Macro                                                        0.66667
 TPR_Micro                                                        0.75
+Zero-one Loss                                                    2
 
 Class Statistics :
 
@@ -272,7 +274,7 @@ MCC(Matthews correlation coefficient)                            0.48795        
 MK(Markedness)                                                   0.71429                 0.71429                 
 N(Condition negative)                                            5                       3                       
 NPV(Negative predictive value)                                   0.71429                 1.0                     
-P(Condition positive)                                            3                       5                       
+P(Condition positive or support)                                 3                       5                       
 POP(Population)                                                  8                       8                       
 PPV(Precision or positive predictive value)                      1.0                     0.71429                 
 PRE(Prevalence)                                                  0.375                   0.625                   
@@ -283,7 +285,7 @@ TNR(Specificity or true negative rate)                           1.0            
 TON(Test outcome negative)                                       7                       1                       
 TOP(Test outcome positive)                                       1                       7                       
 TP(True positive/hit)                                            1                       5                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0                             
+TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0                         
 
 ```
 ### Activation Threshold
@@ -295,6 +297,21 @@ For more information visit [Example3](http://www.shaghighi.ir/pycm/doc/Example3.
 `file` is added in `Version 0.9.5` in order to load saved confusion matrix with `.obj` format generated by `save_obj` method.
 
 For more information visit [Example4](http://www.shaghighi.ir/pycm/doc/Example4.html "Example4")
+
+### Online Help
+
+`online_help` function is added in `Version 1.1` in order to open each statistics definition in web browser
+
+
+```python
+
+>>> from pycm import online_help
+>>> online_help("J")
+>>> online_help("Strength_Of_Agreement(Landis and Koch)")
+>>> online_help(2)
+
+```
+* list of items are available by calling `online_help()` (without argument)				
 
 ### Acceptable Data Types			
 1. `actual_vector` : python `list` or numpy `array` of any stringable objects
@@ -324,70 +341,8 @@ or send an email to [shaghighi@ce.sharif.edu](mailto:shaghighi@ce.sharif.edu "sh
 
 
 ## Todo	
-- [x] Basic
-  - [x] TP
-  - [x] FP
-  - [x] FN
-  - [x] TN
-  - [x] Population
-  - [x] Condition positive
-  - [x] Condition negative 
-  - [x] Test outcome positive
-  - [x] Test outcome negative
-- [x] Class Statistics
-  - [x] ACC
-  - [x] ERR
-  - [x] BM
-  - [x] DOR
-  - [x] F1-Score
-  - [x] FDR
-  - [x] FNR
-  - [x] FOR
-  - [x] FPR
-  - [x] LR+
-  - [x] LR-
-  - [x] MCC
-  - [x] MK
-  - [x] NPV
-  - [x] PPV
-  - [x] TNR
-  - [x] TPR
-  - [x] Prevalence
-  - [x] G-measure
-  - [x] RACC
-- [x] Outputs
-  - [x] CSV File
-  - [x] HTML File
-  - [x] Output File
-  - [x] Table
-  - [x] Normalized Table
-- [x] Overall Statistics
-  - [x] CI
-  - [x] Chi-Squared
-  - [x] Phi-Squared
-  - [x] Cramer's V
-  - [x] Kappa
-  - [x] Kappa Unbiased
-  - [x] Kappa No Prevalence
-  - [ ] Aickin's alpha
-  - [x] Bennett S score
-  - [x] Gwet's AC1
-  - [x] Scott's pi
-  - [ ] Krippendorff's alpha
-  - [x] Goodman and Kruskal's lambda A
-  - [x] Goodman and Kruskal's lambda B
-  - [x] Kullback-Liebler divergence
-  - [x] Entropy
-  - [x] Overall ACC
-  - [x] Strength of Agreement
-    - [x] Landis and Koch
-    - [x] Fleiss
-    - [x] Altman
-    - [x] Cicchetti 
-  - [x] TPR Micro/Macro
-  - [x] PPV Micro/Macro
-  - [x] Jaccard Index
-  - [x] Hamming Loss
+
+Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
 
 ## Outputs	
 
@@ -499,14 +454,10 @@ Download [PyCM.bib](http://www.shaghighi.ir/pycm/PYCM.bib)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsepandhaghighi%2Fpycm.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsepandhaghighi%2Fpycm?ref=badge_large)
 
 
-## Donate to our project
-								
-<h3>Bitcoin :</h3>					
+## Donate to our project		
 
-```12Xm1qL4MXYWiY9sRMoa3VpfTfw6su3vNq```			
+If you do like our project and we hope that you do, can you please support us? Our project is not and is never going to be working for profit. We need the money just so we can continue doing what we do ;-) .
+
+<a href="http://www.shaghighi.ir/pycm/donate.html" target="_blank"><img src="http://www.shaghighi.ir/pycm/images/Donate-Button.png" height="90px" width="270px" alt="PyCM Donation"></a>
 
 
-
-<h3>Payping (For Iranian citizens) :</h3>
-
-<a href="http://www.payping.net/sepandhaghighi" target="__blank"><img src="http://www.qpage.ir/images/payping.png" height=100px width=100px></a>

@@ -33,6 +33,22 @@ def hamming_calc(TP, POP):
         return "None"
 
 
+def zero_one_loss_calc(TP, POP):
+    '''
+    This function zero_one_loss
+    :param TP: True Positive
+    :type TP : dict
+    :param POP: Population
+    :type POP : dict
+    :return: zero_one loss as integer
+    '''
+    try:
+        length = list(POP.values())[0]
+        return (length - sum(TP.values()))
+    except Exception:
+        return "None"
+
+
 def vector_filter(actual_vector, predict_vector):
     '''
     This function convert different type of items in vectors to str
@@ -1004,7 +1020,7 @@ def overall_statistics(
     overall_jaccard_index = overall_jaccard_index_calc(list(
         jaccard_list.values()))
     hamming_loss = hamming_calc(TP, POP)
-
+    zero_one_loss = zero_one_loss_calc(TP, POP)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1045,7 +1061,8 @@ def overall_statistics(
         "Kappa No Prevalence": kappa_no_prevalence,
         "Mutual Information": mutual_information,
         "Overall_J": overall_jaccard_index,
-        "Hamming Loss": hamming_loss}
+        "Hamming Loss": hamming_loss,
+        "Zero-one Loss": zero_one_loss}
 
 
 def class_statistics(TP, TN, FP, FN):

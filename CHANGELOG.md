@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-## [1.1] - 2018-09-04
+## [1.1] - 2018-09-08
 ### Added
 - Zero-one loss
 - Support
@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Changed
 - `README.md` modified
+- `html_table` function modified
+- `table_print` function modified
+- `normalized_table_print` function modified
 
 ## [1.0] - 2018-08-30
 ### Added

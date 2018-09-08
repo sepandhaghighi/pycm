@@ -11847,12 +11847,12 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict          100      200      500      600      
+<pre>Predict          100    200    500    600    
 Actual
-100              0        0        0        0        
-200              9        6        1        0        
-500              1        1        1        0        
-600              1        0        0        0        
+100              0      0      0      0      
+200              9      6      1      0      
+500              1      1      1      0      
+600              1      0      0      0      
 
 
 
@@ -11895,6 +11895,7 @@ Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Slight
 TPR_Macro                                                        None
 TPR_Micro                                                        0.35
+Zero-one Loss                                                    13
 
 Class Statistics :
 
@@ -11920,7 +11921,7 @@ MCC(Matthews correlation coefficient)                            None           
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None                    
 N(Condition negative)                                            20                      4                       17                      19                      
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95                    
-P(Condition positive)                                            0                       16                      3                       1                       
+P(Condition positive or support)                                 0                       16                      3                       1                       
 POP(Population)                                                  20                      20                      20                      20                      
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None                    
 PRE(Prevalence)                                                  0.0                     0.8                     0.15                    0.05                    
@@ -12047,12 +12048,12 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        None           
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict          100      200      500      600      
+<pre>Predict          100    200    500    600    
 Actual
-100              0        0        0        0        
-200              9        6        1        0        
-500              1        1        1        0        
-600              1        0        0        0        
+100              0      0      0      0      
+200              9      6      1      0      
+500              1      1      1      0      
+600              1      0      0      0      
 
 
 
@@ -12095,6 +12096,7 @@ Strength_Of_Agreement(Fleiss)                                    Poor
 Strength_Of_Agreement(Landis and Koch)                           Slight
 TPR_Macro                                                        None
 TPR_Micro                                                        0.35
+Zero-one Loss                                                    13
 
 Class Statistics :
 
@@ -12120,7 +12122,7 @@ MCC(Matthews correlation coefficient)                            None           
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None                    
 N(Condition negative)                                            20                      4                       17                      19                      
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95                    
-P(Condition positive)                                            0                       16                      3                       1                       
+P(Condition positive or support)                                 0                       16                      3                       1                       
 POP(Population)                                                  20                      20                      20                      20                      
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None                    
 PRE(Prevalence)                                                  0.0                     0.8                     0.15                    0.05                    
@@ -12171,7 +12173,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        None           
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#34;Digit&#34;: 5, &#34;Actual-Vector&#34;: [600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200], &#34;Predict-Vector&#34;: [100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200], &#34;Matrix&#34;: {&#34;200&#34;: {&#34;200&#34;: 6, &#34;100&#34;: 9, &#34;500&#34;: 1, &#34;600&#34;: 0}, &#34;500&#34;: {&#34;200&#34;: 1, &#34;100&#34;: 1, &#34;500&#34;: 1, &#34;600&#34;: 0}, &#34;100&#34;: {&#34;200&#34;: 0, &#34;100&#34;: 0, &#34;500&#34;: 0, &#34;600&#34;: 0}, &#34;600&#34;: {&#34;200&#34;: 0, &#34;100&#34;: 1, &#34;500&#34;: 0, &#34;600&#34;: 0}}}
+<pre>{&#34;Actual-Vector&#34;: [600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200], &#34;Predict-Vector&#34;: [100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200], &#34;Matrix&#34;: {&#34;200&#34;: {&#34;200&#34;: 6, &#34;100&#34;: 9, &#34;500&#34;: 1, &#34;600&#34;: 0}, &#34;500&#34;: {&#34;200&#34;: 1, &#34;100&#34;: 1, &#34;500&#34;: 1, &#34;600&#34;: 0}, &#34;100&#34;: {&#34;200&#34;: 0, &#34;100&#34;: 0, &#34;500&#34;: 0, &#34;600&#34;: 0}, &#34;600&#34;: {&#34;200&#34;: 0, &#34;100&#34;: 1, &#34;500&#34;: 0, &#34;600&#34;: 0}}, &#34;Digit&#34;: 5}
 </pre>
 </div>
 </div>

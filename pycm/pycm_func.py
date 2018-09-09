@@ -136,7 +136,7 @@ def matrix_params_from_table(table):
     return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
 
 
-def matrix_params_calc(actual_vector, predict_vector):
+def matrix_params_calc(actual_vector, predict_vector, labels):
     '''
     This function calculate TP,TN,FP,FN for each class
     :param actual_vector: actual values
@@ -150,6 +150,8 @@ def matrix_params_calc(actual_vector, predict_vector):
     if isinstance(predict_vector, numpy.ndarray):
         predict_vector = predict_vector.tolist()
     classes = sorted(set(actual_vector).union(set(predict_vector)))
+    if isinstance(labels,list)==True:
+        classes = labels
     map_dict = {k: 0 for k in classes}
     TP_dict = map_dict.copy()
     TN_dict = map_dict.copy()

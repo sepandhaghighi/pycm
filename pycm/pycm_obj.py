@@ -36,7 +36,7 @@ class ConfusionMatrix():
             actual_vector=None,
             predict_vector=None,
             matrix=None,
-            digit=5, threshold=None, file=None):
+            digit=5, threshold=None, file=None, labels=None):
         '''
         :param actual_vector: Actual Vector
         :type actual_vector: python list or numpy array of any stringable objects
@@ -59,10 +59,14 @@ class ConfusionMatrix():
             obj_data = json.load(file)
             if obj_data["Actual-Vector"] is not None and obj_data[
                     "Predict-Vector"] is not None:
+                try:
+                    loaded_labels = obj_data["Labels"]
+                except Exception:
+                    loaded_labels = None
                 matrix_param = matrix_params_calc(obj_data[
                     "Actual-Vector"],
                     obj_data[
-                    "Predict-Vector"])
+                    "Predict-Vector"],loaded_labels)
                 self.actual_vector = obj_data["Actual-Vector"]
                 self.predict_vector = obj_data["Predict-Vector"]
             else:
@@ -91,7 +95,8 @@ class ConfusionMatrix():
                 raise pycmVectorError("Input Vectors Are Empty")
             [actual_vector, predict_vector] = vector_filter(
                 actual_vector, predict_vector)
-            matrix_param = matrix_params_calc(actual_vector, predict_vector)
+            matrix_param = matrix_params_calc(actual_vector, predict_vector,
+                                              labels)
         if len(matrix_param[0]) < 2:
             raise pycmVectorError("Number Of Classes < 2")
         self.classes = matrix_param[0]

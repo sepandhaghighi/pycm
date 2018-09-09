@@ -807,10 +807,112 @@ TOP(Test outcome positive)                                       5              
 TP(True positive/hit)                                            3                       1                       3                       0
 TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                     None
 <BLANKLINE>
+>>> cm = ConfusionMatrix(y_actu, y_pred, labels=[0,1,2,3],sample_weight=[2, 2, 2, 2, 3, 1, 1, 2, 2, 1, 1, 2])
+>>> print(cm)
+Predict          0    1    2    3
+Actual
+0                6    0    0    0
+1                0    1    2    0
+2                4    2    6    0
+3                0    0    0    0
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Overall Statistics :
+<BLANKLINE>
+95% CI                                                           (0.41134,0.82675)
+Bennett_S                                                        0.49206
+Chi-Squared                                                      None
+Chi-Squared DF                                                   9
+Conditional Entropy                                              None
+Cramer_V                                                         None
+Cross Entropy                                                    None
+Gwet_AC1                                                         0.52227
+Hamming Loss                                                     0.38095
+Joint Entropy                                                    2.34377
+KL Divergence                                                    None
+Kappa                                                            0.3913
+Kappa 95% CI                                                     (0.05943,0.72318)
+Kappa No Prevalence                                              0.2381
+Kappa Standard Error                                             0.16932
+Kappa Unbiased                                                   0.37313
+Lambda A                                                         0.22222
+Lambda B                                                         0.36364
+Mutual Information                                               None
+Overall_ACC                                                      0.61905
+Overall_J                                                        None
+Overall_RACC                                                     0.37415
+Overall_RACCU                                                    0.39229
+PPV_Macro                                                        None
+PPV_Micro                                                        0.61905
+Phi-Squared                                                      None
+Reference Entropy                                                None
+Response Entropy                                                 None
+Scott_PI                                                         0.37313
+Standard Error                                                   0.10597
+Strength_Of_Agreement(Altman)                                    Fair
+Strength_Of_Agreement(Cicchetti)                                 Poor
+Strength_Of_Agreement(Fleiss)                                    Poor
+Strength_Of_Agreement(Landis and Koch)                           Fair
+TPR_Macro                                                        None
+TPR_Micro                                                        0.61905
+Zero-one Loss                                                    8
+<BLANKLINE>
+Class Statistics :
+<BLANKLINE>
+Classes                                                          0                       1                       2                       3
+ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905                 1.0
+BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778                 None
+DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5                     None
+ERR(Error rate)                                                  0.19048                 0.19048                 0.38095                 0.0
+F0.5(F0.5 score)                                                 0.65217                 0.33333                 0.68182                 None
+F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.33333                 0.6                     None
+F2(F2 score)                                                     0.88235                 0.33333                 0.53571                 None
+FDR(False discovery rate)                                        0.4                     0.66667                 0.25                    None
+FN(False negative/miss/type 2 error)                             0                       2                       6                       0
+FNR(Miss rate or false negative rate)                            0.0                     0.66667                 0.5                     None
+FOR(False omission rate)                                         0.0                     0.11111                 0.46154                 0.0
+FP(False positive/type 1 error/false alarm)                      4                       2                       2                       0
+FPR(Fall-out or false positive rate)                             0.26667                 0.11111                 0.22222                 0.0
+G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.33333                 0.61237                 None
+J(Jaccard index)                                                 0.6                     0.2                     0.42857                 None
+LR+(Positive likelihood ratio)                                   3.75                    3.0                     2.25                    None
+LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.64286                 None
+MCC(Matthews correlation coefficient)                            0.66332                 0.22222                 0.28307                 None
+MK(Markedness)                                                   0.6                     0.22222                 0.28846                 None
+N(Condition negative)                                            15                      18                      9                       21
+NPV(Negative predictive value)                                   1.0                     0.88889                 0.53846                 1.0
+P(Condition positive or support)                                 6                       3                       12                      0
+POP(Population)                                                  21                      21                      21                      21
+PPV(Precision or positive predictive value)                      0.6                     0.33333                 0.75                    None
+PRE(Prevalence)                                                  0.28571                 0.14286                 0.57143                 0.0
+RACC(Random accuracy)                                            0.13605                 0.02041                 0.21769                 0.0
+RACCU(Random accuracy unbiased)                                  0.14512                 0.02041                 0.22676                 0.0
+TN(True negative/correct rejection)                              11                      16                      7                       21
+TNR(Specificity or true negative rate)                           0.73333                 0.88889                 0.77778                 1.0
+TON(Test outcome negative)                                       11                      18                      13                      21
+TOP(Test outcome positive)                                       10                      3                       8                       0
+TP(True positive/hit)                                            6                       1                       6                       0
+TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                     None
+<BLANKLINE>
+>>> save_obj=cm.save_obj("test3",address=False)
+>>> save_obj=={'Status': True, 'Message': None}
+True
+>>> cm_file_3=ConfusionMatrix(file=open("test3.obj","r"))
+>>> cm_file_3.matrix()
+Predict          0    1    2    3
+Actual
+0                6    0    0    0
+1                0    1    2    0
+2                4    2    6    0
+3                0    0    0    0
+<BLANKLINE>
 >>> os.remove("test.csv")
 >>> os.remove("test.html")
 >>> os.remove("test.obj")
 >>> os.remove("test2.obj")
+>>> os.remove("test3.obj")
 >>> os.remove("test.pycm")
 
 '''

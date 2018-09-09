@@ -298,6 +298,11 @@ For more information visit [Example3](http://www.shaghighi.ir/pycm/doc/Example3.
 
 For more information visit [Example4](http://www.shaghighi.ir/pycm/doc/Example4.html "Example4")
 
+### Sample Weights
+`sample_weight` is added in `Version 1.2`
+
+For more information visit [Example5](http://www.shaghighi.ir/pycm/doc/Example5.html "Example5")
+
 ### Online Help
 
 `online_help` function is added in `Version 1.1` in order to open each statistics definition in web browser
@@ -320,6 +325,7 @@ For more information visit [Example4](http://www.shaghighi.ir/pycm/doc/Example4.
 4. `digit`: `int`	
 5. `threshold` : `FunctionType (function or lambda)`	
 6. `file` : `File object`
+7. `sample_weight` : `list`
 
 * run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
 

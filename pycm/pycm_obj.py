@@ -37,7 +37,7 @@ class ConfusionMatrix():
             predict_vector=None,
             matrix=None,
             digit=5, threshold=None, file=None, labels=None,
-            sample_weights=None):
+            sample_weight=None):
         '''
         :param actual_vector: Actual Vector
         :type actual_vector: python list or numpy array of any stringable objects
@@ -56,6 +56,7 @@ class ConfusionMatrix():
         self.actual_vector = actual_vector
         self.predict_vector = predict_vector
         self.digit = digit
+        self.weights = None
         if isfile(file):
             obj_data = json.load(file)
             if obj_data["Actual-Vector"] is not None and obj_data[
@@ -65,7 +66,7 @@ class ConfusionMatrix():
                 except Exception:
                     loaded_labels = None
                 try:
-                    loaded_weights = obj_data["Sample-Weights"]
+                    loaded_weights = obj_data["Sample-Weight"]
                 except Exception:
                     loaded_weights = None
                 matrix_param = matrix_params_calc(obj_data[
@@ -74,6 +75,7 @@ class ConfusionMatrix():
                     "Predict-Vector"],loaded_labels, loaded_weights)
                 self.actual_vector = obj_data["Actual-Vector"]
                 self.predict_vector = obj_data["Predict-Vector"]
+                self.weights=loaded_weights
             else:
                 matrix_param = matrix_params_from_table(obj_data[
                     "Matrix"])
@@ -101,7 +103,9 @@ class ConfusionMatrix():
             [actual_vector, predict_vector] = vector_filter(
                 actual_vector, predict_vector)
             matrix_param = matrix_params_calc(actual_vector, predict_vector,
-                                              labels,sample_weights)
+                                              labels,sample_weight)
+            if isinstance(sample_weight, list) == True:
+                self.weights = sample_weight
         if len(matrix_param[0]) < 2:
             raise pycmVectorError("Number Of Classes < 2")
         self.classes = matrix_param[0]
@@ -296,7 +300,8 @@ class ConfusionMatrix():
                        "Predict-Vector": predict_vector_temp,
                        "Matrix": self.table,
                        "Digit": self.digit,
-                       "Labels": self.classes}, obj_file)
+                       "Labels": self.classes,
+                       "Sample-Weight": self.weights}, obj_file)
             if address:
                 message = os.path.join(os.getcwd(), name + ".obj")
             return {"Status": True, "Message": message}

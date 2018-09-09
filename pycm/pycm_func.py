@@ -136,7 +136,7 @@ def matrix_params_from_table(table):
     return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
 
 
-def matrix_params_calc(actual_vector, predict_vector, labels, sample_weights):
+def matrix_params_calc(actual_vector, predict_vector, labels, sample_weight):
     '''
     This function calculate TP,TN,FP,FN for each class
     :param actual_vector: actual values
@@ -160,9 +160,9 @@ def matrix_params_calc(actual_vector, predict_vector, labels, sample_weights):
     FN_dict = map_dict.copy()
     table = {k: map_dict.copy() for k in classes}
     weight_vector = [1]*len(actual_vector)
-    if isinstance(sample_weights,list)==True:
-        if len(sample_weights)==len(actual_vector):
-            weight_vector = sample_weights
+    if isinstance(sample_weight,list)==True:
+        if len(sample_weight)==len(actual_vector):
+            weight_vector = sample_weight
     for index, item in enumerate(actual_vector):
         if (item in classes) and (predict_vector[index] in classes):
             table[item][predict_vector[index]] += 1*weight_vector[index]

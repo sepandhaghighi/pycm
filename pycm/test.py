@@ -716,6 +716,97 @@ Example : online_help("J") or online_help(2)
 ...
 >>> online_help(1)
 ...
+>>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
+>>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
+>>> cm = ConfusionMatrix(y_actu, y_pred, labels=[0,1,2,3])
+>>> print(cm)
+Predict          0    1    2    3
+Actual
+0                3    0    0    0
+1                0    1    2    0
+2                2    1    3    0
+3                0    0    0    0
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Overall Statistics :
+<BLANKLINE>
+95% CI                                                           (0.30439,0.86228)
+Bennett_S                                                        0.44444
+Chi-Squared                                                      None
+Chi-Squared DF                                                   9
+Conditional Entropy                                              None
+Cramer_V                                                         None
+Cross Entropy                                                    None
+Gwet_AC1                                                         0.47137
+Hamming Loss                                                     0.41667
+Joint Entropy                                                    2.45915
+KL Divergence                                                    None
+Kappa                                                            0.35484
+Kappa 95% CI                                                     (-0.07708,0.78675)
+Kappa No Prevalence                                              0.16667
+Kappa Standard Error                                             0.22036
+Kappa Unbiased                                                   0.34426
+Lambda A                                                         0.16667
+Lambda B                                                         0.42857
+Mutual Information                                               None
+Overall_ACC                                                      0.58333
+Overall_J                                                        None
+Overall_RACC                                                     0.35417
+Overall_RACCU                                                    0.36458
+PPV_Macro                                                        None
+PPV_Micro                                                        0.58333
+Phi-Squared                                                      None
+Reference Entropy                                                None
+Response Entropy                                                 None
+Scott_PI                                                         0.34426
+Standard Error                                                   0.14232
+Strength_Of_Agreement(Altman)                                    Fair
+Strength_Of_Agreement(Cicchetti)                                 Poor
+Strength_Of_Agreement(Fleiss)                                    Poor
+Strength_Of_Agreement(Landis and Koch)                           Fair
+TPR_Macro                                                        None
+TPR_Micro                                                        0.58333
+Zero-one Loss                                                    5
+<BLANKLINE>
+Class Statistics :
+<BLANKLINE>
+Classes                                                          0                       1                       2                       3
+ACC(Accuracy)                                                    0.83333                 0.75                    0.58333                 1.0
+BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667                 None
+DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0                     None
+ERR(Error rate)                                                  0.16667                 0.25                    0.41667                 0.0
+F0.5(F0.5 score)                                                 0.65217                 0.45455                 0.57692                 None
+F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545                 None
+F2(F2 score)                                                     0.88235                 0.35714                 0.51724                 None
+FDR(False discovery rate)                                        0.4                     0.5                     0.4                     None
+FN(False negative/miss/type 2 error)                             0                       2                       3                       0
+FNR(Miss rate or false negative rate)                            0.0                     0.66667                 0.5                     None
+FOR(False omission rate)                                         0.0                     0.2                     0.42857                 0.0
+FP(False positive/type 1 error/false alarm)                      2                       1                       2                       0
+FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333                 0.0
+G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772                 None
+J(Jaccard index)                                                 0.6                     0.25                    0.375                   None
+LR+(Positive likelihood ratio)                                   4.5                     3.0                     1.5                     None
+LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.75                    None
+MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903                 None
+MK(Markedness)                                                   0.6                     0.3                     0.17143                 None
+N(Condition negative)                                            9                       9                       6                       12
+NPV(Negative predictive value)                                   1.0                     0.8                     0.57143                 1.0
+P(Condition positive or support)                                 3                       3                       6                       0
+POP(Population)                                                  12                      12                      12                      12
+PPV(Precision or positive predictive value)                      0.6                     0.5                     0.6                     None
+PRE(Prevalence)                                                  0.25                    0.25                    0.5                     0.0
+RACC(Random accuracy)                                            0.10417                 0.04167                 0.20833                 0.0
+RACCU(Random accuracy unbiased)                                  0.11111                 0.0434                  0.21007                 0.0
+TN(True negative/correct rejection)                              7                       8                       4                       12
+TNR(Specificity or true negative rate)                           0.77778                 0.88889                 0.66667                 1.0
+TON(Test outcome negative)                                       7                       10                      7                       12
+TOP(Test outcome positive)                                       5                       2                       5                       0
+TP(True positive/hit)                                            3                       1                       3                       0
+TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                     None
+<BLANKLINE>
 >>> os.remove("test.csv")
 >>> os.remove("test.html")
 >>> os.remove("test.obj")

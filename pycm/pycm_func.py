@@ -149,9 +149,10 @@ def matrix_params_calc(actual_vector, predict_vector, labels):
         actual_vector = actual_vector.tolist()
     if isinstance(predict_vector, numpy.ndarray):
         predict_vector = predict_vector.tolist()
-    classes = sorted(set(actual_vector).union(set(predict_vector)))
+    classes = set(actual_vector).union(set(predict_vector))
     if isinstance(labels,list)==True:
-        classes = labels
+        classes = classes.union(labels)
+    classes = sorted(classes)
     map_dict = {k: 0 for k in classes}
     TP_dict = map_dict.copy()
     TN_dict = map_dict.copy()

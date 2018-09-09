@@ -36,7 +36,7 @@ class ConfusionMatrix():
             actual_vector=None,
             predict_vector=None,
             matrix=None,
-            digit=5, threshold=None, file=None, labels=None,
+            digit=5, threshold=None, file=None,
             sample_weight=None):
         '''
         :param actual_vector: Actual Vector
@@ -62,17 +62,13 @@ class ConfusionMatrix():
             if obj_data["Actual-Vector"] is not None and obj_data[
                     "Predict-Vector"] is not None:
                 try:
-                    loaded_labels = obj_data["Labels"]
-                except Exception:
-                    loaded_labels = None
-                try:
                     loaded_weights = obj_data["Sample-Weight"]
                 except Exception:
                     loaded_weights = None
                 matrix_param = matrix_params_calc(obj_data[
                     "Actual-Vector"],
                     obj_data[
-                    "Predict-Vector"],loaded_labels, loaded_weights)
+                    "Predict-Vector"], loaded_weights)
                 self.actual_vector = obj_data["Actual-Vector"]
                 self.predict_vector = obj_data["Predict-Vector"]
                 self.weights=loaded_weights
@@ -102,8 +98,7 @@ class ConfusionMatrix():
                 raise pycmVectorError("Input Vectors Are Empty")
             [actual_vector, predict_vector] = vector_filter(
                 actual_vector, predict_vector)
-            matrix_param = matrix_params_calc(actual_vector, predict_vector,
-                                              labels,sample_weight)
+            matrix_param = matrix_params_calc(actual_vector, predict_vector,sample_weight)
             if isinstance(sample_weight, list) == True:
                 self.weights = sample_weight
         if len(matrix_param[0]) < 2:
@@ -300,7 +295,6 @@ class ConfusionMatrix():
                        "Predict-Vector": predict_vector_temp,
                        "Matrix": self.table,
                        "Digit": self.digit,
-                       "Labels": self.classes,
                        "Sample-Weight": self.weights}, obj_file)
             if address:
                 message = os.path.join(os.getcwd(), name + ".obj")

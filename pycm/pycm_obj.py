@@ -52,6 +52,8 @@ class ConfusionMatrix():
         :type threshold : FunctionType (function or lambda)
         :param file : saved confusion matrix file object
         :type file : (io.IOBase & file)
+        :param sample_weight : sample weights list
+        :type sample_weight : list
         '''
         self.actual_vector = actual_vector
         self.predict_vector = predict_vector

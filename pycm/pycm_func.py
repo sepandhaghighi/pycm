@@ -143,6 +143,8 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     :type actual_vector : list
     :param predict_vector: predict value
     :type predict_vector : list
+    :param sample_weight : sample weights list
+    :type sample_weight : list
     :return: [classes_list,table,TP,TN,FP,FN]
     '''
     if isinstance(actual_vector, numpy.ndarray):

@@ -290,7 +290,8 @@ class ConfusionMatrix():
             json.dump({"Actual-Vector": actual_vector_temp,
                        "Predict-Vector": predict_vector_temp,
                        "Matrix": self.table,
-                       "Digit": self.digit}, obj_file)
+                       "Digit": self.digit,
+                       "Labels": self.classes}, obj_file)
             if address:
                 message = os.path.join(os.getcwd(), name + ".obj")
             return {"Status": True, "Message": message}

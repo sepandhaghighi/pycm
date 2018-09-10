@@ -73,7 +73,7 @@ class ConfusionMatrix():
                     "Predict-Vector"], loaded_weights)
                 self.actual_vector = obj_data["Actual-Vector"]
                 self.predict_vector = obj_data["Predict-Vector"]
-                self.weights=loaded_weights
+                self.weights = loaded_weights
             else:
                 matrix_param = matrix_params_from_table(obj_data[
                     "Matrix"])
@@ -100,10 +100,11 @@ class ConfusionMatrix():
                 raise pycmVectorError("Input Vectors Are Empty")
             [actual_vector, predict_vector] = vector_filter(
                 actual_vector, predict_vector)
-            matrix_param = matrix_params_calc(actual_vector, predict_vector,sample_weight)
-            if isinstance(sample_weight, list) == True:
+            matrix_param = matrix_params_calc(
+                actual_vector, predict_vector, sample_weight)
+            if isinstance(sample_weight, list):
                 self.weights = sample_weight
-            if isinstance(sample_weight, numpy.ndarray)==True:
+            if isinstance(sample_weight, numpy.ndarray):
                 self.weights = sample_weight.tolist()
         if len(matrix_param[0]) < 2:
             raise pycmVectorError("Number Of Classes < 2")

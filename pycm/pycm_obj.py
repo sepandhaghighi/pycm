@@ -103,6 +103,8 @@ class ConfusionMatrix():
             matrix_param = matrix_params_calc(actual_vector, predict_vector,sample_weight)
             if isinstance(sample_weight, list) == True:
                 self.weights = sample_weight
+            if isinstance(sample_weight, numpy.ndarray)==True:
+                self.weights = sample_weight.tolist()
         if len(matrix_param[0]) < 2:
             raise pycmVectorError("Number Of Classes < 2")
         self.classes = matrix_param[0]

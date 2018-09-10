@@ -325,7 +325,7 @@ For more information visit [Example5](http://www.shaghighi.ir/pycm/doc/Example5.
 4. `digit`: `int`	
 5. `threshold` : `FunctionType (function or lambda)`	
 6. `file` : `File object`
-7. `sample_weight` : `list`
+7. `sample_weight` : python `list` or numpy `array` of any stringable objects
 
 * run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
 

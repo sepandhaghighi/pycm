@@ -160,7 +160,7 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     FN_dict = map_dict.copy()
     table = {k: map_dict.copy() for k in classes}
     weight_vector = [1]*len(actual_vector)
-    if isinstance(sample_weight,list)==True:
+    if isinstance(sample_weight,(list,numpy.ndarray))==True:
         if len(sample_weight)==len(actual_vector):
             weight_vector = sample_weight
     for index, item in enumerate(actual_vector):

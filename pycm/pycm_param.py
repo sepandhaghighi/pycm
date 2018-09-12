@@ -46,7 +46,8 @@ PARAMS_DESCRIPTION = {
     "F2": "F2 Score",
     "ERR": "Error Rate",
     "RACCU": "Random Accuracy Unbiased",
-    "J": "Jaccard index"}
+    "J": "Jaccard index",
+    "NIR":"No Information Rate"}
 
 PARAMS_LINK = {
     "TPR": "http://www.shaghighi.ir/pycm/doc/index.html#TPR--(sensitivity,-recall,-hit-rate,-or-true-positive-rate)",
@@ -123,7 +124,8 @@ PARAMS_LINK = {
     "J": "http://www.shaghighi.ir/pycm/doc/#J-(Jaccard-index)",
     "Overall_J": "http://www.shaghighi.ir/pycm/doc/#Overall_J",
     "Hamming Loss": "http://www.shaghighi.ir/pycm/doc/#Hamming-Loss",
-    "Zero-one Loss": "http://www.shaghighi.ir/pycm/doc/#Zero-one-Loss"}
+    "Zero-one Loss": "http://www.shaghighi.ir/pycm/doc/#Zero-one-Loss",
+    "NIR":"http://www.shaghighi.ir/pycm/doc/#NIR"}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

@@ -17,6 +17,21 @@ def isfile(f):
         f, 'read')
 
 
+def NIR_calc(P,POP):
+    '''
+    This function calculate No Information Rate
+    :param P: Condition positive
+    :type P : dict
+    :param POP: Population
+    :type POP : dict
+    :return: NIR as float
+    '''
+    try:
+        max_P = max(list(P.values()))
+        length = list(POP.values())[0]
+        return max_P/length
+    except Exception:
+        return "None"
 def hamming_calc(TP, POP):
     '''
     This function calculate hamming_loss
@@ -1028,6 +1043,7 @@ def overall_statistics(
         jaccard_list.values()))
     hamming_loss = hamming_calc(TP, POP)
     zero_one_loss = zero_one_loss_calc(TP, POP)
+    NIR = NIR_calc(P,POP)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1069,7 +1085,8 @@ def overall_statistics(
         "Mutual Information": mutual_information,
         "Overall_J": overall_jaccard_index,
         "Hamming Loss": hamming_loss,
-        "Zero-one Loss": zero_one_loss}
+        "Zero-one Loss": zero_one_loss,
+        "NIR":NIR}
 
 
 def class_statistics(TP, TN, FP, FN):

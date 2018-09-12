@@ -893,6 +893,8 @@ TON(Test outcome negative)                                       11             
 TOP(Test outcome positive)                                       10                      3                       8
 TP(True positive/hit)                                            6                       1                       6
 TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5
+>>> NIR_calc({'Class2': 804, 'Class1': 196},{'Class2': 1000, 'Class1': 1000})
+0.804
 >>> os.remove("test.csv")
 >>> os.remove("test.html")
 >>> os.remove("test.obj")

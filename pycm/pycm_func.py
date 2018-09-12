@@ -3,6 +3,8 @@ from __future__ import division
 import math
 import sys
 import numpy
+import operator as op
+from functools import reduce
 
 
 def isfile(f):
@@ -15,6 +17,24 @@ def isfile(f):
     return isinstance(
         f, file) if sys.version_info[0] == 2 else hasattr(
         f, 'read')
+
+def ncr(n, r):
+    r = min(r, n-r)
+    numer = reduce(op.mul, range(n, n-r, -1), 1)
+    denom = reduce(op.mul, range(1, r+1), 1)
+    return numer//denom
+
+def p_value_calc(TP,POP,TOP):
+    try:
+        n = list(POP.values())[0]
+        x = sum(list(TP.values()))
+        p = max(list(TOP.values()))/n
+        result = 0
+        for j in range(x):
+            result += ncr(n, j) * (p ** j) * ((1 - p) ** (n - j))
+        return result
+    except Exception:
+        return "None"
 
 
 def NIR_calc(P,POP):
@@ -1044,6 +1064,7 @@ def overall_statistics(
     hamming_loss = hamming_calc(TP, POP)
     zero_one_loss = zero_one_loss_calc(TP, POP)
     NIR = NIR_calc(P,POP)
+    p_value = 1- p_value_calc(TP,POP,TOP)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1086,7 +1107,8 @@ def overall_statistics(
         "Overall_J": overall_jaccard_index,
         "Hamming Loss": hamming_loss,
         "Zero-one Loss": zero_one_loss,
-        "NIR":NIR}
+        "NIR":NIR,
+        "P-Value":p_value}
 
 
 def class_statistics(TP, TN, FP, FN):

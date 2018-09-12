@@ -125,7 +125,8 @@ PARAMS_LINK = {
     "Overall_J": "http://www.shaghighi.ir/pycm/doc/#Overall_J",
     "Hamming Loss": "http://www.shaghighi.ir/pycm/doc/#Hamming-Loss",
     "Zero-one Loss": "http://www.shaghighi.ir/pycm/doc/#Zero-one-Loss",
-    "NIR":"http://www.shaghighi.ir/pycm/doc/#NIR"}
+    "NIR":"http://www.shaghighi.ir/pycm/doc/#NIR",
+    "P-Value":"http://www.shaghighi.ir/pycm/doc/#P-Value"}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

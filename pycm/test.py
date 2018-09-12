@@ -38,10 +38,12 @@ Kappa Unbiased                                                   0.34426
 Lambda A                                                         0.16667
 Lambda B                                                         0.42857
 Mutual Information                                               0.52421
+NIR                                                              0.5
 Overall_ACC                                                      0.58333
 Overall_J                                                        (1.225,0.40833)
 Overall_RACC                                                     0.35417
 Overall_RACCU                                                    0.36458
+P-Value                                                          0.18926
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
 Phi-Squared                                                      0.55
@@ -224,10 +226,12 @@ Kappa Unbiased                                                   -0.12554
 Lambda A                                                         None
 Lambda B                                                         None
 Mutual Information                                               None
+NIR                                                              0.8
 Overall_ACC                                                      0.35
 Overall_J                                                        (0.60294,0.15074)
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
+P-Value                                                          0.97859
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
@@ -302,10 +306,12 @@ Kappa Unbiased                                                   -0.12554
 Lambda A                                                         None
 Lambda B                                                         None
 Mutual Information                                               None
+NIR                                                              0.8
 Overall_ACC                                                      0.35
 Overall_J                                                        (0.60294,0.15074)
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
+P-Value                                                          0.97859
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
@@ -572,10 +578,12 @@ Kappa Unbiased                                                   -0.12554
 Lambda A                                                         None
 Lambda B                                                         None
 Mutual Information                                               None
+NIR                                                              0.8
 Overall_ACC                                                      0.35
 Overall_J                                                        (0.60294,0.15074)
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
+P-Value                                                          0.97859
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
@@ -681,37 +689,39 @@ Example : online_help("J") or online_help(2)
 37-MK
 38-Mutual Information
 39-N
-40-NPV
-41-Overall_ACC
-42-Overall_J
-43-Overall_RACC
-44-Overall_RACCU
-45-P
-46-POP
-47-PPV
-48-PPV_Macro
-49-PPV_Micro
-50-PRE
-51-Phi-Squared
-52-RACC
-53-RACCU
-54-Reference Entropy
-55-Response Entropy
-56-Scott_PI
-57-Standard Error
-58-Strength_Of_Agreement(Altman)
-59-Strength_Of_Agreement(Cicchetti)
-60-Strength_Of_Agreement(Fleiss)
-61-Strength_Of_Agreement(Landis and Koch)
-62-TN
-63-TNR
-64-TON
-65-TOP
-66-TP
-67-TPR
-68-TPR_Macro
-69-TPR_Micro
-70-Zero-one Loss
+40-NIR
+41-NPV
+42-Overall_ACC
+43-Overall_J
+44-Overall_RACC
+45-Overall_RACCU
+46-P
+47-P-Value
+48-POP
+49-PPV
+50-PPV_Macro
+51-PPV_Micro
+52-PRE
+53-Phi-Squared
+54-RACC
+55-RACCU
+56-Reference Entropy
+57-Response Entropy
+58-Scott_PI
+59-Standard Error
+60-Strength_Of_Agreement(Altman)
+61-Strength_Of_Agreement(Cicchetti)
+62-Strength_Of_Agreement(Fleiss)
+63-Strength_Of_Agreement(Landis and Koch)
+64-TN
+65-TNR
+66-TON
+67-TOP
+68-TP
+69-TPR
+70-TPR_Macro
+71-TPR_Micro
+72-Zero-one Loss
 >>> online_help("J")
 ...
 >>> online_help(1)
@@ -750,10 +760,12 @@ Kappa Unbiased                                                   0.37313
 Lambda A                                                         0.22222
 Lambda B                                                         0.36364
 Mutual Information                                               0.47618
+NIR                                                              0.57143
 Overall_ACC                                                      0.61905
 Overall_J                                                        (1.22857,0.40952)
 Overall_RACC                                                     0.37415
 Overall_RACCU                                                    0.39229
+P-Value                                                          0.13736
 PPV_Macro                                                        0.56111
 PPV_Micro                                                        0.61905
 Phi-Squared                                                      0.49722
@@ -838,10 +850,12 @@ Kappa Unbiased                                                   0.37313
 Lambda A                                                         0.22222
 Lambda B                                                         0.36364
 Mutual Information                                               0.47618
+NIR                                                              0.57143
 Overall_ACC                                                      0.61905
 Overall_J                                                        (1.22857,0.40952)
 Overall_RACC                                                     0.37415
 Overall_RACCU                                                    0.39229
+P-Value                                                          0.13736
 PPV_Macro                                                        0.56111
 PPV_Micro                                                        0.61905
 Phi-Squared                                                      0.49722

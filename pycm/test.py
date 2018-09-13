@@ -216,15 +216,15 @@ Cramer_V                                                         None
 Cross Entropy                                                    None
 Gwet_AC1                                                         0.19505
 Hamming Loss                                                     0.65
-Joint Entropy                                                    None
+Joint Entropy                                                    2.11997
 KL Divergence                                                    None
 Kappa                                                            0.07801
 Kappa 95% CI                                                     (-0.2185,0.37453)
 Kappa No Prevalence                                              -0.3
 Kappa Standard Error                                             0.15128
 Kappa Unbiased                                                   -0.12554
-Lambda A                                                         None
-Lambda B                                                         None
+Lambda A                                                         0.0
+Lambda B                                                         0.0
 Mutual Information                                               None
 NIR                                                              0.8
 Overall_ACC                                                      0.35
@@ -296,15 +296,15 @@ Cramer_V                                                         None
 Cross Entropy                                                    None
 Gwet_AC1                                                         0.19505
 Hamming Loss                                                     0.65
-Joint Entropy                                                    None
+Joint Entropy                                                    2.11997
 KL Divergence                                                    None
 Kappa                                                            0.07801
 Kappa 95% CI                                                     (-0.2185,0.37453)
 Kappa No Prevalence                                              -0.3
 Kappa Standard Error                                             0.15128
 Kappa Unbiased                                                   -0.12554
-Lambda A                                                         None
-Lambda B                                                         None
+Lambda A                                                         0.0
+Lambda B                                                         0.0
 Mutual Information                                               None
 NIR                                                              0.8
 Overall_ACC                                                      0.35
@@ -568,15 +568,15 @@ Cramer_V                                                         None
 Cross Entropy                                                    None
 Gwet_AC1                                                         0.19505
 Hamming Loss                                                     0.65
-Joint Entropy                                                    None
+Joint Entropy                                                    2.11997
 KL Divergence                                                    None
 Kappa                                                            0.07801
 Kappa 95% CI                                                     (-0.2185,0.37453)
 Kappa No Prevalence                                              -0.3
 Kappa Standard Error                                             0.15128
 Kappa Unbiased                                                   -0.12554
-Lambda A                                                         None
-Lambda B                                                         None
+Lambda A                                                         0.0
+Lambda B                                                         0.0
 Mutual Information                                               None
 NIR                                                              0.8
 Overall_ACC                                                      0.35

@@ -283,7 +283,7 @@ def joint_entropy_calc(classes, table, POP):
         classes.sort()
         for i in classes:
             for index, j in enumerate(classes):
-                p_prime = table[i][index] / POP[i]
+                p_prime = table[i][j] / POP[i]
                 if p_prime != 0:
                     result += p_prime * math.log(p_prime, 2)
         return -result
@@ -310,7 +310,7 @@ def conditional_entropy_calc(classes, table, P, POP):
         for i in classes:
             temp = 0
             for index, j in enumerate(classes):
-                p_prime = table[i][index] / P[i]
+                p_prime = table[i][j] / P[i]
                 if p_prime != 0:
                     temp += p_prime * math.log(p_prime, 2)
             result += temp * (P[i] / POP[i])
@@ -373,10 +373,11 @@ def lambda_B_calc(classes, table, TOP, POP):
     try:
         result = 0
         classes.sort()
+        length = list(POP.values())[0]
         maxresponse = max(list(TOP.values()))
         for i in classes:
             result += max(list(table[i].values()))
-        result = (result - maxresponse) / (POP[0] - maxresponse)
+        result = (result - maxresponse) / (length - maxresponse)
         return result
     except Exception:
         return "None"
@@ -399,12 +400,13 @@ def lambda_A_calc(classes, table, P, POP):
         result = 0
         classes.sort()
         maxreference = max(list(P.values()))
+        length = list(POP.values())[0]
         for i in classes:
             col = []
             for col_item in table.values():
                 col.append(col_item[i])
             result += max(col)
-        result = (result - maxreference) / (POP[0] - maxreference)
+        result = (result - maxreference) / (length - maxreference)
         return result
     except Exception:
         return "None"
@@ -431,7 +433,7 @@ def chi_square_calc(classes, table, TOP, P, POP):
         for i in classes:
             for index, j in enumerate(classes):
                 expected = (TOP[j] * P[i]) / (POP[i])
-                result += ((table[i][index] - expected)**2) / expected
+                result += ((table[i][j] - expected)**2) / expected
         return result
     except Exception:
         return "None"

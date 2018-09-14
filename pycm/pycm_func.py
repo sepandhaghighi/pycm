@@ -18,6 +18,7 @@ def isfile(f):
         f, file) if sys.version_info[0] == 2 else hasattr(
         f, 'read')
 
+
 def ncr(n, r):
     '''
     This function calculate n choose r
@@ -27,12 +28,13 @@ def ncr(n, r):
     :type r :int
     :return: n choose r as int
     '''
-    r = min(r, n-r)
-    numer = reduce(op.mul, range(n, n-r, -1), 1)
-    denom = reduce(op.mul, range(1, r+1), 1)
-    return numer//denom
+    r = min(r, n - r)
+    numer = reduce(op.mul, range(n, n - r, -1), 1)
+    denom = reduce(op.mul, range(1, r + 1), 1)
+    return numer // denom
 
-def p_value_calc(TP,POP,NIR):
+
+def p_value_calc(TP, POP, NIR):
     '''
     This function calculate p_value
     :param TP: True Positive
@@ -50,12 +52,12 @@ def p_value_calc(TP,POP,NIR):
         result = 0
         for j in range(x):
             result += ncr(n, j) * (p ** j) * ((1 - p) ** (n - j))
-        return 1-result
+        return 1 - result
     except Exception:
         return "None"
 
 
-def NIR_calc(P,POP):
+def NIR_calc(P, POP):
     '''
     This function calculate No Information Rate
     :param P: Condition positive
@@ -67,9 +69,11 @@ def NIR_calc(P,POP):
     try:
         max_P = max(list(P.values()))
         length = list(POP.values())[0]
-        return max_P/length
+        return max_P / length
     except Exception:
         return "None"
+
+
 def hamming_calc(TP, POP):
     '''
     This function calculate hamming_loss
@@ -1083,8 +1087,8 @@ def overall_statistics(
         jaccard_list.values()))
     hamming_loss = hamming_calc(TP, POP)
     zero_one_loss = zero_one_loss_calc(TP, POP)
-    NIR = NIR_calc(P,POP)
-    p_value = p_value_calc(TP,POP,NIR)
+    NIR = NIR_calc(P, POP)
+    p_value = p_value_calc(TP, POP, NIR)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1127,8 +1131,8 @@ def overall_statistics(
         "Overall_J": overall_jaccard_index,
         "Hamming Loss": hamming_loss,
         "Zero-one Loss": zero_one_loss,
-        "NIR":NIR,
-        "P-Value":p_value}
+        "NIR": NIR,
+        "P-Value": p_value}
 
 
 def class_statistics(TP, TN, FP, FN):

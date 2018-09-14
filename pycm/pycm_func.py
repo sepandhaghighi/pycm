@@ -19,20 +19,38 @@ def isfile(f):
         f, 'read')
 
 def ncr(n, r):
+    '''
+    This function calculate n choose r
+    :param n: n
+    :type n : int
+    :param r: r
+    :type r :int
+    :return: n choose r as int
+    '''
     r = min(r, n-r)
     numer = reduce(op.mul, range(n, n-r, -1), 1)
     denom = reduce(op.mul, range(1, r+1), 1)
     return numer//denom
 
-def p_value_calc(TP,POP,TOP):
+def p_value_calc(TP,POP,NIR):
+    '''
+    This function calculate p_value
+    :param TP: True Positive
+    :type TP : dict
+    :param POP: Population
+    :type POP : dict
+    :param NIR: No Information Rate
+    :type NIR : float
+    :return: p_value as float
+    '''
     try:
         n = list(POP.values())[0]
         x = sum(list(TP.values()))
-        p = max(list(TOP.values()))/n
+        p = NIR
         result = 0
         for j in range(x):
             result += ncr(n, j) * (p ** j) * ((1 - p) ** (n - j))
-        return result
+        return 1-result
     except Exception:
         return "None"
 
@@ -1066,7 +1084,7 @@ def overall_statistics(
     hamming_loss = hamming_calc(TP, POP)
     zero_one_loss = zero_one_loss_calc(TP, POP)
     NIR = NIR_calc(P,POP)
-    p_value = 1- p_value_calc(TP,POP,TOP)
+    p_value = p_value_calc(TP,POP,NIR)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,

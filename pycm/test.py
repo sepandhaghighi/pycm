@@ -43,7 +43,7 @@ Overall_ACC                                                      0.58333
 Overall_J                                                        (1.225,0.40833)
 Overall_RACC                                                     0.35417
 Overall_RACCU                                                    0.36458
-P-Value                                                          0.18926
+P-Value                                                          0.38721
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
 Phi-Squared                                                      0.55
@@ -231,7 +231,7 @@ Overall_ACC                                                      0.35
 Overall_J                                                        (0.60294,0.15074)
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
-P-Value                                                          0.97859
+P-Value                                                          1.0
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
@@ -311,7 +311,7 @@ Overall_ACC                                                      0.35
 Overall_J                                                        (0.60294,0.15074)
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
-P-Value                                                          0.97859
+P-Value                                                          1.0
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
@@ -583,7 +583,7 @@ Overall_ACC                                                      0.35
 Overall_J                                                        (0.60294,0.15074)
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
-P-Value                                                          0.97859
+P-Value                                                          1.0
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
@@ -682,7 +682,7 @@ Overall_ACC                                                      0.66667
 Overall_J                                                        (1.51854,0.50618)
 Overall_RACC                                                     0.36626
 Overall_RACCU                                                    0.36694
-P-Value                                                          0.041
+P-Value                                                          0.01667
 PPV_Macro                                                        0.68262
 PPV_Micro                                                        0.66667
 Phi-Squared                                                      0.57502
@@ -855,7 +855,7 @@ Overall_ACC                                                      0.61905
 Overall_J                                                        (1.22857,0.40952)
 Overall_RACC                                                     0.37415
 Overall_RACCU                                                    0.39229
-P-Value                                                          0.13736
+P-Value                                                          0.41709
 PPV_Macro                                                        0.56111
 PPV_Micro                                                        0.61905
 Phi-Squared                                                      0.49722
@@ -945,7 +945,7 @@ Overall_ACC                                                      0.61905
 Overall_J                                                        (1.22857,0.40952)
 Overall_RACC                                                     0.37415
 Overall_RACCU                                                    0.39229
-P-Value                                                          0.13736
+P-Value                                                          0.41709
 PPV_Macro                                                        0.56111
 PPV_Micro                                                        0.61905
 Phi-Squared                                                      0.49722
@@ -999,6 +999,9 @@ TP(True positive/hit)                                            6              
 TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5
 >>> NIR_calc({'Class2': 804, 'Class1': 196},{'Class2': 1000, 'Class1': 1000})
 0.804
+>>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":183,"Class2":13},"Class2":{"Class1":141,"Class2":663}})
+>>> cm.PValue
+0.000342386296143693
 >>> os.remove("test.csv")
 >>> os.remove("test.html")
 >>> os.remove("test.obj")

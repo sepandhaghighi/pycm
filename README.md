@@ -285,7 +285,15 @@ TNR(Specificity or true negative rate)                           1.0            
 TON(Test outcome negative)                                       7                       1                       
 TOP(Test outcome positive)                                       1                       7                       
 TP(True positive/hit)                                            1                       5                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0                         
+TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0 
+
+>>> cm3 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":0}, "Class2": {"Class1": 2, "Class2": 5}},transpose=True) # Transpose Matrix      
+>>> cm3.matrix()
+Predict          Class1    Class2    
+Actual
+Class1           1         2         
+Class2           0         5         
+                   
 
 ```
 ### Activation Threshold
@@ -302,6 +310,9 @@ For more information visit [Example4](http://www.shaghighi.ir/pycm/doc/Example4.
 `sample_weight` is added in `Version 1.2`
 
 For more information visit [Example5](http://www.shaghighi.ir/pycm/doc/Example5.html "Example5")
+
+### Transpose
+`transpose` is added in `Version 1.2` in order to transpose input matrix (only in `Direct CM` mode)
 
 ### Online Help
 
@@ -326,6 +337,7 @@ For more information visit [Example5](http://www.shaghighi.ir/pycm/doc/Example5.
 5. `threshold` : `FunctionType (function or lambda)`	
 6. `file` : `File object`
 7. `sample_weight` : python `list` or numpy `array` of any stringable objects
+8. `transpose` : `bool`
 
 * run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
 

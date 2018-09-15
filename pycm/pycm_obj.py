@@ -37,7 +37,7 @@ class ConfusionMatrix():
             predict_vector=None,
             matrix=None,
             digit=5, threshold=None, file=None,
-            sample_weight=None,transpose=False):
+            sample_weight=None, transpose=False):
         '''
         :param actual_vector: Actual Vector
         :type actual_vector: python list or numpy array of any stringable objects
@@ -83,7 +83,7 @@ class ConfusionMatrix():
                     loaded_transpose = False
                 self.transpose = loaded_transpose
                 matrix_param = matrix_params_from_table(obj_data[
-                    "Matrix"],loaded_transpose)
+                    "Matrix"], loaded_transpose)
             self.digit = obj_data["Digit"]
         elif isinstance(matrix, dict):
             if matrix_check(matrix):
@@ -91,7 +91,7 @@ class ConfusionMatrix():
                     raise pycmMatrixError(
                         "Input Matrix Classes Must Be Same Type")
                 else:
-                    matrix_param = matrix_params_from_table(matrix,transpose)
+                    matrix_param = matrix_params_from_table(matrix, transpose)
             else:
                 raise pycmMatrixError("Input Confusion Matrix Format Error")
         else:

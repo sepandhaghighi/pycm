@@ -19,7 +19,7 @@ def isfile(f):
         f, 'read')
 
 
-def transpose_func(classes,table):
+def transpose_func(classes, table):
     '''
     This function tranpose table
     :param classes: classes
@@ -29,13 +29,14 @@ def transpose_func(classes,table):
     :return: transposed table as dict
     '''
     transposed_table = table
-    for i,item1 in enumerate(classes):
-        for j,item2 in enumerate(classes):
-            if i>j :
+    for i, item1 in enumerate(classes):
+        for j, item2 in enumerate(classes):
+            if i > j:
                 temp = transposed_table[item1][item2]
                 transposed_table[item1][item2] = transposed_table[item2][item1]
                 transposed_table[item2][item1] = temp
     return transposed_table
+
 
 def ncr(n, r):
     '''
@@ -188,7 +189,7 @@ def matrix_check(table):
         return False
 
 
-def matrix_params_from_table(table,transpose=False):
+def matrix_params_from_table(table, transpose=False):
     '''
     This function calculate TP,TN,FP,FN from confusion matrix
     :param table: input matrix
@@ -210,11 +211,11 @@ def matrix_params_from_table(table,transpose=False):
                 FN_dict[i] += table[i][j]
                 FP_dict[j] += table[i][j]
                 TN_dict[j] += sum(list(table[i].values())) - table[i][j]
-    if transpose==True :
+    if transpose:
         temp = FN_dict
         FN_dict = FP_dict
         FP_dict = temp
-        table = transpose_func(classes,table)
+        table = transpose_func(classes, table)
     return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
 
 

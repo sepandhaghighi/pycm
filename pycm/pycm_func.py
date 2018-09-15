@@ -20,6 +20,14 @@ def isfile(f):
 
 
 def transpose_func(classes,table):
+    '''
+    This function tranpose table
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :return: transposed table as dict
+    '''
     transposed_table = table
     for i,item1 in enumerate(classes):
         for j,item2 in enumerate(classes):
@@ -185,6 +193,8 @@ def matrix_params_from_table(table,transpose=False):
     This function calculate TP,TN,FP,FN from confusion matrix
     :param table: input matrix
     :type table : dict
+    :param transpose : transpose flag
+    :type transpose : bool
     :return: [classes_list,table,TP,TN,FP,FN]
     '''
     classes = sorted(table.keys())

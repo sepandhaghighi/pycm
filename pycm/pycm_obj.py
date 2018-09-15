@@ -37,7 +37,7 @@ class ConfusionMatrix():
             predict_vector=None,
             matrix=None,
             digit=5, threshold=None, file=None,
-            sample_weight=None):
+            sample_weight=None,transpose=False):
         '''
         :param actual_vector: Actual Vector
         :type actual_vector: python list or numpy array of any stringable objects
@@ -75,8 +75,13 @@ class ConfusionMatrix():
                 self.predict_vector = obj_data["Predict-Vector"]
                 self.weights = loaded_weights
             else:
+                try:
+                    loaded_transpose = obj_data["Transpose"]
+                except Exception:
+                    loaded_transpose = False
+                self.transpose = loaded_transpose
                 matrix_param = matrix_params_from_table(obj_data[
-                    "Matrix"])
+                    "Matrix"],loaded_transpose)
             self.digit = obj_data["Digit"]
         elif isinstance(matrix, dict):
             if matrix_check(matrix):
@@ -84,7 +89,7 @@ class ConfusionMatrix():
                     raise pycmMatrixError(
                         "Input Matrix Classes Must Be Same Type")
                 else:
-                    matrix_param = matrix_params_from_table(matrix)
+                    matrix_param = matrix_params_from_table(matrix,transpose)
             else:
                 raise pycmMatrixError("Input Confusion Matrix Format Error")
         else:
@@ -106,6 +111,10 @@ class ConfusionMatrix():
                 self.weights = sample_weight
             if isinstance(sample_weight, numpy.ndarray):
                 self.weights = sample_weight.tolist()
+        if isinstance(transpose, bool):
+            self.transpose = transpose
+        else:
+            self.transpose = False
         if len(matrix_param[0]) < 2:
             raise pycmVectorError("Number Of Classes < 2")
         self.classes = matrix_param[0]
@@ -302,7 +311,8 @@ class ConfusionMatrix():
                        "Predict-Vector": predict_vector_temp,
                        "Matrix": self.table,
                        "Digit": self.digit,
-                       "Sample-Weight": self.weights}, obj_file)
+                       "Sample-Weight": self.weights,
+                       "Transpose": self.transpose}, obj_file)
             if address:
                 message = os.path.join(os.getcwd(), name + ".obj")
             return {"Status": True, "Message": message}

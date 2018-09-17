@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `README.md` modified
 - Key error in some parameters fixed
+- `OSX` env added to `.travis.yml`
 ## [1.1] - 2018-09-08
 ### Added
 - Zero-one loss

@@ -65,3 +65,5 @@
   - [x] Jaccard Index
   - [x] Hamming Loss
   - [x] Zero-One Loss
+  - [x] P-Value
+  - [x] NIR

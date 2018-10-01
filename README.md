@@ -66,7 +66,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ## Installation		
 
 ### Source Code
-- Download [Version 1.1](https://github.com/sepandhaghighi/pycm/archive/v1.1.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 1.2](https://github.com/sepandhaghighi/pycm/archive/v1.2.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -94,11 +94,11 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 >>> cm.table
 {0: {0: 3, 1: 0, 2: 0}, 1: {0: 0, 1: 1, 2: 2}, 2: {0: 2, 1: 1, 2: 3}}
 >>> print(cm)
-Predict          0        1        2        
+Predict          0    1    2    
 Actual
-0                3        0        0        
-1                0        1        2        
-2                2        1        3        
+0                3    0    0    
+1                0    1    2    
+2                2    1    3    
 
 
 
@@ -124,10 +124,12 @@ Kappa Unbiased                                                   0.34426
 Lambda A                                                         0.16667
 Lambda B                                                         0.42857
 Mutual Information                                               0.52421
+NIR                                                              0.5
 Overall_ACC                                                      0.58333
 Overall_J                                                        (1.225,0.40833)
 Overall_RACC                                                     0.35417
 Overall_RACCU                                                    0.36458
+P-Value                                                          0.38721
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
 Phi-Squared                                                      0.55
@@ -178,7 +180,7 @@ TNR(Specificity or true negative rate)                           0.77778        
 TON(Test outcome negative)                                       7                       10                      7                       
 TOP(Test outcome positive)                                       5                       2                       5                       
 TP(True positive/hit)                                            3                       1                       3                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                     
+TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                                         
                                
 >>> cm.matrix()
 Predict          0        1        2        
@@ -202,10 +204,10 @@ Actual
 >>> cm2
 pycm.ConfusionMatrix(classes: ['Class1', 'Class2'])
 >>> print(cm2)
-Predict          Class1   Class2   
+Predict          Class1    Class2    
 Actual
-Class1           1        2        
-Class2           0        5        
+Class1           1         2         
+Class2           0         5         
 
 
 
@@ -214,30 +216,32 @@ Overall Statistics :
 
 95% CI                                                           (0.44994,1.05006)
 Bennett_S                                                        0.5
-Chi-Squared                                                      None
+Chi-Squared                                                      1.90476
 Chi-Squared DF                                                   1
-Conditional Entropy                                              None
-Cramer_V                                                         None
+Conditional Entropy                                              0.34436
+Cramer_V                                                         0.48795
 Cross Entropy                                                    1.2454
 Gwet_AC1                                                         0.6
 Hamming Loss                                                     0.25
-Joint Entropy                                                    None
+Joint Entropy                                                    1.29879
 KL Divergence                                                    0.29097
 Kappa                                                            0.38462
 Kappa 95% CI                                                     (-0.354,1.12323)
 Kappa No Prevalence                                              0.5
 Kappa Standard Error                                             0.37684
 Kappa Unbiased                                                   0.33333
-Lambda A                                                         None
-Lambda B                                                         None
-Mutual Information                                               None
+Lambda A                                                         0.33333
+Lambda B                                                         0.0
+Mutual Information                                               0.1992
+NIR                                                              0.625
 Overall_ACC                                                      0.75
 Overall_J                                                        (1.04762,0.52381)
 Overall_RACC                                                     0.59375
 Overall_RACCU                                                    0.625
+P-Value                                                          0.36974
 PPV_Macro                                                        0.85714
 PPV_Micro                                                        0.75
-Phi-Squared                                                      None
+Phi-Squared                                                      0.2381
 Reference Entropy                                                0.95443
 Response Entropy                                                 0.54356
 Scott_PI                                                         0.33333
@@ -285,7 +289,15 @@ TNR(Specificity or true negative rate)                           1.0            
 TON(Test outcome negative)                                       7                       1                       
 TOP(Test outcome positive)                                       1                       7                       
 TP(True positive/hit)                                            1                       5                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0                         
+TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0   
+
+>>> cm3 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":0}, "Class2": {"Class1": 2, "Class2": 5}},transpose=True) # Transpose Matrix      
+>>> cm3.matrix()
+Predict          Class1    Class2    
+Actual
+Class1           1         2         
+Class2           0         5         
+                   
 
 ```
 ### Activation Threshold
@@ -297,6 +309,14 @@ For more information visit [Example3](http://www.shaghighi.ir/pycm/doc/Example3.
 `file` is added in `Version 0.9.5` in order to load saved confusion matrix with `.obj` format generated by `save_obj` method.
 
 For more information visit [Example4](http://www.shaghighi.ir/pycm/doc/Example4.html "Example4")
+
+### Sample Weights
+`sample_weight` is added in `Version 1.2`
+
+For more information visit [Example5](http://www.shaghighi.ir/pycm/doc/Example5.html "Example5")
+
+### Transpose
+`transpose` is added in `Version 1.2` in order to transpose input matrix (only in `Direct CM` mode)
 
 ### Online Help
 
@@ -320,6 +340,8 @@ For more information visit [Example4](http://www.shaghighi.ir/pycm/doc/Example4.
 4. `digit`: `int`	
 5. `threshold` : `FunctionType (function or lambda)`	
 6. `file` : `File object`
+7. `sample_weight` : python `list` or numpy `array` of any stringable objects
+8. `transpose` : `bool`
 
 * run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
 

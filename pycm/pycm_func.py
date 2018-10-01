@@ -3,6 +3,8 @@ from __future__ import division
 import math
 import sys
 import numpy
+import operator as op
+from functools import reduce
 
 
 def isfile(f):
@@ -15,6 +17,80 @@ def isfile(f):
     return isinstance(
         f, file) if sys.version_info[0] == 2 else hasattr(
         f, 'read')
+
+
+def transpose_func(classes, table):
+    '''
+    This function tranpose table
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :return: transposed table as dict
+    '''
+    transposed_table = table
+    for i, item1 in enumerate(classes):
+        for j, item2 in enumerate(classes):
+            if i > j:
+                temp = transposed_table[item1][item2]
+                transposed_table[item1][item2] = transposed_table[item2][item1]
+                transposed_table[item2][item1] = temp
+    return transposed_table
+
+
+def ncr(n, r):
+    '''
+    This function calculate n choose r
+    :param n: n
+    :type n : int
+    :param r: r
+    :type r :int
+    :return: n choose r as int
+    '''
+    r = min(r, n - r)
+    numer = reduce(op.mul, range(n, n - r, -1), 1)
+    denom = reduce(op.mul, range(1, r + 1), 1)
+    return numer // denom
+
+
+def p_value_calc(TP, POP, NIR):
+    '''
+    This function calculate p_value
+    :param TP: True Positive
+    :type TP : dict
+    :param POP: Population
+    :type POP : dict
+    :param NIR: No Information Rate
+    :type NIR : float
+    :return: p_value as float
+    '''
+    try:
+        n = list(POP.values())[0]
+        x = sum(list(TP.values()))
+        p = NIR
+        result = 0
+        for j in range(x):
+            result += ncr(n, j) * (p ** j) * ((1 - p) ** (n - j))
+        return 1 - result
+    except Exception:
+        return "None"
+
+
+def NIR_calc(P, POP):
+    '''
+    This function calculate No Information Rate
+    :param P: Condition positive
+    :type P : dict
+    :param POP: Population
+    :type POP : dict
+    :return: NIR as float
+    '''
+    try:
+        max_P = max(list(P.values()))
+        length = list(POP.values())[0]
+        return max_P / length
+    except Exception:
+        return "None"
 
 
 def hamming_calc(TP, POP):
@@ -113,11 +189,13 @@ def matrix_check(table):
         return False
 
 
-def matrix_params_from_table(table):
+def matrix_params_from_table(table, transpose=False):
     '''
     This function calculate TP,TN,FP,FN from confusion matrix
     :param table: input matrix
     :type table : dict
+    :param transpose : transpose flag
+    :type transpose : bool
     :return: [classes_list,table,TP,TN,FP,FN]
     '''
     classes = sorted(table.keys())
@@ -133,40 +211,52 @@ def matrix_params_from_table(table):
                 FN_dict[i] += table[i][j]
                 FP_dict[j] += table[i][j]
                 TN_dict[j] += sum(list(table[i].values())) - table[i][j]
+    if transpose:
+        temp = FN_dict
+        FN_dict = FP_dict
+        FP_dict = temp
+        table = transpose_func(classes, table)
     return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
 
 
-def matrix_params_calc(actual_vector, predict_vector):
+def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     '''
     This function calculate TP,TN,FP,FN for each class
     :param actual_vector: actual values
     :type actual_vector : list
     :param predict_vector: predict value
     :type predict_vector : list
+    :param sample_weight : sample weights list
+    :type sample_weight : list
     :return: [classes_list,table,TP,TN,FP,FN]
     '''
     if isinstance(actual_vector, numpy.ndarray):
         actual_vector = actual_vector.tolist()
     if isinstance(predict_vector, numpy.ndarray):
         predict_vector = predict_vector.tolist()
-    classes = sorted(set(actual_vector).union(set(predict_vector)))
+    classes = set(actual_vector).union(set(predict_vector))
+    classes = sorted(classes)
     map_dict = {k: 0 for k in classes}
     TP_dict = map_dict.copy()
     TN_dict = map_dict.copy()
     FP_dict = map_dict.copy()
     FN_dict = map_dict.copy()
     table = {k: map_dict.copy() for k in classes}
+    weight_vector = [1] * len(actual_vector)
+    if isinstance(sample_weight, (list, numpy.ndarray)):
+        if len(sample_weight) == len(actual_vector):
+            weight_vector = sample_weight
     for index, item in enumerate(actual_vector):
         if (item in classes) and (predict_vector[index] in classes):
-            table[item][predict_vector[index]] += 1
+            table[item][predict_vector[index]] += 1 * weight_vector[index]
             if item == predict_vector[index]:
-                TP_dict[item] += 1
+                TP_dict[item] += 1 * weight_vector[index]
             else:
-                FN_dict[item] += 1
-                FP_dict[predict_vector[index]] += 1
+                FN_dict[item] += 1 * weight_vector[index]
+                FP_dict[predict_vector[index]] += 1 * weight_vector[index]
             for i in classes:
                 if i != item and predict_vector[index] != i:
-                    TN_dict[i] += 1
+                    TN_dict[i] += 1 * weight_vector[index]
     return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
 
 
@@ -241,7 +331,7 @@ def joint_entropy_calc(classes, table, POP):
         classes.sort()
         for i in classes:
             for index, j in enumerate(classes):
-                p_prime = table[i][index] / POP[i]
+                p_prime = table[i][j] / POP[i]
                 if p_prime != 0:
                     result += p_prime * math.log(p_prime, 2)
         return -result
@@ -268,7 +358,7 @@ def conditional_entropy_calc(classes, table, P, POP):
         for i in classes:
             temp = 0
             for index, j in enumerate(classes):
-                p_prime = table[i][index] / P[i]
+                p_prime = table[i][j] / P[i]
                 if p_prime != 0:
                     temp += p_prime * math.log(p_prime, 2)
             result += temp * (P[i] / POP[i])
@@ -331,10 +421,11 @@ def lambda_B_calc(classes, table, TOP, POP):
     try:
         result = 0
         classes.sort()
+        length = list(POP.values())[0]
         maxresponse = max(list(TOP.values()))
         for i in classes:
             result += max(list(table[i].values()))
-        result = (result - maxresponse) / (POP[0] - maxresponse)
+        result = (result - maxresponse) / (length - maxresponse)
         return result
     except Exception:
         return "None"
@@ -357,12 +448,13 @@ def lambda_A_calc(classes, table, P, POP):
         result = 0
         classes.sort()
         maxreference = max(list(P.values()))
+        length = list(POP.values())[0]
         for i in classes:
             col = []
             for col_item in table.values():
                 col.append(col_item[i])
             result += max(col)
-        result = (result - maxreference) / (POP[0] - maxreference)
+        result = (result - maxreference) / (length - maxreference)
         return result
     except Exception:
         return "None"
@@ -389,7 +481,7 @@ def chi_square_calc(classes, table, TOP, P, POP):
         for i in classes:
             for index, j in enumerate(classes):
                 expected = (TOP[j] * P[i]) / (POP[i])
-                result += ((table[i][index] - expected)**2) / expected
+                result += ((table[i][j] - expected)**2) / expected
         return result
     except Exception:
         return "None"
@@ -1021,6 +1113,8 @@ def overall_statistics(
         jaccard_list.values()))
     hamming_loss = hamming_calc(TP, POP)
     zero_one_loss = zero_one_loss_calc(TP, POP)
+    NIR = NIR_calc(P, POP)
+    p_value = p_value_calc(TP, POP, NIR)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1062,7 +1156,9 @@ def overall_statistics(
         "Mutual Information": mutual_information,
         "Overall_J": overall_jaccard_index,
         "Hamming Loss": hamming_loss,
-        "Zero-one Loss": zero_one_loss}
+        "Zero-one Loss": zero_one_loss,
+        "NIR": NIR,
+        "P-Value": p_value}
 
 
 def class_statistics(TP, TN, FP, FN):

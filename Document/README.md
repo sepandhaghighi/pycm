@@ -32,6 +32,11 @@
 - [HTML](http://www.shaghighi.ir/pycm/doc/Example4.html)
 
 
+## Example-5 (Sample Weights)
+
+- [Jupyter Notebook](https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Example5.ipynb)
+- [HTML](http://www.shaghighi.ir/pycm/doc/Example5.html)
+
 
 
 

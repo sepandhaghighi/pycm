@@ -47,7 +47,8 @@ PARAMS_DESCRIPTION = {
     "ERR": "Error Rate",
     "RACCU": "Random Accuracy Unbiased",
     "J": "Jaccard index",
-    "NIR": "No Information Rate"}
+    "NIR": "No Information Rate",
+    "IS": "Information Score"}
 
 PARAMS_LINK = {
     "TPR": "http://www.shaghighi.ir/pycm/doc/index.html#TPR--(sensitivity,-recall,-hit-rate,-or-true-positive-rate)",
@@ -126,7 +127,8 @@ PARAMS_LINK = {
     "Hamming Loss": "http://www.shaghighi.ir/pycm/doc/#Hamming-Loss",
     "Zero-one Loss": "http://www.shaghighi.ir/pycm/doc/#Zero-one-Loss",
     "NIR": "http://www.shaghighi.ir/pycm/doc/#NIR-(No-Information-Rate)",
-    "P-Value": "http://www.shaghighi.ir/pycm/doc/#P-Value"}
+    "P-Value": "http://www.shaghighi.ir/pycm/doc/#P-Value",
+    "IS":"http://www.shaghighi.ir/pycm/doc/#IS"}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

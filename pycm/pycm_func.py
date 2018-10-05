@@ -19,6 +19,25 @@ def isfile(f):
         f, 'read')
 
 
+def IS_calc(TP,FP,FN,POP):
+    '''
+    This function calculate Information Score (IS)
+    :param TP: True Positive Dict For All Classes
+    :type TP : int
+    :param FP: False Positive Dict For All Classes
+    :type FP : int
+    :param FN: False Negative Dict For All Classes
+    :type FN : int
+    :param POP: Population
+    :type POP : int
+    :return: IS as float
+    '''
+    try:
+        result = -math.log(((TP+FN)/POP),2)+math.log((TP/(TP+FP)),2)
+        return result
+    except Exception:
+        return "None"
+
 def transpose_func(classes, table):
     '''
     This function tranpose table
@@ -1164,7 +1183,7 @@ def overall_statistics(
 def class_statistics(TP, TN, FP, FN):
     '''
     This function return all class statistics
-    ::param TP: True Positive Dict For All Classes
+    :param TP: True Positive Dict For All Classes
     :type TP : dict
     :param TN: True Negative Dict For All Classes
     :type TN : dict
@@ -1203,6 +1222,7 @@ def class_statistics(TP, TN, FP, FN):
     ERR = {}
     RACCU = {}
     Jaccrd_Index = {}
+    IS={}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1233,6 +1253,7 @@ def class_statistics(TP, TN, FP, FN):
         ERR[i] = ERR_calc(ACC[i])
         RACCU[i] = RACCU_calc(TOP[i], P[i], POP[i])
         Jaccrd_Index[i] = jaccard_index_calc(TP[i], TOP[i], P[i])
+        IS[i] = IS_calc(TP[i],FP[i],FN[i],POP[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1266,5 +1287,6 @@ def class_statistics(TP, TN, FP, FN):
         "F2": F2_Score,
         "ERR": ERR,
         "RACCU": RACCU,
-        "J": Jaccrd_Index}
+        "J": Jaccrd_Index,
+        "IS": IS}
     return result

@@ -76,6 +76,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      2                       1                       2
 FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
+IS(Information score)                                            1.26303                 1.0                     0.26303
 J(Jaccard index)                                                 0.6                     0.25                    0.375
 LR+(Positive likelihood ratio)                                   4.5                     3.0                     1.5
 LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.75
@@ -264,6 +265,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
+IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 LR+(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
 LR-(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
@@ -344,6 +346,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
+IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 LR+(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
 LR-(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
@@ -475,6 +478,8 @@ Actual
 >>> lambda_A=lambda_A_calc(cm2.classes,cm2.table,cm2.P,cm2.POP)
 >>> lambda_A
 0.4
+>>> IS_calc(13,0,0,38)
+1.5474877953024933
 >>> kappa_no_prevalence_calc(cm2.Overall_ACC)
 0.33333333333333326
 >>> reliability_calc(cm2.Overall_RACC,cm2.Overall_ACC)
@@ -616,6 +621,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
+IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 LR+(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
 LR-(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
@@ -715,6 +721,7 @@ FOR(False omission rate)                                         0.21429        
 FP(False positive/type 1 error/false alarm)                      4                       4                       1
 FPR(Fall-out or false positive rate)                             0.26667                 0.22222                 0.04762
 G(G-measure geometric mean of precision and sensitivity)         0.72058                 0.55556                 0.7303
+IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
 LR+(Positive likelihood ratio)                                   2.8125                  2.5                     14.0
 LR-(Negative likelihood ratio)                                   0.34091                 0.57143                 0.35
@@ -805,6 +812,7 @@ FOR(False omission rate)                                         0.21429        
 FP(False positive/type 1 error/false alarm)                      4                       4                       1
 FPR(Fall-out or false positive rate)                             0.26667                 0.22222                 0.04762
 G(G-measure geometric mean of precision and sensitivity)         0.72058                 0.55556                 0.7303
+IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
 LR+(Positive likelihood ratio)                                   2.8125                  2.5                     14.0
 LR-(Negative likelihood ratio)                                   0.34091                 0.57143                 0.35
@@ -853,55 +861,56 @@ Example : online_help("J") or online_help(2)
 21-G
 22-Gwet_AC1
 23-Hamming Loss
-24-J
-25-Joint Entropy
-26-KL Divergence
-27-Kappa
-28-Kappa 95% CI
-29-Kappa No Prevalence
-30-Kappa Standard Error
-31-Kappa Unbiased
-32-LR+
-33-LR-
-34-Lambda A
-35-Lambda B
-36-MCC
-37-MK
-38-Mutual Information
-39-N
-40-NIR
-41-NPV
-42-Overall_ACC
-43-Overall_J
-44-Overall_RACC
-45-Overall_RACCU
-46-P
-47-P-Value
-48-POP
-49-PPV
-50-PPV_Macro
-51-PPV_Micro
-52-PRE
-53-Phi-Squared
-54-RACC
-55-RACCU
-56-Reference Entropy
-57-Response Entropy
-58-Scott_PI
-59-Standard Error
-60-Strength_Of_Agreement(Altman)
-61-Strength_Of_Agreement(Cicchetti)
-62-Strength_Of_Agreement(Fleiss)
-63-Strength_Of_Agreement(Landis and Koch)
-64-TN
-65-TNR
-66-TON
-67-TOP
-68-TP
-69-TPR
-70-TPR_Macro
-71-TPR_Micro
-72-Zero-one Loss
+24-IS
+25-J
+26-Joint Entropy
+27-KL Divergence
+28-Kappa
+29-Kappa 95% CI
+30-Kappa No Prevalence
+31-Kappa Standard Error
+32-Kappa Unbiased
+33-LR+
+34-LR-
+35-Lambda A
+36-Lambda B
+37-MCC
+38-MK
+39-Mutual Information
+40-N
+41-NIR
+42-NPV
+43-Overall_ACC
+44-Overall_J
+45-Overall_RACC
+46-Overall_RACCU
+47-P
+48-P-Value
+49-POP
+50-PPV
+51-PPV_Macro
+52-PPV_Micro
+53-PRE
+54-Phi-Squared
+55-RACC
+56-RACCU
+57-Reference Entropy
+58-Response Entropy
+59-Scott_PI
+60-Standard Error
+61-Strength_Of_Agreement(Altman)
+62-Strength_Of_Agreement(Cicchetti)
+63-Strength_Of_Agreement(Fleiss)
+64-Strength_Of_Agreement(Landis and Koch)
+65-TN
+66-TNR
+67-TON
+68-TOP
+69-TP
+70-TPR
+71-TPR_Macro
+72-TPR_Micro
+73-Zero-one Loss
 >>> online_help("J")
 ...
 >>> online_help(1)
@@ -978,6 +987,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      4                       2                       2
 FPR(Fall-out or false positive rate)                             0.26667                 0.11111                 0.22222
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.33333                 0.61237
+IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
 LR+(Positive likelihood ratio)                                   3.75                    3.0                     2.25
 LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.64286
@@ -1068,6 +1078,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      4                       2                       2
 FPR(Fall-out or false positive rate)                             0.26667                 0.11111                 0.22222
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.33333                 0.61237
+IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
 LR+(Positive likelihood ratio)                                   3.75                    3.0                     2.25
 LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.64286

@@ -128,7 +128,7 @@ PARAMS_LINK = {
     "Zero-one Loss": "http://www.shaghighi.ir/pycm/doc/#Zero-one-Loss",
     "NIR": "http://www.shaghighi.ir/pycm/doc/#NIR-(No-Information-Rate)",
     "P-Value": "http://www.shaghighi.ir/pycm/doc/#P-Value",
-    "IS":"http://www.shaghighi.ir/pycm/doc/#IS"}
+    "IS":"http://www.shaghighi.ir/pycm/doc/#IS-(Information-Score)"}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

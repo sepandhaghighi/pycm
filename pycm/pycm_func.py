@@ -19,6 +19,57 @@ def isfile(f):
         f, 'read')
 
 
+def missclassification_calc(classes,table,i,j,subject_class):
+    try:
+        result = 0
+        for k in classes:
+            result+=(table[subject_class][k]+table[k][subject_class])
+        result = table[i][j]/result
+        return result
+    except Exception:
+        return "None"
+
+def CEN_calc(classes,table,class_name):
+    try:
+        result = 0
+        class_number = len(classes)
+        for k in classes:
+            if k!=class_name:
+                P_j_k = missclassification_calc(classes, table, class_name, k,
+                                         class_name)
+                P_k_j = missclassification_calc(classes,table,k, class_name,
+                                                class_name)
+                if P_j_k!=0:
+                    result+=P_j_k*math.log(P_j_k,2*(class_number-1))
+                if P_k_j!=0:
+                    result+=P_k_j*math.log(P_k_j,2*(class_number-1))
+        return result*(-1)
+    except Exception as e:
+        return "None"
+
+def convex_combination(classes,table,class_name):
+    try:
+        up = 0
+        down =0
+        for k in classes:
+            up +=(table[class_name][k]+ table[k][class_name])
+            for l in classes :
+                down+=(2*table[k][l])
+        return up/down
+    except Exception:
+        return "None"
+
+
+
+
+def overall_CEN_calc(classes,table,CEN_dict):
+    try:
+        result = 0
+        for i in classes :
+            result+=(convex_combination(classes,table,i)*CEN_dict[i])
+        return result
+    except Exception:
+        return "None"
 def IS_calc(TP,FP,FN,POP):
     '''
     This function calculate Information Score (IS)
@@ -1060,6 +1111,7 @@ def overall_statistics(
         P,
         TOP,
         jaccard_list,
+        CEN_dict,
         classes,
         table):
     '''
@@ -1134,6 +1186,7 @@ def overall_statistics(
     zero_one_loss = zero_one_loss_calc(TP, POP)
     NIR = NIR_calc(P, POP)
     p_value = p_value_calc(TP, POP, NIR)
+    overall_CEN = overall_CEN_calc(classes,table,CEN_dict)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1177,10 +1230,11 @@ def overall_statistics(
         "Hamming Loss": hamming_loss,
         "Zero-one Loss": zero_one_loss,
         "NIR": NIR,
-        "P-Value": p_value}
+        "P-Value": p_value,
+        "Overall_CEN":overall_CEN}
 
 
-def class_statistics(TP, TN, FP, FN):
+def class_statistics(TP, TN, FP, FN, classes, table):
     '''
     This function return all class statistics
     :param TP: True Positive Dict For All Classes
@@ -1223,6 +1277,7 @@ def class_statistics(TP, TN, FP, FN):
     RACCU = {}
     Jaccrd_Index = {}
     IS={}
+    CEN={}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1254,6 +1309,7 @@ def class_statistics(TP, TN, FP, FN):
         RACCU[i] = RACCU_calc(TOP[i], P[i], POP[i])
         Jaccrd_Index[i] = jaccard_index_calc(TP[i], TOP[i], P[i])
         IS[i] = IS_calc(TP[i],FP[i],FN[i],POP[i])
+        CEN[i] = CEN_calc(classes,table,i)
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1288,5 +1344,6 @@ def class_statistics(TP, TN, FP, FN):
         "ERR": ERR,
         "RACCU": RACCU,
         "J": Jaccrd_Index,
-        "IS": IS}
+        "IS": IS,
+        "CEN": CEN}
     return result

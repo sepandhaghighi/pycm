@@ -129,7 +129,9 @@ class ConfusionMatrix():
             TP=matrix_param[2],
             TN=matrix_param[3],
             FP=matrix_param[4],
-            FN=matrix_param[5])
+            FN=matrix_param[5],
+            classes=matrix_param[0],
+            table=matrix_param[1])
         self.class_stat = statistic_result
         self.overall_stat = overall_statistics(
             RACC=statistic_result["RACC"],
@@ -144,7 +146,8 @@ class ConfusionMatrix():
             TOP=statistic_result["TOP"],
             jaccard_list=statistic_result["J"],
             classes=self.classes,
-            table=self.table)
+            table=self.table,
+            CEN_dict=statistic_result["CEN"])
         self.TPR = statistic_result["TPR"]
         self.TNR = statistic_result["TNR"]
         self.PPV = statistic_result["PPV"]

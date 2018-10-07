@@ -48,7 +48,8 @@ PARAMS_DESCRIPTION = {
     "RACCU": "Random Accuracy Unbiased",
     "J": "Jaccard index",
     "NIR": "No Information Rate",
-    "IS": "Information Score"}
+    "IS": "Information Score",
+    "CEN": "Confusion Entropy"}
 
 PARAMS_LINK = {
     "TPR": "http://www.shaghighi.ir/pycm/doc/index.html#TPR--(sensitivity,-recall,-hit-rate,-or-true-positive-rate)",
@@ -128,7 +129,9 @@ PARAMS_LINK = {
     "Zero-one Loss": "http://www.shaghighi.ir/pycm/doc/#Zero-one-Loss",
     "NIR": "http://www.shaghighi.ir/pycm/doc/#NIR-(No-Information-Rate)",
     "P-Value": "http://www.shaghighi.ir/pycm/doc/#P-Value",
-    "IS":"http://www.shaghighi.ir/pycm/doc/#IS-(Information-Score)"}
+    "IS":"http://www.shaghighi.ir/pycm/doc/#IS-(Information-Score)",
+    "CEN":"",
+    "Overall_CEN":""}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

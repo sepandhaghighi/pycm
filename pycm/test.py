@@ -40,6 +40,7 @@ Lambda B                                                         0.42857
 Mutual Information                                               0.52421
 NIR                                                              0.5
 Overall_ACC                                                      0.58333
+Overall_CEN                                                      0.46381
 Overall_J                                                        (1.225,0.40833)
 Overall_RACC                                                     0.35417
 Overall_RACCU                                                    0.36458
@@ -64,6 +65,7 @@ Class Statistics :
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
+CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
 ERR(Error rate)                                                  0.16667                 0.25                    0.41667
 F0.5(F0.5 score)                                                 0.65217                 0.45455                 0.57692
@@ -229,6 +231,7 @@ Lambda B                                                         0.0
 Mutual Information                                               None
 NIR                                                              0.8
 Overall_ACC                                                      0.35
+Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
@@ -253,6 +256,7 @@ Class Statistics :
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
+CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 -0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
 ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05
 F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0
@@ -310,6 +314,7 @@ Lambda B                                                         0.0
 Mutual Information                                               None
 NIR                                                              0.8
 Overall_ACC                                                      0.35
+Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
@@ -334,6 +339,7 @@ Class Statistics :
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
+CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 -0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
 ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05
 F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0
@@ -585,6 +591,7 @@ Lambda B                                                         0.0
 Mutual Information                                               None
 NIR                                                              0.8
 Overall_ACC                                                      0.35
+Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
@@ -609,6 +616,7 @@ Class Statistics :
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
+CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 -0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
 ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05
 F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0
@@ -685,6 +693,7 @@ Lambda B                                                         0.35714
 Mutual Information                                               0.39731
 NIR                                                              0.44444
 Overall_ACC                                                      0.66667
+Overall_CEN                                                      0.52986
 Overall_J                                                        (1.51854,0.50618)
 Overall_RACC                                                     0.36626
 Overall_RACCU                                                    0.36694
@@ -709,6 +718,7 @@ Class Statistics :
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
+CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
 ERR(Error rate)                                                  0.25926                 0.2963                  0.11111
 F0.5(F0.5 score)                                                 0.70312                 0.55556                 0.76923
@@ -776,6 +786,7 @@ Lambda B                                                         0.35714
 Mutual Information                                               0.39731
 NIR                                                              0.44444
 Overall_ACC                                                      0.66667
+Overall_CEN                                                      0.52986
 Overall_J                                                        (1.51854,0.50618)
 Overall_RACC                                                     0.36626
 Overall_RACCU                                                    0.36694
@@ -800,6 +811,7 @@ Class Statistics :
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
+CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
 ERR(Error rate)                                                  0.25926                 0.2963                  0.11111
 F0.5(F0.5 score)                                                 0.70312                 0.55556                 0.76923
@@ -842,78 +854,80 @@ Example : online_help("J") or online_help(2)
 2-ACC
 3-BM
 4-Bennett_S
-5-Chi-Squared
-6-Chi-Squared DF
-7-Conditional Entropy
-8-Cramer_V
-9-Cross Entropy
-10-DOR
-11-ERR
-12-F0.5
-13-F1
-14-F2
-15-FDR
-16-FN
-17-FNR
-18-FOR
-19-FP
-20-FPR
-21-G
-22-Gwet_AC1
-23-Hamming Loss
-24-IS
-25-J
-26-Joint Entropy
-27-KL Divergence
-28-Kappa
-29-Kappa 95% CI
-30-Kappa No Prevalence
-31-Kappa Standard Error
-32-Kappa Unbiased
-33-LR+
-34-LR-
-35-Lambda A
-36-Lambda B
-37-MCC
-38-MK
-39-Mutual Information
-40-N
-41-NIR
-42-NPV
-43-Overall_ACC
-44-Overall_J
-45-Overall_RACC
-46-Overall_RACCU
-47-P
-48-P-Value
-49-POP
-50-PPV
-51-PPV_Macro
-52-PPV_Micro
-53-PRE
-54-Phi-Squared
-55-RACC
-56-RACCU
-57-Reference Entropy
-58-Response Entropy
-59-Scott_PI
-60-Standard Error
-61-Strength_Of_Agreement(Altman)
-62-Strength_Of_Agreement(Cicchetti)
-63-Strength_Of_Agreement(Fleiss)
-64-Strength_Of_Agreement(Landis and Koch)
-65-TN
-66-TNR
-67-TON
-68-TOP
-69-TP
-70-TPR
-71-TPR_Macro
-72-TPR_Micro
-73-Zero-one Loss
+5-CEN
+6-Chi-Squared
+7-Chi-Squared DF
+8-Conditional Entropy
+9-Cramer_V
+10-Cross Entropy
+11-DOR
+12-ERR
+13-F0.5
+14-F1
+15-F2
+16-FDR
+17-FN
+18-FNR
+19-FOR
+20-FP
+21-FPR
+22-G
+23-Gwet_AC1
+24-Hamming Loss
+25-IS
+26-J
+27-Joint Entropy
+28-KL Divergence
+29-Kappa
+30-Kappa 95% CI
+31-Kappa No Prevalence
+32-Kappa Standard Error
+33-Kappa Unbiased
+34-LR+
+35-LR-
+36-Lambda A
+37-Lambda B
+38-MCC
+39-MK
+40-Mutual Information
+41-N
+42-NIR
+43-NPV
+44-Overall_ACC
+45-Overall_CEN
+46-Overall_J
+47-Overall_RACC
+48-Overall_RACCU
+49-P
+50-P-Value
+51-POP
+52-PPV
+53-PPV_Macro
+54-PPV_Micro
+55-PRE
+56-Phi-Squared
+57-RACC
+58-RACCU
+59-Reference Entropy
+60-Response Entropy
+61-Scott_PI
+62-Standard Error
+63-Strength_Of_Agreement(Altman)
+64-Strength_Of_Agreement(Cicchetti)
+65-Strength_Of_Agreement(Fleiss)
+66-Strength_Of_Agreement(Landis and Koch)
+67-TN
+68-TNR
+69-TON
+70-TOP
+71-TP
+72-TPR
+73-TPR_Macro
+74-TPR_Micro
+75-Zero-one Loss
 >>> online_help("J")
 ...
->>> online_help(1)
+>>> online_help(4)
 ...
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
@@ -951,6 +965,7 @@ Lambda B                                                         0.36364
 Mutual Information                                               0.47618
 NIR                                                              0.57143
 Overall_ACC                                                      0.61905
+Overall_CEN                                                      0.43947
 Overall_J                                                        (1.22857,0.40952)
 Overall_RACC                                                     0.37415
 Overall_RACCU                                                    0.39229
@@ -975,6 +990,7 @@ Class Statistics :
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
+CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5
 ERR(Error rate)                                                  0.19048                 0.19048                 0.38095
 F0.5(F0.5 score)                                                 0.65217                 0.33333                 0.68182
@@ -1042,6 +1058,7 @@ Lambda B                                                         0.36364
 Mutual Information                                               0.47618
 NIR                                                              0.57143
 Overall_ACC                                                      0.61905
+Overall_CEN                                                      0.43947
 Overall_J                                                        (1.22857,0.40952)
 Overall_RACC                                                     0.37415
 Overall_RACCU                                                    0.39229
@@ -1066,6 +1083,7 @@ Class Statistics :
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
+CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5
 ERR(Error rate)                                                  0.19048                 0.19048                 0.38095
 F0.5(F0.5 score)                                                 0.65217                 0.33333                 0.68182

@@ -19,8 +19,8 @@ def isfile(f):
         f, 'read')
 
 
-def CEN_missclassification_calc(classes, table, i, j, subject_class,
-                                modified=False):
+def CEN_misclassification_calc(classes, table, i, j, subject_class,
+                               modified=False):
     '''
     This function calculate misclassification probability of classifying
     :param classes: classes
@@ -66,12 +66,12 @@ def CEN_calc(classes, table, class_name, modified=False):
         class_number = len(classes)
         for k in classes:
             if k != class_name:
-                P_j_k = CEN_missclassification_calc(classes, table,
-                                                  class_name, k,
-                                                class_name,modified)
-                P_k_j = CEN_missclassification_calc(classes, table, k,
-                                                  class_name,
-                                                class_name,modified)
+                P_j_k = CEN_misclassification_calc(classes, table,
+                                                   class_name, k,
+                                                   class_name, modified)
+                P_k_j = CEN_misclassification_calc(classes, table, k,
+                                                   class_name,
+                                                   class_name, modified)
                 if P_j_k != 0:
                     result += P_j_k * math.log(P_j_k, 2 * (class_number - 1))
                 if P_k_j != 0:
@@ -162,7 +162,7 @@ def IS_calc(TP, FP, FN, POP):
 
 def transpose_func(classes, table):
     '''
-    This function tranpose table
+    This function transpose table
     :param classes: classes
     :type classes : list
     :param table: input matrix
@@ -422,7 +422,7 @@ def entropy_calc(item, POP):
 
 def kappa_no_prevalence_calc(overall_accuracy):
     '''
-    This function calulate Kappa No Prevalence
+    This function calculate Kappa No Prevalence
     :param overall_accuracy: overall accuracy
     :type overall_accuracy : float
     :return: Kappa No Prevalence as float
@@ -511,7 +511,7 @@ def conditional_entropy_calc(classes, table, P, POP):
 def mutual_information_calc(response_entropy, conditional_entropy):
     '''
     This function calculate mutual information
-    :param response_entropy:  resposne entropy
+    :param response_entropy:  response entropy
     :type response_entropy : float
     :param conditional_entropy:  conditional entropy
     :type conditional_entropy : float
@@ -703,7 +703,7 @@ def FXR_calc(Item1):
 
 def ACC_calc(TP, TN, FP, FN):
     '''
-    This functuon caclculate Accuracy
+    This functuon calculate Accuracy
     :param TP: True Positive
     :type TP : int
     :param TN: True Negative
@@ -991,7 +991,7 @@ def CI_calc(mean, SE, CV=1.96):
     This function calculate confidence interval
     :param mean: mean of data
     :type mean : float
-    :param SE: standarad error of data
+    :param SE: standard error of data
     :type SE : float
     :param CV: critical value:
     :type CV:float

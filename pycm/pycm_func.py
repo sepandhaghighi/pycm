@@ -68,7 +68,9 @@ def CEN_calc(classes, table, class_name):
                     result += P_j_k * math.log(P_j_k, 2 * (class_number - 1))
                 if P_k_j != 0:
                     result += P_k_j * math.log(P_k_j, 2 * (class_number - 1))
-        return result * (-1)
+        if result!=0:
+            result = result * (-1)
+        return result
     except Exception as e:
         return "None"
 

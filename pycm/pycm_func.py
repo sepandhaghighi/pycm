@@ -19,7 +19,8 @@ def isfile(f):
         f, 'read')
 
 
-def missclassification_calc(classes, table, i, j, subject_class):
+def CEN_missclassification_calc(classes, table, i, j, subject_class,
+                                modified=False):
     '''
     This function calculate misclassification probability of classifying
     :param classes: classes
@@ -38,13 +39,14 @@ def missclassification_calc(classes, table, i, j, subject_class):
         result = 0
         for k in classes:
             result += (table[subject_class][k] + table[k][subject_class])
+        if modified==True:
+            result -= table[subject_class][subject_class]
         result = table[i][j] / result
         return result
     except Exception:
         return "None"
 
-
-def CEN_calc(classes, table, class_name):
+def CEN_calc(classes, table, class_name, modified=False):
     '''
     This function calculate CEN (Confusion Entropy)
     :param classes: classes
@@ -60,10 +62,12 @@ def CEN_calc(classes, table, class_name):
         class_number = len(classes)
         for k in classes:
             if k != class_name:
-                P_j_k = missclassification_calc(classes, table, class_name, k,
-                                                class_name)
-                P_k_j = missclassification_calc(classes, table, k, class_name,
-                                                class_name)
+                P_j_k = CEN_missclassification_calc(classes, table,
+                                                  class_name, k,
+                                                class_name,modified)
+                P_k_j = CEN_missclassification_calc(classes, table, k,
+                                                  class_name,
+                                                class_name,modified)
                 if P_j_k != 0:
                     result += P_j_k * math.log(P_j_k, 2 * (class_number - 1))
                 if P_k_j != 0:
@@ -71,11 +75,11 @@ def CEN_calc(classes, table, class_name):
         if result!=0:
             result = result * (-1)
         return result
-    except Exception as e:
+    except Exception :
         return "None"
 
 
-def convex_combination(classes, table, class_name):
+def convex_combination(classes, table, class_name, modified = False):
     '''
     This function calculate Overall_CEN coefficient
     :param classes: classes
@@ -89,16 +93,24 @@ def convex_combination(classes, table, class_name):
     try:
         up = 0
         down = 0
+        class_number = len(classes)
+        alpha = 1
+        if class_number == 2:
+            alpha = 0
         for k in classes:
             up += (table[class_name][k] + table[k][class_name])
             for l in classes:
                 down += (2 * table[k][l])
+            if modified == True :
+                down -= (alpha*table[k][k])
+        if modified ==True:
+            up -= table[class_name][class_name]
         return up / down
     except Exception:
         return "None"
 
 
-def overall_CEN_calc(classes, table, CEN_dict):
+def overall_CEN_calc(classes, table, CEN_dict, modified=False):
     '''
     This function calculate Overall_CEN (Overall Confusion Entropy)
     :param classes: classes
@@ -112,7 +124,8 @@ def overall_CEN_calc(classes, table, CEN_dict):
     try:
         result = 0
         for i in classes:
-            result += (convex_combination(classes, table, i) * CEN_dict[i])
+            result += (convex_combination(classes, table, i, modified) *
+                       CEN_dict[i])
         return result
     except Exception:
         return "None"
@@ -1162,6 +1175,7 @@ def overall_statistics(
         TOP,
         jaccard_list,
         CEN_dict,
+        MCEN_dict,
         classes,
         table):
     '''
@@ -1239,6 +1253,7 @@ def overall_statistics(
     NIR = NIR_calc(P, POP)
     p_value = p_value_calc(TP, POP, NIR)
     overall_CEN = overall_CEN_calc(classes, table, CEN_dict)
+    overall_MCEN = overall_CEN_calc(classes, table, MCEN_dict,True)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1283,7 +1298,8 @@ def overall_statistics(
         "Zero-one Loss": zero_one_loss,
         "NIR": NIR,
         "P-Value": p_value,
-        "Overall_CEN": overall_CEN}
+        "Overall_CEN": overall_CEN,
+        "Overall_MCEN": overall_MCEN}
 
 
 def class_statistics(TP, TN, FP, FN, classes, table):
@@ -1334,6 +1350,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     Jaccrd_Index = {}
     IS = {}
     CEN = {}
+    MCEN = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1366,6 +1383,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         Jaccrd_Index[i] = jaccard_index_calc(TP[i], TOP[i], P[i])
         IS[i] = IS_calc(TP[i], FP[i], FN[i], POP[i])
         CEN[i] = CEN_calc(classes, table, i)
+        MCEN[i] = CEN_calc(classes, table, i,True)
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1401,5 +1419,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "RACCU": RACCU,
         "J": Jaccrd_Index,
         "IS": IS,
-        "CEN": CEN}
+        "CEN": CEN,
+        "MCEN": MCEN}
     return result

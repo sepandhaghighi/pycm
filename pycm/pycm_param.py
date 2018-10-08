@@ -49,7 +49,8 @@ PARAMS_DESCRIPTION = {
     "J": "Jaccard index",
     "NIR": "No Information Rate",
     "IS": "Information Score",
-    "CEN": "Confusion Entropy"}
+    "CEN": "Confusion Entropy",
+    "MCEN": "Modified Confusion Entropy"}
 
 PARAMS_LINK = {
     "TPR": "http://www.shaghighi.ir/pycm/doc/index.html#TPR--(sensitivity,-recall,-hit-rate,-or-true-positive-rate)",
@@ -131,7 +132,9 @@ PARAMS_LINK = {
     "P-Value": "http://www.shaghighi.ir/pycm/doc/#P-Value",
     "IS": "http://www.shaghighi.ir/pycm/doc/#IS-(Information-Score)",
     "CEN": "http://www.shaghighi.ir/pycm/doc/#CEN-(Confusion-Entropy)",
-    "Overall_CEN": "http://www.shaghighi.ir/pycm/doc/#Overall_CEN"}
+    "Overall_CEN": "http://www.shaghighi.ir/pycm/doc/#Overall_CEN",
+    "MCEN":"",
+    "Overall_MCEN":""}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

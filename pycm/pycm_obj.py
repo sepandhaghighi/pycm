@@ -147,7 +147,8 @@ class ConfusionMatrix():
             jaccard_list=statistic_result["J"],
             classes=self.classes,
             table=self.table,
-            CEN_dict=statistic_result["CEN"])
+            CEN_dict=statistic_result["CEN"],
+            MCEN_dict=statistic_result["MCEN"])
         self.TPR = statistic_result["TPR"]
         self.TNR = statistic_result["TNR"]
         self.PPV = statistic_result["PPV"]

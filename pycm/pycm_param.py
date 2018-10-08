@@ -129,9 +129,9 @@ PARAMS_LINK = {
     "Zero-one Loss": "http://www.shaghighi.ir/pycm/doc/#Zero-one-Loss",
     "NIR": "http://www.shaghighi.ir/pycm/doc/#NIR-(No-Information-Rate)",
     "P-Value": "http://www.shaghighi.ir/pycm/doc/#P-Value",
-    "IS":"http://www.shaghighi.ir/pycm/doc/#IS-(Information-Score)",
-    "CEN":"http://www.shaghighi.ir/pycm/doc/#CEN-(Confusion-Entropy)",
-    "Overall_CEN":"http://www.shaghighi.ir/pycm/doc/#Overall_CEN"}
+    "IS": "http://www.shaghighi.ir/pycm/doc/#IS-(Information-Score)",
+    "CEN": "http://www.shaghighi.ir/pycm/doc/#CEN-(Confusion-Entropy)",
+    "Overall_CEN": "http://www.shaghighi.ir/pycm/doc/#Overall_CEN"}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

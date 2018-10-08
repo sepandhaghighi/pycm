@@ -33,7 +33,9 @@ def CEN_missclassification_calc(classes, table, i, j, subject_class,
     :type j : any valid type
     :param subject_class: subject to class (class name)
     :type subject_class: any valid type
-    :return:
+    :param modified : modified mode flag
+    :type modified : bool
+    :return: misclassification probability of classifying as float
     '''
     try:
         result = 0
@@ -55,7 +57,9 @@ def CEN_calc(classes, table, class_name, modified=False):
     :type table : dict
     :param class_name: reviewed class name
     :type class_name : any valid type
-    :return:
+    :param modified : modified mode flag
+    :type modified : bool
+    :return: CEN(MCEN) as float
     '''
     try:
         result = 0
@@ -88,7 +92,9 @@ def convex_combination(classes, table, class_name, modified = False):
     :type table : dict
     :param class_name: reviewed class name
     :type class_name : any valid type
-    :return:
+    :param modified : modified mode flag
+    :type modified : bool
+    :return: coefficient as float
     '''
     try:
         up = 0
@@ -119,7 +125,9 @@ def overall_CEN_calc(classes, table, CEN_dict, modified=False):
     :type table : dict
     :param CEN_dict: CEN dictionary for each class
     :type CEN_dict : dict
-    :return:
+    :param modified : modified mode flag
+    :type modified : bool
+    :return: Overall_CEN(MCEN) as float
     '''
     try:
         result = 0

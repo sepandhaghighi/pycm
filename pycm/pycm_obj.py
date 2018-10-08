@@ -178,6 +178,7 @@ class ConfusionMatrix():
         self.ERR = statistic_result["ERR"]
         self.J = statistic_result["J"]
         self.IS = statistic_result["IS"]
+        self.CEN = statistic_result["CEN"]
         self.Overall_J = self.overall_stat["Overall_J"]
         self.SOA1 = self.overall_stat["Strength_Of_Agreement(Landis and Koch)"]
         self.SOA2 = self.overall_stat["Strength_Of_Agreement(Fleiss)"]
@@ -217,6 +218,7 @@ class ConfusionMatrix():
         self.ZeroOneLoss = self.overall_stat["Zero-one Loss"]
         self.NIR = self.overall_stat["NIR"]
         self.PValue = self.overall_stat["P-Value"]
+        self.Overall_CEN = self.overall_stat["Overall_CEN"]
 
     def matrix(self):
         '''

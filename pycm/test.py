@@ -42,6 +42,7 @@ NIR                                                              0.5
 Overall_ACC                                                      0.58333
 Overall_CEN                                                      0.46381
 Overall_J                                                        (1.225,0.40833)
+Overall_MCEN                                                     0.51894
 Overall_RACC                                                     0.35417
 Overall_RACCU                                                    0.36458
 P-Value                                                          0.38721
@@ -83,6 +84,7 @@ J(Jaccard index)                                                 0.6            
 LR+(Positive likelihood ratio)                                   4.5                     3.0                     1.5
 LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.75
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903
+MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875
 MK(Markedness)                                                   0.6                     0.3                     0.17143
 N(Condition negative)                                            9                       9                       6
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143
@@ -233,6 +235,7 @@ NIR                                                              0.8
 Overall_ACC                                                      0.35
 Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
+Overall_MCEN                                                     0.37463
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
 P-Value                                                          1.0
@@ -274,6 +277,7 @@ J(Jaccard index)                                                 0.0            
 LR+(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
 LR-(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
+MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
 N(Condition negative)                                            20                      4                       17                      19
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
@@ -316,6 +320,7 @@ NIR                                                              0.8
 Overall_ACC                                                      0.35
 Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
+Overall_MCEN                                                     0.37463
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
 P-Value                                                          1.0
@@ -357,6 +362,7 @@ J(Jaccard index)                                                 0.0            
 LR+(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
 LR-(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
+MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
 N(Condition negative)                                            20                      4                       17                      19
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
@@ -593,6 +599,7 @@ NIR                                                              0.8
 Overall_ACC                                                      0.35
 Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
+Overall_MCEN                                                     0.37463
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
 P-Value                                                          1.0
@@ -634,6 +641,7 @@ J(Jaccard index)                                                 0.0            
 LR+(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
 LR-(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
+MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
 N(Condition negative)                                            20                      4                       17                      19
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
@@ -695,6 +703,7 @@ NIR                                                              0.44444
 Overall_ACC                                                      0.66667
 Overall_CEN                                                      0.52986
 Overall_J                                                        (1.51854,0.50618)
+Overall_MCEN                                                     0.65286
 Overall_RACC                                                     0.36626
 Overall_RACCU                                                    0.36694
 P-Value                                                          0.01667
@@ -736,6 +745,7 @@ J(Jaccard index)                                                 0.5625         
 LR+(Positive likelihood ratio)                                   2.8125                  2.5                     14.0
 LR-(Negative likelihood ratio)                                   0.34091                 0.57143                 0.35
 MCC(Matthews correlation coefficient)                            0.48067                 0.33333                 0.66254
+MCEN(Modified confusion entropy)                                 0.57782                 0.77284                 0.60158
 MK(Markedness)                                                   0.47802                 0.33333                 0.70909
 N(Condition negative)                                            15                      18                      21
 NPV(Negative predictive value)                                   0.78571                 0.77778                 0.90909
@@ -788,6 +798,7 @@ NIR                                                              0.44444
 Overall_ACC                                                      0.66667
 Overall_CEN                                                      0.52986
 Overall_J                                                        (1.51854,0.50618)
+Overall_MCEN                                                     0.65286
 Overall_RACC                                                     0.36626
 Overall_RACCU                                                    0.36694
 P-Value                                                          0.01667
@@ -829,6 +840,7 @@ J(Jaccard index)                                                 0.5625         
 LR+(Positive likelihood ratio)                                   2.8125                  2.5                     14.0
 LR-(Negative likelihood ratio)                                   0.34091                 0.57143                 0.35
 MCC(Matthews correlation coefficient)                            0.48067                 0.33333                 0.66254
+MCEN(Modified confusion entropy)                                 0.57782                 0.77284                 0.60158
 MK(Markedness)                                                   0.47802                 0.33333                 0.70909
 N(Condition negative)                                            15                      18                      21
 NPV(Negative predictive value)                                   0.78571                 0.77778                 0.90909
@@ -888,43 +900,45 @@ Example : online_help("J") or online_help(2)
 36-Lambda A
 37-Lambda B
 38-MCC
-39-MK
-40-Mutual Information
-41-N
-42-NIR
-43-NPV
-44-Overall_ACC
-45-Overall_CEN
-46-Overall_J
-47-Overall_RACC
-48-Overall_RACCU
-49-P
-50-P-Value
-51-POP
-52-PPV
-53-PPV_Macro
-54-PPV_Micro
-55-PRE
-56-Phi-Squared
-57-RACC
-58-RACCU
-59-Reference Entropy
-60-Response Entropy
-61-Scott_PI
-62-Standard Error
-63-Strength_Of_Agreement(Altman)
-64-Strength_Of_Agreement(Cicchetti)
-65-Strength_Of_Agreement(Fleiss)
-66-Strength_Of_Agreement(Landis and Koch)
-67-TN
-68-TNR
-69-TON
-70-TOP
-71-TP
-72-TPR
-73-TPR_Macro
-74-TPR_Micro
-75-Zero-one Loss
+39-MCEN
+40-MK
+41-Mutual Information
+42-N
+43-NIR
+44-NPV
+45-Overall_ACC
+46-Overall_CEN
+47-Overall_J
+48-Overall_MCEN
+49-Overall_RACC
+50-Overall_RACCU
+51-P
+52-P-Value
+53-POP
+54-PPV
+55-PPV_Macro
+56-PPV_Micro
+57-PRE
+58-Phi-Squared
+59-RACC
+60-RACCU
+61-Reference Entropy
+62-Response Entropy
+63-Scott_PI
+64-Standard Error
+65-Strength_Of_Agreement(Altman)
+66-Strength_Of_Agreement(Cicchetti)
+67-Strength_Of_Agreement(Fleiss)
+68-Strength_Of_Agreement(Landis and Koch)
+69-TN
+70-TNR
+71-TON
+72-TOP
+73-TP
+74-TPR
+75-TPR_Macro
+76-TPR_Micro
+77-Zero-one Loss
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -967,6 +981,7 @@ NIR                                                              0.57143
 Overall_ACC                                                      0.61905
 Overall_CEN                                                      0.43947
 Overall_J                                                        (1.22857,0.40952)
+Overall_MCEN                                                     0.50059
 Overall_RACC                                                     0.37415
 Overall_RACCU                                                    0.39229
 P-Value                                                          0.41709
@@ -1008,6 +1023,7 @@ J(Jaccard index)                                                 0.6            
 LR+(Positive likelihood ratio)                                   3.75                    3.0                     2.25
 LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.64286
 MCC(Matthews correlation coefficient)                            0.66332                 0.22222                 0.28307
+MCEN(Modified confusion entropy)                                 0.26439                 0.52877                 0.65924
 MK(Markedness)                                                   0.6                     0.22222                 0.28846
 N(Condition negative)                                            15                      18                      9
 NPV(Negative predictive value)                                   1.0                     0.88889                 0.53846
@@ -1060,6 +1076,7 @@ NIR                                                              0.57143
 Overall_ACC                                                      0.61905
 Overall_CEN                                                      0.43947
 Overall_J                                                        (1.22857,0.40952)
+Overall_MCEN                                                     0.50059
 Overall_RACC                                                     0.37415
 Overall_RACCU                                                    0.39229
 P-Value                                                          0.41709
@@ -1101,6 +1118,7 @@ J(Jaccard index)                                                 0.6            
 LR+(Positive likelihood ratio)                                   3.75                    3.0                     2.25
 LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.64286
 MCC(Matthews correlation coefficient)                            0.66332                 0.22222                 0.28307
+MCEN(Modified confusion entropy)                                 0.26439                 0.52877                 0.65924
 MK(Markedness)                                                   0.6                     0.22222                 0.28846
 N(Condition negative)                                            15                      18                      9
 NPV(Negative predictive value)                                   1.0                     0.88889                 0.53846

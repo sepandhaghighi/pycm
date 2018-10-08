@@ -421,6 +421,9 @@ Remember to write a few tests for your code before sending pull requests.
 
 <blockquote>16- X. Deng, Q. Liu, Y. Deng, and S. Mahadevan, “An improved method to construct basic probability assignment based on the confusion matrix for classification problem, ” in Information Sciences, pp.250-261, 2016.</blockquote>
 
+<blockquote>17- Wei, J.-M., Yuan, X.-Y., Hu, Q.-H., Wang, S.-Q.: A novel measure for evaluating
+classifiers. Expert Systems with Applications, Vol 37, 3799–3809 (2010).</blockquote>
+
 
 
 

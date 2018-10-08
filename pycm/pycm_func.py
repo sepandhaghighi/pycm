@@ -20,6 +20,20 @@ def isfile(f):
 
 
 def missclassification_calc(classes,table,i,j,subject_class):
+    '''
+    This function calculate misclassification probability of classifying
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :param i: table row index (class name)
+    :type i : any valid type
+    :param j: table col index (class name)
+    :type j : any valid type
+    :param subject_class: subject to class (class name)
+    :type subject_class: any valid type
+    :return:
+    '''
     try:
         result = 0
         for k in classes:
@@ -30,6 +44,16 @@ def missclassification_calc(classes,table,i,j,subject_class):
         return "None"
 
 def CEN_calc(classes,table,class_name):
+    '''
+    This function calculate CEN (Confusion Entropy)
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :param class_name: reviewed class name
+    :type class_name : any valid type
+    :return:
+    '''
     try:
         result = 0
         class_number = len(classes)
@@ -48,6 +72,16 @@ def CEN_calc(classes,table,class_name):
         return "None"
 
 def convex_combination(classes,table,class_name):
+    '''
+    This function calculate Overall_CEN coefficient
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :param class_name: reviewed class name
+    :type class_name : any valid type
+    :return:
+    '''
     try:
         up = 0
         down =0
@@ -63,6 +97,16 @@ def convex_combination(classes,table,class_name):
 
 
 def overall_CEN_calc(classes,table,CEN_dict):
+    '''
+    This function calculate Overall_CEN (Overall Confusion Entropy)
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :param CEN_dict: CEN dictionary for each class
+    :type CEN_dict : dict
+    :return:
+    '''
     try:
         result = 0
         for i in classes :
@@ -1138,6 +1182,8 @@ def overall_statistics(
     :type TOP : dict
     :param jaccard_list : list of jaccard index for each class
     :type jaccard_list : list
+    :param CEN_dict: CEN dictionary for each class
+    :type CEN_dict : dict
     :param classes: confusion matrix classes
     :type classes : list
     :param table: input matrix
@@ -1245,6 +1291,10 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     :type FP : dict
     :param FN: False Negative Dict For All Classes
     :type FN : dict
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
     :return: result as dict
     '''
     TPR = {}

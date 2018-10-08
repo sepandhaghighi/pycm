@@ -424,6 +424,9 @@ Remember to write a few tests for your code before sending pull requests.
 <blockquote>17- Wei, J.-M., Yuan, X.-Y., Hu, Q.-H., Wang, S.-Q.: A novel measure for evaluating
 classifiers. Expert Systems with Applications, Vol 37, 3799–3809 (2010).</blockquote>
 
+<blockquote>18- Kononenko I. and Bratko I. Information-based evaluation criterion for classifier’s
+performance. Machine Learning, 6:67–80, 1991.</blockquote>
+
 
 
 

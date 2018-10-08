@@ -256,7 +256,7 @@ Class Statistics :
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
-CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 -0.0
+CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
 ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05
 F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0
@@ -339,7 +339,7 @@ Class Statistics :
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
-CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 -0.0
+CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
 ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05
 F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0
@@ -616,7 +616,7 @@ Class Statistics :
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
-CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 -0.0
+CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
 ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05
 F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0

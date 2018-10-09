@@ -126,7 +126,9 @@ Lambda B                                                         0.42857
 Mutual Information                                               0.52421
 NIR                                                              0.5
 Overall_ACC                                                      0.58333
+Overall_CEN                                                      0.46381
 Overall_J                                                        (1.225,0.40833)
+Overall_MCEN                                                     0.51894
 Overall_RACC                                                     0.35417
 Overall_RACCU                                                    0.36458
 P-Value                                                          0.38721
@@ -150,6 +152,7 @@ Class Statistics :
 Classes                                                          0                       1                       2                       
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333                 
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667                 
+CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442                 
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0                     
 ERR(Error rate)                                                  0.16667                 0.25                    0.41667                 
 F0.5(F0.5 score)                                                 0.65217                 0.45455                 0.57692                 
@@ -162,10 +165,12 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      2                       1                       2                       
 FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333                 
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772                 
+IS(Information score)                                            1.26303                 1.0                     0.26303                 
 J(Jaccard index)                                                 0.6                     0.25                    0.375                   
 LR+(Positive likelihood ratio)                                   4.5                     3.0                     1.5                     
 LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.75                    
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903                 
+MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875                  
 MK(Markedness)                                                   0.6                     0.3                     0.17143                 
 N(Condition negative)                                            9                       9                       6                       
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143                 
@@ -180,8 +185,8 @@ TNR(Specificity or true negative rate)                           0.77778        
 TON(Test outcome negative)                                       7                       10                      7                       
 TOP(Test outcome positive)                                       5                       2                       5                       
 TP(True positive/hit)                                            3                       1                       3                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                                         
-                               
+TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                     
+                                                                    
 >>> cm.matrix()
 Predict          0        1        2        
 Actual
@@ -235,7 +240,9 @@ Lambda B                                                         0.0
 Mutual Information                                               0.1992
 NIR                                                              0.625
 Overall_ACC                                                      0.75
+Overall_CEN                                                      0.44812
 Overall_J                                                        (1.04762,0.52381)
+Overall_MCEN                                                     0.29904
 Overall_RACC                                                     0.59375
 Overall_RACCU                                                    0.625
 P-Value                                                          0.36974
@@ -259,6 +266,7 @@ Class Statistics :
 Classes                                                          Class1                  Class2                  
 ACC(Accuracy)                                                    0.75                    0.75                    
 BM(Informedness or bookmaker informedness)                       0.33333                 0.33333                 
+CEN(Confusion entropy)                                           0.5                     0.43083                 
 DOR(Diagnostic odds ratio)                                       None                    None                    
 ERR(Error rate)                                                  0.25                    0.25                    
 F0.5(F0.5 score)                                                 0.71429                 0.75758                 
@@ -271,10 +279,12 @@ FOR(False omission rate)                                         0.28571        
 FP(False positive/type 1 error/false alarm)                      0                       2                       
 FPR(Fall-out or false positive rate)                             0.0                     0.66667                 
 G(G-measure geometric mean of precision and sensitivity)         0.57735                 0.84515                 
+IS(Information score)                                            1.41504                 0.19265                 
 J(Jaccard index)                                                 0.33333                 0.71429                 
 LR+(Positive likelihood ratio)                                   None                    1.5                     
 LR-(Negative likelihood ratio)                                   0.66667                 0.0                     
 MCC(Matthews correlation coefficient)                            0.48795                 0.48795                 
+MCEN(Modified confusion entropy)                                 0.38998                 0.51639                 
 MK(Markedness)                                                   0.71429                 0.71429                 
 N(Condition negative)                                            5                       3                       
 NPV(Negative predictive value)                                   0.71429                 1.0                     
@@ -289,7 +299,7 @@ TNR(Specificity or true negative rate)                           1.0            
 TON(Test outcome negative)                                       7                       1                       
 TOP(Test outcome positive)                                       1                       7                       
 TP(True positive/hit)                                            1                       5                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0   
+TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0
 
 >>> cm3 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":0}, "Class2": {"Class1": 2, "Class2": 5}},transpose=True) # Transpose Matrix      
 >>> cm3.matrix()

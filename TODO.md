@@ -31,6 +31,9 @@
   - [x] Prevalence
   - [x] G-measure
   - [x] RACC
+  - [x] CEN
+  - [x] MCEN
+  - [x] IS
 - [x] Outputs
   - [x] CSV File
   - [x] HTML File
@@ -67,3 +70,5 @@
   - [x] Zero-One Loss
   - [x] P-Value
   - [x] NIR
+  - [x] Overall CEN
+  - [x] Overall MCEN

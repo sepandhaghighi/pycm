@@ -129,7 +129,9 @@ class ConfusionMatrix():
             TP=matrix_param[2],
             TN=matrix_param[3],
             FP=matrix_param[4],
-            FN=matrix_param[5])
+            FN=matrix_param[5],
+            classes=matrix_param[0],
+            table=matrix_param[1])
         self.class_stat = statistic_result
         self.overall_stat = overall_statistics(
             RACC=statistic_result["RACC"],
@@ -144,7 +146,9 @@ class ConfusionMatrix():
             TOP=statistic_result["TOP"],
             jaccard_list=statistic_result["J"],
             classes=self.classes,
-            table=self.table)
+            table=self.table,
+            CEN_dict=statistic_result["CEN"],
+            MCEN_dict=statistic_result["MCEN"])
         self.TPR = statistic_result["TPR"]
         self.TNR = statistic_result["TNR"]
         self.PPV = statistic_result["PPV"]
@@ -174,6 +178,9 @@ class ConfusionMatrix():
         self.F05 = statistic_result["F0.5"]
         self.ERR = statistic_result["ERR"]
         self.J = statistic_result["J"]
+        self.IS = statistic_result["IS"]
+        self.CEN = statistic_result["CEN"]
+        self.MCEN = statistic_result["MCEN"]
         self.Overall_J = self.overall_stat["Overall_J"]
         self.SOA1 = self.overall_stat["Strength_Of_Agreement(Landis and Koch)"]
         self.SOA2 = self.overall_stat["Strength_Of_Agreement(Fleiss)"]
@@ -213,6 +220,8 @@ class ConfusionMatrix():
         self.ZeroOneLoss = self.overall_stat["Zero-one Loss"]
         self.NIR = self.overall_stat["NIR"]
         self.PValue = self.overall_stat["P-Value"]
+        self.Overall_CEN = self.overall_stat["Overall_CEN"]
+        self.Overall_MCEN = self.overall_stat["Overall_MCEN"]
 
     def matrix(self):
         '''

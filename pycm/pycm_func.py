@@ -19,9 +19,151 @@ def isfile(f):
         f, 'read')
 
 
+def CEN_misclassification_calc(classes, table, i, j, subject_class,
+                               modified=False):
+    '''
+    This function calculate misclassification probability of classifying
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :param i: table row index (class name)
+    :type i : any valid type
+    :param j: table col index (class name)
+    :type j : any valid type
+    :param subject_class: subject to class (class name)
+    :type subject_class: any valid type
+    :param modified : modified mode flag
+    :type modified : bool
+    :return: misclassification probability of classifying as float
+    '''
+    try:
+        result = 0
+        for k in classes:
+            result += (table[subject_class][k] + table[k][subject_class])
+        if modified:
+            result -= table[subject_class][subject_class]
+        result = table[i][j] / result
+        return result
+    except Exception:
+        return "None"
+
+
+def CEN_calc(classes, table, class_name, modified=False):
+    '''
+    This function calculate CEN (Confusion Entropy)
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :param class_name: reviewed class name
+    :type class_name : any valid type
+    :param modified : modified mode flag
+    :type modified : bool
+    :return: CEN(MCEN) as float
+    '''
+    try:
+        result = 0
+        class_number = len(classes)
+        for k in classes:
+            if k != class_name:
+                P_j_k = CEN_misclassification_calc(classes, table,
+                                                   class_name, k,
+                                                   class_name, modified)
+                P_k_j = CEN_misclassification_calc(classes, table, k,
+                                                   class_name,
+                                                   class_name, modified)
+                if P_j_k != 0:
+                    result += P_j_k * math.log(P_j_k, 2 * (class_number - 1))
+                if P_k_j != 0:
+                    result += P_k_j * math.log(P_k_j, 2 * (class_number - 1))
+        if result != 0:
+            result = result * (-1)
+        return result
+    except Exception:
+        return "None"
+
+
+def convex_combination(classes, table, class_name, modified=False):
+    '''
+    This function calculate Overall_CEN coefficient
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :param class_name: reviewed class name
+    :type class_name : any valid type
+    :param modified : modified mode flag
+    :type modified : bool
+    :return: coefficient as float
+    '''
+    try:
+        up = 0
+        down = 0
+        class_number = len(classes)
+        alpha = 1
+        if class_number == 2:
+            alpha = 0
+        for k in classes:
+            up += (table[class_name][k] + table[k][class_name])
+            for l in classes:
+                down += (2 * table[k][l])
+            if modified:
+                down -= (alpha * table[k][k])
+        if modified:
+            up -= table[class_name][class_name]
+        return up / down
+    except Exception:
+        return "None"
+
+
+def overall_CEN_calc(classes, table, CEN_dict, modified=False):
+    '''
+    This function calculate Overall_CEN (Overall Confusion Entropy)
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :param CEN_dict: CEN dictionary for each class
+    :type CEN_dict : dict
+    :param modified : modified mode flag
+    :type modified : bool
+    :return: Overall_CEN(MCEN) as float
+    '''
+    try:
+        result = 0
+        for i in classes:
+            result += (convex_combination(classes, table, i, modified) *
+                       CEN_dict[i])
+        return result
+    except Exception:
+        return "None"
+
+
+def IS_calc(TP, FP, FN, POP):
+    '''
+    This function calculate Information Score (IS)
+    :param TP: True Positive Dict For All Classes
+    :type TP : int
+    :param FP: False Positive Dict For All Classes
+    :type FP : int
+    :param FN: False Negative Dict For All Classes
+    :type FN : int
+    :param POP: Population
+    :type POP : int
+    :return: IS as float
+    '''
+    try:
+        result = -math.log(((TP + FN) / POP), 2) + \
+            math.log((TP / (TP + FP)), 2)
+        return result
+    except Exception:
+        return "None"
+
+
 def transpose_func(classes, table):
     '''
-    This function tranpose table
+    This function transpose table
     :param classes: classes
     :type classes : list
     :param table: input matrix
@@ -281,7 +423,7 @@ def entropy_calc(item, POP):
 
 def kappa_no_prevalence_calc(overall_accuracy):
     '''
-    This function calulate Kappa No Prevalence
+    This function calculate Kappa No Prevalence
     :param overall_accuracy: overall accuracy
     :type overall_accuracy : float
     :return: Kappa No Prevalence as float
@@ -370,7 +512,7 @@ def conditional_entropy_calc(classes, table, P, POP):
 def mutual_information_calc(response_entropy, conditional_entropy):
     '''
     This function calculate mutual information
-    :param response_entropy:  resposne entropy
+    :param response_entropy:  response entropy
     :type response_entropy : float
     :param conditional_entropy:  conditional entropy
     :type conditional_entropy : float
@@ -562,7 +704,7 @@ def FXR_calc(Item1):
 
 def ACC_calc(TP, TN, FP, FN):
     '''
-    This functuon caclculate Accuracy
+    This functuon calculate Accuracy
     :param TP: True Positive
     :type TP : int
     :param TN: True Negative
@@ -850,7 +992,7 @@ def CI_calc(mean, SE, CV=1.96):
     This function calculate confidence interval
     :param mean: mean of data
     :type mean : float
-    :param SE: standarad error of data
+    :param SE: standard error of data
     :type SE : float
     :param CV: critical value:
     :type CV:float
@@ -1041,6 +1183,8 @@ def overall_statistics(
         P,
         TOP,
         jaccard_list,
+        CEN_dict,
+        MCEN_dict,
         classes,
         table):
     '''
@@ -1067,6 +1211,8 @@ def overall_statistics(
     :type TOP : dict
     :param jaccard_list : list of jaccard index for each class
     :type jaccard_list : list
+    :param CEN_dict: CEN dictionary for each class
+    :type CEN_dict : dict
     :param classes: confusion matrix classes
     :type classes : list
     :param table: input matrix
@@ -1115,6 +1261,8 @@ def overall_statistics(
     zero_one_loss = zero_one_loss_calc(TP, POP)
     NIR = NIR_calc(P, POP)
     p_value = p_value_calc(TP, POP, NIR)
+    overall_CEN = overall_CEN_calc(classes, table, CEN_dict)
+    overall_MCEN = overall_CEN_calc(classes, table, MCEN_dict, True)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1158,13 +1306,15 @@ def overall_statistics(
         "Hamming Loss": hamming_loss,
         "Zero-one Loss": zero_one_loss,
         "NIR": NIR,
-        "P-Value": p_value}
+        "P-Value": p_value,
+        "Overall_CEN": overall_CEN,
+        "Overall_MCEN": overall_MCEN}
 
 
-def class_statistics(TP, TN, FP, FN):
+def class_statistics(TP, TN, FP, FN, classes, table):
     '''
     This function return all class statistics
-    ::param TP: True Positive Dict For All Classes
+    :param TP: True Positive Dict For All Classes
     :type TP : dict
     :param TN: True Negative Dict For All Classes
     :type TN : dict
@@ -1172,6 +1322,10 @@ def class_statistics(TP, TN, FP, FN):
     :type FP : dict
     :param FN: False Negative Dict For All Classes
     :type FN : dict
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
     :return: result as dict
     '''
     TPR = {}
@@ -1203,6 +1357,9 @@ def class_statistics(TP, TN, FP, FN):
     ERR = {}
     RACCU = {}
     Jaccrd_Index = {}
+    IS = {}
+    CEN = {}
+    MCEN = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1233,6 +1390,9 @@ def class_statistics(TP, TN, FP, FN):
         ERR[i] = ERR_calc(ACC[i])
         RACCU[i] = RACCU_calc(TOP[i], P[i], POP[i])
         Jaccrd_Index[i] = jaccard_index_calc(TP[i], TOP[i], P[i])
+        IS[i] = IS_calc(TP[i], FP[i], FN[i], POP[i])
+        CEN[i] = CEN_calc(classes, table, i)
+        MCEN[i] = CEN_calc(classes, table, i, True)
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1266,5 +1426,8 @@ def class_statistics(TP, TN, FP, FN):
         "F2": F2_Score,
         "ERR": ERR,
         "RACCU": RACCU,
-        "J": Jaccrd_Index}
+        "J": Jaccrd_Index,
+        "IS": IS,
+        "CEN": CEN,
+        "MCEN": MCEN}
     return result

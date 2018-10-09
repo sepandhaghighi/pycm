@@ -5,6 +5,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.3] - 2018-10-10
+### Added
+- Confusion Entropy
+- Overall Confusion Entropy
+- Modified Confusion Entropy
+- Overall Modified Confusion Entropy
+- Information Score
+
+### Changed
+- `README.md` modified
+
 ## [1.2] - 2018-10-01
 ### Added
 - NIR (No Information Rate)
@@ -12,11 +23,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `sample_weight`
 - `transpose`
 
-
 ### Changed
 - `README.md` modified
 - Key error in some parameters fixed
 - `OSX` env added to `.travis.yml`
+
 ## [1.1] - 2018-09-08
 ### Added
 - Zero-one loss
@@ -212,7 +223,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.2...HEAD
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.3...HEAD
+[1.3]: https://github.com/sepandhaghighi/pycm/compare/v1.2...v1.3
 [1.2]: https://github.com/sepandhaghighi/pycm/compare/v1.1...v1.2
 [1.1]: https://github.com/sepandhaghighi/pycm/compare/v1.0...v1.1
 [1.0]: https://github.com/sepandhaghighi/pycm/compare/v0.9.5...v1.0

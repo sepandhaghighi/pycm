@@ -40,7 +40,9 @@ Lambda B                                                         0.42857
 Mutual Information                                               0.52421
 NIR                                                              0.5
 Overall_ACC                                                      0.58333
+Overall_CEN                                                      0.46381
 Overall_J                                                        (1.225,0.40833)
+Overall_MCEN                                                     0.51894
 Overall_RACC                                                     0.35417
 Overall_RACCU                                                    0.36458
 P-Value                                                          0.38721
@@ -64,6 +66,7 @@ Class Statistics :
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
+CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
 ERR(Error rate)                                                  0.16667                 0.25                    0.41667
 F0.5(F0.5 score)                                                 0.65217                 0.45455                 0.57692
@@ -76,10 +79,12 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      2                       1                       2
 FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
+IS(Information score)                                            1.26303                 1.0                     0.26303
 J(Jaccard index)                                                 0.6                     0.25                    0.375
 LR+(Positive likelihood ratio)                                   4.5                     3.0                     1.5
 LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.75
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903
+MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875
 MK(Markedness)                                                   0.6                     0.3                     0.17143
 N(Condition negative)                                            9                       9                       6
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143
@@ -228,7 +233,9 @@ Lambda B                                                         0.0
 Mutual Information                                               None
 NIR                                                              0.8
 Overall_ACC                                                      0.35
+Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
+Overall_MCEN                                                     0.37463
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
 P-Value                                                          1.0
@@ -252,6 +259,7 @@ Class Statistics :
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
+CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
 ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05
 F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0
@@ -264,10 +272,12 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
+IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 LR+(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
 LR-(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
+MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
 N(Condition negative)                                            20                      4                       17                      19
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
@@ -308,7 +318,9 @@ Lambda B                                                         0.0
 Mutual Information                                               None
 NIR                                                              0.8
 Overall_ACC                                                      0.35
+Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
+Overall_MCEN                                                     0.37463
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
 P-Value                                                          1.0
@@ -332,6 +344,7 @@ Class Statistics :
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
+CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
 ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05
 F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0
@@ -344,10 +357,12 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
+IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 LR+(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
 LR-(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
+MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
 N(Condition negative)                                            20                      4                       17                      19
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
@@ -475,6 +490,8 @@ Actual
 >>> lambda_A=lambda_A_calc(cm2.classes,cm2.table,cm2.P,cm2.POP)
 >>> lambda_A
 0.4
+>>> IS_calc(13,0,0,38)
+1.5474877953024933
 >>> kappa_no_prevalence_calc(cm2.Overall_ACC)
 0.33333333333333326
 >>> reliability_calc(cm2.Overall_RACC,cm2.Overall_ACC)
@@ -580,7 +597,9 @@ Lambda B                                                         0.0
 Mutual Information                                               None
 NIR                                                              0.8
 Overall_ACC                                                      0.35
+Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
+Overall_MCEN                                                     0.37463
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
 P-Value                                                          1.0
@@ -604,6 +623,7 @@ Class Statistics :
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
+CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
 ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05
 F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0
@@ -616,10 +636,12 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
+IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 LR+(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
 LR-(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
+MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
 N(Condition negative)                                            20                      4                       17                      19
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
@@ -679,7 +701,9 @@ Lambda B                                                         0.35714
 Mutual Information                                               0.39731
 NIR                                                              0.44444
 Overall_ACC                                                      0.66667
+Overall_CEN                                                      0.52986
 Overall_J                                                        (1.51854,0.50618)
+Overall_MCEN                                                     0.65286
 Overall_RACC                                                     0.36626
 Overall_RACCU                                                    0.36694
 P-Value                                                          0.01667
@@ -703,6 +727,7 @@ Class Statistics :
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
+CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
 ERR(Error rate)                                                  0.25926                 0.2963                  0.11111
 F0.5(F0.5 score)                                                 0.70312                 0.55556                 0.76923
@@ -715,10 +740,12 @@ FOR(False omission rate)                                         0.21429        
 FP(False positive/type 1 error/false alarm)                      4                       4                       1
 FPR(Fall-out or false positive rate)                             0.26667                 0.22222                 0.04762
 G(G-measure geometric mean of precision and sensitivity)         0.72058                 0.55556                 0.7303
+IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
 LR+(Positive likelihood ratio)                                   2.8125                  2.5                     14.0
 LR-(Negative likelihood ratio)                                   0.34091                 0.57143                 0.35
 MCC(Matthews correlation coefficient)                            0.48067                 0.33333                 0.66254
+MCEN(Modified confusion entropy)                                 0.57782                 0.77284                 0.60158
 MK(Markedness)                                                   0.47802                 0.33333                 0.70909
 N(Condition negative)                                            15                      18                      21
 NPV(Negative predictive value)                                   0.78571                 0.77778                 0.90909
@@ -769,7 +796,9 @@ Lambda B                                                         0.35714
 Mutual Information                                               0.39731
 NIR                                                              0.44444
 Overall_ACC                                                      0.66667
+Overall_CEN                                                      0.52986
 Overall_J                                                        (1.51854,0.50618)
+Overall_MCEN                                                     0.65286
 Overall_RACC                                                     0.36626
 Overall_RACCU                                                    0.36694
 P-Value                                                          0.01667
@@ -793,6 +822,7 @@ Class Statistics :
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
+CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
 ERR(Error rate)                                                  0.25926                 0.2963                  0.11111
 F0.5(F0.5 score)                                                 0.70312                 0.55556                 0.76923
@@ -805,10 +835,12 @@ FOR(False omission rate)                                         0.21429        
 FP(False positive/type 1 error/false alarm)                      4                       4                       1
 FPR(Fall-out or false positive rate)                             0.26667                 0.22222                 0.04762
 G(G-measure geometric mean of precision and sensitivity)         0.72058                 0.55556                 0.7303
+IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
 LR+(Positive likelihood ratio)                                   2.8125                  2.5                     14.0
 LR-(Negative likelihood ratio)                                   0.34091                 0.57143                 0.35
 MCC(Matthews correlation coefficient)                            0.48067                 0.33333                 0.66254
+MCEN(Modified confusion entropy)                                 0.57782                 0.77284                 0.60158
 MK(Markedness)                                                   0.47802                 0.33333                 0.70909
 N(Condition negative)                                            15                      18                      21
 NPV(Negative predictive value)                                   0.78571                 0.77778                 0.90909
@@ -834,77 +866,82 @@ Example : online_help("J") or online_help(2)
 2-ACC
 3-BM
 4-Bennett_S
-5-Chi-Squared
-6-Chi-Squared DF
-7-Conditional Entropy
-8-Cramer_V
-9-Cross Entropy
-10-DOR
-11-ERR
-12-F0.5
-13-F1
-14-F2
-15-FDR
-16-FN
-17-FNR
-18-FOR
-19-FP
-20-FPR
-21-G
-22-Gwet_AC1
-23-Hamming Loss
-24-J
-25-Joint Entropy
-26-KL Divergence
-27-Kappa
-28-Kappa 95% CI
-29-Kappa No Prevalence
-30-Kappa Standard Error
-31-Kappa Unbiased
-32-LR+
-33-LR-
-34-Lambda A
-35-Lambda B
-36-MCC
-37-MK
-38-Mutual Information
-39-N
-40-NIR
-41-NPV
-42-Overall_ACC
-43-Overall_J
-44-Overall_RACC
-45-Overall_RACCU
-46-P
-47-P-Value
-48-POP
-49-PPV
-50-PPV_Macro
-51-PPV_Micro
-52-PRE
-53-Phi-Squared
-54-RACC
-55-RACCU
-56-Reference Entropy
-57-Response Entropy
-58-Scott_PI
-59-Standard Error
-60-Strength_Of_Agreement(Altman)
-61-Strength_Of_Agreement(Cicchetti)
-62-Strength_Of_Agreement(Fleiss)
-63-Strength_Of_Agreement(Landis and Koch)
-64-TN
-65-TNR
-66-TON
-67-TOP
-68-TP
-69-TPR
-70-TPR_Macro
-71-TPR_Micro
-72-Zero-one Loss
+5-CEN
+6-Chi-Squared
+7-Chi-Squared DF
+8-Conditional Entropy
+9-Cramer_V
+10-Cross Entropy
+11-DOR
+12-ERR
+13-F0.5
+14-F1
+15-F2
+16-FDR
+17-FN
+18-FNR
+19-FOR
+20-FP
+21-FPR
+22-G
+23-Gwet_AC1
+24-Hamming Loss
+25-IS
+26-J
+27-Joint Entropy
+28-KL Divergence
+29-Kappa
+30-Kappa 95% CI
+31-Kappa No Prevalence
+32-Kappa Standard Error
+33-Kappa Unbiased
+34-LR+
+35-LR-
+36-Lambda A
+37-Lambda B
+38-MCC
+39-MCEN
+40-MK
+41-Mutual Information
+42-N
+43-NIR
+44-NPV
+45-Overall_ACC
+46-Overall_CEN
+47-Overall_J
+48-Overall_MCEN
+49-Overall_RACC
+50-Overall_RACCU
+51-P
+52-P-Value
+53-POP
+54-PPV
+55-PPV_Macro
+56-PPV_Micro
+57-PRE
+58-Phi-Squared
+59-RACC
+60-RACCU
+61-Reference Entropy
+62-Response Entropy
+63-Scott_PI
+64-Standard Error
+65-Strength_Of_Agreement(Altman)
+66-Strength_Of_Agreement(Cicchetti)
+67-Strength_Of_Agreement(Fleiss)
+68-Strength_Of_Agreement(Landis and Koch)
+69-TN
+70-TNR
+71-TON
+72-TOP
+73-TP
+74-TPR
+75-TPR_Macro
+76-TPR_Micro
+77-Zero-one Loss
 >>> online_help("J")
 ...
->>> online_help(1)
+>>> online_help(4)
 ...
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
@@ -942,7 +979,9 @@ Lambda B                                                         0.36364
 Mutual Information                                               0.47618
 NIR                                                              0.57143
 Overall_ACC                                                      0.61905
+Overall_CEN                                                      0.43947
 Overall_J                                                        (1.22857,0.40952)
+Overall_MCEN                                                     0.50059
 Overall_RACC                                                     0.37415
 Overall_RACCU                                                    0.39229
 P-Value                                                          0.41709
@@ -966,6 +1005,7 @@ Class Statistics :
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
+CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5
 ERR(Error rate)                                                  0.19048                 0.19048                 0.38095
 F0.5(F0.5 score)                                                 0.65217                 0.33333                 0.68182
@@ -978,10 +1018,12 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      4                       2                       2
 FPR(Fall-out or false positive rate)                             0.26667                 0.11111                 0.22222
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.33333                 0.61237
+IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
 LR+(Positive likelihood ratio)                                   3.75                    3.0                     2.25
 LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.64286
 MCC(Matthews correlation coefficient)                            0.66332                 0.22222                 0.28307
+MCEN(Modified confusion entropy)                                 0.26439                 0.52877                 0.65924
 MK(Markedness)                                                   0.6                     0.22222                 0.28846
 N(Condition negative)                                            15                      18                      9
 NPV(Negative predictive value)                                   1.0                     0.88889                 0.53846
@@ -1032,7 +1074,9 @@ Lambda B                                                         0.36364
 Mutual Information                                               0.47618
 NIR                                                              0.57143
 Overall_ACC                                                      0.61905
+Overall_CEN                                                      0.43947
 Overall_J                                                        (1.22857,0.40952)
+Overall_MCEN                                                     0.50059
 Overall_RACC                                                     0.37415
 Overall_RACCU                                                    0.39229
 P-Value                                                          0.41709
@@ -1056,6 +1100,7 @@ Class Statistics :
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
+CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5
 ERR(Error rate)                                                  0.19048                 0.19048                 0.38095
 F0.5(F0.5 score)                                                 0.65217                 0.33333                 0.68182
@@ -1068,10 +1113,12 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      4                       2                       2
 FPR(Fall-out or false positive rate)                             0.26667                 0.11111                 0.22222
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.33333                 0.61237
+IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
 LR+(Positive likelihood ratio)                                   3.75                    3.0                     2.25
 LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.64286
 MCC(Matthews correlation coefficient)                            0.66332                 0.22222                 0.28307
+MCEN(Modified confusion entropy)                                 0.26439                 0.52877                 0.65924
 MK(Markedness)                                                   0.6                     0.22222                 0.28846
 N(Condition negative)                                            15                      18                      9
 NPV(Negative predictive value)                                   1.0                     0.88889                 0.53846

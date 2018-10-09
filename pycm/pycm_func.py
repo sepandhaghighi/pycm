@@ -41,12 +41,13 @@ def CEN_misclassification_calc(classes, table, i, j, subject_class,
         result = 0
         for k in classes:
             result += (table[subject_class][k] + table[k][subject_class])
-        if modified==True:
+        if modified:
             result -= table[subject_class][subject_class]
         result = table[i][j] / result
         return result
     except Exception:
         return "None"
+
 
 def CEN_calc(classes, table, class_name, modified=False):
     '''
@@ -76,14 +77,14 @@ def CEN_calc(classes, table, class_name, modified=False):
                     result += P_j_k * math.log(P_j_k, 2 * (class_number - 1))
                 if P_k_j != 0:
                     result += P_k_j * math.log(P_k_j, 2 * (class_number - 1))
-        if result!=0:
+        if result != 0:
             result = result * (-1)
         return result
-    except Exception :
+    except Exception:
         return "None"
 
 
-def convex_combination(classes, table, class_name, modified = False):
+def convex_combination(classes, table, class_name, modified=False):
     '''
     This function calculate Overall_CEN coefficient
     :param classes: classes
@@ -107,9 +108,9 @@ def convex_combination(classes, table, class_name, modified = False):
             up += (table[class_name][k] + table[k][class_name])
             for l in classes:
                 down += (2 * table[k][l])
-            if modified == True :
-                down -= (alpha*table[k][k])
-        if modified ==True:
+            if modified:
+                down -= (alpha * table[k][k])
+        if modified:
             up -= table[class_name][class_name]
         return up / down
     except Exception:
@@ -1261,7 +1262,7 @@ def overall_statistics(
     NIR = NIR_calc(P, POP)
     p_value = p_value_calc(TP, POP, NIR)
     overall_CEN = overall_CEN_calc(classes, table, CEN_dict)
-    overall_MCEN = overall_CEN_calc(classes, table, MCEN_dict,True)
+    overall_MCEN = overall_CEN_calc(classes, table, MCEN_dict, True)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1391,7 +1392,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         Jaccrd_Index[i] = jaccard_index_calc(TP[i], TOP[i], P[i])
         IS[i] = IS_calc(TP[i], FP[i], FN[i], POP[i])
         CEN[i] = CEN_calc(classes, table, i)
-        MCEN[i] = CEN_calc(classes, table, i,True)
+        MCEN[i] = CEN_calc(classes, table, i, True)
     result = {
         "TPR": TPR,
         "TNR": TNR,

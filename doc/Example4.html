@@ -11880,7 +11880,9 @@ Lambda B                                                         0.0
 Mutual Information                                               None
 NIR                                                              0.8
 Overall_ACC                                                      0.35
+Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
+Overall_MCEN                                                     0.37463
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
 P-Value                                                          1.0
@@ -11904,6 +11906,7 @@ Class Statistics :
 Classes                                                          100                     200                     500                     600                     
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95                    
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0                     
+CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0                     
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None                    
 ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05                    
 F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0                     
@@ -11916,10 +11919,12 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0                       
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0                     
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None                    
+IS(Information score)                                            None                    0.09954                 1.73697                 None                    
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0                     
 LR+(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None                    
 LR-(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0                     
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None                    
+MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0                     
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None                    
 N(Condition negative)                                            20                      4                       17                      19                      
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95                    
@@ -12083,7 +12088,9 @@ Lambda B                                                         0.0
 Mutual Information                                               None
 NIR                                                              0.8
 Overall_ACC                                                      0.35
+Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
+Overall_MCEN                                                     0.37463
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
 P-Value                                                          1.0
@@ -12107,6 +12114,7 @@ Class Statistics :
 Classes                                                          100                     200                     500                     600                     
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95                    
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0                     
+CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0                     
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None                    
 ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05                    
 F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0                     
@@ -12119,10 +12127,12 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0                       
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0                     
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None                    
+IS(Information score)                                            None                    0.09954                 1.73697                 None                    
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0                     
 LR+(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None                    
 LR-(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0                     
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None                    
+MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0                     
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None                    
 N(Condition negative)                                            20                      4                       17                      19                      
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95                    
@@ -12177,7 +12187,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        None           
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#34;Predict-Vector&#34;: [100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200], &#34;Matrix&#34;: {&#34;200&#34;: {&#34;200&#34;: 6, &#34;100&#34;: 9, &#34;500&#34;: 1, &#34;600&#34;: 0}, &#34;500&#34;: {&#34;200&#34;: 1, &#34;100&#34;: 1, &#34;500&#34;: 1, &#34;600&#34;: 0}, &#34;100&#34;: {&#34;200&#34;: 0, &#34;100&#34;: 0, &#34;500&#34;: 0, &#34;600&#34;: 0}, &#34;600&#34;: {&#34;200&#34;: 0, &#34;100&#34;: 1, &#34;500&#34;: 0, &#34;600&#34;: 0}}, &#34;Transpose&#34;: false, &#34;Actual-Vector&#34;: [600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200], &#34;Sample-Weight&#34;: null, &#34;Digit&#34;: 5}
+<pre>{&#34;Actual-Vector&#34;: [600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200], &#34;Transpose&#34;: false, &#34;Predict-Vector&#34;: [100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200], &#34;Sample-Weight&#34;: null, &#34;Digit&#34;: 5, &#34;Matrix&#34;: {&#34;200&#34;: {&#34;200&#34;: 6, &#34;100&#34;: 9, &#34;500&#34;: 1, &#34;600&#34;: 0}, &#34;500&#34;: {&#34;200&#34;: 1, &#34;100&#34;: 1, &#34;500&#34;: 1, &#34;600&#34;: 0}, &#34;100&#34;: {&#34;200&#34;: 0, &#34;100&#34;: 0, &#34;500&#34;: 0, &#34;600&#34;: 0}, &#34;600&#34;: {&#34;200&#34;: 0, &#34;100&#34;: 1, &#34;500&#34;: 0, &#34;600&#34;: 0}}}
 </pre>
 </div>
 </div>

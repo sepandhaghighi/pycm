@@ -1299,6 +1299,7 @@ def overall_statistics(
     p_value = p_value_calc(TP, POP, NIR)
     overall_CEN = overall_CEN_calc(classes, table, CEN_dict)
     overall_MCEN = overall_CEN_calc(classes, table, MCEN_dict,True)
+    overall_MCC = overall_MCC_calc(classes,table)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,

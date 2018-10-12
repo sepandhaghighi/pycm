@@ -42,6 +42,7 @@ NIR                                                              0.5
 Overall_ACC                                                      0.58333
 Overall_CEN                                                      0.46381
 Overall_J                                                        (1.225,0.40833)
+Overall_MCC                                                      0.36667
 Overall_MCEN                                                     0.51894
 Overall_RACC                                                     0.35417
 Overall_RACCU                                                    0.36458
@@ -235,6 +236,7 @@ NIR                                                              0.8
 Overall_ACC                                                      0.35
 Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
+Overall_MCC                                                      0.12642
 Overall_MCEN                                                     0.37463
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
@@ -320,6 +322,7 @@ NIR                                                              0.8
 Overall_ACC                                                      0.35
 Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
+Overall_MCC                                                      0.12642
 Overall_MCEN                                                     0.37463
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
@@ -599,6 +602,7 @@ NIR                                                              0.8
 Overall_ACC                                                      0.35
 Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
+Overall_MCC                                                      0.12642
 Overall_MCEN                                                     0.37463
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
@@ -703,6 +707,7 @@ NIR                                                              0.44444
 Overall_ACC                                                      0.66667
 Overall_CEN                                                      0.52986
 Overall_J                                                        (1.51854,0.50618)
+Overall_MCC                                                      0.47511
 Overall_MCEN                                                     0.65286
 Overall_RACC                                                     0.36626
 Overall_RACCU                                                    0.36694
@@ -798,6 +803,7 @@ NIR                                                              0.44444
 Overall_ACC                                                      0.66667
 Overall_CEN                                                      0.52986
 Overall_J                                                        (1.51854,0.50618)
+Overall_MCC                                                      0.47511
 Overall_MCEN                                                     0.65286
 Overall_RACC                                                     0.36626
 Overall_RACCU                                                    0.36694
@@ -909,36 +915,37 @@ Example : online_help("J") or online_help(2)
 45-Overall_ACC
 46-Overall_CEN
 47-Overall_J
-48-Overall_MCEN
-49-Overall_RACC
-50-Overall_RACCU
-51-P
-52-P-Value
-53-POP
-54-PPV
-55-PPV_Macro
-56-PPV_Micro
-57-PRE
-58-Phi-Squared
-59-RACC
-60-RACCU
-61-Reference Entropy
-62-Response Entropy
-63-Scott_PI
-64-Standard Error
-65-Strength_Of_Agreement(Altman)
-66-Strength_Of_Agreement(Cicchetti)
-67-Strength_Of_Agreement(Fleiss)
-68-Strength_Of_Agreement(Landis and Koch)
-69-TN
-70-TNR
-71-TON
-72-TOP
-73-TP
-74-TPR
-75-TPR_Macro
-76-TPR_Micro
-77-Zero-one Loss
+48-Overall_MCC
+49-Overall_MCEN
+50-Overall_RACC
+51-Overall_RACCU
+52-P
+53-P-Value
+54-POP
+55-PPV
+56-PPV_Macro
+57-PPV_Micro
+58-PRE
+59-Phi-Squared
+60-RACC
+61-RACCU
+62-Reference Entropy
+63-Response Entropy
+64-Scott_PI
+65-Standard Error
+66-Strength_Of_Agreement(Altman)
+67-Strength_Of_Agreement(Cicchetti)
+68-Strength_Of_Agreement(Fleiss)
+69-Strength_Of_Agreement(Landis and Koch)
+70-TN
+71-TNR
+72-TON
+73-TOP
+74-TP
+75-TPR
+76-TPR_Macro
+77-TPR_Micro
+78-Zero-one Loss
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -981,6 +988,7 @@ NIR                                                              0.57143
 Overall_ACC                                                      0.61905
 Overall_CEN                                                      0.43947
 Overall_J                                                        (1.22857,0.40952)
+Overall_MCC                                                      0.41558
 Overall_MCEN                                                     0.50059
 Overall_RACC                                                     0.37415
 Overall_RACCU                                                    0.39229
@@ -1076,6 +1084,7 @@ NIR                                                              0.57143
 Overall_ACC                                                      0.61905
 Overall_CEN                                                      0.43947
 Overall_J                                                        (1.22857,0.40952)
+Overall_MCC                                                      0.41558
 Overall_MCEN                                                     0.50059
 Overall_RACC                                                     0.37415
 Overall_RACCU                                                    0.39229

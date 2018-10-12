@@ -227,7 +227,11 @@ class ConfusionMatrix():
     def matrix(self,one_vs_all=False,class_name = None):
         '''
         This method print confusion matrix
-        :return:
+        :param one_vs_all : One-Vs-All mode flag
+        :type one_vs_all : bool
+        :param class_name : target class name for One-Vs-All mode
+        :type class_name : any valid type
+        :return: None
         '''
         classes = self.classes
         table = self.table
@@ -239,7 +243,11 @@ class ConfusionMatrix():
     def normalized_matrix(self,one_vs_all=False,class_name = None):
         '''
         This method print normalized confusion matrix
-        :return:
+        :param one_vs_all : One-Vs-All mode flag
+        :type one_vs_all : bool
+        :param class_name : target class name for One-Vs-All mode
+        :type class_name : any valid type
+        :return: None
         '''
         classes = self.classes
         table = self.table

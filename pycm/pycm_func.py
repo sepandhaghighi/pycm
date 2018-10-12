@@ -19,6 +19,24 @@ def isfile(f):
         f, 'read')
 
 def one_vs_all_func(classes,table,TP,TN,FP,FN,class_name):
+    '''
+    One-Vs-All mode handler
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :param TP: True Positive Dict For All Classes
+    :type TP : dict
+    :param TN: True Negative Dict For All Classes
+    :type TN : dict
+    :param FP: False Positive Dict For All Classes
+    :type FP : dict
+    :param FN: False Negative Dict For All Classes
+    :type FN : dict
+    :param class_name : target class name for One-Vs-All mode
+    :type class_name : any valid type
+    :return: [classes , table ] as list
+    '''
     try:
         report_classes = [class_name, "~"]
         report_classes.sort()
@@ -192,11 +210,11 @@ def overall_CEN_calc(classes, table, CEN_dict, modified=False):
 def IS_calc(TP, FP, FN, POP):
     '''
     This function calculate Information Score (IS)
-    :param TP: True Positive Dict For All Classes
+    :param TP: True Positive
     :type TP : int
-    :param FP: False Positive Dict For All Classes
+    :param FP: False Positive
     :type FP : int
-    :param FN: False Negative Dict For All Classes
+    :param FN: False Negative
     :type FN : int
     :param POP: Population
     :type POP : int

@@ -20,6 +20,14 @@ def isfile(f):
 
 
 def overall_MCC_calc(classes,table):
+    '''
+    This function calculate Overall MCC
+     :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :return:  Overall_MCC as float
+    '''
     try:
         cov_x_y = 0
         cov_x_x = 0

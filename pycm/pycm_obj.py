@@ -222,6 +222,7 @@ class ConfusionMatrix():
         self.PValue = self.overall_stat["P-Value"]
         self.Overall_CEN = self.overall_stat["Overall_CEN"]
         self.Overall_MCEN = self.overall_stat["Overall_MCEN"]
+        self.Overall_MCC = self.overall_stat["Overall_MCC"]
 
     def matrix(self):
         '''

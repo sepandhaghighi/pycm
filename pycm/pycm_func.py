@@ -1345,7 +1345,8 @@ def overall_statistics(
         "NIR": NIR,
         "P-Value": p_value,
         "Overall_CEN": overall_CEN,
-        "Overall_MCEN": overall_MCEN}
+        "Overall_MCEN": overall_MCEN,
+        "Overall_MCC":overall_MCC}
 
 
 def class_statistics(TP, TN, FP, FN, classes, table):

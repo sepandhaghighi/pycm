@@ -440,6 +440,9 @@ performance. Machine Learning, 6:67–80, 1991.</blockquote>
 <blockquote>19- Delgado R., Núñez-González J.D. (2019) Enhancing Confusion Entropy as Measure for Evaluating Classifiers. In: Graña M. et al. (eds) International Joint Conference SOCO’18-CISIS’18-ICEUTE’18. SOCO’18-CISIS’18-ICEUTE’18 2018. Advances in Intelligent Systems and Computing, vol 771. Springer, Cham </blockquote>
 
 
+<blockquote>20- Gorodkin J (2004) Comparing two K-category assignments by a K-category
+correlation coefficient. Computational Biology and Chemistry 28: 367–374 </blockquote>
+
 
 
 

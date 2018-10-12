@@ -18,7 +18,8 @@ def isfile(f):
         f, file) if sys.version_info[0] == 2 else hasattr(
         f, 'read')
 
-def one_vs_all_func(classes,table,TP,TN,FP,FN,class_name):
+
+def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
     '''
     One-Vs-All mode handler
     :param classes: classes
@@ -38,15 +39,15 @@ def one_vs_all_func(classes,table,TP,TN,FP,FN,class_name):
     :return: [classes , table ] as list
     '''
     try:
-        report_classes = [class_name, "~"]
-        report_classes.sort()
+        report_classes = sorted([class_name, "~"])
         report_table = {class_name: {class_name: TP[class_name],
-                                "~": FN[class_name]},
-                    "~": {class_name: FP[class_name],
-                        "~": TN[class_name]}}
-        return [report_classes,report_table]
+                                     "~": FN[class_name]},
+                        "~": {class_name: FP[class_name],
+                              "~": TN[class_name]}}
+        return [report_classes, report_table]
     except Exception:
-        return [classes,table]
+        return [classes, table]
+
 
 def overall_MCC_calc(classes, table):
     '''

@@ -224,7 +224,7 @@ class ConfusionMatrix():
         self.Overall_MCEN = self.overall_stat["Overall_MCEN"]
         self.Overall_MCC = self.overall_stat["Overall_MCC"]
 
-    def matrix(self,one_vs_all=False,class_name = None):
+    def matrix(self, one_vs_all=False, class_name=None):
         '''
         This method print confusion matrix
         :param one_vs_all : One-Vs-All mode flag
@@ -235,12 +235,12 @@ class ConfusionMatrix():
         '''
         classes = self.classes
         table = self.table
-        if one_vs_all == True:
-            [classes,table] = one_vs_all_func(classes,table,self.TP,self.TN,
-                                              self.FP,self.FN,class_name)
+        if one_vs_all:
+            [classes, table] = one_vs_all_func(
+                classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
         print(table_print(classes, table))
 
-    def normalized_matrix(self,one_vs_all=False,class_name = None):
+    def normalized_matrix(self, one_vs_all=False, class_name=None):
         '''
         This method print normalized confusion matrix
         :param one_vs_all : One-Vs-All mode flag
@@ -251,9 +251,9 @@ class ConfusionMatrix():
         '''
         classes = self.classes
         table = self.table
-        if one_vs_all == True:
-            [classes,table] = one_vs_all_func(classes,table,self.TP,self.TN,
-                                              self.FP,self.FN,class_name)
+        if one_vs_all:
+            [classes, table] = one_vs_all_func(
+                classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
         print(normalized_table_print(classes, table))
 
     def stat(self):

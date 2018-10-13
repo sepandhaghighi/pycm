@@ -283,12 +283,24 @@ class ConfusionMatrix():
         try:
             message = None
             file = open(name + ".pycm", "w")
+            matrix = "Matrix : \n\n" + table_print(self.classes,
+                                                   self.table)+"\n\n"
+            normalized_matrix = "Normalized Matrix : \n\n" + \
+                                normalized_table_print(self.classes,
+                                                       self.table)+"\n\n"
+            one_vs_all = "\nOne-Vs-All : \n\n"
+            for class_name in self.classes :
+                one_vs_all += str(class_name)+"-Vs-All : \n\n"
+                [classes,table] = one_vs_all_func(self.classes,self.table,
+                                              self.TP,self.TN,self.FP,
+                                              self.FN,str(class_name))
+                one_vs_all += table_print(classes,table)+"\n\n"
             stat = stat_print(
                 self.classes,
                 self.class_stat,
                 self.overall_stat,
                 self.digit)
-            file.write(stat)
+            file.write(matrix+normalized_matrix+stat+one_vs_all)
             file.close()
             if address:
                 message = os.path.join(os.getcwd(), name + ".pycm")

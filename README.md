@@ -4,8 +4,6 @@
 <br/>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
 <a href="/Document"><img src="https://img.shields.io/badge/doc-latest-orange.svg"></a>
-<a href="https://travis-ci.org/sepandhaghighi/pycm"><img src="https://travis-ci.org/sepandhaghighi/pycm.svg?branch=master"></a>
-<a href="https://ci.appveyor.com/project/sepandhaghighi/pycm"><img src="https://ci.appveyor.com/api/projects/status/nbe96d7gk2693ju0?svg=true"></a>
 <a href="https://codecov.io/gh/sepandhaghighi/pycm">
   <img src="https://codecov.io/gh/sepandhaghighi/pycm/branch/master/graph/badge.svg" />
 </a>
@@ -58,6 +56,26 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 	<tr>
 		<td align="center">Github Stars</td>
 		<td align="center"><a href="https://github.com/sepandhaghighi/pycm"><img src="https://img.shields.io/github/stars/sepandhaghighi/pycm.svg?style=social&label=Stars"></a></td>
+	</tr>
+</table>
+</html>
+
+<html>
+<table>
+	<tr> 
+		<td align="center">Branch</td>
+		<td align="center">master</td>	
+		<td align="center">dev</td>	
+	</tr>
+	<tr>
+		<td align="center">Travis</td>
+		<td align="center"><a href="https://travis-ci.org/sepandhaghighi/pycm"><img src="https://travis-ci.org/sepandhaghighi/pycm.svg?branch=master"></a></td>
+		<td align="center"><a href="https://travis-ci.org/sepandhaghighi/pycm"><img src="https://travis-ci.org/sepandhaghighi/pycm.svg?branch=dev"></a></td>
+	</tr>
+	<tr>
+		<td align="center">AppVeyor</td>
+		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/pycm"><img src="https://ci.appveyor.com/api/projects/status/nbe96d7gk2693ju0/branch/master?svg=true"></a></td>
+		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/pycm"><img src="https://ci.appveyor.com/api/projects/status/nbe96d7gk2693ju0/branch/dev?svg=true"></a></td>
 	</tr>
 </table>
 </html>

@@ -43,7 +43,6 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 </div>
 
 
-<html>
 <table>
 	<tr> 
 		<td align="center">Open Hub</td>
@@ -58,9 +57,9 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 		<td align="center"><a href="https://github.com/sepandhaghighi/pycm"><img src="https://img.shields.io/github/stars/sepandhaghighi/pycm.svg?style=social&label=Stars"></a></td>
 	</tr>
 </table>
-</html>
 
-<html>
+
+
 <table>
 	<tr> 
 		<td align="center">Branch</td>
@@ -78,7 +77,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/pycm"><img src="https://ci.appveyor.com/api/projects/status/nbe96d7gk2693ju0/branch/dev?svg=true"></a></td>
 	</tr>
 </table>
-</html>
+
 
 
 ## Installation		
@@ -492,7 +491,7 @@ Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A. (2018). PyCM: Multiclass
 
 Download [PyCM.bib](http://www.shaghighi.ir/pycm/PYCM.bib)	
 
-<html>
+
 <table>
 	<tr> 
 		<td align="center">JOSS</td>
@@ -507,7 +506,7 @@ Download [PyCM.bib](http://www.shaghighi.ir/pycm/PYCM.bib)
 		<td align="center"><a href="https://www.researchgate.net/project/PYCM-python-confusion-matrix"><img src="https://img.shields.io/badge/Researchgate-PyCM-yellow.svg"></a></td>
 	</tr>
 </table>
-</html>					
+				
 
 
 ## License

@@ -884,81 +884,82 @@ Example : online_help("J") or online_help(2)
 2-ACC
 3-BM
 4-Bennett_S
-5-CEN
-6-Chi-Squared
-7-Chi-Squared DF
-8-Conditional Entropy
-9-Cramer_V
-10-Cross Entropy
-11-DOR
-12-ERR
-13-F0.5
-14-F1
-15-F2
-16-FDR
-17-FN
-18-FNR
-19-FOR
-20-FP
-21-FPR
-22-G
-23-Gwet_AC1
-24-Hamming Loss
-25-IS
-26-J
-27-Joint Entropy
-28-KL Divergence
-29-Kappa
-30-Kappa 95% CI
-31-Kappa No Prevalence
-32-Kappa Standard Error
-33-Kappa Unbiased
-34-LR+
-35-LR-
-36-Lambda A
-37-Lambda B
-38-MCC
-39-MCEN
-40-MK
-41-Mutual Information
-42-N
-43-NIR
-44-NPV
-45-Overall_ACC
-46-Overall_CEN
-47-Overall_J
-48-Overall_MCC
-49-Overall_MCEN
-50-Overall_RACC
-51-Overall_RACCU
-52-P
-53-P-Value
-54-POP
-55-PPV
-56-PPV_Macro
-57-PPV_Micro
-58-PRE
-59-Phi-Squared
-60-RACC
-61-RACCU
-62-RR
-63-Reference Entropy
-64-Response Entropy
-65-Scott_PI
-66-Standard Error
-67-Strength_Of_Agreement(Altman)
-68-Strength_Of_Agreement(Cicchetti)
-69-Strength_Of_Agreement(Fleiss)
-70-Strength_Of_Agreement(Landis and Koch)
-71-TN
-72-TNR
-73-TON
-74-TOP
-75-TP
-76-TPR
-77-TPR_Macro
-78-TPR_Micro
-79-Zero-one Loss
+5-CBA
+6-CEN
+7-Chi-Squared
+8-Chi-Squared DF
+9-Conditional Entropy
+10-Cramer_V
+11-Cross Entropy
+12-DOR
+13-ERR
+14-F0.5
+15-F1
+16-F2
+17-FDR
+18-FN
+19-FNR
+20-FOR
+21-FP
+22-FPR
+23-G
+24-Gwet_AC1
+25-Hamming Loss
+26-IS
+27-J
+28-Joint Entropy
+29-KL Divergence
+30-Kappa
+31-Kappa 95% CI
+32-Kappa No Prevalence
+33-Kappa Standard Error
+34-Kappa Unbiased
+35-LR+
+36-LR-
+37-Lambda A
+38-Lambda B
+39-MCC
+40-MCEN
+41-MK
+42-Mutual Information
+43-N
+44-NIR
+45-NPV
+46-Overall_ACC
+47-Overall_CEN
+48-Overall_J
+49-Overall_MCC
+50-Overall_MCEN
+51-Overall_RACC
+52-Overall_RACCU
+53-P
+54-P-Value
+55-POP
+56-PPV
+57-PPV_Macro
+58-PPV_Micro
+59-PRE
+60-Phi-Squared
+61-RACC
+62-RACCU
+63-RR
+64-Reference Entropy
+65-Response Entropy
+66-Scott_PI
+67-Standard Error
+68-Strength_Of_Agreement(Altman)
+69-Strength_Of_Agreement(Cicchetti)
+70-Strength_Of_Agreement(Fleiss)
+71-Strength_Of_Agreement(Landis and Koch)
+72-TN
+73-TNR
+74-TON
+75-TOP
+76-TP
+77-TPR
+78-TPR_Macro
+79-TPR_Micro
+80-Zero-one Loss
 >>> online_help("J")
 ...
 >>> online_help(4)

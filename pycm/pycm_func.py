@@ -34,9 +34,10 @@ def CBA_calc(classes,table,TOP,P):
     '''
     try:
         result = 0
+        class_number = len(classes)
         for i in classes:
-            result+=(table[i][i])/(max(TOP[i],P[i]))
-        return result
+            result+=((table[i][i])/(max(TOP[i],P[i])))
+        return result/class_number
     except Exception:
         return "None"
 

@@ -19,6 +19,24 @@ def isfile(f):
         f, 'read')
 
 
+def RR_calc(classes, table):
+    '''
+    This function calculate RR (Global Performance Index)
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :return: RR as float
+    '''
+    try:
+        result = 0
+        class_number = len(classes)
+        for i in classes:
+            result+= sum(list(table[i].values()))
+        return result/class_number
+    except Exception:
+        return "None"
+
 def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
     '''
     One-Vs-All mode handler

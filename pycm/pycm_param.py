@@ -137,7 +137,7 @@ PARAMS_LINK = {
     "Overall_MCEN": "http://www.shaghighi.ir/pycm/doc/#Overall_MCEN",
     "Overall_MCC": "http://www.shaghighi.ir/pycm/doc/#Overall_MCC",
     "RR": "http://www.shaghighi.ir/pycm/doc/#RR-(Global-Performance-Index)",
-    "CBA": ""}
+    "CBA": "http://www.shaghighi.ir/pycm/doc/#CBA-(Class-Balance-Accuracy)"}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

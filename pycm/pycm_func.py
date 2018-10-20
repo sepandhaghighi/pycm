@@ -32,10 +32,11 @@ def RR_calc(classes, table):
         result = 0
         class_number = len(classes)
         for i in classes:
-            result+= sum(list(table[i].values()))
-        return result/class_number
+            result += sum(list(table[i].values()))
+        return result / class_number
     except Exception:
         return "None"
+
 
 def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
     '''
@@ -1350,7 +1351,7 @@ def overall_statistics(
     overall_CEN = overall_CEN_calc(classes, table, CEN_dict)
     overall_MCEN = overall_CEN_calc(classes, table, MCEN_dict, True)
     overall_MCC = overall_MCC_calc(classes, table)
-    RR = RR_calc(classes,table)
+    RR = RR_calc(classes, table)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,

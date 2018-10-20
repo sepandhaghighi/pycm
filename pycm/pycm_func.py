@@ -1373,6 +1373,7 @@ def overall_statistics(
     overall_MCEN = overall_CEN_calc(classes, table, MCEN_dict, True)
     overall_MCC = overall_MCC_calc(classes, table)
     RR = RR_calc(classes, table)
+    CBA = CBA_calc(classes,table,TOP,P)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1420,7 +1421,8 @@ def overall_statistics(
         "Overall_CEN": overall_CEN,
         "Overall_MCEN": overall_MCEN,
         "Overall_MCC": overall_MCC,
-        "RR": RR}
+        "RR": RR,
+        "CBA": CBA}
 
 
 def class_statistics(TP, TN, FP, FN, classes, table):

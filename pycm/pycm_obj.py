@@ -224,6 +224,7 @@ class ConfusionMatrix():
         self.Overall_MCEN = self.overall_stat["Overall_MCEN"]
         self.Overall_MCC = self.overall_stat["Overall_MCC"]
         self.RR = self.overall_stat["RR"]
+        self.CBA = self.overall_stat["CBA"]
 
     def matrix(self, one_vs_all=False, class_name=None):
         '''

@@ -19,6 +19,27 @@ def isfile(f):
         f, 'read')
 
 
+def CBA_calc(classes,table,TOP,P):
+    '''
+    This function calculate CBA
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :param TOP: Test outcome positive
+    :type TOP : dict
+    :param P: Condition positive
+    :type P : dict
+    :return: CBA as float
+    '''
+    try:
+        result = 0
+        for i in classes:
+            result+=(table[i][i])/(max(TOP[i],P[i]))
+        return result
+    except Exception:
+        return "None"
+
 def RR_calc(classes, table):
     '''
     This function calculate RR (Global Performance Index)

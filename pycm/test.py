@@ -50,6 +50,7 @@ P-Value                                                          0.38721
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
 Phi-Squared                                                      0.55
+RR                                                               4.0
 Reference Entropy                                                1.5
 Response Entropy                                                 1.48336
 Scott_PI                                                         0.34426
@@ -244,6 +245,7 @@ P-Value                                                          1.0
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
+RR                                                               5.0
 Reference Entropy                                                None
 Response Entropy                                                 None
 Scott_PI                                                         -0.12554
@@ -330,6 +332,7 @@ P-Value                                                          1.0
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
+RR                                                               5.0
 Reference Entropy                                                None
 Response Entropy                                                 None
 Scott_PI                                                         -0.12554
@@ -610,6 +613,7 @@ P-Value                                                          1.0
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
+RR                                                               5.0
 Reference Entropy                                                None
 Response Entropy                                                 None
 Scott_PI                                                         -0.12554
@@ -715,6 +719,7 @@ P-Value                                                          0.01667
 PPV_Macro                                                        0.68262
 PPV_Micro                                                        0.66667
 Phi-Squared                                                      0.57502
+RR                                                               9.0
 Reference Entropy                                                1.53049
 Response Entropy                                                 1.48657
 Scott_PI                                                         0.47346
@@ -811,6 +816,7 @@ P-Value                                                          0.01667
 PPV_Macro                                                        0.68262
 PPV_Micro                                                        0.66667
 Phi-Squared                                                      0.57502
+RR                                                               9.0
 Reference Entropy                                                1.53049
 Response Entropy                                                 1.48657
 Scott_PI                                                         0.47346
@@ -929,23 +935,24 @@ Example : online_help("J") or online_help(2)
 59-Phi-Squared
 60-RACC
 61-RACCU
-62-Reference Entropy
-63-Response Entropy
-64-Scott_PI
-65-Standard Error
-66-Strength_Of_Agreement(Altman)
-67-Strength_Of_Agreement(Cicchetti)
-68-Strength_Of_Agreement(Fleiss)
-69-Strength_Of_Agreement(Landis and Koch)
-70-TN
-71-TNR
-72-TON
-73-TOP
-74-TP
-75-TPR
-76-TPR_Macro
-77-TPR_Micro
-78-Zero-one Loss
+62-RR
+63-Reference Entropy
+64-Response Entropy
+65-Scott_PI
+66-Standard Error
+67-Strength_Of_Agreement(Altman)
+68-Strength_Of_Agreement(Cicchetti)
+69-Strength_Of_Agreement(Fleiss)
+70-Strength_Of_Agreement(Landis and Koch)
+71-TN
+72-TNR
+73-TON
+74-TOP
+75-TP
+76-TPR
+77-TPR_Macro
+78-TPR_Micro
+79-Zero-one Loss
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -996,6 +1003,7 @@ P-Value                                                          0.41709
 PPV_Macro                                                        0.56111
 PPV_Micro                                                        0.61905
 Phi-Squared                                                      0.49722
+RR                                                               7.0
 Reference Entropy                                                1.37878
 Response Entropy                                                 1.44117
 Scott_PI                                                         0.37313
@@ -1092,6 +1100,7 @@ P-Value                                                          0.41709
 PPV_Macro                                                        0.56111
 PPV_Micro                                                        0.61905
 Phi-Squared                                                      0.49722
+RR                                                               7.0
 Reference Entropy                                                1.37878
 Response Entropy                                                 1.44117
 Scott_PI                                                         0.37313

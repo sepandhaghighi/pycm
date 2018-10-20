@@ -460,6 +460,8 @@ performance. Machine Learning, 6:67–80, 1991.</blockquote>
 <blockquote>20- Gorodkin J (2004) Comparing two K-category assignments by a K-category
 correlation coefficient. Computational Biology and Chemistry 28: 367–374 </blockquote>
 
+<blockquote>21- Freitas C.O.A., de Carvalho J.M., Oliveira J., Aires S.B.K., Sabourin R. (2007) Confusion Matrix Disagreement for Multiple Classifiers. In: Rueda L., Mery D., Kittler J. (eds) Progress in Pattern Recognition, Image Analysis and Applications. CIARP 2007. Lecture Notes in Computer Science, vol 4756. Springer, Berlin, Heidelberg</blockquote>
+
 
 
 

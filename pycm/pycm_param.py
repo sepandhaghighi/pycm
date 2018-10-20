@@ -135,7 +135,8 @@ PARAMS_LINK = {
     "Overall_CEN": "http://www.shaghighi.ir/pycm/doc/#Overall_CEN",
     "MCEN": "http://www.shaghighi.ir/pycm/doc/#MCEN-(Modified-Confusion-Entropy)",
     "Overall_MCEN": "http://www.shaghighi.ir/pycm/doc/#Overall_MCEN",
-    "Overall_MCC": "http://www.shaghighi.ir/pycm/doc/#Overall_MCC"}
+    "Overall_MCC": "http://www.shaghighi.ir/pycm/doc/#Overall_MCC",
+    "RR": "http://www.shaghighi.ir/pycm/doc/#RR"}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

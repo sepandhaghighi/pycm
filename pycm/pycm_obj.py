@@ -223,6 +223,7 @@ class ConfusionMatrix():
         self.Overall_CEN = self.overall_stat["Overall_CEN"]
         self.Overall_MCEN = self.overall_stat["Overall_MCEN"]
         self.Overall_MCC = self.overall_stat["Overall_MCC"]
+        self.RR = self.overall_stat["RR"]
 
     def matrix(self, one_vs_all=False, class_name=None):
         '''

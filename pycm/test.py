@@ -21,6 +21,7 @@ Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.30439,0.86228)
 Bennett_S                                                        0.375
+CBA                                                              0.47778
 Chi-Squared                                                      6.6
 Chi-Squared DF                                                   4
 Conditional Entropy                                              0.95915
@@ -216,6 +217,7 @@ Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.14096,0.55904)
 Bennett_S                                                        0.13333
+CBA                                                              0.17708
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
 Conditional Entropy                                              None
@@ -303,6 +305,7 @@ Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.14096,0.55904)
 Bennett_S                                                        0.13333
+CBA                                                              0.17708
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
 Conditional Entropy                                              None
@@ -584,6 +587,7 @@ Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.14096,0.55904)
 Bennett_S                                                        0.13333
+CBA                                                              0.17708
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
 Conditional Entropy                                              None
@@ -690,6 +694,7 @@ Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.48885,0.84448)
 Bennett_S                                                        0.5
+CBA                                                              0.63818
 Chi-Squared                                                      15.52564
 Chi-Squared DF                                                   4
 Conditional Entropy                                              1.08926
@@ -787,6 +792,7 @@ Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.48885,0.84448)
 Bennett_S                                                        0.5
+CBA                                                              0.63818
 Chi-Squared                                                      15.52564
 Chi-Squared DF                                                   4
 Conditional Entropy                                              1.08926
@@ -974,6 +980,7 @@ Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.41134,0.82675)
 Bennett_S                                                        0.42857
+CBA                                                              0.47778
 Chi-Squared                                                      10.44167
 Chi-Squared DF                                                   4
 Conditional Entropy                                              0.96498
@@ -1071,6 +1078,7 @@ Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.41134,0.82675)
 Bennett_S                                                        0.42857
+CBA                                                              0.47778
 Chi-Squared                                                      10.44167
 Chi-Squared DF                                                   4
 Conditional Entropy                                              0.96498

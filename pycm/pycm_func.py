@@ -19,7 +19,7 @@ def isfile(f):
         f, 'read')
 
 
-def CBA_calc(classes,table,TOP,P):
+def CBA_calc(classes, table, TOP, P):
     '''
     This function calculate CBA
     :param classes: classes
@@ -36,10 +36,11 @@ def CBA_calc(classes,table,TOP,P):
         result = 0
         class_number = len(classes)
         for i in classes:
-            result+=((table[i][i])/(max(TOP[i],P[i])))
-        return result/class_number
+            result += ((table[i][i]) / (max(TOP[i], P[i])))
+        return result / class_number
     except Exception:
         return "None"
+
 
 def RR_calc(classes, table):
     '''
@@ -1374,7 +1375,7 @@ def overall_statistics(
     overall_MCEN = overall_CEN_calc(classes, table, MCEN_dict, True)
     overall_MCC = overall_MCC_calc(classes, table)
     RR = RR_calc(classes, table)
-    CBA = CBA_calc(classes,table,TOP,P)
+    CBA = CBA_calc(classes, table, TOP, P)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,

@@ -50,7 +50,8 @@ PARAMS_DESCRIPTION = {
     "NIR": "No Information Rate",
     "IS": "Information Score",
     "CEN": "Confusion Entropy",
-    "MCEN": "Modified Confusion Entropy"}
+    "MCEN": "Modified Confusion Entropy",
+    "AUC": "Area under the ROC curve"}
 
 PARAMS_LINK = {
     "TPR": "http://www.shaghighi.ir/pycm/doc/index.html#TPR--(sensitivity,-recall,-hit-rate,-or-true-positive-rate)",

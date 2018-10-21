@@ -20,6 +20,14 @@ def isfile(f):
 
 
 def AUC_calc(TNR,TPR):
+    '''
+    This function calculate Area Under ROC Curve for each class
+    :param TNR: Specificity or true negative rate
+    :type TNR : float
+    :param TPR: Sensitivity, recall, hit rate, or true positive rate
+    :type TPR : float
+    :return: AUC as float
+    '''
     try:
         return (TNR+TPR)/2
     except Exception:

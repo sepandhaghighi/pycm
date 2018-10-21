@@ -18,6 +18,14 @@ def isfile(f):
         f, file) if sys.version_info[0] == 2 else hasattr(
         f, 'read')
 
+def AUNP(classes,P,POP,AUC_dict):
+    try:
+        result = 0
+        for i in classes :
+            result += (P[i]/POP[i])*AUC_dict[i]
+        return result
+    except Exception:
+        return "None"
 
 def AUNU_calc(AUC_dict):
     try:

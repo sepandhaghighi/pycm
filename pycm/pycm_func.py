@@ -19,6 +19,18 @@ def isfile(f):
         f, 'read')
 
 def AUNP_calc(classes,P,POP,AUC_dict):
+    '''
+    This function calculate AUNP
+    :param classes: classes
+    :type classes : list
+    :param P: Condition positive
+    :type P : dict
+    :param POP: Population
+    :type POP : dict
+    :param AUC_dict: AUC (Area Under ROC Curve) for each class
+    :type AUC_dict : dict
+    :return: AUNP as float
+    '''
     try:
         result = 0
         for i in classes :
@@ -28,6 +40,12 @@ def AUNP_calc(classes,P,POP,AUC_dict):
         return "None"
 
 def AUNU_calc(AUC_dict):
+    '''
+    This function calculate AUNU
+    :param AUC_dict: AUC (Area Under ROC Curve) for each class
+    :type AUC_dict : dict
+    :return: AUNU as float
+    '''
     try:
         AUC_list = list(AUC_dict.values())
         return sum(AUC_list)/len(AUC_list)

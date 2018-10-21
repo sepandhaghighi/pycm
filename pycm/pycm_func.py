@@ -18,7 +18,7 @@ def isfile(f):
         f, file) if sys.version_info[0] == 2 else hasattr(
         f, 'read')
 
-def AUNP(classes,P,POP,AUC_dict):
+def AUNP_calc(classes,P,POP,AUC_dict):
     try:
         result = 0
         for i in classes :
@@ -1407,6 +1407,7 @@ def overall_statistics(
     RR = RR_calc(classes, table)
     CBA = CBA_calc(classes, table, TOP, P)
     AUNU = AUNU_calc(AUC_dict)
+    AUNP = AUNP_calc(classes,P,POP,AUC_dict)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1456,8 +1457,8 @@ def overall_statistics(
         "Overall_MCC": overall_MCC,
         "RR": RR,
         "CBA": CBA,
-        "AUNU": AUNU}
-
+        "AUNU": AUNU,
+        "AUNP": AUNP}
 
 def class_statistics(TP, TN, FP, FN, classes, table):
     '''

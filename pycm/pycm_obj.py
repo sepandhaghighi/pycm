@@ -228,6 +228,7 @@ class ConfusionMatrix():
         self.RR = self.overall_stat["RR"]
         self.CBA = self.overall_stat["CBA"]
         self.AUNU = self.overall_stat["AUNU"]
+        self.AUNP = self.overall_stat["AUNP"]
     def matrix(self, one_vs_all=False, class_name=None):
         '''
         This method print confusion matrix

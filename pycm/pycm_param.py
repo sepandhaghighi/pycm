@@ -140,7 +140,8 @@ PARAMS_LINK = {
     "RR": "http://www.shaghighi.ir/pycm/doc/#RR-(Global-Performance-Index)",
     "CBA": "http://www.shaghighi.ir/pycm/doc/#CBA-(Class-Balance-Accuracy)",
     "AUC":"",
-    "AUNU":""}
+    "AUNU":"",
+    "AUNP":""}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

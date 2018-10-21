@@ -19,6 +19,13 @@ def isfile(f):
         f, 'read')
 
 
+def AUNU_calc(AUC_dict):
+    try:
+        AUC_list = list(AUC_dict.values())
+        return sum(AUC_list)/len(AUC_list)
+    except Exception:
+        return "None"
+
 def AUC_calc(TNR,TPR):
     '''
     This function calculate Area Under ROC Curve for each class
@@ -1309,6 +1316,7 @@ def overall_statistics(
         jaccard_list,
         CEN_dict,
         MCEN_dict,
+        AUC_dict,
         classes,
         table):
     '''
@@ -1390,6 +1398,7 @@ def overall_statistics(
     overall_MCC = overall_MCC_calc(classes, table)
     RR = RR_calc(classes, table)
     CBA = CBA_calc(classes, table, TOP, P)
+    AUNU = AUNU_calc(AUC_dict)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1438,7 +1447,8 @@ def overall_statistics(
         "Overall_MCEN": overall_MCEN,
         "Overall_MCC": overall_MCC,
         "RR": RR,
-        "CBA": CBA}
+        "CBA": CBA,
+        "AUNU": AUNU}
 
 
 def class_statistics(TP, TN, FP, FN, classes, table):

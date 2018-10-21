@@ -148,7 +148,8 @@ class ConfusionMatrix():
             classes=self.classes,
             table=self.table,
             CEN_dict=statistic_result["CEN"],
-            MCEN_dict=statistic_result["MCEN"])
+            MCEN_dict=statistic_result["MCEN"],
+            AUC_dict=statistic_result["AUC"])
         self.TPR = statistic_result["TPR"]
         self.TNR = statistic_result["TNR"]
         self.PPV = statistic_result["PPV"]
@@ -182,6 +183,7 @@ class ConfusionMatrix():
         self.CEN = statistic_result["CEN"]
         self.MCEN = statistic_result["MCEN"]
         self.Overall_J = self.overall_stat["Overall_J"]
+        self.AUC = self.overall_stat["AUC"]
         self.SOA1 = self.overall_stat["Strength_Of_Agreement(Landis and Koch)"]
         self.SOA2 = self.overall_stat["Strength_Of_Agreement(Fleiss)"]
         self.SOA3 = self.overall_stat["Strength_Of_Agreement(Altman)"]
@@ -225,7 +227,7 @@ class ConfusionMatrix():
         self.Overall_MCC = self.overall_stat["Overall_MCC"]
         self.RR = self.overall_stat["RR"]
         self.CBA = self.overall_stat["CBA"]
-
+        self.AUNU = self.overall_stat["AUNU"]
     def matrix(self, one_vs_all=False, class_name=None):
         '''
         This method print confusion matrix

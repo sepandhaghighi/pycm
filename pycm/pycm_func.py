@@ -19,6 +19,12 @@ def isfile(f):
         f, 'read')
 
 
+def AUC_calc(TNR,TPR):
+    try:
+        return (TNR+TPR)/2
+    except Exception:
+        return "None"
+
 def CBA_calc(classes, table, TOP, P):
     '''
     This function calculate CBA
@@ -1476,6 +1482,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     IS = {}
     CEN = {}
     MCEN = {}
+    AUC = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1509,6 +1516,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         IS[i] = IS_calc(TP[i], FP[i], FN[i], POP[i])
         CEN[i] = CEN_calc(classes, table, i)
         MCEN[i] = CEN_calc(classes, table, i, True)
+        AUC[i] = AUC_calc(TNR[i],TPR[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1545,5 +1553,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "J": Jaccrd_Index,
         "IS": IS,
         "CEN": CEN,
-        "MCEN": MCEN}
+        "MCEN": MCEN,
+        "AUC": AUC}
     return result

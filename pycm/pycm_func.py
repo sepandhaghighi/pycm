@@ -18,6 +18,12 @@ def isfile(f):
         f, file) if sys.version_info[0] == 2 else hasattr(
         f, 'read')
 
+def dlnd_calc(TNR,TPR):
+    try:
+        result = math.sqrt(((1-TNR)**2)+((1-TPR)**2))
+        return result
+    except Exception:
+        return "None"
 
 def AUNP_calc(classes, P, POP, AUC_dict):
     '''

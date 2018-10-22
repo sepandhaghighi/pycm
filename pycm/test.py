@@ -20,6 +20,8 @@ Actual
 Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.30439,0.86228)
+AUNP                                                             0.66667
+AUNU                                                             0.69444
 Bennett_S                                                        0.375
 CBA                                                              0.47778
 Chi-Squared                                                      6.6
@@ -68,6 +70,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333
+AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
@@ -216,6 +219,8 @@ Actual
 Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.14096,0.55904)
+AUNP                                                             None
+AUNU                                                             None
 Bennett_S                                                        0.13333
 CBA                                                              0.17708
 Chi-Squared                                                      None
@@ -264,6 +269,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
@@ -304,6 +310,8 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        None           
 Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.14096,0.55904)
+AUNP                                                             None
+AUNU                                                             None
 Bennett_S                                                        0.13333
 CBA                                                              0.17708
 Chi-Squared                                                      None
@@ -352,6 +360,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
@@ -586,6 +595,8 @@ Actual
 Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.14096,0.55904)
+AUNP                                                             None
+AUNU                                                             None
 Bennett_S                                                        0.13333
 CBA                                                              0.17708
 Chi-Squared                                                      None
@@ -634,6 +645,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
@@ -693,6 +705,8 @@ Class3           1         1         4
 Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.48885,0.84448)
+AUNP                                                             0.73175
+AUNU                                                             0.73929
 Bennett_S                                                        0.5
 CBA                                                              0.63818
 Chi-Squared                                                      15.52564
@@ -741,6 +755,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
+AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
@@ -791,6 +806,8 @@ Class3           1         1         4
 Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.48885,0.84448)
+AUNP                                                             0.73175
+AUNU                                                             0.73929
 Bennett_S                                                        0.5
 CBA                                                              0.63818
 Chi-Squared                                                      15.52564
@@ -839,6 +856,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
+AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
@@ -882,84 +900,87 @@ Example : online_help("J") or online_help(2)
 <BLANKLINE>
 1-95% CI
 2-ACC
-3-BM
-4-Bennett_S
-5-CBA
-6-CEN
-7-Chi-Squared
-8-Chi-Squared DF
-9-Conditional Entropy
-10-Cramer_V
-11-Cross Entropy
-12-DOR
-13-ERR
-14-F0.5
-15-F1
-16-F2
-17-FDR
-18-FN
-19-FNR
-20-FOR
-21-FP
-22-FPR
-23-G
-24-Gwet_AC1
-25-Hamming Loss
-26-IS
-27-J
-28-Joint Entropy
-29-KL Divergence
-30-Kappa
-31-Kappa 95% CI
-32-Kappa No Prevalence
-33-Kappa Standard Error
-34-Kappa Unbiased
-35-LR+
-36-LR-
-37-Lambda A
-38-Lambda B
-39-MCC
-40-MCEN
-41-MK
-42-Mutual Information
-43-N
-44-NIR
-45-NPV
-46-Overall_ACC
-47-Overall_CEN
-48-Overall_J
-49-Overall_MCC
-50-Overall_MCEN
-51-Overall_RACC
-52-Overall_RACCU
-53-P
-54-P-Value
-55-POP
-56-PPV
-57-PPV_Macro
-58-PPV_Micro
-59-PRE
-60-Phi-Squared
-61-RACC
-62-RACCU
-63-RR
-64-Reference Entropy
-65-Response Entropy
-66-Scott_PI
-67-Standard Error
-68-Strength_Of_Agreement(Altman)
-69-Strength_Of_Agreement(Cicchetti)
-70-Strength_Of_Agreement(Fleiss)
-71-Strength_Of_Agreement(Landis and Koch)
-72-TN
-73-TNR
-74-TON
-75-TOP
-76-TP
-77-TPR
-78-TPR_Macro
-79-TPR_Micro
-80-Zero-one Loss
+3-AUC
+4-AUNP
+5-AUNU
+6-BM
+7-Bennett_S
+8-CBA
+9-CEN
+10-Chi-Squared
+11-Chi-Squared DF
+12-Conditional Entropy
+13-Cramer_V
+14-Cross Entropy
+15-DOR
+16-ERR
+17-F0.5
+18-F1
+19-F2
+20-FDR
+21-FN
+22-FNR
+23-FOR
+24-FP
+25-FPR
+26-G
+27-Gwet_AC1
+28-Hamming Loss
+29-IS
+30-J
+31-Joint Entropy
+32-KL Divergence
+33-Kappa
+34-Kappa 95% CI
+35-Kappa No Prevalence
+36-Kappa Standard Error
+37-Kappa Unbiased
+38-LR+
+39-LR-
+40-Lambda A
+41-Lambda B
+42-MCC
+43-MCEN
+44-MK
+45-Mutual Information
+46-N
+47-NIR
+48-NPV
+49-Overall_ACC
+50-Overall_CEN
+51-Overall_J
+52-Overall_MCC
+53-Overall_MCEN
+54-Overall_RACC
+55-Overall_RACCU
+56-P
+57-P-Value
+58-POP
+59-PPV
+60-PPV_Macro
+61-PPV_Micro
+62-PRE
+63-Phi-Squared
+64-RACC
+65-RACCU
+66-RR
+67-Reference Entropy
+68-Response Entropy
+69-Scott_PI
+70-Standard Error
+71-Strength_Of_Agreement(Altman)
+72-Strength_Of_Agreement(Cicchetti)
+73-Strength_Of_Agreement(Fleiss)
+74-Strength_Of_Agreement(Landis and Koch)
+75-TN
+76-TNR
+77-TON
+78-TOP
+79-TP
+80-TPR
+81-TPR_Macro
+82-TPR_Micro
+83-Zero-one Loss
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -980,6 +1001,8 @@ Actual
 Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.41134,0.82675)
+AUNP                                                             0.7
+AUNU                                                             0.70556
 Bennett_S                                                        0.42857
 CBA                                                              0.47778
 Chi-Squared                                                      10.44167
@@ -1028,6 +1051,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
+AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
 CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5
@@ -1078,6 +1102,8 @@ Actual
 Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.41134,0.82675)
+AUNP                                                             0.7
+AUNU                                                             0.70556
 Bennett_S                                                        0.42857
 CBA                                                              0.47778
 Chi-Squared                                                      10.44167
@@ -1126,6 +1152,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
+AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
 CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5

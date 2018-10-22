@@ -24,7 +24,11 @@ def dlnd_calc(TNR,TPR):
         return result
     except Exception:
         return "None"
-
+def slnd_calc(dlnd):
+    try:
+        return 1-(dlnd/(math.sqrt(2)))
+    except Exception:
+        return "None"
 def AUNP_calc(classes, P, POP, AUC_dict):
     '''
     This function calculate AUNP

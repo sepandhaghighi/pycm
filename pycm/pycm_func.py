@@ -19,12 +19,26 @@ def isfile(f):
         f, 'read')
 
 def dlnd_calc(TNR,TPR):
+    '''
+    This function calculate dlnd
+    :param TNR: Specificity or true negative rate
+    :type TNR : float
+    :param TPR: Sensitivity, recall, hit rate, or true positive rate
+    :type TPR : float
+    :return: dlnd as float
+    '''
     try:
         result = math.sqrt(((1-TNR)**2)+((1-TPR)**2))
         return result
     except Exception:
         return "None"
 def slnd_calc(dlnd):
+    '''
+    This function calculate slnd
+    :param dlnd: dlnd
+    :type dlnd : float
+    :return: slnd as float
+    '''
     try:
         return 1-(dlnd/(math.sqrt(2)))
     except Exception:

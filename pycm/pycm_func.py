@@ -18,7 +18,8 @@ def isfile(f):
         f, file) if sys.version_info[0] == 2 else hasattr(
         f, 'read')
 
-def AUNP_calc(classes,P,POP,AUC_dict):
+
+def AUNP_calc(classes, P, POP, AUC_dict):
     '''
     This function calculate AUNP
     :param classes: classes
@@ -33,11 +34,12 @@ def AUNP_calc(classes,P,POP,AUC_dict):
     '''
     try:
         result = 0
-        for i in classes :
-            result += (P[i]/POP[i])*AUC_dict[i]
+        for i in classes:
+            result += (P[i] / POP[i]) * AUC_dict[i]
         return result
     except Exception:
         return "None"
+
 
 def AUNU_calc(AUC_dict):
     '''
@@ -48,11 +50,12 @@ def AUNU_calc(AUC_dict):
     '''
     try:
         AUC_list = list(AUC_dict.values())
-        return sum(AUC_list)/len(AUC_list)
+        return sum(AUC_list) / len(AUC_list)
     except Exception:
         return "None"
 
-def AUC_calc(TNR,TPR):
+
+def AUC_calc(TNR, TPR):
     '''
     This function calculate Area Under ROC Curve for each class
     :param TNR: Specificity or true negative rate
@@ -62,9 +65,10 @@ def AUC_calc(TNR,TPR):
     :return: AUC as float
     '''
     try:
-        return (TNR+TPR)/2
+        return (TNR + TPR) / 2
     except Exception:
         return "None"
+
 
 def CBA_calc(classes, table, TOP, P):
     '''
@@ -1425,7 +1429,7 @@ def overall_statistics(
     RR = RR_calc(classes, table)
     CBA = CBA_calc(classes, table, TOP, P)
     AUNU = AUNU_calc(AUC_dict)
-    AUNP = AUNP_calc(classes,P,POP,AUC_dict)
+    AUNP = AUNP_calc(classes, P, POP, AUC_dict)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1477,6 +1481,7 @@ def overall_statistics(
         "CBA": CBA,
         "AUNU": AUNU,
         "AUNP": AUNP}
+
 
 def class_statistics(TP, TN, FP, FN, classes, table):
     '''
@@ -1561,7 +1566,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         IS[i] = IS_calc(TP[i], FP[i], FN[i], POP[i])
         CEN[i] = CEN_calc(classes, table, i)
         MCEN[i] = CEN_calc(classes, table, i, True)
-        AUC[i] = AUC_calc(TNR[i],TPR[i])
+        AUC[i] = AUC_calc(TNR[i], TPR[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,

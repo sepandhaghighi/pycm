@@ -1557,6 +1557,8 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     CEN = {}
     MCEN = {}
     AUC = {}
+    dlnd = {}
+    slnd = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1591,6 +1593,8 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         CEN[i] = CEN_calc(classes, table, i)
         MCEN[i] = CEN_calc(classes, table, i, True)
         AUC[i] = AUC_calc(TNR[i], TPR[i])
+        dlnd[i] = dlnd_calc(TNR[i],TPR[i])
+        slnd[i] = slnd_calc(dlnd[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1628,5 +1632,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "IS": IS,
         "CEN": CEN,
         "MCEN": MCEN,
-        "AUC": AUC}
+        "AUC": AUC,
+        "slnd":slnd,
+        "dlnd":dlnd}
     return result

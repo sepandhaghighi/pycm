@@ -183,6 +183,8 @@ class ConfusionMatrix():
         self.CEN = statistic_result["CEN"]
         self.MCEN = statistic_result["MCEN"]
         self.AUC = statistic_result["AUC"]
+        self.dlnd = statistic_result["dlnd"]
+        self.slnd = statistic_result["slnd"]
         self.Overall_J = self.overall_stat["Overall_J"]
         self.SOA1 = self.overall_stat["Strength_Of_Agreement(Landis and Koch)"]
         self.SOA2 = self.overall_stat["Strength_Of_Agreement(Fleiss)"]

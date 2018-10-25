@@ -51,7 +51,9 @@ PARAMS_DESCRIPTION = {
     "IS": "Information Score",
     "CEN": "Confusion Entropy",
     "MCEN": "Modified Confusion Entropy",
-    "AUC": "Area under the ROC curve"}
+    "AUC": "Area under the ROC curve",
+    "dlnd": "Euclidean distance from the top left corner of the ROC space",
+    "slnd": "Similarity index"}
 
 PARAMS_LINK = {
     "TPR": "http://www.shaghighi.ir/pycm/doc/index.html#TPR--(sensitivity,-recall,-hit-rate,-or-true-positive-rate)",

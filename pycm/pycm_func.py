@@ -18,7 +18,8 @@ def isfile(f):
         f, file) if sys.version_info[0] == 2 else hasattr(
         f, 'read')
 
-def dInd_calc(TNR,TPR):
+
+def dInd_calc(TNR, TPR):
     '''
     This function calculate dInd
     :param TNR: Specificity or true negative rate
@@ -28,10 +29,12 @@ def dInd_calc(TNR,TPR):
     :return: dInd as float
     '''
     try:
-        result = math.sqrt(((1-TNR)**2)+((1-TPR)**2))
+        result = math.sqrt(((1 - TNR)**2) + ((1 - TPR)**2))
         return result
     except Exception:
         return "None"
+
+
 def sInd_calc(dInd):
     '''
     This function calculate sInd
@@ -40,9 +43,11 @@ def sInd_calc(dInd):
     :return: sInd as float
     '''
     try:
-        return 1-(dInd/(math.sqrt(2)))
+        return 1 - (dInd / (math.sqrt(2)))
     except Exception:
         return "None"
+
+
 def AUNP_calc(classes, P, POP, AUC_dict):
     '''
     This function calculate AUNP
@@ -1593,7 +1598,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         CEN[i] = CEN_calc(classes, table, i)
         MCEN[i] = CEN_calc(classes, table, i, True)
         AUC[i] = AUC_calc(TNR[i], TPR[i])
-        dInd[i] = dInd_calc(TNR[i],TPR[i])
+        dInd[i] = dInd_calc(TNR[i], TPR[i])
         sInd[i] = sInd_calc(dInd[i])
     result = {
         "TPR": TPR,
@@ -1633,6 +1638,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "CEN": CEN,
         "MCEN": MCEN,
         "AUC": AUC,
-        "sInd":sInd,
-        "dInd":dInd}
+        "sInd": sInd,
+        "dInd": dInd}
     return result

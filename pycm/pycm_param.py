@@ -143,7 +143,9 @@ PARAMS_LINK = {
     "CBA": "http://www.shaghighi.ir/pycm/doc/#CBA-(Class-Balance-Accuracy)",
     "AUC": "http://www.shaghighi.ir/pycm/doc/#AUC-(Area-Under-The-ROC-Curve)",
     "AUNU": "http://www.shaghighi.ir/pycm/doc/#AUNU",
-    "AUNP": "http://www.shaghighi.ir/pycm/doc/#AUNP"}
+    "AUNP": "http://www.shaghighi.ir/pycm/doc/#AUNP",
+    "sInd":"",
+    "dlnd":""}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

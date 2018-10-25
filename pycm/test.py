@@ -106,6 +106,8 @@ TON(Test outcome negative)                                       7              
 TOP(Test outcome positive)                                       5                       2                       5
 TP(True positive/hit)                                            3                       1                       3
 TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5
+dInd(Distance index)                                             0.22222                 0.67586                 0.60093
+sInd(Similarity index)                                           0.84287                 0.52209                 0.57508
 <BLANKLINE>
 >>> cm_2 = ConfusionMatrix(y_actu, 2)
 Traceback (most recent call last):
@@ -305,6 +307,8 @@ TON(Test outcome negative)                                       9              
 TOP(Test outcome positive)                                       11                      7                       2                       0
 TP(True positive/hit)                                            0                       6                       1                       0
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0
+dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0
+sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289
 <BLANKLINE>
 >>> cm.stat()
 Overall Statistics :
@@ -396,6 +400,8 @@ TON(Test outcome negative)                                       9              
 TOP(Test outcome positive)                                       11                      7                       2                       0
 TP(True positive/hit)                                            0                       6                       1                       0
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0
+dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0
+sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289
 <BLANKLINE>
 >>> cm.normalized_matrix()
 Predict          100            200            500            600
@@ -681,6 +687,8 @@ TON(Test outcome negative)                                       9              
 TOP(Test outcome positive)                                       11                      7                       2                       0
 TP(True positive/hit)                                            0                       6                       1                       0
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0
+dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0
+sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289
 <BLANKLINE>
 >>> save_obj=cm_6.save_obj("test2",address=False)
 >>> save_obj=={'Status': True, 'Message': None}
@@ -791,6 +799,8 @@ TON(Test outcome negative)                                       14             
 TOP(Test outcome positive)                                       13                      9                       5
 TP(True positive/hit)                                            9                       5                       4
 TPR(Sensitivity, recall, hit rate, or true positive rate)        0.75                    0.55556                 0.66667
+dInd(Distance index)                                             0.36553                 0.4969                  0.33672
+sInd(Similarity index)                                           0.74153                 0.64864                 0.7619
 <BLANKLINE>
 >>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":9,"Class2":3,"Class3":1},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":0,"Class2":1,"Class3":4}},transpose=True)
 >>> print(cm)
@@ -892,6 +902,8 @@ TON(Test outcome negative)                                       14             
 TOP(Test outcome positive)                                       13                      9                       5
 TP(True positive/hit)                                            9                       5                       4
 TPR(Sensitivity, recall, hit rate, or true positive rate)        0.75                    0.55556                 0.66667
+dInd(Distance index)                                             0.36553                 0.4969                  0.33672
+sInd(Similarity index)                                           0.74153                 0.64864                 0.7619
 <BLANKLINE>
 >>> online_help(param=None)
 Please choose one parameter :
@@ -981,6 +993,8 @@ Example : online_help("J") or online_help(2)
 81-TPR_Macro
 82-TPR_Micro
 83-Zero-one Loss
+84-dlnd
+85-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -1087,6 +1101,8 @@ TON(Test outcome negative)                                       11             
 TOP(Test outcome positive)                                       10                      3                       8
 TP(True positive/hit)                                            6                       1                       6
 TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5
+dInd(Distance index)                                             0.26667                 0.67586                 0.54716
+sInd(Similarity index)                                           0.81144                 0.52209                 0.6131
 >>> save_obj=cm.save_obj("test3",address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
@@ -1188,6 +1204,8 @@ TON(Test outcome negative)                                       11             
 TOP(Test outcome positive)                                       10                      3                       8
 TP(True positive/hit)                                            6                       1                       6
 TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5
+dInd(Distance index)                                             0.26667                 0.67586                 0.54716
+sInd(Similarity index)                                           0.81144                 0.52209                 0.6131
 >>> NIR_calc({'Class2': 804, 'Class1': 196},{'Class2': 1000, 'Class1': 1000})
 0.804
 >>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":183,"Class2":13},"Class2":{"Class1":141,"Class2":663}})

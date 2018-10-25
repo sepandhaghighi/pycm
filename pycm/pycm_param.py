@@ -52,7 +52,7 @@ PARAMS_DESCRIPTION = {
     "CEN": "Confusion Entropy",
     "MCEN": "Modified Confusion Entropy",
     "AUC": "Area under the ROC curve",
-    "dInd": "Euclidean distance from the top left corner of the ROC space",
+    "dInd": "Distance index",
     "sInd": "Similarity index"}
 
 PARAMS_LINK = {
@@ -145,7 +145,7 @@ PARAMS_LINK = {
     "AUNU": "http://www.shaghighi.ir/pycm/doc/#AUNU",
     "AUNP": "http://www.shaghighi.ir/pycm/doc/#AUNP",
     "sInd":"",
-    "dlnd":""}
+    "dInd":""}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

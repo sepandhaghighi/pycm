@@ -993,7 +993,7 @@ Example : online_help("J") or online_help(2)
 81-TPR_Macro
 82-TPR_Micro
 83-Zero-one Loss
-84-dlnd
+84-dInd
 85-sInd
 >>> online_help("J")
 ...

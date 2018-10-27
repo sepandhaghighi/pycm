@@ -1,7 +1,7 @@
 art==2.3
 numpy==1.15.3
 codecov==2.0.15
-pytest==3.9.2
+pytest==3.9.3
 pytest-cov==2.6.0
 
 

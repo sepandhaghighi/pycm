@@ -69,21 +69,6 @@ def AUNP_calc(classes, P, POP, AUC_dict):
     except Exception:
         return "None"
 
-
-def AUNU_calc(AUC_dict):
-    '''
-    This function calculate AUNU
-    :param AUC_dict: AUC (Area Under ROC Curve) for each class
-    :type AUC_dict : dict
-    :return: AUNU as float
-    '''
-    try:
-        AUC_list = list(AUC_dict.values())
-        return sum(AUC_list) / len(AUC_list)
-    except Exception:
-        return "None"
-
-
 def AUC_calc(TNR, TPR):
     '''
     This function calculate Area Under ROC Curve for each class
@@ -1457,7 +1442,7 @@ def overall_statistics(
     overall_MCC = overall_MCC_calc(classes, table)
     RR = RR_calc(classes, table)
     CBA = CBA_calc(classes, table, TOP, P)
-    AUNU = AUNU_calc(AUC_dict)
+    AUNU = macro_calc(AUC_dict)
     AUNP = AUNP_calc(classes, P, POP, AUC_dict)
     return {
         "Overall_ACC": overall_accuracy,

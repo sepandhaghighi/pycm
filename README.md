@@ -466,10 +466,21 @@ correlation coefficient. Computational Biology and Chemistry 28: 367–374 </blo
 
 <blockquote>23- Ballabio, D., Grisoni, F. and Todeschini, R. (2018). Multivariate comparison of classification performance measures. Chemometrics and Intelligent Laboratory Systems, 174, pp.33-44.</blockquote>
 
+<blockquote>24- Cohen, Jacob. 1960. A coefficient of agreement for nominal scales. Educational And Psychological Measurement 20:37-46</blockquote>
 
+<blockquote>25- Siegel, Sidney and N. John Castellan, Jr. 1988. Nonparametric Statistics for the Behavioral Sciences. McGraw Hill.</blockquote>
 
+<blockquote>26- Cramér, Harald. 1946. Mathematical Methods of Statistics. Princeton: Princeton University Press, page 282 (Chapter 21. The two-dimensional case)</blockquote>
 
+<blockquote>27- Matthews, B. W. (1975). "Comparison of the predicted and observed secondary structure of T4 phage lysozyme". Biochimica et Biophysica Acta (BBA) - Protein Structure. 405 (2): 442–451.</blockquote>
 
+<blockquote>28- Swets JA. (1973). "The relative operating characteristic in Psychology". Science. 182 (14116): 990–1000.</blockquote> 
+
+<blockquote>29- Jaccard, Paul (1901), "Étude comparative de la distribution florale dans une portion des Alpes et des Jura", Bulletin de la Société Vaudoise des Sciences Naturelles, 37: 547–579.</blockquote> 
+
+<blockquote>30- Thomas M. Cover and Joy A. Thomas. 2006. Elements of Information Theory (Wiley Series in Telecommunications and Signal Processing). Wiley-Interscience, New York, NY, USA.</blockquote> 
+
+<blockquote>31- Keeping, E.S. (1962) Introduction to Statistical Inference. D. Van Nostrand, Princeton, NJ.</blockquote>
 
 
 ## Cite

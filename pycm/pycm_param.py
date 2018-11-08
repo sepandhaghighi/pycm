@@ -146,8 +146,8 @@ PARAMS_LINK = {
     "AUC": "AUC-(Area-Under-The-ROC-Curve)",
     "AUNU": "AUNU",
     "AUNP": "AUNP",
-    "sInd": "dInd-(Distance-Index)",
-    "dInd": "sInd-(Similarity-Index)"}
+    "sInd": "sInd-(Similarity-Index)",
+    "dInd": "dInd-(Distance-Index)"}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

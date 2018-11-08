@@ -34,6 +34,9 @@
   - [x] CEN
   - [x] MCEN
   - [x] IS
+  - [x] AUC
+  - [x] dlnd
+  - [x] slnd
 - [x] Outputs
   - [x] CSV File
   - [x] HTML File
@@ -72,3 +75,7 @@
   - [x] NIR
   - [x] Overall CEN
   - [x] Overall MCEN
+  - [x] AUNU
+  - [x] AUNP
+  - [x] Overall MCC
+  - [x] CBA

@@ -301,7 +301,7 @@ class ConfusionMatrix():
                 one_vs_all += str(class_name) + "-Vs-All : \n\n"
                 [classes, table] = one_vs_all_func(self.classes, self.table,
                                                    self.TP, self.TN, self.FP,
-                                                   self.FN, str(class_name))
+                                                   self.FN, class_name)
                 one_vs_all += table_print(classes, table) + "\n\n"
             stat = stat_print(
                 self.classes,

@@ -69,6 +69,7 @@ def AUNP_calc(classes, P, POP, AUC_dict):
     except Exception:
         return "None"
 
+
 def AUC_calc(TNR, TPR):
     '''
     This function calculate Area Under ROC Curve for each class
@@ -148,11 +149,11 @@ def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
     try:
         report_classes = [str(class_name), "~"]
         report_table = {str(class_name): {str(class_name): TP[class_name],
-                                     "~": FN[class_name]},
+                                          "~": FN[class_name]},
                         "~": {str(class_name): FP[class_name],
                               "~": TN[class_name]}}
         return [report_classes, report_table]
-    except Exception :
+    except Exception:
         return [classes, table]
 
 

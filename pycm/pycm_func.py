@@ -146,13 +146,13 @@ def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
     :return: [classes , table ] as list
     '''
     try:
-        report_classes = sorted([class_name, "~"])
-        report_table = {class_name: {class_name: TP[class_name],
+        report_classes = [str(class_name), "~"]
+        report_table = {str(class_name): {str(class_name): TP[class_name],
                                      "~": FN[class_name]},
-                        "~": {class_name: FP[class_name],
+                        "~": {str(class_name): FP[class_name],
                               "~": TN[class_name]}}
         return [report_classes, report_table]
-    except Exception:
+    except Exception :
         return [classes, table]
 
 

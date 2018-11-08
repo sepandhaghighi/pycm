@@ -144,8 +144,8 @@ PARAMS_LINK = {
     "AUC": "http://www.shaghighi.ir/pycm/doc/#AUC-(Area-Under-The-ROC-Curve)",
     "AUNU": "http://www.shaghighi.ir/pycm/doc/#AUNU",
     "AUNP": "http://www.shaghighi.ir/pycm/doc/#AUNP",
-    "sInd": "",
-    "dInd": ""}
+    "sInd": "http://www.shaghighi.ir/pycm/doc/#dInd-(Distance-Index)",
+    "dInd": "http://www.shaghighi.ir/pycm/doc/#sInd-(Similarity-Index)"}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

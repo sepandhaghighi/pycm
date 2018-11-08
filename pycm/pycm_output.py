@@ -101,7 +101,7 @@ def html_overall_stat(overall_stat, digit=5):
     for i in overall_stat_keys:
         result += '<tr align="center">\n'
         result += '<td style="border:1px solid black;padding:4px;text-align:left;"><a href="' + \
-            DOCUMENT_ADR+PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
+            DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         if i.find("Strength_Of_Agreement") != -1:
             background_color = BENCHMARK_COLOR[overall_stat[i]]
             result += '<td style="border:1px solid black;padding:4px;background-color:{};">'.format(
@@ -138,7 +138,7 @@ def html_class_stat(classes, class_stat, digit=5):
     for i in class_stat_keys:
         result += '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n'
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;"><a href="' + \
-                  DOCUMENT_ADR +PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
+                  DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         for j in classes:
             result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">' + \
                 rounder(class_stat[i][j], digit) + '</td>\n'
@@ -363,9 +363,10 @@ def online_help(param=None):
     try:
         PARAMS_LINK_KEYS = sorted(PARAMS_LINK.keys())
         if param in PARAMS_LINK_KEYS:
-            webbrowser.open_new_tab(DOCUMENT_ADR+PARAMS_LINK[param])
+            webbrowser.open_new_tab(DOCUMENT_ADR + PARAMS_LINK[param])
         elif param in range(1, len(PARAMS_LINK_KEYS) + 1):
-            webbrowser.open_new_tab(DOCUMENT_ADR+PARAMS_LINK[PARAMS_LINK_KEYS[param - 1]])
+            webbrowser.open_new_tab(
+                DOCUMENT_ADR + PARAMS_LINK[PARAMS_LINK_KEYS[param - 1]])
         else:
             print("Please choose one parameter : \n")
             print('Example : online_help("J") or online_help(2)\n')

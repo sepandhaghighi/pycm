@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-## [1.4] - 2018-11-10
+## [1.4] - 2018-11-11
 ### Added
 - Area Under Curve
 - AUNU
@@ -16,11 +16,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Distance index (dInd)
 - Similarity index (sInd)
 - `one_vs_all`
+- `dev-requirements.txt`
 
 ### Changed
 - `README.md` modified
 - Document modified
 - `save_stat` modified
+- `requirements.txt` modified
 
 ## [1.3] - 2018-10-10
 ### Added

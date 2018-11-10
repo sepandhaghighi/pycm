@@ -419,6 +419,18 @@ Actual
 500              1        1        1        0
 600              1        0        0        0
 <BLANKLINE>
+>>> cm.matrix(one_vs_all=True,class_name=200)
+Predict          200    ~
+Actual
+200              6      10
+~                1      3
+<BLANKLINE>
+>>> cm.normalized_matrix(one_vs_all=True,class_name=200)
+Predict          200               ~
+Actual
+200              0.375             0.625
+~                0.25              0.75
+<BLANKLINE>
 >>> kappa_analysis_koch(-0.1)
 'Poor'
 >>> kappa_analysis_koch(0)

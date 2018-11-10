@@ -1218,11 +1218,20 @@ TP(True positive/hit)                                            6              
 TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5
 dInd(Distance index)                                             0.26667                 0.67586                 0.54716
 sInd(Similarity index)                                           0.81144                 0.52209                 0.6131
->>> NIR_calc({'Class2': 804, 'Class1': 196},{'Class2': 1000, 'Class1': 1000})
+>>> NIR_calc({'Class2': 804, 'Class1': 196},{'Class2': 1000, 'Class1': 1000}) Verified Case
 0.804
->>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":183,"Class2":13},"Class2":{"Class1":141,"Class2":663}})
+>>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":183,"Class2":13},"Class2":{"Class1":141,"Class2":663}})  # Verified Case
 >>> cm.PValue
 0.000342386296143693
+>>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":4,"Class2":2},"Class2":{"Class1":2,"Class2":4}}) Verified Case
+>>> cm.Overall_CEN
+0.861654166907052
+>>> cm.Overall_MCEN
+0.6666666666666666
+>>> cm.IS["Class1"]
+0.4150374992788437
+>>> cm.IS["Class2"]
+0.4150374992788437
 >>> os.remove("test.csv")
 >>> os.remove("test.html")
 >>> os.remove("test.obj")

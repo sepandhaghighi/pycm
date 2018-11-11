@@ -11860,7 +11860,10 @@ Actual
 Overall Statistics : 
 
 95% CI                                                           (0.14096,0.55904)
+AUNP                                                             None
+AUNU                                                             None
 Bennett_S                                                        0.13333
+CBA                                                              0.17708
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
 Conditional Entropy                                              None
@@ -11882,6 +11885,7 @@ NIR                                                              0.8
 Overall_ACC                                                      0.35
 Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
+Overall_MCC                                                      0.12642
 Overall_MCEN                                                     0.37463
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
@@ -11889,6 +11893,7 @@ P-Value                                                          1.0
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
+RR                                                               5.0
 Reference Entropy                                                None
 Response Entropy                                                 None
 Scott_PI                                                         -0.12554
@@ -11905,6 +11910,7 @@ Class Statistics :
 
 Classes                                                          100                     200                     500                     600                     
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95                    
+AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5                     
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0                     
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0                     
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None                    
@@ -11940,6 +11946,8 @@ TON(Test outcome negative)                                       9              
 TOP(Test outcome positive)                                       11                      7                       2                       0                       
 TP(True positive/hit)                                            0                       6                       1                       0                       
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0                     
+dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0                     
+sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289                 
 
 </pre>
 </div>
@@ -12068,7 +12076,10 @@ Actual
 Overall Statistics : 
 
 95% CI                                                           (0.14096,0.55904)
+AUNP                                                             None
+AUNU                                                             None
 Bennett_S                                                        0.13333
+CBA                                                              0.17708
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
 Conditional Entropy                                              None
@@ -12090,6 +12101,7 @@ NIR                                                              0.8
 Overall_ACC                                                      0.35
 Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
+Overall_MCC                                                      0.12642
 Overall_MCEN                                                     0.37463
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
@@ -12097,6 +12109,7 @@ P-Value                                                          1.0
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
+RR                                                               5.0
 Reference Entropy                                                None
 Response Entropy                                                 None
 Scott_PI                                                         -0.12554
@@ -12113,6 +12126,7 @@ Class Statistics :
 
 Classes                                                          100                     200                     500                     600                     
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95                    
+AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5                     
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0                     
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0                     
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None                    
@@ -12148,6 +12162,8 @@ TON(Test outcome negative)                                       9              
 TOP(Test outcome positive)                                       11                      7                       2                       0                       
 TP(True positive/hit)                                            0                       6                       1                       0                       
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0                     
+dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0                     
+sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289                 
 
 </pre>
 </div>
@@ -12187,7 +12203,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        None           
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#34;Actual-Vector&#34;: [600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200], &#34;Transpose&#34;: false, &#34;Predict-Vector&#34;: [100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200], &#34;Sample-Weight&#34;: null, &#34;Digit&#34;: 5, &#34;Matrix&#34;: {&#34;200&#34;: {&#34;200&#34;: 6, &#34;100&#34;: 9, &#34;500&#34;: 1, &#34;600&#34;: 0}, &#34;500&#34;: {&#34;200&#34;: 1, &#34;100&#34;: 1, &#34;500&#34;: 1, &#34;600&#34;: 0}, &#34;100&#34;: {&#34;200&#34;: 0, &#34;100&#34;: 0, &#34;500&#34;: 0, &#34;600&#34;: 0}, &#34;600&#34;: {&#34;200&#34;: 0, &#34;100&#34;: 1, &#34;500&#34;: 0, &#34;600&#34;: 0}}}
+<pre>{&#34;Actual-Vector&#34;: [600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200], &#34;Predict-Vector&#34;: [100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200], &#34;Digit&#34;: 5, &#34;Matrix&#34;: {&#34;200&#34;: {&#34;200&#34;: 6, &#34;100&#34;: 9, &#34;500&#34;: 1, &#34;600&#34;: 0}, &#34;500&#34;: {&#34;200&#34;: 1, &#34;100&#34;: 1, &#34;500&#34;: 1, &#34;600&#34;: 0}, &#34;100&#34;: {&#34;200&#34;: 0, &#34;100&#34;: 0, &#34;500&#34;: 0, &#34;600&#34;: 0}, &#34;600&#34;: {&#34;200&#34;: 0, &#34;100&#34;: 1, &#34;500&#34;: 0, &#34;600&#34;: 0}}, &#34;Transpose&#34;: false, &#34;Sample-Weight&#34;: null}
 </pre>
 </div>
 </div>

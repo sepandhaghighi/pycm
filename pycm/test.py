@@ -20,7 +20,10 @@ Actual
 Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.30439,0.86228)
+AUNP                                                             0.66667
+AUNU                                                             0.69444
 Bennett_S                                                        0.375
+CBA                                                              0.47778
 Chi-Squared                                                      6.6
 Chi-Squared DF                                                   4
 Conditional Entropy                                              0.95915
@@ -42,6 +45,7 @@ NIR                                                              0.5
 Overall_ACC                                                      0.58333
 Overall_CEN                                                      0.46381
 Overall_J                                                        (1.225,0.40833)
+Overall_MCC                                                      0.36667
 Overall_MCEN                                                     0.51894
 Overall_RACC                                                     0.35417
 Overall_RACCU                                                    0.36458
@@ -49,6 +53,7 @@ P-Value                                                          0.38721
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
 Phi-Squared                                                      0.55
+RR                                                               4.0
 Reference Entropy                                                1.5
 Response Entropy                                                 1.48336
 Scott_PI                                                         0.34426
@@ -65,6 +70,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333
+AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
@@ -100,6 +106,8 @@ TON(Test outcome negative)                                       7              
 TOP(Test outcome positive)                                       5                       2                       5
 TP(True positive/hit)                                            3                       1                       3
 TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5
+dInd(Distance index)                                             0.22222                 0.67586                 0.60093
+sInd(Similarity index)                                           0.84287                 0.52209                 0.57508
 <BLANKLINE>
 >>> cm_2 = ConfusionMatrix(y_actu, 2)
 Traceback (most recent call last):
@@ -213,7 +221,10 @@ Actual
 Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.14096,0.55904)
+AUNP                                                             None
+AUNU                                                             None
 Bennett_S                                                        0.13333
+CBA                                                              0.17708
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
 Conditional Entropy                                              None
@@ -235,6 +246,7 @@ NIR                                                              0.8
 Overall_ACC                                                      0.35
 Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
+Overall_MCC                                                      0.12642
 Overall_MCEN                                                     0.37463
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
@@ -242,6 +254,7 @@ P-Value                                                          1.0
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
+RR                                                               5.0
 Reference Entropy                                                None
 Response Entropy                                                 None
 Scott_PI                                                         -0.12554
@@ -258,6 +271,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
@@ -293,12 +307,17 @@ TON(Test outcome negative)                                       9              
 TOP(Test outcome positive)                                       11                      7                       2                       0
 TP(True positive/hit)                                            0                       6                       1                       0
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0
+dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0
+sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289
 <BLANKLINE>
 >>> cm.stat()
 Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.14096,0.55904)
+AUNP                                                             None
+AUNU                                                             None
 Bennett_S                                                        0.13333
+CBA                                                              0.17708
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
 Conditional Entropy                                              None
@@ -320,6 +339,7 @@ NIR                                                              0.8
 Overall_ACC                                                      0.35
 Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
+Overall_MCC                                                      0.12642
 Overall_MCEN                                                     0.37463
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
@@ -327,6 +347,7 @@ P-Value                                                          1.0
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
+RR                                                               5.0
 Reference Entropy                                                None
 Response Entropy                                                 None
 Scott_PI                                                         -0.12554
@@ -343,6 +364,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
@@ -378,6 +400,8 @@ TON(Test outcome negative)                                       9              
 TOP(Test outcome positive)                                       11                      7                       2                       0
 TP(True positive/hit)                                            0                       6                       1                       0
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0
+dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0
+sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289
 <BLANKLINE>
 >>> cm.normalized_matrix()
 Predict          100            200            500            600
@@ -394,6 +418,18 @@ Actual
 200              9        6        1        0
 500              1        1        1        0
 600              1        0        0        0
+<BLANKLINE>
+>>> cm.matrix(one_vs_all=True,class_name=200)
+Predict          200    ~
+Actual
+200              6      10
+~                1      3
+<BLANKLINE>
+>>> cm.normalized_matrix(one_vs_all=True,class_name=200)
+Predict          200               ~
+Actual
+200              0.375             0.625
+~                0.25              0.75
 <BLANKLINE>
 >>> kappa_analysis_koch(-0.1)
 'Poor'
@@ -577,7 +613,10 @@ Actual
 Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.14096,0.55904)
+AUNP                                                             None
+AUNU                                                             None
 Bennett_S                                                        0.13333
+CBA                                                              0.17708
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
 Conditional Entropy                                              None
@@ -599,6 +638,7 @@ NIR                                                              0.8
 Overall_ACC                                                      0.35
 Overall_CEN                                                      0.3648
 Overall_J                                                        (0.60294,0.15074)
+Overall_MCC                                                      0.12642
 Overall_MCEN                                                     0.37463
 Overall_RACC                                                     0.295
 Overall_RACCU                                                    0.4225
@@ -606,6 +646,7 @@ P-Value                                                          1.0
 PPV_Macro                                                        None
 PPV_Micro                                                        0.35
 Phi-Squared                                                      None
+RR                                                               5.0
 Reference Entropy                                                None
 Response Entropy                                                 None
 Scott_PI                                                         -0.12554
@@ -622,6 +663,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
@@ -657,6 +699,8 @@ TON(Test outcome negative)                                       9              
 TOP(Test outcome positive)                                       11                      7                       2                       0
 TP(True positive/hit)                                            0                       6                       1                       0
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0
+dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0
+sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289
 <BLANKLINE>
 >>> save_obj=cm_6.save_obj("test2",address=False)
 >>> save_obj=={'Status': True, 'Message': None}
@@ -681,7 +725,10 @@ Class3           1         1         4
 Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.48885,0.84448)
+AUNP                                                             0.73175
+AUNU                                                             0.73929
 Bennett_S                                                        0.5
+CBA                                                              0.63818
 Chi-Squared                                                      15.52564
 Chi-Squared DF                                                   4
 Conditional Entropy                                              1.08926
@@ -703,6 +750,7 @@ NIR                                                              0.44444
 Overall_ACC                                                      0.66667
 Overall_CEN                                                      0.52986
 Overall_J                                                        (1.51854,0.50618)
+Overall_MCC                                                      0.47511
 Overall_MCEN                                                     0.65286
 Overall_RACC                                                     0.36626
 Overall_RACCU                                                    0.36694
@@ -710,6 +758,7 @@ P-Value                                                          0.01667
 PPV_Macro                                                        0.68262
 PPV_Micro                                                        0.66667
 Phi-Squared                                                      0.57502
+RR                                                               9.0
 Reference Entropy                                                1.53049
 Response Entropy                                                 1.48657
 Scott_PI                                                         0.47346
@@ -726,6 +775,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
+AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
@@ -761,6 +811,8 @@ TON(Test outcome negative)                                       14             
 TOP(Test outcome positive)                                       13                      9                       5
 TP(True positive/hit)                                            9                       5                       4
 TPR(Sensitivity, recall, hit rate, or true positive rate)        0.75                    0.55556                 0.66667
+dInd(Distance index)                                             0.36553                 0.4969                  0.33672
+sInd(Similarity index)                                           0.74153                 0.64864                 0.7619
 <BLANKLINE>
 >>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":9,"Class2":3,"Class3":1},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":0,"Class2":1,"Class3":4}},transpose=True)
 >>> print(cm)
@@ -776,7 +828,10 @@ Class3           1         1         4
 Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.48885,0.84448)
+AUNP                                                             0.73175
+AUNU                                                             0.73929
 Bennett_S                                                        0.5
+CBA                                                              0.63818
 Chi-Squared                                                      15.52564
 Chi-Squared DF                                                   4
 Conditional Entropy                                              1.08926
@@ -798,6 +853,7 @@ NIR                                                              0.44444
 Overall_ACC                                                      0.66667
 Overall_CEN                                                      0.52986
 Overall_J                                                        (1.51854,0.50618)
+Overall_MCC                                                      0.47511
 Overall_MCEN                                                     0.65286
 Overall_RACC                                                     0.36626
 Overall_RACCU                                                    0.36694
@@ -805,6 +861,7 @@ P-Value                                                          0.01667
 PPV_Macro                                                        0.68262
 PPV_Micro                                                        0.66667
 Phi-Squared                                                      0.57502
+RR                                                               9.0
 Reference Entropy                                                1.53049
 Response Entropy                                                 1.48657
 Scott_PI                                                         0.47346
@@ -821,6 +878,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
+AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
@@ -856,6 +914,8 @@ TON(Test outcome negative)                                       14             
 TOP(Test outcome positive)                                       13                      9                       5
 TP(True positive/hit)                                            9                       5                       4
 TPR(Sensitivity, recall, hit rate, or true positive rate)        0.75                    0.55556                 0.66667
+dInd(Distance index)                                             0.36553                 0.4969                  0.33672
+sInd(Similarity index)                                           0.74153                 0.64864                 0.7619
 <BLANKLINE>
 >>> online_help(param=None)
 Please choose one parameter :
@@ -864,81 +924,89 @@ Example : online_help("J") or online_help(2)
 <BLANKLINE>
 1-95% CI
 2-ACC
-3-BM
-4-Bennett_S
-5-CEN
-6-Chi-Squared
-7-Chi-Squared DF
-8-Conditional Entropy
-9-Cramer_V
-10-Cross Entropy
-11-DOR
-12-ERR
-13-F0.5
-14-F1
-15-F2
-16-FDR
-17-FN
-18-FNR
-19-FOR
-20-FP
-21-FPR
-22-G
-23-Gwet_AC1
-24-Hamming Loss
-25-IS
-26-J
-27-Joint Entropy
-28-KL Divergence
-29-Kappa
-30-Kappa 95% CI
-31-Kappa No Prevalence
-32-Kappa Standard Error
-33-Kappa Unbiased
-34-LR+
-35-LR-
-36-Lambda A
-37-Lambda B
-38-MCC
-39-MCEN
-40-MK
-41-Mutual Information
-42-N
-43-NIR
-44-NPV
-45-Overall_ACC
-46-Overall_CEN
-47-Overall_J
-48-Overall_MCEN
-49-Overall_RACC
-50-Overall_RACCU
-51-P
-52-P-Value
-53-POP
-54-PPV
-55-PPV_Macro
-56-PPV_Micro
-57-PRE
-58-Phi-Squared
-59-RACC
-60-RACCU
-61-Reference Entropy
-62-Response Entropy
-63-Scott_PI
-64-Standard Error
-65-Strength_Of_Agreement(Altman)
-66-Strength_Of_Agreement(Cicchetti)
-67-Strength_Of_Agreement(Fleiss)
-68-Strength_Of_Agreement(Landis and Koch)
-69-TN
-70-TNR
-71-TON
-72-TOP
-73-TP
-74-TPR
-75-TPR_Macro
-76-TPR_Micro
-77-Zero-one Loss
+3-AUC
+4-AUNP
+5-AUNU
+6-BM
+7-Bennett_S
+8-CBA
+9-CEN
+10-Chi-Squared
+11-Chi-Squared DF
+12-Conditional Entropy
+13-Cramer_V
+14-Cross Entropy
+15-DOR
+16-ERR
+17-F0.5
+18-F1
+19-F2
+20-FDR
+21-FN
+22-FNR
+23-FOR
+24-FP
+25-FPR
+26-G
+27-Gwet_AC1
+28-Hamming Loss
+29-IS
+30-J
+31-Joint Entropy
+32-KL Divergence
+33-Kappa
+34-Kappa 95% CI
+35-Kappa No Prevalence
+36-Kappa Standard Error
+37-Kappa Unbiased
+38-LR+
+39-LR-
+40-Lambda A
+41-Lambda B
+42-MCC
+43-MCEN
+44-MK
+45-Mutual Information
+46-N
+47-NIR
+48-NPV
+49-Overall_ACC
+50-Overall_CEN
+51-Overall_J
+52-Overall_MCC
+53-Overall_MCEN
+54-Overall_RACC
+55-Overall_RACCU
+56-P
+57-P-Value
+58-POP
+59-PPV
+60-PPV_Macro
+61-PPV_Micro
+62-PRE
+63-Phi-Squared
+64-RACC
+65-RACCU
+66-RR
+67-Reference Entropy
+68-Response Entropy
+69-Scott_PI
+70-Standard Error
+71-Strength_Of_Agreement(Altman)
+72-Strength_Of_Agreement(Cicchetti)
+73-Strength_Of_Agreement(Fleiss)
+74-Strength_Of_Agreement(Landis and Koch)
+75-TN
+76-TNR
+77-TON
+78-TOP
+79-TP
+80-TPR
+81-TPR_Macro
+82-TPR_Micro
+83-Zero-one Loss
+84-dInd
+85-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -959,7 +1027,10 @@ Actual
 Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.41134,0.82675)
+AUNP                                                             0.7
+AUNU                                                             0.70556
 Bennett_S                                                        0.42857
+CBA                                                              0.47778
 Chi-Squared                                                      10.44167
 Chi-Squared DF                                                   4
 Conditional Entropy                                              0.96498
@@ -981,6 +1052,7 @@ NIR                                                              0.57143
 Overall_ACC                                                      0.61905
 Overall_CEN                                                      0.43947
 Overall_J                                                        (1.22857,0.40952)
+Overall_MCC                                                      0.41558
 Overall_MCEN                                                     0.50059
 Overall_RACC                                                     0.37415
 Overall_RACCU                                                    0.39229
@@ -988,6 +1060,7 @@ P-Value                                                          0.41709
 PPV_Macro                                                        0.56111
 PPV_Micro                                                        0.61905
 Phi-Squared                                                      0.49722
+RR                                                               7.0
 Reference Entropy                                                1.37878
 Response Entropy                                                 1.44117
 Scott_PI                                                         0.37313
@@ -1004,6 +1077,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
+AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
 CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5
@@ -1039,6 +1113,8 @@ TON(Test outcome negative)                                       11             
 TOP(Test outcome positive)                                       10                      3                       8
 TP(True positive/hit)                                            6                       1                       6
 TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5
+dInd(Distance index)                                             0.26667                 0.67586                 0.54716
+sInd(Similarity index)                                           0.81144                 0.52209                 0.6131
 >>> save_obj=cm.save_obj("test3",address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
@@ -1054,7 +1130,10 @@ Actual
 Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.41134,0.82675)
+AUNP                                                             0.7
+AUNU                                                             0.70556
 Bennett_S                                                        0.42857
+CBA                                                              0.47778
 Chi-Squared                                                      10.44167
 Chi-Squared DF                                                   4
 Conditional Entropy                                              0.96498
@@ -1076,6 +1155,7 @@ NIR                                                              0.57143
 Overall_ACC                                                      0.61905
 Overall_CEN                                                      0.43947
 Overall_J                                                        (1.22857,0.40952)
+Overall_MCC                                                      0.41558
 Overall_MCEN                                                     0.50059
 Overall_RACC                                                     0.37415
 Overall_RACCU                                                    0.39229
@@ -1083,6 +1163,7 @@ P-Value                                                          0.41709
 PPV_Macro                                                        0.56111
 PPV_Micro                                                        0.61905
 Phi-Squared                                                      0.49722
+RR                                                               7.0
 Reference Entropy                                                1.37878
 Response Entropy                                                 1.44117
 Scott_PI                                                         0.37313
@@ -1099,6 +1180,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
+AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
 CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5
@@ -1134,11 +1216,29 @@ TON(Test outcome negative)                                       11             
 TOP(Test outcome positive)                                       10                      3                       8
 TP(True positive/hit)                                            6                       1                       6
 TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5
->>> NIR_calc({'Class2': 804, 'Class1': 196},{'Class2': 1000, 'Class1': 1000})
+dInd(Distance index)                                             0.26667                 0.67586                 0.54716
+sInd(Similarity index)                                           0.81144                 0.52209                 0.6131
+>>> NIR_calc({'Class2': 804, 'Class1': 196},{'Class2': 1000, 'Class1': 1000}) # Verified Case
 0.804
->>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":183,"Class2":13},"Class2":{"Class1":141,"Class2":663}})
+>>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":183,"Class2":13},"Class2":{"Class1":141,"Class2":663}})  # Verified Case
 >>> cm.PValue
 0.000342386296143693
+>>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":4,"Class2":2},"Class2":{"Class1":2,"Class2":4}}) # Verified Case
+>>> cm.Overall_CEN
+0.861654166907052
+>>> cm.Overall_MCEN
+0.6666666666666666
+>>> cm.IS["Class1"]
+0.4150374992788437
+>>> cm.IS["Class2"]
+0.4150374992788437
+>>> cm = ConfusionMatrix(matrix={1:{1:5,2:0,3:0},2:{1:0,2:10,3:0},3:{1:0,2:300,3:0}})  # Verified Case
+>>> cm.Overall_CEN
+0.022168905807495587
+>>> cm.Overall_MCC
+0.3012440235352457
+>>> cm.CBA
+0.3440860215053763
 >>> os.remove("test.csv")
 >>> os.remove("test.html")
 >>> os.remove("test.obj")

@@ -4,8 +4,6 @@
 <br/>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
 <a href="/Document"><img src="https://img.shields.io/badge/doc-latest-orange.svg"></a>
-<a href="https://travis-ci.org/sepandhaghighi/pycm"><img src="https://travis-ci.org/sepandhaghighi/pycm.svg?branch=master"></a>
-<a href="https://ci.appveyor.com/project/sepandhaghighi/pycm"><img src="https://ci.appveyor.com/api/projects/status/nbe96d7gk2693ju0?svg=true"></a>
 <a href="https://codecov.io/gh/sepandhaghighi/pycm">
   <img src="https://codecov.io/gh/sepandhaghighi/pycm/branch/master/graph/badge.svg" />
 </a>
@@ -45,7 +43,6 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 </div>
 
 
-<html>
 <table>
 	<tr> 
 		<td align="center">Open Hub</td>
@@ -60,13 +57,33 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 		<td align="center"><a href="https://github.com/sepandhaghighi/pycm"><img src="https://img.shields.io/github/stars/sepandhaghighi/pycm.svg?style=social&label=Stars"></a></td>
 	</tr>
 </table>
-</html>
+
+
+
+<table>
+	<tr> 
+		<td align="center">Branch</td>
+		<td align="center">master</td>	
+		<td align="center">dev</td>	
+	</tr>
+	<tr>
+		<td align="center">Travis</td>
+		<td align="center"><a href="https://travis-ci.org/sepandhaghighi/pycm"><img src="https://travis-ci.org/sepandhaghighi/pycm.svg?branch=master"></a></td>
+		<td align="center"><a href="https://travis-ci.org/sepandhaghighi/pycm"><img src="https://travis-ci.org/sepandhaghighi/pycm.svg?branch=dev"></a></td>
+	</tr>
+	<tr>
+		<td align="center">AppVeyor</td>
+		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/pycm"><img src="https://ci.appveyor.com/api/projects/status/nbe96d7gk2693ju0/branch/master?svg=true"></a></td>
+		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/pycm"><img src="https://ci.appveyor.com/api/projects/status/nbe96d7gk2693ju0/branch/dev?svg=true"></a></td>
+	</tr>
+</table>
+
 
 
 ## Installation		
 
 ### Source Code
-- Download [Version 1.3](https://github.com/sepandhaghighi/pycm/archive/v1.3.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 1.4](https://github.com/sepandhaghighi/pycm/archive/v1.4.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -106,7 +123,10 @@ Actual
 Overall Statistics : 
 
 95% CI                                                           (0.30439,0.86228)
+AUNP                                                             0.66667
+AUNU                                                             0.69444
 Bennett_S                                                        0.375
+CBA                                                              0.47778
 Chi-Squared                                                      6.6
 Chi-Squared DF                                                   4
 Conditional Entropy                                              0.95915
@@ -128,6 +148,7 @@ NIR                                                              0.5
 Overall_ACC                                                      0.58333
 Overall_CEN                                                      0.46381
 Overall_J                                                        (1.225,0.40833)
+Overall_MCC                                                      0.36667
 Overall_MCEN                                                     0.51894
 Overall_RACC                                                     0.35417
 Overall_RACCU                                                    0.36458
@@ -135,6 +156,7 @@ P-Value                                                          0.38721
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
 Phi-Squared                                                      0.55
+RR                                                               4.0
 Reference Entropy                                                1.5
 Response Entropy                                                 1.48336
 Scott_PI                                                         0.34426
@@ -151,6 +173,7 @@ Class Statistics :
 
 Classes                                                          0                       1                       2                       
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333                 
+AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333                 
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667                 
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442                 
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0                     
@@ -186,7 +209,9 @@ TON(Test outcome negative)                                       7              
 TOP(Test outcome positive)                                       5                       2                       5                       
 TP(True positive/hit)                                            3                       1                       3                       
 TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                     
-                                                                    
+dInd(Distance index)                                             0.22222                 0.67586                 0.60093                 
+sInd(Similarity index)                                           0.84287                 0.52209                 0.57508                 
+                                                                                     
 >>> cm.matrix()
 Predict          0        1        2        
 Actual
@@ -200,6 +225,12 @@ Actual
 0                1.0            0.0            0.0            
 1                0.0            0.33333        0.66667        
 2                0.33333        0.16667        0.5            
+
+>>> cm.matrix(one_vs_all=True,class_name=0)   # One-Vs-All, new in version 1.4
+Predict          0    ~    
+Actual
+0                3    0    
+~                2    7    
 
 ```
 ### Direct CM
@@ -220,7 +251,10 @@ Class2           0         5
 Overall Statistics : 
 
 95% CI                                                           (0.44994,1.05006)
+AUNP                                                             0.66667
+AUNU                                                             0.66667
 Bennett_S                                                        0.5
+CBA                                                              0.52381
 Chi-Squared                                                      1.90476
 Chi-Squared DF                                                   1
 Conditional Entropy                                              0.34436
@@ -242,6 +276,7 @@ NIR                                                              0.625
 Overall_ACC                                                      0.75
 Overall_CEN                                                      0.44812
 Overall_J                                                        (1.04762,0.52381)
+Overall_MCC                                                      0.48795
 Overall_MCEN                                                     0.29904
 Overall_RACC                                                     0.59375
 Overall_RACCU                                                    0.625
@@ -249,6 +284,7 @@ P-Value                                                          0.36974
 PPV_Macro                                                        0.85714
 PPV_Micro                                                        0.75
 Phi-Squared                                                      0.2381
+RR                                                               4.0
 Reference Entropy                                                0.95443
 Response Entropy                                                 0.54356
 Scott_PI                                                         0.33333
@@ -265,6 +301,7 @@ Class Statistics :
 
 Classes                                                          Class1                  Class2                  
 ACC(Accuracy)                                                    0.75                    0.75                    
+AUC(Area under the roc curve)                                    0.66667                 0.66667                 
 BM(Informedness or bookmaker informedness)                       0.33333                 0.33333                 
 CEN(Confusion entropy)                                           0.5                     0.43083                 
 DOR(Diagnostic odds ratio)                                       None                    None                    
@@ -299,7 +336,9 @@ TNR(Specificity or true negative rate)                           1.0            
 TON(Test outcome negative)                                       7                       1                       
 TOP(Test outcome positive)                                       1                       7                       
 TP(True positive/hit)                                            1                       5                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0
+TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0                     
+dInd(Distance index)                                             0.66667                 0.66667                 
+sInd(Similarity index)                                           0.5286                  0.5286                  
 
 >>> cm3 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":0}, "Class2": {"Class1": 2, "Class2": 5}},transpose=True) # Transpose Matrix      
 >>> cm3.matrix()
@@ -440,7 +479,30 @@ performance. Machine Learning, 6:67–80, 1991.</blockquote>
 <blockquote>19- Delgado R., Núñez-González J.D. (2019) Enhancing Confusion Entropy as Measure for Evaluating Classifiers. In: Graña M. et al. (eds) International Joint Conference SOCO’18-CISIS’18-ICEUTE’18. SOCO’18-CISIS’18-ICEUTE’18 2018. Advances in Intelligent Systems and Computing, vol 771. Springer, Cham </blockquote>
 
 
+<blockquote>20- Gorodkin J (2004) Comparing two K-category assignments by a K-category
+correlation coefficient. Computational Biology and Chemistry 28: 367–374 </blockquote>
 
+<blockquote>21- Freitas C.O.A., de Carvalho J.M., Oliveira J., Aires S.B.K., Sabourin R. (2007) Confusion Matrix Disagreement for Multiple Classifiers. In: Rueda L., Mery D., Kittler J. (eds) Progress in Pattern Recognition, Image Analysis and Applications. CIARP 2007. Lecture Notes in Computer Science, vol 4756. Springer, Berlin, Heidelberg</blockquote>
+
+<blockquote>22- Branco P., Torgo L., Ribeiro R.P. (2017) Relevance-Based Evaluation Metrics for Multi-class Imbalanced Domains. In: Kim J., Shim K., Cao L., Lee JG., Lin X., Moon YS. (eds) Advances in Knowledge Discovery and Data Mining. PAKDD 2017. Lecture Notes in Computer Science, vol 10234. Springer, Cham</blockquote>
+
+<blockquote>23- Ballabio, D., Grisoni, F. and Todeschini, R. (2018). Multivariate comparison of classification performance measures. Chemometrics and Intelligent Laboratory Systems, 174, pp.33-44.</blockquote>
+
+<blockquote>24- Cohen, Jacob. 1960. A coefficient of agreement for nominal scales. Educational And Psychological Measurement 20:37-46</blockquote>
+
+<blockquote>25- Siegel, Sidney and N. John Castellan, Jr. 1988. Nonparametric Statistics for the Behavioral Sciences. McGraw Hill.</blockquote>
+
+<blockquote>26- Cramér, Harald. 1946. Mathematical Methods of Statistics. Princeton: Princeton University Press, page 282 (Chapter 21. The two-dimensional case)</blockquote>
+
+<blockquote>27- Matthews, B. W. (1975). "Comparison of the predicted and observed secondary structure of T4 phage lysozyme". Biochimica et Biophysica Acta (BBA) - Protein Structure. 405 (2): 442–451.</blockquote>
+
+<blockquote>28- Swets JA. (1973). "The relative operating characteristic in Psychology". Science. 182 (14116): 990–1000.</blockquote> 
+
+<blockquote>29- Jaccard, Paul (1901), "Étude comparative de la distribution florale dans une portion des Alpes et des Jura", Bulletin de la Société Vaudoise des Sciences Naturelles, 37: 547–579.</blockquote> 
+
+<blockquote>30- Thomas M. Cover and Joy A. Thomas. 2006. Elements of Information Theory (Wiley Series in Telecommunications and Signal Processing). Wiley-Interscience, New York, NY, USA.</blockquote> 
+
+<blockquote>31- Keeping, E.S. (1962) Introduction to Statistical Inference. D. Van Nostrand, Princeton, NJ.</blockquote>
 
 
 ## Cite
@@ -471,7 +533,7 @@ Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A. (2018). PyCM: Multiclass
 
 Download [PyCM.bib](http://www.shaghighi.ir/pycm/PYCM.bib)	
 
-<html>
+
 <table>
 	<tr> 
 		<td align="center">JOSS</td>
@@ -486,7 +548,7 @@ Download [PyCM.bib](http://www.shaghighi.ir/pycm/PYCM.bib)
 		<td align="center"><a href="https://www.researchgate.net/project/PYCM-python-confusion-matrix"><img src="https://img.shields.io/badge/Researchgate-PyCM-yellow.svg"></a></td>
 	</tr>
 </table>
-</html>					
+				
 
 
 ## License

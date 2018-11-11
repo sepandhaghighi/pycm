@@ -5,6 +5,25 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.4] - 2018-11-12
+### Added
+- Area Under Curve
+- AUNU
+- AUNP
+- Class Balance Accuracy
+- Global Performance Index (RR)
+- Overall MCC
+- Distance index (dInd)
+- Similarity index (sInd)
+- `one_vs_all`
+- `dev-requirements.txt`
+
+### Changed
+- `README.md` modified
+- Document modified
+- `save_stat` modified
+- `requirements.txt` modified
+
 ## [1.3] - 2018-10-10
 ### Added
 - Confusion Entropy
@@ -223,7 +242,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.3...HEAD
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.4...HEAD
+[1.4]: https://github.com/sepandhaghighi/pycm/compare/v1.3...v1.4
 [1.3]: https://github.com/sepandhaghighi/pycm/compare/v1.2...v1.3
 [1.2]: https://github.com/sepandhaghighi/pycm/compare/v1.1...v1.2
 [1.1]: https://github.com/sepandhaghighi/pycm/compare/v1.0...v1.1

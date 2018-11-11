@@ -30,7 +30,7 @@ matrix:
           env: TOXENV=py27
 
 install:
-  - pip install -r requirements.txt
+  - pip install -r dev-requirements.txt
   - python setup.py install
 
 script:

@@ -19,6 +19,182 @@ def isfile(f):
         f, 'read')
 
 
+def dInd_calc(TNR, TPR):
+    '''
+    This function calculate dInd
+    :param TNR: Specificity or true negative rate
+    :type TNR : float
+    :param TPR: Sensitivity, recall, hit rate, or true positive rate
+    :type TPR : float
+    :return: dInd as float
+    '''
+    try:
+        result = math.sqrt(((1 - TNR)**2) + ((1 - TPR)**2))
+        return result
+    except Exception:
+        return "None"
+
+
+def sInd_calc(dInd):
+    '''
+    This function calculate sInd
+    :param dInd: dInd
+    :type dInd : float
+    :return: sInd as float
+    '''
+    try:
+        return 1 - (dInd / (math.sqrt(2)))
+    except Exception:
+        return "None"
+
+
+def AUNP_calc(classes, P, POP, AUC_dict):
+    '''
+    This function calculate AUNP
+    :param classes: classes
+    :type classes : list
+    :param P: Condition positive
+    :type P : dict
+    :param POP: Population
+    :type POP : dict
+    :param AUC_dict: AUC (Area Under ROC Curve) for each class
+    :type AUC_dict : dict
+    :return: AUNP as float
+    '''
+    try:
+        result = 0
+        for i in classes:
+            result += (P[i] / POP[i]) * AUC_dict[i]
+        return result
+    except Exception:
+        return "None"
+
+
+def AUC_calc(TNR, TPR):
+    '''
+    This function calculate Area Under ROC Curve for each class
+    :param TNR: Specificity or true negative rate
+    :type TNR : float
+    :param TPR: Sensitivity, recall, hit rate, or true positive rate
+    :type TPR : float
+    :return: AUC as float
+    '''
+    try:
+        return (TNR + TPR) / 2
+    except Exception:
+        return "None"
+
+
+def CBA_calc(classes, table, TOP, P):
+    '''
+    This function calculate CBA
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :param TOP: Test outcome positive
+    :type TOP : dict
+    :param P: Condition positive
+    :type P : dict
+    :return: CBA as float
+    '''
+    try:
+        result = 0
+        class_number = len(classes)
+        for i in classes:
+            result += ((table[i][i]) / (max(TOP[i], P[i])))
+        return result / class_number
+    except Exception:
+        return "None"
+
+
+def RR_calc(classes, table):
+    '''
+    This function calculate RR (Global Performance Index)
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :return: RR as float
+    '''
+    try:
+        result = 0
+        class_number = len(classes)
+        for i in classes:
+            result += sum(list(table[i].values()))
+        return result / class_number
+    except Exception:
+        return "None"
+
+
+def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
+    '''
+    One-Vs-All mode handler
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :param TP: True Positive Dict For All Classes
+    :type TP : dict
+    :param TN: True Negative Dict For All Classes
+    :type TN : dict
+    :param FP: False Positive Dict For All Classes
+    :type FP : dict
+    :param FN: False Negative Dict For All Classes
+    :type FN : dict
+    :param class_name : target class name for One-Vs-All mode
+    :type class_name : any valid type
+    :return: [classes , table ] as list
+    '''
+    try:
+        report_classes = [str(class_name), "~"]
+        report_table = {str(class_name): {str(class_name): TP[class_name],
+                                          "~": FN[class_name]},
+                        "~": {str(class_name): FP[class_name],
+                              "~": TN[class_name]}}
+        return [report_classes, report_table]
+    except Exception:
+        return [classes, table]
+
+
+def overall_MCC_calc(classes, table):
+    '''
+    This function calculate Overall MCC
+     :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :return:  Overall_MCC as float
+    '''
+    try:
+        cov_x_y = 0
+        cov_x_x = 0
+        cov_y_y = 0
+        sigma1_x_x = 0
+        sigma2_x_x = 0
+        sigma1_y_y = 0
+        sigma2_y_y = 0
+        for i in classes:
+            for j in classes:
+                sigma1_x_x += table[j][i]
+                sigma1_y_y += table[i][j]
+                for k in classes:
+                    cov_x_y += table[i][i] * table[k][j] - \
+                        table[j][i] * table[i][k]
+                    if i != j:
+                        sigma2_x_x += table[k][j]
+                        sigma2_y_y += table[j][k]
+            cov_x_x += sigma1_x_x * sigma2_x_x
+            cov_y_y += sigma1_y_y * sigma2_y_y
+            sigma1_x_x = 0
+            sigma2_x_x = 0
+            sigma1_y_y = 0
+            sigma2_y_y = 0
+        return cov_x_y / (math.sqrt(cov_y_y * cov_x_x))
+    except Exception:
+        return "None"
+
+
 def CEN_misclassification_calc(classes, table, i, j, subject_class,
                                modified=False):
     '''
@@ -143,11 +319,11 @@ def overall_CEN_calc(classes, table, CEN_dict, modified=False):
 def IS_calc(TP, FP, FN, POP):
     '''
     This function calculate Information Score (IS)
-    :param TP: True Positive Dict For All Classes
+    :param TP: True Positive
     :type TP : int
-    :param FP: False Positive Dict For All Classes
+    :param FP: False Positive
     :type FP : int
-    :param FN: False Negative Dict For All Classes
+    :param FN: False Negative
     :type FN : int
     :param POP: Population
     :type POP : int
@@ -1185,6 +1361,7 @@ def overall_statistics(
         jaccard_list,
         CEN_dict,
         MCEN_dict,
+        AUC_dict,
         classes,
         table):
     '''
@@ -1263,6 +1440,11 @@ def overall_statistics(
     p_value = p_value_calc(TP, POP, NIR)
     overall_CEN = overall_CEN_calc(classes, table, CEN_dict)
     overall_MCEN = overall_CEN_calc(classes, table, MCEN_dict, True)
+    overall_MCC = overall_MCC_calc(classes, table)
+    RR = RR_calc(classes, table)
+    CBA = CBA_calc(classes, table, TOP, P)
+    AUNU = macro_calc(AUC_dict)
+    AUNP = AUNP_calc(classes, P, POP, AUC_dict)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1308,7 +1490,12 @@ def overall_statistics(
         "NIR": NIR,
         "P-Value": p_value,
         "Overall_CEN": overall_CEN,
-        "Overall_MCEN": overall_MCEN}
+        "Overall_MCEN": overall_MCEN,
+        "Overall_MCC": overall_MCC,
+        "RR": RR,
+        "CBA": CBA,
+        "AUNU": AUNU,
+        "AUNP": AUNP}
 
 
 def class_statistics(TP, TN, FP, FN, classes, table):
@@ -1360,6 +1547,9 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     IS = {}
     CEN = {}
     MCEN = {}
+    AUC = {}
+    dInd = {}
+    sInd = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1393,6 +1583,9 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         IS[i] = IS_calc(TP[i], FP[i], FN[i], POP[i])
         CEN[i] = CEN_calc(classes, table, i)
         MCEN[i] = CEN_calc(classes, table, i, True)
+        AUC[i] = AUC_calc(TNR[i], TPR[i])
+        dInd[i] = dInd_calc(TNR[i], TPR[i])
+        sInd[i] = sInd_calc(dInd[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1429,5 +1622,8 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "J": Jaccrd_Index,
         "IS": IS,
         "CEN": CEN,
-        "MCEN": MCEN}
+        "MCEN": MCEN,
+        "AUC": AUC,
+        "sInd": sInd,
+        "dInd": dInd}
     return result

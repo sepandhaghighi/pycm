@@ -148,7 +148,8 @@ class ConfusionMatrix():
             classes=self.classes,
             table=self.table,
             CEN_dict=statistic_result["CEN"],
-            MCEN_dict=statistic_result["MCEN"])
+            MCEN_dict=statistic_result["MCEN"],
+            AUC_dict=statistic_result["AUC"])
         self.TPR = statistic_result["TPR"]
         self.TNR = statistic_result["TNR"]
         self.PPV = statistic_result["PPV"]
@@ -181,6 +182,9 @@ class ConfusionMatrix():
         self.IS = statistic_result["IS"]
         self.CEN = statistic_result["CEN"]
         self.MCEN = statistic_result["MCEN"]
+        self.AUC = statistic_result["AUC"]
+        self.dInd = statistic_result["dInd"]
+        self.sInd = statistic_result["sInd"]
         self.Overall_J = self.overall_stat["Overall_J"]
         self.SOA1 = self.overall_stat["Strength_Of_Agreement(Landis and Koch)"]
         self.SOA2 = self.overall_stat["Strength_Of_Agreement(Fleiss)"]
@@ -222,20 +226,43 @@ class ConfusionMatrix():
         self.PValue = self.overall_stat["P-Value"]
         self.Overall_CEN = self.overall_stat["Overall_CEN"]
         self.Overall_MCEN = self.overall_stat["Overall_MCEN"]
+        self.Overall_MCC = self.overall_stat["Overall_MCC"]
+        self.RR = self.overall_stat["RR"]
+        self.CBA = self.overall_stat["CBA"]
+        self.AUNU = self.overall_stat["AUNU"]
+        self.AUNP = self.overall_stat["AUNP"]
 
-    def matrix(self):
+    def matrix(self, one_vs_all=False, class_name=None):
         '''
         This method print confusion matrix
-        :return:
+        :param one_vs_all : One-Vs-All mode flag
+        :type one_vs_all : bool
+        :param class_name : target class name for One-Vs-All mode
+        :type class_name : any valid type
+        :return: None
         '''
-        print(table_print(self.classes, self.table))
+        classes = self.classes
+        table = self.table
+        if one_vs_all:
+            [classes, table] = one_vs_all_func(
+                classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
+        print(table_print(classes, table))
 
-    def normalized_matrix(self):
+    def normalized_matrix(self, one_vs_all=False, class_name=None):
         '''
         This method print normalized confusion matrix
-        :return:
+        :param one_vs_all : One-Vs-All mode flag
+        :type one_vs_all : bool
+        :param class_name : target class name for One-Vs-All mode
+        :type class_name : any valid type
+        :return: None
         '''
-        print(normalized_table_print(self.classes, self.table))
+        classes = self.classes
+        table = self.table
+        if one_vs_all:
+            [classes, table] = one_vs_all_func(
+                classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
+        print(normalized_table_print(classes, table))
 
     def stat(self):
         '''
@@ -264,12 +291,24 @@ class ConfusionMatrix():
         try:
             message = None
             file = open(name + ".pycm", "w")
+            matrix = "Matrix : \n\n" + table_print(self.classes,
+                                                   self.table) + "\n\n"
+            normalized_matrix = "Normalized Matrix : \n\n" + \
+                                normalized_table_print(self.classes,
+                                                       self.table) + "\n\n"
+            one_vs_all = "\nOne-Vs-All : \n\n"
+            for class_name in self.classes:
+                one_vs_all += str(class_name) + "-Vs-All : \n\n"
+                [classes, table] = one_vs_all_func(self.classes, self.table,
+                                                   self.TP, self.TN, self.FP,
+                                                   self.FN, class_name)
+                one_vs_all += table_print(classes, table) + "\n\n"
             stat = stat_print(
                 self.classes,
                 self.class_stat,
                 self.overall_stat,
                 self.digit)
-            file.write(stat)
+            file.write(matrix + normalized_matrix + stat + one_vs_all)
             file.close()
             if address:
                 message = os.path.join(os.getcwd(), name + ".pycm")

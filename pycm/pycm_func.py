@@ -51,7 +51,6 @@ def RCI_calc(classes, table, TOP,P):
                     Hoj += item*math.log(item,2)
             Ho += (-1) * (TOP[i]/matrix_sum)*Hoj
         Hd = (-1)*Hd
-        print(Hd,Ho)
         return (Hd-Ho)/Hd
     except Exception:
         return "None"

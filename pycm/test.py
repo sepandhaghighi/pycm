@@ -1248,6 +1248,12 @@ sInd(Similarity index)                                           0.81144        
 0.3012440235352457
 >>> cm.CBA
 0.3440860215053763
+>>> cm = ConfusionMatrix(matrix={1:{1:1,2:3,3:0,4:0},2:{1:9,2:1,3:0,4:0},3:{1:0,2:0,3:100,4:0},4:{1:0,2:0,3:0,4:200}}) # Verified Case
+>>> cm.RCI
+0.9785616782831341
+>>> cm = ConfusionMatrix(matrix={1:{1:1,2:0,3:3},2:{1:0,2:100,3:0},3:{1:0,2:0,3:200}}) # Verified Case
+>>> cm.RCI
+0.9264007150415144
 >>> os.remove("test.csv")
 >>> os.remove("test.html")
 >>> os.remove("test.obj")

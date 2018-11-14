@@ -19,6 +19,19 @@ def isfile(f):
         f, 'read')
 
 def RCI_calc(classes, table, TOP,P):
+    '''
+    This function calculate RCI
+    This function calculate CBA
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :param TOP: Test outcome positive
+    :type TOP : dict
+    :param P: Condition positive
+    :type P : dict
+    :return: RCI  as float
+    '''
     try:
         Hd = 0
         Ho = 0

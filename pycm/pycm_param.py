@@ -147,7 +147,8 @@ PARAMS_LINK = {
     "AUNU": "AUNU",
     "AUNP": "AUNP",
     "sInd": "sInd-(Similarity-Index)",
-    "dInd": "dInd-(Distance-Index)"}
+    "dInd": "dInd-(Distance-Index)",
+    "RCI":""}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

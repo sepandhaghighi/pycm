@@ -1482,6 +1482,7 @@ def overall_statistics(
     CBA = CBA_calc(classes, table, TOP, P)
     AUNU = macro_calc(AUC_dict)
     AUNP = AUNP_calc(classes, P, POP, AUC_dict)
+    RCI = RCI_calc(classes,table,TOP,P)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1532,7 +1533,8 @@ def overall_statistics(
         "RR": RR,
         "CBA": CBA,
         "AUNU": AUNU,
-        "AUNP": AUNP}
+        "AUNP": AUNP,
+        "RCI": RCI}
 
 
 def class_statistics(TP, TN, FP, FN, classes, table):

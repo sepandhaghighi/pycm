@@ -18,6 +18,30 @@ def isfile(f):
         f, file) if sys.version_info[0] == 2 else hasattr(
         f, 'read')
 
+def RCI_calc(classes, table, TOP,P):
+    try:
+        Hd = 0
+        Ho = 0
+        matrix_sum = sum(list(TOP.values()))
+        if matrix_sum == 0:
+            raise  Exception
+        for i in classes:
+            item = P[i]/matrix_sum
+            if item!=0 :
+                Hd += item*math.log(item,2)
+            Hoj = 0
+            for j in classes :
+                item =0
+                if TOP[i]!=0:
+                    item = table[j][i]/TOP[i]
+                if item!=0:
+                    Hoj += item*math.log(item,2)
+            Ho += (-1) * (TOP[i]/matrix_sum)*Hoj
+        Hd = (-1)*Hd
+        print(Hd,Ho)
+        return (Hd-Ho)/Hd
+    except Exception:
+        return "None"
 
 def dInd_calc(TNR, TPR):
     '''

@@ -641,7 +641,8 @@ def cross_entropy_calc(TOP, P, POP):
         for i in TOP.keys():
             reference_likelihood = P[i] / POP[i]
             response_likelihood = TOP[i] / POP[i]
-            result += reference_likelihood * math.log(response_likelihood, 2)
+            if response_likelihood!=0 and reference_likelihood!=0:
+                result += reference_likelihood * math.log(response_likelihood, 2)
         return -result
     except Exception:
         return "None"

@@ -228,9 +228,9 @@ Bennett_S                                                        0.13333
 CBA                                                              0.17708
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
-Conditional Entropy                                              None
+Conditional Entropy                                              1.23579
 Cramer_V                                                         None
-Cross Entropy                                                    None
+Cross Entropy                                                    1.70995
 Gwet_AC1                                                         0.19505
 Hamming Loss                                                     0.65
 Joint Entropy                                                    2.11997
@@ -242,7 +242,7 @@ Kappa Standard Error                                             0.15128
 Kappa Unbiased                                                   -0.12554
 Lambda A                                                         0.0
 Lambda B                                                         0.0
-Mutual Information                                               None
+Mutual Information                                               0.10088
 NIR                                                              0.8
 Overall_ACC                                                      0.35
 Overall_CEN                                                      0.3648
@@ -257,8 +257,8 @@ PPV_Micro                                                        0.35
 Phi-Squared                                                      None
 RCI                                                              0.11409
 RR                                                               5.0
-Reference Entropy                                                None
-Response Entropy                                                 None
+Reference Entropy                                                0.88418
+Response Entropy                                                 1.33667
 Scott_PI                                                         -0.12554
 Standard Error                                                   0.10665
 Strength_Of_Agreement(Altman)                                    Poor
@@ -322,9 +322,9 @@ Bennett_S                                                        0.13333
 CBA                                                              0.17708
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
-Conditional Entropy                                              None
+Conditional Entropy                                              1.23579
 Cramer_V                                                         None
-Cross Entropy                                                    None
+Cross Entropy                                                    1.70995
 Gwet_AC1                                                         0.19505
 Hamming Loss                                                     0.65
 Joint Entropy                                                    2.11997
@@ -336,7 +336,7 @@ Kappa Standard Error                                             0.15128
 Kappa Unbiased                                                   -0.12554
 Lambda A                                                         0.0
 Lambda B                                                         0.0
-Mutual Information                                               None
+Mutual Information                                               0.10088
 NIR                                                              0.8
 Overall_ACC                                                      0.35
 Overall_CEN                                                      0.3648
@@ -351,8 +351,8 @@ PPV_Micro                                                        0.35
 Phi-Squared                                                      None
 RCI                                                              0.11409
 RR                                                               5.0
-Reference Entropy                                                None
-Response Entropy                                                 None
+Reference Entropy                                                0.88418
+Response Entropy                                                 1.33667
 Scott_PI                                                         -0.12554
 Standard Error                                                   0.10665
 Strength_Of_Agreement(Altman)                                    Poor
@@ -622,9 +622,9 @@ Bennett_S                                                        0.13333
 CBA                                                              0.17708
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
-Conditional Entropy                                              None
+Conditional Entropy                                              1.23579
 Cramer_V                                                         None
-Cross Entropy                                                    None
+Cross Entropy                                                    1.70995
 Gwet_AC1                                                         0.19505
 Hamming Loss                                                     0.65
 Joint Entropy                                                    2.11997
@@ -636,7 +636,7 @@ Kappa Standard Error                                             0.15128
 Kappa Unbiased                                                   -0.12554
 Lambda A                                                         0.0
 Lambda B                                                         0.0
-Mutual Information                                               None
+Mutual Information                                               0.10088
 NIR                                                              0.8
 Overall_ACC                                                      0.35
 Overall_CEN                                                      0.3648
@@ -651,8 +651,8 @@ PPV_Micro                                                        0.35
 Phi-Squared                                                      None
 RCI                                                              0.11409
 RR                                                               5.0
-Reference Entropy                                                None
-Response Entropy                                                 None
+Reference Entropy                                                0.88418
+Response Entropy                                                 1.33667
 Scott_PI                                                         -0.12554
 Standard Error                                                   0.10665
 Strength_Of_Agreement(Altman)                                    Poor
@@ -1253,7 +1253,7 @@ sInd(Similarity index)                                           0.81144        
 0.9785616782831341
 >>> cm = ConfusionMatrix(matrix={1:{1:1,2:0,3:3},2:{1:0,2:100,3:0},3:{1:0,2:0,3:200}}) # Verified Case
 >>> cm.RCI
-0.9264007150415144
+0.9264007150415143
 >>> os.remove("test.csv")
 >>> os.remove("test.html")
 >>> os.remove("test.obj")

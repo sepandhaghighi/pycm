@@ -604,7 +604,8 @@ def entropy_calc(item, POP):
         result = 0
         for i in item.keys():
             likelihood = item[i] / POP[i]
-            result += likelihood * math.log(likelihood, 2)
+            if likelihood!=0:
+                result += likelihood * math.log(likelihood, 2)
         return -result
     except Exception:
         return "None"

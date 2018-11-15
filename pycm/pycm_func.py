@@ -18,40 +18,17 @@ def isfile(f):
         f, file) if sys.version_info[0] == 2 else hasattr(
         f, 'read')
 
-def RCI_calc(classes, table, TOP,P):
+def RCI_calc(mutual_information,reference_entropy):
     '''
     This function calculate RCI
-    This function calculate CBA
-    :param classes: classes
-    :type classes : list
-    :param table: input matrix
-    :type table : dict
-    :param TOP: Test outcome positive
-    :type TOP : dict
-    :param P: Condition positive
-    :type P : dict
-    :return: RCI  as float
+    :param mutual_information: Mutual Information
+    :type mutual_information : float
+    :param response_entropy: Response Entropy
+    :type response_entropy : float
+    :return:  RCI as float
     '''
     try:
-        Hd = 0
-        Ho = 0
-        matrix_sum = sum(list(TOP.values()))
-        if matrix_sum == 0:
-            raise  Exception
-        for i in classes:
-            item = P[i]/matrix_sum
-            if item!=0 :
-                Hd += item*math.log(item,2)
-            Hoj = 0
-            for j in classes :
-                item =0
-                if TOP[i]!=0:
-                    item = table[j][i]/TOP[i]
-                if item!=0:
-                    Hoj += item*math.log(item,2)
-            Ho += (-1) * (TOP[i]/matrix_sum)*Hoj
-        Hd = (-1)*Hd
-        return (Hd-Ho)/Hd
+        return mutual_information/reference_entropy
     except Exception:
         return "None"
 
@@ -1481,7 +1458,7 @@ def overall_statistics(
     CBA = CBA_calc(classes, table, TOP, P)
     AUNU = macro_calc(AUC_dict)
     AUNP = AUNP_calc(classes, P, POP, AUC_dict)
-    RCI = RCI_calc(classes,table,TOP,P)
+    RCI = RCI_calc(mutual_information,reference_entropy)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,

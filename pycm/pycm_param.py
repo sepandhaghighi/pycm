@@ -148,7 +148,7 @@ PARAMS_LINK = {
     "AUNP": "AUNP",
     "sInd": "sInd-(Similarity-Index)",
     "dInd": "dInd-(Distance-Index)",
-    "RCI":""}
+    "RCI":"Relative-Classifier-Information"}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

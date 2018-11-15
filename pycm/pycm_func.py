@@ -24,8 +24,8 @@ def RCI_calc(mutual_information, reference_entropy):
     This function calculate RCI
     :param mutual_information: Mutual Information
     :type mutual_information : float
-    :param response_entropy: Response Entropy
-    :type response_entropy : float
+    :param reference_entropy: Reference Entropy
+    :type reference_entropy : float
     :return:  RCI as float
     '''
     try:

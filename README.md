@@ -504,6 +504,11 @@ correlation coefficient. Computational Biology and Chemistry 28: 367–374 </blo
 
 <blockquote>31- Keeping, E.S. (1962) Introduction to Statistical Inference. D. Van Nostrand, Princeton, NJ.</blockquote>
 
+<blockquote>32- Sindhwani V, Bhattacharge P, Rakshit S (2001) Information theoretic feature
+crediting in multiclass Support Vector Machines. In: Grossman R, Kumar V,
+editors, Proceedings First SIAM International Conference on Data Mining,
+ICDM01. SIAM, pp. 1–18. </blockquote> 
+
 
 ## Cite
 

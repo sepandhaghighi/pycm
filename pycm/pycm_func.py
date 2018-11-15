@@ -18,7 +18,8 @@ def isfile(f):
         f, file) if sys.version_info[0] == 2 else hasattr(
         f, 'read')
 
-def RCI_calc(mutual_information,reference_entropy):
+
+def RCI_calc(mutual_information, reference_entropy):
     '''
     This function calculate RCI
     :param mutual_information: Mutual Information
@@ -28,9 +29,10 @@ def RCI_calc(mutual_information,reference_entropy):
     :return:  RCI as float
     '''
     try:
-        return mutual_information/reference_entropy
+        return mutual_information / reference_entropy
     except Exception:
         return "None"
+
 
 def dInd_calc(TNR, TPR):
     '''
@@ -604,7 +606,7 @@ def entropy_calc(item, POP):
         result = 0
         for i in item.keys():
             likelihood = item[i] / POP[i]
-            if likelihood!=0:
+            if likelihood != 0:
                 result += likelihood * math.log(likelihood, 2)
         return -result
     except Exception:
@@ -641,8 +643,9 @@ def cross_entropy_calc(TOP, P, POP):
         for i in TOP.keys():
             reference_likelihood = P[i] / POP[i]
             response_likelihood = TOP[i] / POP[i]
-            if response_likelihood!=0 and reference_likelihood!=0:
-                result += reference_likelihood * math.log(response_likelihood, 2)
+            if response_likelihood != 0 and reference_likelihood != 0:
+                result += reference_likelihood * \
+                    math.log(response_likelihood, 2)
         return -result
     except Exception:
         return "None"
@@ -692,7 +695,7 @@ def conditional_entropy_calc(classes, table, P, POP):
             temp = 0
             for index, j in enumerate(classes):
                 p_prime = 0
-                if P[i]!=0:
+                if P[i] != 0:
                     p_prime = table[i][j] / P[i]
                 if p_prime != 0:
                     temp += p_prime * math.log(p_prime, 2)
@@ -1462,7 +1465,7 @@ def overall_statistics(
     CBA = CBA_calc(classes, table, TOP, P)
     AUNU = macro_calc(AUC_dict)
     AUNP = AUNP_calc(classes, P, POP, AUC_dict)
-    RCI = RCI_calc(mutual_information,reference_entropy)
+    RCI = RCI_calc(mutual_information, reference_entropy)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,

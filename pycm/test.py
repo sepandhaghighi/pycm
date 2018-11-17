@@ -108,6 +108,7 @@ TON(Test outcome negative)                                       7              
 TOP(Test outcome positive)                                       5                       2                       5
 TP(True positive/hit)                                            3                       1                       3
 TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5
+Y(Youden index)                                                  0.77778                 0.22222                 0.1666
 dInd(Distance index)                                             0.22222                 0.67586                 0.60093
 sInd(Similarity index)                                           0.84287                 0.52209                 0.57508
 <BLANKLINE>
@@ -311,6 +312,7 @@ TON(Test outcome negative)                                       9              
 TOP(Test outcome positive)                                       11                      7                       2                       0
 TP(True positive/hit)                                            0                       6                       1                       0
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0
+Y(Youden index)                                                  None                    0.125                   0.27451                 0.0
 dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0
 sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289
 <BLANKLINE>
@@ -406,6 +408,7 @@ TON(Test outcome negative)                                       9              
 TOP(Test outcome positive)                                       11                      7                       2                       0
 TP(True positive/hit)                                            0                       6                       1                       0
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0
+Y(Youden index)                                                  None                    0.125                   0.27451                 0.0
 dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0
 sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289
 <BLANKLINE>
@@ -707,6 +710,7 @@ TON(Test outcome negative)                                       9              
 TOP(Test outcome positive)                                       11                      7                       2                       0
 TP(True positive/hit)                                            0                       6                       1                       0
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0
+Y(Youden index)                                                  None                    0.125                   0.27451                 0.0
 dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0
 sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289
 <BLANKLINE>
@@ -821,6 +825,7 @@ TON(Test outcome negative)                                       14             
 TOP(Test outcome positive)                                       13                      9                       5
 TP(True positive/hit)                                            9                       5                       4
 TPR(Sensitivity, recall, hit rate, or true positive rate)        0.75                    0.55556                 0.66667
+Y(Youden index)                                                  0.48333                 0.33333                 0.61905
 dInd(Distance index)                                             0.36553                 0.4969                  0.33672
 sInd(Similarity index)                                           0.74153                 0.64864                 0.7619
 <BLANKLINE>
@@ -926,6 +931,7 @@ TON(Test outcome negative)                                       14             
 TOP(Test outcome positive)                                       13                      9                       5
 TP(True positive/hit)                                            9                       5                       4
 TPR(Sensitivity, recall, hit rate, or true positive rate)        0.75                    0.55556                 0.66667
+Y(Youden index)                                                  0.48333                 0.33333                 0.61905
 dInd(Distance index)                                             0.36553                 0.4969                  0.33672
 sInd(Similarity index)                                           0.74153                 0.64864                 0.7619
 <BLANKLINE>
@@ -1018,9 +1024,10 @@ Example : online_help("J") or online_help(2)
 82-TPR
 83-TPR_Macro
 84-TPR_Micro
-85-Zero-one Loss
-86-dInd
-87-sInd
+85-Y
+86-Zero-one Loss
+87-dInd
+88-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -1129,6 +1136,7 @@ TON(Test outcome negative)                                       11             
 TOP(Test outcome positive)                                       10                      3                       8
 TP(True positive/hit)                                            6                       1                       6
 TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5
+Y(Youden index)                                                  0.73333                 0.22222                 0.27778
 dInd(Distance index)                                             0.26667                 0.67586                 0.54716
 sInd(Similarity index)                                           0.81144                 0.52209                 0.6131
 >>> save_obj=cm.save_obj("test3",address=False)
@@ -1234,6 +1242,7 @@ TON(Test outcome negative)                                       11             
 TOP(Test outcome positive)                                       10                      3                       8
 TP(True positive/hit)                                            6                       1                       6
 TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5
+Y(Youden index)                                                  0.73333                 0.22222                 0.27778
 dInd(Distance index)                                             0.26667                 0.67586                 0.54716
 sInd(Similarity index)                                           0.81144                 0.52209                 0.6131
 >>> NIR_calc({'Class2': 804, 'Class1': 196},{'Class2': 1000, 'Class1': 1000}) # Verified Case

@@ -1636,7 +1636,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         dInd[i] = dInd_calc(TNR[i], TPR[i])
         sInd[i] = sInd_calc(dInd[i])
         DP[i] = DP_calc(TPR[i], TNR[i])
-        YI[i] = YI_calc(TPR[i],TNR[i])
+        Y[i] = YI_calc(TPR[i],TNR[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,

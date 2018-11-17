@@ -19,6 +19,12 @@ def isfile(f):
         f, 'read')
 
 
+def YI_calc(TPR,TNR):
+    try:
+        return TPR+TNR-1
+    except Exception:
+        return "None"
+
 def DP_calc(TPR, TNR):
     '''
     This function calculate DP (Discriminant power)
@@ -1592,6 +1598,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     dInd = {}
     sInd = {}
     DP = {}
+    YI = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1629,6 +1636,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         dInd[i] = dInd_calc(TNR[i], TPR[i])
         sInd[i] = sInd_calc(dInd[i])
         DP[i] = DP_calc(TPR[i], TNR[i])
+        YI[i] = YI_calc(TPR[i],TNR[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1669,5 +1677,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "AUC": AUC,
         "sInd": sInd,
         "dInd": dInd,
-        "DP": DP}
+        "DP": DP,
+        "YI": YI}
     return result

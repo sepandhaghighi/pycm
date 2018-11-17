@@ -19,7 +19,7 @@ def isfile(f):
         f, 'read')
 
 
-def YI_calc(TPR,TNR):
+def YI_calc(TPR, TNR):
     '''
     This function calculate Youden's index
     :param TNR: Specificity or true negative rate
@@ -29,9 +29,10 @@ def YI_calc(TPR,TNR):
     :return: Youden's index as float
     '''
     try:
-        return TPR+TNR-1
+        return TPR + TNR - 1
     except Exception:
         return "None"
+
 
 def DP_calc(TPR, TNR):
     '''
@@ -1644,7 +1645,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         dInd[i] = dInd_calc(TNR[i], TPR[i])
         sInd[i] = sInd_calc(dInd[i])
         DP[i] = DP_calc(TPR[i], TNR[i])
-        Y[i] = YI_calc(TPR[i],TNR[i])
+        Y[i] = YI_calc(TPR[i], TNR[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,

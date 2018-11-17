@@ -19,7 +19,7 @@ def isfile(f):
         f, 'read')
 
 
-def DP_calc(TPR,TNR):
+def DP_calc(TPR, TNR):
     '''
     This function calculate DP (Discriminant power)
     :param TNR: Specificity or true negative rate
@@ -29,11 +29,13 @@ def DP_calc(TPR,TNR):
     :return: DP as float
     '''
     try:
-        X = TPR/(1-TPR)
-        Y = TNR/(1-TNR)
-        return (math.sqrt(3)/math.pi)*(math.log(X,10)+math.log(Y,10))
+        X = TPR / (1 - TPR)
+        Y = TNR / (1 - TNR)
+        return (math.sqrt(3) / math.pi) * (math.log(X, 10) + math.log(Y, 10))
     except Exception:
         return "None"
+
+
 def RCI_calc(mutual_information, reference_entropy):
     '''
     This function calculate RCI
@@ -502,7 +504,7 @@ def vector_check(vector):
     for i in vector:
         if isinstance(i, int) == False:
             return False
-        if i<0:
+        if i < 0:
             return False
     return True
 
@@ -1626,7 +1628,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         AUC[i] = AUC_calc(TNR[i], TPR[i])
         dInd[i] = dInd_calc(TNR[i], TPR[i])
         sInd[i] = sInd_calc(dInd[i])
-        DP[i] = DP_calc(TPR[i],TNR[i])
+        DP[i] = DP_calc(TPR[i], TNR[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,

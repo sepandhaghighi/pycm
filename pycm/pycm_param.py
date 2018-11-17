@@ -56,7 +56,7 @@ PARAMS_DESCRIPTION = {
     "AUC": "Area under the ROC curve",
     "dInd": "Distance index",
     "sInd": "Similarity index",
-    "DP":"Discriminant power"}
+    "DP": "Discriminant power"}
 
 PARAMS_LINK = {
     "TPR": "TPR--(sensitivity,-recall,-hit-rate,-or-true-positive-rate)",
@@ -150,7 +150,7 @@ PARAMS_LINK = {
     "sInd": "sInd-(Similarity-Index)",
     "dInd": "dInd-(Distance-Index)",
     "RCI": "Relative-Classifier-Information",
-    "DP":"DP-(Discriminant-Power)"}
+    "DP": "DP-(Discriminant-Power)"}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

@@ -494,6 +494,8 @@ def vector_check(vector):
     for i in vector:
         if isinstance(i, int) == False:
             return False
+        if i<0:
+            return False
     return True
 
 

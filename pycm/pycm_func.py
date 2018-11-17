@@ -1598,7 +1598,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     dInd = {}
     sInd = {}
     DP = {}
-    YI = {}
+    Y = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1678,5 +1678,5 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "sInd": sInd,
         "dInd": dInd,
         "DP": DP,
-        "YI": YI}
+        "Y": Y}
     return result

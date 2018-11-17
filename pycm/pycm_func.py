@@ -20,6 +20,14 @@ def isfile(f):
 
 
 def YI_calc(TPR,TNR):
+    '''
+    This function calculate Youden's index
+    :param TNR: Specificity or true negative rate
+    :type TNR : float
+    :param TPR: Sensitivity, recall, hit rate, or true positive rate
+    :type TPR : float
+    :return: Youden's index as float
+    '''
     try:
         return TPR+TNR-1
     except Exception:

@@ -19,6 +19,13 @@ def isfile(f):
         f, 'read')
 
 
+def DP_calc(TPR,TNR):
+    try:
+        X = TPR/(1-TPR)
+        Y = TNR/(1-TNR)
+        return (math.sqrt(3)/math.pi)*(math.log(X,10)+math.log(Y,10))
+    except Exception:
+        return "None"
 def RCI_calc(mutual_information, reference_entropy):
     '''
     This function calculate RCI
@@ -1572,6 +1579,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     AUC = {}
     dInd = {}
     sInd = {}
+    DP = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1608,6 +1616,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         AUC[i] = AUC_calc(TNR[i], TPR[i])
         dInd[i] = dInd_calc(TNR[i], TPR[i])
         sInd[i] = sInd_calc(dInd[i])
+        DP[i] = DP_calc(TPR[i],TNR[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1647,5 +1656,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "MCEN": MCEN,
         "AUC": AUC,
         "sInd": sInd,
-        "dInd": dInd}
+        "dInd": dInd,
+        "DP": DP}
     return result

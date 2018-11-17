@@ -55,7 +55,8 @@ PARAMS_DESCRIPTION = {
     "MCEN": "Modified Confusion Entropy",
     "AUC": "Area under the ROC curve",
     "dInd": "Distance index",
-    "sInd": "Similarity index"}
+    "sInd": "Similarity index",
+    "DP":"Discriminant power"}
 
 PARAMS_LINK = {
     "TPR": "TPR--(sensitivity,-recall,-hit-rate,-or-true-positive-rate)",
@@ -148,7 +149,8 @@ PARAMS_LINK = {
     "AUNP": "AUNP",
     "sInd": "sInd-(Similarity-Index)",
     "dInd": "dInd-(Distance-Index)",
-    "RCI": "Relative-Classifier-Information"}
+    "RCI": "Relative-Classifier-Information",
+    "DP":""}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

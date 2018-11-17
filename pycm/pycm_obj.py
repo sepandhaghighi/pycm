@@ -185,6 +185,7 @@ class ConfusionMatrix():
         self.AUC = statistic_result["AUC"]
         self.dInd = statistic_result["dInd"]
         self.sInd = statistic_result["sInd"]
+        self.DP = statistic_result["DP"]
         self.Overall_J = self.overall_stat["Overall_J"]
         self.SOA1 = self.overall_stat["Strength_Of_Agreement(Landis and Koch)"]
         self.SOA2 = self.overall_stat["Strength_Of_Agreement(Fleiss)"]

@@ -75,6 +75,7 @@ AUC(Area under the roc curve)                                    0.88889        
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
+DP(Discriminant power)                                           None                    0.33193                 0.16597
 ERR(Error rate)                                                  0.16667                 0.25                    0.41667
 F0.5(F0.5 score)                                                 0.65217                 0.45455                 0.57692
 F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545
@@ -277,6 +278,7 @@ AUC(Area under the roc curve)                                    None           
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
+DP(Discriminant power)                                           None                    0.14074                 0.4979                  None
 ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05
 F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0
 F1(F1 score - harmonic mean of precision and sensitivity)        0.0                     0.52174                 0.4                     0.0
@@ -371,6 +373,7 @@ AUC(Area under the roc curve)                                    None           
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
+DP(Discriminant power)                                           None                    0.14074                 0.4979                  None
 ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05
 F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0
 F1(F1 score - harmonic mean of precision and sensitivity)        0.0                     0.52174                 0.4                     0.0
@@ -671,6 +674,7 @@ AUC(Area under the roc curve)                                    None           
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
+DP(Discriminant power)                                           None                    0.14074                 0.4979                  None
 ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05
 F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0
 F1(F1 score - harmonic mean of precision and sensitivity)        0.0                     0.52174                 0.4                     0.0
@@ -784,6 +788,7 @@ AUC(Area under the roc curve)                                    0.74167        
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
+DP(Discriminant power)                                           0.50527                 0.35339                 0.88326
 ERR(Error rate)                                                  0.25926                 0.2963                  0.11111
 F0.5(F0.5 score)                                                 0.70312                 0.55556                 0.76923
 F1(F1 score - harmonic mean of precision and sensitivity)        0.72                    0.55556                 0.72727
@@ -888,6 +893,7 @@ AUC(Area under the roc curve)                                    0.74167        
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
+DP(Discriminant power)                                           0.50527                 0.35339                 0.88326
 ERR(Error rate)                                                  0.25926                 0.2963                  0.11111
 F0.5(F0.5 score)                                                 0.70312                 0.55556                 0.76923
 F1(F1 score - harmonic mean of precision and sensitivity)        0.72                    0.55556                 0.72727
@@ -943,77 +949,78 @@ Example : online_help("J") or online_help(2)
 13-Cramer_V
 14-Cross Entropy
 15-DOR
-16-ERR
-17-F0.5
-18-F1
-19-F2
-20-FDR
-21-FN
-22-FNR
-23-FOR
-24-FP
-25-FPR
-26-G
-27-Gwet_AC1
-28-Hamming Loss
-29-IS
-30-J
-31-Joint Entropy
-32-KL Divergence
-33-Kappa
-34-Kappa 95% CI
-35-Kappa No Prevalence
-36-Kappa Standard Error
-37-Kappa Unbiased
-38-LR+
-39-LR-
-40-Lambda A
-41-Lambda B
-42-MCC
-43-MCEN
-44-MK
-45-Mutual Information
-46-N
-47-NIR
-48-NPV
-49-Overall_ACC
-50-Overall_CEN
-51-Overall_J
-52-Overall_MCC
-53-Overall_MCEN
-54-Overall_RACC
-55-Overall_RACCU
-56-P
-57-P-Value
-58-POP
-59-PPV
-60-PPV_Macro
-61-PPV_Micro
-62-PRE
-63-Phi-Squared
-64-RACC
-65-RACCU
-66-RCI
-67-RR
-68-Reference Entropy
-69-Response Entropy
-70-Scott_PI
-71-Standard Error
-72-Strength_Of_Agreement(Altman)
-73-Strength_Of_Agreement(Cicchetti)
-74-Strength_Of_Agreement(Fleiss)
-75-Strength_Of_Agreement(Landis and Koch)
-76-TN
-77-TNR
-78-TON
-79-TOP
-80-TP
-81-TPR
-82-TPR_Macro
-83-TPR_Micro
-84-Zero-one Loss
-85-dInd
-86-sInd
+16-DP
+17-ERR
+18-F0.5
+19-F1
+20-F2
+21-FDR
+22-FN
+23-FNR
+24-FOR
+25-FP
+26-FPR
+27-G
+28-Gwet_AC1
+29-Hamming Loss
+30-IS
+31-J
+32-Joint Entropy
+33-KL Divergence
+34-Kappa
+35-Kappa 95% CI
+36-Kappa No Prevalence
+37-Kappa Standard Error
+38-Kappa Unbiased
+39-LR+
+40-LR-
+41-Lambda A
+42-Lambda B
+43-MCC
+44-MCEN
+45-MK
+46-Mutual Information
+47-N
+48-NIR
+49-NPV
+50-Overall_ACC
+51-Overall_CEN
+52-Overall_J
+53-Overall_MCC
+54-Overall_MCEN
+55-Overall_RACC
+56-Overall_RACCU
+57-P
+58-P-Value
+59-POP
+60-PPV
+61-PPV_Macro
+62-PPV_Micro
+63-PRE
+64-Phi-Squared
+65-RACC
+66-RACCU
+67-RCI
+68-RR
+69-Reference Entropy
+70-Response Entropy
+71-Scott_PI
+72-Standard Error
+73-Strength_Of_Agreement(Altman)
+74-Strength_Of_Agreement(Cicchetti)
+75-Strength_Of_Agreement(Fleiss)
+76-Strength_Of_Agreement(Landis and Koch)
+77-TN
+78-TNR
+79-TON
+80-TOP
+81-TP
+82-TPR
+83-TPR_Macro
+84-TPR_Micro
+85-Zero-one Loss
+86-dInd
+87-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -1089,6 +1096,7 @@ AUC(Area under the roc curve)                                    0.86667        
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
 CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5
+DP(Discriminant power)                                           None                    0.33193                 0.29996
 ERR(Error rate)                                                  0.19048                 0.19048                 0.38095
 F0.5(F0.5 score)                                                 0.65217                 0.33333                 0.68182
 F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.33333                 0.6
@@ -1193,6 +1201,7 @@ AUC(Area under the roc curve)                                    0.86667        
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
 CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5
+DP(Discriminant power)                                           None                    0.33193                 0.29996
 ERR(Error rate)                                                  0.19048                 0.19048                 0.38095
 F0.5(F0.5 score)                                                 0.65217                 0.33333                 0.68182
 F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.33333                 0.6

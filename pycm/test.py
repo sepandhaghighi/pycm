@@ -81,7 +81,7 @@ F0.5(F0.5 score)                                                 0.65217        
 F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545
 F2(F2 score)                                                     0.88235                 0.35714                 0.51724
 FDR(False discovery rate)                                        0.4                     0.5                     0.4
-FN(False negative/miss/type 2 error)                            0                       2                       3
+FN(False negative/miss/type 2 error)                             0                       2                       3
 FNR(Miss rate or false negative rate)                            0.0                     0.66667                 0.5
 FOR(False omission rate)                                         0.0                     0.2                     0.42857
 FP(False positive/type 1 error/false alarm)                      2                       1                       2
@@ -108,7 +108,7 @@ TON(Test outcome negative)                                       7              
 TOP(Test outcome positive)                                       5                       2                       5
 TP(True positive/hit)                                            3                       1                       3
 TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5
-Y(Youden index)                                                  0.77778                 0.22222                 0.1666
+Y(Youden index)                                                  0.77778                 0.22222                 0.16667
 dInd(Distance index)                                             0.22222                 0.67586                 0.60093
 sInd(Similarity index)                                           0.84287                 0.52209                 0.57508
 <BLANKLINE>
@@ -1277,7 +1277,7 @@ sInd(Similarity index)                                           0.81144        
 0.3675708571923818
 >>> cm = ConfusionMatrix(matrix={1:{1:12806,2:26332},2:{1:5484,2:299777}},transpose=True) # Verified Case
 >>> cm.DP[1]
-0.7854399677022134
+0.7854399677022138
 >>> cm.Y[1]
 0.6194180158203517
 >>> cm = ConfusionMatrix(matrix={1:{1:13182,2:30516},2:{1:5108,2:295593}},transpose=True) # Verified Case

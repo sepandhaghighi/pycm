@@ -20,6 +20,14 @@ def isfile(f):
 
 
 def DP_calc(TPR,TNR):
+    '''
+    This function calculate DP (Discriminant power)
+    :param TNR: Specificity or true negative rate
+    :type TNR : float
+    :param TPR: Sensitivity, recall, hit rate, or true positive rate
+    :type TPR : float
+    :return: DP as float
+    '''
     try:
         X = TPR/(1-TPR)
         Y = TNR/(1-TNR)

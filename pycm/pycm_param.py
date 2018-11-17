@@ -150,7 +150,7 @@ PARAMS_LINK = {
     "sInd": "sInd-(Similarity-Index)",
     "dInd": "dInd-(Distance-Index)",
     "RCI": "Relative-Classifier-Information",
-    "DP":""}
+    "DP":"DP-(Discriminant-Power)"}
 
 BENCHMARK_COLOR = {
     "Poor": "Red",

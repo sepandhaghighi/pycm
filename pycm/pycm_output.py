@@ -255,8 +255,12 @@ def table_print(classes, table):
     :return: printable table as str
     '''
     classes_len = len(classes)
-    class_max_length = max(map(len, map(str, classes)))
-    shift = "%-" + str(4 + class_max_length) + "s"
+    table_list = []
+    for key in classes:
+        table_list.extend(list(table[key].values()))
+    table_list.extend(classes)
+    table_max_length = max(map(len, map(str, table_list)))
+    shift = "%-" + str(4 + table_max_length) + "s"
     result = "Predict" + 10 * " " + shift * \
         classes_len % tuple(map(str, classes)) + "\n"
     result = result + "Actual\n"
@@ -264,7 +268,7 @@ def table_print(classes, table):
     for key in classes:
         row = [table[key][i] for i in classes]
         result += str(key) + " " * (17 - len(str(key))) + \
-            shift * classes_len % tuple(map(str, row)) + "\n"
+            shift * classes_len % tuple(map(str, row)) + "\n\n"
     return result
 
 

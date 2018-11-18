@@ -391,3 +391,5 @@ class ConfusionMatrix():
         :return: representation as str
         '''
         return "pycm.ConfusionMatrix(classes: " + str(self.classes) + ")"
+    def __len__(self):
+        return len(self.classes)

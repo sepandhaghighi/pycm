@@ -367,6 +367,15 @@ For more information visit [Example5](http://www.shaghighi.ir/pycm/doc/Example5.
 ### Transpose
 `transpose` is added in `Version 1.2` in order to transpose input matrix (only in `Direct CM` mode)
 
+### Relabel		
+`relabel` method is added in `Version 1.5` in order to change ConfusionMatrix classnames.		
+
+```python
+>>> cm.relabel(mapping={0:"L1",1:"L2",2:"L3"})
+>>> cm
+pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
+```
+
 ### Online Help
 
 `online_help` function is added in `Version 1.1` in order to open each statistics definition in web browser

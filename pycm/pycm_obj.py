@@ -121,6 +121,7 @@ class ConfusionMatrix():
             raise pycmVectorError("Number Of Classes < 2")
         self.classes = matrix_param[0]
         self.table = matrix_param[1]
+        self.normalized_table = normalized_table_calc(self.classes, self.table)
         self.TP = matrix_param[2]
         self.TN = matrix_param[3]
         self.FP = matrix_param[4]
@@ -183,7 +184,8 @@ class ConfusionMatrix():
         if one_vs_all:
             [classes, table] = one_vs_all_func(
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
-        print(normalized_table_print(classes, table))
+        table = normalized_table_calc(classes,table)
+        print(table_print(classes, table))
 
     def stat(self):
         '''
@@ -223,8 +225,8 @@ class ConfusionMatrix():
             matrix = "Matrix : \n\n" + table_print(self.classes,
                                                    self.table) + "\n\n"
             normalized_matrix = "Normalized Matrix : \n\n" + \
-                                normalized_table_print(self.classes,
-                                                       self.table) + "\n\n"
+                                table_print(self.classes,
+                                                       self.normalized_table) + "\n\n"
             one_vs_all = "\nOne-Vs-All : \n\n"
             for class_name in self.classes:
                 one_vs_all += str(class_name) + "-Vs-All : \n\n"
@@ -364,9 +366,12 @@ class ConfusionMatrix():
             raise pycmMatrixError("Mapping Classnames Error")
         for row in self.classes:
             temp_dict = {}
+            temp_dict_normalized = {}
             for col in self.classes:
                 temp_dict[mapping[col]] = self.table[row][col]
+                temp_dict_normalized[mapping[col]] = self.normalized_table[row][col]
             self.table[mapping[row]] = temp_dict
+            self.normalized_table[mapping[row]] = temp_dict_normalized
 
         for param in self.class_stat.keys():
             temp_dict = {}

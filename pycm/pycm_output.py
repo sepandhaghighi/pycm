@@ -272,7 +272,7 @@ def table_print(classes, table):
     return result
 
 
-def normalized_table_print(classes, table):
+def normalized_table_calc(classes, table):
     '''
     This function print normalized confusion matrix
     :param classes: classes list
@@ -281,22 +281,17 @@ def normalized_table_print(classes, table):
     :type table:dict
     :return: printable table as str
     '''
-    classes_len = len(classes)
-    class_max_length = max(map(len, map(str, classes)))
-    shift = "%-" + str(15 + class_max_length) + "s"
-    result = "Predict" + 10 * " " + shift * \
-        classes_len % tuple(map(str, classes)) + "\n"
-    result = result + "Actual\n"
     classes.sort()
+    map_dict = {k: 0 for k in classes}
+    new_table = {k: map_dict.copy() for k in classes}
     for key in classes:
         row = [table[key][i] for i in classes]
         div = sum(row)
         if sum(row) == 0:
             div = 1
-        result += str(key) + " " * (17 - len(str(key))) + shift * classes_len\
-            % tuple(
-            map(lambda x: str(numpy.around(x / div, 5)), row)) + "\n"
-    return result
+        for item in classes:
+            new_table[key][item] = numpy.around(table[key][item] / div, 5)
+    return new_table
 
 
 def csv_print(classes, class_stat, digit=5):

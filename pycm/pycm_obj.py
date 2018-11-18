@@ -467,6 +467,12 @@ class ConfusionMatrix():
 
 
 def __class_stat_init__(CM):
+    '''
+    This function init individual class stat
+    :param CM: ConfusionMatrix
+    :type CM : pycm.ConfusionMatrix object
+    :return: None
+    '''
     CM.TPR = CM.class_stat["TPR"]
     CM.TNR = CM.class_stat["TNR"]
     CM.PPV = CM.class_stat["PPV"]
@@ -506,6 +512,12 @@ def __class_stat_init__(CM):
     CM.Y = CM.class_stat["Y"]
 
 def __overall_stat_init__(CM):
+    '''
+    This function init individual overall stat
+    :param CM: ConfusionMatrix
+    :type CM : pycm.ConfusionMatrix object
+    :return: None
+    '''
     CM.Overall_J = CM.overall_stat["Overall_J"]
     CM.SOA1 = CM.overall_stat["Strength_Of_Agreement(Landis and Koch)"]
     CM.SOA2 = CM.overall_stat["Strength_Of_Agreement(Fleiss)"]

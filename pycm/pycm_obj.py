@@ -511,6 +511,7 @@ def __class_stat_init__(CM):
     CM.DP = CM.class_stat["DP"]
     CM.Y = CM.class_stat["Y"]
 
+
 def __overall_stat_init__(CM):
     '''
     This function init individual overall stat
@@ -565,4 +566,3 @@ def __overall_stat_init__(CM):
     CM.AUNU = CM.overall_stat["AUNU"]
     CM.AUNP = CM.overall_stat["AUNP"]
     CM.RCI = CM.overall_stat["RCI"]
-

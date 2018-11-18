@@ -154,7 +154,7 @@ class ConfusionMatrix():
         __class_stat_init__(self)
         __overall_stat_init__(self)
 
-    def matrix(self, one_vs_all=False, class_name=None):
+    def print_matrix(self, one_vs_all=False, class_name=None):
         '''
         This method print confusion matrix
         :param one_vs_all : One-Vs-All mode flag
@@ -170,7 +170,7 @@ class ConfusionMatrix():
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
         print(table_print(classes, table))
 
-    def normalized_matrix(self, one_vs_all=False, class_name=None):
+    def print_normalized_matrix(self, one_vs_all=False, class_name=None):
         '''
         This method print normalized confusion matrix
         :param one_vs_all : One-Vs-All mode flag

@@ -15,7 +15,7 @@ if __name__ == "__main__":
                 "test.py",
                 optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
                 | doctest.IGNORE_EXCEPTION_DETAIL,
-                verbose=True)
+                verbose=False)
         else:
             tprint("pycm")
             tprint("V:" + VERSION)

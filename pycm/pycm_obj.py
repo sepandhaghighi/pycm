@@ -186,7 +186,7 @@ class ConfusionMatrix():
         if one_vs_all:
             [classes, table] = one_vs_all_func(
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
-        table = normalized_table_calc(classes,table)
+        table = normalized_table_calc(classes, table)
         print(table_print(classes, table))
 
     def stat(self):
@@ -228,7 +228,7 @@ class ConfusionMatrix():
                                                    self.table) + "\n\n"
             normalized_matrix = "Normalized Matrix : \n\n" + \
                                 table_print(self.classes,
-                                                       self.normalized_table) + "\n\n"
+                                            self.normalized_table) + "\n\n"
             one_vs_all = "\nOne-Vs-All : \n\n"
             for class_name in self.classes:
                 one_vs_all += str(class_name) + "-Vs-All : \n\n"
@@ -371,7 +371,8 @@ class ConfusionMatrix():
             temp_dict_normalized = {}
             for col in self.classes:
                 temp_dict[mapping[col]] = self.table[row][col]
-                temp_dict_normalized[mapping[col]] = self.normalized_table[row][col]
+                temp_dict_normalized[mapping[col]
+                                     ] = self.normalized_table[row][col]
             self.table[mapping[row]] = temp_dict
             self.normalized_table[mapping[row]] = temp_dict_normalized
         self.matrix = self.table

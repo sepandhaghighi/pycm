@@ -526,7 +526,7 @@ Y(Youden index)                                                  None           
 dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0
 sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289
 <BLANKLINE>
->>> cm.normalized_matrix()
+>>> cm.print_normalized_matrix()
 Predict          100            200            500            600
 Actual
 100              0.0            0.0            0.0            0.0
@@ -534,7 +534,7 @@ Actual
 500              0.33333        0.33333        0.33333        0.0
 600              1.0            0.0            0.0            0.0
 <BLANKLINE>
->>> cm.matrix()
+>>> cm.print_matrix()
 Predict          100      200      500      600
 Actual
 100              0        0        0        0
@@ -542,13 +542,13 @@ Actual
 500              1        1        1        0
 600              1        0        0        0
 <BLANKLINE>
->>> cm.matrix(one_vs_all=True,class_name=200)
+>>> cm.print_matrix(one_vs_all=True,class_name=200)
 Predict          200    ~
 Actual
 200              6      10
 ~                1      3
 <BLANKLINE>
->>> cm.normalized_matrix(one_vs_all=True,class_name=200)
+>>> cm.print_normalized_matrix(one_vs_all=True,class_name=200)
 Predict          200               ~
 Actual
 200              0.375             0.625
@@ -713,7 +713,7 @@ True
 ...	    else:
 ...		    return 0
 >>> cm_6 = ConfusionMatrix([0,0,1,0],[0.87,0.34,0.9,0.12],threshold=activation)
->>> cm_6.matrix()
+>>> cm_6.print_matrix()
 Predict          0        1
 Actual
 0                1        2
@@ -832,7 +832,7 @@ sInd(Similarity index)                                           None           
 >>> save_obj=={'Status': True, 'Message': None}
 True
 >>> cm_file_2=ConfusionMatrix(file=open("test2.obj","r"))
->>> cm_file_2.matrix()
+>>> cm_file_2.print_matrix()
 Predict          0        1
 Actual
 0                1        2
@@ -1257,7 +1257,7 @@ sInd(Similarity index)                                           0.81144        
 >>> save_obj=={'Status': True, 'Message': None}
 True
 >>> cm_file_3=ConfusionMatrix(file=open("test3.obj","r"))
->>> cm_file_3.matrix()
+>>> cm_file_3.print_matrix()
 Predict          0    1    2
 Actual
 0                6    0    0

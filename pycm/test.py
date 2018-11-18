@@ -114,6 +114,112 @@ Y(Youden index)                                                  0.77778        
 dInd(Distance index)                                             0.22222                 0.67586                 0.60093
 sInd(Similarity index)                                           0.84287                 0.52209                 0.57508
 <BLANKLINE>
+>>> cm.relabel({0:"L1",1:"L2",2:"L3"})
+>>> print(cm)
+Predict           L1       L2       L3
+Actual
+L1                3        0        0
+L2                0        1        2
+L3                2        1        3
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Overall Statistics :
+<BLANKLINE>
+95% CI                                                           (0.30439,0.86228)
+AUNP                                                             0.66667
+AUNU                                                             0.69444
+Bennett_S                                                        0.375
+CBA                                                              0.47778
+Chi-Squared                                                      6.6
+Chi-Squared DF                                                   4
+Conditional Entropy                                              0.95915
+Cramer_V                                                         0.5244
+Cross Entropy                                                    1.59352
+Gwet_AC1                                                         0.38931
+Hamming Loss                                                     0.41667
+Joint Entropy                                                    2.45915
+KL Divergence                                                    0.09352
+Kappa                                                            0.35484
+Kappa 95% CI                                                     (-0.07708,0.78675)
+Kappa No Prevalence                                              0.16667
+Kappa Standard Error                                             0.22036
+Kappa Unbiased                                                   0.34426
+Lambda A                                                         0.16667
+Lambda B                                                         0.42857
+Mutual Information                                               0.52421
+NIR                                                              0.5
+Overall_ACC                                                      0.58333
+Overall_CEN                                                      0.46381
+Overall_J                                                        (1.225,0.40833)
+Overall_MCC                                                      0.36667
+Overall_MCEN                                                     0.51894
+Overall_RACC                                                     0.35417
+Overall_RACCU                                                    0.36458
+P-Value                                                          0.38721
+PPV_Macro                                                        0.56667
+PPV_Micro                                                        0.58333
+Phi-Squared                                                      0.55
+RCI                                                              0.34947
+RR                                                               4.0
+Reference Entropy                                                1.5
+Response Entropy                                                 1.48336
+Scott_PI                                                         0.34426
+Standard Error                                                   0.14232
+Strength_Of_Agreement(Altman)                                    Fair
+Strength_Of_Agreement(Cicchetti)                                 Poor
+Strength_Of_Agreement(Fleiss)                                    Poor
+Strength_Of_Agreement(Landis and Koch)                           Fair
+TPR_Macro                                                        0.61111
+TPR_Micro                                                        0.58333
+Zero-one Loss                                                    5
+<BLANKLINE>
+Class Statistics :
+<BLANKLINE>
+Classes                                                          L1                      L2                      L3
+ACC(Accuracy)                                                    0.83333                 0.75                    0.58333
+AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
+BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
+CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
+DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
+DP(Discriminant power)                                           None                    0.33193                 0.16597
+ERR(Error rate)                                                  0.16667                 0.25                    0.41667
+F0.5(F0.5 score)                                                 0.65217                 0.45455                 0.57692
+F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545
+F2(F2 score)                                                     0.88235                 0.35714                 0.51724
+FDR(False discovery rate)                                        0.4                     0.5                     0.4
+FN(False negative/miss/type 2 error)                             0                       2                       3
+FNR(Miss rate or false negative rate)                            0.0                     0.66667                 0.5
+FOR(False omission rate)                                         0.0                     0.2                     0.42857
+FP(False positive/type 1 error/false alarm)                      2                       1                       2
+FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333
+G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
+IS(Information score)                                            1.26303                 1.0                     0.26303
+J(Jaccard index)                                                 0.6                     0.25                    0.375
+LR+(Positive likelihood ratio)                                   4.5                     3.0                     1.5
+LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.75
+MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903
+MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875
+MK(Markedness)                                                   0.6                     0.3                     0.17143
+N(Condition negative)                                            9                       9                       6
+NPV(Negative predictive value)                                   1.0                     0.8                     0.57143
+P(Condition positive or support)                                 3                       3                       6
+POP(Population)                                                  12                      12                      12
+PPV(Precision or positive predictive value)                      0.6                     0.5                     0.6
+PRE(Prevalence)                                                  0.25                    0.25                    0.5
+RACC(Random accuracy)                                            0.10417                 0.04167                 0.20833
+RACCU(Random accuracy unbiased)                                  0.11111                 0.0434                  0.21007
+TN(True negative/correct rejection)                              7                       8                       4
+TNR(Specificity or true negative rate)                           0.77778                 0.88889                 0.66667
+TON(Test outcome negative)                                       7                       10                      7
+TOP(Test outcome positive)                                       5                       2                       5
+TP(True positive/hit)                                            3                       1                       3
+TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5
+Y(Youden index)                                                  0.77778                 0.22222                 0.16667
+dInd(Distance index)                                             0.22222                 0.67586                 0.60093
+sInd(Similarity index)                                           0.84287                 0.52209                 0.57508
+<BLANKLINE>
 >>> cm_2 = ConfusionMatrix(y_actu, 2)
 Traceback (most recent call last):
         ...

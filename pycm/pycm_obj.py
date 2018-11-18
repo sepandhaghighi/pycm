@@ -152,6 +152,7 @@ class ConfusionMatrix():
             AUC_dict=statistic_result["AUC"])
         __class_stat_init__(self)
         __overall_stat_init__(self)
+
     def matrix(self, one_vs_all=False, class_name=None):
         '''
         This method print confusion matrix

@@ -212,14 +212,14 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 dInd(Distance index)                                             0.22222                 0.67586                 0.60093                 
 sInd(Similarity index)                                           0.84287                 0.52209                 0.57508                 
                                                                                      
->>> cm.matrix()
+>>> cm.print_matrix()
 Predict          0        1        2        
 Actual
 0                3        0        0        
 1                0        1        2        
 2                2        1        3        
 
->>> cm.normalized_matrix()
+>>> cm.print_normalized_matrix()
 Predict          0              1              2              
 Actual
 0                1.0            0.0            0.0            
@@ -341,7 +341,7 @@ dInd(Distance index)                                             0.66667        
 sInd(Similarity index)                                           0.5286                  0.5286                  
 
 >>> cm3 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":0}, "Class2": {"Class1": 2, "Class2": 5}},transpose=True) # Transpose Matrix      
->>> cm3.matrix()
+>>> cm3.print_matrix()
 Predict          Class1    Class2    
 Actual
 Class1           1         2         
@@ -349,6 +349,8 @@ Class2           0         5
                    
 
 ```
+* `matrix()` and `normalized_matrix()` renamed to `print_matrix()` and `print_normalized_matrix()` from `Version 1.5`			
+
 ### Activation Threshold
 `threshold` is added in `Version 0.9` for real value prediction.			
 						

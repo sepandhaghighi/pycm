@@ -7,6 +7,8 @@
 >>> cm = ConfusionMatrix(y_actu, y_pred)
 >>> cm
 pycm.ConfusionMatrix(classes: [0, 1, 2])
+>>> len(cm)
+3
 >>> print(cm)
 Predict          0        1        2
 Actual

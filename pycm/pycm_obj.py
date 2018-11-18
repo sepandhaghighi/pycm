@@ -393,3 +393,25 @@ class ConfusionMatrix():
         return "pycm.ConfusionMatrix(classes: " + str(self.classes) + ")"
     def __len__(self):
         return len(self.classes)
+
+    def relabel(self,mapping):
+        if not isinstance(mapping,dict):
+            raise pycmMatrixError("Mapping Format Error")
+        if self.classes != list(mapping.keys()):
+            raise pycmMatrixError("Mapping Classnames Error")
+        for row in self.classes:
+            temp_dict = {}
+            for col in self.classes:
+                temp_dict[mapping[col]] = self.table[row][col]
+            self.table[mapping[row]] = temp_dict
+
+        for param in self.class_stat.keys():
+            temp_dict = {}
+            for classname in self.classes :
+                temp_dict[mapping[classname]] = self.class_stat[param][classname]
+            self.class_stat[param] = temp_dict
+        self.classes = list(mapping.values())
+
+
+
+

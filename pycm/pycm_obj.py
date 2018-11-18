@@ -121,7 +121,9 @@ class ConfusionMatrix():
             raise pycmVectorError("Number Of Classes < 2")
         self.classes = matrix_param[0]
         self.table = matrix_param[1]
+        self.matrix = self.table
         self.normalized_table = normalized_table_calc(self.classes, self.table)
+        self.normalized_matrix = self.normalized_table
         self.TP = matrix_param[2]
         self.TN = matrix_param[3]
         self.FP = matrix_param[4]
@@ -372,7 +374,8 @@ class ConfusionMatrix():
                 temp_dict_normalized[mapping[col]] = self.normalized_table[row][col]
             self.table[mapping[row]] = temp_dict
             self.normalized_table[mapping[row]] = temp_dict_normalized
-
+        self.matrix = self.table
+        self.normalized_matrix = self.normalized_table
         for param in self.class_stat.keys():
             temp_dict = {}
             for classname in self.classes:

@@ -291,6 +291,14 @@ class ConfusionMatrix():
         return result
 
     def save_stat(self, name, address=True):
+        '''
+        This method save ConfusionMatrix in .pycm (flat file format)
+        :param name: filename
+        :type name : str
+        :param address: Flag for address return
+        :type address : bool
+        :return: Saving Status as dict {"Status":bool , "Message":str}
+        '''
         try:
             message = None
             file = open(name + ".pycm", "w")
@@ -320,6 +328,14 @@ class ConfusionMatrix():
             return {"Status": False, "Message": str(e)}
 
     def save_html(self, name, address=True):
+        '''
+        This method save ConfusionMatrix in HTML file
+        :param name: filename
+        :type name : str
+        :param address: Flag for address return
+        :type address : bool
+        :return: Saving Status as dict {"Status":bool , "Message":str}
+        '''
         try:
             message = None
             html_file = open(name + ".html", "w")
@@ -339,6 +355,14 @@ class ConfusionMatrix():
             return {"Status": False, "Message": str(e)}
 
     def save_csv(self, name, address=True):
+        '''
+        This method save ConfusionMatrix in CSV file
+        :param name: filename
+        :type name : str
+        :param address: Flag for address return
+        :type address : bool
+        :return: Saving Status as dict {"Status":bool , "Message":str}
+        '''
         try:
             message = None
             csv_file = open(name + ".csv", "w")
@@ -351,6 +375,14 @@ class ConfusionMatrix():
             return {"Status": False, "Message": str(e)}
 
     def save_obj(self, name, address=True):
+        '''
+        This method save ConfusionMatrix in .obj file
+        :param name: filename
+        :type name : str
+        :param address: Flag for address return
+        :type address : bool
+        :return: Saving Status as dict {"Status":bool , "Message":str}
+        '''
         try:
             message = None
             obj_file = open(name + ".obj", "w")
@@ -373,6 +405,12 @@ class ConfusionMatrix():
             return {"Status": False, "Message": str(e)}
 
     def F_beta(self, Beta):
+        '''
+        This method calculate FBeta Score
+        :param Beta: Beta parameter
+        :type Beta : float
+        :return: FBeta Score for classes as dict
+        '''
         try:
             F_Dict = {}
             for i in self.TP.keys():
@@ -391,10 +429,17 @@ class ConfusionMatrix():
         :return: representation as str
         '''
         return "pycm.ConfusionMatrix(classes: " + str(self.classes) + ")"
+
     def __len__(self):
         return len(self.classes)
 
     def relabel(self,mapping):
+        '''
+        This method rename ConfusionMatrix classes
+        :param mapping: mapping dictionary
+        :type mapping : dict
+        :return: None
+        '''
         if not isinstance(mapping,dict):
             raise pycmMatrixError("Mapping Format Error")
         if self.classes != list(mapping.keys()):

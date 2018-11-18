@@ -274,12 +274,12 @@ def table_print(classes, table):
 
 def normalized_table_calc(classes, table):
     '''
-    This function print normalized confusion matrix
+    This function return normalized confusion matrix
     :param classes: classes list
     :type classes:list
     :param table: table
     :type table:dict
-    :return: printable table as str
+    :return: normalized table as dict
     '''
     classes.sort()
     map_dict = {k: 0 for k in classes}

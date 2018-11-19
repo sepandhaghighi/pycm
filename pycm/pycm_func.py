@@ -1107,6 +1107,18 @@ def PLR_analysis(PLR):
     except Exception:
         return "None"
 
+def DP_analysis (DP):
+    try:
+        if DP <1 :
+            return "Poor"
+        elif DP>=1 and DP<2:
+            return "Limited "
+        elif DP>=2 and DP<3:
+            return "Fair"
+        else :
+            return "Good"
+    except Exception:
+        return "None"
 def kappa_analysis_cicchetti(kappa):
     '''
     This function analysis kappa number with Cicchetti benchmark
@@ -1609,6 +1621,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     DP = {}
     Y = {}
     PLRI={}
+    DPI = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1648,6 +1661,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         DP[i] = DP_calc(TPR[i], TNR[i])
         Y[i] = BM[i]
         PLRI[i] = PLR_analysis(PLR[i])
+        DPI[i] = DP_analysis(DP[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1690,5 +1704,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "dInd": dInd,
         "DP": DP,
         "Y": Y,
-        "PLRI": PLRI}
+        "PLRI": PLRI,
+        "DPI":DPI}
     return result

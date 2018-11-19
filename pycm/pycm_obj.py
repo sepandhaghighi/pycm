@@ -436,6 +436,7 @@ def __class_stat_init__(CM):
     CM.DP = CM.class_stat["DP"]
     CM.Y = CM.class_stat["Y"]
     CM.PLRI = CM.class_stat["PLRI"]
+    CM.DPI = CM.class_stat["DPI"]
 
 
 def __overall_stat_init__(CM):

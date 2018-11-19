@@ -58,7 +58,8 @@ PARAMS_DESCRIPTION = {
     "sInd": "Similarity index",
     "DP": "Discriminant power",
     "Y": "Youden index",
-    "PLRI": "Positive likelihood ratio interpretation"}
+    "PLRI": "Positive likelihood ratio interpretation",
+    "DPI":"Discriminant power interpretation"}
 
 PARAMS_LINK = {
     "TPR": "TPR--(sensitivity,-recall,-hit-rate,-or-true-positive-rate)",
@@ -154,11 +155,13 @@ PARAMS_LINK = {
     "RCI": "Relative-Classifier-Information",
     "DP": "DP-(Discriminant-Power)",
     "Y": "Y-(Youden-Index)",
-    "PLRI":"PLRI-(Positive-likelihood-ratio-interpretation)"}
+    "PLRI":"PLRI-(Positive-likelihood-ratio-interpretation)",
+    "DPI":""}
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",
     "Poor": "Red",
+    "Limited": "Red",
     "Fair": "Orange",
     "Good": "Green",
     "Excellent": "Green",

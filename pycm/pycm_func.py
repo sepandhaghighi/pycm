@@ -1093,16 +1093,17 @@ def reliability_calc(RACC, ACC):
 
 def PLR_analysis(PLR):
     try:
+
+        if PLR == "None":
+            return "None"
         if PLR<=1:
             return "Negligible"
         elif PLR>1 and PLR<5:
             return "Poor"
         elif PLR>=5 and PLR<10:
             return "Fair"
-        elif PLR>=10 :
+        else :
             return "Good"
-        else:
-            return "None"
     except Exception:
         return "None"
 

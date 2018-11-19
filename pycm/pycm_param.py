@@ -59,7 +59,7 @@ PARAMS_DESCRIPTION = {
     "DP": "Discriminant power",
     "Y": "Youden index",
     "PLRI": "Positive likelihood ratio interpretation",
-    "DPI":"Discriminant power interpretation"}
+    "DPI": "Discriminant power interpretation"}
 
 PARAMS_LINK = {
     "TPR": "TPR--(sensitivity,-recall,-hit-rate,-or-true-positive-rate)",
@@ -155,8 +155,8 @@ PARAMS_LINK = {
     "RCI": "Relative-Classifier-Information",
     "DP": "DP-(Discriminant-Power)",
     "Y": "Y-(Youden-Index)",
-    "PLRI":"PLRI-(Positive-likelihood-ratio-interpretation)",
-    "DPI":"DPI-(Discriminant-power-interpretation)"}
+    "PLRI": "PLRI-(Positive-likelihood-ratio-interpretation)",
+    "DPI": "DPI-(Discriminant-power-interpretation)"}
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

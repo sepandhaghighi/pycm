@@ -1091,36 +1091,40 @@ def reliability_calc(RACC, ACC):
     except Exception:
         return "None"
 
+
 def PLR_analysis(PLR):
     try:
 
         if PLR == "None":
             return "None"
-        if PLR<=1:
+        if PLR <= 1:
             return "Negligible"
-        elif PLR>1 and PLR<5:
+        elif PLR > 1 and PLR < 5:
             return "Poor"
-        elif PLR>=5 and PLR<10:
+        elif PLR >= 5 and PLR < 10:
             return "Fair"
-        else :
+        else:
             return "Good"
     except Exception:
         return "None"
 
-def DP_analysis (DP):
+
+def DP_analysis(DP):
     try:
         if DP == "None":
             return "None"
-        if DP <1 :
+        if DP < 1:
             return "Poor"
-        elif DP>=1 and DP<2:
+        elif DP >= 1 and DP < 2:
             return "Limited"
-        elif DP>=2 and DP<3:
+        elif DP >= 2 and DP < 3:
             return "Fair"
-        else :
+        else:
             return "Good"
     except Exception:
         return "None"
+
+
 def kappa_analysis_cicchetti(kappa):
     '''
     This function analysis kappa number with Cicchetti benchmark
@@ -1622,7 +1626,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     sInd = {}
     DP = {}
     Y = {}
-    PLRI={}
+    PLRI = {}
     DPI = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
@@ -1707,5 +1711,5 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "DP": DP,
         "Y": Y,
         "PLRI": PLRI,
-        "DPI":DPI}
+        "DPI": DPI}
     return result

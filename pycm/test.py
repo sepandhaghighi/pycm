@@ -99,6 +99,7 @@ MK(Markedness)                                                   0.6            
 N(Condition negative)                                            9                       9                       6
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143
 P(Condition positive or support)                                 3                       3                       6
+PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Poor
 POP(Population)                                                  12                      12                      12
 PPV(Precision or positive predictive value)                      0.6                     0.5                     0.6
 PRE(Prevalence)                                                  0.25                    0.25                    0.5
@@ -205,6 +206,7 @@ MK(Markedness)                                                   0.6            
 N(Condition negative)                                            9                       9                       6
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143
 P(Condition positive or support)                                 3                       3                       6
+PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Poor
 POP(Population)                                                  12                      12                      12
 PPV(Precision or positive predictive value)                      0.6                     0.5                     0.6
 PRE(Prevalence)                                                  0.25                    0.25                    0.5
@@ -415,6 +417,7 @@ MK(Markedness)                                                   0.0            
 N(Condition negative)                                            20                      4                       17                      19
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
 P(Condition positive or support)                                 0                       16                      3                       1
+PLRI(Positive likelihood ratio interpretation)                   None                    Poor                    Fair                    None
 POP(Population)                                                  20                      20                      20                      20
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None
 PRE(Prevalence)                                                  0.0                     0.8                     0.15                    0.05
@@ -511,6 +514,7 @@ MK(Markedness)                                                   0.0            
 N(Condition negative)                                            20                      4                       17                      19
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
 P(Condition positive or support)                                 0                       16                      3                       1
+PLRI(Positive likelihood ratio interpretation)                   None                    Poor                    Fair                    None
 POP(Population)                                                  20                      20                      20                      20
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None
 PRE(Prevalence)                                                  0.0                     0.8                     0.15                    0.05
@@ -813,6 +817,7 @@ MK(Markedness)                                                   0.0            
 N(Condition negative)                                            20                      4                       17                      19
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
 P(Condition positive or support)                                 0                       16                      3                       1
+PLRI(Positive likelihood ratio interpretation)                   None                    Poor                    Fair                    None
 POP(Population)                                                  20                      20                      20                      20
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None
 PRE(Prevalence)                                                  0.0                     0.8                     0.15                    0.05
@@ -928,6 +933,7 @@ MK(Markedness)                                                   0.47802        
 N(Condition negative)                                            15                      18                      21
 NPV(Negative predictive value)                                   0.78571                 0.77778                 0.90909
 P(Condition positive or support)                                 12                      9                       6
+PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Good
 POP(Population)                                                  27                      27                      27
 PPV(Precision or positive predictive value)                      0.69231                 0.55556                 0.8
 PRE(Prevalence)                                                  0.44444                 0.33333                 0.22222
@@ -1034,6 +1040,7 @@ MK(Markedness)                                                   0.47802        
 N(Condition negative)                                            15                      18                      21
 NPV(Negative predictive value)                                   0.78571                 0.77778                 0.90909
 P(Condition positive or support)                                 12                      9                       6
+PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Good
 POP(Population)                                                  27                      27                      27
 PPV(Precision or positive predictive value)                      0.69231                 0.55556                 0.8
 PRE(Prevalence)                                                  0.44444                 0.33333                 0.22222
@@ -1112,36 +1119,37 @@ Example : online_help("J") or online_help(2)
 56-Overall_RACCU
 57-P
 58-P-Value
-59-POP
-60-PPV
-61-PPV_Macro
-62-PPV_Micro
-63-PRE
-64-Phi-Squared
-65-RACC
-66-RACCU
-67-RCI
-68-RR
-69-Reference Entropy
-70-Response Entropy
-71-Scott_PI
-72-Standard Error
-73-Strength_Of_Agreement(Altman)
-74-Strength_Of_Agreement(Cicchetti)
-75-Strength_Of_Agreement(Fleiss)
-76-Strength_Of_Agreement(Landis and Koch)
-77-TN
-78-TNR
-79-TON
-80-TOP
-81-TP
-82-TPR
-83-TPR_Macro
-84-TPR_Micro
-85-Y
-86-Zero-one Loss
-87-dInd
-88-sInd
+59-PLRI
+60-POP
+61-PPV
+62-PPV_Macro
+63-PPV_Micro
+64-PRE
+65-Phi-Squared
+66-RACC
+67-RACCU
+68-RCI
+69-RR
+70-Reference Entropy
+71-Response Entropy
+72-Scott_PI
+73-Standard Error
+74-Strength_Of_Agreement(Altman)
+75-Strength_Of_Agreement(Cicchetti)
+76-Strength_Of_Agreement(Fleiss)
+77-Strength_Of_Agreement(Landis and Koch)
+78-TN
+79-TNR
+80-TON
+81-TOP
+82-TP
+83-TPR
+84-TPR_Macro
+85-TPR_Micro
+86-Y
+87-Zero-one Loss
+88-dInd
+89-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -1239,6 +1247,7 @@ MK(Markedness)                                                   0.6            
 N(Condition negative)                                            15                      18                      9
 NPV(Negative predictive value)                                   1.0                     0.88889                 0.53846
 P(Condition positive or support)                                 6                       3                       12
+PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Poor
 POP(Population)                                                  21                      21                      21
 PPV(Precision or positive predictive value)                      0.6                     0.33333                 0.75
 PRE(Prevalence)                                                  0.28571                 0.14286                 0.57143
@@ -1345,6 +1354,7 @@ MK(Markedness)                                                   0.6            
 N(Condition negative)                                            15                      18                      9
 NPV(Negative predictive value)                                   1.0                     0.88889                 0.53846
 P(Condition positive or support)                                 6                       3                       12
+PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Poor
 POP(Population)                                                  21                      21                      21
 PPV(Precision or positive predictive value)                      0.6                     0.33333                 0.75
 PRE(Prevalence)                                                  0.28571                 0.14286                 0.57143
@@ -1394,14 +1404,18 @@ sInd(Similarity index)                                           0.81144        
 0.7854399677022138
 >>> cm.Y[1]
 0.6194180158203517
+>>> cm.BM[1]
+0.6194180158203517
 >>> cm = ConfusionMatrix(matrix={1:{1:13182,2:30516},2:{1:5108,2:295593}},transpose=True) # Verified Case
 >>> cm.DP[1]
 0.770700985610517
 >>> cm.Y[1]
 0.627145631592811
->>> cm.BM
+>>> cm.BM[1]
+0.627145631592811
 >>> os.remove("test.csv")
 >>> os.remove("test.obj")
+>>> os.remove("test.html")
 >>> os.remove("test2.obj")
 >>> os.remove("test3.obj")
 >>> os.remove("test.pycm")

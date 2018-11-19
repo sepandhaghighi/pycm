@@ -19,21 +19,6 @@ def isfile(f):
         f, 'read')
 
 
-def YI_calc(TPR, TNR):
-    '''
-    This function calculate Youden's index
-    :param TNR: Specificity or true negative rate
-    :type TNR : float
-    :param TPR: Sensitivity, recall, hit rate, or true positive rate
-    :type TPR : float
-    :return: Youden's index as float
-    '''
-    try:
-        return TPR + TNR - 1
-    except Exception:
-        return "None"
-
-
 def DP_calc(TPR, TNR):
     '''
     This function calculate DP (Discriminant power)
@@ -1645,7 +1630,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         dInd[i] = dInd_calc(TNR[i], TPR[i])
         sInd[i] = sInd_calc(dInd[i])
         DP[i] = DP_calc(TPR[i], TNR[i])
-        Y[i] = YI_calc(TPR[i], TNR[i])
+        Y[i] = BM[i]
     result = {
         "TPR": TPR,
         "TNR": TNR,

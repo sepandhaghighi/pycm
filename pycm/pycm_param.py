@@ -156,7 +156,7 @@ PARAMS_LINK = {
     "DP": "DP-(Discriminant-Power)",
     "Y": "Y-(Youden-Index)",
     "PLRI":"PLRI-(Positive-likelihood-ratio-interpretation)",
-    "DPI":""}
+    "DPI":"DPI-(Discriminant-power-interpretation)"}
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

@@ -1109,10 +1109,12 @@ def PLR_analysis(PLR):
 
 def DP_analysis (DP):
     try:
+        if DP == "None":
+            return "None"
         if DP <1 :
             return "Poor"
         elif DP>=1 and DP<2:
-            return "Limited "
+            return "Limited"
         elif DP>=2 and DP<3:
             return "Fair"
         else :

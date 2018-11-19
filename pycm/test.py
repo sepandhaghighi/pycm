@@ -604,6 +604,22 @@ Actual
 'Good'
 >>> kappa_analysis_cicchetti(0.8)
 'Excellent'
+>>> PLR_analysis(1)
+'Negligible'
+>>> PLR_analysis(3)
+'Poor'
+>>> PLR_analysis(7)
+'Fair'
+>>> PLR_analysis(11)
+'Good'
+>>> DP_analysis(0.2)
+'Poor'
+>>> DP_analysis(1.5)
+'Limited'
+>>> DP_analysis(2.5)
+'Fair'
+>>> DP_analysis(10)
+'Good'
 >>> PC_PI_calc(1,1,1)
 'None'
 >>> PC_PI_calc({1:12},{1:6},{1:45})

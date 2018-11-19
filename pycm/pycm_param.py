@@ -153,8 +153,8 @@ PARAMS_LINK = {
     "dInd": "dInd-(Distance-Index)",
     "RCI": "Relative-Classifier-Information",
     "DP": "DP-(Discriminant-Power)",
-    "Y": "Y-(Youden-index)",
-    "PLRI":""}
+    "Y": "Y-(Youden-Index)",
+    "PLRI":"PLRI-(Positive-likelihood-ratio-interpretation)"}
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

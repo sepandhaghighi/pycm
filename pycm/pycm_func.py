@@ -1099,8 +1099,10 @@ def PLR_analysis(PLR):
             return "Poor"
         elif PLR>=5 and PLR<10:
             return "Fair"
-        else:
+        elif PLR>=10 :
             return "Good"
+        else:
+            return "None"
     except Exception:
         return "None"
 

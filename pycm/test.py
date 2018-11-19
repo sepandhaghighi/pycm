@@ -78,6 +78,7 @@ BM(Informedness or bookmaker informedness)                       0.77778        
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
 DP(Discriminant power)                                           None                    0.33193                 0.16597
+DPI(Discriminant power interpretation)                           None                    Poor                    Poor
 ERR(Error rate)                                                  0.16667                 0.25                    0.41667
 F0.5(F0.5 score)                                                 0.65217                 0.45455                 0.57692
 F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545
@@ -185,6 +186,7 @@ BM(Informedness or bookmaker informedness)                       0.77778        
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
 DP(Discriminant power)                                           None                    0.33193                 0.16597
+DPI(Discriminant power interpretation)                           None                    Poor                    Poor
 ERR(Error rate)                                                  0.16667                 0.25                    0.41667
 F0.5(F0.5 score)                                                 0.65217                 0.45455                 0.57692
 F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545
@@ -396,6 +398,7 @@ BM(Informedness or bookmaker informedness)                       None           
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
 DP(Discriminant power)                                           None                    0.14074                 0.4979                  None
+DPI(Discriminant power interpretation)                           None                    Poor                    Poor                    None
 ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05
 F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0
 F1(F1 score - harmonic mean of precision and sensitivity)        0.0                     0.52174                 0.4                     0.0
@@ -493,6 +496,7 @@ BM(Informedness or bookmaker informedness)                       None           
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
 DP(Discriminant power)                                           None                    0.14074                 0.4979                  None
+DPI(Discriminant power interpretation)                           None                    Poor                    Poor                    None
 ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05
 F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0
 F1(F1 score - harmonic mean of precision and sensitivity)        0.0                     0.52174                 0.4                     0.0
@@ -796,6 +800,7 @@ BM(Informedness or bookmaker informedness)                       None           
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
 DP(Discriminant power)                                           None                    0.14074                 0.4979                  None
+DPI(Discriminant power interpretation)                           None                    Poor                    Poor                    None
 ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05
 F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0
 F1(F1 score - harmonic mean of precision and sensitivity)        0.0                     0.52174                 0.4                     0.0
@@ -912,6 +917,7 @@ BM(Informedness or bookmaker informedness)                       0.48333        
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
 DP(Discriminant power)                                           0.50527                 0.35339                 0.88326
+DPI(Discriminant power interpretation)                           Poor                    Poor                    Poor
 ERR(Error rate)                                                  0.25926                 0.2963                  0.11111
 F0.5(F0.5 score)                                                 0.70312                 0.55556                 0.76923
 F1(F1 score - harmonic mean of precision and sensitivity)        0.72                    0.55556                 0.72727
@@ -1019,6 +1025,7 @@ BM(Informedness or bookmaker informedness)                       0.48333        
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
 DP(Discriminant power)                                           0.50527                 0.35339                 0.88326
+DPI(Discriminant power interpretation)                           Poor                    Poor                    Poor
 ERR(Error rate)                                                  0.25926                 0.2963                  0.11111
 F0.5(F0.5 score)                                                 0.70312                 0.55556                 0.76923
 F1(F1 score - harmonic mean of precision and sensitivity)        0.72                    0.55556                 0.72727
@@ -1077,79 +1084,80 @@ Example : online_help("J") or online_help(2)
 14-Cross Entropy
 15-DOR
 16-DP
-17-ERR
-18-F0.5
-19-F1
-20-F2
-21-FDR
-22-FN
-23-FNR
-24-FOR
-25-FP
-26-FPR
-27-G
-28-Gwet_AC1
-29-Hamming Loss
-30-IS
-31-J
-32-Joint Entropy
-33-KL Divergence
-34-Kappa
-35-Kappa 95% CI
-36-Kappa No Prevalence
-37-Kappa Standard Error
-38-Kappa Unbiased
-39-LR+
-40-LR-
-41-Lambda A
-42-Lambda B
-43-MCC
-44-MCEN
-45-MK
-46-Mutual Information
-47-N
-48-NIR
-49-NPV
-50-Overall_ACC
-51-Overall_CEN
-52-Overall_J
-53-Overall_MCC
-54-Overall_MCEN
-55-Overall_RACC
-56-Overall_RACCU
-57-P
-58-P-Value
-59-PLRI
-60-POP
-61-PPV
-62-PPV_Macro
-63-PPV_Micro
-64-PRE
-65-Phi-Squared
-66-RACC
-67-RACCU
-68-RCI
-69-RR
-70-Reference Entropy
-71-Response Entropy
-72-Scott_PI
-73-Standard Error
-74-Strength_Of_Agreement(Altman)
-75-Strength_Of_Agreement(Cicchetti)
-76-Strength_Of_Agreement(Fleiss)
-77-Strength_Of_Agreement(Landis and Koch)
-78-TN
-79-TNR
-80-TON
-81-TOP
-82-TP
-83-TPR
-84-TPR_Macro
-85-TPR_Micro
-86-Y
-87-Zero-one Loss
-88-dInd
-89-sInd
+17-DPI
+18-ERR
+19-F0.5
+20-F1
+21-F2
+22-FDR
+23-FN
+24-FNR
+25-FOR
+26-FP
+27-FPR
+28-G
+29-Gwet_AC1
+30-Hamming Loss
+31-IS
+32-J
+33-Joint Entropy
+34-KL Divergence
+35-Kappa
+36-Kappa 95% CI
+37-Kappa No Prevalence
+38-Kappa Standard Error
+39-Kappa Unbiased
+40-LR+
+41-LR-
+42-Lambda A
+43-Lambda B
+44-MCC
+45-MCEN
+46-MK
+47-Mutual Information
+48-N
+49-NIR
+50-NPV
+51-Overall_ACC
+52-Overall_CEN
+53-Overall_J
+54-Overall_MCC
+55-Overall_MCEN
+56-Overall_RACC
+57-Overall_RACCU
+58-P
+59-P-Value
+60-PLRI
+61-POP
+62-PPV
+63-PPV_Macro
+64-PPV_Micro
+65-PRE
+66-Phi-Squared
+67-RACC
+68-RACCU
+69-RCI
+70-RR
+71-Reference Entropy
+72-Response Entropy
+73-Scott_PI
+74-Standard Error
+75-Strength_Of_Agreement(Altman)
+76-Strength_Of_Agreement(Cicchetti)
+77-Strength_Of_Agreement(Fleiss)
+78-Strength_Of_Agreement(Landis and Koch)
+79-TN
+80-TNR
+81-TON
+82-TOP
+83-TP
+84-TPR
+85-TPR_Macro
+86-TPR_Micro
+87-Y
+88-Zero-one Loss
+89-dInd
+90-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -1226,6 +1234,7 @@ BM(Informedness or bookmaker informedness)                       0.73333        
 CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5
 DP(Discriminant power)                                           None                    0.33193                 0.29996
+DPI(Discriminant power interpretation)                           None                    Poor                    Poor
 ERR(Error rate)                                                  0.19048                 0.19048                 0.38095
 F0.5(F0.5 score)                                                 0.65217                 0.33333                 0.68182
 F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.33333                 0.6
@@ -1333,6 +1342,7 @@ BM(Informedness or bookmaker informedness)                       0.73333        
 CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5
 DP(Discriminant power)                                           None                    0.33193                 0.29996
+DPI(Discriminant power interpretation)                           None                    Poor                    Poor
 ERR(Error rate)                                                  0.19048                 0.19048                 0.38095
 F0.5(F0.5 score)                                                 0.65217                 0.33333                 0.68182
 F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.33333                 0.6
@@ -1415,6 +1425,7 @@ sInd(Similarity index)                                           0.81144        
 0.627145631592811
 >>> os.remove("test.csv")
 >>> os.remove("test.obj")
+>>> os.remove("test.html")
 >>> os.remove("test2.obj")
 >>> os.remove("test3.obj")
 >>> os.remove("test.pycm")

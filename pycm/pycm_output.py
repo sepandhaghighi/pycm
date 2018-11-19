@@ -140,8 +140,12 @@ def html_class_stat(classes, class_stat, digit=5):
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;"><a href="' + \
                   DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         for j in classes:
-            result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">' + \
-                rounder(class_stat[i][j], digit) + '</td>\n'
+            if i=="PLRI":
+                background_color = BENCHMARK_COLOR[class_stat[i][j]]
+                result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};">'.format(background_color)
+            else:
+                result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">'
+            result += rounder(class_stat[i][j], digit) + '</td>\n'
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;text-align:left;">' + \
                   PARAMS_DESCRIPTION[i].capitalize() + '</td>\n'
         result += "</tr>\n"

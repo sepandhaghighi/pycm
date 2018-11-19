@@ -1091,6 +1091,18 @@ def reliability_calc(RACC, ACC):
     except Exception:
         return "None"
 
+def PLR_analysis(PLR):
+    try:
+        if PLR<=1:
+            return "Negligible"
+        elif PLR>1 and PLR<5:
+            return "Poor"
+        elif PLR>=5 and PLR<10:
+            return "Fair"
+        else:
+            return "Good"
+    except Exception:
+        return "None"
 
 def kappa_analysis_cicchetti(kappa):
     '''
@@ -1593,6 +1605,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     sInd = {}
     DP = {}
     Y = {}
+    PLRI={}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1631,6 +1644,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         sInd[i] = sInd_calc(dInd[i])
         DP[i] = DP_calc(TPR[i], TNR[i])
         Y[i] = BM[i]
+        PLRI[i] = PLR_analysis(PLR[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1672,5 +1686,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "sInd": sInd,
         "dInd": dInd,
         "DP": DP,
-        "Y": Y}
+        "Y": Y,
+        "PLRI": PLRI}
     return result

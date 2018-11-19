@@ -435,6 +435,7 @@ def __class_stat_init__(CM):
     CM.sInd = CM.class_stat["sInd"]
     CM.DP = CM.class_stat["DP"]
     CM.Y = CM.class_stat["Y"]
+    CM.PLRI = CM.class_stat["PLRI"]
 
 
 def __overall_stat_init__(CM):

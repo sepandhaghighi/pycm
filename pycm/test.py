@@ -1401,7 +1401,6 @@ sInd(Similarity index)                                           0.81144        
 0.627145631592811
 >>> cm.BM
 >>> os.remove("test.csv")
->>> os.remove("test.html")
 >>> os.remove("test.obj")
 >>> os.remove("test2.obj")
 >>> os.remove("test3.obj")

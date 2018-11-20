@@ -92,14 +92,14 @@ FPR(Fall-out or false positive rate)                             0.22222        
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
 IS(Information score)                                            1.26303                 1.0                     0.26303
 J(Jaccard index)                                                 0.6                     0.25                    0.375
-LR+(Positive likelihood ratio)                                   4.5                     3.0                     1.5
-LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.75
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903
 MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875
 MK(Markedness)                                                   0.6                     0.3                     0.17143
 N(Condition negative)                                            9                       9                       6
+NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.75
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143
 P(Condition positive or support)                                 3                       3                       6
+PLR(Positive likelihood ratio)                                   4.5                     3.0                     1.5
 PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Poor
 POP(Population)                                                  12                      12                      12
 PPV(Precision or positive predictive value)                      0.6                     0.5                     0.6
@@ -200,14 +200,14 @@ FPR(Fall-out or false positive rate)                             0.22222        
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
 IS(Information score)                                            1.26303                 1.0                     0.26303
 J(Jaccard index)                                                 0.6                     0.25                    0.375
-LR+(Positive likelihood ratio)                                   4.5                     3.0                     1.5
-LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.75
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903
 MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875
 MK(Markedness)                                                   0.6                     0.3                     0.17143
 N(Condition negative)                                            9                       9                       6
+NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.75
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143
 P(Condition positive or support)                                 3                       3                       6
+PLR(Positive likelihood ratio)                                   4.5                     3.0                     1.5
 PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Poor
 POP(Population)                                                  12                      12                      12
 PPV(Precision or positive predictive value)                      0.6                     0.5                     0.6
@@ -412,14 +412,14 @@ FPR(Fall-out or false positive rate)                             0.55           
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
-LR+(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
-LR-(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
 MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
 N(Condition negative)                                            20                      4                       17                      19
+NLR(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
 P(Condition positive or support)                                 0                       16                      3                       1
+PLR(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
 PLRI(Positive likelihood ratio interpretation)                   None                    Poor                    Fair                    None
 POP(Population)                                                  20                      20                      20                      20
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None
@@ -510,14 +510,14 @@ FPR(Fall-out or false positive rate)                             0.55           
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
-LR+(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
-LR-(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
 MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
 N(Condition negative)                                            20                      4                       17                      19
+NLR(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
 P(Condition positive or support)                                 0                       16                      3                       1
+PLR(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
 PLRI(Positive likelihood ratio interpretation)                   None                    Poor                    Fair                    None
 POP(Population)                                                  20                      20                      20                      20
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None
@@ -830,14 +830,14 @@ FPR(Fall-out or false positive rate)                             0.55           
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
-LR+(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
-LR-(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
 MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
 N(Condition negative)                                            20                      4                       17                      19
+NLR(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
 P(Condition positive or support)                                 0                       16                      3                       1
+PLR(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
 PLRI(Positive likelihood ratio interpretation)                   None                    Poor                    Fair                    None
 POP(Population)                                                  20                      20                      20                      20
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None
@@ -947,14 +947,14 @@ FPR(Fall-out or false positive rate)                             0.26667        
 G(G-measure geometric mean of precision and sensitivity)         0.72058                 0.55556                 0.7303
 IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
-LR+(Positive likelihood ratio)                                   2.8125                  2.5                     14.0
-LR-(Negative likelihood ratio)                                   0.34091                 0.57143                 0.35
 MCC(Matthews correlation coefficient)                            0.48067                 0.33333                 0.66254
 MCEN(Modified confusion entropy)                                 0.57782                 0.77284                 0.60158
 MK(Markedness)                                                   0.47802                 0.33333                 0.70909
 N(Condition negative)                                            15                      18                      21
+NLR(Negative likelihood ratio)                                   0.34091                 0.57143                 0.35
 NPV(Negative predictive value)                                   0.78571                 0.77778                 0.90909
 P(Condition positive or support)                                 12                      9                       6
+PLR(Positive likelihood ratio)                                   2.8125                  2.5                     14.0
 PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Good
 POP(Population)                                                  27                      27                      27
 PPV(Precision or positive predictive value)                      0.69231                 0.55556                 0.8
@@ -1055,14 +1055,14 @@ FPR(Fall-out or false positive rate)                             0.26667        
 G(G-measure geometric mean of precision and sensitivity)         0.72058                 0.55556                 0.7303
 IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
-LR+(Positive likelihood ratio)                                   2.8125                  2.5                     14.0
-LR-(Negative likelihood ratio)                                   0.34091                 0.57143                 0.35
 MCC(Matthews correlation coefficient)                            0.48067                 0.33333                 0.66254
 MCEN(Modified confusion entropy)                                 0.57782                 0.77284                 0.60158
 MK(Markedness)                                                   0.47802                 0.33333                 0.70909
 N(Condition negative)                                            15                      18                      21
+NLR(Negative likelihood ratio)                                   0.34091                 0.57143                 0.35
 NPV(Negative predictive value)                                   0.78571                 0.77778                 0.90909
 P(Condition positive or support)                                 12                      9                       6
+PLR(Positive likelihood ratio)                                   2.8125                  2.5                     14.0
 PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Good
 POP(Population)                                                  27                      27                      27
 PPV(Precision or positive predictive value)                      0.69231                 0.55556                 0.8
@@ -1264,14 +1264,14 @@ FPR(Fall-out or false positive rate)                             0.26667        
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.33333                 0.61237
 IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
-LR+(Positive likelihood ratio)                                   3.75                    3.0                     2.25
-LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.64286
 MCC(Matthews correlation coefficient)                            0.66332                 0.22222                 0.28307
 MCEN(Modified confusion entropy)                                 0.26439                 0.52877                 0.65924
 MK(Markedness)                                                   0.6                     0.22222                 0.28846
 N(Condition negative)                                            15                      18                      9
+NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.64286
 NPV(Negative predictive value)                                   1.0                     0.88889                 0.53846
 P(Condition positive or support)                                 6                       3                       12
+PLR(Positive likelihood ratio)                                   3.75                    3.0                     2.25
 PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Poor
 POP(Population)                                                  21                      21                      21
 PPV(Precision or positive predictive value)                      0.6                     0.33333                 0.75
@@ -1372,14 +1372,14 @@ FPR(Fall-out or false positive rate)                             0.26667        
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.33333                 0.61237
 IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
-LR+(Positive likelihood ratio)                                   3.75                    3.0                     2.25
-LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.64286
 MCC(Matthews correlation coefficient)                            0.66332                 0.22222                 0.28307
 MCEN(Modified confusion entropy)                                 0.26439                 0.52877                 0.65924
 MK(Markedness)                                                   0.6                     0.22222                 0.28846
 N(Condition negative)                                            15                      18                      9
+NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.64286
 NPV(Negative predictive value)                                   1.0                     0.88889                 0.53846
 P(Condition positive or support)                                 6                       3                       12
+PLR(Positive likelihood ratio)                                   3.75                    3.0                     2.25
 PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Poor
 POP(Population)                                                  21                      21                      21
 PPV(Precision or positive predictive value)                      0.6                     0.33333                 0.75

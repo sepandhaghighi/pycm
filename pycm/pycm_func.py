@@ -1093,6 +1093,12 @@ def reliability_calc(RACC, ACC):
 
 
 def PLR_analysis(PLR):
+    '''
+    This function analysis PLR(Positive likelihood ratio) with interpretation table
+    :param PLR: Positive likelihood ratio
+    :type PLR : float
+    :return: interpretation result as str
+    '''
     try:
 
         if PLR == "None":
@@ -1110,6 +1116,12 @@ def PLR_analysis(PLR):
 
 
 def DP_analysis(DP):
+    '''
+    This function analysis DP with interpretation table
+    :param DP: Discriminant power
+    :type DP : float
+    :return: interpretation result as str
+    '''
     try:
         if DP == "None":
             return "None"

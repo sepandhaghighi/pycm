@@ -1123,26 +1123,26 @@ Example : online_help("J") or online_help(2)
 37-Kappa No Prevalence
 38-Kappa Standard Error
 39-Kappa Unbiased
-40-LR+
-41-LR-
-42-Lambda A
-43-Lambda B
-44-MCC
-45-MCEN
-46-MK
-47-Mutual Information
-48-N
-49-NIR
-50-NPV
-51-Overall_ACC
-52-Overall_CEN
-53-Overall_J
-54-Overall_MCC
-55-Overall_MCEN
-56-Overall_RACC
-57-Overall_RACCU
-58-P
-59-P-Value
+40-Lambda A
+41-Lambda B
+42-MCC
+43-MCEN
+44-MK
+45-Mutual Information
+46-N
+47-NIR
+48-NLR
+49-NPV
+50-Overall_ACC
+51-Overall_CEN
+52-Overall_J
+53-Overall_MCC
+54-Overall_MCEN
+55-Overall_RACC
+56-Overall_RACCU
+57-P
+58-P-Value
+59-PLR
 60-PLRI
 61-POP
 62-PPV

@@ -5,6 +5,33 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.5] - 2018-11-21
+### Added
+- Relative Classifier Information (RCI)
+- Discriminator Power (DP)
+- Youden's Index (Y)
+- Discriminant Power Interpretation (DPI)
+- Positive Likelihood Ratio Interpretation (PLRI)
+- `__len__` method
+- `relabel` method
+- `__class_stat_init__` function
+- `__overall_stat_init__` function
+- `matrix` attribute as dict
+- `normalized_matrix` attribute as dict
+- `normalized_table` attribute  as dict
+
+### Changed
+- `README.md` modified
+- Document modified
+- `LR+` renamed to `PLR`
+- `LR-` renamed to `NLR`
+- `normalized_matrix` method renamed to `print_normalized_matrix`
+- `matrix` method renamed to `print_matrix`
+- `entropy_calc` fixed
+- `cross_entropy_calc` fixed
+- `conditional_entropy_calc` fixed
+- `print_table` bug for large numbers fixed
+
 ## [1.4] - 2018-11-12
 ### Added
 - Area Under Curve
@@ -242,7 +269,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.4...HEAD
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.5...HEAD
+[1.5]: https://github.com/sepandhaghighi/pycm/compare/v1.4...v1.5
 [1.4]: https://github.com/sepandhaghighi/pycm/compare/v1.3...v1.4
 [1.3]: https://github.com/sepandhaghighi/pycm/compare/v1.2...v1.3
 [1.2]: https://github.com/sepandhaghighi/pycm/compare/v1.1...v1.2

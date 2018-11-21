@@ -391,7 +391,7 @@ pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
 >>> online_help(2)
 
 ```
-* list of items are available by calling `online_help()` (without argument)				
+* List of items are available by calling `online_help()` (without argument)				
 
 ### Acceptable data types			
 1. `actual_vector` : python `list` or numpy `array` of any stringable objects
@@ -403,7 +403,7 @@ pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
 7. `sample_weight` : python `list` or numpy `array` of any stringable objects
 8. `transpose` : `bool`
 
-* run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
+* Run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
 
 
 

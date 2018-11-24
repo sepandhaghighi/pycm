@@ -83,7 +83,8 @@ class ConfusionMatrix():
                     loaded_transpose = False
                 self.transpose = loaded_transpose
                 loaded_matrix = dict(obj_data["Matrix"])
-                matrix_param = matrix_params_from_table(loaded_matrix, loaded_transpose)
+                matrix_param = matrix_params_from_table(
+                    loaded_matrix, loaded_transpose)
             self.digit = obj_data["Digit"]
         elif isinstance(matrix, dict):
             if matrix_check(matrix):

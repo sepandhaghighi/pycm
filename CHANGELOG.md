@@ -31,6 +31,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `cross_entropy_calc` fixed
 - `conditional_entropy_calc` fixed
 - `print_table` bug for large numbers fixed
+- JSON key bug in `save_obj` fixed
+- `transpose` bug in `save_obj` fixed
 
 ## [1.4] - 2018-11-12
 ### Added

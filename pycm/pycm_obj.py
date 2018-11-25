@@ -313,9 +313,9 @@ class ConfusionMatrix():
             actual_vector_temp = self.actual_vector
             predict_vector_temp = self.predict_vector
             matrix_temp = {k: self.table[k].copy() for k in self.classes}
-            matrix_items =[]
+            matrix_items = []
             for i in self.classes:
-                matrix_items.append((i,list(matrix_temp[i].items())))
+                matrix_items.append((i, list(matrix_temp[i].items())))
             if isinstance(actual_vector_temp, numpy.ndarray):
                 actual_vector_temp = actual_vector_temp.tolist()
             if isinstance(predict_vector_temp, numpy.ndarray):

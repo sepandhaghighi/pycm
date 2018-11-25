@@ -2,6 +2,7 @@
 '''
 >>> from pycm import *
 >>> import os
+>>> import json
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu, y_pred)
@@ -1439,8 +1440,9 @@ sInd(Similarity index)                                           0.81144        
 0.627145631592811
 >>> cm.BM[1]
 0.627145631592811
->>> save_obj = cm.save_obj("test4")
+>>> save_obj = cm.save_obj("test4",address=False)
 >>> save_obj=={'Status': True, 'Message': None}
+True
 >>> cm_file=ConfusionMatrix(file=open("test4.obj","r"))
 >>> cm_file.DP[1]
 0.770700985610517
@@ -1450,12 +1452,19 @@ sInd(Similarity index)                                           0.81144        
 0.627145631592811
 >>> cm_file.transpose
 True
+>>> json.dump({"Actual-Vector": None, "Digit": 5, "Predict-Vector": None, "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}, "Transpose": True,"Sample-Weight": None},open("test5.obj","w"))
+>>> cm_file=ConfusionMatrix(file=open("test5.obj","r"))
+>>> cm_file.transpose
+True
+>>> cm_file.matrix == {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}
+True
 >>> os.remove("test.csv")
 >>> os.remove("test.obj")
 >>> os.remove("test.html")
 >>> os.remove("test2.obj")
 >>> os.remove("test3.obj")
 >>> os.remove("test4.obj")
+>>> os.remove("test5.obj")
 >>> os.remove("test.pycm")
 
 '''

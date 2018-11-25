@@ -1439,11 +1439,23 @@ sInd(Similarity index)                                           0.81144        
 0.627145631592811
 >>> cm.BM[1]
 0.627145631592811
+>>> save_obj = cm.save_obj("test4")
+>>> save_obj=={'Status': True, 'Message': None}
+>>> cm_file=ConfusionMatrix(file=open("test4.obj","r"))
+>>> cm_file.DP[1]
+0.770700985610517
+>>> cm_file.Y[1]
+0.627145631592811
+>>> cm_file.BM[1]
+0.627145631592811
+>>> cm_file.transpose
+True
 >>> os.remove("test.csv")
 >>> os.remove("test.obj")
 >>> os.remove("test.html")
 >>> os.remove("test2.obj")
 >>> os.remove("test3.obj")
+>>> os.remove("test4.obj")
 >>> os.remove("test.pycm")
 
 '''

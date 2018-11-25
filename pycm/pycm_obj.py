@@ -61,6 +61,10 @@ class ConfusionMatrix():
         self.predict_vector = predict_vector
         self.digit = digit
         self.weights = None
+        if isinstance(transpose, bool):
+            self.transpose = transpose
+        else:
+            self.transpose = False
         if isfile(file):
             obj_data = json.load(file)
             if obj_data["Actual-Vector"] is not None and obj_data[
@@ -85,8 +89,7 @@ class ConfusionMatrix():
                 loaded_matrix = dict(obj_data["Matrix"])
                 for i in loaded_matrix.keys():
                     loaded_matrix[i] = dict(loaded_matrix[i])
-                matrix_param = matrix_params_from_table(
-                    loaded_matrix, loaded_transpose)
+                matrix_param = matrix_params_from_table(loaded_matrix)
             self.digit = obj_data["Digit"]
         elif isinstance(matrix, dict):
             if matrix_check(matrix):
@@ -116,10 +119,6 @@ class ConfusionMatrix():
                 self.weights = sample_weight
             if isinstance(sample_weight, numpy.ndarray):
                 self.weights = sample_weight.tolist()
-        if isinstance(transpose, bool):
-            self.transpose = transpose
-        else:
-            self.transpose = False
         if len(matrix_param[0]) < 2:
             raise pycmVectorError("Number Of Classes < 2")
         self.classes = matrix_param[0]

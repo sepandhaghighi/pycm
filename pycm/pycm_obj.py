@@ -83,6 +83,8 @@ class ConfusionMatrix():
                     loaded_transpose = False
                 self.transpose = loaded_transpose
                 loaded_matrix = dict(obj_data["Matrix"])
+                for i in loaded_matrix.keys():
+                    loaded_matrix[i] = dict(loaded_matrix[i])
                 matrix_param = matrix_params_from_table(
                     loaded_matrix, loaded_transpose)
             self.digit = obj_data["Digit"]
@@ -311,14 +313,17 @@ class ConfusionMatrix():
             obj_file = open(name + ".obj", "w")
             actual_vector_temp = self.actual_vector
             predict_vector_temp = self.predict_vector
-            matrix_temp = list(self.table.items())
+            matrix_temp = {k: self.table[k].copy() for k in self.classes}
+            matrix_items =[]
+            for i in self.classes:
+                matrix_items.append((i,list(matrix_temp[i].items())))
             if isinstance(actual_vector_temp, numpy.ndarray):
                 actual_vector_temp = actual_vector_temp.tolist()
             if isinstance(predict_vector_temp, numpy.ndarray):
                 predict_vector_temp = predict_vector_temp.tolist()
             json.dump({"Actual-Vector": actual_vector_temp,
                        "Predict-Vector": predict_vector_temp,
-                       "Matrix": matrix_temp,
+                       "Matrix": matrix_items,
                        "Digit": self.digit,
                        "Sample-Weight": self.weights,
                        "Transpose": self.transpose}, obj_file)

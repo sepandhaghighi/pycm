@@ -142,7 +142,7 @@ PARAMS_LINK = {
     "Overall_MCC": "Overall_MCC",
     "RR": "RR-(Global-performance-index)",
     "CBA": "CBA-(Class-balance-accuracy)",
-    "AUC": "#AUC-(Area-under-the-ROC-curve)",
+    "AUC": "AUC-(Area-under-the-ROC-curve)",
     "AUNU": "AUNU",
     "AUNP": "AUNP",
     "sInd": "sInd-(Similarity-index)",

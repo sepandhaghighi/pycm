@@ -114,8 +114,11 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 Predict          0    1    2    
 Actual
 0                3    0    0    
+
 1                0    1    2    
+
 2                2    1    3    
+
 
 
 
@@ -156,6 +159,7 @@ P-Value                                                          0.38721
 PPV_Macro                                                        0.56667
 PPV_Micro                                                        0.58333
 Phi-Squared                                                      0.55
+RCI                                                              0.34947
 RR                                                               4.0
 Reference Entropy                                                1.5
 Response Entropy                                                 1.48336
@@ -177,6 +181,8 @@ AUC(Area under the roc curve)                                    0.88889        
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667                 
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442                 
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0                     
+DP(Discriminant power)                                           None                    0.33193                 0.16597                 
+DPI(Discriminant power interpretation)                           None                    Poor                    Poor                    
 ERR(Error rate)                                                  0.16667                 0.25                    0.41667                 
 F0.5(F0.5 score)                                                 0.65217                 0.45455                 0.57692                 
 F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545                 
@@ -190,14 +196,15 @@ FPR(Fall-out or false positive rate)                             0.22222        
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772                 
 IS(Information score)                                            1.26303                 1.0                     0.26303                 
 J(Jaccard index)                                                 0.6                     0.25                    0.375                   
-LR+(Positive likelihood ratio)                                   4.5                     3.0                     1.5                     
-LR-(Negative likelihood ratio)                                   0.0                     0.75                    0.75                    
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903                 
 MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875                  
 MK(Markedness)                                                   0.6                     0.3                     0.17143                 
 N(Condition negative)                                            9                       9                       6                       
+NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.75                    
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143                 
 P(Condition positive or support)                                 3                       3                       6                       
+PLR(Positive likelihood ratio)                                   4.5                     3.0                     1.5                     
+PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Poor                    
 POP(Population)                                                  12                      12                      12                      
 PPV(Precision or positive predictive value)                      0.6                     0.5                     0.6                     
 PRE(Prevalence)                                                  0.25                    0.25                    0.5                     
@@ -209,28 +216,35 @@ TON(Test outcome negative)                                       7              
 TOP(Test outcome positive)                                       5                       2                       5                       
 TP(True positive/hit)                                            3                       1                       3                       
 TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                     
+Y(Youden index)                                                  0.77778                 0.22222                 0.16667                 
 dInd(Distance index)                                             0.22222                 0.67586                 0.60093                 
 sInd(Similarity index)                                           0.84287                 0.52209                 0.57508                 
-                                                                                     
+
 >>> cm.print_matrix()
-Predict          0        1        2        
+Predict          0    1    2    
 Actual
-0                3        0        0        
-1                0        1        2        
-2                2        1        3        
+0                3    0    0    
+
+1                0    1    2    
+
+2                2    1    3    
 
 >>> cm.print_normalized_matrix()
-Predict          0              1              2              
+Predict          0          1          2          
 Actual
-0                1.0            0.0            0.0            
-1                0.0            0.33333        0.66667        
-2                0.33333        0.16667        0.5            
+0                1.0        0.0        0.0        
 
->>> cm.matrix(one_vs_all=True,class_name=0)   # One-Vs-All, new in version 1.4
+1                0.0        0.33333    0.66667    
+
+2                0.33333    0.16667    0.5        
+
+>>> cm.print_matrix(one_vs_all=True,class_name=0)   # One-Vs-All, new in version 1.4
 Predict          0    ~    
 Actual
 0                3    0    
+
 ~                2    7    
+
 
 ```
 ### Direct CM
@@ -243,7 +257,9 @@ pycm.ConfusionMatrix(classes: ['Class1', 'Class2'])
 Predict          Class1    Class2    
 Actual
 Class1           1         2         
+
 Class2           0         5         
+
 
 
 
@@ -284,6 +300,7 @@ P-Value                                                          0.36974
 PPV_Macro                                                        0.85714
 PPV_Micro                                                        0.75
 Phi-Squared                                                      0.2381
+RCI                                                              0.20871
 RR                                                               4.0
 Reference Entropy                                                0.95443
 Response Entropy                                                 0.54356
@@ -305,6 +322,8 @@ AUC(Area under the roc curve)                                    0.66667        
 BM(Informedness or bookmaker informedness)                       0.33333                 0.33333                 
 CEN(Confusion entropy)                                           0.5                     0.43083                 
 DOR(Diagnostic odds ratio)                                       None                    None                    
+DP(Discriminant power)                                           None                    None                    
+DPI(Discriminant power interpretation)                           None                    None                    
 ERR(Error rate)                                                  0.25                    0.25                    
 F0.5(F0.5 score)                                                 0.71429                 0.75758                 
 F1(F1 score - harmonic mean of precision and sensitivity)        0.5                     0.83333                 
@@ -318,14 +337,15 @@ FPR(Fall-out or false positive rate)                             0.0            
 G(G-measure geometric mean of precision and sensitivity)         0.57735                 0.84515                 
 IS(Information score)                                            1.41504                 0.19265                 
 J(Jaccard index)                                                 0.33333                 0.71429                 
-LR+(Positive likelihood ratio)                                   None                    1.5                     
-LR-(Negative likelihood ratio)                                   0.66667                 0.0                     
 MCC(Matthews correlation coefficient)                            0.48795                 0.48795                 
 MCEN(Modified confusion entropy)                                 0.38998                 0.51639                 
 MK(Markedness)                                                   0.71429                 0.71429                 
 N(Condition negative)                                            5                       3                       
+NLR(Negative likelihood ratio)                                   0.66667                 0.0                     
 NPV(Negative predictive value)                                   0.71429                 1.0                     
 P(Condition positive or support)                                 3                       5                       
+PLR(Positive likelihood ratio)                                   None                    1.5                     
+PLRI(Positive likelihood ratio interpretation)                   None                    Poor                    
 POP(Population)                                                  8                       8                       
 PPV(Precision or positive predictive value)                      1.0                     0.71429                 
 PRE(Prevalence)                                                  0.375                   0.625                   
@@ -337,16 +357,17 @@ TON(Test outcome negative)                                       7              
 TOP(Test outcome positive)                                       1                       7                       
 TP(True positive/hit)                                            1                       5                       
 TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0                     
+Y(Youden index)                                                  0.33333                 0.33333                 
 dInd(Distance index)                                             0.66667                 0.66667                 
 sInd(Similarity index)                                           0.5286                  0.5286                  
-
+                
 >>> cm3 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":0}, "Class2": {"Class1": 2, "Class2": 5}},transpose=True) # Transpose Matrix      
 >>> cm3.print_matrix()
 Predict          Class1    Class2    
 Actual
 Class1           1         2         
+
 Class2           0         5         
-                   
 
 ```
 * `matrix()` and `normalized_matrix()` renamed to `print_matrix()` and `print_normalized_matrix()` from `version 1.5`			

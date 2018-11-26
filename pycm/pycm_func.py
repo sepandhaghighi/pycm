@@ -19,6 +19,38 @@ def isfile(f):
         f, 'read')
 
 
+def DP_calc(TPR, TNR):
+    '''
+    This function calculate DP (Discriminant power)
+    :param TNR: Specificity or true negative rate
+    :type TNR : float
+    :param TPR: Sensitivity, recall, hit rate, or true positive rate
+    :type TPR : float
+    :return: DP as float
+    '''
+    try:
+        X = TPR / (1 - TPR)
+        Y = TNR / (1 - TNR)
+        return (math.sqrt(3) / math.pi) * (math.log(X, 10) + math.log(Y, 10))
+    except Exception:
+        return "None"
+
+
+def RCI_calc(mutual_information, reference_entropy):
+    '''
+    This function calculate RCI
+    :param mutual_information: Mutual Information
+    :type mutual_information : float
+    :param reference_entropy: Reference Entropy
+    :type reference_entropy : float
+    :return:  RCI as float
+    '''
+    try:
+        return mutual_information / reference_entropy
+    except Exception:
+        return "None"
+
+
 def dInd_calc(TNR, TPR):
     '''
     This function calculate dInd
@@ -472,6 +504,8 @@ def vector_check(vector):
     for i in vector:
         if isinstance(i, int) == False:
             return False
+        if i < 0:
+            return False
     return True
 
 
@@ -591,7 +625,8 @@ def entropy_calc(item, POP):
         result = 0
         for i in item.keys():
             likelihood = item[i] / POP[i]
-            result += likelihood * math.log(likelihood, 2)
+            if likelihood != 0:
+                result += likelihood * math.log(likelihood, 2)
         return -result
     except Exception:
         return "None"
@@ -627,7 +662,9 @@ def cross_entropy_calc(TOP, P, POP):
         for i in TOP.keys():
             reference_likelihood = P[i] / POP[i]
             response_likelihood = TOP[i] / POP[i]
-            result += reference_likelihood * math.log(response_likelihood, 2)
+            if response_likelihood != 0 and reference_likelihood != 0:
+                result += reference_likelihood * \
+                    math.log(response_likelihood, 2)
         return -result
     except Exception:
         return "None"
@@ -676,7 +713,9 @@ def conditional_entropy_calc(classes, table, P, POP):
         for i in classes:
             temp = 0
             for index, j in enumerate(classes):
-                p_prime = table[i][j] / P[i]
+                p_prime = 0
+                if P[i] != 0:
+                    p_prime = table[i][j] / P[i]
                 if p_prime != 0:
                     temp += p_prime * math.log(p_prime, 2)
             result += temp * (P[i] / POP[i])
@@ -1049,6 +1088,51 @@ def reliability_calc(RACC, ACC):
     try:
         result = (ACC - RACC) / (1 - RACC)
         return result
+    except Exception:
+        return "None"
+
+
+def PLR_analysis(PLR):
+    '''
+    This function analysis PLR(Positive likelihood ratio) with interpretation table
+    :param PLR: Positive likelihood ratio
+    :type PLR : float
+    :return: interpretation result as str
+    '''
+    try:
+
+        if PLR == "None":
+            return "None"
+        if PLR <= 1:
+            return "Negligible"
+        elif PLR > 1 and PLR < 5:
+            return "Poor"
+        elif PLR >= 5 and PLR < 10:
+            return "Fair"
+        else:
+            return "Good"
+    except Exception:
+        return "None"
+
+
+def DP_analysis(DP):
+    '''
+    This function analysis DP with interpretation table
+    :param DP: Discriminant power
+    :type DP : float
+    :return: interpretation result as str
+    '''
+    try:
+        if DP == "None":
+            return "None"
+        if DP < 1:
+            return "Poor"
+        elif DP >= 1 and DP < 2:
+            return "Limited"
+        elif DP >= 2 and DP < 3:
+            return "Fair"
+        else:
+            return "Good"
     except Exception:
         return "None"
 
@@ -1445,6 +1529,7 @@ def overall_statistics(
     CBA = CBA_calc(classes, table, TOP, P)
     AUNU = macro_calc(AUC_dict)
     AUNP = AUNP_calc(classes, P, POP, AUC_dict)
+    RCI = RCI_calc(mutual_information, reference_entropy)
     return {
         "Overall_ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1495,7 +1580,8 @@ def overall_statistics(
         "RR": RR,
         "CBA": CBA,
         "AUNU": AUNU,
-        "AUNP": AUNP}
+        "AUNP": AUNP,
+        "RCI": RCI}
 
 
 def class_statistics(TP, TN, FP, FN, classes, table):
@@ -1550,6 +1636,10 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     AUC = {}
     dInd = {}
     sInd = {}
+    DP = {}
+    Y = {}
+    PLRI = {}
+    DPI = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1586,6 +1676,10 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         AUC[i] = AUC_calc(TNR[i], TPR[i])
         dInd[i] = dInd_calc(TNR[i], TPR[i])
         sInd[i] = sInd_calc(dInd[i])
+        DP[i] = DP_calc(TPR[i], TNR[i])
+        Y[i] = BM[i]
+        PLRI[i] = PLR_analysis(PLR[i])
+        DPI[i] = DP_analysis(DP[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1600,8 +1694,8 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "MCC": MCC,
         "BM": BM,
         "MK": MK,
-        "LR+": PLR,
-        "LR-": NLR,
+        "PLR": PLR,
+        "NLR": NLR,
         "DOR": DOR,
         "TP": TP,
         "TN": TN,
@@ -1625,5 +1719,9 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "MCEN": MCEN,
         "AUC": AUC,
         "sInd": sInd,
-        "dInd": dInd}
+        "dInd": dInd,
+        "DP": DP,
+        "Y": Y,
+        "PLRI": PLRI,
+        "DPI": DPI}
     return result

@@ -37,6 +37,10 @@
   - [x] AUC
   - [x] dlnd
   - [x] slnd
+  - [x] DP
+  - [x] Y
+  - [x] DPI
+  - [x] PLRI
 - [x] Outputs
   - [x] CSV File
   - [x] HTML File
@@ -79,3 +83,4 @@
   - [x] AUNP
   - [x] Overall MCC
   - [x] CBA
+  - [x] RCI

@@ -140,8 +140,13 @@ def html_class_stat(classes, class_stat, digit=5):
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;"><a href="' + \
                   DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         for j in classes:
-            result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">' + \
-                rounder(class_stat[i][j], digit) + '</td>\n'
+            if i in ["PLRI", "DPI"]:
+                background_color = BENCHMARK_COLOR[class_stat[i][j]]
+                result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};">'.format(
+                    background_color)
+            else:
+                result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">'
+            result += rounder(class_stat[i][j], digit) + '</td>\n'
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;text-align:left;">' + \
                   PARAMS_DESCRIPTION[i].capitalize() + '</td>\n'
         result += "</tr>\n"
@@ -255,8 +260,12 @@ def table_print(classes, table):
     :return: printable table as str
     '''
     classes_len = len(classes)
-    class_max_length = max(map(len, map(str, classes)))
-    shift = "%-" + str(4 + class_max_length) + "s"
+    table_list = []
+    for key in classes:
+        table_list.extend(list(table[key].values()))
+    table_list.extend(classes)
+    table_max_length = max(map(len, map(str, table_list)))
+    shift = "%-" + str(4 + table_max_length) + "s"
     result = "Predict" + 10 * " " + shift * \
         classes_len % tuple(map(str, classes)) + "\n"
     result = result + "Actual\n"
@@ -264,35 +273,30 @@ def table_print(classes, table):
     for key in classes:
         row = [table[key][i] for i in classes]
         result += str(key) + " " * (17 - len(str(key))) + \
-            shift * classes_len % tuple(map(str, row)) + "\n"
+            shift * classes_len % tuple(map(str, row)) + "\n\n"
     return result
 
 
-def normalized_table_print(classes, table):
+def normalized_table_calc(classes, table):
     '''
-    This function print normalized confusion matrix
+    This function return normalized confusion matrix
     :param classes: classes list
     :type classes:list
     :param table: table
     :type table:dict
-    :return: printable table as str
+    :return: normalized table as dict
     '''
-    classes_len = len(classes)
-    class_max_length = max(map(len, map(str, classes)))
-    shift = "%-" + str(15 + class_max_length) + "s"
-    result = "Predict" + 10 * " " + shift * \
-        classes_len % tuple(map(str, classes)) + "\n"
-    result = result + "Actual\n"
     classes.sort()
+    map_dict = {k: 0 for k in classes}
+    new_table = {k: map_dict.copy() for k in classes}
     for key in classes:
         row = [table[key][i] for i in classes]
         div = sum(row)
         if sum(row) == 0:
             div = 1
-        result += str(key) + " " * (17 - len(str(key))) + shift * classes_len\
-            % tuple(
-            map(lambda x: str(numpy.around(x / div, 5)), row)) + "\n"
-    return result
+        for item in classes:
+            new_table[key][item] = numpy.around(table[key][item] / div, 5)
+    return new_table
 
 
 def csv_print(classes, class_stat, digit=5):

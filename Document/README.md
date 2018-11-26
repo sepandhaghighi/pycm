@@ -20,7 +20,7 @@
 - [Jupyter Notebook](https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Example2.ipynb)
 - [HTML](http://www.shaghighi.ir/pycm/doc/Example2.html)
 
-## Example-3 (Activation Threshold)
+## Example-3 (Activation threshold)
 
 - [Jupyter Notebook](https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Example3.ipynb)
 - [HTML](http://www.shaghighi.ir/pycm/doc/Example3.html)
@@ -32,7 +32,7 @@
 - [HTML](http://www.shaghighi.ir/pycm/doc/Example4.html)
 
 
-## Example-5 (Sample Weights)
+## Example-5 (Sample weights)
 
 - [Jupyter Notebook](https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Example5.ipynb)
 - [HTML](http://www.shaghighi.ir/pycm/doc/Example5.html)

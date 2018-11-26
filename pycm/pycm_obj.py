@@ -61,6 +61,10 @@ class ConfusionMatrix():
         self.predict_vector = predict_vector
         self.digit = digit
         self.weights = None
+        if isinstance(transpose, bool):
+            self.transpose = transpose
+        else:
+            self.transpose = False
         if isfile(file):
             obj_data = json.load(file)
             if obj_data["Actual-Vector"] is not None and obj_data[
@@ -82,8 +86,10 @@ class ConfusionMatrix():
                 except Exception:
                     loaded_transpose = False
                 self.transpose = loaded_transpose
-                matrix_param = matrix_params_from_table(obj_data[
-                    "Matrix"], loaded_transpose)
+                loaded_matrix = dict(obj_data["Matrix"])
+                for i in loaded_matrix.keys():
+                    loaded_matrix[i] = dict(loaded_matrix[i])
+                matrix_param = matrix_params_from_table(loaded_matrix)
             self.digit = obj_data["Digit"]
         elif isinstance(matrix, dict):
             if matrix_check(matrix):
@@ -113,14 +119,13 @@ class ConfusionMatrix():
                 self.weights = sample_weight
             if isinstance(sample_weight, numpy.ndarray):
                 self.weights = sample_weight.tolist()
-        if isinstance(transpose, bool):
-            self.transpose = transpose
-        else:
-            self.transpose = False
         if len(matrix_param[0]) < 2:
             raise pycmVectorError("Number Of Classes < 2")
         self.classes = matrix_param[0]
         self.table = matrix_param[1]
+        self.matrix = self.table
+        self.normalized_table = normalized_table_calc(self.classes, self.table)
+        self.normalized_matrix = self.normalized_table
         self.TP = matrix_param[2]
         self.TN = matrix_param[3]
         self.FP = matrix_param[4]
@@ -150,89 +155,10 @@ class ConfusionMatrix():
             CEN_dict=statistic_result["CEN"],
             MCEN_dict=statistic_result["MCEN"],
             AUC_dict=statistic_result["AUC"])
-        self.TPR = statistic_result["TPR"]
-        self.TNR = statistic_result["TNR"]
-        self.PPV = statistic_result["PPV"]
-        self.NPV = statistic_result["NPV"]
-        self.FNR = statistic_result["FNR"]
-        self.FPR = statistic_result["FPR"]
-        self.FDR = statistic_result["FDR"]
-        self.FOR = statistic_result["FOR"]
-        self.ACC = statistic_result["ACC"]
-        self.F1 = statistic_result["F1"]
-        self.MCC = statistic_result["MCC"]
-        self.BM = statistic_result["BM"]
-        self.MK = statistic_result["MK"]
-        self.DOR = statistic_result["DOR"]
-        self.PLR = statistic_result["LR+"]
-        self.NLR = statistic_result["LR-"]
-        self.POP = statistic_result["POP"]
-        self.P = statistic_result["P"]
-        self.N = statistic_result["N"]
-        self.TOP = statistic_result["TOP"]
-        self.TON = statistic_result["TON"]
-        self.PRE = statistic_result["PRE"]
-        self.G = statistic_result["G"]
-        self.RACC = statistic_result["RACC"]
-        self.RACCU = statistic_result["RACCU"]
-        self.F2 = statistic_result["F2"]
-        self.F05 = statistic_result["F0.5"]
-        self.ERR = statistic_result["ERR"]
-        self.J = statistic_result["J"]
-        self.IS = statistic_result["IS"]
-        self.CEN = statistic_result["CEN"]
-        self.MCEN = statistic_result["MCEN"]
-        self.AUC = statistic_result["AUC"]
-        self.dInd = statistic_result["dInd"]
-        self.sInd = statistic_result["sInd"]
-        self.Overall_J = self.overall_stat["Overall_J"]
-        self.SOA1 = self.overall_stat["Strength_Of_Agreement(Landis and Koch)"]
-        self.SOA2 = self.overall_stat["Strength_Of_Agreement(Fleiss)"]
-        self.SOA3 = self.overall_stat["Strength_Of_Agreement(Altman)"]
-        self.SOA4 = self.overall_stat["Strength_Of_Agreement(Cicchetti)"]
-        self.Kappa = self.overall_stat["Kappa"]
-        self.Overall_ACC = self.overall_stat["Overall_ACC"]
-        self.TPR_Macro = self.overall_stat["TPR_Macro"]
-        self.PPV_Macro = self.overall_stat["PPV_Macro"]
-        self.TPR_Micro = self.overall_stat["TPR_Micro"]
-        self.PPV_Micro = self.overall_stat["PPV_Micro"]
-        self.Overall_RACC = self.overall_stat["Overall_RACC"]
-        self.Overall_RACCU = self.overall_stat["Overall_RACCU"]
-        self.PI = self.overall_stat["Scott_PI"]
-        self.AC1 = self.overall_stat["Gwet_AC1"]
-        self.S = self.overall_stat["Bennett_S"]
-        self.Kappa_SE = self.overall_stat["Kappa Standard Error"]
-        self.Kappa_CI = self.overall_stat["Kappa 95% CI"]
-        self.Chi_Squared = self.overall_stat["Chi-Squared"]
-        self.Phi_Squared = self.overall_stat["Phi-Squared"]
-        self.KappaUnbiased = self.overall_stat["Kappa Unbiased"]
-        self.KappaNoPrevalence = self.overall_stat["Kappa No Prevalence"]
-        self.V = self.overall_stat["Cramer_V"]
-        self.DF = self.overall_stat["Chi-Squared DF"]
-        self.CI = self.overall_stat["95% CI"]
-        self.SE = self.overall_stat["Standard Error"]
-        self.ReferenceEntropy = self.overall_stat["Reference Entropy"]
-        self.ResponseEntropy = self.overall_stat["Response Entropy"]
-        self.CrossEntropy = self.overall_stat["Cross Entropy"]
-        self.JointEntropy = self.overall_stat["Joint Entropy"]
-        self.ConditionalEntropy = self.overall_stat["Conditional Entropy"]
-        self.MutualInformation = self.overall_stat["Mutual Information"]
-        self.KL = self.overall_stat["KL Divergence"]
-        self.LambdaB = self.overall_stat["Lambda B"]
-        self.LambdaA = self.overall_stat["Lambda A"]
-        self.HammingLoss = self.overall_stat["Hamming Loss"]
-        self.ZeroOneLoss = self.overall_stat["Zero-one Loss"]
-        self.NIR = self.overall_stat["NIR"]
-        self.PValue = self.overall_stat["P-Value"]
-        self.Overall_CEN = self.overall_stat["Overall_CEN"]
-        self.Overall_MCEN = self.overall_stat["Overall_MCEN"]
-        self.Overall_MCC = self.overall_stat["Overall_MCC"]
-        self.RR = self.overall_stat["RR"]
-        self.CBA = self.overall_stat["CBA"]
-        self.AUNU = self.overall_stat["AUNU"]
-        self.AUNP = self.overall_stat["AUNP"]
+        __class_stat_init__(self)
+        __overall_stat_init__(self)
 
-    def matrix(self, one_vs_all=False, class_name=None):
+    def print_matrix(self, one_vs_all=False, class_name=None):
         '''
         This method print confusion matrix
         :param one_vs_all : One-Vs-All mode flag
@@ -248,7 +174,7 @@ class ConfusionMatrix():
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
         print(table_print(classes, table))
 
-    def normalized_matrix(self, one_vs_all=False, class_name=None):
+    def print_normalized_matrix(self, one_vs_all=False, class_name=None):
         '''
         This method print normalized confusion matrix
         :param one_vs_all : One-Vs-All mode flag
@@ -262,7 +188,8 @@ class ConfusionMatrix():
         if one_vs_all:
             [classes, table] = one_vs_all_func(
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
-        print(normalized_table_print(classes, table))
+        table = normalized_table_calc(classes, table)
+        print(table_print(classes, table))
 
     def stat(self):
         '''
@@ -288,14 +215,22 @@ class ConfusionMatrix():
         return result
 
     def save_stat(self, name, address=True):
+        '''
+        This method save ConfusionMatrix in .pycm (flat file format)
+        :param name: filename
+        :type name : str
+        :param address: Flag for address return
+        :type address : bool
+        :return: Saving Status as dict {"Status":bool , "Message":str}
+        '''
         try:
             message = None
             file = open(name + ".pycm", "w")
             matrix = "Matrix : \n\n" + table_print(self.classes,
                                                    self.table) + "\n\n"
             normalized_matrix = "Normalized Matrix : \n\n" + \
-                                normalized_table_print(self.classes,
-                                                       self.table) + "\n\n"
+                                table_print(self.classes,
+                                            self.normalized_table) + "\n\n"
             one_vs_all = "\nOne-Vs-All : \n\n"
             for class_name in self.classes:
                 one_vs_all += str(class_name) + "-Vs-All : \n\n"
@@ -317,6 +252,14 @@ class ConfusionMatrix():
             return {"Status": False, "Message": str(e)}
 
     def save_html(self, name, address=True):
+        '''
+        This method save ConfusionMatrix in HTML file
+        :param name: filename
+        :type name : str
+        :param address: Flag for address return
+        :type address : bool
+        :return: Saving Status as dict {"Status":bool , "Message":str}
+        '''
         try:
             message = None
             html_file = open(name + ".html", "w")
@@ -336,6 +279,14 @@ class ConfusionMatrix():
             return {"Status": False, "Message": str(e)}
 
     def save_csv(self, name, address=True):
+        '''
+        This method save ConfusionMatrix in CSV file
+        :param name: filename
+        :type name : str
+        :param address: Flag for address return
+        :type address : bool
+        :return: Saving Status as dict {"Status":bool , "Message":str}
+        '''
         try:
             message = None
             csv_file = open(name + ".csv", "w")
@@ -348,18 +299,30 @@ class ConfusionMatrix():
             return {"Status": False, "Message": str(e)}
 
     def save_obj(self, name, address=True):
+        '''
+        This method save ConfusionMatrix in .obj file
+        :param name: filename
+        :type name : str
+        :param address: Flag for address return
+        :type address : bool
+        :return: Saving Status as dict {"Status":bool , "Message":str}
+        '''
         try:
             message = None
             obj_file = open(name + ".obj", "w")
             actual_vector_temp = self.actual_vector
             predict_vector_temp = self.predict_vector
+            matrix_temp = {k: self.table[k].copy() for k in self.classes}
+            matrix_items = []
+            for i in self.classes:
+                matrix_items.append((i, list(matrix_temp[i].items())))
             if isinstance(actual_vector_temp, numpy.ndarray):
                 actual_vector_temp = actual_vector_temp.tolist()
             if isinstance(predict_vector_temp, numpy.ndarray):
                 predict_vector_temp = predict_vector_temp.tolist()
             json.dump({"Actual-Vector": actual_vector_temp,
                        "Predict-Vector": predict_vector_temp,
-                       "Matrix": self.table,
+                       "Matrix": matrix_items,
                        "Digit": self.digit,
                        "Sample-Weight": self.weights,
                        "Transpose": self.transpose}, obj_file)
@@ -370,6 +333,12 @@ class ConfusionMatrix():
             return {"Status": False, "Message": str(e)}
 
     def F_beta(self, Beta):
+        '''
+        This method calculate FBeta Score
+        :param Beta: Beta parameter
+        :type Beta : float
+        :return: FBeta Score for classes as dict
+        '''
         try:
             F_Dict = {}
             for i in self.TP.keys():
@@ -388,3 +357,145 @@ class ConfusionMatrix():
         :return: representation as str
         '''
         return "pycm.ConfusionMatrix(classes: " + str(self.classes) + ")"
+
+    def __len__(self):
+        return len(self.classes)
+
+    def relabel(self, mapping):
+        '''
+        This method rename ConfusionMatrix classes
+        :param mapping: mapping dictionary
+        :type mapping : dict
+        :return: None
+        '''
+        if not isinstance(mapping, dict):
+            raise pycmMatrixError("Mapping Format Error")
+        if self.classes != list(mapping.keys()):
+            raise pycmMatrixError("Mapping Classnames Error")
+        for row in self.classes:
+            temp_dict = {}
+            temp_dict_normalized = {}
+            for col in self.classes:
+                temp_dict[mapping[col]] = self.table[row][col]
+                temp_dict_normalized[mapping[col]
+                                     ] = self.normalized_table[row][col]
+            self.table[mapping[row]] = temp_dict
+            self.normalized_table[mapping[row]] = temp_dict_normalized
+        self.matrix = self.table
+        self.normalized_matrix = self.normalized_table
+        for param in self.class_stat.keys():
+            temp_dict = {}
+            for classname in self.classes:
+                temp_dict[mapping[classname]
+                          ] = self.class_stat[param][classname]
+            self.class_stat[param] = temp_dict
+        self.classes = list(mapping.values())
+        self.TP = self.class_stat["TP"]
+        self.TN = self.class_stat["TN"]
+        self.FP = self.class_stat["FP"]
+        self.FN = self.class_stat["FN"]
+        __class_stat_init__(self)
+
+
+def __class_stat_init__(CM):
+    '''
+    This function init individual class stat
+    :param CM: ConfusionMatrix
+    :type CM : pycm.ConfusionMatrix object
+    :return: None
+    '''
+    CM.TPR = CM.class_stat["TPR"]
+    CM.TNR = CM.class_stat["TNR"]
+    CM.PPV = CM.class_stat["PPV"]
+    CM.NPV = CM.class_stat["NPV"]
+    CM.FNR = CM.class_stat["FNR"]
+    CM.FPR = CM.class_stat["FPR"]
+    CM.FDR = CM.class_stat["FDR"]
+    CM.FOR = CM.class_stat["FOR"]
+    CM.ACC = CM.class_stat["ACC"]
+    CM.F1 = CM.class_stat["F1"]
+    CM.MCC = CM.class_stat["MCC"]
+    CM.BM = CM.class_stat["BM"]
+    CM.MK = CM.class_stat["MK"]
+    CM.DOR = CM.class_stat["DOR"]
+    CM.PLR = CM.class_stat["PLR"]
+    CM.NLR = CM.class_stat["NLR"]
+    CM.POP = CM.class_stat["POP"]
+    CM.P = CM.class_stat["P"]
+    CM.N = CM.class_stat["N"]
+    CM.TOP = CM.class_stat["TOP"]
+    CM.TON = CM.class_stat["TON"]
+    CM.PRE = CM.class_stat["PRE"]
+    CM.G = CM.class_stat["G"]
+    CM.RACC = CM.class_stat["RACC"]
+    CM.RACCU = CM.class_stat["RACCU"]
+    CM.F2 = CM.class_stat["F2"]
+    CM.F05 = CM.class_stat["F0.5"]
+    CM.ERR = CM.class_stat["ERR"]
+    CM.J = CM.class_stat["J"]
+    CM.IS = CM.class_stat["IS"]
+    CM.CEN = CM.class_stat["CEN"]
+    CM.MCEN = CM.class_stat["MCEN"]
+    CM.AUC = CM.class_stat["AUC"]
+    CM.dInd = CM.class_stat["dInd"]
+    CM.sInd = CM.class_stat["sInd"]
+    CM.DP = CM.class_stat["DP"]
+    CM.Y = CM.class_stat["Y"]
+    CM.PLRI = CM.class_stat["PLRI"]
+    CM.DPI = CM.class_stat["DPI"]
+
+
+def __overall_stat_init__(CM):
+    '''
+    This function init individual overall stat
+    :param CM: ConfusionMatrix
+    :type CM : pycm.ConfusionMatrix object
+    :return: None
+    '''
+    CM.Overall_J = CM.overall_stat["Overall_J"]
+    CM.SOA1 = CM.overall_stat["Strength_Of_Agreement(Landis and Koch)"]
+    CM.SOA2 = CM.overall_stat["Strength_Of_Agreement(Fleiss)"]
+    CM.SOA3 = CM.overall_stat["Strength_Of_Agreement(Altman)"]
+    CM.SOA4 = CM.overall_stat["Strength_Of_Agreement(Cicchetti)"]
+    CM.Kappa = CM.overall_stat["Kappa"]
+    CM.Overall_ACC = CM.overall_stat["Overall_ACC"]
+    CM.TPR_Macro = CM.overall_stat["TPR_Macro"]
+    CM.PPV_Macro = CM.overall_stat["PPV_Macro"]
+    CM.TPR_Micro = CM.overall_stat["TPR_Micro"]
+    CM.PPV_Micro = CM.overall_stat["PPV_Micro"]
+    CM.Overall_RACC = CM.overall_stat["Overall_RACC"]
+    CM.Overall_RACCU = CM.overall_stat["Overall_RACCU"]
+    CM.PI = CM.overall_stat["Scott_PI"]
+    CM.AC1 = CM.overall_stat["Gwet_AC1"]
+    CM.S = CM.overall_stat["Bennett_S"]
+    CM.Kappa_SE = CM.overall_stat["Kappa Standard Error"]
+    CM.Kappa_CI = CM.overall_stat["Kappa 95% CI"]
+    CM.Chi_Squared = CM.overall_stat["Chi-Squared"]
+    CM.Phi_Squared = CM.overall_stat["Phi-Squared"]
+    CM.KappaUnbiased = CM.overall_stat["Kappa Unbiased"]
+    CM.KappaNoPrevalence = CM.overall_stat["Kappa No Prevalence"]
+    CM.V = CM.overall_stat["Cramer_V"]
+    CM.DF = CM.overall_stat["Chi-Squared DF"]
+    CM.CI = CM.overall_stat["95% CI"]
+    CM.SE = CM.overall_stat["Standard Error"]
+    CM.ReferenceEntropy = CM.overall_stat["Reference Entropy"]
+    CM.ResponseEntropy = CM.overall_stat["Response Entropy"]
+    CM.CrossEntropy = CM.overall_stat["Cross Entropy"]
+    CM.JointEntropy = CM.overall_stat["Joint Entropy"]
+    CM.ConditionalEntropy = CM.overall_stat["Conditional Entropy"]
+    CM.MutualInformation = CM.overall_stat["Mutual Information"]
+    CM.KL = CM.overall_stat["KL Divergence"]
+    CM.LambdaB = CM.overall_stat["Lambda B"]
+    CM.LambdaA = CM.overall_stat["Lambda A"]
+    CM.HammingLoss = CM.overall_stat["Hamming Loss"]
+    CM.ZeroOneLoss = CM.overall_stat["Zero-one Loss"]
+    CM.NIR = CM.overall_stat["NIR"]
+    CM.PValue = CM.overall_stat["P-Value"]
+    CM.Overall_CEN = CM.overall_stat["Overall_CEN"]
+    CM.Overall_MCEN = CM.overall_stat["Overall_MCEN"]
+    CM.Overall_MCC = CM.overall_stat["Overall_MCC"]
+    CM.RR = CM.overall_stat["RR"]
+    CM.CBA = CM.overall_stat["CBA"]
+    CM.AUNU = CM.overall_stat["AUNU"]
+    CM.AUNP = CM.overall_stat["AUNP"]
+    CM.RCI = CM.overall_stat["RCI"]

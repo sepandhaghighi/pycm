@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `matrix` attribute as dict
 - `normalized_matrix` attribute as dict
 - `normalized_table` attribute  as dict
+- `Python 3.7` added to `.travis.yaml` & `appveyor.yml`
 
 ### Changed
 - `README.md` modified

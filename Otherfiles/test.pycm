@@ -1,19 +1,25 @@
 Matrix : 
 
-Predict          0    1    2    
+Predict          L1    L2    L3    
 Actual
-0                3    0    2    
-1                0    1    1    
-2                0    2    3    
+L1               3     0     2     
+
+L2               0     1     1     
+
+L3               0     2     3     
+
 
 
 Normalized Matrix : 
 
-Predict          0               1               2               
+Predict          L1     L2     L3     
 Actual
-0                0.6             0.0             0.4             
-1                0.0             0.5             0.5             
-2                0.0             0.4             0.6             
+L1               0.6    0.0    0.4    
+
+L2               0.0    0.5    0.5    
+
+L3               0.0    0.4    0.6    
+
 
 
 Overall Statistics : 
@@ -52,6 +58,7 @@ P-Value                                                          0.18926
 PPV_Macro                                                        0.61111
 PPV_Micro                                                        0.58333
 Phi-Squared                                                      0.55
+RCI                                                              0.35339
 RR                                                               4.0
 Reference Entropy                                                1.48336
 Response Entropy                                                 1.5
@@ -67,12 +74,14 @@ Zero-one Loss                                                    5
 
 Class Statistics :
 
-Classes                                                          0                       1                       2                       
+Classes                                                          L1                      L2                      L3                      
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333                 
 AUC(Area under the roc curve)                                    0.8                     0.65                    0.58571                 
 BM(Informedness or bookmaker informedness)                       0.6                     0.3                     0.17143                 
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442                 
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0                     
+DP(Discriminant power)                                           None                    0.33193                 0.16597                 
+DPI(Discriminant power interpretation)                           None                    Poor                    Poor                    
 ERR(Error rate)                                                  0.16667                 0.25                    0.41667                 
 F0.5(F0.5 score)                                                 0.88235                 0.35714                 0.51724                 
 F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545                 
@@ -86,14 +95,15 @@ FPR(Fall-out or false positive rate)                             0.0            
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772                 
 IS(Information score)                                            1.26303                 1.0                     0.26303                 
 J(Jaccard index)                                                 0.6                     0.25                    0.375                   
-LR+(Positive likelihood ratio)                                   None                    2.5                     1.4                     
-LR-(Negative likelihood ratio)                                   0.4                     0.625                   0.7                     
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903                 
 MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875                  
 MK(Markedness)                                                   0.77778                 0.22222                 0.16667                 
 N(Condition negative)                                            7                       10                      7                       
+NLR(Negative likelihood ratio)                                   0.4                     0.625                   0.7                     
 NPV(Negative predictive value)                                   0.77778                 0.88889                 0.66667                 
 P(Condition positive or support)                                 5                       2                       5                       
+PLR(Positive likelihood ratio)                                   None                    2.5                     1.4                     
+PLRI(Positive likelihood ratio interpretation)                   None                    Poor                    Poor                    
 POP(Population)                                                  12                      12                      12                      
 PPV(Precision or positive predictive value)                      1.0                     0.33333                 0.5                     
 PRE(Prevalence)                                                  0.41667                 0.16667                 0.41667                 
@@ -105,32 +115,39 @@ TON(Test outcome negative)                                       9              
 TOP(Test outcome positive)                                       3                       3                       6                       
 TP(True positive/hit)                                            3                       1                       3                       
 TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6                     0.5                     0.6                     
+Y(Youden index)                                                  0.6                     0.3                     0.17143                 
 dInd(Distance index)                                             0.4                     0.53852                 0.58624                 
 sInd(Similarity index)                                           0.71716                 0.61921                 0.58547                 
 
 One-Vs-All : 
 
-0-Vs-All : 
+L1-Vs-All : 
 
-Predict          0    ~    
+Predict          L1    ~     
 Actual
-0                3    2    
-~                0    7    
+L1               3     2     
+
+~                0     7     
 
 
-1-Vs-All : 
 
-Predict          1    ~    
+L2-Vs-All : 
+
+Predict          L2    ~     
 Actual
-1                1    1    
-~                2    8    
+L2               1     1     
+
+~                2     8     
 
 
-2-Vs-All : 
 
-Predict          2    ~    
+L3-Vs-All : 
+
+Predict          L3    ~     
 Actual
-2                3    2    
-~                3    4    
+L3               3     2     
+
+~                3     4     
+
 
 

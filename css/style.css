@@ -6,7 +6,16 @@
     font-family: "consola";
     src: url("../fonts/consola.ttf");
 }
-
+.pip span{
+    color:crimson;
+}
+.pip p{
+    border: 5px solid black;
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+    
+}
 .note{
     text-align: left;
     display: inline-block;

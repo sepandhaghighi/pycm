@@ -38,7 +38,9 @@
   - [x] dlnd
   - [x] slnd
   - [x] DP
-  - [x] YI
+  - [x] Y
+  - [x] DPI
+  - [x] PLRI
 - [x] Outputs
   - [x] CSV File
   - [x] HTML File

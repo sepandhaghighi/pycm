@@ -11833,7 +11833,7 @@ The iris dataset is a classic and very easy multi-class classification dataset.<
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Classifier-1-(C-Support-Vector)">Classifier 1 (C-Support Vector)<a class="anchor-link" href="#Classifier-1-(C-Support-Vector)">&#182;</a></h2>
+<h2 id="Classifier-1-(C-Support-vector)">Classifier 1 (C-Support vector)<a class="anchor-link" href="#Classifier-1-(C-Support-vector)">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11870,7 +11870,7 @@ The iris dataset is a classic and very easy multi-class classification dataset.<
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred_1</span><span class="p">)</span>
-<span class="n">cm1</span><span class="o">.</span><span class="n">matrix</span><span class="p">()</span>
+<span class="n">cm1</span><span class="o">.</span><span class="n">print_matrix</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -11887,11 +11887,14 @@ The iris dataset is a classic and very easy multi-class classification dataset.<
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict          0    1    2    
+<pre>Predict          0     1     2     
 Actual
-0                13   0    0    
-1                0    10   6    
-2                0    0    9    
+0                13    0     0     
+
+1                0     10    6     
+
+2                0     0     9     
+
 
 </pre>
 </div>
@@ -11906,7 +11909,7 @@ Actual
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">normalized_matrix</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -11923,11 +11926,14 @@ Actual
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict          0               1               2               
+<pre>Predict          0        1        2        
 Actual
-0                1.0             0.0             0.0             
-1                0.0             0.625           0.375           
-2                0.0             0.0             1.0             
+0                1.0      0.0      0.0      
+
+1                0.0      0.625    0.375    
+
+2                0.0      0.0      1.0      
+
 
 </pre>
 </div>
@@ -12182,7 +12188,7 @@ Actual
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Classifier-2-(DecisionTree)">Classifier 2 (DecisionTree)<a class="anchor-link" href="#Classifier-2-(DecisionTree)">&#182;</a></h2>
+<h2 id="Classifier-2-(Decision-tree)">Classifier 2 (Decision tree)<a class="anchor-link" href="#Classifier-2-(Decision-tree)">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -12219,7 +12225,7 @@ Actual
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred_2</span><span class="p">)</span>
-<span class="n">cm2</span><span class="o">.</span><span class="n">matrix</span><span class="p">()</span>
+<span class="n">cm2</span><span class="o">.</span><span class="n">print_matrix</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12236,11 +12242,14 @@ Actual
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict          0    1    2    
+<pre>Predict          0     1     2     
 Actual
-0                13   0    0    
-1                0    15   1    
-2                0    0    9    
+0                13    0     0     
+
+1                0     15    1     
+
+2                0     0     9     
+
 
 </pre>
 </div>
@@ -12255,7 +12264,7 @@ Actual
 <div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">normalized_matrix</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12272,11 +12281,14 @@ Actual
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict          0               1               2               
+<pre>Predict          0         1         2         
 Actual
-0                1.0             0.0             0.0             
-1                0.0             0.9375          0.0625          
-2                0.0             0.0             1.0             
+0                1.0       0.0       0.0       
+
+1                0.0       0.9375    0.0625    
+
+2                0.0       0.0       1.0       
+
 
 </pre>
 </div>
@@ -12587,7 +12599,7 @@ Actual
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred_3</span><span class="p">)</span>
-<span class="n">cm3</span><span class="o">.</span><span class="n">matrix</span><span class="p">()</span>
+<span class="n">cm3</span><span class="o">.</span><span class="n">print_matrix</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12604,11 +12616,14 @@ Actual
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict          0    1    2    
+<pre>Predict          0     1     2     
 Actual
-0                13   0    0    
-1                0    15   1    
-2                0    3    6    
+0                13    0     0     
+
+1                0     15    1     
+
+2                0     3     6     
+
 
 </pre>
 </div>
@@ -12623,7 +12638,7 @@ Actual
 <div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">normalized_matrix</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
 </pre></div>
 
 </div>
@@ -12640,11 +12655,14 @@ Actual
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict          0               1               2               
+<pre>Predict          0          1          2          
 Actual
-0                1.0             0.0             0.0             
-1                0.0             0.9375          0.0625          
-2                0.0             0.33333         0.66667         
+0                1.0        0.0        0.0        
+
+1                0.0        0.9375     0.0625     
+
+2                0.0        0.33333    0.66667    
+
 
 </pre>
 </div>

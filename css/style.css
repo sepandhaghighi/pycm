@@ -6,6 +6,24 @@
     font-family: "consola";
     src: url("../fonts/consola.ttf");
 }
+
+.github{
+    overflow-y: hidden;
+    float: left;
+    text-align:left;
+    position: fixed;
+    margin-left: 10px;
+    padding: 10px;
+    background-color:bisque;
+    opacity: 0.7;
+    border: 4px solid black;
+    border-radius: 10px;
+}
+
+.github iframe{
+    display: inline;
+    text-align: left;
+}
 .pip span{
     color:crimson;
 }
@@ -270,6 +288,10 @@ button {
     height: 100%;
 }
 @media all and (max-width: 1024px) {
+    
+.github{
+    display: none;
+}
     .justify{
     text-align: center;
 }
@@ -291,8 +313,8 @@ button {
     height: 50%;
 }
     .PYCM_image{
-    width: 90%;
-    height: 50%;
+    width: 80%;
+    height: 40%;
 }
 
 .help {

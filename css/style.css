@@ -290,7 +290,15 @@ button {
 @media all and (max-width: 1024px) {
     
 .github{
-    display: none;
+    bottom: 0px;
+    width: 100%;
+    margin: 0px;
+    margin-bottom: 5px;
+    border: None;
+    left: 0px;
+    border-radius: 0px;
+    position: relative;
+    text-align: center;
 }
     .justify{
     text-align: center;

@@ -107,7 +107,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 		
 ### From vector
-```python
+```pycon
 >>> from pycm import *
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2] # or y_actu = numpy.array([2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2])
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2] # or y_pred = numpy.array([0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2])
@@ -254,7 +254,7 @@ Actual
 
 ```
 ### Direct CM
-```python
+```pycon
 >>> from pycm import *
 >>> cm2 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":2}, "Class2": {"Class1": 0, "Class2": 5}}) # Create CM Directly
 >>> cm2
@@ -399,7 +399,7 @@ For more information visit [Example5](http://www.shaghighi.ir/pycm/doc/Example5.
 ### Relabel		
 `relabel` method is added in `version 1.5` in order to change ConfusionMatrix classnames.		
 
-```python
+```pycon
 >>> cm.relabel(mapping={0:"L1",1:"L2",2:"L3"})
 >>> cm
 pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
@@ -410,7 +410,7 @@ pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
 `online_help` function is added in `version 1.1` in order to open each statistics definition in web browser
 
 
-```python
+```pycon
 
 >>> from pycm import online_help
 >>> online_help("J")

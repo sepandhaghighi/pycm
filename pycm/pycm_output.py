@@ -84,7 +84,7 @@ def html_table(classes, table):
     return result
 
 
-def html_overall_stat(overall_stat, digit=5,overall_param=None):
+def html_overall_stat(overall_stat, digit=5, overall_param=None):
     '''
     This function return report file overall stat
     :param overall_stat: overall stat
@@ -99,8 +99,8 @@ def html_overall_stat(overall_stat, digit=5,overall_param=None):
     result += "<h2>Overall Statistics : </h2>\n"
     result += '<table style="border:1px solid black;border-collapse: collapse;">\n'
     overall_stat_keys = sorted(overall_stat.keys())
-    if isinstance(overall_param,list):
-        if set(overall_param)<=set(overall_stat_keys):
+    if isinstance(overall_param, list):
+        if set(overall_param) <= set(overall_stat_keys):
             overall_stat_keys = sorted(overall_param)
     background_color = None
     for i in overall_stat_keys:
@@ -119,7 +119,7 @@ def html_overall_stat(overall_stat, digit=5,overall_param=None):
     return result
 
 
-def html_class_stat(classes, class_stat, digit=5,class_param=None):
+def html_class_stat(classes, class_stat, digit=5, class_param=None):
     '''
     This function return report file class_stat
     :param classes: matrix classes
@@ -142,8 +142,8 @@ def html_class_stat(classes, class_stat, digit=5,class_param=None):
     result += '<td>Description</td>\n'
     result += '</tr>\n'
     class_stat_keys = sorted(class_stat.keys())
-    if isinstance(class_param,list)==True:
-        if set(class_param)<=set(class_stat_keys):
+    if isinstance(class_param, list):
+        if set(class_param) <= set(class_stat_keys):
             class_stat_keys = class_param
     for i in class_stat_keys:
         result += '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n'
@@ -186,7 +186,7 @@ def html_maker(
         table,
         overall_stat,
         class_stat,
-        digit=5,overall_param=None,class_param=None):
+        digit=5, overall_param=None, class_param=None):
     '''
     This function create html report
     :param html_file : file object of html
@@ -211,8 +211,8 @@ def html_maker(
     '''
     html_file.write(html_init(name))
     html_file.write(html_table(classes, table))
-    html_file.write(html_overall_stat(overall_stat, digit,overall_param))
-    html_file.write(html_class_stat(classes, class_stat, digit,class_param))
+    html_file.write(html_overall_stat(overall_stat, digit, overall_param))
+    html_file.write(html_class_stat(classes, class_stat, digit, class_param))
     html_file.write(html_end(VERSION))
 
 
@@ -313,7 +313,7 @@ def normalized_table_calc(classes, table):
     return new_table
 
 
-def csv_print(classes, class_stat, digit=5,class_param=None):
+def csv_print(classes, class_stat, digit=5, class_param=None):
     '''
     This function return csv file data
     :param classes: classes list
@@ -330,8 +330,8 @@ def csv_print(classes, class_stat, digit=5,class_param=None):
         result += ',"' + str(item) + '"'
     result += "\n"
     class_stat_keys = sorted(class_stat.keys())
-    if isinstance(class_param,list)==True:
-        if set(class_param)<=set(class_stat_keys):
+    if isinstance(class_param, list):
+        if set(class_param) <= set(class_stat_keys):
             class_stat_keys = class_param
     for key in class_stat_keys:
         row = [rounder(class_stat[key][i], digit) for i in classes]
@@ -340,7 +340,13 @@ def csv_print(classes, class_stat, digit=5,class_param=None):
     return result
 
 
-def stat_print(classes, class_stat, overall_stat, digit=5, overall_param=None, class_param=None):
+def stat_print(
+        classes,
+        class_stat,
+        overall_stat,
+        digit=5,
+        overall_param=None,
+        class_param=None):
     '''
     This function return statistics
     :param classes: classes list
@@ -361,8 +367,8 @@ def stat_print(classes, class_stat, overall_stat, digit=5, overall_param=None, c
     classes_len = len(classes)
     result = "Overall Statistics : " + "\n\n"
     overall_stat_keys = sorted(overall_stat.keys())
-    if isinstance(overall_param,list)==True:
-        if set(overall_param)<=set(overall_stat_keys):
+    if isinstance(overall_param, list):
+        if set(overall_param) <= set(overall_stat_keys):
             overall_stat_keys = sorted(overall_param)
     for key in overall_stat_keys:
         result += key + " " * (
@@ -371,8 +377,8 @@ def stat_print(classes, class_stat, overall_stat, digit=5, overall_param=None, c
     result += "Classes" + shift * " " + "%-24s" * \
         classes_len % tuple(map(str, classes)) + "\n"
     class_stat_keys = sorted(class_stat.keys())
-    if isinstance(class_param,list)==True:
-        if set(class_param)<=set(class_stat_keys):
+    if isinstance(class_param, list):
+        if set(class_param) <= set(class_stat_keys):
             class_stat_keys = sorted(class_param)
     classes.sort()
     rounder_map = partial(rounder, digit=digit)

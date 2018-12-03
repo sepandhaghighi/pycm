@@ -191,7 +191,7 @@ class ConfusionMatrix():
         table = normalized_table_calc(classes, table)
         print(table_print(classes, table))
 
-    def stat(self):
+    def stat(self,overall_param=None,class_param=None):
         '''
         This method print statistical measures table
         :return: None
@@ -201,9 +201,9 @@ class ConfusionMatrix():
                 self.classes,
                 self.class_stat,
                 self.overall_stat,
-                self.digit))
+                self.digit,overall_param,class_param))
 
-    def __str__(self):
+    def __str__(self,overall_param=None,class_param=None):
         '''
         ConfusionMatrix object string representation method
         :return: representation as str (matrix + params)
@@ -211,10 +211,10 @@ class ConfusionMatrix():
         result = table_print(self.classes, self.table)
         result += "\n" * 4
         result += stat_print(self.classes, self.class_stat,
-                             self.overall_stat, self.digit)
+                             self.overall_stat, self.digit,overall_param,class_param)
         return result
 
-    def save_stat(self, name, address=True):
+    def save_stat(self, name, address=True, overall_param=None,class_param=None):
         '''
         This method save ConfusionMatrix in .pycm (flat file format)
         :param name: filename
@@ -242,7 +242,7 @@ class ConfusionMatrix():
                 self.classes,
                 self.class_stat,
                 self.overall_stat,
-                self.digit)
+                self.digit,overall_param,class_param)
             file.write(matrix + normalized_matrix + stat + one_vs_all)
             file.close()
             if address:

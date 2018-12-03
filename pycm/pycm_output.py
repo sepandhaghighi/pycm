@@ -323,9 +323,9 @@ def csv_print(classes, class_stat, digit=5):
     return result
 
 
-def stat_print(classes, class_stat, overall_stat, digit=5):
+def stat_print(classes, class_stat, overall_stat, digit=5, overall_param=None, class_param=None):
     '''
-    This function print statistics
+    This function return statistics
     :param classes: classes list
     :type classes:list
     :param class_stat: statistic result for each class
@@ -340,6 +340,9 @@ def stat_print(classes, class_stat, overall_stat, digit=5):
     classes_len = len(classes)
     result = "Overall Statistics : " + "\n\n"
     overall_stat_keys = sorted(overall_stat.keys())
+    if isinstance(overall_param,list)==True:
+        if set(overall_param)<=set(overall_stat_keys):
+            overall_stat_keys = sorted(overall_param)
     for key in overall_stat_keys:
         result += key + " " * (
             shift - len(key) + 7) + rounder(overall_stat[key], digit) + "\n"
@@ -347,6 +350,9 @@ def stat_print(classes, class_stat, overall_stat, digit=5):
     result += "Classes" + shift * " " + "%-24s" * \
         classes_len % tuple(map(str, classes)) + "\n"
     class_stat_keys = sorted(class_stat.keys())
+    if isinstance(class_param,list)==True:
+        if set(class_param)<=set(class_stat_keys):
+            class_stat_keys = sorted(class_param)
     classes.sort()
     rounder_map = partial(rounder, digit=digit)
     for key in class_stat_keys:

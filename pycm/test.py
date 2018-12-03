@@ -314,6 +314,9 @@ Webpage : http://pycm.shaghighi.ir
 >>> save_stat=cm.save_stat("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=cm.save_stat("test_filtered",address=False,overall_param=["Kappa","Scott_PI"],class_param=["TPR","TNR","ACC","AUC"])
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> save_stat=cm.save_stat("/asdasd,qweqwe.eo/",address=True)
 >>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.pycm'"}
 True
@@ -539,6 +542,20 @@ Y(Youden index)                                                  None           
 dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0
 sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289
 <BLANKLINE>
+>>> cm.stat(overall_param=["Kappa","Scott_PI"],class_param=["TPR","TNR","ACC","AUC"])
+Overall Statistics :
+<BLANKLINE>
+Kappa                                                            0.07801
+Scott_PI                                                         -0.12554
+<BLANKLINE>
+Class Statistics :
+<BLANKLINE>
+Classes                                                          100                     200                     500                     600
+ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
+TNR(Specificity or true negative rate)                           0.45                    0.75                    0.94118                 1.0
+TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0
+<BLANKLINE>
 >>> cm.print_normalized_matrix()
 Predict          100            200            500            600
 Actual
@@ -730,11 +747,20 @@ pycm.pycm_obj.pycmVectorError: Number Of Classes < 2
 >>> save_stat=cm.save_html("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=cm.save_html("test_filtered",address=False,overall_param=["Kappa","Scott_PI"],class_param=["TPR","TNR","ACC","AUC"])
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> save_stat=cm.save_csv("test",address=False)
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_csv("test_filtered",address=False,class_param=["TPR","TNR","ACC","AUC"])
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_html("/asdasd,qweqwe.eo/",address=True)
 >>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.html'"}
+True
+>>> save_stat=cm.save_csv("/asdasd,qweqwe.eo/",address=True)
+>>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.csv'"}
 True
 >>> def activation(i):
 ...	    if i<0.7:
@@ -1471,6 +1497,9 @@ True
 >>> os.remove("test.csv")
 >>> os.remove("test.obj")
 >>> os.remove("test.html")
+>>> os.remove("test_filtered.html")
+>>> os.remove("test_filtered.csv")
+>>> os.remove("test_filtered.pycm")
 >>> os.remove("test2.obj")
 >>> os.remove("test3.obj")
 >>> os.remove("test4.obj")

@@ -5,6 +5,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.6] - 2018-12-04
+### Added
+- AUC Value Interpretation (AUCI)
+- Example-6
+
+### Changed
+- `README.md` modified
+- Document modified
+
 ## [1.5] - 2018-11-26
 ### Added
 - Relative Classifier Information (RCI)
@@ -272,7 +281,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.5...HEAD
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.6...HEAD
+[1.6]: https://github.com/sepandhaghighi/pycm/compare/v1.5...v1.6
 [1.5]: https://github.com/sepandhaghighi/pycm/compare/v1.4...v1.5
 [1.4]: https://github.com/sepandhaghighi/pycm/compare/v1.3...v1.4
 [1.3]: https://github.com/sepandhaghighi/pycm/compare/v1.2...v1.3

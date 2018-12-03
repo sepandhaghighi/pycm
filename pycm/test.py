@@ -75,6 +75,7 @@ Class Statistics :
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333
 AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
+AUCI(Auc value interpretation)                                   Very Good               Fair                    Poor
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
@@ -183,6 +184,7 @@ Class Statistics :
 Classes                                                          L1                      L2                      L3
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333
 AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
+AUCI(Auc value interpretation)                                   Very Good               Fair                    Poor
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
@@ -395,6 +397,7 @@ Class Statistics :
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
+AUCI(Auc value interpretation)                                   None                    Poor                    Fair                    Poor
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
@@ -493,6 +496,7 @@ Class Statistics :
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
+AUCI(Auc value interpretation)                                   None                    Poor                    Fair                    Poor
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
@@ -813,6 +817,7 @@ Class Statistics :
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
+AUCI(Auc value interpretation)                                   None                    Poor                    Fair                    Poor
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
@@ -930,6 +935,7 @@ Class Statistics :
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
 AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
+AUCI(Auc value interpretation)                                   Good                    Fair                    Very Good
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
@@ -1038,6 +1044,7 @@ Class Statistics :
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
 AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
+AUCI(Auc value interpretation)                                   Good                    Fair                    Very Good
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
@@ -1088,93 +1095,94 @@ Example : online_help("J") or online_help(2)
 1-95% CI
 2-ACC
 3-AUC
-4-AUNP
-5-AUNU
-6-BM
-7-Bennett_S
-8-CBA
-9-CEN
-10-Chi-Squared
-11-Chi-Squared DF
-12-Conditional Entropy
-13-Cramer_V
-14-Cross Entropy
-15-DOR
-16-DP
-17-DPI
-18-ERR
-19-F0.5
-20-F1
-21-F2
-22-FDR
-23-FN
-24-FNR
-25-FOR
-26-FP
-27-FPR
-28-G
-29-Gwet_AC1
-30-Hamming Loss
-31-IS
-32-J
-33-Joint Entropy
-34-KL Divergence
-35-Kappa
-36-Kappa 95% CI
-37-Kappa No Prevalence
-38-Kappa Standard Error
-39-Kappa Unbiased
-40-Lambda A
-41-Lambda B
-42-MCC
-43-MCEN
-44-MK
-45-Mutual Information
-46-N
-47-NIR
-48-NLR
-49-NPV
-50-Overall_ACC
-51-Overall_CEN
-52-Overall_J
-53-Overall_MCC
-54-Overall_MCEN
-55-Overall_RACC
-56-Overall_RACCU
-57-P
-58-P-Value
-59-PLR
-60-PLRI
-61-POP
-62-PPV
-63-PPV_Macro
-64-PPV_Micro
-65-PRE
-66-Phi-Squared
-67-RACC
-68-RACCU
-69-RCI
-70-RR
-71-Reference Entropy
-72-Response Entropy
-73-Scott_PI
-74-Standard Error
-75-Strength_Of_Agreement(Altman)
-76-Strength_Of_Agreement(Cicchetti)
-77-Strength_Of_Agreement(Fleiss)
-78-Strength_Of_Agreement(Landis and Koch)
-79-TN
-80-TNR
-81-TON
-82-TOP
-83-TP
-84-TPR
-85-TPR_Macro
-86-TPR_Micro
-87-Y
-88-Zero-one Loss
-89-dInd
-90-sInd
+4-AUCI
+5-AUNP
+6-AUNU
+7-BM
+8-Bennett_S
+9-CBA
+10-CEN
+11-Chi-Squared
+12-Chi-Squared DF
+13-Conditional Entropy
+14-Cramer_V
+15-Cross Entropy
+16-DOR
+17-DP
+18-DPI
+19-ERR
+20-F0.5
+21-F1
+22-F2
+23-FDR
+24-FN
+25-FNR
+26-FOR
+27-FP
+28-FPR
+29-G
+30-Gwet_AC1
+31-Hamming Loss
+32-IS
+33-J
+34-Joint Entropy
+35-KL Divergence
+36-Kappa
+37-Kappa 95% CI
+38-Kappa No Prevalence
+39-Kappa Standard Error
+40-Kappa Unbiased
+41-Lambda A
+42-Lambda B
+43-MCC
+44-MCEN
+45-MK
+46-Mutual Information
+47-N
+48-NIR
+49-NLR
+50-NPV
+51-Overall_ACC
+52-Overall_CEN
+53-Overall_J
+54-Overall_MCC
+55-Overall_MCEN
+56-Overall_RACC
+57-Overall_RACCU
+58-P
+59-P-Value
+60-PLR
+61-PLRI
+62-POP
+63-PPV
+64-PPV_Macro
+65-PPV_Micro
+66-PRE
+67-Phi-Squared
+68-RACC
+69-RACCU
+70-RCI
+71-RR
+72-Reference Entropy
+73-Response Entropy
+74-Scott_PI
+75-Standard Error
+76-Strength_Of_Agreement(Altman)
+77-Strength_Of_Agreement(Cicchetti)
+78-Strength_Of_Agreement(Fleiss)
+79-Strength_Of_Agreement(Landis and Koch)
+80-TN
+81-TNR
+82-TON
+83-TOP
+84-TP
+85-TPR
+86-TPR_Macro
+87-TPR_Micro
+88-Y
+89-Zero-one Loss
+90-dInd
+91-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -1247,6 +1255,7 @@ Class Statistics :
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
 AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
+AUCI(Auc value interpretation)                                   Very Good               Fair                    Fair
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
 CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5
@@ -1355,6 +1364,7 @@ Class Statistics :
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
 AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
+AUCI(Auc value interpretation)                                   Very Good               Fair                    Fair
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
 CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5

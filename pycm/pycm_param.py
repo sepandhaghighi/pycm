@@ -59,7 +59,8 @@ PARAMS_DESCRIPTION = {
     "DP": "Discriminant power",
     "Y": "Youden index",
     "PLRI": "Positive likelihood ratio interpretation",
-    "DPI": "Discriminant power interpretation"}
+    "DPI": "Discriminant power interpretation",
+    "AUCI": "AUC value interpretation"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -151,7 +152,8 @@ PARAMS_LINK = {
     "DP": "DP-(Discriminant-power)",
     "Y": "Y-(Youden-index)",
     "PLRI": "PLRI-(Positive-likelihood-ratio-interpretation)",
-    "DPI": "DPI-(Discriminant-power-interpretation)"}
+    "DPI": "DPI-(Discriminant-power-interpretation)",
+    "AUCI": ""}
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

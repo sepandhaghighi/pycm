@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `overall_param` and `class_param` arguments added to `stat`,`save_stat` and `save_html`  methods
 - `class_param` argument added to `save_csv` method
-- `_` in overall statistics names removed
+- `_` removed from overall statistics names
 - `README.md` modified 
 - Document modified
 

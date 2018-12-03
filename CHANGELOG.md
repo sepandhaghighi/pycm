@@ -9,8 +9,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - AUC Value Interpretation (AUCI)
 - Example-6
+- Anaconda cloud account
 
 ### Changed
+- `overall_param` and `class_param` arguments added to `stat` method
+- `overall_param` and `class_param` arguments added to `save_stat` method
+- `overall_param` and `class_param` arguments added to `save_html` method
+- `class_param` argument added to `save_csv` method
 - `README.md` modified
 - Document modified
 
@@ -28,7 +33,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `matrix` attribute as dict
 - `normalized_matrix` attribute as dict
 - `normalized_table` attribute  as dict
-- `Python 3.7` added to `.travis.yaml` & `appveyor.yml`
 
 ### Changed
 - `README.md` modified
@@ -43,13 +47,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `print_table` bug for large numbers fixed
 - JSON key bug in `save_obj` fixed
 - `transpose` bug in `save_obj` fixed
+- `Python 3.7` added to `.travis.yaml` & `appveyor.yml`
 
 ## [1.4] - 2018-11-12
 ### Added
-- Area Under Curve
+- Area Under Curve (AUC)
 - AUNU
 - AUNP
-- Class Balance Accuracy
+- Class Balance Accuracy (CBA)
 - Global Performance Index (RR)
 - Overall MCC
 - Distance index (dInd)

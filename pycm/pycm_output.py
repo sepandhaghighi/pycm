@@ -140,7 +140,7 @@ def html_class_stat(classes, class_stat, digit=5):
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;"><a href="' + \
                   DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         for j in classes:
-            if i in ["PLRI", "DPI"]:
+            if i in ["PLRI", "DPI","AUCI"]:
                 background_color = BENCHMARK_COLOR[class_stat[i][j]]
                 result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};">'.format(
                     background_color)

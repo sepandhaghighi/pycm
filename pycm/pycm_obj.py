@@ -443,6 +443,7 @@ def __class_stat_init__(CM):
     CM.Y = CM.class_stat["Y"]
     CM.PLRI = CM.class_stat["PLRI"]
     CM.DPI = CM.class_stat["DPI"]
+    CM.AUCI = CM.class_stat["AUCI"]
 
 
 def __overall_stat_init__(CM):

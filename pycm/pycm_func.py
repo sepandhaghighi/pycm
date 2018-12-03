@@ -1137,6 +1137,28 @@ def DP_analysis(DP):
         return "None"
 
 
+def AUC_analysis(AUC):
+    '''
+    This function analysis AUC with interpretation table
+    :param AUC: Area under the ROC curve
+    :type AUC : float
+    :return: interpretation result as str
+    '''
+    try:
+        if AUC=="None":
+            return "None"
+        if AUC<0.6:
+            return "Poor"
+        elif AUC>=0.6 and AUC<0.7:
+            return "Fair"
+        elif AUC>=0.7 and AUC<0.8:
+            return "Good"
+        elif AUC>=0.8 and AUC<0.9:
+            return "Very Good"
+        else:
+            return "Excellent"
+    except Exception:
+        return "None"
 def kappa_analysis_cicchetti(kappa):
     '''
     This function analysis kappa number with Cicchetti benchmark
@@ -1640,6 +1662,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     Y = {}
     PLRI = {}
     DPI = {}
+    AUCI = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1680,6 +1703,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         Y[i] = BM[i]
         PLRI[i] = PLR_analysis(PLR[i])
         DPI[i] = DP_analysis(DP[i])
+        AUCI[i] = AUC_analysis(AUC[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1723,5 +1747,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "DP": DP,
         "Y": Y,
         "PLRI": PLRI,
-        "DPI": DPI}
+        "DPI": DPI,
+        "AUCI": AUCI}
     return result

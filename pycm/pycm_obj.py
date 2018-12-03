@@ -251,7 +251,7 @@ class ConfusionMatrix():
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
-    def save_html(self, name, address=True):
+    def save_html(self, name, address=True,overall_param=None,class_param=None):
         '''
         This method save ConfusionMatrix in HTML file
         :param name: filename
@@ -270,7 +270,7 @@ class ConfusionMatrix():
                 self.table,
                 self.overall_stat,
                 self.class_stat,
-                self.digit)
+                self.digit,overall_param,class_param)
             html_file.close()
             if address:
                 message = os.path.join(os.getcwd(), name + ".html")

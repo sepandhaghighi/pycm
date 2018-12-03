@@ -91,7 +91,7 @@ def html_overall_stat(overall_stat, digit=5, overall_param=None):
     :type overall_stat : dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
-    :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott_PI]
+    :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott PI]
     :type overall_param : list
     :return: html_overall_stat as str
     '''
@@ -107,7 +107,7 @@ def html_overall_stat(overall_stat, digit=5, overall_param=None):
         result += '<tr align="center">\n'
         result += '<td style="border:1px solid black;padding:4px;text-align:left;"><a href="' + \
             DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
-        if i.find("Strength_Of_Agreement") != -1:
+        if i.find("SOA") != -1:
             background_color = BENCHMARK_COLOR[overall_stat[i]]
             result += '<td style="border:1px solid black;padding:4px;background-color:{};">'.format(
                 background_color)
@@ -203,7 +203,7 @@ def html_maker(
     :type class_stat: dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
-    :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott_PI]
+    :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott PI]
     :type overall_param : list
     :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
     :type class_param : list
@@ -357,7 +357,7 @@ def stat_print(
     :type overall_stat:dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
-    :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott_PI]
+    :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott PI]
     :type overall_param : list
     :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
     :type class_param : list

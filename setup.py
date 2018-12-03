@@ -33,7 +33,7 @@ def read_description():
 setup(
     name='pycm',
     packages=['pycm'],
-    version='1.5',
+    version='1.6',
     description='Multi-class confusion matrix library in Python',
     long_description=read_description(),
     long_description_content_type='text/markdown',

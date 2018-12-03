@@ -203,7 +203,7 @@ class ConfusionMatrix():
                 self.overall_stat,
                 self.digit,overall_param,class_param))
 
-    def __str__(self,overall_param=None,class_param=None):
+    def __str__(self):
         '''
         ConfusionMatrix object string representation method
         :return: representation as str (matrix + params)
@@ -211,7 +211,7 @@ class ConfusionMatrix():
         result = table_print(self.classes, self.table)
         result += "\n" * 4
         result += stat_print(self.classes, self.class_stat,
-                             self.overall_stat, self.digit,overall_param,class_param)
+                             self.overall_stat, self.digit)
         return result
 
     def save_stat(self, name, address=True, overall_param=None,class_param=None):

@@ -5,18 +5,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-## [1.6] - 2018-12-04
+## [1.6] - 2018-12-05
 ### Added
 - AUC Value Interpretation (AUCI)
 - Example-6
 - Anaconda cloud account
 
 ### Changed
-- `overall_param` and `class_param` arguments added to `stat` method
-- `overall_param` and `class_param` arguments added to `save_stat` method
-- `overall_param` and `class_param` arguments added to `save_html` method
+- `overall_param` and `class_param` arguments added to `stat`,`save_stat` and `save_html`  methods
 - `class_param` argument added to `save_csv` method
-- `README.md` modified
+- `_` in overall statistics names removed
+- `README.md` modified 
 - Document modified
 
 ## [1.5] - 2018-11-26

@@ -305,7 +305,7 @@ def normalized_table_calc(classes, table):
     return new_table
 
 
-def csv_print(classes, class_stat, digit=5):
+def csv_print(classes, class_stat, digit=5,class_param=None):
     '''
     This function return csv file data
     :param classes: classes list
@@ -322,6 +322,9 @@ def csv_print(classes, class_stat, digit=5):
         result += ',"' + str(item) + '"'
     result += "\n"
     class_stat_keys = sorted(class_stat.keys())
+    if isinstance(class_param,list)==True:
+        if set(class_param)<=set(class_stat_keys):
+            class_stat_keys = class_param
     for key in class_stat_keys:
         row = [rounder(class_stat[key][i], digit) for i in classes]
         result += key + "," + ",".join(row)

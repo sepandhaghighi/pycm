@@ -278,7 +278,7 @@ class ConfusionMatrix():
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
-    def save_csv(self, name, address=True):
+    def save_csv(self, name, address=True,class_param=None):
         '''
         This method save ConfusionMatrix in CSV file
         :param name: filename
@@ -290,7 +290,7 @@ class ConfusionMatrix():
         try:
             message = None
             csv_file = open(name + ".csv", "w")
-            csv_data = csv_print(self.classes, self.class_stat, self.digit)
+            csv_data = csv_print(self.classes, self.class_stat, self.digit,class_param)
             csv_file.write(csv_data)
             if address:
                 message = os.path.join(os.getcwd(), name + ".csv")

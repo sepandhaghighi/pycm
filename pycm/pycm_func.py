@@ -1145,20 +1145,22 @@ def AUC_analysis(AUC):
     :return: interpretation result as str
     '''
     try:
-        if AUC=="None":
+        if AUC == "None":
             return "None"
-        if AUC<0.6:
+        if AUC < 0.6:
             return "Poor"
-        elif AUC>=0.6 and AUC<0.7:
+        elif AUC >= 0.6 and AUC < 0.7:
             return "Fair"
-        elif AUC>=0.7 and AUC<0.8:
+        elif AUC >= 0.7 and AUC < 0.8:
             return "Good"
-        elif AUC>=0.8 and AUC<0.9:
+        elif AUC >= 0.8 and AUC < 0.9:
             return "Very Good"
         else:
             return "Excellent"
     except Exception:
         return "None"
+
+
 def kappa_analysis_cicchetti(kappa):
     '''
     This function analysis kappa number with Cicchetti benchmark

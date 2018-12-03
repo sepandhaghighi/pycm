@@ -91,6 +91,8 @@ def html_overall_stat(overall_stat, digit=5,overall_param=None):
     :type overall_stat : dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
+    :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott_PI]
+    :type overall_param : list
     :return: html_overall_stat as str
     '''
     result = ""
@@ -126,6 +128,8 @@ def html_class_stat(classes, class_stat, digit=5,class_param=None):
     :type class_stat:dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
+    :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
+    :type class_param : list
     :return: html_class_stat as str
     '''
     result = ""
@@ -199,6 +203,10 @@ def html_maker(
     :type class_stat: dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
+    :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott_PI]
+    :type overall_param : list
+    :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
+    :type class_param : list
     :return: None
     '''
     html_file.write(html_init(name))
@@ -343,6 +351,10 @@ def stat_print(classes, class_stat, overall_stat, digit=5, overall_param=None, c
     :type overall_stat:dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
+    :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott_PI]
+    :type overall_param : list
+    :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
+    :type class_param : list
     :return: printable result as str
     '''
     shift = max(map(len, PARAMS_DESCRIPTION.values())) + 5

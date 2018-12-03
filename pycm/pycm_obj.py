@@ -194,6 +194,10 @@ class ConfusionMatrix():
     def stat(self,overall_param=None,class_param=None):
         '''
         This method print statistical measures table
+        :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott_PI]
+        :type overall_param : list
+        :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
+        :type class_param : list
         :return: None
         '''
         print(
@@ -221,6 +225,10 @@ class ConfusionMatrix():
         :type name : str
         :param address: Flag for address return
         :type address : bool
+        :param overall_param : Overall parameters list for save, Example : ["Kappa","Scott_PI]
+        :type overall_param : list
+        :param class_param : Class parameters list for save, Example : ["TPR","TNR","AUC"]
+        :type class_param : list
         :return: Saving Status as dict {"Status":bool , "Message":str}
         '''
         try:
@@ -258,6 +266,10 @@ class ConfusionMatrix():
         :type name : str
         :param address: Flag for address return
         :type address : bool
+        :param overall_param : Overall parameters list for save, Example : ["Kappa","Scott_PI]
+        :type overall_param : list
+        :param class_param : Class parameters list for save, Example : ["TPR","TNR","AUC"]
+        :type class_param : list
         :return: Saving Status as dict {"Status":bool , "Message":str}
         '''
         try:
@@ -285,6 +297,8 @@ class ConfusionMatrix():
         :type name : str
         :param address: Flag for address return
         :type address : bool
+        :param class_param : Class parameters list for save, Example : ["TPR","TNR","AUC"]
+        :type class_param : list
         :return: Saving Status as dict {"Status":bool , "Message":str}
         '''
         try:

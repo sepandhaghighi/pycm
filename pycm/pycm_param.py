@@ -153,7 +153,7 @@ PARAMS_LINK = {
     "Y": "Y-(Youden-index)",
     "PLRI": "PLRI-(Positive-likelihood-ratio-interpretation)",
     "DPI": "DPI-(Discriminant-power-interpretation)",
-    "AUCI": ""}
+    "AUCI": "AUCI-(AUC-value-interpretation)"}
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

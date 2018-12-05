@@ -41,6 +41,7 @@
   - [x] Y
   - [x] DPI
   - [x] PLRI
+  - [x] AUCI
 - [x] Outputs
   - [x] CSV File
   - [x] HTML File

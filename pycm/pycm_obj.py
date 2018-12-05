@@ -191,9 +191,13 @@ class ConfusionMatrix():
         table = normalized_table_calc(classes, table)
         print(table_print(classes, table))
 
-    def stat(self):
+    def stat(self, overall_param=None, class_param=None):
         '''
         This method print statistical measures table
+        :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott PI]
+        :type overall_param : list
+        :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
+        :type class_param : list
         :return: None
         '''
         print(
@@ -201,7 +205,7 @@ class ConfusionMatrix():
                 self.classes,
                 self.class_stat,
                 self.overall_stat,
-                self.digit))
+                self.digit, overall_param, class_param))
 
     def __str__(self):
         '''
@@ -214,13 +218,22 @@ class ConfusionMatrix():
                              self.overall_stat, self.digit)
         return result
 
-    def save_stat(self, name, address=True):
+    def save_stat(
+            self,
+            name,
+            address=True,
+            overall_param=None,
+            class_param=None):
         '''
         This method save ConfusionMatrix in .pycm (flat file format)
         :param name: filename
         :type name : str
         :param address: Flag for address return
         :type address : bool
+        :param overall_param : Overall parameters list for save, Example : ["Kappa","Scott PI]
+        :type overall_param : list
+        :param class_param : Class parameters list for save, Example : ["TPR","TNR","AUC"]
+        :type class_param : list
         :return: Saving Status as dict {"Status":bool , "Message":str}
         '''
         try:
@@ -242,7 +255,7 @@ class ConfusionMatrix():
                 self.classes,
                 self.class_stat,
                 self.overall_stat,
-                self.digit)
+                self.digit, overall_param, class_param)
             file.write(matrix + normalized_matrix + stat + one_vs_all)
             file.close()
             if address:
@@ -251,13 +264,22 @@ class ConfusionMatrix():
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
-    def save_html(self, name, address=True):
+    def save_html(
+            self,
+            name,
+            address=True,
+            overall_param=None,
+            class_param=None):
         '''
         This method save ConfusionMatrix in HTML file
         :param name: filename
         :type name : str
         :param address: Flag for address return
         :type address : bool
+        :param overall_param : Overall parameters list for save, Example : ["Kappa","Scott PI]
+        :type overall_param : list
+        :param class_param : Class parameters list for save, Example : ["TPR","TNR","AUC"]
+        :type class_param : list
         :return: Saving Status as dict {"Status":bool , "Message":str}
         '''
         try:
@@ -270,7 +292,7 @@ class ConfusionMatrix():
                 self.table,
                 self.overall_stat,
                 self.class_stat,
-                self.digit)
+                self.digit, overall_param, class_param)
             html_file.close()
             if address:
                 message = os.path.join(os.getcwd(), name + ".html")
@@ -278,19 +300,25 @@ class ConfusionMatrix():
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
-    def save_csv(self, name, address=True):
+    def save_csv(self, name, address=True, class_param=None):
         '''
         This method save ConfusionMatrix in CSV file
         :param name: filename
         :type name : str
         :param address: Flag for address return
         :type address : bool
+        :param class_param : Class parameters list for save, Example : ["TPR","TNR","AUC"]
+        :type class_param : list
         :return: Saving Status as dict {"Status":bool , "Message":str}
         '''
         try:
             message = None
             csv_file = open(name + ".csv", "w")
-            csv_data = csv_print(self.classes, self.class_stat, self.digit)
+            csv_data = csv_print(
+                self.classes,
+                self.class_stat,
+                self.digit,
+                class_param)
             csv_file.write(csv_data)
             if address:
                 message = os.path.join(os.getcwd(), name + ".csv")
@@ -443,6 +471,7 @@ def __class_stat_init__(CM):
     CM.Y = CM.class_stat["Y"]
     CM.PLRI = CM.class_stat["PLRI"]
     CM.DPI = CM.class_stat["DPI"]
+    CM.AUCI = CM.class_stat["AUCI"]
 
 
 def __overall_stat_init__(CM):
@@ -452,29 +481,29 @@ def __overall_stat_init__(CM):
     :type CM : pycm.ConfusionMatrix object
     :return: None
     '''
-    CM.Overall_J = CM.overall_stat["Overall_J"]
-    CM.SOA1 = CM.overall_stat["Strength_Of_Agreement(Landis and Koch)"]
-    CM.SOA2 = CM.overall_stat["Strength_Of_Agreement(Fleiss)"]
-    CM.SOA3 = CM.overall_stat["Strength_Of_Agreement(Altman)"]
-    CM.SOA4 = CM.overall_stat["Strength_Of_Agreement(Cicchetti)"]
+    CM.Overall_J = CM.overall_stat["Overall J"]
+    CM.SOA1 = CM.overall_stat["SOA1(Landis & Koch)"]
+    CM.SOA2 = CM.overall_stat["SOA2(Fleiss)"]
+    CM.SOA3 = CM.overall_stat["SOA3(Altman)"]
+    CM.SOA4 = CM.overall_stat["SOA4(Cicchetti)"]
     CM.Kappa = CM.overall_stat["Kappa"]
-    CM.Overall_ACC = CM.overall_stat["Overall_ACC"]
-    CM.TPR_Macro = CM.overall_stat["TPR_Macro"]
-    CM.PPV_Macro = CM.overall_stat["PPV_Macro"]
-    CM.TPR_Micro = CM.overall_stat["TPR_Micro"]
-    CM.PPV_Micro = CM.overall_stat["PPV_Micro"]
-    CM.Overall_RACC = CM.overall_stat["Overall_RACC"]
-    CM.Overall_RACCU = CM.overall_stat["Overall_RACCU"]
-    CM.PI = CM.overall_stat["Scott_PI"]
-    CM.AC1 = CM.overall_stat["Gwet_AC1"]
-    CM.S = CM.overall_stat["Bennett_S"]
+    CM.Overall_ACC = CM.overall_stat["Overall ACC"]
+    CM.TPR_Macro = CM.overall_stat["TPR Macro"]
+    CM.PPV_Macro = CM.overall_stat["PPV Macro"]
+    CM.TPR_Micro = CM.overall_stat["TPR Micro"]
+    CM.PPV_Micro = CM.overall_stat["PPV Micro"]
+    CM.Overall_RACC = CM.overall_stat["Overall RACC"]
+    CM.Overall_RACCU = CM.overall_stat["Overall RACCU"]
+    CM.PI = CM.overall_stat["Scott PI"]
+    CM.AC1 = CM.overall_stat["Gwet AC1"]
+    CM.S = CM.overall_stat["Bennett S"]
     CM.Kappa_SE = CM.overall_stat["Kappa Standard Error"]
     CM.Kappa_CI = CM.overall_stat["Kappa 95% CI"]
     CM.Chi_Squared = CM.overall_stat["Chi-Squared"]
     CM.Phi_Squared = CM.overall_stat["Phi-Squared"]
     CM.KappaUnbiased = CM.overall_stat["Kappa Unbiased"]
     CM.KappaNoPrevalence = CM.overall_stat["Kappa No Prevalence"]
-    CM.V = CM.overall_stat["Cramer_V"]
+    CM.V = CM.overall_stat["Cramer V"]
     CM.DF = CM.overall_stat["Chi-Squared DF"]
     CM.CI = CM.overall_stat["95% CI"]
     CM.SE = CM.overall_stat["Standard Error"]
@@ -491,9 +520,9 @@ def __overall_stat_init__(CM):
     CM.ZeroOneLoss = CM.overall_stat["Zero-one Loss"]
     CM.NIR = CM.overall_stat["NIR"]
     CM.PValue = CM.overall_stat["P-Value"]
-    CM.Overall_CEN = CM.overall_stat["Overall_CEN"]
-    CM.Overall_MCEN = CM.overall_stat["Overall_MCEN"]
-    CM.Overall_MCC = CM.overall_stat["Overall_MCC"]
+    CM.Overall_CEN = CM.overall_stat["Overall CEN"]
+    CM.Overall_MCEN = CM.overall_stat["Overall MCEN"]
+    CM.Overall_MCC = CM.overall_stat["Overall MCC"]
     CM.RR = CM.overall_stat["RR"]
     CM.CBA = CM.overall_stat["CBA"]
     CM.AUNU = CM.overall_stat["AUNU"]

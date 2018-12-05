@@ -84,25 +84,30 @@ def html_table(classes, table):
     return result
 
 
-def html_overall_stat(overall_stat, digit=5):
+def html_overall_stat(overall_stat, digit=5, overall_param=None):
     '''
     This function return report file overall stat
     :param overall_stat: overall stat
     :type overall_stat : dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
+    :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott PI]
+    :type overall_param : list
     :return: html_overall_stat as str
     '''
     result = ""
     result += "<h2>Overall Statistics : </h2>\n"
     result += '<table style="border:1px solid black;border-collapse: collapse;">\n'
     overall_stat_keys = sorted(overall_stat.keys())
+    if isinstance(overall_param, list):
+        if set(overall_param) <= set(overall_stat_keys):
+            overall_stat_keys = sorted(overall_param)
     background_color = None
     for i in overall_stat_keys:
         result += '<tr align="center">\n'
         result += '<td style="border:1px solid black;padding:4px;text-align:left;"><a href="' + \
             DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
-        if i.find("Strength_Of_Agreement") != -1:
+        if i.find("SOA") != -1:
             background_color = BENCHMARK_COLOR[overall_stat[i]]
             result += '<td style="border:1px solid black;padding:4px;background-color:{};">'.format(
                 background_color)
@@ -114,7 +119,7 @@ def html_overall_stat(overall_stat, digit=5):
     return result
 
 
-def html_class_stat(classes, class_stat, digit=5):
+def html_class_stat(classes, class_stat, digit=5, class_param=None):
     '''
     This function return report file class_stat
     :param classes: matrix classes
@@ -123,6 +128,8 @@ def html_class_stat(classes, class_stat, digit=5):
     :type class_stat:dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
+    :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
+    :type class_param : list
     :return: html_class_stat as str
     '''
     result = ""
@@ -135,12 +142,15 @@ def html_class_stat(classes, class_stat, digit=5):
     result += '<td>Description</td>\n'
     result += '</tr>\n'
     class_stat_keys = sorted(class_stat.keys())
+    if isinstance(class_param, list):
+        if set(class_param) <= set(class_stat_keys):
+            class_stat_keys = class_param
     for i in class_stat_keys:
         result += '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n'
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;"><a href="' + \
                   DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         for j in classes:
-            if i in ["PLRI", "DPI"]:
+            if i in ["PLRI", "DPI", "AUCI"]:
                 background_color = BENCHMARK_COLOR[class_stat[i][j]]
                 result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};">'.format(
                     background_color)
@@ -176,7 +186,7 @@ def html_maker(
         table,
         overall_stat,
         class_stat,
-        digit=5):
+        digit=5, overall_param=None, class_param=None):
     '''
     This function create html report
     :param html_file : file object of html
@@ -193,12 +203,16 @@ def html_maker(
     :type class_stat: dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
+    :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott PI]
+    :type overall_param : list
+    :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
+    :type class_param : list
     :return: None
     '''
     html_file.write(html_init(name))
     html_file.write(html_table(classes, table))
-    html_file.write(html_overall_stat(overall_stat, digit))
-    html_file.write(html_class_stat(classes, class_stat, digit))
+    html_file.write(html_overall_stat(overall_stat, digit, overall_param))
+    html_file.write(html_class_stat(classes, class_stat, digit, class_param))
     html_file.write(html_end(VERSION))
 
 
@@ -299,7 +313,7 @@ def normalized_table_calc(classes, table):
     return new_table
 
 
-def csv_print(classes, class_stat, digit=5):
+def csv_print(classes, class_stat, digit=5, class_param=None):
     '''
     This function return csv file data
     :param classes: classes list
@@ -316,6 +330,9 @@ def csv_print(classes, class_stat, digit=5):
         result += ',"' + str(item) + '"'
     result += "\n"
     class_stat_keys = sorted(class_stat.keys())
+    if isinstance(class_param, list):
+        if set(class_param) <= set(class_stat_keys):
+            class_stat_keys = class_param
     for key in class_stat_keys:
         row = [rounder(class_stat[key][i], digit) for i in classes]
         result += key + "," + ",".join(row)
@@ -323,9 +340,15 @@ def csv_print(classes, class_stat, digit=5):
     return result
 
 
-def stat_print(classes, class_stat, overall_stat, digit=5):
+def stat_print(
+        classes,
+        class_stat,
+        overall_stat,
+        digit=5,
+        overall_param=None,
+        class_param=None):
     '''
-    This function print statistics
+    This function return statistics
     :param classes: classes list
     :type classes:list
     :param class_stat: statistic result for each class
@@ -334,12 +357,19 @@ def stat_print(classes, class_stat, overall_stat, digit=5):
     :type overall_stat:dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
+    :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott PI]
+    :type overall_param : list
+    :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
+    :type class_param : list
     :return: printable result as str
     '''
     shift = max(map(len, PARAMS_DESCRIPTION.values())) + 5
     classes_len = len(classes)
     result = "Overall Statistics : " + "\n\n"
     overall_stat_keys = sorted(overall_stat.keys())
+    if isinstance(overall_param, list):
+        if set(overall_param) <= set(overall_stat_keys):
+            overall_stat_keys = sorted(overall_param)
     for key in overall_stat_keys:
         result += key + " " * (
             shift - len(key) + 7) + rounder(overall_stat[key], digit) + "\n"
@@ -347,6 +377,9 @@ def stat_print(classes, class_stat, overall_stat, digit=5):
     result += "Classes" + shift * " " + "%-24s" * \
         classes_len % tuple(map(str, classes)) + "\n"
     class_stat_keys = sorted(class_stat.keys())
+    if isinstance(class_param, list):
+        if set(class_param) <= set(class_stat_keys):
+            class_stat_keys = sorted(class_param)
     classes.sort()
     rounder_map = partial(rounder, digit=digit)
     for key in class_stat_keys:

@@ -9,6 +9,7 @@
 </a>
 <a class="badge-align" href="https://www.codacy.com/app/sepand-haghighi/pycm?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/pycm&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/5d9463998a0040d09afc2b80c389365c"/></a>
 <a href="https://badge.fury.io/py/pycm"><img src="https://badge.fury.io/py/pycm.svg" alt="PyPI version" height="18"></a>
+<a href="https://anaconda.org/sepandhaghighi/pycm"><img src="https://anaconda.org/sepandhaghighi/pycm/badges/version.svg"></a>
 </div>
 
 ----------
@@ -83,7 +84,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ## Installation		
 
 ### Source code
-- Download [Version 1.5](https://github.com/sepandhaghighi/pycm/archive/v1.5.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 1.6](https://github.com/sepandhaghighi/pycm/archive/v1.6.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -91,7 +92,12 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm --upgrade` or `pip3 install pycm --upgrade` (Need root access)
+- Run `pip install pycm==1.6` or `pip3 install pycm==1.6` (Need root access)
+
+### Conda
+
+- Check [Conda Managing Package](https://conda.io/docs/user-guide/tasks/manage-pkgs.html#installing-packages-from-anaconda-org)
+- `conda install -c sepandhaghighi pycm` (Need root access)
 
 ### Easy install
 
@@ -101,7 +107,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 		
 ### From vector
-```python
+```pycon
 >>> from pycm import *
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2] # or y_actu = numpy.array([2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2])
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2] # or y_pred = numpy.array([0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2])
@@ -128,14 +134,14 @@ Overall Statistics :
 95% CI                                                           (0.30439,0.86228)
 AUNP                                                             0.66667
 AUNU                                                             0.69444
-Bennett_S                                                        0.375
+Bennett S                                                        0.375
 CBA                                                              0.47778
 Chi-Squared                                                      6.6
 Chi-Squared DF                                                   4
 Conditional Entropy                                              0.95915
-Cramer_V                                                         0.5244
+Cramer V                                                         0.5244
 Cross Entropy                                                    1.59352
-Gwet_AC1                                                         0.38931
+Gwet AC1                                                         0.38931
 Hamming Loss                                                     0.41667
 Joint Entropy                                                    2.45915
 KL Divergence                                                    0.09352
@@ -148,29 +154,29 @@ Lambda A                                                         0.16667
 Lambda B                                                         0.42857
 Mutual Information                                               0.52421
 NIR                                                              0.5
-Overall_ACC                                                      0.58333
-Overall_CEN                                                      0.46381
-Overall_J                                                        (1.225,0.40833)
-Overall_MCC                                                      0.36667
-Overall_MCEN                                                     0.51894
-Overall_RACC                                                     0.35417
-Overall_RACCU                                                    0.36458
+Overall ACC                                                      0.58333
+Overall CEN                                                      0.46381
+Overall J                                                        (1.225,0.40833)
+Overall MCC                                                      0.36667
+Overall MCEN                                                     0.51894
+Overall RACC                                                     0.35417
+Overall RACCU                                                    0.36458
 P-Value                                                          0.38721
-PPV_Macro                                                        0.56667
-PPV_Micro                                                        0.58333
+PPV Macro                                                        0.56667
+PPV Micro                                                        0.58333
 Phi-Squared                                                      0.55
 RCI                                                              0.34947
 RR                                                               4.0
 Reference Entropy                                                1.5
 Response Entropy                                                 1.48336
-Scott_PI                                                         0.34426
+SOA1(Landis & Koch)                                              Fair
+SOA2(Fleiss)                                                     Poor
+SOA3(Altman)                                                     Fair
+SOA4(Cicchetti)                                                  Poor
+Scott PI                                                         0.34426
 Standard Error                                                   0.14232
-Strength_Of_Agreement(Altman)                                    Fair
-Strength_Of_Agreement(Cicchetti)                                 Poor
-Strength_Of_Agreement(Fleiss)                                    Poor
-Strength_Of_Agreement(Landis and Koch)                           Fair
-TPR_Macro                                                        0.61111
-TPR_Micro                                                        0.58333
+TPR Macro                                                        0.61111
+TPR Micro                                                        0.58333
 Zero-one Loss                                                    5
 
 Class Statistics :
@@ -178,6 +184,7 @@ Class Statistics :
 Classes                                                          0                       1                       2                       
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333                 
 AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333                 
+AUCI(Auc value interpretation)                                   Very Good               Fair                    Poor                    
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667                 
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442                 
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0                     
@@ -219,7 +226,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 Y(Youden index)                                                  0.77778                 0.22222                 0.16667                 
 dInd(Distance index)                                             0.22222                 0.67586                 0.60093                 
 sInd(Similarity index)                                           0.84287                 0.52209                 0.57508                 
-
+             
 >>> cm.print_matrix()
 Predict          0    1    2    
 Actual
@@ -248,7 +255,7 @@ Actual
 
 ```
 ### Direct CM
-```python
+```pycon
 >>> from pycm import *
 >>> cm2 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":2}, "Class2": {"Class1": 0, "Class2": 5}}) # Create CM Directly
 >>> cm2
@@ -269,14 +276,14 @@ Overall Statistics :
 95% CI                                                           (0.44994,1.05006)
 AUNP                                                             0.66667
 AUNU                                                             0.66667
-Bennett_S                                                        0.5
+Bennett S                                                        0.5
 CBA                                                              0.52381
 Chi-Squared                                                      1.90476
 Chi-Squared DF                                                   1
 Conditional Entropy                                              0.34436
-Cramer_V                                                         0.48795
+Cramer V                                                         0.48795
 Cross Entropy                                                    1.2454
-Gwet_AC1                                                         0.6
+Gwet AC1                                                         0.6
 Hamming Loss                                                     0.25
 Joint Entropy                                                    1.29879
 KL Divergence                                                    0.29097
@@ -289,29 +296,29 @@ Lambda A                                                         0.33333
 Lambda B                                                         0.0
 Mutual Information                                               0.1992
 NIR                                                              0.625
-Overall_ACC                                                      0.75
-Overall_CEN                                                      0.44812
-Overall_J                                                        (1.04762,0.52381)
-Overall_MCC                                                      0.48795
-Overall_MCEN                                                     0.29904
-Overall_RACC                                                     0.59375
-Overall_RACCU                                                    0.625
+Overall ACC                                                      0.75
+Overall CEN                                                      0.44812
+Overall J                                                        (1.04762,0.52381)
+Overall MCC                                                      0.48795
+Overall MCEN                                                     0.29904
+Overall RACC                                                     0.59375
+Overall RACCU                                                    0.625
 P-Value                                                          0.36974
-PPV_Macro                                                        0.85714
-PPV_Micro                                                        0.75
+PPV Macro                                                        0.85714
+PPV Micro                                                        0.75
 Phi-Squared                                                      0.2381
 RCI                                                              0.20871
 RR                                                               4.0
 Reference Entropy                                                0.95443
 Response Entropy                                                 0.54356
-Scott_PI                                                         0.33333
+SOA1(Landis & Koch)                                              Fair
+SOA2(Fleiss)                                                     Poor
+SOA3(Altman)                                                     Fair
+SOA4(Cicchetti)                                                  Poor
+Scott PI                                                         0.33333
 Standard Error                                                   0.15309
-Strength_Of_Agreement(Altman)                                    Fair
-Strength_Of_Agreement(Cicchetti)                                 Poor
-Strength_Of_Agreement(Fleiss)                                    Poor
-Strength_Of_Agreement(Landis and Koch)                           Fair
-TPR_Macro                                                        0.66667
-TPR_Micro                                                        0.75
+TPR Macro                                                        0.66667
+TPR Micro                                                        0.75
 Zero-one Loss                                                    2
 
 Class Statistics :
@@ -319,6 +326,7 @@ Class Statistics :
 Classes                                                          Class1                  Class2                  
 ACC(Accuracy)                                                    0.75                    0.75                    
 AUC(Area under the roc curve)                                    0.66667                 0.66667                 
+AUCI(Auc value interpretation)                                   Fair                    Fair                    
 BM(Informedness or bookmaker informedness)                       0.33333                 0.33333                 
 CEN(Confusion entropy)                                           0.5                     0.43083                 
 DOR(Diagnostic odds ratio)                                       None                    None                    
@@ -360,7 +368,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333        
 Y(Youden index)                                                  0.33333                 0.33333                 
 dInd(Distance index)                                             0.66667                 0.66667                 
 sInd(Similarity index)                                           0.5286                  0.5286                  
-                
+                                  
 >>> cm3 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":0}, "Class2": {"Class1": 2, "Class2": 5}},transpose=True) # Transpose Matrix      
 >>> cm3.print_matrix()
 Predict          Class1    Class2    
@@ -393,7 +401,7 @@ For more information visit [Example5](http://www.shaghighi.ir/pycm/doc/Example5.
 ### Relabel		
 `relabel` method is added in `version 1.5` in order to change ConfusionMatrix classnames.		
 
-```python
+```pycon
 >>> cm.relabel(mapping={0:"L1",1:"L2",2:"L3"})
 >>> cm
 pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
@@ -404,11 +412,11 @@ pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
 `online_help` function is added in `version 1.1` in order to open each statistics definition in web browser
 
 
-```python
+```pycon
 
 >>> from pycm import online_help
 >>> online_help("J")
->>> online_help("Strength_Of_Agreement(Landis and Koch)")
+>>> online_help("SOA1(Landis & Koch)")
 >>> online_help(2)
 
 ```

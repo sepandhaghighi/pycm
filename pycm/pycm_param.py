@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-VERSION = "1.5"
+VERSION = "1.6"
 
 
 OVERVIEW = '''
@@ -59,7 +59,8 @@ PARAMS_DESCRIPTION = {
     "DP": "Discriminant power",
     "Y": "Youden index",
     "PLRI": "Positive likelihood ratio interpretation",
-    "DPI": "Discriminant power interpretation"}
+    "DPI": "Discriminant power interpretation",
+    "AUCI": "AUC value interpretation"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -94,25 +95,25 @@ PARAMS_LINK = {
     "RACC": "RACC-(Random-accuracy)",
     "RACCU": "RACCU-(Random-accuracy-unbiased)",
     "PRE": "PRE-(Prevalence)",
-    "Overall_ACC": "Overall_ACC",
+    "Overall ACC": "Overall_ACC",
     "Kappa": "Kappa",
-    "Overall_RACC": "Overall_RACC",
-    "Strength_Of_Agreement(Landis and Koch)": "SOA1-(Landis-&-Koch’s-benchmark)",
-    "Strength_Of_Agreement(Fleiss)": "SOA2-(Fleiss’-benchmark)",
-    "Strength_Of_Agreement(Altman)": "SOA3-(Altman’s-benchmark)",
-    "Strength_Of_Agreement(Cicchetti)": "SOA4-(Cicchetti’s-benchmark)",
-    "TPR_Macro": "TPR_Macro",
-    "PPV_Macro": "PPV_Macro",
-    "TPR_Micro": "TPR_Micro",
-    "PPV_Micro": "PPV_Micro",
-    "Scott_PI": "Scott's-Pi",
-    "Gwet_AC1": "Gwet's-AC1",
-    "Bennett_S": "Bennett's-S",
+    "Overall RACC": "Overall_RACC",
+    "SOA1(Landis & Koch)": "SOA1-(Landis-&-Koch’s-benchmark)",
+    "SOA2(Fleiss)": "SOA2-(Fleiss’-benchmark)",
+    "SOA3(Altman)": "SOA3-(Altman’s-benchmark)",
+    "SOA4(Cicchetti)": "SOA4-(Cicchetti’s-benchmark)",
+    "TPR Macro": "TPR_Macro",
+    "PPV Macro": "PPV_Macro",
+    "TPR Micro": "TPR_Micro",
+    "PPV Micro": "PPV_Micro",
+    "Scott PI": "Scott's-Pi",
+    "Gwet AC1": "Gwet's-AC1",
+    "Bennett S": "Bennett's-S",
     "Kappa 95% CI": "Kappa-95%-CI",
     "Kappa Standard Error": "Kappa-95%-CI",
     "Chi-Squared": "Chi-squared",
     "Phi-Squared": "Phi-squared",
-    "Cramer_V": "Cramer's-V",
+    "Cramer V": "Cramer's-V",
     "Chi-Squared DF": "Chi-squared-DF",
     "95% CI": "95%-CI",
     "Standard Error": "95%-CI",
@@ -125,21 +126,21 @@ PARAMS_LINK = {
     "Lambda B": "Goodman-&-Kruskal's-lambda-B",
     "Lambda A": "Goodman-&-Kruskal's-lambda-A",
     "Kappa Unbiased": "Kappa-unbiased",
-    "Overall_RACCU": "Overall_RACCU",
+    "Overall RACCU": "Overall_RACCU",
     "Kappa No Prevalence": "Kappa-no-prevalence",
     "Mutual Information": "Mutual-information",
     "J": "J-(Jaccard-index)",
-    "Overall_J": "Overall_J",
+    "Overall J": "Overall_J",
     "Hamming Loss": "Hamming-loss",
     "Zero-one Loss": "Zero-one-loss",
     "NIR": "NIR-(No-information-rate)",
     "P-Value": "P-Value",
     "IS": "IS-(Information-score)",
     "CEN": "CEN-(Confusion-entropy)",
-    "Overall_CEN": "Overall_CEN",
+    "Overall CEN": "Overall_CEN",
     "MCEN": "MCEN-(Modified-confusion-entropy)",
-    "Overall_MCEN": "Overall_MCEN",
-    "Overall_MCC": "Overall_MCC",
+    "Overall MCEN": "Overall_MCEN",
+    "Overall MCC": "Overall_MCC",
     "RR": "RR-(Global-performance-index)",
     "CBA": "CBA-(Class-balance-accuracy)",
     "AUC": "AUC-(Area-under-the-ROC-curve)",
@@ -151,7 +152,8 @@ PARAMS_LINK = {
     "DP": "DP-(Discriminant-power)",
     "Y": "Y-(Youden-index)",
     "PLRI": "PLRI-(Positive-likelihood-ratio-interpretation)",
-    "DPI": "DPI-(Discriminant-power-interpretation)"}
+    "DPI": "DPI-(Discriminant-power-interpretation)",
+    "AUCI": "AUCI-(AUC-value-interpretation)"}
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

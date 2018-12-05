@@ -5,6 +5,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.6] - 2018-12-06
+### Added
+- AUC Value Interpretation (AUCI)
+- Example-6
+- Anaconda cloud package
+
+### Changed
+- `overall_param` and `class_param` arguments added to `stat`,`save_stat` and `save_html`  methods
+- `class_param` argument added to `save_csv` method
+- `_` removed from overall statistics names
+- `README.md` modified 
+- Document modified
+
 ## [1.5] - 2018-11-26
 ### Added
 - Relative Classifier Information (RCI)
@@ -19,7 +32,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `matrix` attribute as dict
 - `normalized_matrix` attribute as dict
 - `normalized_table` attribute  as dict
-- `Python 3.7` added to `.travis.yaml` & `appveyor.yml`
 
 ### Changed
 - `README.md` modified
@@ -34,13 +46,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `print_table` bug for large numbers fixed
 - JSON key bug in `save_obj` fixed
 - `transpose` bug in `save_obj` fixed
+- `Python 3.7` added to `.travis.yaml` & `appveyor.yml`
 
 ## [1.4] - 2018-11-12
 ### Added
-- Area Under Curve
+- Area Under Curve (AUC)
 - AUNU
 - AUNP
-- Class Balance Accuracy
+- Class Balance Accuracy (CBA)
 - Global Performance Index (RR)
 - Overall MCC
 - Distance index (dInd)
@@ -272,7 +285,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.5...HEAD
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.6...HEAD
+[1.6]: https://github.com/sepandhaghighi/pycm/compare/v1.5...v1.6
 [1.5]: https://github.com/sepandhaghighi/pycm/compare/v1.4...v1.5
 [1.4]: https://github.com/sepandhaghighi/pycm/compare/v1.3...v1.4
 [1.3]: https://github.com/sepandhaghighi/pycm/compare/v1.2...v1.3

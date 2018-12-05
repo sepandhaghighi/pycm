@@ -27,14 +27,14 @@ Overall Statistics :
 95% CI                                                           (0.30439,0.86228)
 AUNP                                                             0.68571
 AUNU                                                             0.67857
-Bennett_S                                                        0.375
+Bennett S                                                        0.375
 CBA                                                              0.47778
 Chi-Squared                                                      6.6
 Chi-Squared DF                                                   4
 Conditional Entropy                                              0.97579
-Cramer_V                                                         0.5244
+Cramer V                                                         0.5244
 Cross Entropy                                                    1.58333
-Gwet_AC1                                                         0.38931
+Gwet AC1                                                         0.38931
 Hamming Loss                                                     0.41667
 Joint Entropy                                                    2.45915
 KL Divergence                                                    0.09998
@@ -47,29 +47,29 @@ Lambda A                                                         0.42857
 Lambda B                                                         0.16667
 Mutual Information                                               0.52421
 NIR                                                              0.41667
-Overall_ACC                                                      0.58333
-Overall_CEN                                                      0.46381
-Overall_J                                                        (1.225,0.40833)
-Overall_MCC                                                      0.36667
-Overall_MCEN                                                     0.51894
-Overall_RACC                                                     0.35417
-Overall_RACCU                                                    0.36458
+Overall ACC                                                      0.58333
+Overall CEN                                                      0.46381
+Overall J                                                        (1.225,0.40833)
+Overall MCC                                                      0.36667
+Overall MCEN                                                     0.51894
+Overall RACC                                                     0.35417
+Overall RACCU                                                    0.36458
 P-Value                                                          0.18926
-PPV_Macro                                                        0.61111
-PPV_Micro                                                        0.58333
+PPV Macro                                                        0.61111
+PPV Micro                                                        0.58333
 Phi-Squared                                                      0.55
 RCI                                                              0.35339
 RR                                                               4.0
 Reference Entropy                                                1.48336
 Response Entropy                                                 1.5
-Scott_PI                                                         0.34426
+SOA1(Landis & Koch)                                              Fair
+SOA2(Fleiss)                                                     Poor
+SOA3(Altman)                                                     Fair
+SOA4(Cicchetti)                                                  Poor
+Scott PI                                                         0.34426
 Standard Error                                                   0.14232
-Strength_Of_Agreement(Altman)                                    Fair
-Strength_Of_Agreement(Cicchetti)                                 Poor
-Strength_Of_Agreement(Fleiss)                                    Poor
-Strength_Of_Agreement(Landis and Koch)                           Fair
-TPR_Macro                                                        0.56667
-TPR_Micro                                                        0.58333
+TPR Macro                                                        0.56667
+TPR Micro                                                        0.58333
 Zero-one Loss                                                    5
 
 Class Statistics :
@@ -77,6 +77,7 @@ Class Statistics :
 Classes                                                          L1                      L2                      L3                      
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333                 
 AUC(Area under the roc curve)                                    0.8                     0.65                    0.58571                 
+AUCI(Auc value interpretation)                                   Very Good               Fair                    Poor                    
 BM(Informedness or bookmaker informedness)                       0.6                     0.3                     0.17143                 
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442                 
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0                     

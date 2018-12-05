@@ -37,6 +37,11 @@
 - [Jupyter Notebook](https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Example5.ipynb)
 - [HTML](http://www.shaghighi.ir/pycm/doc/Example5.html)
 
+## Example-6 (Unbalanced data)
+
+- [Jupyter Notebook](https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Example6.ipynb)
+- [HTML](http://www.shaghighi.ir/pycm/doc/Example6.html)
+
 
 
 

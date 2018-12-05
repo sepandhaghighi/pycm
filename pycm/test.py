@@ -11,11 +11,14 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 >>> len(cm)
 3
 >>> print(cm)
-Predict          0        1        2
+Predict          0    1    2
 Actual
-0                3        0        0
-1                0        1        2
-2                2        1        3
+0                3    0    0
+<BLANKLINE>
+1                0    1    2
+<BLANKLINE>
+2                2    1    3
+<BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
@@ -25,14 +28,14 @@ Overall Statistics :
 95% CI                                                           (0.30439,0.86228)
 AUNP                                                             0.66667
 AUNU                                                             0.69444
-Bennett_S                                                        0.375
+Bennett S                                                        0.375
 CBA                                                              0.47778
 Chi-Squared                                                      6.6
 Chi-Squared DF                                                   4
 Conditional Entropy                                              0.95915
-Cramer_V                                                         0.5244
+Cramer V                                                         0.5244
 Cross Entropy                                                    1.59352
-Gwet_AC1                                                         0.38931
+Gwet AC1                                                         0.38931
 Hamming Loss                                                     0.41667
 Joint Entropy                                                    2.45915
 KL Divergence                                                    0.09352
@@ -45,29 +48,29 @@ Lambda A                                                         0.16667
 Lambda B                                                         0.42857
 Mutual Information                                               0.52421
 NIR                                                              0.5
-Overall_ACC                                                      0.58333
-Overall_CEN                                                      0.46381
-Overall_J                                                        (1.225,0.40833)
-Overall_MCC                                                      0.36667
-Overall_MCEN                                                     0.51894
-Overall_RACC                                                     0.35417
-Overall_RACCU                                                    0.36458
+Overall ACC                                                      0.58333
+Overall CEN                                                      0.46381
+Overall J                                                        (1.225,0.40833)
+Overall MCC                                                      0.36667
+Overall MCEN                                                     0.51894
+Overall RACC                                                     0.35417
+Overall RACCU                                                    0.36458
 P-Value                                                          0.38721
-PPV_Macro                                                        0.56667
-PPV_Micro                                                        0.58333
+PPV Macro                                                        0.56667
+PPV Micro                                                        0.58333
 Phi-Squared                                                      0.55
 RCI                                                              0.34947
 RR                                                               4.0
 Reference Entropy                                                1.5
 Response Entropy                                                 1.48336
-Scott_PI                                                         0.34426
+SOA1(Landis & Koch)                                              Fair
+SOA2(Fleiss)                                                     Poor
+SOA3(Altman)                                                     Fair
+SOA4(Cicchetti)                                                  Poor
+Scott PI                                                         0.34426
 Standard Error                                                   0.14232
-Strength_Of_Agreement(Altman)                                    Fair
-Strength_Of_Agreement(Cicchetti)                                 Poor
-Strength_Of_Agreement(Fleiss)                                    Poor
-Strength_Of_Agreement(Landis and Koch)                           Fair
-TPR_Macro                                                        0.61111
-TPR_Micro                                                        0.58333
+TPR Macro                                                        0.61111
+TPR Micro                                                        0.58333
 Zero-one Loss                                                    5
 <BLANKLINE>
 Class Statistics :
@@ -75,6 +78,7 @@ Class Statistics :
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333
 AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
+AUCI(Auc value interpretation)                                   Very Good               Fair                    Poor
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
@@ -119,11 +123,14 @@ sInd(Similarity index)                                           0.84287        
 <BLANKLINE>
 >>> cm.relabel({0:"L1",1:"L2",2:"L3"})
 >>> print(cm)
-Predict           L1       L2       L3
+Predict          L1    L2    L3
 Actual
-L1                3        0        0
-L2                0        1        2
-L3                2        1        3
+L1               3     0     0
+<BLANKLINE>
+L2               0     1     2
+<BLANKLINE>
+L3               2     1     3
+<BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
@@ -133,14 +140,14 @@ Overall Statistics :
 95% CI                                                           (0.30439,0.86228)
 AUNP                                                             0.66667
 AUNU                                                             0.69444
-Bennett_S                                                        0.375
+Bennett S                                                        0.375
 CBA                                                              0.47778
 Chi-Squared                                                      6.6
 Chi-Squared DF                                                   4
 Conditional Entropy                                              0.95915
-Cramer_V                                                         0.5244
+Cramer V                                                         0.5244
 Cross Entropy                                                    1.59352
-Gwet_AC1                                                         0.38931
+Gwet AC1                                                         0.38931
 Hamming Loss                                                     0.41667
 Joint Entropy                                                    2.45915
 KL Divergence                                                    0.09352
@@ -153,29 +160,29 @@ Lambda A                                                         0.16667
 Lambda B                                                         0.42857
 Mutual Information                                               0.52421
 NIR                                                              0.5
-Overall_ACC                                                      0.58333
-Overall_CEN                                                      0.46381
-Overall_J                                                        (1.225,0.40833)
-Overall_MCC                                                      0.36667
-Overall_MCEN                                                     0.51894
-Overall_RACC                                                     0.35417
-Overall_RACCU                                                    0.36458
+Overall ACC                                                      0.58333
+Overall CEN                                                      0.46381
+Overall J                                                        (1.225,0.40833)
+Overall MCC                                                      0.36667
+Overall MCEN                                                     0.51894
+Overall RACC                                                     0.35417
+Overall RACCU                                                    0.36458
 P-Value                                                          0.38721
-PPV_Macro                                                        0.56667
-PPV_Micro                                                        0.58333
+PPV Macro                                                        0.56667
+PPV Micro                                                        0.58333
 Phi-Squared                                                      0.55
 RCI                                                              0.34947
 RR                                                               4.0
 Reference Entropy                                                1.5
 Response Entropy                                                 1.48336
-Scott_PI                                                         0.34426
+SOA1(Landis & Koch)                                              Fair
+SOA2(Fleiss)                                                     Poor
+SOA3(Altman)                                                     Fair
+SOA4(Cicchetti)                                                  Poor
+Scott PI                                                         0.34426
 Standard Error                                                   0.14232
-Strength_Of_Agreement(Altman)                                    Fair
-Strength_Of_Agreement(Cicchetti)                                 Poor
-Strength_Of_Agreement(Fleiss)                                    Poor
-Strength_Of_Agreement(Landis and Koch)                           Fair
-TPR_Macro                                                        0.61111
-TPR_Micro                                                        0.58333
+TPR Macro                                                        0.61111
+TPR Micro                                                        0.58333
 Zero-one Loss                                                    5
 <BLANKLINE>
 Class Statistics :
@@ -183,6 +190,7 @@ Class Statistics :
 Classes                                                          L1                      L2                      L3
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333
 AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
+AUCI(Auc value interpretation)                                   Very Good               Fair                    Poor
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
@@ -312,6 +320,9 @@ Webpage : http://pycm.shaghighi.ir
 >>> save_stat=cm.save_stat("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=cm.save_stat("test_filtered",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"])
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> save_stat=cm.save_stat("/asdasd,qweqwe.eo/",address=True)
 >>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.pycm'"}
 True
@@ -330,12 +341,16 @@ True
 >>> y_pred = np.array([100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200])
 >>> cm=ConfusionMatrix(y_test, y_pred)
 >>> print(cm)
-Predict          100      200      500      600
+Predict          100    200    500    600
 Actual
-100              0        0        0        0
-200              9        6        1        0
-500              1        1        1        0
-600              1        0        0        0
+100              0      0      0      0
+<BLANKLINE>
+200              9      6      1      0
+<BLANKLINE>
+500              1      1      1      0
+<BLANKLINE>
+600              1      0      0      0
+<BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
@@ -345,14 +360,14 @@ Overall Statistics :
 95% CI                                                           (0.14096,0.55904)
 AUNP                                                             None
 AUNU                                                             None
-Bennett_S                                                        0.13333
+Bennett S                                                        0.13333
 CBA                                                              0.17708
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
 Conditional Entropy                                              1.23579
-Cramer_V                                                         None
+Cramer V                                                         None
 Cross Entropy                                                    1.70995
-Gwet_AC1                                                         0.19505
+Gwet AC1                                                         0.19505
 Hamming Loss                                                     0.65
 Joint Entropy                                                    2.11997
 KL Divergence                                                    None
@@ -365,29 +380,29 @@ Lambda A                                                         0.0
 Lambda B                                                         0.0
 Mutual Information                                               0.10088
 NIR                                                              0.8
-Overall_ACC                                                      0.35
-Overall_CEN                                                      0.3648
-Overall_J                                                        (0.60294,0.15074)
-Overall_MCC                                                      0.12642
-Overall_MCEN                                                     0.37463
-Overall_RACC                                                     0.295
-Overall_RACCU                                                    0.4225
+Overall ACC                                                      0.35
+Overall CEN                                                      0.3648
+Overall J                                                        (0.60294,0.15074)
+Overall MCC                                                      0.12642
+Overall MCEN                                                     0.37463
+Overall RACC                                                     0.295
+Overall RACCU                                                    0.4225
 P-Value                                                          1.0
-PPV_Macro                                                        None
-PPV_Micro                                                        0.35
+PPV Macro                                                        None
+PPV Micro                                                        0.35
 Phi-Squared                                                      None
 RCI                                                              0.11409
 RR                                                               5.0
 Reference Entropy                                                0.88418
 Response Entropy                                                 1.33667
-Scott_PI                                                         -0.12554
+SOA1(Landis & Koch)                                              Slight
+SOA2(Fleiss)                                                     Poor
+SOA3(Altman)                                                     Poor
+SOA4(Cicchetti)                                                  Poor
+Scott PI                                                         -0.12554
 Standard Error                                                   0.10665
-Strength_Of_Agreement(Altman)                                    Poor
-Strength_Of_Agreement(Cicchetti)                                 Poor
-Strength_Of_Agreement(Fleiss)                                    Poor
-Strength_Of_Agreement(Landis and Koch)                           Slight
-TPR_Macro                                                        None
-TPR_Micro                                                        0.35
+TPR Macro                                                        None
+TPR Micro                                                        0.35
 Zero-one Loss                                                    13
 <BLANKLINE>
 Class Statistics :
@@ -395,6 +410,7 @@ Class Statistics :
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
+AUCI(Auc value interpretation)                                   None                    Poor                    Fair                    Poor
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
@@ -405,7 +421,7 @@ F0.5(F0.5 score)                                                 0.0            
 F1(F1 score - harmonic mean of precision and sensitivity)        0.0                     0.52174                 0.4                     0.0
 F2(F2 score)                                                     0.0                     0.42254                 0.35714                 0.0
 FDR(False discovery rate)                                        1.0                     0.14286                 0.5                     None
-FN(False negative/miss/type 2 error)                            0                       10                      2                       1
+FN(False negative/miss/type 2 error)                             0                       10                      2                       1
 FNR(Miss rate or false negative rate)                            None                    0.625                   0.66667                 1.0
 FOR(False omission rate)                                         0.0                     0.76923                 0.11111                 0.05
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
@@ -443,14 +459,14 @@ Overall Statistics :
 95% CI                                                           (0.14096,0.55904)
 AUNP                                                             None
 AUNU                                                             None
-Bennett_S                                                        0.13333
+Bennett S                                                        0.13333
 CBA                                                              0.17708
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
 Conditional Entropy                                              1.23579
-Cramer_V                                                         None
+Cramer V                                                         None
 Cross Entropy                                                    1.70995
-Gwet_AC1                                                         0.19505
+Gwet AC1                                                         0.19505
 Hamming Loss                                                     0.65
 Joint Entropy                                                    2.11997
 KL Divergence                                                    None
@@ -463,29 +479,29 @@ Lambda A                                                         0.0
 Lambda B                                                         0.0
 Mutual Information                                               0.10088
 NIR                                                              0.8
-Overall_ACC                                                      0.35
-Overall_CEN                                                      0.3648
-Overall_J                                                        (0.60294,0.15074)
-Overall_MCC                                                      0.12642
-Overall_MCEN                                                     0.37463
-Overall_RACC                                                     0.295
-Overall_RACCU                                                    0.4225
+Overall ACC                                                      0.35
+Overall CEN                                                      0.3648
+Overall J                                                        (0.60294,0.15074)
+Overall MCC                                                      0.12642
+Overall MCEN                                                     0.37463
+Overall RACC                                                     0.295
+Overall RACCU                                                    0.4225
 P-Value                                                          1.0
-PPV_Macro                                                        None
-PPV_Micro                                                        0.35
+PPV Macro                                                        None
+PPV Micro                                                        0.35
 Phi-Squared                                                      None
 RCI                                                              0.11409
 RR                                                               5.0
 Reference Entropy                                                0.88418
 Response Entropy                                                 1.33667
-Scott_PI                                                         -0.12554
+SOA1(Landis & Koch)                                              Slight
+SOA2(Fleiss)                                                     Poor
+SOA3(Altman)                                                     Poor
+SOA4(Cicchetti)                                                  Poor
+Scott PI                                                         -0.12554
 Standard Error                                                   0.10665
-Strength_Of_Agreement(Altman)                                    Poor
-Strength_Of_Agreement(Cicchetti)                                 Poor
-Strength_Of_Agreement(Fleiss)                                    Poor
-Strength_Of_Agreement(Landis and Koch)                           Slight
-TPR_Macro                                                        None
-TPR_Micro                                                        0.35
+TPR Macro                                                        None
+TPR Micro                                                        0.35
 Zero-one Loss                                                    13
 <BLANKLINE>
 Class Statistics :
@@ -493,6 +509,7 @@ Class Statistics :
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
+AUCI(Auc value interpretation)                                   None                    Poor                    Fair                    Poor
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
@@ -503,7 +520,7 @@ F0.5(F0.5 score)                                                 0.0            
 F1(F1 score - harmonic mean of precision and sensitivity)        0.0                     0.52174                 0.4                     0.0
 F2(F2 score)                                                     0.0                     0.42254                 0.35714                 0.0
 FDR(False discovery rate)                                        1.0                     0.14286                 0.5                     None
-FN(False negative/miss/type 2 error)                            0                       10                      2                       1
+FN(False negative/miss/type 2 error)                             0                       10                      2                       1
 FNR(Miss rate or false negative rate)                            None                    0.625                   0.66667                 1.0
 FOR(False omission rate)                                         0.0                     0.76923                 0.11111                 0.05
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
@@ -534,6 +551,20 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        None           
 Y(Youden index)                                                  None                    0.125                   0.27451                 0.0
 dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0
 sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289
+<BLANKLINE>
+>>> cm.stat(overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"])
+Overall Statistics :
+<BLANKLINE>
+Kappa                                                            0.07801
+Scott PI                                                         -0.12554
+<BLANKLINE>
+Class Statistics :
+<BLANKLINE>
+Classes                                                          100                     200                     500                     600
+ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
+TNR(Specificity or true negative rate)                           0.45                    0.75                    0.94118                 1.0
+TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0
 <BLANKLINE>
 >>> cm.print_normalized_matrix()
 Predict          100            200            500            600
@@ -621,6 +652,18 @@ Actual
 'Fair'
 >>> DP_analysis(10)
 'Good'
+>>> AUC_analysis(0.5)
+'Poor'
+>>> AUC_analysis(0.65)
+'Fair'
+>>> AUC_analysis(0.75)
+'Good'
+>>> AUC_analysis(0.86)
+'Very Good'
+>>> AUC_analysis(0.97)
+'Excellent'
+>>> AUC_analysis(1.0)
+'Excellent'
 >>> PC_PI_calc(1,1,1)
 'None'
 >>> PC_PI_calc({1:12},{1:6},{1:45})
@@ -726,11 +769,20 @@ pycm.pycm_obj.pycmVectorError: Number Of Classes < 2
 >>> save_stat=cm.save_html("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=cm.save_html("test_filtered",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"])
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> save_stat=cm.save_csv("test",address=False)
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_csv("test_filtered",address=False,class_param=["TPR","TNR","ACC","AUC"])
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_html("/asdasd,qweqwe.eo/",address=True)
 >>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.html'"}
+True
+>>> save_stat=cm.save_csv("/asdasd,qweqwe.eo/",address=True)
+>>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.csv'"}
 True
 >>> def activation(i):
 ...	    if i<0.7:
@@ -748,12 +800,16 @@ Actual
 True
 >>> cm_file=ConfusionMatrix(file=open("test.obj","r"))
 >>> print(cm_file)
-Predict          100      200      500      600
+Predict          100    200    500    600
 Actual
-100              0        0        0        0
-200              9        6        1        0
-500              1        1        1        0
-600              1        0        0        0
+100              0      0      0      0
+<BLANKLINE>
+200              9      6      1      0
+<BLANKLINE>
+500              1      1      1      0
+<BLANKLINE>
+600              1      0      0      0
+<BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
@@ -763,14 +819,14 @@ Overall Statistics :
 95% CI                                                           (0.14096,0.55904)
 AUNP                                                             None
 AUNU                                                             None
-Bennett_S                                                        0.13333
+Bennett S                                                        0.13333
 CBA                                                              0.17708
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
 Conditional Entropy                                              1.23579
-Cramer_V                                                         None
+Cramer V                                                         None
 Cross Entropy                                                    1.70995
-Gwet_AC1                                                         0.19505
+Gwet AC1                                                         0.19505
 Hamming Loss                                                     0.65
 Joint Entropy                                                    2.11997
 KL Divergence                                                    None
@@ -783,29 +839,29 @@ Lambda A                                                         0.0
 Lambda B                                                         0.0
 Mutual Information                                               0.10088
 NIR                                                              0.8
-Overall_ACC                                                      0.35
-Overall_CEN                                                      0.3648
-Overall_J                                                        (0.60294,0.15074)
-Overall_MCC                                                      0.12642
-Overall_MCEN                                                     0.37463
-Overall_RACC                                                     0.295
-Overall_RACCU                                                    0.4225
+Overall ACC                                                      0.35
+Overall CEN                                                      0.3648
+Overall J                                                        (0.60294,0.15074)
+Overall MCC                                                      0.12642
+Overall MCEN                                                     0.37463
+Overall RACC                                                     0.295
+Overall RACCU                                                    0.4225
 P-Value                                                          1.0
-PPV_Macro                                                        None
-PPV_Micro                                                        0.35
+PPV Macro                                                        None
+PPV Micro                                                        0.35
 Phi-Squared                                                      None
 RCI                                                              0.11409
 RR                                                               5.0
 Reference Entropy                                                0.88418
 Response Entropy                                                 1.33667
-Scott_PI                                                         -0.12554
+SOA1(Landis & Koch)                                              Slight
+SOA2(Fleiss)                                                     Poor
+SOA3(Altman)                                                     Poor
+SOA4(Cicchetti)                                                  Poor
+Scott PI                                                         -0.12554
 Standard Error                                                   0.10665
-Strength_Of_Agreement(Altman)                                    Poor
-Strength_Of_Agreement(Cicchetti)                                 Poor
-Strength_Of_Agreement(Fleiss)                                    Poor
-Strength_Of_Agreement(Landis and Koch)                           Slight
-TPR_Macro                                                        None
-TPR_Micro                                                        0.35
+TPR Macro                                                        None
+TPR Micro                                                        0.35
 Zero-one Loss                                                    13
 <BLANKLINE>
 Class Statistics :
@@ -813,6 +869,7 @@ Class Statistics :
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
+AUCI(Auc value interpretation)                                   None                    Poor                    Fair                    Poor
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
@@ -823,7 +880,7 @@ F0.5(F0.5 score)                                                 0.0            
 F1(F1 score - harmonic mean of precision and sensitivity)        0.0                     0.52174                 0.4                     0.0
 F2(F2 score)                                                     0.0                     0.42254                 0.35714                 0.0
 FDR(False discovery rate)                                        1.0                     0.14286                 0.5                     None
-FN(False negative/miss/type 2 error)                            0                       10                      2                       1
+FN(False negative/miss/type 2 error)                             0                       10                      2                       1
 FNR(Miss rate or false negative rate)                            None                    0.625                   0.66667                 1.0
 FOR(False omission rate)                                         0.0                     0.76923                 0.11111                 0.05
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
@@ -869,8 +926,11 @@ Actual
 Predict          Class1    Class2    Class3
 Actual
 Class1           9         3         0
+<BLANKLINE>
 Class2           3         5         1
+<BLANKLINE>
 Class3           1         1         4
+<BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
@@ -880,14 +940,14 @@ Overall Statistics :
 95% CI                                                           (0.48885,0.84448)
 AUNP                                                             0.73175
 AUNU                                                             0.73929
-Bennett_S                                                        0.5
+Bennett S                                                        0.5
 CBA                                                              0.63818
 Chi-Squared                                                      15.52564
 Chi-Squared DF                                                   4
 Conditional Entropy                                              1.08926
-Cramer_V                                                         0.5362
+Cramer V                                                         0.5362
 Cross Entropy                                                    1.53762
-Gwet_AC1                                                         0.51229
+Gwet AC1                                                         0.51229
 Hamming Loss                                                     0.33333
 Joint Entropy                                                    2.61975
 KL Divergence                                                    0.00713
@@ -900,29 +960,29 @@ Lambda A                                                         0.4
 Lambda B                                                         0.35714
 Mutual Information                                               0.39731
 NIR                                                              0.44444
-Overall_ACC                                                      0.66667
-Overall_CEN                                                      0.52986
-Overall_J                                                        (1.51854,0.50618)
-Overall_MCC                                                      0.47511
-Overall_MCEN                                                     0.65286
-Overall_RACC                                                     0.36626
-Overall_RACCU                                                    0.36694
+Overall ACC                                                      0.66667
+Overall CEN                                                      0.52986
+Overall J                                                        (1.51854,0.50618)
+Overall MCC                                                      0.47511
+Overall MCEN                                                     0.65286
+Overall RACC                                                     0.36626
+Overall RACCU                                                    0.36694
 P-Value                                                          0.01667
-PPV_Macro                                                        0.68262
-PPV_Micro                                                        0.66667
+PPV Macro                                                        0.68262
+PPV Micro                                                        0.66667
 Phi-Squared                                                      0.57502
 RCI                                                              0.2596
 RR                                                               9.0
 Reference Entropy                                                1.53049
 Response Entropy                                                 1.48657
-Scott_PI                                                         0.47346
+SOA1(Landis & Koch)                                              Moderate
+SOA2(Fleiss)                                                     Intermediate to Good
+SOA3(Altman)                                                     Moderate
+SOA4(Cicchetti)                                                  Fair
+Scott PI                                                         0.47346
 Standard Error                                                   0.09072
-Strength_Of_Agreement(Altman)                                    Moderate
-Strength_Of_Agreement(Cicchetti)                                 Fair
-Strength_Of_Agreement(Fleiss)                                    Intermediate to Good
-Strength_Of_Agreement(Landis and Koch)                           Moderate
-TPR_Macro                                                        0.65741
-TPR_Micro                                                        0.66667
+TPR Macro                                                        0.65741
+TPR Micro                                                        0.66667
 Zero-one Loss                                                    9
 <BLANKLINE>
 Class Statistics :
@@ -930,6 +990,7 @@ Class Statistics :
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
 AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
+AUCI(Auc value interpretation)                                   Good                    Fair                    Very Good
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
@@ -977,8 +1038,11 @@ sInd(Similarity index)                                           0.74153        
 Predict          Class1    Class2    Class3
 Actual
 Class1           9         3         0
+<BLANKLINE>
 Class2           3         5         1
+<BLANKLINE>
 Class3           1         1         4
+<BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
@@ -988,14 +1052,14 @@ Overall Statistics :
 95% CI                                                           (0.48885,0.84448)
 AUNP                                                             0.73175
 AUNU                                                             0.73929
-Bennett_S                                                        0.5
+Bennett S                                                        0.5
 CBA                                                              0.63818
 Chi-Squared                                                      15.52564
 Chi-Squared DF                                                   4
 Conditional Entropy                                              1.08926
-Cramer_V                                                         0.5362
+Cramer V                                                         0.5362
 Cross Entropy                                                    1.53762
-Gwet_AC1                                                         0.51229
+Gwet AC1                                                         0.51229
 Hamming Loss                                                     0.33333
 Joint Entropy                                                    2.61975
 KL Divergence                                                    0.00713
@@ -1008,29 +1072,29 @@ Lambda A                                                         0.4
 Lambda B                                                         0.35714
 Mutual Information                                               0.39731
 NIR                                                              0.44444
-Overall_ACC                                                      0.66667
-Overall_CEN                                                      0.52986
-Overall_J                                                        (1.51854,0.50618)
-Overall_MCC                                                      0.47511
-Overall_MCEN                                                     0.65286
-Overall_RACC                                                     0.36626
-Overall_RACCU                                                    0.36694
+Overall ACC                                                      0.66667
+Overall CEN                                                      0.52986
+Overall J                                                        (1.51854,0.50618)
+Overall MCC                                                      0.47511
+Overall MCEN                                                     0.65286
+Overall RACC                                                     0.36626
+Overall RACCU                                                    0.36694
 P-Value                                                          0.01667
-PPV_Macro                                                        0.68262
-PPV_Micro                                                        0.66667
+PPV Macro                                                        0.68262
+PPV Micro                                                        0.66667
 Phi-Squared                                                      0.57502
 RCI                                                              0.2596
 RR                                                               9.0
 Reference Entropy                                                1.53049
 Response Entropy                                                 1.48657
-Scott_PI                                                         0.47346
+SOA1(Landis & Koch)                                              Moderate
+SOA2(Fleiss)                                                     Intermediate to Good
+SOA3(Altman)                                                     Moderate
+SOA4(Cicchetti)                                                  Fair
+Scott PI                                                         0.47346
 Standard Error                                                   0.09072
-Strength_Of_Agreement(Altman)                                    Moderate
-Strength_Of_Agreement(Cicchetti)                                 Fair
-Strength_Of_Agreement(Fleiss)                                    Intermediate to Good
-Strength_Of_Agreement(Landis and Koch)                           Moderate
-TPR_Macro                                                        0.65741
-TPR_Micro                                                        0.66667
+TPR Macro                                                        0.65741
+TPR Micro                                                        0.66667
 Zero-one Loss                                                    9
 <BLANKLINE>
 Class Statistics :
@@ -1038,6 +1102,7 @@ Class Statistics :
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
 AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
+AUCI(Auc value interpretation)                                   Good                    Fair                    Very Good
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
@@ -1088,93 +1153,94 @@ Example : online_help("J") or online_help(2)
 1-95% CI
 2-ACC
 3-AUC
-4-AUNP
-5-AUNU
-6-BM
-7-Bennett_S
-8-CBA
-9-CEN
-10-Chi-Squared
-11-Chi-Squared DF
-12-Conditional Entropy
-13-Cramer_V
-14-Cross Entropy
-15-DOR
-16-DP
-17-DPI
-18-ERR
-19-F0.5
-20-F1
-21-F2
-22-FDR
-23-FN
-24-FNR
-25-FOR
-26-FP
-27-FPR
-28-G
-29-Gwet_AC1
-30-Hamming Loss
-31-IS
-32-J
-33-Joint Entropy
-34-KL Divergence
-35-Kappa
-36-Kappa 95% CI
-37-Kappa No Prevalence
-38-Kappa Standard Error
-39-Kappa Unbiased
-40-Lambda A
-41-Lambda B
-42-MCC
-43-MCEN
-44-MK
-45-Mutual Information
-46-N
-47-NIR
-48-NLR
-49-NPV
-50-Overall_ACC
-51-Overall_CEN
-52-Overall_J
-53-Overall_MCC
-54-Overall_MCEN
-55-Overall_RACC
-56-Overall_RACCU
-57-P
-58-P-Value
-59-PLR
-60-PLRI
-61-POP
-62-PPV
-63-PPV_Macro
-64-PPV_Micro
-65-PRE
-66-Phi-Squared
-67-RACC
-68-RACCU
-69-RCI
-70-RR
-71-Reference Entropy
-72-Response Entropy
-73-Scott_PI
-74-Standard Error
-75-Strength_Of_Agreement(Altman)
-76-Strength_Of_Agreement(Cicchetti)
-77-Strength_Of_Agreement(Fleiss)
-78-Strength_Of_Agreement(Landis and Koch)
-79-TN
-80-TNR
-81-TON
-82-TOP
-83-TP
-84-TPR
-85-TPR_Macro
-86-TPR_Micro
-87-Y
-88-Zero-one Loss
-89-dInd
-90-sInd
+4-AUCI
+5-AUNP
+6-AUNU
+7-BM
+8-Bennett S
+9-CBA
+10-CEN
+11-Chi-Squared
+12-Chi-Squared DF
+13-Conditional Entropy
+14-Cramer V
+15-Cross Entropy
+16-DOR
+17-DP
+18-DPI
+19-ERR
+20-F0.5
+21-F1
+22-F2
+23-FDR
+24-FN
+25-FNR
+26-FOR
+27-FP
+28-FPR
+29-G
+30-Gwet AC1
+31-Hamming Loss
+32-IS
+33-J
+34-Joint Entropy
+35-KL Divergence
+36-Kappa
+37-Kappa 95% CI
+38-Kappa No Prevalence
+39-Kappa Standard Error
+40-Kappa Unbiased
+41-Lambda A
+42-Lambda B
+43-MCC
+44-MCEN
+45-MK
+46-Mutual Information
+47-N
+48-NIR
+49-NLR
+50-NPV
+51-Overall ACC
+52-Overall CEN
+53-Overall J
+54-Overall MCC
+55-Overall MCEN
+56-Overall RACC
+57-Overall RACCU
+58-P
+59-P-Value
+60-PLR
+61-PLRI
+62-POP
+63-PPV
+64-PPV Macro
+65-PPV Micro
+66-PRE
+67-Phi-Squared
+68-RACC
+69-RACCU
+70-RCI
+71-RR
+72-Reference Entropy
+73-Response Entropy
+74-SOA1(Landis & Koch)
+75-SOA2(Fleiss)
+76-SOA3(Altman)
+77-SOA4(Cicchetti)
+78-Scott PI
+79-Standard Error
+80-TN
+81-TNR
+82-TON
+83-TOP
+84-TP
+85-TPR
+86-TPR Macro
+87-TPR Micro
+88-Y
+89-Zero-one Loss
+90-dInd
+91-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -1186,8 +1252,11 @@ Example : online_help("J") or online_help(2)
 Predict          0    1    2
 Actual
 0                6    0    0
+<BLANKLINE>
 1                0    1    2
+<BLANKLINE>
 2                4    2    6
+<BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
@@ -1197,14 +1266,14 @@ Overall Statistics :
 95% CI                                                           (0.41134,0.82675)
 AUNP                                                             0.7
 AUNU                                                             0.70556
-Bennett_S                                                        0.42857
+Bennett S                                                        0.42857
 CBA                                                              0.47778
 Chi-Squared                                                      10.44167
 Chi-Squared DF                                                   4
 Conditional Entropy                                              0.96498
-Cramer_V                                                         0.49861
+Cramer V                                                         0.49861
 Cross Entropy                                                    1.50249
-Gwet_AC1                                                         0.45277
+Gwet AC1                                                         0.45277
 Hamming Loss                                                     0.38095
 Joint Entropy                                                    2.34377
 KL Divergence                                                    0.1237
@@ -1217,29 +1286,29 @@ Lambda A                                                         0.22222
 Lambda B                                                         0.36364
 Mutual Information                                               0.47618
 NIR                                                              0.57143
-Overall_ACC                                                      0.61905
-Overall_CEN                                                      0.43947
-Overall_J                                                        (1.22857,0.40952)
-Overall_MCC                                                      0.41558
-Overall_MCEN                                                     0.50059
-Overall_RACC                                                     0.37415
-Overall_RACCU                                                    0.39229
+Overall ACC                                                      0.61905
+Overall CEN                                                      0.43947
+Overall J                                                        (1.22857,0.40952)
+Overall MCC                                                      0.41558
+Overall MCEN                                                     0.50059
+Overall RACC                                                     0.37415
+Overall RACCU                                                    0.39229
 P-Value                                                          0.41709
-PPV_Macro                                                        0.56111
-PPV_Micro                                                        0.61905
+PPV Macro                                                        0.56111
+PPV Micro                                                        0.61905
 Phi-Squared                                                      0.49722
 RCI                                                              0.34536
 RR                                                               7.0
 Reference Entropy                                                1.37878
 Response Entropy                                                 1.44117
-Scott_PI                                                         0.37313
+SOA1(Landis & Koch)                                              Fair
+SOA2(Fleiss)                                                     Poor
+SOA3(Altman)                                                     Fair
+SOA4(Cicchetti)                                                  Poor
+Scott PI                                                         0.37313
 Standard Error                                                   0.10597
-Strength_Of_Agreement(Altman)                                    Fair
-Strength_Of_Agreement(Cicchetti)                                 Poor
-Strength_Of_Agreement(Fleiss)                                    Poor
-Strength_Of_Agreement(Landis and Koch)                           Fair
-TPR_Macro                                                        0.61111
-TPR_Micro                                                        0.61905
+TPR Macro                                                        0.61111
+TPR Micro                                                        0.61905
 Zero-one Loss                                                    8
 <BLANKLINE>
 Class Statistics :
@@ -1247,6 +1316,7 @@ Class Statistics :
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
 AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
+AUCI(Auc value interpretation)                                   Very Good               Fair                    Fair
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
 CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5
@@ -1288,6 +1358,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 Y(Youden index)                                                  0.73333                 0.22222                 0.27778
 dInd(Distance index)                                             0.26667                 0.67586                 0.54716
 sInd(Similarity index)                                           0.81144                 0.52209                 0.6131
+<BLANKLINE>
 >>> save_obj=cm.save_obj("test3",address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
@@ -1305,14 +1376,14 @@ Overall Statistics :
 95% CI                                                           (0.41134,0.82675)
 AUNP                                                             0.7
 AUNU                                                             0.70556
-Bennett_S                                                        0.42857
+Bennett S                                                        0.42857
 CBA                                                              0.47778
 Chi-Squared                                                      10.44167
 Chi-Squared DF                                                   4
 Conditional Entropy                                              0.96498
-Cramer_V                                                         0.49861
+Cramer V                                                         0.49861
 Cross Entropy                                                    1.50249
-Gwet_AC1                                                         0.45277
+Gwet AC1                                                         0.45277
 Hamming Loss                                                     0.38095
 Joint Entropy                                                    2.34377
 KL Divergence                                                    0.1237
@@ -1325,29 +1396,29 @@ Lambda A                                                         0.22222
 Lambda B                                                         0.36364
 Mutual Information                                               0.47618
 NIR                                                              0.57143
-Overall_ACC                                                      0.61905
-Overall_CEN                                                      0.43947
-Overall_J                                                        (1.22857,0.40952)
-Overall_MCC                                                      0.41558
-Overall_MCEN                                                     0.50059
-Overall_RACC                                                     0.37415
-Overall_RACCU                                                    0.39229
+Overall ACC                                                      0.61905
+Overall CEN                                                      0.43947
+Overall J                                                        (1.22857,0.40952)
+Overall MCC                                                      0.41558
+Overall MCEN                                                     0.50059
+Overall RACC                                                     0.37415
+Overall RACCU                                                    0.39229
 P-Value                                                          0.41709
-PPV_Macro                                                        0.56111
-PPV_Micro                                                        0.61905
+PPV Macro                                                        0.56111
+PPV Micro                                                        0.61905
 Phi-Squared                                                      0.49722
 RCI                                                              0.34536
 RR                                                               7.0
 Reference Entropy                                                1.37878
 Response Entropy                                                 1.44117
-Scott_PI                                                         0.37313
+SOA1(Landis & Koch)                                              Fair
+SOA2(Fleiss)                                                     Poor
+SOA3(Altman)                                                     Fair
+SOA4(Cicchetti)                                                  Poor
+Scott PI                                                         0.37313
 Standard Error                                                   0.10597
-Strength_Of_Agreement(Altman)                                    Fair
-Strength_Of_Agreement(Cicchetti)                                 Poor
-Strength_Of_Agreement(Fleiss)                                    Poor
-Strength_Of_Agreement(Landis and Koch)                           Fair
-TPR_Macro                                                        0.61111
-TPR_Micro                                                        0.61905
+TPR Macro                                                        0.61111
+TPR Micro                                                        0.61905
 Zero-one Loss                                                    8
 <BLANKLINE>
 Class Statistics :
@@ -1355,6 +1426,7 @@ Class Statistics :
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
 AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
+AUCI(Auc value interpretation)                                   Very Good               Fair                    Fair
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
 CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5
@@ -1461,6 +1533,9 @@ True
 >>> os.remove("test.csv")
 >>> os.remove("test.obj")
 >>> os.remove("test.html")
+>>> os.remove("test_filtered.html")
+>>> os.remove("test_filtered.csv")
+>>> os.remove("test_filtered.pycm")
 >>> os.remove("test2.obj")
 >>> os.remove("test3.obj")
 >>> os.remove("test4.obj")

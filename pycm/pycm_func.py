@@ -1137,6 +1137,30 @@ def DP_analysis(DP):
         return "None"
 
 
+def AUC_analysis(AUC):
+    '''
+    This function analysis AUC with interpretation table
+    :param AUC: Area under the ROC curve
+    :type AUC : float
+    :return: interpretation result as str
+    '''
+    try:
+        if AUC == "None":
+            return "None"
+        if AUC < 0.6:
+            return "Poor"
+        elif AUC >= 0.6 and AUC < 0.7:
+            return "Fair"
+        elif AUC >= 0.7 and AUC < 0.8:
+            return "Good"
+        elif AUC >= 0.8 and AUC < 0.9:
+            return "Very Good"
+        else:
+            return "Excellent"
+    except Exception:
+        return "None"
+
+
 def kappa_analysis_cicchetti(kappa):
     '''
     This function analysis kappa number with Cicchetti benchmark
@@ -1531,29 +1555,29 @@ def overall_statistics(
     AUNP = AUNP_calc(classes, P, POP, AUC_dict)
     RCI = RCI_calc(mutual_information, reference_entropy)
     return {
-        "Overall_ACC": overall_accuracy,
+        "Overall ACC": overall_accuracy,
         "Kappa": overall_kappa,
-        "Overall_RACC": overall_random_accuracy,
-        "Strength_Of_Agreement(Landis and Koch)": kappa_analysis_koch(overall_kappa),
-        "Strength_Of_Agreement(Fleiss)": kappa_analysis_fleiss(overall_kappa),
-        "Strength_Of_Agreement(Altman)": kappa_analysis_altman(overall_kappa),
-        "Strength_Of_Agreement(Cicchetti)": kappa_analysis_cicchetti(overall_kappa),
-        "TPR_Macro": macro_calc(TPR),
-        "PPV_Macro": macro_calc(PPV),
-        "TPR_Micro": micro_calc(
+        "Overall RACC": overall_random_accuracy,
+        "SOA1(Landis & Koch)": kappa_analysis_koch(overall_kappa),
+        "SOA2(Fleiss)": kappa_analysis_fleiss(overall_kappa),
+        "SOA3(Altman)": kappa_analysis_altman(overall_kappa),
+        "SOA4(Cicchetti)": kappa_analysis_cicchetti(overall_kappa),
+        "TPR Macro": macro_calc(TPR),
+        "PPV Macro": macro_calc(PPV),
+        "TPR Micro": micro_calc(
             TP=TP,
             item=FN),
-        "PPV_Micro": micro_calc(
+        "PPV Micro": micro_calc(
             TP=TP,
             item=FP),
-        "Scott_PI": PI,
-        "Gwet_AC1": AC1,
-        "Bennett_S": S,
+        "Scott PI": PI,
+        "Gwet AC1": AC1,
+        "Bennett S": S,
         "Kappa Standard Error": kappa_SE,
         "Kappa 95% CI": kappa_CI,
         "Chi-Squared": chi_squared,
         "Phi-Squared": phi_squared,
-        "Cramer_V": cramer_V,
+        "Cramer V": cramer_V,
         "Chi-Squared DF": DF,
         "95% CI": overall_accuracy_CI,
         "Standard Error": overall_accuracy_se,
@@ -1566,17 +1590,17 @@ def overall_statistics(
         "Lambda B": lambda_B,
         "Lambda A": lambda_A,
         "Kappa Unbiased": kappa_unbiased,
-        "Overall_RACCU": overall_random_accuracy_unbiased,
+        "Overall RACCU": overall_random_accuracy_unbiased,
         "Kappa No Prevalence": kappa_no_prevalence,
         "Mutual Information": mutual_information,
-        "Overall_J": overall_jaccard_index,
+        "Overall J": overall_jaccard_index,
         "Hamming Loss": hamming_loss,
         "Zero-one Loss": zero_one_loss,
         "NIR": NIR,
         "P-Value": p_value,
-        "Overall_CEN": overall_CEN,
-        "Overall_MCEN": overall_MCEN,
-        "Overall_MCC": overall_MCC,
+        "Overall CEN": overall_CEN,
+        "Overall MCEN": overall_MCEN,
+        "Overall MCC": overall_MCC,
         "RR": RR,
         "CBA": CBA,
         "AUNU": AUNU,
@@ -1640,6 +1664,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     Y = {}
     PLRI = {}
     DPI = {}
+    AUCI = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1680,6 +1705,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         Y[i] = BM[i]
         PLRI[i] = PLR_analysis(PLR[i])
         DPI[i] = DP_analysis(DP[i])
+        AUCI[i] = AUC_analysis(AUC[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1723,5 +1749,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "DP": DP,
         "Y": Y,
         "PLRI": PLRI,
-        "DPI": DPI}
+        "DPI": DPI,
+        "AUCI": AUCI}
     return result

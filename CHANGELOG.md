@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - AUC Value Interpretation (AUCI)
 - Example-6
-- Anaconda cloud account
+- Anaconda cloud package
 
 ### Changed
 - `overall_param` and `class_param` arguments added to `stat`,`save_stat` and `save_html`  methods

@@ -288,7 +288,11 @@ button {
     height: 100%;
 }
 @media all and (max-width: 1024px) {
-    
+
+.siteWrapper {
+    overflow-x: hidden;
+        
+}
 .github{
     bottom: 0px;
     width: 100%;

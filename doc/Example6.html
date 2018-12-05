@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>Example5</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Example6</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11771,7 +11771,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Example-5-(Sample-weights)">Example-5 (Sample weights)<a class="anchor-link" href="#Example-5-(Sample-weights)">&#182;</a></h1>
+<h1 id="Example-6-(Unbalanced-data)">Example-6 (Unbalanced data)<a class="anchor-link" href="#Example-6-(Unbalanced-data)">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11779,7 +11779,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Without-weights">Without weights<a class="anchor-link" href="#Without-weights">&#182;</a></h2>
+<h2 id="Binary-classification-for-unbalanced-data">Binary classification for unbalanced data<a class="anchor-link" href="#Binary-classification-for-unbalanced-data">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -11789,55 +11789,45 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pycm</span> <span class="k">import</span> <span class="n">ConfusionMatrix</span>
-<span class="n">y_test</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 </pre></div>
 
 </div>
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Case1-(Both-classes-have-a-good-result)">Case1 (Both classes have a good result)<a class="anchor-link" href="#Case1-(Both-classes-have-a-good-result)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_1=\begin{bmatrix}26900 &amp; 40 \\25 &amp; 500 \end{bmatrix}$$</p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-<span class="n">cm1</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[2]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>pycm.ConfusionMatrix(classes: [0, 1, 2])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cm1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case1</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">26900</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">}})</span>
+<span class="n">case1</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -11854,116 +11844,21 @@ div#notebook {
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict          0    1    2    
+<pre>Predict          Class1     Class2     
 Actual
-0                3    0    0    
+Class1           0.99852    0.00148    
 
-1                0    1    2    
-
-2                2    1    3    
+Class2           0.04762    0.95238    
 
 
-
-
-
-Overall Statistics : 
-
-95% CI                                                           (0.30439,0.86228)
-AUNP                                                             0.66667
-AUNU                                                             0.69444
-Bennett S                                                        0.375
-CBA                                                              0.47778
-Chi-Squared                                                      6.6
-Chi-Squared DF                                                   4
-Conditional Entropy                                              0.95915
-Cramer V                                                         0.5244
-Cross Entropy                                                    1.59352
-Gwet AC1                                                         0.38931
-Hamming Loss                                                     0.41667
-Joint Entropy                                                    2.45915
-KL Divergence                                                    0.09352
-Kappa                                                            0.35484
-Kappa 95% CI                                                     (-0.07708,0.78675)
-Kappa No Prevalence                                              0.16667
-Kappa Standard Error                                             0.22036
-Kappa Unbiased                                                   0.34426
-Lambda A                                                         0.16667
-Lambda B                                                         0.42857
-Mutual Information                                               0.52421
-NIR                                                              0.5
-Overall ACC                                                      0.58333
-Overall CEN                                                      0.46381
-Overall J                                                        (1.225,0.40833)
-Overall MCC                                                      0.36667
-Overall MCEN                                                     0.51894
-Overall RACC                                                     0.35417
-Overall RACCU                                                    0.36458
-P-Value                                                          0.38721
-PPV Macro                                                        0.56667
-PPV Micro                                                        0.58333
-Phi-Squared                                                      0.55
-RCI                                                              0.34947
-RR                                                               4.0
-Reference Entropy                                                1.5
-Response Entropy                                                 1.48336
-SOA1(Landis &amp; Koch)                                              Fair
-SOA2(Fleiss)                                                     Poor
-SOA3(Altman)                                                     Fair
-SOA4(Cicchetti)                                                  Poor
-Scott PI                                                         0.34426
-Standard Error                                                   0.14232
-TPR Macro                                                        0.61111
-TPR Micro                                                        0.58333
-Zero-one Loss                                                    5
-
-Class Statistics :
-
-Classes                                                          0                       1                       2                       
-ACC(Accuracy)                                                    0.83333                 0.75                    0.58333                 
-AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333                 
-AUCI(Auc value interpretation)                                   Very Good               Fair                    Poor                    
-BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667                 
-CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442                 
-DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0                     
-DP(Discriminant power)                                           None                    0.33193                 0.16597                 
-DPI(Discriminant power interpretation)                           None                    Poor                    Poor                    
-ERR(Error rate)                                                  0.16667                 0.25                    0.41667                 
-F0.5(F0.5 score)                                                 0.65217                 0.45455                 0.57692                 
-F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545                 
-F2(F2 score)                                                     0.88235                 0.35714                 0.51724                 
-FDR(False discovery rate)                                        0.4                     0.5                     0.4                     
-FN(False negative/miss/type 2 error)                             0                       2                       3                       
-FNR(Miss rate or false negative rate)                            0.0                     0.66667                 0.5                     
-FOR(False omission rate)                                         0.0                     0.2                     0.42857                 
-FP(False positive/type 1 error/false alarm)                      2                       1                       2                       
-FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333                 
-G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772                 
-IS(Information score)                                            1.26303                 1.0                     0.26303                 
-J(Jaccard index)                                                 0.6                     0.25                    0.375                   
-MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903                 
-MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875                  
-MK(Markedness)                                                   0.6                     0.3                     0.17143                 
-N(Condition negative)                                            9                       9                       6                       
-NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.75                    
-NPV(Negative predictive value)                                   1.0                     0.8                     0.57143                 
-P(Condition positive or support)                                 3                       3                       6                       
-PLR(Positive likelihood ratio)                                   4.5                     3.0                     1.5                     
-PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Poor                    
-POP(Population)                                                  12                      12                      12                      
-PPV(Precision or positive predictive value)                      0.6                     0.5                     0.6                     
-PRE(Prevalence)                                                  0.25                    0.25                    0.5                     
-RACC(Random accuracy)                                            0.10417                 0.04167                 0.20833                 
-RACCU(Random accuracy unbiased)                                  0.11111                 0.0434                  0.21007                 
-TN(True negative/correct rejection)                              7                       8                       4                       
-TNR(Specificity or true negative rate)                           0.77778                 0.88889                 0.66667                 
-TON(Test outcome negative)                                       7                       10                      7                       
-TOP(Test outcome positive)                                       5                       2                       5                       
-TP(True positive/hit)                                            3                       1                       3                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.33333                 0.5                     
-Y(Youden index)                                                  0.77778                 0.22222                 0.16667                 
-dInd(Distance index)                                             0.22222                 0.67586                 0.60093                 
-sInd(Similarity index)                                           0.84287                 0.52209                 0.57508                 
-
+ACC: {&#39;Class2&#39;: 0.9976333515383216, &#39;Class1&#39;: 0.9976333515383216}
+MCC: {&#39;Class2&#39;: 0.9378574017402594, &#39;Class1&#39;: 0.9378574017402594}
+CEN: {&#39;Class2&#39;: 0.30489006849060607, &#39;Class1&#39;: 0.012858728415908176}
+MCEN: {&#39;Class2&#39;: 0.46949279678726225, &#39;Class1&#39;: 0.023280122318969122}
+DP: {&#39;Class2&#39;: 2.276283896527635, &#39;Class1&#39;: 2.276283896527635}
+Kappa: 0.9377606597584491
+RCI: 0.8682877002417864
+SOA1: Almost Perfect
 </pre>
 </div>
 </div>
@@ -11976,65 +11871,34 @@ sInd(Similarity index)                                           0.84287        
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="With-random-weights">With random weights<a class="anchor-link" href="#With-random-weights">&#182;</a></h2>
+<h3 id="Case2-(The-first-class-has-a-good-result)">Case2 (The first class has a good result)<a class="anchor-link" href="#Case2-(The-first-class-has-a-good-result)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_2=\begin{bmatrix}26900 &amp; 40 \\500 &amp; 25 \end{bmatrix}$$</p>
+
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="k">import</span> <span class="n">randint</span>
-<span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">))]</span>
-<span class="n">weights</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*=</span><span class="mi">9</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">sample_weight</span> <span class="o">=</span> <span class="n">weights</span><span class="p">)</span>
-<span class="n">cm2</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[5]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>pycm.ConfusionMatrix(classes: [0, 1, 2])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cm2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case2</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">29600</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">}})</span>
+<span class="n">case2</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12051,116 +11915,556 @@ sInd(Similarity index)                                           0.84287        
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict          0     1     2     
+<pre>Predict          Class1     Class2     
 Actual
-0                18    0     0     
+Class1           0.99865    0.00135    
 
-1                0     9     10    
-
-2                9     9     69    
+Class2           0.95238    0.04762    
 
 
+ACC: {&#39;Class2&#39;: 0.982098458478369, &#39;Class1&#39;: 0.982098458478369}
+MCC: {&#39;Class2&#39;: 0.13048897476798949, &#39;Class1&#39;: 0.13048897476798949}
+CEN: {&#39;Class2&#39;: 0.4655917826576813, &#39;Class1&#39;: 0.06481573363174531}
+MCEN: {&#39;Class2&#39;: 0.4264929996758212, &#39;Class1&#39;: 0.11078640690031397}
+DP: {&#39;Class2&#39;: 0.864594924328404, &#39;Class1&#39;: 0.864594924328404}
+Kappa: 0.08122239707598865
+RCI: 0.022375346499017443
+SOA1: Slight
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Case3-(Second-class-has-a-good-result-)">Case3 (Second class has a good result )<a class="anchor-link" href="#Case3-(Second-class-has-a-good-result-)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_3=\begin{bmatrix}40 &amp; 26900 \\25 &amp; 500 \end{bmatrix}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case3</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">26900</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">}})</span>
+<span class="n">case3</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
 
 
+<div class="output_area">
 
-Overall Statistics : 
+<div class="prompt"></div>
 
-95% CI                                                           (0.7006,0.84779)
-AUNP                                                             0.77955
-AUNU                                                             0.80432
-Bennett S                                                        0.66129
-CBA                                                              0.64448
-Chi-Squared                                                      92.88202
-Chi-Squared DF                                                   4
-Conditional Entropy                                              0.81412
-Cramer V                                                         0.61198
-Cross Entropy                                                    1.20222
-Gwet AC1                                                         0.69957
-Hamming Loss                                                     0.22581
-Joint Entropy                                                    1.99166
-KL Divergence                                                    0.02468
-Kappa                                                            0.54762
-Kappa 95% CI                                                     (0.40019,0.69506)
-Kappa No Prevalence                                              0.54839
-Kappa Standard Error                                             0.07522
-Kappa Unbiased                                                   0.54546
-Lambda A                                                         0.24324
-Lambda B                                                         0.4
-Mutual Information                                               0.4833
-NIR                                                              0.70161
-Overall ACC                                                      0.77419
-Overall CEN                                                      0.35152
-Overall J                                                        (1.69944,0.56648)
-Overall MCC                                                      0.55399
-Overall MCEN                                                     0.45518
-Overall RACC                                                     0.50085
-Overall RACCU                                                    0.50322
-P-Value                                                          0.04494
-PPV Macro                                                        0.68003
-PPV Micro                                                        0.77419
-Phi-Squared                                                      0.74905
-RCI                                                              0.41044
-RR                                                               41.33333
-Reference Entropy                                                1.17754
-Response Entropy                                                 1.29743
-SOA1(Landis &amp; Koch)                                              Moderate
-SOA2(Fleiss)                                                     Intermediate to Good
-SOA3(Altman)                                                     Moderate
-SOA4(Cicchetti)                                                  Fair
-Scott PI                                                         0.54546
-Standard Error                                                   0.03755
-TPR Macro                                                        0.7556
-TPR Micro                                                        0.77419
-Zero-one Loss                                                    28
 
-Class Statistics :
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Predict          Class1     Class2     
+Actual
+Class1           0.00148    0.99852    
 
-Classes                                                          0                       1                       2                       
-ACC(Accuracy)                                                    0.92742                 0.84677                 0.77419                 
-AUC(Area under the roc curve)                                    0.95755                 0.69398                 0.76142                 
-AUCI(Auc value interpretation)                                   Excellent               Fair                    Good                    
-BM(Informedness or bookmaker informedness)                       0.91509                 0.38797                 0.52283                 
-CEN(Confusion entropy)                                           0.23219                 0.50312                 0.35007                 
-DOR(Diagnostic odds ratio)                                       None                    9.6                     10.35                   
-DP(Discriminant power)                                           None                    0.54155                 0.55957                 
-DPI(Discriminant power interpretation)                           None                    Poor                    Poor                    
-ERR(Error rate)                                                  0.07258                 0.15323                 0.22581                 
-F0.5(F0.5 score)                                                 0.71429                 0.49451                 0.85608                 
-F1(F1 score - harmonic mean of precision and sensitivity)        0.8                     0.48649                 0.83133                 
-F2(F2 score)                                                     0.90909                 0.47872                 0.80796                 
-FDR(False discovery rate)                                        0.33333                 0.5                     0.12658                 
-FN(False negative/miss/type 2 error)                             0                       10                      18                      
-FNR(Miss rate or false negative rate)                            0.0                     0.52632                 0.2069                  
-FOR(False omission rate)                                         0.0                     0.09434                 0.4                     
-FP(False positive/type 1 error/false alarm)                      9                       9                       10                      
-FPR(Fall-out or false positive rate)                             0.08491                 0.08571                 0.27027                 
-G(G-measure geometric mean of precision and sensitivity)         0.8165                  0.48666                 0.83229                 
-IS(Information score)                                            2.19931                 1.70627                 0.316                   
-J(Jaccard index)                                                 0.66667                 0.32143                 0.71134                 
-MCC(Matthews correlation coefficient)                            0.78107                 0.39672                 0.49751                 
-MCEN(Modified confusion entropy)                                 0.26416                 0.52841                 0.48721                 
-MK(Markedness)                                                   0.66667                 0.40566                 0.47342                 
-N(Condition negative)                                            106                     105                     37                      
-NLR(Negative likelihood ratio)                                   0.0                     0.57566                 0.28352                 
-NPV(Negative predictive value)                                   1.0                     0.90566                 0.6                     
-P(Condition positive or support)                                 18                      19                      87                      
-PLR(Positive likelihood ratio)                                   11.77778                5.52632                 2.93448                 
-PLRI(Positive likelihood ratio interpretation)                   Good                    Fair                    Poor                    
-POP(Population)                                                  124                     124                     124                     
-PPV(Precision or positive predictive value)                      0.66667                 0.5                     0.87342                 
-PRE(Prevalence)                                                  0.14516                 0.15323                 0.70161                 
-RACC(Random accuracy)                                            0.03161                 0.02224                 0.447                   
-RACCU(Random accuracy unbiased)                                  0.03292                 0.02226                 0.44804                 
-TN(True negative/correct rejection)                              97                      96                      27                      
-TNR(Specificity or true negative rate)                           0.91509                 0.91429                 0.72973                 
-TON(Test outcome negative)                                       97                      106                     45                      
-TOP(Test outcome positive)                                       27                      18                      79                      
-TP(True positive/hit)                                            18                      9                       69                      
-TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0                     0.47368                 0.7931                  
-Y(Youden index)                                                  0.91509                 0.38797                 0.52283                 
-dInd(Distance index)                                             0.08491                 0.53325                 0.34037                 
-sInd(Similarity index)                                           0.93996                 0.62294                 0.75932                 
+Class2           0.04762    0.95238    
 
+
+ACC: {&#39;Class2&#39;: 0.019661387220098307, &#39;Class1&#39;: 0.019661387220098307}
+MCC: {&#39;Class2&#39;: -0.13000800945464058, &#39;Class1&#39;: -0.13000800945464058}
+CEN: {&#39;Class2&#39;: 0.06103563616795208, &#39;Class1&#39;: 0.014927427128936136}
+MCEN: {&#39;Class2&#39;: 0.03655796690365652, &#39;Class1&#39;: 0.01281422838054554}
+DP: {&#39;Class2&#39;: -0.8416930356875597, &#39;Class1&#39;: -0.8416930356875597}
+Kappa: -0.0017678372492452412
+RCI: 0.02192606003351106
+SOA1: Poor
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Multi-class-classification-for-unbalanced-data">Multi-class classification for unbalanced data<a class="anchor-link" href="#Multi-class-classification-for-unbalanced-data">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Case1-(All-classes-have-good-result--and-are-unbalanced)">Case1 (All classes have good result  and are unbalanced)<a class="anchor-link" href="#Case1-(All-classes-have-good-result--and-are-unbalanced)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_1=\begin{bmatrix}4 &amp; 0 &amp;0&amp;1 \\0 &amp; 4&amp;1&amp;0\\0&amp;1&amp;4&amp;0\\0&amp;0&amp;1&amp;4000 \end{bmatrix}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case1</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">},</span>
+                                        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">},</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">40000</span><span class="p">}})</span>
+<span class="n">case1</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Predict          Class1     Class2     Class3     Class4     
+Actual
+Class1           0.8        0.0        0.0        0.2        
+
+Class2           0.0        0.8        0.2        0.0        
+
+Class3           0.0        0.2        0.8        0.0        
+
+Class4           0.0        0.0        2e-05      0.99998    
+
+
+ACC: {&#39;Class2&#39;: 0.9999500199920032, &#39;Class3&#39;: 0.9999250299880048, &#39;Class1&#39;: 0.9999750099960016, &#39;Class4&#39;: 0.9999500199920032}
+MCC: {&#39;Class2&#39;: 0.7999750068731099, &#39;Class3&#39;: 0.7302602381427055, &#39;Class1&#39;: 0.8944160139432883, &#39;Class4&#39;: 0.9333083339583177}
+CEN: {&#39;Class2&#39;: 0.25701944178769376, &#39;Class3&#39;: 0.3649884090288471, &#39;Class1&#39;: 0.13625493172565745, &#39;Class4&#39;: 0.0001575200922489127}
+MCEN: {&#39;Class2&#39;: 0.3333333333333333, &#39;Class3&#39;: 0.4654427710721536, &#39;Class1&#39;: 0.17964888034078544, &#39;Class4&#39;: 0.00029569133318617423}
+DP: {&#39;Class2&#39;: 2.869241573973406, &#39;Class3&#39;: 2.7032690544190636, &#39;Class1&#39;: &#39;None&#39;, &#39;Class4&#39;: 3.1691421556058055}
+Kappa: 0.8666333383326446
+RCI: 0.8711441699127425
+SOA1: Almost Perfect
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Case2-(All-classes-have-same-result-and-are-balanced)">Case2 (All classes have same result and are balanced)<a class="anchor-link" href="#Case2-(All-classes-have-same-result-and-are-balanced)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_2=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\\1&amp;1&amp;1&amp;1 \end{bmatrix}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case2</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
+                                        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}})</span>
+<span class="n">case2</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Predict          Class1    Class2    Class3    Class4    
+Actual
+Class1           0.25      0.25      0.25      0.25      
+
+Class2           0.25      0.25      0.25      0.25      
+
+Class3           0.25      0.25      0.25      0.25      
+
+Class4           0.25      0.25      0.25      0.25      
+
+
+ACC: {&#39;Class2&#39;: 0.625, &#39;Class3&#39;: 0.625, &#39;Class1&#39;: 0.625, &#39;Class4&#39;: 0.625}
+MCC: {&#39;Class2&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class1&#39;: 0.0, &#39;Class4&#39;: 0.0}
+CEN: {&#39;Class2&#39;: 0.8704188162777186, &#39;Class3&#39;: 0.8704188162777186, &#39;Class1&#39;: 0.8704188162777186, &#39;Class4&#39;: 0.8704188162777186}
+MCEN: {&#39;Class2&#39;: 0.9308855421443073, &#39;Class3&#39;: 0.9308855421443073, &#39;Class1&#39;: 0.9308855421443073, &#39;Class4&#39;: 0.9308855421443073}
+DP: {&#39;Class2&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class1&#39;: 0.0, &#39;Class4&#39;: 0.0}
+Kappa: 0.0
+RCI: 0.0
+SOA1: Slight
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Case3-(A-class-has-a-bad-result-and-is-a-bit-unbalanced)">Case3 (A class has a bad result and is a bit unbalanced)<a class="anchor-link" href="#Case3-(A-class-has-a-bad-result-and-is-a-bit-unbalanced)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_3=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\\10&amp;1&amp;1&amp;1 \end{bmatrix}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case3</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
+                                        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}})</span>
+<span class="n">case3</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Predict          Class1     Class2     Class3     Class4     
+Actual
+Class1           0.25       0.25       0.25       0.25       
+
+Class2           0.25       0.25       0.25       0.25       
+
+Class3           0.25       0.25       0.25       0.25       
+
+Class4           0.76923    0.07692    0.07692    0.07692    
+
+
+ACC: {&#39;Class2&#39;: 0.76, &#39;Class3&#39;: 0.76, &#39;Class1&#39;: 0.4, &#39;Class4&#39;: 0.4}
+MCC: {&#39;Class2&#39;: 0.10714285714285714, &#39;Class3&#39;: 0.10714285714285714, &#39;Class1&#39;: -0.2358640882624316, &#39;Class4&#39;: -0.2358640882624316}
+CEN: {&#39;Class2&#39;: 0.8704188162777186, &#39;Class3&#39;: 0.8704188162777186, &#39;Class1&#39;: 0.6392779429225794, &#39;Class4&#39;: 0.6392779429225796}
+MCEN: {&#39;Class2&#39;: 0.9308855421443073, &#39;Class3&#39;: 0.9308855421443073, &#39;Class1&#39;: 0.647512271542988, &#39;Class4&#39;: 0.647512271542988}
+DP: {&#39;Class2&#39;: 0.16596653499824943, &#39;Class3&#39;: 0.16596653499824943, &#39;Class1&#39;: -0.33193306999649924, &#39;Class4&#39;: -0.3319330699964992}
+Kappa: -0.07361963190184047
+RCI: 0.11603030564493641
+SOA1: Poor
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Case4-(A-class-is-very-unbalaned-and-get-bad-result)">Case4 (A class is very unbalaned and get bad result)<a class="anchor-link" href="#Case4-(A-class-is-very-unbalaned-and-get-bad-result)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_4=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\\10000&amp;1&amp;1&amp;1 \end{bmatrix}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case4</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
+                                        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}})</span>
+<span class="n">case3</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case4</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case4</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case4</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case4</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case4</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case4</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case4</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case4</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Predict          Class1     Class2     Class3     Class4     
+Actual
+Class1           0.25       0.25       0.25       0.25       
+
+Class2           0.25       0.25       0.25       0.25       
+
+Class3           0.25       0.25       0.25       0.25       
+
+Class4           0.76923    0.07692    0.07692    0.07692    
+
+
+ACC: {&#39;Class2&#39;: 0.999400898652022, &#39;Class3&#39;: 0.999400898652022, &#39;Class1&#39;: 0.000998502246630055, &#39;Class4&#39;: 0.000998502246630055}
+MCC: {&#39;Class2&#39;: 0.24970032963739885, &#39;Class3&#39;: 0.24970032963739885, &#39;Class1&#39;: -0.43266656861311537, &#39;Class4&#39;: -0.43266656861311537}
+CEN: {&#39;Class2&#39;: 0.8704188162777186, &#39;Class3&#39;: 0.8704188162777186, &#39;Class1&#39;: 0.0029588592520426657, &#39;Class4&#39;: 0.0029588592520426657}
+MCEN: {&#39;Class2&#39;: 0.9308855421443073, &#39;Class3&#39;: 0.9308855421443073, &#39;Class1&#39;: 0.002903385725603509, &#39;Class4&#39;: 0.002903385725603509}
+DP: {&#39;Class2&#39;: 1.6794055876913858, &#39;Class3&#39;: 1.6794055876913858, &#39;Class1&#39;: -1.9423127303715728, &#39;Class4&#39;: -1.9423127303715728}
+Kappa: -0.0003990813465900262
+RCI: 0.5536610475678805
+SOA1: Poor
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Case5-(A-class-is-very-unbalaned-and-get-bad-result)">Case5 (A class is very unbalaned and get bad result)<a class="anchor-link" href="#Case5-(A-class-is-very-unbalaned-and-get-bad-result)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_5=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\\10&amp;10&amp;10&amp;10 \end{bmatrix}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case5</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
+                                        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">}})</span>
+<span class="n">case5</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case5</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case5</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case5</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case5</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case5</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case5</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case5</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case5</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Predict          Class1    Class2    Class3    Class4    
+Actual
+Class1           0.25      0.25      0.25      0.25      
+
+Class2           0.25      0.25      0.25      0.25      
+
+Class3           0.25      0.25      0.25      0.25      
+
+Class4           0.25      0.25      0.25      0.25      
+
+
+ACC: {&#39;Class2&#39;: 0.7115384615384616, &#39;Class3&#39;: 0.7115384615384616, &#39;Class1&#39;: 0.7115384615384616, &#39;Class4&#39;: 0.36538461538461536}
+MCC: {&#39;Class2&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class1&#39;: 0.0, &#39;Class4&#39;: 0.0}
+CEN: {&#39;Class2&#39;: 0.6392779429225794, &#39;Class3&#39;: 0.6392779429225794, &#39;Class1&#39;: 0.6392779429225794, &#39;Class4&#39;: 0.6522742127953861}
+MCEN: {&#39;Class2&#39;: 0.647512271542988, &#39;Class3&#39;: 0.647512271542988, &#39;Class1&#39;: 0.647512271542988, &#39;Class4&#39;: 0.7144082229288313}
+DP: {&#39;Class2&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class1&#39;: 0.0, &#39;Class4&#39;: 0.0}
+Kappa: 0.0
+RCI: 0.0
+SOA1: Slight
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Case6-(A-class-is-very-unbalaned-and-get-bad-result)">Case6 (A class is very unbalaned and get bad result)<a class="anchor-link" href="#Case6-(A-class-is-very-unbalaned-and-get-bad-result)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_6=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\\10000&amp;10000&amp;10000&amp;10000 \end{bmatrix}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case6</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
+                                        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">10000</span><span class="p">}})</span>
+<span class="n">case6</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case6</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case6</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case6</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case6</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case6</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case6</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case6</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case6</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Predict          Class1    Class2    Class3    Class4    
+Actual
+Class1           0.25      0.25      0.25      0.25      
+
+Class2           0.25      0.25      0.25      0.25      
+
+Class3           0.25      0.25      0.25      0.25      
+
+Class4           0.25      0.25      0.25      0.25      
+
+
+ACC: {&#39;Class2&#39;: 0.7499500149955014, &#39;Class3&#39;: 0.7499500149955014, &#39;Class1&#39;: 0.7499500149955014, &#39;Class4&#39;: 0.25014995501349596}
+MCC: {&#39;Class2&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class1&#39;: 0.0, &#39;Class4&#39;: 0.0}
+CEN: {&#39;Class2&#39;: 0.0029588592520426657, &#39;Class3&#39;: 0.0029588592520426657, &#39;Class1&#39;: 0.0029588592520426657, &#39;Class4&#39;: 0.539296694603886}
+MCEN: {&#39;Class2&#39;: 0.002903385725603509, &#39;Class3&#39;: 0.002903385725603509, &#39;Class1&#39;: 0.002903385725603509, &#39;Class4&#39;: 0.580710610324597}
+DP: {&#39;Class2&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class1&#39;: 0.0, &#39;Class4&#39;: 0.0}
+Kappa: 0.0
+RCI: 0.0
+SOA1: Slight
 </pre>
 </div>
 </div>

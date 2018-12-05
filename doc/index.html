@@ -11779,7 +11779,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Version-:-1.5">Version : 1.5<a class="anchor-link" href="#Version-:-1.5">&#182;</a></h3><hr>
+<h3 id="Version-:-1.6">Version : 1.6<a class="anchor-link" href="#Version-:-1.6">&#182;</a></h3><hr>
 
 </div>
 </div>
@@ -11865,6 +11865,7 @@ div#notebook {
         <li><a href="#Y-(Youden-index)">Youden Index</a></li>
         <li><a href="#PLRI-(Positive-likelihood-ratio-interpretation)">Positive Likelihood Ratio Interpretation</a></li>
         <li><a href="#DPI-(Discriminant-power-interpretation)">Discriminant Power Interpretation</a></li>
+        <li><a href="#AUCI-(AUC-value-interpretation)">AUC Value Interpretation</a></li>
     </ol>
     &nbsp;
     <li><a href="#Overall-statistics">Overall Statistics</a></li>
@@ -11964,10 +11965,10 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<div style="text-align:center;">
+<p><div style="text-align:center;">
     <img src="../images/block_diagram.jpg">
-    <p>Fig1. PyCM Block Diagram</p>
-</div>
+</div></p>
+<center><p style="text-align:center;">Fig1. PyCM Block Diagram</p></center>
 </div>
 </div>
 </div>
@@ -11984,7 +11985,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Source-code">Source code<a class="anchor-link" href="#Source-code">&#182;</a></h3><ul>
-<li>Download <a href="https://github.com/sepandhaghighi/pycm/archive/v1.5.zip">Version 1.5</a> or <a href="https://github.com/sepandhaghighi/pycm/archive/dev.zip">Latest Source </a></li>
+<li>Download <a href="https://github.com/sepandhaghighi/pycm/archive/v1.6.zip">Version 1.6</a> or <a href="https://github.com/sepandhaghighi/pycm/archive/dev.zip">Latest Source </a></li>
 <li>Run <code>pip install -r requirements.txt</code> or <code>pip3 install -r requirements.txt</code> (Need root access)</li>
 <li>Run <code>python3 setup.py install</code> or <code>python setup.py install</code> (Need root access)</li>
 </ul>
@@ -11998,7 +11999,19 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="PyPI">PyPI<a class="anchor-link" href="#PyPI">&#182;</a></h3><ul>
 <li>Check <a href="https://packaging.python.org/installing/">Python Packaging User Guide</a>     </li>
-<li>Run <code>pip install pycm --upgrade</code> or <code>pip3 install pycm --upgrade</code> (Need root access)</li>
+<li>Run <code>pip install pycm==1.6</code> or <code>pip3 install pycm==1.6</code> (Need root access)</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Conda">Conda<a class="anchor-link" href="#Conda">&#182;</a></h3><ul>
+<li>Check <a href="https://conda.io/docs/user-guide/tasks/manage-pkgs.html#installing-packages-from-anaconda-org">Conda Managing Package</a></li>
+<li><code>conda install -c sepandhaghighi pycm</code> (Need root access)</li>
 </ul>
 
 </div>
@@ -12240,6 +12253,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <div class="output_text output_subarea output_execute_result">
 <pre>{&#39;ACC&#39;: {0: 0.8333333333333334, 1: 0.75, 2: 0.5833333333333334},
  &#39;AUC&#39;: {0: 0.8888888888888888, 1: 0.611111111111111, 2: 0.5833333333333333},
+ &#39;AUCI&#39;: {0: &#39;Very Good&#39;, 1: &#39;Fair&#39;, 2: &#39;Poor&#39;},
  &#39;BM&#39;: {0: 0.7777777777777777, 1: 0.2222222222222221, 2: 0.16666666666666652},
  &#39;CEN&#39;: {0: 0.25, 1: 0.49657842846620864, 2: 0.6044162769630221},
  &#39;DOR&#39;: {0: &#39;None&#39;, 1: 3.999999999999998, 2: 1.9999999999999998},
@@ -12334,14 +12348,14 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <pre>{&#39;95% CI&#39;: (0.30438856248221097, 0.8622781041844558),
  &#39;AUNP&#39;: 0.6666666666666666,
  &#39;AUNU&#39;: 0.6944444444444443,
- &#39;Bennett_S&#39;: 0.37500000000000006,
+ &#39;Bennett S&#39;: 0.37500000000000006,
  &#39;CBA&#39;: 0.4777777777777778,
  &#39;Chi-Squared&#39;: 6.6,
  &#39;Chi-Squared DF&#39;: 4,
  &#39;Conditional Entropy&#39;: 0.9591479170272448,
- &#39;Cramer_V&#39;: 0.5244044240850757,
+ &#39;Cramer V&#39;: 0.5244044240850757,
  &#39;Cross Entropy&#39;: 1.5935164295556343,
- &#39;Gwet_AC1&#39;: 0.3893129770992367,
+ &#39;Gwet AC1&#39;: 0.3893129770992367,
  &#39;Hamming Loss&#39;: 0.41666666666666663,
  &#39;Joint Entropy&#39;: 2.4591479170272446,
  &#39;KL Divergence&#39;: 0.09351642955563438,
@@ -12354,29 +12368,29 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
  &#39;Lambda B&#39;: 0.42857142857142855,
  &#39;Mutual Information&#39;: 0.5242078379544426,
  &#39;NIR&#39;: 0.5,
- &#39;Overall_ACC&#39;: 0.5833333333333334,
- &#39;Overall_CEN&#39;: 0.4638112995385119,
- &#39;Overall_J&#39;: (1.225, 0.4083333333333334),
- &#39;Overall_MCC&#39;: 0.36666666666666664,
- &#39;Overall_MCEN&#39;: 0.5189369467580801,
- &#39;Overall_RACC&#39;: 0.3541666666666667,
- &#39;Overall_RACCU&#39;: 0.3645833333333333,
+ &#39;Overall ACC&#39;: 0.5833333333333334,
+ &#39;Overall CEN&#39;: 0.4638112995385119,
+ &#39;Overall J&#39;: (1.225, 0.4083333333333334),
+ &#39;Overall MCC&#39;: 0.36666666666666664,
+ &#39;Overall MCEN&#39;: 0.5189369467580801,
+ &#39;Overall RACC&#39;: 0.3541666666666667,
+ &#39;Overall RACCU&#39;: 0.3645833333333333,
  &#39;P-Value&#39;: 0.38720703125,
- &#39;PPV_Macro&#39;: 0.5666666666666668,
- &#39;PPV_Micro&#39;: 0.5833333333333334,
+ &#39;PPV Macro&#39;: 0.5666666666666668,
+ &#39;PPV Micro&#39;: 0.5833333333333334,
  &#39;Phi-Squared&#39;: 0.5499999999999999,
  &#39;RCI&#39;: 0.3494718919696284,
  &#39;RR&#39;: 4.0,
  &#39;Reference Entropy&#39;: 1.5,
  &#39;Response Entropy&#39;: 1.4833557549816874,
- &#39;Scott_PI&#39;: 0.34426229508196726,
+ &#39;SOA1(Landis &amp; Koch)&#39;: &#39;Fair&#39;,
+ &#39;SOA2(Fleiss)&#39;: &#39;Poor&#39;,
+ &#39;SOA3(Altman)&#39;: &#39;Fair&#39;,
+ &#39;SOA4(Cicchetti)&#39;: &#39;Poor&#39;,
+ &#39;Scott PI&#39;: 0.34426229508196726,
  &#39;Standard Error&#39;: 0.14231876063832777,
- &#39;Strength_Of_Agreement(Altman)&#39;: &#39;Fair&#39;,
- &#39;Strength_Of_Agreement(Cicchetti)&#39;: &#39;Poor&#39;,
- &#39;Strength_Of_Agreement(Fleiss)&#39;: &#39;Poor&#39;,
- &#39;Strength_Of_Agreement(Landis and Koch)&#39;: &#39;Fair&#39;,
- &#39;TPR_Macro&#39;: 0.611111111111111,
- &#39;TPR_Micro&#39;: 0.5833333333333334,
+ &#39;TPR Macro&#39;: 0.611111111111111,
+ &#39;TPR Micro&#39;: 0.5833333333333334,
  &#39;Zero-one Loss&#39;: 5}</pre>
 </div>
 
@@ -12392,6 +12406,16 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
     <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 0.3</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  `_` removed from overall statistics names in <span style="color:red;">version 1.6</span> </li>
 </ul>
 </div>
 </div>
@@ -12764,6 +12788,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <div class="output_text output_subarea output_execute_result">
 <pre>{&#39;ACC&#39;: {0: 0.8333333333333334, 1: 0.75, 2: 0.5833333333333334},
  &#39;AUC&#39;: {0: 0.8888888888888888, 1: 0.611111111111111, 2: 0.5833333333333333},
+ &#39;AUCI&#39;: {0: &#39;Very Good&#39;, 1: &#39;Fair&#39;, 2: &#39;Poor&#39;},
  &#39;BM&#39;: {0: 0.7777777777777777, 1: 0.2222222222222221, 2: 0.16666666666666652},
  &#39;CEN&#39;: {0: 0.25, 1: 0.49657842846620864, 2: 0.6044162769630221},
  &#39;DOR&#39;: {0: &#39;None&#39;, 1: 3.999999999999998, 2: 1.9999999999999998},
@@ -12848,14 +12873,14 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <pre>{&#39;95% CI&#39;: (0.30438856248221097, 0.8622781041844558),
  &#39;AUNP&#39;: 0.6666666666666666,
  &#39;AUNU&#39;: 0.6944444444444443,
- &#39;Bennett_S&#39;: 0.37500000000000006,
+ &#39;Bennett S&#39;: 0.37500000000000006,
  &#39;CBA&#39;: 0.4777777777777778,
  &#39;Chi-Squared&#39;: 6.6,
  &#39;Chi-Squared DF&#39;: 4,
  &#39;Conditional Entropy&#39;: 0.9591479170272448,
- &#39;Cramer_V&#39;: 0.5244044240850757,
+ &#39;Cramer V&#39;: 0.5244044240850757,
  &#39;Cross Entropy&#39;: 1.5935164295556343,
- &#39;Gwet_AC1&#39;: 0.3893129770992367,
+ &#39;Gwet AC1&#39;: 0.3893129770992367,
  &#39;Hamming Loss&#39;: 0.41666666666666663,
  &#39;Joint Entropy&#39;: 2.4591479170272446,
  &#39;KL Divergence&#39;: 0.09351642955563438,
@@ -12868,29 +12893,29 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
  &#39;Lambda B&#39;: 0.42857142857142855,
  &#39;Mutual Information&#39;: 0.5242078379544426,
  &#39;NIR&#39;: 0.5,
- &#39;Overall_ACC&#39;: 0.5833333333333334,
- &#39;Overall_CEN&#39;: 0.4638112995385119,
- &#39;Overall_J&#39;: (1.225, 0.4083333333333334),
- &#39;Overall_MCC&#39;: 0.36666666666666664,
- &#39;Overall_MCEN&#39;: 0.5189369467580801,
- &#39;Overall_RACC&#39;: 0.3541666666666667,
- &#39;Overall_RACCU&#39;: 0.3645833333333333,
+ &#39;Overall ACC&#39;: 0.5833333333333334,
+ &#39;Overall CEN&#39;: 0.4638112995385119,
+ &#39;Overall J&#39;: (1.225, 0.4083333333333334),
+ &#39;Overall MCC&#39;: 0.36666666666666664,
+ &#39;Overall MCEN&#39;: 0.5189369467580801,
+ &#39;Overall RACC&#39;: 0.3541666666666667,
+ &#39;Overall RACCU&#39;: 0.3645833333333333,
  &#39;P-Value&#39;: 0.38720703125,
- &#39;PPV_Macro&#39;: 0.5666666666666668,
- &#39;PPV_Micro&#39;: 0.5833333333333334,
+ &#39;PPV Macro&#39;: 0.5666666666666668,
+ &#39;PPV Micro&#39;: 0.5833333333333334,
  &#39;Phi-Squared&#39;: 0.5499999999999999,
  &#39;RCI&#39;: 0.3494718919696284,
  &#39;RR&#39;: 4.0,
  &#39;Reference Entropy&#39;: 1.5,
  &#39;Response Entropy&#39;: 1.4833557549816874,
- &#39;Scott_PI&#39;: 0.34426229508196726,
+ &#39;SOA1(Landis &amp; Koch)&#39;: &#39;Fair&#39;,
+ &#39;SOA2(Fleiss)&#39;: &#39;Poor&#39;,
+ &#39;SOA3(Altman)&#39;: &#39;Fair&#39;,
+ &#39;SOA4(Cicchetti)&#39;: &#39;Poor&#39;,
+ &#39;Scott PI&#39;: 0.34426229508196726,
  &#39;Standard Error&#39;: 0.14231876063832777,
- &#39;Strength_Of_Agreement(Altman)&#39;: &#39;Fair&#39;,
- &#39;Strength_Of_Agreement(Cicchetti)&#39;: &#39;Poor&#39;,
- &#39;Strength_Of_Agreement(Fleiss)&#39;: &#39;Poor&#39;,
- &#39;Strength_Of_Agreement(Landis and Koch)&#39;: &#39;Fair&#39;,
- &#39;TPR_Macro&#39;: 0.611111111111111,
- &#39;TPR_Micro&#39;: 0.5833333333333334,
+ &#39;TPR Macro&#39;: 0.611111111111111,
+ &#39;TPR Micro&#39;: 0.5833333333333334,
  &#39;Zero-one Loss&#39;: 5}</pre>
 </div>
 
@@ -13170,7 +13195,7 @@ Actual
 <div class="text_cell_render border-box-sizing rendered_html">
 <div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">pycm</span> <span class="kn">import</span> <span class="n">online_help</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">online_help</span><span class="p">(</span><span class="s2">&quot;J&quot;</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">online_help</span><span class="p">(</span><span class="s2">&quot;Strength_Of_Agreement(Landis and Koch)&quot;</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">online_help</span><span class="p">(</span><span class="s2">&quot;SOA1(Landis &amp; Koch)&quot;</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">online_help</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
@@ -13217,93 +13242,94 @@ Example : online_help(&#34;J&#34;) or online_help(2)
 1-95% CI
 2-ACC
 3-AUC
-4-AUNP
-5-AUNU
-6-BM
-7-Bennett_S
-8-CBA
-9-CEN
-10-Chi-Squared
-11-Chi-Squared DF
-12-Conditional Entropy
-13-Cramer_V
-14-Cross Entropy
-15-DOR
-16-DP
-17-DPI
-18-ERR
-19-F0.5
-20-F1
-21-F2
-22-FDR
-23-FN
-24-FNR
-25-FOR
-26-FP
-27-FPR
-28-G
-29-Gwet_AC1
-30-Hamming Loss
-31-IS
-32-J
-33-Joint Entropy
-34-KL Divergence
-35-Kappa
-36-Kappa 95% CI
-37-Kappa No Prevalence
-38-Kappa Standard Error
-39-Kappa Unbiased
-40-Lambda A
-41-Lambda B
-42-MCC
-43-MCEN
-44-MK
-45-Mutual Information
-46-N
-47-NIR
-48-NLR
-49-NPV
-50-Overall_ACC
-51-Overall_CEN
-52-Overall_J
-53-Overall_MCC
-54-Overall_MCEN
-55-Overall_RACC
-56-Overall_RACCU
-57-P
-58-P-Value
-59-PLR
-60-PLRI
-61-POP
-62-PPV
-63-PPV_Macro
-64-PPV_Micro
-65-PRE
-66-Phi-Squared
-67-RACC
-68-RACCU
-69-RCI
-70-RR
-71-Reference Entropy
-72-Response Entropy
-73-Scott_PI
-74-Standard Error
-75-Strength_Of_Agreement(Altman)
-76-Strength_Of_Agreement(Cicchetti)
-77-Strength_Of_Agreement(Fleiss)
-78-Strength_Of_Agreement(Landis and Koch)
-79-TN
-80-TNR
-81-TON
-82-TOP
-83-TP
-84-TPR
-85-TPR_Macro
-86-TPR_Micro
-87-Y
-88-Zero-one Loss
-89-dInd
-90-sInd
+4-AUCI
+5-AUNP
+6-AUNU
+7-BM
+8-Bennett S
+9-CBA
+10-CEN
+11-Chi-Squared
+12-Chi-Squared DF
+13-Conditional Entropy
+14-Cramer V
+15-Cross Entropy
+16-DOR
+17-DP
+18-DPI
+19-ERR
+20-F0.5
+21-F1
+22-F2
+23-FDR
+24-FN
+25-FNR
+26-FOR
+27-FP
+28-FPR
+29-G
+30-Gwet AC1
+31-Hamming Loss
+32-IS
+33-J
+34-Joint Entropy
+35-KL Divergence
+36-Kappa
+37-Kappa 95% CI
+38-Kappa No Prevalence
+39-Kappa Standard Error
+40-Kappa Unbiased
+41-Lambda A
+42-Lambda B
+43-MCC
+44-MCEN
+45-MK
+46-Mutual Information
+47-N
+48-NIR
+49-NLR
+50-NPV
+51-Overall ACC
+52-Overall CEN
+53-Overall J
+54-Overall MCC
+55-Overall MCEN
+56-Overall RACC
+57-Overall RACCU
+58-P
+59-P-Value
+60-PLR
+61-PLRI
+62-POP
+63-PPV
+64-PPV Macro
+65-PPV Micro
+66-PRE
+67-Phi-Squared
+68-RACC
+69-RACCU
+70-RCI
+71-RR
+72-Reference Entropy
+73-Response Entropy
+74-SOA1(Landis &amp; Koch)
+75-SOA2(Fleiss)
+76-SOA3(Altman)
+77-SOA4(Cicchetti)
+78-Scott PI
+79-Standard Error
+80-TN
+81-TNR
+82-TON
+83-TOP
+84-TP
+85-TPR
+86-TPR Macro
+87-TPR Micro
+88-Y
+89-Zero-one Loss
+90-dInd
+91-sInd
 </pre>
 </div>
 </div>
@@ -16142,6 +16168,100 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="AUCI-(AUC-value-interpretation)">AUCI (AUC value interpretation)<a class="anchor-link" href="#AUCI-(AUC-value-interpretation)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For more information visit <a href="#References">[33]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+       <tr>
+           <td style="text-align:center">AUC</td>
+           <td style="text-align:center">Model performance</td>
+       </tr>
+        <tr>
+           <td style="text-align:center">0.5 - 0.6</td>
+           <td style="text-align:center">Poor</td>
+       </tr>
+       <tr>
+           <td style="text-align:center">0.6 - 0.7</td>
+           <td style="text-align:center">Fair</td>
+       </tr>
+        <tr>
+           <td style="text-align:center">0.7 - 0.8</td>
+           <td style="text-align:center">Good</td>
+       </tr>
+        <tr>
+           <td style="text-align:center"> 0.8 - 0.9</td>
+           <td style="text-align:center">Very Good</td>
+       </tr>
+       <tr>
+           <td style="text-align:center">0.9 - 1.0</td>
+           <td style="text-align:center">Excellent</td>
+       </tr>
+
+</table>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AUCI</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[74]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;L1&#39;: &#39;Very Good&#39;, &#39;L2&#39;: &#39;Fair&#39;, &#39;L3&#39;: &#39;Poor&#39;}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 1.6</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Overall-statistics">Overall statistics<a class="anchor-link" href="#Overall-statistics">&#182;</a></h2>
 </div>
 </div>
@@ -16175,7 +16295,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Kappa</span>
@@ -16191,7 +16311,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[74]:</div>
+<div class="prompt output_prompt">Out[75]:</div>
 
 
 
@@ -16244,7 +16364,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">KappaUnbiased</span>
@@ -16260,7 +16380,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[75]:</div>
+<div class="prompt output_prompt">Out[76]:</div>
 
 
 
@@ -16313,7 +16433,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">KappaNoPrevalence</span>
@@ -16329,7 +16449,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[76]:</div>
+<div class="prompt output_prompt">Out[77]:</div>
 
 
 
@@ -16391,7 +16511,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Kappa_SE</span>
@@ -16407,7 +16527,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[77]:</div>
+<div class="prompt output_prompt">Out[78]:</div>
 
 
 
@@ -16424,7 +16544,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Kappa_CI</span>
@@ -16440,7 +16560,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[78]:</div>
+<div class="prompt output_prompt">Out[79]:</div>
 
 
 
@@ -16503,7 +16623,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Chi_Squared</span>
@@ -16519,7 +16639,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[79]:</div>
+<div class="prompt output_prompt">Out[80]:</div>
 
 
 
@@ -16572,7 +16692,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">DF</span>
@@ -16588,7 +16708,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[80]:</div>
+<div class="prompt output_prompt">Out[81]:</div>
 
 
 
@@ -16642,7 +16762,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Phi_Squared</span>
@@ -16658,7 +16778,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[81]:</div>
+<div class="prompt output_prompt">Out[82]:</div>
 
 
 
@@ -16712,7 +16832,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">V</span>
@@ -16728,7 +16848,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[82]:</div>
+<div class="prompt output_prompt">Out[83]:</div>
 
 
 
@@ -16791,7 +16911,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CI</span>
@@ -16807,7 +16927,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[83]:</div>
+<div class="prompt output_prompt">Out[84]:</div>
 
 
 
@@ -16824,7 +16944,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SE</span>
@@ -16840,7 +16960,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[84]:</div>
+<div class="prompt output_prompt">Out[85]:</div>
 
 
 
@@ -16904,7 +17024,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">S</span>
@@ -16920,7 +17040,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[85]:</div>
+<div class="prompt output_prompt">Out[86]:</div>
 
 
 
@@ -16983,7 +17103,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PI</span>
@@ -16999,7 +17119,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[86]:</div>
+<div class="prompt output_prompt">Out[87]:</div>
 
 
 
@@ -17070,7 +17190,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="prompt input_prompt">In&nbsp;[88]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AC1</span>
@@ -17086,7 +17206,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[87]:</div>
+<div class="prompt output_prompt">Out[88]:</div>
 
 
 
@@ -17157,7 +17277,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[88]:</div>
+<div class="prompt input_prompt">In&nbsp;[89]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ReferenceEntropy</span>
@@ -17173,7 +17293,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[88]:</div>
+<div class="prompt output_prompt">Out[89]:</div>
 
 
 
@@ -17244,7 +17364,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[89]:</div>
+<div class="prompt input_prompt">In&nbsp;[90]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ResponseEntropy</span>
@@ -17260,7 +17380,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[89]:</div>
+<div class="prompt output_prompt">Out[90]:</div>
 
 
 
@@ -17341,7 +17461,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[90]:</div>
+<div class="prompt input_prompt">In&nbsp;[91]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CrossEntropy</span>
@@ -17357,7 +17477,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[90]:</div>
+<div class="prompt output_prompt">Out[91]:</div>
 
 
 
@@ -17428,7 +17548,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">JointEntropy</span>
@@ -17444,7 +17564,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[91]:</div>
+<div class="prompt output_prompt">Out[92]:</div>
 
 
 
@@ -17516,7 +17636,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="prompt input_prompt">In&nbsp;[93]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ConditionalEntropy</span>
@@ -17532,7 +17652,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[92]:</div>
+<div class="prompt output_prompt">Out[93]:</div>
 
 
 
@@ -17604,7 +17724,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[93]:</div>
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">KL</span>
@@ -17620,7 +17740,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[93]:</div>
+<div class="prompt output_prompt">Out[94]:</div>
 
 
 
@@ -17711,7 +17831,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[95]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">MutualInformation</span>
@@ -17727,7 +17847,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[94]:</div>
+<div class="prompt output_prompt">Out[95]:</div>
 
 
 
@@ -17781,7 +17901,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[95]:</div>
+<div class="prompt input_prompt">In&nbsp;[96]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">LambdaA</span>
@@ -17797,7 +17917,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[95]:</div>
+<div class="prompt output_prompt">Out[96]:</div>
 
 
 
@@ -17851,7 +17971,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[96]:</div>
+<div class="prompt input_prompt">In&nbsp;[97]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">LambdaB</span>
@@ -17867,7 +17987,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[96]:</div>
+<div class="prompt output_prompt">Out[97]:</div>
 
 
 
@@ -17950,7 +18070,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[97]:</div>
+<div class="prompt input_prompt">In&nbsp;[98]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA1</span>
@@ -17966,7 +18086,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[97]:</div>
+<div class="prompt output_prompt">Out[98]:</div>
 
 
 
@@ -18037,7 +18157,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="prompt input_prompt">In&nbsp;[99]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA2</span>
@@ -18053,7 +18173,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[98]:</div>
+<div class="prompt output_prompt">Out[99]:</div>
 
 
 
@@ -18132,7 +18252,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="prompt input_prompt">In&nbsp;[100]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA3</span>
@@ -18148,7 +18268,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[99]:</div>
+<div class="prompt output_prompt">Out[100]:</div>
 
 
 
@@ -18223,7 +18343,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[100]:</div>
+<div class="prompt input_prompt">In&nbsp;[101]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA4</span>
@@ -18239,7 +18359,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[100]:</div>
+<div class="prompt output_prompt">Out[101]:</div>
 
 
 
@@ -18292,7 +18412,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[101]:</div>
+<div class="prompt input_prompt">In&nbsp;[102]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_ACC</span>
@@ -18308,7 +18428,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[101]:</div>
+<div class="prompt output_prompt">Out[102]:</div>
 
 
 
@@ -18361,7 +18481,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="prompt input_prompt">In&nbsp;[103]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_RACC</span>
@@ -18377,7 +18497,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[102]:</div>
+<div class="prompt output_prompt">Out[103]:</div>
 
 
 
@@ -18430,7 +18550,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="prompt input_prompt">In&nbsp;[104]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_RACCU</span>
@@ -18446,7 +18566,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[103]:</div>
+<div class="prompt output_prompt">Out[104]:</div>
 
 
 
@@ -18499,7 +18619,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[104]:</div>
+<div class="prompt input_prompt">In&nbsp;[105]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PPV_Micro</span>
@@ -18515,7 +18635,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[104]:</div>
+<div class="prompt output_prompt">Out[105]:</div>
 
 
 
@@ -18568,7 +18688,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="prompt input_prompt">In&nbsp;[106]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TPR_Micro</span>
@@ -18584,7 +18704,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[105]:</div>
+<div class="prompt output_prompt">Out[106]:</div>
 
 
 
@@ -18637,7 +18757,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[106]:</div>
+<div class="prompt input_prompt">In&nbsp;[107]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PPV_Macro</span>
@@ -18653,7 +18773,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[106]:</div>
+<div class="prompt output_prompt">Out[107]:</div>
 
 
 
@@ -18706,7 +18826,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[107]:</div>
+<div class="prompt input_prompt">In&nbsp;[108]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TPR_Macro</span>
@@ -18722,7 +18842,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[107]:</div>
+<div class="prompt output_prompt">Out[108]:</div>
 
 
 
@@ -18793,7 +18913,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[108]:</div>
+<div class="prompt input_prompt">In&nbsp;[109]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_J</span>
@@ -18809,7 +18929,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[108]:</div>
+<div class="prompt output_prompt">Out[109]:</div>
 
 
 
@@ -18862,7 +18982,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[109]:</div>
+<div class="prompt input_prompt">In&nbsp;[110]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">HammingLoss</span>
@@ -18878,7 +18998,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[109]:</div>
+<div class="prompt output_prompt">Out[110]:</div>
 
 
 
@@ -18931,7 +19051,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[110]:</div>
+<div class="prompt input_prompt">In&nbsp;[111]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ZeroOneLoss</span>
@@ -18947,7 +19067,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[110]:</div>
+<div class="prompt output_prompt">Out[111]:</div>
 
 
 
@@ -19000,7 +19120,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[111]:</div>
+<div class="prompt input_prompt">In&nbsp;[112]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">NIR</span>
@@ -19016,7 +19136,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[111]:</div>
+<div class="prompt output_prompt">Out[112]:</div>
 
 
 
@@ -19096,7 +19216,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[112]:</div>
+<div class="prompt input_prompt">In&nbsp;[113]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PValue</span>
@@ -19112,7 +19232,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[112]:</div>
+<div class="prompt output_prompt">Out[113]:</div>
 
 
 
@@ -19174,7 +19294,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[113]:</div>
+<div class="prompt input_prompt">In&nbsp;[114]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_CEN</span>
@@ -19190,7 +19310,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[113]:</div>
+<div class="prompt output_prompt">Out[114]:</div>
 
 
 
@@ -19261,7 +19381,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[114]:</div>
+<div class="prompt input_prompt">In&nbsp;[115]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_MCEN</span>
@@ -19277,7 +19397,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[114]:</div>
+<div class="prompt output_prompt">Out[115]:</div>
 
 
 
@@ -19357,7 +19477,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[115]:</div>
+<div class="prompt input_prompt">In&nbsp;[116]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_MCC</span>
@@ -19373,7 +19493,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[115]:</div>
+<div class="prompt output_prompt">Out[116]:</div>
 
 
 
@@ -19426,7 +19546,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[116]:</div>
+<div class="prompt input_prompt">In&nbsp;[117]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">RR</span>
@@ -19442,7 +19562,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[116]:</div>
+<div class="prompt output_prompt">Out[117]:</div>
 
 
 
@@ -19495,7 +19615,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[117]:</div>
+<div class="prompt input_prompt">In&nbsp;[118]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CBA</span>
@@ -19511,7 +19631,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[117]:</div>
+<div class="prompt output_prompt">Out[118]:</div>
 
 
 
@@ -19564,7 +19684,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[118]:</div>
+<div class="prompt input_prompt">In&nbsp;[119]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AUNU</span>
@@ -19580,7 +19700,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[118]:</div>
+<div class="prompt output_prompt">Out[119]:</div>
 
 
 
@@ -19633,7 +19753,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[119]:</div>
+<div class="prompt input_prompt">In&nbsp;[120]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AUNP</span>
@@ -19649,7 +19769,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[119]:</div>
+<div class="prompt output_prompt">Out[120]:</div>
 
 
 
@@ -19730,7 +19850,7 @@ comparing relative classifier information while classifier information (mutual i
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[120]:</div>
+<div class="prompt input_prompt">In&nbsp;[121]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">RCI</span>
@@ -19746,7 +19866,7 @@ comparing relative classifier information while classifier information (mutual i
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[120]:</div>
+<div class="prompt output_prompt">Out[121]:</div>
 
 
 
@@ -19789,7 +19909,7 @@ comparing relative classifier information while classifier information (mutual i
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[121]:</div>
+<div class="prompt input_prompt">In&nbsp;[122]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
@@ -19826,14 +19946,14 @@ Overall Statistics :
 95% CI                                                           (0.30439,0.86228)
 AUNP                                                             0.68571
 AUNU                                                             0.67857
-Bennett_S                                                        0.375
+Bennett S                                                        0.375
 CBA                                                              0.47778
 Chi-Squared                                                      6.6
 Chi-Squared DF                                                   4
 Conditional Entropy                                              0.97579
-Cramer_V                                                         0.5244
+Cramer V                                                         0.5244
 Cross Entropy                                                    1.58333
-Gwet_AC1                                                         0.38931
+Gwet AC1                                                         0.38931
 Hamming Loss                                                     0.41667
 Joint Entropy                                                    2.45915
 KL Divergence                                                    0.09998
@@ -19846,29 +19966,29 @@ Lambda A                                                         0.42857
 Lambda B                                                         0.16667
 Mutual Information                                               0.52421
 NIR                                                              0.41667
-Overall_ACC                                                      0.58333
-Overall_CEN                                                      0.46381
-Overall_J                                                        (1.225,0.40833)
-Overall_MCC                                                      0.36667
-Overall_MCEN                                                     0.51894
-Overall_RACC                                                     0.35417
-Overall_RACCU                                                    0.36458
+Overall ACC                                                      0.58333
+Overall CEN                                                      0.46381
+Overall J                                                        (1.225,0.40833)
+Overall MCC                                                      0.36667
+Overall MCEN                                                     0.51894
+Overall RACC                                                     0.35417
+Overall RACCU                                                    0.36458
 P-Value                                                          0.18926
-PPV_Macro                                                        0.61111
-PPV_Micro                                                        0.58333
+PPV Macro                                                        0.61111
+PPV Micro                                                        0.58333
 Phi-Squared                                                      0.55
 RCI                                                              0.35339
 RR                                                               4.0
 Reference Entropy                                                1.48336
 Response Entropy                                                 1.5
-Scott_PI                                                         0.34426
+SOA1(Landis &amp; Koch)                                              Fair
+SOA2(Fleiss)                                                     Poor
+SOA3(Altman)                                                     Fair
+SOA4(Cicchetti)                                                  Poor
+Scott PI                                                         0.34426
 Standard Error                                                   0.14232
-Strength_Of_Agreement(Altman)                                    Fair
-Strength_Of_Agreement(Cicchetti)                                 Poor
-Strength_Of_Agreement(Fleiss)                                    Poor
-Strength_Of_Agreement(Landis and Koch)                           Fair
-TPR_Macro                                                        0.56667
-TPR_Micro                                                        0.58333
+TPR Macro                                                        0.56667
+TPR Micro                                                        0.58333
 Zero-one Loss                                                    5
 
 Class Statistics :
@@ -19876,6 +19996,7 @@ Class Statistics :
 Classes                                                          L1                      L2                      L3                      
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333                 
 AUC(Area under the roc curve)                                    0.8                     0.65                    0.58571                 
+AUCI(Auc value interpretation)                                   Very Good               Fair                    Poor                    
 BM(Informedness or bookmaker informedness)                       0.6                     0.3                     0.17143                 
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442                 
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0                     
@@ -19936,7 +20057,7 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[122]:</div>
+<div class="prompt input_prompt">In&nbsp;[123]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">print_matrix</span><span class="p">()</span>
@@ -19975,7 +20096,7 @@ L3               0     2     3
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[123]:</div>
+<div class="prompt input_prompt">In&nbsp;[124]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">matrix</span>
@@ -19991,7 +20112,7 @@ L3               0     2     3
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[123]:</div>
+<div class="prompt output_prompt">Out[124]:</div>
 
 
 
@@ -20013,7 +20134,7 @@ L3               0     2     3
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[124]:</div>
+<div class="prompt input_prompt">In&nbsp;[125]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">print_matrix</span><span class="p">(</span><span class="n">one_vs_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">class_name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
@@ -20080,7 +20201,7 @@ L3               0     2     3
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[125]:</div>
+<div class="prompt input_prompt">In&nbsp;[126]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
@@ -20119,7 +20240,7 @@ L3               0.0    0.4    0.6
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[126]:</div>
+<div class="prompt input_prompt">In&nbsp;[127]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">normalized_matrix</span>
@@ -20135,7 +20256,7 @@ L3               0.0    0.4    0.6
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[126]:</div>
+<div class="prompt output_prompt">Out[127]:</div>
 
 
 
@@ -20157,7 +20278,7 @@ L3               0.0    0.4    0.6
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[127]:</div>
+<div class="prompt input_prompt">In&nbsp;[128]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">(</span><span class="n">one_vs_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">class_name</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
@@ -20224,7 +20345,7 @@ L3               0.0    0.4    0.6
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[128]:</div>
+<div class="prompt input_prompt">In&nbsp;[129]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span>
@@ -20249,14 +20370,14 @@ L3               0.0    0.4    0.6
 95% CI                                                           (0.30439,0.86228)
 AUNP                                                             0.68571
 AUNU                                                             0.67857
-Bennett_S                                                        0.375
+Bennett S                                                        0.375
 CBA                                                              0.47778
 Chi-Squared                                                      6.6
 Chi-Squared DF                                                   4
 Conditional Entropy                                              0.97579
-Cramer_V                                                         0.5244
+Cramer V                                                         0.5244
 Cross Entropy                                                    1.58333
-Gwet_AC1                                                         0.38931
+Gwet AC1                                                         0.38931
 Hamming Loss                                                     0.41667
 Joint Entropy                                                    2.45915
 KL Divergence                                                    0.09998
@@ -20269,29 +20390,29 @@ Lambda A                                                         0.42857
 Lambda B                                                         0.16667
 Mutual Information                                               0.52421
 NIR                                                              0.41667
-Overall_ACC                                                      0.58333
-Overall_CEN                                                      0.46381
-Overall_J                                                        (1.225,0.40833)
-Overall_MCC                                                      0.36667
-Overall_MCEN                                                     0.51894
-Overall_RACC                                                     0.35417
-Overall_RACCU                                                    0.36458
+Overall ACC                                                      0.58333
+Overall CEN                                                      0.46381
+Overall J                                                        (1.225,0.40833)
+Overall MCC                                                      0.36667
+Overall MCEN                                                     0.51894
+Overall RACC                                                     0.35417
+Overall RACCU                                                    0.36458
 P-Value                                                          0.18926
-PPV_Macro                                                        0.61111
-PPV_Micro                                                        0.58333
+PPV Macro                                                        0.61111
+PPV Micro                                                        0.58333
 Phi-Squared                                                      0.55
 RCI                                                              0.35339
 RR                                                               4.0
 Reference Entropy                                                1.48336
 Response Entropy                                                 1.5
-Scott_PI                                                         0.34426
+SOA1(Landis &amp; Koch)                                              Fair
+SOA2(Fleiss)                                                     Poor
+SOA3(Altman)                                                     Fair
+SOA4(Cicchetti)                                                  Poor
+Scott PI                                                         0.34426
 Standard Error                                                   0.14232
-Strength_Of_Agreement(Altman)                                    Fair
-Strength_Of_Agreement(Cicchetti)                                 Poor
-Strength_Of_Agreement(Fleiss)                                    Poor
-Strength_Of_Agreement(Landis and Koch)                           Fair
-TPR_Macro                                                        0.56667
-TPR_Micro                                                        0.58333
+TPR Macro                                                        0.56667
+TPR Micro                                                        0.58333
 Zero-one Loss                                                    5
 
 Class Statistics :
@@ -20299,6 +20420,7 @@ Class Statistics :
 Classes                                                          L1                      L2                      L3                      
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333                 
 AUC(Area under the roc curve)                                    0.8                     0.65                    0.58571                 
+AUCI(Auc value interpretation)                                   Very Good               Fair                    Poor                    
 BM(Informedness or bookmaker informedness)                       0.6                     0.3                     0.17143                 
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442                 
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0                     
@@ -20349,6 +20471,57 @@ sInd(Similarity index)                                           0.71716        
 </div>
 
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[130]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Overall Statistics : 
+
+Kappa                                                            0.35484
+
+Class Statistics :
+
+Classes                                                          L1                      L2                      L3                      
+ACC(Accuracy)                                                    0.83333                 0.75                    0.58333                 
+AUC(Area under the roc curve)                                    0.8                     0.65                    0.58571                 
+TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6                     0.5                     0.6                     
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  `overall_param` & `class_param` , new in <span style="color:red;">version 1.6 </span> </li>
+</ul>
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -20377,7 +20550,7 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[129]:</div>
+<div class="prompt input_prompt">In&nbsp;[131]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="s2">&quot;cm1&quot;</span><span class="p">)</span>
@@ -20393,7 +20566,7 @@ sInd(Similarity index)                                           0.71716        
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[129]:</div>
+<div class="prompt output_prompt">Out[131]:</div>
 
 
 
@@ -20411,7 +20584,41 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[130]:</div>
+<div class="prompt input_prompt">In&nbsp;[132]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="s2">&quot;cm1_filtered&quot;</span><span class="p">,</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[132]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\cm1_filtered.pycm&#39;,
+ &#39;Status&#39;: True}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[133]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -20427,7 +20634,7 @@ sInd(Similarity index)                                           0.71716        
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[130]:</div>
+<div class="prompt output_prompt">Out[133]:</div>
 
 
 
@@ -20442,6 +20649,16 @@ sInd(Similarity index)                                           0.71716        
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  `overall_param` & `class_param` , new in <span style="color:red;">version 1.6 </span> </li>
+</ul>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -20463,7 +20680,7 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[131]:</div>
+<div class="prompt input_prompt">In&nbsp;[134]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="s2">&quot;cm1&quot;</span><span class="p">)</span>
@@ -20479,7 +20696,7 @@ sInd(Similarity index)                                           0.71716        
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[131]:</div>
+<div class="prompt output_prompt">Out[134]:</div>
 
 
 
@@ -20497,7 +20714,41 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[132]:</div>
+<div class="prompt input_prompt">In&nbsp;[135]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="s2">&quot;cm1_filtered&quot;</span><span class="p">,</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[135]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\cm1_filtered.html&#39;,
+ &#39;Status&#39;: True}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[136]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -20513,7 +20764,7 @@ sInd(Similarity index)                                           0.71716        
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[132]:</div>
+<div class="prompt output_prompt">Out[136]:</div>
 
 
 
@@ -20528,6 +20779,16 @@ sInd(Similarity index)                                           0.71716        
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  `overall_param` & `class_param` , new in <span style="color:red;">version 1.6 </span> </li>
+</ul>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -20549,7 +20810,7 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[133]:</div>
+<div class="prompt input_prompt">In&nbsp;[137]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s2">&quot;cm1&quot;</span><span class="p">)</span>
@@ -20565,7 +20826,7 @@ sInd(Similarity index)                                           0.71716        
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[133]:</div>
+<div class="prompt output_prompt">Out[137]:</div>
 
 
 
@@ -20583,7 +20844,41 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[134]:</div>
+<div class="prompt input_prompt">In&nbsp;[138]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s2">&quot;cm1_filtered&quot;</span><span class="p">,</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[138]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\cm1_filtered.csv&#39;,
+ &#39;Status&#39;: True}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[139]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -20599,7 +20894,7 @@ sInd(Similarity index)                                           0.71716        
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[134]:</div>
+<div class="prompt output_prompt">Out[139]:</div>
 
 
 
@@ -20614,6 +20909,16 @@ sInd(Similarity index)                                           0.71716        
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  `class_param` , new in <span style="color:red;">version 1.6 </span> </li>
+</ul>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -20635,7 +20940,7 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[135]:</div>
+<div class="prompt input_prompt">In&nbsp;[140]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_obj</span><span class="p">(</span><span class="s2">&quot;cm1&quot;</span><span class="p">)</span>
@@ -20651,7 +20956,7 @@ sInd(Similarity index)                                           0.71716        
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[135]:</div>
+<div class="prompt output_prompt">Out[140]:</div>
 
 
 
@@ -20669,7 +20974,7 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[136]:</div>
+<div class="prompt input_prompt">In&nbsp;[141]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_obj</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -20685,7 +20990,7 @@ sInd(Similarity index)                                           0.71716        
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[136]:</div>
+<div class="prompt output_prompt">Out[141]:</div>
 
 
 
@@ -20721,7 +21026,7 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[137]:</div>
+<div class="prompt input_prompt">In&nbsp;[142]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -20755,7 +21060,7 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[138]:</div>
+<div class="prompt input_prompt">In&nbsp;[143]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -20789,7 +21094,7 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[139]:</div>
+<div class="prompt input_prompt">In&nbsp;[144]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -20823,7 +21128,7 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[140]:</div>
+<div class="prompt input_prompt">In&nbsp;[145]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -20857,7 +21162,7 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[141]:</div>
+<div class="prompt input_prompt">In&nbsp;[146]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -20891,7 +21196,7 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[142]:</div>
+<div class="prompt input_prompt">In&nbsp;[147]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -20925,7 +21230,7 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[143]:</div>
+<div class="prompt input_prompt">In&nbsp;[148]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -20998,6 +21303,10 @@ sInd(Similarity index)                                           0.71716        
 <h3 id="Example-5-(Sample-weights)">Example-5 (Sample weights)<a class="anchor-link" href="#Example-5-(Sample-weights)">&#182;</a></h3><ul>
 <li><a href="https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Example5.ipynb">Jupyter Notebook</a></li>
 <li><a href="http://www.shaghighi.ir/pycm/doc/Example5.html">HTML</a></li>
+</ul>
+<h3 id="Example-6-(Unbalanced-data)">Example-6 (Unbalanced data)<a class="anchor-link" href="#Example-6-(Unbalanced-data)">&#182;</a></h3><ul>
+<li><a href="https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Example6.ipynb">Jupyter Notebook</a></li>
+<li><a href="http://www.shaghighi.ir/pycm/doc/Example6.html">HTML</a></li>
 </ul>
 
 </div>

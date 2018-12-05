@@ -652,6 +652,18 @@ Actual
 'Fair'
 >>> DP_analysis(10)
 'Good'
+>>> AUC_analysis(0.5)
+'Poor'
+>>> AUC_analysis(0.65)
+'Fair'
+>>> AUC_analysis(0.75)
+'Good'
+>>> AUC_analysis(0.86)
+'Very Good'
+>>> AUC_analysis(0.97)
+'Excellent'
+>>> AUC_analysis(1.0)
+'Excellent'
 >>> PC_PI_calc(1,1,1)
 'None'
 >>> PC_PI_calc({1:12},{1:6},{1:45})

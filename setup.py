@@ -40,7 +40,7 @@ setup(
     author='Sepand Haghighi',
     author_email='sepand@qpage.ir',
     url='https://github.com/sepandhaghighi/pycm',
-    download_url='https://github.com/sepandhaghighi/pycm/tarball/v1.5',
+    download_url='https://github.com/sepandhaghighi/pycm/tarball/v1.6',
     keywords="confusion-matrix python3 python machine_learning ML",
     project_urls={
         'Webpage': 'http://pycm.shaghighi.ir',

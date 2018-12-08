@@ -556,9 +556,9 @@ def matrix_params_from_table(table, transpose=False):
     TN_dict = map_dict.copy()
     FP_dict = map_dict.copy()
     FN_dict = map_dict.copy()
-    sum_row = sum(list(table[i].values()))
     for i in classes:
         TP_dict[i] = table[i][i]
+        sum_row = sum(list(table[i].values()))
         for j in classes:
             if j != i:
                 FN_dict[i] += table[i][j]

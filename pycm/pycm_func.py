@@ -589,10 +589,6 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     classes = set(actual_vector).union(set(predict_vector))
     classes = sorted(classes)
     map_dict = {k: 0 for k in classes}
-    TP_dict = map_dict.copy()
-    TN_dict = map_dict.copy()
-    FP_dict = map_dict.copy()
-    FN_dict = map_dict.copy()
     table = {k: map_dict.copy() for k in classes}
     weight_vector = [1] * len(actual_vector)
     if isinstance(sample_weight, (list, numpy.ndarray)):
@@ -601,14 +597,7 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     for index, item in enumerate(actual_vector):
         if (item in classes) and (predict_vector[index] in classes):
             table[item][predict_vector[index]] += 1 * weight_vector[index]
-            if item == predict_vector[index]:
-                TP_dict[item] += 1 * weight_vector[index]
-            else:
-                FN_dict[item] += 1 * weight_vector[index]
-                FP_dict[predict_vector[index]] += 1 * weight_vector[index]
-            for i in classes:
-                if i != item and predict_vector[index] != i:
-                    TN_dict[i] += 1 * weight_vector[index]
+    [classes, table, TP_dict, TN_dict, FP_dict, FN_dict] = matrix_params_from_table(table)
     return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
 
 

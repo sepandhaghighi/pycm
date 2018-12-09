@@ -212,8 +212,7 @@ def overall_MCC_calc(classes, table, TOP, P):
         return "None"
 
 
-def CEN_misclassification_calc(classes, table, i, j, subject_class,
-                               modified=False):
+def CEN_misclassification_calc(table,TOP,P, i, j, subject_class,modified=False):
     '''
     This function calculate misclassification probability of classifying
     :param classes: classes
@@ -231,9 +230,7 @@ def CEN_misclassification_calc(classes, table, i, j, subject_class,
     :return: misclassification probability of classifying as float
     '''
     try:
-        result = 0
-        for k in classes:
-            result += (table[subject_class][k] + table[k][subject_class])
+        result = TOP + P
         if modified:
             result -= table[subject_class][subject_class]
         result = table[i][j] / result
@@ -242,7 +239,7 @@ def CEN_misclassification_calc(classes, table, i, j, subject_class,
         return "None"
 
 
-def CEN_calc(classes, table, class_name, modified=False):
+def CEN_calc(classes, table,TOP,P, class_name, modified=False):
     '''
     This function calculate CEN (Confusion Entropy)
     :param classes: classes
@@ -260,12 +257,8 @@ def CEN_calc(classes, table, class_name, modified=False):
         class_number = len(classes)
         for k in classes:
             if k != class_name:
-                P_j_k = CEN_misclassification_calc(classes, table,
-                                                   class_name, k,
-                                                   class_name, modified)
-                P_k_j = CEN_misclassification_calc(classes, table, k,
-                                                   class_name,
-                                                   class_name, modified)
+                P_j_k = CEN_misclassification_calc(table,TOP,P,class_name,k,class_name, modified)
+                P_k_j = CEN_misclassification_calc(table,TOP,P,k,class_name,class_name, modified)
                 if P_j_k != 0:
                     result += P_j_k * math.log(P_j_k, 2 * (class_number - 1))
                 if P_k_j != 0:
@@ -1671,8 +1664,8 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         RACCU[i] = RACCU_calc(TOP[i], P[i], POP[i])
         Jaccrd_Index[i] = jaccard_index_calc(TP[i], TOP[i], P[i])
         IS[i] = IS_calc(TP[i], FP[i], FN[i], POP[i])
-        CEN[i] = CEN_calc(classes, table, i)
-        MCEN[i] = CEN_calc(classes, table, i, True)
+        CEN[i] = CEN_calc(classes, table,TOP[i],P[i], i)
+        MCEN[i] = CEN_calc(classes, table,TOP[i],P[i], i, True)
         AUC[i] = AUC_calc(TNR[i], TPR[i])
         dInd[i] = dInd_calc(TNR[i], TPR[i])
         sInd[i] = sInd_calc(dInd[i])

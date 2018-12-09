@@ -276,7 +276,7 @@ def CEN_calc(classes, table,TOP,P, class_name, modified=False):
         return "None"
 
 
-def convex_combination(classes, table, class_name, modified=False):
+def convex_combination(classes,TP,TOP, P,class_name, modified=False):
     '''
     This function calculate Overall_CEN coefficient
     :param classes: classes
@@ -290,26 +290,24 @@ def convex_combination(classes, table, class_name, modified=False):
     :return: coefficient as float
     '''
     try:
-        up = 0
-        down = 0
         class_number = len(classes)
         alpha = 1
         if class_number == 2:
             alpha = 0
-        for k in classes:
-            up += (table[class_name][k] + table[k][class_name])
-            for l in classes:
-                down += (2 * table[k][l])
-            if modified:
-                down -= (alpha * table[k][k])
+        matrix_sum = sum(list(TOP.values()))
+        TP_sum = sum(list(TP.values()))
+        up = TOP[class_name] + P[class_name]
+        down = 2*matrix_sum
         if modified:
-            up -= table[class_name][class_name]
+            down -= (alpha * TP_sum)
+        if modified:
+            up -= TP[class_name]
         return up / down
     except Exception:
         return "None"
 
 
-def overall_CEN_calc(classes, table, CEN_dict, modified=False):
+def overall_CEN_calc(classes,TP,TOP,P,CEN_dict, modified=False):
     '''
     This function calculate Overall_CEN (Overall Confusion Entropy)
     :param classes: classes
@@ -325,7 +323,7 @@ def overall_CEN_calc(classes, table, CEN_dict, modified=False):
     try:
         result = 0
         for i in classes:
-            result += (convex_combination(classes, table, i, modified) *
+            result += (convex_combination(classes,TP,TOP,P, i, modified) *
                        CEN_dict[i])
         return result
     except Exception:
@@ -1520,8 +1518,8 @@ def overall_statistics(
     zero_one_loss = zero_one_loss_calc(TP, POP)
     NIR = NIR_calc(P, POP)
     p_value = p_value_calc(TP, POP, NIR)
-    overall_CEN = overall_CEN_calc(classes, table, CEN_dict)
-    overall_MCEN = overall_CEN_calc(classes, table, MCEN_dict, True)
+    overall_CEN = overall_CEN_calc(classes,TP,TOP,P, CEN_dict)
+    overall_MCEN = overall_CEN_calc(classes,TP,TOP,P, MCEN_dict, True)
     overall_MCC = overall_MCC_calc(classes, table, TOP, P)
     RR = RR_calc(classes, table)
     CBA = CBA_calc(classes, table, TOP, P)

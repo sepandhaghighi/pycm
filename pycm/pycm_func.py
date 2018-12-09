@@ -196,6 +196,10 @@ def overall_MCC_calc(classes, table, TOP, P):
     :type classes : list
     :param table: input matrix
     :type table : dict
+    :param TOP: Test outcome positive
+    :type TOP : dict
+    :param P: Condition positive
+    :type P : dict
     :return:  Overall_MCC as float
     '''
     try:
@@ -215,10 +219,12 @@ def overall_MCC_calc(classes, table, TOP, P):
 def CEN_misclassification_calc(table,TOP,P, i, j, subject_class,modified=False):
     '''
     This function calculate misclassification probability of classifying
-    :param classes: classes
-    :type classes : list
     :param table: input matrix
     :type table : dict
+    :param TOP: Test outcome positive
+    :type TOP : int
+    :param P: Condition positive
+    :type P : int
     :param i: table row index (class name)
     :type i : any valid type
     :param j: table col index (class name)

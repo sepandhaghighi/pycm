@@ -288,9 +288,9 @@ def convex_combination(classes,TP,TOP, P,class_name, modified=False):
     :param TP: True Positive Dict For All Classes
     :type TP : dict
     :param TOP: Test outcome positive
-    :type TOP : int
+    :type TOP : dict
     :param P: Condition positive
-    :type P : int
+    :type P : dict
     :param class_name: reviewed class name
     :type class_name : any valid type
     :param modified : modified mode flag
@@ -308,7 +308,6 @@ def convex_combination(classes,TP,TOP, P,class_name, modified=False):
         down = 2*matrix_sum
         if modified:
             down -= (alpha * TP_sum)
-        if modified:
             up -= TP[class_name]
         return up / down
     except Exception:
@@ -323,9 +322,9 @@ def overall_CEN_calc(classes,TP,TOP,P,CEN_dict, modified=False):
     :param TP: True Positive Dict For All Classes
     :type TP : dict
     :param TOP: Test outcome positive
-    :type TOP : int
+    :type TOP : dict
     :param P: Condition positive
-    :type P : int
+    :type P : dict
     :param CEN_dict: CEN dictionary for each class
     :type CEN_dict : dict
     :param modified : modified mode flag

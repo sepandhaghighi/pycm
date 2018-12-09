@@ -140,20 +140,18 @@ def CBA_calc(classes, table, TOP, P):
         return "None"
 
 
-def RR_calc(classes, table):
+def RR_calc(classes,TOP):
     '''
     This function calculate RR (Global Performance Index)
     :param classes: classes
     :type classes : list
-    :param table: input matrix
-    :type table : dict
+    :param TOP: Test outcome positive
+    :type TOP : dict
     :return: RR as float
     '''
     try:
-        result = 0
         class_number = len(classes)
-        for i in classes:
-            result += sum(list(table[i].values()))
+        result = sum(list(TOP.values()))
         return result / class_number
     except Exception:
         return "None"
@@ -1532,7 +1530,7 @@ def overall_statistics(
     overall_CEN = overall_CEN_calc(classes,TP,TOP,P, CEN_dict)
     overall_MCEN = overall_CEN_calc(classes,TP,TOP,P, MCEN_dict, True)
     overall_MCC = overall_MCC_calc(classes, table, TOP, P)
-    RR = RR_calc(classes, table)
+    RR = RR_calc(classes, TOP)
     CBA = CBA_calc(classes, table, TOP, P)
     AUNU = macro_calc(AUC_dict)
     AUNP = AUNP_calc(classes, P, POP, AUC_dict)

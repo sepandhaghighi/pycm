@@ -664,7 +664,6 @@ def joint_entropy_calc(classes, table, POP):
     '''
     try:
         result = 0
-        classes.sort()
         for i in classes:
             for index, j in enumerate(classes):
                 p_prime = table[i][j] / POP[i]
@@ -690,7 +689,6 @@ def conditional_entropy_calc(classes, table, P, POP):
     '''
     try:
         result = 0
-        classes.sort()
         for i in classes:
             temp = 0
             for index, j in enumerate(classes):
@@ -758,7 +756,6 @@ def lambda_B_calc(classes, table, TOP, POP):
     '''
     try:
         result = 0
-        classes.sort()
         length = list(POP.values())[0]
         maxresponse = max(list(TOP.values()))
         for i in classes:
@@ -784,7 +781,6 @@ def lambda_A_calc(classes, table, P, POP):
     '''
     try:
         result = 0
-        classes.sort()
         maxreference = max(list(P.values()))
         length = list(POP.values())[0]
         for i in classes:
@@ -815,7 +811,6 @@ def chi_square_calc(classes, table, TOP, P, POP):
     '''
     try:
         result = 0
-        classes.sort()
         for i in classes:
             for index, j in enumerate(classes):
                 expected = (TOP[j] * P[i]) / (POP[i])

@@ -252,6 +252,10 @@ def CEN_calc(classes, table,TOP,P, class_name, modified=False):
     :type classes : list
     :param table: input matrix
     :type table : dict
+    :param TOP: Test outcome positive
+    :type TOP : int
+    :param P: Condition positive
+    :type P : int
     :param class_name: reviewed class name
     :type class_name : any valid type
     :param modified : modified mode flag
@@ -281,8 +285,12 @@ def convex_combination(classes,TP,TOP, P,class_name, modified=False):
     This function calculate Overall_CEN coefficient
     :param classes: classes
     :type classes : list
-    :param table: input matrix
-    :type table : dict
+    :param TP: True Positive Dict For All Classes
+    :type TP : dict
+    :param TOP: Test outcome positive
+    :type TOP : int
+    :param P: Condition positive
+    :type P : int
     :param class_name: reviewed class name
     :type class_name : any valid type
     :param modified : modified mode flag
@@ -312,8 +320,12 @@ def overall_CEN_calc(classes,TP,TOP,P,CEN_dict, modified=False):
     This function calculate Overall_CEN (Overall Confusion Entropy)
     :param classes: classes
     :type classes : list
-    :param table: input matrix
-    :type table : dict
+    :param TP: True Positive Dict For All Classes
+    :type TP : dict
+    :param TOP: Test outcome positive
+    :type TOP : int
+    :param P: Condition positive
+    :type P : int
     :param CEN_dict: CEN dictionary for each class
     :type CEN_dict : dict
     :param modified : modified mode flag

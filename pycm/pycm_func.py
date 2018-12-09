@@ -189,10 +189,10 @@ def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
         return [classes, table]
 
 
-def overall_MCC_calc(classes, table):
+def overall_MCC_calc(classes, table, TOP, P):
     '''
     This function calculate Overall MCC
-     :param classes: classes
+    :param classes: classes
     :type classes : list
     :param table: input matrix
     :type table : dict
@@ -202,26 +202,11 @@ def overall_MCC_calc(classes, table):
         cov_x_y = 0
         cov_x_x = 0
         cov_y_y = 0
-        sigma1_x_x = 0
-        sigma2_x_x = 0
-        sigma1_y_y = 0
-        sigma2_y_y = 0
+        matrix_sum = sum(list(TOP.values()))
         for i in classes:
-            for j in classes:
-                sigma1_x_x += table[j][i]
-                sigma1_y_y += table[i][j]
-                for k in classes:
-                    cov_x_y += table[i][i] * table[k][j] - \
-                        table[j][i] * table[i][k]
-                    if i != j:
-                        sigma2_x_x += table[k][j]
-                        sigma2_y_y += table[j][k]
-            cov_x_x += sigma1_x_x * sigma2_x_x
-            cov_y_y += sigma1_y_y * sigma2_y_y
-            sigma1_x_x = 0
-            sigma2_x_x = 0
-            sigma1_y_y = 0
-            sigma2_y_y = 0
+            cov_x_x += TOP[i] * (matrix_sum - TOP[i])
+            cov_y_y += P[i] * (matrix_sum - P[i])
+            cov_x_y += (table[i][i] * matrix_sum - P[i] * TOP[i])
         return cov_x_y / (math.sqrt(cov_y_y * cov_x_x))
     except Exception:
         return "None"
@@ -1538,7 +1523,7 @@ def overall_statistics(
     p_value = p_value_calc(TP, POP, NIR)
     overall_CEN = overall_CEN_calc(classes, table, CEN_dict)
     overall_MCEN = overall_CEN_calc(classes, table, MCEN_dict, True)
-    overall_MCC = overall_MCC_calc(classes, table)
+    overall_MCC = overall_MCC_calc(classes, table, TOP, P)
     RR = RR_calc(classes, table)
     CBA = CBA_calc(classes, table, TOP, P)
     AUNU = macro_calc(AUC_dict)

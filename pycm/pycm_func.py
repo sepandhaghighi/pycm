@@ -27,9 +27,10 @@ def GI_calc(AUC):
     :return: Gini index as float
     '''
     try:
-        return 2*AUC-1
+        return 2 * AUC - 1
     except Exception:
         return "None"
+
 
 def DP_calc(TPR, TNR):
     '''
@@ -152,7 +153,7 @@ def CBA_calc(classes, table, TOP, P):
         return "None"
 
 
-def RR_calc(classes,TOP):
+def RR_calc(classes, TOP):
     '''
     This function calculate RR (Global Performance Index)
     :param classes: classes
@@ -226,7 +227,14 @@ def overall_MCC_calc(classes, table, TOP, P):
         return "None"
 
 
-def CEN_misclassification_calc(table,TOP,P, i, j, subject_class,modified=False):
+def CEN_misclassification_calc(
+        table,
+        TOP,
+        P,
+        i,
+        j,
+        subject_class,
+        modified=False):
     '''
     This function calculate misclassification probability of classifying
     :param table: input matrix
@@ -255,7 +263,7 @@ def CEN_misclassification_calc(table,TOP,P, i, j, subject_class,modified=False):
         return "None"
 
 
-def CEN_calc(classes, table,TOP,P, class_name, modified=False):
+def CEN_calc(classes, table, TOP, P, class_name, modified=False):
     '''
     This function calculate CEN (Confusion Entropy)
     :param classes: classes
@@ -277,8 +285,10 @@ def CEN_calc(classes, table,TOP,P, class_name, modified=False):
         class_number = len(classes)
         for k in classes:
             if k != class_name:
-                P_j_k = CEN_misclassification_calc(table,TOP,P,class_name,k,class_name, modified)
-                P_k_j = CEN_misclassification_calc(table,TOP,P,k,class_name,class_name, modified)
+                P_j_k = CEN_misclassification_calc(
+                    table, TOP, P, class_name, k, class_name, modified)
+                P_k_j = CEN_misclassification_calc(
+                    table, TOP, P, k, class_name, class_name, modified)
                 if P_j_k != 0:
                     result += P_j_k * math.log(P_j_k, 2 * (class_number - 1))
                 if P_k_j != 0:
@@ -290,7 +300,7 @@ def CEN_calc(classes, table,TOP,P, class_name, modified=False):
         return "None"
 
 
-def convex_combination(classes,TP,TOP, P,class_name, modified=False):
+def convex_combination(classes, TP, TOP, P, class_name, modified=False):
     '''
     This function calculate Overall_CEN coefficient
     :param classes: classes
@@ -315,7 +325,7 @@ def convex_combination(classes,TP,TOP, P,class_name, modified=False):
         matrix_sum = sum(list(TOP.values()))
         TP_sum = sum(list(TP.values()))
         up = TOP[class_name] + P[class_name]
-        down = 2*matrix_sum
+        down = 2 * matrix_sum
         if modified:
             down -= (alpha * TP_sum)
             up -= TP[class_name]
@@ -324,7 +334,7 @@ def convex_combination(classes,TP,TOP, P,class_name, modified=False):
         return "None"
 
 
-def overall_CEN_calc(classes,TP,TOP,P,CEN_dict, modified=False):
+def overall_CEN_calc(classes, TP, TOP, P, CEN_dict, modified=False):
     '''
     This function calculate Overall_CEN (Overall Confusion Entropy)
     :param classes: classes
@@ -344,7 +354,7 @@ def overall_CEN_calc(classes,TP,TOP,P,CEN_dict, modified=False):
     try:
         result = 0
         for i in classes:
-            result += (convex_combination(classes,TP,TOP,P, i, modified) *
+            result += (convex_combination(classes, TP, TOP, P, i, modified) *
                        CEN_dict[i])
         return result
     except Exception:
@@ -601,7 +611,8 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     for index, item in enumerate(actual_vector):
         if (item in classes) and (predict_vector[index] in classes):
             table[item][predict_vector[index]] += 1 * weight_vector[index]
-    [classes, table, TP_dict, TN_dict, FP_dict, FN_dict] = matrix_params_from_table(table)
+    [classes, table, TP_dict, TN_dict, FP_dict,
+        FN_dict] = matrix_params_from_table(table)
     return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
 
 
@@ -1534,8 +1545,8 @@ def overall_statistics(
     zero_one_loss = zero_one_loss_calc(TP, POP)
     NIR = NIR_calc(P, POP)
     p_value = p_value_calc(TP, POP, NIR)
-    overall_CEN = overall_CEN_calc(classes,TP,TOP,P, CEN_dict)
-    overall_MCEN = overall_CEN_calc(classes,TP,TOP,P, MCEN_dict, True)
+    overall_CEN = overall_CEN_calc(classes, TP, TOP, P, CEN_dict)
+    overall_MCEN = overall_CEN_calc(classes, TP, TOP, P, MCEN_dict, True)
     overall_MCC = overall_MCC_calc(classes, table, TOP, P)
     RR = RR_calc(classes, TOP)
     CBA = CBA_calc(classes, table, TOP, P)
@@ -1685,8 +1696,8 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         RACCU[i] = RACCU_calc(TOP[i], P[i], POP[i])
         Jaccrd_Index[i] = jaccard_index_calc(TP[i], TOP[i], P[i])
         IS[i] = IS_calc(TP[i], FP[i], FN[i], POP[i])
-        CEN[i] = CEN_calc(classes, table,TOP[i],P[i], i)
-        MCEN[i] = CEN_calc(classes, table,TOP[i],P[i], i, True)
+        CEN[i] = CEN_calc(classes, table, TOP[i], P[i], i)
+        MCEN[i] = CEN_calc(classes, table, TOP[i], P[i], i, True)
         AUC[i] = AUC_calc(TNR[i], TPR[i])
         dInd[i] = dInd_calc(TNR[i], TPR[i])
         sInd[i] = sInd_calc(dInd[i])

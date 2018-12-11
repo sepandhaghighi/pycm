@@ -19,6 +19,18 @@ def isfile(f):
         f, 'read')
 
 
+def GI_calc(AUC):
+    '''
+    This function calculate Gini index
+    :param AUC_dict: AUC (Area Under ROC Curve)
+    :type AUC_dict : float
+    :return: Gini index as float
+    '''
+    try:
+        return 2*AUC-1
+    except Exception:
+        return "None"
+
 def DP_calc(TPR, TNR):
     '''
     This function calculate DP (Discriminant power)
@@ -1641,6 +1653,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     PLRI = {}
     DPI = {}
     AUCI = {}
+    GI = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1682,6 +1695,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         PLRI[i] = PLR_analysis(PLR[i])
         DPI[i] = DP_analysis(DP[i])
         AUCI[i] = AUC_analysis(AUC[i])
+        GI[i] = GI_calc(AUC[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1726,5 +1740,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "Y": Y,
         "PLRI": PLRI,
         "DPI": DPI,
-        "AUCI": AUCI}
+        "AUCI": AUCI,
+        "GI": GI}
     return result

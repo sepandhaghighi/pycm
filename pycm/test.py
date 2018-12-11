@@ -1509,6 +1509,8 @@ sInd(Similarity index)                                           0.81144        
 >>> cm.RCI
 0.3675708571923818
 >>> cm = ConfusionMatrix(matrix={1:{1:12806,2:26332},2:{1:5484,2:299777}},transpose=True) # Verified Case
+>>> cm.AUC[1]
+0.8097090079101759
 >>> cm.Overall_ACC
 0.9076187793808925
 >>> cm.DP[1]
@@ -1518,6 +1520,8 @@ sInd(Similarity index)                                           0.81144        
 >>> cm.BM[1]
 0.6194180158203517
 >>> cm = ConfusionMatrix(matrix={1:{1:13182,2:30516},2:{1:5108,2:295593}},transpose=True) # Verified Case
+>>> cm.AUC[1]
+0.8135728157964055
 >>> cm.Overall_ACC
 0.896561836706843
 >>> cm.DP[1]

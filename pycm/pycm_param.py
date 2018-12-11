@@ -155,7 +155,7 @@ PARAMS_LINK = {
     "PLRI": "PLRI-(Positive-likelihood-ratio-interpretation)",
     "DPI": "DPI-(Discriminant-power-interpretation)",
     "AUCI": "AUCI-(AUC-value-interpretation)",
-    "GI":""}
+    "GI":"GI-(Gini-index)"}
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

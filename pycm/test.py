@@ -95,6 +95,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      2                       1                       2
 FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
+GI(Gini index)                                                   0.77778                 0.22222                 0.16667
 IS(Information score)                                            1.26303                 1.0                     0.26303
 J(Jaccard index)                                                 0.6                     0.25                    0.375
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903
@@ -207,6 +208,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      2                       1                       2
 FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
+GI(Gini index)                                                   0.77778                 0.22222                 0.16667
 IS(Information score)                                            1.26303                 1.0                     0.26303
 J(Jaccard index)                                                 0.6                     0.25                    0.375
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903
@@ -427,6 +429,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
+GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
@@ -526,6 +529,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
+GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
@@ -886,6 +890,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
+GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
@@ -1007,6 +1012,7 @@ FOR(False omission rate)                                         0.21429        
 FP(False positive/type 1 error/false alarm)                      4                       4                       1
 FPR(Fall-out or false positive rate)                             0.26667                 0.22222                 0.04762
 G(G-measure geometric mean of precision and sensitivity)         0.72058                 0.55556                 0.7303
+GI(Gini index)                                                   0.48333                 0.33333                 0.61905
 IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
 MCC(Matthews correlation coefficient)                            0.48067                 0.33333                 0.66254
@@ -1119,6 +1125,7 @@ FOR(False omission rate)                                         0.21429        
 FP(False positive/type 1 error/false alarm)                      4                       4                       1
 FPR(Fall-out or false positive rate)                             0.26667                 0.22222                 0.04762
 G(G-measure geometric mean of precision and sensitivity)         0.72058                 0.55556                 0.7303
+GI(Gini index)                                                   0.48333                 0.33333                 0.61905
 IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
 MCC(Matthews correlation coefficient)                            0.48067                 0.33333                 0.66254
@@ -1179,68 +1186,69 @@ Example : online_help("J") or online_help(2)
 27-FP
 28-FPR
 29-G
-30-Gwet AC1
-31-Hamming Loss
-32-IS
-33-J
-34-Joint Entropy
-35-KL Divergence
-36-Kappa
-37-Kappa 95% CI
-38-Kappa No Prevalence
-39-Kappa Standard Error
-40-Kappa Unbiased
-41-Lambda A
-42-Lambda B
-43-MCC
-44-MCEN
-45-MK
-46-Mutual Information
-47-N
-48-NIR
-49-NLR
-50-NPV
-51-Overall ACC
-52-Overall CEN
-53-Overall J
-54-Overall MCC
-55-Overall MCEN
-56-Overall RACC
-57-Overall RACCU
-58-P
-59-P-Value
-60-PLR
-61-PLRI
-62-POP
-63-PPV
-64-PPV Macro
-65-PPV Micro
-66-PRE
-67-Phi-Squared
-68-RACC
-69-RACCU
-70-RCI
-71-RR
-72-Reference Entropy
-73-Response Entropy
-74-SOA1(Landis & Koch)
-75-SOA2(Fleiss)
-76-SOA3(Altman)
-77-SOA4(Cicchetti)
-78-Scott PI
-79-Standard Error
-80-TN
-81-TNR
-82-TON
-83-TOP
-84-TP
-85-TPR
-86-TPR Macro
-87-TPR Micro
-88-Y
-89-Zero-one Loss
-90-dInd
-91-sInd
+30-GI
+31-Gwet AC1
+32-Hamming Loss
+33-IS
+34-J
+35-Joint Entropy
+36-KL Divergence
+37-Kappa
+38-Kappa 95% CI
+39-Kappa No Prevalence
+40-Kappa Standard Error
+41-Kappa Unbiased
+42-Lambda A
+43-Lambda B
+44-MCC
+45-MCEN
+46-MK
+47-Mutual Information
+48-N
+49-NIR
+50-NLR
+51-NPV
+52-Overall ACC
+53-Overall CEN
+54-Overall J
+55-Overall MCC
+56-Overall MCEN
+57-Overall RACC
+58-Overall RACCU
+59-P
+60-P-Value
+61-PLR
+62-PLRI
+63-POP
+64-PPV
+65-PPV Macro
+66-PPV Micro
+67-PRE
+68-Phi-Squared
+69-RACC
+70-RACCU
+71-RCI
+72-RR
+73-Reference Entropy
+74-Response Entropy
+75-SOA1(Landis & Koch)
+76-SOA2(Fleiss)
+77-SOA3(Altman)
+78-SOA4(Cicchetti)
+79-Scott PI
+80-Standard Error
+81-TN
+82-TNR
+83-TON
+84-TOP
+85-TP
+86-TPR
+87-TPR Macro
+88-TPR Micro
+89-Y
+90-Zero-one Loss
+91-dInd
+92-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -1333,6 +1341,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      4                       2                       2
 FPR(Fall-out or false positive rate)                             0.26667                 0.11111                 0.22222
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.33333                 0.61237
+GI(Gini index)                                                   0.73333                 0.22222                 0.27778
 IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
 MCC(Matthews correlation coefficient)                            0.66332                 0.22222                 0.28307
@@ -1443,6 +1452,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      4                       2                       2
 FPR(Fall-out or false positive rate)                             0.26667                 0.11111                 0.22222
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.33333                 0.61237
+GI(Gini index)                                                   0.73333                 0.22222                 0.27778
 IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
 MCC(Matthews correlation coefficient)                            0.66332                 0.22222                 0.28307

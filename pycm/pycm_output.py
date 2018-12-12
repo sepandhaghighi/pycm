@@ -6,7 +6,7 @@ import numpy
 import webbrowser
 
 
-def class_filter(classes,class_name):
+def class_filter(classes, class_name):
     '''
     This function compare class_name and classes
     :param classes: matrix classes
@@ -16,10 +16,11 @@ def class_filter(classes,class_name):
     :return: filtered classes as list
     '''
     result_classes = classes
-    if isinstance(class_name,list):
-        if set(class_name)<=set(classes):
+    if isinstance(class_name, list):
+        if set(class_name) <= set(classes):
             result_classes = class_name
     return result_classes
+
 
 def html_init(name):
     '''
@@ -117,7 +118,7 @@ def html_overall_stat(overall_stat, digit=5, overall_param=None):
     if isinstance(overall_param, list):
         if set(overall_param) <= set(overall_stat_keys):
             overall_stat_keys = sorted(overall_param)
-    if len(overall_stat_keys)<1:
+    if len(overall_stat_keys) < 1:
         return ""
     background_color = None
     for i in overall_stat_keys:
@@ -163,7 +164,7 @@ def html_class_stat(classes, class_stat, digit=5, class_param=None):
         if set(class_param) <= set(class_stat_keys):
             class_stat_keys = class_param
     classes.sort()
-    if len(classes)<1 or len(class_stat_keys)<1:
+    if len(classes) < 1 or len(class_stat_keys) < 1:
         return ""
     for i in class_stat_keys:
         result += '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n'
@@ -234,8 +235,13 @@ def html_maker(
     html_file.write(html_init(name))
     html_file.write(html_table(classes, table))
     html_file.write(html_overall_stat(overall_stat, digit, overall_param))
-    class_stat_classes = class_filter(classes,class_name)
-    html_file.write(html_class_stat(class_stat_classes, class_stat, digit, class_param))
+    class_stat_classes = class_filter(classes, class_name)
+    html_file.write(
+        html_class_stat(
+            class_stat_classes,
+            class_stat,
+            digit,
+            class_param))
     html_file.write(html_end(VERSION))
 
 
@@ -356,7 +362,7 @@ def csv_print(classes, class_stat, digit=5, class_param=None):
     if isinstance(class_param, list):
         if set(class_param) <= set(class_stat_keys):
             class_stat_keys = class_param
-    if len(class_stat_keys)<1 or len(classes)<1:
+    if len(class_stat_keys) < 1 or len(classes) < 1:
         return ""
     for key in class_stat_keys:
         row = [rounder(class_stat[key][i], digit) for i in classes]
@@ -395,17 +401,17 @@ def stat_print(
     if isinstance(overall_param, list):
         if set(overall_param) <= set(overall_stat_keys):
             overall_stat_keys = sorted(overall_param)
-    if len(overall_stat_keys)>0:
+    if len(overall_stat_keys) > 0:
         result = "Overall Statistics : " + "\n\n"
         for key in overall_stat_keys:
-            result += key + " " * (
-                shift - len(key) + 7) + rounder(overall_stat[key], digit) + "\n"
+            result += key + " " * (shift - len(key) + 7) + \
+                rounder(overall_stat[key], digit) + "\n"
     class_stat_keys = sorted(class_stat.keys())
     if isinstance(class_param, list):
         if set(class_param) <= set(class_stat_keys):
             class_stat_keys = sorted(class_param)
     classes.sort()
-    if len(class_stat_keys)>0 and len(classes)>0:
+    if len(class_stat_keys) > 0 and len(classes) > 0:
         result += "\nClass Statistics :\n\n"
         result += "Classes" + shift * " " + "%-24s" * \
             classes_len % tuple(map(str, classes)) + "\n"

@@ -202,7 +202,7 @@ class ConfusionMatrix():
         :type class_name : list
         :return: None
         '''
-        classes = class_filter(self.classes,class_name)
+        classes = class_filter(self.classes, class_name)
         print(
             stat_print(
                 classes,
@@ -302,7 +302,7 @@ class ConfusionMatrix():
                 self.table,
                 self.overall_stat,
                 self.class_stat,
-                self.digit, overall_param, class_param,class_name)
+                self.digit, overall_param, class_param, class_name)
             html_file.close()
             if address:
                 message = os.path.join(os.getcwd(), name + ".html")
@@ -310,7 +310,7 @@ class ConfusionMatrix():
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
-    def save_csv(self, name, address=True, class_param=None,class_name=None):
+    def save_csv(self, name, address=True, class_param=None, class_name=None):
         '''
         This method save ConfusionMatrix in CSV file
         :param name: filename

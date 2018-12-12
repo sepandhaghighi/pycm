@@ -829,6 +829,15 @@ True
 >>> save_stat=cm.save_html("test_filtered2",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[100])
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=cm.save_html("test_filtered3",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[])
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_html("test_filtered4",address=False,overall_param=["Kappa","Scott PI"],class_param=[],class_name=[100])
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_html("test_filtered5",address=False,overall_param=[],class_param=["TPR","TNR","ACC","AUC"],class_name=[100])
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> save_stat=cm.save_csv("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
@@ -1615,6 +1624,9 @@ True
 >>> os.remove("test_filtered.csv")
 >>> os.remove("test_filtered.pycm")
 >>> os.remove("test_filtered2.html")
+>>> os.remove("test_filtered3.html")
+>>> os.remove("test_filtered4.html")
+>>> os.remove("test_filtered5.html")
 >>> os.remove("test_filtered2.csv")
 >>> os.remove("test_filtered2.pycm")
 >>> os.remove("test_filtered3.pycm")

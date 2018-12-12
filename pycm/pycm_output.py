@@ -109,6 +109,8 @@ def html_overall_stat(overall_stat, digit=5, overall_param=None):
     if isinstance(overall_param, list):
         if set(overall_param) <= set(overall_stat_keys):
             overall_stat_keys = sorted(overall_param)
+    if len(overall_stat_keys)<1:
+        return ""
     background_color = None
     for i in overall_stat_keys:
         result += '<tr align="center">\n'
@@ -152,6 +154,9 @@ def html_class_stat(classes, class_stat, digit=5, class_param=None):
     if isinstance(class_param, list):
         if set(class_param) <= set(class_stat_keys):
             class_stat_keys = class_param
+    classes.sort()
+    if len(classes)<1 or len(class_stat_keys)<1:
+        return ""
     for i in class_stat_keys:
         result += '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n'
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;"><a href="' + \

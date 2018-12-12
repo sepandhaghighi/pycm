@@ -191,7 +191,7 @@ class ConfusionMatrix():
         table = normalized_table_calc(classes, table)
         print(table_print(classes, table))
 
-    def stat(self, overall_param=None, class_param=None):
+    def stat(self, overall_param=None, class_param=None, class_name=None):
         '''
         This method print statistical measures table
         :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott PI]
@@ -200,9 +200,10 @@ class ConfusionMatrix():
         :type class_param : list
         :return: None
         '''
+        classes = class_filter(self.classes,class_name)
         print(
             stat_print(
-                self.classes,
+                classes,
                 self.class_stat,
                 self.overall_stat,
                 self.digit, overall_param, class_param))
@@ -223,7 +224,8 @@ class ConfusionMatrix():
             name,
             address=True,
             overall_param=None,
-            class_param=None):
+            class_param=None,
+            class_name=None):
         '''
         This method save ConfusionMatrix in .pycm (flat file format)
         :param name: filename
@@ -245,14 +247,15 @@ class ConfusionMatrix():
                                 table_print(self.classes,
                                             self.normalized_table) + "\n\n"
             one_vs_all = "\nOne-Vs-All : \n\n"
-            for class_name in self.classes:
-                one_vs_all += str(class_name) + "-Vs-All : \n\n"
+            for c in self.classes:
+                one_vs_all += str(c) + "-Vs-All : \n\n"
                 [classes, table] = one_vs_all_func(self.classes, self.table,
                                                    self.TP, self.TN, self.FP,
-                                                   self.FN, class_name)
+                                                   self.FN, c)
                 one_vs_all += table_print(classes, table) + "\n\n"
+            classes = class_filter(self.classes, class_name)
             stat = stat_print(
-                self.classes,
+                classes,
                 self.class_stat,
                 self.overall_stat,
                 self.digit, overall_param, class_param)
@@ -269,7 +272,8 @@ class ConfusionMatrix():
             name,
             address=True,
             overall_param=None,
-            class_param=None):
+            class_param=None,
+            class_name=None):
         '''
         This method save ConfusionMatrix in HTML file
         :param name: filename
@@ -292,7 +296,7 @@ class ConfusionMatrix():
                 self.table,
                 self.overall_stat,
                 self.class_stat,
-                self.digit, overall_param, class_param)
+                self.digit, overall_param, class_param,class_name)
             html_file.close()
             if address:
                 message = os.path.join(os.getcwd(), name + ".html")
@@ -300,7 +304,7 @@ class ConfusionMatrix():
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
-    def save_csv(self, name, address=True, class_param=None):
+    def save_csv(self, name, address=True, class_param=None,class_name=None):
         '''
         This method save ConfusionMatrix in CSV file
         :param name: filename
@@ -313,9 +317,10 @@ class ConfusionMatrix():
         '''
         try:
             message = None
+            classes = class_filter(self.classes, class_name)
             csv_file = open(name + ".csv", "w")
             csv_data = csv_print(
-                self.classes,
+                classes,
                 self.class_stat,
                 self.digit,
                 class_param)

@@ -6,6 +6,13 @@ import numpy
 import webbrowser
 
 
+def class_filter(classes,class_name):
+    result_classes = classes
+    if isinstance(class_name,list):
+        if set(class_name)<=set(classes):
+            result_classes = class_name
+    return result_classes
+
 def html_init(name):
     '''
     This function return report  file first lines
@@ -186,7 +193,7 @@ def html_maker(
         table,
         overall_stat,
         class_stat,
-        digit=5, overall_param=None, class_param=None):
+        digit=5, overall_param=None, class_param=None, class_name=None):
     '''
     This function create html report
     :param html_file : file object of html
@@ -212,7 +219,8 @@ def html_maker(
     html_file.write(html_init(name))
     html_file.write(html_table(classes, table))
     html_file.write(html_overall_stat(overall_stat, digit, overall_param))
-    html_file.write(html_class_stat(classes, class_stat, digit, class_param))
+    class_stat_classes = class_filter(classes,class_name)
+    html_file.write(html_class_stat(class_stat_classes, class_stat, digit, class_param))
     html_file.write(html_end(VERSION))
 
 

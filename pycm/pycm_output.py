@@ -346,6 +346,8 @@ def csv_print(classes, class_stat, digit=5, class_param=None):
     if isinstance(class_param, list):
         if set(class_param) <= set(class_stat_keys):
             class_stat_keys = class_param
+    if len(class_stat_keys)<1 or len(classes)<1:
+        return ""
     for key in class_stat_keys:
         row = [rounder(class_stat[key][i], digit) for i in classes]
         result += key + "," + ",".join(row)

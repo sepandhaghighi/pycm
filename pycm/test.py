@@ -847,6 +847,12 @@ True
 >>> save_stat=cm.save_csv("test_filtered2",address=False,class_param=["TPR","TNR","ACC","AUC"],class_name=[100])
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=cm.save_csv("test_filtered3",address=False,class_param=["TPR","TNR","ACC","AUC"],class_name=[])
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_csv("test_filtered4",address=False,class_param=[],class_name=[100])
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> save_stat=cm.save_html("/asdasd,qweqwe.eo/",address=True)
 >>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.html'"}
 True
@@ -1628,6 +1634,8 @@ True
 >>> os.remove("test_filtered4.html")
 >>> os.remove("test_filtered5.html")
 >>> os.remove("test_filtered2.csv")
+>>> os.remove("test_filtered3.csv")
+>>> os.remove("test_filtered4.csv")
 >>> os.remove("test_filtered2.pycm")
 >>> os.remove("test_filtered3.pycm")
 >>> os.remove("test2.obj")

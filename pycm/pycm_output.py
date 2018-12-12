@@ -7,6 +7,14 @@ import webbrowser
 
 
 def class_filter(classes,class_name):
+    '''
+    This function compare class_name and classes
+    :param classes: matrix classes
+    :type classes: list
+    :param class_name: sub set of classes
+    :type class_name : list
+    :return: filtered classes as list
+    '''
     result_classes = classes
     if isinstance(class_name,list):
         if set(class_name)<=set(classes):
@@ -219,6 +227,8 @@ def html_maker(
     :type overall_param : list
     :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
     :type class_param : list
+    :param class_name : Class name (sub set of classes), Example :[1,2,3]
+    :type class_name : list
     :return: None
     '''
     html_file.write(html_init(name))

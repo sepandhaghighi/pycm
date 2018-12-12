@@ -198,6 +198,8 @@ class ConfusionMatrix():
         :type overall_param : list
         :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
         :type class_param : list
+        :param class_name : Class name (sub set of classes), Example :[1,2,3]
+        :type class_name : list
         :return: None
         '''
         classes = class_filter(self.classes,class_name)
@@ -236,6 +238,8 @@ class ConfusionMatrix():
         :type overall_param : list
         :param class_param : Class parameters list for save, Example : ["TPR","TNR","AUC"]
         :type class_param : list
+        :param class_name : Class name (sub set of classes), Example :[1,2,3]
+        :type class_name : list
         :return: Saving Status as dict {"Status":bool , "Message":str}
         '''
         try:
@@ -284,6 +288,8 @@ class ConfusionMatrix():
         :type overall_param : list
         :param class_param : Class parameters list for save, Example : ["TPR","TNR","AUC"]
         :type class_param : list
+        :param class_name : Class name (sub set of classes), Example :[1,2,3]
+        :type class_name : list
         :return: Saving Status as dict {"Status":bool , "Message":str}
         '''
         try:
@@ -313,6 +319,8 @@ class ConfusionMatrix():
         :type address : bool
         :param class_param : Class parameters list for save, Example : ["TPR","TNR","AUC"]
         :type class_param : list
+        :param class_name : Class name (sub set of classes), Example :[1,2,3]
+        :type class_name : list
         :return: Saving Status as dict {"Status":bool , "Message":str}
         '''
         try:

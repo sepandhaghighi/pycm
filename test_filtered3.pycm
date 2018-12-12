@@ -1,0 +1,61 @@
+Matrix : 
+
+Predict          L1    L2    L3    
+Actual
+L1               3     0     0     
+
+L2               0     1     2     
+
+L3               2     1     3     
+
+
+
+Normalized Matrix : 
+
+Predict          L1         L2         L3         
+Actual
+L1               1.0        0.0        0.0        
+
+L2               0.0        0.33333    0.66667    
+
+L3               0.33333    0.16667    0.5        
+
+
+
+Overall Statistics : 
+
+Kappa                                                            0.35484
+Scott PI                                                         0.34426
+
+One-Vs-All : 
+
+L1-Vs-All : 
+
+Predict          L1    ~     
+Actual
+L1               3     0     
+
+~                2     7     
+
+
+
+L2-Vs-All : 
+
+Predict          L2    ~     
+Actual
+L2               1     2     
+
+~                1     8     
+
+
+
+L3-Vs-All : 
+
+Predict          L3    ~     
+Actual
+L3               3     3     
+
+~                2     4     
+
+
+

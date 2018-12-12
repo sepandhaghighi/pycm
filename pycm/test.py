@@ -328,6 +328,9 @@ True
 >>> save_stat=cm.save_stat("test_filtered2",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=["L1","L2"])
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=cm.save_stat("test_filtered3",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[])
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> save_stat=cm.save_stat("/asdasd,qweqwe.eo/",address=True)
 >>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.pycm'"}
 True
@@ -585,6 +588,36 @@ Classes                                                          100
 ACC(Accuracy)                                                    0.45
 AUC(Area under the roc curve)                                    None
 TNR(Specificity or true negative rate)                           0.45
+TPR(Sensitivity, recall, hit rate, or true positive rate)        None
+<BLANKLINE>
+>>> cm.stat(overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[])
+Overall Statistics :
+<BLANKLINE>
+Kappa                                                            0.07801
+Scott PI                                                         -0.12554
+<BLANKLINE>
+>>> cm.stat(overall_param=["Kappa","Scott PI"],class_param=[],class_name=[100])
+Overall Statistics :
+<BLANKLINE>
+Kappa                                                            0.07801
+Scott PI                                                         -0.12554
+<BLANKLINE>
+>>> cm.stat(overall_param=["Kappa","Scott PI"],class_param=["TPR"],class_name=[100])
+Overall Statistics :
+<BLANKLINE>
+Kappa                                                            0.07801
+Scott PI                                                         -0.12554
+<BLANKLINE>
+Class Statistics :
+<BLANKLINE>
+Classes                                                          100
+TPR(Sensitivity, recall, hit rate, or true positive rate)        None
+<BLANKLINE>
+>>> cm.stat(overall_param=[],class_param=["TPR"],class_name=[100])
+<BLANKLINE>
+Class Statistics :
+<BLANKLINE>
+Classes                                                          100
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None
 <BLANKLINE>
 >>> cm.print_normalized_matrix()
@@ -1584,6 +1617,7 @@ True
 >>> os.remove("test_filtered2.html")
 >>> os.remove("test_filtered2.csv")
 >>> os.remove("test_filtered2.pycm")
+>>> os.remove("test_filtered3.pycm")
 >>> os.remove("test2.obj")
 >>> os.remove("test3.obj")
 >>> os.remove("test4.obj")

@@ -373,28 +373,31 @@ def stat_print(
     '''
     shift = max(map(len, PARAMS_DESCRIPTION.values())) + 5
     classes_len = len(classes)
-    result = "Overall Statistics : " + "\n\n"
     overall_stat_keys = sorted(overall_stat.keys())
+    result = ""
     if isinstance(overall_param, list):
         if set(overall_param) <= set(overall_stat_keys):
             overall_stat_keys = sorted(overall_param)
-    for key in overall_stat_keys:
-        result += key + " " * (
-            shift - len(key) + 7) + rounder(overall_stat[key], digit) + "\n"
-    result += "\nClass Statistics :\n\n"
-    result += "Classes" + shift * " " + "%-24s" * \
-        classes_len % tuple(map(str, classes)) + "\n"
+    if len(overall_stat_keys)>0:
+        result = "Overall Statistics : " + "\n\n"
+        for key in overall_stat_keys:
+            result += key + " " * (
+                shift - len(key) + 7) + rounder(overall_stat[key], digit) + "\n"
     class_stat_keys = sorted(class_stat.keys())
     if isinstance(class_param, list):
         if set(class_param) <= set(class_stat_keys):
             class_stat_keys = sorted(class_param)
     classes.sort()
-    rounder_map = partial(rounder, digit=digit)
-    for key in class_stat_keys:
-        row = [class_stat[key][i] for i in classes]
-        result += key + "(" + PARAMS_DESCRIPTION[key].capitalize() + ")" + " " * (
-            shift - len(key) - len(PARAMS_DESCRIPTION[key]) + 5) + "%-24s" * classes_len % tuple(
-            map(rounder_map, row)) + "\n"
+    if len(class_stat_keys)>0 and len(classes)>0:
+        result += "\nClass Statistics :\n\n"
+        result += "Classes" + shift * " " + "%-24s" * \
+            classes_len % tuple(map(str, classes)) + "\n"
+        rounder_map = partial(rounder, digit=digit)
+        for key in class_stat_keys:
+            row = [class_stat[key][i] for i in classes]
+            result += key + "(" + PARAMS_DESCRIPTION[key].capitalize() + ")" + " " * (
+                shift - len(key) - len(PARAMS_DESCRIPTION[key]) + 5) + "%-24s" * classes_len % tuple(
+                map(rounder_map, row)) + "\n"
     return result
 
 

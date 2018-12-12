@@ -22,8 +22,8 @@ def isfile(f):
 def GI_calc(AUC):
     '''
     This function calculate Gini index
-    :param AUC_dict: AUC (Area Under ROC Curve)
-    :type AUC_dict : float
+    :param AUC: AUC (Area Under ROC Curve)
+    :type AUC: float
     :return: Gini index as float
     '''
     try:
@@ -265,7 +265,7 @@ def CEN_misclassification_calc(
 
 def CEN_calc(classes, table, TOP, P, class_name, modified=False):
     '''
-    This function calculate CEN (Confusion Entropy)
+    This function calculate CEN (Confusion Entropy)/ MCEN(Modified Confusion Entropy)
     :param classes: classes
     :type classes : list
     :param table: input matrix

@@ -886,17 +886,17 @@ def DF_calc(classes):
         return "None"
 
 
-def TTPN_calc(Item1, Item2):
+def TTPN_calc(item1, item2):
     '''
     This function calculate TPR,TNR,PPV,NPV
-    :param Item1: item1 in fractional expression
-    :type Item1 : int
-    :param Item2: item2 in fractional expression
-    :type Item2: int
+    :param item1: item1 in fractional expression
+    :type item1 : int
+    :param item2: item2 in fractional expression
+    :type item2: int
     :return: result as float
     '''
     try:
-        result = Item1 / (Item1 + Item2)
+        result = item1 / (item1 + item2)
         return result
     except ZeroDivisionError:
         return "None"

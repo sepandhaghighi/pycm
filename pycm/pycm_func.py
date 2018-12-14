@@ -849,11 +849,11 @@ def phi_square_calc(chi_square, POP):
     :param chi_square: chi squared
     :type chi_square : float
     :param POP: population
-    :type POP : dict
+    :type POP : int
     :return: phi_squared as float
     '''
     try:
-        return chi_square / (list(POP.values())[0])
+        return chi_square / POP
     except Exception:
         return "None"
 
@@ -1535,7 +1535,7 @@ def overall_statistics(
     overall_accuracy_se = se_calc(overall_accuracy, POP)
     overall_accuracy_CI = CI_calc(overall_accuracy, overall_accuracy_se)
     chi_squared = chi_square_calc(classes, table, TOP, P, POP)
-    phi_squared = phi_square_calc(chi_squared, POP)
+    phi_squared = phi_square_calc(chi_squared, population)
     cramer_V = cramers_V_calc(phi_squared, classes)
     response_entropy = entropy_calc(TOP, POP)
     reference_entropy = entropy_calc(P, POP)

@@ -1026,9 +1026,9 @@ def LR_calc(item1, item2):
 def PRE_calc(P, POP):
     '''
     This function calculate prevalence
-    :param P: Condition positive
+    :param P: condition positive
     :type P : int
-    :param POP: Population
+    :param POP: population
     :type POP : int
     :return: prevalence as float
     '''
@@ -1056,18 +1056,28 @@ def G_calc(PPV, TPR):
 
 
 def RACCU_calc(TOP, P, POP):
+    '''
+    This function calculate RACCU (Random accuracy unbiased)
+    :param TOP: test outcome positive
+    :type TOP : int
+    :param P: condition positive
+    :type P : int
+    :param POP: population
+    :type POP : int
+    :return: RACCU as float
+    '''
     result = ((TOP + P) / (2 * POP))**2
     return result
 
 
 def RACC_calc(TOP, P, POP):
     '''
-    This function calculate random Accuracy
-    :param TOP: Test outcome positive
+    This function calculate random accuracy
+    :param TOP: test outcome positive
     :type TOP : int
-    :param P:  Condition positive
+    :param P:  condition positive
     :type P : int
-    :param POP: Population
+    :param POP: population
     :type POP:int
     :return: RACC as float
     '''
@@ -1077,12 +1087,12 @@ def RACC_calc(TOP, P, POP):
 
 def reliability_calc(RACC, ACC):
     '''
-    This function calculate Reliability
+    This function calculate reliability
     :param RACC: random accuracy
     :type RACC : float
     :param ACC: accuracy
     :type ACC : float
-    :return: Reliability as float
+    :return: reliability as float
     '''
     try:
         result = (ACC - RACC) / (1 - RACC)
@@ -1094,7 +1104,7 @@ def reliability_calc(RACC, ACC):
 def PLR_analysis(PLR):
     '''
     This function analysis PLR(Positive likelihood ratio) with interpretation table
-    :param PLR: Positive likelihood ratio
+    :param PLR: positive likelihood ratio
     :type PLR : float
     :return: interpretation result as str
     '''
@@ -1117,7 +1127,7 @@ def PLR_analysis(PLR):
 def DP_analysis(DP):
     '''
     This function analysis DP with interpretation table
-    :param DP: Discriminant power
+    :param DP: discriminant power
     :type DP : float
     :return: interpretation result as str
     '''
@@ -1139,7 +1149,7 @@ def DP_analysis(DP):
 def AUC_analysis(AUC):
     '''
     This function analysis AUC with interpretation table
-    :param AUC: Area under the ROC curve
+    :param AUC: area under the ROC curve
     :type AUC : float
     :return: interpretation result as str
     '''
@@ -1165,7 +1175,7 @@ def kappa_analysis_cicchetti(kappa):
     This function analysis kappa number with Cicchetti benchmark
     :param kappa: kappa number
     :type kappa : float
-    :return: Strength of Agreement as str
+    :return: strength of agreement as str
     '''
     try:
         if kappa < 0.4:
@@ -1187,7 +1197,7 @@ def kappa_analysis_koch(kappa):
     This function analysis kappa number with Landis-Koch benchmark
     :param kappa: kappa number
     :type kappa : float
-    :return: Strength of Agreement as str
+    :return: strength of agreement as str
     '''
     try:
         if kappa < 0:
@@ -1213,7 +1223,7 @@ def kappa_analysis_fleiss(kappa):
     This function analysis kappa number with Fleiss benchmark
     :param kappa: kappa number
     :type kappa : float
-    :return: Strength of Agreement as str
+    :return: strength of agreement as str
     '''
     try:
         if kappa < 0.4:
@@ -1233,7 +1243,7 @@ def kappa_analysis_altman(kappa):
     This function analysis kappa number with  Altman benchmark
     :param kappa: kappa number
     :type kappa : float
-    :return: Strength of Agreement as str
+    :return: strength of agreement as str
     '''
     try:
         if kappa < 0.2:
@@ -1259,7 +1269,7 @@ def kappa_se_calc(PA, PE, POP):
     :type PA : float
     :param PE:  hypothetical probability of chance agreement (random accuracy)
     :type PE : float
-    :param POP: Population
+    :param POP: population
     :type POP:int
     :return: kappa standard error as float
     '''
@@ -1277,7 +1287,7 @@ def CI_calc(mean, SE, CV=1.96):
     :type mean : float
     :param SE: standard error of data
     :type SE : float
-    :param CV: critical value:
+    :param CV: critical value
     :type CV:float
     :return: confidence interval as tuple
     '''
@@ -1295,7 +1305,7 @@ def se_calc(overall_accuracy, POP):
     :param overall_accuracy: overall accuracy
     :type  overall_accuracy : float
     :type PE : float
-    :param POP: Population
+    :param POP: population
     :return: standard error as float
     '''
     try:
@@ -1308,7 +1318,7 @@ def se_calc(overall_accuracy, POP):
 def micro_calc(TP, item):
     '''
     This function calculate PPV_Micro and TPR_Micro
-    :param TP: True Positive
+    :param TP: true positive
     :type TP:dict
     :param item: FN or FP
     :type item : dict
@@ -1340,11 +1350,11 @@ def macro_calc(item):
 def PC_PI_calc(P, TOP, POP):
     '''
     This function calculate percent chance agreement for Scott's Pi
-    :param P: Condition positive
+    :param P: condition positive
     :type P : dict
-    :param TOP: Test outcome positive
+    :param TOP: test outcome positive
     :type TOP : dict
-    :param POP: Population
+    :param POP: population
     :type POP:dict
     :return: percent chance agreement as float
     '''
@@ -1360,11 +1370,11 @@ def PC_PI_calc(P, TOP, POP):
 def PC_AC1_calc(P, TOP, POP):
     '''
     This function calculate percent chance agreement for Gwet's AC1
-    :param P: Condition positive
+    :param P: condition positive
     :type P : dict
-    :param TOP: Test outcome positive
+    :param TOP: test outcome positive
     :type TOP : dict
-    :param POP: Population
+    :param POP: population
     :type POP:dict
     :return: percent chance agreement as float
     '''
@@ -1395,12 +1405,12 @@ def PC_S_calc(classes):
 
 def jaccard_index_calc(TP, TOP, P):
     '''
-    This function calculate jaccard index for each class
-    :param TP: True Positive
+    This function calculate Jaccard index for each class
+    :param TP: true positive
     :type TP : int
-    :param TOP: Test outcome positive
+    :param TOP: test outcome positive
     :type TOP : int
-    :param P:  Condition positive
+    :param P:  condition positive
     :type P : int
     :return: Jaccard index as float
     '''
@@ -1428,9 +1438,9 @@ def overall_jaccard_index_calc(jaccard_list):
 def overall_accuracy_calc(TP, POP):
     '''
     This function calculate overall accuracy
-    :param TP: True Positive
+    :param TP: true positive
     :type TP : dict
-    :param POP: Population
+    :param POP: population
     :type POP:dict
     :return: overall_accuracy as float
     '''
@@ -1479,19 +1489,19 @@ def overall_statistics(
     :type TPR : dict
     :param PPV: precision or positive predictive value
     :type PPV : dict
-    :param TP: True Positive
+    :param TP: true positive
     :type TP : dict
-    :param FN: False Negative
+    :param FN: false negative
     :type FN : dict
-    :param FP: False Positive
+    :param FP: false positive
     :type FP: dict
-    :param POP: Population
+    :param POP: population
     :type POP:dict
-    :param P: Condition positive
+    :param P: condition positive
     :type P : dict
-    :param POP: Population
+    :param POP: population
     :type POP:dict
-    :param TOP: Test outcome positive
+    :param TOP: test outcome positive
     :type TOP : dict
     :param jaccard_list : list of jaccard index for each class
     :type jaccard_list : list
@@ -1610,13 +1620,13 @@ def overall_statistics(
 def class_statistics(TP, TN, FP, FN, classes, table):
     '''
     This function return all class statistics
-    :param TP: True Positive Dict For All Classes
+    :param TP: true positive dict for all classes
     :type TP : dict
-    :param TN: True Negative Dict For All Classes
+    :param TN: true negative dict for all classes
     :type TN : dict
-    :param FP: False Positive Dict For All Classes
+    :param FP: false positive dict for all classes
     :type FP : dict
-    :param FN: False Negative Dict For All Classes
+    :param FN: false negative dict for all classes
     :type FN : dict
     :param classes: classes
     :type classes : list

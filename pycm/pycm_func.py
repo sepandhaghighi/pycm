@@ -445,12 +445,12 @@ def NIR_calc(P, POP):
     :param P: condition positive
     :type P : dict
     :param POP: population
-    :type POP : dict
+    :type POP : int
     :return: NIR as float
     '''
     try:
         max_P = max(list(P.values()))
-        length = list(POP.values())[0]
+        length = POP
         return max_P / length
     except Exception:
         return "None"
@@ -1552,7 +1552,7 @@ def overall_statistics(
         jaccard_list.values()))
     hamming_loss = hamming_calc(TP, POP)
     zero_one_loss = zero_one_loss_calc(TP, POP)
-    NIR = NIR_calc(P, POP)
+    NIR = NIR_calc(P, population)
     p_value = p_value_calc(TP, population, NIR)
     overall_CEN = overall_CEN_calc(classes, TP, TOP, P, CEN_dict)
     overall_MCEN = overall_CEN_calc(classes, TP, TOP, P, MCEN_dict, True)

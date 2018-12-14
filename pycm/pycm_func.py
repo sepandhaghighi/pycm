@@ -422,13 +422,13 @@ def p_value_calc(TP, POP, NIR):
     :param TP: true positive
     :type TP : dict
     :param POP: population
-    :type POP : dict
+    :type POP : int
     :param NIR: no information rate
     :type NIR : float
     :return: p_value as float
     '''
     try:
-        n = list(POP.values())[0]
+        n = POP
         x = sum(list(TP.values()))
         p = NIR
         result = 0
@@ -1553,7 +1553,7 @@ def overall_statistics(
     hamming_loss = hamming_calc(TP, POP)
     zero_one_loss = zero_one_loss_calc(TP, POP)
     NIR = NIR_calc(P, POP)
-    p_value = p_value_calc(TP, POP, NIR)
+    p_value = p_value_calc(TP, population, NIR)
     overall_CEN = overall_CEN_calc(classes, TP, TOP, P, CEN_dict)
     overall_MCEN = overall_CEN_calc(classes, TP, TOP, P, MCEN_dict, True)
     overall_MCC = overall_MCC_calc(classes, table, TOP, P)

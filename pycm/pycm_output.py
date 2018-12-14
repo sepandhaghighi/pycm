@@ -224,11 +224,11 @@ def html_maker(
     :type class_stat: dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
-    :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott PI]
+    :param overall_param : overall parameters list for print, Example : ["Kappa","Scott PI]
     :type overall_param : list
-    :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
+    :param class_param : class parameters list for print, Example : ["TPR","TNR","AUC"]
     :type class_param : list
-    :param class_name : Class name (sub set of classes), Example :[1,2,3]
+    :param class_name : class name (sub set of classes), Example :[1,2,3]
     :type class_name : list
     :return: None
     '''
@@ -250,7 +250,7 @@ def isfloat(value):
     This function check input for float conversion
     :param value: input value
     :type value:str
-    :return: True if input_value is a number and False otherwise
+    :return: result as bool (true if input_value is a number and false otherwise)
     '''
     try:
         float(value)
@@ -351,6 +351,8 @@ def csv_print(classes, class_stat, digit=5, class_param=None):
     :type class_stat:dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
+    :param class_param : class parameters list for print, Example : ["TPR","TNR","AUC"]
+    :type class_param : list
     :return: csv file data as str
     '''
     result = "Class"
@@ -388,9 +390,9 @@ def stat_print(
     :type overall_stat:dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
-    :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott PI]
+    :param overall_param : overall parameters list for print, Example : ["Kappa","Scott PI]
     :type overall_param : list
-    :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
+    :param class_param : class parameters list for print, Example : ["TPR","TNR","AUC"]
     :type class_param : list
     :return: printable result as str
     '''

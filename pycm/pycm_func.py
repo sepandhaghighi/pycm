@@ -10,9 +10,9 @@ from functools import reduce
 def isfile(f):
     '''
     This function check file object in python 2.7 & 3.x
-    :param f: input object
-    :type f : file object
-    :return: file type check as boolean
+    :param f: Input object
+    :type f : File object
+    :return: File type check as boolean
     '''
     return isinstance(
         f, file) if sys.version_info[0] == 2 else hasattr(
@@ -22,7 +22,7 @@ def isfile(f):
 def GI_calc(AUC):
     '''
     This function calculate Gini index
-    :param AUC: AUC (Area Under ROC Curve)
+    :param AUC: AUC (Area under the ROC curve)
     :type AUC: float
     :return: Gini index as float
     '''
@@ -51,10 +51,10 @@ def DP_calc(TPR, TNR):
 
 def RCI_calc(mutual_information, reference_entropy):
     '''
-    This function calculate RCI
-    :param mutual_information: Mutual Information
+    This function calculate RCI (Relative classifier information)
+    :param mutual_information: Mutual information
     :type mutual_information : float
-    :param reference_entropy: Reference Entropy
+    :param reference_entropy: Reference entropy
     :type reference_entropy : float
     :return:  RCI as float
     '''
@@ -66,7 +66,7 @@ def RCI_calc(mutual_information, reference_entropy):
 
 def dInd_calc(TNR, TPR):
     '''
-    This function calculate dInd
+    This function calculate dInd (Distance index)
     :param TNR: Specificity or true negative rate
     :type TNR : float
     :param TPR: Sensitivity, recall, hit rate, or true positive rate
@@ -82,7 +82,7 @@ def dInd_calc(TNR, TPR):
 
 def sInd_calc(dInd):
     '''
-    This function calculate sInd
+    This function calculate sInd (Similarity index)
     :param dInd: dInd
     :type dInd : float
     :return: sInd as float
@@ -96,13 +96,13 @@ def sInd_calc(dInd):
 def AUNP_calc(classes, P, POP, AUC_dict):
     '''
     This function calculate AUNP
-    :param classes: classes
+    :param classes: Classes
     :type classes : list
     :param P: Condition positive
     :type P : dict
     :param POP: Population
     :type POP : dict
-    :param AUC_dict: AUC (Area Under ROC Curve) for each class
+    :param AUC_dict: AUC (Area under the ROC curve) for each class
     :type AUC_dict : dict
     :return: AUNP as float
     '''
@@ -117,7 +117,7 @@ def AUNP_calc(classes, P, POP, AUC_dict):
 
 def AUC_calc(TNR, TPR):
     '''
-    This function calculate Area Under ROC Curve for each class
+    This function calculate AUC (Area under the ROC curve for each class)
     :param TNR: Specificity or true negative rate
     :type TNR : float
     :param TPR: Sensitivity, recall, hit rate, or true positive rate
@@ -132,10 +132,10 @@ def AUC_calc(TNR, TPR):
 
 def CBA_calc(classes, table, TOP, P):
     '''
-    This function calculate CBA
-    :param classes: classes
+    This function calculate CBA (Class balance accuracy)
+    :param classes: Classes
     :type classes : list
-    :param table: input matrix
+    :param table: Input matrix
     :type table : dict
     :param TOP: Test outcome positive
     :type TOP : dict
@@ -156,7 +156,7 @@ def CBA_calc(classes, table, TOP, P):
 def RR_calc(classes, TOP):
     '''
     This function calculate RR (Global Performance Index)
-    :param classes: classes
+    :param classes: Classes
     :type classes : list
     :param TOP: Test outcome positive
     :type TOP : dict

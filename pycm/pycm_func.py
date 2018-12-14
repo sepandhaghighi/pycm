@@ -478,11 +478,11 @@ def zero_one_loss_calc(TP, POP):
     :param TP: true Positive
     :type TP : dict
     :param POP: population
-    :type POP : dict
+    :type POP : int
     :return: zero_one loss as integer
     '''
     try:
-        length = list(POP.values())[0]
+        length = POP
         return (length - sum(TP.values()))
     except Exception:
         return "None"
@@ -1551,7 +1551,7 @@ def overall_statistics(
     overall_jaccard_index = overall_jaccard_index_calc(list(
         jaccard_list.values()))
     hamming_loss = hamming_calc(TP, population)
-    zero_one_loss = zero_one_loss_calc(TP, POP)
+    zero_one_loss = zero_one_loss_calc(TP, population)
     NIR = NIR_calc(P, population)
     p_value = p_value_calc(TP, population, NIR)
     overall_CEN = overall_CEN_calc(classes, TP, TOP, P, CEN_dict)

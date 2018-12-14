@@ -991,17 +991,17 @@ def MCC_calc(TP, TN, FP, FN):
         return "None"
 
 
-def MK_BM_calc(Item1, Item2):
+def MK_BM_calc(item1, item2):
     '''
-    This function calculate Informedness or Bookmaker Informedness (BM) and Markedness (MK)
-    :param Item1: Item1 in expression
-    :type Item1:float
-    :param Item2: Item2 in expression
-    :type Item2:float
+    This function calculate BM (Informedness) and MK (Markedness)
+    :param item1: item1 in expression
+    :type item1:float
+    :param item2: item2 in expression
+    :type item2:float
     :return: MK and BM as float
     '''
     try:
-        result = Item1 + Item2 - 1
+        result = item1 + item2 - 1
         return result
     except Exception:
         return "None"

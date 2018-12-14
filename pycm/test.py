@@ -732,7 +732,8 @@ Actual
 >>> chi_squared=chi_square_calc(cm2.classes,cm2.table,cm2.TOP,cm2.P,cm2.POP)
 >>> chi_squared
 15.525641025641026
->>> phi_squared=phi_square_calc(chi_squared,cm2.POP)
+>>> population = list(cm2.POP.values())[0]
+>>> phi_squared=phi_square_calc(chi_squared,population)
 >>> phi_squared
 0.5750237416904084
 >>> V=cramers_V_calc(phi_squared,cm2.classes)
@@ -741,7 +742,7 @@ Actual
 >>> DF=DF_calc(cm2.classes)
 >>> DF
 4
->>> SE=se_calc(cm2.Overall_ACC,cm2.POP)
+>>> SE=se_calc(cm2.Overall_ACC,population)
 >>> SE
 0.09072184232530289
 >>> CI=CI_calc(cm2.Overall_ACC,SE)
@@ -765,10 +766,10 @@ Actual
 >>> kl_divergence=kl_divergence_calc(cm2.P,cm2.TOP,cm2.POP)
 >>> kl_divergence
 0.007128882443093773
->>> lambda_B=lambda_B_calc(cm2.classes,cm2.table,cm2.TOP,cm2.POP)
+>>> lambda_B=lambda_B_calc(cm2.classes,cm2.table,cm2.TOP,population)
 >>> lambda_B
 0.35714285714285715
->>> lambda_A=lambda_A_calc(cm2.classes,cm2.table,cm2.P,cm2.POP)
+>>> lambda_A=lambda_A_calc(cm2.classes,cm2.table,cm2.P,population)
 >>> lambda_A
 0.4
 >>> IS_calc(13,0,0,38)
@@ -1549,7 +1550,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 Y(Youden index)                                                  0.73333                 0.22222                 0.27778
 dInd(Distance index)                                             0.26667                 0.67586                 0.54716
 sInd(Similarity index)                                           0.81144                 0.52209                 0.6131
->>> NIR_calc({'Class2': 804, 'Class1': 196},{'Class2': 1000, 'Class1': 1000}) # Verified Case
+>>> NIR_calc({'Class2': 804, 'Class1': 196},1000) # Verified Case
 0.804
 >>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":183,"Class2":13},"Class2":{"Class1":141,"Class2":663}})  # Verified Case
 >>> cm.PValue

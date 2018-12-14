@@ -1523,11 +1523,10 @@ def overall_statistics(
     PI = reliability_calc(PC_PI, overall_accuracy)
     AC1 = reliability_calc(PC_AC1, overall_accuracy)
     S = reliability_calc(PC_S, overall_accuracy)
+    population = list(POP.values())[0]
     kappa_SE = kappa_se_calc(
         overall_accuracy,
-        overall_random_accuracy,
-        list(
-            POP.values())[0])
+        overall_random_accuracy,population)
     kappa_unbiased = reliability_calc(
         overall_random_accuracy_unbiased,
         overall_accuracy)

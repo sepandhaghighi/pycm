@@ -1007,17 +1007,17 @@ def MK_BM_calc(item1, item2):
         return "None"
 
 
-def LR_calc(Item1, Item2):
+def LR_calc(item1, item2):
     '''
     This function calculate likelihood ratio
-    :param Item1: Item1 in expression
-    :type Item1:float
-    :param Item2: Item2 in expression
-    :type Item2:float
+    :param item1: item1 in expression
+    :type item1:float
+    :param item2: item2 in expression
+    :type item2:float
     :return: LR+ and LR- as float
     '''
     try:
-        result = Item1 / Item2
+        result = item1 / item2
         return result
     except Exception:
         return "None"

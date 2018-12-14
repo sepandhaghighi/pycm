@@ -1442,11 +1442,11 @@ def overall_accuracy_calc(TP, POP):
     :param TP: true positive
     :type TP : dict
     :param POP: population
-    :type POP:dict
+    :type POP:int
     :return: overall_accuracy as float
     '''
     try:
-        overall_accuracy = sum(TP.values()) / list(POP.values())[0]
+        overall_accuracy = sum(TP.values()) / POP
         return overall_accuracy
     except Exception:
         return None
@@ -1514,7 +1514,8 @@ def overall_statistics(
     :type table : dict
     :return: overall statistics as dict
     '''
-    overall_accuracy = overall_accuracy_calc(TP, POP)
+    population = list(POP.values())[0]
+    overall_accuracy = overall_accuracy_calc(TP, population)
     overall_random_accuracy_unbiased = overall_random_accuracy_calc(RACCU)
     overall_random_accuracy = overall_random_accuracy_calc(RACC)
     overall_kappa = reliability_calc(overall_random_accuracy, overall_accuracy)
@@ -1524,7 +1525,6 @@ def overall_statistics(
     PI = reliability_calc(PC_PI, overall_accuracy)
     AC1 = reliability_calc(PC_AC1, overall_accuracy)
     S = reliability_calc(PC_S, overall_accuracy)
-    population = list(POP.values())[0]
     kappa_SE = kappa_se_calc(
         overall_accuracy,
         overall_random_accuracy,population)

@@ -1527,7 +1527,7 @@ def overall_statistics(
     S = reliability_calc(PC_S, overall_accuracy)
     kappa_SE = kappa_se_calc(
         overall_accuracy,
-        overall_random_accuracy,population)
+        overall_random_accuracy, population)
     kappa_unbiased = reliability_calc(
         overall_random_accuracy_unbiased,
         overall_accuracy)

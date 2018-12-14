@@ -194,11 +194,11 @@ class ConfusionMatrix():
     def stat(self, overall_param=None, class_param=None, class_name=None):
         '''
         This method print statistical measures table
-        :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott PI]
+        :param overall_param : overall parameters list for print, Example : ["Kappa","Scott PI]
         :type overall_param : list
-        :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
+        :param class_param : class parameters list for print, Example : ["TPR","TNR","AUC"]
         :type class_param : list
-        :param class_name : Class name (sub set of classes), Example :[1,2,3]
+        :param class_name : class name (sub set of classes), Example :[1,2,3]
         :type class_name : list
         :return: None
         '''
@@ -232,15 +232,15 @@ class ConfusionMatrix():
         This method save ConfusionMatrix in .pycm (flat file format)
         :param name: filename
         :type name : str
-        :param address: Flag for address return
+        :param address: flag for address return
         :type address : bool
-        :param overall_param : Overall parameters list for save, Example : ["Kappa","Scott PI]
+        :param overall_param : overall parameters list for save, Example : ["Kappa","Scott PI]
         :type overall_param : list
-        :param class_param : Class parameters list for save, Example : ["TPR","TNR","AUC"]
+        :param class_param : class parameters list for save, Example : ["TPR","TNR","AUC"]
         :type class_param : list
-        :param class_name : Class name (sub set of classes), Example :[1,2,3]
+        :param class_name : class name (sub set of classes), Example :[1,2,3]
         :type class_name : list
-        :return: Saving Status as dict {"Status":bool , "Message":str}
+        :return: saving Status as dict {"Status":bool , "Message":str}
         '''
         try:
             message = None
@@ -282,15 +282,15 @@ class ConfusionMatrix():
         This method save ConfusionMatrix in HTML file
         :param name: filename
         :type name : str
-        :param address: Flag for address return
+        :param address: flag for address return
         :type address : bool
-        :param overall_param : Overall parameters list for save, Example : ["Kappa","Scott PI]
+        :param overall_param : overall parameters list for save, Example : ["Kappa","Scott PI]
         :type overall_param : list
-        :param class_param : Class parameters list for save, Example : ["TPR","TNR","AUC"]
+        :param class_param : class parameters list for save, Example : ["TPR","TNR","AUC"]
         :type class_param : list
-        :param class_name : Class name (sub set of classes), Example :[1,2,3]
+        :param class_name : class name (sub set of classes), Example :[1,2,3]
         :type class_name : list
-        :return: Saving Status as dict {"Status":bool , "Message":str}
+        :return: saving Status as dict {"Status":bool , "Message":str}
         '''
         try:
             message = None
@@ -315,13 +315,13 @@ class ConfusionMatrix():
         This method save ConfusionMatrix in CSV file
         :param name: filename
         :type name : str
-        :param address: Flag for address return
+        :param address: flag for address return
         :type address : bool
-        :param class_param : Class parameters list for save, Example : ["TPR","TNR","AUC"]
+        :param class_param : class parameters list for save, Example : ["TPR","TNR","AUC"]
         :type class_param : list
-        :param class_name : Class name (sub set of classes), Example :[1,2,3]
+        :param class_name : class name (sub set of classes), Example :[1,2,3]
         :type class_name : list
-        :return: Saving Status as dict {"Status":bool , "Message":str}
+        :return: saving Status as dict {"Status":bool , "Message":str}
         '''
         try:
             message = None
@@ -344,9 +344,9 @@ class ConfusionMatrix():
         This method save ConfusionMatrix in .obj file
         :param name: filename
         :type name : str
-        :param address: Flag for address return
+        :param address: flag for address return
         :type address : bool
-        :return: Saving Status as dict {"Status":bool , "Message":str}
+        :return: saving Status as dict {"Status":bool , "Message":str}
         '''
         try:
             message = None
@@ -375,8 +375,8 @@ class ConfusionMatrix():
 
     def F_beta(self, Beta):
         '''
-        This method calculate FBeta Score
-        :param Beta: Beta parameter
+        This method calculate FBeta score
+        :param Beta: beta parameter
         :type Beta : float
         :return: FBeta Score for classes as dict
         '''

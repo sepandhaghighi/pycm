@@ -462,11 +462,11 @@ def hamming_calc(TP, POP):
     :param TP: true positive
     :type TP : dict
     :param POP: population
-    :type POP : dict
+    :type POP : int
     :return: hamming loss as float
     '''
     try:
-        length = list(POP.values())[0]
+        length = POP
         return (1 / length) * (length - sum(TP.values()))
     except Exception:
         return "None"
@@ -1550,7 +1550,7 @@ def overall_statistics(
     DF = DF_calc(classes)
     overall_jaccard_index = overall_jaccard_index_calc(list(
         jaccard_list.values()))
-    hamming_loss = hamming_calc(TP, POP)
+    hamming_loss = hamming_calc(TP, population)
     zero_one_loss = zero_one_loss_calc(TP, POP)
     NIR = NIR_calc(P, population)
     p_value = p_value_calc(TP, population, NIR)

@@ -1306,11 +1306,12 @@ def se_calc(overall_accuracy, POP):
     :type  overall_accuracy : float
     :type PE : float
     :param POP: population
+    :type POP : int
     :return: standard error as float
     '''
     try:
         return math.sqrt(
-            (overall_accuracy * (1 - overall_accuracy)) / (list(POP.values())[0]))
+            (overall_accuracy * (1 - overall_accuracy)) / POP)
     except Exception:
         return "None"
 
@@ -1532,7 +1533,7 @@ def overall_statistics(
         overall_accuracy)
     kappa_no_prevalence = kappa_no_prevalence_calc(overall_accuracy)
     kappa_CI = CI_calc(overall_kappa, kappa_SE)
-    overall_accuracy_se = se_calc(overall_accuracy, POP)
+    overall_accuracy_se = se_calc(overall_accuracy, population)
     overall_accuracy_CI = CI_calc(overall_accuracy, overall_accuracy_se)
     chi_squared = chi_square_calc(classes, table, TOP, P, POP)
     phi_squared = phi_square_calc(chi_squared, population)

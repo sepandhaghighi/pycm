@@ -902,15 +902,15 @@ def TTPN_calc(item1, item2):
         return "None"
 
 
-def FXR_calc(Item1):
+def FXR_calc(item):
     '''
     This function calculate FNR,FPR,FDR,FOR
-    :param Item1: Item In Expression
-    :type Item1:float
-    :return: result as float (5 Decimal Precision)
+    :param item: item In expression
+    :type item:float
+    :return: result as float
     '''
     try:
-        result = 1 - Item1
+        result = 1 - item
         return result
     except Exception:
         return "None"

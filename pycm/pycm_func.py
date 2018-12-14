@@ -918,16 +918,16 @@ def FXR_calc(item):
 
 def ACC_calc(TP, TN, FP, FN):
     '''
-    This functuon calculate Accuracy
-    :param TP: True Positive
+    This function calculate accuracy
+    :param TP: true positive
     :type TP : int
-    :param TN: True Negative
+    :param TN: true negative
     :type TN : int
-    :param FP: False Positive
+    :param FP: false positive
     :type FP : int
-    :param FN: False Negative
+    :param FN: false negative
     :type FN : int
-    :return: Accuracy as float
+    :return: accuracy as float
     '''
     try:
         result = (TP + TN) / (TP + TN + FN + FP)
@@ -938,10 +938,10 @@ def ACC_calc(TP, TN, FP, FN):
 
 def ERR_calc(ACC):
     '''
-    This function calculate Error Rate
-    :param ACC: Accuracy
+    This function calculate error rate
+    :param ACC: accuracy
     :type ACC: float
-    :return: Error Rate as float
+    :return: error rate as float
     '''
     try:
         return 1 - ACC
@@ -951,16 +951,16 @@ def ERR_calc(ACC):
 
 def F_calc(TP, FP, FN, Beta):
     '''
-    This function calculate F Score
-    :param TP: True Positive
+    This function calculate F score
+    :param TP: true positive
     :type TP : int
-    :param FP: False Positive
+    :param FP: false positive
     :type FP : int
-    :param FN: False Negative
+    :param FN: false negative
     :type FN : int
-    :param Beta : coefficient
+    :param Beta : beta coefficient
     :type Beta : float
-    :return: F Score as float
+    :return: F score as float
     '''
     try:
         result = ((1 + (Beta)**2) * TP) / \
@@ -972,14 +972,14 @@ def F_calc(TP, FP, FN, Beta):
 
 def MCC_calc(TP, TN, FP, FN):
     '''
-    This function calculate Matthews correlation coefficient (MCC)
-    :param TP: True Positive
+    This function calculate MCC (Matthews correlation coefficient)
+    :param TP: true positive
     :type TP : int
-    :param TN: True Negative
+    :param TN: true negative
     :type TN : int
-    :param FP: False Positive
+    :param FP: false positive
     :type FP : int
-    :param FN: False Negative
+    :param FN: false negative
     :type FN : int
     :return: MCC as float
     '''

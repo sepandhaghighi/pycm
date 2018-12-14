@@ -774,12 +774,12 @@ def lambda_B_calc(classes, table, TOP, POP):
     :param TOP: test outcome positive
     :type TOP : dict
     :param POP: population
-    :type POP : dict
+    :type POP : int
     :return: Goodman and Kruskal's lambda B as float
     '''
     try:
         result = 0
-        length = list(POP.values())[0]
+        length = POP
         maxresponse = max(list(TOP.values()))
         for i in classes:
             result += max(list(table[i].values()))
@@ -1545,7 +1545,7 @@ def overall_statistics(
     mutual_information = mutual_information_calc(
         response_entropy, conditional_entropy)
     kl_divergence = kl_divergence_calc(P, TOP, POP)
-    lambda_B = lambda_B_calc(classes, table, TOP, POP)
+    lambda_B = lambda_B_calc(classes, table, TOP, population)
     lambda_A = lambda_A_calc(classes, table, P, POP)
     DF = DF_calc(classes)
     overall_jaccard_index = overall_jaccard_index_calc(list(

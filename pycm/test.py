@@ -1624,6 +1624,9 @@ True
 True
 >>> cm_file.matrix == {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}
 True
+>>> cm = ConfusionMatrix([1,2,3,4],[1,2,3,"4"])
+>>> cm
+pycm.ConfusionMatrix(classes: ['1', '2', '3', '4'])
 >>> os.remove("test.csv")
 >>> os.remove("test.obj")
 >>> os.remove("test.html")

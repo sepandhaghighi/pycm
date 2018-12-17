@@ -332,8 +332,7 @@ def normalized_table_calc(classes, table):
     map_dict = {k: 0 for k in classes}
     new_table = {k: map_dict.copy() for k in classes}
     for key in classes:
-        row = list(table[key].values())
-        div = sum(row)
+        div = sum(table[key].values())
         if div == 0:
             div = 1
         for item in classes:

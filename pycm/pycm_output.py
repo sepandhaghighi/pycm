@@ -329,13 +329,12 @@ def normalized_table_calc(classes, table):
     :type table:dict
     :return: normalized table as dict
     '''
-    classes.sort()
     map_dict = {k: 0 for k in classes}
     new_table = {k: map_dict.copy() for k in classes}
     for key in classes:
-        row = [table[key][i] for i in classes]
+        row = list(table[key].values())
         div = sum(row)
-        if sum(row) == 0:
+        if div == 0:
             div = 1
         for item in classes:
             new_table[key][item] = numpy.around(table[key][item] / div, 5)

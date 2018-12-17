@@ -39,6 +39,6 @@ install:
 
 script:
   - python -m pytest pycm/ --cov=pycm --cov-report=term
-  - python -m cProfile -s cumtime pycm_profile.py
+  - python -m cProfile -s cumtime pycm/pycm_profile.py
 after_success:
   - codecov

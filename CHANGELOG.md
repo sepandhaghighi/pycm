@@ -5,10 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-## [1.7] - 2018-12-17
+## [1.7] - 2018-12-18
 ### Added
 - Gini Index (GI)
 - Example-7
+- `pycm_profile.py`
 
 ### Changed
 - `class_name` argument added to `stat`,`save_stat`,`save_csv` and `save_html`  methods

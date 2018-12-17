@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `class_name` argument added to `stat`,`save_stat`,`save_csv` and `save_html`  methods
 - `overall_param` and `class_param` arguments empty list bug fixed 
-- `matrix_params_calc` and `matrix_params_from_table` functions optimized
+- `matrix_params_calc`, `matrix_params_from_table` and `vector_filter` functions optimized
 - `overall_MCC_calc`, `CEN_misclassification_calc` and `convex_combination` functions optimized
 - Document modified
 

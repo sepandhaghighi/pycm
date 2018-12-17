@@ -609,8 +609,7 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
         if len(sample_weight) == len(actual_vector):
             weight_vector = sample_weight
     for index, item in enumerate(actual_vector):
-        if (item in classes) and (predict_vector[index] in classes):
-            table[item][predict_vector[index]] += 1 * weight_vector[index]
+        table[item][predict_vector[index]] += 1 * weight_vector[index]
     [classes, table, TP_dict, TN_dict, FP_dict,
         FN_dict] = matrix_params_from_table(table)
     return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]

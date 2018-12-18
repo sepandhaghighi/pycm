@@ -95,6 +95,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      2                       1                       2
 FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
+GI(Gini index)                                                   0.77778                 0.22222                 0.16667
 IS(Information score)                                            1.26303                 1.0                     0.26303
 J(Jaccard index)                                                 0.6                     0.25                    0.375
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903
@@ -207,6 +208,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      2                       1                       2
 FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
+GI(Gini index)                                                   0.77778                 0.22222                 0.16667
 IS(Information score)                                            1.26303                 1.0                     0.26303
 J(Jaccard index)                                                 0.6                     0.25                    0.375
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903
@@ -265,6 +267,24 @@ Repo : https://github.com/sepandhaghighi/pycm
 Webpage : http://pycm.shaghighi.ir
 <BLANKLINE>
 <BLANKLINE>
+>>> RCI_calc(24,0)
+'None'
+>>> CBA_calc([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0})
+'None'
+>>> RR_calc([], {1:0,2:0})
+'None'
+>>> overall_MCC_calc([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0})
+'None'
+>>> CEN_misclassification_calc({1:{1:0,2:0},2:{1:0,2:0}},{1:0,2:0},{1:0,2:0},1,1,2)
+'None'
+>>> vector_check([1,2,3,0.4])
+False
+>>> vector_check([1,2,3,-2])
+False
+>>> matrix_check({1:{1:0.5,2:0},2:{1:0,2:0}})
+False
+>>> matrix_check([])
+False
 >>> TTPN_calc(0,0)
 'None'
 >>> TTPN_calc(1,4)
@@ -321,6 +341,12 @@ Webpage : http://pycm.shaghighi.ir
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_stat("test_filtered",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"])
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_stat("test_filtered2",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=["L1","L2"])
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_stat("test_filtered3",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[])
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_stat("/asdasd,qweqwe.eo/",address=True)
@@ -427,6 +453,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
+GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
@@ -526,6 +553,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
+GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
@@ -565,6 +593,50 @@ ACC(Accuracy)                                                    0.45           
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
 TNR(Specificity or true negative rate)                           0.45                    0.75                    0.94118                 1.0
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0
+<BLANKLINE>
+>>> cm.stat(overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[100])
+Overall Statistics :
+<BLANKLINE>
+Kappa                                                            0.07801
+Scott PI                                                         -0.12554
+<BLANKLINE>
+Class Statistics :
+<BLANKLINE>
+Classes                                                          100
+ACC(Accuracy)                                                    0.45
+AUC(Area under the roc curve)                                    None
+TNR(Specificity or true negative rate)                           0.45
+TPR(Sensitivity, recall, hit rate, or true positive rate)        None
+<BLANKLINE>
+>>> cm.stat(overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[])
+Overall Statistics :
+<BLANKLINE>
+Kappa                                                            0.07801
+Scott PI                                                         -0.12554
+<BLANKLINE>
+>>> cm.stat(overall_param=["Kappa","Scott PI"],class_param=[],class_name=[100])
+Overall Statistics :
+<BLANKLINE>
+Kappa                                                            0.07801
+Scott PI                                                         -0.12554
+<BLANKLINE>
+>>> cm.stat(overall_param=["Kappa","Scott PI"],class_param=["TPR"],class_name=[100])
+Overall Statistics :
+<BLANKLINE>
+Kappa                                                            0.07801
+Scott PI                                                         -0.12554
+<BLANKLINE>
+Class Statistics :
+<BLANKLINE>
+Classes                                                          100
+TPR(Sensitivity, recall, hit rate, or true positive rate)        None
+<BLANKLINE>
+>>> cm.stat(overall_param=[],class_param=["TPR"],class_name=[100])
+<BLANKLINE>
+Class Statistics :
+<BLANKLINE>
+Classes                                                          100
+TPR(Sensitivity, recall, hit rate, or true positive rate)        None
 <BLANKLINE>
 >>> cm.print_normalized_matrix()
 Predict          100            200            500            600
@@ -678,7 +750,8 @@ Actual
 >>> chi_squared=chi_square_calc(cm2.classes,cm2.table,cm2.TOP,cm2.P,cm2.POP)
 >>> chi_squared
 15.525641025641026
->>> phi_squared=phi_square_calc(chi_squared,cm2.POP)
+>>> population = list(cm2.POP.values())[0]
+>>> phi_squared=phi_square_calc(chi_squared,population)
 >>> phi_squared
 0.5750237416904084
 >>> V=cramers_V_calc(phi_squared,cm2.classes)
@@ -687,7 +760,7 @@ Actual
 >>> DF=DF_calc(cm2.classes)
 >>> DF
 4
->>> SE=se_calc(cm2.Overall_ACC,cm2.POP)
+>>> SE=se_calc(cm2.Overall_ACC,population)
 >>> SE
 0.09072184232530289
 >>> CI=CI_calc(cm2.Overall_ACC,SE)
@@ -711,10 +784,10 @@ Actual
 >>> kl_divergence=kl_divergence_calc(cm2.P,cm2.TOP,cm2.POP)
 >>> kl_divergence
 0.007128882443093773
->>> lambda_B=lambda_B_calc(cm2.classes,cm2.table,cm2.TOP,cm2.POP)
+>>> lambda_B=lambda_B_calc(cm2.classes,cm2.table,cm2.TOP,population)
 >>> lambda_B
 0.35714285714285715
->>> lambda_A=lambda_A_calc(cm2.classes,cm2.table,cm2.P,cm2.POP)
+>>> lambda_A=lambda_A_calc(cm2.classes,cm2.table,cm2.P,population)
 >>> lambda_A
 0.4
 >>> IS_calc(13,0,0,38)
@@ -772,10 +845,31 @@ True
 >>> save_stat=cm.save_html("test_filtered",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"])
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=cm.save_html("test_filtered2",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[100])
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_html("test_filtered3",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[])
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_html("test_filtered4",address=False,overall_param=["Kappa","Scott PI"],class_param=[],class_name=[100])
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_html("test_filtered5",address=False,overall_param=[],class_param=["TPR","TNR","ACC","AUC"],class_name=[100])
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> save_stat=cm.save_csv("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_csv("test_filtered",address=False,class_param=["TPR","TNR","ACC","AUC"])
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_csv("test_filtered2",address=False,class_param=["TPR","TNR","ACC","AUC"],class_name=[100])
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_csv("test_filtered3",address=False,class_param=["TPR","TNR","ACC","AUC"],class_name=[])
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_csv("test_filtered4",address=False,class_param=[],class_name=[100])
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_html("/asdasd,qweqwe.eo/",address=True)
@@ -886,6 +980,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
+GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
@@ -1007,6 +1102,7 @@ FOR(False omission rate)                                         0.21429        
 FP(False positive/type 1 error/false alarm)                      4                       4                       1
 FPR(Fall-out or false positive rate)                             0.26667                 0.22222                 0.04762
 G(G-measure geometric mean of precision and sensitivity)         0.72058                 0.55556                 0.7303
+GI(Gini index)                                                   0.48333                 0.33333                 0.61905
 IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
 MCC(Matthews correlation coefficient)                            0.48067                 0.33333                 0.66254
@@ -1119,6 +1215,7 @@ FOR(False omission rate)                                         0.21429        
 FP(False positive/type 1 error/false alarm)                      4                       4                       1
 FPR(Fall-out or false positive rate)                             0.26667                 0.22222                 0.04762
 G(G-measure geometric mean of precision and sensitivity)         0.72058                 0.55556                 0.7303
+GI(Gini index)                                                   0.48333                 0.33333                 0.61905
 IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
 MCC(Matthews correlation coefficient)                            0.48067                 0.33333                 0.66254
@@ -1179,68 +1276,69 @@ Example : online_help("J") or online_help(2)
 27-FP
 28-FPR
 29-G
-30-Gwet AC1
-31-Hamming Loss
-32-IS
-33-J
-34-Joint Entropy
-35-KL Divergence
-36-Kappa
-37-Kappa 95% CI
-38-Kappa No Prevalence
-39-Kappa Standard Error
-40-Kappa Unbiased
-41-Lambda A
-42-Lambda B
-43-MCC
-44-MCEN
-45-MK
-46-Mutual Information
-47-N
-48-NIR
-49-NLR
-50-NPV
-51-Overall ACC
-52-Overall CEN
-53-Overall J
-54-Overall MCC
-55-Overall MCEN
-56-Overall RACC
-57-Overall RACCU
-58-P
-59-P-Value
-60-PLR
-61-PLRI
-62-POP
-63-PPV
-64-PPV Macro
-65-PPV Micro
-66-PRE
-67-Phi-Squared
-68-RACC
-69-RACCU
-70-RCI
-71-RR
-72-Reference Entropy
-73-Response Entropy
-74-SOA1(Landis & Koch)
-75-SOA2(Fleiss)
-76-SOA3(Altman)
-77-SOA4(Cicchetti)
-78-Scott PI
-79-Standard Error
-80-TN
-81-TNR
-82-TON
-83-TOP
-84-TP
-85-TPR
-86-TPR Macro
-87-TPR Micro
-88-Y
-89-Zero-one Loss
-90-dInd
-91-sInd
+30-GI
+31-Gwet AC1
+32-Hamming Loss
+33-IS
+34-J
+35-Joint Entropy
+36-KL Divergence
+37-Kappa
+38-Kappa 95% CI
+39-Kappa No Prevalence
+40-Kappa Standard Error
+41-Kappa Unbiased
+42-Lambda A
+43-Lambda B
+44-MCC
+45-MCEN
+46-MK
+47-Mutual Information
+48-N
+49-NIR
+50-NLR
+51-NPV
+52-Overall ACC
+53-Overall CEN
+54-Overall J
+55-Overall MCC
+56-Overall MCEN
+57-Overall RACC
+58-Overall RACCU
+59-P
+60-P-Value
+61-PLR
+62-PLRI
+63-POP
+64-PPV
+65-PPV Macro
+66-PPV Micro
+67-PRE
+68-Phi-Squared
+69-RACC
+70-RACCU
+71-RCI
+72-RR
+73-Reference Entropy
+74-Response Entropy
+75-SOA1(Landis & Koch)
+76-SOA2(Fleiss)
+77-SOA3(Altman)
+78-SOA4(Cicchetti)
+79-Scott PI
+80-Standard Error
+81-TN
+82-TNR
+83-TON
+84-TOP
+85-TP
+86-TPR
+87-TPR Macro
+88-TPR Micro
+89-Y
+90-Zero-one Loss
+91-dInd
+92-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -1333,6 +1431,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      4                       2                       2
 FPR(Fall-out or false positive rate)                             0.26667                 0.11111                 0.22222
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.33333                 0.61237
+GI(Gini index)                                                   0.73333                 0.22222                 0.27778
 IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
 MCC(Matthews correlation coefficient)                            0.66332                 0.22222                 0.28307
@@ -1443,6 +1542,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      4                       2                       2
 FPR(Fall-out or false positive rate)                             0.26667                 0.11111                 0.22222
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.33333                 0.61237
+GI(Gini index)                                                   0.73333                 0.22222                 0.27778
 IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
 MCC(Matthews correlation coefficient)                            0.66332                 0.22222                 0.28307
@@ -1468,7 +1568,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 Y(Youden index)                                                  0.73333                 0.22222                 0.27778
 dInd(Distance index)                                             0.26667                 0.67586                 0.54716
 sInd(Similarity index)                                           0.81144                 0.52209                 0.6131
->>> NIR_calc({'Class2': 804, 'Class1': 196},{'Class2': 1000, 'Class1': 1000}) # Verified Case
+>>> NIR_calc({'Class2': 804, 'Class1': 196},1000) # Verified Case
 0.804
 >>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":183,"Class2":13},"Class2":{"Class1":141,"Class2":663}})  # Verified Case
 >>> cm.PValue
@@ -1499,6 +1599,12 @@ sInd(Similarity index)                                           0.81144        
 >>> cm.RCI
 0.3675708571923818
 >>> cm = ConfusionMatrix(matrix={1:{1:12806,2:26332},2:{1:5484,2:299777}},transpose=True) # Verified Case
+>>> cm.AUC[1]
+0.8097090079101759
+>>> cm.GI[1]
+0.6194180158203517
+>>> cm.Overall_ACC
+0.9076187793808925
 >>> cm.DP[1]
 0.7854399677022138
 >>> cm.Y[1]
@@ -1506,6 +1612,12 @@ sInd(Similarity index)                                           0.81144        
 >>> cm.BM[1]
 0.6194180158203517
 >>> cm = ConfusionMatrix(matrix={1:{1:13182,2:30516},2:{1:5108,2:295593}},transpose=True) # Verified Case
+>>> cm.AUC[1]
+0.8135728157964055
+>>> cm.GI[1]
+0.627145631592811
+>>> cm.Overall_ACC
+0.896561836706843
 >>> cm.DP[1]
 0.770700985610517
 >>> cm.Y[1]
@@ -1530,12 +1642,24 @@ True
 True
 >>> cm_file.matrix == {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}
 True
+>>> cm = ConfusionMatrix([1,2,3,4],[1,2,3,"4"])
+>>> cm
+pycm.ConfusionMatrix(classes: ['1', '2', '3', '4'])
 >>> os.remove("test.csv")
 >>> os.remove("test.obj")
 >>> os.remove("test.html")
 >>> os.remove("test_filtered.html")
 >>> os.remove("test_filtered.csv")
 >>> os.remove("test_filtered.pycm")
+>>> os.remove("test_filtered2.html")
+>>> os.remove("test_filtered3.html")
+>>> os.remove("test_filtered4.html")
+>>> os.remove("test_filtered5.html")
+>>> os.remove("test_filtered2.csv")
+>>> os.remove("test_filtered3.csv")
+>>> os.remove("test_filtered4.csv")
+>>> os.remove("test_filtered2.pycm")
+>>> os.remove("test_filtered3.pycm")
 >>> os.remove("test2.obj")
 >>> os.remove("test3.obj")
 >>> os.remove("test4.obj")

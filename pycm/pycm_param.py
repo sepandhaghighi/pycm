@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-VERSION = "1.6"
+VERSION = "1.7"
 
 
 OVERVIEW = '''
@@ -60,7 +60,8 @@ PARAMS_DESCRIPTION = {
     "Y": "Youden index",
     "PLRI": "Positive likelihood ratio interpretation",
     "DPI": "Discriminant power interpretation",
-    "AUCI": "AUC value interpretation"}
+    "AUCI": "AUC value interpretation",
+    "GI": "Gini index"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -153,7 +154,8 @@ PARAMS_LINK = {
     "Y": "Y-(Youden-index)",
     "PLRI": "PLRI-(Positive-likelihood-ratio-interpretation)",
     "DPI": "DPI-(Discriminant-power-interpretation)",
-    "AUCI": "AUCI-(AUC-value-interpretation)"}
+    "AUCI": "AUCI-(AUC-value-interpretation)",
+    "GI": "GI-(Gini-index)"}
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

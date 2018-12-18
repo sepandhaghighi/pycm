@@ -191,18 +191,21 @@ class ConfusionMatrix():
         table = normalized_table_calc(classes, table)
         print(table_print(classes, table))
 
-    def stat(self, overall_param=None, class_param=None):
+    def stat(self, overall_param=None, class_param=None, class_name=None):
         '''
         This method print statistical measures table
-        :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott PI]
+        :param overall_param : overall parameters list for print, Example : ["Kappa","Scott PI]
         :type overall_param : list
-        :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
+        :param class_param : class parameters list for print, Example : ["TPR","TNR","AUC"]
         :type class_param : list
+        :param class_name : class name (sub set of classes), Example :[1,2,3]
+        :type class_name : list
         :return: None
         '''
+        classes = class_filter(self.classes, class_name)
         print(
             stat_print(
-                self.classes,
+                classes,
                 self.class_stat,
                 self.overall_stat,
                 self.digit, overall_param, class_param))
@@ -223,18 +226,21 @@ class ConfusionMatrix():
             name,
             address=True,
             overall_param=None,
-            class_param=None):
+            class_param=None,
+            class_name=None):
         '''
         This method save ConfusionMatrix in .pycm (flat file format)
         :param name: filename
         :type name : str
-        :param address: Flag for address return
+        :param address: flag for address return
         :type address : bool
-        :param overall_param : Overall parameters list for save, Example : ["Kappa","Scott PI]
+        :param overall_param : overall parameters list for save, Example : ["Kappa","Scott PI]
         :type overall_param : list
-        :param class_param : Class parameters list for save, Example : ["TPR","TNR","AUC"]
+        :param class_param : class parameters list for save, Example : ["TPR","TNR","AUC"]
         :type class_param : list
-        :return: Saving Status as dict {"Status":bool , "Message":str}
+        :param class_name : class name (sub set of classes), Example :[1,2,3]
+        :type class_name : list
+        :return: saving Status as dict {"Status":bool , "Message":str}
         '''
         try:
             message = None
@@ -245,14 +251,15 @@ class ConfusionMatrix():
                                 table_print(self.classes,
                                             self.normalized_table) + "\n\n"
             one_vs_all = "\nOne-Vs-All : \n\n"
-            for class_name in self.classes:
-                one_vs_all += str(class_name) + "-Vs-All : \n\n"
+            for c in self.classes:
+                one_vs_all += str(c) + "-Vs-All : \n\n"
                 [classes, table] = one_vs_all_func(self.classes, self.table,
                                                    self.TP, self.TN, self.FP,
-                                                   self.FN, class_name)
+                                                   self.FN, c)
                 one_vs_all += table_print(classes, table) + "\n\n"
+            classes = class_filter(self.classes, class_name)
             stat = stat_print(
-                self.classes,
+                classes,
                 self.class_stat,
                 self.overall_stat,
                 self.digit, overall_param, class_param)
@@ -269,18 +276,21 @@ class ConfusionMatrix():
             name,
             address=True,
             overall_param=None,
-            class_param=None):
+            class_param=None,
+            class_name=None):
         '''
         This method save ConfusionMatrix in HTML file
         :param name: filename
         :type name : str
-        :param address: Flag for address return
+        :param address: flag for address return
         :type address : bool
-        :param overall_param : Overall parameters list for save, Example : ["Kappa","Scott PI]
+        :param overall_param : overall parameters list for save, Example : ["Kappa","Scott PI]
         :type overall_param : list
-        :param class_param : Class parameters list for save, Example : ["TPR","TNR","AUC"]
+        :param class_param : class parameters list for save, Example : ["TPR","TNR","AUC"]
         :type class_param : list
-        :return: Saving Status as dict {"Status":bool , "Message":str}
+        :param class_name : class name (sub set of classes), Example :[1,2,3]
+        :type class_name : list
+        :return: saving Status as dict {"Status":bool , "Message":str}
         '''
         try:
             message = None
@@ -292,7 +302,7 @@ class ConfusionMatrix():
                 self.table,
                 self.overall_stat,
                 self.class_stat,
-                self.digit, overall_param, class_param)
+                self.digit, overall_param, class_param, class_name)
             html_file.close()
             if address:
                 message = os.path.join(os.getcwd(), name + ".html")
@@ -300,22 +310,25 @@ class ConfusionMatrix():
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
-    def save_csv(self, name, address=True, class_param=None):
+    def save_csv(self, name, address=True, class_param=None, class_name=None):
         '''
         This method save ConfusionMatrix in CSV file
         :param name: filename
         :type name : str
-        :param address: Flag for address return
+        :param address: flag for address return
         :type address : bool
-        :param class_param : Class parameters list for save, Example : ["TPR","TNR","AUC"]
+        :param class_param : class parameters list for save, Example : ["TPR","TNR","AUC"]
         :type class_param : list
-        :return: Saving Status as dict {"Status":bool , "Message":str}
+        :param class_name : class name (sub set of classes), Example :[1,2,3]
+        :type class_name : list
+        :return: saving Status as dict {"Status":bool , "Message":str}
         '''
         try:
             message = None
+            classes = class_filter(self.classes, class_name)
             csv_file = open(name + ".csv", "w")
             csv_data = csv_print(
-                self.classes,
+                classes,
                 self.class_stat,
                 self.digit,
                 class_param)
@@ -331,9 +344,9 @@ class ConfusionMatrix():
         This method save ConfusionMatrix in .obj file
         :param name: filename
         :type name : str
-        :param address: Flag for address return
+        :param address: flag for address return
         :type address : bool
-        :return: Saving Status as dict {"Status":bool , "Message":str}
+        :return: saving Status as dict {"Status":bool , "Message":str}
         '''
         try:
             message = None
@@ -362,8 +375,8 @@ class ConfusionMatrix():
 
     def F_beta(self, Beta):
         '''
-        This method calculate FBeta Score
-        :param Beta: Beta parameter
+        This method calculate FBeta score
+        :param Beta: beta parameter
         :type Beta : float
         :return: FBeta Score for classes as dict
         '''
@@ -472,6 +485,7 @@ def __class_stat_init__(CM):
     CM.PLRI = CM.class_stat["PLRI"]
     CM.DPI = CM.class_stat["DPI"]
     CM.AUCI = CM.class_stat["AUCI"]
+    CM.GI = CM.class_stat["GI"]
 
 
 def __overall_stat_init__(CM):

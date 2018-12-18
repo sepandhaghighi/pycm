@@ -5,6 +5,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.7] - 2018-12-18
+### Added
+- Gini Index (GI)
+- Example-7
+- `pycm_profile.py`
+
+### Changed
+- `class_name` argument added to `stat`,`save_stat`,`save_csv` and `save_html`  methods
+- `overall_param` and `class_param` arguments empty list bug fixed 
+- `matrix_params_calc`, `matrix_params_from_table` and `vector_filter` functions optimized
+- `overall_MCC_calc`, `CEN_misclassification_calc` and `convex_combination` functions optimized
+- Document modified
+
 ## [1.6] - 2018-12-06
 ### Added
 - AUC Value Interpretation (AUCI)
@@ -46,7 +59,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `print_table` bug for large numbers fixed
 - JSON key bug in `save_obj` fixed
 - `transpose` bug in `save_obj` fixed
-- `Python 3.7` added to `.travis.yaml` & `appveyor.yml`
+- `Python 3.7` added to `.travis.yaml` and `appveyor.yml`
 
 ## [1.4] - 2018-11-12
 ### Added
@@ -285,7 +298,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.6...HEAD
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.7...HEAD
+[1.7]: https://github.com/sepandhaghighi/pycm/compare/v1.6...v1.7
 [1.6]: https://github.com/sepandhaghighi/pycm/compare/v1.5...v1.6
 [1.5]: https://github.com/sepandhaghighi/pycm/compare/v1.4...v1.5
 [1.4]: https://github.com/sepandhaghighi/pycm/compare/v1.3...v1.4

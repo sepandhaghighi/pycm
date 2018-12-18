@@ -6,6 +6,22 @@ import numpy
 import webbrowser
 
 
+def class_filter(classes, class_name):
+    '''
+    This function compare class_name and classes
+    :param classes: matrix classes
+    :type classes: list
+    :param class_name: sub set of classes
+    :type class_name : list
+    :return: filtered classes as list
+    '''
+    result_classes = classes
+    if isinstance(class_name, list):
+        if set(class_name) <= set(classes):
+            result_classes = class_name
+    return result_classes
+
+
 def html_init(name):
     '''
     This function return report  file first lines
@@ -102,6 +118,8 @@ def html_overall_stat(overall_stat, digit=5, overall_param=None):
     if isinstance(overall_param, list):
         if set(overall_param) <= set(overall_stat_keys):
             overall_stat_keys = sorted(overall_param)
+    if len(overall_stat_keys) < 1:
+        return ""
     background_color = None
     for i in overall_stat_keys:
         result += '<tr align="center">\n'
@@ -145,6 +163,9 @@ def html_class_stat(classes, class_stat, digit=5, class_param=None):
     if isinstance(class_param, list):
         if set(class_param) <= set(class_stat_keys):
             class_stat_keys = class_param
+    classes.sort()
+    if len(classes) < 1 or len(class_stat_keys) < 1:
+        return ""
     for i in class_stat_keys:
         result += '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n'
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;"><a href="' + \
@@ -186,7 +207,7 @@ def html_maker(
         table,
         overall_stat,
         class_stat,
-        digit=5, overall_param=None, class_param=None):
+        digit=5, overall_param=None, class_param=None, class_name=None):
     '''
     This function create html report
     :param html_file : file object of html
@@ -203,16 +224,24 @@ def html_maker(
     :type class_stat: dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
-    :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott PI]
+    :param overall_param : overall parameters list for print, Example : ["Kappa","Scott PI]
     :type overall_param : list
-    :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
+    :param class_param : class parameters list for print, Example : ["TPR","TNR","AUC"]
     :type class_param : list
+    :param class_name : class name (sub set of classes), Example :[1,2,3]
+    :type class_name : list
     :return: None
     '''
     html_file.write(html_init(name))
     html_file.write(html_table(classes, table))
     html_file.write(html_overall_stat(overall_stat, digit, overall_param))
-    html_file.write(html_class_stat(classes, class_stat, digit, class_param))
+    class_stat_classes = class_filter(classes, class_name)
+    html_file.write(
+        html_class_stat(
+            class_stat_classes,
+            class_stat,
+            digit,
+            class_param))
     html_file.write(html_end(VERSION))
 
 
@@ -221,7 +250,7 @@ def isfloat(value):
     This function check input for float conversion
     :param value: input value
     :type value:str
-    :return: True if input_value is a number and False otherwise
+    :return: result as bool (true if input_value is a number and false otherwise)
     '''
     try:
         float(value)
@@ -300,13 +329,11 @@ def normalized_table_calc(classes, table):
     :type table:dict
     :return: normalized table as dict
     '''
-    classes.sort()
     map_dict = {k: 0 for k in classes}
     new_table = {k: map_dict.copy() for k in classes}
     for key in classes:
-        row = [table[key][i] for i in classes]
-        div = sum(row)
-        if sum(row) == 0:
+        div = sum(table[key].values())
+        if div == 0:
             div = 1
         for item in classes:
             new_table[key][item] = numpy.around(table[key][item] / div, 5)
@@ -322,6 +349,8 @@ def csv_print(classes, class_stat, digit=5, class_param=None):
     :type class_stat:dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
+    :param class_param : class parameters list for print, Example : ["TPR","TNR","AUC"]
+    :type class_param : list
     :return: csv file data as str
     '''
     result = "Class"
@@ -333,6 +362,8 @@ def csv_print(classes, class_stat, digit=5, class_param=None):
     if isinstance(class_param, list):
         if set(class_param) <= set(class_stat_keys):
             class_stat_keys = class_param
+    if len(class_stat_keys) < 1 or len(classes) < 1:
+        return ""
     for key in class_stat_keys:
         row = [rounder(class_stat[key][i], digit) for i in classes]
         result += key + "," + ",".join(row)
@@ -357,36 +388,39 @@ def stat_print(
     :type overall_stat:dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
-    :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott PI]
+    :param overall_param : overall parameters list for print, Example : ["Kappa","Scott PI]
     :type overall_param : list
-    :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
+    :param class_param : class parameters list for print, Example : ["TPR","TNR","AUC"]
     :type class_param : list
     :return: printable result as str
     '''
     shift = max(map(len, PARAMS_DESCRIPTION.values())) + 5
     classes_len = len(classes)
-    result = "Overall Statistics : " + "\n\n"
     overall_stat_keys = sorted(overall_stat.keys())
+    result = ""
     if isinstance(overall_param, list):
         if set(overall_param) <= set(overall_stat_keys):
             overall_stat_keys = sorted(overall_param)
-    for key in overall_stat_keys:
-        result += key + " " * (
-            shift - len(key) + 7) + rounder(overall_stat[key], digit) + "\n"
-    result += "\nClass Statistics :\n\n"
-    result += "Classes" + shift * " " + "%-24s" * \
-        classes_len % tuple(map(str, classes)) + "\n"
+    if len(overall_stat_keys) > 0:
+        result = "Overall Statistics : " + "\n\n"
+        for key in overall_stat_keys:
+            result += key + " " * (shift - len(key) + 7) + \
+                rounder(overall_stat[key], digit) + "\n"
     class_stat_keys = sorted(class_stat.keys())
     if isinstance(class_param, list):
         if set(class_param) <= set(class_stat_keys):
             class_stat_keys = sorted(class_param)
     classes.sort()
-    rounder_map = partial(rounder, digit=digit)
-    for key in class_stat_keys:
-        row = [class_stat[key][i] for i in classes]
-        result += key + "(" + PARAMS_DESCRIPTION[key].capitalize() + ")" + " " * (
-            shift - len(key) - len(PARAMS_DESCRIPTION[key]) + 5) + "%-24s" * classes_len % tuple(
-            map(rounder_map, row)) + "\n"
+    if len(class_stat_keys) > 0 and len(classes) > 0:
+        result += "\nClass Statistics :\n\n"
+        result += "Classes" + shift * " " + "%-24s" * \
+            classes_len % tuple(map(str, classes)) + "\n"
+        rounder_map = partial(rounder, digit=digit)
+        for key in class_stat_keys:
+            row = [class_stat[key][i] for i in classes]
+            result += key + "(" + PARAMS_DESCRIPTION[key].capitalize() + ")" + " " * (
+                shift - len(key) - len(PARAMS_DESCRIPTION[key]) + 5) + "%-24s" * classes_len % tuple(
+                map(rounder_map, row)) + "\n"
     return result
 
 

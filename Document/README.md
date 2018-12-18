@@ -42,6 +42,11 @@
 - [Jupyter Notebook](https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Example6.ipynb)
 - [HTML](http://www.shaghighi.ir/pycm/doc/Example6.html)
 
+## Example-7 (How to plot via seaborn+pandas)
+
+- [Jupyter Notebook](https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Example7.ipynb)
+- [HTML](http://www.shaghighi.ir/pycm/doc/Example7.html)
+
 
 
 

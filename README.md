@@ -84,7 +84,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ## Installation		
 
 ### Source code
-- Download [Version 1.6](https://github.com/sepandhaghighi/pycm/archive/v1.6.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 1.7](https://github.com/sepandhaghighi/pycm/archive/v1.7.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -92,7 +92,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==1.6` or `pip3 install pycm==1.6` (Need root access)
+- Run `pip install pycm==1.7` or `pip3 install pycm==1.7` (Need root access)
 
 ### Conda
 
@@ -201,6 +201,7 @@ FOR(False omission rate)                                         0.0            
 FP(False positive/type 1 error/false alarm)                      2                       1                       2                       
 FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333                 
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772                 
+GI(Gini index)                                                   0.77778                 0.22222                 0.16667                 
 IS(Information score)                                            1.26303                 1.0                     0.26303                 
 J(Jaccard index)                                                 0.6                     0.25                    0.375                   
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903                 
@@ -226,7 +227,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 Y(Youden index)                                                  0.77778                 0.22222                 0.16667                 
 dInd(Distance index)                                             0.22222                 0.67586                 0.60093                 
 sInd(Similarity index)                                           0.84287                 0.52209                 0.57508                 
-             
+                        
 >>> cm.print_matrix()
 Predict          0    1    2    
 Actual
@@ -343,6 +344,7 @@ FOR(False omission rate)                                         0.28571        
 FP(False positive/type 1 error/false alarm)                      0                       2                       
 FPR(Fall-out or false positive rate)                             0.0                     0.66667                 
 G(G-measure geometric mean of precision and sensitivity)         0.57735                 0.84515                 
+GI(Gini index)                                                   0.33333                 0.33333                 
 IS(Information score)                                            1.41504                 0.19265                 
 J(Jaccard index)                                                 0.33333                 0.71429                 
 MCC(Matthews correlation coefficient)                            0.48795                 0.48795                 

@@ -267,6 +267,24 @@ Repo : https://github.com/sepandhaghighi/pycm
 Webpage : http://pycm.shaghighi.ir
 <BLANKLINE>
 <BLANKLINE>
+>>> RCI_calc(24,0)
+'None'
+>>> CBA_calc([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0})
+'None'
+>>> RR_calc([], {1:0,2:0})
+'None'
+>>> overall_MCC_calc([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0})
+'None'
+>>> CEN_misclassification_calc({1:{1:0,2:0},2:{1:0,2:0}},{1:0,2:0},{1:0,2:0},1,1,2)
+'None'
+>>> vector_check([1,2,3,0.4])
+False
+>>> vector_check([1,2,3,-2])
+False
+>>> matrix_check({1:{1:0.5,2:0},2:{1:0,2:0}})
+False
+>>> matrix_check([])
+False
 >>> TTPN_calc(0,0)
 'None'
 >>> TTPN_calc(1,4)

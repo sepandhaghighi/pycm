@@ -157,7 +157,7 @@ PARAMS_LINK = {
     "DPI": "DPI-(Discriminant-power-interpretation)",
     "AUCI": "AUCI-(AUC-value-interpretation)",
     "GI": "GI-(Gini-index)",
-    "LS": ""}
+    "LS": "LS-(Lift-index)"}
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

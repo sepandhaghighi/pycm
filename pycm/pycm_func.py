@@ -19,6 +19,20 @@ def isfile(f):
         f, 'read')
 
 
+def lift_calc(PPV,PRE):
+    '''
+    This function calculate lift score
+    :param PPV:  precision or positive predictive value
+    :type PPV : float
+    :param PRE: Prevalence
+    :type PRE : float
+    :return: lift score as float
+    '''
+    try:
+        return PPV/PRE
+    except Exception:
+        return "None"
+
 def GI_calc(AUC):
     '''
     This function calculate Gini index
@@ -1673,6 +1687,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     DPI = {}
     AUCI = {}
     GI = {}
+    LS = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1715,6 +1730,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         DPI[i] = DP_analysis(DP[i])
         AUCI[i] = AUC_analysis(AUC[i])
         GI[i] = GI_calc(AUC[i])
+        LS[i] = lift_calc(PPV[i],PRE[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1760,5 +1776,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "PLRI": PLRI,
         "DPI": DPI,
         "AUCI": AUCI,
-        "GI": GI}
+        "GI": GI,
+        "LS":LS}
     return result

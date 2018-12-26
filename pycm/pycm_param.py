@@ -61,7 +61,8 @@ PARAMS_DESCRIPTION = {
     "PLRI": "Positive likelihood ratio interpretation",
     "DPI": "Discriminant power interpretation",
     "AUCI": "AUC value interpretation",
-    "GI": "Gini index"}
+    "GI": "Gini index",
+    "LS": "Lift score"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -155,7 +156,8 @@ PARAMS_LINK = {
     "PLRI": "PLRI-(Positive-likelihood-ratio-interpretation)",
     "DPI": "DPI-(Discriminant-power-interpretation)",
     "AUCI": "AUCI-(AUC-value-interpretation)",
-    "GI": "GI-(Gini-index)"}
+    "GI": "GI-(Gini-index)",
+    "LS": ""}
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

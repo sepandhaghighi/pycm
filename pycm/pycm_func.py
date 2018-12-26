@@ -19,7 +19,7 @@ def isfile(f):
         f, 'read')
 
 
-def lift_calc(PPV,PRE):
+def lift_calc(PPV, PRE):
     '''
     This function calculate lift score
     :param PPV:  precision or positive predictive value
@@ -29,9 +29,10 @@ def lift_calc(PPV,PRE):
     :return: lift score as float
     '''
     try:
-        return PPV/PRE
+        return PPV / PRE
     except Exception:
         return "None"
+
 
 def GI_calc(AUC):
     '''
@@ -1730,7 +1731,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         DPI[i] = DP_analysis(DP[i])
         AUCI[i] = AUC_analysis(AUC[i])
         GI[i] = GI_calc(AUC[i])
-        LS[i] = lift_calc(PPV[i],PRE[i])
+        LS[i] = lift_calc(PPV[i], PRE[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1777,5 +1778,5 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "DPI": DPI,
         "AUCI": AUCI,
         "GI": GI,
-        "LS":LS}
+        "LS": LS}
     return result

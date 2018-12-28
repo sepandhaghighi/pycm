@@ -1127,12 +1127,11 @@ def PLR_analysis(PLR):
             return "None"
         if PLR <= 1:
             return "Negligible"
-        elif PLR > 1 and PLR < 5:
+        if PLR > 1 and PLR < 5:
             return "Poor"
-        elif PLR >= 5 and PLR < 10:
+        if PLR >= 5 and PLR < 10:
             return "Fair"
-        else:
-            return "Good"
+        return "Good"
     except Exception:
         return "None"
 
@@ -1149,12 +1148,11 @@ def DP_analysis(DP):
             return "None"
         if DP < 1:
             return "Poor"
-        elif DP >= 1 and DP < 2:
+        if DP >= 1 and DP < 2:
             return "Limited"
-        elif DP >= 2 and DP < 3:
+        if DP >= 2 and DP < 3:
             return "Fair"
-        else:
-            return "Good"
+        return "Good"
     except Exception:
         return "None"
 
@@ -1171,14 +1169,13 @@ def AUC_analysis(AUC):
             return "None"
         if AUC < 0.6:
             return "Poor"
-        elif AUC >= 0.6 and AUC < 0.7:
+        if AUC >= 0.6 and AUC < 0.7:
             return "Fair"
-        elif AUC >= 0.7 and AUC < 0.8:
+        if AUC >= 0.7 and AUC < 0.8:
             return "Good"
-        elif AUC >= 0.8 and AUC < 0.9:
+        if AUC >= 0.8 and AUC < 0.9:
             return "Very Good"
-        else:
-            return "Excellent"
+        return "Excellent"
     except Exception:
         return "None"
 
@@ -1193,14 +1190,13 @@ def kappa_analysis_cicchetti(kappa):
     try:
         if kappa < 0.4:
             return "Poor"
-        elif kappa >= 0.4 and kappa < 0.59:
+        if kappa >= 0.4 and kappa < 0.59:
             return "Fair"
-        elif kappa >= 0.59 and kappa < 0.74:
+        if kappa >= 0.59 and kappa < 0.74:
             return "Good"
-        elif kappa >= 0.74 and kappa <= 1:
+        if kappa >= 0.74 and kappa <= 1:
             return "Excellent"
-        else:
-            return "None"
+        return "None"
     except Exception:
         return "None"
 
@@ -1215,18 +1211,17 @@ def kappa_analysis_koch(kappa):
     try:
         if kappa < 0:
             return "Poor"
-        elif kappa >= 0 and kappa < 0.2:
+        if kappa >= 0 and kappa < 0.2:
             return "Slight"
-        elif kappa >= 0.20 and kappa < 0.4:
+        if kappa >= 0.20 and kappa < 0.4:
             return "Fair"
-        elif kappa >= 0.40 and kappa < 0.6:
+        if kappa >= 0.40 and kappa < 0.6:
             return "Moderate"
-        elif kappa >= 0.60 and kappa < 0.8:
+        if kappa >= 0.60 and kappa < 0.8:
             return "Substantial"
-        elif kappa >= 0.80 and kappa <= 1:
+        if kappa >= 0.80 and kappa <= 1:
             return "Almost Perfect"
-        else:
-            return "None"
+        return "None"
     except Exception:
         return "None"
 
@@ -1241,12 +1236,11 @@ def kappa_analysis_fleiss(kappa):
     try:
         if kappa < 0.4:
             return "Poor"
-        elif kappa >= 0.4 and kappa < 0.75:
+        if kappa >= 0.4 and kappa < 0.75:
             return "Intermediate to Good"
-        elif kappa >= 0.75:
+        if kappa >= 0.75:
             return "Excellent"
-        else:
-            return "None"
+        return "None"
     except Exception:
         return "None"
 

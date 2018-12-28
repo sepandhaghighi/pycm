@@ -277,10 +277,9 @@ def rounder(input_number, digit=5):
             else:
                 tuple_str.append(str(i))
         return "(" + ",".join(tuple_str) + ")"
-    elif isfloat(input_number):
+    if isfloat(input_number):
         return str(numpy.around(input_number, digit))
-    else:
-        return str(input_number)
+    return str(input_number)
 
 
 def pycm_help():

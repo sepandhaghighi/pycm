@@ -2,6 +2,7 @@
 
 from .pycm_func import *
 from .pycm_output import *
+from .pycm_util import *
 import os
 import json
 import types

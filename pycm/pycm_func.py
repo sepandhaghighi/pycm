@@ -1255,16 +1255,15 @@ def kappa_analysis_altman(kappa):
     try:
         if kappa < 0.2:
             return "Poor"
-        elif kappa >= 0.20 and kappa < 0.4:
+        if kappa >= 0.20 and kappa < 0.4:
             return "Fair"
-        elif kappa >= 0.40 and kappa < 0.6:
+        if kappa >= 0.40 and kappa < 0.6:
             return "Moderate"
-        elif kappa >= 0.60 and kappa < 0.8:
+        if kappa >= 0.60 and kappa < 0.8:
             return "Good"
-        elif kappa >= 0.80 and kappa <= 1:
+        if kappa >= 0.80 and kappa <= 1:
             return "Very Good"
-        else:
-            return "None"
+        return "None"
     except Exception:
         return "None"
 

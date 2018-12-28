@@ -3,7 +3,7 @@ from __future__ import division
 import math
 import operator as op
 from functools import reduce
-from .pycm_benchmark import *
+from .pycm_interpret import *
 
 def lift_calc(PPV, PRE):
     '''

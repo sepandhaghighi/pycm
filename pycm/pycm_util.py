@@ -123,5 +123,3 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     [classes, table, TP_dict, TN_dict, FP_dict,
         FN_dict] = matrix_params_from_table(table)
     return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
-
-

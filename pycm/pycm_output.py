@@ -6,21 +6,6 @@ import numpy
 import webbrowser
 
 
-def class_filter(classes, class_name):
-    '''
-    This function compare class_name and classes
-    :param classes: matrix classes
-    :type classes: list
-    :param class_name: sub set of classes
-    :type class_name : list
-    :return: filtered classes as list
-    '''
-    result_classes = classes
-    if isinstance(class_name, list):
-        if set(class_name) <= set(classes):
-            result_classes = class_name
-    return result_classes
-
 
 def html_init(name):
     '''

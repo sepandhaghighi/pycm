@@ -529,7 +529,7 @@ def vector_check(vector):
     :return: bool
     '''
     for i in vector:
-        if isinstance(i, int) == False:
+        if isinstance(i, int) is False:
             return False
         if i < 0:
             return False
@@ -561,7 +561,7 @@ def matrix_check(table):
             return False
         for i in table.keys():
             if table.keys() != table[i].keys() or vector_check(
-                    list(table[i].values())) == False:
+                    list(table[i].values())) is False:
                 return False
         return True
     except Exception:

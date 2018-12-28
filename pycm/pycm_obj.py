@@ -93,7 +93,7 @@ class ConfusionMatrix():
             self.digit = obj_data["Digit"]
         elif isinstance(matrix, dict):
             if matrix_check(matrix):
-                if class_check(list(matrix.keys())) == False:
+                if class_check(list(matrix.keys())) is False:
                     raise pycmMatrixError(
                         "Input Matrix Classes Must Be Same Type")
                 else:

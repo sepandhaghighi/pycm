@@ -2,7 +2,7 @@
 from __future__ import division
 from functools import partial
 from .pycm_param import *
-import numpy
+from .pycm_util import class_filter,rounder
 import webbrowser
 
 
@@ -230,42 +230,6 @@ def html_maker(
     html_file.write(html_end(VERSION))
 
 
-def isfloat(value):
-    '''
-    This function check input for float conversion
-    :param value: input value
-    :type value:str
-    :return: result as bool (true if input_value is a number and false otherwise)
-    '''
-    try:
-        float(value)
-        return True
-    except Exception:
-        return False
-
-
-def rounder(input_number, digit=5):
-    '''
-    This function round input number
-    :param input_number: input number
-    :type input_number : anything
-    :param digit: scale (the number of digits to the right of the decimal point in a number.)
-    :type digit : int
-    :return: round number as float
-    '''
-    if isinstance(input_number, tuple):
-        tuple_list = list(input_number)
-        tuple_str = []
-        for i in tuple_list:
-            if isfloat(i):
-                tuple_str.append(str(numpy.around(i, digit)))
-            else:
-                tuple_str.append(str(i))
-        return "(" + ",".join(tuple_str) + ")"
-    if isfloat(input_number):
-        return str(numpy.around(input_number, digit))
-    return str(input_number)
-
 
 def pycm_help():
     '''
@@ -302,8 +266,6 @@ def table_print(classes, table):
         result += str(key) + " " * (17 - len(str(key))) + \
             shift * classes_len % tuple(map(str, row)) + "\n\n"
     return result
-
-
 
 
 

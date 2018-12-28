@@ -304,24 +304,7 @@ def table_print(classes, table):
     return result
 
 
-def normalized_table_calc(classes, table):
-    '''
-    This function return normalized confusion matrix
-    :param classes: classes list
-    :type classes:list
-    :param table: table
-    :type table:dict
-    :return: normalized table as dict
-    '''
-    map_dict = {k: 0 for k in classes}
-    new_table = {k: map_dict.copy() for k in classes}
-    for key in classes:
-        div = sum(table[key].values())
-        if div == 0:
-            div = 1
-        for item in classes:
-            new_table[key][item] = numpy.around(table[key][item] / div, 5)
-    return new_table
+
 
 
 def csv_print(classes, class_stat, digit=5, class_param=None):

@@ -13,7 +13,7 @@ data scientists that need a broad array of metrics for predictive models
 and an accurate evaluation of large variety of classifiers.
 '''
 
-DOCUMENT_ADR = "http://www.shaghighi.ir/pycm/doc/index.html#"
+DOCUMENT_ADR = "http://www.pycm.ir/doc/index.html#"
 
 PARAMS_DESCRIPTION = {
     "TPR": "sensitivity, recall, hit rate, or true positive rate",

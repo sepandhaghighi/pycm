@@ -266,7 +266,7 @@ data scientists that need a broad array of metrics for predictive models
 and an accurate evaluation of large variety of classifiers.
 <BLANKLINE>
 Repo : https://github.com/sepandhaghighi/pycm
-Webpage : http://pycm.shaghighi.ir
+Webpage : http://www.pycm.ir
 <BLANKLINE>
 <BLANKLINE>
 >>> RCI_calc(24,0)

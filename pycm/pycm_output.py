@@ -38,7 +38,7 @@ def color_check(color):
                 return list(color)
     return [0,0,0]
 
-def html_table_color(row, item, rgb_color=(0,0,0)):
+def html_table_color(row, item, color=(0,0,0)):
     '''
     This function return background color of each cell of table
     :param row: row dictionary
@@ -48,11 +48,11 @@ def html_table_color(row, item, rgb_color=(0,0,0)):
     :return: background color as int (0-255)
     '''
     result=[0,0,0]
-    color_list = color_check(rgb_color)
+    color_list = color_check(color)
     max_color = max(color_list)
-    back_color = 255 - int((item / (sum(list(row.values())) + 1)) * 255)
+    back_color_index = 255 - int((item / (sum(list(row.values())) + 1)) * 255)
     for i in range(3):
-        result[i] = back_color - (max_color-rgb_color[i])
+        result[i] = back_color_index - (max_color-color[i])
         if result[i]<0:
             result[i] = 0
     return result

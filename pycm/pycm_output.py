@@ -67,6 +67,8 @@ def html_table(classes, table,rgb_color):
     :type classes: list
     :param table: matrix
     :type table : dict
+    :param rgb_color : input color
+    :type rgb_color : tuple
     :return: html_table as str
     '''
     result = ""
@@ -237,6 +239,8 @@ def html_maker(
     :type class_param : list
     :param class_name : class name (sub set of classes), Example :[1,2,3]
     :type class_name : list
+    :param color : input color
+    :type color : tuple
     :return: None
     '''
     html_file.write(html_init(name))

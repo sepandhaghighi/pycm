@@ -25,12 +25,19 @@ def html_init(name):
     return result
 
 
-def rgb_check(rgb_color):
-    if isinstance(rgb_color,tuple):
-        if all(map(lambda x : isinstance(x,int),rgb_color)):
-            if all(map(lambda x : x<256,rgb_color)):
-                return list(rgb_color)
+def color_check(color):
+    '''
+    This function check input color fotmat
+    :param color: input color
+    :type color : tuple
+    :return: color as list
+    '''
+    if isinstance(color,tuple):
+        if all(map(lambda x : isinstance(x,int),color)):
+            if all(map(lambda x : x<256,color)):
+                return list(color)
     return [0,0,0]
+
 def html_table_color(row, item, rgb_color=(0,0,0)):
     '''
     This function return background color of each cell of table
@@ -41,7 +48,7 @@ def html_table_color(row, item, rgb_color=(0,0,0)):
     :return: background color as int (0-255)
     '''
     result=[0,0,0]
-    color_list = rgb_check(rgb_color)
+    color_list = color_check(rgb_color)
     max_color = max(color_list)
     back_color = 255 - int((item / (sum(list(row.values())) + 1)) * 255)
     for i in range(3):

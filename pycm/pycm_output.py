@@ -45,7 +45,9 @@ def html_table_color(row, item, color=(0,0,0)):
     :type row : dict
     :param item: cell number
     :type item : int
-    :return: background color as int (0-255)
+    :param color : input color
+    :type color : tuple
+    :return: background color as list [R,G,B]
     '''
     result=[0,0,0]
     color_list = color_check(color)

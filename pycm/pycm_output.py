@@ -25,7 +25,13 @@ def html_init(name):
     return result
 
 
-def html_table_color(row, item):
+def rgb_check(rgb_color):
+    if isinstance(rgb_color,tuple):
+        if all(map(lambda x : isinstance(x,int),rgb_color)):
+            if all(map(lambda x : x<256,rgb_color)):
+                return list(rgb_color)
+    return [0,0,0]
+def html_table_color(row, item, rgb_color=(0,0,0)):
     '''
     This function return background color of each cell of table
     :param row: row dictionary
@@ -34,11 +40,18 @@ def html_table_color(row, item):
     :type item : int
     :return: background color as int (0-255)
     '''
+    result=[0,0,0]
+    color_list = rgb_check(rgb_color)
+    max_color = max(color_list)
     back_color = 255 - int((item / (sum(list(row.values())) + 1)) * 255)
-    return back_color
+    for i in range(3):
+        result[i] = back_color - (max_color-rgb_color[i])
+        if result[i]<0:
+            result[i] = 0
+    return result
 
 
-def html_table(classes, table):
+def html_table(classes, table,rgb_color):
     '''
     This function return report file confusion matrix
     :param classes: matrix classes
@@ -73,11 +86,11 @@ def html_table(classes, table):
         for j in classes:
             item = table[i][j]
             color = "black;"
-            back_color = html_table_color(table[i], item)
-            if back_color < 128:
+            back_color = html_table_color(table[i], item,rgb_color)
+            if min(back_color) < 128:
                 color = "white"
-            part_2 += '<td style="background-color:	rgb({0},{0},{0});color:{1};padding:10px;height:7em;width:7em;">'.format(
-                str(back_color), color) + str(item) + '</td>\n'
+            part_2 += '<td style="background-color:	rgb({0},{1},{2});color:{3};padding:10px;height:7em;width:7em;">'.format(
+                str(back_color[0]),str(back_color[1]),str(back_color[2]), color) + str(item) + '</td>\n'
         part_2 += "</tr>\n"
     result += '</tr>\n'
     part_2 += "</table>\n</td>\n</tr>\n</table>\n"
@@ -192,7 +205,7 @@ def html_maker(
         table,
         overall_stat,
         class_stat,
-        digit=5, overall_param=None, class_param=None, class_name=None):
+        digit=5, overall_param=None, class_param=None, class_name=None, color = (0,0,0)):
     '''
     This function create html report
     :param html_file : file object of html
@@ -218,7 +231,7 @@ def html_maker(
     :return: None
     '''
     html_file.write(html_init(name))
-    html_file.write(html_table(classes, table))
+    html_file.write(html_table(classes, table, color))
     html_file.write(html_overall_stat(overall_stat, digit, overall_param))
     class_stat_classes = class_filter(classes, class_name)
     html_file.write(

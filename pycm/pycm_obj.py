@@ -278,7 +278,7 @@ class ConfusionMatrix():
             address=True,
             overall_param=None,
             class_param=None,
-            class_name=None):
+            class_name=None,color = (0,0,0)):
         '''
         This method save ConfusionMatrix in HTML file
         :param name: filename
@@ -303,7 +303,7 @@ class ConfusionMatrix():
                 self.table,
                 self.overall_stat,
                 self.class_stat,
-                self.digit, overall_param, class_param, class_name)
+                self.digit, overall_param, class_param, class_name,color)
             html_file.close()
             if address:
                 message = os.path.join(os.getcwd(), name + ".html")

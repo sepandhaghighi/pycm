@@ -15,11 +15,11 @@ and an accurate evaluation of large variety of classifiers.
 
 
 
-MATRIX_CLASS_TYPE_ERROR = "Input Matrix Classes Must Be Same Type"
+MATRIX_CLASS_TYPE_ERROR = "Type of the Input Matrix Classes Must Be The Same"
 MATRIX_FORMAT_ERROR = "Input Confusion Matrix Format Error"
 MAPPING_FORMAT_ERROR = "Mapping Format Error"
-MAPPING_CLASS_NAME_ERROR = "Mapping Classnames Error"
-VECTOR_TYPE_ERROR = "Input Vectors Must Be List"
+MAPPING_CLASS_NAME_ERROR = "Mapping Class Names Error"
+VECTOR_TYPE_ERROR = "The Type of Input Vectors Must Be List"
 VECTOR_SIZE_ERROR = "Input Vectors Must Be The Same Length"
 VECTOR_EMPTY_ERROR = "Input Vectors Are Empty"
 CLASS_NUMBER_ERROR = "Number Of Classes < 2"

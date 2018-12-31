@@ -3,6 +3,7 @@
 from .pycm_func import *
 from .pycm_output import *
 from .pycm_util import *
+from .pycm_param import MATRIX_CLASS_TYPE_ERROR,MATRIX_FORMAT_ERROR,MAPPING_FORMAT_ERROR,MAPPING_CLASS_NAME_ERROR,VECTOR_TYPE_ERROR,VECTOR_SIZE_ERROR,VECTOR_EMPTY_ERROR,CLASS_NUMBER_ERROR
 import os
 import json
 import types
@@ -95,23 +96,22 @@ class ConfusionMatrix():
         elif isinstance(matrix, dict):
             if matrix_check(matrix):
                 if class_check(list(matrix.keys())) is False:
-                    raise pycmMatrixError(
-                        "Input Matrix Classes Must Be Same Type")
+                    raise pycmMatrixError(MATRIX_CLASS_TYPE_ERROR)
                 else:
                     matrix_param = matrix_params_from_table(matrix, transpose)
             else:
-                raise pycmMatrixError("Input Confusion Matrix Format Error")
+                raise pycmMatrixError(MATRIX_FORMAT_ERROR)
         else:
             if isinstance(threshold, types.FunctionType):
                 predict_vector = list(map(threshold, predict_vector))
                 self.predict_vector = predict_vector
             if not isinstance(actual_vector, (list, numpy.ndarray)) or not\
                     isinstance(predict_vector, (list, numpy.ndarray)):
-                raise pycmVectorError("Input Vectors Must Be List")
+                raise pycmVectorError(VECTOR_TYPE_ERROR)
             if len(actual_vector) != len(predict_vector):
-                raise pycmVectorError("Input Vectors Must Be The Same Length")
+                raise pycmVectorError(VECTOR_SIZE_ERROR)
             if len(actual_vector) == 0 or len(predict_vector) == 0:
-                raise pycmVectorError("Input Vectors Are Empty")
+                raise pycmVectorError(VECTOR_EMPTY_ERROR)
             [actual_vector, predict_vector] = vector_filter(
                 actual_vector, predict_vector)
             matrix_param = matrix_params_calc(
@@ -121,7 +121,7 @@ class ConfusionMatrix():
             if isinstance(sample_weight, numpy.ndarray):
                 self.weights = sample_weight.tolist()
         if len(matrix_param[0]) < 2:
-            raise pycmVectorError("Number Of Classes < 2")
+            raise pycmVectorError(CLASS_NUMBER_ERROR)
         self.classes = matrix_param[0]
         self.table = matrix_param[1]
         self.matrix = self.table
@@ -413,9 +413,9 @@ class ConfusionMatrix():
         :return: None
         '''
         if not isinstance(mapping, dict):
-            raise pycmMatrixError("Mapping Format Error")
+            raise pycmMatrixError(MAPPING_FORMAT_ERROR)
         if self.classes != list(mapping.keys()):
-            raise pycmMatrixError("Mapping Classnames Error")
+            raise pycmMatrixError(MAPPING_CLASS_NAME_ERROR)
         for row in self.classes:
             temp_dict = {}
             temp_dict_normalized = {}

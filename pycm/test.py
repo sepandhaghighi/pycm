@@ -242,11 +242,11 @@ sInd(Similarity index)                                           0.84287        
 >>> cm_2 = ConfusionMatrix(y_actu, 2)
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmVectorError: Input Vectors Must Be List
+pycm.pycm_obj.pycmVectorError: The Type Of Input Vectors Must Be List Or NumPy Array
 >>> cm_3 = ConfusionMatrix(y_actu, [1,2])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmVectorError: Input Vectors Must Be The Same Length
+pycm.pycm_obj.pycmVectorError: Input Vectors Must Have Same Length
 >>> cm_4 = ConfusionMatrix([], [])
 Traceback (most recent call last):
         ...
@@ -254,7 +254,7 @@ pycm.pycm_obj.pycmVectorError: Input Vectors Are Empty
 >>> cm_5 = ConfusionMatrix([1,1,1,], [1,1,1,1])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmVectorError: Input Vectors Must Be The Same Length
+pycm.pycm_obj.pycmVectorError: Input Vectors Must Have Same Length
 >>> pycm_help()
 <BLANKLINE>
 PyCM is a multi-class confusion matrix library written in Python that
@@ -838,7 +838,7 @@ pycm.pycm_obj.pycmMatrixError: Input Confusion Matrix Format Error
 >>> cm_4=ConfusionMatrix(matrix={1:{1:2,"1":2},"1":{1:2,"1":3}})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmMatrixError: Input Matrix Classes Must Be Same Type
+pycm.pycm_obj.pycmMatrixError: Type Of The Input Matrix Classes Must Be The Same
 >>> cm_5=ConfusionMatrix(matrix={1:{1:2}})
 Traceback (most recent call last):
         ...

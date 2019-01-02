@@ -15,14 +15,14 @@ and an accurate evaluation of large variety of classifiers.
 
 
 
-MATRIX_CLASS_TYPE_ERROR = "Type Of The Input Matrix Classes Must Be The Same"
-MATRIX_FORMAT_ERROR = "Input Confusion Matrix Format Error"
-MAPPING_FORMAT_ERROR = "Mapping Format Error"
-MAPPING_CLASS_NAME_ERROR = "Mapping Class Names Error"
-VECTOR_TYPE_ERROR = "The Type Of Input Vectors Must Be List Or NumPy Array"
-VECTOR_SIZE_ERROR = "Input Vectors Must Have Same Length"
-VECTOR_EMPTY_ERROR = "Input Vectors Are Empty"
-CLASS_NUMBER_ERROR = "Number Of Classes < 2"
+MATRIX_CLASS_TYPE_ERROR = "Type of the input matrix classes is assumed  be the same"
+MATRIX_FORMAT_ERROR = "Input confusion matrix format error"
+MAPPING_FORMAT_ERROR = "Mapping format error"
+MAPPING_CLASS_NAME_ERROR = "Mapping class names error"
+VECTOR_TYPE_ERROR = "The type of input vectors is assumed to be a list or a NumPy array"
+VECTOR_SIZE_ERROR = "Input vectors must have same length"
+VECTOR_EMPTY_ERROR = "Input vectors are empty"
+CLASS_NUMBER_ERROR = "Number of the classes is lower than 2"
 
 
 

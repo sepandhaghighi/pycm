@@ -861,6 +861,9 @@ True
 >>> save_stat=cm.save_html("test_filtered5",address=False,overall_param=[],class_param=["TPR","TNR","ACC","AUC"],class_name=[100])
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=cm.save_html("test_colored",address=False,color=(130,100,200))
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> save_stat=cm.save_csv("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
@@ -1670,6 +1673,7 @@ pycm.ConfusionMatrix(classes: ['1', '2', '3', '4'])
 >>> os.remove("test_filtered3.html")
 >>> os.remove("test_filtered4.html")
 >>> os.remove("test_filtered5.html")
+>>> os.remove("test_colored.html")
 >>> os.remove("test_filtered2.csv")
 >>> os.remove("test_filtered3.csv")
 >>> os.remove("test_filtered4.csv")

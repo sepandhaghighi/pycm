@@ -2,7 +2,7 @@
 import os
 import sys
 Failed = 0
-VERSION = "1.8"
+VERSION = "1.9"
 
 
 SETUP_ITEMS = ["version='{0}'",'https://github.com/sepandhaghighi/pycm/tarball/v{0}']

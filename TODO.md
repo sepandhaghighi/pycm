@@ -43,6 +43,7 @@
   - [x] PLRI
   - [x] AUCI
   - [x] GI
+  - [x] LS
 - [x] Outputs
   - [x] CSV File
   - [x] HTML File

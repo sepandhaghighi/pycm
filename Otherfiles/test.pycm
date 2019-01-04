@@ -97,6 +97,7 @@ G(G-measure geometric mean of precision and sensitivity)         0.7746         
 GI(Gini index)                                                   0.6                     0.3                     0.17143                 
 IS(Information score)                                            1.26303                 1.0                     0.26303                 
 J(Jaccard index)                                                 0.6                     0.25                    0.375                   
+LS(Lift score)                                                   2.4                     2.0                     1.2                     
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903                 
 MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875                  
 MK(Markedness)                                                   0.77778                 0.22222                 0.16667                 

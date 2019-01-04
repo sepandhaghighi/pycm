@@ -213,6 +213,7 @@ G(G-measure geometric mean of precision and sensitivity)         0.7746         
 GI(Gini index)                                                   0.77778                 0.22222                 0.16667                 
 IS(Information score)                                            1.26303                 1.0                     0.26303                 
 J(Jaccard index)                                                 0.6                     0.25                    0.375                   
+LS(Lift score)                                                   2.4                     2.0                     1.2                     
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903                 
 MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875                  
 MK(Markedness)                                                   0.6                     0.3                     0.17143                 
@@ -236,7 +237,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 Y(Youden index)                                                  0.77778                 0.22222                 0.16667                 
 dInd(Distance index)                                             0.22222                 0.67586                 0.60093                 
 sInd(Similarity index)                                           0.84287                 0.52209                 0.57508                 
-                        
+
 >>> cm.print_matrix()
 Predict          0    1    2    
 Actual
@@ -356,6 +357,7 @@ G(G-measure geometric mean of precision and sensitivity)         0.57735        
 GI(Gini index)                                                   0.33333                 0.33333                 
 IS(Information score)                                            1.41504                 0.19265                 
 J(Jaccard index)                                                 0.33333                 0.71429                 
+LS(Lift score)                                                   2.66667                 1.14286                 
 MCC(Matthews correlation coefficient)                            0.48795                 0.48795                 
 MCEN(Modified confusion entropy)                                 0.38998                 0.51639                 
 MK(Markedness)                                                   0.71429                 0.71429                 
@@ -378,7 +380,7 @@ TP(True positive/hit)                                            1              
 TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0                     
 Y(Youden index)                                                  0.33333                 0.33333                 
 dInd(Distance index)                                             0.66667                 0.66667                 
-sInd(Similarity index)                                           0.5286                  0.5286                  
+sInd(Similarity index)                                           0.5286                  0.5286                                 
                                   
 >>> cm3 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":0}, "Class2": {"Class1": 2, "Class2": 5}},transpose=True) # Transpose Matrix      
 >>> cm3.print_matrix()

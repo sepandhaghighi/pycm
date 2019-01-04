@@ -10,8 +10,9 @@ README_ITEMS = ["[Version {0}](https://github.com/sepandhaghighi/pycm/archive/v{
 CHANGELOG_ITEMS = ["## [{0}]" , "https://github.com/sepandhaghighi/pycm/compare/v{0}...HEAD"]
 DOCUMENT_ITEMS = ["### Version : {0}","[Version {0}](https://github.com/sepandhaghighi/pycm/archive/v{0}.zip)","pip install pycm=={0}","pip3 install pycm=={0}"]
 HTML_ITEMS = ["Version {0}"]
+PARAMS_ITEMS = ['VERSION = "{0}"']
 FILES = {"setup.py":SETUP_ITEMS,"README.md":README_ITEMS,"CHANGELOG.md":CHANGELOG_ITEMS,os.path.join("Document","Document.ipynb"):DOCUMENT_ITEMS,os.path.join("Document","cm1.html"):HTML_ITEMS,\
-        os.path.join("Document","cm2.html"):HTML_ITEMS,os.path.join("Document","cm3.html"):HTML_ITEMS,os.path.join("Otherfiles","test.html"):HTML_ITEMS}
+        os.path.join("Document","cm2.html"):HTML_ITEMS,os.path.join("Document","cm3.html"):HTML_ITEMS,os.path.join("Otherfiles","test.html"):HTML_ITEMS,os.path.join("pycm","pycm_param.py"):PARAMS_ITEMS}
 
 TEST_NUMBER = len(FILES.keys())
 

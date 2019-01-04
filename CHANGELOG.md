@@ -5,6 +5,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.8] - 2019-01-04
+### Added
+- Lift Score (LS)
+- `color` argument added to `save_html` method
+
+### Changed
+- Error messages modified
+- Document modified
+- Website changed to [http://www.pycm.ir](http://www.pycm.ir)
+- Interpretation functions moved to `pycm_interpret.py`
+- Utility functions moved to `pycm_util.py`
+- Unnecessary `else` and `elif` removed
+- `==` changed to `is`
+
 ## [1.7] - 2018-12-18
 ### Added
 - Gini Index (GI)
@@ -298,7 +312,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.7...HEAD
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.8...HEAD
+[1.8]: https://github.com/sepandhaghighi/pycm/compare/v1.7...v1.8
 [1.7]: https://github.com/sepandhaghighi/pycm/compare/v1.6...v1.7
 [1.6]: https://github.com/sepandhaghighi/pycm/compare/v1.5...v1.6
 [1.5]: https://github.com/sepandhaghighi/pycm/compare/v1.4...v1.5

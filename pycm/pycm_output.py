@@ -2,9 +2,8 @@
 from __future__ import division
 from functools import partial
 from .pycm_param import *
-from .pycm_util import class_filter,rounder
+from .pycm_util import class_filter, rounder
 import webbrowser
-
 
 
 def html_init(name):
@@ -32,13 +31,14 @@ def color_check(color):
     :type color : tuple
     :return: color as list
     '''
-    if isinstance(color,tuple):
-        if all(map(lambda x : isinstance(x,int),color)):
-            if all(map(lambda x : x<256,color)):
+    if isinstance(color, tuple):
+        if all(map(lambda x: isinstance(x, int), color)):
+            if all(map(lambda x: x < 256, color)):
                 return list(color)
-    return [0,0,0]
+    return [0, 0, 0]
 
-def html_table_color(row, item, color=(0,0,0)):
+
+def html_table_color(row, item, color=(0, 0, 0)):
     '''
     This function return background color of each cell of table
     :param row: row dictionary
@@ -49,18 +49,18 @@ def html_table_color(row, item, color=(0,0,0)):
     :type color : tuple
     :return: background color as list [R,G,B]
     '''
-    result=[0,0,0]
+    result = [0, 0, 0]
     color_list = color_check(color)
     max_color = max(color_list)
     back_color_index = 255 - int((item / (sum(list(row.values())) + 1)) * 255)
     for i in range(3):
-        result[i] = back_color_index - (max_color-color[i])
-        if result[i]<0:
+        result[i] = back_color_index - (max_color - color[i])
+        if result[i] < 0:
             result[i] = 0
     return result
 
 
-def html_table(classes, table,rgb_color):
+def html_table(classes, table, rgb_color):
     '''
     This function return report file confusion matrix
     :param classes: matrix classes
@@ -97,11 +97,11 @@ def html_table(classes, table,rgb_color):
         for j in classes:
             item = table[i][j]
             color = "black;"
-            back_color = html_table_color(table[i], item,rgb_color)
+            back_color = html_table_color(table[i], item, rgb_color)
             if min(back_color) < 128:
                 color = "white"
             part_2 += '<td style="background-color:	rgb({0},{1},{2});color:{3};padding:10px;height:7em;width:7em;">'.format(
-                str(back_color[0]),str(back_color[1]),str(back_color[2]), color) + str(item) + '</td>\n'
+                str(back_color[0]), str(back_color[1]), str(back_color[2]), color) + str(item) + '</td>\n'
         part_2 += "</tr>\n"
     result += '</tr>\n'
     part_2 += "</table>\n</td>\n</tr>\n</table>\n"
@@ -210,13 +210,20 @@ def html_end(version):
 
 
 def html_maker(
-        html_file,
-        name,
-        classes,
-        table,
-        overall_stat,
-        class_stat,
-        digit=5, overall_param=None, class_param=None, class_name=None, color = (0,0,0)):
+    html_file,
+    name,
+    classes,
+    table,
+    overall_stat,
+    class_stat,
+    digit=5,
+    overall_param=None,
+    class_param=None,
+    class_name=None,
+    color=(
+        0,
+        0,
+        0)):
     '''
     This function create html report
     :param html_file : file object of html
@@ -256,7 +263,6 @@ def html_maker(
     html_file.write(html_end(VERSION))
 
 
-
 def pycm_help():
     '''
     This function print pycm details
@@ -292,7 +298,6 @@ def table_print(classes, table):
         result += str(key) + " " * (17 - len(str(key))) + \
             shift * classes_len % tuple(map(str, row)) + "\n\n"
     return result
-
 
 
 def csv_print(classes, class_stat, digit=5, class_param=None):

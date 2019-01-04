@@ -14,7 +14,6 @@ and an accurate evaluation of large variety of classifiers.
 '''
 
 
-
 MATRIX_CLASS_TYPE_ERROR = "Type of the input matrix classes is assumed  be the same"
 MATRIX_FORMAT_ERROR = "Input confusion matrix format error"
 MAPPING_FORMAT_ERROR = "Mapping format error"
@@ -23,7 +22,6 @@ VECTOR_TYPE_ERROR = "The type of input vectors is assumed to be a list or a NumP
 VECTOR_SIZE_ERROR = "Input vectors must have same length"
 VECTOR_EMPTY_ERROR = "Input vectors are empty"
 CLASS_NUMBER_ERROR = "Number of the classes is lower than 2"
-
 
 
 DOCUMENT_ADR = "http://www.pycm.ir/doc/index.html#"

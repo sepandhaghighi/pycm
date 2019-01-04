@@ -4,7 +4,6 @@ import sys
 import numpy
 
 
-
 def isfloat(value):
     '''
     This function check input for float conversion
@@ -41,6 +40,7 @@ def rounder(input_number, digit=5):
         return str(numpy.around(input_number, digit))
     return str(input_number)
 
+
 def class_filter(classes, class_name):
     '''
     This function compare class_name and classes
@@ -56,6 +56,7 @@ def class_filter(classes, class_name):
             result_classes = class_name
     return result_classes
 
+
 def isfile(f):
     '''
     This function check file object in python 2.7 & 3.x
@@ -66,6 +67,7 @@ def isfile(f):
     return isinstance(
         f, file) if sys.version_info[0] == 2 else hasattr(
         f, 'read')
+
 
 def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
     '''
@@ -96,6 +98,7 @@ def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
     except Exception:
         return [classes, table]
 
+
 def normalized_table_calc(classes, table):
     '''
     This function return normalized confusion matrix
@@ -115,6 +118,7 @@ def normalized_table_calc(classes, table):
             new_table[key][item] = numpy.around(table[key][item] / div, 5)
     return new_table
 
+
 def transpose_func(classes, table):
     '''
     This function transpose table
@@ -132,8 +136,6 @@ def transpose_func(classes, table):
                 transposed_table[item1][item2] = transposed_table[item2][item1]
                 transposed_table[item2][item1] = temp
     return transposed_table
-
-
 
 
 def matrix_params_from_table(table, transpose=False):

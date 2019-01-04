@@ -5,6 +5,7 @@ import operator as op
 from functools import reduce
 from .pycm_interpret import *
 
+
 def lift_calc(PPV, PRE):
     '''
     This function calculate lift score
@@ -169,9 +170,6 @@ def RR_calc(classes, TOP):
         return result / class_number
     except Exception:
         return "None"
-
-
-
 
 
 def overall_MCC_calc(classes, table, TOP, P):
@@ -354,9 +352,6 @@ def IS_calc(TP, FP, FN, POP):
         return result
     except Exception:
         return "None"
-
-
-
 
 
 def ncr(n, r):

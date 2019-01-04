@@ -3,7 +3,7 @@
 from .pycm_func import *
 from .pycm_output import *
 from .pycm_util import *
-from .pycm_param import MATRIX_CLASS_TYPE_ERROR,MATRIX_FORMAT_ERROR,MAPPING_FORMAT_ERROR,MAPPING_CLASS_NAME_ERROR,VECTOR_TYPE_ERROR,VECTOR_SIZE_ERROR,VECTOR_EMPTY_ERROR,CLASS_NUMBER_ERROR
+from .pycm_param import MATRIX_CLASS_TYPE_ERROR, MATRIX_FORMAT_ERROR, MAPPING_FORMAT_ERROR, MAPPING_CLASS_NAME_ERROR, VECTOR_TYPE_ERROR, VECTOR_SIZE_ERROR, VECTOR_EMPTY_ERROR, CLASS_NUMBER_ERROR
 import os
 import json
 import types
@@ -278,7 +278,7 @@ class ConfusionMatrix():
             address=True,
             overall_param=None,
             class_param=None,
-            class_name=None,color = (0,0,0)):
+            class_name=None, color=(0, 0, 0)):
         '''
         This method save ConfusionMatrix in HTML file
         :param name: filename
@@ -305,7 +305,7 @@ class ConfusionMatrix():
                 self.table,
                 self.overall_stat,
                 self.class_stat,
-                self.digit, overall_param, class_param, class_name,color)
+                self.digit, overall_param, class_param, class_name, color)
             html_file.close()
             if address:
                 message = os.path.join(os.getcwd(), name + ".html")

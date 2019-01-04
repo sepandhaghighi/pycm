@@ -2,7 +2,7 @@
 import os
 import sys
 Failed = 0
-VERSION = "1.9"
+VERSION = "1.8"
 
 
 SETUP_ITEMS = ["version='{0}'",'https://github.com/sepandhaghighi/pycm/tarball/v{0}']
@@ -17,7 +17,7 @@ TEST_NUMBER = len(FILES.keys())
 
 def print_result(failed=False):
     message = "Version tag tests "
-    if failed==True :
+    if failed==False :
         print("\n"+message+"passed!")
     else:
         print("\n" + message + "failed!")
@@ -26,7 +26,7 @@ def print_result(failed=False):
 if __name__=="__main__":
     for file_name in FILES.keys():
         try:
-            file_content = open(file_name,"r").read()
+            file_content = open(file_name,"r",errors='ignore').read()
             for test_item in FILES[file_name]:
                 if file_content.find(test_item.format(VERSION))==-1:
                     print("Incorrect version tag in "+file_name)

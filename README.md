@@ -7,7 +7,6 @@
 <a href="https://codecov.io/gh/sepandhaghighi/pycm">
   <img src="https://codecov.io/gh/sepandhaghighi/pycm/branch/master/graph/badge.svg" />
 </a>
-<a class="badge-align" href="https://www.codacy.com/app/sepand-haghighi/pycm?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/pycm&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/5d9463998a0040d09afc2b80c389365c"/></a>
 <a href="https://badge.fury.io/py/pycm"><img src="https://badge.fury.io/py/pycm.svg" alt="PyPI version" height="18"></a>
 <a href="https://anaconda.org/sepandhaghighi/pycm"><img src="https://anaconda.org/sepandhaghighi/pycm/badges/version.svg"></a>
 </div>
@@ -80,11 +79,21 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 </table>
 
 
+<table>
+	<tr> 
+		<td align="center">Code Quality</td>
+		<td align="center"><a class="badge-align" href="https://www.codacy.com/app/sepand-haghighi/pycm?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/pycm&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/5d9463998a0040d09afc2b80c389365c"/></a></td>	
+		<td align="center"><a href="https://www.codefactor.io/repository/github/sepandhaghighi/pycm/overview/dev"><img src="https://www.codefactor.io/repository/github/sepandhaghighi/pycm/badge/dev" alt="CodeFactor" /></a></td>	
+		<td align="center"><a href="https://codebeat.co/projects/github-com-sepandhaghighi-pycm-dev"><img alt="codebeat badge" src="https://codebeat.co/badges/f6642af1-c343-48c2-bd3e-eee802facf39" /></a></td>	
+	</tr>
+</table>
+
+
 
 ## Installation		
 
 ### Source code
-- Download [Version 1.7](https://github.com/sepandhaghighi/pycm/archive/v1.7.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 1.8](https://github.com/sepandhaghighi/pycm/archive/v1.8.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -92,7 +101,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==1.7` or `pip3 install pycm==1.7` (Need root access)
+- Run `pip install pycm==1.8` or `pip3 install pycm==1.8` (Need root access)
 
 ### Conda
 
@@ -204,6 +213,7 @@ G(G-measure geometric mean of precision and sensitivity)         0.7746         
 GI(Gini index)                                                   0.77778                 0.22222                 0.16667                 
 IS(Information score)                                            1.26303                 1.0                     0.26303                 
 J(Jaccard index)                                                 0.6                     0.25                    0.375                   
+LS(Lift score)                                                   2.4                     2.0                     1.2                     
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903                 
 MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875                  
 MK(Markedness)                                                   0.6                     0.3                     0.17143                 
@@ -227,7 +237,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        1.0            
 Y(Youden index)                                                  0.77778                 0.22222                 0.16667                 
 dInd(Distance index)                                             0.22222                 0.67586                 0.60093                 
 sInd(Similarity index)                                           0.84287                 0.52209                 0.57508                 
-                        
+
 >>> cm.print_matrix()
 Predict          0    1    2    
 Actual
@@ -347,6 +357,7 @@ G(G-measure geometric mean of precision and sensitivity)         0.57735        
 GI(Gini index)                                                   0.33333                 0.33333                 
 IS(Information score)                                            1.41504                 0.19265                 
 J(Jaccard index)                                                 0.33333                 0.71429                 
+LS(Lift score)                                                   2.66667                 1.14286                 
 MCC(Matthews correlation coefficient)                            0.48795                 0.48795                 
 MCEN(Modified confusion entropy)                                 0.38998                 0.51639                 
 MK(Markedness)                                                   0.71429                 0.71429                 
@@ -369,7 +380,7 @@ TP(True positive/hit)                                            1              
 TPR(Sensitivity, recall, hit rate, or true positive rate)        0.33333                 1.0                     
 Y(Youden index)                                                  0.33333                 0.33333                 
 dInd(Distance index)                                             0.66667                 0.66667                 
-sInd(Similarity index)                                           0.5286                  0.5286                  
+sInd(Similarity index)                                           0.5286                  0.5286                                 
                                   
 >>> cm3 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":0}, "Class2": {"Class1": 2, "Class2": 5}},transpose=True) # Transpose Matrix      
 >>> cm3.print_matrix()
@@ -385,17 +396,17 @@ Class2           0         5
 ### Activation threshold
 `threshold` is added in `version 0.9` for real value prediction.			
 						
-For more information visit [Example3](http://www.shaghighi.ir/pycm/doc/Example3.html "Example3")
+For more information visit [Example3](http://www.pycm.ir/doc/Example3.html "Example3")
 
 ### Load from file			
 `file` is added in `version 0.9.5` in order to load saved confusion matrix with `.obj` format generated by `save_obj` method.
 
-For more information visit [Example4](http://www.shaghighi.ir/pycm/doc/Example4.html "Example4")
+For more information visit [Example4](http://www.pycm.ir/doc/Example4.html "Example4")
 
 ### Sample weights
 `sample_weight` is added in `version 1.2`
 
-For more information visit [Example5](http://www.shaghighi.ir/pycm/doc/Example5.html "Example5")
+For more information visit [Example5](http://www.pycm.ir/doc/Example5.html "Example5")
 
 ### Transpose
 `transpose` is added in `version 1.2` in order to transpose input matrix (only in `Direct CM` mode)
@@ -459,7 +470,7 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
 
 ## Outputs	
 
-1. [HTML](http://www.shaghighi.ir/pycm/test.html)
+1. [HTML](http://www.pycm.ir/test.html)
 2. [CSV](https://github.com/sepandhaghighi/pycm/blob/master/Otherfiles/test.csv)
 3. [PyCM](https://github.com/sepandhaghighi/pycm/blob/master/Otherfiles/test.pycm)			
 4. [OBJ](https://github.com/sepandhaghighi/pycm/blob/master/Otherfiles/test.obj)	
@@ -556,6 +567,11 @@ ICDM01. SIAM, pp. 1–18. </blockquote>
 <blockquote>34- Youden W, (1950),« Index for rating diagnostic tests »; Cancer, 3 :32–35 </blockquote>
 
 
+<blockquote>35- S. Brin, R. Motwani, J. D. Ullman, and S. Tsur. Dynamic itemset counting and implication rules for market basket data. In Proc. of the ACM SIGMOD Int'l Conf. on Management of Data (ACM SIGMOD '97), pages 265-276, 1997.</blockquote> 
+
+<blockquote>36- Raschka, Sebastian (2018) MLxtend: Providing machine learning and data science utilities and extensions to Python's scientific computing stack. J Open Source Softw 3(24).</blockquote> 
+
+
 ## Cite
 
 If you use PyCM in your research , please cite this JOSS paper :
@@ -582,7 +598,7 @@ Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A. (2018). PyCM: Multiclass
 
 </pre>
 
-Download [PyCM.bib](http://www.shaghighi.ir/pycm/PYCM.bib)	
+Download [PyCM.bib](http://www.pycm.ir/PYCM.bib)	
 
 
 <table>
@@ -611,6 +627,6 @@ Download [PyCM.bib](http://www.shaghighi.ir/pycm/PYCM.bib)
 
 If you do like our project and we hope that you do, can you please support us? Our project is not and is never going to be working for profit. We need the money just so we can continue doing what we do ;-) .
 
-<a href="http://www.shaghighi.ir/pycm/donate.html" target="_blank"><img src="http://www.shaghighi.ir/pycm/images/Donate-Button.png" height="90px" width="270px" alt="PyCM Donation"></a>
+<a href="http://www.pycm.ir/donate.html" target="_blank"><img src="http://www.pycm.ir/images/Donate-Button.png" height="90px" width="270px" alt="PyCM Donation"></a>
 
 

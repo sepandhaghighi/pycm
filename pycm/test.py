@@ -98,6 +98,7 @@ G(G-measure geometric mean of precision and sensitivity)         0.7746         
 GI(Gini index)                                                   0.77778                 0.22222                 0.16667
 IS(Information score)                                            1.26303                 1.0                     0.26303
 J(Jaccard index)                                                 0.6                     0.25                    0.375
+LS(Lift score)                                                   2.4                     2.0                     1.2
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903
 MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875
 MK(Markedness)                                                   0.6                     0.3                     0.17143
@@ -211,6 +212,7 @@ G(G-measure geometric mean of precision and sensitivity)         0.7746         
 GI(Gini index)                                                   0.77778                 0.22222                 0.16667
 IS(Information score)                                            1.26303                 1.0                     0.26303
 J(Jaccard index)                                                 0.6                     0.25                    0.375
+LS(Lift score)                                                   2.4                     2.0                     1.2
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903
 MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875
 MK(Markedness)                                                   0.6                     0.3                     0.17143
@@ -240,19 +242,19 @@ sInd(Similarity index)                                           0.84287        
 >>> cm_2 = ConfusionMatrix(y_actu, 2)
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmVectorError: Input Vectors Must Be List
+pycm.pycm_obj.pycmVectorError: The type of input vectors is assumed to be a list or a NumPy array
 >>> cm_3 = ConfusionMatrix(y_actu, [1,2])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmVectorError: Input Vectors Must Be The Same Length
+pycm.pycm_obj.pycmVectorError: Input vectors must have same length
 >>> cm_4 = ConfusionMatrix([], [])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmVectorError: Input Vectors Are Empty
+pycm.pycm_obj.pycmVectorError: Input vectors are empty
 >>> cm_5 = ConfusionMatrix([1,1,1,], [1,1,1,1])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmVectorError: Input Vectors Must Be The Same Length
+pycm.pycm_obj.pycmVectorError: Input vectors must have same length
 >>> pycm_help()
 <BLANKLINE>
 PyCM is a multi-class confusion matrix library written in Python that
@@ -264,7 +266,7 @@ data scientists that need a broad array of metrics for predictive models
 and an accurate evaluation of large variety of classifiers.
 <BLANKLINE>
 Repo : https://github.com/sepandhaghighi/pycm
-Webpage : http://pycm.shaghighi.ir
+Webpage : http://www.pycm.ir
 <BLANKLINE>
 <BLANKLINE>
 >>> RCI_calc(24,0)
@@ -456,6 +458,7 @@ G(G-measure geometric mean of precision and sensitivity)         None           
 GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
+LS(Lift score)                                                   None                    1.07143                 3.33333                 None
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
 MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
@@ -556,6 +559,7 @@ G(G-measure geometric mean of precision and sensitivity)         None           
 GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
+LS(Lift score)                                                   None                    1.07143                 3.33333                 None
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
 MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
@@ -830,15 +834,15 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 >>> cm3=ConfusionMatrix(matrix={})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmMatrixError: Input Confusion Matrix Format Error
+pycm.pycm_obj.pycmMatrixError: Input confusion matrix format error
 >>> cm_4=ConfusionMatrix(matrix={1:{1:2,"1":2},"1":{1:2,"1":3}})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmMatrixError: Input Matrix Classes Must Be Same Type
+pycm.pycm_obj.pycmMatrixError: Type of the input matrix classes is assumed  be the same
 >>> cm_5=ConfusionMatrix(matrix={1:{1:2}})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmVectorError: Number Of Classes < 2
+pycm.pycm_obj.pycmVectorError: Number of the classes is lower than 2
 >>> save_stat=cm.save_html("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
@@ -855,6 +859,9 @@ True
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_html("test_filtered5",address=False,overall_param=[],class_param=["TPR","TNR","ACC","AUC"],class_name=[100])
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_html("test_colored",address=False,color=(130,100,200))
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_csv("test",address=False)
@@ -983,6 +990,7 @@ G(G-measure geometric mean of precision and sensitivity)         None           
 GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
+LS(Lift score)                                                   None                    1.07143                 3.33333                 None
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
 MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
@@ -1105,6 +1113,7 @@ G(G-measure geometric mean of precision and sensitivity)         0.72058        
 GI(Gini index)                                                   0.48333                 0.33333                 0.61905
 IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
+LS(Lift score)                                                   1.55769                 1.66667                 3.6
 MCC(Matthews correlation coefficient)                            0.48067                 0.33333                 0.66254
 MCEN(Modified confusion entropy)                                 0.57782                 0.77284                 0.60158
 MK(Markedness)                                                   0.47802                 0.33333                 0.70909
@@ -1218,6 +1227,7 @@ G(G-measure geometric mean of precision and sensitivity)         0.72058        
 GI(Gini index)                                                   0.48333                 0.33333                 0.61905
 IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
+LS(Lift score)                                                   1.55769                 1.66667                 3.6
 MCC(Matthews correlation coefficient)                            0.48067                 0.33333                 0.66254
 MCEN(Modified confusion entropy)                                 0.57782                 0.77284                 0.60158
 MK(Markedness)                                                   0.47802                 0.33333                 0.70909
@@ -1288,57 +1298,58 @@ Example : online_help("J") or online_help(2)
 39-Kappa No Prevalence
 40-Kappa Standard Error
 41-Kappa Unbiased
-42-Lambda A
-43-Lambda B
-44-MCC
-45-MCEN
-46-MK
-47-Mutual Information
-48-N
-49-NIR
-50-NLR
-51-NPV
-52-Overall ACC
-53-Overall CEN
-54-Overall J
-55-Overall MCC
-56-Overall MCEN
-57-Overall RACC
-58-Overall RACCU
-59-P
-60-P-Value
-61-PLR
-62-PLRI
-63-POP
-64-PPV
-65-PPV Macro
-66-PPV Micro
-67-PRE
-68-Phi-Squared
-69-RACC
-70-RACCU
-71-RCI
-72-RR
-73-Reference Entropy
-74-Response Entropy
-75-SOA1(Landis & Koch)
-76-SOA2(Fleiss)
-77-SOA3(Altman)
-78-SOA4(Cicchetti)
-79-Scott PI
-80-Standard Error
-81-TN
-82-TNR
-83-TON
-84-TOP
-85-TP
-86-TPR
-87-TPR Macro
-88-TPR Micro
-89-Y
-90-Zero-one Loss
-91-dInd
-92-sInd
+42-LS
+43-Lambda A
+44-Lambda B
+45-MCC
+46-MCEN
+47-MK
+48-Mutual Information
+49-N
+50-NIR
+51-NLR
+52-NPV
+53-Overall ACC
+54-Overall CEN
+55-Overall J
+56-Overall MCC
+57-Overall MCEN
+58-Overall RACC
+59-Overall RACCU
+60-P
+61-P-Value
+62-PLR
+63-PLRI
+64-POP
+65-PPV
+66-PPV Macro
+67-PPV Micro
+68-PRE
+69-Phi-Squared
+70-RACC
+71-RACCU
+72-RCI
+73-RR
+74-Reference Entropy
+75-Response Entropy
+76-SOA1(Landis & Koch)
+77-SOA2(Fleiss)
+78-SOA3(Altman)
+79-SOA4(Cicchetti)
+80-Scott PI
+81-Standard Error
+82-TN
+83-TNR
+84-TON
+85-TOP
+86-TP
+87-TPR
+88-TPR Macro
+89-TPR Micro
+90-Y
+91-Zero-one Loss
+92-dInd
+93-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -1434,6 +1445,7 @@ G(G-measure geometric mean of precision and sensitivity)         0.7746         
 GI(Gini index)                                                   0.73333                 0.22222                 0.27778
 IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
+LS(Lift score)                                                   2.1                     2.33333                 1.3125
 MCC(Matthews correlation coefficient)                            0.66332                 0.22222                 0.28307
 MCEN(Modified confusion entropy)                                 0.26439                 0.52877                 0.65924
 MK(Markedness)                                                   0.6                     0.22222                 0.28846
@@ -1545,6 +1557,7 @@ G(G-measure geometric mean of precision and sensitivity)         0.7746         
 GI(Gini index)                                                   0.73333                 0.22222                 0.27778
 IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
+LS(Lift score)                                                   2.1                     2.33333                 1.3125
 MCC(Matthews correlation coefficient)                            0.66332                 0.22222                 0.28307
 MCEN(Modified confusion entropy)                                 0.26439                 0.52877                 0.65924
 MK(Markedness)                                                   0.6                     0.22222                 0.28846
@@ -1570,6 +1583,11 @@ dInd(Distance index)                                             0.26667        
 sInd(Similarity index)                                           0.81144                 0.52209                 0.6131
 >>> NIR_calc({'Class2': 804, 'Class1': 196},1000) # Verified Case
 0.804
+>>> cm = ConfusionMatrix(matrix={0:{0:3,1:1},1:{0:4,1:2}})   # Verified Case
+>>> cm.LS[1]
+1.1111111111111112
+>>> cm.LS[0]
+1.0714285714285714
 >>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":183,"Class2":13},"Class2":{"Class1":141,"Class2":663}})  # Verified Case
 >>> cm.PValue
 0.000342386296143693
@@ -1655,6 +1673,7 @@ pycm.ConfusionMatrix(classes: ['1', '2', '3', '4'])
 >>> os.remove("test_filtered3.html")
 >>> os.remove("test_filtered4.html")
 >>> os.remove("test_filtered5.html")
+>>> os.remove("test_colored.html")
 >>> os.remove("test_filtered2.csv")
 >>> os.remove("test_filtered3.csv")
 >>> os.remove("test_filtered4.csv")

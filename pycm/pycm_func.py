@@ -1,22 +1,24 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 import math
-import sys
-import numpy
 import operator as op
 from functools import reduce
+from .pycm_interpret import *
 
 
-def isfile(f):
+def lift_calc(PPV, PRE):
     '''
-    This function check file object in python 2.7 & 3.x
-    :param f: input object
-    :type f : file object
-    :return: file type check as boolean
+    This function calculate lift score
+    :param PPV:  precision or positive predictive value
+    :type PPV : float
+    :param PRE: Prevalence
+    :type PRE : float
+    :return: lift score as float
     '''
-    return isinstance(
-        f, file) if sys.version_info[0] == 2 else hasattr(
-        f, 'read')
+    try:
+        return PPV / PRE
+    except Exception:
+        return "None"
 
 
 def GI_calc(AUC):
@@ -168,36 +170,6 @@ def RR_calc(classes, TOP):
         return result / class_number
     except Exception:
         return "None"
-
-
-def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
-    '''
-    One-Vs-All mode handler
-    :param classes: classes
-    :type classes : list
-    :param table: input matrix
-    :type table : dict
-    :param TP: true positive dict for all classes
-    :type TP : dict
-    :param TN: true negative dict for all classes
-    :type TN : dict
-    :param FP: false positive dict for all classes
-    :type FP : dict
-    :param FN: false negative dict for all classes
-    :type FN : dict
-    :param class_name : target class name for One-Vs-All mode
-    :type class_name : any valid type
-    :return: [classes , table ] as list
-    '''
-    try:
-        report_classes = [str(class_name), "~"]
-        report_table = {str(class_name): {str(class_name): TP[class_name],
-                                          "~": FN[class_name]},
-                        "~": {str(class_name): FP[class_name],
-                              "~": TN[class_name]}}
-        return [report_classes, report_table]
-    except Exception:
-        return [classes, table]
 
 
 def overall_MCC_calc(classes, table, TOP, P):
@@ -382,25 +354,6 @@ def IS_calc(TP, FP, FN, POP):
         return "None"
 
 
-def transpose_func(classes, table):
-    '''
-    This function transpose table
-    :param classes: classes
-    :type classes : list
-    :param table: input matrix
-    :type table : dict
-    :return: transposed table as dict
-    '''
-    transposed_table = table
-    for i, item1 in enumerate(classes):
-        for j, item2 in enumerate(classes):
-            if i > j:
-                temp = transposed_table[item1][item2]
-                transposed_table[item1][item2] = transposed_table[item2][item1]
-                transposed_table[item2][item1] = temp
-    return transposed_table
-
-
 def ncr(n, r):
     '''
     This function calculate n choose r
@@ -514,7 +467,7 @@ def vector_check(vector):
     :return: bool
     '''
     for i in vector:
-        if isinstance(i, int) == False:
+        if isinstance(i, int) is False:
             return False
         if i < 0:
             return False
@@ -546,72 +499,11 @@ def matrix_check(table):
             return False
         for i in table.keys():
             if table.keys() != table[i].keys() or vector_check(
-                    list(table[i].values())) == False:
+                    list(table[i].values())) is False:
                 return False
         return True
     except Exception:
         return False
-
-
-def matrix_params_from_table(table, transpose=False):
-    '''
-    This function calculate TP,TN,FP,FN from confusion matrix
-    :param table: input matrix
-    :type table : dict
-    :param transpose : transpose flag
-    :type transpose : bool
-    :return: [classes_list,table,TP,TN,FP,FN]
-    '''
-    classes = sorted(table.keys())
-    map_dict = {k: 0 for k in classes}
-    TP_dict = map_dict.copy()
-    TN_dict = map_dict.copy()
-    FP_dict = map_dict.copy()
-    FN_dict = map_dict.copy()
-    for i in classes:
-        TP_dict[i] = table[i][i]
-        sum_row = sum(list(table[i].values()))
-        for j in classes:
-            if j != i:
-                FN_dict[i] += table[i][j]
-                FP_dict[j] += table[i][j]
-                TN_dict[j] += sum_row - table[i][j]
-    if transpose:
-        temp = FN_dict
-        FN_dict = FP_dict
-        FP_dict = temp
-        table = transpose_func(classes, table)
-    return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
-
-
-def matrix_params_calc(actual_vector, predict_vector, sample_weight):
-    '''
-    This function calculate TP,TN,FP,FN for each class
-    :param actual_vector: actual values
-    :type actual_vector : list
-    :param predict_vector: predict value
-    :type predict_vector : list
-    :param sample_weight : sample weights list
-    :type sample_weight : list
-    :return: [classes_list,table,TP,TN,FP,FN]
-    '''
-    if isinstance(actual_vector, numpy.ndarray):
-        actual_vector = actual_vector.tolist()
-    if isinstance(predict_vector, numpy.ndarray):
-        predict_vector = predict_vector.tolist()
-    classes = set(actual_vector).union(set(predict_vector))
-    classes = sorted(classes)
-    map_dict = {k: 0 for k in classes}
-    table = {k: map_dict.copy() for k in classes}
-    weight_vector = [1] * len(actual_vector)
-    if isinstance(sample_weight, (list, numpy.ndarray)):
-        if len(sample_weight) == len(actual_vector):
-            weight_vector = sample_weight
-    for index, item in enumerate(actual_vector):
-        table[item][predict_vector[index]] += 1 * weight_vector[index]
-    [classes, table, TP_dict, TN_dict, FP_dict,
-        FN_dict] = matrix_params_from_table(table)
-    return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
 
 
 def entropy_calc(item, POP):
@@ -1099,167 +991,6 @@ def reliability_calc(RACC, ACC):
         return "None"
 
 
-def PLR_analysis(PLR):
-    '''
-    This function analysis PLR(Positive likelihood ratio) with interpretation table
-    :param PLR: positive likelihood ratio
-    :type PLR : float
-    :return: interpretation result as str
-    '''
-    try:
-
-        if PLR == "None":
-            return "None"
-        if PLR <= 1:
-            return "Negligible"
-        elif PLR > 1 and PLR < 5:
-            return "Poor"
-        elif PLR >= 5 and PLR < 10:
-            return "Fair"
-        else:
-            return "Good"
-    except Exception:
-        return "None"
-
-
-def DP_analysis(DP):
-    '''
-    This function analysis DP with interpretation table
-    :param DP: discriminant power
-    :type DP : float
-    :return: interpretation result as str
-    '''
-    try:
-        if DP == "None":
-            return "None"
-        if DP < 1:
-            return "Poor"
-        elif DP >= 1 and DP < 2:
-            return "Limited"
-        elif DP >= 2 and DP < 3:
-            return "Fair"
-        else:
-            return "Good"
-    except Exception:
-        return "None"
-
-
-def AUC_analysis(AUC):
-    '''
-    This function analysis AUC with interpretation table
-    :param AUC: area under the ROC curve
-    :type AUC : float
-    :return: interpretation result as str
-    '''
-    try:
-        if AUC == "None":
-            return "None"
-        if AUC < 0.6:
-            return "Poor"
-        elif AUC >= 0.6 and AUC < 0.7:
-            return "Fair"
-        elif AUC >= 0.7 and AUC < 0.8:
-            return "Good"
-        elif AUC >= 0.8 and AUC < 0.9:
-            return "Very Good"
-        else:
-            return "Excellent"
-    except Exception:
-        return "None"
-
-
-def kappa_analysis_cicchetti(kappa):
-    '''
-    This function analysis kappa number with Cicchetti benchmark
-    :param kappa: kappa number
-    :type kappa : float
-    :return: strength of agreement as str
-    '''
-    try:
-        if kappa < 0.4:
-            return "Poor"
-        elif kappa >= 0.4 and kappa < 0.59:
-            return "Fair"
-        elif kappa >= 0.59 and kappa < 0.74:
-            return "Good"
-        elif kappa >= 0.74 and kappa <= 1:
-            return "Excellent"
-        else:
-            return "None"
-    except Exception:
-        return "None"
-
-
-def kappa_analysis_koch(kappa):
-    '''
-    This function analysis kappa number with Landis-Koch benchmark
-    :param kappa: kappa number
-    :type kappa : float
-    :return: strength of agreement as str
-    '''
-    try:
-        if kappa < 0:
-            return "Poor"
-        elif kappa >= 0 and kappa < 0.2:
-            return "Slight"
-        elif kappa >= 0.20 and kappa < 0.4:
-            return "Fair"
-        elif kappa >= 0.40 and kappa < 0.6:
-            return "Moderate"
-        elif kappa >= 0.60 and kappa < 0.8:
-            return "Substantial"
-        elif kappa >= 0.80 and kappa <= 1:
-            return "Almost Perfect"
-        else:
-            return "None"
-    except Exception:
-        return "None"
-
-
-def kappa_analysis_fleiss(kappa):
-    '''
-    This function analysis kappa number with Fleiss benchmark
-    :param kappa: kappa number
-    :type kappa : float
-    :return: strength of agreement as str
-    '''
-    try:
-        if kappa < 0.4:
-            return "Poor"
-        elif kappa >= 0.4 and kappa < 0.75:
-            return "Intermediate to Good"
-        elif kappa >= 0.75:
-            return "Excellent"
-        else:
-            return "None"
-    except Exception:
-        return "None"
-
-
-def kappa_analysis_altman(kappa):
-    '''
-    This function analysis kappa number with  Altman benchmark
-    :param kappa: kappa number
-    :type kappa : float
-    :return: strength of agreement as str
-    '''
-    try:
-        if kappa < 0.2:
-            return "Poor"
-        elif kappa >= 0.20 and kappa < 0.4:
-            return "Fair"
-        elif kappa >= 0.40 and kappa < 0.6:
-            return "Moderate"
-        elif kappa >= 0.60 and kappa < 0.8:
-            return "Good"
-        elif kappa >= 0.80 and kappa <= 1:
-            return "Very Good"
-        else:
-            return "None"
-    except Exception:
-        return "None"
-
-
 def kappa_se_calc(PA, PE, POP):
     '''
     This function calculate kappa standard error
@@ -1673,6 +1404,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     DPI = {}
     AUCI = {}
     GI = {}
+    LS = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1715,6 +1447,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         DPI[i] = DP_analysis(DP[i])
         AUCI[i] = AUC_analysis(AUC[i])
         GI[i] = GI_calc(AUC[i])
+        LS[i] = lift_calc(PPV[i], PRE[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1760,5 +1493,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "PLRI": PLRI,
         "DPI": DPI,
         "AUCI": AUCI,
-        "GI": GI}
+        "GI": GI,
+        "LS": LS}
     return result

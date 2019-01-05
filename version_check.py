@@ -14,7 +14,8 @@ README_ITEMS = [
     "pip3 install pycm=={0}"]
 CHANGELOG_ITEMS = [
     "## [{0}]",
-    "https://github.com/sepandhaghighi/pycm/compare/v{0}...HEAD"]
+    "https://github.com/sepandhaghighi/pycm/compare/v{0}...HEAD",
+    "[{0}]:"]
 DOCUMENT_ITEMS = [
     "### Version : {0}",
     "[Version {0}](https://github.com/sepandhaghighi/pycm/archive/v{0}.zip)",

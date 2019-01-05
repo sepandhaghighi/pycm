@@ -43,5 +43,5 @@ install:
 
 test_script:
   - "%PYTHON%/python.exe -m pytest pycm/ --cov=pycm --cov-report=term"
-  - "%PYTHON%/python.exe -m cProfile -s cumtime pycm/pycm_profile.py"
   - "%PYTHON%/python.exe version_check.py"
+  - "%PYTHON%/python.exe -m cProfile -s cumtime pycm/pycm_profile.py"

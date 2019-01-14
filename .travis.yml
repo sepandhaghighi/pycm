@@ -34,6 +34,8 @@ install:
 
 script:
   - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then pip install --upgrade --upgrade-strategy=only-if-needed -r dev-requirements.txt --user ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then which -a python ; fi
+  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then ls -l /usr/local/bin/python* ; fi
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then pip install --upgrade --upgrade-strategy=only-if-needed -r dev-requirements.txt ; fi
   - python -m pytest pycm/ --cov=pycm --cov-report=term
   - python version_check.py

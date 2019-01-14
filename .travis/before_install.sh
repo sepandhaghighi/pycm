@@ -9,6 +9,6 @@ if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
     export PATH="/Users/travis/.pyenv/shims:${PATH}"
     pyenv-virtualenv venv
     source venv/bin/activate
-    python --version
+	python -m pip install -U pip
 	exit 0
 fi

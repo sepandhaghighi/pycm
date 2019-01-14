@@ -27,11 +27,11 @@ matrix:
           env: TOXENV=py27
 
 install:
-  - pip install --user -r requirements.txt
+  - pip install -r requirements.txt
   - python setup.py install
 
 script:
-  - pip install --upgrade --upgrade-strategy=only-if-needed --user -r dev-requirements.txt
+  - pip install --upgrade --upgrade-strategy=only-if-needed -r dev-requirements.txt
   - python -m pytest pycm/ --cov=pycm --cov-report=term
   - python version_check.py
   - python -m cProfile -s cumtime pycm/pycm_profile.py

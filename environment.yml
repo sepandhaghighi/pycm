@@ -4,7 +4,7 @@ channels:
 dependencies:
   - python
   - pip:
-    - r requirements.txt
+    - -r requirements.txt
     - scikit-learn
     - matplotlib
     - pandas

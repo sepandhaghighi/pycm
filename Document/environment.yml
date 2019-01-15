@@ -1,0 +1,12 @@
+name: PyCM-Document-Environment
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - pip:
+    - scikit-learn
+    - matplotlib
+    - pandas
+    - seaborn
+    - art

@@ -459,10 +459,12 @@ For more information visit [here](https://github.com/sepandhaghighi/pycm/tree/ma
 <a href="https://asciinema.org/a/171863" target="_blank"><img src="https://asciinema.org/a/171863.png" /></a>
 </div>
 
-## Try PyCM in your Browser!
-PyCM can be used online in Jupyter Notebooks via the Binder service! Try it out now! :
+## Try PyCM in your browser!
+PyCM can be used online in interactive Jupyter Notebooks via the Binder service! Try it out now! :
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sepandhaghighi/pycm/master)
+
+* Check `Example`s in `Document` folder 
 
 ## Issues & bug reports			
 

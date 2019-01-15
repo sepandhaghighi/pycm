@@ -49,10 +49,12 @@
 - [HTML](http://www.pycm.ir/doc/Example7.html)
 
 
-## Try PyCM in your Browser!
-PyCM can be used online in Jupyter Notebooks via the Binder service! Try it out now! :
+## Try PyCM in your browser interactively!
+PyCM can be used online in interactive Jupyter Notebooks via the Binder service! Try it out now! :
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sepandhaghighi/pycm/master)
+
+* Check `Example`s in `Document` folder 
 
 
 

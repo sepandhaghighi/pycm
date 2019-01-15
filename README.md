@@ -464,7 +464,7 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder service!
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sepandhaghighi/pycm/master)
 
-* Check `Example`s in `Document` folder 
+* Check `Examples` in `Document` folder 
 
 ## Issues & bug reports			
 

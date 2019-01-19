@@ -17,7 +17,7 @@ def PLR_analysis(PLR):
         if PLR >= 5 and PLR < 10:
             return "Fair"
         return "Good"
-    except Exception:
+    except Exception:  #pragma: no cover
         return "None"
 
 
@@ -38,7 +38,7 @@ def DP_analysis(DP):
         if DP >= 2 and DP < 3:
             return "Fair"
         return "Good"
-    except Exception:
+    except Exception: #pragma: no cover
         return "None"
 
 
@@ -61,7 +61,7 @@ def AUC_analysis(AUC):
         if AUC >= 0.8 and AUC < 0.9:
             return "Very Good"
         return "Excellent"
-    except Exception:
+    except Exception: #pragma: no cover
         return "None"
 
 
@@ -82,7 +82,7 @@ def kappa_analysis_cicchetti(kappa):
         if kappa >= 0.74 and kappa <= 1:
             return "Excellent"
         return "None"
-    except Exception:
+    except Exception: #pragma: no cover
         return "None"
 
 
@@ -107,7 +107,7 @@ def kappa_analysis_koch(kappa):
         if kappa >= 0.80 and kappa <= 1:
             return "Almost Perfect"
         return "None"
-    except Exception:
+    except Exception: #pragma: no cover
         return "None"
 
 
@@ -126,7 +126,7 @@ def kappa_analysis_fleiss(kappa):
         if kappa >= 0.75:
             return "Excellent"
         return "None"
-    except Exception:
+    except Exception: #pragma: no cover
         return "None"
 
 
@@ -149,5 +149,5 @@ def kappa_analysis_altman(kappa):
         if kappa >= 0.80 and kappa <= 1:
             return "Very Good"
         return "None"
-    except Exception:
+    except Exception: #pragma: no cover
         return "None"

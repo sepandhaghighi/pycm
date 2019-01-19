@@ -39,10 +39,11 @@ init:
 
 install:
   - "%PYTHON%/Scripts/pip.exe install -r requirements.txt"
-  - "%PYTHON%/Scripts/pip.exe install -r dev-requirements.txt"
   - "%PYTHON%/python.exe setup.py install"
 
 test_script:
-  - "%PYTHON%/python.exe -m pytest pycm/ --cov=pycm --cov-report=term"
+  - "%PYTHON%/python.exe -m pycm test"
+  - "%PYTHON%/Scripts/pip.exe install -r dev-requirements.txt"
+  - "%PYTHON%/python.exe -m pytest Test --cov=pycm --cov-report=term"
   - "%PYTHON%/python.exe version_check.py"
   - "%PYTHON%/python.exe -m cProfile -s cumtime pycm/pycm_profile.py"

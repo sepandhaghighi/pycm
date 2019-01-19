@@ -115,12 +115,16 @@ False
 'Almost Perfect'
 >>> kappa_analysis_koch(1.2)
 'None'
+>>> kappa_analysis_koch(None)
+'None'
 >>> kappa_analysis_fleiss(0.4)
 'Intermediate to Good'
 >>> kappa_analysis_fleiss(0.75)
 'Excellent'
 >>> kappa_analysis_fleiss(1.2)
 'Excellent'
+>>> kappa_analysis_fleiss(None)
+'None'
 >>> kappa_analysis_altman(-0.2)
 'Poor'
 >>> kappa_analysis_altman(0.2)
@@ -133,6 +137,8 @@ False
 'Very Good'
 >>> kappa_analysis_altman(1.2)
 'None'
+>>> kappa_analysis_altman(None)
+'None'
 >>> kappa_analysis_fleiss(0.2)
 'Poor'
 >>> kappa_analysis_cicchetti(0.3)
@@ -143,6 +149,10 @@ False
 'Good'
 >>> kappa_analysis_cicchetti(0.8)
 'Excellent'
+>>> kappa_analysis_cicchetti(1.2)
+'None'
+>>> kappa_analysis_cicchetti(None)
+'None'
 >>> PLR_analysis(1)
 'Negligible'
 >>> PLR_analysis(3)
@@ -171,6 +181,12 @@ False
 'Excellent'
 >>> AUC_analysis(1.0)
 'Excellent'
+>>> PLR_analysis(None)
+'None'
+>>> DP_analysis(None)
+'None'
+>>> AUC_analysis(None)
+'None'
 >>> PC_PI_calc(1,1,1)
 'None'
 >>> PC_PI_calc({1:12},{1:6},{1:45})

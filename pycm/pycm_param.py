@@ -24,6 +24,11 @@ VECTOR_EMPTY_ERROR = "Input vectors are empty"
 CLASS_NUMBER_ERROR = "Number of the classes is lower than 2"
 
 
+CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won't be demonstrated properly. \n" \
+                       "The save_csv method can be used to save the confusion matrix in csv format and have a better" \
+                       " demonstration of it."
+
+
 DOCUMENT_ADR = "http://www.pycm.ir/doc/index.html#"
 
 PARAMS_DESCRIPTION = {

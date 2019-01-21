@@ -6,9 +6,26 @@ from functools import reduce
 from .pycm_interpret import *
 
 
+def BCD_calc(TOP,P,AM):
+    '''
+    This function calculate BCD (Bray–Curtis dissimilarity)
+    :param TOP: test outcome positive
+    :type TOP : dict
+    :param P: condition positive
+    :type P : dict
+    :param AM: Automatic/Manual
+    :type AM : int
+    :return: BCD as float
+    '''
+    try:
+        TOP_sum = sum(TOP.values())
+        P_sum = sum(P.values())
+        return abs(AM)/(P_sum+TOP_sum)
+    except Exception:
+        return "None"
 def AM_calc(TOP, P):
     '''
-    This function calculate AM (Auto_Manu)
+    This function calculate AM (Automatic/Manual)
     :param TOP: test outcome positive
     :type TOP : int
     :param P: condition positive
@@ -1421,6 +1438,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     GI = {}
     LS = {}
     AM = {}
+    BCD = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1465,6 +1483,8 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         GI[i] = GI_calc(AUC[i])
         LS[i] = lift_calc(PPV[i], PRE[i])
         AM[i] = AM_calc(TOP[i], P[i])
+    for i in TP.keys():
+        BCD[i] = BCD_calc(TOP,P,AM[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1512,5 +1532,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "AUCI": AUCI,
         "GI": GI,
         "LS": LS,
-        "AM": AM}
+        "AM": AM,
+        "BCD":BCD}
     return result

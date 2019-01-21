@@ -177,9 +177,9 @@ PARAMS_LINK = {
     "GI": "GI-(Gini-index)",
     "LS": "LS-(Lift-score)",
     "AM": "AM-(Automatic/Manual)",
-    "BCD":"BCD-(Bray-Curtis-dissimilarity)"}
+    "BCD": "BCD-(Bray-Curtis-dissimilarity)"}
 
-CAPITALIZE_FILTER = ["BCD","AUCI"]
+CAPITALIZE_FILTER = ["BCD", "AUCI"]
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

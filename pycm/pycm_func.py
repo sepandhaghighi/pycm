@@ -6,7 +6,7 @@ from functools import reduce
 from .pycm_interpret import *
 
 
-def BCD_calc(TOP,P,AM):
+def BCD_calc(TOP, P, AM):
     '''
     This function calculate BCD (Bray–Curtis dissimilarity)
     :param TOP: test outcome positive
@@ -20,9 +20,11 @@ def BCD_calc(TOP,P,AM):
     try:
         TOP_sum = sum(TOP.values())
         P_sum = sum(P.values())
-        return abs(AM)/(P_sum+TOP_sum)
+        return abs(AM) / (P_sum + TOP_sum)
     except Exception:
         return "None"
+
+
 def AM_calc(TOP, P):
     '''
     This function calculate AM (Automatic/Manual)
@@ -1484,7 +1486,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         LS[i] = lift_calc(PPV[i], PRE[i])
         AM[i] = AM_calc(TOP[i], P[i])
     for i in TP.keys():
-        BCD[i] = BCD_calc(TOP,P,AM[i])
+        BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1533,5 +1535,5 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "GI": GI,
         "LS": LS,
         "AM": AM,
-        "BCD":BCD}
+        "BCD": BCD}
     return result

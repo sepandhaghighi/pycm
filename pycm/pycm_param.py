@@ -176,8 +176,8 @@ PARAMS_LINK = {
     "AUCI": "AUCI-(AUC-value-interpretation)",
     "GI": "GI-(Gini-index)",
     "LS": "LS-(Lift-score)",
-    "AM": "#AM-(Automatic/Manual)",
-    "BCD":""}
+    "AM": "AM-(Automatic/Manual)",
+    "BCD":"BCD-(Bray-Curtis-dissimilarity)"}
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

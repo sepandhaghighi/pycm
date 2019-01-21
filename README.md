@@ -579,6 +579,7 @@ ICDM01. SIAM, pp. 1–18. </blockquote>
 
 <blockquote>36- Raschka, Sebastian (2018) MLxtend: Providing machine learning and data science utilities and extensions to Python's scientific computing stack. J Open Source Softw 3(24).</blockquote> 
 
+<blockquote>37- Bray, J. R. and J. T. Curtis. 1957. An ordination of upland forest communities of southern Wisconsin. Ecological Monographs 27:325-349.</blockquote>			
 
 ## Cite
 

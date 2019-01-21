@@ -78,7 +78,8 @@ PARAMS_DESCRIPTION = {
     "DPI": "Discriminant power interpretation",
     "AUCI": "AUC value interpretation",
     "GI": "Gini index",
-    "LS": "Lift score"}
+    "LS": "Lift score",
+    "AM": "Difference between Automatic and Manual classification"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -173,7 +174,8 @@ PARAMS_LINK = {
     "DPI": "DPI-(Discriminant-power-interpretation)",
     "AUCI": "AUCI-(AUC-value-interpretation)",
     "GI": "GI-(Gini-index)",
-    "LS": "LS-(Lift-index)"}
+    "LS": "LS-(Lift-index)",
+    "AM":""}
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

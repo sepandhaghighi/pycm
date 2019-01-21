@@ -490,6 +490,7 @@ def __class_stat_init__(CM):
     CM.AUCI = CM.class_stat["AUCI"]
     CM.GI = CM.class_stat["GI"]
     CM.LS = CM.class_stat["LS"]
+    CM.AM = CM.class_stat["AM"]
 
 
 def __overall_stat_init__(CM):

@@ -19,7 +19,7 @@ def AM_calc(TOP,P):
         return TOP-P
     except Exception:
         return "None"
-    
+
 def lift_calc(PPV, PRE):
     '''
     This function calculate lift score
@@ -1419,6 +1419,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     AUCI = {}
     GI = {}
     LS = {}
+    AM = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1462,6 +1463,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         AUCI[i] = AUC_analysis(AUC[i])
         GI[i] = GI_calc(AUC[i])
         LS[i] = lift_calc(PPV[i], PRE[i])
+        AM[i] = AM_calc(TOP[i],P[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,
@@ -1508,5 +1510,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "DPI": DPI,
         "AUCI": AUCI,
         "GI": GI,
-        "LS": LS}
+        "LS": LS,
+        "AM": AM}
     return result

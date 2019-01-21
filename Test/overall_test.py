@@ -80,6 +80,7 @@ ACC(Accuracy)                                                    0.83333        
 AM(Difference between automatic and manual classification)       2                       -1                      -1
 AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
 AUCI(Auc value interpretation)                                   Very Good               Fair                    Poor
+BCD(Bray-curtis dissimilarity)                                   0.08333                 0.04167                 0.04167
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
@@ -195,6 +196,7 @@ ACC(Accuracy)                                                    0.83333        
 AM(Difference between automatic and manual classification)       2                       -1                      -1
 AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
 AUCI(Auc value interpretation)                                   Very Good               Fair                    Poor
+BCD(Bray-curtis dissimilarity)                                   0.08333                 0.04167                 0.04167
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
 DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0
@@ -317,6 +319,7 @@ ACC(Accuracy)                                                    0.45           
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
 AUCI(Auc value interpretation)                                   None                    Poor                    Fair                    Poor
+BCD(Bray-curtis dissimilarity)                                   0.275                   0.225                   0.025                   0.025
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
@@ -419,6 +422,7 @@ ACC(Accuracy)                                                    0.45           
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
 AUCI(Auc value interpretation)                                   None                    Poor                    Fair                    Poor
+BCD(Bray-curtis dissimilarity)                                   0.275                   0.225                   0.025                   0.025
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
@@ -631,6 +635,7 @@ ACC(Accuracy)                                                    0.74074        
 AM(Difference between automatic and manual classification)       1                       0                       -1
 AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
 AUCI(Auc value interpretation)                                   Good                    Fair                    Very Good
+BCD(Bray-curtis dissimilarity)                                   0.01852                 0.0                     0.01852
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
@@ -746,6 +751,7 @@ ACC(Accuracy)                                                    0.74074        
 AM(Difference between automatic and manual classification)       1                       0                       -1
 AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
 AUCI(Auc value interpretation)                                   Good                    Fair                    Very Good
+BCD(Bray-curtis dissimilarity)                                   0.01852                 0.0                     0.01852
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
 DOR(Diagnostic odds ratio)                                       8.25                    4.375                   40.0
@@ -863,6 +869,7 @@ ACC(Accuracy)                                                    0.80952        
 AM(Difference between automatic and manual classification)       4                       0                       -4
 AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
 AUCI(Auc value interpretation)                                   Very Good               Fair                    Fair
+BCD(Bray-curtis dissimilarity)                                   0.09524                 0.0                     0.09524
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
 CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5

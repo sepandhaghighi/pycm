@@ -80,7 +80,7 @@ PARAMS_DESCRIPTION = {
     "GI": "Gini index",
     "LS": "Lift score",
     "AM": "Difference between automatic and manual classification",
-    "BCD": "Bray–Curtis dissimilarity"}
+    "BCD": "Bray-Curtis dissimilarity"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",

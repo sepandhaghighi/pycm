@@ -79,7 +79,8 @@ PARAMS_DESCRIPTION = {
     "AUCI": "AUC value interpretation",
     "GI": "Gini index",
     "LS": "Lift score",
-    "AM": "Difference between automatic and manual classification"}
+    "AM": "Difference between automatic and manual classification",
+    "BCD": "Bray–Curtis dissimilarity"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -175,7 +176,8 @@ PARAMS_LINK = {
     "AUCI": "AUCI-(AUC-value-interpretation)",
     "GI": "GI-(Gini-index)",
     "LS": "LS-(Lift-score)",
-    "AM": "#AM-(Automatic/Manual)"}
+    "AM": "#AM-(Automatic/Manual)",
+    "BCD":""}
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

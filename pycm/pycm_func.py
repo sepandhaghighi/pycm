@@ -6,6 +6,20 @@ from functools import reduce
 from .pycm_interpret import *
 
 
+def AM_calc(TOP,P):
+    '''
+    This function calculate AM (Auto_Manu)
+    :param TOP: test outcome positive
+    :type TOP : int
+    :param P: condition positive
+    :type P : int
+    :return: AM as int
+    '''
+    try:
+        return TOP-P
+    except Exception:
+        return "None"
+    
 def lift_calc(PPV, PRE):
     '''
     This function calculate lift score

@@ -6,7 +6,7 @@ from functools import reduce
 from .pycm_interpret import *
 
 
-def AM_calc(TOP,P):
+def AM_calc(TOP, P):
     '''
     This function calculate AM (Auto_Manu)
     :param TOP: test outcome positive
@@ -16,9 +16,10 @@ def AM_calc(TOP,P):
     :return: AM as int
     '''
     try:
-        return TOP-P
+        return TOP - P
     except Exception:
         return "None"
+
 
 def lift_calc(PPV, PRE):
     '''
@@ -1463,7 +1464,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         AUCI[i] = AUC_analysis(AUC[i])
         GI[i] = GI_calc(AUC[i])
         LS[i] = lift_calc(PPV[i], PRE[i])
-        AM[i] = AM_calc(TOP[i],P[i])
+        AM[i] = AM_calc(TOP[i], P[i])
     result = {
         "TPR": TPR,
         "TNR": TNR,

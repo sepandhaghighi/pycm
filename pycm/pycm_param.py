@@ -175,7 +175,7 @@ PARAMS_LINK = {
     "AUCI": "AUCI-(AUC-value-interpretation)",
     "GI": "GI-(Gini-index)",
     "LS": "LS-(Lift-index)",
-    "AM":"#AM-(Automatic/Manual)"}
+    "AM": "#AM-(Automatic/Manual)"}
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

@@ -77,6 +77,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333
+AM(Difference between automatic and manual classification)       2                       -1                      -1
 AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
 AUCI(Auc value interpretation)                                   Very Good               Fair                    Poor
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
@@ -191,6 +192,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          L1                      L2                      L3
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333
+AM(Difference between automatic and manual classification)       2                       -1                      -1
 AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
 AUCI(Auc value interpretation)                                   Very Good               Fair                    Poor
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
@@ -312,6 +314,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
 AUCI(Auc value interpretation)                                   None                    Poor                    Fair                    Poor
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
@@ -413,6 +416,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
 AUCI(Auc value interpretation)                                   None                    Poor                    Fair                    Poor
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
@@ -624,6 +628,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
+AM(Difference between automatic and manual classification)       1                       0                       -1
 AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
 AUCI(Auc value interpretation)                                   Good                    Fair                    Very Good
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
@@ -738,6 +743,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
+AM(Difference between automatic and manual classification)       1                       0                       -1
 AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
 AUCI(Auc value interpretation)                                   Good                    Fair                    Very Good
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
@@ -854,6 +860,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
+AM(Difference between automatic and manual classification)       4                       0                       -4
 AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
 AUCI(Auc value interpretation)                                   Very Good               Fair                    Fair
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778

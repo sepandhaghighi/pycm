@@ -271,97 +271,98 @@ Example : online_help("J") or online_help(2)
 <BLANKLINE>
 1-95% CI
 2-ACC
-3-AUC
-4-AUCI
-5-AUNP
-6-AUNU
-7-BM
-8-Bennett S
-9-CBA
-10-CEN
-11-Chi-Squared
-12-Chi-Squared DF
-13-Conditional Entropy
-14-Cramer V
-15-Cross Entropy
-16-DOR
-17-DP
-18-DPI
-19-ERR
-20-F0.5
-21-F1
-22-F2
-23-FDR
-24-FN
-25-FNR
-26-FOR
-27-FP
-28-FPR
-29-G
-30-GI
-31-Gwet AC1
-32-Hamming Loss
-33-IS
-34-J
-35-Joint Entropy
-36-KL Divergence
-37-Kappa
-38-Kappa 95% CI
-39-Kappa No Prevalence
-40-Kappa Standard Error
-41-Kappa Unbiased
-42-LS
-43-Lambda A
-44-Lambda B
-45-MCC
-46-MCEN
-47-MK
-48-Mutual Information
-49-N
-50-NIR
-51-NLR
-52-NPV
-53-Overall ACC
-54-Overall CEN
-55-Overall J
-56-Overall MCC
-57-Overall MCEN
-58-Overall RACC
-59-Overall RACCU
-60-P
-61-P-Value
-62-PLR
-63-PLRI
-64-POP
-65-PPV
-66-PPV Macro
-67-PPV Micro
-68-PRE
-69-Phi-Squared
-70-RACC
-71-RACCU
-72-RCI
-73-RR
-74-Reference Entropy
-75-Response Entropy
-76-SOA1(Landis & Koch)
-77-SOA2(Fleiss)
-78-SOA3(Altman)
-79-SOA4(Cicchetti)
-80-Scott PI
-81-Standard Error
-82-TN
-83-TNR
-84-TON
-85-TOP
-86-TP
-87-TPR
-88-TPR Macro
-89-TPR Micro
-90-Y
-91-Zero-one Loss
-92-dInd
-93-sInd
+3-AM
+4-AUC
+5-AUCI
+6-AUNP
+7-AUNU
+8-BM
+9-Bennett S
+10-CBA
+11-CEN
+12-Chi-Squared
+13-Chi-Squared DF
+14-Conditional Entropy
+15-Cramer V
+16-Cross Entropy
+17-DOR
+18-DP
+19-DPI
+20-ERR
+21-F0.5
+22-F1
+23-F2
+24-FDR
+25-FN
+26-FNR
+27-FOR
+28-FP
+29-FPR
+30-G
+31-GI
+32-Gwet AC1
+33-Hamming Loss
+34-IS
+35-J
+36-Joint Entropy
+37-KL Divergence
+38-Kappa
+39-Kappa 95% CI
+40-Kappa No Prevalence
+41-Kappa Standard Error
+42-Kappa Unbiased
+43-LS
+44-Lambda A
+45-Lambda B
+46-MCC
+47-MCEN
+48-MK
+49-Mutual Information
+50-N
+51-NIR
+52-NLR
+53-NPV
+54-Overall ACC
+55-Overall CEN
+56-Overall J
+57-Overall MCC
+58-Overall MCEN
+59-Overall RACC
+60-Overall RACCU
+61-P
+62-P-Value
+63-PLR
+64-PLRI
+65-POP
+66-PPV
+67-PPV Macro
+68-PPV Micro
+69-PRE
+70-Phi-Squared
+71-RACC
+72-RACCU
+73-RCI
+74-RR
+75-Reference Entropy
+76-Response Entropy
+77-SOA1(Landis & Koch)
+78-SOA2(Fleiss)
+79-SOA3(Altman)
+80-SOA4(Cicchetti)
+81-Scott PI
+82-Standard Error
+83-TN
+84-TNR
+85-TON
+86-TOP
+87-TP
+88-TPR
+89-TPR Macro
+90-TPR Micro
+91-Y
+92-Zero-one Loss
+93-dInd
+94-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -427,4 +428,7 @@ Example : online_help("J") or online_help(2)
 0.627145631592811
 >>> cm.BM[1]
 0.627145631592811
+>>> cm = ConfusionMatrix(matrix={1:{1:60,2:9,3:1,4:0,5:0,6:0},2:{1:23,2:48,3:0,4:2,5:2,6:1},3:{1:11,2:5,3:1,4:0,5:0,6:0},4:{1:0,2:2,3:0,4:7,5:1,6:3},5:{1:2,2:1,3:0,4:0,5:4,6:2},6:{1:1,2:2,3:0,4:2,5:1,6:23}}) # Verified Case
+>>> cm.AM[1]
+27
 '''

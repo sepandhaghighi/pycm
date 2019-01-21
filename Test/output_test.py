@@ -139,8 +139,8 @@ Classes                                                          100            
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
-AUCI(Auc value interpretation)                                   None                    Poor                    Fair                    Poor
-BCD(Bray-curtis dissimilarity)                                   0.275                   0.225                   0.025                   0.025
+AUCI(AUC value interpretation)                                   None                    Poor                    Fair                    Poor
+BCD(Bray-Curtis dissimilarity)                                   0.275                   0.225                   0.025                   0.025
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
 DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None
@@ -271,8 +271,8 @@ Classes                                                          0              
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
 AM(Difference between automatic and manual classification)       4                       0                       -4
 AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
-AUCI(Auc value interpretation)                                   Very Good               Fair                    Fair
-BCD(Bray-curtis dissimilarity)                                   0.09524                 0.0                     0.09524
+AUCI(AUC value interpretation)                                   Very Good               Fair                    Fair
+BCD(Bray-Curtis dissimilarity)                                   0.09524                 0.0                     0.09524
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
 CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
 DOR(Diagnostic odds ratio)                                       None                    4.0                     3.5

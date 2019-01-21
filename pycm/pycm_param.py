@@ -179,6 +179,8 @@ PARAMS_LINK = {
     "AM": "AM-(Automatic/Manual)",
     "BCD":"BCD-(Bray-Curtis-dissimilarity)"}
 
+CAPITALIZE_FILTER = ["BCD","AUCI"]
+
 BENCHMARK_COLOR = {
     "Negligible": "Red",
     "Poor": "Red",

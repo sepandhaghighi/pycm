@@ -187,8 +187,11 @@ def html_class_stat(classes, class_stat, digit=5, class_param=None):
             else:
                 result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">'
             result += rounder(class_stat[i][j], digit) + '</td>\n'
+        params_text = PARAMS_DESCRIPTION[i]
+        if i not in CAPITALIZE_FILTER:
+            params_text = params_text.capitalize()
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;text-align:left;">' + \
-                  PARAMS_DESCRIPTION[i].capitalize() + '</td>\n'
+                  params_text + '</td>\n'
         result += "</tr>\n"
     result += "</table>\n"
     return result
@@ -378,7 +381,10 @@ def stat_print(
         rounder_map = partial(rounder, digit=digit)
         for key in class_stat_keys:
             row = [class_stat[key][i] for i in classes]
-            result += key + "(" + PARAMS_DESCRIPTION[key].capitalize() + ")" + " " * (
+            params_text = PARAMS_DESCRIPTION[key]
+            if key not in CAPITALIZE_FILTER:
+                params_text = params_text.capitalize()
+            result += key + "(" + params_text + ")" + " " * (
                 shift - len(key) - len(PARAMS_DESCRIPTION[key]) + 5) + "%-24s" * classes_len % tuple(
                 map(rounder_map, row)) + "\n"
     return result

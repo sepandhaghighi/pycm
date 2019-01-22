@@ -68,31 +68,7 @@ class ConfusionMatrix():
         else:
             self.transpose = False
         if isfile(file):
-            obj_data = json.load(file)
-            if obj_data["Actual-Vector"] is not None and obj_data[
-                    "Predict-Vector"] is not None:
-                try:
-                    loaded_weights = obj_data["Sample-Weight"]
-                except Exception:
-                    loaded_weights = None
-                matrix_param = matrix_params_calc(obj_data[
-                    "Actual-Vector"],
-                    obj_data[
-                    "Predict-Vector"], loaded_weights)
-                self.actual_vector = obj_data["Actual-Vector"]
-                self.predict_vector = obj_data["Predict-Vector"]
-                self.weights = loaded_weights
-            else:
-                try:
-                    loaded_transpose = obj_data["Transpose"]
-                except Exception:
-                    loaded_transpose = False
-                self.transpose = loaded_transpose
-                loaded_matrix = dict(obj_data["Matrix"])
-                for i in loaded_matrix.keys():
-                    loaded_matrix[i] = dict(loaded_matrix[i])
-                matrix_param = matrix_params_from_table(loaded_matrix)
-            self.digit = obj_data["Digit"]
+            matrix_param = __obj_file_handler__(self,file)
         elif isinstance(matrix, dict):
             if matrix_check(matrix):
                 if class_check(list(matrix.keys())) is False:
@@ -548,3 +524,33 @@ def __overall_stat_init__(CM):
     CM.AUNU = CM.overall_stat["AUNU"]
     CM.AUNP = CM.overall_stat["AUNP"]
     CM.RCI = CM.overall_stat["RCI"]
+
+def __obj_file_handler__(CM,file):
+
+    obj_data = json.load(file)
+    if obj_data["Actual-Vector"] is not None and obj_data[
+        "Predict-Vector"] is not None:
+        try:
+            loaded_weights = obj_data["Sample-Weight"]
+        except Exception:
+            loaded_weights = None
+        matrix_param = matrix_params_calc(obj_data[
+                                              "Actual-Vector"],
+                                          obj_data[
+                                              "Predict-Vector"], loaded_weights)
+        CM.actual_vector = obj_data["Actual-Vector"]
+        CM.predict_vector = obj_data["Predict-Vector"]
+        CM.weights = loaded_weights
+    else:
+        try:
+            loaded_transpose = obj_data["Transpose"]
+        except Exception:
+            loaded_transpose = False
+        CM.transpose = loaded_transpose
+        loaded_matrix = dict(obj_data["Matrix"])
+        for i in loaded_matrix.keys():
+            loaded_matrix[i] = dict(loaded_matrix[i])
+        matrix_param = matrix_params_from_table(loaded_matrix)
+    CM.digit = obj_data["Digit"]
+
+    return matrix_param

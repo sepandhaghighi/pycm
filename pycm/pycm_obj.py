@@ -545,6 +545,19 @@ def __obj_matrix_handler__(matrix):
     return matrix_param
 
 def __obj_vector_handler__(cm,actual_vector,predict_vector,threshold,sample_weight):
+    '''
+    This function handle object condition for vectors
+    :param cm: ConfusionMatrix
+    :param actual_vector: Actual Vector
+    :type actual_vector: python list or numpy array of any stringable objects
+    :param predict_vector: Predicted Vector
+    :type predict_vector: python list or numpy array of any stringable objects
+    :param threshold : activation threshold function
+    :type threshold : FunctionType (function or lambda)
+    :param sample_weight : sample weights list
+    :type sample_weight : list
+    :return: matrix parameters as list
+    '''
     if isinstance(threshold, types.FunctionType):
         predict_vector = list(map(threshold, predict_vector))
         cm.predict_vector = predict_vector

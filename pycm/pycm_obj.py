@@ -276,6 +276,8 @@ class ConfusionMatrix():
         :type class_param : list
         :param class_name : class name (sub set of classes), Example :[1,2,3]
         :type class_name : list
+        :param matrix_save : save matrix flag
+        :type matrix_save : bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         '''
         try:

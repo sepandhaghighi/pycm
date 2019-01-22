@@ -49,13 +49,13 @@ True
 >>> save_stat=cm.save_csv("test_filtered",address=False,class_param=["TPR","TNR","ACC","AUC"])
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_csv("test_filtered2",address=False,class_param=["TPR","TNR","ACC","AUC"],class_name=[100])
+>>> save_stat=cm.save_csv("test_filtered2",address=False,class_param=["TPR","TNR","ACC","AUC"],class_name=[100],matrix_save=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_csv("test_filtered3",address=False,class_param=["TPR","TNR","ACC","AUC"],class_name=[])
+>>> save_stat=cm.save_csv("test_filtered3",address=False,class_param=["TPR","TNR","ACC","AUC"],class_name=[],matrix_save=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_csv("test_filtered4",address=False,class_param=[],class_name=[100])
+>>> save_stat=cm.save_csv("test_filtered4",address=False,class_param=[],class_name=[100],matrix_save=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_html("/asdasd,qweqwe.eo/",address=True)
@@ -337,10 +337,12 @@ True
 True
 
 >>> os.remove("test.csv")
+>>> os.remove("test_matrix.csv")
 >>> os.remove("test.obj")
 >>> os.remove("test.html")
 >>> os.remove("test_filtered.html")
 >>> os.remove("test_filtered.csv")
+>>> os.remove("test_filtered_matrix.csv")
 >>> os.remove("test_filtered.pycm")
 >>> os.remove("test_filtered2.html")
 >>> os.remove("test_filtered3.html")

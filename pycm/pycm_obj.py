@@ -70,13 +70,7 @@ class ConfusionMatrix():
         if isfile(file):
             matrix_param = __obj_file_handler__(self,file)
         elif isinstance(matrix, dict):
-            if matrix_check(matrix):
-                if class_check(list(matrix.keys())) is False:
-                    raise pycmMatrixError(MATRIX_CLASS_TYPE_ERROR)
-                else:
-                    matrix_param = matrix_params_from_table(matrix, transpose)
-            else:
-                raise pycmMatrixError(MATRIX_FORMAT_ERROR)
+            matrix_param = __obj_matrix_handler__(matrix)
         else:
             if isinstance(threshold, types.FunctionType):
                 predict_vector = list(map(threshold, predict_vector))
@@ -552,5 +546,17 @@ def __obj_file_handler__(CM,file):
             loaded_matrix[i] = dict(loaded_matrix[i])
         matrix_param = matrix_params_from_table(loaded_matrix)
     CM.digit = obj_data["Digit"]
+
+    return matrix_param
+
+
+def __obj_matrix_handler__(matrix):
+    if matrix_check(matrix):
+        if class_check(list(matrix.keys())) is False:
+            raise pycmMatrixError(MATRIX_CLASS_TYPE_ERROR)
+        else:
+            matrix_param = matrix_params_from_table(matrix, transpose)
+    else:
+        raise pycmMatrixError(MATRIX_FORMAT_ERROR)
 
     return matrix_param

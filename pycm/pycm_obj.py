@@ -46,7 +46,6 @@ class ConfusionMatrix():
         :param predict_vector: Predicted Vector
         :type predict_vector: python list or numpy array of any stringable objects
         :param matrix: direct matrix
-        :type matrix: dictionary
         :type matrix: dict
         :param digit: precision digit (default value : 5)
         :type digit : int
@@ -70,7 +69,7 @@ class ConfusionMatrix():
         if isfile(file):
             matrix_param = __obj_file_handler__(self,file)
         elif isinstance(matrix, dict):
-            matrix_param = __obj_matrix_handler__(matrix)
+            matrix_param = __obj_matrix_handler__(matrix,transpose)
         else:
             matrix_param = __obj_vector_handler__(self,actual_vector,predict_vector,threshold,sample_weight)
         if len(matrix_param[0]) < 2:
@@ -533,7 +532,15 @@ def __obj_file_handler__(CM,file):
     return matrix_param
 
 
-def __obj_matrix_handler__(matrix):
+def __obj_matrix_handler__(matrix,transpose):
+    '''
+    This function handle object conditions for matrix
+    :param matrix: direct matrix
+    :type matrix: dict
+    :param transpose : transpose flag
+    :type transpose : bool
+    :return: matrix parameters as list
+    '''
     if matrix_check(matrix):
         if class_check(list(matrix.keys())) is False:
             raise pycmMatrixError(MATRIX_CLASS_TYPE_ERROR)
@@ -546,7 +553,7 @@ def __obj_matrix_handler__(matrix):
 
 def __obj_vector_handler__(cm,actual_vector,predict_vector,threshold,sample_weight):
     '''
-    This function handle object condition for vectors
+    This function handle object conditions for vectors
     :param cm: ConfusionMatrix
     :param actual_vector: Actual Vector
     :type actual_vector: python list or numpy array of any stringable objects

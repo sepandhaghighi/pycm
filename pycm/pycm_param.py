@@ -28,6 +28,7 @@ CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won'
                        "The save_csv method can be used to save the confusion matrix in csv format and have a better" \
                        " demonstration of it."
 
+CLASS_NUMBER_THRESHOLD = 10
 
 DOCUMENT_ADR = "http://www.pycm.ir/doc/index.html#"
 

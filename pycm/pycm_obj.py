@@ -67,11 +67,12 @@ class ConfusionMatrix():
         else:
             self.transpose = False
         if isfile(file):
-            matrix_param = __obj_file_handler__(self,file)
+            matrix_param = __obj_file_handler__(self, file)
         elif isinstance(matrix, dict):
-            matrix_param = __obj_matrix_handler__(matrix,transpose)
+            matrix_param = __obj_matrix_handler__(matrix, transpose)
         else:
-            matrix_param = __obj_vector_handler__(self,actual_vector,predict_vector,threshold,sample_weight)
+            matrix_param = __obj_vector_handler__(
+                self, actual_vector, predict_vector, threshold, sample_weight)
         if len(matrix_param[0]) < 2:
             raise pycmVectorError(CLASS_NUMBER_ERROR)
         self.classes = matrix_param[0]
@@ -265,7 +266,14 @@ class ConfusionMatrix():
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
-    def save_csv(self, name, address=True, class_param=None, class_name=None, matrix_save=True, normalize= False):
+    def save_csv(
+            self,
+            name,
+            address=True,
+            class_param=None,
+            class_name=None,
+            matrix_save=True,
+            normalize=False):
         '''
         This method save ConfusionMatrix in CSV file
         :param name: filename
@@ -292,12 +300,12 @@ class ConfusionMatrix():
                 self.digit,
                 class_param)
             csv_file.write(csv_data)
-            if matrix_save == True :
-                matrix =  self.table
-                if normalize == True :
+            if matrix_save:
+                matrix = self.table
+                if normalize:
                     matrix = self.normalized_table
-                csv_matrix_file = open(name + "_matrix"+".csv", "w")
-                csv_matrix_data = csv_matrix_print(self.classes,matrix)
+                csv_matrix_file = open(name + "_matrix" + ".csv", "w")
+                csv_matrix_data = csv_matrix_print(self.classes, matrix)
                 csv_matrix_file.write(csv_matrix_data)
             if address:
                 message = os.path.join(os.getcwd(), name + ".csv")
@@ -512,7 +520,8 @@ def __overall_stat_init__(cm):
     cm.AUNP = cm.overall_stat["AUNP"]
     cm.RCI = cm.overall_stat["RCI"]
 
-def __obj_file_handler__(cm,file):
+
+def __obj_file_handler__(cm, file):
     '''
     This function handle object conditions for file
     :param cm: ConfusionMatrix
@@ -523,15 +532,15 @@ def __obj_file_handler__(cm,file):
     '''
     obj_data = json.load(file)
     if obj_data["Actual-Vector"] is not None and obj_data[
-        "Predict-Vector"] is not None:
+            "Predict-Vector"] is not None:
         try:
             loaded_weights = obj_data["Sample-Weight"]
         except Exception:
             loaded_weights = None
         matrix_param = matrix_params_calc(obj_data[
-                                              "Actual-Vector"],
-                                          obj_data[
-                                              "Predict-Vector"], loaded_weights)
+            "Actual-Vector"],
+            obj_data[
+            "Predict-Vector"], loaded_weights)
         cm.actual_vector = obj_data["Actual-Vector"]
         cm.predict_vector = obj_data["Predict-Vector"]
         cm.weights = loaded_weights
@@ -550,7 +559,7 @@ def __obj_file_handler__(cm,file):
     return matrix_param
 
 
-def __obj_matrix_handler__(matrix,transpose):
+def __obj_matrix_handler__(matrix, transpose):
     '''
     This function handle object conditions for matrix
     :param matrix: direct matrix
@@ -569,7 +578,13 @@ def __obj_matrix_handler__(matrix,transpose):
 
     return matrix_param
 
-def __obj_vector_handler__(cm,actual_vector,predict_vector,threshold,sample_weight):
+
+def __obj_vector_handler__(
+        cm,
+        actual_vector,
+        predict_vector,
+        threshold,
+        sample_weight):
     '''
     This function handle object conditions for vectors
     :param cm: ConfusionMatrix

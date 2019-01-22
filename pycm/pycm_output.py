@@ -303,7 +303,7 @@ def table_print(classes, table):
     return result
 
 
-def csv_matrix_print(classes,table):
+def csv_matrix_print(classes, table):
     '''
     This function return matrix as csv data
     :param classes: classes list
@@ -316,9 +316,10 @@ def csv_matrix_print(classes,table):
     classes.sort()
     for i in classes:
         for j in classes:
-            result += str(table[i][j])+","
-        result = result[:-1]+"\n"
+            result += str(table[i][j]) + ","
+        result = result[:-1] + "\n"
     return result[:-1]
+
 
 def csv_print(classes, class_stat, digit=5, class_param=None):
     '''

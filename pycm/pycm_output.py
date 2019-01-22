@@ -303,6 +303,15 @@ def table_print(classes, table):
     return result
 
 
+def csv_matrix_print(classes,matrix):
+    result = ""
+    classes.sort()
+    for i in classes:
+        for j in classes:
+            result += str(matrix[i][j])+","
+        result = result[:-1]+"\n"
+    return result[:-1]
+
 def csv_print(classes, class_stat, digit=5, class_param=None):
     '''
     This function return csv file data

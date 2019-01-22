@@ -72,24 +72,7 @@ class ConfusionMatrix():
         elif isinstance(matrix, dict):
             matrix_param = __obj_matrix_handler__(matrix)
         else:
-            if isinstance(threshold, types.FunctionType):
-                predict_vector = list(map(threshold, predict_vector))
-                self.predict_vector = predict_vector
-            if not isinstance(actual_vector, (list, numpy.ndarray)) or not\
-                    isinstance(predict_vector, (list, numpy.ndarray)):
-                raise pycmVectorError(VECTOR_TYPE_ERROR)
-            if len(actual_vector) != len(predict_vector):
-                raise pycmVectorError(VECTOR_SIZE_ERROR)
-            if len(actual_vector) == 0 or len(predict_vector) == 0:
-                raise pycmVectorError(VECTOR_EMPTY_ERROR)
-            [actual_vector, predict_vector] = vector_filter(
-                actual_vector, predict_vector)
-            matrix_param = matrix_params_calc(
-                actual_vector, predict_vector, sample_weight)
-            if isinstance(sample_weight, list):
-                self.weights = sample_weight
-            if isinstance(sample_weight, numpy.ndarray):
-                self.weights = sample_weight.tolist()
+            matrix_param = __obj_vector_handler__(self,actual_vector,predict_vector,threshold,sample_weight)
         if len(matrix_param[0]) < 2:
             raise pycmVectorError(CLASS_NUMBER_ERROR)
         self.classes = matrix_param[0]
@@ -558,5 +541,27 @@ def __obj_matrix_handler__(matrix):
             matrix_param = matrix_params_from_table(matrix, transpose)
     else:
         raise pycmMatrixError(MATRIX_FORMAT_ERROR)
+
+    return matrix_param
+
+def __obj_vector_handler__(cm,actual_vector,predict_vector,threshold,sample_weight):
+    if isinstance(threshold, types.FunctionType):
+        predict_vector = list(map(threshold, predict_vector))
+        cm.predict_vector = predict_vector
+    if not isinstance(actual_vector, (list, numpy.ndarray)) or not \
+            isinstance(predict_vector, (list, numpy.ndarray)):
+        raise pycmVectorError(VECTOR_TYPE_ERROR)
+    if len(actual_vector) != len(predict_vector):
+        raise pycmVectorError(VECTOR_SIZE_ERROR)
+    if len(actual_vector) == 0 or len(predict_vector) == 0:
+        raise pycmVectorError(VECTOR_EMPTY_ERROR)
+    [actual_vector, predict_vector] = vector_filter(
+        actual_vector, predict_vector)
+    matrix_param = matrix_params_calc(
+        actual_vector, predict_vector, sample_weight)
+    if isinstance(sample_weight, list):
+        cm.weights = sample_weight
+    if isinstance(sample_weight, numpy.ndarray):
+        cm.weights = sample_weight.tolist()
 
     return matrix_param

@@ -303,12 +303,20 @@ def table_print(classes, table):
     return result
 
 
-def csv_matrix_print(classes,matrix):
+def csv_matrix_print(classes,table):
+    '''
+    This function return matrix as csv data
+    :param classes: classes list
+    :type classes:list
+    :param table: table
+    :type table:dict
+    :return:
+    '''
     result = ""
     classes.sort()
     for i in classes:
         for j in classes:
-            result += str(matrix[i][j])+","
+            result += str(table[i][j])+","
         result = result[:-1]+"\n"
     return result[:-1]
 

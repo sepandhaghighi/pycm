@@ -265,7 +265,7 @@ class ConfusionMatrix():
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
-    def save_csv(self, name, address=True, class_param=None, class_name=None, matrix_save=True):
+    def save_csv(self, name, address=True, class_param=None, class_name=None, matrix_save=True, normalize= False):
         '''
         This method save ConfusionMatrix in CSV file
         :param name: filename
@@ -278,6 +278,8 @@ class ConfusionMatrix():
         :type class_name : list
         :param matrix_save : save matrix flag
         :type matrix_save : bool
+        :param normalize : save normalize matrix flag
+        :type normalize : bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         '''
         try:
@@ -291,8 +293,11 @@ class ConfusionMatrix():
                 class_param)
             csv_file.write(csv_data)
             if matrix_save == True :
+                matrix =  self.table
+                if normalize == True :
+                    matrix = self.normalized_table
                 csv_matrix_file = open(name + "_matrix"+".csv", "w")
-                csv_matrix_data = csv_matrix_print(self.classes,self.matrix)
+                csv_matrix_data = csv_matrix_print(self.classes,matrix)
                 csv_matrix_file.write(csv_matrix_data)
             if address:
                 message = os.path.join(os.getcwd(), name + ".csv")

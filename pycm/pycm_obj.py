@@ -505,6 +505,7 @@ def __obj_file_handler__(cm,file):
     '''
     This function handle object conditions for file
     :param cm: ConfusionMatrix
+    :type cm : pycm.ConfusionMatrix object
     :param file : saved confusion matrix file object
     :type file : (io.IOBase & file)
     :return: matrix parameters as list
@@ -561,6 +562,7 @@ def __obj_vector_handler__(cm,actual_vector,predict_vector,threshold,sample_weig
     '''
     This function handle object conditions for vectors
     :param cm: ConfusionMatrix
+    :type cm : pycm.ConfusionMatrix object
     :param actual_vector: Actual Vector
     :type actual_vector: python list or numpy array of any stringable objects
     :param predict_vector: Predicted Vector

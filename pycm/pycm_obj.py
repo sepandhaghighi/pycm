@@ -501,8 +501,14 @@ def __overall_stat_init__(CM):
     CM.AUNP = CM.overall_stat["AUNP"]
     CM.RCI = CM.overall_stat["RCI"]
 
-def __obj_file_handler__(CM,file):
-
+def __obj_file_handler__(cm,file):
+    '''
+    This function handle object conditions for file
+    :param cm: ConfusionMatrix
+    :param file : saved confusion matrix file object
+    :type file : (io.IOBase & file)
+    :return: matrix parameters as list
+    '''
     obj_data = json.load(file)
     if obj_data["Actual-Vector"] is not None and obj_data[
         "Predict-Vector"] is not None:
@@ -514,20 +520,20 @@ def __obj_file_handler__(CM,file):
                                               "Actual-Vector"],
                                           obj_data[
                                               "Predict-Vector"], loaded_weights)
-        CM.actual_vector = obj_data["Actual-Vector"]
-        CM.predict_vector = obj_data["Predict-Vector"]
-        CM.weights = loaded_weights
+        cm.actual_vector = obj_data["Actual-Vector"]
+        cm.predict_vector = obj_data["Predict-Vector"]
+        cm.weights = loaded_weights
     else:
         try:
             loaded_transpose = obj_data["Transpose"]
         except Exception:
             loaded_transpose = False
-        CM.transpose = loaded_transpose
+        cm.transpose = loaded_transpose
         loaded_matrix = dict(obj_data["Matrix"])
         for i in loaded_matrix.keys():
             loaded_matrix[i] = dict(loaded_matrix[i])
         matrix_param = matrix_params_from_table(loaded_matrix)
-    CM.digit = obj_data["Digit"]
+    cm.digit = obj_data["Digit"]
 
     return matrix_param
 

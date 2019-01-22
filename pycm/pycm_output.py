@@ -300,7 +300,7 @@ def table_print(classes, table):
         row = [table[key][i] for i in classes]
         result += str(key) + " " * (17 - len(str(key))) + \
             shift * classes_len % tuple(map(str, row)) + "\n\n"
-    if classes_len>=CLASS_NUMBER_THRESHOLD:
+    if classes_len >= CLASS_NUMBER_THRESHOLD:
         result += "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"
     return result
 
@@ -407,8 +407,8 @@ def stat_print(
             result += key + "(" + params_text + ")" + " " * (
                 shift - len(key) - len(PARAMS_DESCRIPTION[key]) + 5) + "%-24s" * classes_len % tuple(
                 map(rounder_map, row)) + "\n"
-    if classes_len>=CLASS_NUMBER_THRESHOLD:
-        result+="\n"+"Warning : "+CLASS_NUMBER_WARNING+"\n"
+    if classes_len >= CLASS_NUMBER_THRESHOLD:
+        result += "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"
     return result
 
 

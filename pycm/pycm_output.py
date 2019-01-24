@@ -35,6 +35,10 @@ def color_check(color):
         if all(map(lambda x: isinstance(x, int), color)):
             if all(map(lambda x: x < 256, color)):
                 return list(color)
+    if isinstance(color, str):
+        color_lower = color.lower()
+        if color_lower in TABLE_COLOR.keys():
+            return TABLE_COLOR[color_lower]
     return [0, 0, 0]
 
 
@@ -54,7 +58,7 @@ def html_table_color(row, item, color=(0, 0, 0)):
     max_color = max(color_list)
     back_color_index = 255 - int((item / (sum(list(row.values())) + 1)) * 255)
     for i in range(3):
-        result[i] = back_color_index - (max_color - color[i])
+        result[i] = back_color_index - (max_color - color_list[i])
         if result[i] < 0:
             result[i] = 0
     return result

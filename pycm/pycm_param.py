@@ -196,3 +196,20 @@ BENCHMARK_COLOR = {
     "Slight": "Orange",
     "None": "White",
     "Very Good": "Green"}
+
+TABLE_COLOR = {
+    "silver": [192,192,192],
+    "gray": [128,128,128],
+    "red": [255,0,0],
+    "maroon": [128,0,0],
+    "yellow":[255,255,0],
+    "olive": [128,128,0],
+    "lime": [50,205,50],
+    "green": [0,128,0],
+    "aqua": [0,255,255],
+    "teal": [0,128,128],
+    "blue": [0,0,255],
+    "navy": [0,0,128],
+    "fuchsia": [255,0,255],
+    "purple": [128,0,128]
+}

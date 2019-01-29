@@ -469,7 +469,7 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder service!
 ## Issues & bug reports			
 
 Just fill an issue and describe it. We'll check it ASAP!							
-or send an email to [shaghighi@ce.sharif.edu](mailto:shaghighi@ce.sharif.edu "shaghighi@ce.sharif.edu"). 
+or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir"). 
 
 
 ## Todo	

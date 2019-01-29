@@ -29,6 +29,7 @@
    * [License](https://github.com/sepandhaghighi/pycm#license)
    * [Donate](https://github.com/sepandhaghighi/pycm#donate-to-our-project)
    * [Changelog](https://github.com/sepandhaghighi/pycm/blob/master/CHANGELOG.md)
+   * [Code Of Conduct](https://github.com/sepandhaghighi/pycm/blob/master/CODE_OF_CONDUCT.md)
 
 ## Overview
 

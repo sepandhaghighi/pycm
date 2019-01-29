@@ -17,7 +17,7 @@
    * [Installation](https://github.com/sepandhaghighi/pycm#installation)
    * [Usage](https://github.com/sepandhaghighi/pycm#usage)
    * [Document](https://github.com/sepandhaghighi/pycm/tree/master/Document)
-   * [Try PyCM In Your Browser](https://github.com/sepandhaghighi/pycm#try-pycm-in-your-browser)
+   * [Try PyCM in Your Browser](https://github.com/sepandhaghighi/pycm#try-pycm-in-your-browser)
    * [Issues & Bug Reports](https://github.com/sepandhaghighi/pycm#issues--bug-reports)
    * [Todo](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
    * [Outputs](https://github.com/sepandhaghighi/pycm#outputs)
@@ -29,7 +29,7 @@
    * [License](https://github.com/sepandhaghighi/pycm#license)
    * [Donate](https://github.com/sepandhaghighi/pycm#donate-to-our-project)
    * [Changelog](https://github.com/sepandhaghighi/pycm/blob/master/CHANGELOG.md)
-   * [Code Of Conduct](https://github.com/sepandhaghighi/pycm/blob/master/CODE_OF_CONDUCT.md)
+   * [Code of Conduct](https://github.com/sepandhaghighi/pycm/blob/master/CODE_OF_CONDUCT.md)
 
 ## Overview
 

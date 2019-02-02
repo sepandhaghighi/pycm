@@ -197,3 +197,21 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     [classes, table, TP_dict, TN_dict, FP_dict,
         FN_dict] = matrix_params_from_table(table)
     return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
+
+
+def unbalance_check(POP):
+    """
+    This function check if the dataset is imbalanced
+    :param POP:  all classes population
+    :type POP : dictionary
+    :return: is_imbalanced
+    """
+    pop_list = list(POP.values())
+    max_value = max(pop_list)
+    min_value = min(pop_list)
+    balance_ratio = max_value/min_value
+    is_imbalanced = False
+    if balance_ratio > 3:
+        is_imbalanced = True
+    return is_imbalanced
+

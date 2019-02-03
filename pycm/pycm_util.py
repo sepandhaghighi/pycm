@@ -229,3 +229,24 @@ def binary_check(classes):
     if num_classes == 2:
         is_binary = True
     return is_binary
+
+
+def statistic_recommend(classes, POP):
+    """
+    This function recommend parameters which is more suitable due to the input dataset characteristics
+    :param classes:  all classes name
+    :type classes : list
+    :param POP:  all classes population
+    :type POP : dictionary
+    :return: recommendation_list
+    """
+    recommendation_list = []
+    if imbalance_check(POP):
+        recommendation_list.extend(IMBALANCED_RECOMMEND)
+    else:
+        recommendation_list.extend(BALANCED_RECOMMEND)
+    if binary_check(classes):
+        recommendation_list.extend(BINARY_RECOMMEND)
+    else:
+        recommendation_list.extend(MULTICLASS_RECOMMEND)
+    return recommendation_list

@@ -216,3 +216,16 @@ def imbalance_check(POP):
         is_imbalanced = True
     return is_imbalanced
 
+
+def binary_check(classes):
+    """
+    This function check if the problem is a binary classification
+    :param classes:  all classes name
+    :type classes : list
+    :return: is_binary
+    """
+    num_classes = len(classes)
+    is_binary = False
+    if num_classes == 2:
+        is_binary = True
+    return is_binary

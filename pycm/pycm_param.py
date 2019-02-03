@@ -30,6 +30,8 @@ CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won'
 
 CLASS_NUMBER_THRESHOLD = 10
 
+BALANCE_RATIO_THRESHOLD = 3
+
 DOCUMENT_ADR = "http://www.pycm.ir/doc/index.html#"
 
 PARAMS_DESCRIPTION = {

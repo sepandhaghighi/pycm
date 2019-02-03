@@ -24,6 +24,27 @@ def html_init(name):
     return result
 
 
+def html_dataset_type(is_binary,is_imbalanced):
+    '''
+    This function return report file dataset type
+    :param is_binary: is_binary flag (binary : True , mutli-class : False)
+    :type is_binary: bool
+    :param is_imbalanced: is_imbalanced flag (imbalance : True , balance : False)
+    :type is_imbalanced: bool
+    :return: dataset_type as str
+    '''
+    result = "<h2>Dataset Type : </h2>\n"
+    balance_type = "Balanced"
+    class_type = "Binary Classification"
+    if is_imbalanced==True:
+        balance_type = "Imbalanced"
+    if is_binary ==False :
+        class_type = "Multi-Class Classification"
+    result += "<ul>\n\n<li>{0}</li>\n\n<li>{1}</li>\n</ul>\n".format(class_type,balance_type)
+    result += "<p>{0}</p>\n".format(RECOMMEND_HTML_MESSAGE)
+
+    return result
+
 def color_check(color):
     '''
     This function check input color fotmat

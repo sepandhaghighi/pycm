@@ -113,6 +113,7 @@ class ConfusionMatrix():
         __class_stat_init__(self)
         __overall_stat_init__(self)
         self.imbalance = imbalance_check(self.POP)
+        self.binary = binary_check(self.classes)
         self.recommended_list = statistic_recommend(self.classes,self.POP)
 
     def print_matrix(self, one_vs_all=False, class_name=None):
@@ -255,6 +256,7 @@ class ConfusionMatrix():
             message = None
             html_file = open(name + ".html", "w")
             html_file.write(html_init(name))
+            html_file.write(html_dataset_type(self.binary,self.imbalance))
             html_file.write(html_table(self.classes, self.table, color))
             html_file.write(html_overall_stat(self.overall_stat, self.digit, overall_param, self.recommended_list))
             class_stat_classes = class_filter(self.classes, class_name)

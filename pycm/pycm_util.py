@@ -204,8 +204,8 @@ def imbalance_check(POP):
     """
     This function check if the dataset is imbalanced
     :param POP:  all classes population
-    :type POP : dictionary
-    :return: is_imbalanced
+    :type POP : dict
+    :return: is_imbalanced as bool
     """
     pop_list = list(POP.values())
     max_value = max(pop_list)
@@ -222,7 +222,7 @@ def binary_check(classes):
     This function check if the problem is a binary classification
     :param classes:  all classes name
     :type classes : list
-    :return: is_binary
+    :return: is_binary as bool
     """
     num_classes = len(classes)
     is_binary = False
@@ -237,16 +237,14 @@ def statistic_recommend(classes, POP):
     :param classes:  all classes name
     :type classes : list
     :param POP:  all classes population
-    :type POP : dictionary
-    :return: recommendation_list
+    :type POP : dict
+    :return: recommendation_list as list
     """
     recommendation_list = []
     if imbalance_check(POP):
         recommendation_list.extend(IMBALANCED_RECOMMEND)
-    else:
-        recommendation_list.extend(BALANCED_RECOMMEND)
     if binary_check(classes):
         recommendation_list.extend(BINARY_RECOMMEND)
     else:
         recommendation_list.extend(MULTICLASS_RECOMMEND)
-    return recommendation_list
+    return list(set(recommendation_list))

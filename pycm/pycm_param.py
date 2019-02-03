@@ -32,10 +32,12 @@ CLASS_NUMBER_THRESHOLD = 10
 
 BALANCE_RATIO_THRESHOLD = 3
 
-BINARY_RECOMMEND = ["ACC", "MCC", "PLR"]
-MULTICLASS_RECOMMEND = ["Kappa", "MCC", "NLR"]
-BALANCED_RECOMMEND = ["Kappa", "MCC", "NLR"]
-IMBALANCED_RECOMMEND = ["Kappa", "MCC", "NLR"]
+BINARY_RECOMMEND = ["ACC", "TPR", "PPV","AUC","AUCI","TNR","F1"]
+
+MULTICLASS_RECOMMEND = ["ERR","TPR Micro","TPR Macro","PPV Micro","PPV Macro","ACC","Overall ACC","MCC","Overall MCC","BCD","Hamming Loss","Zero-one Loss"]
+
+IMBALANCED_RECOMMEND = ["Kappa","SOA1(Landis & Koch)","SOA2(Fleiss)","SOA3(Altman)","SOA4(Cicchetti)","CEN","MCEN","MCC","J","Overall J","Overall MCC","Overall CEN","Overall MCEN","AUC","AUCI","G",
+                        "DP","DPI","GI"]
 
 DOCUMENT_ADR = "http://www.pycm.ir/doc/index.html#"
 

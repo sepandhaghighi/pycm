@@ -41,6 +41,9 @@ IMBALANCED_RECOMMEND = ["Kappa", "SOA1(Landis & Koch)", "SOA2(Fleiss)", "SOA3(Al
                         "MCEN", "MCC", "J", "Overall J", "Overall MCC", "Overall CEN", "Overall MCEN", "AUC", "AUCI",
                         "G", "DP", "DPI", "GI"]
 
+RECOMMEND_BACKGROUND_COLOR = "Aqua"
+DEFAULT_BACKGROUND_COLOR = "transparent"
+
 DOCUMENT_ADR = "http://www.pycm.ir/doc/index.html#"
 
 PARAMS_DESCRIPTION = {

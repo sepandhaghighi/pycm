@@ -134,9 +134,9 @@ def html_overall_stat(overall_stat, digit=5, overall_param=None, recommended_lis
     if len(overall_stat_keys) < 1:
         return ""
     for i in overall_stat_keys:
-        background_color = "transparent"
+        background_color = DEFAULT_BACKGROUND_COLOR
         if i in recommended_list:
-            background_color = "Aqua"
+            background_color = RECOMMEND_BACKGROUND_COLOR
         result += '<tr align="center">\n'
         result += '<td style="border:1px solid black;padding:4px;text-align:left;background-color:{};"><a href="'.format(background_color) + \
             DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
@@ -182,9 +182,9 @@ def html_class_stat(classes, class_stat, digit=5, class_param=None, recommended_
     if len(classes) < 1 or len(class_stat_keys) < 1:
         return ""
     for i in class_stat_keys:
-        background_color = "transparent"
+        background_color = DEFAULT_BACKGROUND_COLOR
         if i in recommended_list:
-            background_color = "Aqua"
+            background_color = RECOMMEND_BACKGROUND_COLOR
         result += '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n'
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};"><a href="'.format(background_color) + \
                   DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'

@@ -41,6 +41,8 @@ IMBALANCED_RECOMMEND = ["Kappa", "SOA1(Landis & Koch)", "SOA2(Fleiss)", "SOA3(Al
                         "MCEN", "MCC", "J", "Overall J", "Overall MCC", "Overall CEN", "Overall MCEN", "AUC", "AUCI",
                         "G", "DP", "DPI", "GI"]
 
+BENCHMARK_LIST = ["PLRI", "DPI", "AUCI","SOA1(Landis & Koch)","SOA2(Fleiss)","SOA3(Altman)","SOA4(Cicchetti)"]
+
 RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"
 RECOMMEND_HTML_MESSAGE = '<span style="color:red;">Note</span> : Recommended statistics for this type of classification highlighted in <span style="color :{0};">{0}</span>'.format(

@@ -163,7 +163,7 @@ def html_overall_stat(overall_stat, digit=5, overall_param=None, recommended_lis
         result += '<tr align="center">\n'
         result += '<td style="border:1px solid black;padding:4px;text-align:left;background-color:{};"><a href="'.format(background_color) + \
             DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
-        if i.find("SOA") != -1:
+        if i in BENCHMARK_LIST:
             background_color = BENCHMARK_COLOR[overall_stat[i]]
             result += '<td style="border:1px solid black;padding:4px;background-color:{};">'.format(
                 background_color)
@@ -214,7 +214,7 @@ def html_class_stat(classes, class_stat, digit=5, class_param=None, recommended_
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};"><a href="'.format(background_color) + \
                   DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         for j in classes:
-            if i in ["PLRI", "DPI", "AUCI"]:
+            if i in BENCHMARK_LIST:
                 background_color = BENCHMARK_COLOR[class_stat[i][j]]
                 result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};">'.format(
                     background_color)

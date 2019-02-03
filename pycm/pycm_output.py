@@ -221,61 +221,6 @@ def html_end(version):
     return result
 
 
-def html_maker(
-    html_file,
-    name,
-    classes,
-    table,
-    overall_stat,
-    class_stat,
-    digit=5,
-    overall_param=None,
-    class_param=None,
-    class_name=None,
-    color=(
-        0,
-        0,
-        0),
-    recommended_list=()):
-    '''
-    This function create html report
-    :param html_file : file object of html
-    :type html_file: file object
-    :param name: file name
-    :type name : str
-    :param classes: matrix classes
-    :type classes: list
-    :param table: matrix
-    :type table: dict
-    :param overall_stat: overall stat
-    :type overall_stat: dict
-    :param class_stat: class stat
-    :type class_stat: dict
-    :param digit: scale (the number of digits to the right of the decimal point in a number.)
-    :type digit : int
-    :param overall_param : overall parameters list for print, Example : ["Kappa","Scott PI]
-    :type overall_param : list
-    :param class_param : class parameters list for print, Example : ["TPR","TNR","AUC"]
-    :type class_param : list
-    :param class_name : class name (sub set of classes), Example :[1,2,3]
-    :type class_name : list
-    :param color : input color
-    :type color : tuple
-    :return: None
-    '''
-    html_file.write(html_init(name))
-    html_file.write(html_table(classes, table, color))
-    html_file.write(html_overall_stat(overall_stat, digit, overall_param,recommended_list))
-    class_stat_classes = class_filter(classes, class_name)
-    html_file.write(
-        html_class_stat(
-            class_stat_classes,
-            class_stat,
-            digit,
-            class_param,recommended_list))
-    html_file.write(html_end(VERSION))
-
-
 def pycm_help():
     '''
     This function print pycm details

@@ -143,6 +143,8 @@ def html_overall_stat(overall_stat, digit=5, overall_param=None, recommended_lis
     :type digit : int
     :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott PI]
     :type overall_param : list
+    :param recommended_list: recommended statistics list
+    :type recommended_list : list or tuple
     :return: html_overall_stat as str
     '''
     result = ""
@@ -184,6 +186,8 @@ def html_class_stat(classes, class_stat, digit=5, class_param=None, recommended_
     :type digit : int
     :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
     :type class_param : list
+    :param recommended_list: recommended statistics list
+    :type recommended_list : list or tuple
     :return: html_class_stat as str
     '''
     result = ""

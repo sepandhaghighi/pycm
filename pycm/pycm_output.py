@@ -113,7 +113,7 @@ def html_table(classes, table, rgb_color):
     return result
 
 
-def html_overall_stat(overall_stat, digit=5, overall_param=None):
+def html_overall_stat(overall_stat, digit=5, overall_param=None, recommended_list=()):
     '''
     This function return report file overall stat
     :param overall_stat: overall stat
@@ -133,10 +133,12 @@ def html_overall_stat(overall_stat, digit=5, overall_param=None):
             overall_stat_keys = sorted(overall_param)
     if len(overall_stat_keys) < 1:
         return ""
-    background_color = None
     for i in overall_stat_keys:
+        background_color = "transparent"
+        if i in recommended_list:
+            background_color = "Aqua"
         result += '<tr align="center">\n'
-        result += '<td style="border:1px solid black;padding:4px;text-align:left;"><a href="' + \
+        result += '<td style="border:1px solid black;padding:4px;text-align:left;background-color:{};"><a href="'.format(background_color) + \
             DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         if i.find("SOA") != -1:
             background_color = BENCHMARK_COLOR[overall_stat[i]]
@@ -150,7 +152,7 @@ def html_overall_stat(overall_stat, digit=5, overall_param=None):
     return result
 
 
-def html_class_stat(classes, class_stat, digit=5, class_param=None):
+def html_class_stat(classes, class_stat, digit=5, class_param=None, recommended_list=()):
     '''
     This function return report file class_stat
     :param classes: matrix classes
@@ -180,8 +182,11 @@ def html_class_stat(classes, class_stat, digit=5, class_param=None):
     if len(classes) < 1 or len(class_stat_keys) < 1:
         return ""
     for i in class_stat_keys:
+        background_color = "transparent"
+        if i in recommended_list:
+            background_color = "Aqua"
         result += '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n'
-        result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;"><a href="' + \
+        result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};"><a href="'.format(background_color) + \
                   DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         for j in classes:
             if i in ["PLRI", "DPI", "AUCI"]:
@@ -230,7 +235,8 @@ def html_maker(
     color=(
         0,
         0,
-        0)):
+        0),
+    recommended_list=()):
     '''
     This function create html report
     :param html_file : file object of html
@@ -259,14 +265,14 @@ def html_maker(
     '''
     html_file.write(html_init(name))
     html_file.write(html_table(classes, table, color))
-    html_file.write(html_overall_stat(overall_stat, digit, overall_param))
+    html_file.write(html_overall_stat(overall_stat, digit, overall_param,recommended_list))
     class_stat_classes = class_filter(classes, class_name)
     html_file.write(
         html_class_stat(
             class_stat_classes,
             class_stat,
             digit,
-            class_param))
+            class_param,recommended_list))
     html_file.write(html_end(VERSION))
 
 

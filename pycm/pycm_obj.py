@@ -111,6 +111,8 @@ class ConfusionMatrix():
             AUC_dict=statistic_result["AUC"])
         __class_stat_init__(self)
         __overall_stat_init__(self)
+        self.imbalance = imbalance_check(self.POP)
+        self.recommended = statistic_recommend(self.classes,self.POP)
 
     def print_matrix(self, one_vs_all=False, class_name=None):
         '''
@@ -258,7 +260,7 @@ class ConfusionMatrix():
                 self.table,
                 self.overall_stat,
                 self.class_stat,
-                self.digit, overall_param, class_param, class_name, color)
+                self.digit, overall_param, class_param, class_name, color,self.recommended)
             html_file.close()
             if address:
                 message = os.path.join(os.getcwd(), name + ".html")

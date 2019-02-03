@@ -2,6 +2,7 @@
 from __future__ import division
 import sys
 import numpy
+from .pycm_param import *
 
 
 def isfloat(value):
@@ -199,7 +200,7 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
 
 
-def unbalance_check(POP):
+def imbalance_check(POP):
     """
     This function check if the dataset is imbalanced
     :param POP:  all classes population
@@ -211,7 +212,7 @@ def unbalance_check(POP):
     min_value = min(pop_list)
     balance_ratio = max_value/min_value
     is_imbalanced = False
-    if balance_ratio > 3:
+    if balance_ratio > BALANCE_RATIO_THRESHOLD:
         is_imbalanced = True
     return is_imbalanced
 

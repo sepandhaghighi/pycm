@@ -27,9 +27,9 @@ PARAMS_ITEMS = ['VERSION = "{0}"']
 FILES = {
     "setup.py": SETUP_ITEMS, "README.md": README_ITEMS, "CHANGELOG.md": CHANGELOG_ITEMS, os.path.join(
         "Document", "Document.ipynb"): DOCUMENT_ITEMS, os.path.join(
-            "Document","Document_Files", "cm1.html"): HTML_ITEMS, os.path.join(
-                "Document","Document_Files", "cm2.html"): HTML_ITEMS, os.path.join(
-                    "Document","Document_Files", "cm3.html"): HTML_ITEMS, os.path.join(
+            "Document","Example1_Files", "cm1.html"): HTML_ITEMS, os.path.join(
+                "Document","Example1_Files", "cm2.html"): HTML_ITEMS, os.path.join(
+                    "Document","Example1_Files", "cm3.html"): HTML_ITEMS, os.path.join(
                         "Otherfiles", "test.html"): HTML_ITEMS, os.path.join(
                             "pycm", "pycm_param.py"): PARAMS_ITEMS}
 
@@ -56,6 +56,7 @@ if __name__ == "__main__":
                     Failed += 1
                     break
         except Exception as e:
+            Failed += 1
             print("Error in " + file_name + "\n" + "Message : " + str(e))
 
     if Failed == 0:

@@ -333,7 +333,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.8...HEAD
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.8...dev
 [1.8]: https://github.com/sepandhaghighi/pycm/compare/v1.7...v1.8
 [1.7]: https://github.com/sepandhaghighi/pycm/compare/v1.6...v1.7
 [1.6]: https://github.com/sepandhaghighi/pycm/compare/v1.5...v1.6

@@ -9,8 +9,8 @@ Please consider the following :
 1. Fork it!
 2. Create your feature branch (under `dev` branch)
 3. Add your functions/methods to proper files
-4. Add standard `docstring` for your functions/methods
-5. Add tests for your functions/methods (`doctest` testcases, `Test` folder)
+4. Add standard `docstring` to your functions/methods
+5. Add tests for your functions/methods (`doctest` testcases in `Test` folder)
 6. Pass all CI tests
 7. Update `CHANGELOG.md`
 	- Describe changes under `[Unreleased]` section

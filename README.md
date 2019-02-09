@@ -22,7 +22,7 @@
    * [Todo](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
    * [Outputs](https://github.com/sepandhaghighi/pycm#outputs)
    * [Dependencies](https://github.com/sepandhaghighi/pycm#dependencies)
-   * [Contribution](https://github.com/sepandhaghighi/pycm#contribution)
+   * [Contribution](https://github.com/sepandhaghighi/pycm/blob/master/CONTRIBUTING.md)
    * [References](https://github.com/sepandhaghighi/pycm#references)
    * [Cite](https://github.com/sepandhaghighi/pycm#cite)
    * [Authors](https://github.com/sepandhaghighi/pycm/blob/master/AUTHORS.md)
@@ -488,13 +488,6 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
 ## Dependencies
 
 <a href="https://requires.io/github/sepandhaghighi/pycm/requirements/?branch=dev"><img src="https://requires.io/github/sepandhaghighi/pycm/requirements.svg?branch=dev" alt="Requirements Status" /></a>
-
-## Contribution			
-
-Changes and improvements are more than welcome! ❤️ Feel free to fork and open a pull request. Please make your changes in a specific branch and request to pull into `dev` 			
-
-Remember to write a few tests for your code before sending pull requests. 
-
 
 
 ## References			

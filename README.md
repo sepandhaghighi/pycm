@@ -492,6 +492,11 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
 <a href="https://requires.io/github/sepandhaghighi/pycm/requirements/?branch=dev"><img src="https://requires.io/github/sepandhaghighi/pycm/requirements.svg?branch=dev" alt="Requirements Status" /></a>
 
 
+## Contribution						
+
+Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/CONTRIBUTING.md)
+
+
 ## References			
 
 <blockquote>1- J. R. Landis, G. G. Koch, “The measurement of observer agreement for categorical data. Biometrics,” in International Biometric Society,  pp. 159–174, 1977. </blockquote>

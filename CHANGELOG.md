@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - X11 color names support for `save_html` method
 - Parameters recommendation system
 - Warning message for high dimension matrix print
+- Interactive notebooks section (binder)
 
 ### Changed
 - `save_matrix` and `normalize` arguments added to `save_csv` method
@@ -22,7 +23,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Document modified
 - `ConfusionMatrix.__init__` optimized
 - Document and examples output files moved to different folders
-- Notebooks modified for mybinder
 - Test system modified 
 
 ## [1.8] - 2019-01-05

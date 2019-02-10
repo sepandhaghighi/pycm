@@ -29,6 +29,6 @@ before_script:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then pip install --upgrade --upgrade-strategy=only-if-needed -r dev-requirements.txt ; fi
   - chmod +x test.sh
 script:
-  - test.sh
+  - ./test.sh
 after_success:
   - codecov

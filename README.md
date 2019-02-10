@@ -22,14 +22,14 @@
    * [Todo](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
    * [Outputs](https://github.com/sepandhaghighi/pycm#outputs)
    * [Dependencies](https://github.com/sepandhaghighi/pycm#dependencies)
-   * [Contribution](https://github.com/sepandhaghighi/pycm/blob/master/CONTRIBUTING.md)
+   * [Contribution](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBUTING.md)
    * [References](https://github.com/sepandhaghighi/pycm#references)
    * [Cite](https://github.com/sepandhaghighi/pycm#cite)
    * [Authors](https://github.com/sepandhaghighi/pycm/blob/master/AUTHORS.md)
    * [License](https://github.com/sepandhaghighi/pycm#license)
    * [Donate](https://github.com/sepandhaghighi/pycm#donate-to-our-project)
    * [Changelog](https://github.com/sepandhaghighi/pycm/blob/master/CHANGELOG.md)
-   * [Code of Conduct](https://github.com/sepandhaghighi/pycm/blob/master/CODE_OF_CONDUCT.md)
+   * [Code of Conduct](https://github.com/sepandhaghighi/pycm/blob/master/.github/CODE_OF_CONDUCT.md)
 
 ## Overview
 
@@ -494,7 +494,7 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
 
 ## Contribution						
 
-Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/CONTRIBUTING.md)
+Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBUTING.md)
 
 
 ## References			

@@ -423,6 +423,7 @@ class ConfusionMatrix():
                 temp_dict[mapping[col]] = self.table[row][col]
                 temp_dict_normalized[mapping[col]
                                      ] = self.normalized_table[row][col]
+            del self.table[row]
             self.table[mapping[row]] = temp_dict
             self.normalized_table[mapping[row]] = temp_dict_normalized
         self.matrix = self.table

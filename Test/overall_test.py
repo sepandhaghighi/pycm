@@ -241,6 +241,14 @@ Y(Youden index)                                                  0.77778        
 dInd(Distance index)                                             0.22222                 0.67586                 0.60093
 sInd(Similarity index)                                           0.84287                 0.52209                 0.57508
 <BLANKLINE>
+>>> cm.matrix == {'L2': {'L2': 1, 'L1': 0, 'L3': 2}, 'L1': {'L2': 0, 'L1': 3, 'L3': 0}, 'L3': {'L2': 1, 'L1': 2, 'L3': 3}}
+True
+>>> cm.normalized_matrix == {'L2': {'L2': 0.33333, 'L1': 0.0, 'L3': 0.66667}, 'L1': {'L2': 0.0, 'L1': 1.0, 'L3': 0.0}, 'L3': {'L2': 0.16667, 'L1': 0.33333, 'L3': 0.5}}
+True
+>>> cm.matrix == cm.table
+True
+>>> cm.normalized_matrix == cm.normalized_table
+True
 >>> cm.Y["L2"]
 0.2222222222222221
 >>> import numpy as np

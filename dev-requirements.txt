@@ -1,7 +1,7 @@
 art==3.0
 numpy==1.16.1
 codecov==2.0.15
-pytest==4.2.0
+pytest==4.2.1
 pytest-cov==2.6.1
 setuptools==40.8.0
 

@@ -243,7 +243,7 @@ def statistic_recommend(classes, P):
     recommendation_list = []
     if imbalance_check(P):
         recommendation_list.extend(IMBALANCED_RECOMMEND)
-    if binary_check(classes):
+    elif binary_check(classes):
         recommendation_list.extend(BINARY_RECOMMEND)
     else:
         recommendation_list.extend(MULTICLASS_RECOMMEND)

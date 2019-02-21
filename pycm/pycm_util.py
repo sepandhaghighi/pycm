@@ -200,14 +200,18 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
 
 
-def imbalance_check(POP):
+def imbalance_check(TP, FN):
     """
     This function check if the dataset is imbalanced
-    :param POP:  all classes population
-    :type POP : dict
+    :param TP: true positive
+    :type TP : dict
+    :param FN: false negative
+    :type FN : dict
     :return: is_imbalanced as bool
     """
-    pop_list = list(POP.values())
+    tp_ar = numpy.array(list(TP.values()))
+    fn_ar = numpy.array(list(FN.values()))
+    pop_list = tp_ar + fn_ar
     max_value = max(pop_list)
     min_value = min(pop_list)
     balance_ratio = max_value/min_value
@@ -231,17 +235,19 @@ def binary_check(classes):
     return is_binary
 
 
-def statistic_recommend(classes, POP):
+def statistic_recommend(classes, TP, FN):
     """
     This function recommend parameters which is more suitable due to the input dataset characteristics
     :param classes:  all classes name
     :type classes : list
-    :param POP:  all classes population
-    :type POP : dict
+    :param TP: true positive
+    :type TP : dict
+    :param FN: false negative
+    :type FN : dict
     :return: recommendation_list as list
     """
     recommendation_list = []
-    if imbalance_check(POP):
+    if imbalance_check(TP, FN):
         recommendation_list.extend(IMBALANCED_RECOMMEND)
     if binary_check(classes):
         recommendation_list.extend(BINARY_RECOMMEND)

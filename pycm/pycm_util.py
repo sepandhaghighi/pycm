@@ -210,7 +210,10 @@ def imbalance_check(P):
     p_list = list(P.values())
     max_value = max(p_list)
     min_value = min(p_list)
-    balance_ratio = max_value/min_value
+    if min_value > 0:
+        balance_ratio = max_value/min_value
+    else:
+        balance_ratio = max_value
     is_imbalanced = False
     if balance_ratio > BALANCE_RATIO_THRESHOLD:
         is_imbalanced = True

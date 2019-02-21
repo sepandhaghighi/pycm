@@ -112,9 +112,9 @@ class ConfusionMatrix():
             AUC_dict=statistic_result["AUC"])
         __class_stat_init__(self)
         __overall_stat_init__(self)
-        self.imbalance = imbalance_check(self.TP, self.FN)
+        self.imbalance = imbalance_check(self.P)
         self.binary = binary_check(self.classes)
-        self.recommended_list = statistic_recommend(self.classes, self.TP, self.FN)
+        self.recommended_list = statistic_recommend(self.classes, self.P)
 
     def print_matrix(self, one_vs_all=False, class_name=None):
         '''

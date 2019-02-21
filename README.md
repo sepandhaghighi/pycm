@@ -582,7 +582,10 @@ ICDM01. SIAM, pp. 1–18. </blockquote>
 
 <blockquote>37- Bray, J. R. and J. T. Curtis. 1957. An ordination of upland forest communities of southern Wisconsin. Ecological Monographs 27:325-349.</blockquote>	
 
-<blockquote>38- Fleiss, J.L. et al. (1969). Large sample standard errors of kappa and weighted kappa. Psychology Bulletin 72, 323-327.</blockquote> 		
+<blockquote>38- Fleiss, J.L. et al. (1969). Large sample standard errors of kappa and weighted kappa. Psychology Bulletin 72, 323-327.</blockquote> 	
+
+<blockquote>39- Mary Felkin. Comparing classification results between n-ary and binary problems. In
+Quality Measures in Data Mining, chapter 12, pages 277–301. Springer, 2007.</blockquote> 	
 
 ## Cite
 

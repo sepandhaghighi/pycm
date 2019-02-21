@@ -429,9 +429,18 @@ Example : online_help("J") or online_help(2)
 0.627145631592811
 >>> cm.BM[1]
 0.627145631592811
+>>> cm.binary
+True
+>>> cm.imbalance
+True
 >>> cm = ConfusionMatrix(matrix={1:{1:60,2:9,3:1,4:0,5:0,6:0},2:{1:23,2:48,3:0,4:2,5:2,6:1},3:{1:11,2:5,3:1,4:0,5:0,6:0},4:{1:0,2:2,3:0,4:7,5:1,6:3},5:{1:2,2:1,3:0,4:0,5:4,6:2},6:{1:1,2:2,3:0,4:2,5:1,6:23}}) # Verified Case
 >>> cm.AM[1]
 27
 >>> cm.BCD[1]
 0.0630841121495327
+>>> cm.binary
+False
+>>> cm = ConfusionMatrix(matrix={1:{1:295593,2:30516},2:{1:5108,2:295593}},transpose=True) 
+>>> cm.imbalance
+False
 '''

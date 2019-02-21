@@ -434,4 +434,41 @@ Example : online_help("J") or online_help(2)
 27
 >>> cm.BCD[1]
 0.0630841121495327
+>>> cm = ConfusionMatrix(matrix={1:{1:9,2:3,3:0},2:{1:3,2:5,3:1},3:{1:1,2:1,3:4}}) # Verified Case
+>>> cm.CI
+(0.48885185570907297, 0.8444814776242603)
+>>> cm.SE
+0.09072184232530289
+>>> cm.Overall_RACC
+0.36625514403292175
+>>> cm.Kappa
+0.4740259740259741
+>>> cm.KappaNoPrevalence
+0.33333333333333326
+>>> cm.KappaUnbiased
+0.4734561213434452
+>>> cm.ReferenceEntropy
+1.5304930567574824
+>>> cm.ResponseEntropy
+1.486565953154142
+>>> cm.CrossEntropy
+1.5376219392005763
+>>> cm.ConditionalEntropy
+1.089255908674706
+>>> cm.MutualInformation
+0.39731004447943596
+>>> cm.KL
+0.007128882443093773
+>>> cm.Chi_Squared
+15.525641025641026
+>>> cm.Phi_Squared
+0.5750237416904084
+>>> cm.V
+0.5362013342441477
+>>> cm.LambdaA
+0.4
+>>> cm.LambdaB
+0.35714285714285715
+>>> cm.Overall_ACC
+0.6666666666666666
 '''

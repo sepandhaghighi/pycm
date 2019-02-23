@@ -211,7 +211,7 @@ def imbalance_check(P):
     max_value = max(p_list)
     min_value = min(p_list)
     if min_value > 0:
-        balance_ratio = max_value/min_value
+        balance_ratio = max_value / min_value
     else:
         balance_ratio = max_value
     is_imbalanced = False

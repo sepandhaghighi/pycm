@@ -256,11 +256,22 @@ class ConfusionMatrix():
             message = None
             html_file = open(name + ".html", "w")
             html_file.write(html_init(name))
-            html_file.write(html_dataset_type(self.binary,self.imbalance))
+            html_file.write(html_dataset_type(self.binary, self.imbalance))
             html_file.write(html_table(self.classes, self.table, color))
-            html_file.write(html_overall_stat(self.overall_stat, self.digit, overall_param, self.recommended_list))
+            html_file.write(
+                html_overall_stat(
+                    self.overall_stat,
+                    self.digit,
+                    overall_param,
+                    self.recommended_list))
             class_stat_classes = class_filter(self.classes, class_name)
-            html_file.write(html_class_stat(class_stat_classes,self.class_stat,self.digit,class_param, self.recommended_list))
+            html_file.write(
+                html_class_stat(
+                    class_stat_classes,
+                    self.class_stat,
+                    self.digit,
+                    class_param,
+                    self.recommended_list))
             html_file.write(html_end(VERSION))
             html_file.close()
             if address:

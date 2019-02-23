@@ -24,7 +24,7 @@ def html_init(name):
     return result
 
 
-def html_dataset_type(is_binary,is_imbalanced):
+def html_dataset_type(is_binary, is_imbalanced):
     '''
     This function return report file dataset type
     :param is_binary: is_binary flag (binary : True , mutli-class : False)
@@ -36,14 +36,16 @@ def html_dataset_type(is_binary,is_imbalanced):
     result = "<h2>Dataset Type : </h2>\n"
     balance_type = "Balanced"
     class_type = "Binary Classification"
-    if is_imbalanced==True:
+    if is_imbalanced:
         balance_type = "Imbalanced"
-    if is_binary ==False :
+    if not is_binary:
         class_type = "Multi-Class Classification"
-    result += "<ul>\n\n<li>{0}</li>\n\n<li>{1}</li>\n</ul>\n".format(class_type,balance_type)
+    result += "<ul>\n\n<li>{0}</li>\n\n<li>{1}</li>\n</ul>\n".format(
+        class_type, balance_type)
     result += "<p>{0}</p>\n".format(RECOMMEND_HTML_MESSAGE)
 
     return result
+
 
 def color_check(color):
     '''
@@ -134,7 +136,11 @@ def html_table(classes, table, rgb_color):
     return result
 
 
-def html_overall_stat(overall_stat, digit=5, overall_param=None, recommended_list=()):
+def html_overall_stat(
+        overall_stat,
+        digit=5,
+        overall_param=None,
+        recommended_list=()):
     '''
     This function return report file overall stat
     :param overall_stat: overall stat
@@ -161,8 +167,8 @@ def html_overall_stat(overall_stat, digit=5, overall_param=None, recommended_lis
         if i in recommended_list:
             background_color = RECOMMEND_BACKGROUND_COLOR
         result += '<tr align="center">\n'
-        result += '<td style="border:1px solid black;padding:4px;text-align:left;background-color:{};"><a href="'.format(background_color) + \
-            DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
+        result += '<td style="border:1px solid black;padding:4px;text-align:left;background-color:{};"><a href="'.format(
+            background_color) + DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         if i in BENCHMARK_LIST:
             background_color = BENCHMARK_COLOR[overall_stat[i]]
             result += '<td style="border:1px solid black;padding:4px;background-color:{};">'.format(
@@ -175,7 +181,12 @@ def html_overall_stat(overall_stat, digit=5, overall_param=None, recommended_lis
     return result
 
 
-def html_class_stat(classes, class_stat, digit=5, class_param=None, recommended_list=()):
+def html_class_stat(
+        classes,
+        class_stat,
+        digit=5,
+        class_param=None,
+        recommended_list=()):
     '''
     This function return report file class_stat
     :param classes: matrix classes
@@ -211,8 +222,8 @@ def html_class_stat(classes, class_stat, digit=5, class_param=None, recommended_
         if i in recommended_list:
             background_color = RECOMMEND_BACKGROUND_COLOR
         result += '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n'
-        result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};"><a href="'.format(background_color) + \
-                  DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
+        result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};"><a href="'.format(
+            background_color) + DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         for j in classes:
             if i in BENCHMARK_LIST:
                 background_color = BENCHMARK_COLOR[class_stat[i][j]]

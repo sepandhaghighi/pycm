@@ -34,14 +34,49 @@ BALANCE_RATIO_THRESHOLD = 3
 
 BINARY_RECOMMEND = ["ACC", "TPR", "PPV", "AUC", "AUCI", "TNR", "F1"]
 
-MULTICLASS_RECOMMEND = ["ERR", "TPR Micro", "TPR Macro", "PPV Micro", "PPV Macro", "ACC", "Overall ACC", "MCC",
-                        "Overall MCC", "BCD", "Hamming Loss", "Zero-one Loss"]
+MULTICLASS_RECOMMEND = [
+    "ERR",
+    "TPR Micro",
+    "TPR Macro",
+    "PPV Micro",
+    "PPV Macro",
+    "ACC",
+    "Overall ACC",
+    "MCC",
+    "Overall MCC",
+    "BCD",
+    "Hamming Loss",
+    "Zero-one Loss"]
 
-IMBALANCED_RECOMMEND = ["Kappa", "SOA1(Landis & Koch)", "SOA2(Fleiss)", "SOA3(Altman)", "SOA4(Cicchetti)", "CEN",
-                        "MCEN", "MCC", "J", "Overall J", "Overall MCC", "Overall CEN", "Overall MCEN", "AUC", "AUCI",
-                        "G", "DP", "DPI", "GI"]
+IMBALANCED_RECOMMEND = [
+    "Kappa",
+    "SOA1(Landis & Koch)",
+    "SOA2(Fleiss)",
+    "SOA3(Altman)",
+    "SOA4(Cicchetti)",
+    "CEN",
+    "MCEN",
+    "MCC",
+    "J",
+    "Overall J",
+    "Overall MCC",
+    "Overall CEN",
+    "Overall MCEN",
+    "AUC",
+    "AUCI",
+    "G",
+    "DP",
+    "DPI",
+    "GI"]
 
-BENCHMARK_LIST = ["PLRI", "DPI", "AUCI","SOA1(Landis & Koch)","SOA2(Fleiss)","SOA3(Altman)","SOA4(Cicchetti)"]
+BENCHMARK_LIST = [
+    "PLRI",
+    "DPI",
+    "AUCI",
+    "SOA1(Landis & Koch)",
+    "SOA2(Fleiss)",
+    "SOA3(Altman)",
+    "SOA4(Cicchetti)"]
 
 RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"
@@ -365,7 +400,7 @@ TABLE_COLOR = {
     "linen": [250, 240, 230],
     "lavenderblush": [255, 240, 245],
     "mistyrose": [255, 228, 225],
-    
+
     # Gray Colors
     "gainsboro": [220, 220, 220],
     "lightgray": [211, 211, 211],
@@ -375,6 +410,6 @@ TABLE_COLOR = {
     "dimgray": [105, 105, 105],
     "lightslategray": [119, 136, 153],
     "slategray": [112, 128, 144],
-    "darkslategray": [47,  79,  79],
-    "black": [0,   0,   0]
+    "darkslategray": [47, 79, 79],
+    "black": [0, 0, 0]
 }

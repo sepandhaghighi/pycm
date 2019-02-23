@@ -435,7 +435,32 @@ pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
 >>> online_help(2)
 
 ```
-* List of items are available by calling `online_help()` (without argument)				
+* List of items are available by calling `online_help()` (without argument)		
+
+### Parameter recommender
+
+This option has been added in `version 1.9` in order to recommend most related parameters considering the characteristics of the input dataset. The characteristics according to which the parameters are suggested are balance/imbalance and binary/multiclass. All suggestions can be categorized into three main groups: imbalanced dataset, binary classification for a balanced dataset, and multi-class classification for a balanced dataset. The recommendation lists have been gathered according to the respective paper of each parameter and the capabilities which had been claimed by the paper.
+
+```pycon
+>>> cm.imbalance
+False
+>>> cm.binary
+False
+>>> cm.recommended_list
+['BCD',
+ 'Hamming Loss',
+ 'PPV Micro',
+ 'MCC',
+ 'Overall MCC',
+ 'ERR',
+ 'Overall ACC',
+ 'Zero-one Loss',
+ 'TPR Micro',
+ 'TPR Macro',
+ 'PPV Macro',
+ 'ACC']
+
+```		
 
 ### Acceptable data types			
 1. `actual_vector` : python `list` or numpy `array` of any stringable objects

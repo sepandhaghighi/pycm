@@ -11782,6 +11782,9 @@ div#notebook {
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pycm</span> <span class="k">import</span> <span class="n">ConfusionMatrix</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="k">if</span> <span class="s2">&quot;Example4_Files&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">():</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;Example4_Files&quot;</span><span class="p">)</span>
 <span class="n">y_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">600</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">])</span>
 <span class="n">y_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">200</span><span class="p">])</span>
 </pre></div>
@@ -11863,103 +11866,105 @@ Actual
 
 Overall Statistics : 
 
-95% CI                                                           (0.14096,0.55904)
-AUNP                                                             None
-AUNU                                                             None
-Bennett S                                                        0.13333
-CBA                                                              0.17708
-Chi-Squared                                                      None
-Chi-Squared DF                                                   9
-Conditional Entropy                                              1.23579
-Cramer V                                                         None
-Cross Entropy                                                    1.70995
-Gwet AC1                                                         0.19505
-Hamming Loss                                                     0.65
-Joint Entropy                                                    2.11997
-KL Divergence                                                    None
-Kappa                                                            0.07801
-Kappa 95% CI                                                     (-0.2185,0.37453)
-Kappa No Prevalence                                              -0.3
-Kappa Standard Error                                             0.15128
-Kappa Unbiased                                                   -0.12554
-Lambda A                                                         0.0
-Lambda B                                                         0.0
-Mutual Information                                               0.10088
-NIR                                                              0.8
-Overall ACC                                                      0.35
-Overall CEN                                                      0.3648
-Overall J                                                        (0.60294,0.15074)
-Overall MCC                                                      0.12642
-Overall MCEN                                                     0.37463
-Overall RACC                                                     0.295
-Overall RACCU                                                    0.4225
-P-Value                                                          1.0
-PPV Macro                                                        None
-PPV Micro                                                        0.35
-Phi-Squared                                                      None
-RCI                                                              0.11409
-RR                                                               5.0
-Reference Entropy                                                0.88418
-Response Entropy                                                 1.33667
-SOA1(Landis &amp; Koch)                                              Slight
-SOA2(Fleiss)                                                     Poor
-SOA3(Altman)                                                     Poor
-SOA4(Cicchetti)                                                  Poor
-Scott PI                                                         -0.12554
-Standard Error                                                   0.10665
-TPR Macro                                                        None
-TPR Micro                                                        0.35
-Zero-one Loss                                                    13
+95% CI                                                            (0.14096,0.55904)
+AUNP                                                              None
+AUNU                                                              None
+Bennett S                                                         0.13333
+CBA                                                               0.17708
+Chi-Squared                                                       None
+Chi-Squared DF                                                    9
+Conditional Entropy                                               1.23579
+Cramer V                                                          None
+Cross Entropy                                                     1.70995
+Gwet AC1                                                          0.19505
+Hamming Loss                                                      0.65
+Joint Entropy                                                     2.11997
+KL Divergence                                                     None
+Kappa                                                             0.07801
+Kappa 95% CI                                                      (-0.2185,0.37453)
+Kappa No Prevalence                                               -0.3
+Kappa Standard Error                                              0.15128
+Kappa Unbiased                                                    -0.12554
+Lambda A                                                          0.0
+Lambda B                                                          0.0
+Mutual Information                                                0.10088
+NIR                                                               0.8
+Overall ACC                                                       0.35
+Overall CEN                                                       0.3648
+Overall J                                                         (0.60294,0.15074)
+Overall MCC                                                       0.12642
+Overall MCEN                                                      0.37463
+Overall RACC                                                      0.295
+Overall RACCU                                                     0.4225
+P-Value                                                           1.0
+PPV Macro                                                         None
+PPV Micro                                                         0.35
+Phi-Squared                                                       None
+RCI                                                               0.11409
+RR                                                                5.0
+Reference Entropy                                                 0.88418
+Response Entropy                                                  1.33667
+SOA1(Landis &amp; Koch)                                               Slight
+SOA2(Fleiss)                                                      Poor
+SOA3(Altman)                                                      Poor
+SOA4(Cicchetti)                                                   Poor
+Scott PI                                                          -0.12554
+Standard Error                                                    0.10665
+TPR Macro                                                         None
+TPR Micro                                                         0.35
+Zero-one Loss                                                     13
 
 Class Statistics :
 
-Classes                                                          100                     200                     500                     600                     
-ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95                    
-AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5                     
-AUCI(Auc value interpretation)                                   None                    Poor                    Fair                    Poor                    
-BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0                     
-CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0                     
-DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None                    
-DP(Discriminant power)                                           None                    0.14074                 0.4979                  None                    
-DPI(Discriminant power interpretation)                           None                    Poor                    Poor                    None                    
-ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05                    
-F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0                     
-F1(F1 score - harmonic mean of precision and sensitivity)        0.0                     0.52174                 0.4                     0.0                     
-F2(F2 score)                                                     0.0                     0.42254                 0.35714                 0.0                     
-FDR(False discovery rate)                                        1.0                     0.14286                 0.5                     None                    
-FN(False negative/miss/type 2 error)                             0                       10                      2                       1                       
-FNR(Miss rate or false negative rate)                            None                    0.625                   0.66667                 1.0                     
-FOR(False omission rate)                                         0.0                     0.76923                 0.11111                 0.05                    
-FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0                       
-FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0                     
-G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None                    
-GI(Gini index)                                                   None                    0.125                   0.27451                 0.0                     
-IS(Information score)                                            None                    0.09954                 1.73697                 None                    
-J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0                     
-LS(Lift score)                                                   None                    1.07143                 3.33333                 None                    
-MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None                    
-MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0                     
-MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None                    
-N(Condition negative)                                            20                      4                       17                      19                      
-NLR(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0                     
-NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95                    
-P(Condition positive or support)                                 0                       16                      3                       1                       
-PLR(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None                    
-PLRI(Positive likelihood ratio interpretation)                   None                    Poor                    Fair                    None                    
-POP(Population)                                                  20                      20                      20                      20                      
-PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None                    
-PRE(Prevalence)                                                  0.0                     0.8                     0.15                    0.05                    
-RACC(Random accuracy)                                            0.0                     0.28                    0.015                   0.0                     
-RACCU(Random accuracy unbiased)                                  0.07563                 0.33062                 0.01562                 0.00063                 
-TN(True negative/correct rejection)                              9                       3                       16                      19                      
-TNR(Specificity or true negative rate)                           0.45                    0.75                    0.94118                 1.0                     
-TON(Test outcome negative)                                       9                       13                      18                      20                      
-TOP(Test outcome positive)                                       11                      7                       2                       0                       
-TP(True positive/hit)                                            0                       6                       1                       0                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0                     
-Y(Youden index)                                                  None                    0.125                   0.27451                 0.0                     
-dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0                     
-sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289                 
+Classes                                                           100                     200                     500                     600                     
+ACC(Accuracy)                                                     0.45                    0.45                    0.85                    0.95                    
+AM(Difference between automatic and manual classification)        11                      -9                      -1                      -1                      
+AUC(Area under the roc curve)                                     None                    0.5625                  0.63725                 0.5                     
+AUCI(AUC value interpretation)                                    None                    Poor                    Fair                    Poor                    
+BCD(Bray-Curtis dissimilarity)                                    0.275                   0.225                   0.025                   0.025                   
+BM(Informedness or bookmaker informedness)                        None                    0.125                   0.27451                 0.0                     
+CEN(Confusion entropy)                                            0.33496                 0.35708                 0.53895                 0.0                     
+DOR(Diagnostic odds ratio)                                        None                    1.8                     8.0                     None                    
+DP(Discriminant power)                                            None                    0.14074                 0.4979                  None                    
+DPI(Discriminant power interpretation)                            None                    Poor                    Poor                    None                    
+ERR(Error rate)                                                   0.55                    0.55                    0.15                    0.05                    
+F0.5(F0.5 score)                                                  0.0                     0.68182                 0.45455                 0.0                     
+F1(F1 score - harmonic mean of precision and sensitivity)         0.0                     0.52174                 0.4                     0.0                     
+F2(F2 score)                                                      0.0                     0.42254                 0.35714                 0.0                     
+FDR(False discovery rate)                                         1.0                     0.14286                 0.5                     None                    
+FN(False negative/miss/type 2 error)                              0                       10                      2                       1                       
+FNR(Miss rate or false negative rate)                             None                    0.625                   0.66667                 1.0                     
+FOR(False omission rate)                                          0.0                     0.76923                 0.11111                 0.05                    
+FP(False positive/type 1 error/false alarm)                       11                      1                       1                       0                       
+FPR(Fall-out or false positive rate)                              0.55                    0.25                    0.05882                 0.0                     
+G(G-measure geometric mean of precision and sensitivity)          None                    0.56695                 0.40825                 None                    
+GI(Gini index)                                                    None                    0.125                   0.27451                 0.0                     
+IS(Information score)                                             None                    0.09954                 1.73697                 None                    
+J(Jaccard index)                                                  0.0                     0.35294                 0.25                    0.0                     
+LS(Lift score)                                                    None                    1.07143                 3.33333                 None                    
+MCC(Matthews correlation coefficient)                             None                    0.10483                 0.32673                 None                    
+MCEN(Modified confusion entropy)                                  0.33496                 0.37394                 0.58028                 0.0                     
+MK(Markedness)                                                    0.0                     0.08791                 0.38889                 None                    
+N(Condition negative)                                             20                      4                       17                      19                      
+NLR(Negative likelihood ratio)                                    None                    0.83333                 0.70833                 1.0                     
+NPV(Negative predictive value)                                    1.0                     0.23077                 0.88889                 0.95                    
+P(Condition positive or support)                                  0                       16                      3                       1                       
+PLR(Positive likelihood ratio)                                    None                    1.5                     5.66667                 None                    
+PLRI(Positive likelihood ratio interpretation)                    None                    Poor                    Fair                    None                    
+POP(Population)                                                   20                      20                      20                      20                      
+PPV(Precision or positive predictive value)                       0.0                     0.85714                 0.5                     None                    
+PRE(Prevalence)                                                   0.0                     0.8                     0.15                    0.05                    
+RACC(Random accuracy)                                             0.0                     0.28                    0.015                   0.0                     
+RACCU(Random accuracy unbiased)                                   0.07563                 0.33062                 0.01562                 0.00063                 
+TN(True negative/correct rejection)                               9                       3                       16                      19                      
+TNR(Specificity or true negative rate)                            0.45                    0.75                    0.94118                 1.0                     
+TON(Test outcome negative)                                        9                       13                      18                      20                      
+TOP(Test outcome positive)                                        11                      7                       2                       0                       
+TP(True positive/hit)                                             0                       6                       1                       0                       
+TPR(Sensitivity, recall, hit rate, or true positive rate)         None                    0.375                   0.33333                 0.0                     
+Y(Youden index)                                                   None                    0.125                   0.27451                 0.0                     
+dInd(Distance index)                                              None                    0.67315                 0.66926                 1.0                     
+sInd(Similarity index)                                            None                    0.52401                 0.52676                 0.29289                 
 
 </pre>
 </div>
@@ -11982,7 +11987,7 @@ sInd(Similarity index)                                           None           
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_obj</span><span class="p">(</span><span class="s2">&quot;cm&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_obj</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example4_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm&quot;</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -12001,7 +12006,7 @@ sInd(Similarity index)                                           None           
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\cm.obj&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\Example4_Files\\cm.obj&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -12010,6 +12015,15 @@ sInd(Similarity index)                                           None           
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Example4_Files\cm.obj">Open File</a></p>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -12024,7 +12038,7 @@ sInd(Similarity index)                                           None           
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm_load</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;cm.obj&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm_load</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example4_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm.obj&quot;</span><span class="p">),</span><span class="s2">&quot;r&quot;</span><span class="p">))</span>
 <span class="n">cm</span>
 </pre></div>
 
@@ -12091,103 +12105,105 @@ Actual
 
 Overall Statistics : 
 
-95% CI                                                           (0.14096,0.55904)
-AUNP                                                             None
-AUNU                                                             None
-Bennett S                                                        0.13333
-CBA                                                              0.17708
-Chi-Squared                                                      None
-Chi-Squared DF                                                   9
-Conditional Entropy                                              1.23579
-Cramer V                                                         None
-Cross Entropy                                                    1.70995
-Gwet AC1                                                         0.19505
-Hamming Loss                                                     0.65
-Joint Entropy                                                    2.11997
-KL Divergence                                                    None
-Kappa                                                            0.07801
-Kappa 95% CI                                                     (-0.2185,0.37453)
-Kappa No Prevalence                                              -0.3
-Kappa Standard Error                                             0.15128
-Kappa Unbiased                                                   -0.12554
-Lambda A                                                         0.0
-Lambda B                                                         0.0
-Mutual Information                                               0.10088
-NIR                                                              0.8
-Overall ACC                                                      0.35
-Overall CEN                                                      0.3648
-Overall J                                                        (0.60294,0.15074)
-Overall MCC                                                      0.12642
-Overall MCEN                                                     0.37463
-Overall RACC                                                     0.295
-Overall RACCU                                                    0.4225
-P-Value                                                          1.0
-PPV Macro                                                        None
-PPV Micro                                                        0.35
-Phi-Squared                                                      None
-RCI                                                              0.11409
-RR                                                               5.0
-Reference Entropy                                                0.88418
-Response Entropy                                                 1.33667
-SOA1(Landis &amp; Koch)                                              Slight
-SOA2(Fleiss)                                                     Poor
-SOA3(Altman)                                                     Poor
-SOA4(Cicchetti)                                                  Poor
-Scott PI                                                         -0.12554
-Standard Error                                                   0.10665
-TPR Macro                                                        None
-TPR Micro                                                        0.35
-Zero-one Loss                                                    13
+95% CI                                                            (0.14096,0.55904)
+AUNP                                                              None
+AUNU                                                              None
+Bennett S                                                         0.13333
+CBA                                                               0.17708
+Chi-Squared                                                       None
+Chi-Squared DF                                                    9
+Conditional Entropy                                               1.23579
+Cramer V                                                          None
+Cross Entropy                                                     1.70995
+Gwet AC1                                                          0.19505
+Hamming Loss                                                      0.65
+Joint Entropy                                                     2.11997
+KL Divergence                                                     None
+Kappa                                                             0.07801
+Kappa 95% CI                                                      (-0.2185,0.37453)
+Kappa No Prevalence                                               -0.3
+Kappa Standard Error                                              0.15128
+Kappa Unbiased                                                    -0.12554
+Lambda A                                                          0.0
+Lambda B                                                          0.0
+Mutual Information                                                0.10088
+NIR                                                               0.8
+Overall ACC                                                       0.35
+Overall CEN                                                       0.3648
+Overall J                                                         (0.60294,0.15074)
+Overall MCC                                                       0.12642
+Overall MCEN                                                      0.37463
+Overall RACC                                                      0.295
+Overall RACCU                                                     0.4225
+P-Value                                                           1.0
+PPV Macro                                                         None
+PPV Micro                                                         0.35
+Phi-Squared                                                       None
+RCI                                                               0.11409
+RR                                                                5.0
+Reference Entropy                                                 0.88418
+Response Entropy                                                  1.33667
+SOA1(Landis &amp; Koch)                                               Slight
+SOA2(Fleiss)                                                      Poor
+SOA3(Altman)                                                      Poor
+SOA4(Cicchetti)                                                   Poor
+Scott PI                                                          -0.12554
+Standard Error                                                    0.10665
+TPR Macro                                                         None
+TPR Micro                                                         0.35
+Zero-one Loss                                                     13
 
 Class Statistics :
 
-Classes                                                          100                     200                     500                     600                     
-ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95                    
-AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5                     
-AUCI(Auc value interpretation)                                   None                    Poor                    Fair                    Poor                    
-BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0                     
-CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0                     
-DOR(Diagnostic odds ratio)                                       None                    1.8                     8.0                     None                    
-DP(Discriminant power)                                           None                    0.14074                 0.4979                  None                    
-DPI(Discriminant power interpretation)                           None                    Poor                    Poor                    None                    
-ERR(Error rate)                                                  0.55                    0.55                    0.15                    0.05                    
-F0.5(F0.5 score)                                                 0.0                     0.68182                 0.45455                 0.0                     
-F1(F1 score - harmonic mean of precision and sensitivity)        0.0                     0.52174                 0.4                     0.0                     
-F2(F2 score)                                                     0.0                     0.42254                 0.35714                 0.0                     
-FDR(False discovery rate)                                        1.0                     0.14286                 0.5                     None                    
-FN(False negative/miss/type 2 error)                             0                       10                      2                       1                       
-FNR(Miss rate or false negative rate)                            None                    0.625                   0.66667                 1.0                     
-FOR(False omission rate)                                         0.0                     0.76923                 0.11111                 0.05                    
-FP(False positive/type 1 error/false alarm)                      11                      1                       1                       0                       
-FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0                     
-G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None                    
-GI(Gini index)                                                   None                    0.125                   0.27451                 0.0                     
-IS(Information score)                                            None                    0.09954                 1.73697                 None                    
-J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0                     
-LS(Lift score)                                                   None                    1.07143                 3.33333                 None                    
-MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None                    
-MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0                     
-MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None                    
-N(Condition negative)                                            20                      4                       17                      19                      
-NLR(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0                     
-NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95                    
-P(Condition positive or support)                                 0                       16                      3                       1                       
-PLR(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None                    
-PLRI(Positive likelihood ratio interpretation)                   None                    Poor                    Fair                    None                    
-POP(Population)                                                  20                      20                      20                      20                      
-PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None                    
-PRE(Prevalence)                                                  0.0                     0.8                     0.15                    0.05                    
-RACC(Random accuracy)                                            0.0                     0.28                    0.015                   0.0                     
-RACCU(Random accuracy unbiased)                                  0.07563                 0.33062                 0.01562                 0.00063                 
-TN(True negative/correct rejection)                              9                       3                       16                      19                      
-TNR(Specificity or true negative rate)                           0.45                    0.75                    0.94118                 1.0                     
-TON(Test outcome negative)                                       9                       13                      18                      20                      
-TOP(Test outcome positive)                                       11                      7                       2                       0                       
-TP(True positive/hit)                                            0                       6                       1                       0                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0                     
-Y(Youden index)                                                  None                    0.125                   0.27451                 0.0                     
-dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0                     
-sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289                 
+Classes                                                           100                     200                     500                     600                     
+ACC(Accuracy)                                                     0.45                    0.45                    0.85                    0.95                    
+AM(Difference between automatic and manual classification)        11                      -9                      -1                      -1                      
+AUC(Area under the roc curve)                                     None                    0.5625                  0.63725                 0.5                     
+AUCI(AUC value interpretation)                                    None                    Poor                    Fair                    Poor                    
+BCD(Bray-Curtis dissimilarity)                                    0.275                   0.225                   0.025                   0.025                   
+BM(Informedness or bookmaker informedness)                        None                    0.125                   0.27451                 0.0                     
+CEN(Confusion entropy)                                            0.33496                 0.35708                 0.53895                 0.0                     
+DOR(Diagnostic odds ratio)                                        None                    1.8                     8.0                     None                    
+DP(Discriminant power)                                            None                    0.14074                 0.4979                  None                    
+DPI(Discriminant power interpretation)                            None                    Poor                    Poor                    None                    
+ERR(Error rate)                                                   0.55                    0.55                    0.15                    0.05                    
+F0.5(F0.5 score)                                                  0.0                     0.68182                 0.45455                 0.0                     
+F1(F1 score - harmonic mean of precision and sensitivity)         0.0                     0.52174                 0.4                     0.0                     
+F2(F2 score)                                                      0.0                     0.42254                 0.35714                 0.0                     
+FDR(False discovery rate)                                         1.0                     0.14286                 0.5                     None                    
+FN(False negative/miss/type 2 error)                              0                       10                      2                       1                       
+FNR(Miss rate or false negative rate)                             None                    0.625                   0.66667                 1.0                     
+FOR(False omission rate)                                          0.0                     0.76923                 0.11111                 0.05                    
+FP(False positive/type 1 error/false alarm)                       11                      1                       1                       0                       
+FPR(Fall-out or false positive rate)                              0.55                    0.25                    0.05882                 0.0                     
+G(G-measure geometric mean of precision and sensitivity)          None                    0.56695                 0.40825                 None                    
+GI(Gini index)                                                    None                    0.125                   0.27451                 0.0                     
+IS(Information score)                                             None                    0.09954                 1.73697                 None                    
+J(Jaccard index)                                                  0.0                     0.35294                 0.25                    0.0                     
+LS(Lift score)                                                    None                    1.07143                 3.33333                 None                    
+MCC(Matthews correlation coefficient)                             None                    0.10483                 0.32673                 None                    
+MCEN(Modified confusion entropy)                                  0.33496                 0.37394                 0.58028                 0.0                     
+MK(Markedness)                                                    0.0                     0.08791                 0.38889                 None                    
+N(Condition negative)                                             20                      4                       17                      19                      
+NLR(Negative likelihood ratio)                                    None                    0.83333                 0.70833                 1.0                     
+NPV(Negative predictive value)                                    1.0                     0.23077                 0.88889                 0.95                    
+P(Condition positive or support)                                  0                       16                      3                       1                       
+PLR(Positive likelihood ratio)                                    None                    1.5                     5.66667                 None                    
+PLRI(Positive likelihood ratio interpretation)                    None                    Poor                    Fair                    None                    
+POP(Population)                                                   20                      20                      20                      20                      
+PPV(Precision or positive predictive value)                       0.0                     0.85714                 0.5                     None                    
+PRE(Prevalence)                                                   0.0                     0.8                     0.15                    0.05                    
+RACC(Random accuracy)                                             0.0                     0.28                    0.015                   0.0                     
+RACCU(Random accuracy unbiased)                                   0.07563                 0.33062                 0.01562                 0.00063                 
+TN(True negative/correct rejection)                               9                       3                       16                      19                      
+TNR(Specificity or true negative rate)                            0.45                    0.75                    0.94118                 1.0                     
+TON(Test outcome negative)                                        9                       13                      18                      20                      
+TOP(Test outcome positive)                                        11                      7                       2                       0                       
+TP(True positive/hit)                                             0                       6                       1                       0                       
+TPR(Sensitivity, recall, hit rate, or true positive rate)         None                    0.375                   0.33333                 0.0                     
+Y(Youden index)                                                   None                    0.125                   0.27451                 0.0                     
+dInd(Distance index)                                              None                    0.67315                 0.66926                 1.0                     
+sInd(Similarity index)                                            None                    0.52401                 0.52676                 0.29289                 
 
 </pre>
 </div>
@@ -12210,7 +12226,7 @@ sInd(Similarity index)                                           None           
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;cm.obj&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example4_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm.obj&quot;</span><span class="p">),</span><span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 </pre></div>
 
 </div>
@@ -12227,7 +12243,7 @@ sInd(Similarity index)                                           None           
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#34;Matrix&#34;: [[100, [[200, 0], [500, 0], [100, 0], [600, 0]]], [200, [[200, 6], [500, 1], [100, 9], [600, 0]]], [500, [[200, 1], [500, 1], [100, 1], [600, 0]]], [600, [[200, 0], [500, 0], [100, 1], [600, 0]]]], &#34;Actual-Vector&#34;: [600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200], &#34;Sample-Weight&#34;: null, &#34;Digit&#34;: 5, &#34;Transpose&#34;: false, &#34;Predict-Vector&#34;: [100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200]}
+<pre>{&#34;Predict-Vector&#34;: [100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200], &#34;Actual-Vector&#34;: [600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200], &#34;Digit&#34;: 5, &#34;Sample-Weight&#34;: null, &#34;Matrix&#34;: [[100, [[200, 0], [500, 0], [100, 0], [600, 0]]], [200, [[200, 6], [500, 1], [100, 9], [600, 0]]], [500, [[200, 1], [500, 1], [100, 1], [600, 0]]], [600, [[200, 0], [500, 0], [100, 1], [600, 0]]]], &#34;Transpose&#34;: false}
 </pre>
 </div>
 </div>

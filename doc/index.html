@@ -11779,7 +11779,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Version-:-1.8">Version : 1.8<a class="anchor-link" href="#Version-:-1.8">&#182;</a></h3><hr>
+<h3 id="Version-:-1.9">Version : 1.9<a class="anchor-link" href="#Version-:-1.9">&#182;</a></h3><hr>
 
 </div>
 </div>
@@ -11815,6 +11815,7 @@ div#notebook {
             <li><a href="#Transpose">Transpose</a></li>
             <li><a href="#Relabel">Relabel</a></li>
             <li><a href="#Online-help">Online Help</a></li>
+            <li><a href="#Parameter-recommender">Parameter Recommender</a></li>
             <li><a href="#Acceptable-data-types">Acceptable Data Types</a></li>
         </ol>
     &nbsp;
@@ -11867,7 +11868,9 @@ div#notebook {
         <li><a href="#DPI-(Discriminant-power-interpretation)">Discriminant Power Interpretation</a></li>
         <li><a href="#AUCI-(AUC-value-interpretation)">AUC Value Interpretation</a></li>
         <li><a href="#GI-(Gini-index)">Gini Index</a></li>
-        <li><a href="#LS-(Lift-index)">Lift Score</a></li>
+        <li><a href="#LS-(Lift-score)">Lift Score</a></li>
+        <li><a href="#AM-(Automatic/Manual)">Automatic/Manual</a></li>
+        <li><a href="#BCD-(Bray-Curtis-dissimilarity)">Bray-Curtis Dissimilarity</a></li>     
     </ol>
     &nbsp;
     <li><a href="#Overall-statistics">Overall Statistics</a></li>
@@ -11875,14 +11878,14 @@ div#notebook {
         <li><a href="#Kappa">Kappa</a></li>
         <li><a href="#Kappa-unbiased">Kappa Unbiased</a></li>
         <li><a href="#Kappa-no-prevalence">Kappa No Prevalence</a></li>
+        <li><a href="#Kappa-standard-error">Kappa Standard Error</a></li>
         <li><a href="#Kappa-95%-CI">Kappa 95% CI</a></li>
-        <li><a href="#Kappa-95%-CI">Kappa Standard Error</a></li>
         <li><a href="#Chi-squared">Chi Squared</a></li>
         <li><a href="#Chi-squared-DF">Chi Squared DF</a></li>
         <li><a href="#Phi-squared">Phi Squared</a></li>
         <li><a href="#Cramer's-V">Cramer's V</a></li>
+        <li><a href="#Standard-error">Standard Error</a></li>
         <li><a href="#95%-CI">95% CI</a></li>
-        <li><a href="#95%-CI">Standard Error</a></li>
         <li><a href="#Bennett's-S">Bennett's S</a></li>
         <li><a href="#Scott's-Pi">Scott's PI</a></li>
         <li><a href="#Gwet's-AC1">Gwet's AC1</a></li>
@@ -11987,7 +11990,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Source-code">Source code<a class="anchor-link" href="#Source-code">&#182;</a></h3><ul>
-<li>Download <a href="https://github.com/sepandhaghighi/pycm/archive/v1.8.zip">Version 1.8</a> or <a href="https://github.com/sepandhaghighi/pycm/archive/dev.zip">Latest Source </a></li>
+<li>Download <a href="https://github.com/sepandhaghighi/pycm/archive/v1.9.zip">Version 1.9</a> or <a href="https://github.com/sepandhaghighi/pycm/archive/dev.zip">Latest Source </a></li>
 <li>Run <code>pip install -r requirements.txt</code> or <code>pip3 install -r requirements.txt</code> (Need root access)</li>
 <li>Run <code>python3 setup.py install</code> or <code>python setup.py install</code> (Need root access)</li>
 </ul>
@@ -12001,7 +12004,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="PyPI">PyPI<a class="anchor-link" href="#PyPI">&#182;</a></h3><ul>
 <li>Check <a href="https://packaging.python.org/installing/">Python Packaging User Guide</a>     </li>
-<li>Run <code>pip install pycm==1.8</code> or <code>pip3 install pycm==1.8</code> (Need root access)</li>
+<li>Run <code>pip install pycm==1.9</code> or <code>pip3 install pycm==1.9</code> (Need root access)</li>
 </ul>
 
 </div>
@@ -12254,8 +12257,12 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 <div class="output_text output_subarea output_execute_result">
 <pre>{&#39;ACC&#39;: {0: 0.8333333333333334, 1: 0.75, 2: 0.5833333333333334},
+ &#39;AM&#39;: {0: 2, 1: -1, 2: -1},
  &#39;AUC&#39;: {0: 0.8888888888888888, 1: 0.611111111111111, 2: 0.5833333333333333},
  &#39;AUCI&#39;: {0: &#39;Very Good&#39;, 1: &#39;Fair&#39;, 2: &#39;Poor&#39;},
+ &#39;BCD&#39;: {0: 0.08333333333333333,
+  1: 0.041666666666666664,
+  2: 0.041666666666666664},
  &#39;BM&#39;: {0: 0.7777777777777777, 1: 0.2222222222222221, 2: 0.16666666666666652},
  &#39;CEN&#39;: {0: 0.25, 1: 0.49657842846620864, 2: 0.6044162769630221},
  &#39;DOR&#39;: {0: &#39;None&#39;, 1: 3.999999999999998, 2: 1.9999999999999998},
@@ -12791,8 +12798,12 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 <div class="output_text output_subarea output_execute_result">
 <pre>{&#39;ACC&#39;: {0: 0.8333333333333334, 1: 0.75, 2: 0.5833333333333334},
+ &#39;AM&#39;: {0: 2, 1: -1, 2: -1},
  &#39;AUC&#39;: {0: 0.8888888888888888, 1: 0.611111111111111, 2: 0.5833333333333333},
  &#39;AUCI&#39;: {0: &#39;Very Good&#39;, 1: &#39;Fair&#39;, 2: &#39;Poor&#39;},
+ &#39;BCD&#39;: {0: 0.08333333333333333,
+  1: 0.041666666666666664,
+  2: 0.041666666666666664},
  &#39;BM&#39;: {0: 0.7777777777777777, 1: 0.2222222222222221, 2: 0.16666666666666652},
  &#39;CEN&#39;: {0: 0.25, 1: 0.49657842846620864, 2: 0.6044162769630221},
  &#39;DOR&#39;: {0: &#39;None&#39;, 1: 3.999999999999998, 2: 1.9999999999999998},
@@ -13247,97 +13258,99 @@ Example : online_help(&#34;J&#34;) or online_help(2)
 
 1-95% CI
 2-ACC
-3-AUC
-4-AUCI
-5-AUNP
-6-AUNU
-7-BM
-8-Bennett S
-9-CBA
-10-CEN
-11-Chi-Squared
-12-Chi-Squared DF
-13-Conditional Entropy
-14-Cramer V
-15-Cross Entropy
-16-DOR
-17-DP
-18-DPI
-19-ERR
-20-F0.5
-21-F1
-22-F2
-23-FDR
-24-FN
-25-FNR
-26-FOR
-27-FP
-28-FPR
-29-G
-30-GI
-31-Gwet AC1
-32-Hamming Loss
-33-IS
-34-J
-35-Joint Entropy
-36-KL Divergence
-37-Kappa
-38-Kappa 95% CI
-39-Kappa No Prevalence
-40-Kappa Standard Error
-41-Kappa Unbiased
-42-LS
-43-Lambda A
-44-Lambda B
-45-MCC
-46-MCEN
-47-MK
-48-Mutual Information
-49-N
-50-NIR
-51-NLR
-52-NPV
-53-Overall ACC
-54-Overall CEN
-55-Overall J
-56-Overall MCC
-57-Overall MCEN
-58-Overall RACC
-59-Overall RACCU
-60-P
-61-P-Value
-62-PLR
-63-PLRI
-64-POP
-65-PPV
-66-PPV Macro
-67-PPV Micro
-68-PRE
-69-Phi-Squared
-70-RACC
-71-RACCU
-72-RCI
-73-RR
-74-Reference Entropy
-75-Response Entropy
-76-SOA1(Landis &amp; Koch)
-77-SOA2(Fleiss)
-78-SOA3(Altman)
-79-SOA4(Cicchetti)
-80-Scott PI
-81-Standard Error
-82-TN
-83-TNR
-84-TON
-85-TOP
-86-TP
-87-TPR
-88-TPR Macro
-89-TPR Micro
-90-Y
-91-Zero-one Loss
-92-dInd
-93-sInd
+3-AM
+4-AUC
+5-AUCI
+6-AUNP
+7-AUNU
+8-BCD
+9-BM
+10-Bennett S
+11-CBA
+12-CEN
+13-Chi-Squared
+14-Chi-Squared DF
+15-Conditional Entropy
+16-Cramer V
+17-Cross Entropy
+18-DOR
+19-DP
+20-DPI
+21-ERR
+22-F0.5
+23-F1
+24-F2
+25-FDR
+26-FN
+27-FNR
+28-FOR
+29-FP
+30-FPR
+31-G
+32-GI
+33-Gwet AC1
+34-Hamming Loss
+35-IS
+36-J
+37-Joint Entropy
+38-KL Divergence
+39-Kappa
+40-Kappa 95% CI
+41-Kappa No Prevalence
+42-Kappa Standard Error
+43-Kappa Unbiased
+44-LS
+45-Lambda A
+46-Lambda B
+47-MCC
+48-MCEN
+49-MK
+50-Mutual Information
+51-N
+52-NIR
+53-NLR
+54-NPV
+55-Overall ACC
+56-Overall CEN
+57-Overall J
+58-Overall MCC
+59-Overall MCEN
+60-Overall RACC
+61-Overall RACCU
+62-P
+63-P-Value
+64-PLR
+65-PLRI
+66-POP
+67-PPV
+68-PPV Macro
+69-PPV Micro
+70-PRE
+71-Phi-Squared
+72-RACC
+73-RACCU
+74-RCI
+75-RR
+76-Reference Entropy
+77-Response Entropy
+78-SOA1(Landis &amp; Koch)
+79-SOA2(Fleiss)
+80-SOA3(Altman)
+81-SOA4(Cicchetti)
+82-Scott PI
+83-Standard Error
+84-TN
+85-TNR
+86-TON
+87-TOP
+88-TP
+89-TPR
+90-TPR Macro
+91-TPR Micro
+92-Y
+93-Zero-one Loss
+94-dInd
+95-sInd
 </pre>
 </div>
 </div>
@@ -13345,6 +13358,143 @@ Example : online_help(&#34;J&#34;) or online_help(2)
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Parameter-recommender">Parameter recommender<a class="anchor-link" href="#Parameter-recommender">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This option has been added in <code>version 1.9</code> in order to recommend most related parameters considering the characteristics of the input dataset. The characteristics according to which the parameters are suggested are balance/imbalance and binary/multiclass. All suggestions can be categorized into three main groups: imbalanced dataset, binary classification for a balanced dataset, and multi-class classification for a balanced dataset. The recommendation lists have been gathered according to the respective paper of each parameter and the capabilities which had been claimed by the paper.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">imbalance</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[30]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">binary</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[31]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">recommended_list</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[32]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;PPV Macro&#39;,
+ &#39;PPV Micro&#39;,
+ &#39;TPR Macro&#39;,
+ &#39;ERR&#39;,
+ &#39;MCC&#39;,
+ &#39;Overall MCC&#39;,
+ &#39;Zero-one Loss&#39;,
+ &#39;ACC&#39;,
+ &#39;Hamming Loss&#39;,
+ &#39;BCD&#39;,
+ &#39;Overall ACC&#39;,
+ &#39;TPR Micro&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  also available in HTML report </li>
+</ul>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -13411,7 +13561,7 @@ condition is present (correctly identified) <a href="#References">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TP</span>
@@ -13427,7 +13577,7 @@ condition is present (correctly identified) <a href="#References">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[30]:</div>
+<div class="prompt output_prompt">Out[33]:</div>
 
 
 
@@ -13462,7 +13612,7 @@ the condition is absent correctly rejected) <a href="#References">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TN</span>
@@ -13478,7 +13628,7 @@ the condition is absent correctly rejected) <a href="#References">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[31]:</div>
+<div class="prompt output_prompt">Out[34]:</div>
 
 
 
@@ -13513,7 +13663,7 @@ condition is absent (incorrectly identified) <a href="#References">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">FP</span>
@@ -13529,7 +13679,7 @@ condition is absent (incorrectly identified) <a href="#References">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[32]:</div>
+<div class="prompt output_prompt">Out[35]:</div>
 
 
 
@@ -13564,7 +13714,7 @@ the condition is present (incorrectly rejected) <a href="#References">[3]</a>.</
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">FN</span>
@@ -13580,7 +13730,7 @@ the condition is present (incorrectly rejected) <a href="#References">[3]</a>.</
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[33]:</div>
+<div class="prompt output_prompt">Out[36]:</div>
 
 
 
@@ -13615,7 +13765,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">P</span>
@@ -13631,7 +13781,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[34]:</div>
+<div class="prompt output_prompt">Out[37]:</div>
 
 
 
@@ -13665,7 +13815,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">N</span>
@@ -13681,7 +13831,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[35]:</div>
+<div class="prompt output_prompt">Out[38]:</div>
 
 
 
@@ -13715,7 +13865,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TOP</span>
@@ -13731,7 +13881,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[36]:</div>
+<div class="prompt output_prompt">Out[39]:</div>
 
 
 
@@ -13765,7 +13915,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TON</span>
@@ -13781,7 +13931,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[37]:</div>
+<div class="prompt output_prompt">Out[40]:</div>
 
 
 
@@ -13815,7 +13965,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">POP</span>
@@ -13831,7 +13981,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[38]:</div>
+<div class="prompt output_prompt">Out[41]:</div>
 
 
 
@@ -13894,7 +14044,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TPR</span>
@@ -13910,7 +14060,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[39]:</div>
+<div class="prompt output_prompt">Out[42]:</div>
 
 
 
@@ -13954,7 +14104,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TNR</span>
@@ -13970,7 +14120,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[40]:</div>
+<div class="prompt output_prompt">Out[43]:</div>
 
 
 
@@ -14015,7 +14165,7 @@ the presence of the condition <a href="#References">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PPV</span>
@@ -14031,7 +14181,7 @@ the presence of the condition <a href="#References">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[41]:</div>
+<div class="prompt output_prompt">Out[44]:</div>
 
 
 
@@ -14076,7 +14226,7 @@ the absence of the condition <a href="#References">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">NPV</span>
@@ -14092,7 +14242,7 @@ the absence of the condition <a href="#References">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[42]:</div>
+<div class="prompt output_prompt">Out[45]:</div>
 
 
 
@@ -14136,7 +14286,7 @@ the absence of the condition <a href="#References">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">FNR</span>
@@ -14152,7 +14302,7 @@ the absence of the condition <a href="#References">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[43]:</div>
+<div class="prompt output_prompt">Out[46]:</div>
 
 
 
@@ -14197,7 +14347,7 @@ the absence of the condition <a href="#References">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">FPR</span>
@@ -14213,7 +14363,7 @@ the absence of the condition <a href="#References">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[44]:</div>
+<div class="prompt output_prompt">Out[47]:</div>
 
 
 
@@ -14257,7 +14407,7 @@ the absence of the condition <a href="#References">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">FDR</span>
@@ -14273,7 +14423,7 @@ the absence of the condition <a href="#References">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[45]:</div>
+<div class="prompt output_prompt">Out[48]:</div>
 
 
 
@@ -14317,7 +14467,7 @@ the absence of the condition <a href="#References">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="prompt input_prompt">In&nbsp;[49]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">FOR</span>
@@ -14333,7 +14483,7 @@ the absence of the condition <a href="#References">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[46]:</div>
+<div class="prompt output_prompt">Out[49]:</div>
 
 
 
@@ -14379,7 +14529,7 @@ the absence of the condition <a href="#References">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ACC</span>
@@ -14395,7 +14545,7 @@ the absence of the condition <a href="#References">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[47]:</div>
+<div class="prompt output_prompt">Out[50]:</div>
 
 
 
@@ -14438,7 +14588,7 @@ the absence of the condition <a href="#References">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ERR</span>
@@ -14454,7 +14604,7 @@ the absence of the condition <a href="#References">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[48]:</div>
+<div class="prompt output_prompt">Out[51]:</div>
 
 
 
@@ -14509,7 +14659,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">F1</span>
@@ -14525,7 +14675,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[49]:</div>
+<div class="prompt output_prompt">Out[52]:</div>
 
 
 
@@ -14542,7 +14692,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">F05</span>
@@ -14558,7 +14708,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[50]:</div>
+<div class="prompt output_prompt">Out[53]:</div>
 
 
 
@@ -14575,7 +14725,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">F2</span>
@@ -14591,7 +14741,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[51]:</div>
+<div class="prompt output_prompt">Out[54]:</div>
 
 
 
@@ -14608,7 +14758,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">F_beta</span><span class="p">(</span><span class="n">Beta</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -14624,7 +14774,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[52]:</div>
+<div class="prompt output_prompt">Out[55]:</div>
 
 
 
@@ -14678,7 +14828,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">MCC</span>
@@ -14694,7 +14844,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[53]:</div>
+<div class="prompt output_prompt">Out[56]:</div>
 
 
 
@@ -14737,7 +14887,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">BM</span>
@@ -14753,7 +14903,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[54]:</div>
+<div class="prompt output_prompt">Out[57]:</div>
 
 
 
@@ -14798,7 +14948,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[55]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">MK</span>
@@ -14814,7 +14964,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[55]:</div>
+<div class="prompt output_prompt">Out[58]:</div>
 
 
 
@@ -14858,7 +15008,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PLR</span>
@@ -14874,7 +15024,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[56]:</div>
+<div class="prompt output_prompt">Out[59]:</div>
 
 
 
@@ -14928,7 +15078,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[57]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">NLR</span>
@@ -14944,7 +15094,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[57]:</div>
+<div class="prompt output_prompt">Out[60]:</div>
 
 
 
@@ -14998,7 +15148,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">DOR</span>
@@ -15014,7 +15164,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[58]:</div>
+<div class="prompt output_prompt">Out[61]:</div>
 
 
 
@@ -15058,7 +15208,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PRE</span>
@@ -15074,7 +15224,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[59]:</div>
+<div class="prompt output_prompt">Out[62]:</div>
 
 
 
@@ -15118,7 +15268,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">G</span>
@@ -15134,7 +15284,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[60]:</div>
+<div class="prompt output_prompt">Out[63]:</div>
 
 
 
@@ -15177,7 +15327,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">RACC</span>
@@ -15193,7 +15343,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[61]:</div>
+<div class="prompt output_prompt">Out[64]:</div>
 
 
 
@@ -15248,7 +15398,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">RACCU</span>
@@ -15264,7 +15414,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[62]:</div>
+<div class="prompt output_prompt">Out[65]:</div>
 
 
 
@@ -15330,7 +15480,7 @@ $$B=Vector_{Predict}$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">J</span>
@@ -15346,7 +15496,7 @@ $$B=Vector_{Predict}$$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[63]:</div>
+<div class="prompt output_prompt">Out[66]:</div>
 
 
 
@@ -15384,7 +15534,7 @@ $$B=Vector_{Predict}$$</p>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The amount of information needed to correctly classify an example into
-class C, whose prior probability is p(C), is defined as -log2(p(C)) <a href="#References">[18]</a>.</p>
+class C, whose prior probability is p(C), is defined as -log2(p(C)) <a href="#References">[18]</a> <a href="#References">[39]</a>.</p>
 
 </div>
 </div>
@@ -15400,7 +15550,7 @@ class C, whose prior probability is p(C), is defined as -log2(p(C)) <a href="#Re
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">IS</span>
@@ -15416,7 +15566,7 @@ class C, whose prior probability is p(C), is defined as -log2(p(C)) <a href="#Re
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[64]:</div>
+<div class="prompt output_prompt">Out[67]:</div>
 
 
 
@@ -15489,7 +15639,7 @@ other. Hence the proposed measure is more precise than the two measures and can 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CEN</span>
@@ -15505,7 +15655,7 @@ other. Hence the proposed measure is more precise than the two measures and can 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[65]:</div>
+<div class="prompt output_prompt">Out[68]:</div>
 
 
 
@@ -15576,7 +15726,7 @@ other. Hence the proposed measure is more precise than the two measures and can 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">MCEN</span>
@@ -15592,7 +15742,7 @@ other. Hence the proposed measure is more precise than the two measures and can 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[66]:</div>
+<div class="prompt output_prompt">Out[69]:</div>
 
 
 
@@ -15645,7 +15795,7 @@ other. Hence the proposed measure is more precise than the two measures and can 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AUC</span>
@@ -15661,7 +15811,7 @@ other. Hence the proposed measure is more precise than the two measures and can 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[67]:</div>
+<div class="prompt output_prompt">Out[70]:</div>
 
 
 
@@ -15715,7 +15865,7 @@ other. Hence the proposed measure is more precise than the two measures and can 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">dInd</span>
@@ -15731,7 +15881,7 @@ other. Hence the proposed measure is more precise than the two measures and can 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[68]:</div>
+<div class="prompt output_prompt">Out[71]:</div>
 
 
 
@@ -15784,7 +15934,7 @@ other. Hence the proposed measure is more precise than the two measures and can 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">sInd</span>
@@ -15800,7 +15950,7 @@ other. Hence the proposed measure is more precise than the two measures and can 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[69]:</div>
+<div class="prompt output_prompt">Out[72]:</div>
 
 
 
@@ -15872,7 +16022,7 @@ The DP has been used mainly in feature selection over imbalanced data <a href="#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">DP</span>
@@ -15888,7 +16038,7 @@ The DP has been used mainly in feature selection over imbalanced data <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[70]:</div>
+<div class="prompt output_prompt">Out[73]:</div>
 
 
 
@@ -15947,7 +16097,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Y</span>
@@ -15963,7 +16113,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[71]:</div>
+<div class="prompt output_prompt">Out[74]:</div>
 
 
 
@@ -16040,7 +16190,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PLRI</span>
@@ -16056,7 +16206,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[72]:</div>
+<div class="prompt output_prompt">Out[75]:</div>
 
 
 
@@ -16131,7 +16281,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">DPI</span>
@@ -16147,7 +16297,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[73]:</div>
+<div class="prompt output_prompt">Out[76]:</div>
 
 
 
@@ -16225,7 +16375,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AUCI</span>
@@ -16241,7 +16391,7 @@ Telemedical prevention <a href="#References">[33]</a> <a href="#References">[34]
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[74]:</div>
+<div class="prompt output_prompt">Out[77]:</div>
 
 
 
@@ -16297,7 +16447,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">GI</span>
@@ -16313,7 +16463,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[75]:</div>
+<div class="prompt output_prompt">Out[78]:</div>
 
 
 
@@ -16344,7 +16494,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="LS-(Lift-index)">LS (Lift index)<a class="anchor-link" href="#LS-(Lift-index)">&#182;</a></h3>
+<h3 id="LS-(Lift-score)">LS (Lift score)<a class="anchor-link" href="#LS-(Lift-score)">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -16368,7 +16518,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">LS</span>
@@ -16384,7 +16534,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[76]:</div>
+<div class="prompt output_prompt">Out[79]:</div>
 
 
 
@@ -16405,6 +16555,147 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
     <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 1.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="AM-(Automatic/Manual)">AM (Automatic/Manual)<a class="anchor-link" href="#AM-(Automatic/Manual)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Difference between automatic and manual classification</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$AM=TOP-P=(TP+FP)-(TP+FN)$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AM</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[80]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;L1&#39;: -2, &#39;L2&#39;: 1, &#39;L3&#39;: 1}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 1.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="BCD-(Bray-Curtis-dissimilarity)">BCD (Bray-Curtis dissimilarity)<a class="anchor-link" href="#BCD-(Bray-Curtis-dissimilarity)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In ecology and biology, the Bray–Curtis dissimilarity, named after J. Roger Bray and John T. Curtis, is a statistic used to quantify the compositional dissimilarity between two different sites, based on counts at each site. <a href="#References">[37]</a>.</p>
+<p><a href="https://en.wikipedia.org/wiki/Bray%E2%80%93Curtis_dissimilarity">Wikipedia page</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$BCD=\frac{|AM|}{\sum_{i=1}^{|C|}\Big(TOP_i+P_i\Big)}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">BCD</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[81]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;L1&#39;: 0.08333333333333333,
+ &#39;L2&#39;: 0.041666666666666664,
+ &#39;L3&#39;: 0.041666666666666664}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 1.9</span> </li>
 </ul>
 </div>
 </div>
@@ -16446,7 +16737,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Kappa</span>
@@ -16462,7 +16753,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[77]:</div>
+<div class="prompt output_prompt">Out[82]:</div>
 
 
 
@@ -16515,7 +16806,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">KappaUnbiased</span>
@@ -16531,7 +16822,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[78]:</div>
+<div class="prompt output_prompt">Out[83]:</div>
 
 
 
@@ -16584,7 +16875,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">KappaNoPrevalence</span>
@@ -16600,7 +16891,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[79]:</div>
+<div class="prompt output_prompt">Out[84]:</div>
 
 
 
@@ -16629,7 +16920,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Kappa-95%-CI">Kappa 95% CI<a class="anchor-link" href="#Kappa-95%-CI">&#182;</a></h3>
+<h3 id="Kappa-standard-error">Kappa standard error<a class="anchor-link" href="#Kappa-standard-error">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -16637,7 +16928,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Kappa 95% Confidence Interval <a href="#References">[24]</a>.</p>
+<p>The standard error(s) of the Kappa coefficient were obtained by Fleiss (1969) <a href="#References">[24]</a> <a href="#References">[38]</a>.</p>
 
 </div>
 </div>
@@ -16651,18 +16942,9 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>$$Kappa \pm 1.96\times SE_{Kappa}$$</p>
-
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Kappa_SE</span>
@@ -16678,7 +16960,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[80]:</div>
+<div class="prompt output_prompt">Out[85]:</div>
 
 
 
@@ -16693,9 +16975,45 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 0.7</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Kappa-95%-CI">Kappa 95% CI<a class="anchor-link" href="#Kappa-95%-CI">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Kappa 95% Confidence Interval <a href="#References">[24]</a> <a href="#References">[38]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$CI_{Kappa}=Kappa \pm 1.96\times SE_{Kappa}$$</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Kappa_CI</span>
@@ -16711,7 +17029,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[81]:</div>
+<div class="prompt output_prompt">Out[86]:</div>
 
 
 
@@ -16774,7 +17092,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Chi_Squared</span>
@@ -16790,7 +17108,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[82]:</div>
+<div class="prompt output_prompt">Out[87]:</div>
 
 
 
@@ -16843,7 +17161,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="prompt input_prompt">In&nbsp;[88]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">DF</span>
@@ -16859,7 +17177,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[83]:</div>
+<div class="prompt output_prompt">Out[88]:</div>
 
 
 
@@ -16913,7 +17231,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="prompt input_prompt">In&nbsp;[89]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Phi_Squared</span>
@@ -16929,7 +17247,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[84]:</div>
+<div class="prompt output_prompt">Out[89]:</div>
 
 
 
@@ -16983,7 +17301,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="prompt input_prompt">In&nbsp;[90]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">V</span>
@@ -16999,13 +17317,83 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[85]:</div>
+<div class="prompt output_prompt">Out[90]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>0.5244044240850758</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 0.7</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Standard-error">Standard error<a class="anchor-link" href="#Standard-error">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The standard error (SE) of a statistic (usually an estimate of a parameter) is the standard deviation of its sampling distribution or an estimate of that standard deviation <a href="#References">[31]</a>.</p>
+<p><a href="https://en.wikipedia.org/wiki/Standard_error">Wikipedia page</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$SE_{ACC}=\sqrt{\frac{ACC\times (1-ACC)}{POP}}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SE</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[91]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.14231876063832777</pre>
 </div>
 
 </div>
@@ -17046,23 +17434,14 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>$$SE_{ACC}=\sqrt{\frac{ACC\times (1-ACC)}{POP}}$$</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>$$ACC \pm 1.96\times SE_{ACC}$$</p>
+<p>$$CI=ACC \pm 1.96\times SE_{ACC}$$</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CI</span>
@@ -17078,46 +17457,13 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[86]:</div>
+<div class="prompt output_prompt">Out[92]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
 <pre>(0.30438856248221097, 0.8622781041844558)</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SE</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[87]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>0.14231876063832777</pre>
 </div>
 
 </div>
@@ -17175,7 +17521,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[88]:</div>
+<div class="prompt input_prompt">In&nbsp;[93]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">S</span>
@@ -17191,7 +17537,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[88]:</div>
+<div class="prompt output_prompt">Out[93]:</div>
 
 
 
@@ -17254,7 +17600,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[89]:</div>
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PI</span>
@@ -17270,7 +17616,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[89]:</div>
+<div class="prompt output_prompt">Out[94]:</div>
 
 
 
@@ -17341,7 +17687,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[90]:</div>
+<div class="prompt input_prompt">In&nbsp;[95]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AC1</span>
@@ -17357,7 +17703,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[90]:</div>
+<div class="prompt output_prompt">Out[95]:</div>
 
 
 
@@ -17428,7 +17774,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="prompt input_prompt">In&nbsp;[96]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ReferenceEntropy</span>
@@ -17444,7 +17790,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[91]:</div>
+<div class="prompt output_prompt">Out[96]:</div>
 
 
 
@@ -17515,7 +17861,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="prompt input_prompt">In&nbsp;[97]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ResponseEntropy</span>
@@ -17531,7 +17877,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[92]:</div>
+<div class="prompt output_prompt">Out[97]:</div>
 
 
 
@@ -17612,7 +17958,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[93]:</div>
+<div class="prompt input_prompt">In&nbsp;[98]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CrossEntropy</span>
@@ -17628,7 +17974,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[93]:</div>
+<div class="prompt output_prompt">Out[98]:</div>
 
 
 
@@ -17699,7 +18045,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[99]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">JointEntropy</span>
@@ -17715,7 +18061,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[94]:</div>
+<div class="prompt output_prompt">Out[99]:</div>
 
 
 
@@ -17787,7 +18133,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[95]:</div>
+<div class="prompt input_prompt">In&nbsp;[100]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ConditionalEntropy</span>
@@ -17803,7 +18149,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[95]:</div>
+<div class="prompt output_prompt">Out[100]:</div>
 
 
 
@@ -17875,7 +18221,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[96]:</div>
+<div class="prompt input_prompt">In&nbsp;[101]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">KL</span>
@@ -17891,7 +18237,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[96]:</div>
+<div class="prompt output_prompt">Out[101]:</div>
 
 
 
@@ -17982,7 +18328,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[97]:</div>
+<div class="prompt input_prompt">In&nbsp;[102]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">MutualInformation</span>
@@ -17998,7 +18344,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[97]:</div>
+<div class="prompt output_prompt">Out[102]:</div>
 
 
 
@@ -18052,7 +18398,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="prompt input_prompt">In&nbsp;[103]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">LambdaA</span>
@@ -18068,7 +18414,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[98]:</div>
+<div class="prompt output_prompt">Out[103]:</div>
 
 
 
@@ -18122,7 +18468,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="prompt input_prompt">In&nbsp;[104]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">LambdaB</span>
@@ -18138,7 +18484,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[99]:</div>
+<div class="prompt output_prompt">Out[104]:</div>
 
 
 
@@ -18221,7 +18567,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[100]:</div>
+<div class="prompt input_prompt">In&nbsp;[105]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA1</span>
@@ -18237,7 +18583,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[100]:</div>
+<div class="prompt output_prompt">Out[105]:</div>
 
 
 
@@ -18308,7 +18654,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[101]:</div>
+<div class="prompt input_prompt">In&nbsp;[106]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA2</span>
@@ -18324,7 +18670,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[101]:</div>
+<div class="prompt output_prompt">Out[106]:</div>
 
 
 
@@ -18403,7 +18749,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="prompt input_prompt">In&nbsp;[107]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA3</span>
@@ -18419,7 +18765,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[102]:</div>
+<div class="prompt output_prompt">Out[107]:</div>
 
 
 
@@ -18494,7 +18840,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="prompt input_prompt">In&nbsp;[108]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA4</span>
@@ -18510,7 +18856,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[103]:</div>
+<div class="prompt output_prompt">Out[108]:</div>
 
 
 
@@ -18563,7 +18909,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[104]:</div>
+<div class="prompt input_prompt">In&nbsp;[109]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_ACC</span>
@@ -18579,7 +18925,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[104]:</div>
+<div class="prompt output_prompt">Out[109]:</div>
 
 
 
@@ -18632,7 +18978,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="prompt input_prompt">In&nbsp;[110]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_RACC</span>
@@ -18648,7 +18994,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[105]:</div>
+<div class="prompt output_prompt">Out[110]:</div>
 
 
 
@@ -18701,7 +19047,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[106]:</div>
+<div class="prompt input_prompt">In&nbsp;[111]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_RACCU</span>
@@ -18717,7 +19063,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[106]:</div>
+<div class="prompt output_prompt">Out[111]:</div>
 
 
 
@@ -18770,7 +19116,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[107]:</div>
+<div class="prompt input_prompt">In&nbsp;[112]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PPV_Micro</span>
@@ -18786,7 +19132,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[107]:</div>
+<div class="prompt output_prompt">Out[112]:</div>
 
 
 
@@ -18839,7 +19185,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[108]:</div>
+<div class="prompt input_prompt">In&nbsp;[113]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TPR_Micro</span>
@@ -18855,7 +19201,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[108]:</div>
+<div class="prompt output_prompt">Out[113]:</div>
 
 
 
@@ -18908,7 +19254,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[109]:</div>
+<div class="prompt input_prompt">In&nbsp;[114]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PPV_Macro</span>
@@ -18924,7 +19270,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[109]:</div>
+<div class="prompt output_prompt">Out[114]:</div>
 
 
 
@@ -18977,7 +19323,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[110]:</div>
+<div class="prompt input_prompt">In&nbsp;[115]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TPR_Macro</span>
@@ -18993,7 +19339,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[110]:</div>
+<div class="prompt output_prompt">Out[115]:</div>
 
 
 
@@ -19064,7 +19410,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[111]:</div>
+<div class="prompt input_prompt">In&nbsp;[116]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_J</span>
@@ -19080,7 +19426,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[111]:</div>
+<div class="prompt output_prompt">Out[116]:</div>
 
 
 
@@ -19133,7 +19479,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[112]:</div>
+<div class="prompt input_prompt">In&nbsp;[117]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">HammingLoss</span>
@@ -19149,7 +19495,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[112]:</div>
+<div class="prompt output_prompt">Out[117]:</div>
 
 
 
@@ -19202,7 +19548,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[113]:</div>
+<div class="prompt input_prompt">In&nbsp;[118]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ZeroOneLoss</span>
@@ -19218,7 +19564,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[113]:</div>
+<div class="prompt output_prompt">Out[118]:</div>
 
 
 
@@ -19271,7 +19617,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[114]:</div>
+<div class="prompt input_prompt">In&nbsp;[119]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">NIR</span>
@@ -19287,7 +19633,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[114]:</div>
+<div class="prompt output_prompt">Out[119]:</div>
 
 
 
@@ -19367,7 +19713,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[115]:</div>
+<div class="prompt input_prompt">In&nbsp;[120]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PValue</span>
@@ -19383,7 +19729,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[115]:</div>
+<div class="prompt output_prompt">Out[120]:</div>
 
 
 
@@ -19445,7 +19791,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[116]:</div>
+<div class="prompt input_prompt">In&nbsp;[121]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_CEN</span>
@@ -19461,7 +19807,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[116]:</div>
+<div class="prompt output_prompt">Out[121]:</div>
 
 
 
@@ -19532,7 +19878,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[117]:</div>
+<div class="prompt input_prompt">In&nbsp;[122]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_MCEN</span>
@@ -19548,7 +19894,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[117]:</div>
+<div class="prompt output_prompt">Out[122]:</div>
 
 
 
@@ -19628,7 +19974,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[118]:</div>
+<div class="prompt input_prompt">In&nbsp;[123]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_MCC</span>
@@ -19644,7 +19990,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[118]:</div>
+<div class="prompt output_prompt">Out[123]:</div>
 
 
 
@@ -19697,7 +20043,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[119]:</div>
+<div class="prompt input_prompt">In&nbsp;[124]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">RR</span>
@@ -19713,7 +20059,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[119]:</div>
+<div class="prompt output_prompt">Out[124]:</div>
 
 
 
@@ -19766,7 +20112,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[120]:</div>
+<div class="prompt input_prompt">In&nbsp;[125]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CBA</span>
@@ -19782,7 +20128,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[120]:</div>
+<div class="prompt output_prompt">Out[125]:</div>
 
 
 
@@ -19835,7 +20181,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[121]:</div>
+<div class="prompt input_prompt">In&nbsp;[126]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AUNU</span>
@@ -19851,7 +20197,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[121]:</div>
+<div class="prompt output_prompt">Out[126]:</div>
 
 
 
@@ -19904,7 +20250,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[122]:</div>
+<div class="prompt input_prompt">In&nbsp;[127]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AUNP</span>
@@ -19920,7 +20266,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[122]:</div>
+<div class="prompt output_prompt">Out[127]:</div>
 
 
 
@@ -20001,7 +20347,7 @@ comparing relative classifier information while classifier information (mutual i
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[123]:</div>
+<div class="prompt input_prompt">In&nbsp;[128]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">RCI</span>
@@ -20017,7 +20363,7 @@ comparing relative classifier information while classifier information (mutual i
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[123]:</div>
+<div class="prompt output_prompt">Out[128]:</div>
 
 
 
@@ -20060,7 +20406,7 @@ comparing relative classifier information while classifier information (mutual i
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[124]:</div>
+<div class="prompt input_prompt">In&nbsp;[129]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
@@ -20094,103 +20440,105 @@ L3               0     2     3
 
 Overall Statistics : 
 
-95% CI                                                           (0.30439,0.86228)
-AUNP                                                             0.68571
-AUNU                                                             0.67857
-Bennett S                                                        0.375
-CBA                                                              0.47778
-Chi-Squared                                                      6.6
-Chi-Squared DF                                                   4
-Conditional Entropy                                              0.97579
-Cramer V                                                         0.5244
-Cross Entropy                                                    1.58333
-Gwet AC1                                                         0.38931
-Hamming Loss                                                     0.41667
-Joint Entropy                                                    2.45915
-KL Divergence                                                    0.09998
-Kappa                                                            0.35484
-Kappa 95% CI                                                     (-0.07708,0.78675)
-Kappa No Prevalence                                              0.16667
-Kappa Standard Error                                             0.22036
-Kappa Unbiased                                                   0.34426
-Lambda A                                                         0.42857
-Lambda B                                                         0.16667
-Mutual Information                                               0.52421
-NIR                                                              0.41667
-Overall ACC                                                      0.58333
-Overall CEN                                                      0.46381
-Overall J                                                        (1.225,0.40833)
-Overall MCC                                                      0.36667
-Overall MCEN                                                     0.51894
-Overall RACC                                                     0.35417
-Overall RACCU                                                    0.36458
-P-Value                                                          0.18926
-PPV Macro                                                        0.61111
-PPV Micro                                                        0.58333
-Phi-Squared                                                      0.55
-RCI                                                              0.35339
-RR                                                               4.0
-Reference Entropy                                                1.48336
-Response Entropy                                                 1.5
-SOA1(Landis &amp; Koch)                                              Fair
-SOA2(Fleiss)                                                     Poor
-SOA3(Altman)                                                     Fair
-SOA4(Cicchetti)                                                  Poor
-Scott PI                                                         0.34426
-Standard Error                                                   0.14232
-TPR Macro                                                        0.56667
-TPR Micro                                                        0.58333
-Zero-one Loss                                                    5
+95% CI                                                            (0.30439,0.86228)
+AUNP                                                              0.68571
+AUNU                                                              0.67857
+Bennett S                                                         0.375
+CBA                                                               0.47778
+Chi-Squared                                                       6.6
+Chi-Squared DF                                                    4
+Conditional Entropy                                               0.97579
+Cramer V                                                          0.5244
+Cross Entropy                                                     1.58333
+Gwet AC1                                                          0.38931
+Hamming Loss                                                      0.41667
+Joint Entropy                                                     2.45915
+KL Divergence                                                     0.09998
+Kappa                                                             0.35484
+Kappa 95% CI                                                      (-0.07708,0.78675)
+Kappa No Prevalence                                               0.16667
+Kappa Standard Error                                              0.22036
+Kappa Unbiased                                                    0.34426
+Lambda A                                                          0.42857
+Lambda B                                                          0.16667
+Mutual Information                                                0.52421
+NIR                                                               0.41667
+Overall ACC                                                       0.58333
+Overall CEN                                                       0.46381
+Overall J                                                         (1.225,0.40833)
+Overall MCC                                                       0.36667
+Overall MCEN                                                      0.51894
+Overall RACC                                                      0.35417
+Overall RACCU                                                     0.36458
+P-Value                                                           0.18926
+PPV Macro                                                         0.61111
+PPV Micro                                                         0.58333
+Phi-Squared                                                       0.55
+RCI                                                               0.35339
+RR                                                                4.0
+Reference Entropy                                                 1.48336
+Response Entropy                                                  1.5
+SOA1(Landis &amp; Koch)                                               Fair
+SOA2(Fleiss)                                                      Poor
+SOA3(Altman)                                                      Fair
+SOA4(Cicchetti)                                                   Poor
+Scott PI                                                          0.34426
+Standard Error                                                    0.14232
+TPR Macro                                                         0.56667
+TPR Micro                                                         0.58333
+Zero-one Loss                                                     5
 
 Class Statistics :
 
-Classes                                                          L1                      L2                      L3                      
-ACC(Accuracy)                                                    0.83333                 0.75                    0.58333                 
-AUC(Area under the roc curve)                                    0.8                     0.65                    0.58571                 
-AUCI(Auc value interpretation)                                   Very Good               Fair                    Poor                    
-BM(Informedness or bookmaker informedness)                       0.6                     0.3                     0.17143                 
-CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442                 
-DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0                     
-DP(Discriminant power)                                           None                    0.33193                 0.16597                 
-DPI(Discriminant power interpretation)                           None                    Poor                    Poor                    
-ERR(Error rate)                                                  0.16667                 0.25                    0.41667                 
-F0.5(F0.5 score)                                                 0.88235                 0.35714                 0.51724                 
-F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545                 
-F2(F2 score)                                                     0.65217                 0.45455                 0.57692                 
-FDR(False discovery rate)                                        0.0                     0.66667                 0.5                     
-FN(False negative/miss/type 2 error)                             2                       1                       2                       
-FNR(Miss rate or false negative rate)                            0.4                     0.5                     0.4                     
-FOR(False omission rate)                                         0.22222                 0.11111                 0.33333                 
-FP(False positive/type 1 error/false alarm)                      0                       2                       3                       
-FPR(Fall-out or false positive rate)                             0.0                     0.2                     0.42857                 
-G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772                 
-GI(Gini index)                                                   0.6                     0.3                     0.17143                 
-IS(Information score)                                            1.26303                 1.0                     0.26303                 
-J(Jaccard index)                                                 0.6                     0.25                    0.375                   
-LS(Lift score)                                                   2.4                     2.0                     1.2                     
-MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903                 
-MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875                  
-MK(Markedness)                                                   0.77778                 0.22222                 0.16667                 
-N(Condition negative)                                            7                       10                      7                       
-NLR(Negative likelihood ratio)                                   0.4                     0.625                   0.7                     
-NPV(Negative predictive value)                                   0.77778                 0.88889                 0.66667                 
-P(Condition positive or support)                                 5                       2                       5                       
-PLR(Positive likelihood ratio)                                   None                    2.5                     1.4                     
-PLRI(Positive likelihood ratio interpretation)                   None                    Poor                    Poor                    
-POP(Population)                                                  12                      12                      12                      
-PPV(Precision or positive predictive value)                      1.0                     0.33333                 0.5                     
-PRE(Prevalence)                                                  0.41667                 0.16667                 0.41667                 
-RACC(Random accuracy)                                            0.10417                 0.04167                 0.20833                 
-RACCU(Random accuracy unbiased)                                  0.11111                 0.0434                  0.21007                 
-TN(True negative/correct rejection)                              7                       8                       4                       
-TNR(Specificity or true negative rate)                           1.0                     0.8                     0.57143                 
-TON(Test outcome negative)                                       9                       9                       6                       
-TOP(Test outcome positive)                                       3                       3                       6                       
-TP(True positive/hit)                                            3                       1                       3                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6                     0.5                     0.6                     
-Y(Youden index)                                                  0.6                     0.3                     0.17143                 
-dInd(Distance index)                                             0.4                     0.53852                 0.58624                 
-sInd(Similarity index)                                           0.71716                 0.61921                 0.58547                 
+Classes                                                           L1                      L2                      L3                      
+ACC(Accuracy)                                                     0.83333                 0.75                    0.58333                 
+AM(Difference between automatic and manual classification)        -2                      1                       1                       
+AUC(Area under the roc curve)                                     0.8                     0.65                    0.58571                 
+AUCI(AUC value interpretation)                                    Very Good               Fair                    Poor                    
+BCD(Bray-Curtis dissimilarity)                                    0.08333                 0.04167                 0.04167                 
+BM(Informedness or bookmaker informedness)                        0.6                     0.3                     0.17143                 
+CEN(Confusion entropy)                                            0.25                    0.49658                 0.60442                 
+DOR(Diagnostic odds ratio)                                        None                    4.0                     2.0                     
+DP(Discriminant power)                                            None                    0.33193                 0.16597                 
+DPI(Discriminant power interpretation)                            None                    Poor                    Poor                    
+ERR(Error rate)                                                   0.16667                 0.25                    0.41667                 
+F0.5(F0.5 score)                                                  0.88235                 0.35714                 0.51724                 
+F1(F1 score - harmonic mean of precision and sensitivity)         0.75                    0.4                     0.54545                 
+F2(F2 score)                                                      0.65217                 0.45455                 0.57692                 
+FDR(False discovery rate)                                         0.0                     0.66667                 0.5                     
+FN(False negative/miss/type 2 error)                              2                       1                       2                       
+FNR(Miss rate or false negative rate)                             0.4                     0.5                     0.4                     
+FOR(False omission rate)                                          0.22222                 0.11111                 0.33333                 
+FP(False positive/type 1 error/false alarm)                       0                       2                       3                       
+FPR(Fall-out or false positive rate)                              0.0                     0.2                     0.42857                 
+G(G-measure geometric mean of precision and sensitivity)          0.7746                  0.40825                 0.54772                 
+GI(Gini index)                                                    0.6                     0.3                     0.17143                 
+IS(Information score)                                             1.26303                 1.0                     0.26303                 
+J(Jaccard index)                                                  0.6                     0.25                    0.375                   
+LS(Lift score)                                                    2.4                     2.0                     1.2                     
+MCC(Matthews correlation coefficient)                             0.68313                 0.2582                  0.16903                 
+MCEN(Modified confusion entropy)                                  0.26439                 0.5                     0.6875                  
+MK(Markedness)                                                    0.77778                 0.22222                 0.16667                 
+N(Condition negative)                                             7                       10                      7                       
+NLR(Negative likelihood ratio)                                    0.4                     0.625                   0.7                     
+NPV(Negative predictive value)                                    0.77778                 0.88889                 0.66667                 
+P(Condition positive or support)                                  5                       2                       5                       
+PLR(Positive likelihood ratio)                                    None                    2.5                     1.4                     
+PLRI(Positive likelihood ratio interpretation)                    None                    Poor                    Poor                    
+POP(Population)                                                   12                      12                      12                      
+PPV(Precision or positive predictive value)                       1.0                     0.33333                 0.5                     
+PRE(Prevalence)                                                   0.41667                 0.16667                 0.41667                 
+RACC(Random accuracy)                                             0.10417                 0.04167                 0.20833                 
+RACCU(Random accuracy unbiased)                                   0.11111                 0.0434                  0.21007                 
+TN(True negative/correct rejection)                               7                       8                       4                       
+TNR(Specificity or true negative rate)                            1.0                     0.8                     0.57143                 
+TON(Test outcome negative)                                        9                       9                       6                       
+TOP(Test outcome positive)                                        3                       3                       6                       
+TP(True positive/hit)                                             3                       1                       3                       
+TPR(Sensitivity, recall, hit rate, or true positive rate)         0.6                     0.5                     0.6                     
+Y(Youden index)                                                   0.6                     0.3                     0.17143                 
+dInd(Distance index)                                              0.4                     0.53852                 0.58624                 
+sInd(Similarity index)                                            0.71716                 0.61921                 0.58547                 
 
 </pre>
 </div>
@@ -20210,7 +20558,7 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[125]:</div>
+<div class="prompt input_prompt">In&nbsp;[130]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">print_matrix</span><span class="p">()</span>
@@ -20249,7 +20597,7 @@ L3               0     2     3
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[126]:</div>
+<div class="prompt input_prompt">In&nbsp;[131]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">matrix</span>
@@ -20265,16 +20613,13 @@ L3               0     2     3
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[126]:</div>
+<div class="prompt output_prompt">Out[131]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{0: {0: 3, 1: 0, 2: 2},
- 1: {0: 0, 1: 1, 2: 1},
- 2: {0: 0, 1: 2, 2: 3},
- &#39;L1&#39;: {&#39;L1&#39;: 3, &#39;L2&#39;: 0, &#39;L3&#39;: 2},
+<pre>{&#39;L1&#39;: {&#39;L1&#39;: 3, &#39;L2&#39;: 0, &#39;L3&#39;: 2},
  &#39;L2&#39;: {&#39;L1&#39;: 0, &#39;L2&#39;: 1, &#39;L3&#39;: 1},
  &#39;L3&#39;: {&#39;L1&#39;: 0, &#39;L2&#39;: 2, &#39;L3&#39;: 3}}</pre>
 </div>
@@ -20287,7 +20632,7 @@ L3               0     2     3
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[127]:</div>
+<div class="prompt input_prompt">In&nbsp;[132]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">print_matrix</span><span class="p">(</span><span class="n">one_vs_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">class_name</span> <span class="o">=</span> <span class="s2">&quot;L1&quot;</span><span class="p">)</span>
@@ -20372,7 +20717,7 @@ L1               3     2
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[128]:</div>
+<div class="prompt input_prompt">In&nbsp;[133]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
@@ -20411,7 +20756,7 @@ L3               0.0    0.4    0.6
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[129]:</div>
+<div class="prompt input_prompt">In&nbsp;[134]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">normalized_matrix</span>
@@ -20427,16 +20772,13 @@ L3               0.0    0.4    0.6
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[129]:</div>
+<div class="prompt output_prompt">Out[134]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{0: {0: 0.6, 1: 0.0, 2: 0.4},
- 1: {0: 0.0, 1: 0.5, 2: 0.5},
- 2: {0: 0.0, 1: 0.4, 2: 0.6},
- &#39;L1&#39;: {&#39;L1&#39;: 0.6, &#39;L2&#39;: 0.0, &#39;L3&#39;: 0.4},
+<pre>{&#39;L1&#39;: {&#39;L1&#39;: 0.6, &#39;L2&#39;: 0.0, &#39;L3&#39;: 0.4},
  &#39;L2&#39;: {&#39;L1&#39;: 0.0, &#39;L2&#39;: 0.5, &#39;L3&#39;: 0.5},
  &#39;L3&#39;: {&#39;L1&#39;: 0.0, &#39;L2&#39;: 0.4, &#39;L3&#39;: 0.6}}</pre>
 </div>
@@ -20449,7 +20791,7 @@ L3               0.0    0.4    0.6
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[130]:</div>
+<div class="prompt input_prompt">In&nbsp;[135]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">(</span><span class="n">one_vs_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">class_name</span> <span class="o">=</span> <span class="s2">&quot;L1&quot;</span><span class="p">)</span>
@@ -20534,7 +20876,7 @@ L1               0.6    0.4
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[131]:</div>
+<div class="prompt input_prompt">In&nbsp;[136]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span>
@@ -20556,103 +20898,105 @@ L1               0.6    0.4
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Overall Statistics : 
 
-95% CI                                                           (0.30439,0.86228)
-AUNP                                                             0.68571
-AUNU                                                             0.67857
-Bennett S                                                        0.375
-CBA                                                              0.47778
-Chi-Squared                                                      6.6
-Chi-Squared DF                                                   4
-Conditional Entropy                                              0.97579
-Cramer V                                                         0.5244
-Cross Entropy                                                    1.58333
-Gwet AC1                                                         0.38931
-Hamming Loss                                                     0.41667
-Joint Entropy                                                    2.45915
-KL Divergence                                                    0.09998
-Kappa                                                            0.35484
-Kappa 95% CI                                                     (-0.07708,0.78675)
-Kappa No Prevalence                                              0.16667
-Kappa Standard Error                                             0.22036
-Kappa Unbiased                                                   0.34426
-Lambda A                                                         0.42857
-Lambda B                                                         0.16667
-Mutual Information                                               0.52421
-NIR                                                              0.41667
-Overall ACC                                                      0.58333
-Overall CEN                                                      0.46381
-Overall J                                                        (1.225,0.40833)
-Overall MCC                                                      0.36667
-Overall MCEN                                                     0.51894
-Overall RACC                                                     0.35417
-Overall RACCU                                                    0.36458
-P-Value                                                          0.18926
-PPV Macro                                                        0.61111
-PPV Micro                                                        0.58333
-Phi-Squared                                                      0.55
-RCI                                                              0.35339
-RR                                                               4.0
-Reference Entropy                                                1.48336
-Response Entropy                                                 1.5
-SOA1(Landis &amp; Koch)                                              Fair
-SOA2(Fleiss)                                                     Poor
-SOA3(Altman)                                                     Fair
-SOA4(Cicchetti)                                                  Poor
-Scott PI                                                         0.34426
-Standard Error                                                   0.14232
-TPR Macro                                                        0.56667
-TPR Micro                                                        0.58333
-Zero-one Loss                                                    5
+95% CI                                                            (0.30439,0.86228)
+AUNP                                                              0.68571
+AUNU                                                              0.67857
+Bennett S                                                         0.375
+CBA                                                               0.47778
+Chi-Squared                                                       6.6
+Chi-Squared DF                                                    4
+Conditional Entropy                                               0.97579
+Cramer V                                                          0.5244
+Cross Entropy                                                     1.58333
+Gwet AC1                                                          0.38931
+Hamming Loss                                                      0.41667
+Joint Entropy                                                     2.45915
+KL Divergence                                                     0.09998
+Kappa                                                             0.35484
+Kappa 95% CI                                                      (-0.07708,0.78675)
+Kappa No Prevalence                                               0.16667
+Kappa Standard Error                                              0.22036
+Kappa Unbiased                                                    0.34426
+Lambda A                                                          0.42857
+Lambda B                                                          0.16667
+Mutual Information                                                0.52421
+NIR                                                               0.41667
+Overall ACC                                                       0.58333
+Overall CEN                                                       0.46381
+Overall J                                                         (1.225,0.40833)
+Overall MCC                                                       0.36667
+Overall MCEN                                                      0.51894
+Overall RACC                                                      0.35417
+Overall RACCU                                                     0.36458
+P-Value                                                           0.18926
+PPV Macro                                                         0.61111
+PPV Micro                                                         0.58333
+Phi-Squared                                                       0.55
+RCI                                                               0.35339
+RR                                                                4.0
+Reference Entropy                                                 1.48336
+Response Entropy                                                  1.5
+SOA1(Landis &amp; Koch)                                               Fair
+SOA2(Fleiss)                                                      Poor
+SOA3(Altman)                                                      Fair
+SOA4(Cicchetti)                                                   Poor
+Scott PI                                                          0.34426
+Standard Error                                                    0.14232
+TPR Macro                                                         0.56667
+TPR Micro                                                         0.58333
+Zero-one Loss                                                     5
 
 Class Statistics :
 
-Classes                                                          L1                      L2                      L3                      
-ACC(Accuracy)                                                    0.83333                 0.75                    0.58333                 
-AUC(Area under the roc curve)                                    0.8                     0.65                    0.58571                 
-AUCI(Auc value interpretation)                                   Very Good               Fair                    Poor                    
-BM(Informedness or bookmaker informedness)                       0.6                     0.3                     0.17143                 
-CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442                 
-DOR(Diagnostic odds ratio)                                       None                    4.0                     2.0                     
-DP(Discriminant power)                                           None                    0.33193                 0.16597                 
-DPI(Discriminant power interpretation)                           None                    Poor                    Poor                    
-ERR(Error rate)                                                  0.16667                 0.25                    0.41667                 
-F0.5(F0.5 score)                                                 0.88235                 0.35714                 0.51724                 
-F1(F1 score - harmonic mean of precision and sensitivity)        0.75                    0.4                     0.54545                 
-F2(F2 score)                                                     0.65217                 0.45455                 0.57692                 
-FDR(False discovery rate)                                        0.0                     0.66667                 0.5                     
-FN(False negative/miss/type 2 error)                             2                       1                       2                       
-FNR(Miss rate or false negative rate)                            0.4                     0.5                     0.4                     
-FOR(False omission rate)                                         0.22222                 0.11111                 0.33333                 
-FP(False positive/type 1 error/false alarm)                      0                       2                       3                       
-FPR(Fall-out or false positive rate)                             0.0                     0.2                     0.42857                 
-G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772                 
-GI(Gini index)                                                   0.6                     0.3                     0.17143                 
-IS(Information score)                                            1.26303                 1.0                     0.26303                 
-J(Jaccard index)                                                 0.6                     0.25                    0.375                   
-LS(Lift score)                                                   2.4                     2.0                     1.2                     
-MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903                 
-MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875                  
-MK(Markedness)                                                   0.77778                 0.22222                 0.16667                 
-N(Condition negative)                                            7                       10                      7                       
-NLR(Negative likelihood ratio)                                   0.4                     0.625                   0.7                     
-NPV(Negative predictive value)                                   0.77778                 0.88889                 0.66667                 
-P(Condition positive or support)                                 5                       2                       5                       
-PLR(Positive likelihood ratio)                                   None                    2.5                     1.4                     
-PLRI(Positive likelihood ratio interpretation)                   None                    Poor                    Poor                    
-POP(Population)                                                  12                      12                      12                      
-PPV(Precision or positive predictive value)                      1.0                     0.33333                 0.5                     
-PRE(Prevalence)                                                  0.41667                 0.16667                 0.41667                 
-RACC(Random accuracy)                                            0.10417                 0.04167                 0.20833                 
-RACCU(Random accuracy unbiased)                                  0.11111                 0.0434                  0.21007                 
-TN(True negative/correct rejection)                              7                       8                       4                       
-TNR(Specificity or true negative rate)                           1.0                     0.8                     0.57143                 
-TON(Test outcome negative)                                       9                       9                       6                       
-TOP(Test outcome positive)                                       3                       3                       6                       
-TP(True positive/hit)                                            3                       1                       3                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6                     0.5                     0.6                     
-Y(Youden index)                                                  0.6                     0.3                     0.17143                 
-dInd(Distance index)                                             0.4                     0.53852                 0.58624                 
-sInd(Similarity index)                                           0.71716                 0.61921                 0.58547                 
+Classes                                                           L1                      L2                      L3                      
+ACC(Accuracy)                                                     0.83333                 0.75                    0.58333                 
+AM(Difference between automatic and manual classification)        -2                      1                       1                       
+AUC(Area under the roc curve)                                     0.8                     0.65                    0.58571                 
+AUCI(AUC value interpretation)                                    Very Good               Fair                    Poor                    
+BCD(Bray-Curtis dissimilarity)                                    0.08333                 0.04167                 0.04167                 
+BM(Informedness or bookmaker informedness)                        0.6                     0.3                     0.17143                 
+CEN(Confusion entropy)                                            0.25                    0.49658                 0.60442                 
+DOR(Diagnostic odds ratio)                                        None                    4.0                     2.0                     
+DP(Discriminant power)                                            None                    0.33193                 0.16597                 
+DPI(Discriminant power interpretation)                            None                    Poor                    Poor                    
+ERR(Error rate)                                                   0.16667                 0.25                    0.41667                 
+F0.5(F0.5 score)                                                  0.88235                 0.35714                 0.51724                 
+F1(F1 score - harmonic mean of precision and sensitivity)         0.75                    0.4                     0.54545                 
+F2(F2 score)                                                      0.65217                 0.45455                 0.57692                 
+FDR(False discovery rate)                                         0.0                     0.66667                 0.5                     
+FN(False negative/miss/type 2 error)                              2                       1                       2                       
+FNR(Miss rate or false negative rate)                             0.4                     0.5                     0.4                     
+FOR(False omission rate)                                          0.22222                 0.11111                 0.33333                 
+FP(False positive/type 1 error/false alarm)                       0                       2                       3                       
+FPR(Fall-out or false positive rate)                              0.0                     0.2                     0.42857                 
+G(G-measure geometric mean of precision and sensitivity)          0.7746                  0.40825                 0.54772                 
+GI(Gini index)                                                    0.6                     0.3                     0.17143                 
+IS(Information score)                                             1.26303                 1.0                     0.26303                 
+J(Jaccard index)                                                  0.6                     0.25                    0.375                   
+LS(Lift score)                                                    2.4                     2.0                     1.2                     
+MCC(Matthews correlation coefficient)                             0.68313                 0.2582                  0.16903                 
+MCEN(Modified confusion entropy)                                  0.26439                 0.5                     0.6875                  
+MK(Markedness)                                                    0.77778                 0.22222                 0.16667                 
+N(Condition negative)                                             7                       10                      7                       
+NLR(Negative likelihood ratio)                                    0.4                     0.625                   0.7                     
+NPV(Negative predictive value)                                    0.77778                 0.88889                 0.66667                 
+P(Condition positive or support)                                  5                       2                       5                       
+PLR(Positive likelihood ratio)                                    None                    2.5                     1.4                     
+PLRI(Positive likelihood ratio interpretation)                    None                    Poor                    Poor                    
+POP(Population)                                                   12                      12                      12                      
+PPV(Precision or positive predictive value)                       1.0                     0.33333                 0.5                     
+PRE(Prevalence)                                                   0.41667                 0.16667                 0.41667                 
+RACC(Random accuracy)                                             0.10417                 0.04167                 0.20833                 
+RACCU(Random accuracy unbiased)                                   0.11111                 0.0434                  0.21007                 
+TN(True negative/correct rejection)                               7                       8                       4                       
+TNR(Specificity or true negative rate)                            1.0                     0.8                     0.57143                 
+TON(Test outcome negative)                                        9                       9                       6                       
+TOP(Test outcome positive)                                        3                       3                       6                       
+TP(True positive/hit)                                             3                       1                       3                       
+TPR(Sensitivity, recall, hit rate, or true positive rate)         0.6                     0.5                     0.6                     
+Y(Youden index)                                                   0.6                     0.3                     0.17143                 
+dInd(Distance index)                                              0.4                     0.53852                 0.58624                 
+sInd(Similarity index)                                            0.71716                 0.61921                 0.58547                 
 
 </pre>
 </div>
@@ -20664,7 +21008,7 @@ sInd(Similarity index)                                           0.71716        
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[132]:</div>
+<div class="prompt input_prompt">In&nbsp;[137]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">])</span>
@@ -20686,14 +21030,14 @@ sInd(Similarity index)                                           0.71716        
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Overall Statistics : 
 
-Kappa                                                            0.35484
+Kappa                                                             0.35484
 
 Class Statistics :
 
-Classes                                                          L1                      L2                      L3                      
-ACC(Accuracy)                                                    0.83333                 0.75                    0.58333                 
-AUC(Area under the roc curve)                                    0.8                     0.65                    0.58571                 
-TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6                     0.5                     0.6                     
+Classes                                                           L1                      L2                      L3                      
+ACC(Accuracy)                                                     0.83333                 0.75                    0.58333                 
+AUC(Area under the roc curve)                                     0.8                     0.65                    0.58571                 
+TPR(Sensitivity, recall, hit rate, or true positive rate)         0.6                     0.5                     0.6                     
 
 </pre>
 </div>
@@ -20705,7 +21049,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[133]:</div>
+<div class="prompt input_prompt">In&nbsp;[138]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">],</span><span class="n">class_name</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;L1&quot;</span><span class="p">,</span><span class="s2">&quot;L3&quot;</span><span class="p">])</span>
@@ -20727,14 +21071,14 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Overall Statistics : 
 
-Kappa                                                            0.35484
+Kappa                                                             0.35484
 
 Class Statistics :
 
-Classes                                                          L1                      L3                      
-ACC(Accuracy)                                                    0.83333                 0.58333                 
-AUC(Area under the roc curve)                                    0.8                     0.58571                 
-TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6                     0.6                     
+Classes                                                           L1                      L3                      
+ACC(Accuracy)                                                     0.83333                 0.58333                 
+AUC(Area under the roc curve)                                     0.8                     0.58571                 
+TPR(Sensitivity, recall, hit rate, or true positive rate)         0.6                     0.6                     
 
 </pre>
 </div>
@@ -20803,6 +21147,21 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[139]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="k">if</span> <span class="s2">&quot;Document_Files&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">():</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -20813,10 +21172,10 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[134]:</div>
+<div class="prompt input_prompt">In&nbsp;[140]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="s2">&quot;cm1&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1&quot;</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -20829,13 +21188,13 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[134]:</div>
+<div class="prompt output_prompt">Out[140]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\cm1.pycm&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\Document_Files\\cm1.pycm&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -20845,12 +21204,21 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Document_Files\cm1.pycm">Open File</a></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[135]:</div>
+<div class="prompt input_prompt">In&nbsp;[141]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="s2">&quot;cm1_filtered&quot;</span><span class="p">,</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_filtered&quot;</span><span class="p">),</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -20863,13 +21231,13 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[135]:</div>
+<div class="prompt output_prompt">Out[141]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\cm1_filtered.pycm&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\Document_Files\\cm1_filtered.pycm&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -20879,12 +21247,21 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Document_Files\cm1_filtered.pycm">Open File</a></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[136]:</div>
+<div class="prompt input_prompt">In&nbsp;[142]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="s2">&quot;cm1_filtered2&quot;</span><span class="p">,</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">],</span><span class="n">class_name</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;L1&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_filtered2&quot;</span><span class="p">),</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">],</span><span class="n">class_name</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;L1&quot;</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -20897,13 +21274,13 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[136]:</div>
+<div class="prompt output_prompt">Out[142]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\cm1_filtered2.pycm&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\Document_Files\\cm1_filtered2.pycm&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -20913,9 +21290,18 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Document_Files\cm1_filtered2.pycm">Open File</a></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[137]:</div>
+<div class="prompt input_prompt">In&nbsp;[143]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -20931,7 +21317,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[137]:</div>
+<div class="prompt output_prompt">Out[143]:</div>
 
 
 
@@ -21010,10 +21396,10 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[138]:</div>
+<div class="prompt input_prompt">In&nbsp;[144]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="s2">&quot;cm1&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1&quot;</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -21026,13 +21412,13 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[138]:</div>
+<div class="prompt output_prompt">Out[144]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\cm1.html&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\Document_Files\\cm1.html&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -21042,12 +21428,21 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Document_Files\cm1.html">Open File</a></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[139]:</div>
+<div class="prompt input_prompt">In&nbsp;[145]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="s2">&quot;cm1_filtered&quot;</span><span class="p">,</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_filtered&quot;</span><span class="p">),</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -21060,13 +21455,13 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[139]:</div>
+<div class="prompt output_prompt">Out[145]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\cm1_filtered.html&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\Document_Files\\cm1_filtered.html&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -21076,12 +21471,21 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Document_Files\cm1_filtered.html">Open File</a></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[140]:</div>
+<div class="prompt input_prompt">In&nbsp;[146]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="s2">&quot;cm1_filtered2&quot;</span><span class="p">,</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">],</span><span class="n">class_name</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;L1&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_filtered2&quot;</span><span class="p">),</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">],</span><span class="n">class_name</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;L1&quot;</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -21094,13 +21498,13 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[140]:</div>
+<div class="prompt output_prompt">Out[146]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\cm1_filtered2.html&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\Document_Files\\cm1_filtered2.html&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -21110,12 +21514,21 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Document_Files\cm1_filtered2.html">Open File</a></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[141]:</div>
+<div class="prompt input_prompt">In&nbsp;[147]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="s2">&quot;cm1_colored&quot;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_colored&quot;</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -21128,13 +21541,13 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[141]:</div>
+<div class="prompt output_prompt">Out[147]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\cm1_colored.html&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\Document_Files\\cm1_colored.html&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -21144,9 +21557,18 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Document_Files\cm1_colored.html">Open File</a></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[142]:</div>
+<div class="prompt input_prompt">In&nbsp;[148]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -21162,7 +21584,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[142]:</div>
+<div class="prompt output_prompt">Out[148]:</div>
 
 
 
@@ -21252,10 +21674,10 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[143]:</div>
+<div class="prompt input_prompt">In&nbsp;[149]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s2">&quot;cm1&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1&quot;</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -21268,13 +21690,13 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[143]:</div>
+<div class="prompt output_prompt">Out[149]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\cm1.csv&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\Document_Files\\cm1.csv&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -21284,12 +21706,23 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Document_Files\cm1.csv">Open Stat File</a>
+<br/>
+<a href="Document_Files\cm1_matrix.csv">Open Matrix File</a></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[144]:</div>
+<div class="prompt input_prompt">In&nbsp;[150]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s2">&quot;cm1_filtered&quot;</span><span class="p">,</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_filtered&quot;</span><span class="p">),</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">])</span>
 </pre></div>
 
 </div>
@@ -21302,13 +21735,13 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[144]:</div>
+<div class="prompt output_prompt">Out[150]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\cm1_filtered.csv&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\Document_Files\\cm1_filtered.csv&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -21318,12 +21751,23 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Document_Files\cm1_filtered.csv">Open Stat File</a>
+<br/>
+<a href="Document_Files\cm1_filtered.csv">Open Matrix File</a></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[145]:</div>
+<div class="prompt input_prompt">In&nbsp;[151]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s2">&quot;cm1_filtered2&quot;</span><span class="p">,</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">],</span><span class="n">class_name</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;L1&quot;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_filtered2&quot;</span><span class="p">),</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">],</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -21336,13 +21780,13 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[145]:</div>
+<div class="prompt output_prompt">Out[151]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\cm1_filtered2.csv&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\Document_Files\\cm1_filtered2.csv&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -21352,9 +21796,65 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Document_Files\cm1_filtered2.csv">Open Stat File</a>
+<br/>
+<a href="Document_Files\cm1_filtered2.csv">Open Matrix File</a></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[146]:</div>
+<div class="prompt input_prompt">In&nbsp;[152]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_filtered3&quot;</span><span class="p">),</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">],</span><span class="n">class_name</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;L1&quot;</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[152]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\Document_Files\\cm1_filtered3.csv&#39;,
+ &#39;Status&#39;: True}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Document_Files\cm1_filtered3.csv">Open Stat File</a>
+<br/>
+<a href="Document_Files\cm1_filtered3.csv">Open Matrix File</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[153]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -21370,7 +21870,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[146]:</div>
+<div class="prompt output_prompt">Out[153]:</div>
 
 
 
@@ -21403,6 +21903,8 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 <li><code>address</code> : flag for address return (type : <code>bool</code>)</li>
 <li><code>class_param</code> : class statistics names for save (type : <code>list</code>)</li>
 <li><code>class_name</code> : class names for print (sub set of classes) (type : <code>list</code>)</li>
+<li><code>matrix_save</code> : flag for saving matrix in seperate CSV file (type : <code>bool</code>)</li>
+<li><code>normalize</code> : flag for saving normalized matrix instead of matrix (type : <code>bool</code>)</li>
 </ol>
 
 </div>
@@ -21442,16 +21944,26 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  `matrix_save` and `normalize`, new in <span style="color:red;">version 1.9 </span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="OBJ">OBJ<a class="anchor-link" href="#OBJ">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[147]:</div>
+<div class="prompt input_prompt">In&nbsp;[154]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_obj</span><span class="p">(</span><span class="s2">&quot;cm1&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_obj</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1&quot;</span><span class="p">))</span>
 </pre></div>
 
 </div>
@@ -21464,13 +21976,13 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[147]:</div>
+<div class="prompt output_prompt">Out[154]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\cm1.obj&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\Document_Files\\cm1.obj&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -21480,9 +21992,18 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Document_Files\cm1.obj">Open File</a></p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[148]:</div>
+<div class="prompt input_prompt">In&nbsp;[155]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_obj</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -21498,7 +22019,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[148]:</div>
+<div class="prompt output_prompt">Out[155]:</div>
 
 
 
@@ -21554,7 +22075,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[149]:</div>
+<div class="prompt input_prompt">In&nbsp;[156]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -21588,7 +22109,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[150]:</div>
+<div class="prompt input_prompt">In&nbsp;[157]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -21622,7 +22143,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[151]:</div>
+<div class="prompt input_prompt">In&nbsp;[158]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -21656,7 +22177,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[152]:</div>
+<div class="prompt input_prompt">In&nbsp;[159]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -21690,7 +22211,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[153]:</div>
+<div class="prompt input_prompt">In&nbsp;[160]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -21724,7 +22245,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[154]:</div>
+<div class="prompt input_prompt">In&nbsp;[161]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -21758,7 +22279,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)        0.6            
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[155]:</div>
+<div class="prompt input_prompt">In&nbsp;[162]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -21862,7 +22383,8 @@ performance. Machine Learning, 6:67–80, 1991.</blockquote><blockquote>19- Delg
 correlation coefficient. Computational Biology and Chemistry 28: 367–374 </blockquote><blockquote>21- Freitas C.O.A., de Carvalho J.M., Oliveira J., Aires S.B.K., Sabourin R. (2007) Confusion Matrix Disagreement for Multiple Classifiers. In: Rueda L., Mery D., Kittler J. (eds) Progress in Pattern Recognition, Image Analysis and Applications. CIARP 2007. Lecture Notes in Computer Science, vol 4756. Springer, Berlin, Heidelberg</blockquote><blockquote>22- Branco P., Torgo L., Ribeiro R.P. (2017) Relevance-Based Evaluation Metrics for Multi-class Imbalanced Domains. In: Kim J., Shim K., Cao L., Lee JG., Lin X., Moon YS. (eds) Advances in Knowledge Discovery and Data Mining. PAKDD 2017. Lecture Notes in Computer Science, vol 10234. Springer, Cham</blockquote><blockquote>23- Ballabio, D., Grisoni, F. and Todeschini, R. (2018). Multivariate comparison of classification performance measures. Chemometrics and Intelligent Laboratory Systems, 174, pp.33-44.</blockquote><blockquote>24- Cohen, Jacob. 1960. A coefficient of agreement for nominal scales. Educational And Psychological Measurement 20:37-46</blockquote><blockquote>25- Siegel, Sidney and N. John Castellan, Jr. 1988. Nonparametric Statistics for the Behavioral Sciences. McGraw Hill.</blockquote><blockquote>26- Cramér, Harald. 1946. Mathematical Methods of Statistics. Princeton: Princeton University Press, page 282 (Chapter 21. The two-dimensional case)</blockquote><blockquote>27- Matthews, B. W. (1975). "Comparison of the predicted and observed secondary structure of T4 phage lysozyme". Biochimica et Biophysica Acta (BBA) - Protein Structure. 405 (2): 442–451.</blockquote><blockquote>28- Swets JA. (1973). "The relative operating characteristic in Psychology". Science. 182 (14116): 990–1000.</blockquote><blockquote>29- Jaccard, Paul (1901), "Étude comparative de la distribution florale dans une portion des Alpes et des Jura", Bulletin de la Société Vaudoise des Sciences Naturelles, 37: 547–579.</blockquote><blockquote>30- Thomas M. Cover and Joy A. Thomas. 2006. Elements of Information Theory (Wiley Series in Telecommunications and Signal Processing). Wiley-Interscience, New York, NY, USA.</blockquote><blockquote>31- Keeping, E.S. (1962) Introduction to Statistical Inference. D. Van Nostrand, Princeton, NJ.</blockquote><blockquote>32- Sindhwani V, Bhattacharge P, Rakshit S (2001) Information theoretic feature
 crediting in multiclass Support Vector Machines. In: Grossman R, Kumar V,
 editors, Proceedings First SIAM International Conference on Data Mining,
-ICDM01. SIAM, pp. 1–18. </blockquote><blockquote>33- Bekkar, Mohamed & Djema, Hassiba & Alitouche, T.A.. (2013). Evaluation measures for models assessment over imbalanced data sets. Journal of Information Engineering and Applications. 3. 27-38. </blockquote><blockquote>34- Youden W, (1950),« Index for rating diagnostic tests »; Cancer, 3 :32–35 </blockquote><blockquote>35- S. Brin, R. Motwani, J. D. Ullman, and S. Tsur. Dynamic itemset counting and implication rules for market basket data. In Proc. of the ACM SIGMOD Int'l Conf. on Management of Data (ACM SIGMOD '97), pages 265-276, 1997.</blockquote><blockquote>36- Raschka, Sebastian (2018) MLxtend: Providing machine learning and data science utilities and extensions to Python's scientific computing stack. J Open Source Softw 3(24).</blockquote>
+ICDM01. SIAM, pp. 1–18. </blockquote><blockquote>33- Bekkar, Mohamed & Djema, Hassiba & Alitouche, T.A.. (2013). Evaluation measures for models assessment over imbalanced data sets. Journal of Information Engineering and Applications. 3. 27-38. </blockquote><blockquote>34- Youden W, (1950),« Index for rating diagnostic tests »; Cancer, 3 :32–35 </blockquote><blockquote>35- S. Brin, R. Motwani, J. D. Ullman, and S. Tsur. Dynamic itemset counting and implication rules for market basket data. In Proc. of the ACM SIGMOD Int'l Conf. on Management of Data (ACM SIGMOD '97), pages 265-276, 1997.</blockquote><blockquote>36- Raschka, Sebastian (2018) MLxtend: Providing machine learning and data science utilities and extensions to Python's scientific computing stack. J Open Source Softw 3(24).</blockquote><blockquote>37- Bray, J. R. and J. T. Curtis. 1957. An ordination of upland forest communities of southern Wisconsin. Ecological Monographs 27:325-349.</blockquote><blockquote>38- Fleiss, J.L. et al. (1969). Large sample standard errors of kappa and weighted kappa. Psychology Bulletin 72, 323-327.</blockquote><blockquote>39- Mary Felkin. Comparing classification results between n-ary and binary problems. In
+Quality Measures in Data Mining, chapter 12, pages 277–301. Springer, 2007.</blockquote>
 </div>
 </div>
 </div>

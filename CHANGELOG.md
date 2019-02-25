@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `ConfusionMatrix.__init__` optimized
 - Document and examples output files moved to different folders
 - Test system modified 
+- `relabel` method bug fixed
 
 ## [1.8] - 2019-01-05
 ### Added

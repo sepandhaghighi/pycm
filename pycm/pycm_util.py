@@ -2,6 +2,7 @@
 from __future__ import division
 import sys
 import numpy
+from .pycm_param import *
 
 
 def isfloat(value):
@@ -197,3 +198,56 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     [classes, table, TP_dict, TN_dict, FP_dict,
         FN_dict] = matrix_params_from_table(table)
     return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
+
+
+def imbalance_check(P):
+    """
+    This function check if the dataset is imbalanced
+    :param P: condition positive
+    :type P : dict
+    :return: is_imbalanced as bool
+    """
+    p_list = list(P.values())
+    max_value = max(p_list)
+    min_value = min(p_list)
+    if min_value > 0:
+        balance_ratio = max_value / min_value
+    else:
+        balance_ratio = max_value
+    is_imbalanced = False
+    if balance_ratio > BALANCE_RATIO_THRESHOLD:
+        is_imbalanced = True
+    return is_imbalanced
+
+
+def binary_check(classes):
+    """
+    This function check if the problem is a binary classification
+    :param classes:  all classes name
+    :type classes : list
+    :return: is_binary as bool
+    """
+    num_classes = len(classes)
+    is_binary = False
+    if num_classes == 2:
+        is_binary = True
+    return is_binary
+
+
+def statistic_recommend(classes, P):
+    """
+    This function recommend parameters which is more suitable due to the input dataset characteristics
+    :param classes:  all classes name
+    :type classes : list
+    :param P: condition positive
+    :type P : dict
+    :return: recommendation_list as list
+    """
+    recommendation_list = []
+    if imbalance_check(P):
+        recommendation_list.extend(IMBALANCED_RECOMMEND)
+    elif binary_check(classes):
+        recommendation_list.extend(BINARY_RECOMMEND)
+    else:
+        recommendation_list.extend(MULTICLASS_RECOMMEND)
+    return list(set(recommendation_list))

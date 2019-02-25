@@ -1,0 +1,11 @@
+[run]
+branch = True
+omit =
+    */pycm/__main__.py
+    */pycm/__init__.py
+	*/pycm/pycm_profile.py
+	*/pycm/pycm_test.py
+[report]
+# Regexes for lines to exclude from consideration
+exclude_lines =
+    pragma: no cover

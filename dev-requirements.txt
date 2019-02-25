@@ -4,4 +4,6 @@ codecov==2.0.15
 pytest==4.3.0
 pytest-cov==2.6.1
 setuptools==40.8.0
+vulture==1.0
+bandit==1.5.1
 

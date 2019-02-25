@@ -4,6 +4,7 @@
 
 ----------
 
+
 ## Document	
 
 - [Jupyter Notebook](https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Document.ipynb)
@@ -47,6 +48,13 @@
 - [Jupyter Notebook](https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Example7.ipynb)
 - [HTML](http://www.pycm.ir/doc/Example7.html)
 
+
+## Try PyCM in your browser interactively!
+PyCM can be used online in interactive Jupyter Notebooks via the Binder service! Try it out now! :
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sepandhaghighi/pycm/master)
+
+* Check `Examples` in `Document` folder 
 
 
 

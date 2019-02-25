@@ -3,7 +3,8 @@
 from .pycm_func import *
 from .pycm_output import *
 from .pycm_util import *
-from .pycm_param import MATRIX_CLASS_TYPE_ERROR, MATRIX_FORMAT_ERROR, MAPPING_FORMAT_ERROR, MAPPING_CLASS_NAME_ERROR, VECTOR_TYPE_ERROR, VECTOR_SIZE_ERROR, VECTOR_EMPTY_ERROR, CLASS_NUMBER_ERROR
+from .pycm_param import MATRIX_CLASS_TYPE_ERROR, MATRIX_FORMAT_ERROR, MAPPING_FORMAT_ERROR, MAPPING_CLASS_NAME_ERROR
+from .pycm_param import VECTOR_TYPE_ERROR, VECTOR_SIZE_ERROR, VECTOR_EMPTY_ERROR, CLASS_NUMBER_ERROR, VERSION
 import os
 import json
 import types
@@ -46,7 +47,6 @@ class ConfusionMatrix():
         :param predict_vector: Predicted Vector
         :type predict_vector: python list or numpy array of any stringable objects
         :param matrix: direct matrix
-        :type matrix: dictionary
         :type matrix: dict
         :param digit: precision digit (default value : 5)
         :type digit : int
@@ -68,58 +68,12 @@ class ConfusionMatrix():
         else:
             self.transpose = False
         if isfile(file):
-            obj_data = json.load(file)
-            if obj_data["Actual-Vector"] is not None and obj_data[
-                    "Predict-Vector"] is not None:
-                try:
-                    loaded_weights = obj_data["Sample-Weight"]
-                except Exception:
-                    loaded_weights = None
-                matrix_param = matrix_params_calc(obj_data[
-                    "Actual-Vector"],
-                    obj_data[
-                    "Predict-Vector"], loaded_weights)
-                self.actual_vector = obj_data["Actual-Vector"]
-                self.predict_vector = obj_data["Predict-Vector"]
-                self.weights = loaded_weights
-            else:
-                try:
-                    loaded_transpose = obj_data["Transpose"]
-                except Exception:
-                    loaded_transpose = False
-                self.transpose = loaded_transpose
-                loaded_matrix = dict(obj_data["Matrix"])
-                for i in loaded_matrix.keys():
-                    loaded_matrix[i] = dict(loaded_matrix[i])
-                matrix_param = matrix_params_from_table(loaded_matrix)
-            self.digit = obj_data["Digit"]
+            matrix_param = __obj_file_handler__(self, file)
         elif isinstance(matrix, dict):
-            if matrix_check(matrix):
-                if class_check(list(matrix.keys())) is False:
-                    raise pycmMatrixError(MATRIX_CLASS_TYPE_ERROR)
-                else:
-                    matrix_param = matrix_params_from_table(matrix, transpose)
-            else:
-                raise pycmMatrixError(MATRIX_FORMAT_ERROR)
+            matrix_param = __obj_matrix_handler__(matrix, transpose)
         else:
-            if isinstance(threshold, types.FunctionType):
-                predict_vector = list(map(threshold, predict_vector))
-                self.predict_vector = predict_vector
-            if not isinstance(actual_vector, (list, numpy.ndarray)) or not\
-                    isinstance(predict_vector, (list, numpy.ndarray)):
-                raise pycmVectorError(VECTOR_TYPE_ERROR)
-            if len(actual_vector) != len(predict_vector):
-                raise pycmVectorError(VECTOR_SIZE_ERROR)
-            if len(actual_vector) == 0 or len(predict_vector) == 0:
-                raise pycmVectorError(VECTOR_EMPTY_ERROR)
-            [actual_vector, predict_vector] = vector_filter(
-                actual_vector, predict_vector)
-            matrix_param = matrix_params_calc(
-                actual_vector, predict_vector, sample_weight)
-            if isinstance(sample_weight, list):
-                self.weights = sample_weight
-            if isinstance(sample_weight, numpy.ndarray):
-                self.weights = sample_weight.tolist()
+            matrix_param = __obj_vector_handler__(
+                self, actual_vector, predict_vector, threshold, sample_weight)
         if len(matrix_param[0]) < 2:
             raise pycmVectorError(CLASS_NUMBER_ERROR)
         self.classes = matrix_param[0]
@@ -158,6 +112,9 @@ class ConfusionMatrix():
             AUC_dict=statistic_result["AUC"])
         __class_stat_init__(self)
         __overall_stat_init__(self)
+        self.imbalance = imbalance_check(self.P)
+        self.binary = binary_check(self.classes)
+        self.recommended_list = statistic_recommend(self.classes, self.P)
 
     def print_matrix(self, one_vs_all=False, class_name=None):
         '''
@@ -298,14 +255,24 @@ class ConfusionMatrix():
         try:
             message = None
             html_file = open(name + ".html", "w")
-            html_maker(
-                html_file,
-                name,
-                self.classes,
-                self.table,
-                self.overall_stat,
-                self.class_stat,
-                self.digit, overall_param, class_param, class_name, color)
+            html_file.write(html_init(name))
+            html_file.write(html_dataset_type(self.binary, self.imbalance))
+            html_file.write(html_table(self.classes, self.table, color))
+            html_file.write(
+                html_overall_stat(
+                    self.overall_stat,
+                    self.digit,
+                    overall_param,
+                    self.recommended_list))
+            class_stat_classes = class_filter(self.classes, class_name)
+            html_file.write(
+                html_class_stat(
+                    class_stat_classes,
+                    self.class_stat,
+                    self.digit,
+                    class_param,
+                    self.recommended_list))
+            html_file.write(html_end(VERSION))
             html_file.close()
             if address:
                 message = os.path.join(os.getcwd(), name + ".html")
@@ -313,7 +280,14 @@ class ConfusionMatrix():
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
-    def save_csv(self, name, address=True, class_param=None, class_name=None):
+    def save_csv(
+            self,
+            name,
+            address=True,
+            class_param=None,
+            class_name=None,
+            matrix_save=True,
+            normalize=False):
         '''
         This method save ConfusionMatrix in CSV file
         :param name: filename
@@ -324,6 +298,10 @@ class ConfusionMatrix():
         :type class_param : list
         :param class_name : class name (sub set of classes), Example :[1,2,3]
         :type class_name : list
+        :param matrix_save : save matrix flag
+        :type matrix_save : bool
+        :param normalize : save normalize matrix flag
+        :type normalize : bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         '''
         try:
@@ -336,6 +314,13 @@ class ConfusionMatrix():
                 self.digit,
                 class_param)
             csv_file.write(csv_data)
+            if matrix_save:
+                matrix = self.table
+                if normalize:
+                    matrix = self.normalized_table
+                csv_matrix_file = open(name + "_matrix" + ".csv", "w")
+                csv_matrix_data = csv_matrix_print(self.classes, matrix)
+                csv_matrix_file.write(csv_matrix_data)
             if address:
                 message = os.path.join(os.getcwd(), name + ".csv")
             return {"Status": True, "Message": message}
@@ -423,7 +408,9 @@ class ConfusionMatrix():
                 temp_dict[mapping[col]] = self.table[row][col]
                 temp_dict_normalized[mapping[col]
                                      ] = self.normalized_table[row][col]
+            del self.table[row]
             self.table[mapping[row]] = temp_dict
+            del self.normalized_table[row]
             self.normalized_table[mapping[row]] = temp_dict_normalized
         self.matrix = self.table
         self.normalized_matrix = self.normalized_table
@@ -441,108 +428,210 @@ class ConfusionMatrix():
         __class_stat_init__(self)
 
 
-def __class_stat_init__(CM):
+def __class_stat_init__(cm):
     '''
     This function init individual class stat
-    :param CM: ConfusionMatrix
-    :type CM : pycm.ConfusionMatrix object
+    :param cm : ConfusionMatrix
+    :type cm : pycm.ConfusionMatrix object
     :return: None
     '''
-    CM.TPR = CM.class_stat["TPR"]
-    CM.TNR = CM.class_stat["TNR"]
-    CM.PPV = CM.class_stat["PPV"]
-    CM.NPV = CM.class_stat["NPV"]
-    CM.FNR = CM.class_stat["FNR"]
-    CM.FPR = CM.class_stat["FPR"]
-    CM.FDR = CM.class_stat["FDR"]
-    CM.FOR = CM.class_stat["FOR"]
-    CM.ACC = CM.class_stat["ACC"]
-    CM.F1 = CM.class_stat["F1"]
-    CM.MCC = CM.class_stat["MCC"]
-    CM.BM = CM.class_stat["BM"]
-    CM.MK = CM.class_stat["MK"]
-    CM.DOR = CM.class_stat["DOR"]
-    CM.PLR = CM.class_stat["PLR"]
-    CM.NLR = CM.class_stat["NLR"]
-    CM.POP = CM.class_stat["POP"]
-    CM.P = CM.class_stat["P"]
-    CM.N = CM.class_stat["N"]
-    CM.TOP = CM.class_stat["TOP"]
-    CM.TON = CM.class_stat["TON"]
-    CM.PRE = CM.class_stat["PRE"]
-    CM.G = CM.class_stat["G"]
-    CM.RACC = CM.class_stat["RACC"]
-    CM.RACCU = CM.class_stat["RACCU"]
-    CM.F2 = CM.class_stat["F2"]
-    CM.F05 = CM.class_stat["F0.5"]
-    CM.ERR = CM.class_stat["ERR"]
-    CM.J = CM.class_stat["J"]
-    CM.IS = CM.class_stat["IS"]
-    CM.CEN = CM.class_stat["CEN"]
-    CM.MCEN = CM.class_stat["MCEN"]
-    CM.AUC = CM.class_stat["AUC"]
-    CM.dInd = CM.class_stat["dInd"]
-    CM.sInd = CM.class_stat["sInd"]
-    CM.DP = CM.class_stat["DP"]
-    CM.Y = CM.class_stat["Y"]
-    CM.PLRI = CM.class_stat["PLRI"]
-    CM.DPI = CM.class_stat["DPI"]
-    CM.AUCI = CM.class_stat["AUCI"]
-    CM.GI = CM.class_stat["GI"]
-    CM.LS = CM.class_stat["LS"]
+    cm.TPR = cm.class_stat["TPR"]
+    cm.TNR = cm.class_stat["TNR"]
+    cm.PPV = cm.class_stat["PPV"]
+    cm.NPV = cm.class_stat["NPV"]
+    cm.FNR = cm.class_stat["FNR"]
+    cm.FPR = cm.class_stat["FPR"]
+    cm.FDR = cm.class_stat["FDR"]
+    cm.FOR = cm.class_stat["FOR"]
+    cm.ACC = cm.class_stat["ACC"]
+    cm.F1 = cm.class_stat["F1"]
+    cm.MCC = cm.class_stat["MCC"]
+    cm.BM = cm.class_stat["BM"]
+    cm.MK = cm.class_stat["MK"]
+    cm.DOR = cm.class_stat["DOR"]
+    cm.PLR = cm.class_stat["PLR"]
+    cm.NLR = cm.class_stat["NLR"]
+    cm.POP = cm.class_stat["POP"]
+    cm.P = cm.class_stat["P"]
+    cm.N = cm.class_stat["N"]
+    cm.TOP = cm.class_stat["TOP"]
+    cm.TON = cm.class_stat["TON"]
+    cm.PRE = cm.class_stat["PRE"]
+    cm.G = cm.class_stat["G"]
+    cm.RACC = cm.class_stat["RACC"]
+    cm.RACCU = cm.class_stat["RACCU"]
+    cm.F2 = cm.class_stat["F2"]
+    cm.F05 = cm.class_stat["F0.5"]
+    cm.ERR = cm.class_stat["ERR"]
+    cm.J = cm.class_stat["J"]
+    cm.IS = cm.class_stat["IS"]
+    cm.CEN = cm.class_stat["CEN"]
+    cm.MCEN = cm.class_stat["MCEN"]
+    cm.AUC = cm.class_stat["AUC"]
+    cm.dInd = cm.class_stat["dInd"]
+    cm.sInd = cm.class_stat["sInd"]
+    cm.DP = cm.class_stat["DP"]
+    cm.Y = cm.class_stat["Y"]
+    cm.PLRI = cm.class_stat["PLRI"]
+    cm.DPI = cm.class_stat["DPI"]
+    cm.AUCI = cm.class_stat["AUCI"]
+    cm.GI = cm.class_stat["GI"]
+    cm.LS = cm.class_stat["LS"]
+    cm.AM = cm.class_stat["AM"]
+    cm.BCD = cm.class_stat["BCD"]
 
 
-def __overall_stat_init__(CM):
+def __overall_stat_init__(cm):
     '''
     This function init individual overall stat
-    :param CM: ConfusionMatrix
-    :type CM : pycm.ConfusionMatrix object
+    :param cm: ConfusionMatrix
+    :type cm : pycm.ConfusionMatrix object
     :return: None
     '''
-    CM.Overall_J = CM.overall_stat["Overall J"]
-    CM.SOA1 = CM.overall_stat["SOA1(Landis & Koch)"]
-    CM.SOA2 = CM.overall_stat["SOA2(Fleiss)"]
-    CM.SOA3 = CM.overall_stat["SOA3(Altman)"]
-    CM.SOA4 = CM.overall_stat["SOA4(Cicchetti)"]
-    CM.Kappa = CM.overall_stat["Kappa"]
-    CM.Overall_ACC = CM.overall_stat["Overall ACC"]
-    CM.TPR_Macro = CM.overall_stat["TPR Macro"]
-    CM.PPV_Macro = CM.overall_stat["PPV Macro"]
-    CM.TPR_Micro = CM.overall_stat["TPR Micro"]
-    CM.PPV_Micro = CM.overall_stat["PPV Micro"]
-    CM.Overall_RACC = CM.overall_stat["Overall RACC"]
-    CM.Overall_RACCU = CM.overall_stat["Overall RACCU"]
-    CM.PI = CM.overall_stat["Scott PI"]
-    CM.AC1 = CM.overall_stat["Gwet AC1"]
-    CM.S = CM.overall_stat["Bennett S"]
-    CM.Kappa_SE = CM.overall_stat["Kappa Standard Error"]
-    CM.Kappa_CI = CM.overall_stat["Kappa 95% CI"]
-    CM.Chi_Squared = CM.overall_stat["Chi-Squared"]
-    CM.Phi_Squared = CM.overall_stat["Phi-Squared"]
-    CM.KappaUnbiased = CM.overall_stat["Kappa Unbiased"]
-    CM.KappaNoPrevalence = CM.overall_stat["Kappa No Prevalence"]
-    CM.V = CM.overall_stat["Cramer V"]
-    CM.DF = CM.overall_stat["Chi-Squared DF"]
-    CM.CI = CM.overall_stat["95% CI"]
-    CM.SE = CM.overall_stat["Standard Error"]
-    CM.ReferenceEntropy = CM.overall_stat["Reference Entropy"]
-    CM.ResponseEntropy = CM.overall_stat["Response Entropy"]
-    CM.CrossEntropy = CM.overall_stat["Cross Entropy"]
-    CM.JointEntropy = CM.overall_stat["Joint Entropy"]
-    CM.ConditionalEntropy = CM.overall_stat["Conditional Entropy"]
-    CM.MutualInformation = CM.overall_stat["Mutual Information"]
-    CM.KL = CM.overall_stat["KL Divergence"]
-    CM.LambdaB = CM.overall_stat["Lambda B"]
-    CM.LambdaA = CM.overall_stat["Lambda A"]
-    CM.HammingLoss = CM.overall_stat["Hamming Loss"]
-    CM.ZeroOneLoss = CM.overall_stat["Zero-one Loss"]
-    CM.NIR = CM.overall_stat["NIR"]
-    CM.PValue = CM.overall_stat["P-Value"]
-    CM.Overall_CEN = CM.overall_stat["Overall CEN"]
-    CM.Overall_MCEN = CM.overall_stat["Overall MCEN"]
-    CM.Overall_MCC = CM.overall_stat["Overall MCC"]
-    CM.RR = CM.overall_stat["RR"]
-    CM.CBA = CM.overall_stat["CBA"]
-    CM.AUNU = CM.overall_stat["AUNU"]
-    CM.AUNP = CM.overall_stat["AUNP"]
-    CM.RCI = CM.overall_stat["RCI"]
+    cm.Overall_J = cm.overall_stat["Overall J"]
+    cm.SOA1 = cm.overall_stat["SOA1(Landis & Koch)"]
+    cm.SOA2 = cm.overall_stat["SOA2(Fleiss)"]
+    cm.SOA3 = cm.overall_stat["SOA3(Altman)"]
+    cm.SOA4 = cm.overall_stat["SOA4(Cicchetti)"]
+    cm.Kappa = cm.overall_stat["Kappa"]
+    cm.Overall_ACC = cm.overall_stat["Overall ACC"]
+    cm.TPR_Macro = cm.overall_stat["TPR Macro"]
+    cm.PPV_Macro = cm.overall_stat["PPV Macro"]
+    cm.TPR_Micro = cm.overall_stat["TPR Micro"]
+    cm.PPV_Micro = cm.overall_stat["PPV Micro"]
+    cm.Overall_RACC = cm.overall_stat["Overall RACC"]
+    cm.Overall_RACCU = cm.overall_stat["Overall RACCU"]
+    cm.PI = cm.overall_stat["Scott PI"]
+    cm.AC1 = cm.overall_stat["Gwet AC1"]
+    cm.S = cm.overall_stat["Bennett S"]
+    cm.Kappa_SE = cm.overall_stat["Kappa Standard Error"]
+    cm.Kappa_CI = cm.overall_stat["Kappa 95% CI"]
+    cm.Chi_Squared = cm.overall_stat["Chi-Squared"]
+    cm.Phi_Squared = cm.overall_stat["Phi-Squared"]
+    cm.KappaUnbiased = cm.overall_stat["Kappa Unbiased"]
+    cm.KappaNoPrevalence = cm.overall_stat["Kappa No Prevalence"]
+    cm.V = cm.overall_stat["Cramer V"]
+    cm.DF = cm.overall_stat["Chi-Squared DF"]
+    cm.CI = cm.overall_stat["95% CI"]
+    cm.SE = cm.overall_stat["Standard Error"]
+    cm.ReferenceEntropy = cm.overall_stat["Reference Entropy"]
+    cm.ResponseEntropy = cm.overall_stat["Response Entropy"]
+    cm.CrossEntropy = cm.overall_stat["Cross Entropy"]
+    cm.JointEntropy = cm.overall_stat["Joint Entropy"]
+    cm.ConditionalEntropy = cm.overall_stat["Conditional Entropy"]
+    cm.MutualInformation = cm.overall_stat["Mutual Information"]
+    cm.KL = cm.overall_stat["KL Divergence"]
+    cm.LambdaB = cm.overall_stat["Lambda B"]
+    cm.LambdaA = cm.overall_stat["Lambda A"]
+    cm.HammingLoss = cm.overall_stat["Hamming Loss"]
+    cm.ZeroOneLoss = cm.overall_stat["Zero-one Loss"]
+    cm.NIR = cm.overall_stat["NIR"]
+    cm.PValue = cm.overall_stat["P-Value"]
+    cm.Overall_CEN = cm.overall_stat["Overall CEN"]
+    cm.Overall_MCEN = cm.overall_stat["Overall MCEN"]
+    cm.Overall_MCC = cm.overall_stat["Overall MCC"]
+    cm.RR = cm.overall_stat["RR"]
+    cm.CBA = cm.overall_stat["CBA"]
+    cm.AUNU = cm.overall_stat["AUNU"]
+    cm.AUNP = cm.overall_stat["AUNP"]
+    cm.RCI = cm.overall_stat["RCI"]
+
+
+def __obj_file_handler__(cm, file):
+    '''
+    This function handle object conditions for file
+    :param cm: ConfusionMatrix
+    :type cm : pycm.ConfusionMatrix object
+    :param file : saved confusion matrix file object
+    :type file : (io.IOBase & file)
+    :return: matrix parameters as list
+    '''
+    obj_data = json.load(file)
+    if obj_data["Actual-Vector"] is not None and obj_data[
+            "Predict-Vector"] is not None:
+        try:
+            loaded_weights = obj_data["Sample-Weight"]
+        except Exception:
+            loaded_weights = None
+        matrix_param = matrix_params_calc(obj_data[
+            "Actual-Vector"],
+            obj_data[
+            "Predict-Vector"], loaded_weights)
+        cm.actual_vector = obj_data["Actual-Vector"]
+        cm.predict_vector = obj_data["Predict-Vector"]
+        cm.weights = loaded_weights
+    else:
+        try:
+            loaded_transpose = obj_data["Transpose"]
+        except Exception:
+            loaded_transpose = False
+        cm.transpose = loaded_transpose
+        loaded_matrix = dict(obj_data["Matrix"])
+        for i in loaded_matrix.keys():
+            loaded_matrix[i] = dict(loaded_matrix[i])
+        matrix_param = matrix_params_from_table(loaded_matrix)
+    cm.digit = obj_data["Digit"]
+
+    return matrix_param
+
+
+def __obj_matrix_handler__(matrix, transpose):
+    '''
+    This function handle object conditions for matrix
+    :param matrix: direct matrix
+    :type matrix: dict
+    :param transpose : transpose flag
+    :type transpose : bool
+    :return: matrix parameters as list
+    '''
+    if matrix_check(matrix):
+        if class_check(list(matrix.keys())) is False:
+            raise pycmMatrixError(MATRIX_CLASS_TYPE_ERROR)
+        else:
+            matrix_param = matrix_params_from_table(matrix, transpose)
+    else:
+        raise pycmMatrixError(MATRIX_FORMAT_ERROR)
+
+    return matrix_param
+
+
+def __obj_vector_handler__(
+        cm,
+        actual_vector,
+        predict_vector,
+        threshold,
+        sample_weight):
+    '''
+    This function handle object conditions for vectors
+    :param cm: ConfusionMatrix
+    :type cm : pycm.ConfusionMatrix object
+    :param actual_vector: Actual Vector
+    :type actual_vector: python list or numpy array of any stringable objects
+    :param predict_vector: Predicted Vector
+    :type predict_vector: python list or numpy array of any stringable objects
+    :param threshold : activation threshold function
+    :type threshold : FunctionType (function or lambda)
+    :param sample_weight : sample weights list
+    :type sample_weight : list
+    :return: matrix parameters as list
+    '''
+    if isinstance(threshold, types.FunctionType):
+        predict_vector = list(map(threshold, predict_vector))
+        cm.predict_vector = predict_vector
+    if not isinstance(actual_vector, (list, numpy.ndarray)) or not \
+            isinstance(predict_vector, (list, numpy.ndarray)):
+        raise pycmVectorError(VECTOR_TYPE_ERROR)
+    if len(actual_vector) != len(predict_vector):
+        raise pycmVectorError(VECTOR_SIZE_ERROR)
+    if len(actual_vector) == 0 or len(predict_vector) == 0:
+        raise pycmVectorError(VECTOR_EMPTY_ERROR)
+    [actual_vector, predict_vector] = vector_filter(
+        actual_vector, predict_vector)
+    matrix_param = matrix_params_calc(
+        actual_vector, predict_vector, sample_weight)
+    if isinstance(sample_weight, list):
+        cm.weights = sample_weight
+    if isinstance(sample_weight, numpy.ndarray):
+        cm.weights = sample_weight.tolist()
+
+    return matrix_param

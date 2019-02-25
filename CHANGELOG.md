@@ -5,13 +5,34 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [1.9] - 2019-02-25
+### Added
+- Automatic/Manual (AM)
+- Bray-Curtis dissimilarity (BCD)
+- `CODE_OF_CONDUCT.md`
+- `ISSUE_TEMPLATE.md`
+- `PULL_REQUEST_TEMPLATE.md`
+- `CONTRIBUTING.md`
+- X11 color names support for `save_html` method
+- Parameters recommendation system
+- Warning message for high dimension matrix print
+- Interactive notebooks section (binder)
+
+### Changed
+- `save_matrix` and `normalize` arguments added to `save_csv` method
+- `README.md` modified 
+- Document modified
+- `ConfusionMatrix.__init__` optimized
+- Document and examples output files moved to different folders
+- Test system modified 
+
 ## [1.8] - 2019-01-05
 ### Added
 - Lift Score (LS)
-- `color` argument added to `save_html` method
 - `version_check.py`
 
 ### Changed
+- `color` argument added to `save_html` method
 - Error messages modified
 - Document modified
 - Website changed to [http://www.pycm.ir](http://www.pycm.ir)
@@ -313,7 +334,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.8...HEAD
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.9...dev
+[1.9]: https://github.com/sepandhaghighi/pycm/compare/v1.8...v1.9
 [1.8]: https://github.com/sepandhaghighi/pycm/compare/v1.7...v1.8
 [1.7]: https://github.com/sepandhaghighi/pycm/compare/v1.6...v1.7
 [1.6]: https://github.com/sepandhaghighi/pycm/compare/v1.5...v1.6

@@ -24,6 +24,29 @@ def html_init(name):
     return result
 
 
+def html_dataset_type(is_binary, is_imbalanced):
+    '''
+    This function return report file dataset type
+    :param is_binary: is_binary flag (binary : True , mutli-class : False)
+    :type is_binary: bool
+    :param is_imbalanced: is_imbalanced flag (imbalance : True , balance : False)
+    :type is_imbalanced: bool
+    :return: dataset_type as str
+    '''
+    result = "<h2>Dataset Type : </h2>\n"
+    balance_type = "Balanced"
+    class_type = "Binary Classification"
+    if is_imbalanced:
+        balance_type = "Imbalanced"
+    if not is_binary:
+        class_type = "Multi-Class Classification"
+    result += "<ul>\n\n<li>{0}</li>\n\n<li>{1}</li>\n</ul>\n".format(
+        class_type, balance_type)
+    result += "<p>{0}</p>\n".format(RECOMMEND_HTML_MESSAGE)
+
+    return result
+
+
 def color_check(color):
     '''
     This function check input color fotmat
@@ -35,6 +58,10 @@ def color_check(color):
         if all(map(lambda x: isinstance(x, int), color)):
             if all(map(lambda x: x < 256, color)):
                 return list(color)
+    if isinstance(color, str):
+        color_lower = color.lower()
+        if color_lower in TABLE_COLOR.keys():
+            return TABLE_COLOR[color_lower]
     return [0, 0, 0]
 
 
@@ -54,7 +81,7 @@ def html_table_color(row, item, color=(0, 0, 0)):
     max_color = max(color_list)
     back_color_index = 255 - int((item / (sum(list(row.values())) + 1)) * 255)
     for i in range(3):
-        result[i] = back_color_index - (max_color - color[i])
+        result[i] = back_color_index - (max_color - color_list[i])
         if result[i] < 0:
             result[i] = 0
     return result
@@ -109,7 +136,11 @@ def html_table(classes, table, rgb_color):
     return result
 
 
-def html_overall_stat(overall_stat, digit=5, overall_param=None):
+def html_overall_stat(
+        overall_stat,
+        digit=5,
+        overall_param=None,
+        recommended_list=()):
     '''
     This function return report file overall stat
     :param overall_stat: overall stat
@@ -118,6 +149,8 @@ def html_overall_stat(overall_stat, digit=5, overall_param=None):
     :type digit : int
     :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott PI]
     :type overall_param : list
+    :param recommended_list: recommended statistics list
+    :type recommended_list : list or tuple
     :return: html_overall_stat as str
     '''
     result = ""
@@ -129,12 +162,14 @@ def html_overall_stat(overall_stat, digit=5, overall_param=None):
             overall_stat_keys = sorted(overall_param)
     if len(overall_stat_keys) < 1:
         return ""
-    background_color = None
     for i in overall_stat_keys:
+        background_color = DEFAULT_BACKGROUND_COLOR
+        if i in recommended_list:
+            background_color = RECOMMEND_BACKGROUND_COLOR
         result += '<tr align="center">\n'
-        result += '<td style="border:1px solid black;padding:4px;text-align:left;"><a href="' + \
-            DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
-        if i.find("SOA") != -1:
+        result += '<td style="border:1px solid black;padding:4px;text-align:left;background-color:{};"><a href="'.format(
+            background_color) + DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
+        if i in BENCHMARK_LIST:
             background_color = BENCHMARK_COLOR[overall_stat[i]]
             result += '<td style="border:1px solid black;padding:4px;background-color:{};">'.format(
                 background_color)
@@ -146,7 +181,12 @@ def html_overall_stat(overall_stat, digit=5, overall_param=None):
     return result
 
 
-def html_class_stat(classes, class_stat, digit=5, class_param=None):
+def html_class_stat(
+        classes,
+        class_stat,
+        digit=5,
+        class_param=None,
+        recommended_list=()):
     '''
     This function return report file class_stat
     :param classes: matrix classes
@@ -157,6 +197,8 @@ def html_class_stat(classes, class_stat, digit=5, class_param=None):
     :type digit : int
     :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
     :type class_param : list
+    :param recommended_list: recommended statistics list
+    :type recommended_list : list or tuple
     :return: html_class_stat as str
     '''
     result = ""
@@ -176,19 +218,25 @@ def html_class_stat(classes, class_stat, digit=5, class_param=None):
     if len(classes) < 1 or len(class_stat_keys) < 1:
         return ""
     for i in class_stat_keys:
+        background_color = DEFAULT_BACKGROUND_COLOR
+        if i in recommended_list:
+            background_color = RECOMMEND_BACKGROUND_COLOR
         result += '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n'
-        result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;"><a href="' + \
-                  DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
+        result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};"><a href="'.format(
+            background_color) + DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         for j in classes:
-            if i in ["PLRI", "DPI", "AUCI"]:
+            if i in BENCHMARK_LIST:
                 background_color = BENCHMARK_COLOR[class_stat[i][j]]
                 result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};">'.format(
                     background_color)
             else:
                 result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">'
             result += rounder(class_stat[i][j], digit) + '</td>\n'
+        params_text = PARAMS_DESCRIPTION[i]
+        if i not in CAPITALIZE_FILTER:
+            params_text = params_text.capitalize()
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;text-align:left;">' + \
-                  PARAMS_DESCRIPTION[i].capitalize() + '</td>\n'
+                  params_text + '</td>\n'
         result += "</tr>\n"
     result += "</table>\n"
     return result
@@ -207,60 +255,6 @@ def html_end(version):
               'style="text-decoration:none;color:red;">PyCM</a> Version ' + version + '</p>\n'
     result += "</html>"
     return result
-
-
-def html_maker(
-    html_file,
-    name,
-    classes,
-    table,
-    overall_stat,
-    class_stat,
-    digit=5,
-    overall_param=None,
-    class_param=None,
-    class_name=None,
-    color=(
-        0,
-        0,
-        0)):
-    '''
-    This function create html report
-    :param html_file : file object of html
-    :type html_file: file object
-    :param name: file name
-    :type name : str
-    :param classes: matrix classes
-    :type classes: list
-    :param table: matrix
-    :type table: dict
-    :param overall_stat: overall stat
-    :type overall_stat: dict
-    :param class_stat: class stat
-    :type class_stat: dict
-    :param digit: scale (the number of digits to the right of the decimal point in a number.)
-    :type digit : int
-    :param overall_param : overall parameters list for print, Example : ["Kappa","Scott PI]
-    :type overall_param : list
-    :param class_param : class parameters list for print, Example : ["TPR","TNR","AUC"]
-    :type class_param : list
-    :param class_name : class name (sub set of classes), Example :[1,2,3]
-    :type class_name : list
-    :param color : input color
-    :type color : tuple
-    :return: None
-    '''
-    html_file.write(html_init(name))
-    html_file.write(html_table(classes, table, color))
-    html_file.write(html_overall_stat(overall_stat, digit, overall_param))
-    class_stat_classes = class_filter(classes, class_name)
-    html_file.write(
-        html_class_stat(
-            class_stat_classes,
-            class_stat,
-            digit,
-            class_param))
-    html_file.write(html_end(VERSION))
 
 
 def pycm_help():
@@ -297,7 +291,27 @@ def table_print(classes, table):
         row = [table[key][i] for i in classes]
         result += str(key) + " " * (17 - len(str(key))) + \
             shift * classes_len % tuple(map(str, row)) + "\n\n"
+    if classes_len >= CLASS_NUMBER_THRESHOLD:
+        result += "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"
     return result
+
+
+def csv_matrix_print(classes, table):
+    '''
+    This function return matrix as csv data
+    :param classes: classes list
+    :type classes:list
+    :param table: table
+    :type table:dict
+    :return:
+    '''
+    result = ""
+    classes.sort()
+    for i in classes:
+        for j in classes:
+            result += str(table[i][j]) + ","
+        result = result[:-1] + "\n"
+    return result[:-1]
 
 
 def csv_print(classes, class_stat, digit=5, class_param=None):
@@ -378,9 +392,14 @@ def stat_print(
         rounder_map = partial(rounder, digit=digit)
         for key in class_stat_keys:
             row = [class_stat[key][i] for i in classes]
-            result += key + "(" + PARAMS_DESCRIPTION[key].capitalize() + ")" + " " * (
+            params_text = PARAMS_DESCRIPTION[key]
+            if key not in CAPITALIZE_FILTER:
+                params_text = params_text.capitalize()
+            result += key + "(" + params_text + ")" + " " * (
                 shift - len(key) - len(PARAMS_DESCRIPTION[key]) + 5) + "%-24s" * classes_len % tuple(
                 map(rounder_map, row)) + "\n"
+    if classes_len >= CLASS_NUMBER_THRESHOLD:
+        result += "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"
     return result
 
 

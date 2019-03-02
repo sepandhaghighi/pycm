@@ -21,6 +21,10 @@ Repo : https://github.com/sepandhaghighi/pycm
 Webpage : http://www.pycm.ir
 <BLANKLINE>
 <BLANKLINE>
+>>> rounder((1,2,"None"), digit=5)
+'(1,2,None)'
+>>> one_vs_all_func([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, 3) == [[1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}]
+True
 >>> BCD_calc(2, 2, "None")
 'None'
 >>> AM_calc(3, "None")

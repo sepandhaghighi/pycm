@@ -21,7 +21,55 @@ Repo : https://github.com/sepandhaghighi/pycm
 Webpage : http://www.pycm.ir
 <BLANKLINE>
 <BLANKLINE>
+>>> BCD_calc(2, 2, "None")
+'None'
+>>> AM_calc(3, "None")
+'None'
 >>> RCI_calc(24,0)
+'None'
+>>> CEN_calc([1,2,3], {1:{1:0,2:0},2:{1:0,2:0}}, {1:2,2:3}, {1:2,2:3}, 2, modified=False)
+'None'
+>>> convex_combination([1,2,3], {1:{1:0,2:0},2:{1:0,2:0}}, {1:2,2:3}, {1:2,2:3}, 2, modified=False)
+'None'
+>>> overall_CEN_calc([1,2], {1:2,2:3},{1:2,2:3}, {1:2,2:3}, {1:2,2:"None"}, modified=False)
+'None'
+>>> NIR_calc({1:0,2:0}, 0)
+'None'
+>>> hamming_calc({1:0,2:0}, 0)
+'None'
+>>> zero_one_loss_calc({1:0,2:0}, "None")
+'None'
+>>> entropy_calc({1:0,2:0}, {1:0,2:0})
+'None'
+>>> kappa_no_prevalence_calc("None")
+'None'
+>>> cross_entropy_calc({1:0,2:0}, {1:0,2:0}, {1:0,2:0})
+'None'
+>>> joint_entropy_calc([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0})
+'None'
+>>> conditional_entropy_calc([1,2],{1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0})
+'None'
+>>> mutual_information_calc(2, "None")
+'None'
+>>> lambda_B_calc([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0})
+'None'
+>>> lambda_A_calc([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0})
+'None'
+>>> DF_calc(2)
+'None'
+>>> kappa_se_calc(2, 1, 2)
+'None'
+>>> CI_calc(23, "None", CV=1.96)
+('None', 'None')
+>>> PC_S_calc([])
+'None'
+>>> jaccard_index_calc(0, 0, 0)
+'None'
+>>> overall_jaccard_index_calc([])
+'None'
+>>> overall_accuracy_calc({1:0,2:0}, 0)
+'None'
+>>> overall_random_accuracy_calc({1:0,2:None})
 'None'
 >>> CBA_calc([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0})
 'None'

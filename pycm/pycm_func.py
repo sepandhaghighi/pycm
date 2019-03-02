@@ -1230,7 +1230,7 @@ def overall_accuracy_calc(TP, POP):
         overall_accuracy = sum(TP.values()) / POP
         return overall_accuracy
     except Exception:
-        return None
+        return "None"
 
 
 def overall_random_accuracy_calc(item):

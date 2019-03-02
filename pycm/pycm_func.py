@@ -6,7 +6,7 @@ from functools import reduce
 from .pycm_interpret import *
 
 
-def OP_calc(ACC,TPR,TNR):
+def OP_calc(ACC, TPR, TNR):
     '''
     This calculate OP (Optimized precision)
     :param ACC: accuracy
@@ -18,10 +18,11 @@ def OP_calc(ACC,TPR,TNR):
     :return: OP as float
     '''
     try:
-        RI = abs(TNR-TPR)/(TPR+TNR)
+        RI = abs(TNR - TPR) / (TPR + TNR)
         return ACC - RI
     except Exception:
         return "None"
+
 
 def BCD_calc(TOP, P, AM):
     '''
@@ -1503,7 +1504,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         GI[i] = GI_calc(AUC[i])
         LS[i] = lift_calc(PPV[i], PRE[i])
         AM[i] = AM_calc(TOP[i], P[i])
-        OP[i] = OP_calc(ACC[i],TPR[i],TNR[i])
+        OP[i] = OP_calc(ACC[i], TPR[i], TNR[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {
@@ -1555,5 +1556,5 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "LS": LS,
         "AM": AM,
         "BCD": BCD,
-        "OP":OP}
+        "OP": OP}
     return result

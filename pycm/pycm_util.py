@@ -26,7 +26,7 @@ def rounder(input_number, digit=5):
     :type input_number : anything
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
-    :return: round number as float
+    :return: round number as str
     '''
     if isinstance(input_number, tuple):
         tuple_list = list(input_number)

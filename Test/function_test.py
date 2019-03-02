@@ -472,4 +472,6 @@ Example : online_help("J") or online_help(2)
 0.35714285714285715
 >>> cm.Overall_ACC
 0.6666666666666666
+>>> cm.OP[1]
+0.7295047856845609
 '''

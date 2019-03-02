@@ -6,6 +6,23 @@ from functools import reduce
 from .pycm_interpret import *
 
 
+def OP_calc(ACC,TPR,TNR):
+    '''
+    This calculate OP (Optimized precision)
+    :param ACC: accuracy
+    :type ACC : float
+    :param TNR: specificity or true negative rate
+    :type TNR : float
+    :param TPR: sensitivity, recall, hit rate, or true positive rate
+    :type TPR : float
+    :return: OP as float
+    '''
+    try:
+        RI = abs(TNR-TPR)/(TPR+TNR)
+        return ACC - RI
+    except Exception:
+        return "None"
+
 def BCD_calc(TOP, P, AM):
     '''
     This function calculate BCD (Bray–Curtis dissimilarity)

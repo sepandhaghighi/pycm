@@ -125,7 +125,6 @@ def kappa_analysis_fleiss(kappa):
             return "Intermediate to Good"
         if kappa >= 0.75:
             return "Excellent"
-        return "None"
     except Exception:  # pragma: no cover
         return "None"
 

@@ -243,11 +243,9 @@ def statistic_recommend(classes, P):
     :type P : dict
     :return: recommendation_list as list
     """
-    recommendation_list = []
     if imbalance_check(P):
-        recommendation_list.extend(IMBALANCED_RECOMMEND)
+        return IMBALANCED_RECOMMEND
     elif binary_check(classes):
-        recommendation_list.extend(BINARY_RECOMMEND)
+        return BINARY_RECOMMEND
     else:
-        recommendation_list.extend(MULTICLASS_RECOMMEND)
-    return list(set(recommendation_list))
+        return MULTICLASS_RECOMMEND

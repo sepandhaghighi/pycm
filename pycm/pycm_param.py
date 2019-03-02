@@ -134,7 +134,8 @@ PARAMS_DESCRIPTION = {
     "GI": "Gini index",
     "LS": "Lift score",
     "AM": "Difference between automatic and manual classification",
-    "BCD": "Bray-Curtis dissimilarity"}
+    "BCD": "Bray-Curtis dissimilarity",
+    "OP": "Optimized precision"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -231,7 +232,8 @@ PARAMS_LINK = {
     "GI": "GI-(Gini-index)",
     "LS": "LS-(Lift-score)",
     "AM": "AM-(Automatic/Manual)",
-    "BCD": "BCD-(Bray-Curtis-dissimilarity)"}
+    "BCD": "BCD-(Bray-Curtis-dissimilarity)",
+    "OP": ""}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI"]
 

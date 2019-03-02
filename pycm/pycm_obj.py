@@ -479,6 +479,7 @@ def __class_stat_init__(cm):
     cm.LS = cm.class_stat["LS"]
     cm.AM = cm.class_stat["AM"]
     cm.BCD = cm.class_stat["BCD"]
+    cm.OP = cm.class_stat["OP"]
 
 
 def __overall_stat_init__(cm):

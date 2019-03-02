@@ -1458,6 +1458,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     LS = {}
     AM = {}
     BCD = {}
+    OP = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1502,6 +1503,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         GI[i] = GI_calc(AUC[i])
         LS[i] = lift_calc(PPV[i], PRE[i])
         AM[i] = AM_calc(TOP[i], P[i])
+        OP[i] = OP_calc(ACC[i],TPR[i],TNR[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {
@@ -1552,5 +1554,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "GI": GI,
         "LS": LS,
         "AM": AM,
-        "BCD": BCD}
+        "BCD": BCD,
+        "OP":OP}
     return result

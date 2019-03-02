@@ -323,47 +323,48 @@ Example : online_help("J") or online_help(2)
 52-NIR
 53-NLR
 54-NPV
-55-Overall ACC
-56-Overall CEN
-57-Overall J
-58-Overall MCC
-59-Overall MCEN
-60-Overall RACC
-61-Overall RACCU
-62-P
-63-P-Value
-64-PLR
-65-PLRI
-66-POP
-67-PPV
-68-PPV Macro
-69-PPV Micro
-70-PRE
-71-Phi-Squared
-72-RACC
-73-RACCU
-74-RCI
-75-RR
-76-Reference Entropy
-77-Response Entropy
-78-SOA1(Landis & Koch)
-79-SOA2(Fleiss)
-80-SOA3(Altman)
-81-SOA4(Cicchetti)
-82-Scott PI
-83-Standard Error
-84-TN
-85-TNR
-86-TON
-87-TOP
-88-TP
-89-TPR
-90-TPR Macro
-91-TPR Micro
-92-Y
-93-Zero-one Loss
-94-dInd
-95-sInd
+55-OP
+56-Overall ACC
+57-Overall CEN
+58-Overall J
+59-Overall MCC
+60-Overall MCEN
+61-Overall RACC
+62-Overall RACCU
+63-P
+64-P-Value
+65-PLR
+66-PLRI
+67-POP
+68-PPV
+69-PPV Macro
+70-PPV Micro
+71-PRE
+72-Phi-Squared
+73-RACC
+74-RACCU
+75-RCI
+76-RR
+77-Reference Entropy
+78-Response Entropy
+79-SOA1(Landis & Koch)
+80-SOA2(Fleiss)
+81-SOA3(Altman)
+82-SOA4(Cicchetti)
+83-Scott PI
+84-Standard Error
+85-TN
+86-TNR
+87-TON
+88-TOP
+89-TP
+90-TPR
+91-TPR Macro
+92-TPR Micro
+93-Y
+94-Zero-one Loss
+95-dInd
+96-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)

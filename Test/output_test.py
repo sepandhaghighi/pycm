@@ -170,6 +170,7 @@ MK(Markedness)                                                   0.0            
 N(Condition negative)                                            20                      4                       17                      19
 NLR(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
+OP(Optimized precision)                                           None                    0.11667                 0.37308                -0.05
 P(Condition positive or support)                                 0                       16                      3                       1
 PLR(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
 PLRI(Positive likelihood ratio interpretation)                   None                    Poor                    Fair                    None
@@ -302,6 +303,7 @@ MK(Markedness)                                                   0.6            
 N(Condition negative)                                            15                      18                      9
 NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.64286
 NPV(Negative predictive value)                                   1.0                     0.88889                 0.53846
+OP(Optimized precision)                                          0.65568                 0.35498                 0.40166
 P(Condition positive or support)                                 6                       3                       12
 PLR(Positive likelihood ratio)                                   3.75                    3.0                     2.25
 PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Poor

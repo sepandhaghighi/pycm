@@ -1,5 +1,5 @@
 art==3.0
-numpy==1.16.1
+numpy==1.16.2
 codecov==2.0.15
 pytest==4.3.0
 pytest-cov==2.6.1

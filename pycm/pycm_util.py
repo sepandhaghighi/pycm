@@ -245,7 +245,6 @@ def statistic_recommend(classes, P):
     """
     if imbalance_check(P):
         return IMBALANCED_RECOMMEND
-    elif binary_check(classes):
+    if binary_check(classes):
         return BINARY_RECOMMEND
-    else:
-        return MULTICLASS_RECOMMEND
+    return MULTICLASS_RECOMMEND

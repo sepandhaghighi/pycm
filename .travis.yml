@@ -19,7 +19,7 @@ matrix:
     allow_failures:
         - os: osx
           language: generic
-          env: TOXENV=py27 
+          env: TOXENV=py27
 install:
   - pip install -r requirements.txt
   - python setup.py install

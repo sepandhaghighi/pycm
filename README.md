@@ -608,6 +608,12 @@ Quality Measures in Data Mining, chapter 12, pages 277–301. Springer, 2007.</b
 <blockquote>40- Ranawana, R & V Palade (2006). Optimized Precision-A new measure for classifier performance
 evaluation. In: Evolutionary Computation, 2006. CEC 2006. IEEE Congress on. IEEE, pp.2254–2261.</blockquote>	
 
+<blockquote>41- Garcia, V., Mollineda, R. A., and Sanchez, J. S. (2009). Index of balanced
+accuracy: A performance measure for skewed class distributions. In Pattern Recognition and Image Analysis, pages 441–448. Springer.</blockquote> 
+
+<blockquote>42- P. Branco, L. Torgo, and R. P. Ribeiro, “A Survey of Predictive Modeling on Imbalanced
+Domains,” ACM Comput. Surv., vol. 49, no. 2, pp. 31:1—-31:50, Aug 2016.</blockquote> 
+
 ## Cite
 
 If you use PyCM in your research , please cite this JOSS paper :

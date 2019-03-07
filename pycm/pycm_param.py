@@ -236,7 +236,7 @@ PARAMS_LINK = {
     "BCD": "BCD-(Bray-Curtis-dissimilarity)",
     "OP": "OP-(Optimized-precision)",
     "IBA": "IBA-(Index-of-balanced-accuracy)",
-    "GM": ""}
+    "GM": "GM-(G-mean)"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI"]
 

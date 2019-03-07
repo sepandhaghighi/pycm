@@ -366,7 +366,7 @@ class ConfusionMatrix():
         This method calculate FBeta score
         :param beta: beta parameter
         :type beta : float
-        :return: FBeta Score for classes as dict
+        :return: FBeta score for classes as dict
         '''
         try:
             F_dict = {}
@@ -377,6 +377,21 @@ class ConfusionMatrix():
                     FN=self.FN[i],
                     beta=beta)
             return F_dict
+        except Exception:
+            return {}
+
+    def IBA_alpha(self, alpha):
+        '''
+        This method calculate IBA_alpha score
+        :param alpha: alpha parameter
+        :type alpha: float
+        :return: IBA_alpha score for classes as dict
+        '''
+        try:
+            IBA_dict = {}
+            for i in self.classes:
+                IBA_dict[i] = IBA_calc(self.TPR[i],self.TNR[i],alpha=alpha)
+            return IBA_dict
         except Exception:
             return {}
 

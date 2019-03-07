@@ -355,68 +355,69 @@ Example : online_help("J") or online_help(2)
 32-GI
 33-Gwet AC1
 34-Hamming Loss
-35-IS
-36-J
-37-Joint Entropy
-38-KL Divergence
-39-Kappa
-40-Kappa 95% CI
-41-Kappa No Prevalence
-42-Kappa Standard Error
-43-Kappa Unbiased
-44-LS
-45-Lambda A
-46-Lambda B
-47-MCC
-48-MCEN
-49-MK
-50-Mutual Information
-51-N
-52-NIR
-53-NLR
-54-NPV
-55-OP
-56-Overall ACC
-57-Overall CEN
-58-Overall J
-59-Overall MCC
-60-Overall MCEN
-61-Overall RACC
-62-Overall RACCU
-63-P
-64-P-Value
-65-PLR
-66-PLRI
-67-POP
-68-PPV
-69-PPV Macro
-70-PPV Micro
-71-PRE
-72-Phi-Squared
-73-RACC
-74-RACCU
-75-RCI
-76-RR
-77-Reference Entropy
-78-Response Entropy
-79-SOA1(Landis & Koch)
-80-SOA2(Fleiss)
-81-SOA3(Altman)
-82-SOA4(Cicchetti)
-83-Scott PI
-84-Standard Error
-85-TN
-86-TNR
-87-TON
-88-TOP
-89-TP
-90-TPR
-91-TPR Macro
-92-TPR Micro
-93-Y
-94-Zero-one Loss
-95-dInd
-96-sInd
+35-IBA
+36-IS
+37-J
+38-Joint Entropy
+39-KL Divergence
+40-Kappa
+41-Kappa 95% CI
+42-Kappa No Prevalence
+43-Kappa Standard Error
+44-Kappa Unbiased
+45-LS
+46-Lambda A
+47-Lambda B
+48-MCC
+49-MCEN
+50-MK
+51-Mutual Information
+52-N
+53-NIR
+54-NLR
+55-NPV
+56-OP
+57-Overall ACC
+58-Overall CEN
+59-Overall J
+60-Overall MCC
+61-Overall MCEN
+62-Overall RACC
+63-Overall RACCU
+64-P
+65-P-Value
+66-PLR
+67-PLRI
+68-POP
+69-PPV
+70-PPV Macro
+71-PPV Micro
+72-PRE
+73-Phi-Squared
+74-RACC
+75-RACCU
+76-RCI
+77-RR
+78-Reference Entropy
+79-Response Entropy
+80-SOA1(Landis & Koch)
+81-SOA2(Fleiss)
+82-SOA3(Altman)
+83-SOA4(Cicchetti)
+84-Scott PI
+85-Standard Error
+86-TN
+87-TNR
+88-TON
+89-TOP
+90-TP
+91-TPR
+92-TPR Macro
+93-TPR Micro
+94-Y
+95-Zero-one Loss
+96-dInd
+97-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -526,4 +527,8 @@ Example : online_help("J") or online_help(2)
 0.6666666666666666
 >>> cm.OP[1]
 0.7295047856845609
+>>> cm = ConfusionMatrix(matrix={1:{1:55,0:45},0:{0:95,1:5}}) # Verified Case
+>>> cm.IBA[1]
+0.31350000000000006
+
 '''

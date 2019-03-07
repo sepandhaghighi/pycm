@@ -161,6 +161,7 @@ FP(False positive/type 1 error/false alarm)                      11             
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
 GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
+IBA(Index of balanced accuracy)                                  None                    0.17578                 0.12303                 0.0
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 LS(Lift score)                                                   None                    1.07143                 3.33333                 None
@@ -294,6 +295,7 @@ FP(False positive/type 1 error/false alarm)                      4              
 FPR(Fall-out or false positive rate)                             0.26667                 0.11111                 0.22222
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.33333                 0.61237
 GI(Gini index)                                                   0.73333                 0.22222                 0.27778
+IBA(Index of balanced accuracy)                                  0.92889                 0.13169                 0.28086
 IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
 LS(Lift score)                                                   2.1                     2.33333                 1.3125

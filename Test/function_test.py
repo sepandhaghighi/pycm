@@ -527,8 +527,22 @@ Example : online_help("J") or online_help(2)
 0.6666666666666666
 >>> cm.OP[1]
 0.7295047856845609
->>> cm = ConfusionMatrix(matrix={1:{1:55,0:45},0:{0:95,1:5}}) # Verified Case
+>>> cm = ConfusionMatrix(matrix={1:{1:495,0:405},0:{0:8645,1:455}}) # Verified Case
+>>> cm.ACC[1]
+0.914
+>>> cm.TNR[1]
+0.95
+>>> cm.TPR[1]
+0.55
+>>> cm.AUC[1]
+0.75
+>>> cm.OP[1]
+0.6473333333333334
 >>> cm.IBA[1]
 0.31350000000000006
+>>> cm.IBA_alpha(0.5)[1]
+0.41800000000000004
+>>> cm.IBA_alpha(0.1)[1]
+0.5016
 
 '''

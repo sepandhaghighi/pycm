@@ -139,9 +139,9 @@ False
 'None'
 >>> macro_calc({1:2,2:3})
 2.5
->>> F_calc(TP=0,FP=0,FN=0,Beta=1)
+>>> F_calc(TP=0,FP=0,FN=0,beta=1)
 'None'
->>> F_calc(TP=3,FP=2,FN=1,Beta=5)
+>>> F_calc(TP=3,FP=2,FN=1,beta=5)
 0.7428571428571429
 >>> ERR_calc(None)
 'None'

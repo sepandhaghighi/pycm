@@ -135,7 +135,8 @@ PARAMS_DESCRIPTION = {
     "AM": "Difference between automatic and manual classification",
     "BCD": "Bray-Curtis dissimilarity",
     "OP": "Optimized precision",
-    "IBA": "Index of balanced accuracy"}
+    "IBA": "Index of balanced accuracy",
+    "GM": "G-mean geometric mean of specificity and sensitivity"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -234,7 +235,8 @@ PARAMS_LINK = {
     "AM": "AM-(Automatic/Manual)",
     "BCD": "BCD-(Bray-Curtis-dissimilarity)",
     "OP": "OP-(Optimized-precision)",
-    "IBA": "IBA-(Index-of-balanced-accuracy)"}
+    "IBA": "IBA-(Index-of-balanced-accuracy)",
+    "GM": ""}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI"]
 

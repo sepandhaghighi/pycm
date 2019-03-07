@@ -998,17 +998,17 @@ def PRE_calc(P, POP):
         return "None"
 
 
-def G_calc(PPV, TPR):
+def G_calc(item1, item2):
     '''
-    This function calculate G-measure
-    :param PPV:  precision or positive predictive value
-    :type PPV : float
-    :param TPR: sensitivity, recall, hit rate, or true positive rate
-    :type TPR : float
-    :return: G-measure as float
+    This function calculate G-measure & G-mean
+    :param item1: PPV or TPR or TNR
+    :type item1 : float
+    :param item2: PPV or TPR or TNR
+    :type item2 : float
+    :return: G-measure or G-mean as float
     '''
     try:
-        result = math.sqrt(PPV * TPR)
+        result = math.sqrt(item1 * item2)
         return result
     except Exception:
         return "None"
@@ -1478,6 +1478,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     BCD = {}
     OP = {}
     IBA = {}
+    GM = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1524,6 +1525,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         AM[i] = AM_calc(TOP[i], P[i])
         OP[i] = OP_calc(ACC[i], TPR[i], TNR[i])
         IBA[i] = IBA_calc(TPR[i],TNR[i])
+        GM[i] = G_calc(TNR[i],TPR[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {
@@ -1576,5 +1578,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "AM": AM,
         "BCD": BCD,
         "OP": OP,
-        "IBA": IBA}
+        "IBA": IBA,
+        "GM": GM}
     return result

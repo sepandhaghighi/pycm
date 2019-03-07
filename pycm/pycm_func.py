@@ -6,6 +6,23 @@ from functools import reduce
 from .pycm_interpret import *
 
 
+def IBA_calc(TPR,TNR,alpha=1):
+    '''
+    This function calculate IBA (Index of balanced accuracy)
+    :param TNR: specificity or true negative rate
+    :type TNR : float
+    :param TPR: sensitivity, recall, hit rate, or true positive rate
+    :type TPR : float
+    :param alpha : alpha coefficient
+    :type alpha : float
+    :return: IBA as float
+    '''
+    try:
+        IBA = (1+alpha*(TPR-TNR))*TPR*TNR
+        return IBA
+    except Exception:
+        return "None"
+
 def OP_calc(ACC, TPR, TNR):
     '''
     This calculate OP (Optimized precision)
@@ -1460,6 +1477,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     AM = {}
     BCD = {}
     OP = {}
+    IBA = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -1505,6 +1523,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         LS[i] = lift_calc(PPV[i], PRE[i])
         AM[i] = AM_calc(TOP[i], P[i])
         OP[i] = OP_calc(ACC[i], TPR[i], TNR[i])
+        IBA[i] = IBA_calc(TPR[i],TNR[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {
@@ -1556,5 +1575,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "LS": LS,
         "AM": AM,
         "BCD": BCD,
-        "OP": OP}
+        "OP": OP,
+        "IBA": IBA}
     return result

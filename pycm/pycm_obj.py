@@ -480,6 +480,7 @@ def __class_stat_init__(cm):
     cm.AM = cm.class_stat["AM"]
     cm.BCD = cm.class_stat["BCD"]
     cm.OP = cm.class_stat["OP"]
+    cm.IBA = cm.class_stat["IBA"]
 
 
 def __overall_stat_init__(cm):

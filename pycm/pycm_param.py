@@ -134,7 +134,8 @@ PARAMS_DESCRIPTION = {
     "LS": "Lift score",
     "AM": "Difference between automatic and manual classification",
     "BCD": "Bray-Curtis dissimilarity",
-    "OP": "Optimized precision"}
+    "OP": "Optimized precision",
+    "IBA": "Index of balanced accuracy"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -232,7 +233,8 @@ PARAMS_LINK = {
     "LS": "LS-(Lift-score)",
     "AM": "AM-(Automatic/Manual)",
     "BCD": "BCD-(Bray-Curtis-dissimilarity)",
-    "OP": "OP-(Optimized-precision)"}
+    "OP": "OP-(Optimized-precision)",
+    "IBA": ""}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI"]
 

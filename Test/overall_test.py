@@ -98,6 +98,7 @@ FP(False positive/type 1 error/false alarm)                      2              
 FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
 GI(Gini index)                                                   0.77778                 0.22222                 0.16667
+GM(G-mean geometric mean of specificity and sensitivity)         0.88192                 0.54433                 0.57735
 IBA(Index of balanced accuracy)                                   0.95062                 0.13169                 0.27778
 IS(Information score)                                            1.26303                 1.0                     0.26303
 J(Jaccard index)                                                 0.6                     0.25                    0.375
@@ -216,6 +217,7 @@ FP(False positive/type 1 error/false alarm)                      2              
 FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
 GI(Gini index)                                                   0.77778                 0.22222                 0.16667
+GM(G-mean geometric mean of specificity and sensitivity)         0.88192                 0.54433                 0.57735
 IBA(Index of balanced accuracy)                                  0.95062                 0.13169                 0.27778
 IS(Information score)                                            1.26303                 1.0                     0.26303
 J(Jaccard index)                                                 0.6                     0.25                    0.375
@@ -349,6 +351,7 @@ FP(False positive/type 1 error/false alarm)                      11             
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
 GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
+GM(G-mean geometric mean of specificity and sensitivity)         None                    0.53033                 0.56011                 0.0
 IBA(Index of balanced accuracy)                                  None                    0.17578                 0.12303                 0.0
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
@@ -454,6 +457,7 @@ FP(False positive/type 1 error/false alarm)                      11             
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
 GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
+GM(G-mean geometric mean of specificity and sensitivity)         None                    0.53033                 0.56011                 0.0
 IBA(Index of balanced accuracy)                                  None                    0.17578                 0.12303                 0.0
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
@@ -669,6 +673,7 @@ FP(False positive/type 1 error/false alarm)                      4              
 FPR(Fall-out or false positive rate)                             0.26667                 0.22222                 0.04762
 G(G-measure geometric mean of precision and sensitivity)         0.72058                 0.55556                 0.7303
 GI(Gini index)                                                   0.48333                 0.33333                 0.61905
+GM(G-mean geometric mean of specificity and sensitivity)          0.74162                 0.65734                 0.79682
 IBA(Index of balanced accuracy)                                  0.55917                 0.33608                 0.45351
 IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
@@ -787,6 +792,7 @@ FP(False positive/type 1 error/false alarm)                      4              
 FPR(Fall-out or false positive rate)                             0.26667                 0.22222                 0.04762
 G(G-measure geometric mean of precision and sensitivity)         0.72058                 0.55556                 0.7303
 GI(Gini index)                                                   0.48333                 0.33333                 0.61905
+GM(G-mean geometric mean of specificity and sensitivity)         0.74162                 0.65734                 0.79682
 IBA(Index of balanced accuracy)                                  0.55917                 0.33608                 0.45351
 IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
@@ -907,6 +913,7 @@ FP(False positive/type 1 error/false alarm)                      4              
 FPR(Fall-out or false positive rate)                             0.26667                 0.11111                 0.22222
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.33333                 0.61237
 GI(Gini index)                                                   0.73333                 0.22222                 0.27778
+GM(G-mean geometric mean of specificity and sensitivity)         0.85635                 0.54433                 0.62361
 IBA(Index of balanced accuracy)                                  0.92889                 0.13169                 0.28086
 IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857

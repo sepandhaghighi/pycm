@@ -353,71 +353,72 @@ Example : online_help("J") or online_help(2)
 30-FPR
 31-G
 32-GI
-33-Gwet AC1
-34-Hamming Loss
-35-IBA
-36-IS
-37-J
-38-Joint Entropy
-39-KL Divergence
-40-Kappa
-41-Kappa 95% CI
-42-Kappa No Prevalence
-43-Kappa Standard Error
-44-Kappa Unbiased
-45-LS
-46-Lambda A
-47-Lambda B
-48-MCC
-49-MCEN
-50-MK
-51-Mutual Information
-52-N
-53-NIR
-54-NLR
-55-NPV
-56-OP
-57-Overall ACC
-58-Overall CEN
-59-Overall J
-60-Overall MCC
-61-Overall MCEN
-62-Overall RACC
-63-Overall RACCU
-64-P
-65-P-Value
-66-PLR
-67-PLRI
-68-POP
-69-PPV
-70-PPV Macro
-71-PPV Micro
-72-PRE
-73-Phi-Squared
-74-RACC
-75-RACCU
-76-RCI
-77-RR
-78-Reference Entropy
-79-Response Entropy
-80-SOA1(Landis & Koch)
-81-SOA2(Fleiss)
-82-SOA3(Altman)
-83-SOA4(Cicchetti)
-84-Scott PI
-85-Standard Error
-86-TN
-87-TNR
-88-TON
-89-TOP
-90-TP
-91-TPR
-92-TPR Macro
-93-TPR Micro
-94-Y
-95-Zero-one Loss
-96-dInd
-97-sInd
+33-GM
+34-Gwet AC1
+35-Hamming Loss
+36-IBA
+37-IS
+38-J
+39-Joint Entropy
+40-KL Divergence
+41-Kappa
+42-Kappa 95% CI
+43-Kappa No Prevalence
+44-Kappa Standard Error
+45-Kappa Unbiased
+46-LS
+47-Lambda A
+48-Lambda B
+49-MCC
+50-MCEN
+51-MK
+52-Mutual Information
+53-N
+54-NIR
+55-NLR
+56-NPV
+57-OP
+58-Overall ACC
+59-Overall CEN
+60-Overall J
+61-Overall MCC
+62-Overall MCEN
+63-Overall RACC
+64-Overall RACCU
+65-P
+66-P-Value
+67-PLR
+68-PLRI
+69-POP
+70-PPV
+71-PPV Macro
+72-PPV Micro
+73-PRE
+74-Phi-Squared
+75-RACC
+76-RACCU
+77-RCI
+78-RR
+79-Reference Entropy
+80-Response Entropy
+81-SOA1(Landis & Koch)
+82-SOA2(Fleiss)
+83-SOA3(Altman)
+84-SOA4(Cicchetti)
+85-Scott PI
+86-Standard Error
+87-TN
+88-TNR
+89-TON
+90-TOP
+91-TP
+92-TPR
+93-TPR Macro
+94-TPR Micro
+95-Y
+96-Zero-one Loss
+97-dInd
+98-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)

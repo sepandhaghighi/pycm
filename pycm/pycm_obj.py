@@ -361,22 +361,22 @@ class ConfusionMatrix():
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
-    def F_beta(self, Beta):
+    def F_beta(self, beta):
         '''
         This method calculate FBeta score
-        :param Beta: beta parameter
-        :type Beta : float
+        :param beta: beta parameter
+        :type beta : float
         :return: FBeta Score for classes as dict
         '''
         try:
-            F_Dict = {}
+            F_dict = {}
             for i in self.TP.keys():
-                F_Dict[i] = F_calc(
+                F_dict[i] = F_calc(
                     TP=self.TP[i],
                     FP=self.FP[i],
                     FN=self.FN[i],
-                    Beta=Beta)
-            return F_Dict
+                    beta=beta)
+            return F_dict
         except Exception:
             return {}
 

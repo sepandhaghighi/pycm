@@ -908,7 +908,7 @@ def ERR_calc(ACC):
         return "None"
 
 
-def F_calc(TP, FP, FN, Beta):
+def F_calc(TP, FP, FN, beta):
     '''
     This function calculate F score
     :param TP: true positive
@@ -917,13 +917,13 @@ def F_calc(TP, FP, FN, Beta):
     :type FP : int
     :param FN: false negative
     :type FN : int
-    :param Beta : beta coefficient
-    :type Beta : float
+    :param beta : beta coefficient
+    :type beta : float
     :return: F score as float
     '''
     try:
-        result = ((1 + (Beta)**2) * TP) / \
-            ((1 + (Beta)**2) * TP + FP + (Beta**2) * FN)
+        result = ((1 + (beta)**2) * TP) / \
+            ((1 + (beta)**2) * TP + FP + (beta**2) * FN)
         return result
     except ZeroDivisionError:
         return "None"

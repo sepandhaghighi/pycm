@@ -589,11 +589,11 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBU
 
 <blockquote>35- S. Brin, R. Motwani, J. D. Ullman, and S. J. A. S. R. Tsur, "Dynamic itemset counting and implication rules for market basket data," vol. 26, no. 2, pp. 255-264, 1997.</blockquote> 
 
-<blockquote>36- Raschka, Sebastian (2018) MLxtend: Providing machine learning and data science utilities and extensions to Python's scientific computing stack. J Open Source Softw 3(24).</blockquote> 
+<blockquote>36- S. J. T. J. o. O. S. S. Raschka, "MLxtend: Providing machine learning and data science utilities and extensions to Python’s scientific computing stack," vol. 3, no. 24, 2018.</blockquote> 
 
-<blockquote>37- Bray, J. R. and J. T. Curtis. 1957. An ordination of upland forest communities of southern Wisconsin. Ecological Monographs 27:325-349.</blockquote>	
+<blockquote>37- J. BRAy and J. CuRTIS, "An ordination of upland forest communities of southern Wisconsin.-ecological Monographs," ed: Ithaca, 1957.</blockquote>	
 
-<blockquote>38- Fleiss, J.L. et al. (1969). Large sample standard errors of kappa and weighted kappa. Psychology Bulletin 72, 323-327.</blockquote> 	
+<blockquote>38- J. L. Fleiss, J. Cohen, and B. S. J. P. B. Everitt, "Large sample standard errors of kappa and weighted kappa," vol. 72, no. 5, p. 323, 1969.</blockquote> 	
 
 <blockquote>39- Mary Felkin. Comparing classification results between n-ary and binary problems. In
 Quality Measures in Data Mining, chapter 12, pages 277–301. Springer, 2007.</blockquote> 

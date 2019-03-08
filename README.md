@@ -576,14 +576,11 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBU
 
 <blockquote>29- P. J. B. S. V. S. N. Jaccard, "Étude comparative de la distribution florale dans une portion des Alpes et des Jura," vol. 37, pp. 547-579, 1901.</blockquote> 
 
-<blockquote>30- Thomas M. Cover and Joy A. Thomas. 2006. Elements of Information Theory (Wiley Series in Telecommunications and Signal Processing). Wiley-Interscience, New York, NY, USA.</blockquote> 
+<blockquote>30- T. M. Cover and J. A. Thomas, Elements of information theory. John Wiley & Sons, 2012.</blockquote> 
 
-<blockquote>31- Keeping, E.S. (1962) Introduction to Statistical Inference. D. Van Nostrand, Princeton, NJ.</blockquote>
+<blockquote>31- E. S. Keeping, Introduction to statistical inference. Courier Corporation, 1995.</blockquote>
 
-<blockquote>32- Sindhwani V, Bhattacharge P, Rakshit S (2001) Information theoretic feature
-crediting in multiclass Support Vector Machines. In: Grossman R, Kumar V,
-editors, Proceedings First SIAM International Conference on Data Mining,
-ICDM01. SIAM, pp. 1–18. </blockquote> 
+<blockquote>32- V. Sindhwani, P. Bhattacharya, and S. Rakshit, "Information theoretic feature crediting in multiclass support vector machines," in Proceedings of the 2001 SIAM International Conference on Data Mining, 2001, pp. 1-18: SIAM.</blockquote> 
 
 <blockquote>33- Bekkar, Mohamed & Djema, Hassiba & Alitouche, T.A.. (2013). Evaluation measures for models assessment over imbalanced data sets. Journal of Information Engineering and Applications. 3. 27-38. </blockquote>
 

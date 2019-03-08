@@ -6,7 +6,7 @@ from functools import reduce
 from .pycm_interpret import *
 
 
-def IBA_calc(TPR,TNR,alpha=1):
+def IBA_calc(TPR, TNR, alpha=1):
     '''
     This function calculate IBA (Index of balanced accuracy)
     :param TNR: specificity or true negative rate
@@ -18,10 +18,11 @@ def IBA_calc(TPR,TNR,alpha=1):
     :return: IBA as float
     '''
     try:
-        IBA = (1+alpha*(TPR-TNR))*TPR*TNR
+        IBA = (1 + alpha * (TPR - TNR)) * TPR * TNR
         return IBA
     except Exception:
         return "None"
+
 
 def OP_calc(ACC, TPR, TNR):
     '''
@@ -1524,8 +1525,8 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         LS[i] = lift_calc(PPV[i], PRE[i])
         AM[i] = AM_calc(TOP[i], P[i])
         OP[i] = OP_calc(ACC[i], TPR[i], TNR[i])
-        IBA[i] = IBA_calc(TPR[i],TNR[i])
-        GM[i] = G_calc(TNR[i],TPR[i])
+        IBA[i] = IBA_calc(TPR[i], TNR[i])
+        GM[i] = G_calc(TNR[i], TPR[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {

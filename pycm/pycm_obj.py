@@ -390,7 +390,7 @@ class ConfusionMatrix():
         try:
             IBA_dict = {}
             for i in self.classes:
-                IBA_dict[i] = IBA_calc(self.TPR[i],self.TNR[i],alpha=alpha)
+                IBA_dict[i] = IBA_calc(self.TPR[i], self.TNR[i], alpha=alpha)
             return IBA_dict
         except Exception:
             return {}

@@ -582,12 +582,12 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBU
 
 <blockquote>32- V. Sindhwani, P. Bhattacharya, and S. Rakshit, "Information theoretic feature crediting in multiclass support vector machines," in Proceedings of the 2001 SIAM International Conference on Data Mining, 2001, pp. 1-18: SIAM.</blockquote> 
 
-<blockquote>33- Bekkar, Mohamed & Djema, Hassiba & Alitouche, T.A.. (2013). Evaluation measures for models assessment over imbalanced data sets. Journal of Information Engineering and Applications. 3. 27-38. </blockquote>
+<blockquote>33- M. Bekkar, H. K. Djemaa, and T. A. J. J. I. E. A. Alitouche, "Evaluation measures for models assessment over imbalanced data sets," vol. 3, no. 10, 2013.</blockquote>
 
-<blockquote>34- Youden W, (1950),« Index for rating diagnostic tests »; Cancer, 3 :32–35 </blockquote>
+<blockquote>34- W. J. J. C. Youden, "Index for rating diagnostic tests," vol. 3, no. 1, pp. 32-35, 1950.</blockquote>
 
 
-<blockquote>35- S. Brin, R. Motwani, J. D. Ullman, and S. Tsur. Dynamic itemset counting and implication rules for market basket data. In Proc. of the ACM SIGMOD Int'l Conf. on Management of Data (ACM SIGMOD '97), pages 265-276, 1997.</blockquote> 
+<blockquote>35- S. Brin, R. Motwani, J. D. Ullman, and S. J. A. S. R. Tsur, "Dynamic itemset counting and implication rules for market basket data," vol. 26, no. 2, pp. 255-264, 1997.</blockquote> 
 
 <blockquote>36- Raschka, Sebastian (2018) MLxtend: Providing machine learning and data science utilities and extensions to Python's scientific computing stack. J Open Source Softw 3(24).</blockquote> 
 

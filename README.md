@@ -564,11 +564,11 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBU
 
 <blockquote>23- D. Ballabio, F. Grisoni, R. J. C. Todeschini, and I. L. Systems, "Multivariate comparison of classification performance measures," vol. 174, pp. 33-44, 2018.</blockquote>
 
-<blockquote>24- Cohen, Jacob. 1960. A coefficient of agreement for nominal scales. Educational And Psychological Measurement 20:37-46</blockquote>
+<blockquote>24- J. J. E. Cohen and p. measurement, "A coefficient of agreement for nominal scales," vol. 20, no. 1, pp. 37-46, 1960.</blockquote>
 
-<blockquote>25- Siegel, Sidney and N. John Castellan, Jr. 1988. Nonparametric Statistics for the Behavioral Sciences. McGraw Hill.</blockquote>
+<blockquote>25- S. Siegel, "Nonparametric statistics for the behavioral sciences," 1956.</blockquote>
 
-<blockquote>26- Cramér, Harald. 1946. Mathematical Methods of Statistics. Princeton: Princeton University Press, page 282 (Chapter 21. The two-dimensional case)</blockquote>
+<blockquote>26- H. Cramér, Mathematical methods of statistics (PMS-9). Princeton university press, 2016.</blockquote>
 
 <blockquote>27- Matthews, B. W. (1975). "Comparison of the predicted and observed secondary structure of T4 phage lysozyme". Biochimica et Biophysica Acta (BBA) - Protein Structure. 405 (2): 442–451.</blockquote>
 

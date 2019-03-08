@@ -595,17 +595,13 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBU
 
 <blockquote>38- J. L. Fleiss, J. Cohen, and B. S. J. P. B. Everitt, "Large sample standard errors of kappa and weighted kappa," vol. 72, no. 5, p. 323, 1969.</blockquote> 	
 
-<blockquote>39- Mary Felkin. Comparing classification results between n-ary and binary problems. In
-Quality Measures in Data Mining, chapter 12, pages 277–301. Springer, 2007.</blockquote> 
+<blockquote>39- M. Felkin, "Comparing classification results between n-ary and binary problems," in Quality Measures in Data Mining: Springer, 2007, pp. 277-301.</blockquote> 
 
-<blockquote>40- Ranawana, R & V Palade (2006). Optimized Precision-A new measure for classifier performance
-evaluation. In: Evolutionary Computation, 2006. CEC 2006. IEEE Congress on. IEEE, pp.2254–2261.</blockquote>	
+<blockquote>40- R. Ranawana and V. Palade, "Optimized Precision-A new measure for classifier performance evaluation," in 2006 IEEE International Conference on Evolutionary Computation, 2006, pp. 2254-2261: IEEE.</blockquote>	
 
-<blockquote>41- Garcia, V., Mollineda, R. A., and Sanchez, J. S. (2009). Index of balanced
-accuracy: A performance measure for skewed class distributions. In Pattern Recognition and Image Analysis, pages 441–448. Springer.</blockquote> 
+<blockquote>41- V. García, R. A. Mollineda, and J. S. Sánchez, "Index of balanced accuracy: A performance measure for skewed class distributions," in Iberian Conference on Pattern Recognition and Image Analysis, 2009, pp. 441-448: Springer.</blockquote> 
 
-<blockquote>42- P. Branco, L. Torgo, and R. P. Ribeiro, “A Survey of Predictive Modeling on Imbalanced
-Domains,” ACM Comput. Surv., vol. 49, no. 2, pp. 31:1—-31:50, Aug 2016.</blockquote> 
+<blockquote>42- P. Branco, L. Torgo, and R. P. J. A. C. S. Ribeiro, "A survey of predictive modeling on imbalanced domains," vol. 49, no. 2, p. 31, 2016.</blockquote> 
 
 ## Cite
 

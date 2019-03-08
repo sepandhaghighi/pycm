@@ -6,12 +6,12 @@ from .pycm_param import *
 
 
 def isfloat(value):
-    '''
+    """
     This function check input for float conversion
     :param value: input value
     :type value:str
     :return: result as bool (true if input_value is a number and false otherwise)
-    '''
+    """
     try:
         float(value)
         return True
@@ -20,14 +20,14 @@ def isfloat(value):
 
 
 def rounder(input_number, digit=5):
-    '''
+    """
     This function round input number
     :param input_number: input number
     :type input_number : anything
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
     :return: round number as str
-    '''
+    """
     if isinstance(input_number, tuple):
         tuple_list = list(input_number)
         tuple_str = []
@@ -43,14 +43,14 @@ def rounder(input_number, digit=5):
 
 
 def class_filter(classes, class_name):
-    '''
+    """
     This function compare class_name and classes
     :param classes: matrix classes
     :type classes: list
     :param class_name: sub set of classes
     :type class_name : list
     :return: filtered classes as list
-    '''
+    """
     result_classes = classes
     if isinstance(class_name, list):
         if set(class_name) <= set(classes):
@@ -59,19 +59,19 @@ def class_filter(classes, class_name):
 
 
 def isfile(f):
-    '''
+    """
     This function check file object in python 2.7 & 3.x
     :param f: input object
     :type f : file object
     :return: file type check as boolean
-    '''
+    """
     return isinstance(
         f, file) if sys.version_info[0] == 2 else hasattr(
         f, 'read')
 
 
 def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
-    '''
+    """
     One-Vs-All mode handler
     :param classes: classes
     :type classes : list
@@ -88,7 +88,7 @@ def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
     :param class_name : target class name for One-Vs-All mode
     :type class_name : any valid type
     :return: [classes , table ] as list
-    '''
+    """
     try:
         report_classes = [str(class_name), "~"]
         report_table = {str(class_name): {str(class_name): TP[class_name],
@@ -101,14 +101,14 @@ def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
 
 
 def normalized_table_calc(classes, table):
-    '''
+    """
     This function return normalized confusion matrix
     :param classes: classes list
     :type classes:list
     :param table: table
     :type table:dict
     :return: normalized table as dict
-    '''
+    """
     map_dict = {k: 0 for k in classes}
     new_table = {k: map_dict.copy() for k in classes}
     for key in classes:
@@ -121,14 +121,14 @@ def normalized_table_calc(classes, table):
 
 
 def transpose_func(classes, table):
-    '''
+    """
     This function transpose table
     :param classes: classes
     :type classes : list
     :param table: input matrix
     :type table : dict
     :return: transposed table as dict
-    '''
+    """
     transposed_table = table
     for i, item1 in enumerate(classes):
         for j, item2 in enumerate(classes):
@@ -140,14 +140,14 @@ def transpose_func(classes, table):
 
 
 def matrix_params_from_table(table, transpose=False):
-    '''
+    """
     This function calculate TP,TN,FP,FN from confusion matrix
     :param table: input matrix
     :type table : dict
     :param transpose : transpose flag
     :type transpose : bool
     :return: [classes_list,table,TP,TN,FP,FN]
-    '''
+    """
     classes = sorted(table.keys())
     map_dict = {k: 0 for k in classes}
     TP_dict = map_dict.copy()
@@ -171,7 +171,7 @@ def matrix_params_from_table(table, transpose=False):
 
 
 def matrix_params_calc(actual_vector, predict_vector, sample_weight):
-    '''
+    """
     This function calculate TP,TN,FP,FN for each class
     :param actual_vector: actual values
     :type actual_vector : list
@@ -180,7 +180,7 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     :param sample_weight : sample weights list
     :type sample_weight : list
     :return: [classes_list,table,TP,TN,FP,FN]
-    '''
+    """
     if isinstance(actual_vector, numpy.ndarray):
         actual_vector = actual_vector.tolist()
     if isinstance(predict_vector, numpy.ndarray):

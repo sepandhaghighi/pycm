@@ -558,11 +558,11 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBU
 
 <blockquote>20- J. J. C. b. Gorodkin and chemistry, "Comparing two K-category assignments by a K-category correlation coefficient," vol. 28, no. 5-6, pp. 367-374, 2004.</blockquote>
 
-<blockquote>21- Freitas C.O.A., de Carvalho J.M., Oliveira J., Aires S.B.K., Sabourin R. (2007) Confusion Matrix Disagreement for Multiple Classifiers. In: Rueda L., Mery D., Kittler J. (eds) Progress in Pattern Recognition, Image Analysis and Applications. CIARP 2007. Lecture Notes in Computer Science, vol 4756. Springer, Berlin, Heidelberg</blockquote>
+<blockquote>21- C. O. Freitas, J. M. De Carvalho, J. Oliveira, S. B. Aires, and R. Sabourin, "Confusion matrix disagreement for multiple classifiers," in Iberoamerican Congress on Pattern Recognition, 2007, pp. 387-396: Springer.</blockquote>
 
-<blockquote>22- Branco P., Torgo L., Ribeiro R.P. (2017) Relevance-Based Evaluation Metrics for Multi-class Imbalanced Domains. In: Kim J., Shim K., Cao L., Lee JG., Lin X., Moon YS. (eds) Advances in Knowledge Discovery and Data Mining. PAKDD 2017. Lecture Notes in Computer Science, vol 10234. Springer, Cham</blockquote>
+<blockquote>22- P. Branco, L. Torgo, and R. P. Ribeiro, "Relevance-based evaluation metrics for multi-class imbalanced domains," in Pacific-Asia Conference on Knowledge Discovery and Data Mining, 2017, pp. 698-710: Springer.</blockquote>
 
-<blockquote>23- Ballabio, D., Grisoni, F. and Todeschini, R. (2018). Multivariate comparison of classification performance measures. Chemometrics and Intelligent Laboratory Systems, 174, pp.33-44.</blockquote>
+<blockquote>23- D. Ballabio, F. Grisoni, R. J. C. Todeschini, and I. L. Systems, "Multivariate comparison of classification performance measures," vol. 174, pp. 33-44, 2018.</blockquote>
 
 <blockquote>24- Cohen, Jacob. 1960. A coefficient of agreement for nominal scales. Educational And Psychological Measurement 20:37-46</blockquote>
 

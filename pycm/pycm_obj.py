@@ -20,7 +20,7 @@ class pycmMatrixError(Exception):
 
 
 class ConfusionMatrix():
-    '''
+    """
     Main Class Of ConfusionMatrix
     >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
     >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
@@ -32,7 +32,7 @@ class ConfusionMatrix():
     >>> cm2 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":2},"Class2": {"Class1": 0, "Class2": 5}})
     >>> cm2
     pycm.ConfusionMatrix(classes: ['Class1', 'Class2'])
-    '''
+    """
 
     def __init__(
             self,
@@ -41,7 +41,7 @@ class ConfusionMatrix():
             matrix=None,
             digit=5, threshold=None, file=None,
             sample_weight=None, transpose=False):
-        '''
+        """
         :param actual_vector: Actual Vector
         :type actual_vector: python list or numpy array of any stringable objects
         :param predict_vector: Predicted Vector
@@ -58,7 +58,7 @@ class ConfusionMatrix():
         :type sample_weight : list
         :param transpose : transpose flag
         :type transpose : bool
-        '''
+        """
         self.actual_vector = actual_vector
         self.predict_vector = predict_vector
         self.digit = digit
@@ -117,14 +117,14 @@ class ConfusionMatrix():
         self.recommended_list = statistic_recommend(self.classes, self.P)
 
     def print_matrix(self, one_vs_all=False, class_name=None):
-        '''
+        """
         This method print confusion matrix
         :param one_vs_all : One-Vs-All mode flag
         :type one_vs_all : bool
         :param class_name : target class name for One-Vs-All mode
         :type class_name : any valid type
         :return: None
-        '''
+        """
         classes = self.classes
         table = self.table
         if one_vs_all:
@@ -133,14 +133,14 @@ class ConfusionMatrix():
         print(table_print(classes, table))
 
     def print_normalized_matrix(self, one_vs_all=False, class_name=None):
-        '''
+        """
         This method print normalized confusion matrix
         :param one_vs_all : One-Vs-All mode flag
         :type one_vs_all : bool
         :param class_name : target class name for One-Vs-All mode
         :type class_name : any valid type
         :return: None
-        '''
+        """
         classes = self.classes
         table = self.table
         if one_vs_all:
@@ -150,7 +150,7 @@ class ConfusionMatrix():
         print(table_print(classes, table))
 
     def stat(self, overall_param=None, class_param=None, class_name=None):
-        '''
+        """
         This method print statistical measures table
         :param overall_param : overall parameters list for print, Example : ["Kappa","Scott PI]
         :type overall_param : list
@@ -159,7 +159,7 @@ class ConfusionMatrix():
         :param class_name : class name (sub set of classes), Example :[1,2,3]
         :type class_name : list
         :return: None
-        '''
+        """
         classes = class_filter(self.classes, class_name)
         print(
             stat_print(
@@ -169,10 +169,10 @@ class ConfusionMatrix():
                 self.digit, overall_param, class_param))
 
     def __str__(self):
-        '''
+        """
         ConfusionMatrix object string representation method
         :return: representation as str (matrix + params)
-        '''
+        """
         result = table_print(self.classes, self.table)
         result += "\n" * 4
         result += stat_print(self.classes, self.class_stat,
@@ -186,7 +186,7 @@ class ConfusionMatrix():
             overall_param=None,
             class_param=None,
             class_name=None):
-        '''
+        """
         This method save ConfusionMatrix in .pycm (flat file format)
         :param name: filename
         :type name : str
@@ -199,7 +199,7 @@ class ConfusionMatrix():
         :param class_name : class name (sub set of classes), Example :[1,2,3]
         :type class_name : list
         :return: saving Status as dict {"Status":bool , "Message":str}
-        '''
+        """
         try:
             message = None
             file = open(name + ".pycm", "w")
@@ -236,7 +236,7 @@ class ConfusionMatrix():
             overall_param=None,
             class_param=None,
             class_name=None, color=(0, 0, 0)):
-        '''
+        """
         This method save ConfusionMatrix in HTML file
         :param name: filename
         :type name : str
@@ -251,7 +251,7 @@ class ConfusionMatrix():
         :param color : matrix color (R,G,B)
         :type color : tuple
         :return: saving Status as dict {"Status":bool , "Message":str}
-        '''
+        """
         try:
             message = None
             html_file = open(name + ".html", "w")
@@ -288,7 +288,7 @@ class ConfusionMatrix():
             class_name=None,
             matrix_save=True,
             normalize=False):
-        '''
+        """
         This method save ConfusionMatrix in CSV file
         :param name: filename
         :type name : str
@@ -303,7 +303,7 @@ class ConfusionMatrix():
         :param normalize : save normalize matrix flag
         :type normalize : bool
         :return: saving Status as dict {"Status":bool , "Message":str}
-        '''
+        """
         try:
             message = None
             classes = class_filter(self.classes, class_name)
@@ -328,14 +328,14 @@ class ConfusionMatrix():
             return {"Status": False, "Message": str(e)}
 
     def save_obj(self, name, address=True):
-        '''
+        """
         This method save ConfusionMatrix in .obj file
         :param name: filename
         :type name : str
         :param address: flag for address return
         :type address : bool
         :return: saving Status as dict {"Status":bool , "Message":str}
-        '''
+        """
         try:
             message = None
             obj_file = open(name + ".obj", "w")
@@ -362,12 +362,12 @@ class ConfusionMatrix():
             return {"Status": False, "Message": str(e)}
 
     def F_beta(self, beta):
-        '''
+        """
         This method calculate FBeta score
         :param beta: beta parameter
         :type beta : float
         :return: FBeta score for classes as dict
-        '''
+        """
         try:
             F_dict = {}
             for i in self.TP.keys():
@@ -381,12 +381,12 @@ class ConfusionMatrix():
             return {}
 
     def IBA_alpha(self, alpha):
-        '''
+        """
         This method calculate IBA_alpha score
         :param alpha: alpha parameter
         :type alpha: float
         :return: IBA_alpha score for classes as dict
-        '''
+        """
         try:
             IBA_dict = {}
             for i in self.classes:
@@ -396,22 +396,22 @@ class ConfusionMatrix():
             return {}
 
     def __repr__(self):
-        '''
+        """
         ConfusionMatrix object representation method
         :return: representation as str
-        '''
+        """
         return "pycm.ConfusionMatrix(classes: " + str(self.classes) + ")"
 
     def __len__(self):
         return len(self.classes)
 
     def relabel(self, mapping):
-        '''
+        """
         This method rename ConfusionMatrix classes
         :param mapping: mapping dictionary
         :type mapping : dict
         :return: None
-        '''
+        """
         if not isinstance(mapping, dict):
             raise pycmMatrixError(MAPPING_FORMAT_ERROR)
         if self.classes != list(mapping.keys()):
@@ -444,12 +444,12 @@ class ConfusionMatrix():
 
 
 def __class_stat_init__(cm):
-    '''
+    """
     This function init individual class stat
     :param cm : ConfusionMatrix
     :type cm : pycm.ConfusionMatrix object
     :return: None
-    '''
+    """
     cm.TPR = cm.class_stat["TPR"]
     cm.TNR = cm.class_stat["TNR"]
     cm.PPV = cm.class_stat["PPV"]
@@ -500,12 +500,12 @@ def __class_stat_init__(cm):
 
 
 def __overall_stat_init__(cm):
-    '''
+    """
     This function init individual overall stat
     :param cm: ConfusionMatrix
     :type cm : pycm.ConfusionMatrix object
     :return: None
-    '''
+    """
     cm.Overall_J = cm.overall_stat["Overall J"]
     cm.SOA1 = cm.overall_stat["SOA1(Landis & Koch)"]
     cm.SOA2 = cm.overall_stat["SOA2(Fleiss)"]
@@ -556,14 +556,14 @@ def __overall_stat_init__(cm):
 
 
 def __obj_file_handler__(cm, file):
-    '''
+    """
     This function handle object conditions for file
     :param cm: ConfusionMatrix
     :type cm : pycm.ConfusionMatrix object
     :param file : saved confusion matrix file object
     :type file : (io.IOBase & file)
     :return: matrix parameters as list
-    '''
+    """
     obj_data = json.load(file)
     if obj_data["Actual-Vector"] is not None and obj_data[
             "Predict-Vector"] is not None:
@@ -594,14 +594,14 @@ def __obj_file_handler__(cm, file):
 
 
 def __obj_matrix_handler__(matrix, transpose):
-    '''
+    """
     This function handle object conditions for matrix
     :param matrix: direct matrix
     :type matrix: dict
     :param transpose : transpose flag
     :type transpose : bool
     :return: matrix parameters as list
-    '''
+    """
     if matrix_check(matrix):
         if class_check(list(matrix.keys())) is False:
             raise pycmMatrixError(MATRIX_CLASS_TYPE_ERROR)
@@ -619,7 +619,7 @@ def __obj_vector_handler__(
         predict_vector,
         threshold,
         sample_weight):
-    '''
+    """
     This function handle object conditions for vectors
     :param cm: ConfusionMatrix
     :type cm : pycm.ConfusionMatrix object
@@ -632,7 +632,7 @@ def __obj_vector_handler__(
     :param sample_weight : sample weights list
     :type sample_weight : list
     :return: matrix parameters as list
-    '''
+    """
     if isinstance(threshold, types.FunctionType):
         predict_vector = list(map(threshold, predict_vector))
         cm.predict_vector = predict_vector

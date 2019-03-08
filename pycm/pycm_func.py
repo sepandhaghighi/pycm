@@ -7,7 +7,7 @@ from .pycm_interpret import *
 
 
 def IBA_calc(TPR, TNR, alpha=1):
-    '''
+    """
     This function calculate IBA (Index of balanced accuracy)
     :param TNR: specificity or true negative rate
     :type TNR : float
@@ -16,7 +16,7 @@ def IBA_calc(TPR, TNR, alpha=1):
     :param alpha : alpha coefficient
     :type alpha : float
     :return: IBA as float
-    '''
+    """
     try:
         IBA = (1 + alpha * (TPR - TNR)) * TPR * TNR
         return IBA
@@ -25,7 +25,7 @@ def IBA_calc(TPR, TNR, alpha=1):
 
 
 def OP_calc(ACC, TPR, TNR):
-    '''
+    """
     This calculate OP (Optimized precision)
     :param ACC: accuracy
     :type ACC : float
@@ -34,7 +34,7 @@ def OP_calc(ACC, TPR, TNR):
     :param TPR: sensitivity, recall, hit rate, or true positive rate
     :type TPR : float
     :return: OP as float
-    '''
+    """
     try:
         RI = abs(TNR - TPR) / (TPR + TNR)
         return ACC - RI
@@ -43,7 +43,7 @@ def OP_calc(ACC, TPR, TNR):
 
 
 def BCD_calc(TOP, P, AM):
-    '''
+    """
     This function calculate BCD (Bray–Curtis dissimilarity)
     :param TOP: test outcome positive
     :type TOP : dict
@@ -52,7 +52,7 @@ def BCD_calc(TOP, P, AM):
     :param AM: Automatic/Manual
     :type AM : int
     :return: BCD as float
-    '''
+    """
     try:
         TOP_sum = sum(TOP.values())
         P_sum = sum(P.values())
@@ -62,14 +62,14 @@ def BCD_calc(TOP, P, AM):
 
 
 def AM_calc(TOP, P):
-    '''
+    """
     This function calculate AM (Automatic/Manual)
     :param TOP: test outcome positive
     :type TOP : int
     :param P: condition positive
     :type P : int
     :return: AM as int
-    '''
+    """
     try:
         return TOP - P
     except Exception:
@@ -77,14 +77,14 @@ def AM_calc(TOP, P):
 
 
 def lift_calc(PPV, PRE):
-    '''
+    """
     This function calculate lift score
     :param PPV:  precision or positive predictive value
     :type PPV : float
     :param PRE: Prevalence
     :type PRE : float
     :return: lift score as float
-    '''
+    """
     try:
         return PPV / PRE
     except Exception:
@@ -92,12 +92,12 @@ def lift_calc(PPV, PRE):
 
 
 def GI_calc(AUC):
-    '''
+    """
     This function calculate Gini index
     :param AUC: AUC (Area under the ROC curve)
     :type AUC: float
     :return: Gini index as float
-    '''
+    """
     try:
         return 2 * AUC - 1
     except Exception:
@@ -105,14 +105,14 @@ def GI_calc(AUC):
 
 
 def DP_calc(TPR, TNR):
-    '''
+    """
     This function calculate DP (Discriminant power)
     :param TNR: specificity or true negative rate
     :type TNR : float
     :param TPR: sensitivity, recall, hit rate, or true positive rate
     :type TPR : float
     :return: DP as float
-    '''
+    """
     try:
         X = TPR / (1 - TPR)
         Y = TNR / (1 - TNR)
@@ -122,14 +122,14 @@ def DP_calc(TPR, TNR):
 
 
 def RCI_calc(mutual_information, reference_entropy):
-    '''
+    """
     This function calculate RCI (Relative classifier information)
     :param mutual_information: mutual information
     :type mutual_information : float
     :param reference_entropy: reference entropy
     :type reference_entropy : float
     :return:  RCI as float
-    '''
+    """
     try:
         return mutual_information / reference_entropy
     except Exception:
@@ -137,14 +137,14 @@ def RCI_calc(mutual_information, reference_entropy):
 
 
 def dInd_calc(TNR, TPR):
-    '''
+    """
     This function calculate dInd (Distance index)
     :param TNR: specificity or true negative rate
     :type TNR : float
     :param TPR: sensitivity, recall, hit rate, or true positive rate
     :type TPR : float
     :return: dInd as float
-    '''
+    """
     try:
         result = math.sqrt(((1 - TNR)**2) + ((1 - TPR)**2))
         return result
@@ -153,12 +153,12 @@ def dInd_calc(TNR, TPR):
 
 
 def sInd_calc(dInd):
-    '''
+    """
     This function calculate sInd (Similarity index)
     :param dInd: dInd
     :type dInd : float
     :return: sInd as float
-    '''
+    """
     try:
         return 1 - (dInd / (math.sqrt(2)))
     except Exception:
@@ -166,7 +166,7 @@ def sInd_calc(dInd):
 
 
 def AUNP_calc(classes, P, POP, AUC_dict):
-    '''
+    """
     This function calculate AUNP
     :param classes: classes
     :type classes : list
@@ -177,7 +177,7 @@ def AUNP_calc(classes, P, POP, AUC_dict):
     :param AUC_dict: AUC (Area under the ROC curve) for each class
     :type AUC_dict : dict
     :return: AUNP as float
-    '''
+    """
     try:
         result = 0
         for i in classes:
@@ -188,14 +188,14 @@ def AUNP_calc(classes, P, POP, AUC_dict):
 
 
 def AUC_calc(TNR, TPR):
-    '''
+    """
     This function calculate AUC (Area under the ROC curve for each class)
     :param TNR: specificity or true negative rate
     :type TNR : float
     :param TPR: sensitivity, recall, hit rate, or true positive rate
     :type TPR : float
     :return: AUC as float
-    '''
+    """
     try:
         return (TNR + TPR) / 2
     except Exception:
@@ -203,7 +203,7 @@ def AUC_calc(TNR, TPR):
 
 
 def CBA_calc(classes, table, TOP, P):
-    '''
+    """
     This function calculate CBA (Class balance accuracy)
     :param classes: classes
     :type classes : list
@@ -214,7 +214,7 @@ def CBA_calc(classes, table, TOP, P):
     :param P: condition positive
     :type P : dict
     :return: CBA as float
-    '''
+    """
     try:
         result = 0
         class_number = len(classes)
@@ -226,14 +226,14 @@ def CBA_calc(classes, table, TOP, P):
 
 
 def RR_calc(classes, TOP):
-    '''
+    """
     This function calculate RR (Global Performance Index)
     :param classes: classes
     :type classes : list
     :param TOP: test outcome positive
     :type TOP : dict
     :return: RR as float
-    '''
+    """
     try:
         class_number = len(classes)
         result = sum(list(TOP.values()))
@@ -243,7 +243,7 @@ def RR_calc(classes, TOP):
 
 
 def overall_MCC_calc(classes, table, TOP, P):
-    '''
+    """
     This function calculate Overall_MCC
     :param classes: classes
     :type classes : list
@@ -254,7 +254,7 @@ def overall_MCC_calc(classes, table, TOP, P):
     :param P: condition positive
     :type P : dict
     :return:  Overall_MCC as float
-    '''
+    """
     try:
         cov_x_y = 0
         cov_x_x = 0
@@ -277,7 +277,7 @@ def CEN_misclassification_calc(
         j,
         subject_class,
         modified=False):
-    '''
+    """
     This function calculate misclassification probability of classifying
     :param table: input matrix
     :type table : dict
@@ -294,7 +294,7 @@ def CEN_misclassification_calc(
     :param modified : modified mode flag
     :type modified : bool
     :return: misclassification probability of classifying as float
-    '''
+    """
     try:
         result = TOP + P
         if modified:
@@ -306,7 +306,7 @@ def CEN_misclassification_calc(
 
 
 def CEN_calc(classes, table, TOP, P, class_name, modified=False):
-    '''
+    """
     This function calculate CEN (Confusion Entropy)/ MCEN(Modified Confusion Entropy)
     :param classes: classes
     :type classes : list
@@ -321,7 +321,7 @@ def CEN_calc(classes, table, TOP, P, class_name, modified=False):
     :param modified : modified mode flag
     :type modified : bool
     :return: CEN(MCEN) as float
-    '''
+    """
     try:
         result = 0
         class_number = len(classes)
@@ -343,7 +343,7 @@ def CEN_calc(classes, table, TOP, P, class_name, modified=False):
 
 
 def convex_combination(classes, TP, TOP, P, class_name, modified=False):
-    '''
+    """
     This function calculate Overall_CEN coefficient
     :param classes: classes
     :type classes : list
@@ -358,7 +358,7 @@ def convex_combination(classes, TP, TOP, P, class_name, modified=False):
     :param modified : modified mode flag
     :type modified : bool
     :return: coefficient as float
-    '''
+    """
     try:
         class_number = len(classes)
         alpha = 1
@@ -377,7 +377,7 @@ def convex_combination(classes, TP, TOP, P, class_name, modified=False):
 
 
 def overall_CEN_calc(classes, TP, TOP, P, CEN_dict, modified=False):
-    '''
+    """
     This function calculate Overall_CEN (Overall confusion entropy)
     :param classes: classes
     :type classes : list
@@ -392,7 +392,7 @@ def overall_CEN_calc(classes, TP, TOP, P, CEN_dict, modified=False):
     :param modified : modified mode flag
     :type modified : bool
     :return: Overall_CEN(MCEN) as float
-    '''
+    """
     try:
         result = 0
         for i in classes:
@@ -404,7 +404,7 @@ def overall_CEN_calc(classes, TP, TOP, P, CEN_dict, modified=False):
 
 
 def IS_calc(TP, FP, FN, POP):
-    '''
+    """
     This function calculate IS (Information score)
     :param TP: true positive
     :type TP : int
@@ -415,7 +415,7 @@ def IS_calc(TP, FP, FN, POP):
     :param POP: population
     :type POP : int
     :return: IS as float
-    '''
+    """
     try:
         result = -math.log(((TP + FN) / POP), 2) + \
             math.log((TP / (TP + FP)), 2)
@@ -425,14 +425,14 @@ def IS_calc(TP, FP, FN, POP):
 
 
 def ncr(n, r):
-    '''
+    """
     This function calculate n choose r
     :param n: n
     :type n : int
     :param r: r
     :type r :int
     :return: n choose r as int
-    '''
+    """
     r = min(r, n - r)
     numer = reduce(op.mul, range(n, n - r, -1), 1)
     denom = reduce(op.mul, range(1, r + 1), 1)
@@ -440,7 +440,7 @@ def ncr(n, r):
 
 
 def p_value_calc(TP, POP, NIR):
-    '''
+    """
     This function calculate p_value
     :param TP: true positive
     :type TP : dict
@@ -449,7 +449,7 @@ def p_value_calc(TP, POP, NIR):
     :param NIR: no information rate
     :type NIR : float
     :return: p_value as float
-    '''
+    """
     try:
         n = POP
         x = sum(list(TP.values()))
@@ -463,14 +463,14 @@ def p_value_calc(TP, POP, NIR):
 
 
 def NIR_calc(P, POP):
-    '''
+    """
     This function calculate NIR (No information rate)
     :param P: condition positive
     :type P : dict
     :param POP: population
     :type POP : int
     :return: NIR as float
-    '''
+    """
     try:
         max_P = max(list(P.values()))
         length = POP
@@ -480,14 +480,14 @@ def NIR_calc(P, POP):
 
 
 def hamming_calc(TP, POP):
-    '''
+    """
     This function calculate hamming_loss
     :param TP: true positive
     :type TP : dict
     :param POP: population
     :type POP : int
     :return: hamming loss as float
-    '''
+    """
     try:
         length = POP
         return (1 / length) * (length - sum(TP.values()))
@@ -496,14 +496,14 @@ def hamming_calc(TP, POP):
 
 
 def zero_one_loss_calc(TP, POP):
-    '''
+    """
     This function zero_one_loss
     :param TP: true Positive
     :type TP : dict
     :param POP: population
     :type POP : int
     :return: zero_one loss as integer
-    '''
+    """
     try:
         length = POP
         return (length - sum(TP.values()))
@@ -512,14 +512,14 @@ def zero_one_loss_calc(TP, POP):
 
 
 def vector_filter(actual_vector, predict_vector):
-    '''
+    """
     This function convert different type of items in vectors to str
     :param actual_vector: actual values
     :type actual_vector : list
     :param predict_vector: predict value
     :type predict_vector : list
     :return: new actual and predict vector
-    '''
+    """
     temp = []
     temp.extend(actual_vector)
     temp.extend(predict_vector)
@@ -530,12 +530,12 @@ def vector_filter(actual_vector, predict_vector):
 
 
 def vector_check(vector):
-    '''
+    """
     This function check input vector items type
     :param vector: input vector
     :type vector : list
     :return: bool
-    '''
+    """
     for i in vector:
         if isinstance(i, int) is False:
             return False
@@ -545,12 +545,12 @@ def vector_check(vector):
 
 
 def class_check(vector):
-    '''
+    """
     This function check different items in matrix classes
     :param vector: input vector
     :type vector : list
     :return: bool
-    '''
+    """
     for i in vector:
         if not isinstance(i, type(vector[0])):
             return False
@@ -558,12 +558,12 @@ def class_check(vector):
 
 
 def matrix_check(table):
-    '''
+    """
     This function check input matrix format
     :param table: input matrix
     :type table : dict
     :return: bool
-    '''
+    """
     try:
         if len(table.keys()) == 0:
             return False
@@ -577,14 +577,14 @@ def matrix_check(table):
 
 
 def entropy_calc(item, POP):
-    '''
+    """
     This function calculate reference and response likelihood
     :param item : TOP or P
     :type item : dict
     :param POP: population
     :type POP : dict
     :return: reference or response likelihood as float
-    '''
+    """
     try:
         result = 0
         for i in item.keys():
@@ -597,12 +597,12 @@ def entropy_calc(item, POP):
 
 
 def kappa_no_prevalence_calc(overall_accuracy):
-    '''
+    """
     This function calculate kappa no prevalence
     :param overall_accuracy: overall accuracy
     :type overall_accuracy : float
     :return: kappa no prevalence as float
-    '''
+    """
     try:
         result = 2 * overall_accuracy - 1
         return result
@@ -611,7 +611,7 @@ def kappa_no_prevalence_calc(overall_accuracy):
 
 
 def cross_entropy_calc(TOP, P, POP):
-    '''
+    """
     This function calculate cross entropy
     :param TOP: test outcome positive
     :type TOP : dict
@@ -620,7 +620,7 @@ def cross_entropy_calc(TOP, P, POP):
     :param POP: population
     :type POP : dict
     :return: cross entropy as float
-    '''
+    """
     try:
         result = 0
         for i in TOP.keys():
@@ -635,7 +635,7 @@ def cross_entropy_calc(TOP, P, POP):
 
 
 def joint_entropy_calc(classes, table, POP):
-    '''
+    """
     This function calculate joint entropy
     :param classes: confusion matrix classes
     :type classes : list
@@ -644,7 +644,7 @@ def joint_entropy_calc(classes, table, POP):
     :param POP: population
     :type POP : dict
     :return: joint entropy as float
-    '''
+    """
     try:
         result = 0
         for i in classes:
@@ -658,7 +658,7 @@ def joint_entropy_calc(classes, table, POP):
 
 
 def conditional_entropy_calc(classes, table, P, POP):
-    '''
+    """
     This function calculate conditional entropy
     :param classes: confusion matrix classes
     :type classes : list
@@ -669,7 +669,7 @@ def conditional_entropy_calc(classes, table, P, POP):
     :param POP: population
     :type POP : dict
     :return: conditional entropy as float
-    '''
+    """
     try:
         result = 0
         for i in classes:
@@ -687,14 +687,14 @@ def conditional_entropy_calc(classes, table, P, POP):
 
 
 def mutual_information_calc(response_entropy, conditional_entropy):
-    '''
+    """
     This function calculate mutual information
     :param response_entropy:  response entropy
     :type response_entropy : float
     :param conditional_entropy:  conditional entropy
     :type conditional_entropy : float
     :return: mutual information as float
-    '''
+    """
     try:
         return response_entropy - conditional_entropy
     except Exception:
@@ -702,7 +702,7 @@ def mutual_information_calc(response_entropy, conditional_entropy):
 
 
 def kl_divergence_calc(P, TOP, POP):
-    '''
+    """
     This function calculate Kullback-Liebler (KL) divergence
     :param P: condition positive
     :type P : dict
@@ -711,7 +711,7 @@ def kl_divergence_calc(P, TOP, POP):
     :param POP: population
     :type POP : dict
     :return: Kullback-Liebler (KL) divergence as float
-    '''
+    """
     try:
         result = 0
         for i in TOP.keys():
@@ -725,7 +725,7 @@ def kl_divergence_calc(P, TOP, POP):
 
 
 def lambda_B_calc(classes, table, TOP, POP):
-    '''
+    """
     This function calculate  Goodman and Kruskal's lambda B
     :param classes: confusion matrix classes
     :type classes : list
@@ -736,7 +736,7 @@ def lambda_B_calc(classes, table, TOP, POP):
     :param POP: population
     :type POP : int
     :return: Goodman and Kruskal's lambda B as float
-    '''
+    """
     try:
         result = 0
         length = POP
@@ -750,7 +750,7 @@ def lambda_B_calc(classes, table, TOP, POP):
 
 
 def lambda_A_calc(classes, table, P, POP):
-    '''
+    """
     This function calculate Goodman and Kruskal's lambda A
     :param classes: confusion matrix classes
     :type classes : list
@@ -761,7 +761,7 @@ def lambda_A_calc(classes, table, P, POP):
     :param POP: population
     :type POP : int
     :return: Goodman and Kruskal's lambda A as float
-    '''
+    """
     try:
         result = 0
         maxreference = max(list(P.values()))
@@ -778,7 +778,7 @@ def lambda_A_calc(classes, table, P, POP):
 
 
 def chi_square_calc(classes, table, TOP, P, POP):
-    '''
+    """
     This function calculate chi-squared
     :param classes: confusion matrix classes
     :type classes : list
@@ -791,7 +791,7 @@ def chi_square_calc(classes, table, TOP, P, POP):
     :param POP: population
     :type POP : dict
     :return: chi-squared as float
-    '''
+    """
     try:
         result = 0
         for i in classes:
@@ -804,14 +804,14 @@ def chi_square_calc(classes, table, TOP, P, POP):
 
 
 def phi_square_calc(chi_square, POP):
-    '''
+    """
     This function calculate phi_squared
     :param chi_square: chi squared
     :type chi_square : float
     :param POP: population
     :type POP : int
     :return: phi_squared as float
-    '''
+    """
     try:
         return chi_square / POP
     except Exception:
@@ -819,14 +819,14 @@ def phi_square_calc(chi_square, POP):
 
 
 def cramers_V_calc(phi_square, classes):
-    '''
+    """
     This function calculate Cramer's V
     :param phi_square: phi_squared
     :type phi_square : float
     :param classes: confusion matrix classes
     :type classes : list
     :return: Cramer's V as float
-    '''
+    """
     try:
         return math.sqrt((phi_square / (len(classes) - 1)))
     except Exception:
@@ -834,12 +834,12 @@ def cramers_V_calc(phi_square, classes):
 
 
 def DF_calc(classes):
-    '''
+    """
     This function calculate chi squared degree of freedom
     :param classes: confusion matrix classes
     :type classes : list
     :return: DF as int
-    '''
+    """
     try:
         return (len(classes) - 1)**2
     except Exception:
@@ -847,14 +847,14 @@ def DF_calc(classes):
 
 
 def TTPN_calc(item1, item2):
-    '''
+    """
     This function calculate TPR,TNR,PPV,NPV
     :param item1: item1 in fractional expression
     :type item1 : int
     :param item2: item2 in fractional expression
     :type item2: int
     :return: result as float
-    '''
+    """
     try:
         result = item1 / (item1 + item2)
         return result
@@ -863,12 +863,12 @@ def TTPN_calc(item1, item2):
 
 
 def FXR_calc(item):
-    '''
+    """
     This function calculate FNR,FPR,FDR,FOR
     :param item: item In expression
     :type item:float
     :return: result as float
-    '''
+    """
     try:
         result = 1 - item
         return result
@@ -877,7 +877,7 @@ def FXR_calc(item):
 
 
 def ACC_calc(TP, TN, FP, FN):
-    '''
+    """
     This function calculate accuracy
     :param TP: true positive
     :type TP : int
@@ -888,7 +888,7 @@ def ACC_calc(TP, TN, FP, FN):
     :param FN: false negative
     :type FN : int
     :return: accuracy as float
-    '''
+    """
     try:
         result = (TP + TN) / (TP + TN + FN + FP)
         return result
@@ -897,12 +897,12 @@ def ACC_calc(TP, TN, FP, FN):
 
 
 def ERR_calc(ACC):
-    '''
+    """
     This function calculate error rate
     :param ACC: accuracy
     :type ACC: float
     :return: error rate as float
-    '''
+    """
     try:
         return 1 - ACC
     except Exception:
@@ -910,7 +910,7 @@ def ERR_calc(ACC):
 
 
 def F_calc(TP, FP, FN, beta):
-    '''
+    """
     This function calculate F score
     :param TP: true positive
     :type TP : int
@@ -921,7 +921,7 @@ def F_calc(TP, FP, FN, beta):
     :param beta : beta coefficient
     :type beta : float
     :return: F score as float
-    '''
+    """
     try:
         result = ((1 + (beta)**2) * TP) / \
             ((1 + (beta)**2) * TP + FP + (beta**2) * FN)
@@ -931,7 +931,7 @@ def F_calc(TP, FP, FN, beta):
 
 
 def MCC_calc(TP, TN, FP, FN):
-    '''
+    """
     This function calculate MCC (Matthews correlation coefficient)
     :param TP: true positive
     :type TP : int
@@ -942,7 +942,7 @@ def MCC_calc(TP, TN, FP, FN):
     :param FN: false negative
     :type FN : int
     :return: MCC as float
-    '''
+    """
     try:
         result = (TP * TN - FP * FN) / \
             (math.sqrt((TP + FP) * (TP + FN) * (TN + FP) * (TN + FN)))
@@ -952,14 +952,14 @@ def MCC_calc(TP, TN, FP, FN):
 
 
 def MK_BM_calc(item1, item2):
-    '''
+    """
     This function calculate BM (Informedness) and MK (Markedness)
     :param item1: item1 in expression
     :type item1:float
     :param item2: item2 in expression
     :type item2:float
     :return: MK and BM as float
-    '''
+    """
     try:
         result = item1 + item2 - 1
         return result
@@ -968,14 +968,14 @@ def MK_BM_calc(item1, item2):
 
 
 def LR_calc(item1, item2):
-    '''
+    """
     This function calculate likelihood ratio
     :param item1: item1 in expression
     :type item1:float
     :param item2: item2 in expression
     :type item2:float
     :return: LR+ and LR- as float
-    '''
+    """
     try:
         result = item1 / item2
         return result
@@ -984,14 +984,14 @@ def LR_calc(item1, item2):
 
 
 def PRE_calc(P, POP):
-    '''
+    """
     This function calculate prevalence
     :param P: condition positive
     :type P : int
     :param POP: population
     :type POP : int
     :return: prevalence as float
-    '''
+    """
     try:
         result = P / POP
         return result
@@ -1000,14 +1000,14 @@ def PRE_calc(P, POP):
 
 
 def G_calc(item1, item2):
-    '''
+    """
     This function calculate G-measure & G-mean
     :param item1: PPV or TPR or TNR
     :type item1 : float
     :param item2: PPV or TPR or TNR
     :type item2 : float
     :return: G-measure or G-mean as float
-    '''
+    """
     try:
         result = math.sqrt(item1 * item2)
         return result
@@ -1016,7 +1016,7 @@ def G_calc(item1, item2):
 
 
 def RACCU_calc(TOP, P, POP):
-    '''
+    """
     This function calculate RACCU (Random accuracy unbiased)
     :param TOP: test outcome positive
     :type TOP : int
@@ -1025,13 +1025,13 @@ def RACCU_calc(TOP, P, POP):
     :param POP: population
     :type POP : int
     :return: RACCU as float
-    '''
+    """
     result = ((TOP + P) / (2 * POP))**2
     return result
 
 
 def RACC_calc(TOP, P, POP):
-    '''
+    """
     This function calculate random accuracy
     :param TOP: test outcome positive
     :type TOP : int
@@ -1040,20 +1040,20 @@ def RACC_calc(TOP, P, POP):
     :param POP: population
     :type POP:int
     :return: RACC as float
-    '''
+    """
     result = (TOP * P) / ((POP) ** 2)
     return result
 
 
 def reliability_calc(RACC, ACC):
-    '''
+    """
     This function calculate reliability
     :param RACC: random accuracy
     :type RACC : float
     :param ACC: accuracy
     :type ACC : float
     :return: reliability as float
-    '''
+    """
     try:
         result = (ACC - RACC) / (1 - RACC)
         return result
@@ -1062,7 +1062,7 @@ def reliability_calc(RACC, ACC):
 
 
 def kappa_se_calc(PA, PE, POP):
-    '''
+    """
     This function calculate kappa standard error
     :param PA: observed agreement among raters (overall accuracy)
     :type PA : float
@@ -1071,7 +1071,7 @@ def kappa_se_calc(PA, PE, POP):
     :param POP: population
     :type POP:int
     :return: kappa standard error as float
-    '''
+    """
     try:
         result = math.sqrt((PA * (1 - PA)) / (POP * ((1 - PE)**2)))
         return result
@@ -1080,7 +1080,7 @@ def kappa_se_calc(PA, PE, POP):
 
 
 def CI_calc(mean, SE, CV=1.96):
-    '''
+    """
     This function calculate confidence interval
     :param mean: mean of data
     :type mean : float
@@ -1089,7 +1089,7 @@ def CI_calc(mean, SE, CV=1.96):
     :param CV: critical value
     :type CV:float
     :return: confidence interval as tuple
-    '''
+    """
     try:
         CI_down = mean - CV * SE
         CI_up = mean + CV * SE
@@ -1099,7 +1099,7 @@ def CI_calc(mean, SE, CV=1.96):
 
 
 def se_calc(overall_accuracy, POP):
-    '''
+    """
     This function calculate standard error with binomial distribution
     :param overall_accuracy: overall accuracy
     :type  overall_accuracy : float
@@ -1107,7 +1107,7 @@ def se_calc(overall_accuracy, POP):
     :param POP: population
     :type POP : int
     :return: standard error as float
-    '''
+    """
     try:
         return math.sqrt(
             (overall_accuracy * (1 - overall_accuracy)) / POP)
@@ -1116,14 +1116,14 @@ def se_calc(overall_accuracy, POP):
 
 
 def micro_calc(TP, item):
-    '''
+    """
     This function calculate PPV_Micro and TPR_Micro
     :param TP: true positive
     :type TP:dict
     :param item: FN or FP
     :type item : dict
     :return: PPV_Micro or TPR_Micro as float
-    '''
+    """
     try:
         TP_sum = sum(TP.values())
         item_sum = sum(item.values())
@@ -1133,12 +1133,12 @@ def micro_calc(TP, item):
 
 
 def macro_calc(item):
-    '''
+    """
     This function calculate PPV_Macro and TPR_Macro
     :param item: PPV or TPR
     :type item:dict
     :return: PPV_Macro or TPR_Macro as float
-    '''
+    """
     try:
         item_sum = sum(item.values())
         item_len = len(item.values())
@@ -1148,7 +1148,7 @@ def macro_calc(item):
 
 
 def PC_PI_calc(P, TOP, POP):
-    '''
+    """
     This function calculate percent chance agreement for Scott's Pi
     :param P: condition positive
     :type P : dict
@@ -1157,7 +1157,7 @@ def PC_PI_calc(P, TOP, POP):
     :param POP: population
     :type POP:dict
     :return: percent chance agreement as float
-    '''
+    """
     try:
         result = 0
         for i in P.keys():
@@ -1168,7 +1168,7 @@ def PC_PI_calc(P, TOP, POP):
 
 
 def PC_AC1_calc(P, TOP, POP):
-    '''
+    """
     This function calculate percent chance agreement for Gwet's AC1
     :param P: condition positive
     :type P : dict
@@ -1177,7 +1177,7 @@ def PC_AC1_calc(P, TOP, POP):
     :param POP: population
     :type POP:dict
     :return: percent chance agreement as float
-    '''
+    """
     try:
         result = 0
         classes = list(P.keys())
@@ -1191,12 +1191,12 @@ def PC_AC1_calc(P, TOP, POP):
 
 
 def PC_S_calc(classes):
-    '''
+    """
     This function calculate percent chance agreement for Bennett-et-al.'s-S-score
     :param classes: confusion matrix classes
     :type classes : list
     :return: percent chance agreement as float
-    '''
+    """
     try:
         return 1 / (len(classes))
     except Exception:
@@ -1204,7 +1204,7 @@ def PC_S_calc(classes):
 
 
 def jaccard_index_calc(TP, TOP, P):
-    '''
+    """
     This function calculate Jaccard index for each class
     :param TP: true positive
     :type TP : int
@@ -1213,7 +1213,7 @@ def jaccard_index_calc(TP, TOP, P):
     :param P:  condition positive
     :type P : int
     :return: Jaccard index as float
-    '''
+    """
     try:
         return TP / (TOP + P - TP)
     except Exception:
@@ -1221,12 +1221,12 @@ def jaccard_index_calc(TP, TOP, P):
 
 
 def overall_jaccard_index_calc(jaccard_list):
-    '''
+    """
     This function calculate overall jaccard index
     :param jaccard_list : list of jaccard index for each class
     :type jaccard_list : list
     :return: (jaccard_sum , jaccard_mean) as tuple
-    '''
+    """
     try:
         jaccard_sum = sum(jaccard_list)
         jaccard_mean = jaccard_sum / len(jaccard_list)
@@ -1236,14 +1236,14 @@ def overall_jaccard_index_calc(jaccard_list):
 
 
 def overall_accuracy_calc(TP, POP):
-    '''
+    """
     This function calculate overall accuracy
     :param TP: true positive
     :type TP : dict
     :param POP: population
     :type POP:int
     :return: overall_accuracy as float
-    '''
+    """
     try:
         overall_accuracy = sum(TP.values()) / POP
         return overall_accuracy
@@ -1252,12 +1252,12 @@ def overall_accuracy_calc(TP, POP):
 
 
 def overall_random_accuracy_calc(item):
-    '''
+    """
     This function calculate overall random accuracy
     :param item: RACC or RACCU
     :type item : dict
     :return: overall random accuracy as float
-    '''
+    """
     try:
         return sum(item.values())
     except Exception:
@@ -1281,7 +1281,7 @@ def overall_statistics(
         AUC_dict,
         classes,
         table):
-    '''
+    """
     This function return overall statistics
     :param RACC: random accuracy
     :type RACC : dict
@@ -1312,7 +1312,7 @@ def overall_statistics(
     :param table: input matrix
     :type table : dict
     :return: overall statistics as dict
-    '''
+    """
     population = list(POP.values())[0]
     overall_accuracy = overall_accuracy_calc(TP, population)
     overall_random_accuracy_unbiased = overall_random_accuracy_calc(RACCU)
@@ -1417,7 +1417,7 @@ def overall_statistics(
 
 
 def class_statistics(TP, TN, FP, FN, classes, table):
-    '''
+    """
     This function return all class statistics
     :param TP: true positive dict for all classes
     :type TP : dict
@@ -1432,7 +1432,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     :param table: input matrix
     :type table : dict
     :return: result as dict
-    '''
+    """
     TPR = {}
     TNR = {}
     PPV = {}

@@ -23,7 +23,7 @@ class pycmCompareError(Exception):
 
 class ConfusionMatrix():
     """
-    Main Class Of ConfusionMatrix
+    Main class of ConfusionMatrix
     >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
     >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
     >>> cm = ConfusionMatrix(y_actu, y_pred)
@@ -559,7 +559,15 @@ def __overall_stat_init__(cm):
 
 
 class Compare():
+    """
+    Compare class
+
+    """
     def __init__(self,cm_dict):
+        """
+        :param cm_dict: cm's dictionary
+        :type cm_dict : dict
+        """
         if not isinstance(cm_dict,dict):
             raise pycmCompareError("")
         if not all(isinstance(item, ConfusionMatrix) for item in cm_dict.values()):
@@ -677,6 +685,14 @@ def __obj_vector_handler__(
 
 
 def __compare_class_handler__(compare,cm_dict):
+    """
+    This function handle class score of Compare class
+    :param compare: Compare
+    :type compare : pycm.Compare object
+    :param cm_dict: cm's dictionary
+    :type cm_dict : dict
+    :return: (max_class_name,max_class_score) as tuple
+    """
     classes = list(cm_dict.values())[0].classes
     max_class_name = None
     max_class_score = 0
@@ -692,6 +708,14 @@ def __compare_class_handler__(compare,cm_dict):
     return (max_class_name,max_class_score)
 
 def __compare_overall_handler__(compare,cm_dict):
+    """
+    This function handle overall score of Compare class
+    :param compare: Compare
+    :type compare : pycm.Compare object
+    :param cm_dict: cm's dictionary
+    :type cm_dict : dict
+    :return: (max_overall_name,max_overall_score) as tuple
+    """
     max_overall_name = None
     max_overall_score = 0
     for item in OVERALL_BENCHMARK_SCORE_DICT.keys():

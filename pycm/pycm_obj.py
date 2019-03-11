@@ -18,6 +18,8 @@ class pycmVectorError(Exception):
 class pycmMatrixError(Exception):
     pass
 
+class pycmCompareError(Exception):
+    pass
 
 class ConfusionMatrix():
     """
@@ -443,6 +445,7 @@ class ConfusionMatrix():
         __class_stat_init__(self)
 
 
+
 def __class_stat_init__(cm):
     """
     This function init individual class stat
@@ -553,6 +556,47 @@ def __overall_stat_init__(cm):
     cm.AUNU = cm.overall_stat["AUNU"]
     cm.AUNP = cm.overall_stat["AUNP"]
     cm.RCI = cm.overall_stat["RCI"]
+
+
+class Compare():
+    def __init__(self,cm_dict):
+        if not isinstance(cm_dict,dict):
+            raise pycmCompareError("")
+        if not all(isinstance(item, ConfusionMatrix) for item in cm_dict.values()):
+            raise pycmCompareError("")
+        if len(set(list(getattr(item,"POP").values())[0] for item in cm_dict.values()))!=1:
+            raise pycmCompareError("")
+        self.scores = {k:{"overall":0,"class":0}.copy() for k in cm_dict.keys()}
+        self.best = None
+        classes = list(cm_dict.values())[0].classes
+        max_class_name = None
+        max_class_score = 0
+        for c in classes:
+            for item in CLASS_BENCHMARK_SCORE_DICT.keys():
+                all_class_score = [CLASS_BENCHMARK_SCORE_DICT[item][cm.class_stat[item][c]] for cm in cm_dict.values()]
+                if all([isinstance(x,int) for x in all_class_score]):
+                    for cm_name in cm_dict.keys():
+                        self.scores[cm_name]["class"] += CLASS_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].class_stat[item][c]]
+                        if self.scores[cm_name]["class"] > max_class_score:
+                            max_class_score = self.scores[cm_name]["class"]
+                            max_class_name = cm_name
+
+
+        max_overall_name = None
+        max_overall_score = 0
+        for item in OVERALL_BENCHMARK_SCORE_DICT.keys():
+            all_overall_score = [OVERALL_BENCHMARK_SCORE_DICT[item][cm.overall_stat[item]] for cm in cm_dict.values()]
+            if all([isinstance(x,int) for x in all_overall_score]):
+                for cm_name in cm_dict.keys():
+                    self.scores[cm_name]["overall"] += OVERALL_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].overall_stat[item]]
+                    if self.scores[cm_name]["overall"]>max_overall_score:
+                        max_overall_score = self.scores[cm_name]["overall"]
+                        max_overall_name = cm_name
+
+        if max_overall_name == max_class_name:
+            self.best = cm_dict[max_class_name]
+
+
 
 
 def __obj_file_handler__(cm, file):

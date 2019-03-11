@@ -568,31 +568,8 @@ class Compare():
             raise pycmCompareError("")
         self.scores = {k:{"overall":0,"class":0}.copy() for k in cm_dict.keys()}
         self.best = None
-        classes = list(cm_dict.values())[0].classes
-        max_class_name = None
-        max_class_score = 0
-        for c in classes:
-            for item in CLASS_BENCHMARK_SCORE_DICT.keys():
-                all_class_score = [CLASS_BENCHMARK_SCORE_DICT[item][cm.class_stat[item][c]] for cm in cm_dict.values()]
-                if all([isinstance(x,int) for x in all_class_score]):
-                    for cm_name in cm_dict.keys():
-                        self.scores[cm_name]["class"] += CLASS_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].class_stat[item][c]]
-                        if self.scores[cm_name]["class"] > max_class_score:
-                            max_class_score = self.scores[cm_name]["class"]
-                            max_class_name = cm_name
-
-
-        max_overall_name = None
-        max_overall_score = 0
-        for item in OVERALL_BENCHMARK_SCORE_DICT.keys():
-            all_overall_score = [OVERALL_BENCHMARK_SCORE_DICT[item][cm.overall_stat[item]] for cm in cm_dict.values()]
-            if all([isinstance(x,int) for x in all_overall_score]):
-                for cm_name in cm_dict.keys():
-                    self.scores[cm_name]["overall"] += OVERALL_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].overall_stat[item]]
-                    if self.scores[cm_name]["overall"]>max_overall_score:
-                        max_overall_score = self.scores[cm_name]["overall"]
-                        max_overall_name = cm_name
-
+        (max_class_name, max_class_score) = __compare_class_handler__(self,cm_dict)
+        (max_overall_name, max_overall_score) = __compare_overall_handler__(self,cm_dict)
         if max_overall_name == max_class_name:
             self.best = cm_dict[max_class_name]
 
@@ -697,3 +674,33 @@ def __obj_vector_handler__(
         cm.weights = sample_weight.tolist()
 
     return matrix_param
+
+
+def __compare_class_handler__(compare,cm_dict):
+    classes = list(cm_dict.values())[0].classes
+    max_class_name = None
+    max_class_score = 0
+    for c in classes:
+        for item in CLASS_BENCHMARK_SCORE_DICT.keys():
+            all_class_score = [CLASS_BENCHMARK_SCORE_DICT[item][cm.class_stat[item][c]] for cm in cm_dict.values()]
+            if all([isinstance(x, int) for x in all_class_score]):
+                for cm_name in cm_dict.keys():
+                    compare.scores[cm_name]["class"] += CLASS_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].class_stat[item][c]]
+                    if compare.scores[cm_name]["class"] > max_class_score:
+                        max_class_score = compare.scores[cm_name]["class"]
+                        max_class_name = cm_name
+    return (max_class_name,max_class_score)
+
+def __compare_overall_handler__(compare,cm_dict):
+    max_overall_name = None
+    max_overall_score = 0
+    for item in OVERALL_BENCHMARK_SCORE_DICT.keys():
+        all_overall_score = [OVERALL_BENCHMARK_SCORE_DICT[item][cm.overall_stat[item]] for cm in cm_dict.values()]
+        if all([isinstance(x, int) for x in all_overall_score]):
+            for cm_name in cm_dict.keys():
+                compare.scores[cm_name]["overall"] += OVERALL_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].overall_stat[item]]
+                if compare.scores[cm_name]["overall"] > max_overall_score:
+                    max_overall_score = compare.scores[cm_name]["overall"]
+                    max_overall_name = cm_name
+
+    return (max_overall_name,max_overall_score)

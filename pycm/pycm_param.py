@@ -81,24 +81,54 @@ BENCHMARK_LIST = [
     "SOA3(Altman)",
     "SOA4(Cicchetti)"]
 
-PLRI_SCORE = {"Good":4,"Fair":3,"Poor":2,"Negligible":1,"None":"None"}
+PLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}
 
-DPI_SCORE = {"Good":4,"Fair":3,"Limited":2,"Poor":1,"None":"None"}
+DPI_SCORE = {"Good": 4, "Fair": 3, "Limited": 2, "Poor": 1, "None": "None"}
 
-AUCI_SCORE = {"Excellent":5,"Very Good":4,"Good":3,"Fair":2,"Poor":1,"None":"None"}
+AUCI_SCORE = {
+    "Excellent": 5,
+    "Very Good": 4,
+    "Good": 3,
+    "Fair": 2,
+    "Poor": 1,
+    "None": "None"}
 
-SOA1_SCORE = {"Almost Perfect":6,"Substantial":5,"Moderate":4,"Fair":3,"Slight":2,"Poor":1,"None":"None"}
+SOA1_SCORE = {
+    "Almost Perfect": 6,
+    "Substantial": 5,
+    "Moderate": 4,
+    "Fair": 3,
+    "Slight": 2,
+    "Poor": 1,
+    "None": "None"}
 
-SOA2_SCORE = {"Excellent":3,"Intermediate to Good":2,"Poor":1,"None":"None"}
+SOA2_SCORE = {
+    "Excellent": 3,
+    "Intermediate to Good": 2,
+    "Poor": 1,
+    "None": "None"}
 
-SOA3_SCORE = {"Very Good":5,"Good":4,"Moderate":3,"Fair":2,"Poor":1,"None":"None"}
+SOA3_SCORE = {
+    "Very Good": 5,
+    "Good": 4,
+    "Moderate": 3,
+    "Fair": 2,
+    "Poor": 1,
+    "None": "None"}
 
-SOA4_SCORE = {"Excellent":4,"Good":3,"Fair":2,"Poor":1,"None":"None"}
+SOA4_SCORE = {"Excellent": 4, "Good": 3, "Fair": 2, "Poor": 1, "None": "None"}
 
 
-CLASS_BENCHMARK_SCORE_DICT = {"PLRI":PLRI_SCORE,"DPI":DPI_SCORE,"AUCI":AUCI_SCORE}
+CLASS_BENCHMARK_SCORE_DICT = {
+    "PLRI": PLRI_SCORE,
+    "DPI": DPI_SCORE,
+    "AUCI": AUCI_SCORE}
 
-OVERALL_BENCHMARK_SCORE_DICT = {"SOA1(Landis & Koch)":SOA1_SCORE,"SOA2(Fleiss)":SOA2_SCORE,"SOA3(Altman)":SOA3_SCORE,"SOA4(Cicchetti)":SOA4_SCORE}
+OVERALL_BENCHMARK_SCORE_DICT = {
+    "SOA1(Landis & Koch)": SOA1_SCORE,
+    "SOA2(Fleiss)": SOA2_SCORE,
+    "SOA3(Altman)": SOA3_SCORE,
+    "SOA4(Cicchetti)": SOA4_SCORE}
 
 RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"

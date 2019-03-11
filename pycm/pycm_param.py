@@ -22,6 +22,10 @@ VECTOR_TYPE_ERROR = "The type of input vectors is assumed to be a list or a NumP
 VECTOR_SIZE_ERROR = "Input vectors must have same length"
 VECTOR_EMPTY_ERROR = "Input vectors are empty"
 CLASS_NUMBER_ERROR = "Number of the classes is lower than 2"
+COMPARE_FORMAT_ERROR = ""
+COMAPRE_TYPE_ERROR = ""
+COMPARE_DOMAIN_ERROR = ""
+COMPARE_NUMBER_ERROR = ""
 
 
 CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won't be demonstrated properly. \n" \

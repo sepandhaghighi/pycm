@@ -569,11 +569,13 @@ class Compare():
         :type cm_dict : dict
         """
         if not isinstance(cm_dict,dict):
-            raise pycmCompareError("")
+            raise pycmCompareError(COMPARE_FORMAT_ERROR)
         if not all(isinstance(item, ConfusionMatrix) for item in cm_dict.values()):
-            raise pycmCompareError("")
+            raise pycmCompareError(COMAPRE_TYPE_ERROR)
         if len(set(list(getattr(item,"POP").values())[0] for item in cm_dict.values()))!=1:
-            raise pycmCompareError("")
+            raise pycmCompareError(COMPARE_DOMAIN_ERROR)
+        if len(cm_dict)<2:
+            raise pycmCompareError(COMPARE_NUMBER_ERROR)
         self.scores = {k:{"overall":0,"class":0}.copy() for k in cm_dict.keys()}
         self.best = None
         (max_class_name, max_class_score) = __compare_class_handler__(self,cm_dict)

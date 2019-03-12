@@ -136,6 +136,7 @@ RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"
 RECOMMEND_HTML_MESSAGE = '<span style="color:red;">Note</span> : Recommended statistics for this type of classification highlighted in <span style="color :{0};">{0}</span>'.format(
     RECOMMEND_BACKGROUND_COLOR)
+RECOMMEND_WARNING = ""
 
 DOCUMENT_ADR = "http://www.pycm.ir/doc/index.html#"
 

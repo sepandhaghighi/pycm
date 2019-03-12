@@ -5,6 +5,15 @@ import numpy
 from .pycm_param import *
 
 
+def list_check_equal(input_list):
+    """
+    This function check equality of input_list items
+    :param input_list: input list
+    :type input_list: list
+    :return: result as bool
+    """
+    return input_list[1:] == input_list[:-1]
+
 def isfloat(value):
     """
     This function check input for float conversion

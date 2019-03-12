@@ -575,8 +575,7 @@ class Compare():
         if not all(isinstance(item, ConfusionMatrix)
                    for item in cm_dict.values()):
             raise pycmCompareError(COMPARE_TYPE_ERROR)
-        if len(set(list(getattr(item, "POP").values())
-                   [0] for item in cm_dict.values())) != 1:
+        if not list_check_equal([getattr(item, "POP") for item in cm_dict.values()]):
             raise pycmCompareError(COMPARE_DOMAIN_ERROR)
         if len(cm_dict) < 2:
             raise pycmCompareError(COMPARE_NUMBER_ERROR)

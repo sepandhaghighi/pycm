@@ -586,6 +586,7 @@ class Compare():
         (max_overall_name, max_overall_score) = __compare_overall_handler__(self, cm_dict)
         if max_overall_name == max_class_name:
             self.best = cm_dict[max_class_name]
+            self.best_name = max_overall_name
 
 
 def __obj_file_handler__(cm, file):

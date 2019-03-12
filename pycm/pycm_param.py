@@ -30,7 +30,7 @@ COMPARE_NUMBER_ERROR = "Lower than two confusion matrices is given for comparing
                        "confusion matrix for comparing is 2."
 
 
-CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won't be demonstrated properly. \n" \
+CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won't be demonstrated properly.\n" \
                        "The save_csv method can be used to save the confusion matrix in csv format and have a better" \
                        " demonstration of it."
 

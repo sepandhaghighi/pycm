@@ -22,10 +22,12 @@ VECTOR_TYPE_ERROR = "The type of input vectors is assumed to be a list or a NumP
 VECTOR_SIZE_ERROR = "Input vectors must have same length"
 VECTOR_EMPTY_ERROR = "Input vectors are empty"
 CLASS_NUMBER_ERROR = "Number of the classes is lower than 2"
-COMPARE_FORMAT_ERROR = ""
-COMAPRE_TYPE_ERROR = ""
-COMPARE_DOMAIN_ERROR = ""
-COMPARE_NUMBER_ERROR = ""
+COMPARE_FORMAT_ERROR = "The input type is considered to be dictionary but it's not!"
+COMAPRE_TYPE_ERROR = "The input is considered to consist of pycm.ConfusionMatrix object but it's not!"
+COMPARE_DOMAIN_ERROR = "The domain of all ConfusionMatrix objects must be same! the Sample size or the number " \
+                       "of classes are different."
+COMPARE_NUMBER_ERROR = "Lower than two Confusion matrices is given for compare. The minimum number of " \
+                       "confusion matrix for comparing is 2."
 
 
 CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won't be demonstrated properly. \n" \

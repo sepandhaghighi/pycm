@@ -565,7 +565,7 @@ class Compare():
 
     """
 
-    def __init__(self, cm_dict):
+    def __init__(self, cm_dict, by_class=False, weight=None):
         """
         :param cm_dict: cm's dictionary
         :type cm_dict : dict
@@ -579,15 +579,27 @@ class Compare():
             raise pycmCompareError(COMPARE_DOMAIN_ERROR)
         if len(cm_dict) < 2:
             raise pycmCompareError(COMPARE_NUMBER_ERROR)
+        self.classes = list(cm_dict.values())[0].classes
+        self.weight = {k:1 for k in cm_dict.keys()}
+        self.best = None
         self.scores = {k: {"overall": 0, "class": 0}.copy()
                        for k in cm_dict.keys()}
-        self.best = None
+        if by_class == True:
+            if not isinstance(weight,dict):
+                raise pycmCompareError(COMPARE_WEIGHT_ERROR)
+            if list(weight.keys()) == self.classes and all([isfloat(x) for x in weight.values()]):
+                self.weight = weight
+            else:
+                raise pycmCompareError(COMPARE_WEIGHT_ERROR)
         (max_class_name, max_class_score) = __compare_class_handler__(self, cm_dict)
-        (max_overall_name, max_overall_score) = __compare_overall_handler__(self, cm_dict)
-        if max_overall_name == max_class_name:
+        if by_class == True :
             self.best = cm_dict[max_class_name]
-            self.best_name = max_overall_name
-
+            self.best_name = max_class_name
+        else:
+            (max_overall_name, max_overall_score) = __compare_overall_handler__(self, cm_dict)
+            if max_overall_name == max_class_name:
+                self.best = cm_dict[max_class_name]
+                self.best_name = max_overall_name
 
 def __obj_file_handler__(cm, file):
     """
@@ -698,16 +710,15 @@ def __compare_class_handler__(compare, cm_dict):
     :type cm_dict : dict
     :return: (max_class_name,max_class_score) as tuple
     """
-    classes = list(cm_dict.values())[0].classes
     max_class_name = None
     max_class_score = 0
-    for c in classes:
+    for c in compare.classes:
         for item in CLASS_BENCHMARK_SCORE_DICT.keys():
             all_class_score = [CLASS_BENCHMARK_SCORE_DICT[item][
                 cm.class_stat[item][c]] for cm in cm_dict.values()]
             if all([isinstance(x, int) for x in all_class_score]):
                 for cm_name in cm_dict.keys():
-                    compare.scores[cm_name]["class"] += CLASS_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].class_stat[item][c]]
+                    compare.scores[cm_name]["class"] += compare.weight[c] * CLASS_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].class_stat[item][c]]
                     if compare.scores[cm_name]["class"] > max_class_score:
                         max_class_score = compare.scores[cm_name]["class"]
                         max_class_name = cm_name

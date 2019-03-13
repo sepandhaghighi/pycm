@@ -584,7 +584,7 @@ class Compare():
         if len(cm_dict) < 2:
             raise pycmCompareError(COMPARE_NUMBER_ERROR)
         self.classes = list(cm_dict.values())[0].classes
-        self.weight = {k:1 for k in cm_dict.keys()}
+        self.weight = {k:1 for k in self.classes}
         self.best = None
         self.scores = {k: {"overall": 0, "class": 0}.copy()
                        for k in cm_dict.keys()}

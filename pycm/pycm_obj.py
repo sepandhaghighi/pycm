@@ -588,7 +588,7 @@ class Compare():
         self.best = None
         self.scores = {k: {"overall": 0, "class": 0}.copy()
                        for k in cm_dict.keys()}
-        if by_class == True:
+        if by_class == True and weight is not None:
             if not isinstance(weight,dict):
                 raise pycmCompareError(COMPARE_WEIGHT_ERROR)
             if list(weight.keys()) == self.classes and all([isfloat(x) for x in weight.values()]):
@@ -596,11 +596,11 @@ class Compare():
             else:
                 raise pycmCompareError(COMPARE_WEIGHT_ERROR)
         (max_class_name, max_class_score) = __compare_class_handler__(self, cm_dict)
-        if by_class == True :
+        (max_overall_name, max_overall_score) = __compare_overall_handler__(self, cm_dict)
+        if by_class == True and weight is not None :
             self.best = cm_dict[max_class_name]
             self.best_name = max_class_name
         else:
-            (max_overall_name, max_overall_score) = __compare_overall_handler__(self, cm_dict)
             if max_overall_name == max_class_name:
                 self.best = cm_dict[max_class_name]
                 self.best_name = max_overall_name

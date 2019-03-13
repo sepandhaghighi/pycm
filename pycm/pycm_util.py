@@ -14,6 +14,7 @@ def list_check_equal(input_list):
     """
     return input_list[1:] == input_list[:-1]
 
+
 def isfloat(value):
     """
     This function check input for float conversion

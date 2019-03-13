@@ -141,7 +141,8 @@ RECOMMEND_HTML_MESSAGE = '<span style="color:red;">Note1</span> : Recommended st
 RECOMMEND_WARNING = "The recommender system assumes that the input is the result of classification over the whole data" \
                     " rather than just a part of it.\nIf the confusion matrix is the result of test data classification" \
                     ", the recommendation is not valid."
-RECOMMEND_HTML_MESSAGE2 = '<span style="color:red;">Note2</span> : {0}'.format(RECOMMEND_WARNING)
+RECOMMEND_HTML_MESSAGE2 = '<span style="color:red;">Note2</span> : {0}'.format(
+    RECOMMEND_WARNING)
 
 DOCUMENT_ADR = "http://www.pycm.ir/doc/index.html#"
 

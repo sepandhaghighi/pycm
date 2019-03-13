@@ -569,6 +569,10 @@ class Compare():
         """
         :param cm_dict: cm's dictionary
         :type cm_dict : dict
+        :param by_class: compare by class flag
+        :type by_class: bool
+        :param weight: class weights
+        :type weight: dict
         """
         if not isinstance(cm_dict, dict):
             raise pycmCompareError(COMPARE_FORMAT_ERROR)

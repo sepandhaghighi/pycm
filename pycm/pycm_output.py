@@ -43,6 +43,7 @@ def html_dataset_type(is_binary, is_imbalanced):
     result += "<ul>\n\n<li>{0}</li>\n\n<li>{1}</li>\n</ul>\n".format(
         class_type, balance_type)
     result += "<p>{0}</p>\n".format(RECOMMEND_HTML_MESSAGE)
+    result += "<p>{0}</p>\n".format(RECOMMEND_HTML_MESSAGE2)
 
     return result
 

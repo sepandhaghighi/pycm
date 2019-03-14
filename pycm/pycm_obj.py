@@ -606,6 +606,44 @@ class Compare():
             if max_overall_name == max_class_name:
                 self.best = cm_dict[max_class_name]
                 self.best_name = max_overall_name
+    def save_report(
+            self,
+            name,
+            address=True):
+        """
+        This method save ConfusionMatrix in .pycm (flat file format)
+        :param name: filename
+        :type name : str
+        :param address: flag for address return
+        :type address : bool
+        :param overall_param : overall parameters list for save, Example : ["Kappa","Scott PI]
+        :type overall_param : list
+        :param class_param : class parameters list for save, Example : ["TPR","TNR","AUC"]
+        :type class_param : list
+        :param class_name : class name (sub set of classes), Example :[1,2,3]
+        :type class_name : list
+        :return: saving Status as dict {"Status":bool , "Message":str}
+        """
+        try:
+            message = None
+            file = open(name + ".comp", "w")
+            sorted_list = sorted(self.scores, key=lambda x: (self.scores[x]['class'], self.scores[x]['overall']))
+            title_items = ["Rank","Name","Class-Score","Overall-Score"]
+            shift_1 = "%-"+str(len(sorted_list)+4)+"s"
+            shift_2 = "%-"+str(max(map(lambda x : len(str(x)),sorted_list))+4)+"s"
+            shift_3 = "%-"+str(len(str(self.scores[sorted_list[0]]["class"]))+11)+"s"
+            file.write("Best : " + str(self.best_name) + "\n\n")
+            first_line = (shift_1+shift_2+shift_3) % tuple(title_items[:-1])+title_items[-1]+"\n"
+            file.write(first_line)
+            for index,cm in enumerate(sorted_list):
+                line = (shift_1+shift_2+shift_3) % (str(index+1),str(cm),str(self.scores[cm]["class"]))+str(self.scores[cm]["overall"])+"\n"
+                file.write(line)
+            file.close()
+            if address:
+                message = os.path.join(os.getcwd(), name + ".comp")
+            return {"Status": True, "Message": message}
+        except Exception as e:
+            return {"Status": False, "Message": str(e)}
 
 
 def __obj_file_handler__(cm, file):

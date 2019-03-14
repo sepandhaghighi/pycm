@@ -387,8 +387,10 @@ def stat_print(
             class_stat_keys = sorted(class_param)
     classes.sort()
     if len(class_stat_keys) > 0 and len(classes) > 0:
+        class_shift = max(max(map(lambda x: len(str(x)), classes)) + 5, digit + 6, 14)
+        class_shift_format = "%-" + str(class_shift) + "s"
         result += "\nClass Statistics :\n\n"
-        result += "Classes" + shift * " " + "%-24s" * \
+        result += "Classes" + shift * " " + class_shift_format * \
             classes_len % tuple(map(str, classes)) + "\n"
         rounder_map = partial(rounder, digit=digit)
         for key in class_stat_keys:
@@ -397,7 +399,7 @@ def stat_print(
             if key not in CAPITALIZE_FILTER:
                 params_text = params_text.capitalize()
             result += key + "(" + params_text + ")" + " " * (
-                shift - len(key) - len(PARAMS_DESCRIPTION[key]) + 5) + "%-24s" * classes_len % tuple(
+                shift - len(key) - len(PARAMS_DESCRIPTION[key]) + 5) + class_shift_format * classes_len % tuple(
                 map(rounder_map, row)) + "\n"
     if classes_len >= CLASS_NUMBER_THRESHOLD:
         result += "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"

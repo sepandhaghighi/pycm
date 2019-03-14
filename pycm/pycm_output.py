@@ -418,8 +418,13 @@ def compare_report_print(sorted_list,scores):
     result = ""
     result += "Best : " + str(sorted_list[0]) + "\n\n"
     result += ("".join(shifts)) % tuple(title_items[:-1]) + title_items[-1] + "\n"
+    prev_rank = 0
     for index, cm in enumerate(sorted_list):
-        result += ("".join(shifts)) % (str(index + 1), str(cm), str(scores[cm]["class"])) + str(scores[cm]["overall"]) + "\n"
+        rank = index
+        if scores[sorted_list[rank]] == scores[sorted_list[prev_rank]]:
+            rank = prev_rank
+        result += ("".join(shifts)) % (str(rank + 1), str(cm), str(scores[cm]["class"])) + str(scores[cm]["overall"]) + "\n"
+        prev_rank = rank
     return result
 
 

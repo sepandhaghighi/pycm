@@ -608,6 +608,13 @@ class Compare():
             if max_overall_name == max_class_name:
                 self.best = cm_dict[max_class_name]
                 self.best_name = max_overall_name
+    def print_report(self):
+        """
+        This method print Compare report
+        :return: None
+        """
+        report = compare_report_print(self.sorted,self.scores)
+        print(report)
     def save_report(
             self,
             name,
@@ -623,6 +630,8 @@ class Compare():
         try:
             message = None
             file = open(name + ".comp", "w")
+            result = compare_report_print(self.sorted,self.scores)
+            file.write(result)
             file.close()
             if address:
                 message = os.path.join(os.getcwd(), name + ".comp")

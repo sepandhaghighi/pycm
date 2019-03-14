@@ -284,13 +284,13 @@ def table_print(classes, table):
     table_list.extend(classes)
     table_max_length = max(map(len, map(str, table_list)))
     shift = "%-" + str(4 + table_max_length) + "s"
-    result = "Predict" + 10 * " " + shift * \
+    result = shift % "Predict" + shift * \
         classes_len % tuple(map(str, classes)) + "\n"
     result = result + "Actual\n"
     classes.sort()
     for key in classes:
         row = [table[key][i] for i in classes]
-        result += str(key) + " " * (17 - len(str(key))) + \
+        result += shift % str(key) + \
             shift * classes_len % tuple(map(str, row)) + "\n\n"
     if classes_len >= CLASS_NUMBER_THRESHOLD:
         result += "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"

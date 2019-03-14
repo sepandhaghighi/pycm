@@ -599,7 +599,11 @@ class Compare():
                 raise pycmCompareError(COMPARE_WEIGHT_ERROR)
         (max_class_name, max_class_score) = __compare_class_handler__(self, cm_dict)
         (max_overall_name, max_overall_score) = __compare_overall_handler__(self, cm_dict)
-        self.sorted = sorted(self.scores, key=lambda x: (self.scores[x]['class'], self.scores[x]['overall']))
+        self.sorted = sorted(
+            self.scores,
+            key=lambda x: (
+                self.scores[x]['class'],
+                self.scores[x]['overall']))
         self.sorted.reverse()
         if by_class and weight is not None:
             self.best = cm_dict[max_class_name]
@@ -608,13 +612,15 @@ class Compare():
             if max_overall_name == max_class_name:
                 self.best = cm_dict[max_class_name]
                 self.best_name = max_overall_name
+
     def print_report(self):
         """
         This method print Compare report
         :return: None
         """
-        report = compare_report_print(self.sorted,self.scores)
+        report = compare_report_print(self.sorted, self.scores)
         print(report)
+
     def save_report(
             self,
             name,
@@ -630,7 +636,7 @@ class Compare():
         try:
             message = None
             file = open(name + ".comp", "w")
-            report = compare_report_print(self.sorted,self.scores)
+            report = compare_report_print(self.sorted, self.scores)
             file.write(report)
             file.close()
             if address:

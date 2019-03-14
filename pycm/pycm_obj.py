@@ -623,14 +623,6 @@ class Compare():
         try:
             message = None
             file = open(name + ".comp", "w")
-            title_items = ["Rank","Name","Class-Score","Overall-Score"]
-            shifts = ["%-"+str(len(self.sorted)+4)+"s","%-"+str(max(map(lambda x : len(str(x)),self.sorted))+4)+"s","%-"+str(len(str(self.scores[self.sorted[0]]["class"]))+11)+"s"]
-            file.write("Best : " + str(self.best_name) + "\n\n")
-            first_line = ("".join(shifts)) % tuple(title_items[:-1])+title_items[-1]+"\n"
-            file.write(first_line)
-            for index,cm in enumerate(self.sorted):
-                line = ("".join(shifts)) % (str(index+1),str(cm),str(self.scores[cm]["class"]))+str(self.scores[cm]["overall"])+"\n"
-                file.write(line)
             file.close()
             if address:
                 message = os.path.join(os.getcwd(), name + ".comp")

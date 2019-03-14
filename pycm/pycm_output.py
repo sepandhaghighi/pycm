@@ -404,6 +404,26 @@ def stat_print(
     return result
 
 
+def compare_report_print(sorted_list,scores):
+    """
+    This function return compare report
+    :param sorted_list: sorted list of cm's
+    :type sorted_list: list
+    :param scores: scores of cm's
+    :type scores: dict
+    :return: printable result as str
+    """
+    title_items = ["Rank", "Name", "Class-Score", "Overall-Score"]
+    shifts = ["%-" + str(len(sorted_list) + 4) + "s", "%-" + str(max(map(lambda x: len(str(x)), sorted_list)) + 4) + "s", "%-" + str(len(str(scores[sorted_list[0]]["class"])) + 11) + "s"]
+    result = ""
+    result += "Best : " + str(sorted_list[0]) + "\n\n"
+    result += ("".join(shifts)) % tuple(title_items[:-1]) + title_items[-1] + "\n"
+    for index, cm in enumerate(sorted_list):
+        result += ("".join(shifts)) % (str(index + 1), str(cm), str(scores[cm]["class"])) + str(scores[cm]["overall"]) + "\n"
+
+    return result
+
+
 def online_help(param=None):
     """
     This function open online document

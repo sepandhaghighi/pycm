@@ -387,7 +387,8 @@ def stat_print(
             class_stat_keys = sorted(class_param)
     classes.sort()
     if len(class_stat_keys) > 0 and len(classes) > 0:
-        class_shift = max(max(map(lambda x: len(str(x)), classes)) + 5, digit + 6, 14)
+        class_shift = max(
+            max(map(lambda x: len(str(x)), classes)) + 5, digit + 6, 14)
         class_shift_format = "%-" + str(class_shift) + "s"
         result += "\nClass Statistics :\n\n"
         result += "Classes" + shift * " " + class_shift_format * \

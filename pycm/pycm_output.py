@@ -283,7 +283,7 @@ def table_print(classes, table):
         table_list.extend(list(table[key].values()))
     table_list.extend(classes)
     table_max_length = max(map(len, map(str, table_list)))
-    shift = "%-" + str(4 + table_max_length) + "s"
+    shift = "%-" + str(7 + table_max_length) + "s"
     result = shift % "Predict" + shift * \
         classes_len % tuple(map(str, classes)) + "\n"
     result = result + "Actual\n"

@@ -652,6 +652,14 @@ class Compare():
         """
         return "pycm.Compare(classes: " + str(self.classes) + ")"
 
+    def __str__(self):
+        """
+        Compare object string representation method
+        :return: representation as str
+        """
+        report = compare_report_print(self.sorted, self.scores)
+        return report
+
 def __obj_file_handler__(cm, file):
     """
     This function handle object conditions for file

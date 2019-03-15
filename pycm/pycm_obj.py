@@ -645,6 +645,12 @@ class Compare():
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
+    def __repr__(self):
+        """
+        Compare object representation method
+        :return: representation as str
+        """
+        return "pycm.Compare(classes: " + str(self.classes) + ")"
 
 def __obj_file_handler__(cm, file):
     """

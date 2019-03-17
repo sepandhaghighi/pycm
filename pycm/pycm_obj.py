@@ -424,7 +424,6 @@ class ConfusionMatrix():
     def __ne__(self, other):
         """
         ConfusionMatrix not equal method
-        :param other:
         :param other: other ConfusionMatrix
         :type other: ConfusionMatrix
         :return: result as bool

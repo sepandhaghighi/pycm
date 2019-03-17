@@ -407,13 +407,15 @@ def stat_print(
     return result
 
 
-def compare_report_print(sorted_list, scores):
+def compare_report_print(sorted_list, scores, best_name):
     """
     This function return compare report
     :param sorted_list: sorted list of cm's
     :type sorted_list: list
     :param scores: scores of cm's
     :type scores: dict
+    :param best_name: best cm name
+    :type best_name: str
     :return: printable result as str
     """
     title_items = ["Rank", "Name", "Class-Score", "Overall-Score"]
@@ -428,7 +430,7 @@ def compare_report_print(sorted_list, scores):
                   11) +
               "s"]
     result = ""
-    result += "Best : " + str(sorted_list[0]) + "\n\n"
+    result += "Best : " + str(best_name) + "\n\n"
     result += ("".join(shifts)
                ) % tuple(title_items[:-1]) + title_items[-1] + "\n"
     prev_rank = 0

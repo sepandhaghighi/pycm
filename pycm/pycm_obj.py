@@ -621,7 +621,7 @@ class Compare():
         This method print Compare report
         :return: None
         """
-        report = compare_report_print(self.sorted, self.scores)
+        report = compare_report_print(self.sorted, self.scores, self.best_name)
         print(report)
 
     def save_report(
@@ -639,7 +639,7 @@ class Compare():
         try:
             message = None
             file = open(name + ".comp", "w")
-            report = compare_report_print(self.sorted, self.scores)
+            report = compare_report_print(self.sorted, self.scores, self.best_name)
             file.write(report)
             file.close()
             if address:
@@ -660,7 +660,7 @@ class Compare():
         Compare object string representation method
         :return: representation as str
         """
-        report = compare_report_print(self.sorted, self.scores)
+        report = compare_report_print(self.sorted, self.scores, self.best_name)
         return report
 
 def __obj_file_handler__(cm, file):

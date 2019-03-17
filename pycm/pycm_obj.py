@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from __future__ import division
 from .pycm_func import *
 from .pycm_output import *
 from .pycm_util import *

@@ -588,6 +588,7 @@ class Compare():
         self.classes = list(cm_dict.values())[0].classes
         self.weight = {k: 1 for k in self.classes}
         self.best = None
+        self.best_name = None
         self.scores = {k: {"overall": 0, "class": 0}.copy()
                        for k in cm_dict.keys()}
         if by_class and weight is not None:

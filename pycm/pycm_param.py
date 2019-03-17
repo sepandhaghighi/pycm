@@ -29,7 +29,7 @@ COMPARE_DOMAIN_ERROR = "The domain of all ConfusionMatrix objects must be same! 
 COMPARE_NUMBER_ERROR = "Lower than two confusion matrices is given for comparing. The minimum number of " \
                        "confusion matrix for comparing is 2."
 
-COMPARE_WEIGHT_ERROR = "Weight is not set for all classes."
+COMPARE_WEIGHT_ERROR = "The weight type must be dictionary and also must be set for all classes."
 
 
 CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won't be demonstrated properly.\n" \

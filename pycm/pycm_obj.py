@@ -773,12 +773,12 @@ def __compare_class_handler__(compare, cm_dict):
     max_class_score = 0
     for c in compare.classes:
         for item in CLASS_BENCHMARK_SCORE_DICT.keys():
+            max_item_score = len(CLASS_BENCHMARK_SCORE_DICT[item]) - 1
             all_class_score = [CLASS_BENCHMARK_SCORE_DICT[item][
                 cm.class_stat[item][c]] for cm in cm_dict.values()]
             if all([isinstance(x, int) for x in all_class_score]):
                 for cm_name in cm_dict.keys():
-                    compare.scores[cm_name]["class"] += compare.weight[c] * \
-                        CLASS_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].class_stat[item][c]]
+                    compare.scores[cm_name]["class"] += compare.weight[c] * (CLASS_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].class_stat[item][c]] / max_item_score)
                     if compare.scores[cm_name]["class"] > max_class_score:
                         max_class_score = compare.scores[cm_name]["class"]
                         max_class_name = cm_name
@@ -797,11 +797,12 @@ def __compare_overall_handler__(compare, cm_dict):
     max_overall_name = None
     max_overall_score = 0
     for item in OVERALL_BENCHMARK_SCORE_DICT.keys():
+        max_item_score = len(OVERALL_BENCHMARK_SCORE_DICT[item]) - 1
         all_overall_score = [OVERALL_BENCHMARK_SCORE_DICT[item][
             cm.overall_stat[item]] for cm in cm_dict.values()]
         if all([isinstance(x, int) for x in all_overall_score]):
             for cm_name in cm_dict.keys():
-                compare.scores[cm_name]["overall"] += OVERALL_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].overall_stat[item]]
+                compare.scores[cm_name]["overall"] += OVERALL_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].overall_stat[item]] / max_item_score
                 if compare.scores[cm_name]["overall"] > max_overall_score:
                     max_overall_score = compare.scores[cm_name]["overall"]
                     max_overall_name = cm_name

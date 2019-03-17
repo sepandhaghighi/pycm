@@ -421,6 +421,16 @@ class ConfusionMatrix():
             return self.table == other.table
         return False
 
+    def __ne__(self, other):
+        """
+        ConfusionMatrix not equal method
+        :param other:
+        :param other: other ConfusionMatrix
+        :type other: ConfusionMatrix
+        :return: result as bool
+        """
+        return not self.__eq__(other)
+
     def relabel(self, mapping):
         """
         This method rename ConfusionMatrix classes

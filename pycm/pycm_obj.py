@@ -410,6 +410,17 @@ class ConfusionMatrix():
     def __len__(self):
         return len(self.classes)
 
+    def __eq__(self, other):
+        """
+        ConfusionMatrix equal method
+        :param other: other ConfusionMatrix
+        :type other: ConfusionMatrix
+        :return: result as bool
+        """
+        if isinstance(other, ConfusionMatrix):
+            return self.table == other.table
+        return False
+
     def relabel(self, mapping):
         """
         This method rename ConfusionMatrix classes

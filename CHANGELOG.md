@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - G-Mean (GM)
 - Index of balanced accuracy (IBA)
 - Optimized precision (OP)
+- Pearson's C (C)
 - `Compare` class
 - Parameters recommendation warning
 

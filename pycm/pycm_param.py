@@ -300,7 +300,7 @@ PARAMS_LINK = {
     "OP": "OP-(Optimized-precision)",
     "IBA": "IBA-(Index-of-balanced-accuracy)",
     "GM": "GM-(G-mean)",
-    "Pearson C": ""}
+    "Pearson C": "Pearson’s-C"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI"]
 

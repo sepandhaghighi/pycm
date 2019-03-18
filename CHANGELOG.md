@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `table_print` function bug fixed
 - `Beta` argument renamed to `beta` (`F_calc` function & `F_beta` method) 
 - Imbalance dataset parameters recommendation modified
+- `normalize` argument added to `save_html` method
 
 ## [1.9] - 2019-02-25
 ### Added

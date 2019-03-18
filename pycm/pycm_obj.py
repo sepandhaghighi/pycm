@@ -240,7 +240,7 @@ class ConfusionMatrix():
             address=True,
             overall_param=None,
             class_param=None,
-            class_name=None, color=(0, 0, 0)):
+            class_name=None, color=(0, 0, 0), normalize=False):
         """
         This method save ConfusionMatrix in HTML file
         :param name: filename
@@ -255,14 +255,19 @@ class ConfusionMatrix():
         :type class_name : list
         :param color : matrix color (R,G,B)
         :type color : tuple
+        :param normalize : save normalize matrix flag
+        :type normalize : bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
         try:
             message = None
+            table = self.table
+            if normalize:
+                table = self.normalized_table
             html_file = open(name + ".html", "w")
             html_file.write(html_init(name))
             html_file.write(html_dataset_type(self.binary, self.imbalance))
-            html_file.write(html_table(self.classes, self.table, color))
+            html_file.write(html_table(self.classes, table, color, normalize))
             html_file.write(
                 html_overall_stat(
                     self.overall_stat,

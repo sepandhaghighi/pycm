@@ -88,7 +88,7 @@ def html_table_color(row, item, color=(0, 0, 0)):
     return result
 
 
-def html_table(classes, table, rgb_color):
+def html_table(classes, table, rgb_color, normalize=False):
     """
     This function return report file confusion matrix
     :param classes: matrix classes
@@ -97,10 +97,15 @@ def html_table(classes, table, rgb_color):
     :type table : dict
     :param rgb_color : input color
     :type rgb_color : tuple
+    :param normalize : save normalize matrix flag
+    :type normalize : bool
     :return: html_table as str
     """
     result = ""
-    result += "<h2>Confusion Matrix : </h2>\n"
+    result += "<h2>Confusion Matrix "
+    if normalize:
+        result += "(Normalized)"
+    result += ": </h2>\n"
     result += '<table>\n'
     result += '<tr  align="center">' + "\n"
     result += '<td>Actual</td>\n'

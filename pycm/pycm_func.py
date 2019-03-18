@@ -6,6 +6,21 @@ from functools import reduce
 from .pycm_interpret import *
 
 
+def pearson_C_calc(chi_square, POP):
+    """
+    This function calculate C (Pearson’s C)
+    :param chi_square: chi squared
+    :type chi_square : float
+    :param POP: population
+    :type POP : int
+    :return: C as float
+    """
+    try:
+        C = math.sqrt(chi_square/(POP+chi_square))
+        return C
+    except Exception:
+        return "None"
+
 def IBA_calc(TPR, TNR, alpha=1):
     """
     This function calculate IBA (Index of balanced accuracy)
@@ -1362,6 +1377,7 @@ def overall_statistics(
     AUNU = macro_calc(AUC_dict)
     AUNP = AUNP_calc(classes, P, POP, AUC_dict)
     RCI = RCI_calc(mutual_information, reference_entropy)
+    C = pearson_C_calc(chi_squared, population)
     return {
         "Overall ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -1413,7 +1429,8 @@ def overall_statistics(
         "CBA": CBA,
         "AUNU": AUNU,
         "AUNP": AUNP,
-        "RCI": RCI}
+        "RCI": RCI,
+        "Pearson C": C}
 
 
 def class_statistics(TP, TN, FP, FN, classes, table):

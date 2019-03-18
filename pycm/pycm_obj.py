@@ -578,6 +578,7 @@ def __overall_stat_init__(cm):
     cm.AUNU = cm.overall_stat["AUNU"]
     cm.AUNP = cm.overall_stat["AUNP"]
     cm.RCI = cm.overall_stat["RCI"]
+    cm.C = cm.overall_stat["Pearson C"]
 
 
 class Compare():

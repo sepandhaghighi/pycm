@@ -545,5 +545,10 @@ Example : online_help("J") or online_help(2)
 0.5016
 >>> cm.GM[1]
 0.722841614740048
+>>> cm = ConfusionMatrix(matrix={1:{1:22,0:18},0:{1:2,0:14}}) # Verified Case
+>>> cm.C
+0.36170212765957444
+>>> cm.Chi_Squared
+8.429166666666667
 
 '''

@@ -121,6 +121,7 @@ Overall RACCU                                                    0.4225
 P-Value                                                          1.0
 PPV Macro                                                        None
 PPV Micro                                                        0.35
+Pearson C                                                        None
 Phi-Squared                                                      None
 RCI                                                              0.11409
 RR                                                               5.0
@@ -256,6 +257,7 @@ Overall RACCU                                                    0.39229
 P-Value                                                          0.41709
 PPV Macro                                                        0.56111
 PPV Micro                                                        0.61905
+Pearson C                                                        0.57628
 Phi-Squared                                                      0.49722
 RCI                                                              0.34536
 RR                                                               7.0

@@ -58,6 +58,7 @@ Overall RACCU                                                    0.36458
 P-Value                                                          0.38721
 PPV Macro                                                        0.56667
 PPV Micro                                                        0.58333
+Pearson C                                                        0.59568
 Phi-Squared                                                      0.55
 RCI                                                              0.34947
 RR                                                               4.0
@@ -177,6 +178,7 @@ Overall RACCU                                                    0.36458
 P-Value                                                          0.38721
 PPV Macro                                                        0.56667
 PPV Micro                                                        0.58333
+Pearson C                                                        0.59568
 Phi-Squared                                                      0.55
 RCI                                                              0.34947
 RR                                                               4.0
@@ -311,6 +313,7 @@ Overall RACCU                                                    0.4225
 P-Value                                                          1.0
 PPV Macro                                                        None
 PPV Micro                                                        0.35
+Pearson C                                                        None
 Phi-Squared                                                      None
 RCI                                                              0.11409
 RR                                                               5.0
@@ -417,6 +420,7 @@ Overall RACCU                                                    0.4225
 P-Value                                                          1.0
 PPV Macro                                                        None
 PPV Micro                                                        0.35
+Pearson C                                                        None
 Phi-Squared                                                      None
 RCI                                                              0.11409
 RR                                                               5.0
@@ -633,6 +637,7 @@ Overall RACCU                                                    0.36694
 P-Value                                                          0.01667
 PPV Macro                                                        0.68262
 PPV Micro                                                        0.66667
+Pearson C                                                        0.60423
 Phi-Squared                                                      0.57502
 RCI                                                              0.2596
 RR                                                               9.0
@@ -752,6 +757,7 @@ Overall RACCU                                                    0.36694
 P-Value                                                          0.01667
 PPV Macro                                                        0.68262
 PPV Micro                                                        0.66667
+Pearson C                                                        0.60423
 Phi-Squared                                                      0.57502
 RCI                                                              0.2596
 RR                                                               9.0
@@ -873,6 +879,7 @@ Overall RACCU                                                    0.39229
 P-Value                                                          0.41709
 PPV Macro                                                        0.56111
 PPV Micro                                                        0.61905
+Pearson C                                                        0.57628
 Phi-Squared                                                      0.49722
 RCI                                                              0.34536
 RR                                                               7.0

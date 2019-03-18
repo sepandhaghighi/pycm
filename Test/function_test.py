@@ -394,31 +394,32 @@ Example : online_help("J") or online_help(2)
 71-PPV Macro
 72-PPV Micro
 73-PRE
-74-Phi-Squared
-75-RACC
-76-RACCU
-77-RCI
-78-RR
-79-Reference Entropy
-80-Response Entropy
-81-SOA1(Landis & Koch)
-82-SOA2(Fleiss)
-83-SOA3(Altman)
-84-SOA4(Cicchetti)
-85-Scott PI
-86-Standard Error
-87-TN
-88-TNR
-89-TON
-90-TOP
-91-TP
-92-TPR
-93-TPR Macro
-94-TPR Micro
-95-Y
-96-Zero-one Loss
-97-dInd
-98-sInd
+74-Pearson C
+75-Phi-Squared
+76-RACC
+77-RACCU
+78-RCI
+79-RR
+80-Reference Entropy
+81-Response Entropy
+82-SOA1(Landis & Koch)
+83-SOA2(Fleiss)
+84-SOA3(Altman)
+85-SOA4(Cicchetti)
+86-Scott PI
+87-Standard Error
+88-TN
+89-TNR
+90-TON
+91-TOP
+92-TP
+93-TPR
+94-TPR Macro
+95-TPR Micro
+96-Y
+97-Zero-one Loss
+98-dInd
+99-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)

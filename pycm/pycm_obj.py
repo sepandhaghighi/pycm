@@ -661,7 +661,8 @@ class Compare():
         try:
             message = None
             file = open(name + ".comp", "w")
-            report = compare_report_print(self.sorted, self.scores, self.best_name)
+            report = compare_report_print(
+                self.sorted, self.scores, self.best_name)
             file.write(report)
             file.close()
             if address:
@@ -684,6 +685,7 @@ class Compare():
         """
         report = compare_report_print(self.sorted, self.scores, self.best_name)
         return report
+
 
 def __obj_file_handler__(cm, file):
     """
@@ -803,7 +805,8 @@ def __compare_class_handler__(compare, cm_dict):
                 cm.class_stat[item][c]] for cm in cm_dict.values()]
             if all([isinstance(x, int) for x in all_class_score]):
                 for cm_name in cm_dict.keys():
-                    compare.scores[cm_name]["class"] += compare.weight[c] * (CLASS_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].class_stat[item][c]] / max_item_score)
+                    compare.scores[cm_name]["class"] += compare.weight[c] * (
+                        CLASS_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].class_stat[item][c]] / max_item_score)
                     if compare.scores[cm_name]["class"] > max_class_score:
                         max_class_score = compare.scores[cm_name]["class"]
                         max_class_name = cm_name

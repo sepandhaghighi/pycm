@@ -16,10 +16,11 @@ def pearson_C_calc(chi_square, POP):
     :return: C as float
     """
     try:
-        C = math.sqrt(chi_square/(POP+chi_square))
+        C = math.sqrt(chi_square / (POP + chi_square))
         return C
     except Exception:
         return "None"
+
 
 def IBA_calc(TPR, TNR, alpha=1):
     """

@@ -603,9 +603,9 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBU
 
 <blockquote>42- P. Branco, L. Torgo, and R. P. J. A. C. S. Ribeiro, "A survey of predictive modeling on imbalanced domains," vol. 49, no. 2, p. 31, 2016.</blockquote> 
 
-<blockquote>43- Karl Pearson (20 June 1895) "Notes on regression and inheritance in the case of two parents," Proceedings of the Royal Society of London, 58 : 240–242.</blockquote> 
+<blockquote>43- K. Pearson, "Notes on Regression and Inheritance in the Case of Two Parents Proceedings of the Royal Society of London, 58, 240-242," ed, 1895.</blockquote> 
 
-<blockquote>44- Conover (1999), "Practical Nonparametric Statistics", Third Edition, Wiley, pp. 229-230.</blockquote> 
+<blockquote>44- W. J. I. Conover, New York, "Practical Nonparametric Statistics, John Wiley and Sons," 1999.</blockquote> 
 
 ## Cite
 

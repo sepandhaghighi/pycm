@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 from functools import partial
+import numpy
 from .pycm_param import *
 from .pycm_util import class_filter, rounder
 import webbrowser
@@ -412,7 +413,7 @@ def stat_print(
     return result
 
 
-def compare_report_print(sorted_list, scores, best_name):
+def compare_report_print(sorted_list, scores, best_name, digit=5):
     """
     This function return compare report
     :param sorted_list: sorted list of cm's
@@ -421,6 +422,8 @@ def compare_report_print(sorted_list, scores, best_name):
     :type scores: dict
     :param best_name: best cm name
     :type best_name: str
+    :param digit: precision digit (default value : 5)
+    :type digit : int
     :return: printable result as str
     """
     title_items = ["Rank", "Name", "Class-Score", "Overall-Score"]
@@ -432,7 +435,7 @@ def compare_report_print(sorted_list, scores, best_name):
                   4) +
               "s", "%-" +
               str(len(str(scores[sorted_list[0]]["class"])) +
-                  11) +
+                  11+digit) +
               "s"]
     result = ""
     result += "Best : " + str(best_name) + "\n\n"
@@ -444,7 +447,7 @@ def compare_report_print(sorted_list, scores, best_name):
         if scores[sorted_list[rank]] == scores[sorted_list[prev_rank]]:
             rank = prev_rank
         result += ("".join(shifts)) % (str(rank + 1), str(cm),
-                                       str(scores[cm]["class"])) + str(scores[cm]["overall"]) + "\n"
+                                       str(numpy.around(scores[cm]["class"],digit))) + str(numpy.around(scores[cm]["overall"],digit)) + "\n"
         prev_rank = rank
     if best_name is None:
         result += "\n Warning: " + COMPARE_RESULT_WARNING

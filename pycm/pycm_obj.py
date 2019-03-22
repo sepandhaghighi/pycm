@@ -592,7 +592,7 @@ class Compare():
 
     """
 
-    def __init__(self, cm_dict, by_class=False, weight=None):
+    def __init__(self, cm_dict, by_class=False, weight=None, digit=5):
         """
         :param cm_dict: cm's dictionary
         :type cm_dict : dict
@@ -600,6 +600,8 @@ class Compare():
         :type by_class: bool
         :param weight: class weights
         :type weight: dict
+        :param digit: precision digit (default value : 5)
+        :type digit : int
         """
         if not isinstance(cm_dict, dict):
             raise pycmCompareError(COMPARE_FORMAT_ERROR)
@@ -613,6 +615,7 @@ class Compare():
             raise pycmCompareError(COMPARE_NUMBER_ERROR)
         self.classes = list(cm_dict.values())[0].classes
         self.weight = {k: 1 for k in self.classes}
+        self.digit = digit
         self.best = None
         self.best_name = None
         self.scores = {k: {"overall": 0, "class": 0}.copy()
@@ -648,7 +651,7 @@ class Compare():
         This method print Compare report
         :return: None
         """
-        report = compare_report_print(self.sorted, self.scores, self.best_name)
+        report = compare_report_print(self.sorted, self.scores, self.best_name, self.digit)
         print(report)
 
     def save_report(
@@ -667,7 +670,7 @@ class Compare():
             message = None
             file = open(name + ".comp", "w")
             report = compare_report_print(
-                self.sorted, self.scores, self.best_name)
+                self.sorted, self.scores, self.best_name, self.digit)
             file.write(report)
             file.close()
             if address:
@@ -688,7 +691,7 @@ class Compare():
         Compare object string representation method
         :return: representation as str
         """
-        report = compare_report_print(self.sorted, self.scores, self.best_name)
+        report = compare_report_print(self.sorted, self.scores, self.best_name, self.digit)
         return report
 
 
@@ -839,5 +842,4 @@ def __compare_overall_handler__(compare, cm_dict):
                 if compare.scores[cm_name]["overall"] > max_overall_score:
                     max_overall_score = compare.scores[cm_name]["overall"]
                     max_overall_name = cm_name
-
     return (max_overall_name, max_overall_score)

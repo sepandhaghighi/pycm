@@ -751,8 +751,7 @@ def __obj_matrix_handler__(matrix, transpose):
     if matrix_check(matrix):
         if class_check(list(matrix.keys())) is False:
             raise pycmMatrixError(MATRIX_CLASS_TYPE_ERROR)
-        else:
-            matrix_param = matrix_params_from_table(matrix, transpose)
+        matrix_param = matrix_params_from_table(matrix, transpose)
     else:
         raise pycmMatrixError(MATRIX_FORMAT_ERROR)
 

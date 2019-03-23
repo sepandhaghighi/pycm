@@ -505,7 +505,7 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 3. `weight` : python `dict` of class weights (`class_name` : `float`)
 4. `digit`: `int`
 
-* Run `help(Compare)` for more information
+* Run `help(Compare)` for `Compare` object details
 
 
 For more information visit [here](https://github.com/sepandhaghighi/pycm/tree/master/Document "Document")

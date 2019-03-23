@@ -474,6 +474,12 @@ Rank  Name   Class-Score         Overall-Score
 1     cm2    4.15                1.48333
 2     cm3    2.75                0.95
 
+>>> cp.best
+pycm.ConfusionMatrix(classes: [0, 1, 2])
+>>> cp.sorted
+['cm2', 'cm3']
+>>> cp.best_name
+'cm2'
 ```	
 
 ### Acceptable data types	

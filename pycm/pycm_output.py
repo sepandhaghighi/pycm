@@ -434,7 +434,7 @@ def compare_report_print(sorted_list, scores, best_name, digit=5):
                   4) +
               "s", "%-" +
               str(len(str(scores[sorted_list[0]]["class"])) +
-                  11+digit) +
+                  11 + digit) +
               "s"]
     result = ""
     result += "Best : " + str(best_name) + "\n\n"
@@ -445,8 +445,11 @@ def compare_report_print(sorted_list, scores, best_name, digit=5):
         rank = index
         if scores[sorted_list[rank]] == scores[sorted_list[prev_rank]]:
             rank = prev_rank
-        result += ("".join(shifts)) % (str(rank + 1), str(cm),
-                                       rounder(scores[cm]["class"],digit)) + rounder(scores[cm]["overall"],digit) + "\n"
+        result += ("".join(shifts)) % (str(rank + 1),
+                                       str(cm),
+                                       rounder(scores[cm]["class"],
+                                               digit)) + rounder(scores[cm]["overall"],
+                                                                 digit) + "\n"
         prev_rank = rank
     if best_name is None:
         result += "\nWarning: " + COMPARE_RESULT_WARNING

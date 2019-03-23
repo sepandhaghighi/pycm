@@ -655,7 +655,8 @@ class Compare():
         This method print Compare report
         :return: None
         """
-        report = compare_report_print(self.sorted, self.scores, self.best_name, self.digit)
+        report = compare_report_print(
+            self.sorted, self.scores, self.best_name, self.digit)
         print(report)
 
     def save_report(
@@ -695,7 +696,8 @@ class Compare():
         Compare object string representation method
         :return: representation as str
         """
-        report = compare_report_print(self.sorted, self.scores, self.best_name, self.digit)
+        report = compare_report_print(
+            self.sorted, self.scores, self.best_name, self.digit)
         return report
 
 

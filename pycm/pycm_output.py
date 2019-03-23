@@ -449,7 +449,7 @@ def compare_report_print(sorted_list, scores, best_name, digit=5):
                                        rounder(scores[cm]["class"],digit)) + rounder(scores[cm]["overall"],digit) + "\n"
         prev_rank = rank
     if best_name is None:
-        result += "\n Warning: " + COMPARE_RESULT_WARNING
+        result += "\nWarning: " + COMPARE_RESULT_WARNING
     return result
 
 

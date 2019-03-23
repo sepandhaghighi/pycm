@@ -636,15 +636,19 @@ class Compare():
                 self.scores[x]['class'],
                 self.scores[x]['overall']))
         self.sorted.reverse()
-        if by_class and weight is not None:
-            self.best = cm_dict[max_class_name]
-            self.best_name = max_class_name
-        else:
-            if max_overall_name == max_class_name:
+        scores_list = list(self.scores.values())
+        if scores_list.count(self.scores[max_class_name]) == 1:
+            if by_class and (weight is not None):
                 self.best = cm_dict[max_class_name]
-                self.best_name = max_overall_name
+                self.best_name = max_class_name
             else:
-                print('Warning: ', COMPARE_RESULT_WARNING)
+                if max_overall_name == max_class_name:
+                    self.best = cm_dict[max_class_name]
+                    self.best_name = max_overall_name
+                else:
+                    print('Warning: ', COMPARE_RESULT_WARNING)
+        else:
+            print('Warning: ', COMPARE_RESULT_WARNING)
 
     def print_report(self):
         """

@@ -462,7 +462,7 @@ False
 4. `digit`: `int`	
 5. `threshold` : `FunctionType (function or lambda)`	
 6. `file` : `File object`
-7. `sample_weight` : python `list` or numpy `array` of any stringable objects
+7. `sample_weight` : python `list` or numpy `array` of numbers
 8. `transpose` : `bool`
 
 * Run `help(ConfusionMatrix)` for `ConfusionMatrix` object details

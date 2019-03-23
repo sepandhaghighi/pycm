@@ -589,7 +589,22 @@ def __overall_stat_init__(cm):
 class Compare():
     """
     Compare class
+    >>> cm2 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
+    >>> cm3 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
+    >>> cp = Compare({"cm2":cm2,"cm3":cm3})
+    >>> print(cp)
+    Best : cm2
 
+    Rank  Name   Class-Score         Overall-Score
+    1     cm2    4.15                1.48333
+    2     cm3    2.75                0.95
+
+    >>> cp.best
+    pycm.ConfusionMatrix(classes: [0, 1, 2])
+    >>> cp.sorted
+    ['cm2', 'cm3']
+    >>> cp.best_name
+    'cm2'
     """
 
     def __init__(self, cm_dict, by_class=False, weight=None, digit=5):

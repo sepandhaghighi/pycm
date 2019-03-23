@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
 from functools import partial
-import numpy
 from .pycm_param import *
 from .pycm_util import class_filter, rounder
 import webbrowser
@@ -447,7 +446,7 @@ def compare_report_print(sorted_list, scores, best_name, digit=5):
         if scores[sorted_list[rank]] == scores[sorted_list[prev_rank]]:
             rank = prev_rank
         result += ("".join(shifts)) % (str(rank + 1), str(cm),
-                                       str(numpy.around(scores[cm]["class"],digit))) + str(numpy.around(scores[cm]["overall"],digit)) + "\n"
+                                       rounder(scores[cm]["class"],digit)) + rounder(scores[cm]["overall"],digit) + "\n"
         prev_rank = rank
     if best_name is None:
         result += "\n Warning: " + COMPARE_RESULT_WARNING

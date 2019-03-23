@@ -453,9 +453,34 @@ False
 >>> cm.recommended_list
 ['MCC', 'TPR Micro', 'ACC', 'PPV Macro', 'BCD', 'Overall MCC', 'Hamming Loss', 'TPR Macro', 'Zero-one Loss', 'ERR', 'PPV Micro', 'Overall ACC']
 
-```		
+```	
 
-### Acceptable data types			
+### Comapre
+
+In `version 2` a method for comparing several confusion matrices is introduced. This option is a combination of several overall and class-based benchmarks. Each of the benchmarks evaluates the performance of the classification algorithm from good to poor and give them a numeric score. The score of good performance is 1 and for the poor performance is 0.
+
+After that, two scores are calculated for each confusion matrices, overall and class based. The overall score is the average of the score of four overall benchmarks which are Landis & Koch, Fleiss, Altman, and Cicchetti. And with a same manner, the class based score is the average of the score of three class-based benchmarks which are Positive Likelihood Ratio Interpretation, Discriminant Power Interpretation, and AUC value Interpretation. It should be notice that if one of the benchmarks returns none for one of the classes, that benchmarks will be eliminate in total averaging. If user set weights for the classes, the averaging over the value of class-based benchmark scores will transform to a weighted average.
+
+If the user set the value of `by_class` boolean input `True`, the best confusion matrix is the one with the maximum class-based score. Otherwise, if a confusion matrix obtain the maximum of the both overall and class-based score, that will be the reported as the best confusion matrix but in any other cases the compare object doesn’t select best confusion matrix.
+
+```pycon
+>>> cm2 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
+>>> cm3 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
+>>> cp = Compare({"cm2":cm2,"cm3":cm3})
+>>> print(cp)
+Best : cm2
+
+Rank  Name   Class-Score         Overall-Score
+1     cm2    4.15                1.48333
+2     cm3    2.75                0.95
+
+```	
+
+### Acceptable data types	
+
+#### ConfusionMatrix
+
+		
 1. `actual_vector` : python `list` or numpy `array` of any stringable objects
 2. `predict_vector` : python `list` or numpy `array` of any stringable objects
 3. `matrix` : `dict`
@@ -467,9 +492,15 @@ False
 
 * Run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
 
+#### Compare
 
+1. `cm_dict` : python `dict` of `ConfusionMatrix` object (`str` : `ConfusionMatrix`)
+2. `by_class` : `bool`
+3. `weight` : python `dict` of class weights (`class_name` : `float`)
+4. `digit`: `int`
 
-				
+* Run `help(Compare)` for more information
+
 
 For more information visit [here](https://github.com/sepandhaghighi/pycm/tree/master/Document "Document")
 

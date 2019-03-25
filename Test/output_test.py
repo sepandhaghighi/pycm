@@ -346,7 +346,15 @@ True
 True
 >>> cm_file.matrix == {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}
 True
-
+>>> cm_comp1 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
+>>> cm_comp2 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
+>>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2})
+>>> save_report = cp.save_report("test",address=False)
+>>> save_report == {'Status': True, 'Message': None}
+True
+>>> save_report = cp.save_report("/asdasd,qweqwe.eo/",address=False)
+>>> save_report == {'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.comp'"}
+True
 >>> os.remove("test.csv")
 >>> os.remove("test_matrix.csv")
 >>> os.remove("test.obj")
@@ -371,4 +379,5 @@ True
 >>> os.remove("test4.obj")
 >>> os.remove("test5.obj")
 >>> os.remove("test.pycm")
+>>> os.remove("test.comp")
 '''

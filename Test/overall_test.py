@@ -989,6 +989,13 @@ Rank  Name      Class-Score         Overall-Score
 1     model1    4.15                1.48333
 2     model2    2.75                0.95
 <BLANKLINE>
+>>> cp.print_report()
+Best : model1
+<BLANKLINE>
+Rank  Name      Class-Score         Overall-Score
+1     model1    4.15                1.48333
+2     model2    2.75                0.95
+<BLANKLINE>
 >>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2},by_class=True,weight={0:5,1:1,2:1})
 >>> print(cp)
 Best : model2
@@ -1003,4 +1010,16 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 'model2'
 >>> cp.scores == {'model2': {'overall': 0.95, 'class': 8.15}, 'model1': {'overall': 1.4833333333333334, 'class': 6.95}}
 True
+>>> cp2 = Compare({"model1":cm_comp1,"model2":cm_comp1})
+Warning:  Confusion matrices are too close and the best one can not be recognized.
+>>> print(cp2)
+Best : None
+<BLANKLINE>
+Rank  Name      Class-Score         Overall-Score
+1     model2    4.15                1.48333
+1     model1    4.15                1.48333
+<BLANKLINE>
+Warning: Confusion matrices are too close and the best one can not be recognized.
+>>> cp.best
+>>> cp.best_name
 '''

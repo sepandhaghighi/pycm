@@ -973,4 +973,34 @@ True
 >>> cm = ConfusionMatrix(matrix={1:{1:60,2:9,3:1,4:0,5:0,6:0},2:{1:23,2:48,3:0,4:2,5:2,6:1},3:{1:11,2:5,3:60,4:0,5:0,6:0},4:{1:0,2:2,3:0,4:60,5:1,6:3},5:{1:2,2:1,3:0,4:0,5:60,6:2},6:{1:1,2:2,3:0,4:2,5:1,6:60}})
 >>> set(cm.recommended_list) == set(MULTICLASS_RECOMMEND)
 True
+>>> cm_comp1 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
+>>> cm_comp2 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
+>>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2})
+>>> cp.best
+pycm.ConfusionMatrix(classes: [0, 1, 2])
+>>> cp.best_name
+'model1'
+>>> cp.scores == {'model2': {'overall': 0.95, 'class': 2.75}, 'model1': {'overall': 1.4833333333333334, 'class': 4.15}}
+True
+>>> print(cp)
+Best : model1
+<BLANKLINE>
+Rank  Name      Class-Score         Overall-Score
+1     model1    4.15                1.48333
+2     model2    2.75                0.95
+<BLANKLINE>
+>>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2},by_class=True,weight={0:5,1:1,2:1})
+>>> print(cp)
+Best : model2
+<BLANKLINE>
+Rank  Name      Class-Score         Overall-Score
+1     model2    8.15                0.95
+2     model1    6.95                1.48333
+<BLANKLINE>
+>>> cp.best
+pycm.ConfusionMatrix(classes: [0, 1, 2])
+>>> cp.best_name
+'model2'
+>>> cp.scores == {'model2': {'overall': 0.95, 'class': 8.15}, 'model1': {'overall': 1.4833333333333334, 'class': 6.95}}
+True
 '''

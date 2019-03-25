@@ -1016,6 +1016,6 @@ Rank  Name      Class-Score         Overall-Score
 1     model1    4.15                1.48333
 <BLANKLINE>
 Warning: Confusion matrices are too close and the best one can not be recognized.
->>> cp.best
->>> cp.best_name
+>>> cp2.best
+>>> cp2.best_name
 '''

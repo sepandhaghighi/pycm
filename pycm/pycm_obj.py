@@ -649,7 +649,7 @@ class Compare():
             self.scores,
             key=lambda x: (
                 self.scores[x]['class'],
-                self.scores[x]['overall'],self.scores.keys()))
+                self.scores[x]['overall']))
         self.sorted.reverse()
         scores_list = list(self.scores.values())
         if scores_list.count(self.scores[max_class_name]) == 1:

@@ -360,8 +360,6 @@ True
 >>> cm_file.weights
 >>> cm_file.transpose
 False
->>> cm_file
-pycm.ConfusionMatrix(classes: ['0', '1', '2'])
 >>> cm_file.matrix == {'1': {'1': 1, '2': 1, '0': 0}, '2': {'1': 2, '2': 3, '0': 0}, '0': {'1': 0, '2': 2, '0': 3}}
 True
 >>> cm_comp1 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})

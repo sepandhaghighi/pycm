@@ -35,6 +35,14 @@ pycm.pycm_obj.pycmVectorError: Number of the classes is lower than 2
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu,y_pred)
+>>> cm.relabel([1,2,3])
+Traceback (most recent call last):
+        ...
+pycm.pycm_obj.pycmMatrixError: Mapping format error
+>>> cm.relabel({1:"L1",2:"L2"})
+Traceback (most recent call last):
+        ...
+pycm.pycm_obj.pycmMatrixError: Mapping class names error
 >>> cp = Compare([cm,cm])
 Traceback (most recent call last):
         ...

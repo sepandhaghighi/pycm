@@ -155,8 +155,8 @@ False
 0.504950495049505
 >>> cm.F_beta(None)
 {}
->>> cm.IBA_alpha(None)
-{}
+>>> cm.IBA_alpha(None) == {'L3': 'None', 'L1': 'None', 'L2': 'None'}
+True
 >>> kappa_analysis_koch(-0.1)
 'Poor'
 >>> kappa_analysis_koch(0)

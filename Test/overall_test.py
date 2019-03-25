@@ -981,6 +981,8 @@ False
 >>> cm_comp1 == cm_comp1_temp
 True
 >>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2})
+>>> cp.scores == {'model2': {'class': 2.75, 'overall': 0.95}, 'model1': {'class': 4.15, 'overall': 1.48333}}
+True
 >>> cp.best
 pycm.ConfusionMatrix(classes: [0, 1, 2])
 >>> cp.best_name

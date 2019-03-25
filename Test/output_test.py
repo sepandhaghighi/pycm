@@ -355,6 +355,15 @@ True
 True
 >>> cm_file.matrix == {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}
 True
+>>> json.dump({"Actual-Vector": None, "Digit": 5, "Predict-Vector": None, "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}},open("test6.obj","w"))
+>>> cm_file=ConfusionMatrix(file=open("test6.obj","r"))
+>>> cm_file.weights
+>>> cm_file.transpose
+False
+>>> cm_file
+pycm.ConfusionMatrix(classes: ['0', '1', '2'])
+>>> cm_file.matrix == {'1': {'1': 1, '2': 1, '0': 0}, '2': {'1': 2, '2': 3, '0': 0}, '0': {'1': 0, '2': 2, '0': 3}}
+True
 >>> cm_comp1 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
 >>> cm_comp2 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
 >>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2})
@@ -390,6 +399,7 @@ True
 >>> os.remove("test3.obj")
 >>> os.remove("test4.obj")
 >>> os.remove("test5.obj")
+>>> os.remove("test6.obj")
 >>> os.remove("test.pycm")
 >>> os.remove("test.comp")
 '''

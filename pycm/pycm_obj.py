@@ -645,6 +645,7 @@ class Compare():
                 raise pycmCompareError(COMPARE_WEIGHT_ERROR)
         (max_class_name, max_class_score) = __compare_class_handler__(self, cm_dict)
         (max_overall_name, max_overall_score) = __compare_overall_handler__(self, cm_dict)
+        __compare_rounder__(self, cm_dict)
         self.sorted = sorted(
             self.scores,
             key=lambda x: (
@@ -838,9 +839,6 @@ def __compare_class_handler__(compare, cm_dict):
                     if compare.scores[cm_name]["class"] > max_class_score:
                         max_class_score = compare.scores[cm_name]["class"]
                         max_class_name = cm_name
-    for cm_name in cm_dict.keys():
-        compare.scores[cm_name]["class"] = numpy.around(
-            compare.scores[cm_name]["class"], compare.digit)
     return (max_class_name, max_class_score)
 
 
@@ -865,7 +863,20 @@ def __compare_overall_handler__(compare, cm_dict):
                 if compare.scores[cm_name]["overall"] > max_overall_score:
                     max_overall_score = compare.scores[cm_name]["overall"]
                     max_overall_name = cm_name
+    return (max_overall_name, max_overall_score)
+
+
+def __compare_rounder__(compare, cm_dict):
+    """
+    This function round Compare.scores
+    :param compare: Compare
+    :type compare : pycm.Compare object
+    :param cm_dict: cm's dictionary
+    :type cm_dict : dict
+    :return: None
+    """
     for cm_name in cm_dict.keys():
         compare.scores[cm_name]["overall"] = numpy.around(
             compare.scores[cm_name]["overall"], compare.digit)
-    return (max_overall_name, max_overall_score)
+        compare.scores[cm_name]["class"] = numpy.around(
+            compare.scores[cm_name]["class"], compare.digit)

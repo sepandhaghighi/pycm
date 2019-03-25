@@ -671,7 +671,7 @@ class Compare():
         :return: None
         """
         report = compare_report_print(
-            self.sorted, self.scores, self.best_name, self.digit)
+            self.sorted, self.scores, self.best_name)
         print(report)
 
     def save_report(
@@ -690,7 +690,7 @@ class Compare():
             message = None
             file = open(name + ".comp", "w")
             report = compare_report_print(
-                self.sorted, self.scores, self.best_name, self.digit)
+                self.sorted, self.scores, self.best_name)
             file.write(report)
             file.close()
             if address:
@@ -712,7 +712,7 @@ class Compare():
         :return: representation as str
         """
         report = compare_report_print(
-            self.sorted, self.scores, self.best_name, self.digit)
+            self.sorted, self.scores, self.best_name)
         return report
 
 
@@ -838,6 +838,8 @@ def __compare_class_handler__(compare, cm_dict):
                     if compare.scores[cm_name]["class"] > max_class_score:
                         max_class_score = compare.scores[cm_name]["class"]
                         max_class_name = cm_name
+    for cm_name in cm_dict.keys():
+        compare.scores[cm_name]["class"] = numpy.around(compare.scores[cm_name]["class"], compare.digit)
     return (max_class_name, max_class_score)
 
 
@@ -862,4 +864,6 @@ def __compare_overall_handler__(compare, cm_dict):
                 if compare.scores[cm_name]["overall"] > max_overall_score:
                     max_overall_score = compare.scores[cm_name]["overall"]
                     max_overall_name = cm_name
+    for cm_name in cm_dict.keys():
+        compare.scores[cm_name]["overall"] = numpy.around(compare.scores[cm_name]["overall"],compare.digit)
     return (max_overall_name, max_overall_score)

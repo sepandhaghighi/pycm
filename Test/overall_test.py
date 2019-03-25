@@ -1013,6 +1013,14 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 'model2'
 >>> cp2 = Compare({"model1":cm_comp1,"model2":cm_comp1})
 Warning:  Confusion matrices are too close and the best one can not be recognized.
+>>> print(cp2)
+Best : None
+<BLANKLINE>
+Rank  Name      Class-Score    Overall-Score
+1     model2    4.15           1.48333
+1     model1    4.15           1.48333
+<BLANKLINE>
+Warning: Confusion matrices are too close and the best one can not be recognized.
 >>> cp2.best
 >>> cp2.best_name
 '''

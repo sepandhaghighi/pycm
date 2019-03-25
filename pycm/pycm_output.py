@@ -412,7 +412,7 @@ def stat_print(
     return result
 
 
-def compare_report_print(sorted_list, scores, best_name, digit=5):
+def compare_report_print(sorted_list, scores, best_name):
     """
     This function return compare report
     :param sorted_list: sorted list of cm's
@@ -421,11 +421,10 @@ def compare_report_print(sorted_list, scores, best_name, digit=5):
     :type scores: dict
     :param best_name: best cm name
     :type best_name: str
-    :param digit: precision digit (default value : 5)
-    :type digit : int
     :return: printable result as str
     """
     title_items = ["Rank", "Name", "Class-Score", "Overall-Score"]
+    class_scores_len = map(lambda x : len(str(x["class"])), list(scores.values()))
     shifts = ["%-" +
               str(len(sorted_list) +
                   4) +
@@ -433,9 +432,7 @@ def compare_report_print(sorted_list, scores, best_name, digit=5):
               str(max(map(lambda x: len(str(x)), sorted_list)) +
                   4) +
               "s", "%-" +
-              str(len(str(scores[sorted_list[0]]["class"])) +
-                  11 + digit) +
-              "s"]
+              str(max(class_scores_len) + 11) + "s"]
     result = ""
     result += "Best : " + str(best_name) + "\n\n"
     result += ("".join(shifts)
@@ -447,9 +444,7 @@ def compare_report_print(sorted_list, scores, best_name, digit=5):
             rank = prev_rank
         result += ("".join(shifts)) % (str(rank + 1),
                                        str(cm),
-                                       rounder(scores[cm]["class"],
-                                               digit)) + rounder(scores[cm]["overall"],
-                                                                 digit) + "\n"
+                                       str(scores[cm]["class"])) + str(scores[cm]["overall"]) + "\n"
         prev_rank = rank
     if best_name is None:
         result += "\nWarning: " + COMPARE_RESULT_WARNING

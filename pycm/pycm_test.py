@@ -17,4 +17,5 @@ pycm.ConfusionMatrix(classes: ['Class1', 'Class2', 'Class3'])
 >>> cp = Compare({"cm1":cm,"cm2":cm2})
 >>> cp
 pycm.Compare(classes: ['Class1', 'Class2', 'Class3'])
+
 '''

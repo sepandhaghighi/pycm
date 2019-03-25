@@ -839,7 +839,8 @@ def __compare_class_handler__(compare, cm_dict):
                         max_class_score = compare.scores[cm_name]["class"]
                         max_class_name = cm_name
     for cm_name in cm_dict.keys():
-        compare.scores[cm_name]["class"] = numpy.around(compare.scores[cm_name]["class"], compare.digit)
+        compare.scores[cm_name]["class"] = numpy.around(
+            compare.scores[cm_name]["class"], compare.digit)
     return (max_class_name, max_class_score)
 
 
@@ -865,5 +866,6 @@ def __compare_overall_handler__(compare, cm_dict):
                     max_overall_score = compare.scores[cm_name]["overall"]
                     max_overall_name = cm_name
     for cm_name in cm_dict.keys():
-        compare.scores[cm_name]["overall"] = numpy.around(compare.scores[cm_name]["overall"],compare.digit)
+        compare.scores[cm_name]["overall"] = numpy.around(
+            compare.scores[cm_name]["overall"], compare.digit)
     return (max_overall_name, max_overall_score)

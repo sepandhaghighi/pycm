@@ -55,7 +55,7 @@ def color_check(color):
     :type color : tuple
     :return: color as list
     """
-    if isinstance(color, (tuple,list)):
+    if isinstance(color, (tuple, list)):
         if all(map(lambda x: isinstance(x, int), color)):
             if all(map(lambda x: x < 256, color)):
                 return list(color)
@@ -424,7 +424,8 @@ def compare_report_print(sorted_list, scores, best_name):
     :return: printable result as str
     """
     title_items = ["Rank", "Name", "Class-Score", "Overall-Score"]
-    class_scores_len = map(lambda x : len(str(x["class"])), list(scores.values()))
+    class_scores_len = map(lambda x: len(
+        str(x["class"])), list(scores.values()))
     shifts = ["%-" +
               str(len(sorted_list) +
                   4) +
@@ -442,8 +443,7 @@ def compare_report_print(sorted_list, scores, best_name):
         rank = index
         if scores[sorted_list[rank]] == scores[sorted_list[prev_rank]]:
             rank = prev_rank
-        result += ("".join(shifts)) % (str(rank + 1),
-                                       str(cm),
+        result += ("".join(shifts)) % (str(rank + 1), str(cm),
                                        str(scores[cm]["class"])) + str(scores[cm]["overall"]) + "\n"
         prev_rank = rank
     if best_name is None:

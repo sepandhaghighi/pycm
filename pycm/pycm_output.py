@@ -55,7 +55,7 @@ def color_check(color):
     :type color : tuple
     :return: color as list
     """
-    if isinstance(color, tuple):
+    if isinstance(color, (tuple,list)):
         if all(map(lambda x: isinstance(x, int), color)):
             if all(map(lambda x: x < 256, color)):
                 return list(color)

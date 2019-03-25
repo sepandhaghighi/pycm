@@ -34,10 +34,10 @@ True
 >>> save_stat=cm.save_html("test_filtered2",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[100])
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_html("test_filtered3",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[])
+>>> save_stat=cm.save_html("test_filtered3",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[],color=(-2,-2,-2))
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_html("test_filtered4",address=False,overall_param=["Kappa","Scott PI"],class_param=[],class_name=[100])
+>>> save_stat=cm.save_html("test_filtered4",address=False,overall_param=["Kappa","Scott PI"],class_param=[],class_name=[100],color={})
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_html("test_filtered5",address=False,overall_param=[],class_param=["TPR","TNR","ACC","AUC"],class_name=[100])

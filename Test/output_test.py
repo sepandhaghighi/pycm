@@ -25,6 +25,9 @@ True
 >>> save_stat=cm.save_html("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=cm.save_html("test_normalized",address=False,normalize=True)
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> save_stat=cm.save_html("test_filtered",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"])
 >>> save_stat=={'Status': True, 'Message': None}
 True
@@ -47,6 +50,9 @@ True
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_csv("test",address=False)
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_csv("test_normalized",address=False,normalize=True)
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_csv("test_filtered",address=False,class_param=["TPR","TNR","ACC","AUC"])
@@ -331,6 +337,9 @@ sInd(Similarity index)                                           0.81144        
 >>> save_obj = cm.save_obj("test4",address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
+>>> save_obj = cm.save_obj("/asdasd,qweqwe.eo/",address=False)
+>>> save_obj=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.obj'"}
+True
 >>> cm_file=ConfusionMatrix(file=open("test4.obj","r"))
 >>> cm_file.DP[1]
 0.770700985610517
@@ -357,8 +366,11 @@ True
 True
 >>> os.remove("test.csv")
 >>> os.remove("test_matrix.csv")
+>>> os.remove("test_normalized.csv")
+>>> os.remove("test_normalized_matrix.csv")
 >>> os.remove("test.obj")
 >>> os.remove("test.html")
+>>> os.remove("test_normalized.html")
 >>> os.remove("test_filtered.html")
 >>> os.remove("test_filtered.csv")
 >>> os.remove("test_filtered_matrix.csv")

@@ -582,7 +582,7 @@ Actual
 ...		    return 1
 ...	    else:
 ...		    return 0
->>> cm_6 = ConfusionMatrix([0,0,1,0],[0.87,0.34,0.9,0.12],threshold=activation)
+>>> cm_6 = ConfusionMatrix([0,0,1,0],[0.87,0.34,0.9,0.12],threshold=activation, transpose=2)
 >>> cm_6.print_matrix()
 Predict          0        1
 Actual

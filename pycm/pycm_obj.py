@@ -82,40 +82,7 @@ class ConfusionMatrix():
                 self, actual_vector, predict_vector, threshold, sample_weight)
         if len(matrix_param[0]) < 2:
             raise pycmVectorError(CLASS_NUMBER_ERROR)
-        self.classes = matrix_param[0]
-        self.table = matrix_param[1]
-        self.matrix = self.table
-        self.normalized_table = normalized_table_calc(self.classes, self.table)
-        self.normalized_matrix = self.normalized_table
-        self.TP = matrix_param[2]
-        self.TN = matrix_param[3]
-        self.FP = matrix_param[4]
-        self.FN = matrix_param[5]
-        statistic_result = class_statistics(
-            TP=matrix_param[2],
-            TN=matrix_param[3],
-            FP=matrix_param[4],
-            FN=matrix_param[5],
-            classes=matrix_param[0],
-            table=matrix_param[1])
-        self.class_stat = statistic_result
-        self.overall_stat = overall_statistics(
-            RACC=statistic_result["RACC"],
-            RACCU=statistic_result["RACCU"],
-            TPR=statistic_result["TPR"],
-            PPV=statistic_result["PPV"],
-            TP=statistic_result["TP"],
-            FN=statistic_result["FN"],
-            FP=statistic_result["FP"],
-            POP=statistic_result["POP"],
-            P=statistic_result["P"],
-            TOP=statistic_result["TOP"],
-            jaccard_list=statistic_result["J"],
-            classes=self.classes,
-            table=self.table,
-            CEN_dict=statistic_result["CEN"],
-            MCEN_dict=statistic_result["MCEN"],
-            AUC_dict=statistic_result["AUC"])
+        __obj_assign_handler__(self,matrix_param)
         __class_stat_init__(self)
         __overall_stat_init__(self)
         self.imbalance = imbalance_check(self.P)
@@ -716,6 +683,51 @@ class Compare():
         report = compare_report_print(
             self.sorted, self.scores, self.best_name)
         return report
+
+
+def __obj_assign_handler__(cm, matrix_param):
+    """
+    This function assign basic parameters to ConfusionMatrix
+    :param cm: ConfusionMatrix
+    :type cm : pycm.ConfusionMatrix object
+    :param matrix_param: matrix parameters
+    :type matrix_param: dict
+    :return: None
+    """
+    cm.classes = matrix_param[0]
+    cm.table = matrix_param[1]
+    cm.matrix = cm.table
+    cm.normalized_table = normalized_table_calc(cm.classes, cm.table)
+    cm.normalized_matrix = cm.normalized_table
+    cm.TP = matrix_param[2]
+    cm.TN = matrix_param[3]
+    cm.FP = matrix_param[4]
+    cm.FN = matrix_param[5]
+    statistic_result = class_statistics(
+        TP=matrix_param[2],
+        TN=matrix_param[3],
+        FP=matrix_param[4],
+        FN=matrix_param[5],
+        classes=matrix_param[0],
+        table=matrix_param[1])
+    cm.class_stat = statistic_result
+    cm.overall_stat = overall_statistics(
+        RACC=statistic_result["RACC"],
+        RACCU=statistic_result["RACCU"],
+        TPR=statistic_result["TPR"],
+        PPV=statistic_result["PPV"],
+        TP=statistic_result["TP"],
+        FN=statistic_result["FN"],
+        FP=statistic_result["FP"],
+        POP=statistic_result["POP"],
+        P=statistic_result["P"],
+        TOP=statistic_result["TOP"],
+        jaccard_list=statistic_result["J"],
+        classes=cm.classes,
+        table=cm.table,
+        CEN_dict=statistic_result["CEN"],
+        MCEN_dict=statistic_result["MCEN"],
+        AUC_dict=statistic_result["AUC"])
 
 
 def __obj_file_handler__(cm, file):

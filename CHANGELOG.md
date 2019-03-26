@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `Beta` argument renamed to `beta` (`F_calc` function & `F_beta` method) 
 - Imbalance dataset parameters recommendation modified
 - `normalize` argument added to `save_html` method
+- `pycm_func.py` splitted into `pycm_class_func.py` and `pycm_overall_func.py`
 
 ## [1.9] - 2019-02-25
 ### Added

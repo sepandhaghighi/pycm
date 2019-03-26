@@ -67,6 +67,20 @@ def class_filter(classes, class_name):
             result_classes = class_name
     return result_classes
 
+def vector_check(vector):
+    """
+    This function check input vector items type
+    :param vector: input vector
+    :type vector : list
+    :return: bool
+    """
+    for i in vector:
+        if isinstance(i, int) is False:
+            return False
+        if i < 0:
+            return False
+    return True
+
 def matrix_check(table):
     """
     This function check input matrix format

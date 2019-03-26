@@ -274,21 +274,6 @@ def zero_one_loss_calc(TP, POP):
         return "None"
 
 
-def vector_check(vector):
-    """
-    This function check input vector items type
-    :param vector: input vector
-    :type vector : list
-    :return: bool
-    """
-    for i in vector:
-        if isinstance(i, int) is False:
-            return False
-        if i < 0:
-            return False
-    return True
-
-
 def entropy_calc(item, POP):
     """
     This function calculate reference and response likelihood

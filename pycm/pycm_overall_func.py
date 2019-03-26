@@ -274,24 +274,6 @@ def zero_one_loss_calc(TP, POP):
         return "None"
 
 
-def vector_filter(actual_vector, predict_vector):
-    """
-    This function convert different type of items in vectors to str
-    :param actual_vector: actual values
-    :type actual_vector : list
-    :param predict_vector: predict value
-    :type predict_vector : list
-    :return: new actual and predict vector
-    """
-    temp = []
-    temp.extend(actual_vector)
-    temp.extend(predict_vector)
-    types = set(map(type, temp))
-    if len(types) > 1:
-        return [list(map(str, actual_vector)), list(map(str, predict_vector))]
-    return [actual_vector, predict_vector]
-
-
 def vector_check(vector):
     """
     This function check input vector items type
@@ -305,38 +287,6 @@ def vector_check(vector):
         if i < 0:
             return False
     return True
-
-
-def class_check(vector):
-    """
-    This function check different items in matrix classes
-    :param vector: input vector
-    :type vector : list
-    :return: bool
-    """
-    for i in vector:
-        if not isinstance(i, type(vector[0])):
-            return False
-    return True
-
-
-def matrix_check(table):
-    """
-    This function check input matrix format
-    :param table: input matrix
-    :type table : dict
-    :return: bool
-    """
-    try:
-        if len(table.keys()) == 0:
-            return False
-        for i in table.keys():
-            if table.keys() != table[i].keys() or vector_check(
-                    list(table[i].values())) is False:
-                return False
-        return True
-    except Exception:
-        return False
 
 
 def entropy_calc(item, POP):

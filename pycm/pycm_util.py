@@ -67,6 +67,55 @@ def class_filter(classes, class_name):
             result_classes = class_name
     return result_classes
 
+def matrix_check(table):
+    """
+    This function check input matrix format
+    :param table: input matrix
+    :type table : dict
+    :return: bool
+    """
+    try:
+        if len(table.keys()) == 0:
+            return False
+        for i in table.keys():
+            if table.keys() != table[i].keys() or vector_check(
+                    list(table[i].values())) is False:
+                return False
+        return True
+    except Exception:
+        return False
+
+
+def vector_filter(actual_vector, predict_vector):
+    """
+    This function convert different type of items in vectors to str
+    :param actual_vector: actual values
+    :type actual_vector : list
+    :param predict_vector: predict value
+    :type predict_vector : list
+    :return: new actual and predict vector
+    """
+    temp = []
+    temp.extend(actual_vector)
+    temp.extend(predict_vector)
+    types = set(map(type, temp))
+    if len(types) > 1:
+        return [list(map(str, actual_vector)), list(map(str, predict_vector))]
+    return [actual_vector, predict_vector]
+
+
+def class_check(vector):
+    """
+    This function check different items in matrix classes
+    :param vector: input vector
+    :type vector : list
+    :return: bool
+    """
+    for i in vector:
+        if not isinstance(i, type(vector[0])):
+            return False
+    return True
+
 
 def isfile(f):
     """

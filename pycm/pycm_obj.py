@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import division
-from .pycm_func import *
+from .pycm_class_func import class_statistics,F_calc,IBA_calc
+from .pycm_overall_func import overall_statistics,vector_filter,matrix_check,class_check
 from .pycm_output import *
 from .pycm_util import *
 from .pycm_param import MATRIX_CLASS_TYPE_ERROR, MATRIX_FORMAT_ERROR, MAPPING_FORMAT_ERROR, MAPPING_CLASS_NAME_ERROR

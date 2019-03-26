@@ -209,4 +209,3 @@ def __compare_rounder__(compare, cm_dict):
             compare.scores[cm_name]["overall"], compare.digit)
         compare.scores[cm_name]["class"] = numpy.around(
             compare.scores[cm_name]["class"], compare.digit)
-

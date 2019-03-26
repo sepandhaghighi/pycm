@@ -36,6 +36,7 @@ def RCI_calc(mutual_information, reference_entropy):
     except Exception:
         return "None"
 
+
 def AUNP_calc(classes, P, POP, AUC_dict):
     """
     This function calculate AUNP
@@ -56,6 +57,7 @@ def AUNP_calc(classes, P, POP, AUC_dict):
         return result
     except Exception:
         return "None"
+
 
 def CBA_calc(classes, table, TOP, P):
     """
@@ -123,6 +125,7 @@ def overall_MCC_calc(classes, table, TOP, P):
     except Exception:
         return "None"
 
+
 def convex_combination(classes, TP, TOP, P, class_name, modified=False):
     """
     This function calculate Overall_CEN coefficient
@@ -182,6 +185,7 @@ def overall_CEN_calc(classes, TP, TOP, P, CEN_dict, modified=False):
         return result
     except Exception:
         return "None"
+
 
 def ncr(n, r):
     """
@@ -605,42 +609,6 @@ def DF_calc(classes):
         return "None"
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def reliability_calc(RACC, ACC):
     """
     This function calculate reliability
@@ -797,9 +765,6 @@ def PC_S_calc(classes):
         return 1 / (len(classes))
     except Exception:
         return "None"
-
-
-
 
 
 def overall_jaccard_index_calc(jaccard_list):
@@ -998,5 +963,3 @@ def overall_statistics(
         "AUNP": AUNP,
         "RCI": RCI,
         "Pearson C": C}
-
-

@@ -3,6 +3,7 @@ from __future__ import division
 import math
 from .pycm_interpret import *
 
+
 def TTPN_calc(item1, item2):
     """
     This function calculate TPR,TNR,PPV,NPV
@@ -18,6 +19,7 @@ def TTPN_calc(item1, item2):
     except ZeroDivisionError:
         return "None"
 
+
 def FXR_calc(item):
     """
     This function calculate FNR,FPR,FDR,FOR
@@ -30,6 +32,7 @@ def FXR_calc(item):
         return result
     except Exception:
         return "None"
+
 
 def ACC_calc(TP, TN, FP, FN):
     """
@@ -49,6 +52,7 @@ def ACC_calc(TP, TN, FP, FN):
         return result
     except ZeroDivisionError:
         return "None"
+
 
 def F_calc(TP, FP, FN, beta):
     """
@@ -70,6 +74,7 @@ def F_calc(TP, FP, FN, beta):
     except ZeroDivisionError:
         return "None"
 
+
 def MCC_calc(TP, TN, FP, FN):
     """
     This function calculate MCC (Matthews correlation coefficient)
@@ -90,6 +95,7 @@ def MCC_calc(TP, TN, FP, FN):
     except ZeroDivisionError:
         return "None"
 
+
 def MK_BM_calc(item1, item2):
     """
     This function calculate BM (Informedness) and MK (Markedness)
@@ -104,6 +110,7 @@ def MK_BM_calc(item1, item2):
         return result
     except Exception:
         return "None"
+
 
 def LR_calc(item1, item2):
     """
@@ -120,6 +127,7 @@ def LR_calc(item1, item2):
     except Exception:
         return "None"
 
+
 def PRE_calc(P, POP):
     """
     This function calculate prevalence
@@ -134,6 +142,7 @@ def PRE_calc(P, POP):
         return result
     except Exception:
         return "None"
+
 
 def G_calc(item1, item2):
     """
@@ -150,6 +159,7 @@ def G_calc(item1, item2):
     except Exception:
         return "None"
 
+
 def RACC_calc(TOP, P, POP):
     """
     This function calculate random accuracy
@@ -163,6 +173,7 @@ def RACC_calc(TOP, P, POP):
     """
     result = (TOP * P) / ((POP) ** 2)
     return result
+
 
 def RACCU_calc(TOP, P, POP):
     """
@@ -178,6 +189,7 @@ def RACCU_calc(TOP, P, POP):
     result = ((TOP + P) / (2 * POP))**2
     return result
 
+
 def ERR_calc(ACC):
     """
     This function calculate error rate
@@ -189,6 +201,7 @@ def ERR_calc(ACC):
         return 1 - ACC
     except Exception:
         return "None"
+
 
 def jaccard_index_calc(TP, TOP, P):
     """
@@ -205,6 +218,7 @@ def jaccard_index_calc(TP, TOP, P):
         return TP / (TOP + P - TP)
     except Exception:
         return "None"
+
 
 def IS_calc(TP, FP, FN, POP):
     """
@@ -225,6 +239,7 @@ def IS_calc(TP, FP, FN, POP):
         return result
     except Exception:
         return "None"
+
 
 def CEN_misclassification_calc(
         table,
@@ -260,6 +275,7 @@ def CEN_misclassification_calc(
         return result
     except Exception:
         return "None"
+
 
 def CEN_calc(classes, table, TOP, P, class_name, modified=False):
     """
@@ -297,6 +313,7 @@ def CEN_calc(classes, table, TOP, P, class_name, modified=False):
     except Exception:
         return "None"
 
+
 def AUC_calc(TNR, TPR):
     """
     This function calculate AUC (Area under the ROC curve for each class)
@@ -310,6 +327,7 @@ def AUC_calc(TNR, TPR):
         return (TNR + TPR) / 2
     except Exception:
         return "None"
+
 
 def dInd_calc(TNR, TPR):
     """
@@ -326,6 +344,7 @@ def dInd_calc(TNR, TPR):
     except Exception:
         return "None"
 
+
 def sInd_calc(dInd):
     """
     This function calculate sInd (Similarity index)
@@ -337,6 +356,7 @@ def sInd_calc(dInd):
         return 1 - (dInd / (math.sqrt(2)))
     except Exception:
         return "None"
+
 
 def DP_calc(TPR, TNR):
     """
@@ -354,6 +374,7 @@ def DP_calc(TPR, TNR):
     except Exception:
         return "None"
 
+
 def GI_calc(AUC):
     """
     This function calculate Gini index
@@ -365,6 +386,7 @@ def GI_calc(AUC):
         return 2 * AUC - 1
     except Exception:
         return "None"
+
 
 def lift_calc(PPV, PRE):
     """
@@ -380,6 +402,7 @@ def lift_calc(PPV, PRE):
     except Exception:
         return "None"
 
+
 def AM_calc(TOP, P):
     """
     This function calculate AM (Automatic/Manual)
@@ -393,6 +416,7 @@ def AM_calc(TOP, P):
         return TOP - P
     except Exception:
         return "None"
+
 
 def OP_calc(ACC, TPR, TNR):
     """
@@ -411,6 +435,7 @@ def OP_calc(ACC, TPR, TNR):
     except Exception:
         return "None"
 
+
 def IBA_calc(TPR, TNR, alpha=1):
     """
     This function calculate IBA (Index of balanced accuracy)
@@ -427,6 +452,7 @@ def IBA_calc(TPR, TNR, alpha=1):
         return IBA
     except Exception:
         return "None"
+
 
 def BCD_calc(TOP, P, AM):
     """
@@ -445,6 +471,7 @@ def BCD_calc(TOP, P, AM):
         return abs(AM) / (P_sum + TOP_sum)
     except Exception:
         return "None"
+
 
 def class_statistics(TP, TN, FP, FN, classes, table):
     """

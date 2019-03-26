@@ -67,6 +67,7 @@ def class_filter(classes, class_name):
             result_classes = class_name
     return result_classes
 
+
 def vector_check(vector):
     """
     This function check input vector items type
@@ -80,6 +81,7 @@ def vector_check(vector):
         if i < 0:
             return False
     return True
+
 
 def matrix_check(table):
     """

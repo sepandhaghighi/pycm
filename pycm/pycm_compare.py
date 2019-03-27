@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Compare module"""
+"""Compare module."""
 from __future__ import division
 from .pycm_output import *
 from .pycm_util import *
@@ -11,12 +11,15 @@ import numpy
 
 
 class pycmCompareError(Exception):
+    """Compare error class."""
+
     pass
 
 
 class Compare():
     """
-    Compare class
+    Compare class.
+
     >>> cm1 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
     >>> cm2 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
     >>> cp = Compare({"cm1":cm1,"cm2":cm2})
@@ -37,6 +40,8 @@ class Compare():
 
     def __init__(self, cm_dict, by_class=False, weight=None, digit=5):
         """
+        Init method.
+
         :param cm_dict: cm's dictionary
         :type cm_dict : dict
         :param by_class: compare by class flag
@@ -96,7 +101,8 @@ class Compare():
 
     def print_report(self):
         """
-        This method print Compare report
+        Print Compare report.
+
         :return: None
         """
         report = compare_report_print(
@@ -108,7 +114,8 @@ class Compare():
             name,
             address=True):
         """
-        This method save Compare report in .comp (flat file format)
+        Save Compare report in .comp (flat file format).
+
         :param name: filename
         :type name : str
         :param address: flag for address return
@@ -130,14 +137,16 @@ class Compare():
 
     def __repr__(self):
         """
-        Compare object representation method
+        Compare object representation method.
+
         :return: representation as str
         """
         return "pycm.Compare(classes: " + str(self.classes) + ")"
 
     def __str__(self):
         """
-        Compare object string representation method
+        Compare object string representation method.
+
         :return: representation as str
         """
         report = compare_report_print(
@@ -147,7 +156,8 @@ class Compare():
 
 def __compare_class_handler__(compare, cm_dict):
     """
-    This function handle class score of Compare class
+    Handle class score of Compare class.
+
     :param compare: Compare
     :type compare : pycm.Compare object
     :param cm_dict: cm's dictionary
@@ -173,7 +183,8 @@ def __compare_class_handler__(compare, cm_dict):
 
 def __compare_overall_handler__(compare, cm_dict):
     """
-    This function handle overall score of Compare class
+    Handle overall score of Compare class.
+
     :param compare: Compare
     :type compare : pycm.Compare object
     :param cm_dict: cm's dictionary
@@ -197,7 +208,8 @@ def __compare_overall_handler__(compare, cm_dict):
 
 def __compare_rounder__(compare, cm_dict):
     """
-    This function round Compare.scores
+    Round Compare.scores .
+
     :param compare: Compare
     :type compare : pycm.Compare object
     :param cm_dict: cm's dictionary

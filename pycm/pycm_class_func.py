@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Class statistics functions"""
+"""Class statistics functions."""
 from __future__ import division
 import math
 from .pycm_interpret import *
@@ -7,7 +7,8 @@ from .pycm_interpret import *
 
 def TTPN_calc(item1, item2):
     """
-    This function calculate TPR,TNR,PPV,NPV
+    Calculate TPR,TNR,PPV,NPV.
+
     :param item1: item1 in fractional expression
     :type item1 : int
     :param item2: item2 in fractional expression
@@ -23,7 +24,8 @@ def TTPN_calc(item1, item2):
 
 def FXR_calc(item):
     """
-    This function calculate FNR,FPR,FDR,FOR
+    Calculate FNR,FPR,FDR,FOR.
+
     :param item: item In expression
     :type item:float
     :return: result as float
@@ -37,7 +39,8 @@ def FXR_calc(item):
 
 def ACC_calc(TP, TN, FP, FN):
     """
-    This function calculate accuracy
+    Calculate accuracy.
+
     :param TP: true positive
     :type TP : int
     :param TN: true negative
@@ -57,7 +60,8 @@ def ACC_calc(TP, TN, FP, FN):
 
 def F_calc(TP, FP, FN, beta):
     """
-    This function calculate F score
+    Calculate F-score.
+
     :param TP: true positive
     :type TP : int
     :param FP: false positive
@@ -78,7 +82,8 @@ def F_calc(TP, FP, FN, beta):
 
 def MCC_calc(TP, TN, FP, FN):
     """
-    This function calculate MCC (Matthews correlation coefficient)
+    Calculate MCC (Matthews correlation coefficient).
+
     :param TP: true positive
     :type TP : int
     :param TN: true negative
@@ -99,7 +104,8 @@ def MCC_calc(TP, TN, FP, FN):
 
 def MK_BM_calc(item1, item2):
     """
-    This function calculate BM (Informedness) and MK (Markedness)
+    Calculate BM (Informedness) and MK (Markedness).
+
     :param item1: item1 in expression
     :type item1:float
     :param item2: item2 in expression
@@ -115,7 +121,8 @@ def MK_BM_calc(item1, item2):
 
 def LR_calc(item1, item2):
     """
-    This function calculate likelihood ratio
+    Calculate likelihood ratio.
+
     :param item1: item1 in expression
     :type item1:float
     :param item2: item2 in expression
@@ -131,7 +138,8 @@ def LR_calc(item1, item2):
 
 def PRE_calc(P, POP):
     """
-    This function calculate prevalence
+    Calculate prevalence.
+
     :param P: condition positive
     :type P : int
     :param POP: population
@@ -147,7 +155,8 @@ def PRE_calc(P, POP):
 
 def G_calc(item1, item2):
     """
-    This function calculate G-measure & G-mean
+    Calculate G-measure & G-mean.
+
     :param item1: PPV or TPR or TNR
     :type item1 : float
     :param item2: PPV or TPR or TNR
@@ -163,7 +172,8 @@ def G_calc(item1, item2):
 
 def RACC_calc(TOP, P, POP):
     """
-    This function calculate random accuracy
+    Calculate random accuracy.
+
     :param TOP: test outcome positive
     :type TOP : int
     :param P:  condition positive
@@ -181,7 +191,8 @@ def RACC_calc(TOP, P, POP):
 
 def RACCU_calc(TOP, P, POP):
     """
-    This function calculate RACCU (Random accuracy unbiased)
+    Calculate RACCU (Random accuracy unbiased).
+
     :param TOP: test outcome positive
     :type TOP : int
     :param P: condition positive
@@ -199,7 +210,8 @@ def RACCU_calc(TOP, P, POP):
 
 def ERR_calc(ACC):
     """
-    This function calculate error rate
+    Calculate error rate.
+
     :param ACC: accuracy
     :type ACC: float
     :return: error rate as float
@@ -212,7 +224,8 @@ def ERR_calc(ACC):
 
 def jaccard_index_calc(TP, TOP, P):
     """
-    This function calculate Jaccard index for each class
+    Calculate Jaccard index for each class.
+
     :param TP: true positive
     :type TP : int
     :param TOP: test outcome positive
@@ -229,7 +242,8 @@ def jaccard_index_calc(TP, TOP, P):
 
 def IS_calc(TP, FP, FN, POP):
     """
-    This function calculate IS (Information score)
+    Calculate IS (Information score).
+
     :param TP: true positive
     :type TP : int
     :param FP: false positive
@@ -257,7 +271,8 @@ def CEN_misclassification_calc(
         subject_class,
         modified=False):
     """
-    This function calculate misclassification probability of classifying
+    Calculate misclassification probability of classifying.
+
     :param table: input matrix
     :type table : dict
     :param TOP: test outcome positive
@@ -286,7 +301,8 @@ def CEN_misclassification_calc(
 
 def CEN_calc(classes, table, TOP, P, class_name, modified=False):
     """
-    This function calculate CEN (Confusion Entropy)/ MCEN(Modified Confusion Entropy)
+    Calculate CEN (Confusion Entropy)/ MCEN(Modified Confusion Entropy).
+
     :param classes: classes
     :type classes : list
     :param table: input matrix
@@ -323,7 +339,8 @@ def CEN_calc(classes, table, TOP, P, class_name, modified=False):
 
 def AUC_calc(TNR, TPR):
     """
-    This function calculate AUC (Area under the ROC curve for each class)
+    Calculate AUC (Area under the ROC curve for each class).
+
     :param TNR: specificity or true negative rate
     :type TNR : float
     :param TPR: sensitivity, recall, hit rate, or true positive rate
@@ -338,7 +355,8 @@ def AUC_calc(TNR, TPR):
 
 def dInd_calc(TNR, TPR):
     """
-    This function calculate dInd (Distance index)
+    Calculate dInd (Distance index).
+
     :param TNR: specificity or true negative rate
     :type TNR : float
     :param TPR: sensitivity, recall, hit rate, or true positive rate
@@ -354,7 +372,8 @@ def dInd_calc(TNR, TPR):
 
 def sInd_calc(dInd):
     """
-    This function calculate sInd (Similarity index)
+    Calculate sInd (Similarity index).
+
     :param dInd: dInd
     :type dInd : float
     :return: sInd as float
@@ -367,7 +386,8 @@ def sInd_calc(dInd):
 
 def DP_calc(TPR, TNR):
     """
-    This function calculate DP (Discriminant power)
+    Calculate DP (Discriminant power).
+
     :param TNR: specificity or true negative rate
     :type TNR : float
     :param TPR: sensitivity, recall, hit rate, or true positive rate
@@ -384,7 +404,8 @@ def DP_calc(TPR, TNR):
 
 def GI_calc(AUC):
     """
-    This function calculate Gini index
+    Calculate Gini index.
+
     :param AUC: AUC (Area under the ROC curve)
     :type AUC: float
     :return: Gini index as float
@@ -397,7 +418,8 @@ def GI_calc(AUC):
 
 def lift_calc(PPV, PRE):
     """
-    This function calculate lift score
+    Calculate lift score.
+
     :param PPV:  precision or positive predictive value
     :type PPV : float
     :param PRE: Prevalence
@@ -412,7 +434,8 @@ def lift_calc(PPV, PRE):
 
 def AM_calc(TOP, P):
     """
-    This function calculate AM (Automatic/Manual)
+    Calculate AM (Automatic/Manual).
+
     :param TOP: test outcome positive
     :type TOP : int
     :param P: condition positive
@@ -427,7 +450,8 @@ def AM_calc(TOP, P):
 
 def OP_calc(ACC, TPR, TNR):
     """
-    This calculate OP (Optimized precision)
+    Calculate OP (Optimized precision).
+
     :param ACC: accuracy
     :type ACC : float
     :param TNR: specificity or true negative rate
@@ -445,7 +469,8 @@ def OP_calc(ACC, TPR, TNR):
 
 def IBA_calc(TPR, TNR, alpha=1):
     """
-    This function calculate IBA (Index of balanced accuracy)
+    Calculate IBA (Index of balanced accuracy).
+
     :param TNR: specificity or true negative rate
     :type TNR : float
     :param TPR: sensitivity, recall, hit rate, or true positive rate
@@ -463,7 +488,8 @@ def IBA_calc(TPR, TNR, alpha=1):
 
 def BCD_calc(TOP, P, AM):
     """
-    This function calculate BCD (Bray–Curtis dissimilarity)
+    Calculate BCD (Bray–Curtis dissimilarity).
+
     :param TOP: test outcome positive
     :type TOP : dict
     :param P: condition positive
@@ -482,7 +508,8 @@ def BCD_calc(TOP, P, AM):
 
 def class_statistics(TP, TN, FP, FN, classes, table):
     """
-    This function return all class statistics
+    Return all class statistics.
+
     :param TP: true positive dict for all classes
     :type TP : dict
     :param TN: true negative dict for all classes

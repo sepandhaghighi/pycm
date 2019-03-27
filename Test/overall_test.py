@@ -588,6 +588,9 @@ Predict          0        1
 Actual
 0                1        2
 1                1        0
+>>> cm = ConfusionMatrix(matrix={1:{1:0,2:0},2:{1:0,2:0}})
+>>> cm
+pycm.ConfusionMatrix(classes: [1, 2])
 >>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":9,"Class2":3,"Class3":0},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":1,"Class2":1,"Class3":4}})
 >>> print(cm)
 Predict          Class1    Class2    Class3

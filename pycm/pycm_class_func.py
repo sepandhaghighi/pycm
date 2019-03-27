@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Class statistics functions"""
 from __future__ import division
 import math
 from .pycm_interpret import *

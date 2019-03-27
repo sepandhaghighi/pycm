@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Interpretation functions"""
 def PLR_analysis(PLR):
     """
     This function analysis PLR(Positive likelihood ratio) with interpretation table

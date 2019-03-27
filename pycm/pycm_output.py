@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Outputs functions"""
 from __future__ import division
 from functools import partial
 from .pycm_param import *

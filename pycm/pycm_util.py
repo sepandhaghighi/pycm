@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Utility module"""
 from __future__ import division
 import sys
 import numpy

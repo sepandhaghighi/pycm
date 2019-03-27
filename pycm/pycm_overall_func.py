@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Overall statistics functions"""
 from __future__ import division
 import math
 import operator as op

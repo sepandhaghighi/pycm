@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-'''
+"""Basic test file"""
+"""
 >>> from pycm import *
 >>> import os
 >>> import json
@@ -18,4 +19,4 @@ pycm.ConfusionMatrix(classes: ['Class1', 'Class2', 'Class3'])
 >>> cp
 pycm.Compare(classes: ['Class1', 'Class2', 'Class3'])
 
-'''
+"""

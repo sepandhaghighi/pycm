@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+"""ConfusionMatrix module"""
 from __future__ import division
 from .pycm_class_func import class_statistics, F_calc, IBA_calc
 from .pycm_overall_func import overall_statistics

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+"""Compare module"""
 from __future__ import division
 from .pycm_output import *
 from .pycm_util import *

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 >>> from pycm import *
 >>> import os
 >>> import json
@@ -556,4 +556,4 @@ Example : online_help("J") or online_help(2)
 >>> cm.Chi_Squared
 8.429166666666667
 
-'''
+"""

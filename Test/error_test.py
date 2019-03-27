@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 >>> from pycm import *
 >>> import os
 >>> import json
@@ -70,4 +70,4 @@ pycm.pycm_obj.pycmCompareError: The weight type must be dictionary and also must
 Traceback (most recent call last):
         ...
 pycm.pycm_obj.pycmCompareError: The weight type must be dictionary and also must be set for all classes.
-'''
+"""

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 >>> from pycm import *
 >>> import os
 >>> import json
@@ -1024,4 +1024,4 @@ Warning:  Confusion matrices are too close and the best one can not be recognize
 True
 >>> cp2.best
 >>> cp2.best_name
-'''
+"""

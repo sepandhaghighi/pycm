@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 >>> from pycm import *
 >>> import os
 >>> import json
@@ -400,4 +400,4 @@ True
 >>> os.remove("test6.obj")
 >>> os.remove("test.pycm")
 >>> os.remove("test.comp")
-'''
+"""

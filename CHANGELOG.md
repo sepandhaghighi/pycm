@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `normalize` argument added to `save_html` method
 - `pycm_func.py` splitted into `pycm_class_func.py` and `pycm_overall_func.py`
 - `vector_filter`,`vector_check`,`class_check` and `matrix_check` functions moved to `pycm_util.py`
+- `RACC_calc` and `RACCU_calc` functions exception handler modified
 
 ## [1.9] - 2019-02-25
 ### Added

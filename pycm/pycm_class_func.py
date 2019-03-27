@@ -171,8 +171,11 @@ def RACC_calc(TOP, P, POP):
     :type POP:int
     :return: RACC as float
     """
-    result = (TOP * P) / ((POP) ** 2)
-    return result
+    try:
+        result = (TOP * P) / ((POP) ** 2)
+        return result
+    except Exception:
+        return "None"
 
 
 def RACCU_calc(TOP, P, POP):
@@ -186,8 +189,11 @@ def RACCU_calc(TOP, P, POP):
     :type POP : int
     :return: RACCU as float
     """
-    result = ((TOP + P) / (2 * POP))**2
-    return result
+    try:
+        result = ((TOP + P) / (2 * POP))**2
+        return result
+    except Exception:
+        return "None"
 
 
 def ERR_calc(ACC):

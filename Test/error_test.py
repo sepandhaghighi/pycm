@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Error tests."""
 """
 >>> from pycm import *
 >>> import os

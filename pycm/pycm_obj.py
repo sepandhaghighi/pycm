@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""ConfusionMatrix module"""
+"""ConfusionMatrix module."""
 from __future__ import division
 from .pycm_class_func import class_statistics, F_calc, IBA_calc
 from .pycm_overall_func import overall_statistics
@@ -13,17 +13,22 @@ import numpy
 
 
 class pycmVectorError(Exception):
+    """Vector error class."""
+
     pass
 
 
 class pycmMatrixError(Exception):
+    """Matrix error class."""
+
     pass
 
 
 
 class ConfusionMatrix():
     """
-    Main class of ConfusionMatrix
+    Confusion matrix class.
+
     >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
     >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
     >>> cm = ConfusionMatrix(y_actu, y_pred)
@@ -44,6 +49,8 @@ class ConfusionMatrix():
             digit=5, threshold=None, file=None,
             sample_weight=None, transpose=False):
         """
+        Init method.
+
         :param actual_vector: Actual Vector
         :type actual_vector: python list or numpy array of any stringable objects
         :param predict_vector: Predicted Vector
@@ -87,7 +94,8 @@ class ConfusionMatrix():
 
     def print_matrix(self, one_vs_all=False, class_name=None):
         """
-        This method print confusion matrix
+        Print confusion matrix.
+
         :param one_vs_all : One-Vs-All mode flag
         :type one_vs_all : bool
         :param class_name : target class name for One-Vs-All mode
@@ -103,7 +111,8 @@ class ConfusionMatrix():
 
     def print_normalized_matrix(self, one_vs_all=False, class_name=None):
         """
-        This method print normalized confusion matrix
+        Print normalized confusion matrix.
+
         :param one_vs_all : One-Vs-All mode flag
         :type one_vs_all : bool
         :param class_name : target class name for One-Vs-All mode
@@ -120,7 +129,8 @@ class ConfusionMatrix():
 
     def stat(self, overall_param=None, class_param=None, class_name=None):
         """
-        This method print statistical measures table
+        Print statistical measures table.
+
         :param overall_param : overall parameters list for print, Example : ["Kappa","Scott PI]
         :type overall_param : list
         :param class_param : class parameters list for print, Example : ["TPR","TNR","AUC"]
@@ -139,7 +149,8 @@ class ConfusionMatrix():
 
     def __str__(self):
         """
-        ConfusionMatrix object string representation method
+        Confusion matrix object string representation method.
+
         :return: representation as str (matrix + params)
         """
         result = table_print(self.classes, self.table)
@@ -156,7 +167,8 @@ class ConfusionMatrix():
             class_param=None,
             class_name=None):
         """
-        This method save ConfusionMatrix in .pycm (flat file format)
+        Save ConfusionMatrix in .pycm (flat file format).
+
         :param name: filename
         :type name : str
         :param address: flag for address return
@@ -206,7 +218,8 @@ class ConfusionMatrix():
             class_param=None,
             class_name=None, color=(0, 0, 0), normalize=False):
         """
-        This method save ConfusionMatrix in HTML file
+        Save ConfusionMatrix in HTML file.
+
         :param name: filename
         :type name : str
         :param address: flag for address return
@@ -263,7 +276,8 @@ class ConfusionMatrix():
             matrix_save=True,
             normalize=False):
         """
-        This method save ConfusionMatrix in CSV file
+        Save ConfusionMatrix in CSV file.
+
         :param name: filename
         :type name : str
         :param address: flag for address return
@@ -303,7 +317,8 @@ class ConfusionMatrix():
 
     def save_obj(self, name, address=True):
         """
-        This method save ConfusionMatrix in .obj file
+        Save ConfusionMatrix in .obj file.
+
         :param name: filename
         :type name : str
         :param address: flag for address return
@@ -337,7 +352,8 @@ class ConfusionMatrix():
 
     def F_beta(self, beta):
         """
-        This method calculate FBeta score
+        Calculate FBeta score.
+
         :param beta: beta parameter
         :type beta : float
         :return: FBeta score for classes as dict
@@ -356,7 +372,8 @@ class ConfusionMatrix():
 
     def IBA_alpha(self, alpha):
         """
-        This method calculate IBA_alpha score
+        Calculate IBA_alpha score.
+
         :param alpha: alpha parameter
         :type alpha: float
         :return: IBA_alpha score for classes as dict
@@ -371,17 +388,24 @@ class ConfusionMatrix():
 
     def __repr__(self):
         """
-        ConfusionMatrix object representation method
+        Confusion matrix object representation method.
+
         :return: representation as str
         """
         return "pycm.ConfusionMatrix(classes: " + str(self.classes) + ")"
 
     def __len__(self):
+        """
+        Confusion matrix object length method.
+
+        :return: length as int
+        """
         return len(self.classes)
 
     def __eq__(self, other):
         """
-        ConfusionMatrix equal method
+        Confusion matrix equal method.
+
         :param other: other ConfusionMatrix
         :type other: ConfusionMatrix
         :return: result as bool
@@ -392,7 +416,8 @@ class ConfusionMatrix():
 
     def __ne__(self, other):
         """
-        ConfusionMatrix not equal method
+        Confusion matrix not equal method.
+
         :param other: other ConfusionMatrix
         :type other: ConfusionMatrix
         :return: result as bool
@@ -401,7 +426,8 @@ class ConfusionMatrix():
 
     def relabel(self, mapping):
         """
-        This method rename ConfusionMatrix classes
+        Rename ConfusionMatrix classes.
+
         :param mapping: mapping dictionary
         :type mapping : dict
         :return: None
@@ -439,7 +465,8 @@ class ConfusionMatrix():
 
 def __class_stat_init__(cm):
     """
-    This function init individual class stat
+    Init individual class stat.
+
     :param cm : ConfusionMatrix
     :type cm : pycm.ConfusionMatrix object
     :return: None
@@ -495,7 +522,8 @@ def __class_stat_init__(cm):
 
 def __overall_stat_init__(cm):
     """
-    This function init individual overall stat
+    Init individual overall stat.
+
     :param cm: ConfusionMatrix
     :type cm : pycm.ConfusionMatrix object
     :return: None
@@ -551,7 +579,8 @@ def __overall_stat_init__(cm):
 
 def __obj_assign_handler__(cm, matrix_param):
     """
-    This function assign basic parameters to ConfusionMatrix
+    Assign basic parameters to ConfusionMatrix.
+
     :param cm: ConfusionMatrix
     :type cm : pycm.ConfusionMatrix object
     :param matrix_param: matrix parameters
@@ -596,7 +625,8 @@ def __obj_assign_handler__(cm, matrix_param):
 
 def __obj_file_handler__(cm, file):
     """
-    This function handle object conditions for file
+    Handle object conditions for file.
+
     :param cm: ConfusionMatrix
     :type cm : pycm.ConfusionMatrix object
     :param file : saved confusion matrix file object
@@ -634,7 +664,8 @@ def __obj_file_handler__(cm, file):
 
 def __obj_matrix_handler__(matrix, transpose):
     """
-    This function handle object conditions for matrix
+    Handle object conditions for matrix.
+
     :param matrix: direct matrix
     :type matrix: dict
     :param transpose : transpose flag
@@ -658,7 +689,8 @@ def __obj_vector_handler__(
         threshold,
         sample_weight):
     """
-    This function handle object conditions for vectors
+    Handle object conditions for vectors.
+
     :param cm: ConfusionMatrix
     :type cm : pycm.ConfusionMatrix object
     :param actual_vector: Actual Vector

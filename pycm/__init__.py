@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""PyCM modules."""
 from .pycm_class_func import *
 from .pycm_overall_func import *
 from .pycm_output import *

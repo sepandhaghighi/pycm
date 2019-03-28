@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
-"""Interpretation functions"""
+"""Interpretation functions."""
 def PLR_analysis(PLR):
     """
-    This function analysis PLR(Positive likelihood ratio) with interpretation table
+    Analysis PLR(Positive likelihood ratio) with interpretation table.
+
     :param PLR: positive likelihood ratio
     :type PLR : float
     :return: interpretation result as str
@@ -24,7 +25,8 @@ def PLR_analysis(PLR):
 
 def DP_analysis(DP):
     """
-    This function analysis DP with interpretation table
+    Analysis DP with interpretation table.
+
     :param DP: discriminant power
     :type DP : float
     :return: interpretation result as str
@@ -45,7 +47,8 @@ def DP_analysis(DP):
 
 def AUC_analysis(AUC):
     """
-    This function analysis AUC with interpretation table
+    Analysis AUC with interpretation table.
+
     :param AUC: area under the ROC curve
     :type AUC : float
     :return: interpretation result as str
@@ -68,7 +71,8 @@ def AUC_analysis(AUC):
 
 def kappa_analysis_cicchetti(kappa):
     """
-    This function analysis kappa number with Cicchetti benchmark
+    Analysis kappa number with Cicchetti benchmark.
+
     :param kappa: kappa number
     :type kappa : float
     :return: strength of agreement as str
@@ -89,7 +93,8 @@ def kappa_analysis_cicchetti(kappa):
 
 def kappa_analysis_koch(kappa):
     """
-    This function analysis kappa number with Landis-Koch benchmark
+    Analysis kappa number with Landis-Koch benchmark.
+
     :param kappa: kappa number
     :type kappa : float
     :return: strength of agreement as str
@@ -114,7 +119,8 @@ def kappa_analysis_koch(kappa):
 
 def kappa_analysis_fleiss(kappa):
     """
-    This function analysis kappa number with Fleiss benchmark
+    Analysis kappa number with Fleiss benchmark.
+
     :param kappa: kappa number
     :type kappa : float
     :return: strength of agreement as str
@@ -132,7 +138,8 @@ def kappa_analysis_fleiss(kappa):
 
 def kappa_analysis_altman(kappa):
     """
-    This function analysis kappa number with  Altman benchmark
+    Analysis kappa number with Altman benchmark.
+
     :param kappa: kappa number
     :type kappa : float
     :return: strength of agreement as str

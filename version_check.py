@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Version-check script."""
 import os
 import sys
 import codecs
@@ -37,6 +38,13 @@ TEST_NUMBER = len(FILES.keys())
 
 
 def print_result(failed=False):
+    """
+    Print final result.
+
+    :param failed: failed flag
+    :type failed: bool
+    :return: None
+    """
     message = "Version tag tests "
     if not failed:
         print("\n" + message + "passed!")

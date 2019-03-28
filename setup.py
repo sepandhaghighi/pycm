@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Setup module."""
 try:
     from setuptools import setup
 except ImportError:
@@ -6,11 +7,13 @@ except ImportError:
 
 
 def get_requires():
+    """Read requirements.txt."""
     requirements = open("requirements.txt", "r").read()
     return list(filter(lambda x: x != "", requirements.split()))
 
 
 def read_description():
+    """Read README.md and CHANGELOG.md."""
     try:
         with open("README.md") as r:
             description = "\n"

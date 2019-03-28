@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Basic test file"""
+"""Basic test file."""
 """
 >>> from pycm import *
 >>> import os

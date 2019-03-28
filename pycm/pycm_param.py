@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Parameters and constants"""
+"""Parameters and constants."""
 VERSION = "1.9"
 
 

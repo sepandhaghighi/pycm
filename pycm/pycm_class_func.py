@@ -488,7 +488,7 @@ def IBA_calc(TPR, TNR, alpha=1):
 
 def BCD_calc(TOP, P, AM):
     """
-    Calculate BCD (Bray–Curtis dissimilarity).
+    Calculate BCD (Bray-Curtis dissimilarity).
 
     :param TOP: test outcome positive
     :type TOP : dict

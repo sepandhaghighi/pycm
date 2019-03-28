@@ -9,7 +9,7 @@ from .pycm_interpret import *
 
 def pearson_C_calc(chi_square, POP):
     """
-    Calculate C (Pearson’s C).
+    Calculate C (Pearson's C).
 
     :param chi_square: chi squared
     :type chi_square : float

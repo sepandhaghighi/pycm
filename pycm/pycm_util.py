@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Utility module"""
+"""Utility module."""
 from __future__ import division
 import sys
 import numpy
@@ -8,7 +8,8 @@ from .pycm_param import *
 
 def list_check_equal(input_list):
     """
-    This function check equality of input_list items
+    Check equality of input_list items.
+
     :param input_list: input list
     :type input_list: list
     :return: result as bool
@@ -18,7 +19,8 @@ def list_check_equal(input_list):
 
 def isfloat(value):
     """
-    This function check input for float conversion
+    Check input for float conversion.
+
     :param value: input value
     :type value:str
     :return: result as bool (true if input_value is a number and false otherwise)
@@ -32,7 +34,8 @@ def isfloat(value):
 
 def rounder(input_number, digit=5):
     """
-    This function round input number
+    Round input number and convert to str.
+
     :param input_number: input number
     :type input_number : anything
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
@@ -55,7 +58,8 @@ def rounder(input_number, digit=5):
 
 def class_filter(classes, class_name):
     """
-    This function compare class_name and classes
+    Filter classes by comparing two lists.
+
     :param classes: matrix classes
     :type classes: list
     :param class_name: sub set of classes
@@ -71,7 +75,8 @@ def class_filter(classes, class_name):
 
 def vector_check(vector):
     """
-    This function check input vector items type
+    Check input vector items type.
+
     :param vector: input vector
     :type vector : list
     :return: bool
@@ -86,7 +91,8 @@ def vector_check(vector):
 
 def matrix_check(table):
     """
-    This function check input matrix format
+    Check input matrix format.
+
     :param table: input matrix
     :type table : dict
     :return: bool
@@ -105,7 +111,8 @@ def matrix_check(table):
 
 def vector_filter(actual_vector, predict_vector):
     """
-    This function convert different type of items in vectors to str
+    Convert different type of items in vectors to str.
+
     :param actual_vector: actual values
     :type actual_vector : list
     :param predict_vector: predict value
@@ -123,7 +130,8 @@ def vector_filter(actual_vector, predict_vector):
 
 def class_check(vector):
     """
-    This function check different items in matrix classes
+    Check different items in matrix classes.
+
     :param vector: input vector
     :type vector : list
     :return: bool
@@ -136,7 +144,8 @@ def class_check(vector):
 
 def isfile(f):
     """
-    This function check file object in python 2.7 & 3.x
+    Check file object in python 2.7 & 3.x.
+
     :param f: input object
     :type f : file object
     :return: file type check as boolean
@@ -148,7 +157,8 @@ def isfile(f):
 
 def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
     """
-    One-Vs-All mode handler
+    One-Vs-All mode handler.
+
     :param classes: classes
     :type classes : list
     :param table: input matrix
@@ -178,7 +188,8 @@ def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
 
 def normalized_table_calc(classes, table):
     """
-    This function return normalized confusion matrix
+    Return normalized confusion matrix.
+
     :param classes: classes list
     :type classes:list
     :param table: table
@@ -198,7 +209,8 @@ def normalized_table_calc(classes, table):
 
 def transpose_func(classes, table):
     """
-    This function transpose table
+    Transpose table.
+
     :param classes: classes
     :type classes : list
     :param table: input matrix
@@ -217,7 +229,8 @@ def transpose_func(classes, table):
 
 def matrix_params_from_table(table, transpose=False):
     """
-    This function calculate TP,TN,FP,FN from confusion matrix
+    Calculate TP,TN,FP,FN from confusion matrix.
+
     :param table: input matrix
     :type table : dict
     :param transpose : transpose flag
@@ -248,7 +261,8 @@ def matrix_params_from_table(table, transpose=False):
 
 def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     """
-    This function calculate TP,TN,FP,FN for each class
+    Calculate TP,TN,FP,FN for each class.
+
     :param actual_vector: actual values
     :type actual_vector : list
     :param predict_vector: predict value
@@ -278,7 +292,8 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
 
 def imbalance_check(P):
     """
-    This function check if the dataset is imbalanced
+    Check if the dataset is imbalanced.
+
     :param P: condition positive
     :type P : dict
     :return: is_imbalanced as bool
@@ -298,7 +313,8 @@ def imbalance_check(P):
 
 def binary_check(classes):
     """
-    This function check if the problem is a binary classification
+    Check if the problem is a binary classification.
+
     :param classes:  all classes name
     :type classes : list
     :return: is_binary as bool
@@ -312,7 +328,8 @@ def binary_check(classes):
 
 def statistic_recommend(classes, P):
     """
-    This function recommend parameters which is more suitable due to the input dataset characteristics
+    Return recommend parameters which are more suitable due to the input dataset characteristics.
+
     :param classes:  all classes name
     :type classes : list
     :param P: condition positive

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Outputs functions"""
+"""Outputs functions."""
 from __future__ import division
 from functools import partial
 from .pycm_param import *
@@ -9,7 +9,8 @@ import webbrowser
 
 def html_init(name):
     """
-    This function return report  file first lines
+    Return HTML report file first lines.
+
     :param name: name of file
     :type name : str
     :return: html_init as str
@@ -27,8 +28,9 @@ def html_init(name):
 
 def html_dataset_type(is_binary, is_imbalanced):
     """
-    This function return report file dataset type
-    :param is_binary: is_binary flag (binary : True , mutli-class : False)
+    Return HTML report file dataset type.
+
+    :param is_binary: is_binary flag (binary : True , multi-class : False)
     :type is_binary: bool
     :param is_imbalanced: is_imbalanced flag (imbalance : True , balance : False)
     :type is_imbalanced: bool
@@ -51,7 +53,8 @@ def html_dataset_type(is_binary, is_imbalanced):
 
 def color_check(color):
     """
-    This function check input color fotmat
+    Check input color format.
+
     :param color: input color
     :type color : tuple
     :return: color as list
@@ -69,7 +72,8 @@ def color_check(color):
 
 def html_table_color(row, item, color=(0, 0, 0)):
     """
-    This function return background color of each cell of table
+    Return background color of each cell of table.
+
     :param row: row dictionary
     :type row : dict
     :param item: cell number
@@ -91,7 +95,8 @@ def html_table_color(row, item, color=(0, 0, 0)):
 
 def html_table(classes, table, rgb_color, normalize=False):
     """
-    This function return report file confusion matrix
+    Return HTML report file confusion matrix.
+
     :param classes: matrix classes
     :type classes: list
     :param table: matrix
@@ -149,7 +154,8 @@ def html_overall_stat(
         overall_param=None,
         recommended_list=()):
     """
-    This function return report file overall stat
+    Return HTML report file overall stat.
+
     :param overall_stat: overall stat
     :type overall_stat : dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
@@ -195,7 +201,8 @@ def html_class_stat(
         class_param=None,
         recommended_list=()):
     """
-    This function return report file class_stat
+    Return HTML report file class_stat.
+
     :param classes: matrix classes
     :type classes: list
     :param class_stat: class stat
@@ -251,7 +258,8 @@ def html_class_stat(
 
 def html_end(version):
     """
-    This function return report file end lines
+    Return HTML report file end lines.
+
     :param version: pycm version
     :type version:str
     :return: html_end as str
@@ -266,7 +274,8 @@ def html_end(version):
 
 def pycm_help():
     """
-    This function print pycm details
+    Print pycm details.
+
     :return: None
     """
     print(OVERVIEW)
@@ -276,7 +285,8 @@ def pycm_help():
 
 def table_print(classes, table):
     """
-    This function print confusion matrix
+    Return printable confusion matrix.
+
     :param classes: classes list
     :type classes:list
     :param table: table
@@ -305,7 +315,8 @@ def table_print(classes, table):
 
 def csv_matrix_print(classes, table):
     """
-    This function return matrix as csv data
+    Return matrix as csv data.
+
     :param classes: classes list
     :type classes:list
     :param table: table
@@ -323,7 +334,8 @@ def csv_matrix_print(classes, table):
 
 def csv_print(classes, class_stat, digit=5, class_param=None):
     """
-    This function return csv file data
+    Return csv file data.
+
     :param classes: classes list
     :type classes:list
     :param class_stat: statistic result for each class
@@ -360,7 +372,8 @@ def stat_print(
         overall_param=None,
         class_param=None):
     """
-    This function return statistics
+    Return printable statistics table.
+
     :param classes: classes list
     :type classes:list
     :param class_stat: statistic result for each class
@@ -415,7 +428,8 @@ def stat_print(
 
 def compare_report_print(sorted_list, scores, best_name):
     """
-    This function return compare report
+    Return compare report.
+
     :param sorted_list: sorted list of cm's
     :type sorted_list: list
     :param scores: scores of cm's
@@ -454,7 +468,8 @@ def compare_report_print(sorted_list, scores, best_name):
 
 def online_help(param=None):
     """
-    This function open online document
+    Open online document in web browser.
+
     :param param: input parameter
     :type param : int or str
     :return: None

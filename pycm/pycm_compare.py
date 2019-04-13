@@ -66,6 +66,7 @@ class Compare():
         self.digit = digit
         self.best = None
         self.best_name = None
+        self.sorted = None
         self.scores = {k: {"overall": 0, "class": 0}.copy()
                        for k in cm_dict.keys()}
         if by_class and weight is not None:
@@ -76,16 +77,11 @@ class Compare():
                 self.weight = weight
             else:
                 raise pycmCompareError(COMPARE_WEIGHT_ERROR)
-        (max_class_name, max_class_score) = __compare_class_handler__(self, cm_dict)
-        (max_overall_name, max_overall_score) = __compare_overall_handler__(self, cm_dict)
+        __compare_class_handler__(self, cm_dict)
+        __compare_overall_handler__(self, cm_dict)
         __compare_rounder__(self, cm_dict)
-        self.sorted = sorted(
-            self.scores,
-            key=lambda x: (
-                self.scores[x]['class'],
-                self.scores[x]['overall']))
-        self.sorted.reverse()
         scores_list = list(self.scores.values())
+        (max_overall_name, max_overall_score, max_class_name, max_class_score) = __compare_sort_handler__(self)
         if scores_list.count(self.scores[max_class_name]) == 1:
             if by_class and (weight is not None):
                 self.best = cm_dict[max_class_name]
@@ -162,10 +158,8 @@ def __compare_class_handler__(compare, cm_dict):
     :type compare : pycm.Compare object
     :param cm_dict: cm's dictionary
     :type cm_dict : dict
-    :return: (max_class_name,max_class_score) as tuple
+    :return: None
     """
-    max_class_name = None
-    max_class_score = 0
     for c in compare.classes:
         for item in CLASS_BENCHMARK_SCORE_DICT.keys():
             max_item_score = len(CLASS_BENCHMARK_SCORE_DICT[item]) - 1
@@ -175,10 +169,6 @@ def __compare_class_handler__(compare, cm_dict):
                 for cm_name in cm_dict.keys():
                     compare.scores[cm_name]["class"] += compare.weight[c] * (
                         CLASS_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].class_stat[item][c]] / max_item_score)
-                    if compare.scores[cm_name]["class"] > max_class_score:
-                        max_class_score = compare.scores[cm_name]["class"]
-                        max_class_name = cm_name
-    return (max_class_name, max_class_score)
 
 
 def __compare_overall_handler__(compare, cm_dict):
@@ -189,10 +179,8 @@ def __compare_overall_handler__(compare, cm_dict):
     :type compare : pycm.Compare object
     :param cm_dict: cm's dictionary
     :type cm_dict : dict
-    :return: (max_overall_name,max_overall_score) as tuple
+    :return: None
     """
-    max_overall_name = None
-    max_overall_score = 0
     for item in OVERALL_BENCHMARK_SCORE_DICT.keys():
         max_item_score = len(OVERALL_BENCHMARK_SCORE_DICT[item]) - 1
         all_overall_score = [OVERALL_BENCHMARK_SCORE_DICT[item][
@@ -200,10 +188,6 @@ def __compare_overall_handler__(compare, cm_dict):
         if all([isinstance(x, int) for x in all_overall_score]):
             for cm_name in cm_dict.keys():
                 compare.scores[cm_name]["overall"] += OVERALL_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].overall_stat[item]] / max_item_score
-                if compare.scores[cm_name]["overall"] > max_overall_score:
-                    max_overall_score = compare.scores[cm_name]["overall"]
-                    max_overall_name = cm_name
-    return (max_overall_name, max_overall_score)
 
 
 def __compare_rounder__(compare, cm_dict):
@@ -221,3 +205,31 @@ def __compare_rounder__(compare, cm_dict):
             compare.scores[cm_name]["overall"], compare.digit)
         compare.scores[cm_name]["class"] = numpy.around(
             compare.scores[cm_name]["class"], compare.digit)
+
+def __compare_sort_handler__(compare):
+    """
+    Handle sorting of scores.
+
+    :param compare: Compare
+    :type compare : pycm.Compare object
+    :return: (max_overall_name,max_overall_score,max_class_name,max_class_score) as tuple
+    """
+    sorted_by_class = sorted(
+        compare.scores,
+        key=lambda x: (
+            compare.scores[x]['class'],
+            compare.scores[x]['overall']))
+    sorted_by_overall = sorted(
+        compare.scores,
+        key=lambda x: (
+            compare.scores[x]['overall'],
+            compare.scores[x]['class']))
+    sorted_by_class.reverse()
+    sorted_by_overall.reverse()
+    compare.sorted = sorted_by_class
+    max_overall_name = sorted_by_overall[0]
+    max_class_name = sorted_by_class[0]
+    max_class_score = compare.scores[max_class_name]["class"]
+    max_overall_score = compare.scores[max_overall_name]["overall"]
+    return (max_overall_name,max_overall_score,max_class_name,max_class_score)
+

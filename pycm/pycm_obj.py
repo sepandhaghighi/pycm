@@ -24,7 +24,6 @@ class pycmMatrixError(Exception):
     pass
 
 
-
 class ConfusionMatrix():
     """
     Confusion matrix class.
@@ -85,7 +84,7 @@ class ConfusionMatrix():
                 self, actual_vector, predict_vector, threshold, sample_weight)
         if len(matrix_param[0]) < 2:
             raise pycmVectorError(CLASS_NUMBER_ERROR)
-        __obj_assign_handler__(self,matrix_param)
+        __obj_assign_handler__(self, matrix_param)
         __class_stat_init__(self)
         __overall_stat_init__(self)
         self.imbalance = imbalance_check(self.P)
@@ -576,6 +575,7 @@ def __overall_stat_init__(cm):
     cm.AUNP = cm.overall_stat["AUNP"]
     cm.RCI = cm.overall_stat["RCI"]
     cm.C = cm.overall_stat["Pearson C"]
+
 
 def __obj_assign_handler__(cm, matrix_param):
     """

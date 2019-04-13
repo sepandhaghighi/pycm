@@ -9,7 +9,6 @@ import os
 import numpy
 
 
-
 class pycmCompareError(Exception):
     """Compare error class."""
 
@@ -81,7 +80,8 @@ class Compare():
         __compare_overall_handler__(self, cm_dict)
         __compare_rounder__(self, cm_dict)
         scores_list = list(self.scores.values())
-        (max_overall_name, max_overall_score, max_class_name, max_class_score) = __compare_sort_handler__(self)
+        (max_overall_name, max_overall_score, max_class_name,
+         max_class_score) = __compare_sort_handler__(self)
         if scores_list.count(self.scores[max_class_name]) == 1:
             if by_class and (weight is not None):
                 self.best = cm_dict[max_class_name]
@@ -206,6 +206,7 @@ def __compare_rounder__(compare, cm_dict):
         compare.scores[cm_name]["class"] = numpy.around(
             compare.scores[cm_name]["class"], compare.digit)
 
+
 def __compare_sort_handler__(compare):
     """
     Handle sorting of scores.
@@ -231,5 +232,8 @@ def __compare_sort_handler__(compare):
     max_class_name = sorted_by_class[0]
     max_class_score = compare.scores[max_class_name]["class"]
     max_overall_score = compare.scores[max_overall_name]["overall"]
-    return (max_overall_name,max_overall_score,max_class_name,max_class_score)
-
+    return (
+        max_overall_name,
+        max_overall_score,
+        max_class_name,
+        max_class_score)

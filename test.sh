@@ -1,7 +1,7 @@
   set -e
   set -x
   python -m pytest Test --cov=pycm --cov-report=term
-  python version_check.py
+  python Otherfiles/version_check.py
   if [ "$TRAVIS_PYTHON_VERSION" = '3.6' ]
   then
       python -m vulture --min-confidence 80 --exclude=pycm,build,.eggs --sort-by-size .

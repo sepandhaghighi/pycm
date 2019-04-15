@@ -5,6 +5,27 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [2.0] - 2019-04-15
+### Added
+- G-Mean (GM)
+- Index of balanced accuracy (IBA)
+- Optimized precision (OP)
+- Pearson's C (C)
+- `Compare` class
+- Parameters recommendation warning
+
+### Changed
+- Document modified
+- `stat_print` function bug fixed
+- `table_print` function bug fixed
+- `Beta` parameter renamed to `beta` (`F_calc` function & `F_beta` method) 
+- Imbalance dataset parameters recommendation modified
+- `normalize` parameter added to `save_html` method
+- `pycm_func.py` splitted into `pycm_class_func.py` and `pycm_overall_func.py`
+- `vector_filter`,`vector_check`,`class_check` and `matrix_check` functions moved to `pycm_util.py`
+- `RACC_calc` and `RACCU_calc` functions exception handler modified
+- Docstrings modified
+
 ## [1.9] - 2019-02-25
 ### Added
 - Automatic/Manual (AM)
@@ -19,7 +40,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Interactive notebooks section (binder)
 
 ### Changed
-- `save_matrix` and `normalize` arguments added to `save_csv` method
+- `save_matrix` and `normalize` parameters added to `save_csv` method
 - `README.md` modified 
 - Document modified
 - `ConfusionMatrix.__init__` optimized
@@ -33,7 +54,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `version_check.py`
 
 ### Changed
-- `color` argument added to `save_html` method
+- `color` parameter added to `save_html` method
 - Error messages modified
 - Document modified
 - Website changed to [http://www.pycm.ir](http://www.pycm.ir)
@@ -49,8 +70,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `pycm_profile.py`
 
 ### Changed
-- `class_name` argument added to `stat`,`save_stat`,`save_csv` and `save_html`  methods
-- `overall_param` and `class_param` arguments empty list bug fixed 
+- `class_name` parameter added to `stat`,`save_stat`,`save_csv` and `save_html`  methods
+- `overall_param` and `class_param` parameters empty list bug fixed 
 - `matrix_params_calc`, `matrix_params_from_table` and `vector_filter` functions optimized
 - `overall_MCC_calc`, `CEN_misclassification_calc` and `convex_combination` functions optimized
 - Document modified
@@ -62,8 +83,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Anaconda cloud package
 
 ### Changed
-- `overall_param` and `class_param` arguments added to `stat`,`save_stat` and `save_html`  methods
-- `class_param` argument added to `save_csv` method
+- `overall_param` and `class_param` parameters added to `stat`,`save_stat` and `save_html`  methods
+- `class_param` parameter added to `save_csv` method
 - `_` removed from overall statistics names
 - `README.md` modified 
 - Document modified
@@ -335,7 +356,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v1.9...dev
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v2.0...dev
+[2.0]: https://github.com/sepandhaghighi/pycm/compare/v1.9...v2.0
 [1.9]: https://github.com/sepandhaghighi/pycm/compare/v1.8...v1.9
 [1.8]: https://github.com/sepandhaghighi/pycm/compare/v1.7...v1.8
 [1.7]: https://github.com/sepandhaghighi/pycm/compare/v1.6...v1.7

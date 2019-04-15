@@ -95,7 +95,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ## Installation		
 
 ### Source code
-- Download [Version 1.9](https://github.com/sepandhaghighi/pycm/archive/v1.9.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 2.0](https://github.com/sepandhaghighi/pycm/archive/v2.0.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -103,7 +103,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==1.9` or `pip3 install pycm==1.9` (Need root access)
+- Run `pip install pycm==2.0` or `pip3 install pycm==2.0` (Need root access)
 
 ### Conda
 
@@ -128,13 +128,13 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 >>> cm.table
 {0: {0: 3, 1: 0, 2: 0}, 1: {0: 0, 1: 1, 2: 2}, 2: {0: 2, 1: 1, 2: 3}}
 >>> print(cm)
-Predict          0    1    2    
+Predict 0       1       2       
 Actual
-0                3    0    0    
+0       3       0       0       
 
-1                0    1    2    
+1       0       1       2       
 
-2                2    1    3    
+2       2       1       3       
 
 
 
@@ -175,6 +175,7 @@ Overall RACCU                                                     0.36458
 P-Value                                                           0.38721
 PPV Macro                                                         0.56667
 PPV Micro                                                         0.58333
+Pearson C                                                         0.59568
 Phi-Squared                                                       0.55
 RCI                                                               0.34947
 RR                                                                4.0
@@ -192,55 +193,58 @@ Zero-one Loss                                                     5
 
 Class Statistics :
 
-Classes                                                           0                       1                       2                       
-ACC(Accuracy)                                                     0.83333                 0.75                    0.58333                 
-AM(Difference between automatic and manual classification)        2                       -1                      -1                      
-AUC(Area under the roc curve)                                     0.88889                 0.61111                 0.58333                 
-AUCI(AUC value interpretation)                                    Very Good               Fair                    Poor                    
-BCD(Bray-Curtis dissimilarity)                                    0.08333                 0.04167                 0.04167                 
-BM(Informedness or bookmaker informedness)                        0.77778                 0.22222                 0.16667                 
-CEN(Confusion entropy)                                            0.25                    0.49658                 0.60442                 
-DOR(Diagnostic odds ratio)                                        None                    4.0                     2.0                     
-DP(Discriminant power)                                            None                    0.33193                 0.16597                 
-DPI(Discriminant power interpretation)                            None                    Poor                    Poor                    
-ERR(Error rate)                                                   0.16667                 0.25                    0.41667                 
-F0.5(F0.5 score)                                                  0.65217                 0.45455                 0.57692                 
-F1(F1 score - harmonic mean of precision and sensitivity)         0.75                    0.4                     0.54545                 
-F2(F2 score)                                                      0.88235                 0.35714                 0.51724                 
-FDR(False discovery rate)                                         0.4                     0.5                     0.4                     
-FN(False negative/miss/type 2 error)                              0                       2                       3                       
-FNR(Miss rate or false negative rate)                             0.0                     0.66667                 0.5                     
-FOR(False omission rate)                                          0.0                     0.2                     0.42857                 
-FP(False positive/type 1 error/false alarm)                       2                       1                       2                       
-FPR(Fall-out or false positive rate)                              0.22222                 0.11111                 0.33333                 
-G(G-measure geometric mean of precision and sensitivity)          0.7746                  0.40825                 0.54772                 
-GI(Gini index)                                                    0.77778                 0.22222                 0.16667                 
-IS(Information score)                                             1.26303                 1.0                     0.26303                 
-J(Jaccard index)                                                  0.6                     0.25                    0.375                   
-LS(Lift score)                                                    2.4                     2.0                     1.2                     
-MCC(Matthews correlation coefficient)                             0.68313                 0.2582                  0.16903                 
-MCEN(Modified confusion entropy)                                  0.26439                 0.5                     0.6875                  
-MK(Markedness)                                                    0.6                     0.3                     0.17143                 
-N(Condition negative)                                             9                       9                       6                       
-NLR(Negative likelihood ratio)                                    0.0                     0.75                    0.75                    
-NPV(Negative predictive value)                                    1.0                     0.8                     0.57143                 
-P(Condition positive or support)                                  3                       3                       6                       
-PLR(Positive likelihood ratio)                                    4.5                     3.0                     1.5                     
-PLRI(Positive likelihood ratio interpretation)                    Poor                    Poor                    Poor                    
-POP(Population)                                                   12                      12                      12                      
-PPV(Precision or positive predictive value)                       0.6                     0.5                     0.6                     
-PRE(Prevalence)                                                   0.25                    0.25                    0.5                     
-RACC(Random accuracy)                                             0.10417                 0.04167                 0.20833                 
-RACCU(Random accuracy unbiased)                                   0.11111                 0.0434                  0.21007                 
-TN(True negative/correct rejection)                               7                       8                       4                       
-TNR(Specificity or true negative rate)                            0.77778                 0.88889                 0.66667                 
-TON(Test outcome negative)                                        7                       10                      7                       
-TOP(Test outcome positive)                                        5                       2                       5                       
-TP(True positive/hit)                                             3                       1                       3                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0                     0.33333                 0.5                     
-Y(Youden index)                                                   0.77778                 0.22222                 0.16667                 
-dInd(Distance index)                                              0.22222                 0.67586                 0.60093                 
-sInd(Similarity index)                                            0.84287                 0.52209                 0.57508                 
+Classes                                                           0             1             2             
+ACC(Accuracy)                                                     0.83333       0.75          0.58333       
+AM(Difference between automatic and manual classification)        2             -1            -1            
+AUC(Area under the roc curve)                                     0.88889       0.61111       0.58333       
+AUCI(AUC value interpretation)                                    Very Good     Fair          Poor          
+BCD(Bray-Curtis dissimilarity)                                    0.08333       0.04167       0.04167       
+BM(Informedness or bookmaker informedness)                        0.77778       0.22222       0.16667       
+CEN(Confusion entropy)                                            0.25          0.49658       0.60442       
+DOR(Diagnostic odds ratio)                                        None          4.0           2.0           
+DP(Discriminant power)                                            None          0.33193       0.16597       
+DPI(Discriminant power interpretation)                            None          Poor          Poor          
+ERR(Error rate)                                                   0.16667       0.25          0.41667       
+F0.5(F0.5 score)                                                  0.65217       0.45455       0.57692       
+F1(F1 score - harmonic mean of precision and sensitivity)         0.75          0.4           0.54545       
+F2(F2 score)                                                      0.88235       0.35714       0.51724       
+FDR(False discovery rate)                                         0.4           0.5           0.4           
+FN(False negative/miss/type 2 error)                              0             2             3             
+FNR(Miss rate or false negative rate)                             0.0           0.66667       0.5           
+FOR(False omission rate)                                          0.0           0.2           0.42857       
+FP(False positive/type 1 error/false alarm)                       2             1             2             
+FPR(Fall-out or false positive rate)                              0.22222       0.11111       0.33333       
+G(G-measure geometric mean of precision and sensitivity)          0.7746        0.40825       0.54772       
+GI(Gini index)                                                    0.77778       0.22222       0.16667       
+GM(G-mean geometric mean of specificity and sensitivity)          0.88192       0.54433       0.57735       
+IBA(Index of balanced accuracy)                                   0.95062       0.13169       0.27778       
+IS(Information score)                                             1.26303       1.0           0.26303       
+J(Jaccard index)                                                  0.6           0.25          0.375         
+LS(Lift score)                                                    2.4           2.0           1.2           
+MCC(Matthews correlation coefficient)                             0.68313       0.2582        0.16903       
+MCEN(Modified confusion entropy)                                  0.26439       0.5           0.6875        
+MK(Markedness)                                                    0.6           0.3           0.17143       
+N(Condition negative)                                             9             9             6             
+NLR(Negative likelihood ratio)                                    0.0           0.75          0.75          
+NPV(Negative predictive value)                                    1.0           0.8           0.57143       
+OP(Optimized precision)                                           0.70833       0.29545       0.44048       
+P(Condition positive or support)                                  3             3             6             
+PLR(Positive likelihood ratio)                                    4.5           3.0           1.5           
+PLRI(Positive likelihood ratio interpretation)                    Poor          Poor          Poor          
+POP(Population)                                                   12            12            12            
+PPV(Precision or positive predictive value)                       0.6           0.5           0.6           
+PRE(Prevalence)                                                   0.25          0.25          0.5           
+RACC(Random accuracy)                                             0.10417       0.04167       0.20833       
+RACCU(Random accuracy unbiased)                                   0.11111       0.0434        0.21007       
+TN(True negative/correct rejection)                               7             8             4             
+TNR(Specificity or true negative rate)                            0.77778       0.88889       0.66667       
+TON(Test outcome negative)                                        7             10            7             
+TOP(Test outcome positive)                                        5             2             5             
+TP(True positive/hit)                                             3             1             3             
+TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           0.33333       0.5           
+Y(Youden index)                                                   0.77778       0.22222       0.16667       
+dInd(Distance index)                                              0.22222       0.67586       0.60093       
+sInd(Similarity index)                                            0.84287       0.52209       0.57508
 
 >>> cm.print_matrix()
 Predict          0    1    2    
@@ -276,11 +280,11 @@ Actual
 >>> cm2
 pycm.ConfusionMatrix(classes: ['Class1', 'Class2'])
 >>> print(cm2)
-Predict          Class1    Class2    
+Predict      Class1       Class2       
 Actual
-Class1           1         2         
+Class1       1            2            
 
-Class2           0         5         
+Class2       0            5            
 
 
 
@@ -321,6 +325,7 @@ Overall RACCU                                                     0.625
 P-Value                                                           0.36974
 PPV Macro                                                         0.85714
 PPV Micro                                                         0.75
+Pearson C                                                         0.43853
 Phi-Squared                                                       0.2381
 RCI                                                               0.20871
 RR                                                                4.0
@@ -338,55 +343,58 @@ Zero-one Loss                                                     2
 
 Class Statistics :
 
-Classes                                                           Class1                  Class2                  
-ACC(Accuracy)                                                     0.75                    0.75                    
-AM(Difference between automatic and manual classification)        -2                      2                       
-AUC(Area under the roc curve)                                     0.66667                 0.66667                 
-AUCI(AUC value interpretation)                                    Fair                    Fair                    
-BCD(Bray-Curtis dissimilarity)                                    0.125                   0.125                   
-BM(Informedness or bookmaker informedness)                        0.33333                 0.33333                 
-CEN(Confusion entropy)                                            0.5                     0.43083                 
-DOR(Diagnostic odds ratio)                                        None                    None                    
-DP(Discriminant power)                                            None                    None                    
-DPI(Discriminant power interpretation)                            None                    None                    
-ERR(Error rate)                                                   0.25                    0.25                    
-F0.5(F0.5 score)                                                  0.71429                 0.75758                 
-F1(F1 score - harmonic mean of precision and sensitivity)         0.5                     0.83333                 
-F2(F2 score)                                                      0.38462                 0.92593                 
-FDR(False discovery rate)                                         0.0                     0.28571                 
-FN(False negative/miss/type 2 error)                              2                       0                       
-FNR(Miss rate or false negative rate)                             0.66667                 0.0                     
-FOR(False omission rate)                                          0.28571                 0.0                     
-FP(False positive/type 1 error/false alarm)                       0                       2                       
-FPR(Fall-out or false positive rate)                              0.0                     0.66667                 
-G(G-measure geometric mean of precision and sensitivity)          0.57735                 0.84515                 
-GI(Gini index)                                                    0.33333                 0.33333                 
-IS(Information score)                                             1.41504                 0.19265                 
-J(Jaccard index)                                                  0.33333                 0.71429                 
-LS(Lift score)                                                    2.66667                 1.14286                 
-MCC(Matthews correlation coefficient)                             0.48795                 0.48795                 
-MCEN(Modified confusion entropy)                                  0.38998                 0.51639                 
-MK(Markedness)                                                    0.71429                 0.71429                 
-N(Condition negative)                                             5                       3                       
-NLR(Negative likelihood ratio)                                    0.66667                 0.0                     
-NPV(Negative predictive value)                                    0.71429                 1.0                     
-P(Condition positive or support)                                  3                       5                       
-PLR(Positive likelihood ratio)                                    None                    1.5                     
-PLRI(Positive likelihood ratio interpretation)                    None                    Poor                    
-POP(Population)                                                   8                       8                       
-PPV(Precision or positive predictive value)                       1.0                     0.71429                 
-PRE(Prevalence)                                                   0.375                   0.625                   
-RACC(Random accuracy)                                             0.04688                 0.54688                 
-RACCU(Random accuracy unbiased)                                   0.0625                  0.5625                  
-TN(True negative/correct rejection)                               5                       1                       
-TNR(Specificity or true negative rate)                            1.0                     0.33333                 
-TON(Test outcome negative)                                        7                       1                       
-TOP(Test outcome positive)                                        1                       7                       
-TP(True positive/hit)                                             1                       5                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)         0.33333                 1.0                     
-Y(Youden index)                                                   0.33333                 0.33333                 
-dInd(Distance index)                                              0.66667                 0.66667                 
-sInd(Similarity index)                                            0.5286                  0.5286                                  
+Classes                                                           Class1        Class2        
+ACC(Accuracy)                                                     0.75          0.75          
+AM(Difference between automatic and manual classification)        -2            2             
+AUC(Area under the roc curve)                                     0.66667       0.66667       
+AUCI(AUC value interpretation)                                    Fair          Fair          
+BCD(Bray-Curtis dissimilarity)                                    0.125         0.125         
+BM(Informedness or bookmaker informedness)                        0.33333       0.33333       
+CEN(Confusion entropy)                                            0.5           0.43083       
+DOR(Diagnostic odds ratio)                                        None          None          
+DP(Discriminant power)                                            None          None          
+DPI(Discriminant power interpretation)                            None          None          
+ERR(Error rate)                                                   0.25          0.25          
+F0.5(F0.5 score)                                                  0.71429       0.75758       
+F1(F1 score - harmonic mean of precision and sensitivity)         0.5           0.83333       
+F2(F2 score)                                                      0.38462       0.92593       
+FDR(False discovery rate)                                         0.0           0.28571       
+FN(False negative/miss/type 2 error)                              2             0             
+FNR(Miss rate or false negative rate)                             0.66667       0.0           
+FOR(False omission rate)                                          0.28571       0.0           
+FP(False positive/type 1 error/false alarm)                       0             2             
+FPR(Fall-out or false positive rate)                              0.0           0.66667       
+G(G-measure geometric mean of precision and sensitivity)          0.57735       0.84515       
+GI(Gini index)                                                    0.33333       0.33333       
+GM(G-mean geometric mean of specificity and sensitivity)          0.57735       0.57735       
+IBA(Index of balanced accuracy)                                   0.11111       0.55556       
+IS(Information score)                                             1.41504       0.19265       
+J(Jaccard index)                                                  0.33333       0.71429       
+LS(Lift score)                                                    2.66667       1.14286       
+MCC(Matthews correlation coefficient)                             0.48795       0.48795       
+MCEN(Modified confusion entropy)                                  0.38998       0.51639       
+MK(Markedness)                                                    0.71429       0.71429       
+N(Condition negative)                                             5             3             
+NLR(Negative likelihood ratio)                                    0.66667       0.0           
+NPV(Negative predictive value)                                    0.71429       1.0           
+OP(Optimized precision)                                           0.25          0.25          
+P(Condition positive or support)                                  3             5             
+PLR(Positive likelihood ratio)                                    None          1.5           
+PLRI(Positive likelihood ratio interpretation)                    None          Poor          
+POP(Population)                                                   8             8             
+PPV(Precision or positive predictive value)                       1.0           0.71429       
+PRE(Prevalence)                                                   0.375         0.625         
+RACC(Random accuracy)                                             0.04688       0.54688       
+RACCU(Random accuracy unbiased)                                   0.0625        0.5625        
+TN(True negative/correct rejection)                               5             1             
+TNR(Specificity or true negative rate)                            1.0           0.33333       
+TON(Test outcome negative)                                        7             1             
+TOP(Test outcome positive)                                        1             7             
+TP(True positive/hit)                                             1             5             
+TPR(Sensitivity, recall, hit rate, or true positive rate)         0.33333       1.0           
+Y(Youden index)                                                   0.33333       0.33333       
+dInd(Distance index)                                              0.66667       0.66667       
+sInd(Similarity index)                                            0.5286        0.5286                 
                                   
 >>> cm3 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":0}, "Class2": {"Class1": 2, "Class2": 5}},transpose=True) # Transpose Matrix      
 >>> cm3.print_matrix()
@@ -453,23 +461,60 @@ False
 >>> cm.recommended_list
 ['MCC', 'TPR Micro', 'ACC', 'PPV Macro', 'BCD', 'Overall MCC', 'Hamming Loss', 'TPR Macro', 'Zero-one Loss', 'ERR', 'PPV Micro', 'Overall ACC']
 
-```		
+```	
 
-### Acceptable data types			
+### Comapre
+
+In `version 2.0` a method for comparing several confusion matrices is introduced. This option is a combination of several overall and class-based benchmarks. Each of the benchmarks evaluates the performance of the classification algorithm from good to poor and give them a numeric score. The score of good performance is 1 and for the poor performance is 0.
+
+After that, two scores are calculated for each confusion matrices, overall and class based. The overall score is the average of the score of four overall benchmarks which are Landis & Koch, Fleiss, Altman, and Cicchetti. And with a same manner, the class based score is the average of the score of three class-based benchmarks which are Positive Likelihood Ratio Interpretation, Discriminant Power Interpretation, and AUC value Interpretation. It should be notice that if one of the benchmarks returns none for one of the classes, that benchmarks will be eliminate in total averaging. If user set weights for the classes, the averaging over the value of class-based benchmark scores will transform to a weighted average.
+
+If the user set the value of `by_class` boolean input `True`, the best confusion matrix is the one with the maximum class-based score. Otherwise, if a confusion matrix obtain the maximum of the both overall and class-based score, that will be the reported as the best confusion matrix but in any other cases the compare object doesn’t select best confusion matrix.
+
+```pycon
+>>> cm2 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
+>>> cm3 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
+>>> cp = Compare({"cm2":cm2,"cm3":cm3})
+>>> print(cp)
+Best : cm2
+
+Rank  Name   Class-Score         Overall-Score
+1     cm2    4.15                1.48333
+2     cm3    2.75                0.95
+
+>>> cp.best
+pycm.ConfusionMatrix(classes: [0, 1, 2])
+>>> cp.sorted
+['cm2', 'cm3']
+>>> cp.best_name
+'cm2'
+```	
+
+### Acceptable data types	
+
+#### ConfusionMatrix
+
+		
 1. `actual_vector` : python `list` or numpy `array` of any stringable objects
 2. `predict_vector` : python `list` or numpy `array` of any stringable objects
 3. `matrix` : `dict`
 4. `digit`: `int`	
 5. `threshold` : `FunctionType (function or lambda)`	
 6. `file` : `File object`
-7. `sample_weight` : python `list` or numpy `array` of any stringable objects
+7. `sample_weight` : python `list` or numpy `array` of numbers
 8. `transpose` : `bool`
 
 * Run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
 
+#### Compare
 
+1. `cm_dict` : python `dict` of `ConfusionMatrix` object (`str` : `ConfusionMatrix`)
+2. `by_class` : `bool`
+3. `weight` : python `dict` of class weights (`class_name` : `float`)
+4. `digit`: `int`
 
-				
+* Run `help(Compare)` for `Compare` object details
+
 
 For more information visit [here](https://github.com/sepandhaghighi/pycm/tree/master/Document "Document")
 
@@ -550,60 +595,62 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBU
 
 <blockquote>16- X. Deng, Q. Liu, Y. Deng, and S. Mahadevan, “An improved method to construct basic probability assignment based on the confusion matrix for classification problem, ” in Information Sciences, pp.250-261, 2016.</blockquote>
 
-<blockquote>17- Wei, J.-M., Yuan, X.-Y., Hu, Q.-H., Wang, S.-Q.: A novel measure for evaluating
-classifiers. Expert Systems with Applications, Vol 37, 3799–3809 (2010).</blockquote>
+<blockquote>17- J.-M. Wei, X.-J. Yuan, Q.-H. Hu, and S.-Q. J. E. S. w. A. Wang, "A novel measure for evaluating classifiers," vol. 37, no. 5, pp. 3799-3809, 2010.</blockquote>
 
-<blockquote>18- Kononenko I. and Bratko I. Information-based evaluation criterion for classifier’s
-performance. Machine Learning, 6:67–80, 1991.</blockquote>
+<blockquote>18- I. Kononenko and I. J. M. L. Bratko, "Information-based evaluation criterion for classifier's performance," vol. 6, no. 1, pp. 67-80, 1991.</blockquote>
 
-<blockquote>19- Delgado R., Núñez-González J.D. (2019) Enhancing Confusion Entropy as Measure for Evaluating Classifiers. In: Graña M. et al. (eds) International Joint Conference SOCO’18-CISIS’18-ICEUTE’18. SOCO’18-CISIS’18-ICEUTE’18 2018. Advances in Intelligent Systems and Computing, vol 771. Springer, Cham </blockquote>
+<blockquote>19- R. Delgado and J. D. Núñez-González, "Enhancing Confusion Entropy as Measure for Evaluating Classifiers," in The 13th International Conference on Soft Computing Models in Industrial and Environmental Applications, 2018, pp. 79-89: Springer.</blockquote>
 
+<blockquote>20- J. J. C. b. Gorodkin and chemistry, "Comparing two K-category assignments by a K-category correlation coefficient," vol. 28, no. 5-6, pp. 367-374, 2004.</blockquote>
 
-<blockquote>20- Gorodkin J (2004) Comparing two K-category assignments by a K-category
-correlation coefficient. Computational Biology and Chemistry 28: 367–374 </blockquote>
+<blockquote>21- C. O. Freitas, J. M. De Carvalho, J. Oliveira, S. B. Aires, and R. Sabourin, "Confusion matrix disagreement for multiple classifiers," in Iberoamerican Congress on Pattern Recognition, 2007, pp. 387-396: Springer.</blockquote>
 
-<blockquote>21- Freitas C.O.A., de Carvalho J.M., Oliveira J., Aires S.B.K., Sabourin R. (2007) Confusion Matrix Disagreement for Multiple Classifiers. In: Rueda L., Mery D., Kittler J. (eds) Progress in Pattern Recognition, Image Analysis and Applications. CIARP 2007. Lecture Notes in Computer Science, vol 4756. Springer, Berlin, Heidelberg</blockquote>
+<blockquote>22- P. Branco, L. Torgo, and R. P. Ribeiro, "Relevance-based evaluation metrics for multi-class imbalanced domains," in Pacific-Asia Conference on Knowledge Discovery and Data Mining, 2017, pp. 698-710: Springer.</blockquote>
 
-<blockquote>22- Branco P., Torgo L., Ribeiro R.P. (2017) Relevance-Based Evaluation Metrics for Multi-class Imbalanced Domains. In: Kim J., Shim K., Cao L., Lee JG., Lin X., Moon YS. (eds) Advances in Knowledge Discovery and Data Mining. PAKDD 2017. Lecture Notes in Computer Science, vol 10234. Springer, Cham</blockquote>
+<blockquote>23- D. Ballabio, F. Grisoni, R. J. C. Todeschini, and I. L. Systems, "Multivariate comparison of classification performance measures," vol. 174, pp. 33-44, 2018.</blockquote>
 
-<blockquote>23- Ballabio, D., Grisoni, F. and Todeschini, R. (2018). Multivariate comparison of classification performance measures. Chemometrics and Intelligent Laboratory Systems, 174, pp.33-44.</blockquote>
+<blockquote>24- J. J. E. Cohen and p. measurement, "A coefficient of agreement for nominal scales," vol. 20, no. 1, pp. 37-46, 1960.</blockquote>
 
-<blockquote>24- Cohen, Jacob. 1960. A coefficient of agreement for nominal scales. Educational And Psychological Measurement 20:37-46</blockquote>
+<blockquote>25- S. Siegel, "Nonparametric statistics for the behavioral sciences," 1956.</blockquote>
 
-<blockquote>25- Siegel, Sidney and N. John Castellan, Jr. 1988. Nonparametric Statistics for the Behavioral Sciences. McGraw Hill.</blockquote>
+<blockquote>26- H. Cramér, Mathematical methods of statistics (PMS-9). Princeton university press, 2016.</blockquote>
 
-<blockquote>26- Cramér, Harald. 1946. Mathematical Methods of Statistics. Princeton: Princeton University Press, page 282 (Chapter 21. The two-dimensional case)</blockquote>
+<blockquote>27- B. W. J. B. e. B. A.-P. S. Matthews, "Comparison of the predicted and observed secondary structure of T4 phage lysozyme," vol. 405, no. 2, pp. 442-451, 1975.</blockquote>
 
-<blockquote>27- Matthews, B. W. (1975). "Comparison of the predicted and observed secondary structure of T4 phage lysozyme". Biochimica et Biophysica Acta (BBA) - Protein Structure. 405 (2): 442–451.</blockquote>
+<blockquote>28- J. A. J. S. Swets, "The relative operating characteristic in psychology: a technique for isolating effects of response bias finds wide use in the study of perception and cognition," vol. 182, no. 4116, pp. 990-1000, 1973.</blockquote> 
 
-<blockquote>28- Swets JA. (1973). "The relative operating characteristic in Psychology". Science. 182 (14116): 990–1000.</blockquote> 
+<blockquote>29- P. J. B. S. V. S. N. Jaccard, "Étude comparative de la distribution florale dans une portion des Alpes et des Jura," vol. 37, pp. 547-579, 1901.</blockquote> 
 
-<blockquote>29- Jaccard, Paul (1901), "Étude comparative de la distribution florale dans une portion des Alpes et des Jura", Bulletin de la Société Vaudoise des Sciences Naturelles, 37: 547–579.</blockquote> 
+<blockquote>30- T. M. Cover and J. A. Thomas, Elements of information theory. John Wiley & Sons, 2012.</blockquote> 
 
-<blockquote>30- Thomas M. Cover and Joy A. Thomas. 2006. Elements of Information Theory (Wiley Series in Telecommunications and Signal Processing). Wiley-Interscience, New York, NY, USA.</blockquote> 
+<blockquote>31- E. S. Keeping, Introduction to statistical inference. Courier Corporation, 1995.</blockquote>
 
-<blockquote>31- Keeping, E.S. (1962) Introduction to Statistical Inference. D. Van Nostrand, Princeton, NJ.</blockquote>
+<blockquote>32- V. Sindhwani, P. Bhattacharya, and S. Rakshit, "Information theoretic feature crediting in multiclass support vector machines," in Proceedings of the 2001 SIAM International Conference on Data Mining, 2001, pp. 1-18: SIAM.</blockquote> 
 
-<blockquote>32- Sindhwani V, Bhattacharge P, Rakshit S (2001) Information theoretic feature
-crediting in multiclass Support Vector Machines. In: Grossman R, Kumar V,
-editors, Proceedings First SIAM International Conference on Data Mining,
-ICDM01. SIAM, pp. 1–18. </blockquote> 
+<blockquote>33- M. Bekkar, H. K. Djemaa, and T. A. J. J. I. E. A. Alitouche, "Evaluation measures for models assessment over imbalanced data sets," vol. 3, no. 10, 2013.</blockquote>
 
-<blockquote>33- Bekkar, Mohamed & Djema, Hassiba & Alitouche, T.A.. (2013). Evaluation measures for models assessment over imbalanced data sets. Journal of Information Engineering and Applications. 3. 27-38. </blockquote>
-
-<blockquote>34- Youden W, (1950),« Index for rating diagnostic tests »; Cancer, 3 :32–35 </blockquote>
+<blockquote>34- W. J. J. C. Youden, "Index for rating diagnostic tests," vol. 3, no. 1, pp. 32-35, 1950.</blockquote>
 
 
-<blockquote>35- S. Brin, R. Motwani, J. D. Ullman, and S. Tsur. Dynamic itemset counting and implication rules for market basket data. In Proc. of the ACM SIGMOD Int'l Conf. on Management of Data (ACM SIGMOD '97), pages 265-276, 1997.</blockquote> 
+<blockquote>35- S. Brin, R. Motwani, J. D. Ullman, and S. J. A. S. R. Tsur, "Dynamic itemset counting and implication rules for market basket data," vol. 26, no. 2, pp. 255-264, 1997.</blockquote> 
 
-<blockquote>36- Raschka, Sebastian (2018) MLxtend: Providing machine learning and data science utilities and extensions to Python's scientific computing stack. J Open Source Softw 3(24).</blockquote> 
+<blockquote>36- S. J. T. J. o. O. S. S. Raschka, "MLxtend: Providing machine learning and data science utilities and extensions to Python’s scientific computing stack," vol. 3, no. 24, 2018.</blockquote> 
 
-<blockquote>37- Bray, J. R. and J. T. Curtis. 1957. An ordination of upland forest communities of southern Wisconsin. Ecological Monographs 27:325-349.</blockquote>	
+<blockquote>37- J. BRAy and J. CuRTIS, "An ordination of upland forest communities of southern Wisconsin.-ecological Monographs," ed: Ithaca, 1957.</blockquote>	
 
-<blockquote>38- Fleiss, J.L. et al. (1969). Large sample standard errors of kappa and weighted kappa. Psychology Bulletin 72, 323-327.</blockquote> 	
+<blockquote>38- J. L. Fleiss, J. Cohen, and B. S. J. P. B. Everitt, "Large sample standard errors of kappa and weighted kappa," vol. 72, no. 5, p. 323, 1969.</blockquote> 	
 
-<blockquote>39- Mary Felkin. Comparing classification results between n-ary and binary problems. In
-Quality Measures in Data Mining, chapter 12, pages 277–301. Springer, 2007.</blockquote> 	
+<blockquote>39- M. Felkin, "Comparing classification results between n-ary and binary problems," in Quality Measures in Data Mining: Springer, 2007, pp. 277-301.</blockquote> 
+
+<blockquote>40- R. Ranawana and V. Palade, "Optimized Precision-A new measure for classifier performance evaluation," in 2006 IEEE International Conference on Evolutionary Computation, 2006, pp. 2254-2261: IEEE.</blockquote>	
+
+<blockquote>41- V. García, R. A. Mollineda, and J. S. Sánchez, "Index of balanced accuracy: A performance measure for skewed class distributions," in Iberian Conference on Pattern Recognition and Image Analysis, 2009, pp. 441-448: Springer.</blockquote> 
+
+<blockquote>42- P. Branco, L. Torgo, and R. P. J. A. C. S. Ribeiro, "A survey of predictive modeling on imbalanced domains," vol. 49, no. 2, p. 31, 2016.</blockquote> 
+
+<blockquote>43- K. Pearson, "Notes on Regression and Inheritance in the Case of Two Parents Proceedings of the Royal Society of London, 58, 240-242," ed, 1895.</blockquote> 
+
+<blockquote>44- W. J. I. Conover, New York, "Practical Nonparametric Statistics, John Wiley and Sons," 1999.</blockquote> 
 
 ## Cite
 

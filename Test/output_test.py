@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 >>> from pycm import *
 >>> import os
 >>> import json
@@ -25,16 +25,19 @@ True
 >>> save_stat=cm.save_html("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=cm.save_html("test_normalized",address=False,normalize=True)
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> save_stat=cm.save_html("test_filtered",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"])
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_html("test_filtered2",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[100])
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_html("test_filtered3",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[])
+>>> save_stat=cm.save_html("test_filtered3",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[],color=(-2,-2,-2))
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_html("test_filtered4",address=False,overall_param=["Kappa","Scott PI"],class_param=[],class_name=[100])
+>>> save_stat=cm.save_html("test_filtered4",address=False,overall_param=["Kappa","Scott PI"],class_param=[],class_name=[100],color={})
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_html("test_filtered5",address=False,overall_param=[],class_param=["TPR","TNR","ACC","AUC"],class_name=[100])
@@ -43,7 +46,13 @@ True
 >>> save_stat=cm.save_html("test_colored",address=False,color=(130,100,200))
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=cm.save_html("test_colored2",address=False,color="Beige")
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> save_stat=cm.save_csv("test",address=False)
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_csv("test_normalized",address=False,normalize=True)
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_csv("test_filtered",address=False,class_param=["TPR","TNR","ACC","AUC"])
@@ -118,6 +127,7 @@ Overall RACCU                                                    0.4225
 P-Value                                                          1.0
 PPV Macro                                                        None
 PPV Micro                                                        0.35
+Pearson C                                                        None
 Phi-Squared                                                      None
 RCI                                                              0.11409
 RR                                                               5.0
@@ -158,6 +168,8 @@ FP(False positive/type 1 error/false alarm)                      11             
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
 GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
+GM(G-mean geometric mean of specificity and sensitivity)          None                    0.53033                 0.56011                 0.0
+IBA(Index of balanced accuracy)                                  None                    0.17578                 0.12303                 0.0
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 LS(Lift score)                                                   None                    1.07143                 3.33333                 None
@@ -167,6 +179,7 @@ MK(Markedness)                                                   0.0            
 N(Condition negative)                                            20                      4                       17                      19
 NLR(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
+OP(Optimized precision)                                           None                    0.11667                 0.37308                -0.05
 P(Condition positive or support)                                 0                       16                      3                       1
 PLR(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
 PLRI(Positive likelihood ratio interpretation)                   None                    Poor                    Fair                    None
@@ -250,6 +263,7 @@ Overall RACCU                                                    0.39229
 P-Value                                                          0.41709
 PPV Macro                                                        0.56111
 PPV Micro                                                        0.61905
+Pearson C                                                        0.57628
 Phi-Squared                                                      0.49722
 RCI                                                              0.34536
 RR                                                               7.0
@@ -290,6 +304,8 @@ FP(False positive/type 1 error/false alarm)                      4              
 FPR(Fall-out or false positive rate)                             0.26667                 0.11111                 0.22222
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.33333                 0.61237
 GI(Gini index)                                                   0.73333                 0.22222                 0.27778
+GM(G-mean geometric mean of specificity and sensitivity)          0.85635                 0.54433                 0.62361
+IBA(Index of balanced accuracy)                                  0.92889                 0.13169                 0.28086
 IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
 LS(Lift score)                                                   2.1                     2.33333                 1.3125
@@ -299,6 +315,7 @@ MK(Markedness)                                                   0.6            
 N(Condition negative)                                            15                      18                      9
 NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.64286
 NPV(Negative predictive value)                                   1.0                     0.88889                 0.53846
+OP(Optimized precision)                                          0.65568                 0.35498                 0.40166
 P(Condition positive or support)                                 6                       3                       12
 PLR(Positive likelihood ratio)                                   3.75                    3.0                     2.25
 PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Poor
@@ -320,6 +337,9 @@ sInd(Similarity index)                                           0.81144        
 >>> save_obj = cm.save_obj("test4",address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
+>>> save_obj = cm.save_obj("/asdasd,qweqwe.eo/",address=False)
+>>> save_obj=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.obj'"}
+True
 >>> cm_file=ConfusionMatrix(file=open("test4.obj","r"))
 >>> cm_file.DP[1]
 0.770700985610517
@@ -335,11 +355,29 @@ True
 True
 >>> cm_file.matrix == {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}
 True
-
+>>> json.dump({"Actual-Vector": None, "Digit": 5, "Predict-Vector": None, "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}},open("test6.obj","w"))
+>>> cm_file=ConfusionMatrix(file=open("test6.obj","r"))
+>>> cm_file.weights
+>>> cm_file.transpose
+False
+>>> cm_file.matrix == {'1': {'1': 1, '2': 1, '0': 0}, '2': {'1': 2, '2': 3, '0': 0}, '0': {'1': 0, '2': 2, '0': 3}}
+True
+>>> cm_comp1 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
+>>> cm_comp2 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
+>>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2})
+>>> save_report = cp.save_report("test",address=False)
+>>> save_report == {'Status': True, 'Message': None}
+True
+>>> save_report = cp.save_report("/asdasd,qweqwe.eo/",address=False)
+>>> save_report == {'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.comp'"}
+True
 >>> os.remove("test.csv")
 >>> os.remove("test_matrix.csv")
+>>> os.remove("test_normalized.csv")
+>>> os.remove("test_normalized_matrix.csv")
 >>> os.remove("test.obj")
 >>> os.remove("test.html")
+>>> os.remove("test_normalized.html")
 >>> os.remove("test_filtered.html")
 >>> os.remove("test_filtered.csv")
 >>> os.remove("test_filtered_matrix.csv")
@@ -349,6 +387,7 @@ True
 >>> os.remove("test_filtered4.html")
 >>> os.remove("test_filtered5.html")
 >>> os.remove("test_colored.html")
+>>> os.remove("test_colored2.html")
 >>> os.remove("test_filtered2.csv")
 >>> os.remove("test_filtered3.csv")
 >>> os.remove("test_filtered4.csv")
@@ -358,5 +397,7 @@ True
 >>> os.remove("test3.obj")
 >>> os.remove("test4.obj")
 >>> os.remove("test5.obj")
+>>> os.remove("test6.obj")
 >>> os.remove("test.pycm")
-'''
+>>> os.remove("test.comp")
+"""

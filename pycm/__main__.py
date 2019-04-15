@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""PyCM main."""
 
 import doctest
 import sys

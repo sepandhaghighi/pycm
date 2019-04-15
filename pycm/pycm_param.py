@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-
-VERSION = "1.9"
+"""Parameters and constants."""
+VERSION = "2.0"
 
 
 OVERVIEW = '''
@@ -22,9 +22,18 @@ VECTOR_TYPE_ERROR = "The type of input vectors is assumed to be a list or a NumP
 VECTOR_SIZE_ERROR = "Input vectors must have same length"
 VECTOR_EMPTY_ERROR = "Input vectors are empty"
 CLASS_NUMBER_ERROR = "Number of the classes is lower than 2"
+COMPARE_FORMAT_ERROR = "The input type is considered to be dictionary but it's not!"
+COMPARE_TYPE_ERROR = "The input is considered to consist of pycm.ConfusionMatrix object but it's not!"
+COMPARE_DOMAIN_ERROR = "The domain of all ConfusionMatrix objects must be same! The sample size or the number " \
+                       "of classes are different."
+COMPARE_NUMBER_ERROR = "Lower than two confusion matrices is given for comparing. The minimum number of " \
+                       "confusion matrix for comparing is 2."
 
+COMPARE_WEIGHT_ERROR = "The weight type must be dictionary and also must be set for all classes."
 
-CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won't be demonstrated properly. \n" \
+COMPARE_RESULT_WARNING = "Confusion matrices are too close and the best one can not be recognized."
+
+CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won't be demonstrated properly.\n" \
                        "The save_csv method can be used to save the confusion matrix in csv format and have a better" \
                        " demonstration of it."
 
@@ -62,8 +71,7 @@ IMBALANCED_RECOMMEND = [
     "Overall MCC",
     "Overall CEN",
     "Overall MCEN",
-    "AUC",
-    "AUCI",
+    "OP",
     "G",
     "DP",
     "DPI",
@@ -78,10 +86,64 @@ BENCHMARK_LIST = [
     "SOA3(Altman)",
     "SOA4(Cicchetti)"]
 
+PLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}
+
+DPI_SCORE = {"Good": 4, "Fair": 3, "Limited": 2, "Poor": 1, "None": "None"}
+
+AUCI_SCORE = {
+    "Excellent": 5,
+    "Very Good": 4,
+    "Good": 3,
+    "Fair": 2,
+    "Poor": 1,
+    "None": "None"}
+
+SOA1_SCORE = {
+    "Almost Perfect": 6,
+    "Substantial": 5,
+    "Moderate": 4,
+    "Fair": 3,
+    "Slight": 2,
+    "Poor": 1,
+    "None": "None"}
+
+SOA2_SCORE = {
+    "Excellent": 3,
+    "Intermediate to Good": 2,
+    "Poor": 1,
+    "None": "None"}
+
+SOA3_SCORE = {
+    "Very Good": 5,
+    "Good": 4,
+    "Moderate": 3,
+    "Fair": 2,
+    "Poor": 1,
+    "None": "None"}
+
+SOA4_SCORE = {"Excellent": 4, "Good": 3, "Fair": 2, "Poor": 1, "None": "None"}
+
+
+CLASS_BENCHMARK_SCORE_DICT = {
+    "PLRI": PLRI_SCORE,
+    "DPI": DPI_SCORE,
+    "AUCI": AUCI_SCORE}
+
+OVERALL_BENCHMARK_SCORE_DICT = {
+    "SOA1(Landis & Koch)": SOA1_SCORE,
+    "SOA2(Fleiss)": SOA2_SCORE,
+    "SOA3(Altman)": SOA3_SCORE,
+    "SOA4(Cicchetti)": SOA4_SCORE}
+
 RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"
-RECOMMEND_HTML_MESSAGE = '<span style="color:red;">Note</span> : Recommended statistics for this type of classification highlighted in <span style="color :{0};">{0}</span>'.format(
+RECOMMEND_HTML_MESSAGE = '<span style="color:red;">Note1</span> : Recommended statistics for this type of classification highlighted in <span style="color :{0};">{0}</span>'.format(
     RECOMMEND_BACKGROUND_COLOR)
+RECOMMEND_WARNING = "The recommender system assumes that the input is the result of classification over the whole data" \
+                    " rather than just a part of it.\nIf the confusion matrix is the result of test data classification" \
+                    ", the recommendation is not valid."
+RECOMMEND_HTML_MESSAGE2 = '<span style="color:red;">Note2</span> : {0}'.format(
+    RECOMMEND_WARNING)
 
 DOCUMENT_ADR = "http://www.pycm.ir/doc/index.html#"
 
@@ -134,7 +196,10 @@ PARAMS_DESCRIPTION = {
     "GI": "Gini index",
     "LS": "Lift score",
     "AM": "Difference between automatic and manual classification",
-    "BCD": "Bray-Curtis dissimilarity"}
+    "BCD": "Bray-Curtis dissimilarity",
+    "OP": "Optimized precision",
+    "IBA": "Index of balanced accuracy",
+    "GM": "G-mean geometric mean of specificity and sensitivity"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -231,7 +296,11 @@ PARAMS_LINK = {
     "GI": "GI-(Gini-index)",
     "LS": "LS-(Lift-score)",
     "AM": "AM-(Automatic/Manual)",
-    "BCD": "BCD-(Bray-Curtis-dissimilarity)"}
+    "BCD": "BCD-(Bray-Curtis-dissimilarity)",
+    "OP": "OP-(Optimized-precision)",
+    "IBA": "IBA-(Index-of-balanced-accuracy)",
+    "GM": "GM-(G-mean)",
+    "Pearson C": "Pearson’s-C"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI"]
 

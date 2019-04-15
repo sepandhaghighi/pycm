@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 >>> from pycm import *
 >>> import os
 >>> import json
@@ -21,7 +21,59 @@ Repo : https://github.com/sepandhaghighi/pycm
 Webpage : http://www.pycm.ir
 <BLANKLINE>
 <BLANKLINE>
+>>> rounder((1,2,"None"), digit=5)
+'(1,2,None)'
+>>> one_vs_all_func([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, 3) == [[1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}]
+True
+>>> BCD_calc(2, 2, "None")
+'None'
+>>> AM_calc(3, "None")
+'None'
 >>> RCI_calc(24,0)
+'None'
+>>> CEN_calc([1,2,3], {1:{1:0,2:0},2:{1:0,2:0}}, {1:2,2:3}, {1:2,2:3}, 2, modified=False)
+'None'
+>>> convex_combination([1,2,3], {1:{1:0,2:0},2:{1:0,2:0}}, {1:2,2:3}, {1:2,2:3}, 2, modified=False)
+'None'
+>>> overall_CEN_calc([1,2], {1:2,2:3},{1:2,2:3}, {1:2,2:3}, {1:2,2:"None"}, modified=False)
+'None'
+>>> NIR_calc({1:0,2:0}, 0)
+'None'
+>>> hamming_calc({1:0,2:0}, 0)
+'None'
+>>> zero_one_loss_calc({1:0,2:0}, "None")
+'None'
+>>> entropy_calc({1:0,2:0}, {1:0,2:0})
+'None'
+>>> kappa_no_prevalence_calc("None")
+'None'
+>>> cross_entropy_calc({1:0,2:0}, {1:0,2:0}, {1:0,2:0})
+'None'
+>>> joint_entropy_calc([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0})
+'None'
+>>> conditional_entropy_calc([1,2],{1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0})
+'None'
+>>> mutual_information_calc(2, "None")
+'None'
+>>> lambda_B_calc([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0})
+'None'
+>>> lambda_A_calc([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0})
+'None'
+>>> DF_calc(2)
+'None'
+>>> kappa_se_calc(2, 1, 2)
+'None'
+>>> CI_calc(23, "None", CV=1.96)
+('None', 'None')
+>>> PC_S_calc([])
+'None'
+>>> jaccard_index_calc(0, 0, 0)
+'None'
+>>> overall_jaccard_index_calc([])
+'None'
+>>> overall_accuracy_calc({1:0,2:0}, 0)
+'None'
+>>> overall_random_accuracy_calc({1:0,2:None})
 'None'
 >>> CBA_calc([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0})
 'None'
@@ -87,9 +139,9 @@ False
 'None'
 >>> macro_calc({1:2,2:3})
 2.5
->>> F_calc(TP=0,FP=0,FN=0,Beta=1)
+>>> F_calc(TP=0,FP=0,FN=0,beta=1)
 'None'
->>> F_calc(TP=3,FP=2,FN=1,Beta=5)
+>>> F_calc(TP=3,FP=2,FN=1,beta=5)
 0.7428571428571429
 >>> ERR_calc(None)
 'None'
@@ -101,6 +153,10 @@ False
 0.34
 >>> cm.F_beta(4)["L3"]
 0.504950495049505
+>>> cm.F_beta(None)
+{}
+>>> cm.IBA_alpha(None) == {'L3': 'None', 'L1': 'None', 'L2': 'None'}
+True
 >>> kappa_analysis_koch(-0.1)
 'Poor'
 >>> kappa_analysis_koch(0)
@@ -301,69 +357,73 @@ Example : online_help("J") or online_help(2)
 30-FPR
 31-G
 32-GI
-33-Gwet AC1
-34-Hamming Loss
-35-IS
-36-J
-37-Joint Entropy
-38-KL Divergence
-39-Kappa
-40-Kappa 95% CI
-41-Kappa No Prevalence
-42-Kappa Standard Error
-43-Kappa Unbiased
-44-LS
-45-Lambda A
-46-Lambda B
-47-MCC
-48-MCEN
-49-MK
-50-Mutual Information
-51-N
-52-NIR
-53-NLR
-54-NPV
-55-Overall ACC
-56-Overall CEN
-57-Overall J
-58-Overall MCC
-59-Overall MCEN
-60-Overall RACC
-61-Overall RACCU
-62-P
-63-P-Value
-64-PLR
-65-PLRI
-66-POP
-67-PPV
-68-PPV Macro
-69-PPV Micro
-70-PRE
-71-Phi-Squared
-72-RACC
-73-RACCU
-74-RCI
-75-RR
-76-Reference Entropy
-77-Response Entropy
-78-SOA1(Landis & Koch)
-79-SOA2(Fleiss)
-80-SOA3(Altman)
-81-SOA4(Cicchetti)
-82-Scott PI
-83-Standard Error
-84-TN
-85-TNR
-86-TON
-87-TOP
-88-TP
-89-TPR
-90-TPR Macro
-91-TPR Micro
-92-Y
-93-Zero-one Loss
-94-dInd
-95-sInd
+33-GM
+34-Gwet AC1
+35-Hamming Loss
+36-IBA
+37-IS
+38-J
+39-Joint Entropy
+40-KL Divergence
+41-Kappa
+42-Kappa 95% CI
+43-Kappa No Prevalence
+44-Kappa Standard Error
+45-Kappa Unbiased
+46-LS
+47-Lambda A
+48-Lambda B
+49-MCC
+50-MCEN
+51-MK
+52-Mutual Information
+53-N
+54-NIR
+55-NLR
+56-NPV
+57-OP
+58-Overall ACC
+59-Overall CEN
+60-Overall J
+61-Overall MCC
+62-Overall MCEN
+63-Overall RACC
+64-Overall RACCU
+65-P
+66-P-Value
+67-PLR
+68-PLRI
+69-POP
+70-PPV
+71-PPV Macro
+72-PPV Micro
+73-PRE
+74-Pearson C
+75-Phi-Squared
+76-RACC
+77-RACCU
+78-RCI
+79-RR
+80-Reference Entropy
+81-Response Entropy
+82-SOA1(Landis & Koch)
+83-SOA2(Fleiss)
+84-SOA3(Altman)
+85-SOA4(Cicchetti)
+86-Scott PI
+87-Standard Error
+88-TN
+89-TNR
+90-TON
+91-TOP
+92-TP
+93-TPR
+94-TPR Macro
+95-TPR Micro
+96-Y
+97-Zero-one Loss
+98-dInd
+99-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -471,4 +531,29 @@ Example : online_help("J") or online_help(2)
 0.35714285714285715
 >>> cm.Overall_ACC
 0.6666666666666666
-'''
+>>> cm = ConfusionMatrix(matrix={1:{1:495,0:405},0:{0:8645,1:455}}) # Verified Case
+>>> cm.ACC[1]
+0.914
+>>> cm.TNR[1]
+0.95
+>>> cm.TPR[1]
+0.55
+>>> cm.AUC[1]
+0.75
+>>> cm.OP[1]
+0.6473333333333334
+>>> cm.IBA[1]
+0.31350000000000006
+>>> cm.IBA_alpha(0.5)[1]
+0.41800000000000004
+>>> cm.IBA_alpha(0.1)[1]
+0.5016
+>>> cm.GM[1]
+0.722841614740048
+>>> cm = ConfusionMatrix(matrix={1:{1:22,0:18},0:{1:2,0:14}}) # Verified Case
+>>> cm.C
+0.36170212765957444
+>>> cm.Chi_Squared
+8.429166666666667
+
+"""

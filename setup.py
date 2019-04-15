@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Setup module."""
 try:
     from setuptools import setup
 except ImportError:
@@ -6,11 +7,13 @@ except ImportError:
 
 
 def get_requires():
+    """Read requirements.txt."""
     requirements = open("requirements.txt", "r").read()
     return list(filter(lambda x: x != "", requirements.split()))
 
 
 def read_description():
+    """Read README.md and CHANGELOG.md."""
     try:
         with open("README.md") as r:
             description = "\n"
@@ -33,14 +36,14 @@ def read_description():
 setup(
     name='pycm',
     packages=['pycm'],
-    version='1.9',
+    version='2.0',
     description='Multi-class confusion matrix library in Python',
     long_description=read_description(),
     long_description_content_type='text/markdown',
     author='Sepand Haghighi',
     author_email='sepand@qpage.ir',
     url='https://github.com/sepandhaghighi/pycm',
-    download_url='https://github.com/sepandhaghighi/pycm/tarball/v1.9',
+    download_url='https://github.com/sepandhaghighi/pycm/tarball/v2.0',
     keywords="confusion-matrix python3 python machine_learning ML",
     project_urls={
         'Webpage': 'http://pycm.shaghighi.ir',
@@ -49,7 +52,7 @@ setup(
     install_requires=get_requires(),
     python_requires='>=2.7',
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'Natural Language :: English',
         'License :: OSI Approved :: MIT License',
@@ -59,6 +62,7 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Intended Audience :: Developers',
         'Intended Audience :: Education',
         'Intended Audience :: End Users/Desktop',

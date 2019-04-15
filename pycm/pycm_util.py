@@ -1,17 +1,30 @@
 # -*- coding: utf-8 -*-
+"""Utility module."""
 from __future__ import division
 import sys
 import numpy
 from .pycm_param import *
 
 
+def list_check_equal(input_list):
+    """
+    Check equality of input_list items.
+
+    :param input_list: input list
+    :type input_list: list
+    :return: result as bool
+    """
+    return input_list[1:] == input_list[:-1]
+
+
 def isfloat(value):
-    '''
-    This function check input for float conversion
+    """
+    Check input for float conversion.
+
     :param value: input value
     :type value:str
     :return: result as bool (true if input_value is a number and false otherwise)
-    '''
+    """
     try:
         float(value)
         return True
@@ -20,14 +33,15 @@ def isfloat(value):
 
 
 def rounder(input_number, digit=5):
-    '''
-    This function round input number
+    """
+    Round input number and convert to str.
+
     :param input_number: input number
     :type input_number : anything
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
     :type digit : int
-    :return: round number as float
-    '''
+    :return: round number as str
+    """
     if isinstance(input_number, tuple):
         tuple_list = list(input_number)
         tuple_str = []
@@ -43,14 +57,15 @@ def rounder(input_number, digit=5):
 
 
 def class_filter(classes, class_name):
-    '''
-    This function compare class_name and classes
+    """
+    Filter classes by comparing two lists.
+
     :param classes: matrix classes
     :type classes: list
     :param class_name: sub set of classes
     :type class_name : list
     :return: filtered classes as list
-    '''
+    """
     result_classes = classes
     if isinstance(class_name, list):
         if set(class_name) <= set(classes):
@@ -58,21 +73,92 @@ def class_filter(classes, class_name):
     return result_classes
 
 
+def vector_check(vector):
+    """
+    Check input vector items type.
+
+    :param vector: input vector
+    :type vector : list
+    :return: bool
+    """
+    for i in vector:
+        if isinstance(i, int) is False:
+            return False
+        if i < 0:
+            return False
+    return True
+
+
+def matrix_check(table):
+    """
+    Check input matrix format.
+
+    :param table: input matrix
+    :type table : dict
+    :return: bool
+    """
+    try:
+        if len(table.keys()) == 0:
+            return False
+        for i in table.keys():
+            if table.keys() != table[i].keys() or vector_check(
+                    list(table[i].values())) is False:
+                return False
+        return True
+    except Exception:
+        return False
+
+
+def vector_filter(actual_vector, predict_vector):
+    """
+    Convert different type of items in vectors to str.
+
+    :param actual_vector: actual values
+    :type actual_vector : list
+    :param predict_vector: predict value
+    :type predict_vector : list
+    :return: new actual and predict vector
+    """
+    temp = []
+    temp.extend(actual_vector)
+    temp.extend(predict_vector)
+    types = set(map(type, temp))
+    if len(types) > 1:
+        return [list(map(str, actual_vector)), list(map(str, predict_vector))]
+    return [actual_vector, predict_vector]
+
+
+def class_check(vector):
+    """
+    Check different items in matrix classes.
+
+    :param vector: input vector
+    :type vector : list
+    :return: bool
+    """
+    for i in vector:
+        if not isinstance(i, type(vector[0])):
+            return False
+    return True
+
+
 def isfile(f):
-    '''
-    This function check file object in python 2.7 & 3.x
+    """
+    Check file object in python 2.7 & 3.x.
+
     :param f: input object
     :type f : file object
     :return: file type check as boolean
-    '''
+    """
     return isinstance(
         f, file) if sys.version_info[0] == 2 else hasattr(
         f, 'read')
 
 
 def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
-    '''
-    One-Vs-All mode handler
+    """
+    One-Vs-All mode handler.
+
     :param classes: classes
     :type classes : list
     :param table: input matrix
@@ -88,7 +174,7 @@ def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
     :param class_name : target class name for One-Vs-All mode
     :type class_name : any valid type
     :return: [classes , table ] as list
-    '''
+    """
     try:
         report_classes = [str(class_name), "~"]
         report_table = {str(class_name): {str(class_name): TP[class_name],
@@ -101,14 +187,15 @@ def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
 
 
 def normalized_table_calc(classes, table):
-    '''
-    This function return normalized confusion matrix
+    """
+    Return normalized confusion matrix.
+
     :param classes: classes list
     :type classes:list
     :param table: table
     :type table:dict
     :return: normalized table as dict
-    '''
+    """
     map_dict = {k: 0 for k in classes}
     new_table = {k: map_dict.copy() for k in classes}
     for key in classes:
@@ -121,14 +208,15 @@ def normalized_table_calc(classes, table):
 
 
 def transpose_func(classes, table):
-    '''
-    This function transpose table
+    """
+    Transpose table.
+
     :param classes: classes
     :type classes : list
     :param table: input matrix
     :type table : dict
     :return: transposed table as dict
-    '''
+    """
     transposed_table = table
     for i, item1 in enumerate(classes):
         for j, item2 in enumerate(classes):
@@ -140,14 +228,15 @@ def transpose_func(classes, table):
 
 
 def matrix_params_from_table(table, transpose=False):
-    '''
-    This function calculate TP,TN,FP,FN from confusion matrix
+    """
+    Calculate TP,TN,FP,FN from confusion matrix.
+
     :param table: input matrix
     :type table : dict
     :param transpose : transpose flag
     :type transpose : bool
     :return: [classes_list,table,TP,TN,FP,FN]
-    '''
+    """
     classes = sorted(table.keys())
     map_dict = {k: 0 for k in classes}
     TP_dict = map_dict.copy()
@@ -171,8 +260,9 @@ def matrix_params_from_table(table, transpose=False):
 
 
 def matrix_params_calc(actual_vector, predict_vector, sample_weight):
-    '''
-    This function calculate TP,TN,FP,FN for each class
+    """
+    Calculate TP,TN,FP,FN for each class.
+
     :param actual_vector: actual values
     :type actual_vector : list
     :param predict_vector: predict value
@@ -180,7 +270,7 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     :param sample_weight : sample weights list
     :type sample_weight : list
     :return: [classes_list,table,TP,TN,FP,FN]
-    '''
+    """
     if isinstance(actual_vector, numpy.ndarray):
         actual_vector = actual_vector.tolist()
     if isinstance(predict_vector, numpy.ndarray):
@@ -202,7 +292,8 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
 
 def imbalance_check(P):
     """
-    This function check if the dataset is imbalanced
+    Check if the dataset is imbalanced.
+
     :param P: condition positive
     :type P : dict
     :return: is_imbalanced as bool
@@ -222,7 +313,8 @@ def imbalance_check(P):
 
 def binary_check(classes):
     """
-    This function check if the problem is a binary classification
+    Check if the problem is a binary classification.
+
     :param classes:  all classes name
     :type classes : list
     :return: is_binary as bool
@@ -236,18 +328,16 @@ def binary_check(classes):
 
 def statistic_recommend(classes, P):
     """
-    This function recommend parameters which is more suitable due to the input dataset characteristics
+    Return recommend parameters which are more suitable due to the input dataset characteristics.
+
     :param classes:  all classes name
     :type classes : list
     :param P: condition positive
     :type P : dict
     :return: recommendation_list as list
     """
-    recommendation_list = []
     if imbalance_check(P):
-        recommendation_list.extend(IMBALANCED_RECOMMEND)
-    elif binary_check(classes):
-        recommendation_list.extend(BINARY_RECOMMEND)
-    else:
-        recommendation_list.extend(MULTICLASS_RECOMMEND)
-    return list(set(recommendation_list))
+        return IMBALANCED_RECOMMEND
+    if binary_check(classes):
+        return BINARY_RECOMMEND
+    return MULTICLASS_RECOMMEND

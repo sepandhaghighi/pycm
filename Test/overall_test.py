@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
+"""
 >>> from pycm import *
 >>> import os
 >>> import json
@@ -58,6 +58,7 @@ Overall RACCU                                                    0.36458
 P-Value                                                          0.38721
 PPV Macro                                                        0.56667
 PPV Micro                                                        0.58333
+Pearson C                                                        0.59568
 Phi-Squared                                                      0.55
 RCI                                                              0.34947
 RR                                                               4.0
@@ -98,6 +99,8 @@ FP(False positive/type 1 error/false alarm)                      2              
 FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
 GI(Gini index)                                                   0.77778                 0.22222                 0.16667
+GM(G-mean geometric mean of specificity and sensitivity)         0.88192                 0.54433                 0.57735
+IBA(Index of balanced accuracy)                                   0.95062                 0.13169                 0.27778
 IS(Information score)                                            1.26303                 1.0                     0.26303
 J(Jaccard index)                                                 0.6                     0.25                    0.375
 LS(Lift score)                                                   2.4                     2.0                     1.2
@@ -107,6 +110,7 @@ MK(Markedness)                                                   0.6            
 N(Condition negative)                                            9                       9                       6
 NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.75
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143
+OP(Optimized precision)                                           0.70833                 0.29545                 0.44048
 P(Condition positive or support)                                 3                       3                       6
 PLR(Positive likelihood ratio)                                   4.5                     3.0                     1.5
 PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Poor
@@ -174,6 +178,7 @@ Overall RACCU                                                    0.36458
 P-Value                                                          0.38721
 PPV Macro                                                        0.56667
 PPV Micro                                                        0.58333
+Pearson C                                                        0.59568
 Phi-Squared                                                      0.55
 RCI                                                              0.34947
 RR                                                               4.0
@@ -214,6 +219,8 @@ FP(False positive/type 1 error/false alarm)                      2              
 FPR(Fall-out or false positive rate)                             0.22222                 0.11111                 0.33333
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
 GI(Gini index)                                                   0.77778                 0.22222                 0.16667
+GM(G-mean geometric mean of specificity and sensitivity)         0.88192                 0.54433                 0.57735
+IBA(Index of balanced accuracy)                                  0.95062                 0.13169                 0.27778
 IS(Information score)                                            1.26303                 1.0                     0.26303
 J(Jaccard index)                                                 0.6                     0.25                    0.375
 LS(Lift score)                                                   2.4                     2.0                     1.2
@@ -223,6 +230,7 @@ MK(Markedness)                                                   0.6            
 N(Condition negative)                                            9                       9                       6
 NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.75
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143
+OP(Optimized precision)                                           0.70833                 0.29545                 0.44048
 P(Condition positive or support)                                 3                       3                       6
 PLR(Positive likelihood ratio)                                   4.5                     3.0                     1.5
 PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Poor
@@ -305,6 +313,7 @@ Overall RACCU                                                    0.4225
 P-Value                                                          1.0
 PPV Macro                                                        None
 PPV Micro                                                        0.35
+Pearson C                                                        None
 Phi-Squared                                                      None
 RCI                                                              0.11409
 RR                                                               5.0
@@ -345,6 +354,8 @@ FP(False positive/type 1 error/false alarm)                      11             
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
 GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
+GM(G-mean geometric mean of specificity and sensitivity)         None                    0.53033                 0.56011                 0.0
+IBA(Index of balanced accuracy)                                  None                    0.17578                 0.12303                 0.0
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 LS(Lift score)                                                   None                    1.07143                 3.33333                 None
@@ -354,6 +365,7 @@ MK(Markedness)                                                   0.0            
 N(Condition negative)                                            20                      4                       17                      19
 NLR(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
+OP(Optimized precision)                                          None                    0.11667                 0.37308                 -0.05
 P(Condition positive or support)                                 0                       16                      3                       1
 PLR(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
 PLRI(Positive likelihood ratio interpretation)                   None                    Poor                    Fair                    None
@@ -408,6 +420,7 @@ Overall RACCU                                                    0.4225
 P-Value                                                          1.0
 PPV Macro                                                        None
 PPV Micro                                                        0.35
+Pearson C                                                        None
 Phi-Squared                                                      None
 RCI                                                              0.11409
 RR                                                               5.0
@@ -448,6 +461,8 @@ FP(False positive/type 1 error/false alarm)                      11             
 FPR(Fall-out or false positive rate)                             0.55                    0.25                    0.05882                 0.0
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
 GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
+GM(G-mean geometric mean of specificity and sensitivity)         None                    0.53033                 0.56011                 0.0
+IBA(Index of balanced accuracy)                                  None                    0.17578                 0.12303                 0.0
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 LS(Lift score)                                                   None                    1.07143                 3.33333                 None
@@ -457,6 +472,7 @@ MK(Markedness)                                                   0.0            
 N(Condition negative)                                            20                      4                       17                      19
 NLR(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
+OP(Optimized precision)                                          None                    0.11667                 0.37308                 -0.05
 P(Condition positive or support)                                 0                       16                      3                       1
 PLR(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
 PLRI(Positive likelihood ratio interpretation)                   None                    Poor                    Fair                    None
@@ -566,12 +582,15 @@ Actual
 ...		    return 1
 ...	    else:
 ...		    return 0
->>> cm_6 = ConfusionMatrix([0,0,1,0],[0.87,0.34,0.9,0.12],threshold=activation)
+>>> cm_6 = ConfusionMatrix([0,0,1,0],[0.87,0.34,0.9,0.12],threshold=activation, transpose=2)
 >>> cm_6.print_matrix()
 Predict          0        1
 Actual
 0                1        2
 1                1        0
+>>> cm = ConfusionMatrix(matrix={1:{1:0,2:0},2:{1:0,2:0}})
+>>> cm
+pycm.ConfusionMatrix(classes: [1, 2])
 >>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":9,"Class2":3,"Class3":0},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":1,"Class2":1,"Class3":4}})
 >>> print(cm)
 Predict          Class1    Class2    Class3
@@ -621,6 +640,7 @@ Overall RACCU                                                    0.36694
 P-Value                                                          0.01667
 PPV Macro                                                        0.68262
 PPV Micro                                                        0.66667
+Pearson C                                                        0.60423
 Phi-Squared                                                      0.57502
 RCI                                                              0.2596
 RR                                                               9.0
@@ -661,6 +681,8 @@ FP(False positive/type 1 error/false alarm)                      4              
 FPR(Fall-out or false positive rate)                             0.26667                 0.22222                 0.04762
 G(G-measure geometric mean of precision and sensitivity)         0.72058                 0.55556                 0.7303
 GI(Gini index)                                                   0.48333                 0.33333                 0.61905
+GM(G-mean geometric mean of specificity and sensitivity)          0.74162                 0.65734                 0.79682
+IBA(Index of balanced accuracy)                                  0.55917                 0.33608                 0.45351
 IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
 LS(Lift score)                                                   1.55769                 1.66667                 3.6
@@ -670,6 +692,7 @@ MK(Markedness)                                                   0.47802        
 N(Condition negative)                                            15                      18                      21
 NLR(Negative likelihood ratio)                                   0.34091                 0.57143                 0.35
 NPV(Negative predictive value)                                   0.78571                 0.77778                 0.90909
+OP(Optimized precision)                                          0.7295                  0.53704                 0.71242
 P(Condition positive or support)                                 12                      9                       6
 PLR(Positive likelihood ratio)                                   2.8125                  2.5                     14.0
 PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Good
@@ -737,6 +760,7 @@ Overall RACCU                                                    0.36694
 P-Value                                                          0.01667
 PPV Macro                                                        0.68262
 PPV Micro                                                        0.66667
+Pearson C                                                        0.60423
 Phi-Squared                                                      0.57502
 RCI                                                              0.2596
 RR                                                               9.0
@@ -777,6 +801,8 @@ FP(False positive/type 1 error/false alarm)                      4              
 FPR(Fall-out or false positive rate)                             0.26667                 0.22222                 0.04762
 G(G-measure geometric mean of precision and sensitivity)         0.72058                 0.55556                 0.7303
 GI(Gini index)                                                   0.48333                 0.33333                 0.61905
+GM(G-mean geometric mean of specificity and sensitivity)         0.74162                 0.65734                 0.79682
+IBA(Index of balanced accuracy)                                  0.55917                 0.33608                 0.45351
 IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
 LS(Lift score)                                                   1.55769                 1.66667                 3.6
@@ -786,6 +812,7 @@ MK(Markedness)                                                   0.47802        
 N(Condition negative)                                            15                      18                      21
 NLR(Negative likelihood ratio)                                   0.34091                 0.57143                 0.35
 NPV(Negative predictive value)                                   0.78571                 0.77778                 0.90909
+OP(Optimized precision)                                          0.7295                  0.53704                 0.71242
 P(Condition positive or support)                                 12                      9                       6
 PLR(Positive likelihood ratio)                                   2.8125                  2.5                     14.0
 PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Good
@@ -855,6 +882,7 @@ Overall RACCU                                                    0.39229
 P-Value                                                          0.41709
 PPV Macro                                                        0.56111
 PPV Micro                                                        0.61905
+Pearson C                                                        0.57628
 Phi-Squared                                                      0.49722
 RCI                                                              0.34536
 RR                                                               7.0
@@ -895,6 +923,8 @@ FP(False positive/type 1 error/false alarm)                      4              
 FPR(Fall-out or false positive rate)                             0.26667                 0.11111                 0.22222
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.33333                 0.61237
 GI(Gini index)                                                   0.73333                 0.22222                 0.27778
+GM(G-mean geometric mean of specificity and sensitivity)         0.85635                 0.54433                 0.62361
+IBA(Index of balanced accuracy)                                  0.92889                 0.13169                 0.28086
 IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
 LS(Lift score)                                                   2.1                     2.33333                 1.3125
@@ -904,6 +934,7 @@ MK(Markedness)                                                   0.6            
 N(Condition negative)                                            15                      18                      9
 NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.64286
 NPV(Negative predictive value)                                   1.0                     0.88889                 0.53846
+OP(Optimized precision)                                          0.65568                 0.35498                 0.40166
 P(Condition positive or support)                                 6                       3                       12
 PLR(Positive likelihood ratio)                                   3.75                    3.0                     2.25
 PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Poor
@@ -945,4 +976,52 @@ True
 >>> cm = ConfusionMatrix(matrix={1:{1:60,2:9,3:1,4:0,5:0,6:0},2:{1:23,2:48,3:0,4:2,5:2,6:1},3:{1:11,2:5,3:60,4:0,5:0,6:0},4:{1:0,2:2,3:0,4:60,5:1,6:3},5:{1:2,2:1,3:0,4:0,5:60,6:2},6:{1:1,2:2,3:0,4:2,5:1,6:60}})
 >>> set(cm.recommended_list) == set(MULTICLASS_RECOMMEND)
 True
-'''
+>>> cm_comp1 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
+>>> cm_comp2 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
+>>> cm_comp1 == cm_comp2
+False
+>>> cm_comp1_temp = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
+>>> cm_comp1 == cm_comp1_temp
+True
+>>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2})
+>>> cp
+pycm.Compare(classes: [0, 1, 2])
+>>> cp.scores == {'model2': {'class': 2.75, 'overall': 0.95}, 'model1': {'class': 4.15, 'overall': 1.48333}}
+True
+>>> cp.best
+pycm.ConfusionMatrix(classes: [0, 1, 2])
+>>> cp.best_name
+'model1'
+>>> print(cp)
+Best : model1
+<BLANKLINE>
+Rank  Name      Class-Score         Overall-Score
+1     model1    4.15                1.48333
+2     model2    2.75                0.95
+<BLANKLINE>
+>>> cp.print_report()
+Best : model1
+<BLANKLINE>
+Rank  Name      Class-Score         Overall-Score
+1     model1    4.15                1.48333
+2     model2    2.75                0.95
+<BLANKLINE>
+>>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2},by_class=True,weight={0:5,1:1,2:1})
+>>> print(cp)
+Best : model2
+<BLANKLINE>
+Rank  Name      Class-Score         Overall-Score
+1     model2    8.15                0.95
+2     model1    6.95                1.48333
+<BLANKLINE>
+>>> cp.best
+pycm.ConfusionMatrix(classes: [0, 1, 2])
+>>> cp.best_name
+'model2'
+>>> cp2 = Compare({"model1":cm_comp1,"model2":cm_comp1})
+Warning:  Confusion matrices are too close and the best one can not be recognized.
+>>> cp2.scores == {'model2': {'overall': 1.48333, 'class': 4.15}, 'model1': {'overall': 1.48333, 'class': 4.15}}
+True
+>>> cp2.best
+>>> cp2.best_name
+"""

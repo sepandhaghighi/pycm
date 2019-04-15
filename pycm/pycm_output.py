@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""Outputs functions."""
 from __future__ import division
 from functools import partial
 from .pycm_param import *
@@ -7,12 +8,13 @@ import webbrowser
 
 
 def html_init(name):
-    '''
-    This function return report  file first lines
+    """
+    Return HTML report file first lines.
+
     :param name: name of file
     :type name : str
     :return: html_init as str
-    '''
+    """
     result = ""
     result += "<html>\n"
     result += "<head>\n"
@@ -25,14 +27,15 @@ def html_init(name):
 
 
 def html_dataset_type(is_binary, is_imbalanced):
-    '''
-    This function return report file dataset type
-    :param is_binary: is_binary flag (binary : True , mutli-class : False)
+    """
+    Return HTML report file dataset type.
+
+    :param is_binary: is_binary flag (binary : True , multi-class : False)
     :type is_binary: bool
     :param is_imbalanced: is_imbalanced flag (imbalance : True , balance : False)
     :type is_imbalanced: bool
     :return: dataset_type as str
-    '''
+    """
     result = "<h2>Dataset Type : </h2>\n"
     balance_type = "Balanced"
     class_type = "Binary Classification"
@@ -43,18 +46,20 @@ def html_dataset_type(is_binary, is_imbalanced):
     result += "<ul>\n\n<li>{0}</li>\n\n<li>{1}</li>\n</ul>\n".format(
         class_type, balance_type)
     result += "<p>{0}</p>\n".format(RECOMMEND_HTML_MESSAGE)
+    result += "<p>{0}</p>\n".format(RECOMMEND_HTML_MESSAGE2)
 
     return result
 
 
 def color_check(color):
-    '''
-    This function check input color fotmat
+    """
+    Check input color format.
+
     :param color: input color
     :type color : tuple
     :return: color as list
-    '''
-    if isinstance(color, tuple):
+    """
+    if isinstance(color, (tuple, list)):
         if all(map(lambda x: isinstance(x, int), color)):
             if all(map(lambda x: x < 256, color)):
                 return list(color)
@@ -66,8 +71,9 @@ def color_check(color):
 
 
 def html_table_color(row, item, color=(0, 0, 0)):
-    '''
-    This function return background color of each cell of table
+    """
+    Return background color of each cell of table.
+
     :param row: row dictionary
     :type row : dict
     :param item: cell number
@@ -75,7 +81,7 @@ def html_table_color(row, item, color=(0, 0, 0)):
     :param color : input color
     :type color : tuple
     :return: background color as list [R,G,B]
-    '''
+    """
     result = [0, 0, 0]
     color_list = color_check(color)
     max_color = max(color_list)
@@ -87,19 +93,25 @@ def html_table_color(row, item, color=(0, 0, 0)):
     return result
 
 
-def html_table(classes, table, rgb_color):
-    '''
-    This function return report file confusion matrix
+def html_table(classes, table, rgb_color, normalize=False):
+    """
+    Return HTML report file confusion matrix.
+
     :param classes: matrix classes
     :type classes: list
     :param table: matrix
     :type table : dict
     :param rgb_color : input color
     :type rgb_color : tuple
+    :param normalize : save normalize matrix flag
+    :type normalize : bool
     :return: html_table as str
-    '''
+    """
     result = ""
-    result += "<h2>Confusion Matrix : </h2>\n"
+    result += "<h2>Confusion Matrix "
+    if normalize:
+        result += "(Normalized)"
+    result += ": </h2>\n"
     result += '<table>\n'
     result += '<tr  align="center">' + "\n"
     result += '<td>Actual</td>\n'
@@ -141,8 +153,9 @@ def html_overall_stat(
         digit=5,
         overall_param=None,
         recommended_list=()):
-    '''
-    This function return report file overall stat
+    """
+    Return HTML report file overall stat.
+
     :param overall_stat: overall stat
     :type overall_stat : dict
     :param digit: scale (the number of digits to the right of the decimal point in a number.)
@@ -152,7 +165,7 @@ def html_overall_stat(
     :param recommended_list: recommended statistics list
     :type recommended_list : list or tuple
     :return: html_overall_stat as str
-    '''
+    """
     result = ""
     result += "<h2>Overall Statistics : </h2>\n"
     result += '<table style="border:1px solid black;border-collapse: collapse;">\n'
@@ -187,8 +200,9 @@ def html_class_stat(
         digit=5,
         class_param=None,
         recommended_list=()):
-    '''
-    This function return report file class_stat
+    """
+    Return HTML report file class_stat.
+
     :param classes: matrix classes
     :type classes: list
     :param class_stat: class stat
@@ -200,7 +214,7 @@ def html_class_stat(
     :param recommended_list: recommended statistics list
     :type recommended_list : list or tuple
     :return: html_class_stat as str
-    '''
+    """
     result = ""
     result += "<h2>Class Statistics : </h2>\n"
     result += '<table style="border:1px solid black;border-collapse: collapse;">\n'
@@ -243,12 +257,13 @@ def html_class_stat(
 
 
 def html_end(version):
-    '''
-    This function return report file end lines
+    """
+    Return HTML report file end lines.
+
     :param version: pycm version
     :type version:str
     :return: html_end as str
-    '''
+    """
     result = "</body>\n"
     result += '<p style="text-align:center;border-top:1px solid black;">Generated By ' \
         '<a href="http://www.pycm.ir" ' \
@@ -258,38 +273,40 @@ def html_end(version):
 
 
 def pycm_help():
-    '''
-    This function print pycm details
+    """
+    Print pycm details.
+
     :return: None
-    '''
+    """
     print(OVERVIEW)
     print("Repo : https://github.com/sepandhaghighi/pycm")
     print("Webpage : http://www.pycm.ir")
 
 
 def table_print(classes, table):
-    '''
-    This function print confusion matrix
+    """
+    Return printable confusion matrix.
+
     :param classes: classes list
     :type classes:list
     :param table: table
     :type table:dict
     :return: printable table as str
-    '''
+    """
     classes_len = len(classes)
     table_list = []
     for key in classes:
         table_list.extend(list(table[key].values()))
     table_list.extend(classes)
     table_max_length = max(map(len, map(str, table_list)))
-    shift = "%-" + str(4 + table_max_length) + "s"
-    result = "Predict" + 10 * " " + shift * \
+    shift = "%-" + str(7 + table_max_length) + "s"
+    result = shift % "Predict" + shift * \
         classes_len % tuple(map(str, classes)) + "\n"
     result = result + "Actual\n"
     classes.sort()
     for key in classes:
         row = [table[key][i] for i in classes]
-        result += str(key) + " " * (17 - len(str(key))) + \
+        result += shift % str(key) + \
             shift * classes_len % tuple(map(str, row)) + "\n\n"
     if classes_len >= CLASS_NUMBER_THRESHOLD:
         result += "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"
@@ -297,14 +314,15 @@ def table_print(classes, table):
 
 
 def csv_matrix_print(classes, table):
-    '''
-    This function return matrix as csv data
+    """
+    Return matrix as csv data.
+
     :param classes: classes list
     :type classes:list
     :param table: table
     :type table:dict
     :return:
-    '''
+    """
     result = ""
     classes.sort()
     for i in classes:
@@ -315,8 +333,9 @@ def csv_matrix_print(classes, table):
 
 
 def csv_print(classes, class_stat, digit=5, class_param=None):
-    '''
-    This function return csv file data
+    """
+    Return csv file data.
+
     :param classes: classes list
     :type classes:list
     :param class_stat: statistic result for each class
@@ -326,7 +345,7 @@ def csv_print(classes, class_stat, digit=5, class_param=None):
     :param class_param : class parameters list for print, Example : ["TPR","TNR","AUC"]
     :type class_param : list
     :return: csv file data as str
-    '''
+    """
     result = "Class"
     classes.sort()
     for item in classes:
@@ -352,8 +371,9 @@ def stat_print(
         digit=5,
         overall_param=None,
         class_param=None):
-    '''
-    This function return statistics
+    """
+    Return printable statistics table.
+
     :param classes: classes list
     :type classes:list
     :param class_stat: statistic result for each class
@@ -367,7 +387,7 @@ def stat_print(
     :param class_param : class parameters list for print, Example : ["TPR","TNR","AUC"]
     :type class_param : list
     :return: printable result as str
-    '''
+    """
     shift = max(map(len, PARAMS_DESCRIPTION.values())) + 5
     classes_len = len(classes)
     overall_stat_keys = sorted(overall_stat.keys())
@@ -386,8 +406,11 @@ def stat_print(
             class_stat_keys = sorted(class_param)
     classes.sort()
     if len(class_stat_keys) > 0 and len(classes) > 0:
+        class_shift = max(
+            max(map(lambda x: len(str(x)), classes)) + 5, digit + 6, 14)
+        class_shift_format = "%-" + str(class_shift) + "s"
         result += "\nClass Statistics :\n\n"
-        result += "Classes" + shift * " " + "%-24s" * \
+        result += "Classes" + shift * " " + class_shift_format * \
             classes_len % tuple(map(str, classes)) + "\n"
         rounder_map = partial(rounder, digit=digit)
         for key in class_stat_keys:
@@ -396,20 +419,61 @@ def stat_print(
             if key not in CAPITALIZE_FILTER:
                 params_text = params_text.capitalize()
             result += key + "(" + params_text + ")" + " " * (
-                shift - len(key) - len(PARAMS_DESCRIPTION[key]) + 5) + "%-24s" * classes_len % tuple(
+                shift - len(key) - len(PARAMS_DESCRIPTION[key]) + 5) + class_shift_format * classes_len % tuple(
                 map(rounder_map, row)) + "\n"
     if classes_len >= CLASS_NUMBER_THRESHOLD:
         result += "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"
     return result
 
 
+def compare_report_print(sorted_list, scores, best_name):
+    """
+    Return compare report.
+
+    :param sorted_list: sorted list of cm's
+    :type sorted_list: list
+    :param scores: scores of cm's
+    :type scores: dict
+    :param best_name: best cm name
+    :type best_name: str
+    :return: printable result as str
+    """
+    title_items = ["Rank", "Name", "Class-Score", "Overall-Score"]
+    class_scores_len = map(lambda x: len(
+        str(x["class"])), list(scores.values()))
+    shifts = ["%-" +
+              str(len(sorted_list) +
+                  4) +
+              "s", "%-" +
+              str(max(map(lambda x: len(str(x)), sorted_list)) +
+                  4) +
+              "s", "%-" +
+              str(max(class_scores_len) + 11) + "s"]
+    result = ""
+    result += "Best : " + str(best_name) + "\n\n"
+    result += ("".join(shifts)
+               ) % tuple(title_items[:-1]) + title_items[-1] + "\n"
+    prev_rank = 0
+    for index, cm in enumerate(sorted_list):
+        rank = index
+        if scores[sorted_list[rank]] == scores[sorted_list[prev_rank]]:
+            rank = prev_rank
+        result += ("".join(shifts)) % (str(rank + 1), str(cm),
+                                       str(scores[cm]["class"])) + str(scores[cm]["overall"]) + "\n"
+        prev_rank = rank
+    if best_name is None:
+        result += "\nWarning: " + COMPARE_RESULT_WARNING
+    return result
+
+
 def online_help(param=None):
-    '''
-    This function open online document
+    """
+    Open online document in web browser.
+
     :param param: input parameter
     :type param : int or str
     :return: None
-    '''
+    """
     try:
         PARAMS_LINK_KEYS = sorted(PARAMS_LINK.keys())
         if param in PARAMS_LINK_KEYS:

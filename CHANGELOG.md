@@ -13,13 +13,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Pearson's C (C)
 - `Compare` class
 - Parameters recommendation warning
+- `ConfusionMatrix` equal method
 
 ### Changed
 - Document modified
 - `stat_print` function bug fixed
 - `table_print` function bug fixed
 - `Beta` parameter renamed to `beta` (`F_calc` function & `F_beta` method) 
-- Imbalance dataset parameters recommendation modified
+- Parameters recommendation for imbalance dataset  modified
 - `normalize` parameter added to `save_html` method
 - `pycm_func.py` splitted into `pycm_class_func.py` and `pycm_overall_func.py`
 - `vector_filter`,`vector_check`,`class_check` and `matrix_check` functions moved to `pycm_util.py`

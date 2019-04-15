@@ -11925,13 +11925,13 @@ You should consider upgrading via the &#39;python -m pip install --upgrade pip&#
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict          0     1     2     
+<pre>Predict  0        1        2        
 Actual
-0                13    0     0     
+0        13       0        0        
 
-1                0     10    6     
+1        0        10       6        
 
-2                0     0     9     
+2        0        0        9        
 
 
 </pre>
@@ -11964,13 +11964,13 @@ Actual
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict          0        1        2        
+<pre>Predict     0           1           2           
 Actual
-0                1.0      0.0      0.0      
+0           1.0         0.0         0.0         
 
-1                0.0      0.625    0.375    
+1           0.0         0.625       0.375       
 
-2                0.0      0.0      1.0      
+2           0.0         0.0         1.0         
 
 
 </pre>
@@ -12280,13 +12280,13 @@ Actual
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict          0     1     2     
+<pre>Predict  0        1        2        
 Actual
-0                13    0     0     
+0        13       0        0        
 
-1                0     15    1     
+1        0        15       1        
 
-2                0     0     9     
+2        0        0        9        
 
 
 </pre>
@@ -12319,13 +12319,13 @@ Actual
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict          0         1         2         
+<pre>Predict      0            1            2            
 Actual
-0                1.0       0.0       0.0       
+0            1.0          0.0          0.0          
 
-1                0.0       0.9375    0.0625    
+1            0.0          0.9375       0.0625       
 
-2                0.0       0.0       1.0       
+2            0.0          0.0          1.0          
 
 
 </pre>
@@ -12654,13 +12654,13 @@ Actual
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict          0     1     2     
+<pre>Predict  0        1        2        
 Actual
-0                13    0     0     
+0        13       0        0        
 
-1                0     15    1     
+1        0        15       1        
 
-2                0     3     6     
+2        0        3        6        
 
 
 </pre>
@@ -12693,13 +12693,13 @@ Actual
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict          0          1          2          
+<pre>Predict       0             1             2             
 Actual
-0                1.0        0.0        0.0        
+0             1.0           0.0           0.0           
 
-1                0.0        0.9375     0.0625     
+1             0.0           0.9375        0.0625        
 
-2                0.0        0.33333    0.66667    
+2             0.0           0.33333       0.66667       
 
 
 </pre>
@@ -12959,12 +12959,85 @@ Actual
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pycm</span> <span class="k">import</span> <span class="n">Compare</span>
+
+<span class="n">cp</span> <span class="o">=</span> <span class="n">Compare</span><span class="p">({</span><span class="s2">&quot;C-Support vector&quot;</span><span class="p">:</span><span class="n">cm1</span><span class="p">,</span><span class="s2">&quot;Decision tree&quot;</span><span class="p">:</span><span class="n">cm2</span><span class="p">,</span><span class="s2">&quot;AdaBoost&quot;</span><span class="p">:</span><span class="n">cm3</span><span class="p">})</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cp</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Best : Decision tree
+
+Rank   Name                Class-Score   Overall-Score
+1      Decision tree       4.0           4.0
+2      AdaBoost            3.8           4.0
+3      C-Support vector    3.1           3.63333
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span><span class="o">.</span><span class="n">save_report</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example1_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cp&quot;</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[37]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\Example1_Files\\cp.comp&#39;,
+ &#39;Status&#39;: True}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Classifiers can be compared with each other according to results of the benchmarks.
-The second classifier (DecisionTree) is the best one in this case. PYCM supports different useful parameters such as <code>Kappa value</code>, <code>Scott's pi</code>, <code>Entropy</code>, to name but a handful.</p>
+<p><a href="Example1_Files\cp.comp">Open File</a></p>
 
 </div>
 </div>

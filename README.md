@@ -128,13 +128,13 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 >>> cm.table
 {0: {0: 3, 1: 0, 2: 0}, 1: {0: 0, 1: 1, 2: 2}, 2: {0: 2, 1: 1, 2: 3}}
 >>> print(cm)
-Predict          0    1    2    
+Predict 0       1       2       
 Actual
-0                3    0    0    
+0       3       0       0       
 
-1                0    1    2    
+1       0       1       2       
 
-2                2    1    3    
+2       2       1       3       
 
 
 
@@ -175,6 +175,7 @@ Overall RACCU                                                     0.36458
 P-Value                                                           0.38721
 PPV Macro                                                         0.56667
 PPV Micro                                                         0.58333
+Pearson C                                                         0.59568
 Phi-Squared                                                       0.55
 RCI                                                               0.34947
 RR                                                                4.0
@@ -192,55 +193,58 @@ Zero-one Loss                                                     5
 
 Class Statistics :
 
-Classes                                                           0                       1                       2                       
-ACC(Accuracy)                                                     0.83333                 0.75                    0.58333                 
-AM(Difference between automatic and manual classification)        2                       -1                      -1                      
-AUC(Area under the roc curve)                                     0.88889                 0.61111                 0.58333                 
-AUCI(AUC value interpretation)                                    Very Good               Fair                    Poor                    
-BCD(Bray-Curtis dissimilarity)                                    0.08333                 0.04167                 0.04167                 
-BM(Informedness or bookmaker informedness)                        0.77778                 0.22222                 0.16667                 
-CEN(Confusion entropy)                                            0.25                    0.49658                 0.60442                 
-DOR(Diagnostic odds ratio)                                        None                    4.0                     2.0                     
-DP(Discriminant power)                                            None                    0.33193                 0.16597                 
-DPI(Discriminant power interpretation)                            None                    Poor                    Poor                    
-ERR(Error rate)                                                   0.16667                 0.25                    0.41667                 
-F0.5(F0.5 score)                                                  0.65217                 0.45455                 0.57692                 
-F1(F1 score - harmonic mean of precision and sensitivity)         0.75                    0.4                     0.54545                 
-F2(F2 score)                                                      0.88235                 0.35714                 0.51724                 
-FDR(False discovery rate)                                         0.4                     0.5                     0.4                     
-FN(False negative/miss/type 2 error)                              0                       2                       3                       
-FNR(Miss rate or false negative rate)                             0.0                     0.66667                 0.5                     
-FOR(False omission rate)                                          0.0                     0.2                     0.42857                 
-FP(False positive/type 1 error/false alarm)                       2                       1                       2                       
-FPR(Fall-out or false positive rate)                              0.22222                 0.11111                 0.33333                 
-G(G-measure geometric mean of precision and sensitivity)          0.7746                  0.40825                 0.54772                 
-GI(Gini index)                                                    0.77778                 0.22222                 0.16667                 
-IS(Information score)                                             1.26303                 1.0                     0.26303                 
-J(Jaccard index)                                                  0.6                     0.25                    0.375                   
-LS(Lift score)                                                    2.4                     2.0                     1.2                     
-MCC(Matthews correlation coefficient)                             0.68313                 0.2582                  0.16903                 
-MCEN(Modified confusion entropy)                                  0.26439                 0.5                     0.6875                  
-MK(Markedness)                                                    0.6                     0.3                     0.17143                 
-N(Condition negative)                                             9                       9                       6                       
-NLR(Negative likelihood ratio)                                    0.0                     0.75                    0.75                    
-NPV(Negative predictive value)                                    1.0                     0.8                     0.57143                 
-P(Condition positive or support)                                  3                       3                       6                       
-PLR(Positive likelihood ratio)                                    4.5                     3.0                     1.5                     
-PLRI(Positive likelihood ratio interpretation)                    Poor                    Poor                    Poor                    
-POP(Population)                                                   12                      12                      12                      
-PPV(Precision or positive predictive value)                       0.6                     0.5                     0.6                     
-PRE(Prevalence)                                                   0.25                    0.25                    0.5                     
-RACC(Random accuracy)                                             0.10417                 0.04167                 0.20833                 
-RACCU(Random accuracy unbiased)                                   0.11111                 0.0434                  0.21007                 
-TN(True negative/correct rejection)                               7                       8                       4                       
-TNR(Specificity or true negative rate)                            0.77778                 0.88889                 0.66667                 
-TON(Test outcome negative)                                        7                       10                      7                       
-TOP(Test outcome positive)                                        5                       2                       5                       
-TP(True positive/hit)                                             3                       1                       3                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0                     0.33333                 0.5                     
-Y(Youden index)                                                   0.77778                 0.22222                 0.16667                 
-dInd(Distance index)                                              0.22222                 0.67586                 0.60093                 
-sInd(Similarity index)                                            0.84287                 0.52209                 0.57508                 
+Classes                                                           0             1             2             
+ACC(Accuracy)                                                     0.83333       0.75          0.58333       
+AM(Difference between automatic and manual classification)        2             -1            -1            
+AUC(Area under the roc curve)                                     0.88889       0.61111       0.58333       
+AUCI(AUC value interpretation)                                    Very Good     Fair          Poor          
+BCD(Bray-Curtis dissimilarity)                                    0.08333       0.04167       0.04167       
+BM(Informedness or bookmaker informedness)                        0.77778       0.22222       0.16667       
+CEN(Confusion entropy)                                            0.25          0.49658       0.60442       
+DOR(Diagnostic odds ratio)                                        None          4.0           2.0           
+DP(Discriminant power)                                            None          0.33193       0.16597       
+DPI(Discriminant power interpretation)                            None          Poor          Poor          
+ERR(Error rate)                                                   0.16667       0.25          0.41667       
+F0.5(F0.5 score)                                                  0.65217       0.45455       0.57692       
+F1(F1 score - harmonic mean of precision and sensitivity)         0.75          0.4           0.54545       
+F2(F2 score)                                                      0.88235       0.35714       0.51724       
+FDR(False discovery rate)                                         0.4           0.5           0.4           
+FN(False negative/miss/type 2 error)                              0             2             3             
+FNR(Miss rate or false negative rate)                             0.0           0.66667       0.5           
+FOR(False omission rate)                                          0.0           0.2           0.42857       
+FP(False positive/type 1 error/false alarm)                       2             1             2             
+FPR(Fall-out or false positive rate)                              0.22222       0.11111       0.33333       
+G(G-measure geometric mean of precision and sensitivity)          0.7746        0.40825       0.54772       
+GI(Gini index)                                                    0.77778       0.22222       0.16667       
+GM(G-mean geometric mean of specificity and sensitivity)          0.88192       0.54433       0.57735       
+IBA(Index of balanced accuracy)                                   0.95062       0.13169       0.27778       
+IS(Information score)                                             1.26303       1.0           0.26303       
+J(Jaccard index)                                                  0.6           0.25          0.375         
+LS(Lift score)                                                    2.4           2.0           1.2           
+MCC(Matthews correlation coefficient)                             0.68313       0.2582        0.16903       
+MCEN(Modified confusion entropy)                                  0.26439       0.5           0.6875        
+MK(Markedness)                                                    0.6           0.3           0.17143       
+N(Condition negative)                                             9             9             6             
+NLR(Negative likelihood ratio)                                    0.0           0.75          0.75          
+NPV(Negative predictive value)                                    1.0           0.8           0.57143       
+OP(Optimized precision)                                           0.70833       0.29545       0.44048       
+P(Condition positive or support)                                  3             3             6             
+PLR(Positive likelihood ratio)                                    4.5           3.0           1.5           
+PLRI(Positive likelihood ratio interpretation)                    Poor          Poor          Poor          
+POP(Population)                                                   12            12            12            
+PPV(Precision or positive predictive value)                       0.6           0.5           0.6           
+PRE(Prevalence)                                                   0.25          0.25          0.5           
+RACC(Random accuracy)                                             0.10417       0.04167       0.20833       
+RACCU(Random accuracy unbiased)                                   0.11111       0.0434        0.21007       
+TN(True negative/correct rejection)                               7             8             4             
+TNR(Specificity or true negative rate)                            0.77778       0.88889       0.66667       
+TON(Test outcome negative)                                        7             10            7             
+TOP(Test outcome positive)                                        5             2             5             
+TP(True positive/hit)                                             3             1             3             
+TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           0.33333       0.5           
+Y(Youden index)                                                   0.77778       0.22222       0.16667       
+dInd(Distance index)                                              0.22222       0.67586       0.60093       
+sInd(Similarity index)                                            0.84287       0.52209       0.57508
 
 >>> cm.print_matrix()
 Predict          0    1    2    
@@ -276,11 +280,11 @@ Actual
 >>> cm2
 pycm.ConfusionMatrix(classes: ['Class1', 'Class2'])
 >>> print(cm2)
-Predict          Class1    Class2    
+Predict      Class1       Class2       
 Actual
-Class1           1         2         
+Class1       1            2            
 
-Class2           0         5         
+Class2       0            5            
 
 
 
@@ -321,6 +325,7 @@ Overall RACCU                                                     0.625
 P-Value                                                           0.36974
 PPV Macro                                                         0.85714
 PPV Micro                                                         0.75
+Pearson C                                                         0.43853
 Phi-Squared                                                       0.2381
 RCI                                                               0.20871
 RR                                                                4.0
@@ -338,55 +343,58 @@ Zero-one Loss                                                     2
 
 Class Statistics :
 
-Classes                                                           Class1                  Class2                  
-ACC(Accuracy)                                                     0.75                    0.75                    
-AM(Difference between automatic and manual classification)        -2                      2                       
-AUC(Area under the roc curve)                                     0.66667                 0.66667                 
-AUCI(AUC value interpretation)                                    Fair                    Fair                    
-BCD(Bray-Curtis dissimilarity)                                    0.125                   0.125                   
-BM(Informedness or bookmaker informedness)                        0.33333                 0.33333                 
-CEN(Confusion entropy)                                            0.5                     0.43083                 
-DOR(Diagnostic odds ratio)                                        None                    None                    
-DP(Discriminant power)                                            None                    None                    
-DPI(Discriminant power interpretation)                            None                    None                    
-ERR(Error rate)                                                   0.25                    0.25                    
-F0.5(F0.5 score)                                                  0.71429                 0.75758                 
-F1(F1 score - harmonic mean of precision and sensitivity)         0.5                     0.83333                 
-F2(F2 score)                                                      0.38462                 0.92593                 
-FDR(False discovery rate)                                         0.0                     0.28571                 
-FN(False negative/miss/type 2 error)                              2                       0                       
-FNR(Miss rate or false negative rate)                             0.66667                 0.0                     
-FOR(False omission rate)                                          0.28571                 0.0                     
-FP(False positive/type 1 error/false alarm)                       0                       2                       
-FPR(Fall-out or false positive rate)                              0.0                     0.66667                 
-G(G-measure geometric mean of precision and sensitivity)          0.57735                 0.84515                 
-GI(Gini index)                                                    0.33333                 0.33333                 
-IS(Information score)                                             1.41504                 0.19265                 
-J(Jaccard index)                                                  0.33333                 0.71429                 
-LS(Lift score)                                                    2.66667                 1.14286                 
-MCC(Matthews correlation coefficient)                             0.48795                 0.48795                 
-MCEN(Modified confusion entropy)                                  0.38998                 0.51639                 
-MK(Markedness)                                                    0.71429                 0.71429                 
-N(Condition negative)                                             5                       3                       
-NLR(Negative likelihood ratio)                                    0.66667                 0.0                     
-NPV(Negative predictive value)                                    0.71429                 1.0                     
-P(Condition positive or support)                                  3                       5                       
-PLR(Positive likelihood ratio)                                    None                    1.5                     
-PLRI(Positive likelihood ratio interpretation)                    None                    Poor                    
-POP(Population)                                                   8                       8                       
-PPV(Precision or positive predictive value)                       1.0                     0.71429                 
-PRE(Prevalence)                                                   0.375                   0.625                   
-RACC(Random accuracy)                                             0.04688                 0.54688                 
-RACCU(Random accuracy unbiased)                                   0.0625                  0.5625                  
-TN(True negative/correct rejection)                               5                       1                       
-TNR(Specificity or true negative rate)                            1.0                     0.33333                 
-TON(Test outcome negative)                                        7                       1                       
-TOP(Test outcome positive)                                        1                       7                       
-TP(True positive/hit)                                             1                       5                       
-TPR(Sensitivity, recall, hit rate, or true positive rate)         0.33333                 1.0                     
-Y(Youden index)                                                   0.33333                 0.33333                 
-dInd(Distance index)                                              0.66667                 0.66667                 
-sInd(Similarity index)                                            0.5286                  0.5286                                  
+Classes                                                           Class1        Class2        
+ACC(Accuracy)                                                     0.75          0.75          
+AM(Difference between automatic and manual classification)        -2            2             
+AUC(Area under the roc curve)                                     0.66667       0.66667       
+AUCI(AUC value interpretation)                                    Fair          Fair          
+BCD(Bray-Curtis dissimilarity)                                    0.125         0.125         
+BM(Informedness or bookmaker informedness)                        0.33333       0.33333       
+CEN(Confusion entropy)                                            0.5           0.43083       
+DOR(Diagnostic odds ratio)                                        None          None          
+DP(Discriminant power)                                            None          None          
+DPI(Discriminant power interpretation)                            None          None          
+ERR(Error rate)                                                   0.25          0.25          
+F0.5(F0.5 score)                                                  0.71429       0.75758       
+F1(F1 score - harmonic mean of precision and sensitivity)         0.5           0.83333       
+F2(F2 score)                                                      0.38462       0.92593       
+FDR(False discovery rate)                                         0.0           0.28571       
+FN(False negative/miss/type 2 error)                              2             0             
+FNR(Miss rate or false negative rate)                             0.66667       0.0           
+FOR(False omission rate)                                          0.28571       0.0           
+FP(False positive/type 1 error/false alarm)                       0             2             
+FPR(Fall-out or false positive rate)                              0.0           0.66667       
+G(G-measure geometric mean of precision and sensitivity)          0.57735       0.84515       
+GI(Gini index)                                                    0.33333       0.33333       
+GM(G-mean geometric mean of specificity and sensitivity)          0.57735       0.57735       
+IBA(Index of balanced accuracy)                                   0.11111       0.55556       
+IS(Information score)                                             1.41504       0.19265       
+J(Jaccard index)                                                  0.33333       0.71429       
+LS(Lift score)                                                    2.66667       1.14286       
+MCC(Matthews correlation coefficient)                             0.48795       0.48795       
+MCEN(Modified confusion entropy)                                  0.38998       0.51639       
+MK(Markedness)                                                    0.71429       0.71429       
+N(Condition negative)                                             5             3             
+NLR(Negative likelihood ratio)                                    0.66667       0.0           
+NPV(Negative predictive value)                                    0.71429       1.0           
+OP(Optimized precision)                                           0.25          0.25          
+P(Condition positive or support)                                  3             5             
+PLR(Positive likelihood ratio)                                    None          1.5           
+PLRI(Positive likelihood ratio interpretation)                    None          Poor          
+POP(Population)                                                   8             8             
+PPV(Precision or positive predictive value)                       1.0           0.71429       
+PRE(Prevalence)                                                   0.375         0.625         
+RACC(Random accuracy)                                             0.04688       0.54688       
+RACCU(Random accuracy unbiased)                                   0.0625        0.5625        
+TN(True negative/correct rejection)                               5             1             
+TNR(Specificity or true negative rate)                            1.0           0.33333       
+TON(Test outcome negative)                                        7             1             
+TOP(Test outcome positive)                                        1             7             
+TP(True positive/hit)                                             1             5             
+TPR(Sensitivity, recall, hit rate, or true positive rate)         0.33333       1.0           
+Y(Youden index)                                                   0.33333       0.33333       
+dInd(Distance index)                                              0.66667       0.66667       
+sInd(Similarity index)                                            0.5286        0.5286                 
                                   
 >>> cm3 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":0}, "Class2": {"Class1": 2, "Class2": 5}},transpose=True) # Transpose Matrix      
 >>> cm3.print_matrix()
@@ -457,7 +465,7 @@ False
 
 ### Comapre
 
-In `version 2` a method for comparing several confusion matrices is introduced. This option is a combination of several overall and class-based benchmarks. Each of the benchmarks evaluates the performance of the classification algorithm from good to poor and give them a numeric score. The score of good performance is 1 and for the poor performance is 0.
+In `version 2.0` a method for comparing several confusion matrices is introduced. This option is a combination of several overall and class-based benchmarks. Each of the benchmarks evaluates the performance of the classification algorithm from good to poor and give them a numeric score. The score of good performance is 1 and for the poor performance is 0.
 
 After that, two scores are calculated for each confusion matrices, overall and class based. The overall score is the average of the score of four overall benchmarks which are Landis & Koch, Fleiss, Altman, and Cicchetti. And with a same manner, the class based score is the average of the score of three class-based benchmarks which are Positive Likelihood Ratio Interpretation, Discriminant Power Interpretation, and AUC value Interpretation. It should be notice that if one of the benchmarks returns none for one of the classes, that benchmarks will be eliminate in total averaging. If user set weights for the classes, the averaging over the value of class-based benchmark scores will transform to a weighted average.
 

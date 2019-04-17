@@ -237,10 +237,10 @@ PARAMS_LINK = {
     "Overall ACC": "Overall_ACC",
     "Kappa": "Kappa",
     "Overall RACC": "Overall_RACC",
-    "SOA1(Landis & Koch)": "SOA1-(Landis-&-Koch’s-benchmark)",
-    "SOA2(Fleiss)": "SOA2-(Fleiss’-benchmark)",
-    "SOA3(Altman)": "SOA3-(Altman’s-benchmark)",
-    "SOA4(Cicchetti)": "SOA4-(Cicchetti’s-benchmark)",
+    "SOA1(Landis & Koch)": "SOA1-(Landis-&-Koch's-benchmark)",
+    "SOA2(Fleiss)": "SOA2-(Fleiss'-benchmark)",
+    "SOA3(Altman)": "SOA3-(Altman's-benchmark)",
+    "SOA4(Cicchetti)": "SOA4-(Cicchetti's-benchmark)",
     "TPR Macro": "TPR_Macro",
     "PPV Macro": "PPV_Macro",
     "TPR Micro": "TPR_Micro",
@@ -300,7 +300,7 @@ PARAMS_LINK = {
     "OP": "OP-(Optimized-precision)",
     "IBA": "IBA-(Index-of-balanced-accuracy)",
     "GM": "GM-(G-mean)",
-    "Pearson C": "Pearson’s-C"}
+    "Pearson C": "Pearson's-C"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI"]
 

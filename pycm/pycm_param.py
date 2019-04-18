@@ -200,7 +200,7 @@ PARAMS_DESCRIPTION = {
     "OP": "Optimized precision",
     "IBA": "Index of balanced accuracy",
     "GM": "G-mean geometric mean of specificity and sensitivity",
-    "Q": "Yule Q"}
+    "Q": "Yule Q - coefficient of colligation"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -304,7 +304,7 @@ PARAMS_LINK = {
     "Pearson C": "Pearson's-C",
     "Q": ""}
 
-CAPITALIZE_FILTER = ["BCD", "AUCI"]
+CAPITALIZE_FILTER = ["BCD", "AUCI", "Q"]
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

@@ -186,6 +186,7 @@ PLRI(Positive likelihood ratio interpretation)                   None           
 POP(Population)                                                  20                      20                      20                      20
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None
 PRE(Prevalence)                                                  0.0                     0.8                     0.15                    0.05
+Q(Yule Q - coefficient of colligation)                           None                    0.28571                 0.77778                 None
 RACC(Random accuracy)                                            0.0                     0.28                    0.015                   0.0
 RACCU(Random accuracy unbiased)                                  0.07563                 0.33062                 0.01562                 0.00063
 TN(True negative/correct rejection)                              9                       3                       16                      19
@@ -322,6 +323,7 @@ PLRI(Positive likelihood ratio interpretation)                   Poor           
 POP(Population)                                                  21                      21                      21
 PPV(Precision or positive predictive value)                      0.6                     0.33333                 0.75
 PRE(Prevalence)                                                  0.28571                 0.14286                 0.57143
+Q(Yule Q - coefficient of colligation)                           None                    0.6                     0.55556
 RACC(Random accuracy)                                            0.13605                 0.02041                 0.21769
 RACCU(Random accuracy unbiased)                                  0.14512                 0.02041                 0.22676
 TN(True negative/correct rejection)                              11                      16                      7

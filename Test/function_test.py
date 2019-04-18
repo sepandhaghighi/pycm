@@ -25,6 +25,8 @@ Webpage : http://www.pycm.ir
 '(1,2,None)'
 >>> one_vs_all_func([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, 3) == [[1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}]
 True
+>>> Q_calc(1,2,3,"None")
+'None'
 >>> BCD_calc(2, 2, "None")
 'None'
 >>> AM_calc(3, "None")
@@ -400,30 +402,31 @@ Example : online_help("J") or online_help(2)
 73-PRE
 74-Pearson C
 75-Phi-Squared
-76-RACC
-77-RACCU
-78-RCI
-79-RR
-80-Reference Entropy
-81-Response Entropy
-82-SOA1(Landis & Koch)
-83-SOA2(Fleiss)
-84-SOA3(Altman)
-85-SOA4(Cicchetti)
-86-Scott PI
-87-Standard Error
-88-TN
-89-TNR
-90-TON
-91-TOP
-92-TP
-93-TPR
-94-TPR Macro
-95-TPR Micro
-96-Y
-97-Zero-one Loss
-98-dInd
-99-sInd
+76-Q
+77-RACC
+78-RACCU
+79-RCI
+80-RR
+81-Reference Entropy
+82-Response Entropy
+83-SOA1(Landis & Koch)
+84-SOA2(Fleiss)
+85-SOA3(Altman)
+86-SOA4(Cicchetti)
+87-Scott PI
+88-Standard Error
+89-TN
+90-TNR
+91-TON
+92-TOP
+93-TP
+94-TPR
+95-TPR Macro
+96-TPR Micro
+97-Y
+98-Zero-one Loss
+99-dInd
+100-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)

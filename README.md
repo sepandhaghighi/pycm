@@ -652,6 +652,8 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBU
 
 <blockquote>44- W. J. I. Conover, New York, "Practical Nonparametric Statistics, John Wiley and Sons," 1999.</blockquote> 
 
+<blockquote>45- Yule, G. Udny (1912). "On the Methods of Measuring Association Between Two Attributes". Journal of the Royal Statistical Society. 75 (6): 579–652. doi:10.2307/2340126</blockquote>
+
 ## Cite
 
 If you use PyCM in your research , please cite this JOSS paper :

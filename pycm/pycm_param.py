@@ -302,7 +302,7 @@ PARAMS_LINK = {
     "IBA": "IBA-(Index-of-balanced-accuracy)",
     "GM": "GM-(G-mean)",
     "Pearson C": "Pearson's-C",
-    "Q": ""}
+    "Q": "Q-(Yule's-Q)"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q"]
 

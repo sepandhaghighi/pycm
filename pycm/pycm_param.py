@@ -199,7 +199,8 @@ PARAMS_DESCRIPTION = {
     "BCD": "Bray-Curtis dissimilarity",
     "OP": "Optimized precision",
     "IBA": "Index of balanced accuracy",
-    "GM": "G-mean geometric mean of specificity and sensitivity"}
+    "GM": "G-mean geometric mean of specificity and sensitivity",
+    "Q": "Yule Q"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -300,7 +301,8 @@ PARAMS_LINK = {
     "OP": "OP-(Optimized-precision)",
     "IBA": "IBA-(Index-of-balanced-accuracy)",
     "GM": "GM-(G-mean)",
-    "Pearson C": "Pearson's-C"}
+    "Pearson C": "Pearson's-C",
+    "Q": ""}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI"]
 

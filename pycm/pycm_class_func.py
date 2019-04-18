@@ -4,7 +4,8 @@ from __future__ import division
 import math
 from .pycm_interpret import *
 
-def Q_calc(TP,TN,FP,FN):
+
+def Q_calc(TP, TN, FP, FN):
     """
     Calculate Yule's Q.
 
@@ -19,11 +20,12 @@ def Q_calc(TP,TN,FP,FN):
     :return: Yule's Q as float
     """
     try:
-        OR = (TP*TN)/(FP*FN)
-        result = (OR-1)/(OR+1)
+        OR = (TP * TN) / (FP * FN)
+        result = (OR - 1) / (OR + 1)
         return result
     except Exception:
         return "None"
+
 
 def TTPN_calc(item1, item2):
     """
@@ -639,7 +641,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         OP[i] = OP_calc(ACC[i], TPR[i], TNR[i])
         IBA[i] = IBA_calc(TPR[i], TNR[i])
         GM[i] = G_calc(TNR[i], TPR[i])
-        Q[i] = Q_calc(TP[i],TN[i],FP[i],FN[i])
+        Q[i] = Q_calc(TP[i], TN[i], FP[i], FN[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {

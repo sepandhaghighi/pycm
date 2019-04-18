@@ -5,6 +5,19 @@ import math
 from .pycm_interpret import *
 
 def Q_calc(TP,TN,FP,FN):
+    """
+    Calculate Yule's Q.
+
+    :param TP: true positive
+    :type TP : int
+    :param TN: true negative
+    :type TN : int
+    :param FP: false positive
+    :type FP : int
+    :param FN: false negative
+    :type FN : int
+    :return: Yule's Q as float
+    """
     try:
         OR = (TP*TN)/(FP*FN)
         result = (OR-1)/(OR+1)

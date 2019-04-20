@@ -654,6 +654,9 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBU
 
 <blockquote>45- Yule, G. U. (1912). "On the methods of measuring association between two attributes." Journal of the Royal Statistical Society 75(6): 579-652.</blockquote>
 
+<blockquote>46- Batuwita, R. and Palade, V. (2009). A new performance measure for class imbalance learning. application to bioinformatics problems. In Machine Learning and Applications, 2009. ICMLA’09. International Conference on, pages 545–550. IEEE.</blockquote>
+
+
 ## Cite
 
 If you use PyCM in your research , please cite this JOSS paper :

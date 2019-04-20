@@ -304,7 +304,7 @@ PARAMS_LINK = {
     "GM": "GM-(G-mean)",
     "Pearson C": "Pearson's-C",
     "Q": "Q-(Yule's-Q)",
-    "AGM": ""}
+    "AGM": "AGM-(Adjusted-G-mean)"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q"]
 

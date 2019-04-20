@@ -4,6 +4,31 @@ from __future__ import division
 import math
 from .pycm_interpret import *
 
+def AGM_calc(TPR,TNR,GM,N,POP):
+    """
+    Calculate AGM (Adjusted geometric mean).
+
+    :param TNR: specificity or true negative rate
+    :type TNR : float
+    :param TPR: sensitivity, recall, hit rate, or true positive rate
+    :type TPR : float
+    :param GM: geometric mean
+    :type GM : float
+    :param N: condition negative
+    :type N : int
+    :param POP: population
+    :type POP : int
+    :return: AGM as float
+    """
+    try:
+        n = N/POP
+        if TPR == 0:
+            result = 0
+        else:
+            result = (GM+TNR*n)/(1+n)
+        return result
+    except Exception:
+        return "None"
 
 def Q_calc(TP, TN, FP, FN):
     """
@@ -594,6 +619,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     IBA = {}
     GM = {}
     Q = {}
+    AGM = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -642,6 +668,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         IBA[i] = IBA_calc(TPR[i], TNR[i])
         GM[i] = G_calc(TNR[i], TPR[i])
         Q[i] = Q_calc(TP[i], TN[i], FP[i], FN[i])
+        AGM[i] = AGM_calc(TPR[i], TNR[i], GM[i], N[i], POP[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {
@@ -696,5 +723,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "OP": OP,
         "IBA": IBA,
         "GM": GM,
-        "Q": Q}
+        "Q": Q,
+        "AGM": AGM}
     return result

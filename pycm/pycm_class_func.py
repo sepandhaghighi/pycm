@@ -4,7 +4,8 @@ from __future__ import division
 import math
 from .pycm_interpret import *
 
-def AGM_calc(TPR,TNR,GM,N,POP):
+
+def AGM_calc(TPR, TNR, GM, N, POP):
     """
     Calculate AGM (Adjusted geometric mean).
 
@@ -21,14 +22,15 @@ def AGM_calc(TPR,TNR,GM,N,POP):
     :return: AGM as float
     """
     try:
-        n = N/POP
+        n = N / POP
         if TPR == 0:
             result = 0
         else:
-            result = (GM+TNR*n)/(1+n)
+            result = (GM + TNR * n) / (1 + n)
         return result
     except Exception:
         return "None"
+
 
 def Q_calc(TP, TN, FP, FN):
     """

@@ -200,7 +200,8 @@ PARAMS_DESCRIPTION = {
     "OP": "Optimized precision",
     "IBA": "Index of balanced accuracy",
     "GM": "G-mean geometric mean of specificity and sensitivity",
-    "Q": "Yule Q - coefficient of colligation"}
+    "Q": "Yule Q - coefficient of colligation",
+    "AGM": "Adjusted geometric mean"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -302,7 +303,8 @@ PARAMS_LINK = {
     "IBA": "IBA-(Index-of-balanced-accuracy)",
     "GM": "GM-(G-mean)",
     "Pearson C": "Pearson's-C",
-    "Q": "Q-(Yule's-Q)"}
+    "Q": "Q-(Yule's-Q)",
+    "AGM": ""}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q"]
 

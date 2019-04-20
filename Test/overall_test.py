@@ -78,6 +78,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333
+AGM(Adjusted geometric mean)                                     0.83729                 0.692                   0.60712
 AM(Difference between automatic and manual classification)       2                       -1                      -1
 AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
 AUCI(AUC value interpretation)                                   Very Good               Fair                    Poor
@@ -110,7 +111,7 @@ MK(Markedness)                                                   0.6            
 N(Condition negative)                                            9                       9                       6
 NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.75
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143
-OP(Optimized precision)                                           0.70833                 0.29545                 0.44048
+OP(Optimized precision)                                          0.70833                 0.29545                 0.44048
 P(Condition positive or support)                                 3                       3                       6
 PLR(Positive likelihood ratio)                                   4.5                     3.0                     1.5
 PLRI(Positive likelihood ratio interpretation)                   Poor                    Poor                    Poor
@@ -199,6 +200,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          L1                      L2                      L3
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333
+AGM(Adjusted geometric mean)                                     0.83729                 0.692                   0.60712
 AM(Difference between automatic and manual classification)       2                       -1                      -1
 AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
 AUCI(AUC value interpretation)                                   Very Good               Fair                    Poor
@@ -335,6 +337,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AGM(Adjusted geometric mean)                                     None                    0.56694                 0.7352                  0
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
 AUCI(AUC value interpretation)                                   None                    Poor                    Fair                    Poor
@@ -443,6 +446,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AGM(Adjusted geometric mean)                                     None                    0.56694                 0.7352                  0
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
 AUCI(AUC value interpretation)                                   None                    Poor                    Fair                    Poor
@@ -664,6 +668,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
+AGM(Adjusted geometric mean)                                     0.73866                 0.70552                 0.86488
 AM(Difference between automatic and manual classification)       1                       0                       -1
 AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
 AUCI(AUC value interpretation)                                   Good                    Fair                    Very Good
@@ -785,6 +790,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
+AGM(Adjusted geometric mean)                                     0.73866                 0.70552                 0.86488
 AM(Difference between automatic and manual classification)       1                       0                       -1
 AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
 AUCI(AUC value interpretation)                                   Good                    Fair                    Very Good
@@ -908,6 +914,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
+AGM(Adjusted geometric mean)                                     0.80509                 0.70336                 0.66986
 AM(Difference between automatic and manual classification)       4                       0                       -4
 AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
 AUCI(AUC value interpretation)                                   Very Good               Fair                    Fair

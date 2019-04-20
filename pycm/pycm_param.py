@@ -137,12 +137,12 @@ OVERALL_BENCHMARK_SCORE_DICT = {
 
 RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"
-RECOMMEND_HTML_MESSAGE = '<span style="color:red;">Note 1 </span> : Recommended statistics for this type of classification highlighted in <span style="color :{0};">{0}</span>'.format(
+RECOMMEND_HTML_MESSAGE = '<span style="color:red;">Note 1</span> : Recommended statistics for this type of classification highlighted in <span style="color :{0};">{0}</span>'.format(
     RECOMMEND_BACKGROUND_COLOR)
 RECOMMEND_WARNING = "The recommender system assumes that the input is the result of classification over the whole data" \
                     " rather than just a part of it.\nIf the confusion matrix is the result of test data classification" \
                     ", the recommendation is not valid."
-RECOMMEND_HTML_MESSAGE2 = '<span style="color:red;">Note 2 </span> : {0}'.format(
+RECOMMEND_HTML_MESSAGE2 = '<span style="color:red;">Note 2</span> : {0}'.format(
     RECOMMEND_WARNING)
 
 DOCUMENT_ADR = "http://www.pycm.ir/doc/index.html#"

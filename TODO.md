@@ -44,6 +44,13 @@
   - [x] AUCI
   - [x] GI
   - [x] LS
+  - [x] A/M
+  - [x] BCD
+  - [x] OP
+  - [x] IBA
+  - [x] GM
+  - [x] Q
+  - [x] AGM
 - [x] Outputs
   - [x] CSV File
   - [x] HTML File
@@ -87,3 +94,4 @@
   - [x] Overall MCC
   - [x] CBA
   - [x] RCI
+  - [x] Pearson's C

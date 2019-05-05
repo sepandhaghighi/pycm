@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `Compare` class and parameters recommendation system block diagrams
 ### Changed
 - Document links bug fixed
+- Document modified
 ## [2.0] - 2019-04-15
 ### Added
 - G-Mean (GM)

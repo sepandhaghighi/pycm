@@ -2,7 +2,7 @@ art==3.5
 numpy==1.16.3
 codecov==2.0.15
 pytest==4.4.1
-pytest-cov==2.6.1
+pytest-cov==2.7.1
 setuptools==41.0.1
 vulture==1.0
 bandit==1.5.1

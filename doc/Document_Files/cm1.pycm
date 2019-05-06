@@ -77,6 +77,7 @@ Class Statistics :
 
 Classes                                                           L1            L2            L3            
 ACC(Accuracy)                                                     0.83333       0.75          0.58333       
+AGM(Adjusted geometric mean)                                      0.85764       0.70861       0.58034       
 AM(Difference between automatic and manual classification)        -2            1             1             
 AUC(Area under the roc curve)                                     0.8           0.65          0.58571       
 AUCI(AUC value interpretation)                                    Very Good     Fair          Poor          
@@ -116,6 +117,7 @@ PLRI(Positive likelihood ratio interpretation)                    None          
 POP(Population)                                                   12            12            12            
 PPV(Precision or positive predictive value)                       1.0           0.33333       0.5           
 PRE(Prevalence)                                                   0.41667       0.16667       0.41667       
+Q(Yule Q - coefficient of colligation)                            None          0.6           0.33333       
 RACC(Random accuracy)                                             0.10417       0.04167       0.20833       
 RACCU(Random accuracy unbiased)                                   0.11111       0.0434        0.21007       
 TN(True negative/correct rejection)                               7             8             4             

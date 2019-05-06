@@ -147,6 +147,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AGM(Adjusted geometric mean)                                     None                    0.56694                 0.7352                  0
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
 AUCI(AUC value interpretation)                                   None                    Poor                    Fair                    Poor
@@ -186,6 +187,7 @@ PLRI(Positive likelihood ratio interpretation)                   None           
 POP(Population)                                                  20                      20                      20                      20
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None
 PRE(Prevalence)                                                  0.0                     0.8                     0.15                    0.05
+Q(Yule Q - coefficient of colligation)                           None                    0.28571                 0.77778                 None
 RACC(Random accuracy)                                            0.0                     0.28                    0.015                   0.0
 RACCU(Random accuracy unbiased)                                  0.07563                 0.33062                 0.01562                 0.00063
 TN(True negative/correct rejection)                              9                       3                       16                      19
@@ -283,6 +285,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
+AGM(Adjusted geometric mean)                                     0.80509                 0.70336                 0.66986
 AM(Difference between automatic and manual classification)       4                       0                       -4
 AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
 AUCI(AUC value interpretation)                                   Very Good               Fair                    Fair
@@ -322,6 +325,7 @@ PLRI(Positive likelihood ratio interpretation)                   Poor           
 POP(Population)                                                  21                      21                      21
 PPV(Precision or positive predictive value)                      0.6                     0.33333                 0.75
 PRE(Prevalence)                                                  0.28571                 0.14286                 0.57143
+Q(Yule Q - coefficient of colligation)                           None                    0.6                     0.55556
 RACC(Random accuracy)                                            0.13605                 0.02041                 0.21769
 RACCU(Random accuracy unbiased)                                  0.14512                 0.02041                 0.22676
 TN(True negative/correct rejection)                              11                      16                      7

@@ -5,6 +5,55 @@ import math
 from .pycm_interpret import *
 
 
+def AGM_calc(TPR, TNR, GM, N, POP):
+    """
+    Calculate AGM (Adjusted geometric mean).
+
+    :param TNR: specificity or true negative rate
+    :type TNR : float
+    :param TPR: sensitivity, recall, hit rate, or true positive rate
+    :type TPR : float
+    :param GM: geometric mean
+    :type GM : float
+    :param N: condition negative
+    :type N : int
+    :param POP: population
+    :type POP : int
+    :return: AGM as float
+    """
+    try:
+        n = N / POP
+        if TPR == 0:
+            result = 0
+        else:
+            result = (GM + TNR * n) / (1 + n)
+        return result
+    except Exception:
+        return "None"
+
+
+def Q_calc(TP, TN, FP, FN):
+    """
+    Calculate Yule's Q.
+
+    :param TP: true positive
+    :type TP : int
+    :param TN: true negative
+    :type TN : int
+    :param FP: false positive
+    :type FP : int
+    :param FN: false negative
+    :type FN : int
+    :return: Yule's Q as float
+    """
+    try:
+        OR = (TP * TN) / (FP * FN)
+        result = (OR - 1) / (OR + 1)
+        return result
+    except Exception:
+        return "None"
+
+
 def TTPN_calc(item1, item2):
     """
     Calculate TPR,TNR,PPV,NPV.
@@ -571,6 +620,8 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     OP = {}
     IBA = {}
     GM = {}
+    Q = {}
+    AGM = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -618,6 +669,8 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         OP[i] = OP_calc(ACC[i], TPR[i], TNR[i])
         IBA[i] = IBA_calc(TPR[i], TNR[i])
         GM[i] = G_calc(TNR[i], TPR[i])
+        Q[i] = Q_calc(TP[i], TN[i], FP[i], FN[i])
+        AGM[i] = AGM_calc(TPR[i], TNR[i], GM[i], N[i], POP[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {
@@ -671,5 +724,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "BCD": BCD,
         "OP": OP,
         "IBA": IBA,
-        "GM": GM}
+        "GM": GM,
+        "Q": Q,
+        "AGM": AGM}
     return result

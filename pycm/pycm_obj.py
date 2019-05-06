@@ -517,6 +517,8 @@ def __class_stat_init__(cm):
     cm.OP = cm.class_stat["OP"]
     cm.IBA = cm.class_stat["IBA"]
     cm.GM = cm.class_stat["GM"]
+    cm.Q = cm.class_stat["Q"]
+    cm.AGM = cm.class_stat["AGM"]
 
 
 def __overall_stat_init__(cm):

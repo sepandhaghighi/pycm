@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parameters and constants."""
-VERSION = "2.0"
+VERSION = "2.1"
 
 
 OVERVIEW = '''
@@ -137,12 +137,12 @@ OVERALL_BENCHMARK_SCORE_DICT = {
 
 RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"
-RECOMMEND_HTML_MESSAGE = '<span style="color:red;">Note1</span> : Recommended statistics for this type of classification highlighted in <span style="color :{0};">{0}</span>'.format(
+RECOMMEND_HTML_MESSAGE = '<span style="color:red;">Note 1</span> : Recommended statistics for this type of classification highlighted in <span style="color :{0};">{0}</span>'.format(
     RECOMMEND_BACKGROUND_COLOR)
 RECOMMEND_WARNING = "The recommender system assumes that the input is the result of classification over the whole data" \
                     " rather than just a part of it.\nIf the confusion matrix is the result of test data classification" \
                     ", the recommendation is not valid."
-RECOMMEND_HTML_MESSAGE2 = '<span style="color:red;">Note2</span> : {0}'.format(
+RECOMMEND_HTML_MESSAGE2 = '<span style="color:red;">Note 2</span> : {0}'.format(
     RECOMMEND_WARNING)
 
 DOCUMENT_ADR = "http://www.pycm.ir/doc/index.html#"
@@ -199,7 +199,9 @@ PARAMS_DESCRIPTION = {
     "BCD": "Bray-Curtis dissimilarity",
     "OP": "Optimized precision",
     "IBA": "Index of balanced accuracy",
-    "GM": "G-mean geometric mean of specificity and sensitivity"}
+    "GM": "G-mean geometric mean of specificity and sensitivity",
+    "Q": "Yule Q - coefficient of colligation",
+    "AGM": "Adjusted geometric mean"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -237,10 +239,10 @@ PARAMS_LINK = {
     "Overall ACC": "Overall_ACC",
     "Kappa": "Kappa",
     "Overall RACC": "Overall_RACC",
-    "SOA1(Landis & Koch)": "SOA1-(Landis-&-Koch’s-benchmark)",
-    "SOA2(Fleiss)": "SOA2-(Fleiss’-benchmark)",
-    "SOA3(Altman)": "SOA3-(Altman’s-benchmark)",
-    "SOA4(Cicchetti)": "SOA4-(Cicchetti’s-benchmark)",
+    "SOA1(Landis & Koch)": "SOA1-(Landis-&-Koch's-benchmark)",
+    "SOA2(Fleiss)": "SOA2-(Fleiss'-benchmark)",
+    "SOA3(Altman)": "SOA3-(Altman's-benchmark)",
+    "SOA4(Cicchetti)": "SOA4-(Cicchetti's-benchmark)",
     "TPR Macro": "TPR_Macro",
     "PPV Macro": "PPV_Macro",
     "TPR Micro": "TPR_Micro",
@@ -300,9 +302,11 @@ PARAMS_LINK = {
     "OP": "OP-(Optimized-precision)",
     "IBA": "IBA-(Index-of-balanced-accuracy)",
     "GM": "GM-(G-mean)",
-    "Pearson C": "Pearson’s-C"}
+    "Pearson C": "Pearson's-C",
+    "Q": "Q-(Yule's-Q)",
+    "AGM": "AGM-(Adjusted-G-mean)"}
 
-CAPITALIZE_FILTER = ["BCD", "AUCI"]
+CAPITALIZE_FILTER = ["BCD", "AUCI", "Q"]
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

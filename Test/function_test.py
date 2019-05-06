@@ -25,6 +25,10 @@ Webpage : http://www.pycm.ir
 '(1,2,None)'
 >>> one_vs_all_func([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, 3) == [[1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}]
 True
+>>> Q_calc(1,2,3,"None")
+'None'
+>>> AGM_calc(2,2,2,2,"None")
+'None'
 >>> BCD_calc(2, 2, "None")
 'None'
 >>> AM_calc(3, "None")
@@ -327,103 +331,105 @@ Example : online_help("J") or online_help(2)
 <BLANKLINE>
 1-95% CI
 2-ACC
-3-AM
-4-AUC
-5-AUCI
-6-AUNP
-7-AUNU
-8-BCD
-9-BM
-10-Bennett S
-11-CBA
-12-CEN
-13-Chi-Squared
-14-Chi-Squared DF
-15-Conditional Entropy
-16-Cramer V
-17-Cross Entropy
-18-DOR
-19-DP
-20-DPI
-21-ERR
-22-F0.5
-23-F1
-24-F2
-25-FDR
-26-FN
-27-FNR
-28-FOR
-29-FP
-30-FPR
-31-G
-32-GI
-33-GM
-34-Gwet AC1
-35-Hamming Loss
-36-IBA
-37-IS
-38-J
-39-Joint Entropy
-40-KL Divergence
-41-Kappa
-42-Kappa 95% CI
-43-Kappa No Prevalence
-44-Kappa Standard Error
-45-Kappa Unbiased
-46-LS
-47-Lambda A
-48-Lambda B
-49-MCC
-50-MCEN
-51-MK
-52-Mutual Information
-53-N
-54-NIR
-55-NLR
-56-NPV
-57-OP
-58-Overall ACC
-59-Overall CEN
-60-Overall J
-61-Overall MCC
-62-Overall MCEN
-63-Overall RACC
-64-Overall RACCU
-65-P
-66-P-Value
-67-PLR
-68-PLRI
-69-POP
-70-PPV
-71-PPV Macro
-72-PPV Micro
-73-PRE
-74-Pearson C
-75-Phi-Squared
-76-RACC
-77-RACCU
-78-RCI
-79-RR
-80-Reference Entropy
-81-Response Entropy
-82-SOA1(Landis & Koch)
-83-SOA2(Fleiss)
-84-SOA3(Altman)
-85-SOA4(Cicchetti)
-86-Scott PI
-87-Standard Error
-88-TN
-89-TNR
-90-TON
-91-TOP
-92-TP
-93-TPR
-94-TPR Macro
-95-TPR Micro
-96-Y
-97-Zero-one Loss
-98-dInd
-99-sInd
+3-AGM
+4-AM
+5-AUC
+6-AUCI
+7-AUNP
+8-AUNU
+9-BCD
+10-BM
+11-Bennett S
+12-CBA
+13-CEN
+14-Chi-Squared
+15-Chi-Squared DF
+16-Conditional Entropy
+17-Cramer V
+18-Cross Entropy
+19-DOR
+20-DP
+21-DPI
+22-ERR
+23-F0.5
+24-F1
+25-F2
+26-FDR
+27-FN
+28-FNR
+29-FOR
+30-FP
+31-FPR
+32-G
+33-GI
+34-GM
+35-Gwet AC1
+36-Hamming Loss
+37-IBA
+38-IS
+39-J
+40-Joint Entropy
+41-KL Divergence
+42-Kappa
+43-Kappa 95% CI
+44-Kappa No Prevalence
+45-Kappa Standard Error
+46-Kappa Unbiased
+47-LS
+48-Lambda A
+49-Lambda B
+50-MCC
+51-MCEN
+52-MK
+53-Mutual Information
+54-N
+55-NIR
+56-NLR
+57-NPV
+58-OP
+59-Overall ACC
+60-Overall CEN
+61-Overall J
+62-Overall MCC
+63-Overall MCEN
+64-Overall RACC
+65-Overall RACCU
+66-P
+67-P-Value
+68-PLR
+69-PLRI
+70-POP
+71-PPV
+72-PPV Macro
+73-PPV Micro
+74-PRE
+75-Pearson C
+76-Phi-Squared
+77-Q
+78-RACC
+79-RACCU
+80-RCI
+81-RR
+82-Reference Entropy
+83-Response Entropy
+84-SOA1(Landis & Koch)
+85-SOA2(Fleiss)
+86-SOA3(Altman)
+87-SOA4(Cicchetti)
+88-Scott PI
+89-Standard Error
+90-TN
+91-TNR
+92-TON
+93-TOP
+94-TP
+95-TPR
+96-TPR Macro
+97-TPR Micro
+98-Y
+99-Zero-one Loss
+100-dInd
+101-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -555,5 +561,18 @@ Example : online_help("J") or online_help(2)
 0.36170212765957444
 >>> cm.Chi_Squared
 8.429166666666667
+>>> cm = ConfusionMatrix(matrix={0:{0:42,1:7},1:{1:114,0:203}}) # Verified Case
+>>> cm.Q[0]
+0.5422773393461104
+>>> cm = ConfusionMatrix(matrix={1:{1:828,0:72},0:{0:8918,1:182}}) # Verified Case
+>>> cm.AGM[1]
+0.9640451296531609
+>>> cm.GM[1]
+0.9495261976375375
+>>> cm = ConfusionMatrix(matrix={1:{1:882,0:18},0:{0:8372,1:728}}) # Verified Case
+>>> cm.AGM[1]
+0.935458742218606
+>>> cm.GM[1]
+0.9495261976375375
 
 """

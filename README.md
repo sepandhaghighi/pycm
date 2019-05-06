@@ -195,6 +195,7 @@ Class Statistics :
 
 Classes                                                           0             1             2             
 ACC(Accuracy)                                                     0.83333       0.75          0.58333       
+AGM(Adjusted geometric mean)                                      0.83729       0.692         0.60712       
 AM(Difference between automatic and manual classification)        2             -1            -1            
 AUC(Area under the roc curve)                                     0.88889       0.61111       0.58333       
 AUCI(AUC value interpretation)                                    Very Good     Fair          Poor          
@@ -234,6 +235,7 @@ PLRI(Positive likelihood ratio interpretation)                    Poor          
 POP(Population)                                                   12            12            12            
 PPV(Precision or positive predictive value)                       0.6           0.5           0.6           
 PRE(Prevalence)                                                   0.25          0.25          0.5           
+Q(Yule Q - coefficient of colligation)                            None          0.6           0.33333       
 RACC(Random accuracy)                                             0.10417       0.04167       0.20833       
 RACCU(Random accuracy unbiased)                                   0.11111       0.0434        0.21007       
 TN(True negative/correct rejection)                               7             8             4             
@@ -345,6 +347,7 @@ Class Statistics :
 
 Classes                                                           Class1        Class2        
 ACC(Accuracy)                                                     0.75          0.75          
+AGM(Adjusted geometric mean)                                      0.73991       0.5108        
 AM(Difference between automatic and manual classification)        -2            2             
 AUC(Area under the roc curve)                                     0.66667       0.66667       
 AUCI(AUC value interpretation)                                    Fair          Fair          
@@ -384,6 +387,7 @@ PLRI(Positive likelihood ratio interpretation)                    None          
 POP(Population)                                                   8             8             
 PPV(Precision or positive predictive value)                       1.0           0.71429       
 PRE(Prevalence)                                                   0.375         0.625         
+Q(Yule Q - coefficient of colligation)                            None          None          
 RACC(Random accuracy)                                             0.04688       0.54688       
 RACCU(Random accuracy unbiased)                                   0.0625        0.5625        
 TN(True negative/correct rejection)                               5             1             
@@ -394,7 +398,7 @@ TP(True positive/hit)                                             1             
 TPR(Sensitivity, recall, hit rate, or true positive rate)         0.33333       1.0           
 Y(Youden index)                                                   0.33333       0.33333       
 dInd(Distance index)                                              0.66667       0.66667       
-sInd(Similarity index)                                            0.5286        0.5286                 
+sInd(Similarity index)                                            0.5286        0.5286                  
                                   
 >>> cm3 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":0}, "Class2": {"Class1": 2, "Class2": 5}},transpose=True) # Transpose Matrix      
 >>> cm3.print_matrix()

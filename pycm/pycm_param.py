@@ -84,7 +84,8 @@ BENCHMARK_LIST = [
     "SOA1(Landis & Koch)",
     "SOA2(Fleiss)",
     "SOA3(Altman)",
-    "SOA4(Cicchetti)"]
+    "SOA4(Cicchetti)",
+    "SOA5(Cramer VI)"]
 
 PLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}
 
@@ -123,6 +124,8 @@ SOA3_SCORE = {
 
 SOA4_SCORE = {"Excellent": 4, "Good": 3, "Fair": 2, "Poor": 1, "None": "None"}
 
+SOA5_SCORE = {"Very Strong":6,"Strong":5,"Relatively Strong":4,"Moderate":3,"Weak":2,"Negligible":1,"None": "None"}
+
 
 CLASS_BENCHMARK_SCORE_DICT = {
     "PLRI": PLRI_SCORE,
@@ -133,7 +136,8 @@ OVERALL_BENCHMARK_SCORE_DICT = {
     "SOA1(Landis & Koch)": SOA1_SCORE,
     "SOA2(Fleiss)": SOA2_SCORE,
     "SOA3(Altman)": SOA3_SCORE,
-    "SOA4(Cicchetti)": SOA4_SCORE}
+    "SOA4(Cicchetti)": SOA4_SCORE,
+    "SOA5(Cramer VI)": SOA5_SCORE}
 
 RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"

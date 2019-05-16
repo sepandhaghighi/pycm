@@ -577,6 +577,7 @@ def __overall_stat_init__(cm):
     cm.AUNP = cm.overall_stat["AUNP"]
     cm.RCI = cm.overall_stat["RCI"]
     cm.C = cm.overall_stat["Pearson C"]
+    cm.SOA5 = cm.overall_stat["SOA5(Cramer VI)"]
 
 
 def __obj_assign_handler__(cm, matrix_param):

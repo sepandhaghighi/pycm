@@ -68,6 +68,7 @@ SOA1(Landis & Koch)                                              Fair
 SOA2(Fleiss)                                                     Poor
 SOA3(Altman)                                                     Fair
 SOA4(Cicchetti)                                                  Poor
+SOA5(Cramer)                                                     Relatively Strong
 Scott PI                                                         0.34426
 Standard Error                                                   0.14232
 TPR Macro                                                        0.61111
@@ -190,6 +191,7 @@ SOA1(Landis & Koch)                                              Fair
 SOA2(Fleiss)                                                     Poor
 SOA3(Altman)                                                     Fair
 SOA4(Cicchetti)                                                  Poor
+SOA5(Cramer)                                                     Relatively Strong
 Scott PI                                                         0.34426
 Standard Error                                                   0.14232
 TPR Macro                                                        0.61111
@@ -327,6 +329,7 @@ SOA1(Landis & Koch)                                              Slight
 SOA2(Fleiss)                                                     Poor
 SOA3(Altman)                                                     Poor
 SOA4(Cicchetti)                                                  Poor
+SOA5(Cramer)                                                     None
 Scott PI                                                         -0.12554
 Standard Error                                                   0.10665
 TPR Macro                                                        None
@@ -436,6 +439,7 @@ SOA1(Landis & Koch)                                              Slight
 SOA2(Fleiss)                                                     Poor
 SOA3(Altman)                                                     Poor
 SOA4(Cicchetti)                                                  Poor
+SOA5(Cramer)                                                     None
 Scott PI                                                         -0.12554
 Standard Error                                                   0.10665
 TPR Macro                                                        None
@@ -658,6 +662,7 @@ SOA1(Landis & Koch)                                              Moderate
 SOA2(Fleiss)                                                     Intermediate to Good
 SOA3(Altman)                                                     Moderate
 SOA4(Cicchetti)                                                  Fair
+SOA5(Cramer)                                                     Relatively Strong
 Scott PI                                                         0.47346
 Standard Error                                                   0.09072
 TPR Macro                                                        0.65741
@@ -780,6 +785,7 @@ SOA1(Landis & Koch)                                              Moderate
 SOA2(Fleiss)                                                     Intermediate to Good
 SOA3(Altman)                                                     Moderate
 SOA4(Cicchetti)                                                  Fair
+SOA5(Cramer)                                                     Relatively Strong
 Scott PI                                                         0.47346
 Standard Error                                                   0.09072
 TPR Macro                                                        0.65741
@@ -904,6 +910,7 @@ SOA1(Landis & Koch)                                              Fair
 SOA2(Fleiss)                                                     Poor
 SOA3(Altman)                                                     Fair
 SOA4(Cicchetti)                                                  Poor
+SOA5(Cramer)                                                     Relatively Strong
 Scott PI                                                         0.37313
 Standard Error                                                   0.10597
 TPR Macro                                                        0.61111
@@ -1000,7 +1007,7 @@ True
 >>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2})
 >>> cp
 pycm.Compare(classes: [0, 1, 2])
->>> cp.scores == {'model2': {'class': 2.75, 'overall': 0.95}, 'model1': {'class': 4.15, 'overall': 1.48333}}
+>>> cp.scores == {'model1': {'overall': 2.15, 'class': 4.15}, 'model2': {'overall': 1.78333, 'class': 2.75}}
 True
 >>> cp.best
 pycm.ConfusionMatrix(classes: [0, 1, 2])
@@ -1010,23 +1017,23 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 Best : model1
 <BLANKLINE>
 Rank  Name      Class-Score         Overall-Score
-1     model1    4.15                1.48333
-2     model2    2.75                0.95
+1     model1    4.15                2.15
+2     model2    2.75                1.78333
 <BLANKLINE>
 >>> cp.print_report()
 Best : model1
 <BLANKLINE>
 Rank  Name      Class-Score         Overall-Score
-1     model1    4.15                1.48333
-2     model2    2.75                0.95
+1     model1    4.15                2.15
+2     model2    2.75                1.78333
 <BLANKLINE>
 >>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2},by_class=True,weight={0:5,1:1,2:1})
 >>> print(cp)
 Best : model2
 <BLANKLINE>
 Rank  Name      Class-Score         Overall-Score
-1     model2    8.15                0.95
-2     model1    6.95                1.48333
+1     model2    8.15                1.78333
+2     model1    6.95                2.15
 <BLANKLINE>
 >>> cp.best
 pycm.ConfusionMatrix(classes: [0, 1, 2])
@@ -1034,7 +1041,7 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 'model2'
 >>> cp2 = Compare({"model1":cm_comp1,"model2":cm_comp1})
 Warning:  Confusion matrices are too close and the best one can not be recognized.
->>> cp2.scores == {'model2': {'overall': 1.48333, 'class': 4.15}, 'model1': {'overall': 1.48333, 'class': 4.15}}
+>>> cp2.scores == {'model1': {'overall': 2.15, 'class': 4.15}, 'model2': {'overall': 2.15, 'class': 4.15}}
 True
 >>> cp2.best
 >>> cp2.best_name

@@ -416,20 +416,21 @@ Example : online_help("J") or online_help(2)
 85-SOA2(Fleiss)
 86-SOA3(Altman)
 87-SOA4(Cicchetti)
-88-Scott PI
-89-Standard Error
-90-TN
-91-TNR
-92-TON
-93-TOP
-94-TP
-95-TPR
-96-TPR Macro
-97-TPR Micro
-98-Y
-99-Zero-one Loss
-100-dInd
-101-sInd
+88-SOA5(Cramer)
+89-Scott PI
+90-Standard Error
+91-TN
+92-TNR
+93-TON
+94-TOP
+95-TP
+96-TPR
+97-TPR Macro
+98-TPR Micro
+99-Y
+100-Zero-one Loss
+101-dInd
+102-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)

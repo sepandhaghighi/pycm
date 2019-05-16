@@ -137,6 +137,7 @@ SOA1(Landis & Koch)                                              Slight
 SOA2(Fleiss)                                                     Poor
 SOA3(Altman)                                                     Poor
 SOA4(Cicchetti)                                                  Poor
+SOA5(Cramer)                                                     None
 Scott PI                                                         -0.12554
 Standard Error                                                   0.10665
 TPR Macro                                                        None
@@ -275,6 +276,7 @@ SOA1(Landis & Koch)                                              Fair
 SOA2(Fleiss)                                                     Poor
 SOA3(Altman)                                                     Fair
 SOA4(Cicchetti)                                                  Poor
+SOA5(Cramer)                                                     Relatively Strong
 Scott PI                                                         0.37313
 Standard Error                                                   0.10597
 TPR Macro                                                        0.61111

@@ -124,7 +124,14 @@ SOA3_SCORE = {
 
 SOA4_SCORE = {"Excellent": 4, "Good": 3, "Fair": 2, "Poor": 1, "None": "None"}
 
-SOA5_SCORE = {"Very Strong":6,"Strong":5,"Relatively Strong":4,"Moderate":3,"Weak":2,"Negligible":1,"None": "None"}
+SOA5_SCORE = {
+    "Very Strong": 6,
+    "Strong": 5,
+    "Relatively Strong": 4,
+    "Moderate": 3,
+    "Weak": 2,
+    "Negligible": 1,
+    "None": "None"}
 
 
 CLASS_BENCHMARK_SCORE_DICT = {

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Interpretation functions."""
 
+
 def V_analysis(V):
     """
     Analysis Cramer's V with interpretation table.
@@ -14,18 +15,19 @@ def V_analysis(V):
             return "None"
         if V <= 0.1:
             return "Negligible"
-        if V>0.1 and V<0.2:
+        if V > 0.1 and V < 0.2:
             return "Weak"
-        if V>=0.2 and V<0.4:
+        if V >= 0.2 and V < 0.4:
             return "Moderate"
-        if V>=0.4 and V<0.6:
+        if V >= 0.4 and V < 0.6:
             return "Relatively Strong"
-        if V>=0.6 and V<0.8:
+        if V >= 0.6 and V < 0.8:
             return "Strong"
-        if V>=0.8:
+        if V >= 0.8:
             return "Very Strong"
     except Exception:
         return "None"
+
 
 def PLR_analysis(PLR):
     """

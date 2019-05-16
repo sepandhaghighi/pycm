@@ -893,7 +893,7 @@ def overall_statistics(
         "SOA2(Fleiss)": kappa_analysis_fleiss(overall_kappa),
         "SOA3(Altman)": kappa_analysis_altman(overall_kappa),
         "SOA4(Cicchetti)": kappa_analysis_cicchetti(overall_kappa),
-        "SOA5(Cramer VI)": V_analysis(cramer_V),
+        "SOA5(Cramer)": V_analysis(cramer_V),
         "TPR Macro": macro_calc(TPR),
         "PPV Macro": macro_calc(PPV),
         "TPR Micro": micro_calc(

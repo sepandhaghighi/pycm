@@ -85,7 +85,7 @@ BENCHMARK_LIST = [
     "SOA2(Fleiss)",
     "SOA3(Altman)",
     "SOA4(Cicchetti)",
-    "SOA5(Cramer VI)"]
+    "SOA5(Cramer)"]
 
 PLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}
 
@@ -137,7 +137,7 @@ OVERALL_BENCHMARK_SCORE_DICT = {
     "SOA2(Fleiss)": SOA2_SCORE,
     "SOA3(Altman)": SOA3_SCORE,
     "SOA4(Cicchetti)": SOA4_SCORE,
-    "SOA5(Cramer VI)": SOA5_SCORE}
+    "SOA5(Cramer)": SOA5_SCORE}
 
 RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"
@@ -309,7 +309,7 @@ PARAMS_LINK = {
     "Pearson C": "Pearson's-C",
     "Q": "Q-(Yule's-Q)",
     "AGM": "AGM-(Adjusted-G-mean)",
-    "SOA5(Cramer VI)": ""}
+    "SOA5(Cramer)": ""}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q"]
 

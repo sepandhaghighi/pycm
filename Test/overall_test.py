@@ -111,6 +111,7 @@ MCEN(Modified confusion entropy)                                 0.26439        
 MK(Markedness)                                                   0.6                     0.3                     0.17143
 N(Condition negative)                                            9                       9                       6
 NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.75
+NLRI(Negative likelihood ratio interpretation)                   Good                    Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143
 OP(Optimized precision)                                          0.70833                 0.29545                 0.44048
 P(Condition positive or support)                                 3                       3                       6
@@ -234,6 +235,7 @@ MCEN(Modified confusion entropy)                                 0.26439        
 MK(Markedness)                                                   0.6                     0.3                     0.17143
 N(Condition negative)                                            9                       9                       6
 NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.75
+NLRI(Negative likelihood ratio interpretation)                   Good                    Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143
 OP(Optimized precision)                                           0.70833                 0.29545                 0.44048
 P(Condition positive or support)                                 3                       3                       6
@@ -372,6 +374,7 @@ MCEN(Modified confusion entropy)                                 0.33496        
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
 N(Condition negative)                                            20                      4                       17                      19
 NLR(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
+NLRI(Negative likelihood ratio interpretation)                   None                    Negligible              Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
 OP(Optimized precision)                                          None                    0.11667                 0.37308                 -0.05
 P(Condition positive or support)                                 0                       16                      3                       1
@@ -482,6 +485,7 @@ MCEN(Modified confusion entropy)                                 0.33496        
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
 N(Condition negative)                                            20                      4                       17                      19
 NLR(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
+NLRI(Negative likelihood ratio interpretation)                   None                    Negligible              Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
 OP(Optimized precision)                                          None                    0.11667                 0.37308                 -0.05
 P(Condition positive or support)                                 0                       16                      3                       1
@@ -705,6 +709,7 @@ MCEN(Modified confusion entropy)                                 0.57782        
 MK(Markedness)                                                   0.47802                 0.33333                 0.70909
 N(Condition negative)                                            15                      18                      21
 NLR(Negative likelihood ratio)                                   0.34091                 0.57143                 0.35
+NLRI(Negative likelihood ratio interpretation)                   Poor                    Negligible              Poor
 NPV(Negative predictive value)                                   0.78571                 0.77778                 0.90909
 OP(Optimized precision)                                          0.7295                  0.53704                 0.71242
 P(Condition positive or support)                                 12                      9                       6
@@ -828,6 +833,7 @@ MCEN(Modified confusion entropy)                                 0.57782        
 MK(Markedness)                                                   0.47802                 0.33333                 0.70909
 N(Condition negative)                                            15                      18                      21
 NLR(Negative likelihood ratio)                                   0.34091                 0.57143                 0.35
+NLRI(Negative likelihood ratio interpretation)                   Poor                    Negligible              Poor
 NPV(Negative predictive value)                                   0.78571                 0.77778                 0.90909
 OP(Optimized precision)                                          0.7295                  0.53704                 0.71242
 P(Condition positive or support)                                 12                      9                       6
@@ -953,6 +959,7 @@ MCEN(Modified confusion entropy)                                 0.26439        
 MK(Markedness)                                                   0.6                     0.22222                 0.28846
 N(Condition negative)                                            15                      18                      9
 NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.64286
+NLRI(Negative likelihood ratio interpretation)                   Good                    Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.88889                 0.53846
 OP(Optimized precision)                                          0.65568                 0.35498                 0.40166
 P(Condition positive or support)                                 6                       3                       12
@@ -1007,7 +1014,7 @@ True
 >>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2})
 >>> cp
 pycm.Compare(classes: [0, 1, 2])
->>> cp.scores == {'model1': {'overall': 2.15, 'class': 4.15}, 'model2': {'overall': 1.78333, 'class': 2.75}}
+>>> cp.scores == {'model2': {'class': 3.75, 'overall': 1.78333}, 'model1': {'class': 5.65, 'overall': 2.15}}
 True
 >>> cp.best
 pycm.ConfusionMatrix(classes: [0, 1, 2])
@@ -1017,23 +1024,23 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 Best : model1
 <BLANKLINE>
 Rank  Name      Class-Score         Overall-Score
-1     model1    4.15                2.15
-2     model2    2.75                1.78333
+1     model1    5.65                2.15
+2     model2    3.75                1.78333
 <BLANKLINE>
 >>> cp.print_report()
 Best : model1
 <BLANKLINE>
 Rank  Name      Class-Score         Overall-Score
-1     model1    4.15                2.15
-2     model2    2.75                1.78333
+1     model1    5.65                2.15
+2     model2    3.75                1.78333
 <BLANKLINE>
 >>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2},by_class=True,weight={0:5,1:1,2:1})
 >>> print(cp)
 Best : model2
 <BLANKLINE>
 Rank  Name      Class-Score         Overall-Score
-1     model2    8.15                1.78333
-2     model1    6.95                2.15
+1     model2    11.15               1.78333
+2     model1    9.45                2.15
 <BLANKLINE>
 >>> cp.best
 pycm.ConfusionMatrix(classes: [0, 1, 2])
@@ -1041,7 +1048,7 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 'model2'
 >>> cp2 = Compare({"model1":cm_comp1,"model2":cm_comp1})
 Warning:  Confusion matrices are too close and the best one can not be recognized.
->>> cp2.scores == {'model1': {'overall': 2.15, 'class': 4.15}, 'model2': {'overall': 2.15, 'class': 4.15}}
+>>> cp2.scores == {'model2': {'class': 5.65, 'overall': 2.15}, 'model1': {'class': 5.65, 'overall': 2.15}}
 True
 >>> cp2.best
 >>> cp2.best_name

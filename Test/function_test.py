@@ -205,6 +205,8 @@ True
 'Excellent'
 >>> kappa_analysis_cicchetti(1.2)
 'None'
+>>> PLR_analysis("None")
+'None'
 >>> PLR_analysis(1)
 'Negligible'
 >>> PLR_analysis(3)
@@ -385,52 +387,53 @@ Example : online_help("J") or online_help(2)
 54-N
 55-NIR
 56-NLR
-57-NPV
-58-OP
-59-Overall ACC
-60-Overall CEN
-61-Overall J
-62-Overall MCC
-63-Overall MCEN
-64-Overall RACC
-65-Overall RACCU
-66-P
-67-P-Value
-68-PLR
-69-PLRI
-70-POP
-71-PPV
-72-PPV Macro
-73-PPV Micro
-74-PRE
-75-Pearson C
-76-Phi-Squared
-77-Q
-78-RACC
-79-RACCU
-80-RCI
-81-RR
-82-Reference Entropy
-83-Response Entropy
-84-SOA1(Landis & Koch)
-85-SOA2(Fleiss)
-86-SOA3(Altman)
-87-SOA4(Cicchetti)
-88-SOA5(Cramer)
-89-Scott PI
-90-Standard Error
-91-TN
-92-TNR
-93-TON
-94-TOP
-95-TP
-96-TPR
-97-TPR Macro
-98-TPR Micro
-99-Y
-100-Zero-one Loss
-101-dInd
-102-sInd
+57-NLRI
+58-NPV
+59-OP
+60-Overall ACC
+61-Overall CEN
+62-Overall J
+63-Overall MCC
+64-Overall MCEN
+65-Overall RACC
+66-Overall RACCU
+67-P
+68-P-Value
+69-PLR
+70-PLRI
+71-POP
+72-PPV
+73-PPV Macro
+74-PPV Micro
+75-PRE
+76-Pearson C
+77-Phi-Squared
+78-Q
+79-RACC
+80-RACCU
+81-RCI
+82-RR
+83-Reference Entropy
+84-Response Entropy
+85-SOA1(Landis & Koch)
+86-SOA2(Fleiss)
+87-SOA3(Altman)
+88-SOA4(Cicchetti)
+89-SOA5(Cramer)
+90-Scott PI
+91-Standard Error
+92-TN
+93-TNR
+94-TON
+95-TOP
+96-TP
+97-TPR
+98-TPR Macro
+99-TPR Micro
+100-Y
+101-Zero-one Loss
+102-dInd
+103-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)

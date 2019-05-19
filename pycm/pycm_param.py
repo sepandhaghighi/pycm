@@ -79,6 +79,7 @@ IMBALANCED_RECOMMEND = [
 
 BENCHMARK_LIST = [
     "PLRI",
+    "NLRI",
     "DPI",
     "AUCI",
     "SOA1(Landis & Koch)",
@@ -88,6 +89,8 @@ BENCHMARK_LIST = [
     "SOA5(Cramer)"]
 
 PLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}
+
+NLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}
 
 DPI_SCORE = {"Good": 4, "Fair": 3, "Limited": 2, "Poor": 1, "None": "None"}
 
@@ -136,6 +139,7 @@ SOA5_SCORE = {
 
 CLASS_BENCHMARK_SCORE_DICT = {
     "PLRI": PLRI_SCORE,
+    "NLRI": NLRI_SCORE,
     "DPI": DPI_SCORE,
     "AUCI": AUCI_SCORE}
 

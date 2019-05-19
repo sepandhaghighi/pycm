@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Interpretation functions."""
 
+
 def NLR_analysis(NLR):
     """
     Analysis NLR(Negative likelihood ratio) with interpretation table.
@@ -12,15 +13,16 @@ def NLR_analysis(NLR):
     try:
         if NLR == "None":
             return "None"
-        if NLR <= 0.1 :
+        if NLR <= 0.1:
             return "Good"
-        if NLR > 0.1 and NLR < 0.2 :
+        if NLR > 0.1 and NLR < 0.2:
             return "Fair"
-        if NLR >=0.2 and NLR < 0.5 :
+        if NLR >= 0.2 and NLR < 0.5:
             return "Poor"
         return "Negligible"
     except Exception:
         return "None"
+
 
 def V_analysis(V):
     """

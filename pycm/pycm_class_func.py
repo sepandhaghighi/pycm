@@ -611,6 +611,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     DP = {}
     Y = {}
     PLRI = {}
+    NLRI = {}
     DPI = {}
     AUCI = {}
     GI = {}
@@ -661,6 +662,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         DP[i] = DP_calc(TPR[i], TNR[i])
         Y[i] = BM[i]
         PLRI[i] = PLR_analysis(PLR[i])
+        NLRI[i] = NLR_analysis(NLR[i])
         DPI[i] = DP_analysis(DP[i])
         AUCI[i] = AUC_analysis(AUC[i])
         GI[i] = GI_calc(AUC[i])
@@ -726,5 +728,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "IBA": IBA,
         "GM": GM,
         "Q": Q,
-        "AGM": AGM}
+        "AGM": AGM,
+        "NLRI": NLRI}
     return result

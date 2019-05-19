@@ -202,6 +202,7 @@ PARAMS_DESCRIPTION = {
     "DP": "Discriminant power",
     "Y": "Youden index",
     "PLRI": "Positive likelihood ratio interpretation",
+    "NLRI": "Negative likelihood ratio interpretation",
     "DPI": "Discriminant power interpretation",
     "AUCI": "AUC value interpretation",
     "GI": "Gini index",
@@ -316,7 +317,8 @@ PARAMS_LINK = {
     "Pearson C": "Pearson's-C",
     "Q": "Q-(Yule's-Q)",
     "AGM": "AGM-(Adjusted-G-mean)",
-    "SOA5(Cramer)": ""}
+    "SOA5(Cramer)": "",
+    "NLRI": ""}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q"]
 

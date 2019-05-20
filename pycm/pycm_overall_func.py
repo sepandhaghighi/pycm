@@ -888,6 +888,7 @@ def overall_statistics(
     AUNP = AUNP_calc(classes, P, POP, AUC_dict)
     RCI = RCI_calc(mutual_information, reference_entropy)
     C = pearson_C_calc(chi_squared, population)
+    TPR_PPV_F1_micro = micro_calc(TP=TP,item=FN)
     return {
         "Overall ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -900,12 +901,9 @@ def overall_statistics(
         "TPR Macro": macro_calc(TPR),
         "PPV Macro": macro_calc(PPV),
         "F1 Macro": macro_calc(F1),
-        "TPR Micro": micro_calc(
-            TP=TP,
-            item=FN),
-        "PPV Micro": micro_calc(
-            TP=TP,
-            item=FP),
+        "TPR Micro": TPR_PPV_F1_micro,
+        "PPV Micro": TPR_PPV_F1_micro,
+        "F1 Micro": TPR_PPV_F1_micro,
         "Scott PI": PI,
         "Gwet AC1": AC1,
         "Bennett S": S,

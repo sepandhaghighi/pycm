@@ -262,6 +262,7 @@ PARAMS_LINK = {
     "TPR Macro": "TPR_Macro",
     "PPV Macro": "PPV_Macro",
     "F1 Macro": "",
+    "F1 Micro": "",
     "TPR Micro": "TPR_Micro",
     "PPV Micro": "PPV_Micro",
     "Scott PI": "Scott's-Pi",

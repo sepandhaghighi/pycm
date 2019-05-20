@@ -613,6 +613,7 @@ def __obj_assign_handler__(cm, matrix_param):
         RACCU=statistic_result["RACCU"],
         TPR=statistic_result["TPR"],
         PPV=statistic_result["PPV"],
+        F1=statistic_result["F1"],
         TP=statistic_result["TP"],
         FN=statistic_result["FN"],
         FP=statistic_result["FP"],

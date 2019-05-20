@@ -790,6 +790,7 @@ def overall_statistics(
         RACCU,
         TPR,
         PPV,
+        F1,
         TP,
         FN,
         FP,
@@ -811,6 +812,8 @@ def overall_statistics(
     :type TPR : dict
     :param PPV: precision or positive predictive value
     :type PPV : dict
+    :param F1: F1 score
+    :type F1: dict
     :param TP: true positive
     :type TP : dict
     :param FN: false negative
@@ -896,6 +899,7 @@ def overall_statistics(
         "SOA5(Cramer)": V_analysis(cramer_V),
         "TPR Macro": macro_calc(TPR),
         "PPV Macro": macro_calc(PPV),
+        "F1 Macro": macro_calc(F1),
         "TPR Micro": micro_calc(
             TP=TP,
             item=FN),

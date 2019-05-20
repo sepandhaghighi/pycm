@@ -261,6 +261,7 @@ PARAMS_LINK = {
     "SOA4(Cicchetti)": "SOA4-(Cicchetti's-benchmark)",
     "TPR Macro": "TPR_Macro",
     "PPV Macro": "PPV_Macro",
+    "F1 Macro": "",
     "TPR Micro": "TPR_Micro",
     "PPV Micro": "PPV_Micro",
     "Scott PI": "Scott's-Pi",

@@ -9,8 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Negative likelihood ratio interpretation (NLRI)
 - Cramer benchmark
 - F1 Macro
+- F1 Micro
 ### Changed
 - `Compare` class score calculation modified
+- Parameters recommendation for multi-class dataset  modified
 ## [2.1] - 2019-05-06
 ### Added
 - Adjusted geometric mean (AGM)

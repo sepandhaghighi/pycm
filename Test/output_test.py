@@ -104,6 +104,7 @@ Chi-Squared DF                                                   9
 Conditional Entropy                                              1.23579
 Cramer V                                                         None
 Cross Entropy                                                    1.70995
+F1 Macro                                                         0.23043
 Gwet AC1                                                         0.19505
 Hamming Loss                                                     0.65
 Joint Entropy                                                    2.11997
@@ -244,6 +245,7 @@ Chi-Squared DF                                                   4
 Conditional Entropy                                              0.96498
 Cramer V                                                         0.49861
 Cross Entropy                                                    1.50249
+F1 Macro                                                         0.56111
 Gwet AC1                                                         0.45277
 Hamming Loss                                                     0.38095
 Joint Entropy                                                    2.34377

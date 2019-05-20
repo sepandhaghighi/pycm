@@ -47,7 +47,7 @@ MULTICLASS_RECOMMEND = [
     "ERR",
     "TPR Micro",
     "TPR Macro",
-    "PPV Micro",
+    "F1 Macro",
     "PPV Macro",
     "ACC",
     "Overall ACC",

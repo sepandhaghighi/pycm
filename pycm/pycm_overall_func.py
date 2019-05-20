@@ -888,7 +888,7 @@ def overall_statistics(
     AUNP = AUNP_calc(classes, P, POP, AUC_dict)
     RCI = RCI_calc(mutual_information, reference_entropy)
     C = pearson_C_calc(chi_squared, population)
-    TPR_PPV_F1_micro = micro_calc(TP=TP,item=FN)
+    TPR_PPV_F1_micro = micro_calc(TP=TP, item=FN)
     return {
         "Overall ACC": overall_accuracy,
         "Kappa": overall_kappa,

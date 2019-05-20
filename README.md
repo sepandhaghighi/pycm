@@ -659,6 +659,10 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBU
 
 <blockquote>46- Batuwita, R. and Palade, V, "A new performance measure for class imbalance learning. application to bioinformatics problems," in Machine Learning and Applications, pp.545–550, 2009.</blockquote>
 
+<blockquote>47- Lee, Dong. (2016). Alternatives to P value: Confidence interval and effect size. Korean Journal of Anesthesiology. 69. 555. 10.4097/kjae.2016.69.6.555.</blockquote>
+
+<blockquote>48- A. Raslich, Marc & J. Markert, Ronald & A. Stutes, Shahan. (2007). Selecting and interpreting diagnostic tests. Biochemia Medica. 17. 151-161. 10.11613/BM.2007.014. </blockquote>
+
 
 
 ## Cite

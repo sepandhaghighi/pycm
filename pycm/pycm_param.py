@@ -322,7 +322,7 @@ PARAMS_LINK = {
     "Q": "Q-(Yule's-Q)",
     "AGM": "AGM-(Adjusted-G-mean)",
     "SOA5(Cramer)": "SOA5-(Cramer's-benchmark)",
-    "NLRI": ""}
+    "NLRI": "NLRI-(Negative-likelihood-ratio-interpretation)"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q"]
 

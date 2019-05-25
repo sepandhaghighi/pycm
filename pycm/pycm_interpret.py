@@ -3,9 +3,9 @@
 
 def MCC_analysis(MCC):
     """
-    Analysis MCC(Matthew correlation coefficient) with interpretation table.
+    Analysis MCC(Matthews correlation coefficient) with interpretation table.
 
-    :param MCC: Matthew correlation coefficient
+    :param MCC: Matthews correlation coefficient
     :type MCC: float
     :return: interpretation result as str
     """

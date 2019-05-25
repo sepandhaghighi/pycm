@@ -140,6 +140,7 @@ SOA2(Fleiss)                                                     Poor
 SOA3(Altman)                                                     Poor
 SOA4(Cicchetti)                                                  Poor
 SOA5(Cramer)                                                     None
+SOA6(Matthews)                                                   Negligible
 Scott PI                                                         -0.12554
 Standard Error                                                   0.10665
 TPR Macro                                                        None
@@ -178,6 +179,7 @@ IS(Information score)                                            None           
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 LS(Lift score)                                                   None                    1.07143                 3.33333                 None
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
+MCCI(Matthews correlation coefficient interpretation)            None                    Negligible              Weak                    None
 MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
 N(Condition negative)                                            20                      4                       17                      19
@@ -282,6 +284,7 @@ SOA2(Fleiss)                                                     Poor
 SOA3(Altman)                                                     Fair
 SOA4(Cicchetti)                                                  Poor
 SOA5(Cramer)                                                     Relatively Strong
+SOA6(Matthews)                                                   Weak
 Scott PI                                                         0.37313
 Standard Error                                                   0.10597
 TPR Macro                                                        0.61111
@@ -320,6 +323,7 @@ IS(Information score)                                            1.07039        
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
 LS(Lift score)                                                   2.1                     2.33333                 1.3125
 MCC(Matthews correlation coefficient)                            0.66332                 0.22222                 0.28307
+MCCI(Matthews correlation coefficient interpretation)            Moderate                Negligible              Negligible
 MCEN(Modified confusion entropy)                                 0.26439                 0.52877                 0.65924
 MK(Markedness)                                                   0.6                     0.22222                 0.28846
 N(Condition negative)                                            15                      18                      9

@@ -71,6 +71,7 @@ SOA2(Fleiss)                                                     Poor
 SOA3(Altman)                                                     Fair
 SOA4(Cicchetti)                                                  Poor
 SOA5(Cramer)                                                     Relatively Strong
+SOA6(Matthews)                                                   Weak
 Scott PI                                                         0.34426
 Standard Error                                                   0.14232
 TPR Macro                                                        0.61111
@@ -109,6 +110,7 @@ IS(Information score)                                            1.26303        
 J(Jaccard index)                                                 0.6                     0.25                    0.375
 LS(Lift score)                                                   2.4                     2.0                     1.2
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903
+MCCI(Matthews correlation coefficient interpretation)            Moderate                Negligible              Negligible
 MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875
 MK(Markedness)                                                   0.6                     0.3                     0.17143
 N(Condition negative)                                            9                       9                       6
@@ -197,6 +199,7 @@ SOA2(Fleiss)                                                     Poor
 SOA3(Altman)                                                     Fair
 SOA4(Cicchetti)                                                  Poor
 SOA5(Cramer)                                                     Relatively Strong
+SOA6(Matthews)                                                   Weak
 Scott PI                                                         0.34426
 Standard Error                                                   0.14232
 TPR Macro                                                        0.61111
@@ -235,6 +238,7 @@ IS(Information score)                                            1.26303        
 J(Jaccard index)                                                 0.6                     0.25                    0.375
 LS(Lift score)                                                   2.4                     2.0                     1.2
 MCC(Matthews correlation coefficient)                            0.68313                 0.2582                  0.16903
+MCCI(Matthews correlation coefficient interpretation)            Moderate                Negligible              Negligible
 MCEN(Modified confusion entropy)                                 0.26439                 0.5                     0.6875
 MK(Markedness)                                                   0.6                     0.3                     0.17143
 N(Condition negative)                                            9                       9                       6
@@ -338,6 +342,7 @@ SOA2(Fleiss)                                                     Poor
 SOA3(Altman)                                                     Poor
 SOA4(Cicchetti)                                                  Poor
 SOA5(Cramer)                                                     None
+SOA6(Matthews)                                                   Negligible
 Scott PI                                                         -0.12554
 Standard Error                                                   0.10665
 TPR Macro                                                        None
@@ -376,6 +381,7 @@ IS(Information score)                                            None           
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 LS(Lift score)                                                   None                    1.07143                 3.33333                 None
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
+MCCI(Matthews correlation coefficient interpretation)            None                    Negligible              Weak                    None
 MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
 N(Condition negative)                                            20                      4                       17                      19
@@ -451,6 +457,7 @@ SOA2(Fleiss)                                                     Poor
 SOA3(Altman)                                                     Poor
 SOA4(Cicchetti)                                                  Poor
 SOA5(Cramer)                                                     None
+SOA6(Matthews)                                                   Negligible
 Scott PI                                                         -0.12554
 Standard Error                                                   0.10665
 TPR Macro                                                        None
@@ -489,6 +496,7 @@ IS(Information score)                                            None           
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 LS(Lift score)                                                   None                    1.07143                 3.33333                 None
 MCC(Matthews correlation coefficient)                            None                    0.10483                 0.32673                 None
+MCCI(Matthews correlation coefficient interpretation)            None                    Negligible              Weak                    None
 MCEN(Modified confusion entropy)                                 0.33496                 0.37394                 0.58028                 0.0
 MK(Markedness)                                                   0.0                     0.08791                 0.38889                 None
 N(Condition negative)                                            20                      4                       17                      19
@@ -677,6 +685,7 @@ SOA2(Fleiss)                                                     Intermediate to
 SOA3(Altman)                                                     Moderate
 SOA4(Cicchetti)                                                  Fair
 SOA5(Cramer)                                                     Relatively Strong
+SOA6(Matthews)                                                   Weak
 Scott PI                                                         0.47346
 Standard Error                                                   0.09072
 TPR Macro                                                        0.65741
@@ -715,6 +724,7 @@ IS(Information score)                                            0.63941        
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
 LS(Lift score)                                                   1.55769                 1.66667                 3.6
 MCC(Matthews correlation coefficient)                            0.48067                 0.33333                 0.66254
+MCCI(Matthews correlation coefficient interpretation)            Weak                    Weak                    Moderate
 MCEN(Modified confusion entropy)                                 0.57782                 0.77284                 0.60158
 MK(Markedness)                                                   0.47802                 0.33333                 0.70909
 N(Condition negative)                                            15                      18                      21
@@ -803,6 +813,7 @@ SOA2(Fleiss)                                                     Intermediate to
 SOA3(Altman)                                                     Moderate
 SOA4(Cicchetti)                                                  Fair
 SOA5(Cramer)                                                     Relatively Strong
+SOA6(Matthews)                                                   Weak
 Scott PI                                                         0.47346
 Standard Error                                                   0.09072
 TPR Macro                                                        0.65741
@@ -841,6 +852,7 @@ IS(Information score)                                            0.63941        
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
 LS(Lift score)                                                   1.55769                 1.66667                 3.6
 MCC(Matthews correlation coefficient)                            0.48067                 0.33333                 0.66254
+MCCI(Matthews correlation coefficient interpretation)            Weak                    Weak                    Moderate
 MCEN(Modified confusion entropy)                                 0.57782                 0.77284                 0.60158
 MK(Markedness)                                                   0.47802                 0.33333                 0.70909
 N(Condition negative)                                            15                      18                      21
@@ -931,6 +943,7 @@ SOA2(Fleiss)                                                     Poor
 SOA3(Altman)                                                     Fair
 SOA4(Cicchetti)                                                  Poor
 SOA5(Cramer)                                                     Relatively Strong
+SOA6(Matthews)                                                   Weak
 Scott PI                                                         0.37313
 Standard Error                                                   0.10597
 TPR Macro                                                        0.61111
@@ -969,6 +982,7 @@ IS(Information score)                                            1.07039        
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
 LS(Lift score)                                                   2.1                     2.33333                 1.3125
 MCC(Matthews correlation coefficient)                            0.66332                 0.22222                 0.28307
+MCCI(Matthews correlation coefficient interpretation)            Moderate                Negligible              Negligible
 MCEN(Modified confusion entropy)                                 0.26439                 0.52877                 0.65924
 MK(Markedness)                                                   0.6                     0.22222                 0.28846
 N(Condition negative)                                            15                      18                      9
@@ -1028,7 +1042,7 @@ True
 >>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2})
 >>> cp
 pycm.Compare(classes: [0, 1, 2])
->>> cp.scores == {'model2': {'class': 3.75, 'overall': 1.78333}, 'model1': {'class': 5.65, 'overall': 2.15}}
+>>> cp.scores == {'model1': {'overall': 2.55, 'class': 7.05}, 'model2': {'overall': 1.98333, 'class': 4.55}}
 True
 >>> cp.best
 pycm.ConfusionMatrix(classes: [0, 1, 2])
@@ -1038,23 +1052,23 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 Best : model1
 <BLANKLINE>
 Rank  Name      Class-Score         Overall-Score
-1     model1    5.65                2.15
-2     model2    3.75                1.78333
+1     model1    7.05                2.55
+2     model2    4.55                1.98333
 <BLANKLINE>
 >>> cp.print_report()
 Best : model1
 <BLANKLINE>
 Rank  Name      Class-Score         Overall-Score
-1     model1    5.65                2.15
-2     model2    3.75                1.78333
+1     model1    7.05                2.55
+2     model2    4.55                1.98333
 <BLANKLINE>
 >>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2},by_class=True,weight={0:5,1:1,2:1})
 >>> print(cp)
 Best : model2
 <BLANKLINE>
 Rank  Name      Class-Score         Overall-Score
-1     model2    11.15               1.78333
-2     model1    9.45                2.15
+1     model2    13.55               1.98333
+2     model1    11.65               2.55
 <BLANKLINE>
 >>> cp.best
 pycm.ConfusionMatrix(classes: [0, 1, 2])
@@ -1062,7 +1076,7 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 'model2'
 >>> cp2 = Compare({"model1":cm_comp1,"model2":cm_comp1})
 Warning:  Confusion matrices are too close and the best one can not be recognized.
->>> cp2.scores == {'model2': {'class': 5.65, 'overall': 2.15}, 'model1': {'class': 5.65, 'overall': 2.15}}
+>>> cp2.scores == {'model1': {'overall': 2.55, 'class': 7.05}, 'model2': {'overall': 2.55, 'class': 7.05}}
 True
 >>> cp2.best
 >>> cp2.best_name

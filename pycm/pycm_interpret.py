@@ -15,7 +15,7 @@ def MCC_analysis(MCC):
         if MCC <= 0.3 :
             return "Negligible"
         if MCC > 0.3 and MCC < 0.5 :
-            return "Poor"
+            return "Weak"
         if MCC >=0.5 and MCC < 0.7 :
             return "Moderate"
         if MCC >= 0.7 and MCC < 0.9 :

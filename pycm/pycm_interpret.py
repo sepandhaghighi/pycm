@@ -1,7 +1,27 @@
 # -*- coding: utf-8 -*-
 """Interpretation functions."""
 
-
+def MCC_analysis(MCC):
+    """
+    Analysis MCC(Matthew correlation coefficient) with interpretation table.
+    
+    :param MCC: Matthew correlation coefficient
+    :type MCC: float
+    :return: interpretation result as str
+    """
+    try:
+        if MCC == "None":
+            return "None"
+        if MCC <= 0.3 :
+            return "Negligible"
+        if MCC > 0.3 and MCC < 0.5 :
+            return "Poor"
+        if MCC >=0.5 and MCC < 0.7 :
+            return "Moderate"
+        if MCC >= 0.7 and MCC < 0.9 :
+            return "Strong"
+        if MCC >= 0.9 :
+            return "Very Strong"
 def NLR_analysis(NLR):
     """
     Analysis NLR(Negative likelihood ratio) with interpretation table.

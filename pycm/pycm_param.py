@@ -138,7 +138,13 @@ SOA5_SCORE = {
     "Negligible": 1,
     "None": "None"}
 
-SOA6_SCORE = {"Very Strong": 5,"Strong": 4,"Moderate": 3,"Weak": 2,"Negligible": 1,"None": "None"}
+SOA6_SCORE = {
+    "Very Strong": 5,
+    "Strong": 4,
+    "Moderate": 3,
+    "Weak": 2,
+    "Negligible": 1,
+    "None": "None"}
 
 
 CLASS_BENCHMARK_SCORE_DICT = {

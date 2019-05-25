@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Interpretation functions."""
 
+
 def MCC_analysis(MCC):
     """
     Analysis MCC(Matthews correlation coefficient) with interpretation table.
@@ -12,18 +13,19 @@ def MCC_analysis(MCC):
     try:
         if MCC == "None":
             return "None"
-        if MCC <= 0.3 :
+        if MCC <= 0.3:
             return "Negligible"
-        if MCC > 0.3 and MCC < 0.5 :
+        if MCC > 0.3 and MCC < 0.5:
             return "Weak"
-        if MCC >=0.5 and MCC < 0.7 :
+        if MCC >= 0.5 and MCC < 0.7:
             return "Moderate"
-        if MCC >= 0.7 and MCC < 0.9 :
+        if MCC >= 0.7 and MCC < 0.9:
             return "Strong"
-        if MCC >= 0.9 :
+        if MCC >= 0.9:
             return "Very Strong"
     except Exception:
         return "None"
+
 
 def NLR_analysis(NLR):
     """

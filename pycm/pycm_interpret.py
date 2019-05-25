@@ -23,7 +23,7 @@ def MCC_analysis(MCC):
             return "Strong"
         if MCC >= 0.9:
             return "Very Strong"
-    except Exception:
+    except Exception: # pragma: no cover
         return "None"
 
 
@@ -45,7 +45,7 @@ def NLR_analysis(NLR):
         if NLR >= 0.2 and NLR < 0.5:
             return "Poor"
         return "Negligible"
-    except Exception:
+    except Exception: # pragma: no cover
         return "None"
 
 

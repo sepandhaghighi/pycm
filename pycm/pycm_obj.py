@@ -520,6 +520,7 @@ def __class_stat_init__(cm):
     cm.Q = cm.class_stat["Q"]
     cm.AGM = cm.class_stat["AGM"]
     cm.NLRI = cm.class_stat["NLRI"]
+    cm.MCCI = cm.class_stat["MCCI"]
 
 
 def __overall_stat_init__(cm):

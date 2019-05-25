@@ -174,6 +174,7 @@ PARAMS_DESCRIPTION = {
     "ACC": "accuracy",
     "F1": "F1 Score - harmonic mean of precision and sensitivity",
     "MCC": "Matthews correlation coefficient",
+    "MCCI": "Matthews correlation coefficient interpretation",
     "BM": "Informedness or Bookmaker Informedness",
     "MK": "Markedness",
     "PLR": "Positive likelihood ratio",
@@ -324,7 +325,8 @@ PARAMS_LINK = {
     "Q": "Q-(Yule's-Q)",
     "AGM": "AGM-(Adjusted-G-mean)",
     "SOA5(Cramer)": "SOA5-(Cramer's-benchmark)",
-    "NLRI": "NLRI-(Negative-likelihood-ratio-interpretation)"}
+    "NLRI": "NLRI-(Negative-likelihood-ratio-interpretation)",
+    "MCCI": ""}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q"]
 

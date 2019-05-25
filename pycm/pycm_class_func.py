@@ -623,6 +623,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     GM = {}
     Q = {}
     AGM = {}
+    MCCI = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -673,6 +674,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         GM[i] = G_calc(TNR[i], TPR[i])
         Q[i] = Q_calc(TP[i], TN[i], FP[i], FN[i])
         AGM[i] = AGM_calc(TPR[i], TNR[i], GM[i], N[i], POP[i])
+        MCCI[i] = MCC_analysis(MCC[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {
@@ -729,5 +731,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "GM": GM,
         "Q": Q,
         "AGM": AGM,
-        "NLRI": NLRI}
+        "NLRI": NLRI,
+        "MCCI": MCCI}
     return result

@@ -663,7 +663,7 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBU
 
 <blockquote>48- M. A. Raslich, R. J. Markert, and S. A. Stutes, "Selecting and interpreting diagnostic tests," Biochemia medica: Biochemia medica, vol. 17, no. 2, pp. 151-161, 2007.</blockquote>
 
-<blockquote>49- Hinkle, Dennis E., William Wiersma, and Stephen G. Jurs. "Applied statistics for the behavioral sciences." (1988).</blockquote>
+<blockquote>49- D. E. Hinkle, W. Wiersma, and S. G. Jurs, "Applied statistics for the behavioral sciences," 1988.</blockquote>
 
 
 

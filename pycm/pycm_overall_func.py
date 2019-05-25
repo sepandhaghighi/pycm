@@ -898,6 +898,7 @@ def overall_statistics(
         "SOA3(Altman)": kappa_analysis_altman(overall_kappa),
         "SOA4(Cicchetti)": kappa_analysis_cicchetti(overall_kappa),
         "SOA5(Cramer)": V_analysis(cramer_V),
+        "SOA6(Matthews)": MCC_analysis(overall_MCC),
         "TPR Macro": macro_calc(TPR),
         "PPV Macro": macro_calc(PPV),
         "F1 Macro": macro_calc(F1),

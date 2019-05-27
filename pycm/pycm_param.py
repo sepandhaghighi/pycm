@@ -276,7 +276,7 @@ PARAMS_LINK = {
     "PPV Macro": "PPV_Macro",
     "F1 Macro": "F1_Macro",
     "F1 Micro": "F1_Micro",
-    "ACC Macro": "",
+    "ACC Macro": "ACC_Macro",
     "TPR Micro": "TPR_Micro",
     "PPV Micro": "PPV_Micro",
     "Scott PI": "Scott's-Pi",

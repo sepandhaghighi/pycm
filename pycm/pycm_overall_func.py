@@ -793,7 +793,7 @@ def overall_statistics(
         F1,
         TP,
         FN,
-        FP,
+        ACC,
         POP,
         P,
         TOP,
@@ -818,8 +818,8 @@ def overall_statistics(
     :type TP : dict
     :param FN: false negative
     :type FN : dict
-    :param FP: false positive
-    :type FP: dict
+    :param ACC: accuracy
+    :type ACC: dict
     :param POP: population
     :type POP:dict
     :param P: condition positive
@@ -901,6 +901,7 @@ def overall_statistics(
         "SOA6(Matthews)": MCC_analysis(overall_MCC),
         "TPR Macro": macro_calc(TPR),
         "PPV Macro": macro_calc(PPV),
+        "ACC Macro": macro_calc(ACC),
         "F1 Macro": macro_calc(F1),
         "TPR Micro": TPR_PPV_F1_micro,
         "PPV Micro": TPR_PPV_F1_micro,

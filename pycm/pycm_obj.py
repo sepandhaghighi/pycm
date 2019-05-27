@@ -540,6 +540,7 @@ def __overall_stat_init__(cm):
     cm.Overall_ACC = cm.overall_stat["Overall ACC"]
     cm.TPR_Macro = cm.overall_stat["TPR Macro"]
     cm.PPV_Macro = cm.overall_stat["PPV Macro"]
+    cm.ACC_Macro = cm.overall_stat["ACC Macro"]
     cm.TPR_Micro = cm.overall_stat["TPR Micro"]
     cm.PPV_Micro = cm.overall_stat["PPV Micro"]
     cm.F1_Macro = cm.overall_stat["F1 Macro"]
@@ -620,7 +621,7 @@ def __obj_assign_handler__(cm, matrix_param):
         F1=statistic_result["F1"],
         TP=statistic_result["TP"],
         FN=statistic_result["FN"],
-        FP=statistic_result["FP"],
+        ACC=statistic_result["ACC"],
         POP=statistic_result["POP"],
         P=statistic_result["P"],
         TOP=statistic_result["TOP"],

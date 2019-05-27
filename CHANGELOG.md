@@ -72,7 +72,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.8] - 2019-01-05
 ### Added
-- Lift Score (LS)
+- Lift score (LS)
 - `version_check.py`
 
 ### Changed
@@ -87,7 +87,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.7] - 2018-12-18
 ### Added
-- Gini Index (GI)
+- Gini index (GI)
 - Example-7
 - `pycm_profile.py`
 
@@ -100,7 +100,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.6] - 2018-12-06
 ### Added
-- AUC Value Interpretation (AUCI)
+- AUC value interpretation (AUCI)
 - Example-6
 - Anaconda cloud package
 
@@ -113,11 +113,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.5] - 2018-11-26
 ### Added
-- Relative Classifier Information (RCI)
-- Discriminator Power (DP)
-- Youden's Index (Y)
-- Discriminant Power Interpretation (DPI)
-- Positive Likelihood Ratio Interpretation (PLRI)
+- Relative classifier information (RCI)
+- Discriminator power (DP)
+- Youden's index (Y)
+- Discriminant power interpretation (DPI)
+- Positive likelihood ratio interpretation (PLRI)
 - `__len__` method
 - `relabel` method
 - `__class_stat_init__` function
@@ -143,11 +143,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.4] - 2018-11-12
 ### Added
-- Area Under Curve (AUC)
+- Area under curve (AUC)
 - AUNU
 - AUNP
-- Class Balance Accuracy (CBA)
-- Global Performance Index (RR)
+- Class balance accuracy (CBA)
+- Global performance index (RR)
 - Overall MCC
 - Distance index (dInd)
 - Similarity index (sInd)
@@ -162,18 +162,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [1.3] - 2018-10-10
 ### Added
-- Confusion Entropy
-- Overall Confusion Entropy
-- Modified Confusion Entropy
-- Overall Modified Confusion Entropy
-- Information Score
+- Confusion entropy (CEN)
+- Overall confusion entropy (Overall CEN)
+- Modified confusion entropy (MCEN)
+- Overall modified confusion entropy (Overall MCEN)
+- Information score (IS)
 
 ### Changed
 - `README.md` modified
 
 ## [1.2] - 2018-10-01
 ### Added
-- NIR (No Information Rate)
+- No information rate (NIR)
 - P-Value
 - `sample_weight`
 - `transpose`
@@ -214,7 +214,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.9] - 2018-06-28
 ### Added
-- Activation Threshold
+- Activation threshold
 - Example-3
 - Jaccard index
 - Overall Jaccard index
@@ -251,19 +251,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Goodman and Kruskal's lambda B
 - Goodman and Kruskal's lambda A 
-- Cross Entropy
-- Conditional Entropy
-- Joint Entropy
-- Reference Entropy 
-- Response Entropy
+- Cross entropy
+- Conditional entropy
+- Joint entropy
+- Reference entropy 
+- Response entropy
 - Kullback-Liebler divergence
 - Direct ConfusionMatrix
-- Kappa Unbiased
-- Kappa No Prevalence
-- Random Accuracy Unbiased
+- Kappa unbiased
+- Kappa no prevalence
+- Random accuracy unbiased
 - `pycmVectorError` class
 - `pycmMatrixError` class
-- Mutual Information
+- Mutual information
 - Support `numpy` arrays
 
 ### Changed
@@ -276,7 +276,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.7] - 2018-02-26
 ### Added
 - Cramer's V
-- 95% Confidence interval 
+- 95% confidence interval 
 - Chi-Squared
 - Phi-Squared
 - Chi-Squared DF
@@ -312,11 +312,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [0.4] - 2018-02-05
 ### Added
-- TPR Micro/Macro
-- PPV Micro/Macro
-- RACC overall
-- ERR(Error rate)
-- FBeta-Score
+- TPR micro/macro
+- PPV micro/macro
+- Overall RACC
+- Error rate (ERR)
+- FBeta score
 - F0.5
 - F2
 - Fleiss benchmark

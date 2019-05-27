@@ -10,9 +10,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Cramer's benchmark (SOA5)
 - Matthews correlation coefficient interpretation (MCCI)
 - Matthews's benchmark (SOA6)
-- F1 Macro
-- F1 Micro
-- 
+- F1 macro
+- F1 micro
+- Accuracy macro
 ### Changed
 - `Compare` class score calculation modified
 - Parameters recommendation for multi-class dataset  modified

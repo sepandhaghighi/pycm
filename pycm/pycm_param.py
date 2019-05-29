@@ -52,7 +52,9 @@ MULTICLASS_RECOMMEND = [
     "ACC",
     "Overall ACC",
     "MCC",
+    "MCCI",
     "Overall MCC",
+    "SOA6(Matthews)"
     "BCD",
     "Hamming Loss",
     "Zero-one Loss"]

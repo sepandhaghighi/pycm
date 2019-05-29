@@ -208,7 +208,7 @@ True
 >>> PLR_analysis("None")
 'None'
 >>> PLR_analysis(1)
-'Negligible'
+'Poor'
 >>> PLR_analysis(3)
 'Poor'
 >>> PLR_analysis(7)

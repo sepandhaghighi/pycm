@@ -95,7 +95,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ## Installation		
 
 ### Source code
-- Download [Version 2.1](https://github.com/sepandhaghighi/pycm/archive/v2.1.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 2.2](https://github.com/sepandhaghighi/pycm/archive/v2.2.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -103,7 +103,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==2.1` or `pip3 install pycm==2.1` (Need root access)
+- Run `pip install pycm==2.2` or `pip3 install pycm==2.2` (Need root access)
 
 ### Conda
 

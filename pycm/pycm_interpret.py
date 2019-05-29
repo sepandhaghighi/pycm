@@ -13,9 +13,9 @@ def MCC_analysis(MCC):
     try:
         if MCC == "None":
             return "None"
-        if MCC <= 0.3:
+        if MCC < 0.3:
             return "Negligible"
-        if MCC > 0.3 and MCC < 0.5:
+        if MCC >= 0.3 and MCC < 0.5:
             return "Weak"
         if MCC >= 0.5 and MCC < 0.7:
             return "Moderate"
@@ -38,9 +38,9 @@ def NLR_analysis(NLR):
     try:
         if NLR == "None":
             return "None"
-        if NLR <= 0.1:
+        if NLR < 0.1:
             return "Good"
-        if NLR > 0.1 and NLR < 0.2:
+        if NLR >= 0.1 and NLR < 0.2:
             return "Fair"
         if NLR >= 0.2 and NLR < 0.5:
             return "Poor"
@@ -60,9 +60,9 @@ def V_analysis(V):
     try:
         if V == "None":
             return "None"
-        if V <= 0.1:
+        if V < 0.1:
             return "Negligible"
-        if V > 0.1 and V < 0.2:
+        if V >= 0.1 and V < 0.2:
             return "Weak"
         if V >= 0.2 and V < 0.4:
             return "Moderate"
@@ -88,9 +88,9 @@ def PLR_analysis(PLR):
 
         if PLR == "None":
             return "None"
-        if PLR <= 1:
+        if PLR < 1:
             return "Negligible"
-        if PLR > 1 and PLR < 5:
+        if PLR >= 1 and PLR < 5:
             return "Poor"
         if PLR >= 5 and PLR < 10:
             return "Fair"

@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Parameters recommendation for multi-class dataset  modified
 - `README.md` modified 
 - Document modified
+- Logo updated
 ## [2.1] - 2019-05-06
 ### Added
 - Adjusted geometric mean (AGM)

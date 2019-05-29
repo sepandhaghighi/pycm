@@ -73,8 +73,8 @@ body{
 }
 li { list-style-position: inside }
 .PYCM_image{
-    height: 350px;
-    width: 350px;
+    width: 270px;
+    height: 387px;
     opacity: 0.7;
 }
 
@@ -323,10 +323,6 @@ button {
 .donate_image{
     width: 90%;
     height: 50%;
-}
-    .PYCM_image{
-    width: 80%;
-    height: 40%;
 }
 
 .help {

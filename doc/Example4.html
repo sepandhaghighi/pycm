@@ -11867,6 +11867,7 @@ Actual
 Overall Statistics : 
 
 95% CI                                                            (0.14096,0.55904)
+ACC Macro                                                         0.675
 AUNP                                                              None
 AUNU                                                              None
 Bennett S                                                         0.13333
@@ -11876,6 +11877,8 @@ Chi-Squared DF                                                    9
 Conditional Entropy                                               1.23579
 Cramer V                                                          None
 Cross Entropy                                                     1.70995
+F1 Macro                                                          0.23043
+F1 Micro                                                          0.35
 Gwet AC1                                                          0.19505
 Hamming Loss                                                      0.65
 Joint Entropy                                                     2.11997
@@ -11909,6 +11912,8 @@ SOA1(Landis &amp; Koch)                                               Slight
 SOA2(Fleiss)                                                      Poor
 SOA3(Altman)                                                      Poor
 SOA4(Cicchetti)                                                   Poor
+SOA5(Cramer)                                                      None
+SOA6(Matthews)                                                    Negligible
 Scott PI                                                          -0.12554
 Standard Error                                                    0.10665
 TPR Macro                                                         None
@@ -11947,10 +11952,12 @@ IS(Information score)                                             None          
 J(Jaccard index)                                                  0.0           0.35294       0.25          0.0           
 LS(Lift score)                                                    None          1.07143       3.33333       None          
 MCC(Matthews correlation coefficient)                             None          0.10483       0.32673       None          
+MCCI(Matthews correlation coefficient interpretation)             None          Negligible    Weak          None          
 MCEN(Modified confusion entropy)                                  0.33496       0.37394       0.58028       0.0           
 MK(Markedness)                                                    0.0           0.08791       0.38889       None          
 N(Condition negative)                                             20            4             17            19            
 NLR(Negative likelihood ratio)                                    None          0.83333       0.70833       1.0           
+NLRI(Negative likelihood ratio interpretation)                    None          Negligible    Negligible    Negligible    
 NPV(Negative predictive value)                                    1.0           0.23077       0.88889       0.95          
 OP(Optimized precision)                                           None          0.11667       0.37308       -0.05         
 P(Condition positive or support)                                  0             16            3             1             
@@ -12112,6 +12119,7 @@ Actual
 Overall Statistics : 
 
 95% CI                                                            (0.14096,0.55904)
+ACC Macro                                                         0.675
 AUNP                                                              None
 AUNU                                                              None
 Bennett S                                                         0.13333
@@ -12121,6 +12129,8 @@ Chi-Squared DF                                                    9
 Conditional Entropy                                               1.23579
 Cramer V                                                          None
 Cross Entropy                                                     1.70995
+F1 Macro                                                          0.23043
+F1 Micro                                                          0.35
 Gwet AC1                                                          0.19505
 Hamming Loss                                                      0.65
 Joint Entropy                                                     2.11997
@@ -12154,6 +12164,8 @@ SOA1(Landis &amp; Koch)                                               Slight
 SOA2(Fleiss)                                                      Poor
 SOA3(Altman)                                                      Poor
 SOA4(Cicchetti)                                                   Poor
+SOA5(Cramer)                                                      None
+SOA6(Matthews)                                                    Negligible
 Scott PI                                                          -0.12554
 Standard Error                                                    0.10665
 TPR Macro                                                         None
@@ -12192,10 +12204,12 @@ IS(Information score)                                             None          
 J(Jaccard index)                                                  0.0           0.35294       0.25          0.0           
 LS(Lift score)                                                    None          1.07143       3.33333       None          
 MCC(Matthews correlation coefficient)                             None          0.10483       0.32673       None          
+MCCI(Matthews correlation coefficient interpretation)             None          Negligible    Weak          None          
 MCEN(Modified confusion entropy)                                  0.33496       0.37394       0.58028       0.0           
 MK(Markedness)                                                    0.0           0.08791       0.38889       None          
 N(Condition negative)                                             20            4             17            19            
 NLR(Negative likelihood ratio)                                    None          0.83333       0.70833       1.0           
+NLRI(Negative likelihood ratio interpretation)                    None          Negligible    Negligible    Negligible    
 NPV(Negative predictive value)                                    1.0           0.23077       0.88889       0.95          
 OP(Optimized precision)                                           None          0.11667       0.37308       -0.05         
 P(Condition positive or support)                                  0             16            3             1             
@@ -12255,7 +12269,7 @@ sInd(Similarity index)                                            None          
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#34;Predict-Vector&#34;: [100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200], &#34;Matrix&#34;: [[100, [[200, 0], [500, 0], [100, 0], [600, 0]]], [200, [[200, 6], [500, 1], [100, 9], [600, 0]]], [500, [[200, 1], [500, 1], [100, 1], [600, 0]]], [600, [[200, 0], [500, 0], [100, 1], [600, 0]]]], &#34;Transpose&#34;: false, &#34;Actual-Vector&#34;: [600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200], &#34;Sample-Weight&#34;: null, &#34;Digit&#34;: 5}
+<pre>{&#34;Predict-Vector&#34;: [100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200], &#34;Transpose&#34;: false, &#34;Digit&#34;: 5, &#34;Actual-Vector&#34;: [600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200], &#34;Sample-Weight&#34;: null, &#34;Matrix&#34;: [[100, [[200, 0], [500, 0], [100, 0], [600, 0]]], [200, [[200, 6], [500, 1], [100, 9], [600, 0]]], [500, [[200, 1], [500, 1], [100, 1], [600, 0]]], [600, [[200, 0], [500, 0], [100, 1], [600, 0]]]]}
 </pre>
 </div>
 </div>

@@ -66,9 +66,11 @@ IMBALANCED_RECOMMEND = [
     "CEN",
     "MCEN",
     "MCC",
+    "MCCI",
     "J",
     "Overall J",
     "Overall MCC",
+    "SOA6(Matthews)"
     "Overall CEN",
     "Overall MCEN",
     "OP",

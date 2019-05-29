@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `Compare` class score calculation modified
 - Parameters recommendation for multi-class dataset  modified
+- Parameters recommendation for imbalance dataset  modified
 - `README.md` modified 
 - Document modified
 - Logo updated

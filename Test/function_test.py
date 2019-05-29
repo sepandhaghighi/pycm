@@ -205,8 +205,10 @@ True
 'Excellent'
 >>> kappa_analysis_cicchetti(1.2)
 'None'
+>>> PLR_analysis("None")
+'None'
 >>> PLR_analysis(1)
-'Negligible'
+'Poor'
 >>> PLR_analysis(3)
 'Poor'
 >>> PLR_analysis(7)
@@ -331,105 +333,112 @@ Example : online_help("J") or online_help(2)
 <BLANKLINE>
 1-95% CI
 2-ACC
-3-AGM
-4-AM
-5-AUC
-6-AUCI
-7-AUNP
-8-AUNU
-9-BCD
-10-BM
-11-Bennett S
-12-CBA
-13-CEN
-14-Chi-Squared
-15-Chi-Squared DF
-16-Conditional Entropy
-17-Cramer V
-18-Cross Entropy
-19-DOR
-20-DP
-21-DPI
-22-ERR
-23-F0.5
-24-F1
-25-F2
-26-FDR
-27-FN
-28-FNR
-29-FOR
-30-FP
-31-FPR
-32-G
-33-GI
-34-GM
-35-Gwet AC1
-36-Hamming Loss
-37-IBA
-38-IS
-39-J
-40-Joint Entropy
-41-KL Divergence
-42-Kappa
-43-Kappa 95% CI
-44-Kappa No Prevalence
-45-Kappa Standard Error
-46-Kappa Unbiased
-47-LS
-48-Lambda A
-49-Lambda B
-50-MCC
-51-MCEN
-52-MK
-53-Mutual Information
-54-N
-55-NIR
-56-NLR
-57-NPV
-58-OP
-59-Overall ACC
-60-Overall CEN
-61-Overall J
-62-Overall MCC
-63-Overall MCEN
-64-Overall RACC
-65-Overall RACCU
-66-P
-67-P-Value
-68-PLR
-69-PLRI
-70-POP
-71-PPV
-72-PPV Macro
-73-PPV Micro
-74-PRE
-75-Pearson C
-76-Phi-Squared
-77-Q
-78-RACC
-79-RACCU
-80-RCI
-81-RR
-82-Reference Entropy
-83-Response Entropy
-84-SOA1(Landis & Koch)
-85-SOA2(Fleiss)
-86-SOA3(Altman)
-87-SOA4(Cicchetti)
-88-Scott PI
-89-Standard Error
-90-TN
-91-TNR
-92-TON
-93-TOP
-94-TP
-95-TPR
-96-TPR Macro
-97-TPR Micro
-98-Y
-99-Zero-one Loss
-100-dInd
-101-sInd
+3-ACC Macro
+4-AGM
+5-AM
+6-AUC
+7-AUCI
+8-AUNP
+9-AUNU
+10-BCD
+11-BM
+12-Bennett S
+13-CBA
+14-CEN
+15-Chi-Squared
+16-Chi-Squared DF
+17-Conditional Entropy
+18-Cramer V
+19-Cross Entropy
+20-DOR
+21-DP
+22-DPI
+23-ERR
+24-F0.5
+25-F1
+26-F1 Macro
+27-F1 Micro
+28-F2
+29-FDR
+30-FN
+31-FNR
+32-FOR
+33-FP
+34-FPR
+35-G
+36-GI
+37-GM
+38-Gwet AC1
+39-Hamming Loss
+40-IBA
+41-IS
+42-J
+43-Joint Entropy
+44-KL Divergence
+45-Kappa
+46-Kappa 95% CI
+47-Kappa No Prevalence
+48-Kappa Standard Error
+49-Kappa Unbiased
+50-LS
+51-Lambda A
+52-Lambda B
+53-MCC
+54-MCCI
+55-MCEN
+56-MK
+57-Mutual Information
+58-N
+59-NIR
+60-NLR
+61-NLRI
+62-NPV
+63-OP
+64-Overall ACC
+65-Overall CEN
+66-Overall J
+67-Overall MCC
+68-Overall MCEN
+69-Overall RACC
+70-Overall RACCU
+71-P
+72-P-Value
+73-PLR
+74-PLRI
+75-POP
+76-PPV
+77-PPV Macro
+78-PPV Micro
+79-PRE
+80-Pearson C
+81-Phi-Squared
+82-Q
+83-RACC
+84-RACCU
+85-RCI
+86-RR
+87-Reference Entropy
+88-Response Entropy
+89-SOA1(Landis & Koch)
+90-SOA2(Fleiss)
+91-SOA3(Altman)
+92-SOA4(Cicchetti)
+93-SOA5(Cramer)
+94-SOA6(Matthews)
+95-Scott PI
+96-Standard Error
+97-TN
+98-TNR
+99-TON
+100-TOP
+101-TP
+102-TPR
+103-TPR Macro
+104-TPR Micro
+105-Y
+106-Zero-one Loss
+107-dInd
+108-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -574,5 +583,10 @@ Example : online_help("J") or online_help(2)
 0.935458742218606
 >>> cm.GM[1]
 0.9495261976375375
+>>> cm = ConfusionMatrix([1,2,3,2,3,3,1,2,2],[2,2,1,2,1,3,2,3,2]) # Verified Case
+>>> cm.F1_Macro
+0.35555555555555557
+>>> cm.F1_Micro
+0.4444444444444444
 
 """

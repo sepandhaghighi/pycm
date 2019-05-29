@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parameters and constants."""
-VERSION = "2.1"
+VERSION = "2.2"
 
 
 OVERVIEW = '''
@@ -47,12 +47,14 @@ MULTICLASS_RECOMMEND = [
     "ERR",
     "TPR Micro",
     "TPR Macro",
-    "PPV Micro",
+    "F1 Macro",
     "PPV Macro",
     "ACC",
     "Overall ACC",
     "MCC",
+    "MCCI",
     "Overall MCC",
+    "SOA6(Matthews)"
     "BCD",
     "Hamming Loss",
     "Zero-one Loss"]
@@ -66,9 +68,11 @@ IMBALANCED_RECOMMEND = [
     "CEN",
     "MCEN",
     "MCC",
+    "MCCI",
     "J",
     "Overall J",
     "Overall MCC",
+    "SOA6(Matthews)"
     "Overall CEN",
     "Overall MCEN",
     "OP",
@@ -79,14 +83,20 @@ IMBALANCED_RECOMMEND = [
 
 BENCHMARK_LIST = [
     "PLRI",
+    "NLRI",
     "DPI",
     "AUCI",
+    "MCCI",
     "SOA1(Landis & Koch)",
     "SOA2(Fleiss)",
     "SOA3(Altman)",
-    "SOA4(Cicchetti)"]
+    "SOA4(Cicchetti)",
+    "SOA5(Cramer)",
+    "SOA6(Matthews)"]
 
 PLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}
+
+NLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}
 
 DPI_SCORE = {"Good": 4, "Fair": 3, "Limited": 2, "Poor": 1, "None": "None"}
 
@@ -123,17 +133,38 @@ SOA3_SCORE = {
 
 SOA4_SCORE = {"Excellent": 4, "Good": 3, "Fair": 2, "Poor": 1, "None": "None"}
 
+SOA5_SCORE = {
+    "Very Strong": 6,
+    "Strong": 5,
+    "Relatively Strong": 4,
+    "Moderate": 3,
+    "Weak": 2,
+    "Negligible": 1,
+    "None": "None"}
+
+SOA6_SCORE = {
+    "Very Strong": 5,
+    "Strong": 4,
+    "Moderate": 3,
+    "Weak": 2,
+    "Negligible": 1,
+    "None": "None"}
+
 
 CLASS_BENCHMARK_SCORE_DICT = {
     "PLRI": PLRI_SCORE,
+    "NLRI": NLRI_SCORE,
     "DPI": DPI_SCORE,
-    "AUCI": AUCI_SCORE}
+    "AUCI": AUCI_SCORE,
+    "MCCI": SOA6_SCORE}
 
 OVERALL_BENCHMARK_SCORE_DICT = {
     "SOA1(Landis & Koch)": SOA1_SCORE,
     "SOA2(Fleiss)": SOA2_SCORE,
     "SOA3(Altman)": SOA3_SCORE,
-    "SOA4(Cicchetti)": SOA4_SCORE}
+    "SOA4(Cicchetti)": SOA4_SCORE,
+    "SOA5(Cramer)": SOA5_SCORE,
+    "SOA6(Matthews)": SOA6_SCORE}
 
 RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"
@@ -159,6 +190,7 @@ PARAMS_DESCRIPTION = {
     "ACC": "accuracy",
     "F1": "F1 Score - harmonic mean of precision and sensitivity",
     "MCC": "Matthews correlation coefficient",
+    "MCCI": "Matthews correlation coefficient interpretation",
     "BM": "Informedness or Bookmaker Informedness",
     "MK": "Markedness",
     "PLR": "Positive likelihood ratio",
@@ -191,6 +223,7 @@ PARAMS_DESCRIPTION = {
     "DP": "Discriminant power",
     "Y": "Youden index",
     "PLRI": "Positive likelihood ratio interpretation",
+    "NLRI": "Negative likelihood ratio interpretation",
     "DPI": "Discriminant power interpretation",
     "AUCI": "AUC value interpretation",
     "GI": "Gini index",
@@ -245,6 +278,9 @@ PARAMS_LINK = {
     "SOA4(Cicchetti)": "SOA4-(Cicchetti's-benchmark)",
     "TPR Macro": "TPR_Macro",
     "PPV Macro": "PPV_Macro",
+    "F1 Macro": "F1_Macro",
+    "F1 Micro": "F1_Micro",
+    "ACC Macro": "ACC_Macro",
     "TPR Micro": "TPR_Micro",
     "PPV Micro": "PPV_Micro",
     "Scott PI": "Scott's-Pi",
@@ -304,21 +340,29 @@ PARAMS_LINK = {
     "GM": "GM-(G-mean)",
     "Pearson C": "Pearson's-C",
     "Q": "Q-(Yule's-Q)",
-    "AGM": "AGM-(Adjusted-G-mean)"}
+    "AGM": "AGM-(Adjusted-G-mean)",
+    "SOA5(Cramer)": "SOA5-(Cramer's-benchmark)",
+    "NLRI": "NLRI-(Negative-likelihood-ratio-interpretation)",
+    "MCCI": "MCCI-(Matthews-correlation-coefficient-interpretation)",
+    "SOA6(Matthews)": "SOA6-(Matthews's-benchmark)"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q"]
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",
+    "Weak": "Red",
     "Poor": "Red",
     "Limited": "Red",
+    "Relatively Strong": "Green",
+    "Strong": "Green",
+    "Very Strong": "Green",
     "Fair": "Orange",
     "Good": "Green",
     "Excellent": "Green",
     "Intermediate to Good": "Green",
     "Substantial": "Green",
     "Almost Perfect": "Green",
-    "Moderate": "Green",
+    "Moderate": "Orange",
     "Slight": "Orange",
     "None": "White",
     "Very Good": "Green"}

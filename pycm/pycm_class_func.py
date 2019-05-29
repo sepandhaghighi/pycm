@@ -611,6 +611,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     DP = {}
     Y = {}
     PLRI = {}
+    NLRI = {}
     DPI = {}
     AUCI = {}
     GI = {}
@@ -622,6 +623,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     GM = {}
     Q = {}
     AGM = {}
+    MCCI = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -661,6 +663,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         DP[i] = DP_calc(TPR[i], TNR[i])
         Y[i] = BM[i]
         PLRI[i] = PLR_analysis(PLR[i])
+        NLRI[i] = NLR_analysis(NLR[i])
         DPI[i] = DP_analysis(DP[i])
         AUCI[i] = AUC_analysis(AUC[i])
         GI[i] = GI_calc(AUC[i])
@@ -671,6 +674,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         GM[i] = G_calc(TNR[i], TPR[i])
         Q[i] = Q_calc(TP[i], TN[i], FP[i], FN[i])
         AGM[i] = AGM_calc(TPR[i], TNR[i], GM[i], N[i], POP[i])
+        MCCI[i] = MCC_analysis(MCC[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {
@@ -726,5 +730,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "IBA": IBA,
         "GM": GM,
         "Q": Q,
-        "AGM": AGM}
+        "AGM": AGM,
+        "NLRI": NLRI,
+        "MCCI": MCCI}
     return result

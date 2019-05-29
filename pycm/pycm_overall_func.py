@@ -790,9 +790,10 @@ def overall_statistics(
         RACCU,
         TPR,
         PPV,
+        F1,
         TP,
         FN,
-        FP,
+        ACC,
         POP,
         P,
         TOP,
@@ -811,12 +812,14 @@ def overall_statistics(
     :type TPR : dict
     :param PPV: precision or positive predictive value
     :type PPV : dict
+    :param F1: F1 score
+    :type F1: dict
     :param TP: true positive
     :type TP : dict
     :param FN: false negative
     :type FN : dict
-    :param FP: false positive
-    :type FP: dict
+    :param ACC: accuracy
+    :type ACC: dict
     :param POP: population
     :type POP:dict
     :param P: condition positive
@@ -885,6 +888,7 @@ def overall_statistics(
     AUNP = AUNP_calc(classes, P, POP, AUC_dict)
     RCI = RCI_calc(mutual_information, reference_entropy)
     C = pearson_C_calc(chi_squared, population)
+    TPR_PPV_F1_micro = micro_calc(TP=TP, item=FN)
     return {
         "Overall ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -893,14 +897,15 @@ def overall_statistics(
         "SOA2(Fleiss)": kappa_analysis_fleiss(overall_kappa),
         "SOA3(Altman)": kappa_analysis_altman(overall_kappa),
         "SOA4(Cicchetti)": kappa_analysis_cicchetti(overall_kappa),
+        "SOA5(Cramer)": V_analysis(cramer_V),
+        "SOA6(Matthews)": MCC_analysis(overall_MCC),
         "TPR Macro": macro_calc(TPR),
         "PPV Macro": macro_calc(PPV),
-        "TPR Micro": micro_calc(
-            TP=TP,
-            item=FN),
-        "PPV Micro": micro_calc(
-            TP=TP,
-            item=FP),
+        "ACC Macro": macro_calc(ACC),
+        "F1 Macro": macro_calc(F1),
+        "TPR Micro": TPR_PPV_F1_micro,
+        "PPV Micro": TPR_PPV_F1_micro,
+        "F1 Micro": TPR_PPV_F1_micro,
         "Scott PI": PI,
         "Gwet AC1": AC1,
         "Bennett S": S,

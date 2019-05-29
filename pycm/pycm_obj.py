@@ -519,6 +519,8 @@ def __class_stat_init__(cm):
     cm.GM = cm.class_stat["GM"]
     cm.Q = cm.class_stat["Q"]
     cm.AGM = cm.class_stat["AGM"]
+    cm.NLRI = cm.class_stat["NLRI"]
+    cm.MCCI = cm.class_stat["MCCI"]
 
 
 def __overall_stat_init__(cm):
@@ -538,8 +540,11 @@ def __overall_stat_init__(cm):
     cm.Overall_ACC = cm.overall_stat["Overall ACC"]
     cm.TPR_Macro = cm.overall_stat["TPR Macro"]
     cm.PPV_Macro = cm.overall_stat["PPV Macro"]
+    cm.ACC_Macro = cm.overall_stat["ACC Macro"]
     cm.TPR_Micro = cm.overall_stat["TPR Micro"]
     cm.PPV_Micro = cm.overall_stat["PPV Micro"]
+    cm.F1_Macro = cm.overall_stat["F1 Macro"]
+    cm.F1_Micro = cm.overall_stat["F1 Micro"]
     cm.Overall_RACC = cm.overall_stat["Overall RACC"]
     cm.Overall_RACCU = cm.overall_stat["Overall RACCU"]
     cm.PI = cm.overall_stat["Scott PI"]
@@ -577,6 +582,8 @@ def __overall_stat_init__(cm):
     cm.AUNP = cm.overall_stat["AUNP"]
     cm.RCI = cm.overall_stat["RCI"]
     cm.C = cm.overall_stat["Pearson C"]
+    cm.SOA5 = cm.overall_stat["SOA5(Cramer)"]
+    cm.SOA6 = cm.overall_stat["SOA6(Matthews)"]
 
 
 def __obj_assign_handler__(cm, matrix_param):
@@ -611,9 +618,10 @@ def __obj_assign_handler__(cm, matrix_param):
         RACCU=statistic_result["RACCU"],
         TPR=statistic_result["TPR"],
         PPV=statistic_result["PPV"],
+        F1=statistic_result["F1"],
         TP=statistic_result["TP"],
         FN=statistic_result["FN"],
-        FP=statistic_result["FP"],
+        ACC=statistic_result["ACC"],
         POP=statistic_result["POP"],
         P=statistic_result["P"],
         TOP=statistic_result["TOP"],

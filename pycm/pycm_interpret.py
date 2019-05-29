@@ -2,6 +2,80 @@
 """Interpretation functions."""
 
 
+def MCC_analysis(MCC):
+    """
+    Analysis MCC(Matthews correlation coefficient) with interpretation table.
+
+    :param MCC: Matthews correlation coefficient
+    :type MCC: float
+    :return: interpretation result as str
+    """
+    try:
+        if MCC == "None":
+            return "None"
+        if MCC < 0.3:
+            return "Negligible"
+        if MCC >= 0.3 and MCC < 0.5:
+            return "Weak"
+        if MCC >= 0.5 and MCC < 0.7:
+            return "Moderate"
+        if MCC >= 0.7 and MCC < 0.9:
+            return "Strong"
+        if MCC >= 0.9:
+            return "Very Strong"
+    except Exception:  # pragma: no cover
+        return "None"
+
+
+def NLR_analysis(NLR):
+    """
+    Analysis NLR(Negative likelihood ratio) with interpretation table.
+
+    :param NLR: negative likelihood ratio
+    :type NLR: float
+    :return: interpretation result as str
+    """
+    try:
+        if NLR == "None":
+            return "None"
+        if NLR < 0.1:
+            return "Good"
+        if NLR >= 0.1 and NLR < 0.2:
+            return "Fair"
+        if NLR >= 0.2 and NLR < 0.5:
+            return "Poor"
+        return "Negligible"
+    except Exception:  # pragma: no cover
+        return "None"
+
+
+def V_analysis(V):
+    """
+    Analysis Cramer's V with interpretation table.
+
+    :param V: Cramer's V
+    :type V: float
+    :return: interpretation result as str
+    """
+    try:
+        if V == "None":
+            return "None"
+        if V < 0.1:
+            return "Negligible"
+        if V >= 0.1 and V < 0.2:
+            return "Weak"
+        if V >= 0.2 and V < 0.4:
+            return "Moderate"
+        if V >= 0.4 and V < 0.6:
+            return "Relatively Strong"
+        if V >= 0.6 and V < 0.8:
+            return "Strong"
+        if V >= 0.8:
+            return "Very Strong"
+    except Exception:
+        return "None"
+
+
 def PLR_analysis(PLR):
     """
     Analysis PLR(Positive likelihood ratio) with interpretation table.
@@ -14,9 +88,9 @@ def PLR_analysis(PLR):
 
         if PLR == "None":
             return "None"
-        if PLR <= 1:
+        if PLR < 1:
             return "Negligible"
-        if PLR > 1 and PLR < 5:
+        if PLR >= 1 and PLR < 5:
             return "Poor"
         if PLR >= 5 and PLR < 10:
             return "Fair"

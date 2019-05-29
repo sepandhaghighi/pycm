@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/sepandhaghighi/pycm/raw/dev/Otherfiles/logo.png" width=250px height=250px>
+<img src="https://github.com/sepandhaghighi/pycm/raw/dev/Otherfiles/logo.png">
 <br/>
 <br/>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>

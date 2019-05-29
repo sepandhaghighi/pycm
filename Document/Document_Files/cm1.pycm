@@ -25,6 +25,7 @@ L3        0.0       0.4       0.6
 Overall Statistics : 
 
 95% CI                                                            (0.30439,0.86228)
+ACC Macro                                                         0.72222
 AUNP                                                              0.68571
 AUNU                                                              0.67857
 Bennett S                                                         0.375
@@ -34,6 +35,8 @@ Chi-Squared DF                                                    4
 Conditional Entropy                                               0.97579
 Cramer V                                                          0.5244
 Cross Entropy                                                     1.58333
+F1 Macro                                                          0.56515
+F1 Micro                                                          0.58333
 Gwet AC1                                                          0.38931
 Hamming Loss                                                      0.41667
 Joint Entropy                                                     2.45915
@@ -67,6 +70,8 @@ SOA1(Landis & Koch)                                               Fair
 SOA2(Fleiss)                                                      Poor
 SOA3(Altman)                                                      Fair
 SOA4(Cicchetti)                                                   Poor
+SOA5(Cramer)                                                      Relatively Strong
+SOA6(Matthews)                                                    Weak
 Scott PI                                                          0.34426
 Standard Error                                                    0.14232
 TPR Macro                                                         0.56667
@@ -105,10 +110,12 @@ IS(Information score)                                             1.26303       
 J(Jaccard index)                                                  0.6           0.25          0.375         
 LS(Lift score)                                                    2.4           2.0           1.2           
 MCC(Matthews correlation coefficient)                             0.68313       0.2582        0.16903       
+MCCI(Matthews correlation coefficient interpretation)             Moderate      Negligible    Negligible    
 MCEN(Modified confusion entropy)                                  0.26439       0.5           0.6875        
 MK(Markedness)                                                    0.77778       0.22222       0.16667       
 N(Condition negative)                                             7             10            7             
 NLR(Negative likelihood ratio)                                    0.4           0.625         0.7           
+NLRI(Negative likelihood ratio interpretation)                    Poor          Negligible    Negligible    
 NPV(Negative predictive value)                                    0.77778       0.88889       0.66667       
 OP(Optimized precision)                                           0.58333       0.51923       0.55894       
 P(Condition positive or support)                                  5             2             5             

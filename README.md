@@ -552,6 +552,7 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
 2. [CSV](https://github.com/sepandhaghighi/pycm/blob/master/Otherfiles/test.csv)
 3. [PyCM](https://github.com/sepandhaghighi/pycm/blob/master/Otherfiles/test.pycm)			
 4. [OBJ](https://github.com/sepandhaghighi/pycm/blob/master/Otherfiles/test.obj)	
+5. [COMP](https://github.com/sepandhaghighi/pycm/blob/master/Otherfiles/test.comp)
 
 
 ## Dependencies

@@ -557,7 +557,18 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
 
 ## Dependencies
 
-<a href="https://requires.io/github/sepandhaghighi/pycm/requirements/?branch=dev"><img src="https://requires.io/github/sepandhaghighi/pycm/requirements.svg?branch=dev" alt="Requirements Status" /></a>
+<table>
+	<tr> 
+		<td align="center">master</td>	
+		<td align="center">dev</td>	
+	</tr>
+	<tr>
+		<td align="center"><a href="https://requires.io/github/sepandhaghighi/pycm/requirements/?branch=master"><img src="https://requires.io/github/sepandhaghighi/pycm/requirements.svg?branch=master" alt="Requirements Status" /></a></td>
+		<td align="center"><a href="https://requires.io/github/sepandhaghighi/pycm/requirements/?branch=dev"><img src="https://requires.io/github/sepandhaghighi/pycm/requirements.svg?branch=dev" alt="Requirements Status" /></a></td>
+	</tr>
+</table>
+
+
 
 
 ## Contribution						

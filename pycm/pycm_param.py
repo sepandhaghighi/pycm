@@ -235,7 +235,7 @@ PARAMS_DESCRIPTION = {
     "GM": "G-mean geometric mean of specificity and sensitivity",
     "Q": "Yule Q - coefficient of colligation",
     "AGM": "Adjusted geometric mean",
-    "AGF": "Adjusted F-measure"}
+    "AGF": "Adjusted F-score"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",

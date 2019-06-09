@@ -588,5 +588,12 @@ Example : online_help("J") or online_help(2)
 0.35555555555555557
 >>> cm.F1_Micro
 0.4444444444444444
-
+>>> cm = ConfusionMatrix(matrix = {"True":{"True":5,"False":1},"False":{"False":6,"True":2}}) # Verified Case
+>>> cm.AGF
+>>> cm.AGF["True"]
+0.8197822947299411
+>>> cm.F2["True"]
+0.8064516129032258
+>>> cm.F05["False"]
+0.8333333333333334
 """

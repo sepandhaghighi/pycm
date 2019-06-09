@@ -346,7 +346,7 @@ PARAMS_LINK = {
     "NLRI": "NLRI-(Negative-likelihood-ratio-interpretation)",
     "MCCI": "MCCI-(Matthews-correlation-coefficient-interpretation)",
     "SOA6(Matthews)": "SOA6-(Matthews's-benchmark)",
-    "AGF": ""}
+    "AGF": "AGF-(Adjusted-F-score)"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF"]
 

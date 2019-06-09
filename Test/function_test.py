@@ -334,111 +334,112 @@ Example : online_help("J") or online_help(2)
 1-95% CI
 2-ACC
 3-ACC Macro
-4-AGM
-5-AM
-6-AUC
-7-AUCI
-8-AUNP
-9-AUNU
-10-BCD
-11-BM
-12-Bennett S
-13-CBA
-14-CEN
-15-Chi-Squared
-16-Chi-Squared DF
-17-Conditional Entropy
-18-Cramer V
-19-Cross Entropy
-20-DOR
-21-DP
-22-DPI
-23-ERR
-24-F0.5
-25-F1
-26-F1 Macro
-27-F1 Micro
-28-F2
-29-FDR
-30-FN
-31-FNR
-32-FOR
-33-FP
-34-FPR
-35-G
-36-GI
-37-GM
-38-Gwet AC1
-39-Hamming Loss
-40-IBA
-41-IS
-42-J
-43-Joint Entropy
-44-KL Divergence
-45-Kappa
-46-Kappa 95% CI
-47-Kappa No Prevalence
-48-Kappa Standard Error
-49-Kappa Unbiased
-50-LS
-51-Lambda A
-52-Lambda B
-53-MCC
-54-MCCI
-55-MCEN
-56-MK
-57-Mutual Information
-58-N
-59-NIR
-60-NLR
-61-NLRI
-62-NPV
-63-OP
-64-Overall ACC
-65-Overall CEN
-66-Overall J
-67-Overall MCC
-68-Overall MCEN
-69-Overall RACC
-70-Overall RACCU
-71-P
-72-P-Value
-73-PLR
-74-PLRI
-75-POP
-76-PPV
-77-PPV Macro
-78-PPV Micro
-79-PRE
-80-Pearson C
-81-Phi-Squared
-82-Q
-83-RACC
-84-RACCU
-85-RCI
-86-RR
-87-Reference Entropy
-88-Response Entropy
-89-SOA1(Landis & Koch)
-90-SOA2(Fleiss)
-91-SOA3(Altman)
-92-SOA4(Cicchetti)
-93-SOA5(Cramer)
-94-SOA6(Matthews)
-95-Scott PI
-96-Standard Error
-97-TN
-98-TNR
-99-TON
-100-TOP
-101-TP
-102-TPR
-103-TPR Macro
-104-TPR Micro
-105-Y
-106-Zero-one Loss
-107-dInd
-108-sInd
+4-AGF
+5-AGM
+6-AM
+7-AUC
+8-AUCI
+9-AUNP
+10-AUNU
+11-BCD
+12-BM
+13-Bennett S
+14-CBA
+15-CEN
+16-Chi-Squared
+17-Chi-Squared DF
+18-Conditional Entropy
+19-Cramer V
+20-Cross Entropy
+21-DOR
+22-DP
+23-DPI
+24-ERR
+25-F0.5
+26-F1
+27-F1 Macro
+28-F1 Micro
+29-F2
+30-FDR
+31-FN
+32-FNR
+33-FOR
+34-FP
+35-FPR
+36-G
+37-GI
+38-GM
+39-Gwet AC1
+40-Hamming Loss
+41-IBA
+42-IS
+43-J
+44-Joint Entropy
+45-KL Divergence
+46-Kappa
+47-Kappa 95% CI
+48-Kappa No Prevalence
+49-Kappa Standard Error
+50-Kappa Unbiased
+51-LS
+52-Lambda A
+53-Lambda B
+54-MCC
+55-MCCI
+56-MCEN
+57-MK
+58-Mutual Information
+59-N
+60-NIR
+61-NLR
+62-NLRI
+63-NPV
+64-OP
+65-Overall ACC
+66-Overall CEN
+67-Overall J
+68-Overall MCC
+69-Overall MCEN
+70-Overall RACC
+71-Overall RACCU
+72-P
+73-P-Value
+74-PLR
+75-PLRI
+76-POP
+77-PPV
+78-PPV Macro
+79-PPV Micro
+80-PRE
+81-Pearson C
+82-Phi-Squared
+83-Q
+84-RACC
+85-RACCU
+86-RCI
+87-RR
+88-Reference Entropy
+89-Response Entropy
+90-SOA1(Landis & Koch)
+91-SOA2(Fleiss)
+92-SOA3(Altman)
+93-SOA4(Cicchetti)
+94-SOA5(Cramer)
+95-SOA6(Matthews)
+96-Scott PI
+97-Standard Error
+98-TN
+99-TNR
+100-TON
+101-TOP
+102-TP
+103-TPR
+104-TPR Macro
+105-TPR Micro
+106-Y
+107-Zero-one Loss
+108-dInd
+109-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)

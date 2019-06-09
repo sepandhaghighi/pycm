@@ -7,12 +7,13 @@ from .pycm_interpret import *
 
 def AGF_calc(TP, FP, FN, TN):
     try:
-        F2 = F_calc(TP=TP, FP=FP,FN=FN, beta=2)
+        F2 = F_calc(TP=TP, FP=FP, FN=FN, beta=2)
         F05_inv = F_calc(TP=TN, FP=FN, FN=FP, beta=0.5)
-        AGF = math.sqrt(F2*F05_inv)
+        AGF = math.sqrt(F2 * F05_inv)
         return AGF
     except Exception:
         return "None"
+
 
 def AGM_calc(TPR, TNR, GM, N, POP):
     """
@@ -685,7 +686,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         Q[i] = Q_calc(TP[i], TN[i], FP[i], FN[i])
         AGM[i] = AGM_calc(TPR[i], TNR[i], GM[i], N[i], POP[i])
         MCCI[i] = MCC_analysis(MCC[i])
-        AGF[i] = AGF_calc(TP[i],FP[i],FN[i],TN[i])
+        AGF[i] = AGF_calc(TP[i], FP[i], FN[i], TN[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {

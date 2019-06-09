@@ -234,7 +234,8 @@ PARAMS_DESCRIPTION = {
     "IBA": "Index of balanced accuracy",
     "GM": "G-mean geometric mean of specificity and sensitivity",
     "Q": "Yule Q - coefficient of colligation",
-    "AGM": "Adjusted geometric mean"}
+    "AGM": "Adjusted geometric mean",
+    "AGF": "Adjusted F-measure"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -344,9 +345,10 @@ PARAMS_LINK = {
     "SOA5(Cramer)": "SOA5-(Cramer's-benchmark)",
     "NLRI": "NLRI-(Negative-likelihood-ratio-interpretation)",
     "MCCI": "MCCI-(Matthews-correlation-coefficient-interpretation)",
-    "SOA6(Matthews)": "SOA6-(Matthews's-benchmark)"}
+    "SOA6(Matthews)": "SOA6-(Matthews's-benchmark)",
+    "AGF": ""}
 
-CAPITALIZE_FILTER = ["BCD", "AUCI", "Q"]
+CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF"]
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

@@ -521,6 +521,7 @@ def __class_stat_init__(cm):
     cm.AGM = cm.class_stat["AGM"]
     cm.NLRI = cm.class_stat["NLRI"]
     cm.MCCI = cm.class_stat["MCCI"]
+    cm.AGF = cm.class_stat["AGF"]
 
 
 def __overall_stat_init__(cm):

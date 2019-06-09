@@ -5,6 +5,15 @@ import math
 from .pycm_interpret import *
 
 
+def AGF_calc(TP, FP, FN, TN):
+    try:
+        F2 = F_calc(TP=TP, FP=FP,FN=FN, beta=2)
+        F05_inv = F_calc(TP=TN, FP=FN, FN=FP, beta=0.5)
+        AGF = math.sqrt(F2*F05_inv)
+        return AGF
+    except Exception:
+        return "None"
+
 def AGM_calc(TPR, TNR, GM, N, POP):
     """
     Calculate AGM (Adjusted geometric mean).

@@ -83,6 +83,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333
+AGF(Adjusted F-score)                                            0.9136                  0.53995                 0.5516
 AGM(Adjusted geometric mean)                                     0.83729                 0.692                   0.60712
 AM(Difference between automatic and manual classification)       2                       -1                      -1
 AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
@@ -212,6 +213,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          L1                      L2                      L3
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333
+AGF(Adjusted F-score)                                            0.9136                  0.53995                 0.5516
 AGM(Adjusted geometric mean)                                     0.83729                 0.692                   0.60712
 AM(Difference between automatic and manual classification)       2                       -1                      -1
 AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
@@ -356,6 +358,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AGF(Adjusted F-score)                                            0.0                     0.33642                 0.56659                 0.0
 AGM(Adjusted geometric mean)                                     None                    0.56694                 0.7352                  0
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
@@ -472,6 +475,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AGF(Adjusted F-score)                                            0.0                     0.33642                 0.56659                 0.0
 AGM(Adjusted geometric mean)                                     None                    0.56694                 0.7352                  0
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
@@ -701,6 +705,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
+AGF(Adjusted F-score)                                            0.75595                 0.65734                 0.79543
 AGM(Adjusted geometric mean)                                     0.73866                 0.70552                 0.86488
 AM(Difference between automatic and manual classification)       1                       0                       -1
 AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
@@ -830,6 +835,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
+AGF(Adjusted F-score)                                            0.75595                 0.65734                 0.79543
 AGM(Adjusted geometric mean)                                     0.73866                 0.70552                 0.86488
 AM(Difference between automatic and manual classification)       1                       0                       -1
 AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
@@ -961,6 +967,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
+AGF(Adjusted F-score)                                            0.90694                 0.54433                 0.55442
 AGM(Adjusted geometric mean)                                     0.80509                 0.70336                 0.66986
 AM(Difference between automatic and manual classification)       4                       0                       -4
 AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889

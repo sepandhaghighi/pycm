@@ -6,6 +6,19 @@ from .pycm_interpret import *
 
 
 def AGF_calc(TP, FP, FN, TN):
+    """
+    Calculate AGF (Adjusted F-score).
+
+    :param TP: true positive
+    :type TP : int
+    :param TN: true negative
+    :type TN : int
+    :param FP: false positive
+    :type FP : int
+    :param FN: false negative
+    :type FN : int
+    :return: AGF as float
+    """
     try:
         F2 = F_calc(TP=TP, FP=FP, FN=FN, beta=2)
         F05_inv = F_calc(TP=TN, FP=FN, FN=FP, beta=0.5)

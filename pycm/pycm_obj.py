@@ -314,7 +314,7 @@ class ConfusionMatrix():
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
-    def save_obj(self, name, address=True, extension="obj"):
+    def save_obj(self, name, address=True, extension="obj", save_metrics=False):
         """
         Save ConfusionMatrix in .obj file.
 
@@ -324,6 +324,8 @@ class ConfusionMatrix():
         :type address : bool
         :param extension: filename extension
         :type extension: str
+        :param save_metrics: save metrics flag
+        :type save_metrics: bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
         try:
@@ -339,12 +341,16 @@ class ConfusionMatrix():
                 actual_vector_temp = actual_vector_temp.tolist()
             if isinstance(predict_vector_temp, numpy.ndarray):
                 predict_vector_temp = predict_vector_temp.tolist()
-            json.dump({"Actual-Vector": actual_vector_temp,
+            dump_dict = {"Actual-Vector": actual_vector_temp,
                        "Predict-Vector": predict_vector_temp,
                        "Matrix": matrix_items,
                        "Digit": self.digit,
                        "Sample-Weight": self.weights,
-                       "Transpose": self.transpose}, obj_file)
+                       "Transpose": self.transpose}
+            if save_metrics == True :
+                dump_dict["Class-Stat"] = self.class_stat
+                dump_dict["Overall-Stat"] = self.overall_stat
+            json.dump(dump_dict, obj_file)
             if address:
                 message = os.path.join(os.getcwd(), name + "." + extension)
             return {"Status": True, "Message": message}

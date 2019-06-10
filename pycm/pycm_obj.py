@@ -314,7 +314,7 @@ class ConfusionMatrix():
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
-    def save_obj(self, name, address=True):
+    def save_obj(self, name, address=True, extension="obj"):
         """
         Save ConfusionMatrix in .obj file.
 
@@ -322,11 +322,13 @@ class ConfusionMatrix():
         :type name : str
         :param address: flag for address return
         :type address : bool
+        :param extension: filename extension
+        :type extension: str
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
         try:
             message = None
-            obj_file = open(name + ".obj", "w")
+            obj_file = open(name + "." + extension, "w")
             actual_vector_temp = self.actual_vector
             predict_vector_temp = self.predict_vector
             matrix_temp = {k: self.table[k].copy() for k in self.classes}
@@ -344,7 +346,7 @@ class ConfusionMatrix():
                        "Sample-Weight": self.weights,
                        "Transpose": self.transpose}, obj_file)
             if address:
-                message = os.path.join(os.getcwd(), name + ".obj")
+                message = os.path.join(os.getcwd(), name + "." + extension)
             return {"Status": True, "Message": message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}

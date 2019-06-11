@@ -237,7 +237,8 @@ PARAMS_DESCRIPTION = {
     "Q": "Yule Q - coefficient of colligation",
     "AGM": "Adjusted geometric mean",
     "AGF": "Adjusted F-score",
-    "OC": "Overlap coefficient"}
+    "OC": "Overlap coefficient",
+    "OCC": "Otsuka-Ochiai coefficient"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -349,9 +350,10 @@ PARAMS_LINK = {
     "MCCI": "MCCI-(Matthews-correlation-coefficient-interpretation)",
     "SOA6(Matthews)": "SOA6-(Matthews's-benchmark)",
     "AGF": "AGF-(Adjusted-F-score)",
-    "OC": "OC-(Overlap-coefficient)"}
+    "OC": "OC-(Overlap-coefficient)",
+    "OCC": ""}
 
-CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF"]
+CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OCC"]
 
 BENCHMARK_COLOR = {
     "Negligible": "Red",

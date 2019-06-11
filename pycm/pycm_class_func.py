@@ -5,7 +5,6 @@ import math
 from .pycm_interpret import *
 
 
-
 def overlap_coef_calc(TP, TOP, P):
     """
     Calculate OC (Overlap coefficient).
@@ -19,10 +18,11 @@ def overlap_coef_calc(TP, TOP, P):
     :return: overlap coefficient as float
     """
     try:
-        overlap_coef = TP/min(TOP,P)
+        overlap_coef = TP / min(TOP, P)
         return overlap_coef
     except Exception:
         return "None"
+
 
 def AGF_calc(TP, FP, FN, TN):
     """

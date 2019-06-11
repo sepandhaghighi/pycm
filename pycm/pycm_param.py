@@ -351,7 +351,7 @@ PARAMS_LINK = {
     "SOA6(Matthews)": "SOA6-(Matthews's-benchmark)",
     "AGF": "AGF-(Adjusted-F-score)",
     "OC": "OC-(Overlap-coefficient)",
-    "OOC": ""}
+    "OOC": "OOC-(Otsuka-Ochiai-coefficient)"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC"]
 

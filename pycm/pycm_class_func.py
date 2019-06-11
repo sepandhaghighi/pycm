@@ -667,6 +667,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     AGM = {}
     MCCI = {}
     AGF = {}
+    OC = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -719,6 +720,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         AGM[i] = AGM_calc(TPR[i], TNR[i], GM[i], N[i], POP[i])
         MCCI[i] = MCC_analysis(MCC[i])
         AGF[i] = AGF_calc(TP[i], FP[i], FN[i], TN[i])
+        OC[i] = overlap_coef_calc(TP[i], TOP[i], P[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {
@@ -777,5 +779,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "AGM": AGM,
         "NLRI": NLRI,
         "MCCI": MCCI,
-        "AGF": AGF}
+        "AGF": AGF,
+        "OC": OC}
     return result

@@ -236,7 +236,8 @@ PARAMS_DESCRIPTION = {
     "GM": "G-mean geometric mean of specificity and sensitivity",
     "Q": "Yule Q - coefficient of colligation",
     "AGM": "Adjusted geometric mean",
-    "AGF": "Adjusted F-score"}
+    "AGF": "Adjusted F-score",
+    "OC": "Overlap coefficient"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -347,7 +348,8 @@ PARAMS_LINK = {
     "NLRI": "NLRI-(Negative-likelihood-ratio-interpretation)",
     "MCCI": "MCCI-(Matthews-correlation-coefficient-interpretation)",
     "SOA6(Matthews)": "SOA6-(Matthews's-benchmark)",
-    "AGF": "AGF-(Adjusted-F-score)"}
+    "AGF": "AGF-(Adjusted-F-score)",
+    "OC": ""}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF"]
 

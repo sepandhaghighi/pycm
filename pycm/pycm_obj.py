@@ -314,7 +314,12 @@ class ConfusionMatrix():
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
-    def save_obj(self, name, address=True, save_metrics=False, save_vectors=True):
+    def save_obj(
+            self,
+            name,
+            address=True,
+            save_metrics=False,
+            save_vectors=True):
         """
         Save ConfusionMatrix in .obj file.
 
@@ -342,15 +347,15 @@ class ConfusionMatrix():
             if isinstance(predict_vector_temp, numpy.ndarray):
                 predict_vector_temp = predict_vector_temp.tolist()
             dump_dict = {"Actual-Vector": actual_vector_temp,
-                       "Predict-Vector": predict_vector_temp,
-                       "Matrix": matrix_items,
-                       "Digit": self.digit,
-                       "Sample-Weight": self.weights,
-                       "Transpose": self.transpose}
-            if save_metrics == True :
+                         "Predict-Vector": predict_vector_temp,
+                         "Matrix": matrix_items,
+                         "Digit": self.digit,
+                         "Sample-Weight": self.weights,
+                         "Transpose": self.transpose}
+            if save_metrics:
                 dump_dict["Class-Stat"] = self.class_stat
                 dump_dict["Overall-Stat"] = self.overall_stat
-            if save_vectors == False:
+            if not save_vectors:
                 dump_dict["Actual-Vector"] = None
                 dump_dict["Predict-Vector"] = None
             json.dump(dump_dict, obj_file)

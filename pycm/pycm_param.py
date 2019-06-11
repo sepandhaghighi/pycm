@@ -77,6 +77,7 @@ IMBALANCED_RECOMMEND = [
     "Overall MCEN",
     "OP",
     "G",
+    "GI",
     "DP",
     "DPI",
     "GI"]

@@ -76,6 +76,12 @@ True
 >>> save_obj=cm.save_obj("test",address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
+>>> save_obj=cm.save_obj("test_metrics",address=False,save_metrics=True)
+>>> save_obj=={'Status': True, 'Message': None}
+True
+>>> save_obj=cm.save_obj("test_no_vectors",address=False,save_vectors=False)
+>>> save_obj=={'Status': True, 'Message': None}
+True
 >>> cm_file=ConfusionMatrix(file=open("test.obj","r"))
 >>> print(cm_file)
 Predict          100    200    500    600
@@ -208,6 +214,22 @@ Y(Youden index)                                                  None           
 dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0
 sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289
 <BLANKLINE>
+>>> cm_metrics_file=ConfusionMatrix(file=open("test_metrics.obj","r"))
+>>> cm_no_vectors_file=ConfusionMatrix(file=open("test_no_vectors.obj","r"))
+>>> cm_metrics_file==cm_metrics_file
+True
+>>> cm_no_vectors_file==cm_file
+True
+>>> cm_no_vectors_dict = json.load(open("test_no_vectors.obj","r"))
+>>> cm_no_vectors_dict["Actual-Vector"] == None
+True
+>>> cm_no_vectors_dict["Predict-Vector"] == None
+True
+>>> cm_metrics_dict = json.load(open("test_metrics.obj","r"))
+>>> cm_metrics_dict["Class-Stat"]["MCC"] != None
+True
+>>> cm_metrics_dict["Overall-Stat"]["Overall MCC"] != None
+True
 >>> def activation(i):
 ...	    if i<0.7:
 ...		    return 1
@@ -396,6 +418,8 @@ True
 >>> os.remove("test_normalized.csv")
 >>> os.remove("test_normalized_matrix.csv")
 >>> os.remove("test.obj")
+>>> os.remove("test_metrics.obj")
+>>> os.remove("test_no_vectors.obj")
 >>> os.remove("test.html")
 >>> os.remove("test_normalized.html")
 >>> os.remove("test_filtered.html")

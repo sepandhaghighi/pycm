@@ -5,9 +5,9 @@ import math
 from .pycm_interpret import *
 
 
-def OCC_calc(TP, TOP, P):
+def OOC_calc(TP, TOP, P):
     """
-    Calculate OCC (Otsuka-Ochiai coefficient).
+    Calculate OOC (Otsuka-Ochiai coefficient).
 
     :param TP: true positive
     :type TP : int
@@ -18,8 +18,8 @@ def OCC_calc(TP, TOP, P):
     :return: Otsuka-Ochiai coefficient as float
     """
     try:
-        OCC = TP/(math.sqrt(TOP*P))
-        return OCC
+        OOC = TP/(math.sqrt(TOP*P))
+        return OOC
     except Exception:
         return "None"
 
@@ -686,7 +686,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     MCCI = {}
     AGF = {}
     OC = {}
-    OCC = {}
+    OOC = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -740,7 +740,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         MCCI[i] = MCC_analysis(MCC[i])
         AGF[i] = AGF_calc(TP[i], FP[i], FN[i], TN[i])
         OC[i] = OC_calc(TP[i], TOP[i], P[i])
-        OCC[i] = OCC_calc(TP[i], TOP[i], P[i])
+        OOC[i] = OOC_calc(TP[i], TOP[i], P[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {
@@ -801,5 +801,5 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "MCCI": MCCI,
         "AGF": AGF,
         "OC": OC,
-        "OCC":OCC}
+        "OOC":OOC}
     return result

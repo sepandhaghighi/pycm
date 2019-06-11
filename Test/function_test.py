@@ -395,7 +395,7 @@ Example : online_help("J") or online_help(2)
 62-NLRI
 63-NPV
 64-OC
-65-OCC
+65-OOC
 66-OP
 67-Overall ACC
 68-Overall CEN
@@ -601,6 +601,6 @@ Example : online_help("J") or online_help(2)
 >>> cm = ConfusionMatrix(matrix={1:{1:53,0:2},0:{1:5,0:44}})
 >>> cm.OC[1]
 0.9636363636363636
->>> cm.OCC[1]
+>>> cm.OOC[1]
 0.9383838571303771
 """

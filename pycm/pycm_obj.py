@@ -539,7 +539,7 @@ def __class_stat_init__(cm):
     cm.MCCI = cm.class_stat["MCCI"]
     cm.AGF = cm.class_stat["AGF"]
     cm.OC = cm.class_stat["OC"]
-    cm.OCC = cm.class_stat["OCC"]
+    cm.OOC = cm.class_stat["OOC"]
 
 
 def __overall_stat_init__(cm):

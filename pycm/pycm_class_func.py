@@ -18,10 +18,11 @@ def OOC_calc(TP, TOP, P):
     :return: Otsuka-Ochiai coefficient as float
     """
     try:
-        OOC = TP/(math.sqrt(TOP*P))
+        OOC = TP / (math.sqrt(TOP * P))
         return OOC
     except Exception:
         return "None"
+
 
 def OC_calc(TP, TOP, P):
     """
@@ -801,5 +802,5 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "MCCI": MCCI,
         "AGF": AGF,
         "OC": OC,
-        "OOC":OOC}
+        "OOC": OOC}
     return result

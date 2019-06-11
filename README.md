@@ -681,6 +681,8 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBU
 
 <blockquote>51- L.  Mosley.   A  balanced  approach  to  the  multi-class  imbalance  problem.Graduate Theses and Dissertations. Paper 13537., 2013</blockquote>
 
+<blockquote>52- M K, Vijaymeena & K, Kavitha. (2016). A Survey on Similarity Measures in Text Mining. Machine Learning and Applications: An International Journal. 3. 19-28. 10.5121/mlaij.2016.3103.</blockquote>
+
 
 
 ## Cite

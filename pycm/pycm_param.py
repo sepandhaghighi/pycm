@@ -349,7 +349,7 @@ PARAMS_LINK = {
     "MCCI": "MCCI-(Matthews-correlation-coefficient-interpretation)",
     "SOA6(Matthews)": "SOA6-(Matthews's-benchmark)",
     "AGF": "AGF-(Adjusted-F-score)",
-    "OC": ""}
+    "OC": "OC-(Overlap-coefficient)"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF"]
 

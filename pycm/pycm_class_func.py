@@ -5,6 +5,25 @@ import math
 from .pycm_interpret import *
 
 
+
+def overlap_coef_calc(TP, TOP, P):
+    """
+    Calculate OC (Overlap coefficient).
+
+    :param TP: true positive
+    :type TP : int
+    :param TOP: test outcome positive
+    :type TOP : int
+    :param P:  condition positive
+    :type P : int
+    :return: overlap coefficient as float
+    """
+    try:
+        overlap_coef = TP/min(TOP,P)
+        return overlap_coef
+    except Exception:
+        return "None"
+
 def AGF_calc(TP, FP, FN, TN):
     """
     Calculate AGF (Adjusted F-score).

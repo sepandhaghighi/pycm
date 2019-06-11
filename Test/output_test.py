@@ -216,7 +216,7 @@ sInd(Similarity index)                                           None           
 <BLANKLINE>
 >>> cm_metrics_file=ConfusionMatrix(file=open("test_metrics.obj","r"))
 >>> cm_no_vectors_file=ConfusionMatrix(file=open("test_no_vectors.obj","r"))
->>> cm_metrics_file==cm_metrics_file
+>>> cm_metrics_file==cm_file
 True
 >>> cm_no_vectors_file==cm_file
 True

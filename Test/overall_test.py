@@ -120,6 +120,7 @@ NLR(Negative likelihood ratio)                                   0.0            
 NLRI(Negative likelihood ratio interpretation)                   Good                    Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143
 OC(Overlap coefficient)                                          1.0                     0.5                     0.6
+OCC(Otsuka-Ochiai coefficient)                                   0.7746                  0.40825                 0.54772
 OP(Optimized precision)                                          0.70833                 0.29545                 0.44048
 P(Condition positive or support)                                 3                       3                       6
 PLR(Positive likelihood ratio)                                   4.5                     3.0                     1.5
@@ -251,6 +252,7 @@ NLR(Negative likelihood ratio)                                   0.0            
 NLRI(Negative likelihood ratio interpretation)                   Good                    Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143
 OC(Overlap coefficient)                                          1.0                     0.5                     0.6
+OCC(Otsuka-Ochiai coefficient)                                   0.7746                  0.40825                 0.54772
 OP(Optimized precision)                                           0.70833                 0.29545                 0.44048
 P(Condition positive or support)                                 3                       3                       6
 PLR(Positive likelihood ratio)                                   4.5                     3.0                     1.5
@@ -397,6 +399,7 @@ NLR(Negative likelihood ratio)                                   None           
 NLRI(Negative likelihood ratio interpretation)                   None                    Negligible              Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
 OC(Overlap coefficient)                                          None                    0.85714                 0.5                     None
+OCC(Otsuka-Ochiai coefficient)                                   None                    0.56695                 0.40825                 None
 OP(Optimized precision)                                          None                    0.11667                 0.37308                 -0.05
 P(Condition positive or support)                                 0                       16                      3                       1
 PLR(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
@@ -515,6 +518,7 @@ NLR(Negative likelihood ratio)                                   None           
 NLRI(Negative likelihood ratio interpretation)                   None                    Negligible              Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
 OC(Overlap coefficient)                                          None                    0.85714                 0.5                     None
+OCC(Otsuka-Ochiai coefficient)                                   None                    0.56695                 0.40825                 None
 OP(Optimized precision)                                          None                    0.11667                 0.37308                 -0.05
 P(Condition positive or support)                                 0                       16                      3                       1
 PLR(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
@@ -746,6 +750,7 @@ NLR(Negative likelihood ratio)                                   0.34091        
 NLRI(Negative likelihood ratio interpretation)                   Poor                    Negligible              Poor
 NPV(Negative predictive value)                                   0.78571                 0.77778                 0.90909
 OC(Overlap coefficient)                                          0.75                    0.55556                 0.8
+OCC(Otsuka-Ochiai coefficient)                                   0.72058                 0.55556                 0.7303
 OP(Optimized precision)                                          0.7295                  0.53704                 0.71242
 P(Condition positive or support)                                 12                      9                       6
 PLR(Positive likelihood ratio)                                   2.8125                  2.5                     14.0
@@ -877,6 +882,7 @@ NLR(Negative likelihood ratio)                                   0.34091        
 NLRI(Negative likelihood ratio interpretation)                   Poor                    Negligible              Poor
 NPV(Negative predictive value)                                   0.78571                 0.77778                 0.90909
 OC(Overlap coefficient)                                          0.75                    0.55556                 0.8
+OCC(Otsuka-Ochiai coefficient)                                   0.72058                 0.55556                 0.7303
 OP(Optimized precision)                                          0.7295                  0.53704                 0.71242
 P(Condition positive or support)                                 12                      9                       6
 PLR(Positive likelihood ratio)                                   2.8125                  2.5                     14.0
@@ -1010,6 +1016,7 @@ NLR(Negative likelihood ratio)                                   0.0            
 NLRI(Negative likelihood ratio interpretation)                   Good                    Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.88889                 0.53846
 OC(Overlap coefficient)                                          1.0                     0.33333                 0.75
+OCC(Otsuka-Ochiai coefficient)                                   0.7746                  0.33333                 0.61237
 OP(Optimized precision)                                          0.65568                 0.35498                 0.40166
 P(Condition positive or support)                                 6                       3                       12
 PLR(Positive likelihood ratio)                                   3.75                    3.0                     2.25

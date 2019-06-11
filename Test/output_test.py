@@ -195,6 +195,7 @@ NLR(Negative likelihood ratio)                                   None           
 NLRI(Negative likelihood ratio interpretation)                   None                    Negligible              Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
 OC(Overlap coefficient)                                          None                    0.85714                 0.5                     None
+OCC(Otsuka-Ochiai coefficient)                                   None                    0.56695                 0.40825                 None
 OP(Optimized precision)                                           None                    0.11667                 0.37308                -0.05
 P(Condition positive or support)                                 0                       16                      3                       1
 PLR(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
@@ -358,6 +359,7 @@ NLR(Negative likelihood ratio)                                   0.0            
 NLRI(Negative likelihood ratio interpretation)                   Good                    Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.88889                 0.53846
 OC(Overlap coefficient)                                          1.0                     0.33333                 0.75
+OCC(Otsuka-Ochiai coefficient)                                   0.7746                  0.33333                 0.61237
 OP(Optimized precision)                                          0.65568                 0.35498                 0.40166
 P(Condition positive or support)                                 6                       3                       12
 PLR(Positive likelihood ratio)                                   3.75                    3.0                     2.25

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Adjusted F-score (AGF)
+- Overlap coefficient (OC)
 ### Changed
 - `save_metrics` and `save_vectors` parameters added to `save_obj` method
 - Document modified

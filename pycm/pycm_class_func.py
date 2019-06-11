@@ -5,7 +5,25 @@ import math
 from .pycm_interpret import *
 
 
-def overlap_coef_calc(TP, TOP, P):
+def OCC_calc(TP, TOP, P):
+    """
+    Calculate OCC (Otsuka-Ochiai coefficient).
+
+    :param TP: true positive
+    :type TP : int
+    :param TOP: test outcome positive
+    :type TOP : int
+    :param P:  condition positive
+    :type P : int
+    :return: Otsuka-Ochiai coefficient as float
+    """
+    try:
+        OCC = TP/(math.sqrt(TOP*P))
+        return OCC
+    except Exception:
+        return "None"
+
+def OC_calc(TP, TOP, P):
     """
     Calculate OC (Overlap coefficient).
 
@@ -668,6 +686,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     MCCI = {}
     AGF = {}
     OC = {}
+    OCC = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -720,7 +739,8 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         AGM[i] = AGM_calc(TPR[i], TNR[i], GM[i], N[i], POP[i])
         MCCI[i] = MCC_analysis(MCC[i])
         AGF[i] = AGF_calc(TP[i], FP[i], FN[i], TN[i])
-        OC[i] = overlap_coef_calc(TP[i], TOP[i], P[i])
+        OC[i] = OC_calc(TP[i], TOP[i], P[i])
+        OCC[i] = OCC_calc(TP[i], TOP[i], P[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {
@@ -780,5 +800,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "NLRI": NLRI,
         "MCCI": MCCI,
         "AGF": AGF,
-        "OC": OC}
+        "OC": OC,
+        "OCC":OCC}
     return result

@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Adjusted F-score (AGF)
 ### Changed
 - `save_metrics` and `save_vectors` parameters added to `save_obj` method
+- Document modified
 ## [2.2] - 2019-05-30
 ### Added
 - Negative likelihood ratio interpretation (NLRI)

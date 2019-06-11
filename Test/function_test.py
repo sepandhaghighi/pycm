@@ -394,52 +394,53 @@ Example : online_help("J") or online_help(2)
 61-NLR
 62-NLRI
 63-NPV
-64-OP
-65-Overall ACC
-66-Overall CEN
-67-Overall J
-68-Overall MCC
-69-Overall MCEN
-70-Overall RACC
-71-Overall RACCU
-72-P
-73-P-Value
-74-PLR
-75-PLRI
-76-POP
-77-PPV
-78-PPV Macro
-79-PPV Micro
-80-PRE
-81-Pearson C
-82-Phi-Squared
-83-Q
-84-RACC
-85-RACCU
-86-RCI
-87-RR
-88-Reference Entropy
-89-Response Entropy
-90-SOA1(Landis & Koch)
-91-SOA2(Fleiss)
-92-SOA3(Altman)
-93-SOA4(Cicchetti)
-94-SOA5(Cramer)
-95-SOA6(Matthews)
-96-Scott PI
-97-Standard Error
-98-TN
-99-TNR
-100-TON
-101-TOP
-102-TP
-103-TPR
-104-TPR Macro
-105-TPR Micro
-106-Y
-107-Zero-one Loss
-108-dInd
-109-sInd
+64-OC
+65-OP
+66-Overall ACC
+67-Overall CEN
+68-Overall J
+69-Overall MCC
+70-Overall MCEN
+71-Overall RACC
+72-Overall RACCU
+73-P
+74-P-Value
+75-PLR
+76-PLRI
+77-POP
+78-PPV
+79-PPV Macro
+80-PPV Micro
+81-PRE
+82-Pearson C
+83-Phi-Squared
+84-Q
+85-RACC
+86-RACCU
+87-RCI
+88-RR
+89-Reference Entropy
+90-Response Entropy
+91-SOA1(Landis & Koch)
+92-SOA2(Fleiss)
+93-SOA3(Altman)
+94-SOA4(Cicchetti)
+95-SOA5(Cramer)
+96-SOA6(Matthews)
+97-Scott PI
+98-Standard Error
+99-TN
+100-TNR
+101-TON
+102-TOP
+103-TP
+104-TPR
+105-TPR Macro
+106-TPR Micro
+107-Y
+108-Zero-one Loss
+109-dInd
+110-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -596,4 +597,7 @@ Example : online_help("J") or online_help(2)
 0.8064516129032258
 >>> cm.F05[0]
 0.8333333333333334
+>>> cm = ConfusionMatrix(matrix={1:{1:53,0:2},0:{1:5,0:44}})
+>>> cm[1]
+0.9636363636363636
 """

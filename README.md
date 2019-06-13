@@ -681,7 +681,7 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBU
 
 <blockquote>51- L.  Mosley.   A  balanced  approach  to  the  multi-class  imbalance  problem.Graduate Theses and Dissertations. Paper 13537., 2013</blockquote>
 
-<blockquote>52- M K, Vijaymeena & K, Kavitha. (2016). A Survey on Similarity Measures in Text Mining. Machine Learning and Applications: An International Journal. 3. 19-28. 10.5121/mlaij.2016.3103.</blockquote>
+<blockquote>52- M. Vijaymeena and K. Kavitha, "A survey on similarity measures in text mining," Machine Learning and Applications: An International Journal, vol. 3, no. 2, pp. 19-28, 2016.</blockquote>
 
 <blockquote>53- Otsuka, Yanosuke (1936). "The faunal character of the Japanese Pleistocene marine Mollusca, as evidence of the climate having become colder during the Pleistocene in Japan". Bulletin of the Biogeographical Society of Japan. 6 (16): 165–170.</blockquote>
 

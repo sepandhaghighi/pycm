@@ -1108,4 +1108,26 @@ Warning:  Confusion matrices are too close and the best one can not be recognize
 True
 >>> cp2.best
 >>> cp2.best_name
+>>> cm1 = ConfusionMatrix(matrix={0:{0:50,1:0,2:0},1:{0:0,1:35,2:15},2:{0:0,1:16,2:34}})
+>>> cm2 = ConfusionMatrix(matrix={0:{0:48,1:2,2:0},1:{0:3,1:46,2:1},2:{0:8,1:2,2:40}})
+>>> cp3 = Compare({"cm1":cm1,"cm2":cm2})
+>>> print(cp3)
+Best : cm2
+<BLANKLINE>
+Rank  Name   Class-Score    Overall-Score
+1     cm2    10.7           5.8
+2     cm1    7.9            4.48333
+<BLANKLINE>
+>>> cp3 = Compare({"cm1":cm1,"cm2":cm2},weight={0:200,1:1,2:1})
+Warning: Confusion matrices are too close and the best one can not be recognized.
+>>> print(cp3)
+Best : None
+<BLANKLINE>
+Rank  Name   Class-Score     Overall-Score
+1     cm1    604.9           4.48333
+2     cm2    567.9           5.8
+<BLANKLINE>
+Warning: Confusion matrices are too close and the best one can not be recognized.
+>>> cp3.best
+>>> cp3.best_name
 """

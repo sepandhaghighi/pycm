@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `save_metrics` and `save_vectors` parameters added to `save_obj` method
 - Document modified
 - Parameters recommendation for imbalance dataset  modified
+- Minor bug in `Compare` class fixed
 ## [2.2] - 2019-05-30
 ### Added
 - Negative likelihood ratio interpretation (NLRI)

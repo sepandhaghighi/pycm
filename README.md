@@ -679,7 +679,7 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBU
 
 <blockquote>50- A. Maratea, A. Petrosino, and M. Manzo, "Adjusted F-measure and kernel scaling for imbalanced data learning," Information Sciences, vol. 257, pp. 331-341, 2014.</blockquote>
 
-<blockquote>51- L.  Mosley.   A  balanced  approach  to  the  multi-class  imbalance  problem.Graduate Theses and Dissertations. Paper 13537., 2013</blockquote>
+<blockquote>51- L. Mosley, "A balanced approach to the multi-class imbalance problem," 2013.</blockquote>
 
 <blockquote>52- M. Vijaymeena and K. Kavitha, "A survey on similarity measures in text mining," Machine Learning and Applications: An International Journal, vol. 3, no. 2, pp. 19-28, 2016.</blockquote>
 

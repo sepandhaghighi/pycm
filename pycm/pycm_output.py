@@ -183,7 +183,7 @@ def html_overall_stat(
         result += '<td style="border:1px solid black;padding:4px;text-align:left;background-color:{};"><a href="'.format(
             background_color) + DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         if i in BENCHMARK_LIST:
-            background_color = BENCHMARK_COLOR[overall_stat[i]]
+            background_color = BENCHMARK_COLOR[i][overall_stat[i]]
             result += '<td style="border:1px solid black;padding:4px;background-color:{};">'.format(
                 background_color)
         else:
@@ -240,7 +240,7 @@ def html_class_stat(
             background_color) + DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         for j in classes:
             if i in BENCHMARK_LIST:
-                background_color = BENCHMARK_COLOR[class_stat[i][j]]
+                background_color = BENCHMARK_COLOR[i][class_stat[i][j]]
                 result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};">'.format(
                     background_color)
             else:

@@ -361,23 +361,18 @@ PARAMS_LINK = {
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC"]
 
 BENCHMARK_COLOR = {
-    "Negligible": "Red",
-    "Weak": "Red",
-    "Poor": "Red",
-    "Limited": "Red",
-    "Relatively Strong": "Green",
-    "Strong": "Green",
-    "Very Strong": "Green",
-    "Fair": "Orange",
-    "Good": "Green",
-    "Excellent": "Green",
-    "Intermediate to Good": "Green",
-    "Substantial": "Green",
-    "Almost Perfect": "Green",
-    "Moderate": "Orange",
-    "Slight": "Orange",
-    "None": "White",
-    "Very Good": "Green"}
+    "PLRI" : {"Negligible": "Red","Poor": "Red","Fair": "Orange","Good": "Green","None": "White"},
+    "NLRI" : {"Negligible": "Red","Poor": "Red","Fair": "Orange","Good": "Green","None": "White"},
+    "DPI" : {"Poor": "Red","Limited": "Red","Fair": "Orange","Good": "Green","None": "White"},
+    "AUCI" : {"Poor": "Red","Fair": "Orange","Good": "Green","Very Good": "Green","Excellent": "Green","None": "White"},
+    "MCCI" : {"Negligible": "Red","Weak": "Red","Moderate": "Orange","Strong": "Green","Very Strong": "Green","None": "White"},
+    "SOA1(Landis & Koch)" : {"Poor": "Red","Slight": "Orange","Fair": "Orange","Moderate": "Orange","Substantial": "Green","Almost Perfect": "Green","None": "White"},
+    "SOA2(Fleiss)" : {"Poor": "Red","Intermediate to Good": "Green","Excellent": "Green","None": "White"},
+    "SOA3(Altman)" : {"Poor": "Red","Fair": "Orange","Moderate": "Orange","Good": "Green","Very Good": "Green","None": "White"},
+    "SOA4(Cicchetti)" : {"Poor": "Red","Fair": "Orange","Good": "Green","Excellent": "Green","None": "White"},
+    "SOA5(Cramer)" : {"Negligible": "Red","Weak": "Red","Moderate": "Orange","Relatively Strong": "Green","Strong": "Green","Very Strong": "Green","None": "White"},
+    "SOA6(Matthews)" : {"Negligible": "Red","Weak": "Red","Moderate": "Orange","Strong": "Green","Very Strong": "Green","None": "White"}
+                }
 
 TABLE_COLOR = {
     # Pink Colors

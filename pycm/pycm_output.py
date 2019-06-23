@@ -280,7 +280,7 @@ def pycm_help():
     """
     print(OVERVIEW)
     print("Repo : https://github.com/sepandhaghighi/pycm")
-    print("Webpage : http://www.pycm.ir")
+    print("Webpage : https://www.pycm.ir")
 
 
 def table_print(classes, table):

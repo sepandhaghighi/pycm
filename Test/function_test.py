@@ -17,10 +17,13 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at
 data scientists that need a broad array of metrics for predictive models
 and an accurate evaluation of large variety of classifiers.
 <BLANKLINE>
+If you use PyCM in your research, please cite this paper :
+<BLANKLINE>
+https://doi.org/10.21105/joss.00729
+<BLANKLINE>
+<BLANKLINE>
 Repo : https://github.com/sepandhaghighi/pycm
-Webpage : http://www.pycm.ir
-<BLANKLINE>
-<BLANKLINE>
+Webpage : https://www.pycm.ir
 >>> rounder((1,2,"None"), digit=5)
 '(1,2,None)'
 >>> one_vs_all_func([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, 3) == [[1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}]

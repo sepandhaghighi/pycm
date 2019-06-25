@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Overlap coefficient (OC)
 - Otsuka-Ochiai coefficient (OOC)
 ### Changed
-- `save_metrics` and `save_vectors` parameters added to `save_obj` method
+- `save_stat` and `save_vector` parameters added to `save_obj` method
 - Document modified
 - Parameters recommendation for imbalance dataset  modified
 - Minor bug in `Compare` class fixed

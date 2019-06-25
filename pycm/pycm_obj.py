@@ -318,8 +318,8 @@ class ConfusionMatrix():
             self,
             name,
             address=True,
-            save_metrics=False,
-            save_vectors=True):
+            save_stat=False,
+            save_vector=True):
         """
         Save ConfusionMatrix in .obj file.
 
@@ -327,10 +327,10 @@ class ConfusionMatrix():
         :type name : str
         :param address: flag for address return
         :type address : bool
-        :param save_metrics: save metrics flag
-        :type save_metrics: bool
-        :param save_vectors : save vectors flag
-        :type save_vectors: bool
+        :param save_stat: save statistics flag
+        :type save_stat: bool
+        :param save_vector : save vectors flag
+        :type save_vector: bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
         try:
@@ -352,10 +352,10 @@ class ConfusionMatrix():
                          "Digit": self.digit,
                          "Sample-Weight": self.weights,
                          "Transpose": self.transpose}
-            if save_metrics:
+            if save_stat:
                 dump_dict["Class-Stat"] = self.class_stat
                 dump_dict["Overall-Stat"] = self.overall_stat
-            if not save_vectors:
+            if not save_vector:
                 dump_dict["Actual-Vector"] = None
                 dump_dict["Predict-Vector"] = None
             json.dump(dump_dict, obj_file)

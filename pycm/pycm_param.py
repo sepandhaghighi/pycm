@@ -348,18 +348,79 @@ PARAMS_LINK = {
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC"]
 
 BENCHMARK_COLOR = {
-    "PLRI" : {"Negligible": "Red","Poor": "Orange","Fair": "Yellow","Good": "Green","None": "White"},
-    "NLRI" : {"Negligible": "Red","Poor": "Orange","Fair":  "Yellow","Good": "Green","None": "White"},
-    "DPI" : {"Poor": "Red","Limited": "Orange","Fair": "Yellow","Good": "Green","None": "White"},
-    "AUCI" : {"Poor": "Red","Fair": "Orange","Good": "YellowGreen","Very Good": "LawnGreen","Excellent": "Green","None": "White"},
-    "MCCI" : {"Negligible": "Red","Weak": "Orange","Moderate": "Yellow","Strong": "LawnGreen","Very Strong": "Green","None": "White"},
-    "SOA1(Landis & Koch)" : {"Poor": "Red","Slight": "OrangeRed","Fair": "Orange","Moderate": "Yellow","Substantial": "LawnGreen","Almost Perfect": "Green","None": "White"},
-    "SOA2(Fleiss)" : {"Poor": "Red","Intermediate to Good": "LawnGreen","Excellent": "Green","None": "White"},
-    "SOA3(Altman)" : {"Poor": "Red","Fair": "Orange","Moderate": "Yellow","Good": "LawnGreen","Very Good": "Green","None": "White"},
-    "SOA4(Cicchetti)" : {"Poor": "Red","Fair": "Orange","Good": "LawnGreen","Excellent": "Green","None": "White"},
-    "SOA5(Cramer)" : {"Negligible": "Red","Weak": "Orange","Moderate": "Yellow","Relatively Strong": "YellowGreen","Strong": "LawnGreen","Very Strong": "Green","None": "White"},
-    "SOA6(Matthews)" : {"Negligible": "Red","Weak": "Orange","Moderate": "Yellow","Strong": "LawnGreen","Very Strong": "Green","None": "White"}
-                }
+    "PLRI": {
+        "Negligible": "Red",
+        "Poor": "Orange",
+        "Fair": "Yellow",
+        "Good": "Green",
+        "None": "White"},
+    "NLRI": {
+        "Negligible": "Red",
+        "Poor": "Orange",
+        "Fair": "Yellow",
+        "Good": "Green",
+        "None": "White"},
+    "DPI": {
+        "Poor": "Red",
+                "Limited": "Orange",
+                "Fair": "Yellow",
+                "Good": "Green",
+                "None": "White"},
+    "AUCI": {
+        "Poor": "Red",
+        "Fair": "Orange",
+        "Good": "YellowGreen",
+        "Very Good": "LawnGreen",
+        "Excellent": "Green",
+        "None": "White"},
+    "MCCI": {
+        "Negligible": "Red",
+        "Weak": "Orange",
+        "Moderate": "Yellow",
+        "Strong": "LawnGreen",
+        "Very Strong": "Green",
+        "None": "White"},
+    "SOA1(Landis & Koch)": {
+        "Poor": "Red",
+        "Slight": "OrangeRed",
+        "Fair": "Orange",
+        "Moderate": "Yellow",
+        "Substantial": "LawnGreen",
+        "Almost Perfect": "Green",
+        "None": "White"},
+    "SOA2(Fleiss)": {
+        "Poor": "Red",
+        "Intermediate to Good": "LawnGreen",
+                                "Excellent": "Green",
+                                "None": "White"},
+    "SOA3(Altman)": {
+        "Poor": "Red",
+        "Fair": "Orange",
+        "Moderate": "Yellow",
+        "Good": "LawnGreen",
+        "Very Good": "Green",
+        "None": "White"},
+    "SOA4(Cicchetti)": {
+        "Poor": "Red",
+        "Fair": "Orange",
+        "Good": "LawnGreen",
+        "Excellent": "Green",
+        "None": "White"},
+    "SOA5(Cramer)": {
+        "Negligible": "Red",
+        "Weak": "Orange",
+        "Moderate": "Yellow",
+        "Relatively Strong": "YellowGreen",
+        "Strong": "LawnGreen",
+        "Very Strong": "Green",
+        "None": "White"},
+    "SOA6(Matthews)": {
+        "Negligible": "Red",
+        "Weak": "Orange",
+        "Moderate": "Yellow",
+        "Strong": "LawnGreen",
+        "Very Strong": "Green",
+        "None": "White"}}
 
 BENCHMARK_LIST = list(BENCHMARK_COLOR.keys())
 

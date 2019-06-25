@@ -87,19 +87,6 @@ IMBALANCED_RECOMMEND = [
     "DPI",
     "GI"]
 
-BENCHMARK_LIST = [
-    "PLRI",
-    "NLRI",
-    "DPI",
-    "AUCI",
-    "MCCI",
-    "SOA1(Landis & Koch)",
-    "SOA2(Fleiss)",
-    "SOA3(Altman)",
-    "SOA4(Cicchetti)",
-    "SOA5(Cramer)",
-    "SOA6(Matthews)"]
-
 PLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}
 
 NLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}
@@ -373,6 +360,9 @@ BENCHMARK_COLOR = {
     "SOA5(Cramer)" : {"Negligible": "Red","Weak": "Orange","Moderate": "Yellow","Relatively Strong": "YellowGreen","Strong": "LawnGreen","Very Strong": "Green","None": "White"},
     "SOA6(Matthews)" : {"Negligible": "Red","Weak": "Orange","Moderate": "Yellow","Strong": "LawnGreen","Very Strong": "Green","None": "White"}
                 }
+
+BENCHMARK_LIST = list(BENCHMARK_COLOR.keys())
+
 
 TABLE_COLOR = {
     # Pink Colors

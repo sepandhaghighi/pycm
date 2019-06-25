@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Document modified
 - Parameters recommendation for imbalance dataset  modified
 - Minor bug in `Compare` class fixed
+- `pycm_help` function modified
+- Benchmarks color modified
 ## [2.2] - 2019-05-30
 ### Added
 - Negative likelihood ratio interpretation (NLRI)

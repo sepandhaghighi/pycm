@@ -1064,6 +1064,8 @@ True
 >>> cm_comp2 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
 >>> cm_comp1 == cm_comp2
 False
+>>> cm_comp1 == 2
+False
 >>> cm_comp1_temp = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
 >>> cm_comp1 == cm_comp1_temp
 True

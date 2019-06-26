@@ -1037,9 +1037,6 @@ Y(Youden index)                                                  0.73333        
 dInd(Distance index)                                             0.26667                 0.67586                 0.54716
 sInd(Similarity index)                                           0.81144                 0.52209                 0.6131
 <BLANKLINE>
->>> cm2 = ConfusionMatrix(np.array(y_actu), np.array(y_pred), sample_weight=np.array([2, 2, 2, 2, 3, 1, 1, 2, 2, 1, 1, 2]))
->>> cm2 == cm
-True
 >>> cm = ConfusionMatrix([1,2,3,4],[1,2,3,"4"])
 >>> cm
 pycm.ConfusionMatrix(classes: ['1', '2', '3', '4'])

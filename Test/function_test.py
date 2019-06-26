@@ -17,10 +17,13 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at
 data scientists that need a broad array of metrics for predictive models
 and an accurate evaluation of large variety of classifiers.
 <BLANKLINE>
+If you use PyCM in your research, please cite this paper :
+<BLANKLINE>
+https://doi.org/10.21105/joss.00729
+<BLANKLINE>
+<BLANKLINE>
 Repo : https://github.com/sepandhaghighi/pycm
-Webpage : http://www.pycm.ir
-<BLANKLINE>
-<BLANKLINE>
+Webpage : https://www.pycm.ir
 >>> rounder((1,2,"None"), digit=5)
 '(1,2,None)'
 >>> one_vs_all_func([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, 3) == [[1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}]
@@ -161,6 +164,9 @@ False
 {}
 >>> cm.IBA_alpha(None) == {'L3': 'None', 'L1': 'None', 'L2': 'None'}
 True
+>>> del cm.classes
+>>> cm.IBA_alpha(2)
+{}
 >>> kappa_analysis_koch(-0.1)
 'Poor'
 >>> kappa_analysis_koch(0)
@@ -334,111 +340,114 @@ Example : online_help("J") or online_help(2)
 1-95% CI
 2-ACC
 3-ACC Macro
-4-AGM
-5-AM
-6-AUC
-7-AUCI
-8-AUNP
-9-AUNU
-10-BCD
-11-BM
-12-Bennett S
-13-CBA
-14-CEN
-15-Chi-Squared
-16-Chi-Squared DF
-17-Conditional Entropy
-18-Cramer V
-19-Cross Entropy
-20-DOR
-21-DP
-22-DPI
-23-ERR
-24-F0.5
-25-F1
-26-F1 Macro
-27-F1 Micro
-28-F2
-29-FDR
-30-FN
-31-FNR
-32-FOR
-33-FP
-34-FPR
-35-G
-36-GI
-37-GM
-38-Gwet AC1
-39-Hamming Loss
-40-IBA
-41-IS
-42-J
-43-Joint Entropy
-44-KL Divergence
-45-Kappa
-46-Kappa 95% CI
-47-Kappa No Prevalence
-48-Kappa Standard Error
-49-Kappa Unbiased
-50-LS
-51-Lambda A
-52-Lambda B
-53-MCC
-54-MCCI
-55-MCEN
-56-MK
-57-Mutual Information
-58-N
-59-NIR
-60-NLR
-61-NLRI
-62-NPV
-63-OP
-64-Overall ACC
-65-Overall CEN
-66-Overall J
-67-Overall MCC
-68-Overall MCEN
-69-Overall RACC
-70-Overall RACCU
-71-P
-72-P-Value
-73-PLR
-74-PLRI
-75-POP
-76-PPV
-77-PPV Macro
-78-PPV Micro
-79-PRE
-80-Pearson C
-81-Phi-Squared
-82-Q
-83-RACC
-84-RACCU
-85-RCI
-86-RR
-87-Reference Entropy
-88-Response Entropy
-89-SOA1(Landis & Koch)
-90-SOA2(Fleiss)
-91-SOA3(Altman)
-92-SOA4(Cicchetti)
-93-SOA5(Cramer)
-94-SOA6(Matthews)
-95-Scott PI
-96-Standard Error
-97-TN
-98-TNR
-99-TON
-100-TOP
-101-TP
-102-TPR
-103-TPR Macro
-104-TPR Micro
-105-Y
-106-Zero-one Loss
-107-dInd
-108-sInd
+4-AGF
+5-AGM
+6-AM
+7-AUC
+8-AUCI
+9-AUNP
+10-AUNU
+11-BCD
+12-BM
+13-Bennett S
+14-CBA
+15-CEN
+16-Chi-Squared
+17-Chi-Squared DF
+18-Conditional Entropy
+19-Cramer V
+20-Cross Entropy
+21-DOR
+22-DP
+23-DPI
+24-ERR
+25-F0.5
+26-F1
+27-F1 Macro
+28-F1 Micro
+29-F2
+30-FDR
+31-FN
+32-FNR
+33-FOR
+34-FP
+35-FPR
+36-G
+37-GI
+38-GM
+39-Gwet AC1
+40-Hamming Loss
+41-IBA
+42-IS
+43-J
+44-Joint Entropy
+45-KL Divergence
+46-Kappa
+47-Kappa 95% CI
+48-Kappa No Prevalence
+49-Kappa Standard Error
+50-Kappa Unbiased
+51-LS
+52-Lambda A
+53-Lambda B
+54-MCC
+55-MCCI
+56-MCEN
+57-MK
+58-Mutual Information
+59-N
+60-NIR
+61-NLR
+62-NLRI
+63-NPV
+64-OC
+65-OOC
+66-OP
+67-Overall ACC
+68-Overall CEN
+69-Overall J
+70-Overall MCC
+71-Overall MCEN
+72-Overall RACC
+73-Overall RACCU
+74-P
+75-P-Value
+76-PLR
+77-PLRI
+78-POP
+79-PPV
+80-PPV Macro
+81-PPV Micro
+82-PRE
+83-Pearson C
+84-Phi-Squared
+85-Q
+86-RACC
+87-RACCU
+88-RCI
+89-RR
+90-Reference Entropy
+91-Response Entropy
+92-SOA1(Landis & Koch)
+93-SOA2(Fleiss)
+94-SOA3(Altman)
+95-SOA4(Cicchetti)
+96-SOA5(Cramer)
+97-SOA6(Matthews)
+98-Scott PI
+99-Standard Error
+100-TN
+101-TNR
+102-TON
+103-TOP
+104-TP
+105-TPR
+106-TPR Macro
+107-TPR Micro
+108-Y
+109-Zero-one Loss
+110-dInd
+111-sInd
 >>> online_help("J")
 ...
 >>> online_help(4)
@@ -588,5 +597,16 @@ Example : online_help("J") or online_help(2)
 0.35555555555555557
 >>> cm.F1_Micro
 0.4444444444444444
-
+>>> cm = ConfusionMatrix(matrix = {1:{1:5,0:1},0:{0:6,1:2}}) # Verified Case
+>>> cm.AGF[1]
+0.8197822947299411
+>>> cm.F2[1]
+0.8064516129032258
+>>> cm.F05[0]
+0.8333333333333334
+>>> cm = ConfusionMatrix(matrix={1:{1:53,0:2},0:{1:5,0:44}})
+>>> cm.OC[1]
+0.9636363636363636
+>>> cm.OOC[1]
+0.9383838571303771
 """

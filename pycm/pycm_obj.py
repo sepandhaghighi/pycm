@@ -204,7 +204,7 @@ class ConfusionMatrix():
             file.write(matrix + normalized_matrix + stat + one_vs_all)
             file.close()
             if address:
-                message = os.path.join(os.getcwd(), name + ".pycm")
+                message = os.path.join(os.getcwd(), name + ".pycm") # pragma: no cover
             return {"Status": True, "Message": message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}
@@ -261,7 +261,7 @@ class ConfusionMatrix():
             html_file.write(html_end(VERSION))
             html_file.close()
             if address:
-                message = os.path.join(os.getcwd(), name + ".html")
+                message = os.path.join(os.getcwd(), name + ".html") # pragma: no cover
             return {"Status": True, "Message": message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}
@@ -309,12 +309,17 @@ class ConfusionMatrix():
                 csv_matrix_data = csv_matrix_print(self.classes, matrix)
                 csv_matrix_file.write(csv_matrix_data)
             if address:
-                message = os.path.join(os.getcwd(), name + ".csv")
+                message = os.path.join(os.getcwd(), name + ".csv") # pragma: no cover
             return {"Status": True, "Message": message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
-    def save_obj(self, name, address=True):
+    def save_obj(
+            self,
+            name,
+            address=True,
+            save_stat=False,
+            save_vector=True):
         """
         Save ConfusionMatrix in .obj file.
 
@@ -322,6 +327,10 @@ class ConfusionMatrix():
         :type name : str
         :param address: flag for address return
         :type address : bool
+        :param save_stat: save statistics flag
+        :type save_stat: bool
+        :param save_vector : save vectors flag
+        :type save_vector: bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
         try:
@@ -337,14 +346,21 @@ class ConfusionMatrix():
                 actual_vector_temp = actual_vector_temp.tolist()
             if isinstance(predict_vector_temp, numpy.ndarray):
                 predict_vector_temp = predict_vector_temp.tolist()
-            json.dump({"Actual-Vector": actual_vector_temp,
-                       "Predict-Vector": predict_vector_temp,
-                       "Matrix": matrix_items,
-                       "Digit": self.digit,
-                       "Sample-Weight": self.weights,
-                       "Transpose": self.transpose}, obj_file)
+            dump_dict = {"Actual-Vector": actual_vector_temp,
+                         "Predict-Vector": predict_vector_temp,
+                         "Matrix": matrix_items,
+                         "Digit": self.digit,
+                         "Sample-Weight": self.weights,
+                         "Transpose": self.transpose}
+            if save_stat:
+                dump_dict["Class-Stat"] = self.class_stat
+                dump_dict["Overall-Stat"] = self.overall_stat
+            if not save_vector:
+                dump_dict["Actual-Vector"] = None
+                dump_dict["Predict-Vector"] = None
+            json.dump(dump_dict, obj_file)
             if address:
-                message = os.path.join(os.getcwd(), name + ".obj")
+                message = os.path.join(os.getcwd(), name + ".obj") # pragma: no cover
             return {"Status": True, "Message": message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}
@@ -521,6 +537,9 @@ def __class_stat_init__(cm):
     cm.AGM = cm.class_stat["AGM"]
     cm.NLRI = cm.class_stat["NLRI"]
     cm.MCCI = cm.class_stat["MCCI"]
+    cm.AGF = cm.class_stat["AGF"]
+    cm.OC = cm.class_stat["OC"]
+    cm.OOC = cm.class_stat["OOC"]
 
 
 def __overall_stat_init__(cm):

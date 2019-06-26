@@ -76,6 +76,12 @@ True
 >>> save_obj=cm.save_obj("test",address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
+>>> save_obj=cm.save_obj("test_stat",address=False,save_stat=True)
+>>> save_obj=={'Status': True, 'Message': None}
+True
+>>> save_obj=cm.save_obj("test_no_vectors",address=False,save_vector=False)
+>>> save_obj=={'Status': True, 'Message': None}
+True
 >>> cm_file=ConfusionMatrix(file=open("test.obj","r"))
 >>> print(cm_file)
 Predict          100    200    500    600
@@ -152,6 +158,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AGF(Adjusted F-score)                                            0.0                     0.33642                 0.56659                 0.0
 AGM(Adjusted geometric mean)                                     None                    0.56694                 0.7352                  0
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
@@ -187,6 +194,8 @@ N(Condition negative)                                            20             
 NLR(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 NLRI(Negative likelihood ratio interpretation)                   None                    Negligible              Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
+OC(Overlap coefficient)                                          None                    0.85714                 0.5                     None
+OOC(Otsuka-Ochiai coefficient)                                   None                    0.56695                 0.40825                 None
 OP(Optimized precision)                                           None                    0.11667                 0.37308                -0.05
 P(Condition positive or support)                                 0                       16                      3                       1
 PLR(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
@@ -207,6 +216,22 @@ Y(Youden index)                                                  None           
 dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0
 sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289
 <BLANKLINE>
+>>> cm_stat_file=ConfusionMatrix(file=open("test_stat.obj","r"))
+>>> cm_no_vectors_file=ConfusionMatrix(file=open("test_no_vectors.obj","r"))
+>>> cm_stat_file==cm_file
+True
+>>> cm_no_vectors_file==cm_file
+True
+>>> cm_no_vectors_dict = json.load(open("test_no_vectors.obj","r"))
+>>> cm_no_vectors_dict["Actual-Vector"] == None
+True
+>>> cm_no_vectors_dict["Predict-Vector"] == None
+True
+>>> cm_stat_dict = json.load(open("test_stat.obj","r"))
+>>> cm_stat_dict["Class-Stat"]["MCC"] != None
+True
+>>> cm_stat_dict["Overall-Stat"]["Overall MCC"] != None
+True
 >>> def activation(i):
 ...	    if i<0.7:
 ...		    return 1
@@ -297,6 +322,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
+AGF(Adjusted F-score)                                            0.90694                 0.54433                 0.55442
 AGM(Adjusted geometric mean)                                     0.80509                 0.70336                 0.66986
 AM(Difference between automatic and manual classification)       4                       0                       -4
 AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
@@ -332,6 +358,8 @@ N(Condition negative)                                            15             
 NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.64286
 NLRI(Negative likelihood ratio interpretation)                   Good                    Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.88889                 0.53846
+OC(Overlap coefficient)                                          1.0                     0.33333                 0.75
+OOC(Otsuka-Ochiai coefficient)                                   0.7746                  0.33333                 0.61237
 OP(Optimized precision)                                          0.65568                 0.35498                 0.40166
 P(Condition positive or support)                                 6                       3                       12
 PLR(Positive likelihood ratio)                                   3.75                    3.0                     2.25
@@ -394,6 +422,8 @@ True
 >>> os.remove("test_normalized.csv")
 >>> os.remove("test_normalized_matrix.csv")
 >>> os.remove("test.obj")
+>>> os.remove("test_stat.obj")
+>>> os.remove("test_no_vectors.obj")
 >>> os.remove("test.html")
 >>> os.remove("test_normalized.html")
 >>> os.remove("test_filtered.html")

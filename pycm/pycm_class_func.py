@@ -5,6 +5,67 @@ import math
 from .pycm_interpret import *
 
 
+def OOC_calc(TP, TOP, P):
+    """
+    Calculate OOC (Otsuka-Ochiai coefficient).
+
+    :param TP: true positive
+    :type TP : int
+    :param TOP: test outcome positive
+    :type TOP : int
+    :param P:  condition positive
+    :type P : int
+    :return: Otsuka-Ochiai coefficient as float
+    """
+    try:
+        OOC = TP / (math.sqrt(TOP * P))
+        return OOC
+    except Exception:
+        return "None"
+
+
+def OC_calc(TP, TOP, P):
+    """
+    Calculate OC (Overlap coefficient).
+
+    :param TP: true positive
+    :type TP : int
+    :param TOP: test outcome positive
+    :type TOP : int
+    :param P:  condition positive
+    :type P : int
+    :return: overlap coefficient as float
+    """
+    try:
+        overlap_coef = TP / min(TOP, P)
+        return overlap_coef
+    except Exception:
+        return "None"
+
+
+def AGF_calc(TP, FP, FN, TN):
+    """
+    Calculate AGF (Adjusted F-score).
+
+    :param TP: true positive
+    :type TP : int
+    :param TN: true negative
+    :type TN : int
+    :param FP: false positive
+    :type FP : int
+    :param FN: false negative
+    :type FN : int
+    :return: AGF as float
+    """
+    try:
+        F2 = F_calc(TP=TP, FP=FP, FN=FN, beta=2)
+        F05_inv = F_calc(TP=TN, FP=FN, FN=FP, beta=0.5)
+        AGF = math.sqrt(F2 * F05_inv)
+        return AGF
+    except Exception:
+        return "None"
+
+
 def AGM_calc(TPR, TNR, GM, N, POP):
     """
     Calculate AGM (Adjusted geometric mean).
@@ -624,6 +685,9 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     Q = {}
     AGM = {}
     MCCI = {}
+    AGF = {}
+    OC = {}
+    OOC = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -675,6 +739,9 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         Q[i] = Q_calc(TP[i], TN[i], FP[i], FN[i])
         AGM[i] = AGM_calc(TPR[i], TNR[i], GM[i], N[i], POP[i])
         MCCI[i] = MCC_analysis(MCC[i])
+        AGF[i] = AGF_calc(TP[i], FP[i], FN[i], TN[i])
+        OC[i] = OC_calc(TP[i], TOP[i], P[i])
+        OOC[i] = OOC_calc(TP[i], TOP[i], P[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {
@@ -732,5 +799,8 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "Q": Q,
         "AGM": AGM,
         "NLRI": NLRI,
-        "MCCI": MCCI}
+        "MCCI": MCCI,
+        "AGF": AGF,
+        "OC": OC,
+        "OOC": OOC}
     return result

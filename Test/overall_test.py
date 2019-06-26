@@ -83,6 +83,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333
+AGF(Adjusted F-score)                                            0.9136                  0.53995                 0.5516
 AGM(Adjusted geometric mean)                                     0.83729                 0.692                   0.60712
 AM(Difference between automatic and manual classification)       2                       -1                      -1
 AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
@@ -118,6 +119,8 @@ N(Condition negative)                                            9              
 NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.75
 NLRI(Negative likelihood ratio interpretation)                   Good                    Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143
+OC(Overlap coefficient)                                          1.0                     0.5                     0.6
+OOC(Otsuka-Ochiai coefficient)                                   0.7746                  0.40825                 0.54772
 OP(Optimized precision)                                          0.70833                 0.29545                 0.44048
 P(Condition positive or support)                                 3                       3                       6
 PLR(Positive likelihood ratio)                                   4.5                     3.0                     1.5
@@ -212,6 +215,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          L1                      L2                      L3
 ACC(Accuracy)                                                    0.83333                 0.75                    0.58333
+AGF(Adjusted F-score)                                            0.9136                  0.53995                 0.5516
 AGM(Adjusted geometric mean)                                     0.83729                 0.692                   0.60712
 AM(Difference between automatic and manual classification)       2                       -1                      -1
 AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
@@ -247,6 +251,8 @@ N(Condition negative)                                            9              
 NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.75
 NLRI(Negative likelihood ratio interpretation)                   Good                    Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.8                     0.57143
+OC(Overlap coefficient)                                          1.0                     0.5                     0.6
+OOC(Otsuka-Ochiai coefficient)                                   0.7746                  0.40825                 0.54772
 OP(Optimized precision)                                           0.70833                 0.29545                 0.44048
 P(Condition positive or support)                                 3                       3                       6
 PLR(Positive likelihood ratio)                                   4.5                     3.0                     1.5
@@ -356,6 +362,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AGF(Adjusted F-score)                                            0.0                     0.33642                 0.56659                 0.0
 AGM(Adjusted geometric mean)                                     None                    0.56694                 0.7352                  0
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
@@ -391,6 +398,8 @@ N(Condition negative)                                            20             
 NLR(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 NLRI(Negative likelihood ratio interpretation)                   None                    Negligible              Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
+OC(Overlap coefficient)                                          None                    0.85714                 0.5                     None
+OOC(Otsuka-Ochiai coefficient)                                   None                    0.56695                 0.40825                 None
 OP(Optimized precision)                                          None                    0.11667                 0.37308                 -0.05
 P(Condition positive or support)                                 0                       16                      3                       1
 PLR(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
@@ -472,6 +481,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
+AGF(Adjusted F-score)                                            0.0                     0.33642                 0.56659                 0.0
 AGM(Adjusted geometric mean)                                     None                    0.56694                 0.7352                  0
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
@@ -507,6 +517,8 @@ N(Condition negative)                                            20             
 NLR(Negative likelihood ratio)                                   None                    0.83333                 0.70833                 1.0
 NLRI(Negative likelihood ratio interpretation)                   None                    Negligible              Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.23077                 0.88889                 0.95
+OC(Overlap coefficient)                                          None                    0.85714                 0.5                     None
+OOC(Otsuka-Ochiai coefficient)                                   None                    0.56695                 0.40825                 None
 OP(Optimized precision)                                          None                    0.11667                 0.37308                 -0.05
 P(Condition positive or support)                                 0                       16                      3                       1
 PLR(Positive likelihood ratio)                                   None                    1.5                     5.66667                 None
@@ -701,6 +713,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
+AGF(Adjusted F-score)                                            0.75595                 0.65734                 0.79543
 AGM(Adjusted geometric mean)                                     0.73866                 0.70552                 0.86488
 AM(Difference between automatic and manual classification)       1                       0                       -1
 AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
@@ -736,6 +749,8 @@ N(Condition negative)                                            15             
 NLR(Negative likelihood ratio)                                   0.34091                 0.57143                 0.35
 NLRI(Negative likelihood ratio interpretation)                   Poor                    Negligible              Poor
 NPV(Negative predictive value)                                   0.78571                 0.77778                 0.90909
+OC(Overlap coefficient)                                          0.75                    0.55556                 0.8
+OOC(Otsuka-Ochiai coefficient)                                   0.72058                 0.55556                 0.7303
 OP(Optimized precision)                                          0.7295                  0.53704                 0.71242
 P(Condition positive or support)                                 12                      9                       6
 PLR(Positive likelihood ratio)                                   2.8125                  2.5                     14.0
@@ -830,6 +845,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          Class1                  Class2                  Class3
 ACC(Accuracy)                                                    0.74074                 0.7037                  0.88889
+AGF(Adjusted F-score)                                            0.75595                 0.65734                 0.79543
 AGM(Adjusted geometric mean)                                     0.73866                 0.70552                 0.86488
 AM(Difference between automatic and manual classification)       1                       0                       -1
 AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
@@ -865,6 +881,8 @@ N(Condition negative)                                            15             
 NLR(Negative likelihood ratio)                                   0.34091                 0.57143                 0.35
 NLRI(Negative likelihood ratio interpretation)                   Poor                    Negligible              Poor
 NPV(Negative predictive value)                                   0.78571                 0.77778                 0.90909
+OC(Overlap coefficient)                                          0.75                    0.55556                 0.8
+OOC(Otsuka-Ochiai coefficient)                                   0.72058                 0.55556                 0.7303
 OP(Optimized precision)                                          0.7295                  0.53704                 0.71242
 P(Condition positive or support)                                 12                      9                       6
 PLR(Positive likelihood ratio)                                   2.8125                  2.5                     14.0
@@ -961,6 +979,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          0                       1                       2
 ACC(Accuracy)                                                    0.80952                 0.80952                 0.61905
+AGF(Adjusted F-score)                                            0.90694                 0.54433                 0.55442
 AGM(Adjusted geometric mean)                                     0.80509                 0.70336                 0.66986
 AM(Difference between automatic and manual classification)       4                       0                       -4
 AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
@@ -996,6 +1015,8 @@ N(Condition negative)                                            15             
 NLR(Negative likelihood ratio)                                   0.0                     0.75                    0.64286
 NLRI(Negative likelihood ratio interpretation)                   Good                    Negligible              Negligible
 NPV(Negative predictive value)                                   1.0                     0.88889                 0.53846
+OC(Overlap coefficient)                                          1.0                     0.33333                 0.75
+OOC(Otsuka-Ochiai coefficient)                                   0.7746                  0.33333                 0.61237
 OP(Optimized precision)                                          0.65568                 0.35498                 0.40166
 P(Condition positive or support)                                 6                       3                       12
 PLR(Positive likelihood ratio)                                   3.75                    3.0                     2.25
@@ -1043,6 +1064,8 @@ True
 >>> cm_comp2 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
 >>> cm_comp1 == cm_comp2
 False
+>>> cm_comp1 == 2
+False
 >>> cm_comp1_temp = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
 >>> cm_comp1 == cm_comp1_temp
 True
@@ -1087,4 +1110,26 @@ Warning:  Confusion matrices are too close and the best one can not be recognize
 True
 >>> cp2.best
 >>> cp2.best_name
+>>> cm1 = ConfusionMatrix(matrix={0:{0:50,1:0,2:0},1:{0:0,1:35,2:15},2:{0:0,1:16,2:34}})
+>>> cm2 = ConfusionMatrix(matrix={0:{0:48,1:2,2:0},1:{0:3,1:46,2:1},2:{0:8,1:2,2:40}})
+>>> cp3 = Compare({"cm1":cm1,"cm2":cm2})
+>>> print(cp3)
+Best : cm2
+<BLANKLINE>
+Rank  Name   Class-Score    Overall-Score
+1     cm2    10.7           5.8
+2     cm1    7.9            4.48333
+<BLANKLINE>
+>>> cp3 = Compare({"cm1":cm1,"cm2":cm2},weight={0:200,1:1,2:1})
+Warning: Confusion matrices are too close and the best one can not be recognized.
+>>> print(cp3)
+Best : None
+<BLANKLINE>
+Rank  Name   Class-Score     Overall-Score
+1     cm1    604.9           4.48333
+2     cm2    567.9           5.8
+<BLANKLINE>
+Warning: Confusion matrices are too close and the best one can not be recognized.
+>>> cp3.best
+>>> cp3.best_name
 """

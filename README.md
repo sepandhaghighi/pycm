@@ -95,7 +95,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ## Installation		
 
 ### Source code
-- Download [Version 2.2](https://github.com/sepandhaghighi/pycm/archive/v2.2.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 2.3](https://github.com/sepandhaghighi/pycm/archive/v2.3.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -103,7 +103,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==2.2` or `pip3 install pycm==2.2` (Need root access)
+- Run `pip install pycm==2.3` or `pip3 install pycm==2.3` (Need root access)
 
 ### Conda
 
@@ -143,6 +143,7 @@ Actual
 Overall Statistics : 
 
 95% CI                                                            (0.30439,0.86228)
+ACC Macro                                                         0.72222
 AUNP                                                              0.66667
 AUNU                                                              0.69444
 Bennett S                                                         0.375
@@ -152,6 +153,8 @@ Chi-Squared DF                                                    4
 Conditional Entropy                                               0.95915
 Cramer V                                                          0.5244
 Cross Entropy                                                     1.59352
+F1 Macro                                                          0.56515
+F1 Micro                                                          0.58333
 Gwet AC1                                                          0.38931
 Hamming Loss                                                      0.41667
 Joint Entropy                                                     2.45915
@@ -185,6 +188,8 @@ SOA1(Landis & Koch)                                               Fair
 SOA2(Fleiss)                                                      Poor
 SOA3(Altman)                                                      Fair
 SOA4(Cicchetti)                                                   Poor
+SOA5(Cramer)                                                      Relatively Strong
+SOA6(Matthews)                                                    Weak
 Scott PI                                                          0.34426
 Standard Error                                                    0.14232
 TPR Macro                                                         0.61111
@@ -195,6 +200,7 @@ Class Statistics :
 
 Classes                                                           0             1             2             
 ACC(Accuracy)                                                     0.83333       0.75          0.58333       
+AGF(Adjusted F-score)                                             0.9136        0.53995       0.5516        
 AGM(Adjusted geometric mean)                                      0.83729       0.692         0.60712       
 AM(Difference between automatic and manual classification)        2             -1            -1            
 AUC(Area under the roc curve)                                     0.88889       0.61111       0.58333       
@@ -223,11 +229,15 @@ IS(Information score)                                             1.26303       
 J(Jaccard index)                                                  0.6           0.25          0.375         
 LS(Lift score)                                                    2.4           2.0           1.2           
 MCC(Matthews correlation coefficient)                             0.68313       0.2582        0.16903       
+MCCI(Matthews correlation coefficient interpretation)             Moderate      Negligible    Negligible    
 MCEN(Modified confusion entropy)                                  0.26439       0.5           0.6875        
 MK(Markedness)                                                    0.6           0.3           0.17143       
 N(Condition negative)                                             9             9             6             
 NLR(Negative likelihood ratio)                                    0.0           0.75          0.75          
+NLRI(Negative likelihood ratio interpretation)                    Good          Negligible    Negligible    
 NPV(Negative predictive value)                                    1.0           0.8           0.57143       
+OC(Overlap coefficient)                                           1.0           0.5           0.6           
+OOC(Otsuka-Ochiai coefficient)                                    0.7746        0.40825       0.54772       
 OP(Optimized precision)                                           0.70833       0.29545       0.44048       
 P(Condition positive or support)                                  3             3             6             
 PLR(Positive likelihood ratio)                                    4.5           3.0           1.5           
@@ -246,7 +256,7 @@ TP(True positive/hit)                                             3             
 TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           0.33333       0.5           
 Y(Youden index)                                                   0.77778       0.22222       0.16667       
 dInd(Distance index)                                              0.22222       0.67586       0.60093       
-sInd(Similarity index)                                            0.84287       0.52209       0.57508
+sInd(Similarity index)                                            0.84287       0.52209       0.57508 
 
 >>> cm.print_matrix()
 Predict          0    1    2    
@@ -295,6 +305,7 @@ Class2       0            5
 Overall Statistics : 
 
 95% CI                                                            (0.44994,1.05006)
+ACC Macro                                                         0.75
 AUNP                                                              0.66667
 AUNU                                                              0.66667
 Bennett S                                                         0.5
@@ -304,6 +315,8 @@ Chi-Squared DF                                                    1
 Conditional Entropy                                               0.34436
 Cramer V                                                          0.48795
 Cross Entropy                                                     1.2454
+F1 Macro                                                          0.66667
+F1 Micro                                                          0.75
 Gwet AC1                                                          0.6
 Hamming Loss                                                      0.25
 Joint Entropy                                                     1.29879
@@ -337,6 +350,8 @@ SOA1(Landis & Koch)                                               Fair
 SOA2(Fleiss)                                                      Poor
 SOA3(Altman)                                                      Fair
 SOA4(Cicchetti)                                                   Poor
+SOA5(Cramer)                                                      Relatively Strong
+SOA6(Matthews)                                                    Weak
 Scott PI                                                          0.33333
 Standard Error                                                    0.15309
 TPR Macro                                                         0.66667
@@ -347,6 +362,7 @@ Class Statistics :
 
 Classes                                                           Class1        Class2        
 ACC(Accuracy)                                                     0.75          0.75          
+AGF(Adjusted F-score)                                             0.53979       0.81325       
 AGM(Adjusted geometric mean)                                      0.73991       0.5108        
 AM(Difference between automatic and manual classification)        -2            2             
 AUC(Area under the roc curve)                                     0.66667       0.66667       
@@ -375,11 +391,15 @@ IS(Information score)                                             1.41504       
 J(Jaccard index)                                                  0.33333       0.71429       
 LS(Lift score)                                                    2.66667       1.14286       
 MCC(Matthews correlation coefficient)                             0.48795       0.48795       
+MCCI(Matthews correlation coefficient interpretation)             Weak          Weak          
 MCEN(Modified confusion entropy)                                  0.38998       0.51639       
 MK(Markedness)                                                    0.71429       0.71429       
 N(Condition negative)                                             5             3             
 NLR(Negative likelihood ratio)                                    0.66667       0.0           
+NLRI(Negative likelihood ratio interpretation)                    Negligible    Good          
 NPV(Negative predictive value)                                    0.71429       1.0           
+OC(Overlap coefficient)                                           1.0           1.0           
+OOC(Otsuka-Ochiai coefficient)                                    0.57735       0.84515       
 OP(Optimized precision)                                           0.25          0.25          
 P(Condition positive or support)                                  3             5             
 PLR(Positive likelihood ratio)                                    None          1.5           
@@ -542,10 +562,6 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 * Please complete the issue template
 
 
-## Todo	
-
-Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
-
 ## Outputs	
 
 1. [HTML](http://www.pycm.ir/test.html)
@@ -567,13 +583,6 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
 		<td align="center"><a href="https://requires.io/github/sepandhaghighi/pycm/requirements/?branch=dev"><img src="https://requires.io/github/sepandhaghighi/pycm/requirements.svg?branch=dev" alt="Requirements Status" /></a></td>
 	</tr>
 </table>
-
-
-
-
-## Contribution						
-
-Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBUTING.md)
 
 
 ## References			
@@ -677,11 +686,19 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBU
 
 <blockquote>49- D. E. Hinkle, W. Wiersma, and S. G. Jurs, "Applied statistics for the behavioral sciences," 1988.</blockquote>
 
+<blockquote>50- A. Maratea, A. Petrosino, and M. Manzo, "Adjusted F-measure and kernel scaling for imbalanced data learning," Information Sciences, vol. 257, pp. 331-341, 2014.</blockquote>
+
+<blockquote>51- L. Mosley, "A balanced approach to the multi-class imbalance problem," 2013.</blockquote>
+
+<blockquote>52- M. Vijaymeena and K. Kavitha, "A survey on similarity measures in text mining," Machine Learning and Applications: An International Journal, vol. 3, no. 2, pp. 19-28, 2016.</blockquote>
+
+<blockquote>53- Y. Otsuka, "The faunal character of the Japanese Pleistocene marine Mollusca, as evidence of climate having become colder during the Pleistocene in Japan," Biogeograph. Soc. Japan, vol. 6, pp. 165-170, 1936.</blockquote>
+
 
 
 ## Cite
 
-If you use PyCM in your research , please cite this JOSS paper :
+If you use PyCM in your research, please cite this paper :
 
 <pre>
 Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A. (2018). PyCM: Multiclass confusion matrix library in Python. Journal of Open Source Software, 3(25), p.729.

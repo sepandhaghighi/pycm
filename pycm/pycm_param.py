@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parameters and constants."""
-VERSION = "2.2"
+VERSION = "2.3"
 
 
 OVERVIEW = '''
@@ -11,6 +11,11 @@ statistics parameters.
 PyCM is the swiss-army knife of confusion matrices, targeted mainly at
 data scientists that need a broad array of metrics for predictive models
 and an accurate evaluation of large variety of classifiers.
+
+If you use PyCM in your research, please cite this paper :
+
+https://doi.org/10.21105/joss.00729
+
 '''
 
 
@@ -54,7 +59,7 @@ MULTICLASS_RECOMMEND = [
     "MCC",
     "MCCI",
     "Overall MCC",
-    "SOA6(Matthews)"
+    "SOA6(Matthews)",
     "BCD",
     "Hamming Loss",
     "Zero-one Loss"]
@@ -72,27 +77,15 @@ IMBALANCED_RECOMMEND = [
     "J",
     "Overall J",
     "Overall MCC",
-    "SOA6(Matthews)"
+    "SOA6(Matthews)",
     "Overall CEN",
     "Overall MCEN",
     "OP",
     "G",
+    "GI",
     "DP",
     "DPI",
     "GI"]
-
-BENCHMARK_LIST = [
-    "PLRI",
-    "NLRI",
-    "DPI",
-    "AUCI",
-    "MCCI",
-    "SOA1(Landis & Koch)",
-    "SOA2(Fleiss)",
-    "SOA3(Altman)",
-    "SOA4(Cicchetti)",
-    "SOA5(Cramer)",
-    "SOA6(Matthews)"]
 
 PLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}
 
@@ -234,7 +227,10 @@ PARAMS_DESCRIPTION = {
     "IBA": "Index of balanced accuracy",
     "GM": "G-mean geometric mean of specificity and sensitivity",
     "Q": "Yule Q - coefficient of colligation",
-    "AGM": "Adjusted geometric mean"}
+    "AGM": "Adjusted geometric mean",
+    "AGF": "Adjusted F-score",
+    "OC": "Overlap coefficient",
+    "OOC": "Otsuka-Ochiai coefficient"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -344,28 +340,90 @@ PARAMS_LINK = {
     "SOA5(Cramer)": "SOA5-(Cramer's-benchmark)",
     "NLRI": "NLRI-(Negative-likelihood-ratio-interpretation)",
     "MCCI": "MCCI-(Matthews-correlation-coefficient-interpretation)",
-    "SOA6(Matthews)": "SOA6-(Matthews's-benchmark)"}
+    "SOA6(Matthews)": "SOA6-(Matthews's-benchmark)",
+    "AGF": "AGF-(Adjusted-F-score)",
+    "OC": "OC-(Overlap-coefficient)",
+    "OOC": "OOC-(Otsuka-Ochiai-coefficient)"}
 
-CAPITALIZE_FILTER = ["BCD", "AUCI", "Q"]
+CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC"]
 
 BENCHMARK_COLOR = {
-    "Negligible": "Red",
-    "Weak": "Red",
-    "Poor": "Red",
-    "Limited": "Red",
-    "Relatively Strong": "Green",
-    "Strong": "Green",
-    "Very Strong": "Green",
-    "Fair": "Orange",
-    "Good": "Green",
-    "Excellent": "Green",
-    "Intermediate to Good": "Green",
-    "Substantial": "Green",
-    "Almost Perfect": "Green",
-    "Moderate": "Orange",
-    "Slight": "Orange",
-    "None": "White",
-    "Very Good": "Green"}
+    "PLRI": {
+        "Negligible": "Red",
+        "Poor": "Orange",
+        "Fair": "Yellow",
+        "Good": "Green",
+        "None": "White"},
+    "NLRI": {
+        "Negligible": "Red",
+        "Poor": "Orange",
+        "Fair": "Yellow",
+        "Good": "Green",
+        "None": "White"},
+    "DPI": {
+        "Poor": "Red",
+                "Limited": "Orange",
+                "Fair": "Yellow",
+                "Good": "Green",
+                "None": "White"},
+    "AUCI": {
+        "Poor": "Red",
+        "Fair": "Orange",
+        "Good": "YellowGreen",
+        "Very Good": "LawnGreen",
+        "Excellent": "Green",
+        "None": "White"},
+    "MCCI": {
+        "Negligible": "Red",
+        "Weak": "Orange",
+        "Moderate": "Yellow",
+        "Strong": "LawnGreen",
+        "Very Strong": "Green",
+        "None": "White"},
+    "SOA1(Landis & Koch)": {
+        "Poor": "Red",
+        "Slight": "OrangeRed",
+        "Fair": "Orange",
+        "Moderate": "Yellow",
+        "Substantial": "LawnGreen",
+        "Almost Perfect": "Green",
+        "None": "White"},
+    "SOA2(Fleiss)": {
+        "Poor": "Red",
+        "Intermediate to Good": "LawnGreen",
+                                "Excellent": "Green",
+                                "None": "White"},
+    "SOA3(Altman)": {
+        "Poor": "Red",
+        "Fair": "Orange",
+        "Moderate": "Yellow",
+        "Good": "LawnGreen",
+        "Very Good": "Green",
+        "None": "White"},
+    "SOA4(Cicchetti)": {
+        "Poor": "Red",
+        "Fair": "Orange",
+        "Good": "LawnGreen",
+        "Excellent": "Green",
+        "None": "White"},
+    "SOA5(Cramer)": {
+        "Negligible": "Red",
+        "Weak": "Orange",
+        "Moderate": "Yellow",
+        "Relatively Strong": "YellowGreen",
+        "Strong": "LawnGreen",
+        "Very Strong": "Green",
+        "None": "White"},
+    "SOA6(Matthews)": {
+        "Negligible": "Red",
+        "Weak": "Orange",
+        "Moderate": "Yellow",
+        "Strong": "LawnGreen",
+        "Very Strong": "Green",
+        "None": "White"}}
+
+BENCHMARK_LIST = list(BENCHMARK_COLOR.keys())
+
 
 TABLE_COLOR = {
     # Pink Colors

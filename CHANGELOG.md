@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [2.3] - 2019-06-27
 ### Added
 - Adjusted F-score (AGF)
 - Overlap coefficient (OC)
@@ -392,7 +393,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v2.2...dev
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v2.3...dev
+[2.3]: https://github.com/sepandhaghighi/pycm/compare/v2.2...v2.3
 [2.2]: https://github.com/sepandhaghighi/pycm/compare/v2.1...v2.2
 [2.1]: https://github.com/sepandhaghighi/pycm/compare/v2.0...v2.1
 [2.0]: https://github.com/sepandhaghighi/pycm/compare/v1.9...v2.0

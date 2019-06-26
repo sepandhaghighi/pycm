@@ -59,7 +59,7 @@ MULTICLASS_RECOMMEND = [
     "MCC",
     "MCCI",
     "Overall MCC",
-    "SOA6(Matthews)"
+    "SOA6(Matthews)",
     "BCD",
     "Hamming Loss",
     "Zero-one Loss"]
@@ -77,7 +77,7 @@ IMBALANCED_RECOMMEND = [
     "J",
     "Overall J",
     "Overall MCC",
-    "SOA6(Matthews)"
+    "SOA6(Matthews)",
     "Overall CEN",
     "Overall MCEN",
     "OP",

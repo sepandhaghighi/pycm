@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `save_stat` and `save_vector` parameters added to `save_obj` method
 - Document modified
+- `README.md` modified 
 - Parameters recommendation for imbalance dataset  modified
 - Minor bug in `Compare` class fixed
 - `pycm_help` function modified

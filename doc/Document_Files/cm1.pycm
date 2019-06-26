@@ -82,6 +82,7 @@ Class Statistics :
 
 Classes                                                           L1            L2            L3            
 ACC(Accuracy)                                                     0.83333       0.75          0.58333       
+AGF(Adjusted F-score)                                             0.72859       0.62869       0.61009       
 AGM(Adjusted geometric mean)                                      0.85764       0.70861       0.58034       
 AM(Difference between automatic and manual classification)        -2            1             1             
 AUC(Area under the roc curve)                                     0.8           0.65          0.58571       
@@ -117,6 +118,8 @@ N(Condition negative)                                             7             
 NLR(Negative likelihood ratio)                                    0.4           0.625         0.7           
 NLRI(Negative likelihood ratio interpretation)                    Poor          Negligible    Negligible    
 NPV(Negative predictive value)                                    0.77778       0.88889       0.66667       
+OC(Overlap coefficient)                                           1.0           0.5           0.6           
+OOC(Otsuka-Ochiai coefficient)                                    0.7746        0.40825       0.54772       
 OP(Optimized precision)                                           0.58333       0.51923       0.55894       
 P(Condition positive or support)                                  5             2             5             
 PLR(Positive likelihood ratio)                                    None          2.5           1.4           

@@ -11924,6 +11924,7 @@ Class Statistics :
 
 Classes                                                           100           200           500           600           
 ACC(Accuracy)                                                     0.45          0.45          0.85          0.95          
+AGF(Adjusted F-score)                                             0.0           0.33642       0.56659       0.0           
 AGM(Adjusted geometric mean)                                      None          0.56694       0.7352        0             
 AM(Difference between automatic and manual classification)        11            -9            -1            -1            
 AUC(Area under the roc curve)                                     None          0.5625        0.63725       0.5           
@@ -11959,6 +11960,8 @@ N(Condition negative)                                             20            
 NLR(Negative likelihood ratio)                                    None          0.83333       0.70833       1.0           
 NLRI(Negative likelihood ratio interpretation)                    None          Negligible    Negligible    Negligible    
 NPV(Negative predictive value)                                    1.0           0.23077       0.88889       0.95          
+OC(Overlap coefficient)                                           None          0.85714       0.5           None          
+OOC(Otsuka-Ochiai coefficient)                                    None          0.56695       0.40825       None          
 OP(Optimized precision)                                           None          0.11667       0.37308       -0.05         
 P(Condition positive or support)                                  0             16            3             1             
 PLR(Positive likelihood ratio)                                    None          1.5           5.66667       None          
@@ -12038,21 +12041,12 @@ sInd(Similarity index)                                            None          
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Load">Load<a class="anchor-link" href="#Load">&#182;</a></h2>
-</div>
-</div>
-</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm_load</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example4_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm.obj&quot;</span><span class="p">),</span><span class="s2">&quot;r&quot;</span><span class="p">))</span>
-<span class="n">cm</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_obj</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example4_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm_stat&quot;</span><span class="p">),</span><span class="n">save_stat</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -12071,6 +12065,101 @@ sInd(Similarity index)                                            None          
 
 
 <div class="output_text output_subarea output_execute_result">
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\Example4_Files\\cm_stat.obj&#39;,
+ &#39;Status&#39;: True}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Example4_Files\cm_stat.obj">Open File</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_obj</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example4_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm_no_vectors&quot;</span><span class="p">),</span><span class="n">save_vector</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\Document\\Example4_Files\\cm_no_vectors.obj&#39;,
+ &#39;Status&#39;: True}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="Example4_Files\cm_no_vectors.obj">Open File</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Load">Load<a class="anchor-link" href="#Load">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm_load</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">file</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example4_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm.obj&quot;</span><span class="p">),</span><span class="s2">&quot;r&quot;</span><span class="p">))</span>
+<span class="n">cm</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[7]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
 <pre>pycm.ConfusionMatrix(classes: [100, 200, 500, 600])</pre>
 </div>
 
@@ -12082,7 +12171,7 @@ sInd(Similarity index)                                            None          
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
@@ -12176,6 +12265,7 @@ Class Statistics :
 
 Classes                                                           100           200           500           600           
 ACC(Accuracy)                                                     0.45          0.45          0.85          0.95          
+AGF(Adjusted F-score)                                             0.0           0.33642       0.56659       0.0           
 AGM(Adjusted geometric mean)                                      None          0.56694       0.7352        0             
 AM(Difference between automatic and manual classification)        11            -9            -1            -1            
 AUC(Area under the roc curve)                                     None          0.5625        0.63725       0.5           
@@ -12211,6 +12301,8 @@ N(Condition negative)                                             20            
 NLR(Negative likelihood ratio)                                    None          0.83333       0.70833       1.0           
 NLRI(Negative likelihood ratio interpretation)                    None          Negligible    Negligible    Negligible    
 NPV(Negative predictive value)                                    1.0           0.23077       0.88889       0.95          
+OC(Overlap coefficient)                                           None          0.85714       0.5           None          
+OOC(Otsuka-Ochiai coefficient)                                    None          0.56695       0.40825       None          
 OP(Optimized precision)                                           None          0.11667       0.37308       -0.05         
 P(Condition positive or support)                                  0             16            3             1             
 PLR(Positive likelihood ratio)                                    None          1.5           5.66667       None          
@@ -12249,7 +12341,7 @@ sInd(Similarity index)                                            None          
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example4_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm.obj&quot;</span><span class="p">),</span><span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
@@ -12269,7 +12361,69 @@ sInd(Similarity index)                                            None          
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>{&#34;Predict-Vector&#34;: [100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200], &#34;Transpose&#34;: false, &#34;Digit&#34;: 5, &#34;Actual-Vector&#34;: [600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200], &#34;Sample-Weight&#34;: null, &#34;Matrix&#34;: [[100, [[200, 0], [500, 0], [100, 0], [600, 0]]], [200, [[200, 6], [500, 1], [100, 9], [600, 0]]], [500, [[200, 1], [500, 1], [100, 1], [600, 0]]], [600, [[200, 0], [500, 0], [100, 1], [600, 0]]]]}
+<pre>{&#34;Actual-Vector&#34;: [600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200], &#34;Digit&#34;: 5, &#34;Transpose&#34;: false, &#34;Predict-Vector&#34;: [100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200], &#34;Matrix&#34;: [[100, [[200, 0], [500, 0], [100, 0], [600, 0]]], [200, [[200, 6], [500, 1], [100, 9], [600, 0]]], [500, [[200, 1], [500, 1], [100, 1], [600, 0]]], [600, [[200, 0], [500, 0], [100, 1], [600, 0]]]], &#34;Sample-Weight&#34;: null}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example4_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm_stat.obj&quot;</span><span class="p">),</span><span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#34;Actual-Vector&#34;: [600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200], &#34;Digit&#34;: 5, &#34;Transpose&#34;: false, &#34;Predict-Vector&#34;: [100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200], &#34;Class-Stat&#34;: {&#34;OC&#34;: {&#34;200&#34;: 0.8571428571428571, &#34;500&#34;: 0.5, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: &#34;None&#34;}, &#34;dInd&#34;: {&#34;200&#34;: 0.673145600891813, &#34;500&#34;: 0.6692567908186672, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: 1.0}, &#34;NLR&#34;: {&#34;200&#34;: 0.8333333333333334, &#34;500&#34;: 0.7083333333333334, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: 1.0}, &#34;MCC&#34;: {&#34;200&#34;: 0.10482848367219183, &#34;500&#34;: 0.32673201960653564, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: &#34;None&#34;}, &#34;RACCU&#34;: {&#34;200&#34;: 0.33062499999999995, &#34;500&#34;: 0.015625, &#34;100&#34;: 0.07562500000000001, &#34;600&#34;: 0.0006250000000000001}, &#34;IS&#34;: {&#34;200&#34;: 0.09953567355091428, &#34;500&#34;: 1.736965594166206, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: &#34;None&#34;}, &#34;MK&#34;: {&#34;200&#34;: 0.08791208791208782, &#34;500&#34;: 0.38888888888888884, &#34;100&#34;: 0.0, &#34;600&#34;: &#34;None&#34;}, &#34;ACC&#34;: {&#34;200&#34;: 0.45, &#34;500&#34;: 0.85, &#34;100&#34;: 0.45, &#34;600&#34;: 0.95}, &#34;FOR&#34;: {&#34;200&#34;: 0.7692307692307692, &#34;500&#34;: 0.11111111111111116, &#34;100&#34;: 0.0, &#34;600&#34;: 0.050000000000000044}, &#34;FDR&#34;: {&#34;200&#34;: 0.1428571428571429, &#34;500&#34;: 0.5, &#34;100&#34;: 1.0, &#34;600&#34;: &#34;None&#34;}, &#34;Y&#34;: {&#34;200&#34;: 0.125, &#34;500&#34;: 0.27450980392156854, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: 0.0}, &#34;PLRI&#34;: {&#34;200&#34;: &#34;Poor&#34;, &#34;500&#34;: &#34;Fair&#34;, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: &#34;None&#34;}, &#34;G&#34;: {&#34;200&#34;: 0.5669467095138409, &#34;500&#34;: 0.408248290463863, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: &#34;None&#34;}, &#34;TOP&#34;: {&#34;200&#34;: 7, &#34;500&#34;: 2, &#34;100&#34;: 11, &#34;600&#34;: 0}, &#34;TON&#34;: {&#34;200&#34;: 13, &#34;500&#34;: 18, &#34;100&#34;: 9, &#34;600&#34;: 20}, &#34;FNR&#34;: {&#34;200&#34;: 0.625, &#34;500&#34;: 0.6666666666666667, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: 1.0}, &#34;F0.5&#34;: {&#34;200&#34;: 0.6818181818181818, &#34;500&#34;: 0.45454545454545453, &#34;100&#34;: 0.0, &#34;600&#34;: 0.0}, &#34;DOR&#34;: {&#34;200&#34;: 1.7999999999999998, &#34;500&#34;: 7.999999999999997, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: &#34;None&#34;}, &#34;sInd&#34;: {&#34;200&#34;: 0.5240141808835057, &#34;500&#34;: 0.5267639848569737, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: 0.29289321881345254}, &#34;RACC&#34;: {&#34;200&#34;: 0.28, &#34;500&#34;: 0.015, &#34;100&#34;: 0.0, &#34;600&#34;: 0.0}, &#34;DPI&#34;: {&#34;200&#34;: &#34;Poor&#34;, &#34;500&#34;: &#34;Poor&#34;, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: &#34;None&#34;}, &#34;NLRI&#34;: {&#34;200&#34;: &#34;Negligible&#34;, &#34;500&#34;: &#34;Negligible&#34;, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: &#34;Negligible&#34;}, &#34;FP&#34;: {&#34;200&#34;: 1, &#34;100&#34;: 11, &#34;500&#34;: 1, &#34;600&#34;: 0}, &#34;TP&#34;: {&#34;200&#34;: 6, &#34;100&#34;: 0, &#34;500&#34;: 1, &#34;600&#34;: 0}, &#34;MCEN&#34;: {&#34;200&#34;: 0.3739448088748241, &#34;500&#34;: 0.5802792108518123, &#34;100&#34;: 0.3349590631259315, &#34;600&#34;: 0.0}, &#34;GI&#34;: {&#34;200&#34;: 0.125, &#34;500&#34;: 0.27450980392156854, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: 0.0}, &#34;AGM&#34;: {&#34;200&#34;: 0.5669417382415922, &#34;500&#34;: 0.7351956938438939, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: 0}, &#34;ERR&#34;: {&#34;200&#34;: 0.55, &#34;500&#34;: 0.15000000000000002, &#34;100&#34;: 0.55, &#34;600&#34;: 0.050000000000000044}, &#34;OOC&#34;: {&#34;200&#34;: 0.5669467095138409, &#34;500&#34;: 0.4082482904638631, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: &#34;None&#34;}, &#34;PRE&#34;: {&#34;200&#34;: 0.8, &#34;500&#34;: 0.15, &#34;100&#34;: 0.0, &#34;600&#34;: 0.05}, &#34;AGF&#34;: {&#34;200&#34;: 0.33642097801219245, &#34;500&#34;: 0.5665926996700735, &#34;100&#34;: 0.0, &#34;600&#34;: 0.0}, &#34;J&#34;: {&#34;200&#34;: 0.35294117647058826, &#34;500&#34;: 0.25, &#34;100&#34;: 0.0, &#34;600&#34;: 0.0}, &#34;PPV&#34;: {&#34;200&#34;: 0.8571428571428571, &#34;500&#34;: 0.5, &#34;100&#34;: 0.0, &#34;600&#34;: &#34;None&#34;}, &#34;DP&#34;: {&#34;200&#34;: 0.1407391082701595, &#34;500&#34;: 0.49789960499474867, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: &#34;None&#34;}, &#34;FPR&#34;: {&#34;200&#34;: 0.25, &#34;500&#34;: 0.05882352941176472, &#34;100&#34;: 0.55, &#34;600&#34;: 0.0}, &#34;MCCI&#34;: {&#34;200&#34;: &#34;Negligible&#34;, &#34;500&#34;: &#34;Weak&#34;, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: &#34;None&#34;}, &#34;AUCI&#34;: {&#34;200&#34;: &#34;Poor&#34;, &#34;500&#34;: &#34;Fair&#34;, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: &#34;Poor&#34;}, &#34;IBA&#34;: {&#34;200&#34;: 0.17578125, &#34;500&#34;: 0.1230296039984621, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: 0.0}, &#34;PLR&#34;: {&#34;200&#34;: 1.5, &#34;500&#34;: 5.666666666666665, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: &#34;None&#34;}, &#34;AUC&#34;: {&#34;200&#34;: 0.5625, &#34;500&#34;: 0.6372549019607843, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: 0.5}, &#34;TPR&#34;: {&#34;200&#34;: 0.375, &#34;500&#34;: 0.3333333333333333, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: 0.0}, &#34;LS&#34;: {&#34;200&#34;: 1.0714285714285714, &#34;500&#34;: 3.3333333333333335, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: &#34;None&#34;}, &#34;BM&#34;: {&#34;200&#34;: 0.125, &#34;500&#34;: 0.27450980392156854, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: 0.0}, &#34;AM&#34;: {&#34;200&#34;: -9, &#34;500&#34;: -1, &#34;100&#34;: 11, &#34;600&#34;: -1}, &#34;POP&#34;: {&#34;200&#34;: 20, &#34;500&#34;: 20, &#34;100&#34;: 20, &#34;600&#34;: 20}, &#34;P&#34;: {&#34;200&#34;: 16, &#34;500&#34;: 3, &#34;100&#34;: 0, &#34;600&#34;: 1}, &#34;BCD&#34;: {&#34;200&#34;: 0.225, &#34;500&#34;: 0.025, &#34;100&#34;: 0.275, &#34;600&#34;: 0.025}, &#34;Q&#34;: {&#34;200&#34;: 0.28571428571428575, &#34;500&#34;: 0.7777777777777778, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: &#34;None&#34;}, &#34;TNR&#34;: {&#34;200&#34;: 0.75, &#34;500&#34;: 0.9411764705882353, &#34;100&#34;: 0.45, &#34;600&#34;: 1.0}, &#34;N&#34;: {&#34;200&#34;: 4, &#34;500&#34;: 17, &#34;100&#34;: 20, &#34;600&#34;: 19}, &#34;F2&#34;: {&#34;200&#34;: 0.4225352112676056, &#34;500&#34;: 0.35714285714285715, &#34;100&#34;: 0.0, &#34;600&#34;: 0.0}, &#34;NPV&#34;: {&#34;200&#34;: 0.23076923076923078, &#34;500&#34;: 0.8888888888888888, &#34;100&#34;: 1.0, &#34;600&#34;: 0.95}, &#34;GM&#34;: {&#34;200&#34;: 0.5303300858899106, &#34;500&#34;: 0.5601120336112039, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: 0.0}, &#34;TN&#34;: {&#34;200&#34;: 3, &#34;100&#34;: 9, &#34;500&#34;: 16, &#34;600&#34;: 19}, &#34;OP&#34;: {&#34;200&#34;: 0.1166666666666667, &#34;500&#34;: 0.373076923076923, &#34;100&#34;: &#34;None&#34;, &#34;600&#34;: -0.050000000000000044}, &#34;F1&#34;: {&#34;200&#34;: 0.5217391304347826, &#34;500&#34;: 0.4, &#34;100&#34;: 0.0, &#34;600&#34;: 0.0}, &#34;CEN&#34;: {&#34;200&#34;: 0.3570795472009597, &#34;500&#34;: 0.5389466410223563, &#34;100&#34;: 0.3349590631259315, &#34;600&#34;: 0.0}, &#34;FN&#34;: {&#34;200&#34;: 10, &#34;100&#34;: 0, &#34;500&#34;: 2, &#34;600&#34;: 1}}, &#34;Matrix&#34;: [[100, [[200, 0], [500, 0], [100, 0], [600, 0]]], [200, [[200, 6], [500, 1], [100, 9], [600, 0]]], [500, [[200, 1], [500, 1], [100, 1], [600, 0]]], [600, [[200, 0], [500, 0], [100, 1], [600, 0]]]], &#34;Sample-Weight&#34;: null, &#34;Overall-Stat&#34;: {&#34;NIR&#34;: 0.8, &#34;Gwet AC1&#34;: 0.19504643962848295, &#34;Phi-Squared&#34;: &#34;None&#34;, &#34;SOA1(Landis &amp; Koch)&#34;: &#34;Slight&#34;, &#34;AUNU&#34;: &#34;None&#34;, &#34;Zero-one Loss&#34;: 13, &#34;Kappa No Prevalence&#34;: -0.30000000000000004, &#34;Kappa Standard Error&#34;: 0.15128176601206766, &#34;Cramer V&#34;: &#34;None&#34;, &#34;SOA6(Matthews)&#34;: &#34;Negligible&#34;, &#34;Mutual Information&#34;: 0.10087710767390168, &#34;PPV Macro&#34;: &#34;None&#34;, &#34;Overall ACC&#34;: 0.35, &#34;AUNP&#34;: &#34;None&#34;, &#34;Overall RACC&#34;: 0.29500000000000004, &#34;Chi-Squared&#34;: &#34;None&#34;, &#34;TPR Micro&#34;: 0.35, &#34;Bennett S&#34;: 0.1333333333333333, &#34;Standard Error&#34;: 0.1066536450385077, &#34;Kappa&#34;: 0.07801418439716304, &#34;ACC Macro&#34;: 0.675, &#34;Conditional Entropy&#34;: 1.235789374242786, &#34;CBA&#34;: 0.17708333333333331, &#34;Kappa Unbiased&#34;: -0.12554112554112543, &#34;SOA5(Cramer)&#34;: &#34;None&#34;, &#34;Overall J&#34;: [0.6029411764705883, 0.15073529411764708], &#34;RR&#34;: 5.0, &#34;Overall MCEN&#34;: 0.3746281299595305, &#34;Overall MCC&#34;: 0.1264200803632855, &#34;PPV Micro&#34;: 0.35, &#34;Cross Entropy&#34;: 1.709947752496911, &#34;Overall CEN&#34;: 0.3648028121279775, &#34;P-Value&#34;: 0.9999981549942787, &#34;Pearson C&#34;: &#34;None&#34;, &#34;KL Divergence&#34;: &#34;None&#34;, &#34;Hamming Loss&#34;: 0.65, &#34;Kappa 95% CI&#34;: [-0.21849807698648957, 0.3745264457808156], &#34;Lambda A&#34;: 0.0, &#34;SOA3(Altman)&#34;: &#34;Poor&#34;, &#34;95% CI&#34;: [0.14095885572452488, 0.559041144275475], &#34;Lambda B&#34;: 0.0, &#34;SOA4(Cicchetti)&#34;: &#34;Poor&#34;, &#34;SOA2(Fleiss)&#34;: &#34;Poor&#34;, &#34;TPR Macro&#34;: &#34;None&#34;, &#34;Response Entropy&#34;: 1.3366664819166876, &#34;F1 Macro&#34;: 0.23043478260869565, &#34;RCI&#34;: 0.11409066398451011, &#34;Joint Entropy&#34;: 2.119973094021975, &#34;F1 Micro&#34;: 0.35, &#34;Chi-Squared DF&#34;: 9, &#34;Reference Entropy&#34;: 0.8841837197791889, &#34;Overall RACCU&#34;: 0.42249999999999993, &#34;Scott PI&#34;: -0.12554112554112543}}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example4_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm_no_vectors.obj&quot;</span><span class="p">),</span><span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#34;Actual-Vector&#34;: null, &#34;Digit&#34;: 5, &#34;Transpose&#34;: false, &#34;Predict-Vector&#34;: null, &#34;Matrix&#34;: [[100, [[200, 0], [500, 0], [100, 0], [600, 0]]], [200, [[200, 6], [500, 1], [100, 9], [600, 0]]], [500, [[200, 1], [500, 1], [100, 1], [600, 0]]], [600, [[200, 0], [500, 0], [100, 1], [600, 0]]]], &#34;Sample-Weight&#34;: null}
 </pre>
 </div>
 </div>
@@ -12284,6 +12438,26 @@ sInd(Similarity index)                                            None          
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
     <li> <span style="color:red;">Notice </span> : `Matrix` save method changed in <span style="color:red;">version 1.5</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  `save_vector` and `save_stat`, new in <span style="color:red;">version 2.3 </span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> : output format is JSON</li>
 </ul>
 </div>
 </div>

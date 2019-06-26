@@ -562,10 +562,6 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 * Please complete the issue template
 
 
-## Todo	
-
-Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
-
 ## Outputs	
 
 1. [HTML](http://www.pycm.ir/test.html)
@@ -587,13 +583,6 @@ Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
 		<td align="center"><a href="https://requires.io/github/sepandhaghighi/pycm/requirements/?branch=dev"><img src="https://requires.io/github/sepandhaghighi/pycm/requirements.svg?branch=dev" alt="Requirements Status" /></a></td>
 	</tr>
 </table>
-
-
-
-
-## Contribution						
-
-Moved [here](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBUTING.md)
 
 
 ## References			

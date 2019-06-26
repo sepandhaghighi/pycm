@@ -72,7 +72,7 @@ def V_analysis(V):
             return "Strong"
         if V >= 0.8:
             return "Very Strong"
-    except Exception:
+    except Exception: # pragma: no cover
         return "None"
 
 

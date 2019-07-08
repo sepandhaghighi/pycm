@@ -204,7 +204,8 @@ class ConfusionMatrix():
             file.write(matrix + normalized_matrix + stat + one_vs_all)
             file.close()
             if address:
-                message = os.path.join(os.getcwd(), name + ".pycm") # pragma: no cover
+                message = os.path.join(
+                    os.getcwd(), name + ".pycm")  # pragma: no cover
             return {"Status": True, "Message": message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}
@@ -261,7 +262,8 @@ class ConfusionMatrix():
             html_file.write(html_end(VERSION))
             html_file.close()
             if address:
-                message = os.path.join(os.getcwd(), name + ".html") # pragma: no cover
+                message = os.path.join(
+                    os.getcwd(), name + ".html")  # pragma: no cover
             return {"Status": True, "Message": message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}
@@ -309,7 +311,8 @@ class ConfusionMatrix():
                 csv_matrix_data = csv_matrix_print(self.classes, matrix)
                 csv_matrix_file.write(csv_matrix_data)
             if address:
-                message = os.path.join(os.getcwd(), name + ".csv") # pragma: no cover
+                message = os.path.join(
+                    os.getcwd(), name + ".csv")  # pragma: no cover
             return {"Status": True, "Message": message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}
@@ -360,7 +363,8 @@ class ConfusionMatrix():
                 dump_dict["Predict-Vector"] = None
             json.dump(dump_dict, obj_file)
             if address:
-                message = os.path.join(os.getcwd(), name + ".obj") # pragma: no cover
+                message = os.path.join(
+                    os.getcwd(), name + ".obj")  # pragma: no cover
             return {"Status": True, "Message": message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}
@@ -412,9 +416,10 @@ class ConfusionMatrix():
         :return: TI as float
         """
         try:
-            TI_dict={}
+            TI_dict = {}
             for i in self.classes:
-                TI_dict[i] = TI_calc(self.TP[i],self.FP[i],self.FN[i],alpha,beta)
+                TI_dict[i] = TI_calc(
+                    self.TP[i], self.FP[i], self.FN[i], alpha, beta)
             return TI_dict
         except Exception:
             return {}

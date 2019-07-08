@@ -22,10 +22,11 @@ def TI_calc(TP, FP, FN, alpha, beta):
     :return: TI as float
     """
     try:
-        TI = TP/(TP+alpha*FN + beta*FP)
+        TI = TP / (TP + alpha * FN + beta * FP)
         return TI
     except Exception:
         return "None"
+
 
 def OOC_calc(TP, TOP, P):
     """

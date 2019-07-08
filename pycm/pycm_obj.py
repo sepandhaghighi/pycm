@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix module."""
 from __future__ import division
-from .pycm_class_func import class_statistics, F_calc, IBA_calc
+from .pycm_class_func import class_statistics, F_calc, IBA_calc, TI_calc
 from .pycm_overall_func import overall_statistics
 from .pycm_output import *
 from .pycm_util import *
@@ -398,6 +398,24 @@ class ConfusionMatrix():
             for i in self.classes:
                 IBA_dict[i] = IBA_calc(self.TPR[i], self.TNR[i], alpha=alpha)
             return IBA_dict
+        except Exception:
+            return {}
+
+    def TI(self, alpha, beta):
+        """
+        Calculate TI (Tversky index).
+
+        :param alpha: alpha coefficient
+        :type alpha : float
+        :param beta: beta coefficient
+        :type beta: float
+        :return: TI as float
+        """
+        try:
+            TI_dict={}
+            for i in self.classes:
+                TI_dict[i] = TI_calc(self.TP[i],self.FP[i],self.FN[i],alpha,beta)
+            return TI_dict
         except Exception:
             return {}
 

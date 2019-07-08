@@ -614,6 +614,10 @@ Example : online_help("J") or online_help(2)
 >>> cm = ConfusionMatrix(matrix={1:{1:63,0:1},0:{0:50,1:2}}) # Verified Case
 >>> cm.TI(alpha=1,beta=1)[1]
 0.9545454545454546
+>>> cm.TI(alpha=0.5,beta=0.5)[1] == cm.F1[1]
+True
+>>> cm.TI(alpha=0.5,beta=0.5)[0] == cm.F1[0]
+True
 >>> cm.TI(alpha=2,beta=8)[1]
 0.7777777777777778
 >>> cm.TI(alpha=2,beta=8)[0]

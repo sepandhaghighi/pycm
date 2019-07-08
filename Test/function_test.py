@@ -167,6 +167,8 @@ True
 >>> del cm.classes
 >>> cm.IBA_alpha(2)
 {}
+>>> cm.TI(2,3)
+{}
 >>> kappa_analysis_koch(-0.1)
 'Poor'
 >>> kappa_analysis_koch(0)
@@ -609,4 +611,11 @@ Example : online_help("J") or online_help(2)
 0.9636363636363636
 >>> cm.OOC[1]
 0.9383838571303771
+>>> cm = ConfusionMatrix(matrix={1:{1:63,0:1},0:{0:50,1:2}}) # Verified Case
+>>> cm.TI(alpha=1,beta=1)[1]
+0.9545454545454546
+>>> cm.TI(alpha=2,beta=8)[1]
+0.7777777777777778
+>>> cm.TI(alpha=2,beta=8)[0]
+0.8064516129032258
 """

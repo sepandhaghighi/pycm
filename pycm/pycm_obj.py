@@ -407,7 +407,7 @@ class ConfusionMatrix():
 
     def TI(self, alpha, beta):
         """
-        Calculate TI (Tversky index).
+        Calculate Tversky index.
 
         :param alpha: alpha coefficient
         :type alpha : float

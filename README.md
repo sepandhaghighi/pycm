@@ -694,7 +694,7 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>53- Y. Otsuka, "The faunal character of the Japanese Pleistocene marine Mollusca, as evidence of climate having become colder during the Pleistocene in Japan," Biogeograph. Soc. Japan, vol. 6, pp. 165-170, 1936.</blockquote>
 
-<blockquote>54- Tversky, Amos (1977). "Features of Similarity" . Psychological Review. 84 (4): 327–352. doi:10.1037/0033-295x.84.4.327</blockquote>
+<blockquote>54- A. Tversky, "Features of similarity," Psychological review, vol. 84, no. 4, p. 327, 1977.</blockquote>
 
 
 

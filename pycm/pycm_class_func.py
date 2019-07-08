@@ -5,6 +5,28 @@ import math
 from .pycm_interpret import *
 
 
+def TI_calc(TP, FP, FN, alpha, beta):
+    """
+    Calculate TI (Tversky index).
+
+    :param TP: true positive
+    :type TP : int
+    :param FP: false positive
+    :type FP : int
+    :param FN: false negative
+    :type FN : int
+    :param alpha: alpha coefficient
+    :type alpha : float
+    :param beta: beta coefficient
+    :type beta: float
+    :return: TI as float
+    """
+    try:
+        TI = TP/(TP+alpha*FN + beta*FP)
+        return TI
+    except Exception:
+        return "None"
+
 def OOC_calc(TP, TOP, P):
     """
     Calculate OOC (Otsuka-Ochiai coefficient).

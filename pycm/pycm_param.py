@@ -230,7 +230,8 @@ PARAMS_DESCRIPTION = {
     "AGM": "Adjusted geometric mean",
     "AGF": "Adjusted F-score",
     "OC": "Overlap coefficient",
-    "OOC": "Otsuka-Ochiai coefficient"}
+    "OOC": "Otsuka-Ochiai coefficient",
+    "AUPR": "Area under the PR curve"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -343,9 +344,10 @@ PARAMS_LINK = {
     "SOA6(Matthews)": "SOA6-(Matthews's-benchmark)",
     "AGF": "AGF-(Adjusted-F-score)",
     "OC": "OC-(Overlap-coefficient)",
-    "OOC": "OOC-(Otsuka-Ochiai-coefficient)"}
+    "OOC": "OOC-(Otsuka-Ochiai-coefficient)",
+    "AUPR": ""}
 
-CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC"]
+CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR"]
 
 BENCHMARK_COLOR = {
     "PLRI": {

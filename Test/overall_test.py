@@ -86,7 +86,7 @@ ACC(Accuracy)                                                    0.83333        
 AGF(Adjusted F-score)                                            0.9136                  0.53995                 0.5516
 AGM(Adjusted geometric mean)                                     0.83729                 0.692                   0.60712
 AM(Difference between automatic and manual classification)       2                       -1                      -1
-AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
+AUC(Area under the ROC curve)                                    0.88889                 0.61111                 0.58333
 AUCI(AUC value interpretation)                                   Very Good               Fair                    Poor
 AUPR(Area under the PR curve)                                    0.8                     0.41667                 0.55
 BCD(Bray-Curtis dissimilarity)                                   0.08333                 0.04167                 0.04167
@@ -219,7 +219,7 @@ ACC(Accuracy)                                                    0.83333        
 AGF(Adjusted F-score)                                            0.9136                  0.53995                 0.5516
 AGM(Adjusted geometric mean)                                     0.83729                 0.692                   0.60712
 AM(Difference between automatic and manual classification)       2                       -1                      -1
-AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
+AUC(Area under the ROC curve)                                    0.88889                 0.61111                 0.58333
 AUCI(AUC value interpretation)                                   Very Good               Fair                    Poor
 AUPR(Area under the PR curve)                                    0.8                     0.41667                 0.55
 BCD(Bray-Curtis dissimilarity)                                   0.08333                 0.04167                 0.04167
@@ -367,7 +367,7 @@ ACC(Accuracy)                                                    0.45           
 AGF(Adjusted F-score)                                            0.0                     0.33642                 0.56659                 0.0
 AGM(Adjusted geometric mean)                                     None                    0.56694                 0.7352                  0
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
-AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
+AUC(Area under the ROC curve)                                    None                    0.5625                  0.63725                 0.5
 AUCI(AUC value interpretation)                                   None                    Poor                    Fair                    Poor
 AUPR(Area under the PR curve)                                    None                    0.61607                 0.41667                 None
 BCD(Bray-Curtis dissimilarity)                                   0.275                   0.225                   0.025                   0.025
@@ -487,7 +487,7 @@ ACC(Accuracy)                                                    0.45           
 AGF(Adjusted F-score)                                            0.0                     0.33642                 0.56659                 0.0
 AGM(Adjusted geometric mean)                                     None                    0.56694                 0.7352                  0
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
-AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
+AUC(Area under the ROC curve)                                    None                    0.5625                  0.63725                 0.5
 AUCI(AUC value interpretation)                                   None                    Poor                    Fair                    Poor
 AUPR(Area under the PR curve)                                    None                    0.61607                 0.41667                 None
 BCD(Bray-Curtis dissimilarity)                                   0.275                   0.225                   0.025                   0.025
@@ -553,7 +553,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
-AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
+AUC(Area under the ROC curve)                                    None                    0.5625                  0.63725                 0.5
 TNR(Specificity or true negative rate)                           0.45                    0.75                    0.94118                 1.0
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0
 <BLANKLINE>
@@ -567,7 +567,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100
 ACC(Accuracy)                                                    0.45
-AUC(Area under the roc curve)                                    None
+AUC(Area under the ROC curve)                                    None
 TNR(Specificity or true negative rate)                           0.45
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None
 <BLANKLINE>
@@ -720,7 +720,7 @@ ACC(Accuracy)                                                    0.74074        
 AGF(Adjusted F-score)                                            0.75595                 0.65734                 0.79543
 AGM(Adjusted geometric mean)                                     0.73866                 0.70552                 0.86488
 AM(Difference between automatic and manual classification)       1                       0                       -1
-AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
+AUC(Area under the ROC curve)                                    0.74167                 0.66667                 0.80952
 AUCI(AUC value interpretation)                                   Good                    Fair                    Very Good
 AUPR(Area under the PR curve)                                    0.72115                 0.55556                 0.73333
 BCD(Bray-Curtis dissimilarity)                                   0.01852                 0.0                     0.01852
@@ -853,7 +853,7 @@ ACC(Accuracy)                                                    0.74074        
 AGF(Adjusted F-score)                                            0.75595                 0.65734                 0.79543
 AGM(Adjusted geometric mean)                                     0.73866                 0.70552                 0.86488
 AM(Difference between automatic and manual classification)       1                       0                       -1
-AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
+AUC(Area under the ROC curve)                                    0.74167                 0.66667                 0.80952
 AUCI(AUC value interpretation)                                   Good                    Fair                    Very Good
 AUPR(Area under the PR curve)                                    0.72115                 0.55556                 0.73333
 BCD(Bray-Curtis dissimilarity)                                   0.01852                 0.0                     0.01852
@@ -988,7 +988,7 @@ ACC(Accuracy)                                                    0.80952        
 AGF(Adjusted F-score)                                            0.90694                 0.54433                 0.55442
 AGM(Adjusted geometric mean)                                     0.80509                 0.70336                 0.66986
 AM(Difference between automatic and manual classification)       4                       0                       -4
-AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
+AUC(Area under the ROC curve)                                    0.86667                 0.61111                 0.63889
 AUCI(AUC value interpretation)                                   Very Good               Fair                    Fair
 AUPR(Area under the PR curve)                                    0.8                     0.33333                 0.625
 BCD(Bray-Curtis dissimilarity)                                   0.09524                 0.0                     0.09524

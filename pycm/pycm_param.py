@@ -347,7 +347,7 @@ PARAMS_LINK = {
     "OOC": "OOC-(Otsuka-Ochiai-coefficient)",
     "AUPR": ""}
 
-CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR"]
+CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC"]
 
 BENCHMARK_COLOR = {
     "PLRI": {

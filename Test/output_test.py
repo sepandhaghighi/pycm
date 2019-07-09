@@ -161,7 +161,7 @@ ACC(Accuracy)                                                    0.45           
 AGF(Adjusted F-score)                                            0.0                     0.33642                 0.56659                 0.0
 AGM(Adjusted geometric mean)                                     None                    0.56694                 0.7352                  0
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
-AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
+AUC(Area under the ROC curve)                                    None                    0.5625                  0.63725                 0.5
 AUCI(AUC value interpretation)                                   None                    Poor                    Fair                    Poor
 AUPR(Area under the PR curve)                                    None                    0.61607                 0.41667                 None
 BCD(Bray-Curtis dissimilarity)                                   0.275                   0.225                   0.025                   0.025
@@ -326,7 +326,7 @@ ACC(Accuracy)                                                    0.80952        
 AGF(Adjusted F-score)                                            0.90694                 0.54433                 0.55442
 AGM(Adjusted geometric mean)                                     0.80509                 0.70336                 0.66986
 AM(Difference between automatic and manual classification)       4                       0                       -4
-AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
+AUC(Area under the ROC curve)                                    0.86667                 0.61111                 0.63889
 AUCI(AUC value interpretation)                                   Very Good               Fair                    Fair
 AUPR(Area under the PR curve)                                    0.8                     0.33333                 0.625
 BCD(Bray-Curtis dissimilarity)                                   0.09524                 0.0                     0.09524

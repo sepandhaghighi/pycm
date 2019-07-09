@@ -470,18 +470,18 @@ def CEN_calc(classes, table, TOP, P, class_name, modified=False):
         return "None"
 
 
-def AUC_calc(TNR, TPR):
+def AUC_calc(item, TPR):
     """
-    Calculate AUC (Area under the ROC curve for each class).
+    Calculate AUC/AUPR (Area under the ROC/PR curve for each class).
 
-    :param TNR: specificity or true negative rate
-    :type TNR : float
+    :param item: TNR or PPV
+    :type item : float
     :param TPR: sensitivity, recall, hit rate, or true positive rate
     :type TPR : float
-    :return: AUC as float
+    :return: AUC/AUPR as float
     """
     try:
-        return (TNR + TPR) / 2
+        return (item + TPR) / 2
     except Exception:
         return "None"
 
@@ -711,6 +711,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     AGF = {}
     OC = {}
     OOC = {}
+    AUPR = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -765,6 +766,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         AGF[i] = AGF_calc(TP[i], FP[i], FN[i], TN[i])
         OC[i] = OC_calc(TP[i], TOP[i], P[i])
         OOC[i] = OOC_calc(TP[i], TOP[i], P[i])
+        AUPR[i] = AUC_calc(PPV[i], TPR[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {
@@ -825,5 +827,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "MCCI": MCCI,
         "AGF": AGF,
         "OC": OC,
-        "OOC": OOC}
+        "OOC": OOC,
+        "AUPR": AUPR}
     return result

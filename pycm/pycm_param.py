@@ -345,7 +345,7 @@ PARAMS_LINK = {
     "AGF": "AGF-(Adjusted-F-score)",
     "OC": "OC-(Overlap-coefficient)",
     "OOC": "OOC-(Otsuka-Ochiai-coefficient)",
-    "AUPR": ""}
+    "AUPR": "AUPR-(Area-under-the-PR-curve)"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC"]
 

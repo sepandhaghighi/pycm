@@ -696,6 +696,10 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>54- A. Tversky, "Features of similarity," Psychological review, vol. 84, no. 4, p. 327, 1977.</blockquote>
 
+<blockquote>55- Boyd, K., Eng, K.H. and Page, C.D., 2013, September. Area under the precision-recall curve: point estimates and confidence intervals. In Joint European conference on machine learning and knowledge discovery in databases (pp. 451-466). Springer, Berlin, Heidelberg.</blockquote>
+
+<blockquote>56- Davis, J. and Goadrich, M., 2006, June. The relationship between Precision-Recall and ROC curves. In Proceedings of the 23rd international conference on Machine learning (pp. 233-240). ACM.</blockquote>
+
 
 
 ## Cite

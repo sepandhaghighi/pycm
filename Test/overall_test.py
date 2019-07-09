@@ -88,6 +88,7 @@ AGM(Adjusted geometric mean)                                     0.83729        
 AM(Difference between automatic and manual classification)       2                       -1                      -1
 AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
 AUCI(AUC value interpretation)                                   Very Good               Fair                    Poor
+AUPR(Area under the PR curve)                                    0.8                     0.41667                 0.55
 BCD(Bray-Curtis dissimilarity)                                   0.08333                 0.04167                 0.04167
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
@@ -220,6 +221,7 @@ AGM(Adjusted geometric mean)                                     0.83729        
 AM(Difference between automatic and manual classification)       2                       -1                      -1
 AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
 AUCI(AUC value interpretation)                                   Very Good               Fair                    Poor
+AUPR(Area under the PR curve)                                    0.8                     0.41667                 0.55
 BCD(Bray-Curtis dissimilarity)                                   0.08333                 0.04167                 0.04167
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
@@ -367,6 +369,7 @@ AGM(Adjusted geometric mean)                                     None           
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
 AUCI(AUC value interpretation)                                   None                    Poor                    Fair                    Poor
+AUPR(Area under the PR curve)                                    None                    0.61607                 0.41667                 None
 BCD(Bray-Curtis dissimilarity)                                   0.275                   0.225                   0.025                   0.025
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
@@ -486,6 +489,7 @@ AGM(Adjusted geometric mean)                                     None           
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
 AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
 AUCI(AUC value interpretation)                                   None                    Poor                    Fair                    Poor
+AUPR(Area under the PR curve)                                    None                    0.61607                 0.41667                 None
 BCD(Bray-Curtis dissimilarity)                                   0.275                   0.225                   0.025                   0.025
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
@@ -718,6 +722,7 @@ AGM(Adjusted geometric mean)                                     0.73866        
 AM(Difference between automatic and manual classification)       1                       0                       -1
 AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
 AUCI(AUC value interpretation)                                   Good                    Fair                    Very Good
+AUPR(Area under the PR curve)                                    0.72115                 0.55556                 0.73333
 BCD(Bray-Curtis dissimilarity)                                   0.01852                 0.0                     0.01852
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
@@ -850,6 +855,7 @@ AGM(Adjusted geometric mean)                                     0.73866        
 AM(Difference between automatic and manual classification)       1                       0                       -1
 AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
 AUCI(AUC value interpretation)                                   Good                    Fair                    Very Good
+AUPR(Area under the PR curve)                                    0.72115                 0.55556                 0.73333
 BCD(Bray-Curtis dissimilarity)                                   0.01852                 0.0                     0.01852
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
@@ -984,6 +990,7 @@ AGM(Adjusted geometric mean)                                     0.80509        
 AM(Difference between automatic and manual classification)       4                       0                       -4
 AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
 AUCI(AUC value interpretation)                                   Very Good               Fair                    Fair
+AUPR(Area under the PR curve)                                    0.8                     0.33333                 0.625
 BCD(Bray-Curtis dissimilarity)                                   0.09524                 0.0                     0.09524
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
 CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439

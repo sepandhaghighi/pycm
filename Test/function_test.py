@@ -566,6 +566,8 @@ Example : online_help("J") or online_help(2)
 0.55
 >>> cm.AUC[1]
 0.75
+>>> cm.AUPR[1]
+0.5355263157894736
 >>> cm.OP[1]
 0.6473333333333334
 >>> cm.IBA[1]

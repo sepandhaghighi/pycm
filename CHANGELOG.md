@@ -7,9 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Tversky index (TI)
-- Are under the PR curve (AUPR)
+- Area under the PR curve (AUPR)
 ### Changed
 - `AUC_calc` function modified
+- Document modified
 ## [2.3] - 2019-06-27
 ### Added
 - Adjusted F-score (AGF)

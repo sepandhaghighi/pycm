@@ -700,6 +700,8 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>56- Davis, J. and Goadrich, M., 2006, June. The relationship between Precision-Recall and ROC curves. In Proceedings of the 23rd international conference on Machine learning (pp. 233-240). ACM.</blockquote>
 
+<blockquote>57- Kuhn, M., 2008. Building predictive models in R using the caret package. Journal of statistical software, 28(5), pp.1-26.</blockquote>
+
 
 
 ## Cite

@@ -126,7 +126,7 @@ class ConfusionMatrix():
         table = normalized_table_calc(classes, table)
         print(table_print(classes, table))
 
-    def stat(self, overall_param=None, class_param=None, class_name=None):
+    def stat(self, overall_param=None, class_param=None, class_name=None, summary=False):
         """
         Print statistical measures table.
 
@@ -136,15 +136,22 @@ class ConfusionMatrix():
         :type class_param : list
         :param class_name : class name (sub set of classes), Example :[1,2,3]
         :type class_name : list
+        :param summary : summary mode flag
+        :type summary : bool
         :return: None
         """
         classes = class_filter(self.classes, class_name)
+        class_list = class_param
+        overall_list = overall_param
+        if summary :
+            class_list = SUMMARY_CLASS
+            overall_list = SUMMARY_OVERALL
         print(
             stat_print(
                 classes,
                 self.class_stat,
                 self.overall_stat,
-                self.digit, overall_param, class_param))
+                self.digit, overall_list, class_list))
 
     def __str__(self):
         """

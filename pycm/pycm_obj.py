@@ -231,7 +231,7 @@ class ConfusionMatrix():
             address=True,
             overall_param=None,
             class_param=None,
-            class_name=None, color=(0, 0, 0), normalize=False):
+            class_name=None, color=(0, 0, 0), normalize=False, summary=False):
         """
         Save ConfusionMatrix in HTML file.
 
@@ -249,9 +249,16 @@ class ConfusionMatrix():
         :type color : tuple
         :param normalize : save normalize matrix flag
         :type normalize : bool
+        :param summary : summary mode flag
+        :type summary : bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
         try:
+            class_list = class_param
+            overall_list = overall_param
+            if summary:
+                class_list = SUMMARY_CLASS
+                overall_list = SUMMARY_OVERALL
             message = None
             table = self.table
             if normalize:
@@ -264,7 +271,7 @@ class ConfusionMatrix():
                 html_overall_stat(
                     self.overall_stat,
                     self.digit,
-                    overall_param,
+                    overall_list,
                     self.recommended_list))
             class_stat_classes = class_filter(self.classes, class_name)
             html_file.write(
@@ -272,7 +279,7 @@ class ConfusionMatrix():
                     class_stat_classes,
                     self.class_stat,
                     self.digit,
-                    class_param,
+                    class_list,
                     self.recommended_list))
             html_file.write(html_end(VERSION))
             html_file.close()

@@ -5,6 +5,8 @@
 >>> import json
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
+>>> y_actu_copy = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
+>>> y_pred_copy = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu, y_pred)
 >>> cm
 pycm.ConfusionMatrix(classes: [0, 1, 2])
@@ -143,6 +145,10 @@ dInd(Distance index)                                             0.22222        
 sInd(Similarity index)                                           0.84287                 0.52209                 0.57508
 <BLANKLINE>
 >>> cm.relabel({0:"L1",1:"L2",2:"L3"})
+>>> y_actu == y_actu_copy
+True
+>>> y_pred == y_pred_copy
+True
 >>> print(cm)
 Predict          L1    L2    L3
 Actual
@@ -287,8 +293,14 @@ True
 0.2222222222222221
 >>> import numpy as np
 >>> y_test = np.array([600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200])
+>>> y_test_copy = np.array([600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200])
 >>> y_pred = np.array([100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200])
+>>> y_pred_copy = np.array([100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200])
 >>> cm=ConfusionMatrix(y_test, y_pred)
+>>> type(y_pred) == type(y_pred_copy)
+True
+>>> type(y_test) == type(y_test_copy)
+True
 >>> print(cm)
 Predict          100    200    500    600
 Actual
@@ -634,7 +646,11 @@ Actual
 ...		    return 1
 ...	    else:
 ...		    return 0
->>> cm_6 = ConfusionMatrix([0,0,1,0],[0.87,0.34,0.9,0.12],threshold=activation, transpose=2)
+>>> y_pred_act = [0.87,0.34,0.9,0.12]
+>>> y_pred_act_copy = [0.87,0.34,0.9,0.12]
+>>> cm_6 = ConfusionMatrix([0,0,1,0],y_pred_act,threshold=activation, transpose=2)
+>>> y_pred_act_copy == y_pred_act
+True
 >>> cm_6.print_matrix()
 Predict          0        1
 Actual
@@ -643,7 +659,11 @@ Actual
 >>> cm = ConfusionMatrix(matrix={1:{1:0,2:0},2:{1:0,2:0}})
 >>> cm
 pycm.ConfusionMatrix(classes: [1, 2])
->>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":9,"Class2":3,"Class3":0},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":1,"Class2":1,"Class3":4}})
+>>> matrix1 = {"Class1":{"Class1":9,"Class2":3,"Class3":0},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":1,"Class2":1,"Class3":4}}
+>>> matrix1_copy = {"Class1":{"Class1":9,"Class2":3,"Class3":0},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":1,"Class2":1,"Class3":4}}
+>>> cm = ConfusionMatrix(matrix=matrix1)
+>>> matrix1 == matrix1_copy
+True
 >>> print(cm)
 Predict          Class1    Class2    Class3
 Actual
@@ -776,7 +796,9 @@ Y(Youden index)                                                  0.48333        
 dInd(Distance index)                                             0.36553                 0.4969                  0.33672
 sInd(Similarity index)                                           0.74153                 0.64864                 0.7619
 <BLANKLINE>
->>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":9,"Class2":3,"Class3":1},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":0,"Class2":1,"Class3":4}},transpose=True)
+>>> cm = ConfusionMatrix(matrix=matrix1,transpose=True)
+>>> matrix1 == matrix1_copy
+True
 >>> print(cm)
 Predict          Class1    Class2    Class3
 Actual
@@ -911,7 +933,11 @@ sInd(Similarity index)                                           0.74153        
 <BLANKLINE>
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
->>> cm = ConfusionMatrix(y_actu, y_pred, sample_weight=[2, 2, 2, 2, 3, 1, 1, 2, 2, 1, 1, 2])
+>>> weight = [2, 2, 2, 2, 3, 1, 1, 2, 2, 1, 1, 2]
+>>> weight_copy = [2, 2, 2, 2, 3, 1, 1, 2, 2, 1, 1, 2]
+>>> cm = ConfusionMatrix(y_actu, y_pred, sample_weight=weight)
+>>> weight_copy == weight
+True
 >>> print(cm)
 Predict          0    1    2
 Actual

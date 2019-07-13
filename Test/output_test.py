@@ -13,6 +13,9 @@ True
 >>> save_stat=cm.save_stat("test_filtered",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"])
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=cm.save_stat("test_summary",address=False,summary=True)
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> save_stat=cm.save_stat("test_filtered2",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=["L1","L2"])
 >>> save_stat=={'Status': True, 'Message': None}
 True
@@ -26,6 +29,9 @@ True
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_html("test_normalized",address=False,normalize=True)
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_html("test_summary",address=False,summary=True)
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_html("test_filtered",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"])
@@ -53,6 +59,9 @@ True
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_csv("test_normalized",address=False,normalize=True)
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_csv("test_summary",address=False,summary=True,matrix_save=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_csv("test_filtered",address=False,class_param=["TPR","TNR","ACC","AUC"])
@@ -397,6 +406,10 @@ True
 0.627145631592811
 >>> cm_file.transpose
 True
+>>> cm.matrix == cm_file.matrix
+True
+>>> cm.normalized_matrix == cm_file.normalized_matrix
+True
 >>> json.dump({"Actual-Vector": None, "Digit": 5, "Predict-Vector": None, "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}, "Transpose": True,"Sample-Weight": None},open("test5.obj","w"))
 >>> cm_file=ConfusionMatrix(file=open("test5.obj","r"))
 >>> cm_file.transpose
@@ -432,15 +445,18 @@ True
 >>> os.remove("test_filtered.csv")
 >>> os.remove("test_filtered_matrix.csv")
 >>> os.remove("test_filtered.pycm")
+>>> os.remove("test_summary.pycm")
 >>> os.remove("test_filtered2.html")
 >>> os.remove("test_filtered3.html")
 >>> os.remove("test_filtered4.html")
 >>> os.remove("test_filtered5.html")
+>>> os.remove("test_summary.html")
 >>> os.remove("test_colored.html")
 >>> os.remove("test_colored2.html")
 >>> os.remove("test_filtered2.csv")
 >>> os.remove("test_filtered3.csv")
 >>> os.remove("test_filtered4.csv")
+>>> os.remove("test_summary.csv")
 >>> os.remove("test_filtered2.pycm")
 >>> os.remove("test_filtered3.pycm")
 >>> os.remove("test2.obj")

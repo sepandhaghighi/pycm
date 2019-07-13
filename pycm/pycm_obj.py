@@ -143,7 +143,7 @@ class ConfusionMatrix():
         classes = class_filter(self.classes, class_name)
         class_list = class_param
         overall_list = overall_param
-        if summary :
+        if summary:
             class_list = SUMMARY_CLASS
             overall_list = SUMMARY_OVERALL
         print(
@@ -171,7 +171,8 @@ class ConfusionMatrix():
             address=True,
             overall_param=None,
             class_param=None,
-            class_name=None):
+            class_name=None,
+            summary=False):
         """
         Save ConfusionMatrix in .pycm (flat file format).
 
@@ -185,10 +186,17 @@ class ConfusionMatrix():
         :type class_param : list
         :param class_name : class name (sub set of classes), Example :[1,2,3]
         :type class_name : list
+        :param summary : summary mode flag
+        :type summary : bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
         try:
             message = None
+            class_list = class_param
+            overall_list = overall_param
+            if summary:
+                class_list = SUMMARY_CLASS
+                overall_list = SUMMARY_OVERALL
             file = open(name + ".pycm", "w")
             matrix = "Matrix : \n\n" + table_print(self.classes,
                                                    self.table) + "\n\n"
@@ -207,7 +215,7 @@ class ConfusionMatrix():
                 classes,
                 self.class_stat,
                 self.overall_stat,
-                self.digit, overall_param, class_param)
+                self.digit, overall_list, class_list)
             file.write(matrix + normalized_matrix + stat + one_vs_all)
             file.close()
             if address:

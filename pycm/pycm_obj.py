@@ -297,7 +297,8 @@ class ConfusionMatrix():
             class_param=None,
             class_name=None,
             matrix_save=True,
-            normalize=False):
+            normalize=False,
+            summary=False):
         """
         Save ConfusionMatrix in CSV file.
 
@@ -313,9 +314,14 @@ class ConfusionMatrix():
         :type matrix_save : bool
         :param normalize : save normalize matrix flag
         :type normalize : bool
+        :param summary : summary mode flag
+        :type summary : bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
         try:
+            class_list = class_param
+            if summary:
+                class_list = SUMMARY_CLASS
             message = None
             classes = class_filter(self.classes, class_name)
             csv_file = open(name + ".csv", "w")
@@ -323,7 +329,7 @@ class ConfusionMatrix():
                 classes,
                 self.class_stat,
                 self.digit,
-                class_param)
+                class_list)
             csv_file.write(csv_data)
             if matrix_save:
                 matrix = self.table

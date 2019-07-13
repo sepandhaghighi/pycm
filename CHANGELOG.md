@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `AUC_calc` function modified
 - Document modified
+- `summary` parameter added to `save_html`,`save_stat`,`save_csv` and `stat` methods
 ## [2.3] - 2019-06-27
 ### Added
 - Adjusted F-score (AGF)

@@ -796,6 +796,8 @@ Y(Youden index)                                                  0.48333        
 dInd(Distance index)                                             0.36553                 0.4969                  0.33672
 sInd(Similarity index)                                           0.74153                 0.64864                 0.7619
 <BLANKLINE>
+>>> matrix1 = {"Class1":{"Class1":9,"Class2":3,"Class3":1},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":0,"Class2":1,"Class3":4}}
+>>> matrix1_copy = {"Class1":{"Class1":9,"Class2":3,"Class3":1},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":0,"Class2":1,"Class3":4}}
 >>> cm = ConfusionMatrix(matrix=matrix1,transpose=True)
 >>> matrix1 == matrix1_copy
 True

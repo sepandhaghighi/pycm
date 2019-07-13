@@ -217,7 +217,7 @@ def transpose_func(classes, table):
     :type table : dict
     :return: transposed table as dict
     """
-    transposed_table = table
+    transposed_table = {k:table[k].copy() for k in classes}
     for i, item1 in enumerate(classes):
         for j, item2 in enumerate(classes):
             if i > j:
@@ -238,6 +238,7 @@ def matrix_params_from_table(table, transpose=False):
     :return: [classes_list,table,TP,TN,FP,FN]
     """
     classes = sorted(table.keys())
+    table_temp = table
     map_dict = {k: 0 for k in classes}
     TP_dict = map_dict.copy()
     TN_dict = map_dict.copy()
@@ -255,8 +256,8 @@ def matrix_params_from_table(table, transpose=False):
         temp = FN_dict
         FN_dict = FP_dict
         FP_dict = temp
-        table = transpose_func(classes, table)
-    return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
+        table_temp = transpose_func(classes, table)
+    return [classes, table_temp, TP_dict, TN_dict, FP_dict, FN_dict]
 
 
 def matrix_params_calc(actual_vector, predict_vector, sample_weight):

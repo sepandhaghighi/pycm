@@ -1104,7 +1104,11 @@ False
 >>> cm_comp1_temp = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
 >>> cm_comp1 == cm_comp1_temp
 True
->>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2})
+>>> compare_input = {"model1":cm_comp1,"model2":cm_comp2}
+>>> compare_input_copy = {"model1":cm_comp1,"model2":cm_comp2}
+>>> cp = Compare(compare_input)
+>>> compare_input == compare_input_copy
+True
 >>> cp
 pycm.Compare(classes: [0, 1, 2])
 >>> cp.scores == {'model1': {'overall': 2.55, 'class': 7.05}, 'model2': {'overall': 1.98333, 'class': 4.55}}
@@ -1127,7 +1131,11 @@ Rank  Name      Class-Score         Overall-Score
 1     model1    7.05                2.55
 2     model2    4.55                1.98333
 <BLANKLINE>
->>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2},by_class=True,weight={0:5,1:1,2:1})
+>>> weight = {0:5,1:1,2:1}
+>>> weight_copy = {0:5,1:1,2:1}
+>>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2},by_class=True,weight=weight)
+>>> weight == weight_copy
+True
 >>> print(cp)
 Best : model2
 <BLANKLINE>

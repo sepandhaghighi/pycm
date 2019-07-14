@@ -24,7 +24,7 @@ def TI_calc(TP, FP, FN, alpha, beta):
     try:
         TI = TP / (TP + alpha * FN + beta * FP)
         return TI
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -43,7 +43,7 @@ def OOC_calc(TP, TOP, P):
     try:
         OOC = TP / (math.sqrt(TOP * P))
         return OOC
-    except Exception:
+    except (ZeroDivisionError, TypeError, ValueError):
         return "None"
 
 
@@ -62,7 +62,7 @@ def OC_calc(TP, TOP, P):
     try:
         overlap_coef = TP / min(TOP, P)
         return overlap_coef
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -85,7 +85,7 @@ def AGF_calc(TP, FP, FN, TN):
         F05_inv = F_calc(TP=TN, FP=FN, FN=FP, beta=0.5)
         AGF = math.sqrt(F2 * F05_inv)
         return AGF
-    except Exception:
+    except (TypeError, ValueError):
         return "None"
 
 
@@ -112,7 +112,7 @@ def AGM_calc(TPR, TNR, GM, N, POP):
         else:
             result = (GM + TNR * n) / (1 + n)
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -134,7 +134,7 @@ def Q_calc(TP, TN, FP, FN):
         OR = (TP * TN) / (FP * FN)
         result = (OR - 1) / (OR + 1)
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -151,7 +151,7 @@ def TTPN_calc(item1, item2):
     try:
         result = item1 / (item1 + item2)
         return result
-    except ZeroDivisionError:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -166,7 +166,7 @@ def FXR_calc(item):
     try:
         result = 1 - item
         return result
-    except Exception:
+    except TypeError:
         return "None"
 
 
@@ -248,7 +248,7 @@ def MK_BM_calc(item1, item2):
     try:
         result = item1 + item2 - 1
         return result
-    except Exception:
+    except TypeError:
         return "None"
 
 
@@ -265,7 +265,7 @@ def LR_calc(item1, item2):
     try:
         result = item1 / item2
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -282,7 +282,7 @@ def PRE_calc(P, POP):
     try:
         result = P / POP
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -299,7 +299,7 @@ def G_calc(item1, item2):
     try:
         result = math.sqrt(item1 * item2)
         return result
-    except Exception:
+    except (TypeError, ValueError):
         return "None"
 
 
@@ -318,7 +318,7 @@ def RACC_calc(TOP, P, POP):
     try:
         result = (TOP * P) / ((POP) ** 2)
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -337,7 +337,7 @@ def RACCU_calc(TOP, P, POP):
     try:
         result = ((TOP + P) / (2 * POP))**2
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -351,7 +351,7 @@ def ERR_calc(ACC):
     """
     try:
         return 1 - ACC
-    except Exception:
+    except TypeError:
         return "None"
 
 
@@ -369,7 +369,7 @@ def jaccard_index_calc(TP, TOP, P):
     """
     try:
         return TP / (TOP + P - TP)
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -391,7 +391,7 @@ def IS_calc(TP, FP, FN, POP):
         result = -math.log(((TP + FN) / POP), 2) + \
             math.log((TP / (TP + FP)), 2)
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError, ValueError):
         return "None"
 
 
@@ -428,7 +428,7 @@ def CEN_misclassification_calc(
             result -= table[subject_class][subject_class]
         result = table[i][j] / result
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -466,7 +466,7 @@ def CEN_calc(classes, table, TOP, P, class_name, modified=False):
         if result != 0:
             result = result * (-1)
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError, ValueError):
         return "None"
 
 
@@ -482,7 +482,7 @@ def AUC_calc(item, TPR):
     """
     try:
         return (item + TPR) / 2
-    except Exception:
+    except TypeError:
         return "None"
 
 
@@ -499,7 +499,7 @@ def dInd_calc(TNR, TPR):
     try:
         result = math.sqrt(((1 - TNR)**2) + ((1 - TPR)**2))
         return result
-    except Exception:
+    except TypeError:
         return "None"
 
 
@@ -513,7 +513,7 @@ def sInd_calc(dInd):
     """
     try:
         return 1 - (dInd / (math.sqrt(2)))
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -531,7 +531,7 @@ def DP_calc(TPR, TNR):
         X = TPR / (1 - TPR)
         Y = TNR / (1 - TNR)
         return (math.sqrt(3) / math.pi) * (math.log(X, 10) + math.log(Y, 10))
-    except Exception:
+    except (ZeroDivisionError, TypeError, ValueError):
         return "None"
 
 
@@ -545,7 +545,7 @@ def GI_calc(AUC):
     """
     try:
         return 2 * AUC - 1
-    except Exception:
+    except TypeError:
         return "None"
 
 
@@ -561,7 +561,7 @@ def lift_calc(PPV, PRE):
     """
     try:
         return PPV / PRE
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -577,7 +577,7 @@ def AM_calc(TOP, P):
     """
     try:
         return TOP - P
-    except Exception:
+    except TypeError:
         return "None"
 
 
@@ -596,7 +596,7 @@ def OP_calc(ACC, TPR, TNR):
     try:
         RI = abs(TNR - TPR) / (TPR + TNR)
         return ACC - RI
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -615,7 +615,7 @@ def IBA_calc(TPR, TNR, alpha=1):
     try:
         IBA = (1 + alpha * (TPR - TNR)) * TPR * TNR
         return IBA
-    except Exception:
+    except TypeError:
         return "None"
 
 
@@ -635,7 +635,7 @@ def BCD_calc(TOP, P, AM):
         TOP_sum = sum(TOP.values())
         P_sum = sum(P.values())
         return abs(AM) / (P_sum + TOP_sum)
-    except Exception:
+    except (ZeroDivisionError, TypeError, AttributeError):
         return "None"
 
 

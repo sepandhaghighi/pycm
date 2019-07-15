@@ -126,7 +126,12 @@ class ConfusionMatrix():
         table = normalized_table_calc(classes, table)
         print(table_print(classes, table))
 
-    def stat(self, overall_param=None, class_param=None, class_name=None, summary=False):
+    def stat(
+            self,
+            overall_param=None,
+            class_param=None,
+            class_name=None,
+            summary=False):
         """
         Print statistical measures table.
 

@@ -217,7 +217,7 @@ def transpose_func(classes, table):
     :type table : dict
     :return: transposed table as dict
     """
-    transposed_table = {k:table[k].copy() for k in classes}
+    transposed_table = {k: table[k].copy() for k in classes}
     for i, item1 in enumerate(classes):
         for j, item2 in enumerate(classes):
             if i > j:

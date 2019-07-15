@@ -46,9 +46,32 @@ CLASS_NUMBER_THRESHOLD = 10
 
 BALANCE_RATIO_THRESHOLD = 3
 
-SUMMARY_OVERALL = ["ACC Macro","Kappa","Overall ACC","SOA1(Landis & Koch)","Zero-one Loss","F1 Macro","TPR Macro","PPV Macro"]
+SUMMARY_OVERALL = [
+    "ACC Macro",
+    "Kappa",
+    "Overall ACC",
+    "SOA1(Landis & Koch)",
+    "Zero-one Loss",
+    "F1 Macro",
+    "TPR Macro",
+    "PPV Macro"]
 
-SUMMARY_CLASS = ["ACC","AUC","AUCI","F1","TPR","PPV","TP","FP","FN","TN","N","P","POP","TOP","TON"]
+SUMMARY_CLASS = [
+    "ACC",
+    "AUC",
+    "AUCI",
+    "F1",
+    "TPR",
+    "PPV",
+    "TP",
+    "FP",
+    "FN",
+    "TN",
+    "N",
+    "P",
+    "POP",
+    "TOP",
+    "TON"]
 
 BINARY_RECOMMEND = ["ACC", "TPR", "PPV", "AUC", "AUCI", "TNR", "F1"]
 

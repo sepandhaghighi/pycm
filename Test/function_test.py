@@ -162,14 +162,17 @@ False
 0.34
 >>> cm.F_beta(4)["L3"]
 0.504950495049505
->>> cm.F_beta(None)
-{}
+>>> cm.F_beta(None) == {'L3': 'None', 'L1': 'None', 'L2': 'None'}
+True
 >>> cm.IBA_alpha(None) == {'L3': 'None', 'L1': 'None', 'L2': 'None'}
 True
 >>> del cm.classes
+>>> del cm.TP
 >>> cm.IBA_alpha(2)
 {}
 >>> cm.TI(2,3)
+{}
+>>> cm.F_beta(2)
 {}
 >>> kappa_analysis_koch(-0.1)
 'Poor'

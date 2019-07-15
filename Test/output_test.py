@@ -264,6 +264,13 @@ Actual
 >>> save_obj=={'Status': True, 'Message': None}
 True
 >>> cm_file_3=ConfusionMatrix(file=open("test3.obj","r"))
+>>> cm = ConfusionMatrix(y_actu, y_pred, sample_weight=np.array([2, 2, 2, 2, 3, 1, 1, 2, 2, 1, 1, 2]))
+>>> save_obj=cm.save_obj("test3_np",address=False)
+>>> save_obj=={'Status': True, 'Message': None}
+True
+>>> cm_file_3_np=ConfusionMatrix(file=open("test3_np.obj","r"))
+>>> cm_file_3_np == cm_file_3
+True
 >>> cm_file_3.print_matrix()
 Predict          0    1    2
 Actual
@@ -461,6 +468,7 @@ True
 >>> os.remove("test_filtered3.pycm")
 >>> os.remove("test2.obj")
 >>> os.remove("test3.obj")
+>>> os.remove("test3_np.obj")
 >>> os.remove("test4.obj")
 >>> os.remove("test5.obj")
 >>> os.remove("test6.obj")

@@ -187,7 +187,7 @@ def ACC_calc(TP, TN, FP, FN):
     try:
         result = (TP + TN) / (TP + TN + FN + FP)
         return result
-    except ZeroDivisionError:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -209,7 +209,7 @@ def F_calc(TP, FP, FN, beta):
         result = ((1 + (beta)**2) * TP) / \
             ((1 + (beta)**2) * TP + FP + (beta**2) * FN)
         return result
-    except ZeroDivisionError:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -231,7 +231,7 @@ def MCC_calc(TP, TN, FP, FN):
         result = (TP * TN - FP * FN) / \
             (math.sqrt((TP + FP) * (TP + FN) * (TN + FP) * (TN + FN)))
         return result
-    except ZeroDivisionError:
+    except (ZeroDivisionError, TypeError, ValueError):
         return "None"
 
 
@@ -499,7 +499,7 @@ def dInd_calc(TNR, TPR):
     try:
         result = math.sqrt(((1 - TNR)**2) + ((1 - TPR)**2))
         return result
-    except TypeError:
+    except (TypeError, ValueError):
         return "None"
 
 

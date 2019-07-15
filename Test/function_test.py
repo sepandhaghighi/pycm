@@ -150,6 +150,8 @@ False
 'None'
 >>> F_calc(TP=3,FP=2,FN=1,beta=5)
 0.7428571428571429
+>>> TI_calc("None",0,0,0,0)
+'None'
 >>> ERR_calc(None)
 'None'
 >>> ERR_calc(0.1)

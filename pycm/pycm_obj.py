@@ -369,6 +369,7 @@ class ConfusionMatrix():
             obj_file = open(name + ".obj", "w")
             actual_vector_temp = self.actual_vector
             predict_vector_temp = self.predict_vector
+            weights_vector_temp = self.weights
             matrix_temp = {k: self.table[k].copy() for k in self.classes}
             matrix_items = []
             for i in self.classes:
@@ -377,11 +378,13 @@ class ConfusionMatrix():
                 actual_vector_temp = actual_vector_temp.tolist()
             if isinstance(predict_vector_temp, numpy.ndarray):
                 predict_vector_temp = predict_vector_temp.tolist()
+            if isinstance(weights_vector_temp, numpy.ndarray):
+                weights_vector_temp = weights_vector_temp.tolist()
             dump_dict = {"Actual-Vector": actual_vector_temp,
                          "Predict-Vector": predict_vector_temp,
                          "Matrix": matrix_items,
                          "Digit": self.digit,
-                         "Sample-Weight": self.weights,
+                         "Sample-Weight": weights_vector_temp,
                          "Transpose": self.transpose}
             if save_stat:
                 dump_dict["Class-Stat"] = self.class_stat
@@ -798,9 +801,7 @@ def __obj_vector_handler__(
         actual_vector, predict_vector)
     matrix_param = matrix_params_calc(
         actual_vector, predict_vector, sample_weight)
-    if isinstance(sample_weight, list):
+    if isinstance(sample_weight, (list, numpy.ndarray)):
         cm.weights = sample_weight
-    if isinstance(sample_weight, numpy.ndarray):
-        cm.weights = sample_weight.tolist()
 
     return matrix_param

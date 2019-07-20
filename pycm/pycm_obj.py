@@ -10,6 +10,7 @@ import os
 import json
 import types
 import numpy
+from warnings import warn
 
 
 class pycmVectorError(Exception):

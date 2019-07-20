@@ -308,8 +308,6 @@ def table_print(classes, table):
         row = [table[key][i] for i in classes]
         result += shift % str(key) + \
             shift * classes_len % tuple(map(str, row)) + "\n\n"
-    if classes_len >= CLASS_NUMBER_THRESHOLD:
-        result += "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"
     return result
 
 

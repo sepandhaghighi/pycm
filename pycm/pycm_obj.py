@@ -107,6 +107,8 @@ class ConfusionMatrix():
             [classes, table] = one_vs_all_func(
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
         print(table_print(classes, table))
+        if len(classes) >= CLASS_NUMBER_THRESHOLD:
+            warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 
     def print_normalized_matrix(self, one_vs_all=False, class_name=None):
         """
@@ -125,6 +127,8 @@ class ConfusionMatrix():
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
         table = normalized_table_calc(classes, table)
         print(table_print(classes, table))
+        if len(classes) >= CLASS_NUMBER_THRESHOLD:
+            warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 
     def stat(
             self,
@@ -168,6 +172,8 @@ class ConfusionMatrix():
         result += "\n" * 4
         result += stat_print(self.classes, self.class_stat,
                              self.overall_stat, self.digit)
+        if len(self.classes) >= CLASS_NUMBER_THRESHOLD:
+            warn(CLASS_NUMBER_WARNING, RuntimeWarning)
         return result
 
     def save_stat(
@@ -199,6 +205,7 @@ class ConfusionMatrix():
             message = None
             class_list = class_param
             overall_list = overall_param
+            warning_message = ""
             if summary:
                 class_list = SUMMARY_CLASS
                 overall_list = SUMMARY_OVERALL
@@ -221,7 +228,9 @@ class ConfusionMatrix():
                 self.class_stat,
                 self.overall_stat,
                 self.digit, overall_list, class_list)
-            file.write(matrix + normalized_matrix + stat + one_vs_all)
+            if len(self.classes) >= CLASS_NUMBER_THRESHOLD:
+                warning_message = "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"
+            file.write(matrix + normalized_matrix + stat + one_vs_all + warning_message)
             file.close()
             if address:
                 message = os.path.join(

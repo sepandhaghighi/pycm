@@ -161,6 +161,8 @@ class ConfusionMatrix():
                 self.class_stat,
                 self.overall_stat,
                 self.digit, overall_list, class_list))
+        if len(classes) >= CLASS_NUMBER_THRESHOLD:
+            warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 
     def __str__(self):
         """

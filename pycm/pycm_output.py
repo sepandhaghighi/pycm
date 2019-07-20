@@ -419,8 +419,6 @@ def stat_print(
             result += key + "(" + params_text + ")" + " " * (
                 shift - len(key) - len(PARAMS_DESCRIPTION[key]) + 5) + class_shift_format * classes_len % tuple(
                 map(rounder_map, row)) + "\n"
-    if classes_len >= CLASS_NUMBER_THRESHOLD:
-        result += "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"
     return result
 
 

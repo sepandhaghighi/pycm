@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 >>> from pycm import *
+>>> from pytest import warns
 >>> import os
 >>> import json
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
@@ -1183,8 +1184,8 @@ Rank  Name      Class-Score         Overall-Score
 pycm.ConfusionMatrix(classes: [0, 1, 2])
 >>> cp.best_name
 'model2'
->>> cp2 = Compare({"model1":cm_comp1,"model2":cm_comp1})
-Warning:  Confusion matrices are too close and the best one can not be recognized.
+>>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
+...     cp2 = Compare({"model1":cm_comp1,"model2":cm_comp1})
 >>> cp2.scores == {'model1': {'overall': 2.55, 'class': 7.05}, 'model2': {'overall': 2.55, 'class': 7.05}}
 True
 >>> cp2.best
@@ -1199,8 +1200,8 @@ Rank  Name   Class-Score    Overall-Score
 1     cm2    10.7           5.8
 2     cm1    7.9            4.48333
 <BLANKLINE>
->>> cp3 = Compare({"cm1":cm1,"cm2":cm2},weight={0:200,1:1,2:1})
-Warning: Confusion matrices are too close and the best one can not be recognized.
+>>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
+...     cp3 = Compare({"cm1":cm1,"cm2":cm2},weight={0:200,1:1,2:1})
 >>> print(cp3)
 Best : None
 <BLANKLINE>

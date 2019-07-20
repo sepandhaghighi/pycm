@@ -1132,6 +1132,321 @@ True
 >>> cm = ConfusionMatrix(matrix={1:{1:60,2:9,3:1,4:0,5:0,6:0},2:{1:23,2:48,3:0,4:2,5:2,6:1},3:{1:11,2:5,3:60,4:0,5:0,6:0},4:{1:0,2:2,3:0,4:60,5:1,6:3},5:{1:2,2:1,3:0,4:0,5:60,6:2},6:{1:1,2:2,3:0,4:2,5:1,6:60}})
 >>> set(cm.recommended_list) == set(MULTICLASS_RECOMMEND)
 True
+>>> large_cm = ConfusionMatrix(list(range(10)),list(range(10)))
+>>> with warns(RuntimeWarning, match='The confusion matrix is a high dimension matrix'):
+...     large_cm.print_matrix()
+Predict 0       1       2       3       4       5       6       7       8       9
+Actual
+0       1       0       0       0       0       0       0       0       0       0
+<BLANKLINE>
+1       0       1       0       0       0       0       0       0       0       0
+<BLANKLINE>
+2       0       0       1       0       0       0       0       0       0       0
+<BLANKLINE>
+3       0       0       0       1       0       0       0       0       0       0
+<BLANKLINE>
+4       0       0       0       0       1       0       0       0       0       0
+<BLANKLINE>
+5       0       0       0       0       0       1       0       0       0       0
+<BLANKLINE>
+6       0       0       0       0       0       0       1       0       0       0
+<BLANKLINE>
+7       0       0       0       0       0       0       0       1       0       0
+<BLANKLINE>
+8       0       0       0       0       0       0       0       0       1       0
+<BLANKLINE>
+9       0       0       0       0       0       0       0       0       0       1
+<BLANKLINE>
+>>> with warns(RuntimeWarning, match='The confusion matrix is a high dimension matrix'):
+...     large_cm.print_normalized_matrix()
+Predict   0         1         2         3         4         5         6         7         8         9
+Actual
+0         1.0       0.0       0.0       0.0       0.0       0.0       0.0       0.0       0.0       0.0
+<BLANKLINE>
+1         0.0       1.0       0.0       0.0       0.0       0.0       0.0       0.0       0.0       0.0
+<BLANKLINE>
+2         0.0       0.0       1.0       0.0       0.0       0.0       0.0       0.0       0.0       0.0
+<BLANKLINE>
+3         0.0       0.0       0.0       1.0       0.0       0.0       0.0       0.0       0.0       0.0
+<BLANKLINE>
+4         0.0       0.0       0.0       0.0       1.0       0.0       0.0       0.0       0.0       0.0
+<BLANKLINE>
+5         0.0       0.0       0.0       0.0       0.0       1.0       0.0       0.0       0.0       0.0
+<BLANKLINE>
+6         0.0       0.0       0.0       0.0       0.0       0.0       1.0       0.0       0.0       0.0
+<BLANKLINE>
+7         0.0       0.0       0.0       0.0       0.0       0.0       0.0       1.0       0.0       0.0
+<BLANKLINE>
+8         0.0       0.0       0.0       0.0       0.0       0.0       0.0       0.0       1.0       0.0
+<BLANKLINE>
+9         0.0       0.0       0.0       0.0       0.0       0.0       0.0       0.0       0.0       1.0
+<BLANKLINE>
+>>> with warns(RuntimeWarning, match='The confusion matrix is a high dimension matrix'):
+...     large_cm.stat()
+Overall Statistics :
+<BLANKLINE>
+95% CI                                                            (1.0,1.0)
+ACC Macro                                                         1.0
+AUNP                                                              1.0
+AUNU                                                              1.0
+Bennett S                                                         1.0
+CBA                                                               1.0
+Chi-Squared                                                       90.0
+Chi-Squared DF                                                    81
+Conditional Entropy                                               -0.0
+Cramer V                                                          1.0
+Cross Entropy                                                     3.32193
+F1 Macro                                                          1.0
+F1 Micro                                                          1.0
+Gwet AC1                                                          1.0
+Hamming Loss                                                      0.0
+Joint Entropy                                                     3.32193
+KL Divergence                                                     0.0
+Kappa                                                             1.0
+Kappa 95% CI                                                      (1.0,1.0)
+Kappa No Prevalence                                               1.0
+Kappa Standard Error                                              0.0
+Kappa Unbiased                                                    1.0
+Lambda A                                                          1.0
+Lambda B                                                          1.0
+Mutual Information                                                3.32193
+NIR                                                               0.1
+Overall ACC                                                       1.0
+Overall CEN                                                       0.0
+Overall J                                                         (10.0,1.0)
+Overall MCC                                                       1.0
+Overall MCEN                                                      0.0
+Overall RACC                                                      0.1
+Overall RACCU                                                     0.1
+P-Value                                                           0.0
+PPV Macro                                                         1.0
+PPV Micro                                                         1.0
+Pearson C                                                         0.94868
+Phi-Squared                                                       9.0
+RCI                                                               1.0
+RR                                                                1.0
+Reference Entropy                                                 3.32193
+Response Entropy                                                  3.32193
+SOA1(Landis & Koch)                                               Almost Perfect
+SOA2(Fleiss)                                                      Excellent
+SOA3(Altman)                                                      Very Good
+SOA4(Cicchetti)                                                   Excellent
+SOA5(Cramer)                                                      Very Strong
+SOA6(Matthews)                                                    Very Strong
+Scott PI                                                          1.0
+Standard Error                                                    0.0
+TPR Macro                                                         1.0
+TPR Micro                                                         1.0
+Zero-one Loss                                                     0
+<BLANKLINE>
+Class Statistics :
+<BLANKLINE>
+Classes                                                           0             1             2             3             4             5             6             7             8             9
+ACC(Accuracy)                                                     1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+AGF(Adjusted F-score)                                             1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+AGM(Adjusted geometric mean)                                      1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+AM(Difference between automatic and manual classification)        0             0             0             0             0             0             0             0             0             0
+AUC(Area under the ROC curve)                                     1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+AUCI(AUC value interpretation)                                    Excellent     Excellent     Excellent     Excellent     Excellent     Excellent     Excellent     Excellent     Excellent     Excellent
+AUPR(Area under the PR curve)                                     1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+BCD(Bray-Curtis dissimilarity)                                    0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0
+BM(Informedness or bookmaker informedness)                        1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+CEN(Confusion entropy)                                            0             0             0             0             0             0             0             0             0             0
+DOR(Diagnostic odds ratio)                                        None          None          None          None          None          None          None          None          None          None
+DP(Discriminant power)                                            None          None          None          None          None          None          None          None          None          None
+DPI(Discriminant power interpretation)                            None          None          None          None          None          None          None          None          None          None
+ERR(Error rate)                                                   0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0
+F0.5(F0.5 score)                                                  1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+F1(F1 score - harmonic mean of precision and sensitivity)         1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+F2(F2 score)                                                      1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+FDR(False discovery rate)                                         0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0
+FN(False negative/miss/type 2 error)                              0             0             0             0             0             0             0             0             0             0
+FNR(Miss rate or false negative rate)                             0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0
+FOR(False omission rate)                                          0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0
+FP(False positive/type 1 error/false alarm)                       0             0             0             0             0             0             0             0             0             0
+FPR(Fall-out or false positive rate)                              0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0
+G(G-measure geometric mean of precision and sensitivity)          1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+GI(Gini index)                                                    1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+GM(G-mean geometric mean of specificity and sensitivity)          1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+IBA(Index of balanced accuracy)                                   1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+IS(Information score)                                             3.32193       3.32193       3.32193       3.32193       3.32193       3.32193       3.32193       3.32193       3.32193       3.32193
+J(Jaccard index)                                                  1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+LS(Lift score)                                                    10.0          10.0          10.0          10.0          10.0          10.0          10.0          10.0          10.0          10.0
+MCC(Matthews correlation coefficient)                             1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+MCCI(Matthews correlation coefficient interpretation)             Very Strong   Very Strong   Very Strong   Very Strong   Very Strong   Very Strong   Very Strong   Very Strong   Very Strong   Very Strong
+MCEN(Modified confusion entropy)                                  0             0             0             0             0             0             0             0             0             0
+MK(Markedness)                                                    1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+N(Condition negative)                                             9             9             9             9             9             9             9             9             9             9
+NLR(Negative likelihood ratio)                                    0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0
+NLRI(Negative likelihood ratio interpretation)                    Good          Good          Good          Good          Good          Good          Good          Good          Good          Good
+NPV(Negative predictive value)                                    1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+OC(Overlap coefficient)                                           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+OOC(Otsuka-Ochiai coefficient)                                    1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+OP(Optimized precision)                                           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+P(Condition positive or support)                                  1             1             1             1             1             1             1             1             1             1
+PLR(Positive likelihood ratio)                                    None          None          None          None          None          None          None          None          None          None
+PLRI(Positive likelihood ratio interpretation)                    None          None          None          None          None          None          None          None          None          None
+POP(Population)                                                   10            10            10            10            10            10            10            10            10            10
+PPV(Precision or positive predictive value)                       1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+PRE(Prevalence)                                                   0.1           0.1           0.1           0.1           0.1           0.1           0.1           0.1           0.1           0.1
+Q(Yule Q - coefficient of colligation)                            None          None          None          None          None          None          None          None          None          None
+RACC(Random accuracy)                                             0.01          0.01          0.01          0.01          0.01          0.01          0.01          0.01          0.01          0.01
+RACCU(Random accuracy unbiased)                                   0.01          0.01          0.01          0.01          0.01          0.01          0.01          0.01          0.01          0.01
+TN(True negative/correct rejection)                               9             9             9             9             9             9             9             9             9             9
+TNR(Specificity or true negative rate)                            1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+TON(Test outcome negative)                                        9             9             9             9             9             9             9             9             9             9
+TOP(Test outcome positive)                                        1             1             1             1             1             1             1             1             1             1
+TP(True positive/hit)                                             1             1             1             1             1             1             1             1             1             1
+TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+Y(Youden index)                                                   1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+dInd(Distance index)                                              0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0
+sInd(Similarity index)                                            1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+<BLANKLINE>
+>>> with warns(RuntimeWarning, match='The confusion matrix is a high dimension matrix'):
+...     print(large_cm)
+Predict 0       1       2       3       4       5       6       7       8       9
+Actual
+0       1       0       0       0       0       0       0       0       0       0
+<BLANKLINE>
+1       0       1       0       0       0       0       0       0       0       0
+<BLANKLINE>
+2       0       0       1       0       0       0       0       0       0       0
+<BLANKLINE>
+3       0       0       0       1       0       0       0       0       0       0
+<BLANKLINE>
+4       0       0       0       0       1       0       0       0       0       0
+<BLANKLINE>
+5       0       0       0       0       0       1       0       0       0       0
+<BLANKLINE>
+6       0       0       0       0       0       0       1       0       0       0
+<BLANKLINE>
+7       0       0       0       0       0       0       0       1       0       0
+<BLANKLINE>
+8       0       0       0       0       0       0       0       0       1       0
+<BLANKLINE>
+9       0       0       0       0       0       0       0       0       0       1
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Overall Statistics :
+<BLANKLINE>
+95% CI                                                            (1.0,1.0)
+ACC Macro                                                         1.0
+AUNP                                                              1.0
+AUNU                                                              1.0
+Bennett S                                                         1.0
+CBA                                                               1.0
+Chi-Squared                                                       90.0
+Chi-Squared DF                                                    81
+Conditional Entropy                                               -0.0
+Cramer V                                                          1.0
+Cross Entropy                                                     3.32193
+F1 Macro                                                          1.0
+F1 Micro                                                          1.0
+Gwet AC1                                                          1.0
+Hamming Loss                                                      0.0
+Joint Entropy                                                     3.32193
+KL Divergence                                                     0.0
+Kappa                                                             1.0
+Kappa 95% CI                                                      (1.0,1.0)
+Kappa No Prevalence                                               1.0
+Kappa Standard Error                                              0.0
+Kappa Unbiased                                                    1.0
+Lambda A                                                          1.0
+Lambda B                                                          1.0
+Mutual Information                                                3.32193
+NIR                                                               0.1
+Overall ACC                                                       1.0
+Overall CEN                                                       0.0
+Overall J                                                         (10.0,1.0)
+Overall MCC                                                       1.0
+Overall MCEN                                                      0.0
+Overall RACC                                                      0.1
+Overall RACCU                                                     0.1
+P-Value                                                           0.0
+PPV Macro                                                         1.0
+PPV Micro                                                         1.0
+Pearson C                                                         0.94868
+Phi-Squared                                                       9.0
+RCI                                                               1.0
+RR                                                                1.0
+Reference Entropy                                                 3.32193
+Response Entropy                                                  3.32193
+SOA1(Landis & Koch)                                               Almost Perfect
+SOA2(Fleiss)                                                      Excellent
+SOA3(Altman)                                                      Very Good
+SOA4(Cicchetti)                                                   Excellent
+SOA5(Cramer)                                                      Very Strong
+SOA6(Matthews)                                                    Very Strong
+Scott PI                                                          1.0
+Standard Error                                                    0.0
+TPR Macro                                                         1.0
+TPR Micro                                                         1.0
+Zero-one Loss                                                     0
+<BLANKLINE>
+Class Statistics :
+<BLANKLINE>
+Classes                                                           0             1             2             3             4             5             6             7             8             9
+ACC(Accuracy)                                                     1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+AGF(Adjusted F-score)                                             1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+AGM(Adjusted geometric mean)                                      1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+AM(Difference between automatic and manual classification)        0             0             0             0             0             0             0             0             0             0
+AUC(Area under the ROC curve)                                     1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+AUCI(AUC value interpretation)                                    Excellent     Excellent     Excellent     Excellent     Excellent     Excellent     Excellent     Excellent     Excellent     Excellent
+AUPR(Area under the PR curve)                                     1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+BCD(Bray-Curtis dissimilarity)                                    0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0
+BM(Informedness or bookmaker informedness)                        1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+CEN(Confusion entropy)                                            0             0             0             0             0             0             0             0             0             0
+DOR(Diagnostic odds ratio)                                        None          None          None          None          None          None          None          None          None          None
+DP(Discriminant power)                                            None          None          None          None          None          None          None          None          None          None
+DPI(Discriminant power interpretation)                            None          None          None          None          None          None          None          None          None          None
+ERR(Error rate)                                                   0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0
+F0.5(F0.5 score)                                                  1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+F1(F1 score - harmonic mean of precision and sensitivity)         1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+F2(F2 score)                                                      1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+FDR(False discovery rate)                                         0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0
+FN(False negative/miss/type 2 error)                              0             0             0             0             0             0             0             0             0             0
+FNR(Miss rate or false negative rate)                             0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0
+FOR(False omission rate)                                          0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0
+FP(False positive/type 1 error/false alarm)                       0             0             0             0             0             0             0             0             0             0
+FPR(Fall-out or false positive rate)                              0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0
+G(G-measure geometric mean of precision and sensitivity)          1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+GI(Gini index)                                                    1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+GM(G-mean geometric mean of specificity and sensitivity)          1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+IBA(Index of balanced accuracy)                                   1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+IS(Information score)                                             3.32193       3.32193       3.32193       3.32193       3.32193       3.32193       3.32193       3.32193       3.32193       3.32193
+J(Jaccard index)                                                  1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+LS(Lift score)                                                    10.0          10.0          10.0          10.0          10.0          10.0          10.0          10.0          10.0          10.0
+MCC(Matthews correlation coefficient)                             1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+MCCI(Matthews correlation coefficient interpretation)             Very Strong   Very Strong   Very Strong   Very Strong   Very Strong   Very Strong   Very Strong   Very Strong   Very Strong   Very Strong
+MCEN(Modified confusion entropy)                                  0             0             0             0             0             0             0             0             0             0
+MK(Markedness)                                                    1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+N(Condition negative)                                             9             9             9             9             9             9             9             9             9             9
+NLR(Negative likelihood ratio)                                    0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0
+NLRI(Negative likelihood ratio interpretation)                    Good          Good          Good          Good          Good          Good          Good          Good          Good          Good
+NPV(Negative predictive value)                                    1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+OC(Overlap coefficient)                                           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+OOC(Otsuka-Ochiai coefficient)                                    1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+OP(Optimized precision)                                           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+P(Condition positive or support)                                  1             1             1             1             1             1             1             1             1             1
+PLR(Positive likelihood ratio)                                    None          None          None          None          None          None          None          None          None          None
+PLRI(Positive likelihood ratio interpretation)                    None          None          None          None          None          None          None          None          None          None
+POP(Population)                                                   10            10            10            10            10            10            10            10            10            10
+PPV(Precision or positive predictive value)                       1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+PRE(Prevalence)                                                   0.1           0.1           0.1           0.1           0.1           0.1           0.1           0.1           0.1           0.1
+Q(Yule Q - coefficient of colligation)                            None          None          None          None          None          None          None          None          None          None
+RACC(Random accuracy)                                             0.01          0.01          0.01          0.01          0.01          0.01          0.01          0.01          0.01          0.01
+RACCU(Random accuracy unbiased)                                   0.01          0.01          0.01          0.01          0.01          0.01          0.01          0.01          0.01          0.01
+TN(True negative/correct rejection)                               9             9             9             9             9             9             9             9             9             9
+TNR(Specificity or true negative rate)                            1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+TON(Test outcome negative)                                        9             9             9             9             9             9             9             9             9             9
+TOP(Test outcome positive)                                        1             1             1             1             1             1             1             1             1             1
+TP(True positive/hit)                                             1             1             1             1             1             1             1             1             1             1
+TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+Y(Youden index)                                                   1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+dInd(Distance index)                                              0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0           0.0
+sInd(Similarity index)                                            1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0           1.0
+<BLANKLINE>
 >>> cm_comp1 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
 >>> cm_comp2 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
 >>> cm_comp1 == cm_comp2

@@ -7,7 +7,7 @@ from .pycm_param import *
 from .pycm_obj import ConfusionMatrix
 import os
 import numpy
-
+from warnings import warn
 
 class pycmCompareError(Exception):
     """Compare error class."""
@@ -91,9 +91,11 @@ class Compare():
                     self.best = cm_dict[max_class_name]
                     self.best_name = max_overall_name
                 else:
-                    print('Warning: ' + COMPARE_RESULT_WARNING)
+                    warn(COMPARE_RESULT_WARNING, RuntimeWarning)
+                    # print('Warning: ' + COMPARE_RESULT_WARNING)
         else:
-            print('Warning: ' + COMPARE_RESULT_WARNING)
+            warn(COMPARE_RESULT_WARNING, RuntimeWarning)
+            # print('Warning: ' + COMPARE_RESULT_WARNING)
 
     def print_report(self):
         """

@@ -22,6 +22,10 @@ True
 >>> save_stat=cm.save_stat("test_filtered3",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[])
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> large_cm = ConfusionMatrix(list(range(20)),list(range(20)))
+>>> save_stat = large_cm.save_stat("test_large",address=False)
+>>> save_stat == {'Status': True, 'Message': None}
+True
 >>> save_stat=cm.save_stat("/asdasd,qweqwe.eo/",address=True)
 >>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.pycm'"}
 True
@@ -452,6 +456,7 @@ True
 >>> os.remove("test_filtered.csv")
 >>> os.remove("test_filtered_matrix.csv")
 >>> os.remove("test_filtered.pycm")
+>>> os.remove("test_large.pycm")
 >>> os.remove("test_summary.pycm")
 >>> os.remove("test_filtered2.html")
 >>> os.remove("test_filtered3.html")

@@ -1526,7 +1526,6 @@ Rank  Name   Class-Score     Overall-Score
 1     cm1    604.9           4.48333
 2     cm2    567.9           5.8
 <BLANKLINE>
-Warning: Confusion matrices are too close and the best one can not be recognized.
 >>> cp3.best
 >>> cp3.best_name
 """

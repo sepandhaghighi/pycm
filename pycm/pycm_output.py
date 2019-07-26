@@ -5,6 +5,7 @@ from functools import partial
 from .pycm_param import *
 from .pycm_util import class_filter, rounder
 import webbrowser
+from warnings import warn
 
 
 def html_init(name):
@@ -457,8 +458,6 @@ def compare_report_print(sorted_list, scores, best_name):
         result += ("".join(shifts)) % (str(rank + 1), str(cm),
                                        str(scores[cm]["class"])) + str(scores[cm]["overall"]) + "\n"
         prev_rank = rank
-    if best_name is None:
-        result += "\nWarning: " + COMPARE_RESULT_WARNING
     return result
 
 

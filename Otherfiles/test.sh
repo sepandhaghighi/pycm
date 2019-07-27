@@ -7,7 +7,7 @@
   isInTRAVIS=false
   if [ "$CI" = 'true' ] && [ "$TRAVIS" = 'true' ]
   then
-      $isInTRAVIS=true
+      isInTRAVIS=true
   fi
 
   if [ "$isInTRAVIS" = 'false' ] || { [ "$isInTRAVIS" = 'true' ] && [ "$TRAVIS_PYTHON_VERSION" = '3.6' ]; }

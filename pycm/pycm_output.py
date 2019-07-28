@@ -154,7 +154,7 @@ def html_overall_stat(
         digit=5,
         overall_param=None,
         recommended_list=(),
-        alt_link = False):
+        alt_link=False):
     """
     Return HTML report file overall stat.
 
@@ -473,7 +473,7 @@ def compare_report_print(sorted_list, scores, best_name):
     return result
 
 
-def online_help(param=None,alt_link=False):
+def online_help(param=None, alt_link=False):
     """
     Open online document in web browser.
 

@@ -9,6 +9,7 @@ import os
 import numpy
 from warnings import warn
 
+
 class pycmCompareError(Exception):
     """Compare error class."""
 

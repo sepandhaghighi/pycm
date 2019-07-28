@@ -233,7 +233,12 @@ class ConfusionMatrix():
                 self.digit, overall_list, class_list)
             if len(self.classes) >= CLASS_NUMBER_THRESHOLD:
                 warning_message = "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"
-            file.write(matrix + normalized_matrix + stat + one_vs_all + warning_message)
+            file.write(
+                matrix +
+                normalized_matrix +
+                stat +
+                one_vs_all +
+                warning_message)
             file.close()
             if address:
                 message = os.path.join(
@@ -248,7 +253,14 @@ class ConfusionMatrix():
             address=True,
             overall_param=None,
             class_param=None,
-            class_name=None, color=(0, 0, 0), normalize=False, summary=False, alt_link=False):
+            class_name=None,
+            color=(
+                0,
+                0,
+                0),
+            normalize=False,
+            summary=False,
+            alt_link=False):
         """
         Save ConfusionMatrix in HTML file.
 

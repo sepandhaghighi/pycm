@@ -5,7 +5,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-- vulture section edited
 ### Added
 - Tversky index (TI)
 - Area under the PR curve (AUPR)
@@ -15,6 +14,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `summary` parameter added to `save_html`,`save_stat`,`save_csv` and `stat` methods
 - `sample_weight` bug in `numpy` array format fixed
 - Inputs manipulation bug fixed
+- Test system modified 
+- `alt_link` parameter added to `save_html` method and `online_help` function
 ## [2.3] - 2019-06-27
 ### Added
 - Adjusted F-score (AGF)

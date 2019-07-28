@@ -153,7 +153,8 @@ def html_overall_stat(
         overall_stat,
         digit=5,
         overall_param=None,
-        recommended_list=()):
+        recommended_list=(),
+        alt_link = False):
     """
     Return HTML report file overall stat.
 
@@ -165,6 +166,8 @@ def html_overall_stat(
     :type overall_param : list
     :param recommended_list: recommended statistics list
     :type recommended_list : list or tuple
+    :param alt_link: alternative link for document flag
+    :type alt_link: bool
     :return: html_overall_stat as str
     """
     result = ""
@@ -200,7 +203,8 @@ def html_class_stat(
         class_stat,
         digit=5,
         class_param=None,
-        recommended_list=()):
+        recommended_list=(),
+        alt_link=False):
     """
     Return HTML report file class_stat.
 
@@ -214,6 +218,8 @@ def html_class_stat(
     :type class_param : list
     :param recommended_list: recommended statistics list
     :type recommended_list : list or tuple
+    :param alt_link: alternative link for document flag
+    :type alt_link: bool
     :return: html_class_stat as str
     """
     result = ""
@@ -461,12 +467,14 @@ def compare_report_print(sorted_list, scores, best_name):
     return result
 
 
-def online_help(param=None):
+def online_help(param=None,alt_link=False):
     """
     Open online document in web browser.
 
     :param param: input parameter
     :type param : int or str
+    :param alt_link: alternative link for document flag
+    :type alt_link: bool
     :return: None
     """
     try:

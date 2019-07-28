@@ -197,6 +197,7 @@ RECOMMEND_HTML_MESSAGE2 = '<span style="color:red;">Note 2</span> : {0}'.format(
     RECOMMEND_WARNING)
 
 DOCUMENT_ADR = "http://www.pycm.ir/doc/index.html#"
+DOCUMENT_ADR_ALT = "https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Document.ipynb"
 
 PARAMS_DESCRIPTION = {
     "TPR": "sensitivity, recall, hit rate, or true positive rate",

@@ -35,6 +35,9 @@ True
 >>> save_stat=cm.save_html("test_normalized",address=False,normalize=True)
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=cm.save_html("test_alt",address=False,normalize=True,alt_link=True)
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> save_stat=cm.save_html("test_summary",address=False,summary=True)
 >>> save_stat=={'Status': True, 'Message': None}
 True
@@ -467,6 +470,7 @@ True
 >>> os.remove("test_filtered4.html")
 >>> os.remove("test_filtered5.html")
 >>> os.remove("test_long_name.html")
+>>> os.remove("test_alt.html")
 >>> os.remove("test_summary.html")
 >>> os.remove("test_colored.html")
 >>> os.remove("test_colored2.html")

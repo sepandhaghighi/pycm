@@ -170,6 +170,9 @@ def html_overall_stat(
     :type alt_link: bool
     :return: html_overall_stat as str
     """
+    document_link = DOCUMENT_ADR
+    if alt_link:
+        document_link = DOCUMENT_ADR_ALT
     result = ""
     result += "<h2>Overall Statistics : </h2>\n"
     result += '<table style="border:1px solid black;border-collapse: collapse;">\n'
@@ -185,7 +188,7 @@ def html_overall_stat(
             background_color = RECOMMEND_BACKGROUND_COLOR
         result += '<tr align="center">\n'
         result += '<td style="border:1px solid black;padding:4px;text-align:left;background-color:{};"><a href="'.format(
-            background_color) + DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
+            background_color) + document_link + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         if i in BENCHMARK_LIST:
             background_color = BENCHMARK_COLOR[i][overall_stat[i]]
             result += '<td style="border:1px solid black;padding:4px;background-color:{};">'.format(
@@ -222,6 +225,9 @@ def html_class_stat(
     :type alt_link: bool
     :return: html_class_stat as str
     """
+    document_link = DOCUMENT_ADR
+    if alt_link:
+        document_link = DOCUMENT_ADR_ALT
     result = ""
     result += "<h2>Class Statistics : </h2>\n"
     result += '<table style="border:1px solid black;border-collapse: collapse;">\n'
@@ -244,7 +250,7 @@ def html_class_stat(
             background_color = RECOMMEND_BACKGROUND_COLOR
         result += '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n'
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};"><a href="'.format(
-            background_color) + DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
+            background_color) + document_link + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         for j in classes:
             if i in BENCHMARK_LIST:
                 background_color = BENCHMARK_COLOR[i][class_stat[i][j]]
@@ -478,12 +484,15 @@ def online_help(param=None,alt_link=False):
     :return: None
     """
     try:
+        document_link = DOCUMENT_ADR
+        if alt_link:
+            document_link = DOCUMENT_ADR_ALT
         PARAMS_LINK_KEYS = sorted(PARAMS_LINK.keys())
         if param in PARAMS_LINK_KEYS:
-            webbrowser.open_new_tab(DOCUMENT_ADR + PARAMS_LINK[param])
+            webbrowser.open_new_tab(document_link + PARAMS_LINK[param])
         elif param in range(1, len(PARAMS_LINK_KEYS) + 1):
             webbrowser.open_new_tab(
-                DOCUMENT_ADR + PARAMS_LINK[PARAMS_LINK_KEYS[param - 1]])
+                document_link + PARAMS_LINK[PARAMS_LINK_KEYS[param - 1]])
         else:
             print("Please choose one parameter : \n")
             print('Example : online_help("J") or online_help(2)\n')

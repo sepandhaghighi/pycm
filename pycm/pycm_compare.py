@@ -54,7 +54,7 @@ class Compare():
         self.scores = None
         self.sorted = None
         self.classes = None
-        __compare_assign_handler__(self,cm_dict,weight,digit)
+        __compare_assign_handler__(self, cm_dict, weight, digit)
         __compare_class_handler__(self, cm_dict)
         __compare_overall_handler__(self, cm_dict)
         __compare_rounder__(self, cm_dict)
@@ -219,7 +219,8 @@ def __compare_sort_handler__(compare):
         max_class_name,
         max_class_score)
 
-def __compare_assign_handler__(compare,cm_dict,weight,digit):
+
+def __compare_assign_handler__(compare, cm_dict, weight, digit):
     """
     Assign basic parameters to Comapre.
 
@@ -250,7 +251,7 @@ def __compare_assign_handler__(compare,cm_dict,weight,digit):
     compare.best_name = None
     compare.sorted = None
     compare.scores = {k: {"overall": 0, "class": 0}.copy()
-                   for k in cm_dict.keys()}
+                      for k in cm_dict.keys()}
     if weight is not None:
         if not isinstance(weight, dict):
             raise pycmCompareError(COMPARE_WEIGHT_ERROR)
@@ -259,4 +260,3 @@ def __compare_assign_handler__(compare,cm_dict,weight,digit):
             compare.weight = weight
         else:
             raise pycmCompareError(COMPARE_WEIGHT_ERROR)
-

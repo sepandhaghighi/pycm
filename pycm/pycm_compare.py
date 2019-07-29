@@ -51,32 +51,10 @@ class Compare():
         :param digit: precision digit (default value : 5)
         :type digit : int
         """
-        if not isinstance(cm_dict, dict):
-            raise pycmCompareError(COMPARE_FORMAT_ERROR)
-        if not all(isinstance(item, ConfusionMatrix)
-                   for item in cm_dict.values()):
-            raise pycmCompareError(COMPARE_TYPE_ERROR)
-        if not list_check_equal([getattr(item, "POP")
-                                 for item in cm_dict.values()]):
-            raise pycmCompareError(COMPARE_DOMAIN_ERROR)
-        if len(cm_dict) < 2:
-            raise pycmCompareError(COMPARE_NUMBER_ERROR)
-        self.classes = list(cm_dict.values())[0].classes
-        self.weight = {k: 1 for k in self.classes}
-        self.digit = digit
-        self.best = None
-        self.best_name = None
+        self.scores = None
         self.sorted = None
-        self.scores = {k: {"overall": 0, "class": 0}.copy()
-                       for k in cm_dict.keys()}
-        if weight is not None:
-            if not isinstance(weight, dict):
-                raise pycmCompareError(COMPARE_WEIGHT_ERROR)
-            if list(weight.keys()) == self.classes and all(
-                    [isfloat(x) for x in weight.values()]):
-                self.weight = weight
-            else:
-                raise pycmCompareError(COMPARE_WEIGHT_ERROR)
+        self.classes = None
+        __compare_assign_handler__(self,cm_dict,weight,digit)
         __compare_class_handler__(self, cm_dict)
         __compare_overall_handler__(self, cm_dict)
         __compare_rounder__(self, cm_dict)
@@ -240,3 +218,45 @@ def __compare_sort_handler__(compare):
         max_overall_score,
         max_class_name,
         max_class_score)
+
+def __compare_assign_handler__(compare,cm_dict,weight,digit):
+    """
+    Assign basic parameters to Comapre.
+
+    :param compare: Compare
+    :type compare : pycm.Compare object
+    :param cm_dict: cm's dictionary
+    :type cm_dict : dict
+    :param digit: precision digit (default value : 5)
+    :type digit : int
+    :param weight: class weights
+    :type weight: dict
+    :return: None
+    """
+    if not isinstance(cm_dict, dict):
+        raise pycmCompareError(COMPARE_FORMAT_ERROR)
+    if not all(isinstance(item, ConfusionMatrix)
+               for item in cm_dict.values()):
+        raise pycmCompareError(COMPARE_TYPE_ERROR)
+    if not list_check_equal([getattr(item, "POP")
+                             for item in cm_dict.values()]):
+        raise pycmCompareError(COMPARE_DOMAIN_ERROR)
+    if len(cm_dict) < 2:
+        raise pycmCompareError(COMPARE_NUMBER_ERROR)
+    compare.classes = list(cm_dict.values())[0].classes
+    compare.weight = {k: 1 for k in compare.classes}
+    compare.digit = digit
+    compare.best = None
+    compare.best_name = None
+    compare.sorted = None
+    compare.scores = {k: {"overall": 0, "class": 0}.copy()
+                   for k in cm_dict.keys()}
+    if weight is not None:
+        if not isinstance(weight, dict):
+            raise pycmCompareError(COMPARE_WEIGHT_ERROR)
+        if list(weight.keys()) == compare.classes and all(
+                [isfloat(x) for x in weight.values()]):
+            compare.weight = weight
+        else:
+            raise pycmCompareError(COMPARE_WEIGHT_ERROR)
+

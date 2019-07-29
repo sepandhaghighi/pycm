@@ -43,6 +43,7 @@ install:
 
 test_script:
   - "%PYTHON%/python.exe -m pycm test"
+  - "%PYTHON%/python.exe -m pycm"
   - "%PYTHON%/Scripts/pip.exe install -r dev-requirements.txt"
   - "%PYTHON%/python.exe -m pytest Test --cov=pycm --cov-report=term"
   - "%PYTHON%/python.exe Otherfiles/version_check.py"

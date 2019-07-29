@@ -106,7 +106,7 @@ class Compare():
             file.write(report)
             file.close()
             if address:
-                message = os.path.join(os.getcwd(), name + ".comp")
+                message = os.path.join(os.getcwd(), name + ".comp") # pragma: no cover
             return {"Status": True, "Message": message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}

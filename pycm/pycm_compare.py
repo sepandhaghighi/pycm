@@ -212,7 +212,7 @@ def __compare_sort_handler__(compare):
     max_class_name = sorted_by_class[0]
     #max_class_score = compare.scores[max_class_name]["class"]
     #max_overall_score = compare.scores[max_overall_name]["overall"]
-    return (max_overall_name,max_class_name)
+    return (max_overall_name, max_class_name)
 
 
 def __compare_assign_handler__(compare, cm_dict, weight, digit):

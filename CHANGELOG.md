@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Inputs manipulation bug fixed
 - Test system modified 
 - `alt_link` parameter added to `save_html` method and `online_help` function
+- `Compare` class tests moved to `compare_test.py`
 ## [2.3] - 2019-06-27
 ### Added
 - Adjusted F-score (AGF)

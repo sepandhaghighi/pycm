@@ -72,6 +72,7 @@ class ConfusionMatrix():
         self.predict_vector = predict_vector
         self.digit = digit
         self.weights = None
+        self.classes = None
         if isinstance(transpose, bool):
             self.transpose = transpose
         else:

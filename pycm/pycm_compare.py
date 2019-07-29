@@ -59,8 +59,7 @@ class Compare():
         __compare_overall_handler__(self, cm_dict)
         __compare_rounder__(self, cm_dict)
         scores_list = list(self.scores.values())
-        (max_overall_name, max_overall_score, max_class_name,
-         max_class_score) = __compare_sort_handler__(self)
+        (max_overall_name, max_class_name) = __compare_sort_handler__(self)
         if scores_list.count(self.scores[max_class_name]) == 1:
             if by_class:
                 self.best = cm_dict[max_class_name]
@@ -194,7 +193,7 @@ def __compare_sort_handler__(compare):
 
     :param compare: Compare
     :type compare : pycm.Compare object
-    :return: (max_overall_name,max_overall_score,max_class_name,max_class_score) as tuple
+    :return: (max_overall_name,max_class_name) as tuple
     """
     sorted_by_class = sorted(
         compare.scores,
@@ -211,13 +210,9 @@ def __compare_sort_handler__(compare):
     compare.sorted = sorted_by_class
     max_overall_name = sorted_by_overall[0]
     max_class_name = sorted_by_class[0]
-    max_class_score = compare.scores[max_class_name]["class"]
-    max_overall_score = compare.scores[max_overall_name]["overall"]
-    return (
-        max_overall_name,
-        max_overall_score,
-        max_class_name,
-        max_class_score)
+    #max_class_score = compare.scores[max_class_name]["class"]
+    #max_overall_score = compare.scores[max_overall_name]["overall"]
+    return (max_overall_name,max_class_name)
 
 
 def __compare_assign_handler__(compare, cm_dict, weight, digit):

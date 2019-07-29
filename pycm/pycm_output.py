@@ -487,16 +487,16 @@ def online_help(param=None, alt_link=False):
         document_link = DOCUMENT_ADR
         if alt_link:
             document_link = DOCUMENT_ADR_ALT
-        PARAMS_LINK_KEYS = sorted(PARAMS_LINK.keys())
-        if param in PARAMS_LINK_KEYS:
+        params_link_keys = sorted(PARAMS_LINK.keys())
+        if param in params_link_keys:
             webbrowser.open_new_tab(document_link + PARAMS_LINK[param])
-        elif param in range(1, len(PARAMS_LINK_KEYS) + 1):
+        elif param in range(1, len(params_link_keys) + 1):
             webbrowser.open_new_tab(
-                document_link + PARAMS_LINK[PARAMS_LINK_KEYS[param - 1]])
+                document_link + PARAMS_LINK[params_link_keys[param - 1]])
         else:
             print("Please choose one parameter : \n")
             print('Example : online_help("J") or online_help(2)\n')
-            for index, item in enumerate(PARAMS_LINK_KEYS):
+            for index, item in enumerate(params_link_keys):
                 print(str(index + 1) + "-" + item)
     except Exception:
         print("Error in online help")

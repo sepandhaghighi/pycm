@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parameters and constants."""
-VERSION = "2.3"
+VERSION = "2.4"
 
 
 OVERVIEW = '''

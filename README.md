@@ -423,7 +423,38 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)         0.33333       
 Y(Youden index)                                                   0.33333       0.33333       
 dInd(Distance index)                                              0.66667       0.66667       
 sInd(Similarity index)                                            0.5286        0.5286           
-                                  
+   
+>>> cm2.stat(summary=True)
+Overall Statistics : 
+
+ACC Macro                                                         0.75
+F1 Macro                                                          0.66667
+Kappa                                                             0.38462
+Overall ACC                                                       0.75
+PPV Macro                                                         0.85714
+SOA1(Landis & Koch)                                               Fair
+TPR Macro                                                         0.66667
+Zero-one Loss                                                     2
+
+Class Statistics :
+
+Classes                                                           Class1        Class2        
+ACC(Accuracy)                                                     0.75          0.75          
+AUC(Area under the ROC curve)                                     0.66667       0.66667       
+AUCI(AUC value interpretation)                                    Fair          Fair          
+F1(F1 score - harmonic mean of precision and sensitivity)         0.5           0.83333       
+FN(False negative/miss/type 2 error)                              2             0             
+FP(False positive/type 1 error/false alarm)                       0             2             
+N(Condition negative)                                             5             3             
+P(Condition positive or support)                                  3             5             
+POP(Population)                                                   8             8             
+PPV(Precision or positive predictive value)                       1.0           0.71429       
+TN(True negative/correct rejection)                               5             1             
+TON(Test outcome negative)                                        7             1             
+TOP(Test outcome positive)                                        1             7             
+TP(True positive/hit)                                             1             5             
+TPR(Sensitivity, recall, hit rate, or true positive rate)         0.33333       1.0 
+                               
 >>> cm3 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":0}, "Class2": {"Class1": 2, "Class2": 5}},transpose=True) # Transpose Matrix      
 >>> cm3.print_matrix()
 Predict          Class1    Class2    

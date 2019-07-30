@@ -507,6 +507,7 @@ pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
 
 ```
 * List of items are available by calling `online_help()` (without argument)		
+* If PyCM website is not available, set `alt_link = True` (new in `version 2.4`)
 
 ### Parameter recommender
 

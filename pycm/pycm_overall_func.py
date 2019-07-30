@@ -364,7 +364,7 @@ def joint_entropy_calc(classes, table, POP):
     try:
         result = 0
         for i in classes:
-            for index, j in enumerate(classes):
+            for j in classes:
                 p_prime = table[i][j] / POP[i]
                 if p_prime != 0:
                     result += p_prime * math.log(p_prime, 2)

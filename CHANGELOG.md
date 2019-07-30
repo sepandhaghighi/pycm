@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `sample_weight` bug in `numpy` array format fixed
 - Inputs manipulation bug fixed
 - Test system modified 
+- Warning system modified
 - `alt_link` parameter added to `save_html` method and `online_help` function
 - `Compare` class tests moved to `compare_test.py`
 - Warning tests moved to `warning_test.py`

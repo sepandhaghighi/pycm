@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Tversky index (TI)
 - Area under the PR curve (AUPR)
+- `FUNDING.yml`
 ### Changed
 - `AUC_calc` function modified
 - Document modified

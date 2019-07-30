@@ -94,6 +94,8 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 ## Installation		
 
+⚠️  PyCM 2.4 is the last version to support **Python 2.7** & **Python 3.4**
+
 ### Source code
 - Download [Version 2.3](https://github.com/sepandhaghighi/pycm/archive/v2.3.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)

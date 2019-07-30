@@ -391,7 +391,7 @@ def conditional_entropy_calc(classes, table, P, POP):
         result = 0
         for i in classes:
             temp = 0
-            for index, j in enumerate(classes):
+            for j in classes:
                 p_prime = 0
                 if P[i] != 0:
                     p_prime = table[i][j] / P[i]

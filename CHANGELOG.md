@@ -5,6 +5,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [2.4] - 2019-07-31
+### Added
+- Tversky index (TI)
+- Area under the PR curve (AUPR)
+- `FUNDING.yml`
+### Changed
+- `AUC_calc` function modified
+- Document modified
+- `summary` parameter added to `save_html`,`save_stat`,`save_csv` and `stat` methods
+- `sample_weight` bug in `numpy` array format fixed
+- Inputs manipulation bug fixed
+- Test system modified 
+- Warning system modified
+- `alt_link` parameter added to `save_html` method and `online_help` function
+- `Compare` class tests moved to `compare_test.py`
+- Warning tests moved to `warning_test.py`
 ## [2.3] - 2019-06-27
 ### Added
 - Adjusted F-score (AGF)
@@ -394,7 +410,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v2.3...dev
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v2.4...dev
+[2.4]: https://github.com/sepandhaghighi/pycm/compare/v2.3...v2.4
 [2.3]: https://github.com/sepandhaghighi/pycm/compare/v2.2...v2.3
 [2.2]: https://github.com/sepandhaghighi/pycm/compare/v2.1...v2.2
 [2.1]: https://github.com/sepandhaghighi/pycm/compare/v2.0...v2.1

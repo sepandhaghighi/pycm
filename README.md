@@ -94,8 +94,10 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 ## Installation		
 
+⚠️  PyCM 2.4 is the last version to support **Python 2.7** & **Python 3.4**
+
 ### Source code
-- Download [Version 2.3](https://github.com/sepandhaghighi/pycm/archive/v2.3.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 2.4](https://github.com/sepandhaghighi/pycm/archive/v2.4.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -103,7 +105,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==2.3` or `pip3 install pycm==2.3` (Need root access)
+- Run `pip install pycm==2.4` or `pip3 install pycm==2.4` (Need root access)
 
 ### Conda
 
@@ -203,8 +205,9 @@ ACC(Accuracy)                                                     0.83333       
 AGF(Adjusted F-score)                                             0.9136        0.53995       0.5516        
 AGM(Adjusted geometric mean)                                      0.83729       0.692         0.60712       
 AM(Difference between automatic and manual classification)        2             -1            -1            
-AUC(Area under the roc curve)                                     0.88889       0.61111       0.58333       
+AUC(Area under the ROC curve)                                     0.88889       0.61111       0.58333       
 AUCI(AUC value interpretation)                                    Very Good     Fair          Poor          
+AUPR(Area under the PR curve)                                     0.8           0.41667       0.55          
 BCD(Bray-Curtis dissimilarity)                                    0.08333       0.04167       0.04167       
 BM(Informedness or bookmaker informedness)                        0.77778       0.22222       0.16667       
 CEN(Confusion entropy)                                            0.25          0.49658       0.60442       
@@ -365,8 +368,9 @@ ACC(Accuracy)                                                     0.75          
 AGF(Adjusted F-score)                                             0.53979       0.81325       
 AGM(Adjusted geometric mean)                                      0.73991       0.5108        
 AM(Difference between automatic and manual classification)        -2            2             
-AUC(Area under the roc curve)                                     0.66667       0.66667       
+AUC(Area under the ROC curve)                                     0.66667       0.66667       
 AUCI(AUC value interpretation)                                    Fair          Fair          
+AUPR(Area under the PR curve)                                     0.66667       0.85714       
 BCD(Bray-Curtis dissimilarity)                                    0.125         0.125         
 BM(Informedness or bookmaker informedness)                        0.33333       0.33333       
 CEN(Confusion entropy)                                            0.5           0.43083       
@@ -418,8 +422,39 @@ TP(True positive/hit)                                             1             
 TPR(Sensitivity, recall, hit rate, or true positive rate)         0.33333       1.0           
 Y(Youden index)                                                   0.33333       0.33333       
 dInd(Distance index)                                              0.66667       0.66667       
-sInd(Similarity index)                                            0.5286        0.5286                  
-                                  
+sInd(Similarity index)                                            0.5286        0.5286           
+   
+>>> cm2.stat(summary=True)
+Overall Statistics : 
+
+ACC Macro                                                         0.75
+F1 Macro                                                          0.66667
+Kappa                                                             0.38462
+Overall ACC                                                       0.75
+PPV Macro                                                         0.85714
+SOA1(Landis & Koch)                                               Fair
+TPR Macro                                                         0.66667
+Zero-one Loss                                                     2
+
+Class Statistics :
+
+Classes                                                           Class1        Class2        
+ACC(Accuracy)                                                     0.75          0.75          
+AUC(Area under the ROC curve)                                     0.66667       0.66667       
+AUCI(AUC value interpretation)                                    Fair          Fair          
+F1(F1 score - harmonic mean of precision and sensitivity)         0.5           0.83333       
+FN(False negative/miss/type 2 error)                              2             0             
+FP(False positive/type 1 error/false alarm)                       0             2             
+N(Condition negative)                                             5             3             
+P(Condition positive or support)                                  3             5             
+POP(Population)                                                   8             8             
+PPV(Precision or positive predictive value)                       1.0           0.71429       
+TN(True negative/correct rejection)                               5             1             
+TON(Test outcome negative)                                        7             1             
+TOP(Test outcome positive)                                        1             7             
+TP(True positive/hit)                                             1             5             
+TPR(Sensitivity, recall, hit rate, or true positive rate)         0.33333       1.0 
+                               
 >>> cm3 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":0}, "Class2": {"Class1": 2, "Class2": 5}},transpose=True) # Transpose Matrix      
 >>> cm3.print_matrix()
 Predict          Class1    Class2    
@@ -472,6 +507,7 @@ pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
 
 ```
 * List of items are available by calling `online_help()` (without argument)		
+* If PyCM website is not available, set `alt_link = True` (new in `version 2.4`)
 
 ### Parameter recommender
 
@@ -693,6 +729,14 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 <blockquote>52- M. Vijaymeena and K. Kavitha, "A survey on similarity measures in text mining," Machine Learning and Applications: An International Journal, vol. 3, no. 2, pp. 19-28, 2016.</blockquote>
 
 <blockquote>53- Y. Otsuka, "The faunal character of the Japanese Pleistocene marine Mollusca, as evidence of climate having become colder during the Pleistocene in Japan," Biogeograph. Soc. Japan, vol. 6, pp. 165-170, 1936.</blockquote>
+
+<blockquote>54- A. Tversky, "Features of similarity," Psychological review, vol. 84, no. 4, p. 327, 1977.</blockquote>
+
+<blockquote>55- K. Boyd, K. H. Eng, and C. D. Page, "Area under the precision-recall curve: point estimates and confidence intervals," in Joint European conference on machine learning and knowledge discovery in databases, 2013, pp. 451-466: Springer.</blockquote>
+
+<blockquote>56- J. Davis and M. Goadrich, "The relationship between Precision-Recall and ROC curves," in Proceedings of the 23rd international conference on Machine learning, 2006, pp. 233-240: ACM.</blockquote>
+
+<blockquote>57- M. Kuhn, "Building predictive models in R using the caret package," Journal of statistical software, vol. 28, no. 5, pp. 1-26, 2008.</blockquote>
 
 
 

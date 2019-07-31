@@ -150,6 +150,8 @@ False
 'None'
 >>> F_calc(TP=3,FP=2,FN=1,beta=5)
 0.7428571428571429
+>>> TI_calc("None",0,0,0,0)
+'None'
 >>> ERR_calc(None)
 'None'
 >>> ERR_calc(0.1)
@@ -160,12 +162,17 @@ False
 0.34
 >>> cm.F_beta(4)["L3"]
 0.504950495049505
->>> cm.F_beta(None)
-{}
+>>> cm.F_beta(None) == {'L3': 'None', 'L1': 'None', 'L2': 'None'}
+True
 >>> cm.IBA_alpha(None) == {'L3': 'None', 'L1': 'None', 'L2': 'None'}
 True
 >>> del cm.classes
+>>> del cm.TP
 >>> cm.IBA_alpha(2)
+{}
+>>> cm.TI(2,3)
+{}
+>>> cm.F_beta(2)
 {}
 >>> kappa_analysis_koch(-0.1)
 'Poor'
@@ -347,108 +354,111 @@ Example : online_help("J") or online_help(2)
 8-AUCI
 9-AUNP
 10-AUNU
-11-BCD
-12-BM
-13-Bennett S
-14-CBA
-15-CEN
-16-Chi-Squared
-17-Chi-Squared DF
-18-Conditional Entropy
-19-Cramer V
-20-Cross Entropy
-21-DOR
-22-DP
-23-DPI
-24-ERR
-25-F0.5
-26-F1
-27-F1 Macro
-28-F1 Micro
-29-F2
-30-FDR
-31-FN
-32-FNR
-33-FOR
-34-FP
-35-FPR
-36-G
-37-GI
-38-GM
-39-Gwet AC1
-40-Hamming Loss
-41-IBA
-42-IS
-43-J
-44-Joint Entropy
-45-KL Divergence
-46-Kappa
-47-Kappa 95% CI
-48-Kappa No Prevalence
-49-Kappa Standard Error
-50-Kappa Unbiased
-51-LS
-52-Lambda A
-53-Lambda B
-54-MCC
-55-MCCI
-56-MCEN
-57-MK
-58-Mutual Information
-59-N
-60-NIR
-61-NLR
-62-NLRI
-63-NPV
-64-OC
-65-OOC
-66-OP
-67-Overall ACC
-68-Overall CEN
-69-Overall J
-70-Overall MCC
-71-Overall MCEN
-72-Overall RACC
-73-Overall RACCU
-74-P
-75-P-Value
-76-PLR
-77-PLRI
-78-POP
-79-PPV
-80-PPV Macro
-81-PPV Micro
-82-PRE
-83-Pearson C
-84-Phi-Squared
-85-Q
-86-RACC
-87-RACCU
-88-RCI
-89-RR
-90-Reference Entropy
-91-Response Entropy
-92-SOA1(Landis & Koch)
-93-SOA2(Fleiss)
-94-SOA3(Altman)
-95-SOA4(Cicchetti)
-96-SOA5(Cramer)
-97-SOA6(Matthews)
-98-Scott PI
-99-Standard Error
-100-TN
-101-TNR
-102-TON
-103-TOP
-104-TP
-105-TPR
-106-TPR Macro
-107-TPR Micro
-108-Y
-109-Zero-one Loss
-110-dInd
-111-sInd
+11-AUPR
+12-BCD
+13-BM
+14-Bennett S
+15-CBA
+16-CEN
+17-Chi-Squared
+18-Chi-Squared DF
+19-Conditional Entropy
+20-Cramer V
+21-Cross Entropy
+22-DOR
+23-DP
+24-DPI
+25-ERR
+26-F0.5
+27-F1
+28-F1 Macro
+29-F1 Micro
+30-F2
+31-FDR
+32-FN
+33-FNR
+34-FOR
+35-FP
+36-FPR
+37-G
+38-GI
+39-GM
+40-Gwet AC1
+41-Hamming Loss
+42-IBA
+43-IS
+44-J
+45-Joint Entropy
+46-KL Divergence
+47-Kappa
+48-Kappa 95% CI
+49-Kappa No Prevalence
+50-Kappa Standard Error
+51-Kappa Unbiased
+52-LS
+53-Lambda A
+54-Lambda B
+55-MCC
+56-MCCI
+57-MCEN
+58-MK
+59-Mutual Information
+60-N
+61-NIR
+62-NLR
+63-NLRI
+64-NPV
+65-OC
+66-OOC
+67-OP
+68-Overall ACC
+69-Overall CEN
+70-Overall J
+71-Overall MCC
+72-Overall MCEN
+73-Overall RACC
+74-Overall RACCU
+75-P
+76-P-Value
+77-PLR
+78-PLRI
+79-POP
+80-PPV
+81-PPV Macro
+82-PPV Micro
+83-PRE
+84-Pearson C
+85-Phi-Squared
+86-Q
+87-RACC
+88-RACCU
+89-RCI
+90-RR
+91-Reference Entropy
+92-Response Entropy
+93-SOA1(Landis & Koch)
+94-SOA2(Fleiss)
+95-SOA3(Altman)
+96-SOA4(Cicchetti)
+97-SOA5(Cramer)
+98-SOA6(Matthews)
+99-Scott PI
+100-Standard Error
+101-TN
+102-TNR
+103-TON
+104-TOP
+105-TP
+106-TPR
+107-TPR Macro
+108-TPR Micro
+109-Y
+110-Zero-one Loss
+111-dInd
+112-sInd
 >>> online_help("J")
+...
+>>> online_help("J",alt_link=True)
 ...
 >>> online_help(4)
 ...
@@ -564,6 +574,8 @@ Example : online_help("J") or online_help(2)
 0.55
 >>> cm.AUC[1]
 0.75
+>>> cm.AUPR[1]
+0.5355263157894736
 >>> cm.OP[1]
 0.6473333333333334
 >>> cm.IBA[1]
@@ -609,4 +621,15 @@ Example : online_help("J") or online_help(2)
 0.9636363636363636
 >>> cm.OOC[1]
 0.9383838571303771
+>>> cm = ConfusionMatrix(matrix={1:{1:63,0:1},0:{0:50,1:2}}) # Verified Case
+>>> cm.TI(alpha=1,beta=1)[1]
+0.9545454545454546
+>>> cm.TI(alpha=0.5,beta=0.5)[1] == cm.F1[1]
+True
+>>> cm.TI(alpha=0.5,beta=0.5)[0] == cm.F1[0]
+True
+>>> cm.TI(alpha=2,beta=8)[1]
+0.7777777777777778
+>>> cm.TI(alpha=2,beta=8)[0]
+0.8064516129032258
 """

@@ -5,6 +5,8 @@
 >>> import json
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
+>>> y_actu_copy = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
+>>> y_pred_copy = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu, y_pred)
 >>> cm
 pycm.ConfusionMatrix(classes: [0, 1, 2])
@@ -86,8 +88,9 @@ ACC(Accuracy)                                                    0.83333        
 AGF(Adjusted F-score)                                            0.9136                  0.53995                 0.5516
 AGM(Adjusted geometric mean)                                     0.83729                 0.692                   0.60712
 AM(Difference between automatic and manual classification)       2                       -1                      -1
-AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
+AUC(Area under the ROC curve)                                    0.88889                 0.61111                 0.58333
 AUCI(AUC value interpretation)                                   Very Good               Fair                    Poor
+AUPR(Area under the PR curve)                                    0.8                     0.41667                 0.55
 BCD(Bray-Curtis dissimilarity)                                   0.08333                 0.04167                 0.04167
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
@@ -142,6 +145,10 @@ dInd(Distance index)                                             0.22222        
 sInd(Similarity index)                                           0.84287                 0.52209                 0.57508
 <BLANKLINE>
 >>> cm.relabel({0:"L1",1:"L2",2:"L3"})
+>>> y_actu == y_actu_copy
+True
+>>> y_pred == y_pred_copy
+True
 >>> print(cm)
 Predict          L1    L2    L3
 Actual
@@ -218,8 +225,9 @@ ACC(Accuracy)                                                    0.83333        
 AGF(Adjusted F-score)                                            0.9136                  0.53995                 0.5516
 AGM(Adjusted geometric mean)                                     0.83729                 0.692                   0.60712
 AM(Difference between automatic and manual classification)       2                       -1                      -1
-AUC(Area under the roc curve)                                    0.88889                 0.61111                 0.58333
+AUC(Area under the ROC curve)                                    0.88889                 0.61111                 0.58333
 AUCI(AUC value interpretation)                                   Very Good               Fair                    Poor
+AUPR(Area under the PR curve)                                    0.8                     0.41667                 0.55
 BCD(Bray-Curtis dissimilarity)                                   0.08333                 0.04167                 0.04167
 BM(Informedness or bookmaker informedness)                       0.77778                 0.22222                 0.16667
 CEN(Confusion entropy)                                           0.25                    0.49658                 0.60442
@@ -285,8 +293,14 @@ True
 0.2222222222222221
 >>> import numpy as np
 >>> y_test = np.array([600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200])
+>>> y_test_copy = np.array([600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200])
 >>> y_pred = np.array([100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200])
+>>> y_pred_copy = np.array([100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200])
 >>> cm=ConfusionMatrix(y_test, y_pred)
+>>> type(y_pred) == type(y_pred_copy)
+True
+>>> type(y_test) == type(y_test_copy)
+True
 >>> print(cm)
 Predict          100    200    500    600
 Actual
@@ -365,8 +379,9 @@ ACC(Accuracy)                                                    0.45           
 AGF(Adjusted F-score)                                            0.0                     0.33642                 0.56659                 0.0
 AGM(Adjusted geometric mean)                                     None                    0.56694                 0.7352                  0
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
-AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
+AUC(Area under the ROC curve)                                    None                    0.5625                  0.63725                 0.5
 AUCI(AUC value interpretation)                                   None                    Poor                    Fair                    Poor
+AUPR(Area under the PR curve)                                    None                    0.61607                 0.41667                 None
 BCD(Bray-Curtis dissimilarity)                                   0.275                   0.225                   0.025                   0.025
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
@@ -484,8 +499,9 @@ ACC(Accuracy)                                                    0.45           
 AGF(Adjusted F-score)                                            0.0                     0.33642                 0.56659                 0.0
 AGM(Adjusted geometric mean)                                     None                    0.56694                 0.7352                  0
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
-AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
+AUC(Area under the ROC curve)                                    None                    0.5625                  0.63725                 0.5
 AUCI(AUC value interpretation)                                   None                    Poor                    Fair                    Poor
+AUPR(Area under the PR curve)                                    None                    0.61607                 0.41667                 None
 BCD(Bray-Curtis dissimilarity)                                   0.275                   0.225                   0.025                   0.025
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
@@ -539,6 +555,37 @@ Y(Youden index)                                                  None           
 dInd(Distance index)                                             None                    0.67315                 0.66926                 1.0
 sInd(Similarity index)                                           None                    0.52401                 0.52676                 0.29289
 <BLANKLINE>
+>>> cm.stat(summary=True)
+Overall Statistics :
+<BLANKLINE>
+ACC Macro                                                         0.675
+F1 Macro                                                          0.23043
+Kappa                                                             0.07801
+Overall ACC                                                       0.35
+PPV Macro                                                         None
+SOA1(Landis & Koch)                                               Slight
+TPR Macro                                                         None
+Zero-one Loss                                                     13
+<BLANKLINE>
+Class Statistics :
+<BLANKLINE>
+Classes                                                           100           200           500           600
+ACC(Accuracy)                                                     0.45          0.45          0.85          0.95
+AUC(Area under the ROC curve)                                     None          0.5625        0.63725       0.5
+AUCI(AUC value interpretation)                                    None          Poor          Fair          Poor
+F1(F1 score - harmonic mean of precision and sensitivity)         0.0           0.52174       0.4           0.0
+FN(False negative/miss/type 2 error)                              0             10            2             1
+FP(False positive/type 1 error/false alarm)                       11            1             1             0
+N(Condition negative)                                             20            4             17            19
+P(Condition positive or support)                                  0             16            3             1
+POP(Population)                                                   20            20            20            20
+PPV(Precision or positive predictive value)                       0.0           0.85714       0.5           None
+TN(True negative/correct rejection)                               9             3             16            19
+TON(Test outcome negative)                                        9             13            18            20
+TOP(Test outcome positive)                                        11            7             2             0
+TP(True positive/hit)                                             0             6             1             0
+TPR(Sensitivity, recall, hit rate, or true positive rate)         None          0.375         0.33333       0.0
+<BLANKLINE>
 >>> cm.stat(overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"])
 Overall Statistics :
 <BLANKLINE>
@@ -549,7 +596,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100                     200                     500                     600
 ACC(Accuracy)                                                    0.45                    0.45                    0.85                    0.95
-AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
+AUC(Area under the ROC curve)                                    None                    0.5625                  0.63725                 0.5
 TNR(Specificity or true negative rate)                           0.45                    0.75                    0.94118                 1.0
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0
 <BLANKLINE>
@@ -563,7 +610,7 @@ Class Statistics :
 <BLANKLINE>
 Classes                                                          100
 ACC(Accuracy)                                                    0.45
-AUC(Area under the roc curve)                                    None
+AUC(Area under the ROC curve)                                    None
 TNR(Specificity or true negative rate)                           0.45
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None
 <BLANKLINE>
@@ -630,7 +677,11 @@ Actual
 ...		    return 1
 ...	    else:
 ...		    return 0
->>> cm_6 = ConfusionMatrix([0,0,1,0],[0.87,0.34,0.9,0.12],threshold=activation, transpose=2)
+>>> y_pred_act = [0.87,0.34,0.9,0.12]
+>>> y_pred_act_copy = [0.87,0.34,0.9,0.12]
+>>> cm_6 = ConfusionMatrix([0,0,1,0],y_pred_act,threshold=activation, transpose=2)
+>>> y_pred_act_copy == y_pred_act
+True
 >>> cm_6.print_matrix()
 Predict          0        1
 Actual
@@ -639,7 +690,11 @@ Actual
 >>> cm = ConfusionMatrix(matrix={1:{1:0,2:0},2:{1:0,2:0}})
 >>> cm
 pycm.ConfusionMatrix(classes: [1, 2])
->>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":9,"Class2":3,"Class3":0},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":1,"Class2":1,"Class3":4}})
+>>> matrix1 = {"Class1":{"Class1":9,"Class2":3,"Class3":0},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":1,"Class2":1,"Class3":4}}
+>>> matrix1_copy = {"Class1":{"Class1":9,"Class2":3,"Class3":0},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":1,"Class2":1,"Class3":4}}
+>>> cm = ConfusionMatrix(matrix=matrix1)
+>>> matrix1 == matrix1_copy
+True
 >>> print(cm)
 Predict          Class1    Class2    Class3
 Actual
@@ -716,8 +771,9 @@ ACC(Accuracy)                                                    0.74074        
 AGF(Adjusted F-score)                                            0.75595                 0.65734                 0.79543
 AGM(Adjusted geometric mean)                                     0.73866                 0.70552                 0.86488
 AM(Difference between automatic and manual classification)       1                       0                       -1
-AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
+AUC(Area under the ROC curve)                                    0.74167                 0.66667                 0.80952
 AUCI(AUC value interpretation)                                   Good                    Fair                    Very Good
+AUPR(Area under the PR curve)                                    0.72115                 0.55556                 0.73333
 BCD(Bray-Curtis dissimilarity)                                   0.01852                 0.0                     0.01852
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
@@ -771,7 +827,11 @@ Y(Youden index)                                                  0.48333        
 dInd(Distance index)                                             0.36553                 0.4969                  0.33672
 sInd(Similarity index)                                           0.74153                 0.64864                 0.7619
 <BLANKLINE>
->>> cm = ConfusionMatrix(matrix={"Class1":{"Class1":9,"Class2":3,"Class3":1},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":0,"Class2":1,"Class3":4}},transpose=True)
+>>> matrix1 = {"Class1":{"Class1":9,"Class2":3,"Class3":1},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":0,"Class2":1,"Class3":4}}
+>>> matrix1_copy = {"Class1":{"Class1":9,"Class2":3,"Class3":1},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":0,"Class2":1,"Class3":4}}
+>>> cm = ConfusionMatrix(matrix=matrix1,transpose=True)
+>>> matrix1 == matrix1_copy
+True
 >>> print(cm)
 Predict          Class1    Class2    Class3
 Actual
@@ -848,8 +908,9 @@ ACC(Accuracy)                                                    0.74074        
 AGF(Adjusted F-score)                                            0.75595                 0.65734                 0.79543
 AGM(Adjusted geometric mean)                                     0.73866                 0.70552                 0.86488
 AM(Difference between automatic and manual classification)       1                       0                       -1
-AUC(Area under the roc curve)                                    0.74167                 0.66667                 0.80952
+AUC(Area under the ROC curve)                                    0.74167                 0.66667                 0.80952
 AUCI(AUC value interpretation)                                   Good                    Fair                    Very Good
+AUPR(Area under the PR curve)                                    0.72115                 0.55556                 0.73333
 BCD(Bray-Curtis dissimilarity)                                   0.01852                 0.0                     0.01852
 BM(Informedness or bookmaker informedness)                       0.48333                 0.33333                 0.61905
 CEN(Confusion entropy)                                           0.45994                 0.66249                 0.47174
@@ -905,7 +966,11 @@ sInd(Similarity index)                                           0.74153        
 <BLANKLINE>
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
->>> cm = ConfusionMatrix(y_actu, y_pred, sample_weight=[2, 2, 2, 2, 3, 1, 1, 2, 2, 1, 1, 2])
+>>> weight = [2, 2, 2, 2, 3, 1, 1, 2, 2, 1, 1, 2]
+>>> weight_copy = [2, 2, 2, 2, 3, 1, 1, 2, 2, 1, 1, 2]
+>>> cm = ConfusionMatrix(y_actu, y_pred, sample_weight=weight)
+>>> weight_copy == weight
+True
 >>> print(cm)
 Predict          0    1    2
 Actual
@@ -982,8 +1047,9 @@ ACC(Accuracy)                                                    0.80952        
 AGF(Adjusted F-score)                                            0.90694                 0.54433                 0.55442
 AGM(Adjusted geometric mean)                                     0.80509                 0.70336                 0.66986
 AM(Difference between automatic and manual classification)       4                       0                       -4
-AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
+AUC(Area under the ROC curve)                                    0.86667                 0.61111                 0.63889
 AUCI(AUC value interpretation)                                   Very Good               Fair                    Fair
+AUPR(Area under the PR curve)                                    0.8                     0.33333                 0.625
 BCD(Bray-Curtis dissimilarity)                                   0.09524                 0.0                     0.09524
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
 CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
@@ -1037,6 +1103,11 @@ Y(Youden index)                                                  0.73333        
 dInd(Distance index)                                             0.26667                 0.67586                 0.54716
 sInd(Similarity index)                                           0.81144                 0.52209                 0.6131
 <BLANKLINE>
+>>> cm2 = ConfusionMatrix(y_actu, y_pred, sample_weight=np.array(weight))
+>>> isinstance(cm2.weights,np.ndarray)
+True
+>>> cm2 == cm
+True
 >>> cm = ConfusionMatrix([1,2,3,4],[1,2,3,"4"])
 >>> cm
 pycm.ConfusionMatrix(classes: ['1', '2', '3', '4'])
@@ -1060,76 +1131,4 @@ True
 >>> cm = ConfusionMatrix(matrix={1:{1:60,2:9,3:1,4:0,5:0,6:0},2:{1:23,2:48,3:0,4:2,5:2,6:1},3:{1:11,2:5,3:60,4:0,5:0,6:0},4:{1:0,2:2,3:0,4:60,5:1,6:3},5:{1:2,2:1,3:0,4:0,5:60,6:2},6:{1:1,2:2,3:0,4:2,5:1,6:60}})
 >>> set(cm.recommended_list) == set(MULTICLASS_RECOMMEND)
 True
->>> cm_comp1 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
->>> cm_comp2 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
->>> cm_comp1 == cm_comp2
-False
->>> cm_comp1 == 2
-False
->>> cm_comp1_temp = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
->>> cm_comp1 == cm_comp1_temp
-True
->>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2})
->>> cp
-pycm.Compare(classes: [0, 1, 2])
->>> cp.scores == {'model1': {'overall': 2.55, 'class': 7.05}, 'model2': {'overall': 1.98333, 'class': 4.55}}
-True
->>> cp.best
-pycm.ConfusionMatrix(classes: [0, 1, 2])
->>> cp.best_name
-'model1'
->>> print(cp)
-Best : model1
-<BLANKLINE>
-Rank  Name      Class-Score         Overall-Score
-1     model1    7.05                2.55
-2     model2    4.55                1.98333
-<BLANKLINE>
->>> cp.print_report()
-Best : model1
-<BLANKLINE>
-Rank  Name      Class-Score         Overall-Score
-1     model1    7.05                2.55
-2     model2    4.55                1.98333
-<BLANKLINE>
->>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2},by_class=True,weight={0:5,1:1,2:1})
->>> print(cp)
-Best : model2
-<BLANKLINE>
-Rank  Name      Class-Score         Overall-Score
-1     model2    13.55               1.98333
-2     model1    11.65               2.55
-<BLANKLINE>
->>> cp.best
-pycm.ConfusionMatrix(classes: [0, 1, 2])
->>> cp.best_name
-'model2'
->>> cp2 = Compare({"model1":cm_comp1,"model2":cm_comp1})
-Warning:  Confusion matrices are too close and the best one can not be recognized.
->>> cp2.scores == {'model1': {'overall': 2.55, 'class': 7.05}, 'model2': {'overall': 2.55, 'class': 7.05}}
-True
->>> cp2.best
->>> cp2.best_name
->>> cm1 = ConfusionMatrix(matrix={0:{0:50,1:0,2:0},1:{0:0,1:35,2:15},2:{0:0,1:16,2:34}})
->>> cm2 = ConfusionMatrix(matrix={0:{0:48,1:2,2:0},1:{0:3,1:46,2:1},2:{0:8,1:2,2:40}})
->>> cp3 = Compare({"cm1":cm1,"cm2":cm2})
->>> print(cp3)
-Best : cm2
-<BLANKLINE>
-Rank  Name   Class-Score    Overall-Score
-1     cm2    10.7           5.8
-2     cm1    7.9            4.48333
-<BLANKLINE>
->>> cp3 = Compare({"cm1":cm1,"cm2":cm2},weight={0:200,1:1,2:1})
-Warning: Confusion matrices are too close and the best one can not be recognized.
->>> print(cp3)
-Best : None
-<BLANKLINE>
-Rank  Name   Class-Score     Overall-Score
-1     cm1    604.9           4.48333
-2     cm2    567.9           5.8
-<BLANKLINE>
-Warning: Confusion matrices are too close and the best one can not be recognized.
->>> cp3.best
->>> cp3.best_name
 """

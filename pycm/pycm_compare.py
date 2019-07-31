@@ -7,6 +7,7 @@ from .pycm_param import *
 from .pycm_obj import ConfusionMatrix
 import os
 import numpy
+from warnings import warn
 
 
 class pycmCompareError(Exception):
@@ -50,38 +51,15 @@ class Compare():
         :param digit: precision digit (default value : 5)
         :type digit : int
         """
-        if not isinstance(cm_dict, dict):
-            raise pycmCompareError(COMPARE_FORMAT_ERROR)
-        if not all(isinstance(item, ConfusionMatrix)
-                   for item in cm_dict.values()):
-            raise pycmCompareError(COMPARE_TYPE_ERROR)
-        if not list_check_equal([getattr(item, "POP")
-                                 for item in cm_dict.values()]):
-            raise pycmCompareError(COMPARE_DOMAIN_ERROR)
-        if len(cm_dict) < 2:
-            raise pycmCompareError(COMPARE_NUMBER_ERROR)
-        self.classes = list(cm_dict.values())[0].classes
-        self.weight = {k: 1 for k in self.classes}
-        self.digit = digit
-        self.best = None
-        self.best_name = None
+        self.scores = None
         self.sorted = None
-        self.scores = {k: {"overall": 0, "class": 0}.copy()
-                       for k in cm_dict.keys()}
-        if weight is not None:
-            if not isinstance(weight, dict):
-                raise pycmCompareError(COMPARE_WEIGHT_ERROR)
-            if list(weight.keys()) == self.classes and all(
-                    [isfloat(x) for x in weight.values()]):
-                self.weight = weight
-            else:
-                raise pycmCompareError(COMPARE_WEIGHT_ERROR)
+        self.classes = None
+        __compare_assign_handler__(self, cm_dict, weight, digit)
         __compare_class_handler__(self, cm_dict)
         __compare_overall_handler__(self, cm_dict)
         __compare_rounder__(self, cm_dict)
         scores_list = list(self.scores.values())
-        (max_overall_name, max_overall_score, max_class_name,
-         max_class_score) = __compare_sort_handler__(self)
+        (max_overall_name, max_class_name) = __compare_sort_handler__(self)
         if scores_list.count(self.scores[max_class_name]) == 1:
             if by_class:
                 self.best = cm_dict[max_class_name]
@@ -91,9 +69,11 @@ class Compare():
                     self.best = cm_dict[max_class_name]
                     self.best_name = max_overall_name
                 else:
-                    print('Warning: ' + COMPARE_RESULT_WARNING)
+                    warn(COMPARE_RESULT_WARNING, RuntimeWarning)
+                    # print('Warning: ' + COMPARE_RESULT_WARNING)
         else:
-            print('Warning: ' + COMPARE_RESULT_WARNING)
+            warn(COMPARE_RESULT_WARNING, RuntimeWarning)
+            # print('Warning: ' + COMPARE_RESULT_WARNING)
 
     def print_report(self):
         """
@@ -126,7 +106,8 @@ class Compare():
             file.write(report)
             file.close()
             if address:
-                message = os.path.join(os.getcwd(), name + ".comp")
+                message = os.path.join(
+                    os.getcwd(), name + ".comp")  # pragma: no cover
             return {"Status": True, "Message": message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}
@@ -213,7 +194,7 @@ def __compare_sort_handler__(compare):
 
     :param compare: Compare
     :type compare : pycm.Compare object
-    :return: (max_overall_name,max_overall_score,max_class_name,max_class_score) as tuple
+    :return: (max_overall_name,max_class_name) as tuple
     """
     sorted_by_class = sorted(
         compare.scores,
@@ -230,10 +211,48 @@ def __compare_sort_handler__(compare):
     compare.sorted = sorted_by_class
     max_overall_name = sorted_by_overall[0]
     max_class_name = sorted_by_class[0]
-    max_class_score = compare.scores[max_class_name]["class"]
-    max_overall_score = compare.scores[max_overall_name]["overall"]
-    return (
-        max_overall_name,
-        max_overall_score,
-        max_class_name,
-        max_class_score)
+    #max_class_score = compare.scores[max_class_name]["class"]
+    #max_overall_score = compare.scores[max_overall_name]["overall"]
+    return (max_overall_name, max_class_name)
+
+
+def __compare_assign_handler__(compare, cm_dict, weight, digit):
+    """
+    Assign basic parameters to Comapre.
+
+    :param compare: Compare
+    :type compare : pycm.Compare object
+    :param cm_dict: cm's dictionary
+    :type cm_dict : dict
+    :param digit: precision digit (default value : 5)
+    :type digit : int
+    :param weight: class weights
+    :type weight: dict
+    :return: None
+    """
+    if not isinstance(cm_dict, dict):
+        raise pycmCompareError(COMPARE_FORMAT_ERROR)
+    if not all(isinstance(item, ConfusionMatrix)
+               for item in cm_dict.values()):
+        raise pycmCompareError(COMPARE_TYPE_ERROR)
+    if not list_check_equal([getattr(item, "POP")
+                             for item in cm_dict.values()]):
+        raise pycmCompareError(COMPARE_DOMAIN_ERROR)
+    if len(cm_dict) < 2:
+        raise pycmCompareError(COMPARE_NUMBER_ERROR)
+    compare.classes = list(cm_dict.values())[0].classes
+    compare.weight = {k: 1 for k in compare.classes}
+    compare.digit = digit
+    compare.best = None
+    compare.best_name = None
+    compare.sorted = None
+    compare.scores = {k: {"overall": 0, "class": 0}.copy()
+                      for k in cm_dict.keys()}
+    if weight is not None:
+        if not isinstance(weight, dict):
+            raise pycmCompareError(COMPARE_WEIGHT_ERROR)
+        if list(weight.keys()) == compare.classes and all(
+                [isfloat(x) for x in weight.values()]):
+            compare.weight = weight
+        else:
+            raise pycmCompareError(COMPARE_WEIGHT_ERROR)

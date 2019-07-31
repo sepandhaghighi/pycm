@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix module."""
 from __future__ import division
-from .pycm_class_func import class_statistics, F_calc, IBA_calc
+from .pycm_class_func import class_statistics, F_calc, IBA_calc, TI_calc
 from .pycm_overall_func import overall_statistics
 from .pycm_output import *
 from .pycm_util import *
@@ -10,6 +10,7 @@ import os
 import json
 import types
 import numpy
+from warnings import warn
 
 
 class pycmVectorError(Exception):
@@ -71,6 +72,7 @@ class ConfusionMatrix():
         self.predict_vector = predict_vector
         self.digit = digit
         self.weights = None
+        self.classes = None
         if isinstance(transpose, bool):
             self.transpose = transpose
         else:
@@ -107,6 +109,8 @@ class ConfusionMatrix():
             [classes, table] = one_vs_all_func(
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
         print(table_print(classes, table))
+        if len(classes) >= CLASS_NUMBER_THRESHOLD:
+            warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 
     def print_normalized_matrix(self, one_vs_all=False, class_name=None):
         """
@@ -125,8 +129,15 @@ class ConfusionMatrix():
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
         table = normalized_table_calc(classes, table)
         print(table_print(classes, table))
+        if len(classes) >= CLASS_NUMBER_THRESHOLD:
+            warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 
-    def stat(self, overall_param=None, class_param=None, class_name=None):
+    def stat(
+            self,
+            overall_param=None,
+            class_param=None,
+            class_name=None,
+            summary=False):
         """
         Print statistical measures table.
 
@@ -136,15 +147,24 @@ class ConfusionMatrix():
         :type class_param : list
         :param class_name : class name (sub set of classes), Example :[1,2,3]
         :type class_name : list
+        :param summary : summary mode flag
+        :type summary : bool
         :return: None
         """
         classes = class_filter(self.classes, class_name)
+        class_list = class_param
+        overall_list = overall_param
+        if summary:
+            class_list = SUMMARY_CLASS
+            overall_list = SUMMARY_OVERALL
         print(
             stat_print(
                 classes,
                 self.class_stat,
                 self.overall_stat,
-                self.digit, overall_param, class_param))
+                self.digit, overall_list, class_list))
+        if len(classes) >= CLASS_NUMBER_THRESHOLD:
+            warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 
     def __str__(self):
         """
@@ -156,6 +176,8 @@ class ConfusionMatrix():
         result += "\n" * 4
         result += stat_print(self.classes, self.class_stat,
                              self.overall_stat, self.digit)
+        if len(self.classes) >= CLASS_NUMBER_THRESHOLD:
+            warn(CLASS_NUMBER_WARNING, RuntimeWarning)
         return result
 
     def save_stat(
@@ -164,7 +186,8 @@ class ConfusionMatrix():
             address=True,
             overall_param=None,
             class_param=None,
-            class_name=None):
+            class_name=None,
+            summary=False):
         """
         Save ConfusionMatrix in .pycm (flat file format).
 
@@ -178,10 +201,18 @@ class ConfusionMatrix():
         :type class_param : list
         :param class_name : class name (sub set of classes), Example :[1,2,3]
         :type class_name : list
+        :param summary : summary mode flag
+        :type summary : bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
         try:
             message = None
+            class_list = class_param
+            overall_list = overall_param
+            warning_message = ""
+            if summary:
+                class_list = SUMMARY_CLASS
+                overall_list = SUMMARY_OVERALL
             file = open(name + ".pycm", "w")
             matrix = "Matrix : \n\n" + table_print(self.classes,
                                                    self.table) + "\n\n"
@@ -200,11 +231,19 @@ class ConfusionMatrix():
                 classes,
                 self.class_stat,
                 self.overall_stat,
-                self.digit, overall_param, class_param)
-            file.write(matrix + normalized_matrix + stat + one_vs_all)
+                self.digit, overall_list, class_list)
+            if len(self.classes) >= CLASS_NUMBER_THRESHOLD:
+                warning_message = "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"
+            file.write(
+                matrix +
+                normalized_matrix +
+                stat +
+                one_vs_all +
+                warning_message)
             file.close()
             if address:
-                message = os.path.join(os.getcwd(), name + ".pycm") # pragma: no cover
+                message = os.path.join(
+                    os.getcwd(), name + ".pycm")  # pragma: no cover
             return {"Status": True, "Message": message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}
@@ -215,7 +254,14 @@ class ConfusionMatrix():
             address=True,
             overall_param=None,
             class_param=None,
-            class_name=None, color=(0, 0, 0), normalize=False):
+            class_name=None,
+            color=(
+                0,
+                0,
+                0),
+            normalize=False,
+            summary=False,
+            alt_link=False):
         """
         Save ConfusionMatrix in HTML file.
 
@@ -233,9 +279,18 @@ class ConfusionMatrix():
         :type color : tuple
         :param normalize : save normalize matrix flag
         :type normalize : bool
+        :param summary : summary mode flag
+        :type summary : bool
+        :param alt_link: alternative link for document flag
+        :type alt_link: bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
         try:
+            class_list = class_param
+            overall_list = overall_param
+            if summary:
+                class_list = SUMMARY_CLASS
+                overall_list = SUMMARY_OVERALL
             message = None
             table = self.table
             if normalize:
@@ -248,20 +303,23 @@ class ConfusionMatrix():
                 html_overall_stat(
                     self.overall_stat,
                     self.digit,
-                    overall_param,
-                    self.recommended_list))
+                    overall_list,
+                    self.recommended_list,
+                    alt_link))
             class_stat_classes = class_filter(self.classes, class_name)
             html_file.write(
                 html_class_stat(
                     class_stat_classes,
                     self.class_stat,
                     self.digit,
-                    class_param,
-                    self.recommended_list))
+                    class_list,
+                    self.recommended_list,
+                    alt_link))
             html_file.write(html_end(VERSION))
             html_file.close()
             if address:
-                message = os.path.join(os.getcwd(), name + ".html") # pragma: no cover
+                message = os.path.join(
+                    os.getcwd(), name + ".html")  # pragma: no cover
             return {"Status": True, "Message": message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}
@@ -273,7 +331,8 @@ class ConfusionMatrix():
             class_param=None,
             class_name=None,
             matrix_save=True,
-            normalize=False):
+            normalize=False,
+            summary=False):
         """
         Save ConfusionMatrix in CSV file.
 
@@ -289,9 +348,14 @@ class ConfusionMatrix():
         :type matrix_save : bool
         :param normalize : save normalize matrix flag
         :type normalize : bool
+        :param summary : summary mode flag
+        :type summary : bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
         try:
+            class_list = class_param
+            if summary:
+                class_list = SUMMARY_CLASS
             message = None
             classes = class_filter(self.classes, class_name)
             csv_file = open(name + ".csv", "w")
@@ -299,7 +363,7 @@ class ConfusionMatrix():
                 classes,
                 self.class_stat,
                 self.digit,
-                class_param)
+                class_list)
             csv_file.write(csv_data)
             if matrix_save:
                 matrix = self.table
@@ -309,7 +373,8 @@ class ConfusionMatrix():
                 csv_matrix_data = csv_matrix_print(self.classes, matrix)
                 csv_matrix_file.write(csv_matrix_data)
             if address:
-                message = os.path.join(os.getcwd(), name + ".csv") # pragma: no cover
+                message = os.path.join(
+                    os.getcwd(), name + ".csv")  # pragma: no cover
             return {"Status": True, "Message": message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}
@@ -338,6 +403,7 @@ class ConfusionMatrix():
             obj_file = open(name + ".obj", "w")
             actual_vector_temp = self.actual_vector
             predict_vector_temp = self.predict_vector
+            weights_vector_temp = self.weights
             matrix_temp = {k: self.table[k].copy() for k in self.classes}
             matrix_items = []
             for i in self.classes:
@@ -346,11 +412,13 @@ class ConfusionMatrix():
                 actual_vector_temp = actual_vector_temp.tolist()
             if isinstance(predict_vector_temp, numpy.ndarray):
                 predict_vector_temp = predict_vector_temp.tolist()
+            if isinstance(weights_vector_temp, numpy.ndarray):
+                weights_vector_temp = weights_vector_temp.tolist()
             dump_dict = {"Actual-Vector": actual_vector_temp,
                          "Predict-Vector": predict_vector_temp,
                          "Matrix": matrix_items,
                          "Digit": self.digit,
-                         "Sample-Weight": self.weights,
+                         "Sample-Weight": weights_vector_temp,
                          "Transpose": self.transpose}
             if save_stat:
                 dump_dict["Class-Stat"] = self.class_stat
@@ -360,7 +428,8 @@ class ConfusionMatrix():
                 dump_dict["Predict-Vector"] = None
             json.dump(dump_dict, obj_file)
             if address:
-                message = os.path.join(os.getcwd(), name + ".obj") # pragma: no cover
+                message = os.path.join(
+                    os.getcwd(), name + ".obj")  # pragma: no cover
             return {"Status": True, "Message": message}
         except Exception as e:
             return {"Status": False, "Message": str(e)}
@@ -398,6 +467,25 @@ class ConfusionMatrix():
             for i in self.classes:
                 IBA_dict[i] = IBA_calc(self.TPR[i], self.TNR[i], alpha=alpha)
             return IBA_dict
+        except Exception:
+            return {}
+
+    def TI(self, alpha, beta):
+        """
+        Calculate Tversky index.
+
+        :param alpha: alpha coefficient
+        :type alpha : float
+        :param beta: beta coefficient
+        :type beta: float
+        :return: TI as float
+        """
+        try:
+            TI_dict = {}
+            for i in self.classes:
+                TI_dict[i] = TI_calc(
+                    self.TP[i], self.FP[i], self.FN[i], alpha, beta)
+            return TI_dict
         except Exception:
             return {}
 
@@ -540,6 +628,7 @@ def __class_stat_init__(cm):
     cm.AGF = cm.class_stat["AGF"]
     cm.OC = cm.class_stat["OC"]
     cm.OOC = cm.class_stat["OOC"]
+    cm.AUPR = cm.class_stat["AUPR"]
 
 
 def __overall_stat_init__(cm):
@@ -746,9 +835,7 @@ def __obj_vector_handler__(
         actual_vector, predict_vector)
     matrix_param = matrix_params_calc(
         actual_vector, predict_vector, sample_weight)
-    if isinstance(sample_weight, list):
+    if isinstance(sample_weight, (list, numpy.ndarray)):
         cm.weights = sample_weight
-    if isinstance(sample_weight, numpy.ndarray):
-        cm.weights = sample_weight.tolist()
 
     return matrix_param

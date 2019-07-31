@@ -364,7 +364,7 @@ def joint_entropy_calc(classes, table, POP):
     try:
         result = 0
         for i in classes:
-            for index, j in enumerate(classes):
+            for j in classes:
                 p_prime = table[i][j] / POP[i]
                 if p_prime != 0:
                     result += p_prime * math.log(p_prime, 2)
@@ -391,7 +391,7 @@ def conditional_entropy_calc(classes, table, P, POP):
         result = 0
         for i in classes:
             temp = 0
-            for index, j in enumerate(classes):
+            for j in classes:
                 p_prime = 0
                 if P[i] != 0:
                     p_prime = table[i][j] / P[i]
@@ -517,7 +517,7 @@ def chi_square_calc(classes, table, TOP, P, POP):
     try:
         result = 0
         for i in classes:
-            for index, j in enumerate(classes):
+            for j in classes:
                 expected = (TOP[j] * P[i]) / (POP[i])
                 result += ((table[i][j] - expected)**2) / expected
         return result

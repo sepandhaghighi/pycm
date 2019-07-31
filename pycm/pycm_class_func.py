@@ -5,6 +5,29 @@ import math
 from .pycm_interpret import *
 
 
+def TI_calc(TP, FP, FN, alpha, beta):
+    """
+    Calculate TI (Tversky index).
+
+    :param TP: true positive
+    :type TP : int
+    :param FP: false positive
+    :type FP : int
+    :param FN: false negative
+    :type FN : int
+    :param alpha: alpha coefficient
+    :type alpha : float
+    :param beta: beta coefficient
+    :type beta: float
+    :return: TI as float
+    """
+    try:
+        TI = TP / (TP + alpha * FN + beta * FP)
+        return TI
+    except (ZeroDivisionError, TypeError):
+        return "None"
+
+
 def OOC_calc(TP, TOP, P):
     """
     Calculate OOC (Otsuka-Ochiai coefficient).
@@ -20,7 +43,7 @@ def OOC_calc(TP, TOP, P):
     try:
         OOC = TP / (math.sqrt(TOP * P))
         return OOC
-    except Exception:
+    except (ZeroDivisionError, TypeError, ValueError):
         return "None"
 
 
@@ -39,7 +62,7 @@ def OC_calc(TP, TOP, P):
     try:
         overlap_coef = TP / min(TOP, P)
         return overlap_coef
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -62,7 +85,7 @@ def AGF_calc(TP, FP, FN, TN):
         F05_inv = F_calc(TP=TN, FP=FN, FN=FP, beta=0.5)
         AGF = math.sqrt(F2 * F05_inv)
         return AGF
-    except Exception:
+    except (TypeError, ValueError):
         return "None"
 
 
@@ -89,7 +112,7 @@ def AGM_calc(TPR, TNR, GM, N, POP):
         else:
             result = (GM + TNR * n) / (1 + n)
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -111,7 +134,7 @@ def Q_calc(TP, TN, FP, FN):
         OR = (TP * TN) / (FP * FN)
         result = (OR - 1) / (OR + 1)
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -128,7 +151,7 @@ def TTPN_calc(item1, item2):
     try:
         result = item1 / (item1 + item2)
         return result
-    except ZeroDivisionError:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -143,7 +166,7 @@ def FXR_calc(item):
     try:
         result = 1 - item
         return result
-    except Exception:
+    except TypeError:
         return "None"
 
 
@@ -164,7 +187,7 @@ def ACC_calc(TP, TN, FP, FN):
     try:
         result = (TP + TN) / (TP + TN + FN + FP)
         return result
-    except ZeroDivisionError:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -186,7 +209,7 @@ def F_calc(TP, FP, FN, beta):
         result = ((1 + (beta)**2) * TP) / \
             ((1 + (beta)**2) * TP + FP + (beta**2) * FN)
         return result
-    except ZeroDivisionError:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -208,7 +231,7 @@ def MCC_calc(TP, TN, FP, FN):
         result = (TP * TN - FP * FN) / \
             (math.sqrt((TP + FP) * (TP + FN) * (TN + FP) * (TN + FN)))
         return result
-    except ZeroDivisionError:
+    except (ZeroDivisionError, TypeError, ValueError):
         return "None"
 
 
@@ -225,7 +248,7 @@ def MK_BM_calc(item1, item2):
     try:
         result = item1 + item2 - 1
         return result
-    except Exception:
+    except TypeError:
         return "None"
 
 
@@ -242,7 +265,7 @@ def LR_calc(item1, item2):
     try:
         result = item1 / item2
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -259,7 +282,7 @@ def PRE_calc(P, POP):
     try:
         result = P / POP
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -276,7 +299,7 @@ def G_calc(item1, item2):
     try:
         result = math.sqrt(item1 * item2)
         return result
-    except Exception:
+    except (TypeError, ValueError):
         return "None"
 
 
@@ -295,7 +318,7 @@ def RACC_calc(TOP, P, POP):
     try:
         result = (TOP * P) / ((POP) ** 2)
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -314,7 +337,7 @@ def RACCU_calc(TOP, P, POP):
     try:
         result = ((TOP + P) / (2 * POP))**2
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -328,7 +351,7 @@ def ERR_calc(ACC):
     """
     try:
         return 1 - ACC
-    except Exception:
+    except TypeError:
         return "None"
 
 
@@ -346,7 +369,7 @@ def jaccard_index_calc(TP, TOP, P):
     """
     try:
         return TP / (TOP + P - TP)
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -368,7 +391,7 @@ def IS_calc(TP, FP, FN, POP):
         result = -math.log(((TP + FN) / POP), 2) + \
             math.log((TP / (TP + FP)), 2)
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError, ValueError):
         return "None"
 
 
@@ -405,7 +428,7 @@ def CEN_misclassification_calc(
             result -= table[subject_class][subject_class]
         result = table[i][j] / result
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -443,23 +466,23 @@ def CEN_calc(classes, table, TOP, P, class_name, modified=False):
         if result != 0:
             result = result * (-1)
         return result
-    except Exception:
+    except (ZeroDivisionError, TypeError, ValueError):
         return "None"
 
 
-def AUC_calc(TNR, TPR):
+def AUC_calc(item, TPR):
     """
-    Calculate AUC (Area under the ROC curve for each class).
+    Calculate AUC/AUPR (Area under the ROC/PR curve for each class).
 
-    :param TNR: specificity or true negative rate
-    :type TNR : float
+    :param item: TNR or PPV
+    :type item : float
     :param TPR: sensitivity, recall, hit rate, or true positive rate
     :type TPR : float
-    :return: AUC as float
+    :return: AUC/AUPR as float
     """
     try:
-        return (TNR + TPR) / 2
-    except Exception:
+        return (item + TPR) / 2
+    except TypeError:
         return "None"
 
 
@@ -476,7 +499,7 @@ def dInd_calc(TNR, TPR):
     try:
         result = math.sqrt(((1 - TNR)**2) + ((1 - TPR)**2))
         return result
-    except Exception:
+    except (TypeError, ValueError):
         return "None"
 
 
@@ -490,7 +513,7 @@ def sInd_calc(dInd):
     """
     try:
         return 1 - (dInd / (math.sqrt(2)))
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -508,7 +531,7 @@ def DP_calc(TPR, TNR):
         X = TPR / (1 - TPR)
         Y = TNR / (1 - TNR)
         return (math.sqrt(3) / math.pi) * (math.log(X, 10) + math.log(Y, 10))
-    except Exception:
+    except (ZeroDivisionError, TypeError, ValueError):
         return "None"
 
 
@@ -522,7 +545,7 @@ def GI_calc(AUC):
     """
     try:
         return 2 * AUC - 1
-    except Exception:
+    except TypeError:
         return "None"
 
 
@@ -538,7 +561,7 @@ def lift_calc(PPV, PRE):
     """
     try:
         return PPV / PRE
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -554,7 +577,7 @@ def AM_calc(TOP, P):
     """
     try:
         return TOP - P
-    except Exception:
+    except TypeError:
         return "None"
 
 
@@ -573,7 +596,7 @@ def OP_calc(ACC, TPR, TNR):
     try:
         RI = abs(TNR - TPR) / (TPR + TNR)
         return ACC - RI
-    except Exception:
+    except (ZeroDivisionError, TypeError):
         return "None"
 
 
@@ -592,7 +615,7 @@ def IBA_calc(TPR, TNR, alpha=1):
     try:
         IBA = (1 + alpha * (TPR - TNR)) * TPR * TNR
         return IBA
-    except Exception:
+    except TypeError:
         return "None"
 
 
@@ -612,7 +635,7 @@ def BCD_calc(TOP, P, AM):
         TOP_sum = sum(TOP.values())
         P_sum = sum(P.values())
         return abs(AM) / (P_sum + TOP_sum)
-    except Exception:
+    except (ZeroDivisionError, TypeError, AttributeError):
         return "None"
 
 
@@ -688,6 +711,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     AGF = {}
     OC = {}
     OOC = {}
+    AUPR = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -742,6 +766,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         AGF[i] = AGF_calc(TP[i], FP[i], FN[i], TN[i])
         OC[i] = OC_calc(TP[i], TOP[i], P[i])
         OOC[i] = OOC_calc(TP[i], TOP[i], P[i])
+        AUPR[i] = AUC_calc(PPV[i], TPR[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {
@@ -802,5 +827,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "MCCI": MCCI,
         "AGF": AGF,
         "OC": OC,
-        "OOC": OOC}
+        "OOC": OOC,
+        "AUPR": AUPR}
     return result

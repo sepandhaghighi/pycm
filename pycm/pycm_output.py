@@ -3,7 +3,7 @@
 from __future__ import division
 from functools import partial
 from .pycm_param import *
-from .pycm_util import class_filter, rounder
+from .pycm_util import rounder
 import webbrowser
 
 
@@ -152,7 +152,8 @@ def html_overall_stat(
         overall_stat,
         digit=5,
         overall_param=None,
-        recommended_list=()):
+        recommended_list=(),
+        alt_link=False):
     """
     Return HTML report file overall stat.
 
@@ -164,8 +165,13 @@ def html_overall_stat(
     :type overall_param : list
     :param recommended_list: recommended statistics list
     :type recommended_list : list or tuple
+    :param alt_link: alternative link for document flag
+    :type alt_link: bool
     :return: html_overall_stat as str
     """
+    document_link = DOCUMENT_ADR
+    if alt_link:
+        document_link = DOCUMENT_ADR_ALT
     result = ""
     result += "<h2>Overall Statistics : </h2>\n"
     result += '<table style="border:1px solid black;border-collapse: collapse;">\n'
@@ -181,7 +187,7 @@ def html_overall_stat(
             background_color = RECOMMEND_BACKGROUND_COLOR
         result += '<tr align="center">\n'
         result += '<td style="border:1px solid black;padding:4px;text-align:left;background-color:{};"><a href="'.format(
-            background_color) + DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
+            background_color) + document_link + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         if i in BENCHMARK_LIST:
             background_color = BENCHMARK_COLOR[i][overall_stat[i]]
             result += '<td style="border:1px solid black;padding:4px;background-color:{};">'.format(
@@ -199,7 +205,8 @@ def html_class_stat(
         class_stat,
         digit=5,
         class_param=None,
-        recommended_list=()):
+        recommended_list=(),
+        alt_link=False):
     """
     Return HTML report file class_stat.
 
@@ -213,8 +220,13 @@ def html_class_stat(
     :type class_param : list
     :param recommended_list: recommended statistics list
     :type recommended_list : list or tuple
+    :param alt_link: alternative link for document flag
+    :type alt_link: bool
     :return: html_class_stat as str
     """
+    document_link = DOCUMENT_ADR
+    if alt_link:
+        document_link = DOCUMENT_ADR_ALT
     result = ""
     result += "<h2>Class Statistics : </h2>\n"
     result += '<table style="border:1px solid black;border-collapse: collapse;">\n'
@@ -237,7 +249,7 @@ def html_class_stat(
             background_color = RECOMMEND_BACKGROUND_COLOR
         result += '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n'
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};"><a href="'.format(
-            background_color) + DOCUMENT_ADR + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
+            background_color) + document_link + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         for j in classes:
             if i in BENCHMARK_LIST:
                 background_color = BENCHMARK_COLOR[i][class_stat[i][j]]
@@ -308,8 +320,6 @@ def table_print(classes, table):
         row = [table[key][i] for i in classes]
         result += shift % str(key) + \
             shift * classes_len % tuple(map(str, row)) + "\n\n"
-    if classes_len >= CLASS_NUMBER_THRESHOLD:
-        result += "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"
     return result
 
 
@@ -421,8 +431,6 @@ def stat_print(
             result += key + "(" + params_text + ")" + " " * (
                 shift - len(key) - len(PARAMS_DESCRIPTION[key]) + 5) + class_shift_format * classes_len % tuple(
                 map(rounder_map, row)) + "\n"
-    if classes_len >= CLASS_NUMBER_THRESHOLD:
-        result += "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"
     return result
 
 
@@ -461,30 +469,33 @@ def compare_report_print(sorted_list, scores, best_name):
         result += ("".join(shifts)) % (str(rank + 1), str(cm),
                                        str(scores[cm]["class"])) + str(scores[cm]["overall"]) + "\n"
         prev_rank = rank
-    if best_name is None:
-        result += "\nWarning: " + COMPARE_RESULT_WARNING
     return result
 
 
-def online_help(param=None):
+def online_help(param=None, alt_link=False):
     """
     Open online document in web browser.
 
     :param param: input parameter
     :type param : int or str
+    :param alt_link: alternative link for document flag
+    :type alt_link: bool
     :return: None
     """
     try:
-        PARAMS_LINK_KEYS = sorted(PARAMS_LINK.keys())
-        if param in PARAMS_LINK_KEYS:
-            webbrowser.open_new_tab(DOCUMENT_ADR + PARAMS_LINK[param])
-        elif param in range(1, len(PARAMS_LINK_KEYS) + 1):
+        document_link = DOCUMENT_ADR
+        if alt_link:
+            document_link = DOCUMENT_ADR_ALT
+        params_link_keys = sorted(PARAMS_LINK.keys())
+        if param in params_link_keys:
+            webbrowser.open_new_tab(document_link + PARAMS_LINK[param])
+        elif param in range(1, len(params_link_keys) + 1):
             webbrowser.open_new_tab(
-                DOCUMENT_ADR + PARAMS_LINK[PARAMS_LINK_KEYS[param - 1]])
+                document_link + PARAMS_LINK[params_link_keys[param - 1]])
         else:
             print("Please choose one parameter : \n")
             print('Example : online_help("J") or online_help(2)\n')
-            for index, item in enumerate(PARAMS_LINK_KEYS):
+            for index, item in enumerate(params_link_keys):
                 print(str(index + 1) + "-" + item)
     except Exception:
         print("Error in online help")

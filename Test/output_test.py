@@ -13,11 +13,18 @@ True
 >>> save_stat=cm.save_stat("test_filtered",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"])
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=cm.save_stat("test_summary",address=False,summary=True)
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> save_stat=cm.save_stat("test_filtered2",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=["L1","L2"])
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_stat("test_filtered3",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[])
 >>> save_stat=={'Status': True, 'Message': None}
+True
+>>> large_cm = ConfusionMatrix(list(range(20)),list(range(20)))
+>>> save_stat = large_cm.save_stat("test_large",address=False)
+>>> save_stat == {'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_stat("/asdasd,qweqwe.eo/",address=True)
 >>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.pycm'"}
@@ -26,6 +33,12 @@ True
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_html("test_normalized",address=False,normalize=True)
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_html("test_alt",address=False,normalize=True,alt_link=True)
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_html("test_summary",address=False,summary=True)
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_html("test_filtered",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"])
@@ -49,10 +62,20 @@ True
 >>> save_stat=cm.save_html("test_colored2",address=False,color="Beige")
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> long_name_cm = ConfusionMatrix(matrix={'SVM-Classifier':{'SVM-Classifier':25,'NN-Classifier':2},'NN-Classifier':{'SVM-Classifier':3,'NN-Classifier':50}})
+>>> save_stat=long_name_cm.save_html("test_long_name",address=False,color="Pink")
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_html("/asdasd,qweqwe.eo/",address=True)
+>>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.html'"}
+True
 >>> save_stat=cm.save_csv("test",address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_csv("test_normalized",address=False,normalize=True)
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_csv("test_summary",address=False,summary=True,matrix_save=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_csv("test_filtered",address=False,class_param=["TPR","TNR","ACC","AUC"])
@@ -66,9 +89,6 @@ True
 True
 >>> save_stat=cm.save_csv("test_filtered4",address=False,class_param=[],class_name=[100],matrix_save=False)
 >>> save_stat=={'Status': True, 'Message': None}
-True
->>> save_stat=cm.save_html("/asdasd,qweqwe.eo/",address=True)
->>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.html'"}
 True
 >>> save_stat=cm.save_csv("/asdasd,qweqwe.eo/",address=True)
 >>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.csv'"}
@@ -161,8 +181,9 @@ ACC(Accuracy)                                                    0.45           
 AGF(Adjusted F-score)                                            0.0                     0.33642                 0.56659                 0.0
 AGM(Adjusted geometric mean)                                     None                    0.56694                 0.7352                  0
 AM(Difference between automatic and manual classification)       11                      -9                      -1                      -1
-AUC(Area under the roc curve)                                    None                    0.5625                  0.63725                 0.5
+AUC(Area under the ROC curve)                                    None                    0.5625                  0.63725                 0.5
 AUCI(AUC value interpretation)                                   None                    Poor                    Fair                    Poor
+AUPR(Area under the PR curve)                                    None                    0.61607                 0.41667                 None
 BCD(Bray-Curtis dissimilarity)                                   0.275                   0.225                   0.025                   0.025
 BM(Informedness or bookmaker informedness)                       None                    0.125                   0.27451                 0.0
 CEN(Confusion entropy)                                           0.33496                 0.35708                 0.53895                 0.0
@@ -254,6 +275,13 @@ Actual
 >>> save_obj=={'Status': True, 'Message': None}
 True
 >>> cm_file_3=ConfusionMatrix(file=open("test3.obj","r"))
+>>> cm = ConfusionMatrix(y_actu, y_pred, sample_weight=np.array([2, 2, 2, 2, 3, 1, 1, 2, 2, 1, 1, 2]))
+>>> save_obj=cm.save_obj("test3_np",address=False)
+>>> save_obj=={'Status': True, 'Message': None}
+True
+>>> cm_file_3_np=ConfusionMatrix(file=open("test3_np.obj","r"))
+>>> cm_file_3_np == cm_file_3
+True
 >>> cm_file_3.print_matrix()
 Predict          0    1    2
 Actual
@@ -325,8 +353,9 @@ ACC(Accuracy)                                                    0.80952        
 AGF(Adjusted F-score)                                            0.90694                 0.54433                 0.55442
 AGM(Adjusted geometric mean)                                     0.80509                 0.70336                 0.66986
 AM(Difference between automatic and manual classification)       4                       0                       -4
-AUC(Area under the roc curve)                                    0.86667                 0.61111                 0.63889
+AUC(Area under the ROC curve)                                    0.86667                 0.61111                 0.63889
 AUCI(AUC value interpretation)                                   Very Good               Fair                    Fair
+AUPR(Area under the PR curve)                                    0.8                     0.33333                 0.625
 BCD(Bray-Curtis dissimilarity)                                   0.09524                 0.0                     0.09524
 BM(Informedness or bookmaker informedness)                       0.73333                 0.22222                 0.27778
 CEN(Confusion entropy)                                           0.25                    0.52832                 0.56439
@@ -395,6 +424,10 @@ True
 0.627145631592811
 >>> cm_file.transpose
 True
+>>> cm.matrix == cm_file.matrix
+True
+>>> cm.normalized_matrix == cm_file.normalized_matrix
+True
 >>> json.dump({"Actual-Vector": None, "Digit": 5, "Predict-Vector": None, "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}, "Transpose": True,"Sample-Weight": None},open("test5.obj","w"))
 >>> cm_file=ConfusionMatrix(file=open("test5.obj","r"))
 >>> cm_file.transpose
@@ -407,6 +440,17 @@ True
 >>> cm_file.transpose
 False
 >>> cm_file.matrix == {'1': {'1': 1, '2': 1, '0': 0}, '2': {'1': 2, '2': 3, '0': 0}, '0': {'1': 0, '2': 2, '0': 3}}
+True
+>>> json.dump({"Actual-Vector": ['1', '1', '2', '2', '2', '2', '2', '0', '0', '0', '0', '0'], "Digit": 5, "Predict-Vector": ['1', '2', '1', '1', '2', '2', '2', '2', '2', '0', '0', '0'], "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}},open("test7.obj","w"))
+>>> cm_file=ConfusionMatrix(file=open("test7.obj","r"))
+>>> cm_file.weights
+>>> cm_file.transpose
+False
+>>> cm_file.matrix == {'1': {'1': 1, '2': 1, '0': 0}, '2': {'1': 2, '2': 3, '0': 0}, '0': {'1': 0, '2': 2, '0': 3}}
+True
+>>> cm_file.actual_vector == ['1', '1', '2', '2', '2', '2', '2', '0', '0', '0', '0', '0']
+True
+>>> cm_file.predict_vector == ['1', '2', '1', '1', '2', '2', '2', '2', '2', '0', '0', '0']
 True
 >>> cm_comp1 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
 >>> cm_comp2 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
@@ -430,22 +474,30 @@ True
 >>> os.remove("test_filtered.csv")
 >>> os.remove("test_filtered_matrix.csv")
 >>> os.remove("test_filtered.pycm")
+>>> os.remove("test_large.pycm")
+>>> os.remove("test_summary.pycm")
 >>> os.remove("test_filtered2.html")
 >>> os.remove("test_filtered3.html")
 >>> os.remove("test_filtered4.html")
 >>> os.remove("test_filtered5.html")
+>>> os.remove("test_long_name.html")
+>>> os.remove("test_alt.html")
+>>> os.remove("test_summary.html")
 >>> os.remove("test_colored.html")
 >>> os.remove("test_colored2.html")
 >>> os.remove("test_filtered2.csv")
 >>> os.remove("test_filtered3.csv")
 >>> os.remove("test_filtered4.csv")
+>>> os.remove("test_summary.csv")
 >>> os.remove("test_filtered2.pycm")
 >>> os.remove("test_filtered3.pycm")
 >>> os.remove("test2.obj")
 >>> os.remove("test3.obj")
+>>> os.remove("test3_np.obj")
 >>> os.remove("test4.obj")
 >>> os.remove("test5.obj")
 >>> os.remove("test6.obj")
+>>> os.remove("test7.obj")
 >>> os.remove("test.pycm")
 >>> os.remove("test.comp")
 """

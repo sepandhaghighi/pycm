@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parameters and constants."""
-VERSION = "2.3"
+VERSION = "2.4"
 
 
 OVERVIEW = '''
@@ -45,6 +45,33 @@ CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won'
 CLASS_NUMBER_THRESHOLD = 10
 
 BALANCE_RATIO_THRESHOLD = 3
+
+SUMMARY_OVERALL = [
+    "ACC Macro",
+    "Kappa",
+    "Overall ACC",
+    "SOA1(Landis & Koch)",
+    "Zero-one Loss",
+    "F1 Macro",
+    "TPR Macro",
+    "PPV Macro"]
+
+SUMMARY_CLASS = [
+    "ACC",
+    "AUC",
+    "AUCI",
+    "F1",
+    "TPR",
+    "PPV",
+    "TP",
+    "FP",
+    "FN",
+    "TN",
+    "N",
+    "P",
+    "POP",
+    "TOP",
+    "TON"]
 
 BINARY_RECOMMEND = ["ACC", "TPR", "PPV", "AUC", "AUCI", "TNR", "F1"]
 
@@ -170,6 +197,7 @@ RECOMMEND_HTML_MESSAGE2 = '<span style="color:red;">Note 2</span> : {0}'.format(
     RECOMMEND_WARNING)
 
 DOCUMENT_ADR = "http://www.pycm.ir/doc/index.html#"
+DOCUMENT_ADR_ALT = "https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Document.ipynb#"
 
 PARAMS_DESCRIPTION = {
     "TPR": "sensitivity, recall, hit rate, or true positive rate",
@@ -230,7 +258,8 @@ PARAMS_DESCRIPTION = {
     "AGM": "Adjusted geometric mean",
     "AGF": "Adjusted F-score",
     "OC": "Overlap coefficient",
-    "OOC": "Otsuka-Ochiai coefficient"}
+    "OOC": "Otsuka-Ochiai coefficient",
+    "AUPR": "Area under the PR curve"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -343,9 +372,10 @@ PARAMS_LINK = {
     "SOA6(Matthews)": "SOA6-(Matthews's-benchmark)",
     "AGF": "AGF-(Adjusted-F-score)",
     "OC": "OC-(Overlap-coefficient)",
-    "OOC": "OOC-(Otsuka-Ochiai-coefficient)"}
+    "OOC": "OOC-(Otsuka-Ochiai-coefficient)",
+    "AUPR": "AUPR-(Area-under-the-PR-curve)"}
 
-CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC"]
+CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC"]
 
 BENCHMARK_COLOR = {
     "PLRI": {

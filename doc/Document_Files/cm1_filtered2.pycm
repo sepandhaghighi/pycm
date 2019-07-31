@@ -30,7 +30,7 @@ Class Statistics :
 
 Classes                                                           L1            
 ACC(Accuracy)                                                     0.83333       
-AUC(Area under the roc curve)                                     0.8           
+AUC(Area under the ROC curve)                                     0.8           
 TPR(Sensitivity, recall, hit rate, or true positive rate)         0.6           
 
 One-Vs-All : 

@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- `install.sh`
+### Changed
+- `test.sh` moved to `.travis` folder
+- Python 3.4 support dropped
+- Python 2.7 support dropped
 ## [2.4] - 2019-07-31
 ### Added
 - Tversky index (TI)

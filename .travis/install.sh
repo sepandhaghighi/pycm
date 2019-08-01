@@ -14,6 +14,12 @@
   $PYTHON_COMMAND setup.py install
   $PYTHON_COMMAND -m pycm test
   $PYTHON_COMMAND -m pycm
-  $PIP_COMMAND install --upgrade --upgrade-strategy=only-if-needed -r dev-requirements.txt --user
+  
+  if [ "$TRAVIS_OS_NAME" == "osx" ]
+  then
+	$PIP_COMMAND install --upgrade --upgrade-strategy=only-if-needed -r dev-requirements.txt --user
+  else
+	$PIP_COMMAND install --upgrade --upgrade-strategy=only-if-needed -r dev-requirements.txt
+  fi
 
 

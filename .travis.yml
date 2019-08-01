@@ -29,8 +29,6 @@ install:
   - chmod +x .travis/install.sh
   - .travis/install.sh
 before_script:
-  - if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then pip3 install --upgrade --upgrade-strategy=only-if-needed -r dev-requirements.txt --user ; fi
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then pip install --upgrade --upgrade-strategy=only-if-needed -r dev-requirements.txt ; fi
   - chmod +x .travis/test.sh
 script:
   - .travis/test.sh

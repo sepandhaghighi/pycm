@@ -1,10 +1,6 @@
 #!/bin/bash
   set -e
   set -x
-  python -m pytest Test --cov=pycm --cov-report=term
-  python Otherfiles/version_check.py
-
-  #Check if we are in TRAVIS
   IS_IN_TRAVIS=false
   if [ "$CI" = 'true' ] && [ "$TRAVIS" = 'true' ]
   then
@@ -17,4 +13,15 @@
       python -m bandit -r pycm -s B311
       python -m pydocstyle --match-dir=pycm
   fi
-  python -m cProfile -s cumtime pycm/pycm_profile.py
+  
+  if [ "$TRAVIS_OS_NAME" == "osx" ]
+  then
+	python3 -m pytest Test --cov=pycm --cov-report=term
+	python3 Otherfiles/version_check.py
+	python3 -m cProfile -s cumtime pycm/pycm_profile.py
+  else
+	python -m pytest Test --cov=pycm --cov-report=term
+	python Otherfiles/version_check.py
+	python -m cProfile -s cumtime pycm/pycm_profile.py
+  fi
+

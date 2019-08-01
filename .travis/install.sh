@@ -2,18 +2,18 @@
   set -e
   set -x
   
+  PYTHON_COMMAND=python
+  PIP_COMMAND=pip
   if [ "$TRAVIS_OS_NAME" == "osx" ]
   then
-      pip3 install -r requirements.txt
-      python3 setup.py install
-      python3 -m pycm test
-      python3 -m pycm
-	  pip3 install --upgrade --upgrade-strategy=only-if-needed -r dev-requirements.txt --user
-  else
-	  pip install -r requirements.txt
-      python setup.py install
-      python -m pycm test
-      python -m pycm
-	  pip install --upgrade --upgrade-strategy=only-if-needed -r dev-requirements.txt
+	  PYTHON_COMMAND=python3
+	  PIP_COMMAND=pip3
   fi
+  
+  $PIP_COMMAND install -r requirements.txt
+  $PYTHON_COMMAND setup.py install
+  $PYTHON_COMMAND -m pycm test
+  $PYTHON_COMMAND -m pycm
+  $PIP_COMMAND install --upgrade --upgrade-strategy=only-if-needed -r dev-requirements.txt --user
+
 

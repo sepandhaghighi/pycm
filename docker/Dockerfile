@@ -21,10 +21,11 @@ RUN usermod -a -G sudo user
 
 # Install necessary python libraries
 RUN python3.6 -m pip install pip --upgrade
-RUN python3.6 setup.py
+RUN python3.6 -m pip install pycm
 
 USER user
 WORKDIR /home/user
+RUN python3.6 -m pycm test
 RUN python3.6 -m pycm
 
 ENTRYPOINT /bin/bash

@@ -119,10 +119,11 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 ### Docker	
 
-PyCM has several pre-build docker images that are hosted on dockerhub.
-Run the latest docker build of PyCM from the repository (automatically pulls the image):
-`docker pull sepandhaghighi/pycm`
-This will open a preconfigured bash shell. The latest version has Ubuntu 16.04 and Python 3.6 installed.
+- Run `docker pull sepandhaghighi/pycm` (Need root access)
+- Configuration :
+	- Ubuntu 16.04
+	- Python 3.6
+
 
 ## Usage
 

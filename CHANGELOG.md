@@ -7,12 +7,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `install.sh`
+- Dockerfile
 ### Changed
 - `test.sh` moved to `.travis` folder
 - Python 3.4 support dropped
 - Python 2.7 support dropped
 - `AUTHORS.md` updated
 - `CONTRIBUTING.md` updated
+- Example-3 updated
 ## [2.4] - 2019-07-31
 ### Added
 - Tversky index (TI)

@@ -315,7 +315,7 @@ class ConfusionMatrix():
                     class_list,
                     self.recommended_list,
                     alt_link))
-            html_file.write(html_end(VERSION))
+            html_file.write(html_end(PYCM_VERSION))
             html_file.close()
             if address:
                 message = os.path.join(

@@ -128,8 +128,8 @@ def vector_filter(actual_vector, predict_vector):
     temp.extend(predict_vector)
     types = set(map(type, temp))
     if len(types) > 1:
-        return [list(map(str, actual_vector)), list(map(str, predict_vector)), list(sample_weight)]
-    return [actual_vector, predict_vector, list(sample_weight)]
+        return [list(map(str, actual_vector)), list(map(str, predict_vector))]
+    return [actual_vector, predict_vector]
 
 
 def class_check(vector):

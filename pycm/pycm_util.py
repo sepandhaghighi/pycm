@@ -109,7 +109,7 @@ def matrix_check(table):
         return False
 
 
-def vector_filter(actual_vector, predict_vector, sample_weight):
+def vector_filter(actual_vector, predict_vector):
     """
     Convert different type of items in vectors to str.
 
@@ -123,8 +123,6 @@ def vector_filter(actual_vector, predict_vector, sample_weight):
         actual_vector = actual_vector.tolist()
     if isinstance(predict_vector, numpy.ndarray):
         predict_vector = predict_vector.tolist()
-    if isinstance(sample_weight, numpy.ndarray):
-        sample_weight = sample_weight.tolist()
     temp = []
     temp.extend(actual_vector)
     temp.extend(predict_vector)
@@ -278,7 +276,9 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     :type sample_weight : list
     :return: [classes_list,table,TP,TN,FP,FN]
     """
-    [actual_vector, predict_vector,  sample_weight] = vector_filter(actual_vector, predict_vector, sample_weight)
+    [actual_vector, predict_vector] = vector_filter(actual_vector, predict_vector)
+    if isinstance(sample_weight, numpy.ndarray):
+        sample_weight = sample_weight.tolist()
     classes = set(actual_vector).union(set(predict_vector))
     classes = sorted(classes)
     map_dict = {k: 0 for k in classes}

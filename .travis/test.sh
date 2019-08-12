@@ -17,7 +17,7 @@
       IS_IN_TRAVIS=true
   fi
 
-  if [ "$IS_IN_TRAVIS" = 'false' ] && [ "$TRAVIS_PYTHON_VERSION" = '3.6' ]
+  if [ "$IS_IN_TRAVIS" = 'false' ] || [ "$TRAVIS_PYTHON_VERSION" = '3.6' ]
   then
       $PYTHON_COMMAND -m vulture pycm/ Otherfiles/ setup.py --min-confidence 65 --exclude=build,.eggs --sort-by-size
       $PYTHON_COMMAND -m bandit -r pycm -s B311

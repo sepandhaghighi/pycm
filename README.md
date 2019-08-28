@@ -9,6 +9,7 @@
 </a>
 <a href="https://badge.fury.io/py/pycm"><img src="https://badge.fury.io/py/pycm.svg" alt="PyPI version" height="18"></a>
 <a href="https://anaconda.org/sepandhaghighi/pycm"><img src="https://anaconda.org/sepandhaghighi/pycm/badges/version.svg"></a>
+<a href = "https://hub.docker.com/r/sepandhaghighi/pycm"><img alt="Docker Cloud Build Status" src="https://img.shields.io/docker/cloud/build/sepandhaghighi/pycm"></a>
 </div>
 
 ----------
@@ -115,6 +116,14 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ### Easy install
 
 - Run `easy_install --upgrade pycm` (Need root access)
+
+### Docker	
+
+- Run `docker pull sepandhaghighi/pycm` (Need root access)
+- Configuration :
+	- Ubuntu 16.04
+	- Python 3.6
+
 
 ## Usage
 

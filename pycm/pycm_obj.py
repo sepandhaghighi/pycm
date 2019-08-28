@@ -315,7 +315,7 @@ class ConfusionMatrix():
                     class_list,
                     self.recommended_list,
                     alt_link))
-            html_file.write(html_end(VERSION))
+            html_file.write(html_end(PYCM_VERSION))
             html_file.close()
             if address:
                 message = os.path.join(
@@ -831,8 +831,6 @@ def __obj_vector_handler__(
         raise pycmVectorError(VECTOR_SIZE_ERROR)
     if len(actual_vector) == 0 or len(predict_vector) == 0:
         raise pycmVectorError(VECTOR_EMPTY_ERROR)
-    [actual_vector, predict_vector] = vector_filter(
-        actual_vector, predict_vector)
     matrix_param = matrix_params_calc(
         actual_vector, predict_vector, sample_weight)
     if isinstance(sample_weight, (list, numpy.ndarray)):

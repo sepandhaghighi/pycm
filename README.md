@@ -11,7 +11,7 @@
 <a href="https://anaconda.org/sepandhaghighi/pycm"><img src="https://anaconda.org/sepandhaghighi/pycm/badges/version.svg"></a>
 </div>
 
-----------
+----------a
 ## Table of contents					
    * [Overview](https://github.com/sepandhaghighi/pycm#overview)
    * [Installation](https://github.com/sepandhaghighi/pycm#installation)
@@ -523,7 +523,7 @@ False
 
 ```	
 
-### Comapre
+### Compare
 
 In `version 2.0` a method for comparing several confusion matrices is introduced. This option is a combination of several overall and class-based benchmarks. Each of the benchmarks evaluates the performance of the classification algorithm from good to poor and give them a numeric score. The score of good performance is 1 and for the poor performance is 0.
 

@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `AUTHORS.md` updated
 - `CONTRIBUTING.md` updated
 - Example-3 updated
+- `README.md` modified
 ## [2.4] - 2019-07-31
 ### Added
 - Tversky index (TI)

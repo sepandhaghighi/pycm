@@ -11,7 +11,7 @@
 <a href="https://anaconda.org/sepandhaghighi/pycm"><img src="https://anaconda.org/sepandhaghighi/pycm/badges/version.svg"></a>
 </div>
 
-----------a
+----------
 ## Table of contents					
    * [Overview](https://github.com/sepandhaghighi/pycm#overview)
    * [Installation](https://github.com/sepandhaghighi/pycm#installation)

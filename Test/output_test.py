@@ -461,6 +461,16 @@ True
 >>> save_report = cp.save_report("/asdasd,qweqwe.eo/",address=False)
 >>> save_report == {'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.comp'"}
 True
+>>> cm = ConfusionMatrix(["¢ℓαѕѕ1","¢ℓαѕѕ2"],["¢ℓαѕѕ1","¢ℓαѕѕ2"])
+>>> save_stat_data = cm.save_stat("test")
+>>> save_stat_data["Status"]
+True
+>>> save_csv_data = cm.save_csv("test")
+>>> save_csv_data["Status"]
+True
+>>> save_html_data = cm.save_html("test")
+>>> save_html_data["Status"]
+True
 >>> os.remove("test.csv")
 >>> os.remove("test_matrix.csv")
 >>> os.remove("test_normalized.csv")

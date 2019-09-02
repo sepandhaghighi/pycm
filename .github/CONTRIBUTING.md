@@ -45,10 +45,15 @@ Please consider the following :
 ## Overall statistic 
 
 1. Add new functions to `pycm_overall_func.py`
-2. Add statistic calculation to `overall_statistics` function in `pycm_class_func.py`
-3. Add statistic to `__overall_stat_init__` function in `pycm_obj.py`
-4. Add description to `Overall Statistics` section in `Document.ipynb`
-5. Update `References` section in `Document.ipynb` and `README.md`
-6. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document link (without `#`)
+2. Update `overall_statistics` function in `pycm_class_func.py`
+	- Call statistic function and store result in a variable
+	- Add this variable to output
+3. Update `__overall_stat_init__` function in `pycm_obj.py` by a new attribute
+4. Update `References` section in `Document.ipynb` and `README.md`
+5. Add description to `Overall Statistics` section in `Document.ipynb`
+	- Cite reference
+	- Update table of contents
+	- Use `LaTeX` for formula
+6. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document tag (without `#`)
 7. Add tests to `overall_test.py` and `function_test.py` in `TEST` folder
 8. Run `autopep8.bat` (Optional, need to install latest version of `autopep8` package)

@@ -25,14 +25,20 @@ Please consider the following :
 ## Class statistic 
 
 1. Add new functions to `pycm_class_func.py`
-2. Add statistic calculation to `class_statistics` function in `pycm_class_func.py`
-3. Add statistic to `__class_stat_init__` function in `pycm_obj.py`
+2. Update `class_statistics` function in `pycm_class_func.py`
+	- Define a new variable as a dictionary
+	- Call statistic function and store result in this variable
+	- Add this variable to `result` dictionary
+3. Update `__class_stat_init__` function in `pycm_obj.py` by a new attribute
 4. Update `PARAMS_DESCRIPTION` dictionary in `pycm_param.py` by a short description
-5. Add description to `Class Statistics` section in `Document.ipynb`
-6. Update `References` section in `Document.ipynb` and `README.md`
-7. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document link (without `#`)
-9. Add tests to `overall_test.py` and `function_test.py` in `TEST` folder
-10. Run `autopep8.bat` (Optional, need to install latest version of `autopep8` package)
+5. Update `References` section in `Document.ipynb` and `README.md`
+6. Add description to `Class Statistics` section in `Document.ipynb`
+	- Cite reference
+	- Update table of contents
+	- Use `LaTeX` for formula
+7. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document tag (without `#`)
+8. Add tests to `overall_test.py` and `function_test.py` in `TEST` folder
+9. Run `autopep8.bat` (Optional, need to install latest version of `autopep8` package)
 
 
 

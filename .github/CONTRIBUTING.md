@@ -11,6 +11,7 @@ Please consider the following :
 3. Add your new features or fix detected bugs
 	- To add a new class statistic visit [here](#class-statistic)
 	- To add a new overall statistic visit [here](#overall-statistic)
+	- To add a new interpretation visit [here](#interpretation)
 4. Add standard `docstring` to your functions/methods
 5. Add tests for your functions/methods (`doctest`, `Test` folder)
 6. Update `README.md` (if needed)
@@ -57,3 +58,26 @@ Please consider the following :
 6. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document tag (without `#`)
 7. Add tests to `overall_test.py` and `function_test.py` in `TEST` folder
 8. Run `autopep8.bat` (Optional, need to install latest version of `autopep8` package)
+
+
+## Interpretation
+
+1. Add new interpretation table as a function to `pycm_interpret.py`
+2. Add a score dictionary to `pycm_param.py`
+	- Example : ```PLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}```
+3. Add a color dictionary to `BENCHMARK_COLOR` in `pycm_param.py`
+	- Example : 
+		```"PLRI": {
+        "Negligible": "Red",
+        "Poor": "Orange",
+        "Fair": "Yellow",
+        "Good": "Green",
+        "None": "White"}		```
+4. If interpretation table is for class statistic
+	- Step 2-7 [class statistic](#class-statistic)
+	- Update `CLASS_BENCHMARK_SCORE_DICT` in `pycm_param.py`
+5. If interpretation table is for overall statistic
+	- Step 2-6 [overall statistic](#overall-statistic)
+	- Update `OVERALL_BENCHMARK_SCORE_DICT` in `pycm_param.py`
+6. Add tests to `compare_test.py` and `function_test.py` in `TEST` folder
+7. Run `autopep8.bat` (Optional, need to install latest version of `autopep8` package)

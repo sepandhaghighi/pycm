@@ -9,6 +9,7 @@ Please consider the following :
 1. Fork it!
 2. Create your feature branch (under `dev` branch)
 3. Add your new features or fix detected bugs
+	- To add a new class statistic visit [here]()
 4. Add standard `docstring` to your functions/methods
 5. Add tests for your functions/methods (`doctest`, `Test` folder)
 6. Update `README.md` (if needed)
@@ -18,3 +19,16 @@ Please consider the following :
 9. Update `AUTHORS.md`
 	- Add your name under `# Other Contributors #` section
 10. Submit a pull request into `dev` (please complete the pull request template)
+
+
+## Class statistic 
+
+1. Add new functions to `pycm_class_func.py`
+2. Add statistic calculation to `class_statistics` function in `pycm_class_func.py`
+3. Add statistic to `__class_stat_init__` function in `pycm_obj.py`
+4. Update `PARAMS_DESCRIPTION` dictionary in `pycm_param.py` by a short description
+5. Add description to `Class Statistics` section in `Document.ipynb`
+6. Update `References` section in `Document.ipynb` and `README.md`
+7. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document link (without `#`)
+9. Add tests to `overall_test.py` and `function_test.py` in `TEST` folder
+10. Run `autopep8.bat` (Optional, need to install latest version of `autopep8` package)

@@ -73,10 +73,10 @@ Please consider the following :
         "Fair": "Yellow",
         "Good": "Green",
         "None": "White"}		```
-4. If interpretation table is for class statistic
+4. If interpretation table is for a class statistic:
 	- Step 2-7 [class statistic](#class-statistic)
 	- Update `CLASS_BENCHMARK_SCORE_DICT` in `pycm_param.py`
-5. If interpretation table is for overall statistic
+5. If interpretation table is for overall statistic:
 	- Step 2-6 [overall statistic](#overall-statistic)
 	- Update `OVERALL_BENCHMARK_SCORE_DICT` in `pycm_param.py`
 6. Add tests to `compare_test.py` and `function_test.py` in `TEST` folder

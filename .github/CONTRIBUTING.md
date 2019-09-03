@@ -67,12 +67,7 @@ Please consider the following :
 	- Example : ```PLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}```
 3. Add a color dictionary to `BENCHMARK_COLOR` in `pycm_param.py`
 	- Example : 
-		```"PLRI": {
-        "Negligible": "Red",
-        "Poor": "Orange",
-        "Fair": "Yellow",
-        "Good": "Green",
-        "None": "White"}		```
+		```"PLRI": {"Negligible": "Red","Poor": "Orange","Fair": "Yellow","Good": "Green","None": "White"}```
 4. If interpretation table is for a class statistic:
 	- Step 2-7 [class statistic](#class-statistic)
 	- Update `CLASS_BENCHMARK_SCORE_DICT` in `pycm_param.py`

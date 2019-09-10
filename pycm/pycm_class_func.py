@@ -237,7 +237,7 @@ def MCC_calc(TP, TN, FP, FN):
 
 def MK_BM_calc(item1, item2):
     """
-    Calculate BM (Informedness) and MK (Markedness).
+    Calculate BM (Informedness) and MK (Markedness) and ICSI (Individual classification success index).
 
     :param item1: item1 in expression
     :type item1:float

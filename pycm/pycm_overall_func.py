@@ -801,6 +801,7 @@ def overall_statistics(
         CEN_dict,
         MCEN_dict,
         AUC_dict,
+        ICSI_dict,
         classes,
         table):
     """
@@ -832,6 +833,12 @@ def overall_statistics(
     :type jaccard_list : list
     :param CEN_dict: CEN dictionary for each class
     :type CEN_dict : dict
+    :param MCEN_dict: MCEN dictionary for each class
+    :type MCEN_dict : dict
+    :param AUC_dict: AUC dictionary for each class
+    :type AUC_dict : dict
+    :param ICSI_dict: ICSI dictionary for each class
+    :type ICSI_dict : dict
     :param classes: confusion matrix classes
     :type classes : list
     :param table: input matrix
@@ -889,6 +896,7 @@ def overall_statistics(
     RCI = RCI_calc(mutual_information, reference_entropy)
     C = pearson_C_calc(chi_squared, population)
     TPR_PPV_F1_micro = micro_calc(TP=TP, item=FN)
+    CSI = macro_calc(ICSI_dict)
     return {
         "Overall ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -942,4 +950,5 @@ def overall_statistics(
         "AUNU": AUNU,
         "AUNP": AUNP,
         "RCI": RCI,
-        "Pearson C": C}
+        "Pearson C": C,
+        "CSI": CSI}

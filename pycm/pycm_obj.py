@@ -693,6 +693,7 @@ def __overall_stat_init__(cm):
     cm.C = cm.overall_stat["Pearson C"]
     cm.SOA5 = cm.overall_stat["SOA5(Cramer)"]
     cm.SOA6 = cm.overall_stat["SOA6(Matthews)"]
+    cm.CSI = cm.overall_stat["CSI"]
 
 
 def __obj_assign_handler__(cm, matrix_param):
@@ -739,7 +740,8 @@ def __obj_assign_handler__(cm, matrix_param):
         table=cm.table,
         CEN_dict=statistic_result["CEN"],
         MCEN_dict=statistic_result["MCEN"],
-        AUC_dict=statistic_result["AUC"])
+        AUC_dict=statistic_result["AUC"],
+        ICSI_dict=statistic_result["ICSI"])
 
 
 def __obj_file_handler__(cm, file):

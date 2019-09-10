@@ -375,7 +375,8 @@ PARAMS_LINK = {
     "OC": "OC-(Overlap-coefficient)",
     "OOC": "OOC-(Otsuka-Ochiai-coefficient)",
     "AUPR": "AUPR-(Area-under-the-PR-curve)",
-    "ICSI": "ICSI-(Individual-classification-success-index)"}
+    "ICSI": "ICSI-(Individual-classification-success-index)",
+    "CSI": ""}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC"]
 

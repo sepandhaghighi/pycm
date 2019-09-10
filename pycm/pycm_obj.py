@@ -629,6 +629,7 @@ def __class_stat_init__(cm):
     cm.OC = cm.class_stat["OC"]
     cm.OOC = cm.class_stat["OOC"]
     cm.AUPR = cm.class_stat["AUPR"]
+    cm.ICSI = cm.class_stat["ICSI"]
 
 
 def __overall_stat_init__(cm):

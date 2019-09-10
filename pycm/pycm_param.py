@@ -259,7 +259,8 @@ PARAMS_DESCRIPTION = {
     "AGF": "Adjusted F-score",
     "OC": "Overlap coefficient",
     "OOC": "Otsuka-Ochiai coefficient",
-    "AUPR": "Area under the PR curve"}
+    "AUPR": "Area under the PR curve",
+    "ICSI": "Individual classification success index"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -373,7 +374,8 @@ PARAMS_LINK = {
     "AGF": "AGF-(Adjusted-F-score)",
     "OC": "OC-(Overlap-coefficient)",
     "OOC": "OOC-(Otsuka-Ochiai-coefficient)",
-    "AUPR": "AUPR-(Area-under-the-PR-curve)"}
+    "AUPR": "AUPR-(Area-under-the-PR-curve)",
+    "ICSI": ""}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC"]
 

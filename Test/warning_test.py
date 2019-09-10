@@ -139,6 +139,7 @@ G(G-measure geometric mean of precision and sensitivity)          1.0           
 GI(Gini index)                                                    1.0           0.91667       0.40909       0.5           1.0           0.5           1.0           0.91667       1.0           1.0
 GM(G-mean geometric mean of specificity and sensitivity)          1.0           0.95743       0.6742        0.70711       1.0           0.70711       1.0           0.95743       1.0           1.0
 IBA(Index of balanced accuracy)                                   1.0           0.99306       0.2686        0.25          1.0           0.25          1.0           0.99306       1.0           1.0
+ICSI(Individual classification success index)                     1.0           0.5           0.0           0.5           1.0           0.5           1.0           0.5           1.0           1.0
 IS(Information score)                                             3.70044       2.70044       1.70044       2.70044       3.70044       2.70044       3.70044       2.70044       3.70044       3.70044
 J(Jaccard index)                                                  1.0           0.5           0.33333       0.5           1.0           0.5           1.0           0.5           1.0           1.0
 LS(Lift score)                                                    13.0          6.5           3.25          6.5           13.0          6.5           13.0          6.5           13.0          13.0
@@ -286,6 +287,7 @@ G(G-measure geometric mean of precision and sensitivity)          1.0           
 GI(Gini index)                                                    1.0           0.91667       0.40909       0.5           1.0           0.5           1.0           0.91667       1.0           1.0
 GM(G-mean geometric mean of specificity and sensitivity)          1.0           0.95743       0.6742        0.70711       1.0           0.70711       1.0           0.95743       1.0           1.0
 IBA(Index of balanced accuracy)                                   1.0           0.99306       0.2686        0.25          1.0           0.25          1.0           0.99306       1.0           1.0
+ICSI(Individual classification success index)                     1.0           0.5           0.0           0.5           1.0           0.5           1.0           0.5           1.0           1.0
 IS(Information score)                                             3.70044       2.70044       1.70044       2.70044       3.70044       2.70044       3.70044       2.70044       3.70044       3.70044
 J(Jaccard index)                                                  1.0           0.5           0.33333       0.5           1.0           0.5           1.0           0.5           1.0           1.0
 LS(Lift score)                                                    13.0          6.5           3.25          6.5           13.0          6.5           13.0          6.5           13.0          13.0

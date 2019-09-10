@@ -110,7 +110,8 @@ FPR(Fall-out or false positive rate)                             0.22222        
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
 GI(Gini index)                                                   0.77778                 0.22222                 0.16667
 GM(G-mean geometric mean of specificity and sensitivity)         0.88192                 0.54433                 0.57735
-IBA(Index of balanced accuracy)                                   0.95062                 0.13169                 0.27778
+IBA(Index of balanced accuracy)                                  0.95062                 0.13169                 0.27778
+ICSI(Individual classification success index)                    0.6                     -0.16667                0.1
 IS(Information score)                                            1.26303                 1.0                     0.26303
 J(Jaccard index)                                                 0.6                     0.25                    0.375
 LS(Lift score)                                                   2.4                     2.0                     1.2
@@ -248,6 +249,7 @@ G(G-measure geometric mean of precision and sensitivity)         0.7746         
 GI(Gini index)                                                   0.77778                 0.22222                 0.16667
 GM(G-mean geometric mean of specificity and sensitivity)         0.88192                 0.54433                 0.57735
 IBA(Index of balanced accuracy)                                  0.95062                 0.13169                 0.27778
+ICSI(Individual classification success index)                    0.6                     -0.16667                0.1
 IS(Information score)                                            1.26303                 1.0                     0.26303
 J(Jaccard index)                                                 0.6                     0.25                    0.375
 LS(Lift score)                                                   2.4                     2.0                     1.2
@@ -402,6 +404,7 @@ G(G-measure geometric mean of precision and sensitivity)         None           
 GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
 GM(G-mean geometric mean of specificity and sensitivity)         None                    0.53033                 0.56011                 0.0
 IBA(Index of balanced accuracy)                                  None                    0.17578                 0.12303                 0.0
+ICSI(Individual classification success index)                    None                    0.23214                 -0.16667                None
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 LS(Lift score)                                                   None                    1.07143                 3.33333                 None
@@ -522,6 +525,7 @@ G(G-measure geometric mean of precision and sensitivity)         None           
 GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
 GM(G-mean geometric mean of specificity and sensitivity)         None                    0.53033                 0.56011                 0.0
 IBA(Index of balanced accuracy)                                  None                    0.17578                 0.12303                 0.0
+ICSI(Individual classification success index)                    None                    0.23214                 -0.16667                None
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 LS(Lift score)                                                   None                    1.07143                 3.33333                 None
@@ -794,6 +798,7 @@ G(G-measure geometric mean of precision and sensitivity)         0.72058        
 GI(Gini index)                                                   0.48333                 0.33333                 0.61905
 GM(G-mean geometric mean of specificity and sensitivity)          0.74162                 0.65734                 0.79682
 IBA(Index of balanced accuracy)                                  0.55917                 0.33608                 0.45351
+ICSI(Individual classification success index)                    0.44231                 0.11111                 0.46667
 IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
 LS(Lift score)                                                   1.55769                 1.66667                 3.6
@@ -931,6 +936,7 @@ G(G-measure geometric mean of precision and sensitivity)         0.72058        
 GI(Gini index)                                                   0.48333                 0.33333                 0.61905
 GM(G-mean geometric mean of specificity and sensitivity)         0.74162                 0.65734                 0.79682
 IBA(Index of balanced accuracy)                                  0.55917                 0.33608                 0.45351
+ICSI(Individual classification success index)                    0.44231                 0.11111                 0.46667
 IS(Information score)                                            0.63941                 0.73697                 1.848
 J(Jaccard index)                                                 0.5625                  0.38462                 0.57143
 LS(Lift score)                                                   1.55769                 1.66667                 3.6
@@ -1070,6 +1076,7 @@ G(G-measure geometric mean of precision and sensitivity)         0.7746         
 GI(Gini index)                                                   0.73333                 0.22222                 0.27778
 GM(G-mean geometric mean of specificity and sensitivity)         0.85635                 0.54433                 0.62361
 IBA(Index of balanced accuracy)                                  0.92889                 0.13169                 0.28086
+ICSI(Individual classification success index)                    0.6                     -0.33333                0.25
 IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
 LS(Lift score)                                                   2.1                     2.33333                 1.3125

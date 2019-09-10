@@ -712,6 +712,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     OC = {}
     OOC = {}
     AUPR = {}
+    ICSI = {}
     for i in TP.keys():
         POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
         P[i] = TP[i] + FN[i]
@@ -767,6 +768,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         OC[i] = OC_calc(TP[i], TOP[i], P[i])
         OOC[i] = OOC_calc(TP[i], TOP[i], P[i])
         AUPR[i] = AUC_calc(PPV[i], TPR[i])
+        ICSI[i] = MK_BM_calc(PPV[i],TPR[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {
@@ -828,5 +830,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "AGF": AGF,
         "OC": OC,
         "OOC": OOC,
-        "AUPR": AUPR}
+        "AUPR": AUPR,
+        "ICSI": ICSI}
     return result

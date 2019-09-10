@@ -61,6 +61,7 @@ AUNP                                                              0.87121
 AUNU                                                              0.91212
 Bennett S                                                         0.74359
 CBA                                                               0.75
+CSI                                                               0.7
 Chi-Squared                                                       91.0
 Chi-Squared DF                                                    81
 Conditional Entropy                                               0.46154
@@ -209,6 +210,7 @@ AUNP                                                              0.87121
 AUNU                                                              0.91212
 Bennett S                                                         0.74359
 CBA                                                               0.75
+CSI                                                               0.7
 Chi-Squared                                                       91.0
 Chi-Squared DF                                                    81
 Conditional Entropy                                               0.46154

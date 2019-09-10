@@ -768,7 +768,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         OC[i] = OC_calc(TP[i], TOP[i], P[i])
         OOC[i] = OOC_calc(TP[i], TOP[i], P[i])
         AUPR[i] = AUC_calc(PPV[i], TPR[i])
-        ICSI[i] = MK_BM_calc(PPV[i],TPR[i])
+        ICSI[i] = MK_BM_calc(PPV[i], TPR[i])
     for i in TP.keys():
         BCD[i] = BCD_calc(TOP, P, AM[i])
     result = {

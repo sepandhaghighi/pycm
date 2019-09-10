@@ -276,7 +276,8 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     :type sample_weight : list
     :return: [classes_list,table,TP,TN,FP,FN]
     """
-    [actual_vector, predict_vector] = vector_filter(actual_vector, predict_vector)
+    [actual_vector, predict_vector] = vector_filter(
+        actual_vector, predict_vector)
     if isinstance(sample_weight, numpy.ndarray):
         sample_weight = sample_weight.tolist()
     classes = set(actual_vector).union(set(predict_vector))

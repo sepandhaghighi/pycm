@@ -213,7 +213,7 @@ class ConfusionMatrix():
             if summary:
                 class_list = SUMMARY_CLASS
                 overall_list = SUMMARY_OVERALL
-            file = open(name + ".pycm", "w", encoding = "utf-8")
+            file = open(name + ".pycm", "w", encoding="utf-8")
             matrix = "Matrix : \n\n" + table_print(self.classes,
                                                    self.table) + "\n\n"
             normalized_matrix = "Normalized Matrix : \n\n" + \
@@ -295,7 +295,7 @@ class ConfusionMatrix():
             table = self.table
             if normalize:
                 table = self.normalized_table
-            html_file = open(name + ".html", "w", encoding = "utf-8")
+            html_file = open(name + ".html", "w", encoding="utf-8")
             html_file.write(html_init(name))
             html_file.write(html_dataset_type(self.binary, self.imbalance))
             html_file.write(html_table(self.classes, table, color, normalize))
@@ -358,7 +358,7 @@ class ConfusionMatrix():
                 class_list = SUMMARY_CLASS
             message = None
             classes = class_filter(self.classes, class_name)
-            csv_file = open(name + ".csv", "w", encoding = "utf-8")
+            csv_file = open(name + ".csv", "w", encoding="utf-8")
             csv_data = csv_print(
                 classes,
                 self.class_stat,

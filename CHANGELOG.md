@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Non-ASCII class names supported
 - Individual classification success index (ICSI)
+- Classification success index (CSI)
 - `install.sh`
 - `autopep8.sh`
 - Dockerfile

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Non-ASCII class names supported
 - `install.sh`
+- `autopep8.sh`
 - Dockerfile
 ### Changed
 - `test.sh` moved to `.travis` folder

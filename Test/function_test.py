@@ -313,7 +313,7 @@ True
 >>> cm3=ConfusionMatrix(matrix=cm2.table)
 >>> cm3
 pycm.ConfusionMatrix(classes: [0, 1, 2])
->>> cm3.CI
+>>> cm3.CI95
 (0.48885185570907297, 0.8444814776242603)
 >>> cm3.Chi_Squared
 15.525641025641026
@@ -531,7 +531,7 @@ Example : online_help("J") or online_help(2)
 >>> cm.BCD[1]
 0.0630841121495327
 >>> cm = ConfusionMatrix(matrix={1:{1:9,2:3,3:0},2:{1:3,2:5,3:1},3:{1:1,2:1,3:4}}) # Verified Case
->>> cm.CI
+>>> cm.CI95
 (0.48885185570907297, 0.8444814776242603)
 >>> cm.SE
 0.09072184232530289

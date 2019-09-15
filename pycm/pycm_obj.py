@@ -667,7 +667,7 @@ def __overall_stat_init__(cm):
     cm.KappaNoPrevalence = cm.overall_stat["Kappa No Prevalence"]
     cm.V = cm.overall_stat["Cramer V"]
     cm.DF = cm.overall_stat["Chi-Squared DF"]
-    cm.CI = cm.overall_stat["95% CI"]
+    cm.CI95 = cm.overall_stat["95% CI"]
     cm.SE = cm.overall_stat["Standard Error"]
     cm.ReferenceEntropy = cm.overall_stat["Reference Entropy"]
     cm.ResponseEntropy = cm.overall_stat["Response Entropy"]

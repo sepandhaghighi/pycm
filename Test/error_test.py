@@ -70,4 +70,13 @@ pycm.pycm_obj.pycmCompareError: The weight type must be dictionary and also must
 Traceback (most recent call last):
         ...
 pycm.pycm_obj.pycmCompareError: The weight type must be dictionary and also must be set for all classes.
+>>> cm.CI("MCC")
+Traceback (most recent call last):
+        ...
+pycm.pycm_obj.pycmCIError: CI calculation for this parameter is no supported on this version of pycm.
+Supported parameters : TPR,TNR,PPV,NPV,ACC,Kappa,Overall ACC
+>>> cm.CI(2)
+Traceback (most recent call last):
+        ...
+pycm.pycm_obj.pycmCIError: The input type is considered to be string but it's not!
 """

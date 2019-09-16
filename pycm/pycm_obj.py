@@ -495,6 +495,15 @@ class ConfusionMatrix():
             return {}
 
     def CI(self, param, alpha = 0.05):
+        """
+        Calculate CI.
+
+        :param param: input parameter
+        :type param: str
+        :param alpha: type I error
+        :type alpha: float
+        :return: CI
+        """
         if isinstance(param, str):
             if alpha in ALPHA_TABLE.keys():
                 CV = ALPHA_TABLE[alpha]
@@ -864,6 +873,17 @@ def __obj_vector_handler__(
     return matrix_param
 
 def __CI_class_handler__(cm,param,CV):
+    """
+    Handle CI calculation for class parameters.
+
+    :param cm: ConfusionMatrix
+    :type cm : pycm.ConfusionMatrix object
+    :param param: input parameter
+    :type param: str
+    :param CV: critical value
+    :type CV: float
+    :return: result as dictionary
+    """
     result = {}
     item1 = cm.class_stat[param]
     if param == "TPR" or param == "FNR":
@@ -886,6 +906,17 @@ def __CI_class_handler__(cm,param,CV):
     return result
 
 def __CI_overall_handler__(cm,param,CV):
+    """
+    Handle CI calculation for overall parameters.
+
+    :param cm: ConfusionMatrix
+    :type cm : pycm.ConfusionMatrix object
+    :param param: input parameter
+    :type param: str
+    :param CV: critical value
+    :type CV: float
+    :return: result as list [SE,(CI_DOWN,DI_UP)]
+    """
     result = []
     population = cm.POP.values()[0]
     if param == "Kappa":

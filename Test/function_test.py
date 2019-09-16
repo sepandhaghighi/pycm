@@ -653,4 +653,8 @@ True
 0.9492581037307116
 >>> cm.CI("NPV",0.05)[1][1][1]
 1.0162591376485988
+>>> cm.CI("Overall ACC",0.05)[1] == cm.CI95
+True
+>>> cm.CI("Kappa",0.05)[1]==cm.Kappa_CI
+True
 """

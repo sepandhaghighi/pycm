@@ -513,8 +513,8 @@ class ConfusionMatrix():
             param_u = param.upper()
             if param_u in CI_CLASS_LIST:
                 return __CI_class_handler__(self,param_u,CV)
-            elif param_u in CI_OVERALL_LIST:
-                return __CI_overall_handler__(self,param_u,CV)
+            elif param in CI_OVERALL_LIST:
+                return __CI_overall_handler__(self,param,CV)
             else:
                 raise pycmCIError("")
         else:
@@ -918,7 +918,7 @@ def __CI_overall_handler__(cm,param,CV):
     :return: result as list [SE,(CI_DOWN,DI_UP)]
     """
     result = []
-    population = cm.POP.values()[0]
+    population = list(cm.POP.values())[0]
     if param == "Kappa":
         SE = kappa_se_calc(cm.overall_stat["Overall ACC"],cm.overall_stat["Overall RACC"],population)
     else:

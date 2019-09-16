@@ -75,6 +75,12 @@ SUMMARY_CLASS = [
 
 BINARY_RECOMMEND = ["ACC", "TPR", "PPV", "AUC", "AUCI", "TNR", "F1"]
 
+CI_CLASS_LIST = ["TPR","TNR","PPV","NPV","ACC"]
+
+CI_OVERALL_LIST = ["Kappa","Overall ACC"]
+
+ALPHA_TABLE = {0.1:1.645,0.05:1.96,0.02:2.326,0.01:2.576}
+
 MULTICLASS_RECOMMEND = [
     "ERR",
     "TPR Micro",

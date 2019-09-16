@@ -516,7 +516,7 @@ class ConfusionMatrix():
             elif param in CI_OVERALL_LIST:
                 return __CI_overall_handler__(self,param,CV)
             else:
-                raise pycmCIError("")
+                raise pycmCIError(CI_SUPPORT_ERROR+",".join(CI_CLASS_LIST)+","+",".join(CI_OVERALL_LIST))
         else:
             raise pycmCIError(CI_FORMAT_ERROR)
 

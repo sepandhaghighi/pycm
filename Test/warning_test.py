@@ -323,4 +323,8 @@ Y(Youden index)                                                   1.0           
 dInd(Distance index)                                              0.0           0.08333       0.5082        0.5           0.0           0.5           0.0           0.08333       0.0           0.0
 sInd(Similarity index)                                            1.0           0.94107       0.64065       0.64645       1.0           0.64645       1.0           0.94107       1.0           1.0
 <BLANKLINE>
+>>> cm = ConfusionMatrix(matrix={1:{1:22,0:54},0:{1:1,0:57}},transpose=True)
+>>> with warns(RuntimeWarning, match="The alpha value is invalid, automatically set to 0.05.\\nSupported parameters : 0.01,0.02,0.05,0.1"):
+...     cm.CI("TPR",alpha=2)[1][1][1]
+1.0398659919971112
 """

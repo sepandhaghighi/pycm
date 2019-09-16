@@ -893,13 +893,13 @@ def __CI_class_handler__(cm,param,CV):
     elif param == "PPV" :
         item2 = cm.class_stat["TOP"]
     elif param == "NPV":
-        item2 = cm.class_Stat["TON"]
+        item2 = cm.class_stat["TON"]
     elif param == "ACC":
-        item2 = cm.class_Stat["POP"]
+        item2 = cm.class_stat["POP"]
     for i in cm.classes:
         temp = []
         SE = se_calc(item1[i],item2[i])
-        CI = CI_calc(item1[i],item2[i],CV)
+        CI = CI_calc(item1[i],SE,CV)
         temp.append(SE)
         temp.append(CI)
         result[i] = temp

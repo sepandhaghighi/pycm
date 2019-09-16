@@ -509,7 +509,7 @@ class ConfusionMatrix():
                 CV = ALPHA_TABLE[alpha]
             else:
                 CV = ALPHA_TABLE[0.05]
-                warn("", RuntimeWarning)
+                warn(CI_ALPHA_WARNING, RuntimeWarning)
             param_u = param.upper()
             if param_u in CI_CLASS_LIST:
                 return __CI_class_handler__(self,param_u,CV)

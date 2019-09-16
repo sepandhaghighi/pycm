@@ -518,7 +518,7 @@ class ConfusionMatrix():
             else:
                 raise pycmCIError("")
         else:
-            raise pycmCIError("")
+            raise pycmCIError(CI_FORMAT_ERROR)
 
     def __repr__(self):
         """

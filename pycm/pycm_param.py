@@ -28,6 +28,7 @@ VECTOR_SIZE_ERROR = "Input vectors must have same length"
 VECTOR_EMPTY_ERROR = "Input vectors are empty"
 CLASS_NUMBER_ERROR = "Number of the classes is lower than 2"
 COMPARE_FORMAT_ERROR = "The input type is considered to be dictionary but it's not!"
+CI_FORMAT_ERROR = "The input type is considered to be string but it's not!"
 COMPARE_TYPE_ERROR = "The input is considered to consist of pycm.ConfusionMatrix object but it's not!"
 COMPARE_DOMAIN_ERROR = "The domain of all ConfusionMatrix objects must be same! The sample size or the number " \
                        "of classes are different."

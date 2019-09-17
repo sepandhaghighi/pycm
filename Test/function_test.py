@@ -697,4 +697,9 @@ True
 1.0879165051294297
 >>> cm.CI("TPR",alpha=0.0005,one_side=True)[1][1][1]
 1.0964210207280702
+>>> cm.CI("ACC",alpha=0.05,one_side=False)[1][1][1]
+0.6728424118161956
+>>> cm.CI("Overall ACC")[1][1] == cm.CI("ACC",alpha=0.05,one_side=False)[1][1][1]
+True
+
 """

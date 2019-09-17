@@ -97,10 +97,10 @@ ALPHA_ONE_SIDE_TABLE = {
     0.001: 3.09,
     0.0005: 3.29}
 
-CI_ALPHA_TWO_SIDE_WARNING = "The alpha value is invalid, automatically set to 0.05.\nSupported values (two side) : " + ",".join(
+CI_ALPHA_TWO_SIDE_WARNING = "The alpha value is invalid, automatically set to 0.05.\nSupported values (two-sided) : " + ",".join(
     map(str, sorted(list(ALPHA_TWO_SIDE_TABLE.keys()))))
 
-CI_ALPHA_ONE_SIDE_WARNING = "The alpha value is invalid, automatically set to 0.05.\nSupported values (one side) : " + ",".join(
+CI_ALPHA_ONE_SIDE_WARNING = "The alpha value is invalid, automatically set to 0.05.\nSupported values (one-sided) : " + ",".join(
     map(str, sorted(list(ALPHA_ONE_SIDE_TABLE.keys()))))
 
 CI_FORMAT_ERROR = "The input type is considered to be string but it's not!"

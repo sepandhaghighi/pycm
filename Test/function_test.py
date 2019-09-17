@@ -685,21 +685,21 @@ True
 2.591323998732794
 >>> cm.CI("PLR",0.01)[1][1][0]
 1.4918542999699553
->>> cm.CI("TPR",alpha=0.05,one_side=True)[1][1][1]
+>>> cm.CI("TPR",alpha=0.05,one_sided=True)[1][1][1]
 1.0264713799292524
->>> cm.CI("TPR",alpha=0.1,one_side=True)[1][1][1]
+>>> cm.CI("TPR",alpha=0.1,one_sided=True)[1][1][1]
 1.0109506389617338
->>> cm.CI("TPR",alpha=0.01,one_side=True)[1][1][1]
+>>> cm.CI("TPR",alpha=0.01,one_sided=True)[1][1][1]
 1.0554292555426232
->>> cm.CI("TPR",alpha=0.005,one_side=True)[1][1][1]
+>>> cm.CI("TPR",alpha=0.005,one_sided=True)[1][1][1]
 1.0660599000409237
->>> cm.CI("TPR",alpha=0.001,one_side=True)[1][1][1]
+>>> cm.CI("TPR",alpha=0.001,one_sided=True)[1][1][1]
 1.0879165051294297
->>> cm.CI("TPR",alpha=0.0005,one_side=True)[1][1][1]
+>>> cm.CI("TPR",alpha=0.0005,one_sided=True)[1][1][1]
 1.0964210207280702
->>> cm.CI("ACC",alpha=0.05,one_side=False)[1][1][1]
+>>> cm.CI("ACC",alpha=0.05,one_sided=False)[1][1][1]
 0.6728424118161956
->>> cm.CI("Overall ACC")[1][1] == cm.CI("ACC",alpha=0.05,one_side=False)[1][1][1]
+>>> cm.CI("Overall ACC")[1][1] == cm.CI("ACC",alpha=0.05,one_sided=False)[1][1][1]
 True
 >>> cm.CI("FPR",0.05)[1][1][1]
 0.5794699910796607

@@ -328,6 +328,6 @@ sInd(Similarity index)                                            1.0           
 ...     cm.CI("TPR",alpha=2)[1][1][1]
 1.0398659919971112
 >>> with warns(RuntimeWarning):
-...     cm.CI("TPR",alpha=2,one_side=True)[1][1][1]
+...     cm.CI("TPR",alpha=2,one_sided=True)[1][1][1]
 1.0264713799292524
 """

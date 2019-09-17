@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix module."""
 from __future__ import division
-from .pycm_class_func import class_statistics, F_calc, IBA_calc, TI_calc
+from .pycm_class_func import class_statistics, F_calc, IBA_calc, TI_calc, LR_CI_calc, LR_se_calc
 from .pycm_overall_func import overall_statistics,kappa_se_calc,se_calc,CI_calc
 from .pycm_output import *
 from .pycm_util import *
@@ -898,8 +898,15 @@ def __CI_class_handler__(cm,param,CV):
         item2 = cm.class_stat["POP"]
     for i in cm.classes:
         temp = []
-        SE = se_calc(item1[i],item2[i])
-        CI = CI_calc(item1[i],SE,CV)
+        if param == "PLR":
+            SE = LR_se_calc(cm.TP[i],cm.P[i],cm.FP[i],cm.N[i])
+            CI = LR_CI_calc(cm.PLR[i],SE,CV)
+        elif param == "NLR":
+            SE = LR_se_calc(cm.FN[i], cm.P[i], cm.TN[i], cm.N[i])
+            CI = LR_CI_calc(cm.NLR[i], SE, CV)
+        else:
+            SE = se_calc(item1[i],item2[i])
+            CI = CI_calc(item1[i],SE,CV)
         temp.append(SE)
         temp.append(CI)
         result[i] = temp

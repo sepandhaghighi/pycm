@@ -749,6 +749,10 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>58- Vincent Labatut, Hocine Cherifi. Accuracy Measures for the Comparison of Classifiers. The 5th International Conference on Information Technology, May 2011, amman, Jordan. pp.1,5. ffhal-00611319f</blockquote>
 
+<blockquote>59- Wallis, Sean. "Binomial confidence intervals and contingency tests: mathematical fundamentals and the evaluation of alternative methods." Journal of Quantitative Linguistics 20.3 (2013): 178-208</blockquote>
+
+<blockquote>60- Altman DG, Machin D, Bryant TN, Gardner MJ (Eds) (2000) Statistics with confidence, 2nd ed. BMJ Books.</blockquote>
+
 
 
 ## Cite

@@ -324,10 +324,10 @@ dInd(Distance index)                                              0.0           
 sInd(Similarity index)                                            1.0           0.94107       0.64065       0.64645       1.0           0.64645       1.0           0.94107       1.0           1.0
 <BLANKLINE>
 >>> cm = ConfusionMatrix(matrix={1:{1:22,0:54},0:{1:1,0:57}},transpose=True)
->>> with warns(RuntimeWarning, match="RuntimeWarning: The alpha value is invalid, automatically set to 0.05.\\nSupported values (two side) : 0.001,0.002,0.01,0.02,0.05,0.1,0.2"):
+>>> with warns(RuntimeWarning):
 ...     cm.CI("TPR",alpha=2)[1][1][1]
 1.0398659919971112
->>> >>> with warns(RuntimeWarning, match="RuntimeWarning: The alpha value is invalid, automatically set to 0.05.\\nSupported values (one side) : 0.0005,0.001,0.005,0.01,0.05,0.1"):
+>>> with warns(RuntimeWarning):
 ...     cm.CI("TPR",alpha=2,one_side=True)[1][1][1]
 1.0264713799292524
 """

@@ -5,6 +5,44 @@ import math
 from .pycm_interpret import *
 
 
+def LR_se_calc(item1,item2,item3,item4):
+    """
+    Calculate likelihood ratio +/- standartd error.
+
+    :param item1: first item (TP or FN)
+    :type item1: int
+    :param item2: second item (P)
+    :type item2: int
+    :param item3: third item (FP or TN)
+    :type item3: int
+    :param item4: fourth item (N)
+    :type item4: int
+    :return: standard error as float
+    """
+    try:
+        return math.sqrt((1/item1)-(1/item2)+(1/item3)-(1/item4))
+    except Exception:
+        return "None"
+
+def LR_CI_calc(mean, SE, CV=1.96):
+    """
+    Calculate confidence interval for likelihood ratio +/- by using of log method.
+
+    :param mean: mean of data
+    :type mean : float
+    :param SE: standard error of data
+    :type SE : float
+    :param CV: critical value
+    :type CV:float
+    :return: confidence interval as tuple
+    """
+    try:
+        CI_down = math.exp(math.log(mean)-CV*SE)
+        CI_up = math.exp(math.log(mean)+CV*SE)
+        return (CI_down, CI_up)
+    except Exception:
+        return ("None", "None")
+
 def TI_calc(TP, FP, FN, alpha, beta):
     """
     Calculate TI (Tversky index).

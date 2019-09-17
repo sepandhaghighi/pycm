@@ -2,7 +2,7 @@
 """ConfusionMatrix module."""
 from __future__ import division
 from .pycm_class_func import class_statistics, F_calc, IBA_calc, TI_calc, LR_CI_calc, LR_se_calc
-from .pycm_overall_func import overall_statistics,kappa_se_calc,se_calc,CI_calc
+from .pycm_overall_func import overall_statistics, kappa_se_calc, se_calc, CI_calc
 from .pycm_output import *
 from .pycm_util import *
 from .pycm_param import *
@@ -23,6 +23,7 @@ class pycmMatrixError(Exception):
     """Matrix error class."""
 
     pass
+
 
 class pycmCIError(Exception):
     """CI error class."""
@@ -494,7 +495,7 @@ class ConfusionMatrix():
         except Exception:
             return {}
 
-    def CI(self, param, alpha = 0.05, one_side = False):
+    def CI(self, param, alpha=0.05, one_side=False):
         """
         Calculate CI.
 
@@ -507,7 +508,7 @@ class ConfusionMatrix():
         :return: CI
         """
         if isinstance(param, str):
-            if one_side :
+            if one_side:
                 if alpha in ALPHA_ONE_SIDE_TABLE.keys():
                     CV = ALPHA_ONE_SIDE_TABLE[alpha]
                 else:
@@ -521,9 +522,9 @@ class ConfusionMatrix():
                     warn(CI_ALPHA_TWO_SIDE_WARNING, RuntimeWarning)
             param_u = param.upper()
             if param_u in CI_CLASS_LIST:
-                return __CI_class_handler__(self,param_u,CV)
+                return __CI_class_handler__(self, param_u, CV)
             elif param in CI_OVERALL_LIST:
-                return __CI_overall_handler__(self,param,CV)
+                return __CI_overall_handler__(self, param, CV)
             else:
                 raise pycmCIError(CI_SUPPORT_ERROR)
         else:
@@ -881,7 +882,8 @@ def __obj_vector_handler__(
 
     return matrix_param
 
-def __CI_class_handler__(cm,param,CV):
+
+def __CI_class_handler__(cm, param, CV):
     """
     Handle CI calculation for class parameters.
 
@@ -899,7 +901,7 @@ def __CI_class_handler__(cm,param,CV):
         item2 = cm.class_stat["P"]
     elif param == "TNR" or param == "FPR":
         item2 = cm.class_stat["N"]
-    elif param == "PPV" :
+    elif param == "PPV":
         item2 = cm.class_stat["TOP"]
     elif param == "NPV":
         item2 = cm.class_stat["TON"]
@@ -908,20 +910,21 @@ def __CI_class_handler__(cm,param,CV):
     for i in cm.classes:
         temp = []
         if param == "PLR":
-            SE = LR_se_calc(cm.TP[i],cm.P[i],cm.FP[i],cm.N[i])
-            CI = LR_CI_calc(cm.PLR[i],SE,CV)
+            SE = LR_se_calc(cm.TP[i], cm.P[i], cm.FP[i], cm.N[i])
+            CI = LR_CI_calc(cm.PLR[i], SE, CV)
         elif param == "NLR":
             SE = LR_se_calc(cm.FN[i], cm.P[i], cm.TN[i], cm.N[i])
             CI = LR_CI_calc(cm.NLR[i], SE, CV)
         else:
-            SE = se_calc(item1[i],item2[i])
-            CI = CI_calc(item1[i],SE,CV)
+            SE = se_calc(item1[i], item2[i])
+            CI = CI_calc(item1[i], SE, CV)
         temp.append(SE)
         temp.append(CI)
         result[i] = temp
     return result
 
-def __CI_overall_handler__(cm,param,CV):
+
+def __CI_overall_handler__(cm, param, CV):
     """
     Handle CI calculation for overall parameters.
 
@@ -936,12 +939,13 @@ def __CI_overall_handler__(cm,param,CV):
     result = []
     population = list(cm.POP.values())[0]
     if param == "Kappa":
-        SE = kappa_se_calc(cm.overall_stat["Overall ACC"],cm.overall_stat["Overall RACC"],population)
+        SE = kappa_se_calc(
+            cm.overall_stat["Overall ACC"],
+            cm.overall_stat["Overall RACC"],
+            population)
     else:
-        SE = se_calc(cm.overall_stat[param],population)
-    CI = CI_calc(cm.overall_stat[param],SE,CV)
+        SE = se_calc(cm.overall_stat[param], population)
+    CI = CI_calc(cm.overall_stat[param], SE, CV)
     result.append(SE)
     result.append(CI)
     return result
-
-

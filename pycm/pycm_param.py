@@ -80,9 +80,13 @@ CI_CLASS_LIST = ["TPR","TNR","PPV","NPV","ACC","PLR","NLR"]
 
 CI_OVERALL_LIST = ["Kappa","Overall ACC"]
 
-ALPHA_TABLE = {0.1:1.645,0.05:1.96,0.02:2.326,0.01:2.576}
+ALPHA_TWO_SIDE_TABLE = {0.2:1.28,0.1:1.645,0.05:1.96,0.02:2.326,0.01:2.576,0.002:3.09,0.001:3.29}
 
-CI_ALPHA_WARNING = "The alpha value is invalid, automatically set to 0.05.\nSupported parameters : " + ",".join(map(str,sorted(list(ALPHA_TABLE.keys()))))
+ALPHA_ONE_SIDE_TABLE = {0.1:1.28,0.05:1.645,0.01:2.326,0.005:2.576,0.001:3.09,0.0005:3.29}
+
+CI_ALPHA_TWO_SIDE_WARNING = "The alpha value is invalid, automatically set to 0.05.\nSupported values (two side) : " + ",".join(map(str,sorted(list(ALPHA_TWO_SIDE_TABLE.keys()))))
+
+CI_ALPHA_ONE_SIDE_WARNING = "The alpha value is invalid, automatically set to 0.05.\nSupported values (one side) : " + ",".join(map(str,sorted(list(ALPHA_ONE_SIDE_TABLE.keys()))))
 
 CI_FORMAT_ERROR = "The input type is considered to be string but it's not!"
 

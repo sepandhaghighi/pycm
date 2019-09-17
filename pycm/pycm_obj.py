@@ -494,7 +494,7 @@ class ConfusionMatrix():
         except Exception:
             return {}
 
-    def CI(self, param, alpha = 0.05):
+    def CI(self, param, alpha = 0.05, one_side = False):
         """
         Calculate CI.
 
@@ -502,14 +502,23 @@ class ConfusionMatrix():
         :type param: str
         :param alpha: type I error
         :type alpha: float
+        :param one_side: one side mode
+        :type one_side: bool
         :return: CI
         """
         if isinstance(param, str):
-            if alpha in ALPHA_TABLE.keys():
-                CV = ALPHA_TABLE[alpha]
+            if one_side :
+                if alpha in ALPHA_ONE_SIDE_TABLE.keys():
+                    CV = ALPHA_ONE_SIDE_TABLE[alpha]
+                else:
+                    CV = ALPHA_ONE_SIDE_TABLE[0.05]
+                    warn(CI_ALPHA_ONE_SIDE_WARNING, RuntimeWarning)
             else:
-                CV = ALPHA_TABLE[0.05]
-                warn(CI_ALPHA_WARNING, RuntimeWarning)
+                if alpha in ALPHA_TWO_SIDE_TABLE.keys():
+                    CV = ALPHA_TWO_SIDE_TABLE[alpha]
+                else:
+                    CV = ALPHA_TWO_SIDE_TABLE[0.05]
+                    warn(CI_ALPHA_TWO_SIDE_WARNING, RuntimeWarning)
             param_u = param.upper()
             if param_u in CI_CLASS_LIST:
                 return __CI_class_handler__(self,param_u,CV)

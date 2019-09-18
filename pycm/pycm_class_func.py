@@ -5,7 +5,7 @@ import math
 from .pycm_interpret import *
 
 
-def AUC_SE_calc(AUC,P,N):
+def AUC_SE_calc(AUC, P, N):
     """
     Calculate AUC standard error.
 
@@ -18,13 +18,14 @@ def AUC_SE_calc(AUC,P,N):
     :return: standard error as float
     """
     try:
-        q0 = AUC*(1-AUC)
-        q1 = (AUC/(2-AUC))-AUC**2
-        q2 = ((2*(AUC**2))/(1+AUC))-AUC**2
-        result = math.sqrt((q0+(N-1)*q1+(P-1)*q2)/(P*N))
+        q0 = AUC * (1 - AUC)
+        q1 = (AUC / (2 - AUC)) - AUC**2
+        q2 = ((2 * (AUC**2)) / (1 + AUC)) - AUC**2
+        result = math.sqrt((q0 + (N - 1) * q1 + (P - 1) * q2) / (P * N))
         return result
     except Exception:
         return "None"
+
 
 def LR_SE_calc(item1, item2, item3, item4):
     """

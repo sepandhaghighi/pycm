@@ -76,7 +76,17 @@ SUMMARY_CLASS = [
 
 BINARY_RECOMMEND = ["ACC", "TPR", "PPV", "AUC", "AUCI", "TNR", "F1"]
 
-CI_CLASS_LIST = ["TPR", "TNR", "PPV", "NPV", "ACC", "PLR", "NLR", "FPR", "FNR", "AUC"]
+CI_CLASS_LIST = [
+    "TPR",
+    "TNR",
+    "PPV",
+    "NPV",
+    "ACC",
+    "PLR",
+    "NLR",
+    "FPR",
+    "FNR",
+    "AUC"]
 
 CI_OVERALL_LIST = ["Kappa", "Overall ACC"]
 

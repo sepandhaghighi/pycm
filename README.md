@@ -753,6 +753,8 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>60- Altman DG, Machin D, Bryant TN, Gardner MJ (Eds) (2000) Statistics with confidence, 2nd ed. BMJ Books.</blockquote>
 
+<blockquote>61- Hanley, James A., and Barbara J. McNeil. "The meaning and use of the area under a receiver operating characteristic (ROC) curve." Radiology 143, no. 1 (1982): 29-36.</blockquote>
+
 
 
 ## Cite

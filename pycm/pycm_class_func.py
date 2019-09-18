@@ -5,9 +5,30 @@ import math
 from .pycm_interpret import *
 
 
+def AUC_se_calc(AUC,P,N):
+    """
+    Calculate AUC standard error.
+
+    :param AUC: AUC value
+    :type AUC: float
+    :param P:  condition positive
+    :type P : int
+    :param N: condition negative
+    :type N : int
+    :return: standard error as float
+    """
+    try:
+        q0 = AUC*(1-AUC)
+        q1 = (AUC/(2-AUC))-AUC**2
+        q2 = ((2*(AUC**2))/(1+AUC))-AUC**2
+        result = math.sqrt((q0+(N-1)*q1+(P-1)*q2)/(P*N))
+        return result
+    except Exception:
+        return "None"
+
 def LR_se_calc(item1, item2, item3, item4):
     """
-    Calculate likelihood ratio +/- standartd error.
+    Calculate likelihood ratio +/- standard error.
 
     :param item1: first item (TP or FN)
     :type item1: int

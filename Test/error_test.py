@@ -74,7 +74,7 @@ pycm.pycm_obj.pycmCompareError: The weight type must be dictionary and also must
 Traceback (most recent call last):
         ...
 pycm.pycm_obj.pycmCIError: CI calculation for this parameter is no supported on this version of pycm.
-Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,Kappa,Overall ACC
+Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,Kappa,Overall ACC
 >>> cm.CI(2)
 Traceback (most recent call last):
         ...

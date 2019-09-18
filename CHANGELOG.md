@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `install.sh`
 - `autopep8.sh`
 - Dockerfile
-- `CI` method
+- `CI` method (supported statistics : `ACC`,`AUC`,`Overall ACC`,`Kappa`,`TPR`,`TNR`,`PPV`,`NPV`,`PLR`,`NLR`)
 ### Changed
 - `test.sh` moved to `.travis` folder
 - Python 3.4 support dropped

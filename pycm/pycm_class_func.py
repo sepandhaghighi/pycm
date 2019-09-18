@@ -5,7 +5,7 @@ import math
 from .pycm_interpret import *
 
 
-def AUC_se_calc(AUC,P,N):
+def AUC_SE_calc(AUC,P,N):
     """
     Calculate AUC standard error.
 
@@ -26,7 +26,7 @@ def AUC_se_calc(AUC,P,N):
     except Exception:
         return "None"
 
-def LR_se_calc(item1, item2, item3, item4):
+def LR_SE_calc(item1, item2, item3, item4):
     """
     Calculate likelihood ratio +/- standard error.
 

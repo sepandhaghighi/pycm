@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix module."""
 from __future__ import division
-from .pycm_class_func import class_statistics, F_calc, IBA_calc, TI_calc, LR_CI_calc, LR_se_calc, AUC_se_calc
-from .pycm_overall_func import overall_statistics, kappa_se_calc, se_calc, CI_calc
+from .pycm_class_func import class_statistics, F_calc, IBA_calc, TI_calc, LR_CI_calc, LR_SE_calc, AUC_SE_calc
+from .pycm_overall_func import overall_statistics, kappa_SE_calc, SE_calc, CI_calc
 from .pycm_output import *
 from .pycm_util import *
 from .pycm_param import *
@@ -910,16 +910,16 @@ def __CI_class_handler__(cm, param, CV):
     for i in cm.classes:
         temp = []
         if param == "PLR":
-            SE = LR_se_calc(cm.TP[i], cm.P[i], cm.FP[i], cm.N[i])
+            SE = LR_SE_calc(cm.TP[i], cm.P[i], cm.FP[i], cm.N[i])
             CI = LR_CI_calc(cm.PLR[i], SE, CV)
         elif param == "NLR":
-            SE = LR_se_calc(cm.FN[i], cm.P[i], cm.TN[i], cm.N[i])
+            SE = LR_SE_calc(cm.FN[i], cm.P[i], cm.TN[i], cm.N[i])
             CI = LR_CI_calc(cm.NLR[i], SE, CV)
         elif param == "AUC":
-            SE = AUC_se_calc(cm.AUC[i], cm.P[i], cm.N[i])
+            SE = AUC_SE_calc(cm.AUC[i], cm.P[i], cm.N[i])
             CI = CI_calc(item1[i], SE, CV)
         else:
-            SE = se_calc(item1[i], item2[i])
+            SE = SE_calc(item1[i], item2[i])
             CI = CI_calc(item1[i], SE, CV)
         temp.append(SE)
         temp.append(CI)
@@ -942,12 +942,12 @@ def __CI_overall_handler__(cm, param, CV):
     result = []
     population = list(cm.POP.values())[0]
     if param == "Kappa":
-        SE = kappa_se_calc(
+        SE = kappa_SE_calc(
             cm.overall_stat["Overall ACC"],
             cm.overall_stat["Overall RACC"],
             population)
     else:
-        SE = se_calc(cm.overall_stat[param], population)
+        SE = SE_calc(cm.overall_stat[param], population)
     CI = CI_calc(cm.overall_stat[param], SE, CV)
     result.append(SE)
     result.append(CI)

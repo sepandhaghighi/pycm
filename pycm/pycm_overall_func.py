@@ -588,7 +588,7 @@ def reliability_calc(RACC, ACC):
         return "None"
 
 
-def kappa_se_calc(PA, PE, POP):
+def kappa_SE_calc(PA, PE, POP):
     """
     Calculate kappa standard error.
 
@@ -627,7 +627,7 @@ def CI_calc(mean, SE, CV=1.96):
         return ("None", "None")
 
 
-def se_calc(overall_accuracy, POP):
+def SE_calc(overall_accuracy, POP):
     """
     Calculate standard error with binomial distribution.
 
@@ -856,7 +856,7 @@ def overall_statistics(
     PI = reliability_calc(PC_PI, overall_accuracy)
     AC1 = reliability_calc(PC_AC1, overall_accuracy)
     S = reliability_calc(PC_S, overall_accuracy)
-    kappa_SE = kappa_se_calc(
+    kappa_SE = kappa_SE_calc(
         overall_accuracy,
         overall_random_accuracy, population)
     kappa_unbiased = reliability_calc(
@@ -864,7 +864,7 @@ def overall_statistics(
         overall_accuracy)
     kappa_no_prevalence = kappa_no_prevalence_calc(overall_accuracy)
     kappa_CI = CI_calc(overall_kappa, kappa_SE)
-    overall_accuracy_se = se_calc(overall_accuracy, population)
+    overall_accuracy_se = SE_calc(overall_accuracy, population)
     overall_accuracy_CI = CI_calc(overall_accuracy, overall_accuracy_se)
     chi_squared = chi_square_calc(classes, table, TOP, P, POP)
     phi_squared = phi_square_calc(chi_squared, population)

@@ -68,7 +68,7 @@ True
 'None'
 >>> DF_calc(2)
 'None'
->>> kappa_se_calc(2, 1, 2)
+>>> kappa_SE_calc(2, 1, 2)
 'None'
 >>> CI_calc(23, "None", CV=1.96)
 ('None', 'None')
@@ -272,7 +272,7 @@ True
 >>> DF=DF_calc(cm2.classes)
 >>> DF
 4
->>> SE=se_calc(cm2.Overall_ACC,population)
+>>> SE=SE_calc(cm2.Overall_ACC,population)
 >>> SE
 0.09072184232530289
 >>> CI=CI_calc(cm2.Overall_ACC,SE)

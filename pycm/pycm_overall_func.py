@@ -627,20 +627,19 @@ def CI_calc(mean, SE, CV=1.96):
         return ("None", "None")
 
 
-def SE_calc(overall_accuracy, POP):
+def SE_calc(item1, item2):
     """
     Calculate standard error with binomial distribution.
 
-    :param overall_accuracy: overall accuracy
-    :type  overall_accuracy : float
-    :type PE : float
-    :param POP: population
-    :type POP : int
+    :param item1: parameter
+    :type  item1 : float
+    :param item2: number of experiments
+    :type item2 : int
     :return: standard error as float
     """
     try:
         return math.sqrt(
-            (overall_accuracy * (1 - overall_accuracy)) / POP)
+            (item1 * (1 - item1)) / item2)
     except Exception:
         return "None"
 

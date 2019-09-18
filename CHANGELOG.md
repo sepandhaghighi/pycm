@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `README.md` modified
 - `CI` attribute renamed to `CI95`
 - `kappa_se_calc` function renamed to `kappa_SE_calc`
-- `se_calc` function renamed to `SE_calc`
+- `se_calc` function modified and renamed to `SE_calc`
 ## [2.4] - 2019-07-31
 ### Added
 - Tversky index (TI)

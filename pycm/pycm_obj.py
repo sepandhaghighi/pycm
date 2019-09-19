@@ -510,6 +510,9 @@ class ConfusionMatrix():
         :return: CI
         """
         if isinstance(param, str):
+            method = "normal-approx"
+            if isinstance(binom_method,str):
+                method = binom_method.lower()
             if one_sided:
                 if alpha in ALPHA_ONE_SIDE_TABLE.keys():
                     CV = ALPHA_ONE_SIDE_TABLE[alpha]
@@ -524,9 +527,9 @@ class ConfusionMatrix():
                     warn(CI_ALPHA_TWO_SIDE_WARNING, RuntimeWarning)
             param_u = param.upper()
             if param_u in CI_CLASS_LIST:
-                return __CI_class_handler__(self, param_u, CV, binom_method)
+                return __CI_class_handler__(self, param_u, CV, method)
             elif param in CI_OVERALL_LIST:
-                return __CI_overall_handler__(self, param, CV, binom_method)
+                return __CI_overall_handler__(self, param, CV, method)
             else:
                 raise pycmCIError(CI_SUPPORT_ERROR)
         else:

@@ -721,6 +721,18 @@ True
 0.11718265287943842
 >>> cm.CI("PRE",binom_method="wilson")[1][1][1]
 0.2444033995169354
+>>> cm.CI("PRE",binom_method="agresti-coull")[1][1][0]
+0.11654591925873323
+>>> cm.CI("PRE",binom_method="agresti-coull")[1][1][1]
+0.2450401331376406
+>>> cm.CI("Overall ACC",binom_method="agresti-coull")[1][1]
+0.6692525441184717
+>>> cm.CI("Overall ACC",binom_method="agresti-coull")[1][0]
+0.5048603506825172
+>>> cm.CI("Overall ACC",binom_method="wilson")[1][1]
+0.6692157009292735
+>>> cm.CI("Overall ACC",binom_method="wilson")[1][0]
+0.5048971938717156
 >>> SE = AUC_SE_calc(0.88915,279,527) # Verified Case
 >>> SE
 0.011116012490627622

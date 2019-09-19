@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix module."""
 from __future__ import division
-from .pycm_class_func import class_statistics, F_calc, IBA_calc, TI_calc, LR_CI_calc, LR_SE_calc, AUC_SE_calc
+from .pycm_class_func import class_statistics, F_calc, IBA_calc, TI_calc, LR_CI_calc, LR_SE_calc, AUC_SE_calc, CI_calc_wilson
 from .pycm_overall_func import overall_statistics, kappa_SE_calc, SE_calc, CI_calc
 from .pycm_output import *
 from .pycm_util import *
@@ -495,7 +495,7 @@ class ConfusionMatrix():
         except Exception:
             return {}
 
-    def CI(self, param, alpha=0.05, one_sided=False):
+    def CI(self, param, alpha=0.05, one_sided=False, binom_method="normal-approx"):
         """
         Calculate CI.
 
@@ -522,9 +522,9 @@ class ConfusionMatrix():
                     warn(CI_ALPHA_TWO_SIDE_WARNING, RuntimeWarning)
             param_u = param.upper()
             if param_u in CI_CLASS_LIST:
-                return __CI_class_handler__(self, param_u, CV)
+                return __CI_class_handler__(self, param_u, CV, binom_method)
             elif param in CI_OVERALL_LIST:
-                return __CI_overall_handler__(self, param, CV)
+                return __CI_overall_handler__(self, param, CV, binom_method)
             else:
                 raise pycmCIError(CI_SUPPORT_ERROR)
         else:
@@ -883,7 +883,7 @@ def __obj_vector_handler__(
     return matrix_param
 
 
-def __CI_class_handler__(cm, param, CV):
+def __CI_class_handler__(cm, param, CV, binom_method="normal-approx"):
     """
     Handle CI calculation for class parameters.
 
@@ -920,14 +920,17 @@ def __CI_class_handler__(cm, param, CV):
             CI = CI_calc(item1[i], SE, CV)
         else:
             SE = SE_calc(item1[i], item2[i])
-            CI = CI_calc(item1[i], SE, CV)
+            if binom_method == "wilson":
+                CI = CI_calc_wilson(item1[i], item2[i], CV)
+            else:
+                CI = CI_calc(item1[i], SE, CV)
         temp.append(SE)
         temp.append(CI)
         result[i] = temp
     return result
 
 
-def __CI_overall_handler__(cm, param, CV):
+def __CI_overall_handler__(cm, param, CV, binom_method="normal-approx"):
     """
     Handle CI calculation for overall parameters.
 
@@ -948,7 +951,10 @@ def __CI_overall_handler__(cm, param, CV):
             population)
     else:
         SE = SE_calc(cm.overall_stat[param], population)
-    CI = CI_calc(cm.overall_stat[param], SE, CV)
+    if binom_method == "wilson":
+        CI = CI_calc_wilson(cm.overall_stat[param],population,CV)
+    else:
+        CI = CI_calc(cm.overall_stat[param], SE, CV)
     result.append(SE)
     result.append(CI)
     return result

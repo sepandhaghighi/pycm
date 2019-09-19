@@ -4,6 +4,29 @@ from __future__ import division
 import math
 from .pycm_interpret import *
 
+def CI_calc_wilson(item1,item2,CV=1.96):
+    """
+    Calculate confidence interval for by using of wilson method.
+
+    :param item1: parameter
+    :type  item1 : float
+    :param item2: number of experiments
+    :type item2 : int
+    :param CV: critical value
+    :type CV:float
+    :return: confidence interval as tuple
+    """
+    try:
+        mean = (item1 + ((CV**2)/(2*item2))) / (1+(CV**2)/item2)
+        error = math.sqrt((item1*(1-item1)/item2)+((CV**2)/(4*item2**2)))
+        coef = CV/(1+(CV**2)/item2)
+        CI_down = mean - coef * error
+        CI_up = mean + coef * error
+        return (CI_down,CI_up)
+    except Exception:
+        return ("None", "None")
+
+
 
 def AUC_SE_calc(AUC, P, N):
     """

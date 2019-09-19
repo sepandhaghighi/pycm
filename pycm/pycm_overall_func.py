@@ -5,7 +5,7 @@ import math
 import operator as op
 from functools import reduce
 from .pycm_interpret import *
-from .pycm_ci import kappa_SE_calc,CI_calc,SE_calc
+from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
 
 
 def pearson_C_calc(chi_square, POP):
@@ -587,9 +587,6 @@ def reliability_calc(RACC, ACC):
         return result
     except Exception:
         return "None"
-
-
-
 
 
 def micro_calc(TP, item):

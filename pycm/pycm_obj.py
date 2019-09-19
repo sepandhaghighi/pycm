@@ -496,7 +496,12 @@ class ConfusionMatrix():
         except Exception:
             return {}
 
-    def CI(self, param, alpha=0.05, one_sided=False, binom_method="normal-approx"):
+    def CI(
+            self,
+            param,
+            alpha=0.05,
+            one_sided=False,
+            binom_method="normal-approx"):
         """
         Calculate CI.
 
@@ -512,7 +517,7 @@ class ConfusionMatrix():
         """
         if isinstance(param, str):
             method = "normal-approx"
-            if isinstance(binom_method,str):
+            if isinstance(binom_method, str):
                 method = binom_method.lower()
             if one_sided:
                 if alpha in ALPHA_ONE_SIDE_TABLE.keys():
@@ -964,9 +969,9 @@ def __CI_overall_handler__(cm, param, CV, binom_method="normal-approx"):
     else:
         SE = SE_calc(cm.overall_stat[param], population)
     if binom_method == "wilson":
-        CI = CI_calc_wilson(cm.overall_stat[param],population,CV)
+        CI = CI_calc_wilson(cm.overall_stat[param], population, CV)
     elif binom_method == "agresti-coull":
-        CI = CI_calc_agresti(cm.overall_stat[param],population,CV)
+        CI = CI_calc_agresti(cm.overall_stat[param], population, CV)
     else:
         CI = CI_calc(cm.overall_stat[param], SE, CV)
     result.append(SE)

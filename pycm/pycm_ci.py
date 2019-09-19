@@ -3,7 +3,8 @@
 from __future__ import division
 import math
 
-def CI_calc_agresti(item1,item2,CV=1.96):
+
+def CI_calc_agresti(item1, item2, CV=1.96):
     """
     Calculate confidence interval by using of Agresti and Coull method.
 
@@ -17,15 +18,16 @@ def CI_calc_agresti(item1,item2,CV=1.96):
     """
     try:
         item3 = item2 * item1
-        mean = (item3+(CV**2)/2)/(item2+CV**2)
-        error = math.sqrt(mean*(1-mean)/(item2+CV**2))
-        CI_down = mean - CV*error
-        CI_up = mean + CV*error
+        mean = (item3 + (CV**2) / 2) / (item2 + CV**2)
+        error = math.sqrt(mean * (1 - mean) / (item2 + CV**2))
+        CI_down = mean - CV * error
+        CI_up = mean + CV * error
         return (CI_down, CI_up)
     except Exception:
         return ("None", "None")
 
-def CI_calc_wilson(item1,item2,CV=1.96):
+
+def CI_calc_wilson(item1, item2, CV=1.96):
     """
     Calculate confidence interval by using of Wilson method.
 
@@ -38,14 +40,16 @@ def CI_calc_wilson(item1,item2,CV=1.96):
     :return: confidence interval as tuple
     """
     try:
-        mean = (item1 + ((CV**2)/(2*item2))) / (1+(CV**2)/item2)
-        error = math.sqrt((item1*(1-item1)/item2)+((CV**2)/(4*item2**2)))
-        coef = CV/(1+(CV**2)/item2)
+        mean = (item1 + ((CV**2) / (2 * item2))) / (1 + (CV**2) / item2)
+        error = math.sqrt((item1 * (1 - item1) / item2) +
+                          ((CV**2) / (4 * item2**2)))
+        coef = CV / (1 + (CV**2) / item2)
         CI_down = mean - coef * error
         CI_up = mean + coef * error
-        return (CI_down,CI_up)
+        return (CI_down, CI_up)
     except Exception:
         return ("None", "None")
+
 
 def AUC_SE_calc(AUC, P, N):
     """
@@ -88,6 +92,7 @@ def LR_SE_calc(item1, item2, item3, item4):
     except Exception:
         return "None"
 
+
 def LR_CI_calc(mean, SE, CV=1.96):
     """
     Calculate confidence interval for likelihood ratio +/- by using of log method.
@@ -106,6 +111,7 @@ def LR_CI_calc(mean, SE, CV=1.96):
         return (CI_down, CI_up)
     except Exception:
         return ("None", "None")
+
 
 def CI_calc(mean, SE, CV=1.96):
     """
@@ -126,6 +132,7 @@ def CI_calc(mean, SE, CV=1.96):
     except Exception:
         return ("None", "None")
 
+
 def SE_calc(item1, item2):
     """
     Calculate standard error with binomial distribution.
@@ -141,6 +148,7 @@ def SE_calc(item1, item2):
             (item1 * (1 - item1)) / item2)
     except Exception:
         return "None"
+
 
 def kappa_SE_calc(PA, PE, POP):
     """
@@ -159,5 +167,3 @@ def kappa_SE_calc(PA, PE, POP):
         return result
     except Exception:
         return "None"
-
-

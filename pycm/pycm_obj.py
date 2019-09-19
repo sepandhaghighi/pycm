@@ -505,6 +505,8 @@ class ConfusionMatrix():
         :type alpha: float
         :param one_sided: one side mode
         :type one_sided: bool
+        :param binom_method: binomial confidence intervals method
+        :type binom_method: str
         :return: CI
         """
         if isinstance(param, str):
@@ -893,6 +895,8 @@ def __CI_class_handler__(cm, param, CV, binom_method="normal-approx"):
     :type param: str
     :param CV: critical value
     :type CV: float
+    :param binom_method: binomial confidence intervals method
+    :type binom_method: str
     :return: result as dictionary
     """
     result = {}
@@ -940,6 +944,8 @@ def __CI_overall_handler__(cm, param, CV, binom_method="normal-approx"):
     :type param: str
     :param CV: critical value
     :type CV: float
+    :param binom_method: binomial confidence intervals method
+    :type binom_method: str
     :return: result as list [SE,(CI_DOWN,DI_UP)]
     """
     result = []

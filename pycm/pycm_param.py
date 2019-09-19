@@ -86,7 +86,8 @@ CI_CLASS_LIST = [
     "NLR",
     "FPR",
     "FNR",
-    "AUC"]
+    "AUC",
+    "PRE"]
 
 CI_OVERALL_LIST = ["Kappa", "Overall ACC"]
 

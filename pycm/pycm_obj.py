@@ -905,7 +905,7 @@ def __CI_class_handler__(cm, param, CV, binom_method="normal-approx"):
         item2 = cm.class_stat["TOP"]
     elif param == "NPV":
         item2 = cm.class_stat["TON"]
-    elif param == "ACC":
+    elif param == "ACC" or param == "PRE":
         item2 = cm.class_stat["POP"]
     for i in cm.classes:
         temp = []

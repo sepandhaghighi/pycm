@@ -72,6 +72,22 @@ True
 'None'
 >>> CI_calc(23, "None", CV=1.96)
 ('None', 'None')
+>>> CI_calc_agresti("None",20,CV=1.96)
+('None', 'None')
+>>> CI_calc_wilson(200,0,CV=1.96)
+('None', 'None')
+>>> CI_calc_wilson(200,"None",CV=1.96)
+('None', 'None')
+>>> AUC_SE_calc(0.52, 0, 0)
+'None'
+>>> AUC_SE_calc("None", 40, 42)
+'None'
+>>> LR_SE_calc(0, 0, 0, 0)
+'None'
+>>> LR_SE_calc(0, 20, 2, 21)
+'None'
+>>> LR_CI_calc("None", 0.5, CV=1.96)
+('None', 'None')
 >>> PC_S_calc([])
 'None'
 >>> jaccard_index_calc(0, 0, 0)

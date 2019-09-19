@@ -4,9 +4,31 @@ from __future__ import division
 import math
 from .pycm_interpret import *
 
+def CI_calc_agresti(item1,item2,CV=1.96):
+    """
+    Calculate confidence interval by using of Agresti and Coull method.
+
+    :param item1: parameter
+    :type  item1 : float
+    :param item2: number of experiments
+    :type item2 : int
+    :param CV: critical value
+    :type CV:float
+    :return: confidence interval as tuple
+    """
+    try:
+        item3 = item2 * item1
+        mean = (item3+(CV**2)/2)/(item2+CV**2)
+        error = math.sqrt(mean*(1-mean)/(item2+CV**2))
+        CI_down = mean - CV*error
+        CI_up = mean + CV*error
+        return (CI_down, CI_up)
+    except Exception:
+        return ("None", "None")
+
 def CI_calc_wilson(item1,item2,CV=1.96):
     """
-    Calculate confidence interval for by using of wilson method.
+    Calculate confidence interval by using of Wilson method.
 
     :param item1: parameter
     :type  item1 : float

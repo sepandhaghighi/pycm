@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix module."""
 from __future__ import division
-from .pycm_class_func import class_statistics, F_calc, IBA_calc, TI_calc, LR_CI_calc, LR_SE_calc, AUC_SE_calc, CI_calc_wilson
+from .pycm_class_func import class_statistics, F_calc, IBA_calc, TI_calc, LR_CI_calc, LR_SE_calc, AUC_SE_calc, CI_calc_wilson,CI_calc_agresti
 from .pycm_overall_func import overall_statistics, kappa_SE_calc, SE_calc, CI_calc
 from .pycm_output import *
 from .pycm_util import *
@@ -926,6 +926,8 @@ def __CI_class_handler__(cm, param, CV, binom_method="normal-approx"):
             SE = SE_calc(item1[i], item2[i])
             if binom_method == "wilson":
                 CI = CI_calc_wilson(item1[i], item2[i], CV)
+            elif binom_method == "agresti-coull":
+                CI = CI_calc_agresti(item1[i], item2[i], CV)
             else:
                 CI = CI_calc(item1[i], SE, CV)
         temp.append(SE)
@@ -959,6 +961,8 @@ def __CI_overall_handler__(cm, param, CV, binom_method="normal-approx"):
         SE = SE_calc(cm.overall_stat[param], population)
     if binom_method == "wilson":
         CI = CI_calc_wilson(cm.overall_stat[param],population,CV)
+    elif binom_method == "agresti-coull":
+        CI = CI_calc_agresti(cm.overall_stat[param],population,CV)
     else:
         CI = CI_calc(cm.overall_stat[param], SE, CV)
     result.append(SE)

@@ -7,4 +7,5 @@ from .pycm_obj import *
 from .pycm_compare import *
 from .pycm_util import *
 from .pycm_interpret import *
+from .pycm_ci import *
 __version__ = PYCM_VERSION

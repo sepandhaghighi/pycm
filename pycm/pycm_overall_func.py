@@ -5,6 +5,7 @@ import math
 import operator as op
 from functools import reduce
 from .pycm_interpret import *
+from .pycm_ci import kappa_SE_calc,CI_calc,SE_calc
 
 
 def pearson_C_calc(chi_square, POP):
@@ -588,60 +589,7 @@ def reliability_calc(RACC, ACC):
         return "None"
 
 
-def kappa_SE_calc(PA, PE, POP):
-    """
-    Calculate kappa standard error.
 
-    :param PA: observed agreement among raters (overall accuracy)
-    :type PA : float
-    :param PE:  hypothetical probability of chance agreement (random accuracy)
-    :type PE : float
-    :param POP: population
-    :type POP:int
-    :return: kappa standard error as float
-    """
-    try:
-        result = math.sqrt((PA * (1 - PA)) / (POP * ((1 - PE)**2)))
-        return result
-    except Exception:
-        return "None"
-
-
-def CI_calc(mean, SE, CV=1.96):
-    """
-    Calculate confidence interval.
-
-    :param mean: mean of data
-    :type mean : float
-    :param SE: standard error of data
-    :type SE : float
-    :param CV: critical value
-    :type CV:float
-    :return: confidence interval as tuple
-    """
-    try:
-        CI_down = mean - CV * SE
-        CI_up = mean + CV * SE
-        return (CI_down, CI_up)
-    except Exception:
-        return ("None", "None")
-
-
-def SE_calc(item1, item2):
-    """
-    Calculate standard error with binomial distribution.
-
-    :param item1: parameter
-    :type  item1 : float
-    :param item2: number of experiments
-    :type item2 : int
-    :return: standard error as float
-    """
-    try:
-        return math.sqrt(
-            (item1 * (1 - item1)) / item2)
-    except Exception:
-        return "None"
 
 
 def micro_calc(TP, item):

@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix module."""
 from __future__ import division
-from .pycm_class_func import class_statistics, F_calc, IBA_calc, TI_calc, LR_CI_calc, LR_SE_calc, AUC_SE_calc, CI_calc_wilson,CI_calc_agresti
-from .pycm_overall_func import overall_statistics, kappa_SE_calc, SE_calc, CI_calc
+from .pycm_class_func import class_statistics, F_calc, IBA_calc, TI_calc
+from .pycm_overall_func import overall_statistics
 from .pycm_output import *
 from .pycm_util import *
 from .pycm_param import *
+from .pycm_ci import *
 import os
 import json
 import types

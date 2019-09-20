@@ -168,6 +168,7 @@ def kappa_SE_calc(PA, PE, POP):
     except Exception:
         return "None"
 
+
 def __CI_class_handler__(cm, param, CV, binom_method="normal-approx"):
     """
     Handle CI calculation for class parameters.

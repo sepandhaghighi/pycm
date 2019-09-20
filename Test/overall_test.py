@@ -1122,6 +1122,10 @@ sInd(Similarity index)                                           0.81144        
 True
 >>> cm2 == cm
 True
+>>> cm2.__ne__(cm)
+False
+>>> cm2 != cm
+False
 >>> cm = ConfusionMatrix([1,2,3,4],[1,2,3,"4"])
 >>> cm
 pycm.ConfusionMatrix(classes: ['1', '2', '3', '4'])

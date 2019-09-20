@@ -6,7 +6,7 @@ from .pycm_overall_func import overall_statistics
 from .pycm_output import *
 from .pycm_util import *
 from .pycm_param import *
-from .pycm_ci import *
+from .pycm_ci import __CI_overall_handler__, __CI_class_handler__
 import os
 import json
 import types
@@ -892,88 +892,3 @@ def __obj_vector_handler__(
         cm.weights = sample_weight
 
     return matrix_param
-
-
-def __CI_class_handler__(cm, param, CV, binom_method="normal-approx"):
-    """
-    Handle CI calculation for class parameters.
-
-    :param cm: ConfusionMatrix
-    :type cm : pycm.ConfusionMatrix object
-    :param param: input parameter
-    :type param: str
-    :param CV: critical value
-    :type CV: float
-    :param binom_method: binomial confidence intervals method
-    :type binom_method: str
-    :return: result as dictionary
-    """
-    result = {}
-    item1 = cm.class_stat[param]
-    if param == "TPR" or param == "FNR":
-        item2 = cm.class_stat["P"]
-    elif param == "TNR" or param == "FPR":
-        item2 = cm.class_stat["N"]
-    elif param == "PPV":
-        item2 = cm.class_stat["TOP"]
-    elif param == "NPV":
-        item2 = cm.class_stat["TON"]
-    elif param == "ACC" or param == "PRE":
-        item2 = cm.class_stat["POP"]
-    for i in cm.classes:
-        temp = []
-        if param == "PLR":
-            SE = LR_SE_calc(cm.TP[i], cm.P[i], cm.FP[i], cm.N[i])
-            CI = LR_CI_calc(cm.PLR[i], SE, CV)
-        elif param == "NLR":
-            SE = LR_SE_calc(cm.FN[i], cm.P[i], cm.TN[i], cm.N[i])
-            CI = LR_CI_calc(cm.NLR[i], SE, CV)
-        elif param == "AUC":
-            SE = AUC_SE_calc(cm.AUC[i], cm.P[i], cm.N[i])
-            CI = CI_calc(item1[i], SE, CV)
-        else:
-            SE = SE_calc(item1[i], item2[i])
-            if binom_method == "wilson":
-                CI = CI_calc_wilson(item1[i], item2[i], CV)
-            elif binom_method == "agresti-coull":
-                CI = CI_calc_agresti(item1[i], item2[i], CV)
-            else:
-                CI = CI_calc(item1[i], SE, CV)
-        temp.append(SE)
-        temp.append(CI)
-        result[i] = temp
-    return result
-
-
-def __CI_overall_handler__(cm, param, CV, binom_method="normal-approx"):
-    """
-    Handle CI calculation for overall parameters.
-
-    :param cm: ConfusionMatrix
-    :type cm : pycm.ConfusionMatrix object
-    :param param: input parameter
-    :type param: str
-    :param CV: critical value
-    :type CV: float
-    :param binom_method: binomial confidence intervals method
-    :type binom_method: str
-    :return: result as list [SE,(CI_DOWN,DI_UP)]
-    """
-    result = []
-    population = list(cm.POP.values())[0]
-    if param == "Kappa":
-        SE = kappa_SE_calc(
-            cm.overall_stat["Overall ACC"],
-            cm.overall_stat["Overall RACC"],
-            population)
-    else:
-        SE = SE_calc(cm.overall_stat[param], population)
-    if binom_method == "wilson":
-        CI = CI_calc_wilson(cm.overall_stat[param], population, CV)
-    elif binom_method == "agresti-coull":
-        CI = CI_calc_agresti(cm.overall_stat[param], population, CV)
-    else:
-        CI = CI_calc(cm.overall_stat[param], SE, CV)
-    result.append(SE)
-    result.append(CI)
-    return result

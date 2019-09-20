@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Python 3.4 support dropped
 - Python 2.7 support dropped
 - `AUTHORS.md` updated
+- `save_stat`,`save_csv` and `save_html` methods Non-ASCII character bug fixed
 - `CONTRIBUTING.md` updated
 - Example-3 updated
 - `README.md` modified

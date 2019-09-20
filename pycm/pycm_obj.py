@@ -509,7 +509,7 @@ class ConfusionMatrix():
         :type param: str
         :param alpha: type I error
         :type alpha: float
-        :param one_sided: one side mode
+        :param one_sided: one-sided mode
         :type one_sided: bool
         :param binom_method: binomial confidence intervals method
         :type binom_method: str

@@ -755,7 +755,7 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>61- J. A. Hanley and B. J. McNeil, "The meaning and use of the area under a receiver operating characteristic (ROC) curve," Radiology, vol. 143, no. 1, pp. 29-36, 1982.</blockquote>
 
-<blockquote>62- Wilson, E. B. (1927). Probable inference, the law of succession, and statistical inference. Journal of the American Statistical Association, 22(158), 209-212.</blockquote>
+<blockquote>62- E. B. Wilson, "Probable inference, the law of succession, and statistical inference," Journal of the American Statistical Association, vol. 22, no. 158, pp. 209-212, 1927.</blockquote>
 
 <blockquote>63- Agresti, A., and Coull, B. A. (1998), Approximate is Better than "exact" for interval estimation of binomial proportions, The American Statistician, 52: 119-126.</blockquote>
 

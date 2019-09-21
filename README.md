@@ -757,7 +757,7 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>62- E. B. Wilson, "Probable inference, the law of succession, and statistical inference," Journal of the American Statistical Association, vol. 22, no. 158, pp. 209-212, 1927.</blockquote>
 
-<blockquote>63- Agresti, A., and Coull, B. A. (1998), Approximate is Better than "exact" for interval estimation of binomial proportions, The American Statistician, 52: 119-126.</blockquote>
+<blockquote>63- A. Agresti and B. A. Coull, "Approximate is better than “exact” for interval estimation of binomial proportions," The American Statistician, vol. 52, no. 2, pp. 119-126, 1998.</blockquote>
 
 
 

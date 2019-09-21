@@ -751,7 +751,7 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>59- S. Wallis, "Binomial confidence intervals and contingency tests: mathematical fundamentals and the evaluation of alternative methods," Journal of Quantitative Linguistics, vol. 20, no. 3, pp. 178-208, 2013.</blockquote>
 
-<blockquote>60- Altman DG, Machin D, Bryant TN, Gardner MJ (Eds) (2000) Statistics with confidence, 2nd ed. BMJ Books.</blockquote>
+<blockquote>60- D. Altman, D. Machin, T. Bryant, and M. Gardner, Statistics with confidence: confidence intervals and statistical guidelines. John Wiley & Sons, 2013.</blockquote>
 
 <blockquote>61- Hanley, James A., and Barbara J. McNeil. "The meaning and use of the area under a receiver operating characteristic (ROC) curve." Radiology 143, no. 1 (1982): 29-36.</blockquote>
 

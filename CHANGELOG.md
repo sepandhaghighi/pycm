@@ -6,9 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- Non-ASCII class names supported
 - Individual classification success index (ICSI)
 - Classification success index (CSI)
+- Example-8 (Confidence interval)
 - `install.sh`
 - `autopep8.sh`
 - Dockerfile
@@ -25,7 +25,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `CI` attribute renamed to `CI95`
 - `kappa_se_calc` function renamed to `kappa_SE_calc`
 - `se_calc` function modified and renamed to `SE_calc`
-- CI functions moved to `pycm_ci.py`
+- CI/SE functions moved to `pycm_ci.py`
 ## [2.4] - 2019-07-31
 ### Added
 - Tversky index (TI)

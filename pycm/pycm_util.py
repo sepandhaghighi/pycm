@@ -293,7 +293,7 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
         table[item][predict_vector[index]] += 1 * weight_vector[index]
         if item is predict_vector[index]:
             predict_vector_state[index] = 'T'
-        else
+        else:
             predict_vector_state[index] = 'F'
     [classes, table, TP_dict, TN_dict, FP_dict,
         FN_dict] = matrix_params_from_table(table)

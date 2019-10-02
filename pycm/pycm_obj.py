@@ -96,6 +96,7 @@ class ConfusionMatrix():
         __obj_assign_handler__(self, matrix_param)
         __class_stat_init__(self)
         __overall_stat_init__(self)
+        self.predict_vector_state = matrix_param[6]
         self.imbalance = imbalance_check(self.P)
         self.binary = binary_check(self.classes)
         self.recommended_list = statistic_recommend(self.classes, self.P)

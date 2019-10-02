@@ -282,6 +282,7 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
         sample_weight = sample_weight.tolist()
     classes = set(actual_vector).union(set(predict_vector))
     classes = sorted(classes)
+    predict_vector_state = predict_vector.copy()
     map_dict = {k: 0 for k in classes}
     table = {k: map_dict.copy() for k in classes}
     weight_vector = [1] * len(actual_vector)
@@ -290,9 +291,13 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
             weight_vector = sample_weight
     for index, item in enumerate(actual_vector):
         table[item][predict_vector[index]] += 1 * weight_vector[index]
+        if item is predict_vector[index]:
+            predict_vector_state[index] = 'T'
+        else
+            predict_vector_state[index] = 'F'
     [classes, table, TP_dict, TN_dict, FP_dict,
         FN_dict] = matrix_params_from_table(table)
-    return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
+    return [classes, table, predict_vector_state, TP_dict, TN_dict, FP_dict, FN_dict]
 
 
 def imbalance_check(P):

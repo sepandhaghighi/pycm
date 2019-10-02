@@ -274,7 +274,7 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     :type predict_vector : list
     :param sample_weight : sample weights list
     :type sample_weight : list
-    :return: [classes_list,table,TP,TN,FP,FN]
+    :return: [classes_list,table,TP,TN,FP,FN,predict_vector_state]
     """
     [actual_vector, predict_vector] = vector_filter(
         actual_vector, predict_vector)
@@ -292,12 +292,12 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     for index, item in enumerate(actual_vector):
         table[item][predict_vector[index]] += 1 * weight_vector[index]
         if item is predict_vector[index]:
-            predict_vector_state[index] = 'T'
+            predict_vector_state[index] = 1
         else:
-            predict_vector_state[index] = 'F'
+            predict_vector_state[index] = 0
     [classes, table, TP_dict, TN_dict, FP_dict,
         FN_dict] = matrix_params_from_table(table)
-    return [classes, table, predict_vector_state, TP_dict, TN_dict, FP_dict, FN_dict]
+    return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict, predict_vector_state]
 
 
 def imbalance_check(P):

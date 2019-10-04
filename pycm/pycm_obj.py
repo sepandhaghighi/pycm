@@ -100,7 +100,7 @@ class ConfusionMatrix():
         self.binary = binary_check(self.classes)
         self.recommended_list = statistic_recommend(self.classes, self.P)
 
-    def print_matrix(self, one_vs_all=False, class_name=None):
+    def print_matrix(self, one_vs_all=False, class_name=None, sparse=False):
         """
         Print confusion matrix.
 
@@ -108,6 +108,8 @@ class ConfusionMatrix():
         :type one_vs_all : bool
         :param class_name : target class name for One-Vs-All mode
         :type class_name : any valid type
+        :param sparse : sparse mode printing flag
+        :type sparse : bool
         :return: None
         """
         classes = self.classes
@@ -115,7 +117,10 @@ class ConfusionMatrix():
         if one_vs_all:
             [classes, table] = one_vs_all_func(
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
-        print(table_print(classes, table))
+        if sparse is True:
+            print(sparse_table_print(classes, table))
+        else:
+            print(table_print(classes, table))
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 

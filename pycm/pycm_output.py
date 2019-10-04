@@ -353,7 +353,6 @@ def sparse_table_print(classes, table):
                 break
         if is_sparse is True:
             col_to_be_deleted.append(y)
-    
     for index in row_to_be_deleted:
         del table[index]
         actual_classes.remove(index)
@@ -361,7 +360,6 @@ def sparse_table_print(classes, table):
         for row in actual_classes:
             del table[row][index]
         predict_classes.remove(index)
-    
     classes_len = len(predict_classes)
     table_list = []
     for key in actual_classes:

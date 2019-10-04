@@ -204,7 +204,8 @@ class ConfusionMatrix():
             overall_param=None,
             class_param=None,
             class_name=None,
-            summary=False):
+            summary=False,
+            sparse=False):
         """
         Save ConfusionMatrix in .pycm (flat file format).
 
@@ -220,6 +221,8 @@ class ConfusionMatrix():
         :type class_name : list
         :param summary : summary mode flag
         :type summary : bool
+        :param sparse : sparse mode printing flag
+        :type sparse : bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
         try:
@@ -231,18 +234,32 @@ class ConfusionMatrix():
                 class_list = SUMMARY_CLASS
                 overall_list = SUMMARY_OVERALL
             file = open(name + ".pycm", "w", encoding="utf-8")
-            matrix = "Matrix : \n\n" + table_print(self.classes,
-                                                   self.table) + "\n\n"
-            normalized_matrix = "Normalized Matrix : \n\n" + \
-                                table_print(self.classes,
-                                            self.normalized_table) + "\n\n"
-            one_vs_all = "\nOne-Vs-All : \n\n"
-            for c in self.classes:
-                one_vs_all += str(c) + "-Vs-All : \n\n"
-                [classes, table] = one_vs_all_func(self.classes, self.table,
-                                                   self.TP, self.TN, self.FP,
-                                                   self.FN, c)
-                one_vs_all += table_print(classes, table) + "\n\n"
+            if sparse is True:
+                matrix = "Matrix : \n\n" + sparse_table_print(self.classes,
+                                                    self.table) + "\n\n"
+                normalized_matrix = "Normalized Matrix : \n\n" + \
+                                    sparse_table_print(self.classes,
+                                                self.normalized_table) + "\n\n"
+                one_vs_all = "\nOne-Vs-All : \n\n"
+                for c in self.classes:
+                    one_vs_all += str(c) + "-Vs-All : \n\n"
+                    [classes, table] = one_vs_all_func(self.classes, self.table,
+                                                    self.TP, self.TN, self.FP,
+                                                    self.FN, c)
+                    one_vs_all += sparse_table_print(classes, table) + "\n\n"
+            else:
+                matrix = "Matrix : \n\n" + table_print(self.classes,
+                                                    self.table) + "\n\n"
+                normalized_matrix = "Normalized Matrix : \n\n" + \
+                                    table_print(self.classes,
+                                                self.normalized_table) + "\n\n"
+                one_vs_all = "\nOne-Vs-All : \n\n"
+                for c in self.classes:
+                    one_vs_all += str(c) + "-Vs-All : \n\n"
+                    [classes, table] = one_vs_all_func(self.classes, self.table,
+                                                    self.TP, self.TN, self.FP,
+                                                    self.FN, c)
+                    one_vs_all += table_print(classes, table) + "\n\n"
             classes = class_filter(self.classes, class_name)
             stat = stat_print(
                 classes,

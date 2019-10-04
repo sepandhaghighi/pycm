@@ -124,7 +124,7 @@ class ConfusionMatrix():
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 
-    def print_normalized_matrix(self, one_vs_all=False, class_name=None):
+    def print_normalized_matrix(self, one_vs_all=False, class_name=None, sparse=False):
         """
         Print normalized confusion matrix.
 
@@ -132,6 +132,8 @@ class ConfusionMatrix():
         :type one_vs_all : bool
         :param class_name : target class name for One-Vs-All mode
         :type class_name : any valid type
+        :param sparse : sparse mode printing flag
+        :type sparse : bool
         :return: None
         """
         classes = self.classes
@@ -140,7 +142,10 @@ class ConfusionMatrix():
             [classes, table] = one_vs_all_func(
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
         table = normalized_table_calc(classes, table)
-        print(table_print(classes, table))
+        if sparse is True:
+            print(sparse_table_print(classes, table))
+        else:
+            print(table_print(classes, table))
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 

@@ -335,7 +335,7 @@ def sparse_table_print(classes, table):
     """
     sparse_table = {}
     for key in table:
-        sparse_table[key] = table[key].copy()  
+        sparse_table[key] = table[key].copy()
     predict_classes = classes.copy()
     actual_classes = classes.copy()
     for x in classes:

@@ -333,7 +333,10 @@ def sparse_table_print(classes, table):
     :type table:dict
     :return: printable table as str
     """
+    predict_classes = classes.copy()
+    actual_classes = classes.copy()
     row_to_be_deleted = []
+    col_to_be_deleted = []
     for x in classes:
         is_sparse = True
         for y in classes:
@@ -342,10 +345,6 @@ def sparse_table_print(classes, table):
                 break
         if is_sparse is True:
             row_to_be_deleted.append(x)
-    for index in row_to_be_deleted:
-        del table[index]
-    
-    col_to_be_deleted = []
     for y in classes:
         is_sparse = True
         for x in classes:
@@ -354,25 +353,29 @@ def sparse_table_print(classes, table):
                 break
         if is_sparse is True:
             col_to_be_deleted.append(y)
-    for index in col_to_be_deleted:
-        for row in classes:
-            del table[row][index]
     
-    for sparse_class in [_class for _class in row_to_be_deleted if _class in col_to_be_deleted]:
-        classes.remove(sparse_class)
-    classes_len = len(classes)
+    for index in row_to_be_deleted:
+        del table[index]
+        actual_classes.remove(index)
+    for index in col_to_be_deleted:
+        for row in actual_classes:
+            del table[row][index]
+        predict_classes.remove(index)
+    
+    classes_len = len(predict_classes)
     table_list = []
-    for key in classes:
+    for key in actual_classes:
         table_list.extend(list(table[key].values()))
-    table_list.extend(classes)
+    table_list.extend(predict_classes)
     table_max_length = max(map(len, map(str, table_list)))
     shift = "%-" + str(7 + table_max_length) + "s"
     result = shift % "Predict" + shift * \
-        classes_len % tuple(map(str, classes)) + "\n"
+        classes_len % tuple(map(str, predict_classes)) + "\n"
     result = result + "Actual\n"
-    classes.sort()
-    for key in classes:
-        row = [table[key][i] for i in classes]
+    predict_classes.sort()
+    actual_classes.sort()
+    for key in actual_classes:
+        row = [table[key][i] for i in predict_classes]
         result += shift % str(key) + \
             shift * classes_len % tuple(map(str, row)) + "\n\n"
     return result

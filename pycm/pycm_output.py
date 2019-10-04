@@ -338,31 +338,19 @@ def sparse_table_print(classes, table):
         sparse_table[key] = table[key].copy()  
     predict_classes = classes.copy()
     actual_classes = classes.copy()
-    row_to_be_deleted = []
-    col_to_be_deleted = []
     for x in classes:
-        is_sparse = True
+        row_sum = 0
+        col_sum = 0
         for y in classes:
-            if sparse_table[x][y] != 0:
-                is_sparse = False
-                break
-        if is_sparse is True:
-            row_to_be_deleted.append(x)
-    for y in classes:
-        is_sparse = True
-        for x in classes:
-            if sparse_table[x][y] != 0:
-                is_sparse = False
-                break
-        if is_sparse is True:
-            col_to_be_deleted.append(y)
-    for index in row_to_be_deleted:
-        del sparse_table[index]
-        actual_classes.remove(index)
-    for index in col_to_be_deleted:
-        for row in actual_classes:
-            del sparse_table[row][index]
-        predict_classes.remove(index)
+            row_sum += table[x][y]
+            col_sum += table[y][x]
+        if row_sum == 0:
+            del sparse_table[x]
+            actual_classes.remove(x)
+        if col_sum == 0:
+            for row in classes:
+                del sparse_table[row][x]
+            predict_classes.remove(x)
     classes_len = len(predict_classes)
     table_list = []
     for key in actual_classes:

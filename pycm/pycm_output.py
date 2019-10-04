@@ -323,6 +323,61 @@ def table_print(classes, table):
     return result
 
 
+def sparse_table_print(classes, table):
+    """
+    Return printable confusion matrix in sparse mode when there are too many zeros.
+
+    :param classes: classes list
+    :type classes:list
+    :param table: table
+    :type table:dict
+    :return: printable table as str
+    """
+    row_to_be_deleted = []
+    for x in classes:
+        is_sparse = True
+        for y in classes:
+            if table[x][y] is not 0:
+                is_sparse = False
+                break
+        if is_sparse is True:
+            row_to_be_deleted.append(x)
+    for index in row_to_be_deleted:
+        del table[index]
+    
+    col_to_be_deleted = []
+    for y in classes:
+        is_sparse = True
+        for x in classes:
+            if table[x][y] is not 0:
+                is_sparse = False
+                break
+        if is_sparse is True:
+            col_to_be_deleted.append(y)
+    for index in col_to_be_deleted:
+        for row in classes:
+            del table[row][index]
+    
+    for sparse_class in [_class for _class in row_to_be_deleted if _class in col_to_be_deleted]:
+        classes.remove(sparse_class)
+    classes_len = len(classes)
+    table_list = []
+    for key in classes:
+        table_list.extend(list(table[key].values()))
+    table_list.extend(classes)
+    table_max_length = max(map(len, map(str, table_list)))
+    shift = "%-" + str(7 + table_max_length) + "s"
+    result = shift % "Predict" + shift * \
+        classes_len % tuple(map(str, classes)) + "\n"
+    result = result + "Actual\n"
+    classes.sort()
+    for key in classes:
+        row = [table[key][i] for i in classes]
+        result += shift % str(key) + \
+            shift * classes_len % tuple(map(str, row)) + "\n\n"
+    return result
+
+
 def csv_matrix_print(classes, table):
     """
     Return matrix as csv data.

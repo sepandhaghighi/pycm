@@ -340,7 +340,7 @@ def sparse_table_print(classes, table):
     for x in classes:
         is_sparse = True
         for y in classes:
-            if table[x][y] is not 0:
+            if table[x][y] != 0:
                 is_sparse = False
                 break
         if is_sparse is True:
@@ -348,7 +348,7 @@ def sparse_table_print(classes, table):
     for y in classes:
         is_sparse = True
         for x in classes:
-            if table[x][y] is not 0:
+            if table[x][y] != 0:
                 is_sparse = False
                 break
         if is_sparse is True:

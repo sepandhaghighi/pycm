@@ -333,6 +333,9 @@ def sparse_table_print(classes, table):
     :type table:dict
     :return: printable table as str
     """
+    sparse_table = {}
+    for key in table:
+        sparse_table[key] = table[key].copy()  
     predict_classes = classes.copy()
     actual_classes = classes.copy()
     row_to_be_deleted = []
@@ -340,7 +343,7 @@ def sparse_table_print(classes, table):
     for x in classes:
         is_sparse = True
         for y in classes:
-            if table[x][y] != 0:
+            if sparse_table[x][y] != 0:
                 is_sparse = False
                 break
         if is_sparse is True:
@@ -348,22 +351,22 @@ def sparse_table_print(classes, table):
     for y in classes:
         is_sparse = True
         for x in classes:
-            if table[x][y] != 0:
+            if sparse_table[x][y] != 0:
                 is_sparse = False
                 break
         if is_sparse is True:
             col_to_be_deleted.append(y)
     for index in row_to_be_deleted:
-        del table[index]
+        del sparse_table[index]
         actual_classes.remove(index)
     for index in col_to_be_deleted:
         for row in actual_classes:
-            del table[row][index]
+            del sparse_table[row][index]
         predict_classes.remove(index)
     classes_len = len(predict_classes)
     table_list = []
     for key in actual_classes:
-        table_list.extend(list(table[key].values()))
+        table_list.extend(list(sparse_table[key].values()))
     table_list.extend(predict_classes)
     table_max_length = max(map(len, map(str, table_list)))
     shift = "%-" + str(7 + table_max_length) + "s"
@@ -373,7 +376,7 @@ def sparse_table_print(classes, table):
     predict_classes.sort()
     actual_classes.sort()
     for key in actual_classes:
-        row = [table[key][i] for i in predict_classes]
+        row = [sparse_table[key][i] for i in predict_classes]
         result += shift % str(key) + \
             shift * classes_len % tuple(map(str, row)) + "\n\n"
     return result

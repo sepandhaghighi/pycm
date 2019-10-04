@@ -270,6 +270,29 @@ Predict          0        1
 Actual
 0                1        2
 1                1        0
+>>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2, 0, 1, 0, 2, 1, 0, 0, 0, 1]
+>>> y_pred = [2, 0, 2, 2, 0, 2, 2, 2, 2, 0, 0, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0]
+>>> cm = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred)
+>>> cm.print_matrix()
+Predict 0       1       2       
+Actual
+0       8       0       0       
+
+1       3       0       3       
+
+2       0       0       7       
+
+
+>>> cm.print_matrix(sparse = True)
+Predict 0       2       
+Actual
+0       8       0       
+
+1       3       3       
+
+2       0       7       
+
+
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu, y_pred, sample_weight=[2, 2, 2, 2, 3, 1, 1, 2, 2, 1, 1, 2])

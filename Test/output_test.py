@@ -277,22 +277,22 @@ Actual
 Predict 0       1       2       
 Actual
 0       8       0       0       
-
+<BLANKLINE>
 1       3       0       3       
-
+<BLANKLINE>
 2       0       0       7       
-
-
+<BLANKLINE>
+<BLANKLINE>
 >>> cm.print_matrix(sparse = True)
 Predict 0       2       
 Actual
 0       8       0       
-
+<BLANKLINE>
 1       3       3       
-
+<BLANKLINE>
 2       0       7       
-
-
+<BLANKLINE>
+<BLANKLINE>
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu, y_pred, sample_weight=[2, 2, 2, 2, 3, 1, 1, 2, 2, 1, 1, 2])

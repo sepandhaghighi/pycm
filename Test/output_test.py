@@ -307,15 +307,15 @@ Actual
 Predict   0         1         2         3         4         5         
 Actual
 0         1.0       0.0       0.0       0.0       0.0       0.0       
-
+<BLANKLINE>
 1         0.5       0.0       0.5       0.0       0.0       0.0       
-
+<BLANKLINE>
 2         0.0       0.0       1.0       0.0       0.0       0.0       
-
+<BLANKLINE>
 3         0.0       0.0       0.0       0.0       0.0       0.0       
-
+<BLANKLINE>
 4         0.0       0.0       0.0       0.0       0.0       1.0       
-
+<BLANKLINE>
 5         0.0       0.0       0.0       1.0       0.0       0.0       
 <BLANKLINE>
 <BLANKLINE>

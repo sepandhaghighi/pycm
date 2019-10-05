@@ -270,29 +270,72 @@ Predict          0        1
 Actual
 0                1        2
 1                1        0
->>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2, 0, 1, 0, 2, 1, 0, 0, 0, 1]
->>> y_pred = [2, 0, 2, 2, 0, 2, 2, 2, 2, 0, 0, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0]
+>>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2, 0, 1, 0, 2, 1, 0, 0, 0, 1, 2, 4, 5]
+>>> y_pred = [2, 0, 2, 2, 0, 2, 2, 2, 2, 0, 0, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 2, 5, 3]
 >>> cm = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred)
 >>> cm.print_matrix()
-Predict 0       1       2       
+Predict 0       1       2       3       4       5       
 Actual
-0       8       0       0       
-<BLANKLINE>
-1       3       0       3       
-<BLANKLINE>
-2       0       0       7       
-<BLANKLINE>
-<BLANKLINE>
+0       8       0       0       0       0       0       
+
+1       3       0       3       0       0       0       
+
+2       0       0       8       0       0       0       
+
+3       0       0       0       0       0       0       
+
+4       0       0       0       0       0       1       
+
+5       0       0       0       1       0       0       
+
+
 >>> cm.print_matrix(sparse = True)
-Predict 0       2       
+Predict 0       2       3       5       
 Actual
-0       8       0       
-<BLANKLINE>
-1       3       3       
-<BLANKLINE>
-2       0       7       
-<BLANKLINE>
-<BLANKLINE>
+0       8       0       0       0       
+
+1       3       3       0       0       
+
+2       0       8       0       0       
+
+4       0       0       0       1       
+
+5       0       0       1       0       
+
+
+>>> cm.print_normalized_matrix()
+Predict   0         1         2         3         4         5         
+Actual
+0         1.0       0.0       0.0       0.0       0.0       0.0       
+
+1         0.5       0.0       0.5       0.0       0.0       0.0       
+
+2         0.0       0.0       1.0       0.0       0.0       0.0       
+
+3         0.0       0.0       0.0       0.0       0.0       0.0       
+
+4         0.0       0.0       0.0       0.0       0.0       1.0       
+
+5         0.0       0.0       0.0       1.0       0.0       0.0       
+
+
+>>> cm.print_normalized_matrix(sparse = True)
+Predict   0         2         3         5         
+Actual
+0         1.0       0.0       0.0       0.0       
+
+1         0.5       0.5       0.0       0.0       
+
+2         0.0       1.0       0.0       0.0       
+
+4         0.0       0.0       0.0       1.0       
+
+5         0.0       0.0       1.0       0.0       
+
+
+>>> save_stat_data = cm.save_stat("test")
+>>> save_stat_data['Status']
+True
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu, y_pred, sample_weight=[2, 2, 2, 2, 3, 1, 1, 2, 2, 1, 1, 2])

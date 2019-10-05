@@ -246,7 +246,6 @@ class ConfusionMatrix():
                     [classes, table] = one_vs_all_func(self.classes, self.table,
                                                     self.TP, self.TN, self.FP,
                                                     self.FN, c)
-                    one_vs_all += sparse_table_print(classes, table) + "\n\n"
             else:
                 matrix = "Matrix : \n\n" + table_print(self.classes,
                                                     self.table) + "\n\n"
@@ -259,7 +258,7 @@ class ConfusionMatrix():
                     [classes, table] = one_vs_all_func(self.classes, self.table,
                                                     self.TP, self.TN, self.FP,
                                                     self.FN, c)
-                    one_vs_all += table_print(classes, table) + "\n\n"
+            one_vs_all += table_print(classes, table) + "\n\n"
             classes = class_filter(self.classes, class_name)
             stat = stat_print(
                 classes,

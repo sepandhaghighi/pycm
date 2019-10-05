@@ -277,32 +277,32 @@ Actual
 Predict 0       1       2       3       4       5       
 Actual
 0       8       0       0       0       0       0       
-
+<BLANKLINE>
 1       3       0       3       0       0       0       
-
+<BLANKLINE>
 2       0       0       8       0       0       0       
-
+<BLANKLINE>
 3       0       0       0       0       0       0       
-
+<BLANKLINE>
 4       0       0       0       0       0       1       
-
+<BLANKLINE>
 5       0       0       0       1       0       0       
-
-
+<BLANKLINE>
+<BLANKLINE>
 >>> cm.print_matrix(sparse = True)
 Predict 0       2       3       5       
 Actual
 0       8       0       0       0       
-
+<BLANKLINE>
 1       3       3       0       0       
-
+<BLANKLINE>
 2       0       8       0       0       
-
+<BLANKLINE>
 4       0       0       0       1       
-
+<BLANKLINE>
 5       0       0       1       0       
-
-
+<BLANKLINE>
+<BLANKLINE>
 >>> cm.print_normalized_matrix()
 Predict   0         1         2         3         4         5         
 Actual
@@ -317,22 +317,22 @@ Actual
 4         0.0       0.0       0.0       0.0       0.0       1.0       
 
 5         0.0       0.0       0.0       1.0       0.0       0.0       
-
-
+<BLANKLINE>
+<BLANKLINE>
 >>> cm.print_normalized_matrix(sparse = True)
 Predict   0         2         3         5         
 Actual
 0         1.0       0.0       0.0       0.0       
-
+<BLANKLINE>
 1         0.5       0.5       0.0       0.0       
-
+<BLANKLINE>
 2         0.0       1.0       0.0       0.0       
-
+<BLANKLINE>
 4         0.0       0.0       0.0       1.0       
-
+<BLANKLINE>
 5         0.0       0.0       1.0       0.0       
-
-
+<BLANKLINE>
+<BLANKLINE>
 >>> save_stat_data = cm.save_stat("test")
 >>> save_stat_data['Status']
 True

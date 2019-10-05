@@ -15,12 +15,13 @@ Please consider the following :
 4. Add standard `docstring` to your functions/methods
 5. Add tests for your functions/methods (`doctest`, `Test` folder)
 6. Update `README.md` (if needed)
-7. Pass all CI tests
-8. Update `CHANGELOG.md`
+7. Update `Document.ipynb` (if needed)
+8. Pass all CI tests
+9. Update `CHANGELOG.md`
 	- Describe changes under `[Unreleased]` section
-9. Update `AUTHORS.md`
+10. Update `AUTHORS.md`
 	- Add your name under `# Other Contributors #` section
-10. Submit a pull request into `dev` (please complete the pull request template)
+11. Submit a pull request into `dev` (please complete the pull request template)
 
 
 ## Class statistic 
@@ -32,6 +33,7 @@ Please consider the following :
 	- Add this variable to `result` dictionary
 3. Update `__class_stat_init__` function in `pycm_obj.py` by a new attribute
 4. Update `PARAMS_DESCRIPTION` dictionary in `pycm_param.py` by a short description
+	- If you don't want capitalization, update `CAPITALIZE_FILTER` list in `pycm_param.py`
 5. Update `References` section in `Document.ipynb` and `README.md`
 6. Add description to `Class Statistics` section in `Document.ipynb`
 	- Cite reference
@@ -71,8 +73,8 @@ Please consider the following :
 4. If interpretation table is for a class statistic:
 	- Step 2-7 [class statistic](#class-statistic)
 	- Update `CLASS_BENCHMARK_SCORE_DICT` in `pycm_param.py`
-5. If interpretation table is for overall statistic:
+5. If interpretation table is for a overall statistic:
 	- Step 2-6 [overall statistic](#overall-statistic)
 	- Update `OVERALL_BENCHMARK_SCORE_DICT` in `pycm_param.py`
-6. Add tests to `compare_test.py` and `function_test.py` in `TEST` folder
+6. Add tests to `compare_test.py`, `overall_test.py` and `function_test.py` in `TEST` folder
 7. Run `autopep8.bat`/`autopep8.sh` (Optional, need to install latest version of `autopep8` package)

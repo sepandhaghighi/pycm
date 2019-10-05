@@ -124,7 +124,11 @@ class ConfusionMatrix():
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 
-    def print_normalized_matrix(self, one_vs_all=False, class_name=None, sparse=False):
+    def print_normalized_matrix(
+            self,
+            one_vs_all=False,
+            class_name=None,
+            sparse=False):
         """
         Print normalized confusion matrix.
 
@@ -235,14 +239,13 @@ class ConfusionMatrix():
                 overall_list = SUMMARY_OVERALL
             file = open(name + ".pycm", "w", encoding="utf-8")
             if sparse is True:
-                matrix = "Matrix : \n\n" + sparse_table_print(self.classes,
-                                                    self.table) + "\n\n"
+                matrix = "Matrix : \n\n" + \
+                    sparse_table_print(self.classes, self.table) + "\n\n"
                 normalized_matrix = "Normalized Matrix : \n\n" + \
-                                    sparse_table_print(self.classes,
-                                                self.normalized_table) + "\n\n"
+                    sparse_table_print(self.classes, self.normalized_table) + "\n\n"
             else:
                 matrix = "Matrix : \n\n" + table_print(self.classes,
-                                                    self.table) + "\n\n"
+                                                       self.table) + "\n\n"
                 normalized_matrix = "Normalized Matrix : \n\n" + \
                                     table_print(self.classes,
                                                 self.normalized_table) + "\n\n"
@@ -250,8 +253,8 @@ class ConfusionMatrix():
             for c in self.classes:
                 one_vs_all += str(c) + "-Vs-All : \n\n"
                 [classes, table] = one_vs_all_func(self.classes, self.table,
-                                                self.TP, self.TN, self.FP,
-                                                self.FN, c)
+                                                   self.TP, self.TN, self.FP,
+                                                   self.FN, c)
             one_vs_all += table_print(classes, table) + "\n\n"
             classes = class_filter(self.classes, class_name)
             stat = stat_print(

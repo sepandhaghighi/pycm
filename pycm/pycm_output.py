@@ -348,7 +348,7 @@ def sparse_table_print(classes, table):
             del sparse_table[x]
             actual_classes.remove(x)
         if col_sum == 0:
-            for row in classes:
+            for row in actual_classes:
                 del sparse_table[row][x]
             predict_classes.remove(x)
     classes_len = len(predict_classes)

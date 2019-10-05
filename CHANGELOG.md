@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `CONTRIBUTING.md` updated
 - Example-3 updated
 - `README.md` modified
+- Document modified
 - `CI` attribute renamed to `CI95`
 - `kappa_se_calc` function renamed to `kappa_SE_calc`
 - `se_calc` function modified and renamed to `SE_calc`

@@ -763,7 +763,7 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 ## Cite
 
-If you use PyCM in your research, please cite this paper :
+If you use PyCM in your research, we would appreciate citations to the following paper :
 
 <pre>
 Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A. (2018). PyCM: Multiclass confusion matrix library in Python. Journal of Open Source Software, 3(25), p.729.

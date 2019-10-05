@@ -30,6 +30,7 @@ AUNP                                                              0.68571
 AUNU                                                              0.67857
 Bennett S                                                         0.375
 CBA                                                               0.47778
+CSI                                                               0.17778
 Chi-Squared                                                       6.6
 Chi-Squared DF                                                    4
 Conditional Entropy                                               0.97579
@@ -108,6 +109,7 @@ G(G-measure geometric mean of precision and sensitivity)          0.7746        
 GI(Gini index)                                                    0.6           0.3           0.17143       
 GM(G-mean geometric mean of specificity and sensitivity)          0.7746        0.63246       0.58554       
 IBA(Index of balanced accuracy)                                   0.36          0.28          0.35265       
+ICSI(Individual classification success index)                     0.6           -0.16667      0.1           
 IS(Information score)                                             1.26303       1.0           0.26303       
 J(Jaccard index)                                                  0.6           0.25          0.375         
 LS(Lift score)                                                    2.4           2.0           1.2           

@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 - `sparse_table_print` function 
+## [2.5] - 2019-10-09
 ### Added
 - Individual classification success index (ICSI)
 - Classification success index (CSI)
@@ -432,7 +433,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v2.4...dev
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v2.5...dev
+[2.5]: https://github.com/sepandhaghighi/pycm/compare/v2.4...v2.5
 [2.4]: https://github.com/sepandhaghighi/pycm/compare/v2.3...v2.4
 [2.3]: https://github.com/sepandhaghighi/pycm/compare/v2.2...v2.3
 [2.2]: https://github.com/sepandhaghighi/pycm/compare/v2.1...v2.2

@@ -333,7 +333,7 @@ Actual
 5         0.0       0.0       1.0       0.0       
 <BLANKLINE>
 <BLANKLINE>
->>> save_stat_data = cm.save_stat("test")
+>>> save_stat_data = cm.save_stat("test", sparse = True)
 >>> save_stat_data['Status']
 True
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]

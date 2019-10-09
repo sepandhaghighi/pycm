@@ -116,7 +116,7 @@ CI_ALPHA_ONE_SIDE_WARNING = "The alpha value is invalid, automatically set to 0.
 
 CI_FORMAT_ERROR = "The input type is considered to be string but it's not!"
 
-CI_SUPPORT_ERROR = "CI calculation for this parameter is no supported on this version of pycm.\nSupported parameters : " + \
+CI_SUPPORT_ERROR = "CI calculation for this parameter is not supported on this version of pycm.\nSupported parameters : " + \
     ",".join(CI_CLASS_LIST) + "," + ",".join(CI_OVERALL_LIST)
 
 

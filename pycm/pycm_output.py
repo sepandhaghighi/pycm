@@ -135,7 +135,7 @@ def html_table(classes, table, rgb_color, normalize=False):
             class_name + '</td>\n'
         for j in classes:
             item = table[i][j]
-            color = "black;"
+            color = "black"
             back_color = html_table_color(table[i], item, rgb_color)
             if min(back_color) < 128:
                 color = "white"

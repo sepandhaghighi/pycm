@@ -159,6 +159,7 @@ AUNP                                                              0.66667
 AUNU                                                              0.69444
 Bennett S                                                         0.375
 CBA                                                               0.47778
+CSI                                                               0.17778
 Chi-Squared                                                       6.6
 Chi-Squared DF                                                    4
 Conditional Entropy                                               0.95915
@@ -237,6 +238,7 @@ G(G-measure geometric mean of precision and sensitivity)          0.7746        
 GI(Gini index)                                                    0.77778       0.22222       0.16667       
 GM(G-mean geometric mean of specificity and sensitivity)          0.88192       0.54433       0.57735       
 IBA(Index of balanced accuracy)                                   0.95062       0.13169       0.27778       
+ICSI(Individual classification success index)                     0.6           -0.16667      0.1           
 IS(Information score)                                             1.26303       1.0           0.26303       
 J(Jaccard index)                                                  0.6           0.25          0.375         
 LS(Lift score)                                                    2.4           2.0           1.2           
@@ -268,7 +270,7 @@ TP(True positive/hit)                                             3             
 TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           0.33333       0.5           
 Y(Youden index)                                                   0.77778       0.22222       0.16667       
 dInd(Distance index)                                              0.22222       0.67586       0.60093       
-sInd(Similarity index)                                            0.84287       0.52209       0.57508 
+sInd(Similarity index)                                            0.84287       0.52209       0.57508
 
 >>> cm.print_matrix()
 Predict          0    1    2    
@@ -322,6 +324,7 @@ AUNP                                                              0.66667
 AUNU                                                              0.66667
 Bennett S                                                         0.5
 CBA                                                               0.52381
+CSI                                                               0.52381
 Chi-Squared                                                       1.90476
 Chi-Squared DF                                                    1
 Conditional Entropy                                               0.34436
@@ -400,6 +403,7 @@ G(G-measure geometric mean of precision and sensitivity)          0.57735       
 GI(Gini index)                                                    0.33333       0.33333       
 GM(G-mean geometric mean of specificity and sensitivity)          0.57735       0.57735       
 IBA(Index of balanced accuracy)                                   0.11111       0.55556       
+ICSI(Individual classification success index)                     0.33333       0.71429       
 IS(Information score)                                             1.41504       0.19265       
 J(Jaccard index)                                                  0.33333       0.71429       
 LS(Lift score)                                                    2.66667       1.14286       
@@ -431,7 +435,7 @@ TP(True positive/hit)                                             1             
 TPR(Sensitivity, recall, hit rate, or true positive rate)         0.33333       1.0           
 Y(Youden index)                                                   0.33333       0.33333       
 dInd(Distance index)                                              0.66667       0.66667       
-sInd(Similarity index)                                            0.5286        0.5286           
+sInd(Similarity index)                                            0.5286        0.5286
    
 >>> cm2.stat(summary=True)
 Overall Statistics : 

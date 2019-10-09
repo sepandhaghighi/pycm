@@ -557,12 +557,10 @@ class ConfusionMatrix():
             param_u = param.upper()
             if param_u in CI_CLASS_LIST:
                 return __CI_class_handler__(self, param_u, CV, method)
-            elif param in CI_OVERALL_LIST:
+            if param in CI_OVERALL_LIST:
                 return __CI_overall_handler__(self, param, CV, method)
-            else:
-                raise pycmCIError(CI_SUPPORT_ERROR)
-        else:
-            raise pycmCIError(CI_FORMAT_ERROR)
+            raise pycmCIError(CI_SUPPORT_ERROR)
+        raise pycmCIError(CI_FORMAT_ERROR)
 
     def __repr__(self):
         """

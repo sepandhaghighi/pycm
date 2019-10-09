@@ -1,15 +1,16 @@
 FROM ubuntu:16.04
 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y --no-install-recommends \
   software-properties-common \
-  && \
-  rm -rf /var/lib/apt/lists/*
-RUN add-apt-repository ppa:jonathonf/python-3.6 && apt-get update
-RUN apt-get install -y \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
+RUN add-apt-repository ppa:jonathonf/python-3.6
+RUN apt-get update && apt-get install -y --no-install-recommends \
   git \
   python3.6-dev \
   python3-pip \
   sudo \
+  && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
 # Add user with valid passwrd

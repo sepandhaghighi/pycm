@@ -33,7 +33,7 @@ Please consider the following :
 	- Add this variable to `result` dictionary
 3. Update `__class_stat_init__` function in `pycm_obj.py` by a new attribute
 4. Update `PARAMS_DESCRIPTION` dictionary in `pycm_param.py` by a short description
-	- If you don't want capitalization, update `CAPITALIZE_FILTER` list in `pycm_param.py`
+	- If you don't want capitalization, update `CAPITALIZE_FILTER` list in `pycm_param.py` (*Optional*)
 5. Update `References` section in `Document.ipynb` and `README.md`
 6. Add description to `Class Statistics` section in `Document.ipynb`
 	- Cite reference
@@ -41,7 +41,7 @@ Please consider the following :
 	- Use `LaTeX` for formula
 7. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document tag (without `#`)
 8. Add tests to `overall_test.py` and `function_test.py` in `TEST` folder
-9. Run `autopep8.bat`/`autopep8.sh` (Optional, need to install latest version of `autopep8` package)
+9. Run `autopep8.bat`/`autopep8.sh` (*Optional*, need to install latest version of `autopep8` package)
 
 
 
@@ -59,7 +59,7 @@ Please consider the following :
 	- Use `LaTeX` for formula
 6. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document tag (without `#`)
 7. Add tests to `overall_test.py` and `function_test.py` in `TEST` folder
-8. Run `autopep8.bat`/`autopep8.sh` (Optional, need to install latest version of `autopep8` package)
+8. Run `autopep8.bat`/`autopep8.sh` (*Optional*, need to install latest version of `autopep8` package)
 
 
 ## Interpretation
@@ -77,4 +77,4 @@ Please consider the following :
 	- Step 2-6 [overall statistic](#overall-statistic)
 	- Update `OVERALL_BENCHMARK_SCORE_DICT` in `pycm_param.py`
 6. Add tests to `compare_test.py`, `overall_test.py` and `function_test.py` in `TEST` folder
-7. Run `autopep8.bat`/`autopep8.sh` (Optional, need to install latest version of `autopep8` package)
+7. Run `autopep8.bat`/`autopep8.sh` (*Optional*, need to install latest version of `autopep8` package)

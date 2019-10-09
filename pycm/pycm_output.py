@@ -3,7 +3,7 @@
 from __future__ import division
 from functools import partial
 from .pycm_param import *
-from .pycm_util import rounder
+from .pycm_util import rounder, sparse_table_calc
 import webbrowser
 
 
@@ -333,24 +333,7 @@ def sparse_table_print(classes, table):
     :type table:dict
     :return: printable table as str
     """
-    sparse_table = {}
-    for key in table:
-        sparse_table[key] = table[key].copy()
-    predict_classes = classes.copy()
-    actual_classes = classes.copy()
-    for x in classes:
-        row_sum = 0
-        col_sum = 0
-        for y in classes:
-            row_sum += table[x][y]
-            col_sum += table[y][x]
-        if row_sum == 0:
-            del sparse_table[x]
-            actual_classes.remove(x)
-        if col_sum == 0:
-            for row in actual_classes:
-                del sparse_table[row][x]
-            predict_classes.remove(x)
+    [sparse_table, predict_classes, actual_classes] = sparse_table_calc(classes, table)
     classes_len = len(predict_classes)
     table_list = []
     for key in actual_classes:

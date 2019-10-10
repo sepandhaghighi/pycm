@@ -3,7 +3,7 @@
 from __future__ import division
 from functools import partial
 from .pycm_param import *
-from .pycm_util import rounder, sparse_table_calc
+from .pycm_util import rounder
 import webbrowser
 
 

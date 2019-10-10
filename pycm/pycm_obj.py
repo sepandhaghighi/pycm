@@ -100,6 +100,7 @@ class ConfusionMatrix():
         self.binary = binary_check(self.classes)
         self.recommended_list = statistic_recommend(self.classes, self.P)
         self.sparse_matrix = None
+        self.sparse_normalized_matrix = None
 
     def print_matrix(self, one_vs_all=False, class_name=None, sparse=False):
         """
@@ -150,9 +151,9 @@ class ConfusionMatrix():
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
         table = normalized_table_calc(classes, table)
         if sparse is True:
-            if self.sparse_matrix is None:
-                self.sparse_matrix = sparse_matrix_calc(classes, table)
-            print(sparse_table_print(self.sparse_matrix))
+            if self.sparse_normalized_matrix is None:
+                self.sparse_normalized_matrix = sparse_matrix_calc(classes, table)
+            print(sparse_table_print(self.sparse_normalized_matrix))
         else:
             print(table_print(classes, table))
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
@@ -242,14 +243,18 @@ class ConfusionMatrix():
             if summary:
                 class_list = SUMMARY_CLASS
                 overall_list = SUMMARY_OVERALL
+            classes = self.classes
+            table = self.table
             file = open(name + ".pycm", "w", encoding="utf-8")
             if sparse is True:
                 if self.sparse_matrix is None:
                     self.sparse_matrix = sparse_matrix_calc(classes, table)
                 matrix = "Matrix : \n\n" + \
                     sparse_table_print(self.sparse_matrix) + "\n\n"
+                if self.sparse_normalized_matrix is None:
+                    self.sparse_normalized_matrix = sparse_matrix_calc(classes, table)
                 normalized_matrix = "Normalized Matrix : \n\n" + \
-                    sparse_table_print(self.sparse_matrix) + "\n\n"
+                    sparse_table_print(self.sparse_normalized_matrix) + "\n\n"
             else:
                 matrix = "Matrix : \n\n" + table_print(self.classes,
                                                        self.table) + "\n\n"

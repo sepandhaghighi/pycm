@@ -190,6 +190,37 @@ def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
         return [classes, table]
 
 
+def sparse_table_calc(classes, table):
+    """
+    Return sparse table matrix.
+
+    :param classes: classes list
+    :type classes:list
+    :param table: table
+    :type table:dict
+    :return: sparse table, new predict and actual classes as dict
+    """
+    sparse_table = {}
+    for key in table:
+        sparse_table[key] = table[key].copy()
+    predict_classes = classes.copy()
+    actual_classes = classes.copy()
+    for x in classes:
+        row_sum = 0
+        col_sum = 0
+        for y in classes:
+            row_sum += table[x][y]
+            col_sum += table[y][x]
+        if row_sum == 0:
+            del sparse_table[x]
+            actual_classes.remove(x)
+        if col_sum == 0:
+            for row in actual_classes:
+                del sparse_table[row][x]
+            predict_classes.remove(x)
+    return [sparse_table, predict_classes, actual_classes]
+
+
 def normalized_table_calc(classes, table):
     """
     Return normalized confusion matrix.

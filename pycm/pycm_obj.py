@@ -99,6 +99,7 @@ class ConfusionMatrix():
         self.imbalance = imbalance_check(self.P)
         self.binary = binary_check(self.classes)
         self.recommended_list = statistic_recommend(self.classes, self.P)
+        self.sparse_matrix = None
 
     def print_matrix(self, one_vs_all=False, class_name=None, sparse=False):
         """
@@ -118,7 +119,9 @@ class ConfusionMatrix():
             [classes, table] = one_vs_all_func(
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
         if sparse is True:
-            print(sparse_table_print(classes, table))
+            if self.sparse_matrix is None:
+                self.sparse_matrix = sparse_matrix_calc(classes, table)
+            print(sparse_table_print(self.sparse_matrix))
         else:
             print(table_print(classes, table))
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
@@ -147,7 +150,9 @@ class ConfusionMatrix():
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
         table = normalized_table_calc(classes, table)
         if sparse is True:
-            print(sparse_table_print(classes, table))
+            if self.sparse_matrix is None:
+                self.sparse_matrix = sparse_matrix_calc(classes, table)
+            print(sparse_table_print(self.sparse_matrix))
         else:
             print(table_print(classes, table))
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
@@ -239,10 +244,12 @@ class ConfusionMatrix():
                 overall_list = SUMMARY_OVERALL
             file = open(name + ".pycm", "w", encoding="utf-8")
             if sparse is True:
+                if self.sparse_matrix is None:
+                    self.sparse_matrix = sparse_matrix_calc(classes, table)
                 matrix = "Matrix : \n\n" + \
-                    sparse_table_print(self.classes, self.table) + "\n\n"
+                    sparse_table_print(self.sparse_matrix) + "\n\n"
                 normalized_matrix = "Normalized Matrix : \n\n" + \
-                    sparse_table_print(self.classes, self.normalized_table) + "\n\n"
+                    sparse_table_print(self.sparse_matrix) + "\n\n"
             else:
                 matrix = "Matrix : \n\n" + table_print(self.classes,
                                                        self.table) + "\n\n"

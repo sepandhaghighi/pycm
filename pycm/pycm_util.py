@@ -211,6 +211,37 @@ def normalized_table_calc(classes, table):
     return new_table
 
 
+def sparse_matrix_calc(classes, table):
+    """
+    Return sparse confusion table and it's classes.
+
+    :param classes: classes list
+    :type classes:list
+    :param table: table
+    :type table:dict
+    :return: a list containing 3 dicts(sparse_table, actual_classes, predict_classes)
+    """
+    sparse_table = {}
+    for key in table:
+        sparse_table[key] = table[key].copy()
+    predict_classes = classes.copy()
+    actual_classes = classes.copy()
+    for x in classes:
+        row_sum = 0
+        col_sum = 0
+        for y in classes:
+            row_sum += table[x][y]
+            col_sum += table[y][x]
+        if row_sum == 0:
+            del sparse_table[x]
+            actual_classes.remove(x)
+        if col_sum == 0:
+            for row in actual_classes:
+                del sparse_table[row][x]
+            predict_classes.remove(x)
+    return [sparse_table, actual_classes, predict_classes]
+
+
 def transpose_func(classes, table):
     """
     Transpose table.

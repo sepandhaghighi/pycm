@@ -323,7 +323,7 @@ def table_print(classes, table):
     return result
 
 
-def sparse_table_print(classes, table):
+def sparse_table_print(sparse_matrix):
     """
     Return printable confusion matrix in sparse mode when there are too many zeros.
 
@@ -333,24 +333,7 @@ def sparse_table_print(classes, table):
     :type table:dict
     :return: printable table as str
     """
-    sparse_table = {}
-    for key in table:
-        sparse_table[key] = table[key].copy()
-    predict_classes = classes.copy()
-    actual_classes = classes.copy()
-    for x in classes:
-        row_sum = 0
-        col_sum = 0
-        for y in classes:
-            row_sum += table[x][y]
-            col_sum += table[y][x]
-        if row_sum == 0:
-            del sparse_table[x]
-            actual_classes.remove(x)
-        if col_sum == 0:
-            for row in actual_classes:
-                del sparse_table[row][x]
-            predict_classes.remove(x)
+    [sparse_table, actual_classes, predict_classes] = sparse_matrix
     classes_len = len(predict_classes)
     table_list = []
     for key in actual_classes:

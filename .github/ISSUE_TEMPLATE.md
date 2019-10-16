@@ -10,4 +10,4 @@
 
 #### Python Version
 
-#### PyCM Version
+#### PyCM Version (Use : `pycm.__version__`)

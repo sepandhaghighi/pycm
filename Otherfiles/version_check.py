@@ -4,7 +4,7 @@ import os
 import sys
 import codecs
 Failed = 0
-VERSION = "2.4"
+PYCM_VERSION = "2.5"
 
 
 SETUP_ITEMS = [
@@ -24,7 +24,7 @@ DOCUMENT_ITEMS = [
     "pip install pycm=={0}",
     "pip3 install pycm=={0}"]
 HTML_ITEMS = ["Version {0}"]
-PARAMS_ITEMS = ['VERSION = "{0}"']
+PARAMS_ITEMS = ['PYCM_VERSION = "{0}"']
 FILES = {
     "setup.py": SETUP_ITEMS, "README.md": README_ITEMS, "CHANGELOG.md": CHANGELOG_ITEMS, os.path.join(
         "Document", "Document.ipynb"): DOCUMENT_ITEMS, os.path.join(
@@ -59,7 +59,7 @@ if __name__ == "__main__":
             file_content = codecs.open(
                 file_name, "r", "utf-8", 'ignore').read()
             for test_item in FILES[file_name]:
-                if file_content.find(test_item.format(VERSION)) == -1:
+                if file_content.find(test_item.format(PYCM_VERSION)) == -1:
                     print("Incorrect version tag in " + file_name)
                     Failed += 1
                     break

@@ -17,7 +17,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at
 data scientists that need a broad array of metrics for predictive models
 and an accurate evaluation of large variety of classifiers.
 <BLANKLINE>
-If you use PyCM in your research, please cite this paper :
+If you use PyCM in your research, we would appreciate citations to the following paper :
 <BLANKLINE>
 https://doi.org/10.21105/joss.00729
 <BLANKLINE>
@@ -68,9 +68,25 @@ True
 'None'
 >>> DF_calc(2)
 'None'
->>> kappa_se_calc(2, 1, 2)
+>>> kappa_SE_calc(2, 1, 2)
 'None'
 >>> CI_calc(23, "None", CV=1.96)
+('None', 'None')
+>>> CI_calc_agresti("None",20,CV=1.96)
+('None', 'None')
+>>> CI_calc_wilson(200,0,CV=1.96)
+('None', 'None')
+>>> CI_calc_wilson(200,"None",CV=1.96)
+('None', 'None')
+>>> AUC_SE_calc(0.52, 0, 0)
+'None'
+>>> AUC_SE_calc("None", 40, 42)
+'None'
+>>> LR_SE_calc(0, 0, 0, 0)
+'None'
+>>> LR_SE_calc(0, 20, 2, 21)
+'None'
+>>> LR_CI_calc("None", 0.5, CV=1.96)
 ('None', 'None')
 >>> PC_S_calc([])
 'None'
@@ -272,7 +288,7 @@ True
 >>> DF=DF_calc(cm2.classes)
 >>> DF
 4
->>> SE=se_calc(cm2.Overall_ACC,population)
+>>> SE=SE_calc(cm2.Overall_ACC,population)
 >>> SE
 0.09072184232530289
 >>> CI=CI_calc(cm2.Overall_ACC,SE)
@@ -313,7 +329,7 @@ True
 >>> cm3=ConfusionMatrix(matrix=cm2.table)
 >>> cm3
 pycm.ConfusionMatrix(classes: [0, 1, 2])
->>> cm3.CI
+>>> cm3.CI95
 (0.48885185570907297, 0.8444814776242603)
 >>> cm3.Chi_Squared
 15.525641025641026
@@ -360,102 +376,104 @@ Example : online_help("J") or online_help(2)
 14-Bennett S
 15-CBA
 16-CEN
-17-Chi-Squared
-18-Chi-Squared DF
-19-Conditional Entropy
-20-Cramer V
-21-Cross Entropy
-22-DOR
-23-DP
-24-DPI
-25-ERR
-26-F0.5
-27-F1
-28-F1 Macro
-29-F1 Micro
-30-F2
-31-FDR
-32-FN
-33-FNR
-34-FOR
-35-FP
-36-FPR
-37-G
-38-GI
-39-GM
-40-Gwet AC1
-41-Hamming Loss
-42-IBA
-43-IS
-44-J
-45-Joint Entropy
-46-KL Divergence
-47-Kappa
-48-Kappa 95% CI
-49-Kappa No Prevalence
-50-Kappa Standard Error
-51-Kappa Unbiased
-52-LS
-53-Lambda A
-54-Lambda B
-55-MCC
-56-MCCI
-57-MCEN
-58-MK
-59-Mutual Information
-60-N
-61-NIR
-62-NLR
-63-NLRI
-64-NPV
-65-OC
-66-OOC
-67-OP
-68-Overall ACC
-69-Overall CEN
-70-Overall J
-71-Overall MCC
-72-Overall MCEN
-73-Overall RACC
-74-Overall RACCU
-75-P
-76-P-Value
-77-PLR
-78-PLRI
-79-POP
-80-PPV
-81-PPV Macro
-82-PPV Micro
-83-PRE
-84-Pearson C
-85-Phi-Squared
-86-Q
-87-RACC
-88-RACCU
-89-RCI
-90-RR
-91-Reference Entropy
-92-Response Entropy
-93-SOA1(Landis & Koch)
-94-SOA2(Fleiss)
-95-SOA3(Altman)
-96-SOA4(Cicchetti)
-97-SOA5(Cramer)
-98-SOA6(Matthews)
-99-Scott PI
-100-Standard Error
-101-TN
-102-TNR
-103-TON
-104-TOP
-105-TP
-106-TPR
-107-TPR Macro
-108-TPR Micro
-109-Y
-110-Zero-one Loss
-111-dInd
-112-sInd
+17-CSI
+18-Chi-Squared
+19-Chi-Squared DF
+20-Conditional Entropy
+21-Cramer V
+22-Cross Entropy
+23-DOR
+24-DP
+25-DPI
+26-ERR
+27-F0.5
+28-F1
+29-F1 Macro
+30-F1 Micro
+31-F2
+32-FDR
+33-FN
+34-FNR
+35-FOR
+36-FP
+37-FPR
+38-G
+39-GI
+40-GM
+41-Gwet AC1
+42-Hamming Loss
+43-IBA
+44-ICSI
+45-IS
+46-J
+47-Joint Entropy
+48-KL Divergence
+49-Kappa
+50-Kappa 95% CI
+51-Kappa No Prevalence
+52-Kappa Standard Error
+53-Kappa Unbiased
+54-LS
+55-Lambda A
+56-Lambda B
+57-MCC
+58-MCCI
+59-MCEN
+60-MK
+61-Mutual Information
+62-N
+63-NIR
+64-NLR
+65-NLRI
+66-NPV
+67-OC
+68-OOC
+69-OP
+70-Overall ACC
+71-Overall CEN
+72-Overall J
+73-Overall MCC
+74-Overall MCEN
+75-Overall RACC
+76-Overall RACCU
+77-P
+78-P-Value
+79-PLR
+80-PLRI
+81-POP
+82-PPV
+83-PPV Macro
+84-PPV Micro
+85-PRE
+86-Pearson C
+87-Phi-Squared
+88-Q
+89-RACC
+90-RACCU
+91-RCI
+92-RR
+93-Reference Entropy
+94-Response Entropy
+95-SOA1(Landis & Koch)
+96-SOA2(Fleiss)
+97-SOA3(Altman)
+98-SOA4(Cicchetti)
+99-SOA5(Cramer)
+100-SOA6(Matthews)
+101-Scott PI
+102-Standard Error
+103-TN
+104-TNR
+105-TON
+106-TOP
+107-TP
+108-TPR
+109-TPR Macro
+110-TPR Micro
+111-Y
+112-Zero-one Loss
+113-dInd
+114-sInd
 >>> online_help("J")
 ...
 >>> online_help("J",alt_link=True)
@@ -529,7 +547,7 @@ Example : online_help("J") or online_help(2)
 >>> cm.BCD[1]
 0.0630841121495327
 >>> cm = ConfusionMatrix(matrix={1:{1:9,2:3,3:0},2:{1:3,2:5,3:1},3:{1:1,2:1,3:4}}) # Verified Case
->>> cm.CI
+>>> cm.CI95
 (0.48885185570907297, 0.8444814776242603)
 >>> cm.SE
 0.09072184232530289
@@ -632,4 +650,110 @@ True
 0.7777777777777778
 >>> cm.TI(alpha=2,beta=8)[0]
 0.8064516129032258
+>>> cm = ConfusionMatrix(matrix={1:{1:22,0:54},0:{1:1,0:57}},transpose=True) # Verified Case
+>>> cm.TPR[1]
+0.9565217391304348
+>>> cm.CI("TPR",0.05)[1][1][0]
+0.8731774862637585
+>>> cm.CI("TPR",0.05)[1][1][1]
+1.0398659919971112
+>>> cm.CI("TNR",0.05)[1][1][0]
+0.4205300089203393
+>>> cm.CI("TNR",0.05)[1][1][1]
+0.6064970181066877
+>>> cm.CI("PPV",0.05)[1][1][0]
+0.18751037940411688
+>>> cm.CI("PPV",0.05)[1][1][1]
+0.3914369890169358
+>>> cm.CI("NPV",0.05)[1][1][0]
+0.9492581037307116
+>>> cm.CI("NPV",0.05)[1][1][1]
+1.0162591376485988
+>>> cm.CI("Overall ACC",0.05)[1] == cm.CI95
+True
+>>> cm.CI("Kappa",0.05)[1]==cm.Kappa_CI
+True
+>>> cm.CI("TPR",0.01)[1][1][1]
+1.0660599000409237
+>>> cm.CI("TPR",0.01)[1][1][0]
+0.8469835782199459
+>>> cm.CI("TPR",0.02)[1][1][0]
+0.8576142227182464
+>>> cm.CI("TPR",0.02)[1][1][1]
+1.0554292555426232
+>>> cm.CI("TPR",0.1)[1][1][0]
+0.8865720983316171
+>>> cm.CI("TPR",0.1)[1][1][1]
+1.0264713799292524
+>>> cm.PLR[1]
+1.966183574879227
+>>> cm.NLR[1]
+0.08466819221967958
+>>> cm.CI("PLR")[1][1][1]
+2.425775129875753
+>>> cm.CI("PLR")[1][1][0]
+1.5936670314213608
+>>> cm.CI("NLR")[1][1][0]
+0.012345468067066089
+>>> cm.CI("NLR")[1][1][1]
+0.5806748464136811
+>>> cm.CI("PLR",0.01)[1][1][1]
+2.591323998732794
+>>> cm.CI("PLR",0.01)[1][1][0]
+1.4918542999699553
+>>> cm.CI("TPR",alpha=0.05,one_sided=True)[1][1][1]
+1.0264713799292524
+>>> cm.CI("TPR",alpha=0.1,one_sided=True)[1][1][1]
+1.0109506389617338
+>>> cm.CI("TPR",alpha=0.01,one_sided=True)[1][1][1]
+1.0554292555426232
+>>> cm.CI("TPR",alpha=0.005,one_sided=True)[1][1][1]
+1.0660599000409237
+>>> cm.CI("TPR",alpha=0.001,one_sided=True)[1][1][1]
+1.0879165051294297
+>>> cm.CI("TPR",alpha=0.0005,one_sided=True)[1][1][1]
+1.0964210207280702
+>>> cm.CI("ACC",alpha=0.05,one_sided=False)[1][1][1]
+0.6728424118161956
+>>> cm.CI("Overall ACC")[1][1] == cm.CI("ACC",alpha=0.05,one_sided=False)[1][1][1]
+True
+>>> cm.CI("FPR",0.05)[1][1][1]
+0.5794699910796607
+>>> cm.CI("FPR",0.05)[1][1][0]
+0.39350298189331234
+>>> cm.CI("FNR",0.05)[1][1][1]
+0.12682251373624154
+>>> cm.CI("FNR",0.05)[1][1][0]
+-0.039865991997111175
+>>> cm.CI("AUC")[1][1][0]
+0.6361359326673304
+>>> cm.CI("AUC")[1][1][1]
+0.8338993199766178
+>>> cm.CI("PRE")[1][1][0]
+0.10779717474937288
+>>> cm.CI("PRE")[1][1][1]
+0.23548640734017934
+>>> cm.CI("PRE",binom_method="wilson")[1][1][0]
+0.11718265287943842
+>>> cm.CI("PRE",binom_method="wilson")[1][1][1]
+0.2444033995169354
+>>> cm.CI("PRE",binom_method="agresti-coull")[1][1][0]
+0.11654591925873323
+>>> cm.CI("PRE",binom_method="agresti-coull")[1][1][1]
+0.2450401331376406
+>>> cm.CI("Overall ACC",binom_method="agresti-coull")[1][1]
+0.6692525441184717
+>>> cm.CI("Overall ACC",binom_method="agresti-coull")[1][0]
+0.5048603506825172
+>>> cm.CI("Overall ACC",binom_method="wilson")[1][1]
+0.6692157009292735
+>>> cm.CI("Overall ACC",binom_method="wilson")[1][0]
+0.5048971938717156
+>>> SE = AUC_SE_calc(0.88915,279,527) # Verified Case
+>>> SE
+0.011116012490627622
+>>> CI_calc(0.88915,SE)[0]
+0.8673626155183699
+>>> CI_calc(0.88915,SE)[1]
+0.9109373844816301
 """

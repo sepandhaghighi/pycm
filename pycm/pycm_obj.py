@@ -6,6 +6,7 @@ from .pycm_overall_func import overall_statistics
 from .pycm_output import *
 from .pycm_util import *
 from .pycm_param import *
+from .pycm_ci import __CI_overall_handler__, __CI_class_handler__
 import os
 import json
 import types
@@ -21,6 +22,12 @@ class pycmVectorError(Exception):
 
 class pycmMatrixError(Exception):
     """Matrix error class."""
+
+    pass
+
+
+class pycmCIError(Exception):
+    """CI error class."""
 
     pass
 
@@ -213,7 +220,7 @@ class ConfusionMatrix():
             if summary:
                 class_list = SUMMARY_CLASS
                 overall_list = SUMMARY_OVERALL
-            file = open(name + ".pycm", "w")
+            file = open(name + ".pycm", "w", encoding="utf-8")
             matrix = "Matrix : \n\n" + table_print(self.classes,
                                                    self.table) + "\n\n"
             normalized_matrix = "Normalized Matrix : \n\n" + \
@@ -295,7 +302,7 @@ class ConfusionMatrix():
             table = self.table
             if normalize:
                 table = self.normalized_table
-            html_file = open(name + ".html", "w")
+            html_file = open(name + ".html", "w", encoding="utf-8")
             html_file.write(html_init(name))
             html_file.write(html_dataset_type(self.binary, self.imbalance))
             html_file.write(html_table(self.classes, table, color, normalize))
@@ -315,7 +322,7 @@ class ConfusionMatrix():
                     class_list,
                     self.recommended_list,
                     alt_link))
-            html_file.write(html_end(VERSION))
+            html_file.write(html_end(PYCM_VERSION))
             html_file.close()
             if address:
                 message = os.path.join(
@@ -358,7 +365,7 @@ class ConfusionMatrix():
                 class_list = SUMMARY_CLASS
             message = None
             classes = class_filter(self.classes, class_name)
-            csv_file = open(name + ".csv", "w")
+            csv_file = open(name + ".csv", "w", encoding="utf-8")
             csv_data = csv_print(
                 classes,
                 self.class_stat,
@@ -488,6 +495,49 @@ class ConfusionMatrix():
             return TI_dict
         except Exception:
             return {}
+
+    def CI(
+            self,
+            param,
+            alpha=0.05,
+            one_sided=False,
+            binom_method="normal-approx"):
+        """
+        Calculate CI.
+
+        :param param: input parameter
+        :type param: str
+        :param alpha: type I error
+        :type alpha: float
+        :param one_sided: one-sided mode
+        :type one_sided: bool
+        :param binom_method: binomial confidence intervals method
+        :type binom_method: str
+        :return: CI
+        """
+        if isinstance(param, str):
+            method = "normal-approx"
+            if isinstance(binom_method, str):
+                method = binom_method.lower()
+            if one_sided:
+                if alpha in ALPHA_ONE_SIDE_TABLE.keys():
+                    CV = ALPHA_ONE_SIDE_TABLE[alpha]
+                else:
+                    CV = ALPHA_ONE_SIDE_TABLE[0.05]
+                    warn(CI_ALPHA_ONE_SIDE_WARNING, RuntimeWarning)
+            else:
+                if alpha in ALPHA_TWO_SIDE_TABLE.keys():
+                    CV = ALPHA_TWO_SIDE_TABLE[alpha]
+                else:
+                    CV = ALPHA_TWO_SIDE_TABLE[0.05]
+                    warn(CI_ALPHA_TWO_SIDE_WARNING, RuntimeWarning)
+            param_u = param.upper()
+            if param_u in CI_CLASS_LIST:
+                return __CI_class_handler__(self, param_u, CV, method)
+            if param in CI_OVERALL_LIST:
+                return __CI_overall_handler__(self, param, CV, method)
+            raise pycmCIError(CI_SUPPORT_ERROR)
+        raise pycmCIError(CI_FORMAT_ERROR)
 
     def __repr__(self):
         """
@@ -629,6 +679,7 @@ def __class_stat_init__(cm):
     cm.OC = cm.class_stat["OC"]
     cm.OOC = cm.class_stat["OOC"]
     cm.AUPR = cm.class_stat["AUPR"]
+    cm.ICSI = cm.class_stat["ICSI"]
 
 
 def __overall_stat_init__(cm):
@@ -666,7 +717,7 @@ def __overall_stat_init__(cm):
     cm.KappaNoPrevalence = cm.overall_stat["Kappa No Prevalence"]
     cm.V = cm.overall_stat["Cramer V"]
     cm.DF = cm.overall_stat["Chi-Squared DF"]
-    cm.CI = cm.overall_stat["95% CI"]
+    cm.CI95 = cm.overall_stat["95% CI"]
     cm.SE = cm.overall_stat["Standard Error"]
     cm.ReferenceEntropy = cm.overall_stat["Reference Entropy"]
     cm.ResponseEntropy = cm.overall_stat["Response Entropy"]
@@ -692,6 +743,7 @@ def __overall_stat_init__(cm):
     cm.C = cm.overall_stat["Pearson C"]
     cm.SOA5 = cm.overall_stat["SOA5(Cramer)"]
     cm.SOA6 = cm.overall_stat["SOA6(Matthews)"]
+    cm.CSI = cm.overall_stat["CSI"]
 
 
 def __obj_assign_handler__(cm, matrix_param):
@@ -738,7 +790,8 @@ def __obj_assign_handler__(cm, matrix_param):
         table=cm.table,
         CEN_dict=statistic_result["CEN"],
         MCEN_dict=statistic_result["MCEN"],
-        AUC_dict=statistic_result["AUC"])
+        AUC_dict=statistic_result["AUC"],
+        ICSI_dict=statistic_result["ICSI"])
 
 
 def __obj_file_handler__(cm, file):
@@ -831,8 +884,6 @@ def __obj_vector_handler__(
         raise pycmVectorError(VECTOR_SIZE_ERROR)
     if len(actual_vector) == 0 or len(predict_vector) == 0:
         raise pycmVectorError(VECTOR_EMPTY_ERROR)
-    [actual_vector, predict_vector] = vector_filter(
-        actual_vector, predict_vector)
     matrix_param = matrix_params_calc(
         actual_vector, predict_vector, sample_weight)
     if isinstance(sample_weight, (list, numpy.ndarray)):

@@ -5,6 +5,7 @@ import math
 import operator as op
 from functools import reduce
 from .pycm_interpret import *
+from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
 
 
 def pearson_C_calc(chi_square, POP):
@@ -588,63 +589,6 @@ def reliability_calc(RACC, ACC):
         return "None"
 
 
-def kappa_se_calc(PA, PE, POP):
-    """
-    Calculate kappa standard error.
-
-    :param PA: observed agreement among raters (overall accuracy)
-    :type PA : float
-    :param PE:  hypothetical probability of chance agreement (random accuracy)
-    :type PE : float
-    :param POP: population
-    :type POP:int
-    :return: kappa standard error as float
-    """
-    try:
-        result = math.sqrt((PA * (1 - PA)) / (POP * ((1 - PE)**2)))
-        return result
-    except Exception:
-        return "None"
-
-
-def CI_calc(mean, SE, CV=1.96):
-    """
-    Calculate confidence interval.
-
-    :param mean: mean of data
-    :type mean : float
-    :param SE: standard error of data
-    :type SE : float
-    :param CV: critical value
-    :type CV:float
-    :return: confidence interval as tuple
-    """
-    try:
-        CI_down = mean - CV * SE
-        CI_up = mean + CV * SE
-        return (CI_down, CI_up)
-    except Exception:
-        return ("None", "None")
-
-
-def se_calc(overall_accuracy, POP):
-    """
-    Calculate standard error with binomial distribution.
-
-    :param overall_accuracy: overall accuracy
-    :type  overall_accuracy : float
-    :type PE : float
-    :param POP: population
-    :type POP : int
-    :return: standard error as float
-    """
-    try:
-        return math.sqrt(
-            (overall_accuracy * (1 - overall_accuracy)) / POP)
-    except Exception:
-        return "None"
-
-
 def micro_calc(TP, item):
     """
     Calculate PPV_Micro and TPR_Micro.
@@ -801,6 +745,7 @@ def overall_statistics(
         CEN_dict,
         MCEN_dict,
         AUC_dict,
+        ICSI_dict,
         classes,
         table):
     """
@@ -832,6 +777,12 @@ def overall_statistics(
     :type jaccard_list : list
     :param CEN_dict: CEN dictionary for each class
     :type CEN_dict : dict
+    :param MCEN_dict: MCEN dictionary for each class
+    :type MCEN_dict : dict
+    :param AUC_dict: AUC dictionary for each class
+    :type AUC_dict : dict
+    :param ICSI_dict: ICSI dictionary for each class
+    :type ICSI_dict : dict
     :param classes: confusion matrix classes
     :type classes : list
     :param table: input matrix
@@ -849,7 +800,7 @@ def overall_statistics(
     PI = reliability_calc(PC_PI, overall_accuracy)
     AC1 = reliability_calc(PC_AC1, overall_accuracy)
     S = reliability_calc(PC_S, overall_accuracy)
-    kappa_SE = kappa_se_calc(
+    kappa_SE = kappa_SE_calc(
         overall_accuracy,
         overall_random_accuracy, population)
     kappa_unbiased = reliability_calc(
@@ -857,7 +808,7 @@ def overall_statistics(
         overall_accuracy)
     kappa_no_prevalence = kappa_no_prevalence_calc(overall_accuracy)
     kappa_CI = CI_calc(overall_kappa, kappa_SE)
-    overall_accuracy_se = se_calc(overall_accuracy, population)
+    overall_accuracy_se = SE_calc(overall_accuracy, population)
     overall_accuracy_CI = CI_calc(overall_accuracy, overall_accuracy_se)
     chi_squared = chi_square_calc(classes, table, TOP, P, POP)
     phi_squared = phi_square_calc(chi_squared, population)
@@ -889,6 +840,7 @@ def overall_statistics(
     RCI = RCI_calc(mutual_information, reference_entropy)
     C = pearson_C_calc(chi_squared, population)
     TPR_PPV_F1_micro = micro_calc(TP=TP, item=FN)
+    CSI = macro_calc(ICSI_dict)
     return {
         "Overall ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -942,4 +894,5 @@ def overall_statistics(
         "AUNU": AUNU,
         "AUNP": AUNP,
         "RCI": RCI,
-        "Pearson C": C}
+        "Pearson C": C,
+        "CSI": CSI}

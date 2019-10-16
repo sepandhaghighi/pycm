@@ -61,6 +61,7 @@ AUNP                                                              0.87121
 AUNU                                                              0.91212
 Bennett S                                                         0.74359
 CBA                                                               0.75
+CSI                                                               0.7
 Chi-Squared                                                       91.0
 Chi-Squared DF                                                    81
 Conditional Entropy                                               0.46154
@@ -139,6 +140,7 @@ G(G-measure geometric mean of precision and sensitivity)          1.0           
 GI(Gini index)                                                    1.0           0.91667       0.40909       0.5           1.0           0.5           1.0           0.91667       1.0           1.0
 GM(G-mean geometric mean of specificity and sensitivity)          1.0           0.95743       0.6742        0.70711       1.0           0.70711       1.0           0.95743       1.0           1.0
 IBA(Index of balanced accuracy)                                   1.0           0.99306       0.2686        0.25          1.0           0.25          1.0           0.99306       1.0           1.0
+ICSI(Individual classification success index)                     1.0           0.5           0.0           0.5           1.0           0.5           1.0           0.5           1.0           1.0
 IS(Information score)                                             3.70044       2.70044       1.70044       2.70044       3.70044       2.70044       3.70044       2.70044       3.70044       3.70044
 J(Jaccard index)                                                  1.0           0.5           0.33333       0.5           1.0           0.5           1.0           0.5           1.0           1.0
 LS(Lift score)                                                    13.0          6.5           3.25          6.5           13.0          6.5           13.0          6.5           13.0          13.0
@@ -208,6 +210,7 @@ AUNP                                                              0.87121
 AUNU                                                              0.91212
 Bennett S                                                         0.74359
 CBA                                                               0.75
+CSI                                                               0.7
 Chi-Squared                                                       91.0
 Chi-Squared DF                                                    81
 Conditional Entropy                                               0.46154
@@ -286,6 +289,7 @@ G(G-measure geometric mean of precision and sensitivity)          1.0           
 GI(Gini index)                                                    1.0           0.91667       0.40909       0.5           1.0           0.5           1.0           0.91667       1.0           1.0
 GM(G-mean geometric mean of specificity and sensitivity)          1.0           0.95743       0.6742        0.70711       1.0           0.70711       1.0           0.95743       1.0           1.0
 IBA(Index of balanced accuracy)                                   1.0           0.99306       0.2686        0.25          1.0           0.25          1.0           0.99306       1.0           1.0
+ICSI(Individual classification success index)                     1.0           0.5           0.0           0.5           1.0           0.5           1.0           0.5           1.0           1.0
 IS(Information score)                                             3.70044       2.70044       1.70044       2.70044       3.70044       2.70044       3.70044       2.70044       3.70044       3.70044
 J(Jaccard index)                                                  1.0           0.5           0.33333       0.5           1.0           0.5           1.0           0.5           1.0           1.0
 LS(Lift score)                                                    13.0          6.5           3.25          6.5           13.0          6.5           13.0          6.5           13.0          13.0
@@ -319,4 +323,11 @@ Y(Youden index)                                                   1.0           
 dInd(Distance index)                                              0.0           0.08333       0.5082        0.5           0.0           0.5           0.0           0.08333       0.0           0.0
 sInd(Similarity index)                                            1.0           0.94107       0.64065       0.64645       1.0           0.64645       1.0           0.94107       1.0           1.0
 <BLANKLINE>
+>>> cm = ConfusionMatrix(matrix={1:{1:22,0:54},0:{1:1,0:57}},transpose=True)
+>>> with warns(RuntimeWarning):
+...     cm.CI("TPR",alpha=2)[1][1][1]
+1.0398659919971112
+>>> with warns(RuntimeWarning):
+...     cm.CI("TPR",alpha=2,one_sided=True)[1][1][1]
+1.0264713799292524
 """

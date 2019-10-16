@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parameters and constants."""
-VERSION = "2.4"
+PYCM_VERSION = "2.5"
 
 
 OVERVIEW = '''
@@ -12,7 +12,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at
 data scientists that need a broad array of metrics for predictive models
 and an accurate evaluation of large variety of classifiers.
 
-If you use PyCM in your research, please cite this paper :
+If you use PyCM in your research, we would appreciate citations to the following paper :
 
 https://doi.org/10.21105/joss.00729
 
@@ -28,6 +28,7 @@ VECTOR_SIZE_ERROR = "Input vectors must have same length"
 VECTOR_EMPTY_ERROR = "Input vectors are empty"
 CLASS_NUMBER_ERROR = "Number of the classes is lower than 2"
 COMPARE_FORMAT_ERROR = "The input type is considered to be dictionary but it's not!"
+
 COMPARE_TYPE_ERROR = "The input is considered to consist of pycm.ConfusionMatrix object but it's not!"
 COMPARE_DOMAIN_ERROR = "The domain of all ConfusionMatrix objects must be same! The sample size or the number " \
                        "of classes are different."
@@ -74,6 +75,50 @@ SUMMARY_CLASS = [
     "TON"]
 
 BINARY_RECOMMEND = ["ACC", "TPR", "PPV", "AUC", "AUCI", "TNR", "F1"]
+
+CI_CLASS_LIST = [
+    "TPR",
+    "TNR",
+    "PPV",
+    "NPV",
+    "ACC",
+    "PLR",
+    "NLR",
+    "FPR",
+    "FNR",
+    "AUC",
+    "PRE"]
+
+CI_OVERALL_LIST = ["Kappa", "Overall ACC"]
+
+ALPHA_TWO_SIDE_TABLE = {
+    0.2: 1.28,
+    0.1: 1.645,
+    0.05: 1.96,
+    0.02: 2.326,
+    0.01: 2.576,
+    0.002: 3.09,
+    0.001: 3.29}
+
+ALPHA_ONE_SIDE_TABLE = {
+    0.1: 1.28,
+    0.05: 1.645,
+    0.01: 2.326,
+    0.005: 2.576,
+    0.001: 3.09,
+    0.0005: 3.29}
+
+CI_ALPHA_TWO_SIDE_WARNING = "The alpha value is invalid, automatically set to 0.05.\nSupported values (two-sided) : " + ",".join(
+    map(str, sorted(list(ALPHA_TWO_SIDE_TABLE.keys()))))
+
+CI_ALPHA_ONE_SIDE_WARNING = "The alpha value is invalid, automatically set to 0.05.\nSupported values (one-sided) : " + ",".join(
+    map(str, sorted(list(ALPHA_ONE_SIDE_TABLE.keys()))))
+
+CI_FORMAT_ERROR = "The input type is considered to be string but it's not!"
+
+CI_SUPPORT_ERROR = "CI calculation for this parameter is not supported on this version of pycm.\nSupported parameters : " + \
+    ",".join(CI_CLASS_LIST) + "," + ",".join(CI_OVERALL_LIST)
+
 
 MULTICLASS_RECOMMEND = [
     "ERR",
@@ -259,7 +304,8 @@ PARAMS_DESCRIPTION = {
     "AGF": "Adjusted F-score",
     "OC": "Overlap coefficient",
     "OOC": "Otsuka-Ochiai coefficient",
-    "AUPR": "Area under the PR curve"}
+    "AUPR": "Area under the PR curve",
+    "ICSI": "Individual classification success index"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -373,7 +419,9 @@ PARAMS_LINK = {
     "AGF": "AGF-(Adjusted-F-score)",
     "OC": "OC-(Overlap-coefficient)",
     "OOC": "OOC-(Otsuka-Ochiai-coefficient)",
-    "AUPR": "AUPR-(Area-under-the-PR-curve)"}
+    "AUPR": "AUPR-(Area-under-the-PR-curve)",
+    "ICSI": "ICSI-(Individual-classification-success-index)",
+    "CSI": "CSI-(Classification-success-index)"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC"]
 

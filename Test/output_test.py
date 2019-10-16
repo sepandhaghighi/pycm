@@ -126,6 +126,7 @@ AUNP                                                             None
 AUNU                                                             None
 Bennett S                                                        0.13333
 CBA                                                              0.17708
+CSI                                                              None
 Chi-Squared                                                      None
 Chi-Squared DF                                                   9
 Conditional Entropy                                              1.23579
@@ -204,6 +205,7 @@ G(G-measure geometric mean of precision and sensitivity)         None           
 GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
 GM(G-mean geometric mean of specificity and sensitivity)          None                    0.53033                 0.56011                 0.0
 IBA(Index of balanced accuracy)                                  None                    0.17578                 0.12303                 0.0
+ICSI(Individual classification success index)                    None                    0.23214                 -0.16667                None
 IS(Information score)                                            None                    0.09954                 1.73697                 None
 J(Jaccard index)                                                 0.0                     0.35294                 0.25                    0.0
 LS(Lift score)                                                   None                    1.07143                 3.33333                 None
@@ -298,6 +300,7 @@ AUNP                                                             0.7
 AUNU                                                             0.70556
 Bennett S                                                        0.42857
 CBA                                                              0.47778
+CSI                                                              0.17222
 Chi-Squared                                                      10.44167
 Chi-Squared DF                                                   4
 Conditional Entropy                                              0.96498
@@ -376,6 +379,7 @@ G(G-measure geometric mean of precision and sensitivity)         0.7746         
 GI(Gini index)                                                   0.73333                 0.22222                 0.27778
 GM(G-mean geometric mean of specificity and sensitivity)          0.85635                 0.54433                 0.62361
 IBA(Index of balanced accuracy)                                  0.92889                 0.13169                 0.28086
+ICSI(Individual classification success index)                    0.6                     -0.33333                0.25
 IS(Information score)                                            1.07039                 1.22239                 0.39232
 J(Jaccard index)                                                 0.6                     0.2                     0.42857
 LS(Lift score)                                                   2.1                     2.33333                 1.3125
@@ -460,6 +464,16 @@ True
 True
 >>> save_report = cp.save_report("/asdasd,qweqwe.eo/",address=False)
 >>> save_report == {'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.comp'"}
+True
+>>> cm = ConfusionMatrix(["¢ℓαѕѕ1","¢ℓαѕѕ2"],["¢ℓαѕѕ1","¢ℓαѕѕ2"])
+>>> save_stat_data = cm.save_stat("test")
+>>> save_stat_data["Status"]
+True
+>>> save_csv_data = cm.save_csv("test")
+>>> save_csv_data["Status"]
+True
+>>> save_html_data = cm.save_html("test")
+>>> save_html_data["Status"]
 True
 >>> os.remove("test.csv")
 >>> os.remove("test_matrix.csv")

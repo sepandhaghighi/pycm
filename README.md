@@ -9,6 +9,7 @@
 </a>
 <a href="https://badge.fury.io/py/pycm"><img src="https://badge.fury.io/py/pycm.svg" alt="PyPI version" height="18"></a>
 <a href="https://anaconda.org/sepandhaghighi/pycm"><img src="https://anaconda.org/sepandhaghighi/pycm/badges/version.svg"></a>
+<a href = "https://hub.docker.com/r/sepandhaghighi/pycm"><img alt="Docker Cloud Build Status" src="https://img.shields.io/docker/cloud/build/sepandhaghighi/pycm"></a>
 </div>
 
 ----------
@@ -97,7 +98,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ⚠️  PyCM 2.4 is the last version to support **Python 2.7** & **Python 3.4**
 
 ### Source code
-- Download [Version 2.4](https://github.com/sepandhaghighi/pycm/archive/v2.4.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 2.5](https://github.com/sepandhaghighi/pycm/archive/v2.5.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -105,7 +106,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==2.4` or `pip3 install pycm==2.4` (Need root access)
+- Run `pip install pycm==2.5` or `pip3 install pycm==2.5` (Need root access)
 
 ### Conda
 
@@ -115,6 +116,14 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ### Easy install
 
 - Run `easy_install --upgrade pycm` (Need root access)
+
+### Docker	
+
+- Run `docker pull sepandhaghighi/pycm` (Need root access)
+- Configuration :
+	- Ubuntu 16.04
+	- Python 3.6
+
 
 ## Usage
 
@@ -150,6 +159,7 @@ AUNP                                                              0.66667
 AUNU                                                              0.69444
 Bennett S                                                         0.375
 CBA                                                               0.47778
+CSI                                                               0.17778
 Chi-Squared                                                       6.6
 Chi-Squared DF                                                    4
 Conditional Entropy                                               0.95915
@@ -228,6 +238,7 @@ G(G-measure geometric mean of precision and sensitivity)          0.7746        
 GI(Gini index)                                                    0.77778       0.22222       0.16667       
 GM(G-mean geometric mean of specificity and sensitivity)          0.88192       0.54433       0.57735       
 IBA(Index of balanced accuracy)                                   0.95062       0.13169       0.27778       
+ICSI(Individual classification success index)                     0.6           -0.16667      0.1           
 IS(Information score)                                             1.26303       1.0           0.26303       
 J(Jaccard index)                                                  0.6           0.25          0.375         
 LS(Lift score)                                                    2.4           2.0           1.2           
@@ -259,7 +270,7 @@ TP(True positive/hit)                                             3             
 TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           0.33333       0.5           
 Y(Youden index)                                                   0.77778       0.22222       0.16667       
 dInd(Distance index)                                              0.22222       0.67586       0.60093       
-sInd(Similarity index)                                            0.84287       0.52209       0.57508 
+sInd(Similarity index)                                            0.84287       0.52209       0.57508
 
 >>> cm.print_matrix()
 Predict          0    1    2    
@@ -313,6 +324,7 @@ AUNP                                                              0.66667
 AUNU                                                              0.66667
 Bennett S                                                         0.5
 CBA                                                               0.52381
+CSI                                                               0.52381
 Chi-Squared                                                       1.90476
 Chi-Squared DF                                                    1
 Conditional Entropy                                               0.34436
@@ -391,6 +403,7 @@ G(G-measure geometric mean of precision and sensitivity)          0.57735       
 GI(Gini index)                                                    0.33333       0.33333       
 GM(G-mean geometric mean of specificity and sensitivity)          0.57735       0.57735       
 IBA(Index of balanced accuracy)                                   0.11111       0.55556       
+ICSI(Individual classification success index)                     0.33333       0.71429       
 IS(Information score)                                             1.41504       0.19265       
 J(Jaccard index)                                                  0.33333       0.71429       
 LS(Lift score)                                                    2.66667       1.14286       
@@ -422,7 +435,7 @@ TP(True positive/hit)                                             1             
 TPR(Sensitivity, recall, hit rate, or true positive rate)         0.33333       1.0           
 Y(Youden index)                                                   0.33333       0.33333       
 dInd(Distance index)                                              0.66667       0.66667       
-sInd(Similarity index)                                            0.5286        0.5286           
+sInd(Similarity index)                                            0.5286        0.5286
    
 >>> cm2.stat(summary=True)
 Overall Statistics : 
@@ -523,7 +536,7 @@ False
 
 ```	
 
-### Comapre
+### Compare
 
 In `version 2.0` a method for comparing several confusion matrices is introduced. This option is a combination of several overall and class-based benchmarks. Each of the benchmarks evaluates the performance of the classification algorithm from good to poor and give them a numeric score. The score of good performance is 1 and for the poor performance is 0.
 
@@ -738,11 +751,23 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>57- M. Kuhn, "Building predictive models in R using the caret package," Journal of statistical software, vol. 28, no. 5, pp. 1-26, 2008.</blockquote>
 
+<blockquote>58- V. Labatut and H. Cherifi, "Accuracy measures for the comparison of classifiers," arXiv preprint, 2012.</blockquote>
+
+<blockquote>59- S. Wallis, "Binomial confidence intervals and contingency tests: mathematical fundamentals and the evaluation of alternative methods," Journal of Quantitative Linguistics, vol. 20, no. 3, pp. 178-208, 2013.</blockquote>
+
+<blockquote>60- D. Altman, D. Machin, T. Bryant, and M. Gardner, Statistics with confidence: confidence intervals and statistical guidelines. John Wiley & Sons, 2013.</blockquote>
+
+<blockquote>61- J. A. Hanley and B. J. McNeil, "The meaning and use of the area under a receiver operating characteristic (ROC) curve," Radiology, vol. 143, no. 1, pp. 29-36, 1982.</blockquote>
+
+<blockquote>62- E. B. Wilson, "Probable inference, the law of succession, and statistical inference," Journal of the American Statistical Association, vol. 22, no. 158, pp. 209-212, 1927.</blockquote>
+
+<blockquote>63- A. Agresti and B. A. Coull, "Approximate is better than “exact” for interval estimation of binomial proportions," The American Statistician, vol. 52, no. 2, pp. 119-126, 1998.</blockquote>
+
 
 
 ## Cite
 
-If you use PyCM in your research, please cite this paper :
+If you use PyCM in your research, we would appreciate citations to the following paper :
 
 <pre>
 Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A. (2018). PyCM: Multiclass confusion matrix library in Python. Journal of Open Source Software, 3(25), p.729.

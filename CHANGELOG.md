@@ -5,6 +5,30 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [2.5] - 2019-10-16
+### Added
+- Individual classification success index (ICSI)
+- Classification success index (CSI)
+- Example-8 (Confidence interval)
+- `install.sh`
+- `autopep8.sh`
+- Dockerfile
+- `CI` method (supported statistics : `ACC`,`AUC`,`Overall ACC`,`Kappa`,`TPR`,`TNR`,`PPV`,`NPV`,`PLR`,`NLR`,`PRE`)
+### Changed
+- `test.sh` moved to `.travis` folder
+- Python 3.4 support dropped
+- Python 2.7 support dropped
+- `AUTHORS.md` updated
+- `save_stat`,`save_csv` and `save_html` methods Non-ASCII character bug fixed
+- `CONTRIBUTING.md` updated
+- Example-3 updated
+- `README.md` modified
+- Document modified
+- `CI` attribute renamed to `CI95`
+- `kappa_se_calc` function renamed to `kappa_SE_calc`
+- `se_calc` function modified and renamed to `SE_calc`
+- CI/SE functions moved to `pycm_ci.py`
+- Minor bug in `save_html` method fixed
 ## [2.4] - 2019-07-31
 ### Added
 - Tversky index (TI)
@@ -410,7 +434,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v2.4...dev
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v2.5...dev
+[2.5]: https://github.com/sepandhaghighi/pycm/compare/v2.4...v2.5
 [2.4]: https://github.com/sepandhaghighi/pycm/compare/v2.3...v2.4
 [2.3]: https://github.com/sepandhaghighi/pycm/compare/v2.2...v2.3
 [2.2]: https://github.com/sepandhaghighi/pycm/compare/v2.1...v2.2

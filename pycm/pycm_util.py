@@ -119,6 +119,10 @@ def vector_filter(actual_vector, predict_vector):
     :type predict_vector : list
     :return: new actual and predict vector
     """
+    if isinstance(actual_vector, numpy.ndarray):
+        actual_vector = actual_vector.tolist()
+    if isinstance(predict_vector, numpy.ndarray):
+        predict_vector = predict_vector.tolist()
     temp = []
     temp.extend(actual_vector)
     temp.extend(predict_vector)
@@ -272,10 +276,8 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     :type sample_weight : list
     :return: [classes_list,table,TP,TN,FP,FN]
     """
-    if isinstance(actual_vector, numpy.ndarray):
-        actual_vector = actual_vector.tolist()
-    if isinstance(predict_vector, numpy.ndarray):
-        predict_vector = predict_vector.tolist()
+    [actual_vector, predict_vector] = vector_filter(
+        actual_vector, predict_vector)
     if isinstance(sample_weight, numpy.ndarray):
         sample_weight = sample_weight.tolist()
     classes = set(actual_vector).union(set(predict_vector))

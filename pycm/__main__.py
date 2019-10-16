@@ -20,9 +20,9 @@ if __name__ == "__main__":
             sys.exit(error_flag)
         else:
             tprint("pycm")
-            tprint("V:" + VERSION)
+            tprint("V:" + PYCM_VERSION)
             pycm_help()
     else:
         tprint("pycm")
-        tprint("V:" + VERSION)
+        tprint("V:" + PYCM_VERSION)
         pycm_help()

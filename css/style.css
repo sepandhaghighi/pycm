@@ -141,7 +141,7 @@ hr{
 .help {
     width: 80%;
     margin: auto;
-    font-size: 33px;
+    font-size: 28px;
     text-align: justify;
     font-size-adjust: auto;
     hyphens: auto;
@@ -150,7 +150,7 @@ hr{
 .main_text{
     width: 80%;
     margin: auto;
-    font-size: 33px;
+    font-size:28px;
     text-align: center;
     font-size-adjust: auto;
     hyphens: auto;
@@ -158,13 +158,13 @@ hr{
 .functions{
     width: 80%;
     margin: auto;
-    font-size: 33px;
+    font-size: 28px;
     text-align: center;
     font-size-adjust: auto;
     hyphens: auto;
 }
 .fomart-title{
-    font-size: 33px;
+    font-size: 28px;
 }
 .help h3{
     text-align: center;

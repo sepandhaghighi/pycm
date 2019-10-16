@@ -37,7 +37,20 @@
           <li><code>install.sh</code> added</li>
           <li><code>autopep8.sh</code> added</li>
           <li>Dockerfile added</li>
-          <li><code>CI</code> method added (supported statistics : <code>ACC</code>,<code>AUC</code>,<code>Overall ACC</code>,<code>Kappa</code>,<code>TPR</code>,<code>TNR</code>,<code>PPV</code>,<code>NPV</code>,<code>PLR</code>,<code>NLR</code>,<code>PRE</code>)</li>
+          <li><code>CI</code> method added
+              <ul>
+                  <li>ACC</li>
+                  <li>AUC</li>
+                  <li>Overall ACC</li>
+                  <li>Kappa</li>
+                  <li>TPR</li>
+                  <li>TNR</li>
+                  <li>PPV</li>
+                  <li>NPV</li>
+                  <li>PLR</li>
+                  <li>NLR</li>
+                  <li>PRE</li>
+              </ul>
           <li><code>test.sh</code> moved to <code>.travis</code> folder</li>
           <li>Python 3.4 support dropped</li>
           <li>Python 2.7 support dropped</li>
@@ -67,7 +80,7 @@
           <li><code>FUNDING.yml</code> added</li>
           <li><code>AUC_calc</code> function modified</li>
           <li>Document modified</li>
-          <li><code>summary</code> parameter added to <code>save_html</code>,<code>save_stat</code>,<code>save_csv</code> and <code>stat</code> methods</li>
+          <li><code>summary</code> parameter added to save and stat methods</li>
           <li><code>sample_weight</code> bug in <code>numpy</code> array format fixed</li>
           <li>Inputs manipulation bug fixed</li>
           <li>Test system modified</li>
@@ -149,11 +162,11 @@
           <li>Document modified </li>
           <li><code>stat_print</code> function bug fixed</li>
           <li><code>table_print</code> function bug fixed</li>
-          <li><code>Beta</code> parameter renamed to <code>beta</code> (<code>F_calc</code> function & <code>F_beta</code> method)</li>
+          <li><code>Beta</code> parameter renamed to <code>beta</code></li>
           <li>Parameters recommendation for imbalance dataset modified</li>
           <li><code>normalize</code> parameter added to <code>save_html</code> method</li>
-          <li><code>pycm_func.py</code> splitted into <code>pycm_class_func.py</code> and <code>pycm_overall_func.py</code></li>
-          <li><code>vector_filter</code>,<code>vector_check</code>,<code>class_check</code> and <code>matrix_check</code> functions moved to <code>pycm_util.py</code></li>
+          <li><code>pycm_func.py</code> splitted</li>
+          <li>filter and check functions moved to <code>pycm_util.py</code></li>
           <li><code>RACC_calc</code> and <code>RACCU_calc</code> functions exception handler modified</li>
           <li>Docstrings modified</li>
       </ul>
@@ -178,7 +191,7 @@
           <li><code>save_matrix</code> and <code>normalize</code> arguments added to <code>save_csv</code> method</li>
           <li><code>README.md</code> modified</li>
           <li>Document modified</li>
-          <li><code>ConfusionMatrix.__init__</code> optimized</li>
+          <li><code>__init__</code> optimized</li>
           <li>Document and examples output files moved to different folders</li>
           <li>Test system modified</li>
           <li><code>relabel</code> method bug fixed</li>
@@ -256,7 +269,7 @@
           <li><code>matrix</code> attribute added</li>
           <li><code>normalized_matrix</code> attribute added</li>
           <li><code>normalized_table</code> attribute added</li>
-          <li><code>Python 3.7</code> added to .travis.yml & appveyor.yml</li>
+          <li><code>Python 3.7</code> added to <code>.travis.yml</code> & <code>appveyor.yml</code></li>
           <li><code>README.md</code> modified</li>
           <li>Document modified</li>
           <li><code>LR+</code> renamed to <code>PLR</code></li>

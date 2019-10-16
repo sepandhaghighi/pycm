@@ -334,9 +334,12 @@ button {
 
     .main_text{
            width: 95%;
-        font-size: 22px;
+        font-size: 20px;
         text-align: center;
         hyphens: auto;
+    }
+    .note li{
+        font-size: 17px;
     }
     .pip{
         font-size: 20px;

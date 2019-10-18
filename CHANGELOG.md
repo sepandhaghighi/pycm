@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `sparse_normalized_matrix` attribute 
 ## [2.5] - 2019-10-09
 ### Added
+- `__version__` variable
 - Individual classification success index (ICSI)
 - Classification success index (CSI)
 - Example-8 (Confidence interval)
@@ -23,6 +24,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Python 2.7 support dropped
 - `AUTHORS.md` updated
 - `save_stat`,`save_csv` and `save_html` methods Non-ASCII character bug fixed
+- Mixed type input vectors bug fixed
 - `CONTRIBUTING.md` updated
 - Example-3 updated
 - `README.md` modified

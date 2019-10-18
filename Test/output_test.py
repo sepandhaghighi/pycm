@@ -273,107 +273,16 @@ Actual
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2, 0, 1, 0, 2, 1, 0, 0, 0, 1, 2, 4, 5]
 >>> y_pred = [2, 0, 2, 2, 0, 2, 2, 2, 2, 0, 0, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 2, 5, 3]
 >>> cm = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred)
+>>> cm.sparse_normalized_matrix
 >>> cm.sparse_matrix
->>> cm.sparse_normalized_matrix
->>> cm.print_matrix()
-Predict 0       1       2       3       4       5
-Actual
-0       8       0       0       0       0       0
-<BLANKLINE>
-1       3       0       3       0       0       0
-<BLANKLINE>
-2       0       0       8       0       0       0
-<BLANKLINE>
-3       0       0       0       0       0       0
-<BLANKLINE>
-4       0       0       0       0       0       1
-<BLANKLINE>
-5       0       0       0       1       0       0
-<BLANKLINE>
-<BLANKLINE>
->>> cm.print_matrix(sparse = True)
-Predict 0       2       3       5
-Actual
-0       8       0       0       0
-<BLANKLINE>
-1       3       3       0       0
-<BLANKLINE>
-2       0       8       0       0
-<BLANKLINE>
-4       0       0       0       1
-<BLANKLINE>
-5       0       0       1       0
-<BLANKLINE>
-<BLANKLINE>
->>> cm.sparse_matrix
-[{0: {0: 8, 2: 0, 3: 0, 5: 0}, 1: {0: 3, 2: 3, 3: 0, 5: 0}, 2: {0: 0, 2: 8, 3: 0, 5: 0}, 4: {0: 0, 2: 0, 3: 0, 5: 1}, 5: {0: 0, 2: 0, 3: 1, 5: 0}}, [0, 1, 2, 4, 5], [0, 2, 3, 5]]
->>> cm.print_matrix(sparse = True)
-Predict 0       2       3       5
-Actual
-0       8       0       0       0
-<BLANKLINE>
-1       3       3       0       0
-<BLANKLINE>
-2       0       8       0       0
-<BLANKLINE>
-4       0       0       0       1
-<BLANKLINE>
-5       0       0       1       0
-<BLANKLINE>
-<BLANKLINE>
->>> cm.sparse_normalized_matrix
->>> cm.print_normalized_matrix()
-Predict   0         1         2         3         4         5
-Actual
-0         1.0       0.0       0.0       0.0       0.0       0.0
-<BLANKLINE>
-1         0.5       0.0       0.5       0.0       0.0       0.0
-<BLANKLINE>
-2         0.0       0.0       1.0       0.0       0.0       0.0
-<BLANKLINE>
-3         0.0       0.0       0.0       0.0       0.0       0.0
-<BLANKLINE>
-4         0.0       0.0       0.0       0.0       0.0       1.0
-<BLANKLINE>
-5         0.0       0.0       0.0       1.0       0.0       0.0
-<BLANKLINE>
-<BLANKLINE>
->>> cm.print_normalized_matrix(sparse = True)
-Predict   0         2         3         5
-Actual
-0         1.0       0.0       0.0       0.0
-<BLANKLINE>
-1         0.5       0.5       0.0       0.0
-<BLANKLINE>
-2         0.0       1.0       0.0       0.0
-<BLANKLINE>
-4         0.0       0.0       0.0       1.0
-<BLANKLINE>
-5         0.0       0.0       1.0       0.0
-<BLANKLINE>
-<BLANKLINE>
->>> cm.sparse_normalized_matrix
-[{0: {0: 1.0, 2: 0.0, 3: 0.0, 5: 0.0}, 1: {0: 0.5, 2: 0.5, 3: 0.0, 5: 0.0}, 2: {0: 0.0, 2: 1.0, 3: 0.0, 5: 0.0}, 4: {0: 0.0, 2: 0.0, 3: 0.0, 5: 1.0}, 5: {0: 0.0, 2: 0.0, 3: 1.0, 5: 0.0}}, [0, 1, 2, 4, 5], [0, 2, 3, 5]]
->>> cm.print_normalized_matrix(sparse = True)
-Predict   0         2         3         5
-Actual
-0         1.0       0.0       0.0       0.0
-<BLANKLINE>
-1         0.5       0.5       0.0       0.0
-<BLANKLINE>
-2         0.0       1.0       0.0       0.0
-<BLANKLINE>
-4         0.0       0.0       0.0       1.0
-<BLANKLINE>
-5         0.0       0.0       1.0       0.0
-<BLANKLINE>
-<BLANKLINE>
 >>> save_stat_data = cm.save_stat("test", sparse = True)
 >>> save_stat_data['Status']
 True
->>> cm = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred)
 >>> cm.sparse_normalized_matrix
 >>> cm.sparse_matrix
+[{0: {0: 8, 2: 0, 3: 0, 5: 0}, 1: {0: 3, 2: 3, 3: 0, 5: 0}, 2: {0: 0, 2: 8, 3: 0, 5: 0}, 4: {0: 0, 2: 0, 3: 0, 5: 1}, 5: {0: 0, 2: 0, 3: 1, 5: 0}}, [0, 1, 2, 4, 5], [0, 2, 3, 5]]
+>>> cm.sparse_normalized_matrix
+[{0: {0: 1.0, 2: 0.0, 3: 0.0, 5: 0.0}, 1: {0: 0.5, 2: 0.5, 3: 0.0, 5: 0.0}, 2: {0: 0.0, 2: 1.0, 3: 0.0, 5: 0.0}, 4: {0: 0.0, 2: 0.0, 3: 0.0, 5: 1.0}, 5: {0: 0.0, 2: 0.0, 3: 1.0, 5: 0.0}}, [0, 1, 2, 4, 5], [0, 2, 3, 5]]
 >>> save_stat_data = cm.save_stat("test", sparse = True)
 >>> save_stat_data['Status']
 True

@@ -252,6 +252,7 @@ class ConfusionMatrix():
                 matrix = "Matrix : \n\n" + \
                     sparse_table_print(self.sparse_matrix) + "\n\n"
                 if self.sparse_normalized_matrix is None:
+                    table = normalized_table_calc(classes, table)
                     self.sparse_normalized_matrix = sparse_matrix_calc(classes, table)
                 normalized_matrix = "Normalized Matrix : \n\n" + \
                     sparse_table_print(self.sparse_normalized_matrix) + "\n\n"

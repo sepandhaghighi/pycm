@@ -5,10 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
 - `sparse_table_print` function
 - `sparse_matrix` attribute
 - `sparse_normalized_matrix` attribute 
-## [2.5] - 2019-10-09
+## [2.5] - 2019-10-16
 ### Added
 - `__version__` variable
 - Individual classification success index (ICSI)

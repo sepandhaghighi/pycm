@@ -99,8 +99,10 @@ class ConfusionMatrix():
         self.imbalance = imbalance_check(self.P)
         self.binary = binary_check(self.classes)
         self.recommended_list = statistic_recommend(self.classes, self.P)
+        self.sparse_matrix = None
+        self.sparse_normalized_matrix = None
 
-    def print_matrix(self, one_vs_all=False, class_name=None):
+    def print_matrix(self, one_vs_all=False, class_name=None, sparse=False):
         """
         Print confusion matrix.
 
@@ -108,6 +110,8 @@ class ConfusionMatrix():
         :type one_vs_all : bool
         :param class_name : target class name for One-Vs-All mode
         :type class_name : any valid type
+        :param sparse : sparse mode printing flag
+        :type sparse : bool
         :return: None
         """
         classes = self.classes
@@ -115,11 +119,20 @@ class ConfusionMatrix():
         if one_vs_all:
             [classes, table] = one_vs_all_func(
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
-        print(table_print(classes, table))
+        if sparse is True:
+            if self.sparse_matrix is None:
+                self.sparse_matrix = sparse_matrix_calc(classes, table)
+            print(sparse_table_print(self.sparse_matrix))
+        else:
+            print(table_print(classes, table))
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 
-    def print_normalized_matrix(self, one_vs_all=False, class_name=None):
+    def print_normalized_matrix(
+            self,
+            one_vs_all=False,
+            class_name=None,
+            sparse=False):
         """
         Print normalized confusion matrix.
 
@@ -127,6 +140,8 @@ class ConfusionMatrix():
         :type one_vs_all : bool
         :param class_name : target class name for One-Vs-All mode
         :type class_name : any valid type
+        :param sparse : sparse mode printing flag
+        :type sparse : bool
         :return: None
         """
         classes = self.classes
@@ -135,7 +150,12 @@ class ConfusionMatrix():
             [classes, table] = one_vs_all_func(
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
         table = normalized_table_calc(classes, table)
-        print(table_print(classes, table))
+        if sparse is True:
+            if self.sparse_normalized_matrix is None:
+                self.sparse_normalized_matrix = sparse_matrix_calc(classes, table)
+            print(sparse_table_print(self.sparse_normalized_matrix))
+        else:
+            print(table_print(classes, table))
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 
@@ -194,7 +214,8 @@ class ConfusionMatrix():
             overall_param=None,
             class_param=None,
             class_name=None,
-            summary=False):
+            summary=False,
+            sparse=False):
         """
         Save ConfusionMatrix in .pycm (flat file format).
 
@@ -210,6 +231,8 @@ class ConfusionMatrix():
         :type class_name : list
         :param summary : summary mode flag
         :type summary : bool
+        :param sparse : sparse mode printing flag
+        :type sparse : bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
         try:
@@ -220,12 +243,24 @@ class ConfusionMatrix():
             if summary:
                 class_list = SUMMARY_CLASS
                 overall_list = SUMMARY_OVERALL
+            classes = self.classes
+            table = self.table
             file = open(name + ".pycm", "w", encoding="utf-8")
-            matrix = "Matrix : \n\n" + table_print(self.classes,
-                                                   self.table) + "\n\n"
-            normalized_matrix = "Normalized Matrix : \n\n" + \
-                                table_print(self.classes,
-                                            self.normalized_table) + "\n\n"
+            if sparse is True:
+                if self.sparse_matrix is None:
+                    self.sparse_matrix = sparse_matrix_calc(classes, table)
+                matrix = "Matrix : \n\n" + \
+                    sparse_table_print(self.sparse_matrix) + "\n\n"
+                if self.sparse_normalized_matrix is None:
+                    self.sparse_normalized_matrix = sparse_matrix_calc(classes, self.normalized_table)
+                normalized_matrix = "Normalized Matrix : \n\n" + \
+                    sparse_table_print(self.sparse_normalized_matrix) + "\n\n"
+            else:
+                matrix = "Matrix : \n\n" + table_print(self.classes,
+                                                       self.table) + "\n\n"
+                normalized_matrix = "Normalized Matrix : \n\n" + \
+                                    table_print(self.classes,
+                                                self.normalized_table) + "\n\n"
             one_vs_all = "\nOne-Vs-All : \n\n"
             for c in self.classes:
                 one_vs_all += str(c) + "-Vs-All : \n\n"

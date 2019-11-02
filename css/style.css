@@ -338,6 +338,10 @@ button {
         text-align: center;
         hyphens: auto;
     }
+    .note{
+        padding-left: 0px;
+        display: table;
+    }
     .note li{
         font-size: 17px;
     }

@@ -39,6 +39,11 @@
     padding-left: 0px;
     display: table;
 }
+.note-index{
+    display: inline-block;
+    text-align: left;
+}
+
 .download{
     display: inline-block;
     text-align: left;

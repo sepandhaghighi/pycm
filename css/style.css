@@ -39,6 +39,10 @@
     padding-left: 0px;
     display: table;
 }
+.download{
+    display: inline-block;
+    text-align: left;
+}
 
 .justify{
     text-align: justify;
@@ -339,7 +343,7 @@ button {
         text-align: center;
         hyphens: auto;
     }
-    .note{
+    .download{
         padding-left: 0px;
         display: table;
     }

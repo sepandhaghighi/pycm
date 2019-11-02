@@ -36,7 +36,8 @@
 }
 .note{
     text-align: left;
-    display: inline-block;
+    padding-left: 0px;
+    display: table;
 }
 
 .justify{

@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `sparse_table_print` function
 - `sparse_matrix` attribute
 - `sparse_normalized_matrix` attribute 
+### Changed
+- Test system modified 
 ## [2.5] - 2019-10-16
 ### Added
 - `__version__` variable

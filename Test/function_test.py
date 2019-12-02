@@ -190,6 +190,8 @@ True
 {}
 >>> cm.F_beta(2)
 {}
+>>> cm.NB(2,3)
+{}
 >>> kappa_analysis_koch(-0.1)
 'Poor'
 >>> kappa_analysis_koch(0)
@@ -756,4 +758,13 @@ True
 0.8673626155183699
 >>> CI_calc(0.88915,SE)[1]
 0.9109373844816301
+>>> cm = ConfusionMatrix(matrix={1:{1:135,0:48},0:{0:2014,1:1067}}) # Verified Case
+>>> cm.TP[1]
+135
+>>> cm.FP[1]
+1067
+>>> cm.POP[1]
+3264
+>>> cm.NB(w=0.059)[1]
+0.022073223039215686
 """

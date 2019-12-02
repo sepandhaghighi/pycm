@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix module."""
 from __future__ import division
-from .pycm_class_func import class_statistics, F_calc, IBA_calc, TI_calc
+from .pycm_class_func import class_statistics, F_calc, IBA_calc, TI_calc, NB_calc
 from .pycm_overall_func import overall_statistics
 from .pycm_output import *
 from .pycm_util import *
@@ -528,6 +528,22 @@ class ConfusionMatrix():
                 TI_dict[i] = TI_calc(
                     self.TP[i], self.FP[i], self.FN[i], alpha, beta)
             return TI_dict
+        except Exception:
+            return {}
+
+    def NB(self, w):
+        """
+        Calculate Net benefit.
+
+        :param w: weight
+        :type w: float
+        :return: NB
+        """
+        try:
+            NB_dict = {}
+            for i in self.classes:
+                NB_dict[i] = NB_calc(self.TP[i],self.FP[i],self.POP[i],w)
+            return NB_dict
         except Exception:
             return {}
 

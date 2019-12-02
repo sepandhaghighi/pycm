@@ -190,7 +190,7 @@ True
 {}
 >>> cm.F_beta(2)
 {}
->>> cm.NB(2,3)
+>>> cm.NB(3)
 {}
 >>> kappa_analysis_koch(-0.1)
 'Poor'

@@ -6,9 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- `sparse_table_print` function
+- `sparse_table_print` method
 - `sparse_matrix` attribute
 - `sparse_normalized_matrix` attribute 
+- Net benefit (NB)
 ### Changed
 - Test system modified 
 ## [2.5] - 2019-10-16

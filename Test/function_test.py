@@ -168,6 +168,8 @@ False
 0.7428571428571429
 >>> TI_calc("None",0,0,0,0)
 'None'
+>>> NB_calc(1,2,4,"None")
+'None'
 >>> ERR_calc(None)
 'None'
 >>> ERR_calc(0.1)

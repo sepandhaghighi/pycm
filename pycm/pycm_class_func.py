@@ -20,7 +20,7 @@ def NB_calc(TP, FP, POP, w):
     :return: NB as float
     """
     try:
-        NB = (TP - w*FP)/POP
+        NB = (TP - w * FP) / POP
         return NB
     except (ZeroDivisionError, TypeError):
         return "None"

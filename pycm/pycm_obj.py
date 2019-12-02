@@ -152,7 +152,8 @@ class ConfusionMatrix():
         table = normalized_table_calc(classes, table)
         if sparse is True:
             if self.sparse_normalized_matrix is None:
-                self.sparse_normalized_matrix = sparse_matrix_calc(classes, table)
+                self.sparse_normalized_matrix = sparse_matrix_calc(
+                    classes, table)
             print(sparse_table_print(self.sparse_normalized_matrix))
         else:
             print(table_print(classes, table))
@@ -252,7 +253,8 @@ class ConfusionMatrix():
                 matrix = "Matrix : \n\n" + \
                     sparse_table_print(self.sparse_matrix) + "\n\n"
                 if self.sparse_normalized_matrix is None:
-                    self.sparse_normalized_matrix = sparse_matrix_calc(classes, self.normalized_table)
+                    self.sparse_normalized_matrix = sparse_matrix_calc(
+                        classes, self.normalized_table)
                 normalized_matrix = "Normalized Matrix : \n\n" + \
                     sparse_table_print(self.sparse_normalized_matrix) + "\n\n"
             else:
@@ -542,7 +544,7 @@ class ConfusionMatrix():
         try:
             NB_dict = {}
             for i in self.classes:
-                NB_dict[i] = NB_calc(self.TP[i],self.FP[i],self.POP[i],w)
+                NB_dict[i] = NB_calc(self.TP[i], self.FP[i], self.POP[i], w)
             return NB_dict
         except Exception:
             return {}

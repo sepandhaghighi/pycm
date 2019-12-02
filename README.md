@@ -763,6 +763,13 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>63- A. Agresti and B. A. Coull, "Approximate is better than “exact” for interval estimation of binomial proportions," The American Statistician, vol. 52, no. 2, pp. 119-126, 1998.</blockquote>
 
+<blockquote>64- Peirce C. S. (1884), The Numerical Measure of the Success of Predictions, “Science”, Vol. 4, No.93, pp. 453–454</blockquote>
+
+<blockquote>65-Steyerberg E. W., Van Calster B., Pencina M. J. (2011), Performance Measures for Prediction Models and Markers: Evaluation of Predictions and Classifications, “Revista Española de
+Cardiología”, 64(9), pp. 788–794.</blockquote>
+
+<blockquote>66- Vickers A. J., Elkin E. B. (2006), Decision curve analysis: a novel method for evaluating prediction models, “Medical Decision Making”, 26, pp. 565–574</blockquote>
+
 
 
 ## Cite

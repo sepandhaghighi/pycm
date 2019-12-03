@@ -27,6 +27,7 @@ class pycmCIError(Exception):
 
     pass
 
+
 def __class_stat_init__(cm):
     """
     Init individual class stat.

@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - handler functions moved to `pycm_handler.py`
 - verified tests references updated
 - Test system modified 
+- `CONTRIBUTING.md` updated
 ## [2.5] - 2019-10-16
 ### Added
 - `__version__` variable

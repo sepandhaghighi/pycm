@@ -31,7 +31,7 @@ Please consider the following :
 	- Define a new variable as a dictionary
 	- Call statistic function and store result in this variable
 	- Add this variable to `result` dictionary
-3. Update `__class_stat_init__` function in `pycm_obj.py` by a new attribute
+3. Update `__class_stat_init__` function in `pycm_handler.py` by a new attribute
 4. Update `PARAMS_DESCRIPTION` dictionary in `pycm_param.py` by a short description
 	- If you don't want capitalization, update `CAPITALIZE_FILTER` list in `pycm_param.py` (*Optional*)
 5. Update `References` section in `Document.ipynb` and `README.md`
@@ -51,7 +51,7 @@ Please consider the following :
 2. Update `overall_statistics` function in `pycm_class_func.py`
 	- Call statistic function and store result in a variable
 	- Add this variable to output
-3. Update `__overall_stat_init__` function in `pycm_obj.py` by a new attribute
+3. Update `__overall_stat_init__` function in `pycm_handler.py` by a new attribute
 4. Update `References` section in `Document.ipynb` and `README.md`
 5. Add description to `Overall Statistics` section in `Document.ipynb`
 	- Cite reference

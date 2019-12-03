@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix module."""
 from __future__ import division
-from .pycm_handler import pycmVectorError, pycmMatrixError, pycmCIError
+from .pycm_error import pycmVectorError, pycmMatrixError, pycmCIError
 from .pycm_handler import __class_stat_init__, __overall_stat_init__
 from .pycm_handler import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__
 from .pycm_class_func import F_calc, IBA_calc, TI_calc, NB_calc

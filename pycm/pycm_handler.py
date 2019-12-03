@@ -2,30 +2,13 @@
 """ConfusionMatrix handlers."""
 from __future__ import division
 from .pycm_class_func import class_statistics
+from .pycm_error import pycmVectorError, pycmMatrixError
 from .pycm_overall_func import overall_statistics
 from .pycm_util import *
 from .pycm_param import *
 import json
 import types
 import numpy
-
-
-class pycmVectorError(Exception):
-    """Vector error class."""
-
-    pass
-
-
-class pycmMatrixError(Exception):
-    """Matrix error class."""
-
-    pass
-
-
-class pycmCIError(Exception):
-    """CI error class."""
-
-    pass
 
 
 def __class_stat_init__(cm):

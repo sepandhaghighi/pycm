@@ -24,6 +24,136 @@ https://doi.org/10.21105/joss.00729
 <BLANKLINE>
 Repo : https://github.com/sepandhaghighi/pycm
 Webpage : https://www.pycm.ir
+>>> online_help(param=None)
+Please choose one parameter :
+<BLANKLINE>
+Example : online_help("J") or online_help(2)
+<BLANKLINE>
+1-95% CI
+2-ACC
+3-ACC Macro
+4-AGF
+5-AGM
+6-AM
+7-AUC
+8-AUCI
+9-AUNP
+10-AUNU
+11-AUPR
+12-BCD
+13-BM
+14-Bennett S
+15-CBA
+16-CEN
+17-CSI
+18-Chi-Squared
+19-Chi-Squared DF
+20-Conditional Entropy
+21-Cramer V
+22-Cross Entropy
+23-DOR
+24-DP
+25-DPI
+26-ERR
+27-F0.5
+28-F1
+29-F1 Macro
+30-F1 Micro
+31-F2
+32-FDR
+33-FN
+34-FNR
+35-FOR
+36-FP
+37-FPR
+38-G
+39-GI
+40-GM
+41-Gwet AC1
+42-Hamming Loss
+43-IBA
+44-ICSI
+45-IS
+46-J
+47-Joint Entropy
+48-KL Divergence
+49-Kappa
+50-Kappa 95% CI
+51-Kappa No Prevalence
+52-Kappa Standard Error
+53-Kappa Unbiased
+54-LS
+55-Lambda A
+56-Lambda B
+57-MCC
+58-MCCI
+59-MCEN
+60-MK
+61-Mutual Information
+62-N
+63-NIR
+64-NLR
+65-NLRI
+66-NPV
+67-OC
+68-OOC
+69-OP
+70-Overall ACC
+71-Overall CEN
+72-Overall J
+73-Overall MCC
+74-Overall MCEN
+75-Overall RACC
+76-Overall RACCU
+77-P
+78-P-Value
+79-PLR
+80-PLRI
+81-POP
+82-PPV
+83-PPV Macro
+84-PPV Micro
+85-PRE
+86-Pearson C
+87-Phi-Squared
+88-Q
+89-RACC
+90-RACCU
+91-RCI
+92-RR
+93-Reference Entropy
+94-Response Entropy
+95-SOA1(Landis & Koch)
+96-SOA2(Fleiss)
+97-SOA3(Altman)
+98-SOA4(Cicchetti)
+99-SOA5(Cramer)
+100-SOA6(Matthews)
+101-Scott PI
+102-Standard Error
+103-TN
+104-TNR
+105-TON
+106-TOP
+107-TP
+108-TPR
+109-TPR Macro
+110-TPR Micro
+111-Y
+112-Zero-one Loss
+113-dInd
+114-sInd
+>>> online_help("J")
+...
+>>> online_help("J",alt_link=True)
+...
+>>> online_help(4)
+...
+>>> from pycm.pycm_overall_func import *
+>>> from pycm.pycm_class_func import *
+>>> from pycm.pycm_ci import *
+>>> from pycm.pycm_interpret import *
+>>> from pycm.pycm_util import *
 >>> rounder((1,2,"None"), digit=5)
 '(1,2,None)'
 >>> one_vs_all_func([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, 3) == [[1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}]
@@ -359,129 +489,4 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 0.4
 >>> cm3.LambdaB
 0.35714285714285715
->>> online_help(param=None)
-Please choose one parameter :
-<BLANKLINE>
-Example : online_help("J") or online_help(2)
-<BLANKLINE>
-1-95% CI
-2-ACC
-3-ACC Macro
-4-AGF
-5-AGM
-6-AM
-7-AUC
-8-AUCI
-9-AUNP
-10-AUNU
-11-AUPR
-12-BCD
-13-BM
-14-Bennett S
-15-CBA
-16-CEN
-17-CSI
-18-Chi-Squared
-19-Chi-Squared DF
-20-Conditional Entropy
-21-Cramer V
-22-Cross Entropy
-23-DOR
-24-DP
-25-DPI
-26-ERR
-27-F0.5
-28-F1
-29-F1 Macro
-30-F1 Micro
-31-F2
-32-FDR
-33-FN
-34-FNR
-35-FOR
-36-FP
-37-FPR
-38-G
-39-GI
-40-GM
-41-Gwet AC1
-42-Hamming Loss
-43-IBA
-44-ICSI
-45-IS
-46-J
-47-Joint Entropy
-48-KL Divergence
-49-Kappa
-50-Kappa 95% CI
-51-Kappa No Prevalence
-52-Kappa Standard Error
-53-Kappa Unbiased
-54-LS
-55-Lambda A
-56-Lambda B
-57-MCC
-58-MCCI
-59-MCEN
-60-MK
-61-Mutual Information
-62-N
-63-NIR
-64-NLR
-65-NLRI
-66-NPV
-67-OC
-68-OOC
-69-OP
-70-Overall ACC
-71-Overall CEN
-72-Overall J
-73-Overall MCC
-74-Overall MCEN
-75-Overall RACC
-76-Overall RACCU
-77-P
-78-P-Value
-79-PLR
-80-PLRI
-81-POP
-82-PPV
-83-PPV Macro
-84-PPV Micro
-85-PRE
-86-Pearson C
-87-Phi-Squared
-88-Q
-89-RACC
-90-RACCU
-91-RCI
-92-RR
-93-Reference Entropy
-94-Response Entropy
-95-SOA1(Landis & Koch)
-96-SOA2(Fleiss)
-97-SOA3(Altman)
-98-SOA4(Cicchetti)
-99-SOA5(Cramer)
-100-SOA6(Matthews)
-101-Scott PI
-102-Standard Error
-103-TN
-104-TNR
-105-TON
-106-TOP
-107-TP
-108-TPR
-109-TPR Macro
-110-TPR Micro
-111-Y
-112-Zero-one Loss
-113-dInd
-114-sInd
->>> online_help("J")
-...
->>> online_help("J",alt_link=True)
-...
->>> online_help(4)
-...
 """

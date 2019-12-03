@@ -650,3 +650,4 @@ class ConfusionMatrix():
         self.FP = self.class_stat["FP"]
         self.FN = self.class_stat["FN"]
         __class_stat_init__(self)
+        

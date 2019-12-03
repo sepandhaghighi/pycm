@@ -11,10 +11,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Net benefit (NB)
 ### Changed
 - `sparse` parameter added to `print_matrix`,`print_normalized_matrix` and `save_stat` methods
-- handler functions moved to `pycm_handler.py`
-- verified tests references updated
+- Handler functions moved to `pycm_handler.py`
+- Error objects moved to `pycm_error.py`
+- Verified tests references updated
 - Test system modified 
 - `CONTRIBUTING.md` updated
+- Namespace optimized
 ## [2.5] - 2019-10-16
 ### Added
 - `__version__` variable

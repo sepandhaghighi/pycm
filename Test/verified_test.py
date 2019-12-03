@@ -2,7 +2,7 @@
 """
 >>> from pycm import *
 >>> from pycm.pycm_overall_func import NIR_calc
->>> from pycm.pycm_ci import AUC_SE_calc
+>>> from pycm.pycm_ci import AUC_SE_calc,CI_calc
 >>> NIR_calc({'Class2': 804, 'Class1': 196},1000) # Verified Case - (Caret package)
 0.804
 >>> cm = ConfusionMatrix(matrix={0:{0:3,1:1},1:{0:4,1:2}})   # Verified Case - (https://bit.ly/2DHQvjn)

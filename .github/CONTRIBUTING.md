@@ -41,6 +41,7 @@ Please consider the following :
 	- Use `LaTeX` for formula
 7. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document tag (without `#`)
 8. Add tests to `overall_test.py` and `function_test.py` in `TEST` folder
+	- If you have any verified test add them to `verified_test.py`
 9. Run `autopep8.bat`/`autopep8.sh` (*Optional*, need to install latest version of `autopep8` package)
 
 
@@ -59,6 +60,7 @@ Please consider the following :
 	- Use `LaTeX` for formula
 6. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document tag (without `#`)
 7. Add tests to `overall_test.py` and `function_test.py` in `TEST` folder
+	- If you have any verified test add them to `verified_test.py`
 8. Run `autopep8.bat`/`autopep8.sh` (*Optional*, need to install latest version of `autopep8` package)
 
 
@@ -77,4 +79,5 @@ Please consider the following :
 	- Step 2-6 [overall statistic](#overall-statistic)
 	- Update `OVERALL_BENCHMARK_SCORE_DICT` in `pycm_param.py`
 6. Add tests to `compare_test.py`, `overall_test.py` and `function_test.py` in `TEST` folder
+	- If you have any verified test add them to `verified_test.py`
 7. Run `autopep8.bat`/`autopep8.sh` (*Optional*, need to install latest version of `autopep8` package)

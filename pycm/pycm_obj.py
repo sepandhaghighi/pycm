@@ -516,7 +516,7 @@ class ConfusionMatrix():
         except Exception:
             return {}
 
-    def NB(self, w):
+    def NB(self, w=1):
         """
         Calculate Net benefit.
 

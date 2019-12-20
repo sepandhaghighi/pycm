@@ -1,4 +1,4 @@
-art==4.2
+art==4.3
 numpy==1.17.4
 codecov>=2.0.15
 pytest>=4.3.1

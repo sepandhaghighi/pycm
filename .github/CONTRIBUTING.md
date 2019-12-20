@@ -31,7 +31,7 @@ Please consider the following :
 	- Define a new variable as a dictionary
 	- Call statistic function and store result in this variable
 	- Add this variable to `result` dictionary
-3. Update `__class_stat_init__` function in `pycm_obj.py` by a new attribute
+3. Update `__class_stat_init__` function in `pycm_handler.py` by a new attribute
 4. Update `PARAMS_DESCRIPTION` dictionary in `pycm_param.py` by a short description
 	- If you don't want capitalization, update `CAPITALIZE_FILTER` list in `pycm_param.py` (*Optional*)
 5. Update `References` section in `Document.ipynb` and `README.md`
@@ -41,6 +41,7 @@ Please consider the following :
 	- Use `LaTeX` for formula
 7. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document tag (without `#`)
 8. Add tests to `overall_test.py` and `function_test.py` in `TEST` folder
+	- If you have any verified test add them to `verified_test.py`
 9. Run `autopep8.bat`/`autopep8.sh` (*Optional*, need to install latest version of `autopep8` package)
 
 
@@ -51,7 +52,7 @@ Please consider the following :
 2. Update `overall_statistics` function in `pycm_class_func.py`
 	- Call statistic function and store result in a variable
 	- Add this variable to output
-3. Update `__overall_stat_init__` function in `pycm_obj.py` by a new attribute
+3. Update `__overall_stat_init__` function in `pycm_handler.py` by a new attribute
 4. Update `References` section in `Document.ipynb` and `README.md`
 5. Add description to `Overall Statistics` section in `Document.ipynb`
 	- Cite reference
@@ -59,6 +60,7 @@ Please consider the following :
 	- Use `LaTeX` for formula
 6. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document tag (without `#`)
 7. Add tests to `overall_test.py` and `function_test.py` in `TEST` folder
+	- If you have any verified test add them to `verified_test.py`
 8. Run `autopep8.bat`/`autopep8.sh` (*Optional*, need to install latest version of `autopep8` package)
 
 
@@ -77,4 +79,5 @@ Please consider the following :
 	- Step 2-6 [overall statistic](#overall-statistic)
 	- Update `OVERALL_BENCHMARK_SCORE_DICT` in `pycm_param.py`
 6. Add tests to `compare_test.py`, `overall_test.py` and `function_test.py` in `TEST` folder
+	- If you have any verified test add them to `verified_test.py`
 7. Run `autopep8.bat`/`autopep8.sh` (*Optional*, need to install latest version of `autopep8` package)

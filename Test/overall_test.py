@@ -1134,6 +1134,7 @@ pycm.ConfusionMatrix(classes: ['1', '2', '3', '4'])
 True
 >>> cm.imbalance
 True
+>>> from pycm.pycm_param import IMBALANCED_RECOMMEND, MULTICLASS_RECOMMEND, BINARY_RECOMMEND
 >>> set(cm.recommended_list) == set(IMBALANCED_RECOMMEND)
 True
 >>> cm = ConfusionMatrix(matrix={1:{1:60,2:9,3:1,4:0,5:0,6:0},2:{1:23,2:48,3:0,4:2,5:2,6:1},3:{1:11,2:5,3:1,4:0,5:0,6:0},4:{1:0,2:2,3:0,4:7,5:1,6:3},5:{1:2,2:1,3:0,4:0,5:4,6:2},6:{1:1,2:2,3:0,4:2,5:1,6:23}}) # Verified Case

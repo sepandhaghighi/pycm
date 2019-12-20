@@ -19,7 +19,7 @@
 
   if [ "$IS_IN_TRAVIS" = 'false' ] || [ "$TRAVIS_PYTHON_VERSION" = '3.6' ]
   then
-      $PYTHON_COMMAND -m vulture pycm/ Otherfiles/ setup.py --min-confidence 65 --sort-by-size
+      $PYTHON_COMMAND -m vulture pycm/ Otherfiles/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
       $PYTHON_COMMAND -m bandit -r pycm -s B311
       $PYTHON_COMMAND -m pydocstyle --match-dir=pycm
   fi

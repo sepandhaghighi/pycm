@@ -5,6 +5,27 @@ import math
 from .pycm_interpret import *
 
 
+def NB_calc(TP, FP, POP, w):
+    """
+    Calculate NB (Net Benefit).
+
+    :param TP: true positive
+    :type TP : int
+    :param FP: false positive
+    :type FP : int
+    :param POP: population
+    :type POP : int
+    :param w: weight
+    :type w: float
+    :return: NB as float
+    """
+    try:
+        NB = (TP - w * FP) / POP
+        return NB
+    except (ZeroDivisionError, TypeError):
+        return "None"
+
+
 def TI_calc(TP, FP, FN, alpha, beta):
     """
     Calculate TI (Tversky index).

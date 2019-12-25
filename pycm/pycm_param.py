@@ -428,7 +428,7 @@ PARAMS_LINK = {
     "CSI": "CSI-(Classification-success-index)",
     "QI":""}
 
-CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC"]
+CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC", "QI"]
 
 BENCHMARK_COLOR = {
     "PLRI": {

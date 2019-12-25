@@ -5,7 +5,7 @@
 def Q_analysis(Q):
     """
     Analysis Q(Yule's Q) with interpretation table.
-    
+
     :param Q: Yule's Q
     :type Q: float
     :return: interpretation result as str

@@ -300,6 +300,7 @@ PARAMS_DESCRIPTION = {
     "IBA": "Index of balanced accuracy",
     "GM": "G-mean geometric mean of specificity and sensitivity",
     "Q": "Yule Q - coefficient of colligation",
+    "QI": "Yule Q interpretation",
     "AGM": "Adjusted geometric mean",
     "AGF": "Adjusted F-score",
     "OC": "Overlap coefficient",
@@ -421,7 +422,8 @@ PARAMS_LINK = {
     "OOC": "OOC-(Otsuka-Ochiai-coefficient)",
     "AUPR": "AUPR-(Area-under-the-PR-curve)",
     "ICSI": "ICSI-(Individual-classification-success-index)",
-    "CSI": "CSI-(Classification-success-index)"}
+    "CSI": "CSI-(Classification-success-index)",
+    "QI":""}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC"]
 

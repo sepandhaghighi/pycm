@@ -117,32 +117,33 @@ Example : online_help("J") or online_help(2)
 86-Pearson C
 87-Phi-Squared
 88-Q
-89-RACC
-90-RACCU
-91-RCI
-92-RR
-93-Reference Entropy
-94-Response Entropy
-95-SOA1(Landis & Koch)
-96-SOA2(Fleiss)
-97-SOA3(Altman)
-98-SOA4(Cicchetti)
-99-SOA5(Cramer)
-100-SOA6(Matthews)
-101-Scott PI
-102-Standard Error
-103-TN
-104-TNR
-105-TON
-106-TOP
-107-TP
-108-TPR
-109-TPR Macro
-110-TPR Micro
-111-Y
-112-Zero-one Loss
-113-dInd
-114-sInd
+89-QI
+90-RACC
+91-RACCU
+92-RCI
+93-RR
+94-Reference Entropy
+95-Response Entropy
+96-SOA1(Landis & Koch)
+97-SOA2(Fleiss)
+98-SOA3(Altman)
+99-SOA4(Cicchetti)
+100-SOA5(Cramer)
+101-SOA6(Matthews)
+102-Scott PI
+103-Standard Error
+104-TN
+105-TNR
+106-TON
+107-TOP
+108-TP
+109-TPR
+110-TPR Macro
+111-TPR Micro
+112-Y
+113-Zero-one Loss
+114-dInd
+115-sInd
 >>> online_help("J")
 ...
 >>> online_help("J",alt_link=True)
@@ -324,6 +325,14 @@ True
 {}
 >>> cm.NB(3)
 {}
+>>> Q_analysis(None)
+'None'
+>>> Q_analysis("None")
+'None'
+>>> Q_analysis(1)
+'Strong'
+>>> Q_analysis(0)
+'Negligible'
 >>> kappa_analysis_koch(-0.1)
 'Poor'
 >>> kappa_analysis_koch(0)

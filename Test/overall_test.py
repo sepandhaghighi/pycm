@@ -134,6 +134,7 @@ POP(Population)                                                  12             
 PPV(Precision or positive predictive value)                      0.6                     0.5                     0.6
 PRE(Prevalence)                                                  0.25                    0.25                    0.5
 Q(Yule Q - coefficient of colligation)                           None                    0.6                     0.33333
+QI(Yule Q interpretation)                                        None                    Moderate                Weak
 RACC(Random accuracy)                                            0.10417                 0.04167                 0.20833
 RACCU(Random accuracy unbiased)                                  0.11111                 0.0434                  0.21007
 TN(True negative/correct rejection)                              7                       8                       4
@@ -273,6 +274,7 @@ POP(Population)                                                  12             
 PPV(Precision or positive predictive value)                      0.6                     0.5                     0.6
 PRE(Prevalence)                                                  0.25                    0.25                    0.5
 Q(Yule Q - coefficient of colligation)                           None                    0.6                     0.33333
+QI(Yule Q interpretation)                                        None                    Moderate                Weak
 RACC(Random accuracy)                                            0.10417                 0.04167                 0.20833
 RACCU(Random accuracy unbiased)                                  0.11111                 0.0434                  0.21007
 TN(True negative/correct rejection)                              7                       8                       4
@@ -429,6 +431,7 @@ POP(Population)                                                  20             
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None
 PRE(Prevalence)                                                  0.0                     0.8                     0.15                    0.05
 Q(Yule Q - coefficient of colligation)                           None                    0.28571                 0.77778                 None
+QI(Yule Q interpretation)                                        None                    Weak                    Strong                  None
 RACC(Random accuracy)                                            0.0                     0.28                    0.015                   0.0
 RACCU(Random accuracy unbiased)                                  0.07563                 0.33062                 0.01562                 0.00063
 TN(True negative/correct rejection)                              9                       3                       16                      19
@@ -551,6 +554,7 @@ POP(Population)                                                  20             
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None
 PRE(Prevalence)                                                  0.0                     0.8                     0.15                    0.05
 Q(Yule Q - coefficient of colligation)                           None                    0.28571                 0.77778                 None
+QI(Yule Q interpretation)                                        None                    Weak                    Strong                  None
 RACC(Random accuracy)                                            0.0                     0.28                    0.015                   0.0
 RACCU(Random accuracy unbiased)                                  0.07563                 0.33062                 0.01562                 0.00063
 TN(True negative/correct rejection)                              9                       3                       16                      19
@@ -825,6 +829,7 @@ POP(Population)                                                  27             
 PPV(Precision or positive predictive value)                      0.69231                 0.55556                 0.8
 PRE(Prevalence)                                                  0.44444                 0.33333                 0.22222
 Q(Yule Q - coefficient of colligation)                           0.78378                 0.62791                 0.95122
+QI(Yule Q interpretation)                                        Strong                  Moderate                Strong
 RACC(Random accuracy)                                            0.21399                 0.11111                 0.04115
 RACCU(Random accuracy unbiased)                                  0.21433                 0.11111                 0.0415
 TN(True negative/correct rejection)                              11                      14                      20
@@ -964,6 +969,7 @@ POP(Population)                                                  27             
 PPV(Precision or positive predictive value)                      0.69231                 0.55556                 0.8
 PRE(Prevalence)                                                  0.44444                 0.33333                 0.22222
 Q(Yule Q - coefficient of colligation)                           0.78378                 0.62791                 0.95122
+QI(Yule Q interpretation)                                        Strong                  Moderate                Strong
 RACC(Random accuracy)                                            0.21399                 0.11111                 0.04115
 RACCU(Random accuracy unbiased)                                  0.21433                 0.11111                 0.0415
 TN(True negative/correct rejection)                              11                      14                      20
@@ -1105,6 +1111,7 @@ POP(Population)                                                  21             
 PPV(Precision or positive predictive value)                      0.6                     0.33333                 0.75
 PRE(Prevalence)                                                  0.28571                 0.14286                 0.57143
 Q(Yule Q - coefficient of colligation)                           None                    0.6                     0.55556
+QI(Yule Q interpretation)                                        None                    Moderate                Moderate
 RACC(Random accuracy)                                            0.13605                 0.02041                 0.21769
 RACCU(Random accuracy unbiased)                                  0.14512                 0.02041                 0.22676
 TN(True negative/correct rejection)                              11                      16                      7

@@ -165,7 +165,12 @@ NLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}
 
 DPI_SCORE = {"Good": 4, "Fair": 3, "Limited": 2, "Poor": 1, "None": "None"}
 
-QI_SCORE = {"Strong":4,"Moderate":3,"Weak":2,"Negligible":1,"None": "None"}
+QI_SCORE = {
+    "Strong": 4,
+    "Moderate": 3,
+    "Weak": 2,
+    "Negligible": 1,
+    "None": "None"}
 
 AUCI_SCORE = {
     "Excellent": 5,
@@ -426,7 +431,7 @@ PARAMS_LINK = {
     "AUPR": "AUPR-(Area-under-the-PR-curve)",
     "ICSI": "ICSI-(Individual-classification-success-index)",
     "CSI": "CSI-(Classification-success-index)",
-    "QI":"QI-(Yule's-Q-interpretation)"}
+    "QI": "QI-(Yule's-Q-interpretation)"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC", "QI"]
 

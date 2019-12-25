@@ -2,6 +2,29 @@
 """Interpretation functions."""
 
 
+def Q_analysis(Q):
+    """
+    Analysis Q(Yule's Q) with interpretation table.
+    
+    :param Q: Yule's Q
+    :type Q: float
+    :return: interpretation result as str
+    """
+    try:
+        if Q == "None":
+            return "None"
+        if Q < 0.25:
+            return "Negligible"
+        if Q >= 0.25 and Q < 0.5:
+            return "Weak"
+        if Q >= 0.5 and Q < 0.75:
+            return "Moderate"
+        if Q >= 0.75:
+            return "Strong"
+    except Exception:
+        return "None"
+
+
 def MCC_analysis(MCC):
     """
     Analysis MCC(Matthews correlation coefficient) with interpretation table.

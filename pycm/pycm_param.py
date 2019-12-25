@@ -437,6 +437,12 @@ BENCHMARK_COLOR = {
         "Fair": "Yellow",
         "Good": "Green",
         "None": "White"},
+    "QI": {
+        "Negligible": "Red",
+        "Weak": "Orange",
+        "Moderate": "Yellow",
+        "Strong": "Green",
+        "None": "White"},
     "NLRI": {
         "Negligible": "Red",
         "Poor": "Orange",

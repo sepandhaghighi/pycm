@@ -67,6 +67,7 @@ def __class_stat_init__(cm):
     cm.IBA = cm.class_stat["IBA"]
     cm.GM = cm.class_stat["GM"]
     cm.Q = cm.class_stat["Q"]
+    cm.QI = cm.class_stat["QI"]
     cm.AGM = cm.class_stat["AGM"]
     cm.NLRI = cm.class_stat["NLRI"]
     cm.MCCI = cm.class_stat["MCCI"]

@@ -426,7 +426,7 @@ PARAMS_LINK = {
     "AUPR": "AUPR-(Area-under-the-PR-curve)",
     "ICSI": "ICSI-(Individual-classification-success-index)",
     "CSI": "CSI-(Classification-success-index)",
-    "QI":""}
+    "QI":"QI-(Yule's-Q-interpretation)"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC", "QI"]
 

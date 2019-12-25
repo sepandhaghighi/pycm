@@ -769,6 +769,8 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>66- A. J. Vickers and E. B. Elkin, "Decision curve analysis: a novel method for evaluating prediction models," Medical Decision Making, vol. 26, no. 6, pp. 565-574, 2006.</blockquote>
 
+<blockquote>67- Knoke, D., Bohrnstedt, G. W., & Mee, A. P. (2002). Statistics for social data analysis. Itasca, IL: FE Peacock Publishers, p. 150</blockquote>
+
 
 
 ## Cite

@@ -56,7 +56,7 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 'model2'
 >>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
 ...     cp2 = Compare({"model1":cm_comp1,"model2":cm_comp1})
->>> cp2.scores == {'model1': {'overall': 2.55, 'class': 7.05}, 'model2': {'overall': 2.55, 'class': 7.05}}
+>>> cp2.scores == {'model2': {'class': 9.05, 'overall': 2.55}, 'model1': {'class': 9.05, 'overall': 2.55}}
 True
 >>> cp2.best
 >>> cp2.best_name

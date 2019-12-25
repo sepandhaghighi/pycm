@@ -165,6 +165,8 @@ NLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}
 
 DPI_SCORE = {"Good": 4, "Fair": 3, "Limited": 2, "Poor": 1, "None": "None"}
 
+QI_SCORE = {"Strong":4,"Moderate":3,"Weak":2,"Negligible":1,"None": "None"}
+
 AUCI_SCORE = {
     "Excellent": 5,
     "Very Good": 4,
@@ -221,7 +223,8 @@ CLASS_BENCHMARK_SCORE_DICT = {
     "NLRI": NLRI_SCORE,
     "DPI": DPI_SCORE,
     "AUCI": AUCI_SCORE,
-    "MCCI": SOA6_SCORE}
+    "MCCI": SOA6_SCORE,
+    "QI": QI_SCORE}
 
 OVERALL_BENCHMARK_SCORE_DICT = {
     "SOA1(Landis & Koch)": SOA1_SCORE,

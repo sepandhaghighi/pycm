@@ -333,6 +333,14 @@ True
 'Strong'
 >>> Q_analysis(0)
 'Negligible'
+>>> Q_analysis(0.75)
+'Strong'
+>>> MCC_analysis(0.9)
+'Very Strong'
+>>> V_analysis(0.8)
+'Very Strong'
+>>> kappa_analysis_fleiss(0.75)
+'Excellent'
 >>> kappa_analysis_koch(-0.1)
 'Poor'
 >>> kappa_analysis_koch(0)

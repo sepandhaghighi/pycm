@@ -135,6 +135,11 @@
 >>> cm = ConfusionMatrix(matrix={0:{0:42,1:7},1:{1:114,0:203}}) # Verified Case - (https://bit.ly/2LiCZXB)
 >>> cm.Q[0]
 0.5422773393461104
+>>> cm = ConfusionMatrix(matrix={0:{0:27,1:10},1:{0:16,1:15}})  # Verified Case - (https://bit.ly/2skyjKG)
+>>> cm.Q[0]
+0.4336283185840708
+>>> cm.QI[0]
+'Weak'
 >>> cm = ConfusionMatrix(matrix={1:{1:828,0:72},0:{0:8918,1:182}}) # Verified Case - (Batuwita, Palade, 2009)
 >>> cm.AGM[1]
 0.9640451296531609

@@ -19,8 +19,7 @@ def Q_analysis(Q):
             return "Weak"
         if Q >= 0.5 and Q < 0.75:
             return "Moderate"
-        if Q >= 0.75:
-            return "Strong"
+        return "Strong"
     except Exception:
         return "None"
 
@@ -44,8 +43,7 @@ def MCC_analysis(MCC):
             return "Moderate"
         if MCC >= 0.7 and MCC < 0.9:
             return "Strong"
-        if MCC >= 0.9:
-            return "Very Strong"
+        return "Very Strong"
     except Exception:  # pragma: no cover
         return "None"
 
@@ -93,8 +91,7 @@ def V_analysis(V):
             return "Relatively Strong"
         if V >= 0.6 and V < 0.8:
             return "Strong"
-        if V >= 0.8:
-            return "Very Strong"
+        return "Very Strong"
     except Exception:  # pragma: no cover
         return "None"
 
@@ -229,8 +226,7 @@ def kappa_analysis_fleiss(kappa):
             return "Poor"
         if kappa >= 0.4 and kappa < 0.75:
             return "Intermediate to Good"
-        if kappa >= 0.75:
-            return "Excellent"
+        return "Excellent"
     except Exception:  # pragma: no cover
         return "None"
 

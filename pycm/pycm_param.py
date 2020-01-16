@@ -165,6 +165,13 @@ NLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}
 
 DPI_SCORE = {"Good": 4, "Fair": 3, "Limited": 2, "Poor": 1, "None": "None"}
 
+QI_SCORE = {
+    "Strong": 4,
+    "Moderate": 3,
+    "Weak": 2,
+    "Negligible": 1,
+    "None": "None"}
+
 AUCI_SCORE = {
     "Excellent": 5,
     "Very Good": 4,
@@ -221,7 +228,8 @@ CLASS_BENCHMARK_SCORE_DICT = {
     "NLRI": NLRI_SCORE,
     "DPI": DPI_SCORE,
     "AUCI": AUCI_SCORE,
-    "MCCI": SOA6_SCORE}
+    "MCCI": SOA6_SCORE,
+    "QI": QI_SCORE}
 
 OVERALL_BENCHMARK_SCORE_DICT = {
     "SOA1(Landis & Koch)": SOA1_SCORE,
@@ -300,6 +308,7 @@ PARAMS_DESCRIPTION = {
     "IBA": "Index of balanced accuracy",
     "GM": "G-mean geometric mean of specificity and sensitivity",
     "Q": "Yule Q - coefficient of colligation",
+    "QI": "Yule Q interpretation",
     "AGM": "Adjusted geometric mean",
     "AGF": "Adjusted F-score",
     "OC": "Overlap coefficient",
@@ -421,9 +430,10 @@ PARAMS_LINK = {
     "OOC": "OOC-(Otsuka-Ochiai-coefficient)",
     "AUPR": "AUPR-(Area-under-the-PR-curve)",
     "ICSI": "ICSI-(Individual-classification-success-index)",
-    "CSI": "CSI-(Classification-success-index)"}
+    "CSI": "CSI-(Classification-success-index)",
+    "QI": "QI-(Yule's-Q-interpretation)"}
 
-CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC"]
+CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC", "QI"]
 
 BENCHMARK_COLOR = {
     "PLRI": {
@@ -431,6 +441,12 @@ BENCHMARK_COLOR = {
         "Poor": "Orange",
         "Fair": "Yellow",
         "Good": "Green",
+        "None": "White"},
+    "QI": {
+        "Negligible": "Red",
+        "Weak": "Orange",
+        "Moderate": "Yellow",
+        "Strong": "Green",
         "None": "White"},
     "NLRI": {
         "Negligible": "Red",

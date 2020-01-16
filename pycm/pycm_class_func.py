@@ -727,6 +727,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     IBA = {}
     GM = {}
     Q = {}
+    QI = {}
     AGM = {}
     MCCI = {}
     AGF = {}
@@ -783,6 +784,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         IBA[i] = IBA_calc(TPR[i], TNR[i])
         GM[i] = G_calc(TNR[i], TPR[i])
         Q[i] = Q_calc(TP[i], TN[i], FP[i], FN[i])
+        QI[i] = Q_analysis(Q[i])
         AGM[i] = AGM_calc(TPR[i], TNR[i], GM[i], N[i], POP[i])
         MCCI[i] = MCC_analysis(MCC[i])
         AGF[i] = AGF_calc(TP[i], FP[i], FN[i], TN[i])
@@ -852,5 +854,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "OC": OC,
         "OOC": OOC,
         "AUPR": AUPR,
-        "ICSI": ICSI}
+        "ICSI": ICSI,
+        "QI": QI}
     return result

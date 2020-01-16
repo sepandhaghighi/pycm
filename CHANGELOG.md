@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `sparse_matrix` attribute
 - `sparse_normalized_matrix` attribute 
 - Net benefit (NB)
+- Yule's Q interpretation (QI)
 ### Changed
 - `sparse` parameter added to `print_matrix`,`print_normalized_matrix` and `save_stat` methods
 - Handler functions moved to `pycm_handler.py`

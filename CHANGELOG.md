@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `CONTRIBUTING.md` updated
 - Namespace optimized
 - `README.md` modified
+- Document modified
 ## [2.5] - 2019-10-16
 ### Added
 - `__version__` variable

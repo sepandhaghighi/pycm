@@ -379,7 +379,7 @@ PARAMS_LINK = {
     "Cross Entropy": "Cross-entropy",
     "Joint Entropy": "Joint-entropy",
     "Conditional Entropy": "Conditional-entropy",
-    "KL Divergence": "Kullback-Liebler-divergence",
+    "KL Divergence": "Kullback-Leibler-divergence",
     "Lambda B": "Goodman-&-Kruskal's-lambda-B",
     "Lambda A": "Goodman-&-Kruskal's-lambda-A",
     "Kappa Unbiased": "Kappa-unbiased",

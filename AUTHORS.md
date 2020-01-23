@@ -13,3 +13,4 @@
 - [Mohammad Mahdi Rahimi](https://github.com/mahi97)
 - [Sadra Sabouri](https://github.com/sadrasabouri)
 - [Christian Clauss](https://github.com/cclauss)
+- [Negar Zabetian](https://github.com/negarzabetian)

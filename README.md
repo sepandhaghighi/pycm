@@ -525,7 +525,7 @@ pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
 ### Parameter recommender
 
 This option has been added in `version 1.9` to recommend the most related parameters considering the characteristics of the input dataset. 
-According to the parameters' suggestion, the characteristics are as follows: balance/imbalance and binary/multi-class.
+The suggested parameters are selected according to some characteristics of the input such as being balance/imbalance and binary/multi-class.
 All suggestions can be categorized into three main groups: imbalanced dataset, binary classification for a balanced dataset, and multi-class classification for a balanced dataset. 
 The recommendation lists have been gathered according to the respective paper of each parameter and the capabilities which had been claimed by the paper.
 

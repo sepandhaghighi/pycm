@@ -656,27 +656,6 @@ def macro_calc(item):
         return "None"
 
 
-def PC_PI_calc(P, TOP, POP):
-    """
-    Calculate percent chance agreement for Scott's Pi.
-
-    :param P: condition positive
-    :type P : dict
-    :param TOP: test outcome positive
-    :type TOP : dict
-    :param POP: population
-    :type POP:dict
-    :return: percent chance agreement as float
-    """
-    try:
-        result = 0
-        for i in P.keys():
-            result += ((P[i] + TOP[i]) / (2 * POP[i]))**2
-        return result
-    except Exception:
-        return "None"
-
-
 def PC_AC1_calc(P, TOP, POP):
     """
     Calculate percent chance agreement for Gwet's AC1.
@@ -827,10 +806,8 @@ def overall_statistics(
     overall_random_accuracy_unbiased = overall_random_accuracy_calc(RACCU)
     overall_random_accuracy = overall_random_accuracy_calc(RACC)
     overall_kappa = reliability_calc(overall_random_accuracy, overall_accuracy)
-    PC_PI = PC_PI_calc(P, TOP, POP)
     PC_AC1 = PC_AC1_calc(P, TOP, POP)
     PC_S = PC_S_calc(classes)
-    PI = reliability_calc(PC_PI, overall_accuracy)
     AC1 = reliability_calc(PC_AC1, overall_accuracy)
     S = reliability_calc(PC_S, overall_accuracy)
     kappa_SE = kappa_SE_calc(
@@ -839,6 +816,7 @@ def overall_statistics(
     kappa_unbiased = reliability_calc(
         overall_random_accuracy_unbiased,
         overall_accuracy)
+    PI = kappa_unbiased
     kappa_no_prevalence = kappa_no_prevalence_calc(overall_accuracy)
     kappa_CI = CI_calc(overall_kappa, kappa_SE)
     overall_accuracy_se = SE_calc(overall_accuracy, population)

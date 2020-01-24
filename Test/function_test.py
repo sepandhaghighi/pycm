@@ -418,10 +418,6 @@ True
 'Excellent'
 >>> AUC_analysis(1.0)
 'Excellent'
->>> PC_PI_calc(1,1,1)
-'None'
->>> PC_PI_calc({1:12},{1:6},{1:45})
-0.04000000000000001
 >>> PC_AC1_calc(1,1,1)
 'None'
 >>> PC_AC1_calc({1:123,2:2},{1:120,2:5},{1:125,2:125})

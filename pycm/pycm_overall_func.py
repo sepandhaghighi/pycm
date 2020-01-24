@@ -7,6 +7,36 @@ from functools import reduce
 from .pycm_interpret import *
 from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
 
+def ARI_calc(classes, table, TOP, P, POP):
+    """
+    Calculate ARI (Adjusted rand index).
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :param TOP: test outcome positive
+    :type TOP : dict
+    :param P: condition positive
+    :type P : dict
+    :param POP: population
+    :type POP : int
+    :return: ARI as float
+    """
+    try:
+        table_sum = 0
+        TOP_sum = 0
+        P_sum = 0
+        nc2 = ncr(POP, 2)
+        for i in classes:
+            TOP_sum += ncr(TOP[i], 2)
+            P_sum += ncr(P[i], 2)
+            for j in classes:
+                table_sum += ncr(table[i][j], 2)
+        ARI = (table_sum - (TOP_sum * P_sum) / nc2) / ((P_sum + TOP_sum) / 2 - (TOP_sum * P_sum) / nc2)
+        return ARI
+    except Exception:
+        return "None"
+
 
 def pearson_C_calc(chi_square, POP):
     """

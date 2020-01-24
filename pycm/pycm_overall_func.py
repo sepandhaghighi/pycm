@@ -7,6 +7,7 @@ from functools import reduce
 from .pycm_interpret import *
 from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
 
+
 def ARI_calc(classes, table, TOP, P, POP):
     """
     Calculate ARI (Adjusted rand index).
@@ -33,7 +34,8 @@ def ARI_calc(classes, table, TOP, P, POP):
             P_sum += ncr(P[i], 2)
             for j in classes:
                 table_sum += ncr(table[i][j], 2)
-        ARI = (table_sum - (TOP_sum * P_sum) / nc2) / ((P_sum + TOP_sum) / 2 - (TOP_sum * P_sum) / nc2)
+        ARI = (table_sum - (TOP_sum * P_sum) / nc2) / \
+            ((P_sum + TOP_sum) / 2 - (TOP_sum * P_sum) / nc2)
         return ARI
     except Exception:
         return "None"
@@ -238,7 +240,7 @@ def ncr(n, r):
     :type r :int
     :return: n choose r as int
     """
-    if r>n:
+    if r > n:
         return 0
     r = min(r, n - r)
     numer = reduce(op.mul, range(n, n - r, -1), 1)
@@ -852,7 +854,7 @@ def overall_statistics(
     C = pearson_C_calc(chi_squared, population)
     TPR_PPV_F1_micro = micro_calc(TP=TP, item=FN)
     CSI = macro_calc(ICSI_dict)
-    ARI = ARI_calc(classes,table,TOP,P,population)
+    ARI = ARI_calc(classes, table, TOP, P, population)
     return {
         "Overall ACC": overall_accuracy,
         "Kappa": overall_kappa,

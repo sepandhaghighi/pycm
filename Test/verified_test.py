@@ -293,4 +293,13 @@ True
 3264
 >>> cm.NB(w=0.059)[1]
 0.022073223039215686
+>>> cm = ConfusionMatrix(matrix={1:{1:3,2:0,3:1},2:{1:1,2:2,3:1},3:{1:0,2:2,3:2}})  # Verified Case -- (https://bit.ly/2ur7Rj4)
+>>> cm.ARI
+0.08333333333333333
+>>> cm = ConfusionMatrix([0, 0, 1, 1], [0, 0, 1, 1]) # Verified Case -- (https://bit.ly/30PNzvL)
+>>> cm.ARI
+1.0
+>>> cm = ConfusionMatrix([0, 0, 1, 2], [0, 0, 1, 1]) # Verified Case -- (https://bit.ly/30PNzvL)
+>>> cm.ARI
+0.5714285714285715
 """

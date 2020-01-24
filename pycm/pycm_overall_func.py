@@ -873,6 +873,7 @@ def overall_statistics(
     C = pearson_C_calc(chi_squared, population)
     TPR_PPV_F1_micro = micro_calc(TP=TP, item=FN)
     CSI = macro_calc(ICSI_dict)
+    ARI = ARI_calc(classes,table,TOP,P,population)
     return {
         "Overall ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -927,4 +928,5 @@ def overall_statistics(
         "AUNP": AUNP,
         "RCI": RCI,
         "Pearson C": C,
-        "CSI": CSI}
+        "CSI": CSI,
+        "ARI": ARI}

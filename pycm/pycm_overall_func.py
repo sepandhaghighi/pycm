@@ -237,6 +237,8 @@ def ncr(n, r):
     :type r :int
     :return: n choose r as int
     """
+    if r>n:
+        return 0
     r = min(r, n - r)
     numer = reduce(op.mul, range(n, n - r, -1), 1)
     denom = reduce(op.mul, range(1, r + 1), 1)

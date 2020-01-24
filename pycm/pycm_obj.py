@@ -129,17 +129,18 @@ class ConfusionMatrix():
         """
         classes = self.classes
         table = self.table
+        normalized_table = self.normalized_table
         if one_vs_all:
             [classes, table] = one_vs_all_func(
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
-        table = normalized_table_calc(classes, table)
+            normalized_table = normalized_table_calc(classes, table)
         if sparse is True:
             if self.sparse_normalized_matrix is None:
                 self.sparse_normalized_matrix = sparse_matrix_calc(
-                    classes, table)
+                    classes, normalized_table)
             print(sparse_table_print(self.sparse_normalized_matrix))
         else:
-            print(table_print(classes, table))
+            print(table_print(classes, normalized_table))
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 

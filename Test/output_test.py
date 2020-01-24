@@ -122,6 +122,7 @@ Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.14096,0.55904)
 ACC Macro                                                        0.675
+ARI                                                              0.02298
 AUNP                                                             None
 AUNU                                                             None
 Bennett S                                                        0.13333
@@ -312,6 +313,7 @@ Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.41134,0.82675)
 ACC Macro                                                        0.74603
+ARI                                                              0.15323
 AUNP                                                             0.7
 AUNU                                                             0.70556
 Bennett S                                                        0.42857

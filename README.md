@@ -775,6 +775,10 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>67- D. Knoke, G. W. Bohrnstedt, and A. P. Mee, Statistics for social data analysis. FE Peacock Publishers Itasca, IL, 2002</blockquote>
 
+<blockquote>68- Rand, W. M. (1971). Objective criteria for the evaluation of clustering methods. Journal of the American Statistical association, 66(336), 846-850.</blockquote>
+
+<blockquote>69- Santos, J. M., & Embrechts, M. (2009, September). On the use of the adjusted rand index as a metric for evaluating supervised classification. In International conference on artificial neural networks (pp. 175-184). Springer, Berlin, Heidelberg.</blockquote>
+
 
 
 ## Cite

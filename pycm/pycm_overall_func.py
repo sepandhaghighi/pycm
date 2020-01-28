@@ -10,7 +10,7 @@ from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
 
 def ARI_calc(classes, table, TOP, P, POP):
     """
-    Calculate ARI (Adjusted rand index).
+    Calculate ARI (Adjusted Rand index).
 
     :param classes: classes
     :type classes : list

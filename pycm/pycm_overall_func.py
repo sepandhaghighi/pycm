@@ -34,8 +34,8 @@ def ARI_calc(classes, table, TOP, P, POP):
             P_sum += ncr(P[i], 2)
             for j in classes:
                 table_sum += ncr(table[i][j], 2)
-        ARI = (table_sum - (TOP_sum * P_sum) / nc2) / \
-            ((P_sum + TOP_sum) / 2 - (TOP_sum * P_sum) / nc2)
+        x = (TOP_sum * P_sum) / nc2
+        ARI = (table_sum - x) / ((P_sum + TOP_sum) / 2 - x)
         return ARI
     except Exception:
         return "None"

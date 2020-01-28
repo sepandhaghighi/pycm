@@ -23,6 +23,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `README.md` modified
 - Document modified
 - `print_normalized_matrix` method modified
+### Removed
+- `PC_PI_calc` function
 ## [2.5] - 2019-10-16
 ### Added
 - `__version__` variable

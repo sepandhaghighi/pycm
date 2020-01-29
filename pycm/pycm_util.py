@@ -202,7 +202,7 @@ def normalized_table_calc(classes, table):
     """
     normalized_table={}
     for key in classes:
-        normalized_table[key] = table[key].copy()
+        normalized_table[key] = {}
         div = sum(table[key].values())
         if div == 0:
             div = 1

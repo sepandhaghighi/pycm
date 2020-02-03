@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `sparse_normalized_matrix` attribute 
 - Net benefit (NB)
 - Yule's Q interpretation (QI)
+- Adjusted Rand index (ARI)
 ### Changed
 - `sparse` parameter added to `print_matrix`,`print_normalized_matrix` and `save_stat` methods
 - Handler functions moved to `pycm_handler.py`
@@ -21,6 +22,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Namespace optimized
 - `README.md` modified
 - Document modified
+- `print_normalized_matrix` method modified
+- `normalized_table_calc` function modified
+### Removed
+- `PC_PI_calc` function
 ## [2.5] - 2019-10-16
 ### Added
 - `__version__` variable

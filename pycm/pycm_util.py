@@ -200,15 +200,15 @@ def normalized_table_calc(classes, table):
     :type table:dict
     :return: normalized table as dict
     """
-    map_dict = {k: 0 for k in classes}
-    new_table = {k: map_dict.copy() for k in classes}
+    normalized_table={}
     for key in classes:
+        normalized_table[key] = {}
         div = sum(table[key].values())
         if div == 0:
             div = 1
         for item in classes:
-            new_table[key][item] = numpy.around(table[key][item] / div, 5)
-    return new_table
+            normalized_table[key][item] = numpy.around(table[key][item] / div, 5)
+    return normalized_table
 
 
 def sparse_matrix_calc(classes, table):

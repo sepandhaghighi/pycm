@@ -8,6 +8,39 @@ from .pycm_interpret import *
 from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
 
 
+def ARI_calc(classes, table, TOP, P, POP):
+    """
+    Calculate ARI (Adjusted Rand index).
+
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :param TOP: test outcome positive
+    :type TOP : dict
+    :param P: condition positive
+    :type P : dict
+    :param POP: population
+    :type POP : int
+    :return: ARI as float
+    """
+    try:
+        table_sum = 0
+        TOP_sum = 0
+        P_sum = 0
+        nc2 = ncr(POP, 2)
+        for i in classes:
+            TOP_sum += ncr(TOP[i], 2)
+            P_sum += ncr(P[i], 2)
+            for j in classes:
+                table_sum += ncr(table[i][j], 2)
+        x = (TOP_sum * P_sum) / nc2
+        ARI = (table_sum - x) / ((P_sum + TOP_sum) / 2 - x)
+        return ARI
+    except Exception:
+        return "None"
+
+
 def pearson_C_calc(chi_square, POP):
     """
     Calculate C (Pearson's C).
@@ -207,6 +240,8 @@ def ncr(n, r):
     :type r :int
     :return: n choose r as int
     """
+    if r > n:
+        return 0
     r = min(r, n - r)
     numer = reduce(op.mul, range(n, n - r, -1), 1)
     denom = reduce(op.mul, range(1, r + 1), 1)
@@ -623,27 +658,6 @@ def macro_calc(item):
         return "None"
 
 
-def PC_PI_calc(P, TOP, POP):
-    """
-    Calculate percent chance agreement for Scott's Pi.
-
-    :param P: condition positive
-    :type P : dict
-    :param TOP: test outcome positive
-    :type TOP : dict
-    :param POP: population
-    :type POP:dict
-    :return: percent chance agreement as float
-    """
-    try:
-        result = 0
-        for i in P.keys():
-            result += ((P[i] + TOP[i]) / (2 * POP[i]))**2
-        return result
-    except Exception:
-        return "None"
-
-
 def PC_AC1_calc(P, TOP, POP):
     """
     Calculate percent chance agreement for Gwet's AC1.
@@ -794,10 +808,8 @@ def overall_statistics(
     overall_random_accuracy_unbiased = overall_random_accuracy_calc(RACCU)
     overall_random_accuracy = overall_random_accuracy_calc(RACC)
     overall_kappa = reliability_calc(overall_random_accuracy, overall_accuracy)
-    PC_PI = PC_PI_calc(P, TOP, POP)
     PC_AC1 = PC_AC1_calc(P, TOP, POP)
     PC_S = PC_S_calc(classes)
-    PI = reliability_calc(PC_PI, overall_accuracy)
     AC1 = reliability_calc(PC_AC1, overall_accuracy)
     S = reliability_calc(PC_S, overall_accuracy)
     kappa_SE = kappa_SE_calc(
@@ -806,6 +818,7 @@ def overall_statistics(
     kappa_unbiased = reliability_calc(
         overall_random_accuracy_unbiased,
         overall_accuracy)
+    PI = kappa_unbiased
     kappa_no_prevalence = kappa_no_prevalence_calc(overall_accuracy)
     kappa_CI = CI_calc(overall_kappa, kappa_SE)
     overall_accuracy_se = SE_calc(overall_accuracy, population)
@@ -841,6 +854,7 @@ def overall_statistics(
     C = pearson_C_calc(chi_squared, population)
     TPR_PPV_F1_micro = micro_calc(TP=TP, item=FN)
     CSI = macro_calc(ICSI_dict)
+    ARI = ARI_calc(classes, table, TOP, P, population)
     return {
         "Overall ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -895,4 +909,5 @@ def overall_statistics(
         "AUNP": AUNP,
         "RCI": RCI,
         "Pearson C": C,
-        "CSI": CSI}
+        "CSI": CSI,
+        "ARI": ARI}

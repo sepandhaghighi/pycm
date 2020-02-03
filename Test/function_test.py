@@ -35,115 +35,116 @@ Example : online_help("J") or online_help(2)
 4-AGF
 5-AGM
 6-AM
-7-AUC
-8-AUCI
-9-AUNP
-10-AUNU
-11-AUPR
-12-BCD
-13-BM
-14-Bennett S
-15-CBA
-16-CEN
-17-CSI
-18-Chi-Squared
-19-Chi-Squared DF
-20-Conditional Entropy
-21-Cramer V
-22-Cross Entropy
-23-DOR
-24-DP
-25-DPI
-26-ERR
-27-F0.5
-28-F1
-29-F1 Macro
-30-F1 Micro
-31-F2
-32-FDR
-33-FN
-34-FNR
-35-FOR
-36-FP
-37-FPR
-38-G
-39-GI
-40-GM
-41-Gwet AC1
-42-Hamming Loss
-43-IBA
-44-ICSI
-45-IS
-46-J
-47-Joint Entropy
-48-KL Divergence
-49-Kappa
-50-Kappa 95% CI
-51-Kappa No Prevalence
-52-Kappa Standard Error
-53-Kappa Unbiased
-54-LS
-55-Lambda A
-56-Lambda B
-57-MCC
-58-MCCI
-59-MCEN
-60-MK
-61-Mutual Information
-62-N
-63-NIR
-64-NLR
-65-NLRI
-66-NPV
-67-OC
-68-OOC
-69-OP
-70-Overall ACC
-71-Overall CEN
-72-Overall J
-73-Overall MCC
-74-Overall MCEN
-75-Overall RACC
-76-Overall RACCU
-77-P
-78-P-Value
-79-PLR
-80-PLRI
-81-POP
-82-PPV
-83-PPV Macro
-84-PPV Micro
-85-PRE
-86-Pearson C
-87-Phi-Squared
-88-Q
-89-QI
-90-RACC
-91-RACCU
-92-RCI
-93-RR
-94-Reference Entropy
-95-Response Entropy
-96-SOA1(Landis & Koch)
-97-SOA2(Fleiss)
-98-SOA3(Altman)
-99-SOA4(Cicchetti)
-100-SOA5(Cramer)
-101-SOA6(Matthews)
-102-Scott PI
-103-Standard Error
-104-TN
-105-TNR
-106-TON
-107-TOP
-108-TP
-109-TPR
-110-TPR Macro
-111-TPR Micro
-112-Y
-113-Zero-one Loss
-114-dInd
-115-sInd
+7-ARI
+8-AUC
+9-AUCI
+10-AUNP
+11-AUNU
+12-AUPR
+13-BCD
+14-BM
+15-Bennett S
+16-CBA
+17-CEN
+18-CSI
+19-Chi-Squared
+20-Chi-Squared DF
+21-Conditional Entropy
+22-Cramer V
+23-Cross Entropy
+24-DOR
+25-DP
+26-DPI
+27-ERR
+28-F0.5
+29-F1
+30-F1 Macro
+31-F1 Micro
+32-F2
+33-FDR
+34-FN
+35-FNR
+36-FOR
+37-FP
+38-FPR
+39-G
+40-GI
+41-GM
+42-Gwet AC1
+43-Hamming Loss
+44-IBA
+45-ICSI
+46-IS
+47-J
+48-Joint Entropy
+49-KL Divergence
+50-Kappa
+51-Kappa 95% CI
+52-Kappa No Prevalence
+53-Kappa Standard Error
+54-Kappa Unbiased
+55-LS
+56-Lambda A
+57-Lambda B
+58-MCC
+59-MCCI
+60-MCEN
+61-MK
+62-Mutual Information
+63-N
+64-NIR
+65-NLR
+66-NLRI
+67-NPV
+68-OC
+69-OOC
+70-OP
+71-Overall ACC
+72-Overall CEN
+73-Overall J
+74-Overall MCC
+75-Overall MCEN
+76-Overall RACC
+77-Overall RACCU
+78-P
+79-P-Value
+80-PLR
+81-PLRI
+82-POP
+83-PPV
+84-PPV Macro
+85-PPV Micro
+86-PRE
+87-Pearson C
+88-Phi-Squared
+89-Q
+90-QI
+91-RACC
+92-RACCU
+93-RCI
+94-RR
+95-Reference Entropy
+96-Response Entropy
+97-SOA1(Landis & Koch)
+98-SOA2(Fleiss)
+99-SOA3(Altman)
+100-SOA4(Cicchetti)
+101-SOA5(Cramer)
+102-SOA6(Matthews)
+103-Scott PI
+104-Standard Error
+105-TN
+106-TNR
+107-TON
+108-TOP
+109-TP
+110-TPR
+111-TPR Macro
+112-TPR Micro
+113-Y
+114-Zero-one Loss
+115-dInd
+116-sInd
 >>> online_help("J")
 ...
 >>> online_help("J",alt_link=True)
@@ -162,6 +163,8 @@ True
 >>> Q_calc(1,2,3,"None")
 'None'
 >>> AGM_calc(2,2,2,2,"None")
+'None'
+>>> ARI_calc([1,2],{1:{1:0,2:0},2:{1:0,2:0}},{1:0,2:0},{1:0,2:0},0)
 'None'
 >>> BCD_calc(2, 2, "None")
 'None'
@@ -415,10 +418,6 @@ True
 'Excellent'
 >>> AUC_analysis(1.0)
 'Excellent'
->>> PC_PI_calc(1,1,1)
-'None'
->>> PC_PI_calc({1:12},{1:6},{1:45})
-0.04000000000000001
 >>> PC_AC1_calc(1,1,1)
 'None'
 >>> PC_AC1_calc({1:123,2:2},{1:120,2:5},{1:125,2:125})

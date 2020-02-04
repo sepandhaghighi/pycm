@@ -195,9 +195,9 @@ def normalized_table_calc(classes, table):
     Return normalized confusion matrix.
 
     :param classes: classes list
-    :type classes:list
+    :type classes: list
     :param table: table
-    :type table:dict
+    :type table: dict
     :return: normalized table as dict
     """
     normalized_table={}
@@ -230,9 +230,9 @@ def sparse_matrix_calc(classes, table):
     Return sparse confusion table and it's classes.
 
     :param classes: classes list
-    :type classes:list
+    :type classes: list
     :param table: table
-    :type table:dict
+    :type table: dict
     :return: a list containing 3 dicts(sparse_table, actual_classes, predict_classes)
     """
     sparse_table = {}

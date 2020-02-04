@@ -200,18 +200,19 @@ def normalized_table_calc(classes, table):
     :type table: dict
     :return: normalized table as dict
     """
-    normalized_table={}
+    normalized_table = {}
     for key in classes:
         normalized_table[key] = {}
         div = sum(table[key].values())
         if div == 0:
             div = 1
         for item in classes:
-            normalized_table[key][item] = custom_rounder(table[key][item] / div, 5)
+            normalized_table[key][item] = custom_rounder(
+                table[key][item] / div, 5)
     return normalized_table
 
 
-def custom_rounder(input_number,digit):
+def custom_rounder(input_number, digit):
     """
     Return round of a input number respected to the digit
 
@@ -222,7 +223,7 @@ def custom_rounder(input_number,digit):
     :return: rounded number in float
     """
     p = float(10**digit)
-    return int(input_number * p + 0.5)/p
+    return int(input_number * p + 0.5) / p
 
 
 def sparse_matrix_calc(classes, table):

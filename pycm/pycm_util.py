@@ -211,6 +211,20 @@ def normalized_table_calc(classes, table):
     return normalized_table
 
 
+def custom_rounder(input_number,digit):
+    """
+    Return round of a input number respected to the digit
+
+    :param input_number: number that should be round
+    :type input_number: float
+    :param digit: number of digits that we should round number into
+    :type digit: int
+    :return: rounded number in float
+    """
+    p = float(10**digit)
+    return int(input_number * p + 0.5)/p
+
+
 def sparse_matrix_calc(classes, table):
     """
     Return sparse confusion table and it's classes.

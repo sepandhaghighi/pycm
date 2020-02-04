@@ -207,7 +207,7 @@ def normalized_table_calc(classes, table):
         if div == 0:
             div = 1
         for item in classes:
-            normalized_table[key][item] = numpy.around(table[key][item] / div, 5)
+            normalized_table[key][item] = custom_rounder(table[key][item] / div, 5)
     return normalized_table
 
 

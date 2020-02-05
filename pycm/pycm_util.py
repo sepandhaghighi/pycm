@@ -206,23 +206,22 @@ def normalized_table_calc(classes, table):
         div = sum(table[key].values())
         if div == 0:
             div = 1
+        p = float(10**5)
         for item in classes:
             normalized_table[key][item] = custom_rounder(
-                table[key][item] / div, 5)
+                table[key][item] / div, p)
     return normalized_table
 
 
-def custom_rounder(input_number, digit):
+def custom_rounder(input_number, p):
     """
     Return round of a input number respected to the digit.
-
     :param input_number: number that should be round
     :type input_number: float
-    :param digit: number of digits that we should round number into
+    :param p: 10 powered by number of digits the wanted to be rounded to
     :type digit: int
     :return: rounded number in float
     """
-    p = float(10**digit)
     return int(input_number * p + 0.5) / p
 
 

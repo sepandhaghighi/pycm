@@ -216,6 +216,7 @@ def normalized_table_calc(classes, table):
 def custom_rounder(input_number, p):
     """
     Return round of a input number respected to the digit.
+    
     :param input_number: number that should be round
     :type input_number: float
     :param p: 10 powered by number of digits the wanted to be rounded to

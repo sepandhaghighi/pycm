@@ -201,12 +201,12 @@ def normalized_table_calc(classes, table):
     :return: normalized table as dict
     """
     normalized_table = {}
+    p = float(10**5)
     for key in classes:
         normalized_table[key] = {}
         div = sum(table[key].values())
         if div == 0:
             div = 1
-        p = float(10**5)
         for item in classes:
             normalized_table[key][item] = custom_rounder(
                 table[key][item] / div, p)

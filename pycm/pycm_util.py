@@ -195,20 +195,35 @@ def normalized_table_calc(classes, table):
     Return normalized confusion matrix.
 
     :param classes: classes list
-    :type classes:list
+    :type classes: list
     :param table: table
-    :type table:dict
+    :type table: dict
     :return: normalized table as dict
     """
-    normalized_table={}
+    normalized_table = {}
+    p = float(10**5)
     for key in classes:
         normalized_table[key] = {}
         div = sum(table[key].values())
         if div == 0:
             div = 1
         for item in classes:
-            normalized_table[key][item] = numpy.around(table[key][item] / div, 5)
+            normalized_table[key][item] = custom_rounder(
+                table[key][item] / div, p)
     return normalized_table
+
+
+def custom_rounder(input_number, p):
+    """
+    Return round of a input number respected to the digit.
+
+    :param input_number: number that should be round
+    :type input_number: float
+    :param p: 10 powered by number of digits the wanted to be rounded to
+    :type digit: int
+    :return: rounded number in float
+    """
+    return int(input_number * p + 0.5) / p
 
 
 def sparse_matrix_calc(classes, table):
@@ -216,9 +231,9 @@ def sparse_matrix_calc(classes, table):
     Return sparse confusion table and it's classes.
 
     :param classes: classes list
-    :type classes:list
+    :type classes: list
     :param table: table
-    :type table:dict
+    :type table: dict
     :return: a list containing 3 dicts(sparse_table, actual_classes, predict_classes)
     """
     sparse_table = {}

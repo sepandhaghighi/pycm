@@ -368,9 +368,9 @@ def csv_matrix_print(classes, table, header=False):
     result = ""
     classes.sort()
     if header is True:
-        for c in classes:
-            result += c.name
-            if c != classes[-1]:
+        for class_name in classes:
+            result += class_name
+            if class_name != classes[-1]:
                 result += ','
     for i in classes:
         for j in classes:

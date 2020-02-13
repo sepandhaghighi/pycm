@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 - `custom_rounder` method added instead of `numpy.around`
+- `header` flag added to `save_csv` method
+- `header` option added to `csv_matrix_print`
 ### Added
 - `sparse_matrix` attribute
 - `sparse_normalized_matrix` attribute 

@@ -366,16 +366,19 @@ def csv_matrix_print(classes, table, header=False):
     :return:
     """
     result = ""
+    header_section = ""
     classes.sort()
-    if header is True:
-        for class_name in classes:
-            result += class_name
-            if class_name != classes[-1]:
-                result += ','
     for i in classes:
+        if header is True:
+            header_section += i
+            if i != classes[-1]:
+                header_section += ","
+            else:
+                header_section += "\n"
         for j in classes:
             result += str(table[i][j]) + ","
         result = result[:-1] + "\n"
+    result = header_section + result
     return result[:-1]
 
 

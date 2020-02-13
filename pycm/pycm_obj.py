@@ -401,7 +401,8 @@ class ConfusionMatrix():
                 if normalize:
                     matrix = self.normalized_table
                 csv_matrix_file = open(name + "_matrix" + ".csv", "w")
-                csv_matrix_data = csv_matrix_print(self.classes, matrix, header=header)
+                csv_matrix_data = csv_matrix_print(
+                    self.classes, matrix, header=header)
                 csv_matrix_file.write(csv_matrix_data)
             if address:
                 message = os.path.join(

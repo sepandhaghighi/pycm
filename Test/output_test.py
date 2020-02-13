@@ -491,6 +491,12 @@ True
 >>> save_csv_data = cm.save_csv("test")
 >>> save_csv_data["Status"]
 True
+>>> save_csv_data = cm.save_csv("test", header=False)
+>>> save_csv_data["Status"]
+True
+>>> save_csv_data = cm.save_csv("test", header=True)
+>>> save_csv_data["Status"]
+True
 >>> save_html_data = cm.save_html("test")
 >>> save_html_data["Status"]
 True

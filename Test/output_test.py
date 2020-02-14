@@ -543,5 +543,5 @@ True
 >>> os.remove("test.pycm")
 >>> os.remove("test.comp")
 >>> os.remove("test_header.csv")
->>> os.remove("test_header_matrix.csv") 
+>>> os.remove("test_header_matrix.csv")
 """

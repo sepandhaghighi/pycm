@@ -374,7 +374,7 @@ def csv_matrix_print(classes, table, header=False):
         for j in classes:
             result += str(table[i][j]) + ","
         result = result[:-1] + "\n"
-    if header_section is not "":
+    if len(header_section) > 0:
         header_section = header_section[:-1] + "\n"
     result = header_section + result
     return result[:-1]

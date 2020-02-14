@@ -369,7 +369,7 @@ def csv_matrix_print(classes, table, header=False):
     header_section = ""
     classes.sort()
     for i in classes:
-        header_section += i
+        header_section += str(i)
         if i != classes[-1]:
             header_section += ","
         else:

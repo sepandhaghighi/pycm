@@ -369,16 +369,16 @@ def csv_matrix_print(classes, table, header=False):
     header_section = ""
     classes.sort()
     for i in classes:
-        if header is True:
-            header_section += i
-            if i != classes[-1]:
-                header_section += ","
-            else:
-                header_section += "\n"
+        header_section += i
+        if i != classes[-1]:
+            header_section += ","
+        else:
+            header_section += "\n"
         for j in classes:
             result += str(table[i][j]) + ","
         result = result[:-1] + "\n"
-    result = header_section + result
+    if header is True:
+        result = header_section + result
     return result[:-1]
 
 

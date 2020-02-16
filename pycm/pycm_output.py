@@ -370,7 +370,7 @@ def csv_matrix_print(classes, table, header=False):
     classes.sort()
     for i in classes:
         if header is True:
-            header_section += str(i) + ","
+            header_section += '"' + str(i) + '"' + ","
         for j in classes:
             result += str(table[i][j]) + ","
         result = result[:-1] + "\n"

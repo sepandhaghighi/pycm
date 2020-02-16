@@ -5,10 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-- `custom_rounder` method added instead of `numpy.around`
-- `header` flag added to `save_csv` method
-- `header` option added to `csv_matrix_print`
 ### Added
+- `custom_rounder` function
 - `sparse_matrix` attribute
 - `sparse_normalized_matrix` attribute 
 - Net benefit (NB)
@@ -16,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Adjusted Rand index (ARI)
 ### Changed
 - `sparse` parameter added to `print_matrix`,`print_normalized_matrix` and `save_stat` methods
+- `header` parameter added to `save_csv` method
 - Handler functions moved to `pycm_handler.py`
 - Error objects moved to `pycm_error.py`
 - Verified tests references updated

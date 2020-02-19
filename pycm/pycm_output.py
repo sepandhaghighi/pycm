@@ -353,7 +353,7 @@ def sparse_table_print(sparse_matrix):
     return result
 
 
-def csv_matrix_print(classes, table):
+def csv_matrix_print(classes, table, header=False):
     """
     Return matrix as csv data.
 
@@ -361,14 +361,22 @@ def csv_matrix_print(classes, table):
     :type classes:list
     :param table: table
     :type table:dict
+    :param header: add headers to .csv file
+    :type header: bool
     :return:
     """
     result = ""
+    header_section = ""
     classes.sort()
     for i in classes:
+        if header is True:
+            header_section += '"' + str(i) + '"' + ","
         for j in classes:
             result += str(table[i][j]) + ","
         result = result[:-1] + "\n"
+    if len(header_section) > 0:
+        header_section = header_section[:-1] + "\n"
+    result = header_section + result
     return result[:-1]
 
 

@@ -360,7 +360,8 @@ class ConfusionMatrix():
             class_name=None,
             matrix_save=True,
             normalize=False,
-            summary=False):
+            summary=False,
+            header=False):
         """
         Save ConfusionMatrix in CSV file.
 
@@ -378,6 +379,8 @@ class ConfusionMatrix():
         :type normalize : bool
         :param summary : summary mode flag
         :type summary : bool
+        :param header: add headers to .csv file
+        :type header: bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
         try:
@@ -397,8 +400,9 @@ class ConfusionMatrix():
                 matrix = self.table
                 if normalize:
                     matrix = self.normalized_table
-                csv_matrix_file = open(name + "_matrix" + ".csv", "w")
-                csv_matrix_data = csv_matrix_print(self.classes, matrix)
+                csv_matrix_file = open(name + "_matrix" + ".csv", "w", encoding="utf-8")
+                csv_matrix_data = csv_matrix_print(
+                    self.classes, matrix, header=header)
                 csv_matrix_file.write(csv_matrix_data)
             if address:
                 message = os.path.join(

@@ -491,8 +491,17 @@ True
 >>> save_csv_data = cm.save_csv("test")
 >>> save_csv_data["Status"]
 True
+>>> save_csv_data = cm.save_csv("test", header=False)
+>>> save_csv_data["Status"]
+True
 >>> save_html_data = cm.save_html("test")
 >>> save_html_data["Status"]
+True
+>>> save_csv_data = cm.save_csv("test_header", header=True)
+>>> save_csv_data["Status"]
+True
+>>> save_csv_data = cm.save_csv("test_header", header=True,matrix_save=True)
+>>> save_csv_data["Status"]
 True
 >>> os.remove("test.csv")
 >>> os.remove("test_matrix.csv")
@@ -533,4 +542,6 @@ True
 >>> os.remove("test7.obj")
 >>> os.remove("test.pycm")
 >>> os.remove("test.comp")
+>>> os.remove("test_header.csv")
+>>> os.remove("test_header_matrix.csv")
 """

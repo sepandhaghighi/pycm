@@ -743,70 +743,24 @@ def overall_random_accuracy_calc(item):
         return "None"
 
 
-def overall_statistics(
-        RACC,
-        RACCU,
-        TPR,
-        PPV,
-        F1,
-        TP,
-        FN,
-        ACC,
-        POP,
-        P,
-        TOP,
-        jaccard_list,
-        CEN_dict,
-        MCEN_dict,
-        AUC_dict,
-        ICSI_dict,
-        classes,
-        table):
+def overall_statistics(**kwargs):
     """
     Return overall statistics.
 
-    :param RACC: random accuracy
-    :type RACC : dict
-    :param TPR: sensitivity, recall, hit rate, or true positive rate
-    :type TPR : dict
-    :param PPV: precision or positive predictive value
-    :type PPV : dict
-    :param F1: F1 score
-    :type F1: dict
-    :param TP: true positive
-    :type TP : dict
-    :param FN: false negative
-    :type FN : dict
-    :param ACC: accuracy
-    :type ACC: dict
-    :param POP: population
-    :type POP:dict
-    :param P: condition positive
-    :type P : dict
-    :param POP: population
-    :type POP:dict
-    :param TOP: test outcome positive
-    :type TOP : dict
-    :param jaccard_list : list of jaccard index for each class
-    :type jaccard_list : list
-    :param CEN_dict: CEN dictionary for each class
-    :type CEN_dict : dict
-    :param MCEN_dict: MCEN dictionary for each class
-    :type MCEN_dict : dict
-    :param AUC_dict: AUC dictionary for each class
-    :type AUC_dict : dict
-    :param ICSI_dict: ICSI dictionary for each class
-    :type ICSI_dict : dict
-    :param classes: confusion matrix classes
-    :type classes : list
-    :param table: input matrix
-    :type table : dict
+    :param kwargs: inputs
+    :type kwargs: dict
     :return: overall statistics as dict
     """
+    POP = kwargs["POP"]
     population = list(POP.values())[0]
+    TP = kwargs["TP"]
+    P = kwargs["P"]
+    TOP = kwargs["TOP"]
+    table = kwargs["table"]
+    classes = kwargs["classes"]
     overall_accuracy = overall_accuracy_calc(TP, population)
-    overall_random_accuracy_unbiased = overall_random_accuracy_calc(RACCU)
-    overall_random_accuracy = overall_random_accuracy_calc(RACC)
+    overall_random_accuracy_unbiased = overall_random_accuracy_calc(kwargs["RACCU"])
+    overall_random_accuracy = overall_random_accuracy_calc(kwargs["RACC"])
     overall_kappa = reliability_calc(overall_random_accuracy, overall_accuracy)
     PC_AC1 = PC_AC1_calc(P, TOP, POP)
     PC_S = PC_S_calc(classes)
@@ -838,22 +792,22 @@ def overall_statistics(
     lambda_A = lambda_A_calc(classes, table, P, population)
     DF = DF_calc(classes)
     overall_jaccard_index = overall_jaccard_index_calc(list(
-        jaccard_list.values()))
+        kwargs["jaccard_list"].values()))
     hamming_loss = hamming_calc(TP, population)
     zero_one_loss = zero_one_loss_calc(TP, population)
     NIR = NIR_calc(P, population)
     p_value = p_value_calc(TP, population, NIR)
-    overall_CEN = overall_CEN_calc(classes, TP, TOP, P, CEN_dict)
-    overall_MCEN = overall_CEN_calc(classes, TP, TOP, P, MCEN_dict, True)
+    overall_CEN = overall_CEN_calc(classes, TP, TOP, P, kwargs["CEN_dict"])
+    overall_MCEN = overall_CEN_calc(classes, TP, TOP, P, kwargs["MCEN_dict"], True)
     overall_MCC = overall_MCC_calc(classes, table, TOP, P)
     RR = RR_calc(classes, TOP)
     CBA = CBA_calc(classes, table, TOP, P)
-    AUNU = macro_calc(AUC_dict)
-    AUNP = AUNP_calc(classes, P, POP, AUC_dict)
+    AUNU = macro_calc(kwargs["AUC_dict"])
+    AUNP = AUNP_calc(classes, P, POP, kwargs["AUC_dict"])
     RCI = RCI_calc(mutual_information, reference_entropy)
     C = pearson_C_calc(chi_squared, population)
-    TPR_PPV_F1_micro = micro_calc(TP=TP, item=FN)
-    CSI = macro_calc(ICSI_dict)
+    TPR_PPV_F1_micro = micro_calc(TP=TP, item=kwargs["FN"])
+    CSI = macro_calc(kwargs["ICSI_dict"])
     ARI = ARI_calc(classes, table, TOP, P, population)
     return {
         "Overall ACC": overall_accuracy,
@@ -865,10 +819,10 @@ def overall_statistics(
         "SOA4(Cicchetti)": kappa_analysis_cicchetti(overall_kappa),
         "SOA5(Cramer)": V_analysis(cramer_V),
         "SOA6(Matthews)": MCC_analysis(overall_MCC),
-        "TPR Macro": macro_calc(TPR),
-        "PPV Macro": macro_calc(PPV),
-        "ACC Macro": macro_calc(ACC),
-        "F1 Macro": macro_calc(F1),
+        "TPR Macro": macro_calc(kwargs["TPR"]),
+        "PPV Macro": macro_calc(kwargs["PPV"]),
+        "ACC Macro": macro_calc(kwargs["ACC"]),
+        "F1 Macro": macro_calc(kwargs["F1"]),
         "TPR Micro": TPR_PPV_F1_micro,
         "PPV Micro": TPR_PPV_F1_micro,
         "F1 Micro": TPR_PPV_F1_micro,

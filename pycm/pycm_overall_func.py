@@ -624,20 +624,20 @@ def reliability_calc(RACC, ACC):
         return "None"
 
 
-def micro_calc(TP, item):
+def micro_calc(item1, item2):
     """
-    Calculate PPV_Micro and TPR_Micro.
+    Calculate PPV,TPR,TNR,FNR,FPR,F1 micro.
 
-    :param TP: true positive
-    :type TP:dict
-    :param item: FN or FP
-    :type item : dict
-    :return: PPV_Micro or TPR_Micro as float
+    :param item1: item1 in micro averaging
+    :type item1:dict
+    :param item2: item2 in micro averaging
+    :type item2 : dict
+    :return: PPV,TPR,TNR,FNR,FPR,F1 micro as float
     """
     try:
-        TP_sum = sum(TP.values())
-        item_sum = sum(item.values())
-        return TP_sum / (TP_sum + item_sum)
+        item1_sum = sum(item1.values())
+        item2_sum = sum(item2.values())
+        return item1_sum / (item1_sum + item2_sum)
     except Exception:
         return "None"
 
@@ -806,7 +806,7 @@ def overall_statistics(**kwargs):
     AUNP = AUNP_calc(classes, P, POP, kwargs["AUC_dict"])
     RCI = RCI_calc(mutual_information, reference_entropy)
     C = pearson_C_calc(chi_squared, population)
-    TPR_PPV_F1_micro = micro_calc(TP=TP, item=kwargs["FN"])
+    TPR_PPV_F1_micro = micro_calc(item1=TP, item2=kwargs["FN"])
     CSI = macro_calc(kwargs["ICSI_dict"])
     ARI = ARI_calc(classes, table, TOP, P, population)
     return {

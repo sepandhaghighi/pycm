@@ -135,16 +135,18 @@ Example : online_help("J") or online_help(2)
 104-Standard Error
 105-TN
 106-TNR
-107-TON
-108-TOP
-109-TP
-110-TPR
-111-TPR Macro
-112-TPR Micro
-113-Y
-114-Zero-one Loss
-115-dInd
-116-sInd
+107-TNR Macro
+108-TNR Micro
+109-TON
+110-TOP
+111-TP
+112-TPR
+113-TPR Macro
+114-TPR Micro
+115-Y
+116-Zero-one Loss
+117-dInd
+118-sInd
 >>> online_help("J")
 ...
 >>> online_help("J",alt_link=True)

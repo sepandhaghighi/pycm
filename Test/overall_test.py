@@ -79,6 +79,8 @@ SOA5(Cramer)                                                     Relatively Stro
 SOA6(Matthews)                                                   Weak
 Scott PI                                                         0.34426
 Standard Error                                                   0.14232
+TNR Macro                                                        0.77778
+TNR Micro                                                        0.79167
 TPR Macro                                                        0.61111
 TPR Micro                                                        0.58333
 Zero-one Loss                                                    5
@@ -220,6 +222,8 @@ SOA5(Cramer)                                                     Relatively Stro
 SOA6(Matthews)                                                   Weak
 Scott PI                                                         0.34426
 Standard Error                                                   0.14232
+TNR Macro                                                        0.77778
+TNR Micro                                                        0.79167
 TPR Macro                                                        0.61111
 TPR Micro                                                        0.58333
 Zero-one Loss                                                    5
@@ -378,6 +382,8 @@ SOA5(Cramer)                                                     None
 SOA6(Matthews)                                                   Negligible
 Scott PI                                                         -0.12554
 Standard Error                                                   0.10665
+TNR Macro                                                        0.78529
+TNR Micro                                                        0.78333
 TPR Macro                                                        None
 TPR Micro                                                        0.35
 Zero-one Loss                                                    13
@@ -502,6 +508,8 @@ SOA5(Cramer)                                                     None
 SOA6(Matthews)                                                   Negligible
 Scott PI                                                         -0.12554
 Standard Error                                                   0.10665
+TNR Macro                                                        0.78529
+TNR Micro                                                        0.78333
 TPR Macro                                                        None
 TPR Micro                                                        0.35
 Zero-one Loss                                                    13
@@ -778,6 +786,8 @@ SOA5(Cramer)                                                     Relatively Stro
 SOA6(Matthews)                                                   Weak
 Scott PI                                                         0.47346
 Standard Error                                                   0.09072
+TNR Macro                                                        0.82116
+TNR Micro                                                        0.83333
 TPR Macro                                                        0.65741
 TPR Micro                                                        0.66667
 Zero-one Loss                                                    9
@@ -919,6 +929,8 @@ SOA5(Cramer)                                                     Relatively Stro
 SOA6(Matthews)                                                   Weak
 Scott PI                                                         0.47346
 Standard Error                                                   0.09072
+TNR Macro                                                        0.82116
+TNR Micro                                                        0.83333
 TPR Macro                                                        0.65741
 TPR Micro                                                        0.66667
 Zero-one Loss                                                    9
@@ -1062,6 +1074,8 @@ SOA5(Cramer)                                                     Relatively Stro
 SOA6(Matthews)                                                   Weak
 Scott PI                                                         0.37313
 Standard Error                                                   0.10597
+TNR Macro                                                        0.8
+TNR Micro                                                        0.80952
 TPR Macro                                                        0.61111
 TPR Micro                                                        0.61905
 Zero-one Loss                                                    8

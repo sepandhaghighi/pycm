@@ -190,7 +190,10 @@ def __obj_assign_handler__(cm, matrix_param):
         CEN_dict=statistic_result["CEN"],
         MCEN_dict=statistic_result["MCEN"],
         AUC_dict=statistic_result["AUC"],
-        ICSI_dict=statistic_result["ICSI"])
+        ICSI_dict=statistic_result["ICSI"],
+        TNR=statistic_result["TNR"],
+        TN=statistic_result["TN"],
+        FP=statistic_result["FP"])
 
 
 def __obj_file_handler__(cm, file):

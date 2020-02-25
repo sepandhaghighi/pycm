@@ -107,6 +107,8 @@ SOA5(Cramer)                                                      Very Strong
 SOA6(Matthews)                                                    Strong
 Scott PI                                                          0.74172
 Standard Error                                                    0.11685
+TNR Macro                                                         0.97424
+TNR Micro                                                         0.97436
 TPR Macro                                                         0.85
 TPR Micro                                                         0.76923
 Zero-one Loss                                                     3
@@ -258,6 +260,8 @@ SOA5(Cramer)                                                      Very Strong
 SOA6(Matthews)                                                    Strong
 Scott PI                                                          0.74172
 Standard Error                                                    0.11685
+TNR Macro                                                         0.97424
+TNR Micro                                                         0.97436
 TPR Macro                                                         0.85
 TPR Micro                                                         0.76923
 Zero-one Loss                                                     3

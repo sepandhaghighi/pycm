@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Net benefit (NB)
 - Yule's Q interpretation (QI)
 - Adjusted Rand index (ARI)
+- TNR micro/macro
 ### Changed
 - `sparse` parameter added to `print_matrix`,`print_normalized_matrix` and `save_stat` methods
 - `header` parameter added to `save_csv` method

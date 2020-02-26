@@ -808,6 +808,7 @@ def overall_statistics(**kwargs):
     RCI = RCI_calc(mutual_information, reference_entropy)
     C = pearson_C_calc(chi_squared, population)
     TPR_PPV_F1_micro = micro_calc(item1=TP, item2=kwargs["FN"])
+    TPR_macro = macro_calc(kwargs["TPR"])
     CSI = macro_calc(kwargs["ICSI_dict"])
     ARI = ARI_calc(classes, table, TOP, P, population)
     TNR_micro = micro_calc(item1=kwargs["TN"],item2=kwargs["FP"])
@@ -823,14 +824,16 @@ def overall_statistics(**kwargs):
         "SOA5(Cramer)": V_analysis(cramer_V),
         "SOA6(Matthews)": MCC_analysis(overall_MCC),
         "TNR Macro": TNR_macro,
-        "TPR Macro": macro_calc(kwargs["TPR"]),
+        "TPR Macro": TPR_macro,
         "FPR Macro": complement(TNR_macro),
+        "FNR Macro": complement(TPR_macro),
         "PPV Macro": macro_calc(kwargs["PPV"]),
         "ACC Macro": macro_calc(kwargs["ACC"]),
         "F1 Macro": macro_calc(kwargs["F1"]),
         "TNR Micro": TNR_micro,
         "FPR Micro": complement(TNR_micro),
         "TPR Micro": TPR_PPV_F1_micro,
+        "FNR Micro": complement(TPR_PPV_F1_micro),
         "PPV Micro": TPR_PPV_F1_micro,
         "F1 Micro": TPR_PPV_F1_micro,
         "Scott PI": PI,

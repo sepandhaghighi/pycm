@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Document modified
 - `print_normalized_matrix` method modified
 - `normalized_table_calc` function modified
+- summary mode updated
 ### Removed
 - `PC_PI_calc` function
 ## [2.5] - 2019-10-16

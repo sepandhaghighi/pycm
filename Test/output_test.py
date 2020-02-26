@@ -135,6 +135,8 @@ Cramer V                                                         None
 Cross Entropy                                                    1.70995
 F1 Macro                                                         0.23043
 F1 Micro                                                         0.35
+FPR Macro                                                        0.21471
+FPR Micro                                                        0.21667
 Gwet AC1                                                         0.19505
 Hamming Loss                                                     0.65
 Joint Entropy                                                    2.11997
@@ -328,6 +330,8 @@ Cramer V                                                         0.49861
 Cross Entropy                                                    1.50249
 F1 Macro                                                         0.56111
 F1 Micro                                                         0.61905
+FPR Macro                                                        0.2
+FPR Micro                                                        0.19048
 Gwet AC1                                                         0.45277
 Hamming Loss                                                     0.38095
 Joint Entropy                                                    2.34377

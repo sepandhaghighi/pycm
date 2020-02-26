@@ -67,86 +67,88 @@ Example : online_help("J") or online_help(2)
 36-FOR
 37-FP
 38-FPR
-39-G
-40-GI
-41-GM
-42-Gwet AC1
-43-Hamming Loss
-44-IBA
-45-ICSI
-46-IS
-47-J
-48-Joint Entropy
-49-KL Divergence
-50-Kappa
-51-Kappa 95% CI
-52-Kappa No Prevalence
-53-Kappa Standard Error
-54-Kappa Unbiased
-55-LS
-56-Lambda A
-57-Lambda B
-58-MCC
-59-MCCI
-60-MCEN
-61-MK
-62-Mutual Information
-63-N
-64-NIR
-65-NLR
-66-NLRI
-67-NPV
-68-OC
-69-OOC
-70-OP
-71-Overall ACC
-72-Overall CEN
-73-Overall J
-74-Overall MCC
-75-Overall MCEN
-76-Overall RACC
-77-Overall RACCU
-78-P
-79-P-Value
-80-PLR
-81-PLRI
-82-POP
-83-PPV
-84-PPV Macro
-85-PPV Micro
-86-PRE
-87-Pearson C
-88-Phi-Squared
-89-Q
-90-QI
-91-RACC
-92-RACCU
-93-RCI
-94-RR
-95-Reference Entropy
-96-Response Entropy
-97-SOA1(Landis & Koch)
-98-SOA2(Fleiss)
-99-SOA3(Altman)
-100-SOA4(Cicchetti)
-101-SOA5(Cramer)
-102-SOA6(Matthews)
-103-Scott PI
-104-Standard Error
-105-TN
-106-TNR
-107-TNR Macro
-108-TNR Micro
-109-TON
-110-TOP
-111-TP
-112-TPR
-113-TPR Macro
-114-TPR Micro
-115-Y
-116-Zero-one Loss
-117-dInd
-118-sInd
+39-FPR Macro
+40-FPR Micro
+41-G
+42-GI
+43-GM
+44-Gwet AC1
+45-Hamming Loss
+46-IBA
+47-ICSI
+48-IS
+49-J
+50-Joint Entropy
+51-KL Divergence
+52-Kappa
+53-Kappa 95% CI
+54-Kappa No Prevalence
+55-Kappa Standard Error
+56-Kappa Unbiased
+57-LS
+58-Lambda A
+59-Lambda B
+60-MCC
+61-MCCI
+62-MCEN
+63-MK
+64-Mutual Information
+65-N
+66-NIR
+67-NLR
+68-NLRI
+69-NPV
+70-OC
+71-OOC
+72-OP
+73-Overall ACC
+74-Overall CEN
+75-Overall J
+76-Overall MCC
+77-Overall MCEN
+78-Overall RACC
+79-Overall RACCU
+80-P
+81-P-Value
+82-PLR
+83-PLRI
+84-POP
+85-PPV
+86-PPV Macro
+87-PPV Micro
+88-PRE
+89-Pearson C
+90-Phi-Squared
+91-Q
+92-QI
+93-RACC
+94-RACCU
+95-RCI
+96-RR
+97-Reference Entropy
+98-Response Entropy
+99-SOA1(Landis & Koch)
+100-SOA2(Fleiss)
+101-SOA3(Altman)
+102-SOA4(Cicchetti)
+103-SOA5(Cramer)
+104-SOA6(Matthews)
+105-Scott PI
+106-Standard Error
+107-TN
+108-TNR
+109-TNR Macro
+110-TNR Micro
+111-TON
+112-TOP
+113-TP
+114-TPR
+115-TPR Macro
+116-TPR Micro
+117-Y
+118-Zero-one Loss
+119-dInd
+120-sInd
 >>> online_help("J")
 ...
 >>> online_help("J",alt_link=True)

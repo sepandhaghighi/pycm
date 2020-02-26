@@ -760,7 +760,8 @@ def overall_statistics(**kwargs):
     table = kwargs["table"]
     classes = kwargs["classes"]
     overall_accuracy = overall_accuracy_calc(TP, population)
-    overall_random_accuracy_unbiased = overall_random_accuracy_calc(kwargs["RACCU"])
+    overall_random_accuracy_unbiased = overall_random_accuracy_calc(
+        kwargs["RACCU"])
     overall_random_accuracy = overall_random_accuracy_calc(kwargs["RACC"])
     overall_kappa = reliability_calc(overall_random_accuracy, overall_accuracy)
     PC_AC1 = PC_AC1_calc(P, TOP, POP)
@@ -799,7 +800,8 @@ def overall_statistics(**kwargs):
     NIR = NIR_calc(P, population)
     p_value = p_value_calc(TP, population, NIR)
     overall_CEN = overall_CEN_calc(classes, TP, TOP, P, kwargs["CEN_dict"])
-    overall_MCEN = overall_CEN_calc(classes, TP, TOP, P, kwargs["MCEN_dict"], True)
+    overall_MCEN = overall_CEN_calc(
+        classes, TP, TOP, P, kwargs["MCEN_dict"], True)
     overall_MCC = overall_MCC_calc(classes, table, TOP, P)
     RR = RR_calc(classes, TOP)
     CBA = CBA_calc(classes, table, TOP, P)
@@ -811,7 +813,7 @@ def overall_statistics(**kwargs):
     TPR_macro = macro_calc(kwargs["TPR"])
     CSI = macro_calc(kwargs["ICSI_dict"])
     ARI = ARI_calc(classes, table, TOP, P, population)
-    TNR_micro = micro_calc(item1=kwargs["TN"],item2=kwargs["FP"])
+    TNR_micro = micro_calc(item1=kwargs["TN"], item2=kwargs["FP"])
     TNR_macro = macro_calc(kwargs["TNR"])
     return {
         "Overall ACC": overall_accuracy,

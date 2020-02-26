@@ -359,7 +359,7 @@ PARAMS_LINK = {
     "SOA3(Altman)": "SOA3-(Altman's-benchmark)",
     "SOA4(Cicchetti)": "SOA4-(Cicchetti's-benchmark)",
     "TPR Macro": "TPR_Macro",
-    "FNR Macro":"FNR_Macro",
+    "FNR Macro": "FNR_Macro",
     "TNR Macro": "TNR_Macro",
     "FPR Macro": "FPR_Macro",
     "PPV Macro": "PPV_Macro",

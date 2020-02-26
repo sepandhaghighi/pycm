@@ -376,6 +376,7 @@ def binary_check(classes):
         is_binary = True
     return is_binary
 
+
 def complement(input_number):
     """
     Calculate complement of input number.
@@ -385,7 +386,7 @@ def complement(input_number):
     :return: complement as float
     """
     try:
-        return 1-input_number
+        return 1 - input_number
     except Exception:
         return "None"
 

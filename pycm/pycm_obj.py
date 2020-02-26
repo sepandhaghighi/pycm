@@ -400,7 +400,8 @@ class ConfusionMatrix():
                 matrix = self.table
                 if normalize:
                     matrix = self.normalized_table
-                csv_matrix_file = open(name + "_matrix" + ".csv", "w", encoding="utf-8")
+                csv_matrix_file = open(
+                    name + "_matrix" + ".csv", "w", encoding="utf-8")
                 csv_matrix_data = csv_matrix_print(
                     self.classes, matrix, header=header)
                 csv_matrix_file.write(csv_matrix_data)

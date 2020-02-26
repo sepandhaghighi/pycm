@@ -95,9 +95,11 @@ def __overall_stat_init__(cm):
     cm.Overall_ACC = cm.overall_stat["Overall ACC"]
     cm.TNR_Macro = cm.overall_stat["TNR Macro"]
     cm.TPR_Macro = cm.overall_stat["TPR Macro"]
+    cm.FPR_Macro = cm.overall_stat["FPR Macro"]
     cm.PPV_Macro = cm.overall_stat["PPV Macro"]
     cm.ACC_Macro = cm.overall_stat["ACC Macro"]
     cm.TNR_Micro = cm.overall_stat["TNR Micro"]
+    cm.FPR_Micro = cm.overall_stat["FPR Micro"]
     cm.TPR_Micro = cm.overall_stat["TPR Micro"]
     cm.PPV_Micro = cm.overall_stat["PPV Micro"]
     cm.F1_Macro = cm.overall_stat["F1 Macro"]
@@ -192,6 +194,7 @@ def __obj_assign_handler__(cm, matrix_param):
         AUC_dict=statistic_result["AUC"],
         ICSI_dict=statistic_result["ICSI"],
         TNR=statistic_result["TNR"],
+        FPR=statistic_result["FPR"],
         TN=statistic_result["TN"],
         FP=statistic_result["FP"])
 

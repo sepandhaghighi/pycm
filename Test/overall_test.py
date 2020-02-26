@@ -600,6 +600,7 @@ Overall Statistics :
 <BLANKLINE>
 ACC Macro                                                         0.675
 F1 Macro                                                          0.23043
+FPR Macro                                                         0.21471
 Kappa                                                             0.07801
 Overall ACC                                                       0.35
 PPV Macro                                                         None
@@ -616,6 +617,7 @@ AUCI(AUC value interpretation)                                    None          
 F1(F1 score - harmonic mean of precision and sensitivity)         0.0           0.52174       0.4           0.0
 FN(False negative/miss/type 2 error)                              0             10            2             1
 FP(False positive/type 1 error/false alarm)                       11            1             1             0
+FPR(Fall-out or false positive rate)                              0.55          0.25          0.05882       0.0
 N(Condition negative)                                             20            4             17            19
 P(Condition positive or support)                                  0             16            3             1
 POP(Population)                                                   20            20            20            20

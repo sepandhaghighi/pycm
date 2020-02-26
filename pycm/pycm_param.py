@@ -55,7 +55,8 @@ SUMMARY_OVERALL = [
     "Zero-one Loss",
     "F1 Macro",
     "TPR Macro",
-    "PPV Macro"]
+    "PPV Macro",
+    "FPR Macro"]
 
 SUMMARY_CLASS = [
     "ACC",
@@ -63,6 +64,7 @@ SUMMARY_CLASS = [
     "AUCI",
     "F1",
     "TPR",
+    "FPR",
     "PPV",
     "TP",
     "FP",

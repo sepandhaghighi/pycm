@@ -42,6 +42,8 @@ Cramer V                                                         0.5244
 Cross Entropy                                                    1.59352
 F1 Macro                                                         0.56515
 F1 Micro                                                         0.58333
+FNR Macro                                                        0.38889
+FNR Micro                                                        0.41667
 FPR Macro                                                        0.22222
 FPR Micro                                                        0.20833
 Gwet AC1                                                         0.38931
@@ -187,6 +189,8 @@ Cramer V                                                         0.5244
 Cross Entropy                                                    1.59352
 F1 Macro                                                         0.56515
 F1 Micro                                                         0.58333
+FNR Macro                                                        0.38889
+FNR Micro                                                        0.41667
 FPR Macro                                                        0.22222
 FPR Micro                                                        0.20833
 Gwet AC1                                                         0.38931
@@ -349,6 +353,8 @@ Cramer V                                                         None
 Cross Entropy                                                    1.70995
 F1 Macro                                                         0.23043
 F1 Micro                                                         0.35
+FNR Macro                                                        None
+FNR Micro                                                        0.65
 FPR Macro                                                        0.21471
 FPR Micro                                                        0.21667
 Gwet AC1                                                         0.19505
@@ -477,6 +483,8 @@ Cramer V                                                         None
 Cross Entropy                                                    1.70995
 F1 Macro                                                         0.23043
 F1 Micro                                                         0.35
+FNR Macro                                                        None
+FNR Micro                                                        0.65
 FPR Macro                                                        0.21471
 FPR Micro                                                        0.21667
 Gwet AC1                                                         0.19505
@@ -757,6 +765,8 @@ Cramer V                                                         0.5362
 Cross Entropy                                                    1.53762
 F1 Macro                                                         0.66761
 F1 Micro                                                         0.66667
+FNR Macro                                                        0.34259
+FNR Micro                                                        0.33333
 FPR Macro                                                        0.17884
 FPR Micro                                                        0.16667
 Gwet AC1                                                         0.51229
@@ -902,6 +912,8 @@ Cramer V                                                         0.5362
 Cross Entropy                                                    1.53762
 F1 Macro                                                         0.66761
 F1 Micro                                                         0.66667
+FNR Macro                                                        0.34259
+FNR Micro                                                        0.33333
 FPR Macro                                                        0.17884
 FPR Micro                                                        0.16667
 Gwet AC1                                                         0.51229
@@ -1049,6 +1061,8 @@ Cramer V                                                         0.49861
 Cross Entropy                                                    1.50249
 F1 Macro                                                         0.56111
 F1 Micro                                                         0.61905
+FNR Macro                                                        0.38889
+FNR Micro                                                        0.38095
 FPR Macro                                                        0.2
 FPR Micro                                                        0.19048
 Gwet AC1                                                         0.45277

@@ -6,6 +6,7 @@ import operator as op
 from functools import reduce
 from .pycm_interpret import *
 from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
+from .pycm_util import complement
 
 
 def ARI_calc(classes, table, TOP, P, POP):
@@ -809,6 +810,8 @@ def overall_statistics(**kwargs):
     TPR_PPV_F1_micro = micro_calc(item1=TP, item2=kwargs["FN"])
     CSI = macro_calc(kwargs["ICSI_dict"])
     ARI = ARI_calc(classes, table, TOP, P, population)
+    TNR_micro = micro_calc(item1=kwargs["TN"],item2=kwargs["FP"])
+    TNR_macro = macro_calc(kwargs["TNR"])
     return {
         "Overall ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -819,14 +822,14 @@ def overall_statistics(**kwargs):
         "SOA4(Cicchetti)": kappa_analysis_cicchetti(overall_kappa),
         "SOA5(Cramer)": V_analysis(cramer_V),
         "SOA6(Matthews)": MCC_analysis(overall_MCC),
-        "TNR Macro": macro_calc(kwargs["TNR"]),
+        "TNR Macro": TNR_macro,
         "TPR Macro": macro_calc(kwargs["TPR"]),
-        "FPR Macro": macro_calc(kwargs["FPR"]),
+        "FPR Macro": complement(TNR_macro),
         "PPV Macro": macro_calc(kwargs["PPV"]),
         "ACC Macro": macro_calc(kwargs["ACC"]),
         "F1 Macro": macro_calc(kwargs["F1"]),
-        "TNR Micro": micro_calc(item1=kwargs["TN"],item2=kwargs["FP"]),
-        "FPR Micro": micro_calc(item1=kwargs["FP"],item2=kwargs["TN"]),
+        "TNR Micro": TNR_micro,
+        "FPR Micro": complement(TNR_micro),
         "TPR Micro": TPR_PPV_F1_micro,
         "PPV Micro": TPR_PPV_F1_micro,
         "F1 Micro": TPR_PPV_F1_micro,

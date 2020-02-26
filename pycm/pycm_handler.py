@@ -194,7 +194,6 @@ def __obj_assign_handler__(cm, matrix_param):
         AUC_dict=statistic_result["AUC"],
         ICSI_dict=statistic_result["ICSI"],
         TNR=statistic_result["TNR"],
-        FPR=statistic_result["FPR"],
         TN=statistic_result["TN"],
         FP=statistic_result["FP"])
 

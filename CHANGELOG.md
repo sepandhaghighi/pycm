@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `custom_rounder` function
+- `complement` function
 - `sparse_matrix` attribute
 - `sparse_normalized_matrix` attribute 
 - Net benefit (NB)

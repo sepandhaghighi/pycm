@@ -381,7 +381,7 @@ def complement(input_number):
     """
     Calculate complement of input number.
 
-    :param input_number: inpurt number
+    :param input_number: input number
     :type input_number: float
     :return: complement as float
     """

@@ -70,6 +70,10 @@ Cramer V                                                          0.88192
 Cross Entropy                                                     3.39275
 F1 Macro                                                          0.81667
 F1 Micro                                                          0.76923
+FNR Macro                                                         0.15
+FNR Micro                                                         0.23077
+FPR Macro                                                         0.02576
+FPR Micro                                                         0.02564
 Gwet AC1                                                          0.7438
 Hamming Loss                                                      0.23077
 Joint Entropy                                                     3.70044
@@ -107,6 +111,8 @@ SOA5(Cramer)                                                      Very Strong
 SOA6(Matthews)                                                    Strong
 Scott PI                                                          0.74172
 Standard Error                                                    0.11685
+TNR Macro                                                         0.97424
+TNR Micro                                                         0.97436
 TPR Macro                                                         0.85
 TPR Micro                                                         0.76923
 Zero-one Loss                                                     3
@@ -221,6 +227,10 @@ Cramer V                                                          0.88192
 Cross Entropy                                                     3.39275
 F1 Macro                                                          0.81667
 F1 Micro                                                          0.76923
+FNR Macro                                                         0.15
+FNR Micro                                                         0.23077
+FPR Macro                                                         0.02576
+FPR Micro                                                         0.02564
 Gwet AC1                                                          0.7438
 Hamming Loss                                                      0.23077
 Joint Entropy                                                     3.70044
@@ -258,6 +268,8 @@ SOA5(Cramer)                                                      Very Strong
 SOA6(Matthews)                                                    Strong
 Scott PI                                                          0.74172
 Standard Error                                                    0.11685
+TNR Macro                                                         0.97424
+TNR Micro                                                         0.97436
 TPR Macro                                                         0.85
 TPR Micro                                                         0.76923
 Zero-one Loss                                                     3

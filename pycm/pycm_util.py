@@ -377,6 +377,20 @@ def binary_check(classes):
     return is_binary
 
 
+def complement(input_number):
+    """
+    Calculate complement of input number.
+
+    :param input_number: input number
+    :type input_number: float
+    :return: complement as float
+    """
+    try:
+        return 1 - input_number
+    except Exception:
+        return "None"
+
+
 def statistic_recommend(classes, P):
     """
     Return recommend parameters which are more suitable due to the input dataset characteristics.

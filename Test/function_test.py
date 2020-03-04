@@ -64,87 +64,93 @@ Example : online_help("J") or online_help(2)
 33-FDR
 34-FN
 35-FNR
-36-FOR
-37-FP
-38-FPR
-39-G
-40-GI
-41-GM
-42-Gwet AC1
-43-Hamming Loss
-44-IBA
-45-ICSI
-46-IS
-47-J
-48-Joint Entropy
-49-KL Divergence
-50-Kappa
-51-Kappa 95% CI
-52-Kappa No Prevalence
-53-Kappa Standard Error
-54-Kappa Unbiased
-55-LS
-56-Lambda A
-57-Lambda B
-58-MCC
-59-MCCI
-60-MCEN
-61-MK
-62-Mutual Information
-63-N
-64-NIR
-65-NLR
-66-NLRI
-67-NPV
-68-OC
-69-OOC
-70-OP
-71-Overall ACC
-72-Overall CEN
-73-Overall J
-74-Overall MCC
-75-Overall MCEN
-76-Overall RACC
-77-Overall RACCU
-78-P
-79-P-Value
-80-PLR
-81-PLRI
-82-POP
-83-PPV
-84-PPV Macro
-85-PPV Micro
-86-PRE
-87-Pearson C
-88-Phi-Squared
-89-Q
-90-QI
-91-RACC
-92-RACCU
-93-RCI
-94-RR
-95-Reference Entropy
-96-Response Entropy
-97-SOA1(Landis & Koch)
-98-SOA2(Fleiss)
-99-SOA3(Altman)
-100-SOA4(Cicchetti)
-101-SOA5(Cramer)
-102-SOA6(Matthews)
-103-Scott PI
-104-Standard Error
-105-TN
-106-TNR
-107-TON
-108-TOP
-109-TP
-110-TPR
-111-TPR Macro
-112-TPR Micro
-113-Y
-114-Zero-one Loss
-115-dInd
-116-sInd
+36-FNR Macro
+37-FNR Micro
+38-FOR
+39-FP
+40-FPR
+41-FPR Macro
+42-FPR Micro
+43-G
+44-GI
+45-GM
+46-Gwet AC1
+47-Hamming Loss
+48-IBA
+49-ICSI
+50-IS
+51-J
+52-Joint Entropy
+53-KL Divergence
+54-Kappa
+55-Kappa 95% CI
+56-Kappa No Prevalence
+57-Kappa Standard Error
+58-Kappa Unbiased
+59-LS
+60-Lambda A
+61-Lambda B
+62-MCC
+63-MCCI
+64-MCEN
+65-MK
+66-Mutual Information
+67-N
+68-NIR
+69-NLR
+70-NLRI
+71-NPV
+72-OC
+73-OOC
+74-OP
+75-Overall ACC
+76-Overall CEN
+77-Overall J
+78-Overall MCC
+79-Overall MCEN
+80-Overall RACC
+81-Overall RACCU
+82-P
+83-P-Value
+84-PLR
+85-PLRI
+86-POP
+87-PPV
+88-PPV Macro
+89-PPV Micro
+90-PRE
+91-Pearson C
+92-Phi-Squared
+93-Q
+94-QI
+95-RACC
+96-RACCU
+97-RCI
+98-RR
+99-Reference Entropy
+100-Response Entropy
+101-SOA1(Landis & Koch)
+102-SOA2(Fleiss)
+103-SOA3(Altman)
+104-SOA4(Cicchetti)
+105-SOA5(Cramer)
+106-SOA6(Matthews)
+107-Scott PI
+108-Standard Error
+109-TN
+110-TNR
+111-TNR Macro
+112-TNR Micro
+113-TON
+114-TOP
+115-TP
+116-TPR
+117-TPR Macro
+118-TPR Micro
+119-Y
+120-Zero-one Loss
+121-dInd
+122-sInd
 >>> online_help("J")
 ...
 >>> online_help("J",alt_link=True)
@@ -156,6 +162,10 @@ Example : online_help("J") or online_help(2)
 >>> from pycm.pycm_ci import *
 >>> from pycm.pycm_interpret import *
 >>> from pycm.pycm_util import *
+>>> complement(0.5)
+0.5
+>>> complement("None")
+'None'
 >>> rounder((1,2,"None"), digit=5)
 '(1,2,None)'
 >>> one_vs_all_func([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, 3) == [[1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}]

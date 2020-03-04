@@ -55,7 +55,8 @@ SUMMARY_OVERALL = [
     "Zero-one Loss",
     "F1 Macro",
     "TPR Macro",
-    "PPV Macro"]
+    "PPV Macro",
+    "FPR Macro"]
 
 SUMMARY_CLASS = [
     "ACC",
@@ -63,6 +64,7 @@ SUMMARY_CLASS = [
     "AUCI",
     "F1",
     "TPR",
+    "FPR",
     "PPV",
     "TP",
     "FP",
@@ -357,11 +359,17 @@ PARAMS_LINK = {
     "SOA3(Altman)": "SOA3-(Altman's-benchmark)",
     "SOA4(Cicchetti)": "SOA4-(Cicchetti's-benchmark)",
     "TPR Macro": "TPR_Macro",
+    "FNR Macro": "FNR_Macro",
+    "TNR Macro": "TNR_Macro",
+    "FPR Macro": "FPR_Macro",
     "PPV Macro": "PPV_Macro",
     "F1 Macro": "F1_Macro",
     "F1 Micro": "F1_Micro",
     "ACC Macro": "ACC_Macro",
     "TPR Micro": "TPR_Micro",
+    "FNR Micro": "FNR_Micro",
+    "TNR Micro": "TNR_Micro",
+    "FPR Micro": "FPR_Micro",
     "PPV Micro": "PPV_Micro",
     "Scott PI": "Scott's-Pi",
     "Gwet AC1": "Gwet's-AC1",

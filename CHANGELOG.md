@@ -7,11 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `custom_rounder` function
+- `complement` function
 - `sparse_matrix` attribute
 - `sparse_normalized_matrix` attribute 
 - Net benefit (NB)
 - Yule's Q interpretation (QI)
 - Adjusted Rand index (ARI)
+- TNR micro/macro
+- FPR micro/macro
+- FNR micro/macro
 ### Changed
 - `sparse` parameter added to `print_matrix`,`print_normalized_matrix` and `save_stat` methods
 - `header` parameter added to `save_csv` method
@@ -26,6 +30,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Document modified
 - `print_normalized_matrix` method modified
 - `normalized_table_calc` function modified
+- summary mode updated
 ### Removed
 - `PC_PI_calc` function
 ## [2.5] - 2019-10-16

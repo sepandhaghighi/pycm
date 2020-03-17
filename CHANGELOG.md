@@ -32,6 +32,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `normalized_table_calc` function modified
 - `setup.py` modified
 - summary mode updated
+- Dockerfile updated
+- `Python 3.8` added to `.travis.yaml` and `appveyor.yml`
 ### Removed
 - `PC_PI_calc` function
 ## [2.5] - 2019-10-16

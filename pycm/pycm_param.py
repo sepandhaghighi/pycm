@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parameters and constants."""
-PYCM_VERSION = "2.5"
+PYCM_VERSION = "2.6"
 
 
 OVERVIEW = '''

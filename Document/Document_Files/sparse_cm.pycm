@@ -22,6 +22,7 @@ Overall Statistics :
 
 ACC Macro                                                         0.9
 F1 Macro                                                          0.47368
+FPR Macro                                                         0.5
 Kappa                                                             0.0
 Overall ACC                                                       0.9
 PPV Macro                                                         None
@@ -38,6 +39,7 @@ AUCI(AUC value interpretation)                                    Poor          
 F1(F1 score - harmonic mean of precision and sensitivity)         0.0           0.94737       
 FN(False negative/miss/type 2 error)                              2             0             
 FP(False positive/type 1 error/false alarm)                       0             2             
+FPR(Fall-out or false positive rate)                              0.0           1.0           
 N(Condition negative)                                             18            2             
 P(Condition positive or support)                                  2             18            
 POP(Population)                                                   20            20            

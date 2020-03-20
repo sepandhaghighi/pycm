@@ -155,6 +155,7 @@ Overall Statistics :
 
 95% CI                                                            (0.30439,0.86228)
 ACC Macro                                                         0.72222
+ARI                                                               0.09206
 AUNP                                                              0.66667
 AUNU                                                              0.69444
 Bennett S                                                         0.375
@@ -167,6 +168,10 @@ Cramer V                                                          0.5244
 Cross Entropy                                                     1.59352
 F1 Macro                                                          0.56515
 F1 Micro                                                          0.58333
+FNR Macro                                                         0.38889
+FNR Micro                                                         0.41667
+FPR Macro                                                         0.22222
+FPR Micro                                                         0.20833
 Gwet AC1                                                          0.38931
 Hamming Loss                                                      0.41667
 Joint Entropy                                                     2.45915
@@ -204,6 +209,8 @@ SOA5(Cramer)                                                      Relatively Str
 SOA6(Matthews)                                                    Weak
 Scott PI                                                          0.34426
 Standard Error                                                    0.14232
+TNR Macro                                                         0.77778
+TNR Micro                                                         0.79167
 TPR Macro                                                         0.61111
 TPR Micro                                                         0.58333
 Zero-one Loss                                                     5
@@ -260,6 +267,7 @@ POP(Population)                                                   12            
 PPV(Precision or positive predictive value)                       0.6           0.5           0.6           
 PRE(Prevalence)                                                   0.25          0.25          0.5           
 Q(Yule Q - coefficient of colligation)                            None          0.6           0.33333       
+QI(Yule Q interpretation)                                         None          Moderate      Weak          
 RACC(Random accuracy)                                             0.10417       0.04167       0.20833       
 RACCU(Random accuracy unbiased)                                   0.11111       0.0434        0.21007       
 TN(True negative/correct rejection)                               7             8             4             
@@ -320,6 +328,7 @@ Overall Statistics :
 
 95% CI                                                            (0.44994,1.05006)
 ACC Macro                                                         0.75
+ARI                                                               0.17241
 AUNP                                                              0.66667
 AUNU                                                              0.66667
 Bennett S                                                         0.5
@@ -332,6 +341,10 @@ Cramer V                                                          0.48795
 Cross Entropy                                                     1.2454
 F1 Macro                                                          0.66667
 F1 Micro                                                          0.75
+FNR Macro                                                         0.33333
+FNR Micro                                                         0.25
+FPR Macro                                                         0.33333
+FPR Micro                                                         0.25
 Gwet AC1                                                          0.6
 Hamming Loss                                                      0.25
 Joint Entropy                                                     1.29879
@@ -369,6 +382,8 @@ SOA5(Cramer)                                                      Relatively Str
 SOA6(Matthews)                                                    Weak
 Scott PI                                                          0.33333
 Standard Error                                                    0.15309
+TNR Macro                                                         0.66667
+TNR Micro                                                         0.75
 TPR Macro                                                         0.66667
 TPR Micro                                                         0.75
 Zero-one Loss                                                     2
@@ -425,6 +440,7 @@ POP(Population)                                                   8             
 PPV(Precision or positive predictive value)                       1.0           0.71429       
 PRE(Prevalence)                                                   0.375         0.625         
 Q(Yule Q - coefficient of colligation)                            None          None          
+QI(Yule Q interpretation)                                         None          None          
 RACC(Random accuracy)                                             0.04688       0.54688       
 RACCU(Random accuracy unbiased)                                   0.0625        0.5625        
 TN(True negative/correct rejection)                               5             1             
@@ -442,6 +458,7 @@ Overall Statistics :
 
 ACC Macro                                                         0.75
 F1 Macro                                                          0.66667
+FPR Macro                                                         0.33333
 Kappa                                                             0.38462
 Overall ACC                                                       0.75
 PPV Macro                                                         0.85714
@@ -458,6 +475,7 @@ AUCI(AUC value interpretation)                                    Fair          
 F1(F1 score - harmonic mean of precision and sensitivity)         0.5           0.83333       
 FN(False negative/miss/type 2 error)                              2             0             
 FP(False positive/type 1 error/false alarm)                       0             2             
+FPR(Fall-out or false positive rate)                              0.0           0.66667       
 N(Condition negative)                                             5             3             
 P(Condition positive or support)                                  3             5             
 POP(Population)                                                   8             8             
@@ -555,9 +573,9 @@ If the user sets the value of `by_class` boolean input `True`, the best confusio
 >>> print(cp)
 Best : cm2
 
-Rank  Name   Class-Score         Overall-Score
-1     cm2    4.15                1.48333
-2     cm3    2.75                0.95
+Rank  Name   Class-Score    Overall-Score
+1     cm2    9.05           2.55
+2     cm3    6.05           1.98333
 
 >>> cp.best
 pycm.ConfusionMatrix(classes: [0, 1, 2])

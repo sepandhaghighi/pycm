@@ -57,6 +57,7 @@ Overall Statistics :
 <BLANKLINE>
 95% CI                                                            (0.5402,0.99827)
 ACC Macro                                                         0.95385
+ARI                                                               -0.04
 AUNP                                                              0.87121
 AUNU                                                              0.91212
 Bennett S                                                         0.74359
@@ -69,6 +70,10 @@ Cramer V                                                          0.88192
 Cross Entropy                                                     3.39275
 F1 Macro                                                          0.81667
 F1 Micro                                                          0.76923
+FNR Macro                                                         0.15
+FNR Micro                                                         0.23077
+FPR Macro                                                         0.02576
+FPR Micro                                                         0.02564
 Gwet AC1                                                          0.7438
 Hamming Loss                                                      0.23077
 Joint Entropy                                                     3.70044
@@ -106,6 +111,8 @@ SOA5(Cramer)                                                      Very Strong
 SOA6(Matthews)                                                    Strong
 Scott PI                                                          0.74172
 Standard Error                                                    0.11685
+TNR Macro                                                         0.97424
+TNR Micro                                                         0.97436
 TPR Macro                                                         0.85
 TPR Micro                                                         0.76923
 Zero-one Loss                                                     3
@@ -162,6 +169,7 @@ POP(Population)                                                   13            
 PPV(Precision or positive predictive value)                       1.0           0.5           0.5           1.0           1.0           1.0           1.0           0.5           1.0           1.0
 PRE(Prevalence)                                                   0.07692       0.07692       0.15385       0.15385       0.07692       0.15385       0.07692       0.07692       0.07692       0.07692
 Q(Yule Q - coefficient of colligation)                            None          None          0.81818       None          None          None          None          None          None          None
+QI(Yule Q interpretation)                                         None          None          Strong        None          None          None          None          None          None          None
 RACC(Random accuracy)                                             0.00592       0.01183       0.02367       0.01183       0.00592       0.01183       0.00592       0.01183       0.00592       0.00592
 RACCU(Random accuracy unbiased)                                   0.00592       0.01331       0.02367       0.01331       0.00592       0.01331       0.00592       0.01331       0.00592       0.00592
 TN(True negative/correct rejection)                               12            11            10            11            12            11            12            11            12            12
@@ -206,6 +214,7 @@ Overall Statistics :
 <BLANKLINE>
 95% CI                                                            (0.5402,0.99827)
 ACC Macro                                                         0.95385
+ARI                                                               -0.04
 AUNP                                                              0.87121
 AUNU                                                              0.91212
 Bennett S                                                         0.74359
@@ -218,6 +227,10 @@ Cramer V                                                          0.88192
 Cross Entropy                                                     3.39275
 F1 Macro                                                          0.81667
 F1 Micro                                                          0.76923
+FNR Macro                                                         0.15
+FNR Micro                                                         0.23077
+FPR Macro                                                         0.02576
+FPR Micro                                                         0.02564
 Gwet AC1                                                          0.7438
 Hamming Loss                                                      0.23077
 Joint Entropy                                                     3.70044
@@ -255,6 +268,8 @@ SOA5(Cramer)                                                      Very Strong
 SOA6(Matthews)                                                    Strong
 Scott PI                                                          0.74172
 Standard Error                                                    0.11685
+TNR Macro                                                         0.97424
+TNR Micro                                                         0.97436
 TPR Macro                                                         0.85
 TPR Micro                                                         0.76923
 Zero-one Loss                                                     3
@@ -311,6 +326,7 @@ POP(Population)                                                   13            
 PPV(Precision or positive predictive value)                       1.0           0.5           0.5           1.0           1.0           1.0           1.0           0.5           1.0           1.0
 PRE(Prevalence)                                                   0.07692       0.07692       0.15385       0.15385       0.07692       0.15385       0.07692       0.07692       0.07692       0.07692
 Q(Yule Q - coefficient of colligation)                            None          None          0.81818       None          None          None          None          None          None          None
+QI(Yule Q interpretation)                                         None          None          Strong        None          None          None          None          None          None          None
 RACC(Random accuracy)                                             0.00592       0.01183       0.02367       0.01183       0.00592       0.01183       0.00592       0.01183       0.00592       0.00592
 RACCU(Random accuracy unbiased)                                   0.00592       0.01331       0.02367       0.01331       0.00592       0.01331       0.00592       0.01331       0.00592       0.00592
 TN(True negative/correct rejection)                               12            11            10            11            12            11            12            11            12            12

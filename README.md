@@ -36,7 +36,7 @@
 
 <p align="justify">	
 PyCM is a multi-class confusion matrix library written in Python that supports both input data vectors and direct matrix, and a proper tool for post-classification model evaluation that supports most classes and overall statistics parameters.	
-PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scientists that need a broad array of metrics for predictive models and an accurate evaluation of large variety of classifiers.
+PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scientists that need a broad array of metrics for predictive models and accurate evaluation of a large variety of classifiers.
 
 </p>
 
@@ -98,7 +98,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ⚠️  PyCM 2.4 is the last version to support **Python 2.7** & **Python 3.4**
 
 ### Source code
-- Download [Version 2.5](https://github.com/sepandhaghighi/pycm/archive/v2.5.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 2.6](https://github.com/sepandhaghighi/pycm/archive/v2.6.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -106,11 +106,11 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==2.5` or `pip3 install pycm==2.5` (Need root access)
+- Run `pip install pycm==2.6` or `pip3 install pycm==2.6` (Need root access)
 
 ### Conda
 
-- Check [Conda Managing Package](https://conda.io/docs/user-guide/tasks/manage-pkgs.html#installing-packages-from-anaconda-org)
+- Check [Conda Managing Package](https://conda.io/)
 - `conda install -c sepandhaghighi pycm` (Need root access)
 
 ### Easy install
@@ -155,6 +155,7 @@ Overall Statistics :
 
 95% CI                                                            (0.30439,0.86228)
 ACC Macro                                                         0.72222
+ARI                                                               0.09206
 AUNP                                                              0.66667
 AUNU                                                              0.69444
 Bennett S                                                         0.375
@@ -167,6 +168,10 @@ Cramer V                                                          0.5244
 Cross Entropy                                                     1.59352
 F1 Macro                                                          0.56515
 F1 Micro                                                          0.58333
+FNR Macro                                                         0.38889
+FNR Micro                                                         0.41667
+FPR Macro                                                         0.22222
+FPR Micro                                                         0.20833
 Gwet AC1                                                          0.38931
 Hamming Loss                                                      0.41667
 Joint Entropy                                                     2.45915
@@ -204,6 +209,8 @@ SOA5(Cramer)                                                      Relatively Str
 SOA6(Matthews)                                                    Weak
 Scott PI                                                          0.34426
 Standard Error                                                    0.14232
+TNR Macro                                                         0.77778
+TNR Micro                                                         0.79167
 TPR Macro                                                         0.61111
 TPR Micro                                                         0.58333
 Zero-one Loss                                                     5
@@ -260,6 +267,7 @@ POP(Population)                                                   12            
 PPV(Precision or positive predictive value)                       0.6           0.5           0.6           
 PRE(Prevalence)                                                   0.25          0.25          0.5           
 Q(Yule Q - coefficient of colligation)                            None          0.6           0.33333       
+QI(Yule Q interpretation)                                         None          Moderate      Weak          
 RACC(Random accuracy)                                             0.10417       0.04167       0.20833       
 RACCU(Random accuracy unbiased)                                   0.11111       0.0434        0.21007       
 TN(True negative/correct rejection)                               7             8             4             
@@ -320,6 +328,7 @@ Overall Statistics :
 
 95% CI                                                            (0.44994,1.05006)
 ACC Macro                                                         0.75
+ARI                                                               0.17241
 AUNP                                                              0.66667
 AUNU                                                              0.66667
 Bennett S                                                         0.5
@@ -332,6 +341,10 @@ Cramer V                                                          0.48795
 Cross Entropy                                                     1.2454
 F1 Macro                                                          0.66667
 F1 Micro                                                          0.75
+FNR Macro                                                         0.33333
+FNR Micro                                                         0.25
+FPR Macro                                                         0.33333
+FPR Micro                                                         0.25
 Gwet AC1                                                          0.6
 Hamming Loss                                                      0.25
 Joint Entropy                                                     1.29879
@@ -369,6 +382,8 @@ SOA5(Cramer)                                                      Relatively Str
 SOA6(Matthews)                                                    Weak
 Scott PI                                                          0.33333
 Standard Error                                                    0.15309
+TNR Macro                                                         0.66667
+TNR Micro                                                         0.75
 TPR Macro                                                         0.66667
 TPR Micro                                                         0.75
 Zero-one Loss                                                     2
@@ -425,6 +440,7 @@ POP(Population)                                                   8             
 PPV(Precision or positive predictive value)                       1.0           0.71429       
 PRE(Prevalence)                                                   0.375         0.625         
 Q(Yule Q - coefficient of colligation)                            None          None          
+QI(Yule Q interpretation)                                         None          None          
 RACC(Random accuracy)                                             0.04688       0.54688       
 RACCU(Random accuracy unbiased)                                   0.0625        0.5625        
 TN(True negative/correct rejection)                               5             1             
@@ -442,6 +458,7 @@ Overall Statistics :
 
 ACC Macro                                                         0.75
 F1 Macro                                                          0.66667
+FPR Macro                                                         0.33333
 Kappa                                                             0.38462
 Overall ACC                                                       0.75
 PPV Macro                                                         0.85714
@@ -458,6 +475,7 @@ AUCI(AUC value interpretation)                                    Fair          
 F1(F1 score - harmonic mean of precision and sensitivity)         0.5           0.83333       
 FN(False negative/miss/type 2 error)                              2             0             
 FP(False positive/type 1 error/false alarm)                       0             2             
+FPR(Fall-out or false positive rate)                              0.0           0.66667       
 N(Condition negative)                                             5             3             
 P(Condition positive or support)                                  3             5             
 POP(Population)                                                   8             8             
@@ -524,7 +542,10 @@ pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
 
 ### Parameter recommender
 
-This option has been added in `version 1.9` in order to recommend most related parameters considering the characteristics of the input dataset. The characteristics according to which the parameters are suggested are balance/imbalance and binary/multiclass. All suggestions can be categorized into three main groups: imbalanced dataset, binary classification for a balanced dataset, and multi-class classification for a balanced dataset. The recommendation lists have been gathered according to the respective paper of each parameter and the capabilities which had been claimed by the paper.
+This option has been added in `version 1.9` to recommend the most related parameters considering the characteristics of the input dataset. 
+The suggested parameters are selected according to some characteristics of the input such as being balance/imbalance and binary/multi-class.
+All suggestions can be categorized into three main groups: imbalanced dataset, binary classification for a balanced dataset, and multi-class classification for a balanced dataset. 
+The recommendation lists have been gathered according to the respective paper of each parameter and the capabilities which had been claimed by the paper.
 
 ```pycon
 >>> cm.imbalance
@@ -538,11 +559,12 @@ False
 
 ### Compare
 
-In `version 2.0` a method for comparing several confusion matrices is introduced. This option is a combination of several overall and class-based benchmarks. Each of the benchmarks evaluates the performance of the classification algorithm from good to poor and give them a numeric score. The score of good performance is 1 and for the poor performance is 0.
+In `version 2.0`, a method for comparing several confusion matrices is introduced. This option is a combination of several overall and class-based benchmarks. Each of the benchmarks evaluates the performance of the classification algorithm from good to poor and give them a numeric score. The score of good and poor performances are 1 and 0, respectively.
 
-After that, two scores are calculated for each confusion matrices, overall and class based. The overall score is the average of the score of six overall benchmarks which are Landis & Koch, Fleiss, Altman, Cicchetti, Cramer, and Matthews. And with a same manner, the class based score is the average of the score of five class-based benchmarks which are Positive Likelihood Ratio Interpretation, Negative Likelihood Ratio Interpretation, Discriminant Power Interpretation, AUC value Interpretation, and Matthews Correlation Coefficient Interpretation. It should be notice that if one of the benchmarks returns none for one of the classes, that benchmarks will be eliminate in total averaging. If user set weights for the classes, the averaging over the value of class-based benchmark scores will transform to a weighted average.
+After that, two scores are calculated for each confusion matrices, overall and class-based. The overall score is the average of the score of six overall benchmarks which are Landis & Koch, Fleiss, Altman, Cicchetti, Cramer, and Matthews. In the same manner, the class-based score is the average of the score of six class-based benchmarks which are Positive Likelihood Ratio Interpretation, Negative Likelihood Ratio Interpretation, Discriminant Power Interpretation, AUC value Interpretation, Matthews Correlation Coefficient Interpretation and Yule's Q Interpretation. It should be noticed that if one of the benchmarks returns none for one of the classes, that benchmarks will be eliminated in total averaging. If the user sets weights for the classes, the averaging over the value of class-based benchmark scores will transform to a weighted average.
 
-If the user set the value of `by_class` boolean input `True`, the best confusion matrix is the one with the maximum class-based score. Otherwise, if a confusion matrix obtain the maximum of the both overall and class-based score, that will be the reported as the best confusion matrix but in any other cases the compare object doesn’t select best confusion matrix.
+If the user sets the value of `by_class` boolean input `True`, the best confusion matrix is the one with the maximum class-based score. Otherwise, if a confusion matrix obtains the maximum of both overall and class-based scores, that will be reported as the best confusion matrix, but in any other case, the compared object doesn’t select the best confusion matrix.
+
 
 ```pycon
 >>> cm2 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
@@ -551,9 +573,9 @@ If the user set the value of `by_class` boolean input `True`, the best confusion
 >>> print(cp)
 Best : cm2
 
-Rank  Name   Class-Score         Overall-Score
-1     cm2    4.15                1.48333
-2     cm3    2.75                0.95
+Rank  Name   Class-Score    Overall-Score
+1     cm2    9.05           2.55
+2     cm3    6.05           1.98333
 
 >>> cp.best
 pycm.ConfusionMatrix(classes: [0, 1, 2])
@@ -762,6 +784,18 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 <blockquote>62- E. B. Wilson, "Probable inference, the law of succession, and statistical inference," Journal of the American Statistical Association, vol. 22, no. 158, pp. 209-212, 1927.</blockquote>
 
 <blockquote>63- A. Agresti and B. A. Coull, "Approximate is better than “exact” for interval estimation of binomial proportions," The American Statistician, vol. 52, no. 2, pp. 119-126, 1998.</blockquote>
+
+<blockquote>64- C. S. Peirce, "The numerical measure of the success of predictions," Science, no. 93, pp. 453-454, 1884.</blockquote>
+
+<blockquote>65- E. W. Steyerberg, B. Van Calster, and M. J. Pencina, "Performance measures for prediction models and markers: evaluation of predictions and classifications," Revista Española de Cardiología, vol. 64, no. 9, pp. 788-794, 2011.</blockquote>
+
+<blockquote>66- A. J. Vickers and E. B. Elkin, "Decision curve analysis: a novel method for evaluating prediction models," Medical Decision Making, vol. 26, no. 6, pp. 565-574, 2006.</blockquote>
+
+<blockquote>67- D. Knoke, G. W. Bohrnstedt, and A. P. Mee, Statistics for social data analysis. FE Peacock Publishers Itasca, IL, 2002</blockquote>
+
+<blockquote>68- W. M. Rand, "Objective criteria for the evaluation of clustering methods," Journal of the American Statistical association, vol. 66, no. 336, pp. 846-850, 1971.</blockquote>
+
+<blockquote>69- J. M. Santos and M. Embrechts, "On the use of the adjusted rand index as a metric for evaluating supervised classification," in International conference on artificial neural networks, 2009: Springer, pp. 175-184.</blockquote>
 
 
 

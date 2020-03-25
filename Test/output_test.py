@@ -122,6 +122,7 @@ Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.14096,0.55904)
 ACC Macro                                                        0.675
+ARI                                                              0.02298
 AUNP                                                             None
 AUNU                                                             None
 Bennett S                                                        0.13333
@@ -134,6 +135,10 @@ Cramer V                                                         None
 Cross Entropy                                                    1.70995
 F1 Macro                                                         0.23043
 F1 Micro                                                         0.35
+FNR Macro                                                        None
+FNR Micro                                                        0.65
+FPR Macro                                                        0.21471
+FPR Micro                                                        0.21667
 Gwet AC1                                                         0.19505
 Hamming Loss                                                     0.65
 Joint Entropy                                                    2.11997
@@ -171,6 +176,8 @@ SOA5(Cramer)                                                     None
 SOA6(Matthews)                                                   Negligible
 Scott PI                                                         -0.12554
 Standard Error                                                   0.10665
+TNR Macro                                                        0.78529
+TNR Micro                                                        0.78333
 TPR Macro                                                        None
 TPR Micro                                                        0.35
 Zero-one Loss                                                    13
@@ -227,6 +234,7 @@ POP(Population)                                                  20             
 PPV(Precision or positive predictive value)                      0.0                     0.85714                 0.5                     None
 PRE(Prevalence)                                                  0.0                     0.8                     0.15                    0.05
 Q(Yule Q - coefficient of colligation)                           None                    0.28571                 0.77778                 None
+QI(Yule Q interpretation)                                        None                    Weak                    Strong                  None
 RACC(Random accuracy)                                            0.0                     0.28                    0.015                   0.0
 RACCU(Random accuracy unbiased)                                  0.07563                 0.33062                 0.01562                 0.00063
 TN(True negative/correct rejection)                              9                       3                       16                      19
@@ -270,6 +278,21 @@ Predict          0        1
 Actual
 0                1        2
 1                1        0
+>>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2, 0, 1, 0, 2, 1, 0, 0, 0, 1, 2, 4, 5]
+>>> y_pred = [2, 0, 2, 2, 0, 2, 2, 2, 2, 0, 0, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 2, 5, 3]
+>>> cm = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred)
+>>> cm.sparse_normalized_matrix
+>>> cm.sparse_matrix
+>>> save_stat_data = cm.save_stat("test", sparse = True)
+>>> save_stat_data['Status']
+True
+>>> cm.sparse_normalized_matrix
+[{0: {0: 1.0, 2: 0.0, 3: 0.0, 5: 0.0}, 1: {0: 0.5, 2: 0.5, 3: 0.0, 5: 0.0}, 2: {0: 0.0, 2: 1.0, 3: 0.0, 5: 0.0}, 4: {0: 0.0, 2: 0.0, 3: 0.0, 5: 1.0}, 5: {0: 0.0, 2: 0.0, 3: 1.0, 5: 0.0}}, [0, 1, 2, 4, 5], [0, 2, 3, 5]]
+>>> cm.sparse_matrix
+[{0: {0: 8, 2: 0, 3: 0, 5: 0}, 1: {0: 3, 2: 3, 3: 0, 5: 0}, 2: {0: 0, 2: 8, 3: 0, 5: 0}, 4: {0: 0, 2: 0, 3: 0, 5: 1}, 5: {0: 0, 2: 0, 3: 1, 5: 0}}, [0, 1, 2, 4, 5], [0, 2, 3, 5]]
+>>> save_stat_data = cm.save_stat("test", sparse = True)
+>>> save_stat_data['Status']
+True
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu, y_pred, sample_weight=[2, 2, 2, 2, 3, 1, 1, 2, 2, 1, 1, 2])
@@ -296,6 +319,7 @@ Overall Statistics :
 <BLANKLINE>
 95% CI                                                           (0.41134,0.82675)
 ACC Macro                                                        0.74603
+ARI                                                              0.15323
 AUNP                                                             0.7
 AUNU                                                             0.70556
 Bennett S                                                        0.42857
@@ -308,6 +332,10 @@ Cramer V                                                         0.49861
 Cross Entropy                                                    1.50249
 F1 Macro                                                         0.56111
 F1 Micro                                                         0.61905
+FNR Macro                                                        0.38889
+FNR Micro                                                        0.38095
+FPR Macro                                                        0.2
+FPR Micro                                                        0.19048
 Gwet AC1                                                         0.45277
 Hamming Loss                                                     0.38095
 Joint Entropy                                                    2.34377
@@ -345,6 +373,8 @@ SOA5(Cramer)                                                     Relatively Stro
 SOA6(Matthews)                                                   Weak
 Scott PI                                                         0.37313
 Standard Error                                                   0.10597
+TNR Macro                                                        0.8
+TNR Micro                                                        0.80952
 TPR Macro                                                        0.61111
 TPR Micro                                                        0.61905
 Zero-one Loss                                                    8
@@ -401,6 +431,7 @@ POP(Population)                                                  21             
 PPV(Precision or positive predictive value)                      0.6                     0.33333                 0.75
 PRE(Prevalence)                                                  0.28571                 0.14286                 0.57143
 Q(Yule Q - coefficient of colligation)                           None                    0.6                     0.55556
+QI(Yule Q interpretation)                                        None                    Moderate                Moderate
 RACC(Random accuracy)                                            0.13605                 0.02041                 0.21769
 RACCU(Random accuracy unbiased)                                  0.14512                 0.02041                 0.22676
 TN(True negative/correct rejection)                              11                      16                      7
@@ -472,8 +503,17 @@ True
 >>> save_csv_data = cm.save_csv("test")
 >>> save_csv_data["Status"]
 True
+>>> save_csv_data = cm.save_csv("test", header=False)
+>>> save_csv_data["Status"]
+True
 >>> save_html_data = cm.save_html("test")
 >>> save_html_data["Status"]
+True
+>>> save_csv_data = cm.save_csv("test_header", header=True)
+>>> save_csv_data["Status"]
+True
+>>> save_csv_data = cm.save_csv("test_header", header=True,matrix_save=True)
+>>> save_csv_data["Status"]
 True
 >>> os.remove("test.csv")
 >>> os.remove("test_matrix.csv")
@@ -514,4 +554,6 @@ True
 >>> os.remove("test7.obj")
 >>> os.remove("test.pycm")
 >>> os.remove("test.comp")
+>>> os.remove("test_header.csv")
+>>> os.remove("test_header_matrix.csv")
 """

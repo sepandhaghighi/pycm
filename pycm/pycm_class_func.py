@@ -5,6 +5,27 @@ import math
 from .pycm_interpret import *
 
 
+def NB_calc(TP, FP, POP, w):
+    """
+    Calculate NB (Net Benefit).
+
+    :param TP: true positive
+    :type TP : int
+    :param FP: false positive
+    :type FP : int
+    :param POP: population
+    :type POP : int
+    :param w: weight
+    :type w: float
+    :return: NB as float
+    """
+    try:
+        NB = (TP - w * FP) / POP
+        return NB
+    except (ZeroDivisionError, TypeError):
+        return "None"
+
+
 def TI_calc(TP, FP, FN, alpha, beta):
     """
     Calculate TI (Tversky index).
@@ -706,6 +727,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     IBA = {}
     GM = {}
     Q = {}
+    QI = {}
     AGM = {}
     MCCI = {}
     AGF = {}
@@ -762,6 +784,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         IBA[i] = IBA_calc(TPR[i], TNR[i])
         GM[i] = G_calc(TNR[i], TPR[i])
         Q[i] = Q_calc(TP[i], TN[i], FP[i], FN[i])
+        QI[i] = Q_analysis(Q[i])
         AGM[i] = AGM_calc(TPR[i], TNR[i], GM[i], N[i], POP[i])
         MCCI[i] = MCC_analysis(MCC[i])
         AGF[i] = AGF_calc(TP[i], FP[i], FN[i], TN[i])
@@ -831,5 +854,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         "OC": OC,
         "OOC": OOC,
         "AUPR": AUPR,
-        "ICSI": ICSI}
+        "ICSI": ICSI,
+        "QI": QI}
     return result

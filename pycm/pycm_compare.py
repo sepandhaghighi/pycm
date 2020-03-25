@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Compare module."""
 from __future__ import division
+from .pycm_error import pycmCompareError
 from .pycm_output import *
 from .pycm_util import *
 from .pycm_param import *
@@ -8,12 +9,6 @@ from .pycm_obj import ConfusionMatrix
 import os
 import numpy
 from warnings import warn
-
-
-class pycmCompareError(Exception):
-    """Compare error class."""
-
-    pass
 
 
 class Compare():

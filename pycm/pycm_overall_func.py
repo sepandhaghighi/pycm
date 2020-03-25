@@ -6,6 +6,40 @@ import operator as op
 from functools import reduce
 from .pycm_interpret import *
 from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
+from .pycm_util import complement
+
+
+def ARI_calc(classes, table, TOP, P, POP):
+    """
+    Calculate ARI (Adjusted Rand index).
+
+    :param classes: classes
+    :type classes : list
+    :param table: input matrix
+    :type table : dict
+    :param TOP: test outcome positive
+    :type TOP : dict
+    :param P: condition positive
+    :type P : dict
+    :param POP: population
+    :type POP : int
+    :return: ARI as float
+    """
+    try:
+        table_sum = 0
+        TOP_sum = 0
+        P_sum = 0
+        nc2 = ncr(POP, 2)
+        for i in classes:
+            TOP_sum += ncr(TOP[i], 2)
+            P_sum += ncr(P[i], 2)
+            for j in classes:
+                table_sum += ncr(table[i][j], 2)
+        x = (TOP_sum * P_sum) / nc2
+        ARI = (table_sum - x) / ((P_sum + TOP_sum) / 2 - x)
+        return ARI
+    except Exception:
+        return "None"
 
 
 def pearson_C_calc(chi_square, POP):
@@ -207,6 +241,8 @@ def ncr(n, r):
     :type r :int
     :return: n choose r as int
     """
+    if r > n:
+        return 0
     r = min(r, n - r)
     numer = reduce(op.mul, range(n, n - r, -1), 1)
     denom = reduce(op.mul, range(1, r + 1), 1)
@@ -589,20 +625,20 @@ def reliability_calc(RACC, ACC):
         return "None"
 
 
-def micro_calc(TP, item):
+def micro_calc(item1, item2):
     """
-    Calculate PPV_Micro and TPR_Micro.
+    Calculate PPV,TPR,TNR,FNR,FPR,F1 micro.
 
-    :param TP: true positive
-    :type TP:dict
-    :param item: FN or FP
-    :type item : dict
-    :return: PPV_Micro or TPR_Micro as float
+    :param item1: item1 in micro averaging
+    :type item1:dict
+    :param item2: item2 in micro averaging
+    :type item2 : dict
+    :return: PPV,TPR,TNR,FNR,FPR,F1 micro as float
     """
     try:
-        TP_sum = sum(TP.values())
-        item_sum = sum(item.values())
-        return TP_sum / (TP_sum + item_sum)
+        item1_sum = sum(item1.values())
+        item2_sum = sum(item2.values())
+        return item1_sum / (item1_sum + item2_sum)
     except Exception:
         return "None"
 
@@ -619,27 +655,6 @@ def macro_calc(item):
         item_sum = sum(item.values())
         item_len = len(item.values())
         return item_sum / item_len
-    except Exception:
-        return "None"
-
-
-def PC_PI_calc(P, TOP, POP):
-    """
-    Calculate percent chance agreement for Scott's Pi.
-
-    :param P: condition positive
-    :type P : dict
-    :param TOP: test outcome positive
-    :type TOP : dict
-    :param POP: population
-    :type POP:dict
-    :return: percent chance agreement as float
-    """
-    try:
-        result = 0
-        for i in P.keys():
-            result += ((P[i] + TOP[i]) / (2 * POP[i]))**2
-        return result
     except Exception:
         return "None"
 
@@ -729,75 +744,28 @@ def overall_random_accuracy_calc(item):
         return "None"
 
 
-def overall_statistics(
-        RACC,
-        RACCU,
-        TPR,
-        PPV,
-        F1,
-        TP,
-        FN,
-        ACC,
-        POP,
-        P,
-        TOP,
-        jaccard_list,
-        CEN_dict,
-        MCEN_dict,
-        AUC_dict,
-        ICSI_dict,
-        classes,
-        table):
+def overall_statistics(**kwargs):
     """
     Return overall statistics.
 
-    :param RACC: random accuracy
-    :type RACC : dict
-    :param TPR: sensitivity, recall, hit rate, or true positive rate
-    :type TPR : dict
-    :param PPV: precision or positive predictive value
-    :type PPV : dict
-    :param F1: F1 score
-    :type F1: dict
-    :param TP: true positive
-    :type TP : dict
-    :param FN: false negative
-    :type FN : dict
-    :param ACC: accuracy
-    :type ACC: dict
-    :param POP: population
-    :type POP:dict
-    :param P: condition positive
-    :type P : dict
-    :param POP: population
-    :type POP:dict
-    :param TOP: test outcome positive
-    :type TOP : dict
-    :param jaccard_list : list of jaccard index for each class
-    :type jaccard_list : list
-    :param CEN_dict: CEN dictionary for each class
-    :type CEN_dict : dict
-    :param MCEN_dict: MCEN dictionary for each class
-    :type MCEN_dict : dict
-    :param AUC_dict: AUC dictionary for each class
-    :type AUC_dict : dict
-    :param ICSI_dict: ICSI dictionary for each class
-    :type ICSI_dict : dict
-    :param classes: confusion matrix classes
-    :type classes : list
-    :param table: input matrix
-    :type table : dict
+    :param kwargs: inputs
+    :type kwargs: dict
     :return: overall statistics as dict
     """
+    POP = kwargs["POP"]
     population = list(POP.values())[0]
+    TP = kwargs["TP"]
+    P = kwargs["P"]
+    TOP = kwargs["TOP"]
+    table = kwargs["table"]
+    classes = kwargs["classes"]
     overall_accuracy = overall_accuracy_calc(TP, population)
-    overall_random_accuracy_unbiased = overall_random_accuracy_calc(RACCU)
-    overall_random_accuracy = overall_random_accuracy_calc(RACC)
+    overall_random_accuracy_unbiased = overall_random_accuracy_calc(
+        kwargs["RACCU"])
+    overall_random_accuracy = overall_random_accuracy_calc(kwargs["RACC"])
     overall_kappa = reliability_calc(overall_random_accuracy, overall_accuracy)
-    PC_PI = PC_PI_calc(P, TOP, POP)
     PC_AC1 = PC_AC1_calc(P, TOP, POP)
     PC_S = PC_S_calc(classes)
-    PI = reliability_calc(PC_PI, overall_accuracy)
     AC1 = reliability_calc(PC_AC1, overall_accuracy)
     S = reliability_calc(PC_S, overall_accuracy)
     kappa_SE = kappa_SE_calc(
@@ -806,6 +774,7 @@ def overall_statistics(
     kappa_unbiased = reliability_calc(
         overall_random_accuracy_unbiased,
         overall_accuracy)
+    PI = kappa_unbiased
     kappa_no_prevalence = kappa_no_prevalence_calc(overall_accuracy)
     kappa_CI = CI_calc(overall_kappa, kappa_SE)
     overall_accuracy_se = SE_calc(overall_accuracy, population)
@@ -825,22 +794,27 @@ def overall_statistics(
     lambda_A = lambda_A_calc(classes, table, P, population)
     DF = DF_calc(classes)
     overall_jaccard_index = overall_jaccard_index_calc(list(
-        jaccard_list.values()))
+        kwargs["jaccard_list"].values()))
     hamming_loss = hamming_calc(TP, population)
     zero_one_loss = zero_one_loss_calc(TP, population)
     NIR = NIR_calc(P, population)
     p_value = p_value_calc(TP, population, NIR)
-    overall_CEN = overall_CEN_calc(classes, TP, TOP, P, CEN_dict)
-    overall_MCEN = overall_CEN_calc(classes, TP, TOP, P, MCEN_dict, True)
+    overall_CEN = overall_CEN_calc(classes, TP, TOP, P, kwargs["CEN_dict"])
+    overall_MCEN = overall_CEN_calc(
+        classes, TP, TOP, P, kwargs["MCEN_dict"], True)
     overall_MCC = overall_MCC_calc(classes, table, TOP, P)
     RR = RR_calc(classes, TOP)
     CBA = CBA_calc(classes, table, TOP, P)
-    AUNU = macro_calc(AUC_dict)
-    AUNP = AUNP_calc(classes, P, POP, AUC_dict)
+    AUNU = macro_calc(kwargs["AUC_dict"])
+    AUNP = AUNP_calc(classes, P, POP, kwargs["AUC_dict"])
     RCI = RCI_calc(mutual_information, reference_entropy)
     C = pearson_C_calc(chi_squared, population)
-    TPR_PPV_F1_micro = micro_calc(TP=TP, item=FN)
-    CSI = macro_calc(ICSI_dict)
+    TPR_PPV_F1_micro = micro_calc(item1=TP, item2=kwargs["FN"])
+    TPR_macro = macro_calc(kwargs["TPR"])
+    CSI = macro_calc(kwargs["ICSI_dict"])
+    ARI = ARI_calc(classes, table, TOP, P, population)
+    TNR_micro = micro_calc(item1=kwargs["TN"], item2=kwargs["FP"])
+    TNR_macro = macro_calc(kwargs["TNR"])
     return {
         "Overall ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -851,11 +825,17 @@ def overall_statistics(
         "SOA4(Cicchetti)": kappa_analysis_cicchetti(overall_kappa),
         "SOA5(Cramer)": V_analysis(cramer_V),
         "SOA6(Matthews)": MCC_analysis(overall_MCC),
-        "TPR Macro": macro_calc(TPR),
-        "PPV Macro": macro_calc(PPV),
-        "ACC Macro": macro_calc(ACC),
-        "F1 Macro": macro_calc(F1),
+        "TNR Macro": TNR_macro,
+        "TPR Macro": TPR_macro,
+        "FPR Macro": complement(TNR_macro),
+        "FNR Macro": complement(TPR_macro),
+        "PPV Macro": macro_calc(kwargs["PPV"]),
+        "ACC Macro": macro_calc(kwargs["ACC"]),
+        "F1 Macro": macro_calc(kwargs["F1"]),
+        "TNR Micro": TNR_micro,
+        "FPR Micro": complement(TNR_micro),
         "TPR Micro": TPR_PPV_F1_micro,
+        "FNR Micro": complement(TPR_PPV_F1_micro),
         "PPV Micro": TPR_PPV_F1_micro,
         "F1 Micro": TPR_PPV_F1_micro,
         "Scott PI": PI,
@@ -895,4 +875,5 @@ def overall_statistics(
         "AUNP": AUNP,
         "RCI": RCI,
         "Pearson C": C,
-        "CSI": CSI}
+        "CSI": CSI,
+        "ARI": ARI}

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parameters and constants."""
-PYCM_VERSION = "2.5"
+PYCM_VERSION = "2.6"
 
 
 OVERVIEW = '''
@@ -40,8 +40,8 @@ COMPARE_WEIGHT_ERROR = "The weight type must be dictionary and also must be set 
 COMPARE_RESULT_WARNING = "Confusion matrices are too close and the best one can not be recognized."
 
 CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won't be demonstrated properly.\n" \
-                       "The save_csv method can be used to save the confusion matrix in csv format and have a better" \
-                       " demonstration of it."
+                       "If confusion matrix has too many zeros (sparse matrix) you can set `sparse` flag to True in printing functions "\
+                       "otherwise by using save_csv method to save the confusion matrix in csv format you'll have better demonstration."
 
 CLASS_NUMBER_THRESHOLD = 10
 
@@ -55,7 +55,8 @@ SUMMARY_OVERALL = [
     "Zero-one Loss",
     "F1 Macro",
     "TPR Macro",
-    "PPV Macro"]
+    "PPV Macro",
+    "FPR Macro"]
 
 SUMMARY_CLASS = [
     "ACC",
@@ -63,6 +64,7 @@ SUMMARY_CLASS = [
     "AUCI",
     "F1",
     "TPR",
+    "FPR",
     "PPV",
     "TP",
     "FP",
@@ -165,6 +167,13 @@ NLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}
 
 DPI_SCORE = {"Good": 4, "Fair": 3, "Limited": 2, "Poor": 1, "None": "None"}
 
+QI_SCORE = {
+    "Strong": 4,
+    "Moderate": 3,
+    "Weak": 2,
+    "Negligible": 1,
+    "None": "None"}
+
 AUCI_SCORE = {
     "Excellent": 5,
     "Very Good": 4,
@@ -221,7 +230,8 @@ CLASS_BENCHMARK_SCORE_DICT = {
     "NLRI": NLRI_SCORE,
     "DPI": DPI_SCORE,
     "AUCI": AUCI_SCORE,
-    "MCCI": SOA6_SCORE}
+    "MCCI": SOA6_SCORE,
+    "QI": QI_SCORE}
 
 OVERALL_BENCHMARK_SCORE_DICT = {
     "SOA1(Landis & Koch)": SOA1_SCORE,
@@ -300,6 +310,7 @@ PARAMS_DESCRIPTION = {
     "IBA": "Index of balanced accuracy",
     "GM": "G-mean geometric mean of specificity and sensitivity",
     "Q": "Yule Q - coefficient of colligation",
+    "QI": "Yule Q interpretation",
     "AGM": "Adjusted geometric mean",
     "AGF": "Adjusted F-score",
     "OC": "Overlap coefficient",
@@ -348,11 +359,17 @@ PARAMS_LINK = {
     "SOA3(Altman)": "SOA3-(Altman's-benchmark)",
     "SOA4(Cicchetti)": "SOA4-(Cicchetti's-benchmark)",
     "TPR Macro": "TPR_Macro",
+    "FNR Macro": "FNR_Macro",
+    "TNR Macro": "TNR_Macro",
+    "FPR Macro": "FPR_Macro",
     "PPV Macro": "PPV_Macro",
     "F1 Macro": "F1_Macro",
     "F1 Micro": "F1_Micro",
     "ACC Macro": "ACC_Macro",
     "TPR Micro": "TPR_Micro",
+    "FNR Micro": "FNR_Micro",
+    "TNR Micro": "TNR_Micro",
+    "FPR Micro": "FPR_Micro",
     "PPV Micro": "PPV_Micro",
     "Scott PI": "Scott's-Pi",
     "Gwet AC1": "Gwet's-AC1",
@@ -370,7 +387,7 @@ PARAMS_LINK = {
     "Cross Entropy": "Cross-entropy",
     "Joint Entropy": "Joint-entropy",
     "Conditional Entropy": "Conditional-entropy",
-    "KL Divergence": "Kullback-Liebler-divergence",
+    "KL Divergence": "Kullback-Leibler-divergence",
     "Lambda B": "Goodman-&-Kruskal's-lambda-B",
     "Lambda A": "Goodman-&-Kruskal's-lambda-A",
     "Kappa Unbiased": "Kappa-unbiased",
@@ -421,9 +438,11 @@ PARAMS_LINK = {
     "OOC": "OOC-(Otsuka-Ochiai-coefficient)",
     "AUPR": "AUPR-(Area-under-the-PR-curve)",
     "ICSI": "ICSI-(Individual-classification-success-index)",
-    "CSI": "CSI-(Classification-success-index)"}
+    "CSI": "CSI-(Classification-success-index)",
+    "QI": "QI-(Yule's-Q-interpretation)",
+    "ARI": "ARI-(Adjusted-Rand-index)"}
 
-CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC"]
+CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC", "QI"]
 
 BENCHMARK_COLOR = {
     "PLRI": {
@@ -431,6 +450,12 @@ BENCHMARK_COLOR = {
         "Poor": "Orange",
         "Fair": "Yellow",
         "Good": "Green",
+        "None": "White"},
+    "QI": {
+        "Negligible": "Red",
+        "Weak": "Orange",
+        "Moderate": "Yellow",
+        "Strong": "Green",
         "None": "White"},
     "NLRI": {
         "Negligible": "Red",

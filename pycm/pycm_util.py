@@ -195,20 +195,66 @@ def normalized_table_calc(classes, table):
     Return normalized confusion matrix.
 
     :param classes: classes list
-    :type classes:list
+    :type classes: list
     :param table: table
-    :type table:dict
+    :type table: dict
     :return: normalized table as dict
     """
-    map_dict = {k: 0 for k in classes}
-    new_table = {k: map_dict.copy() for k in classes}
+    normalized_table = {}
+    p = float(10**5)
     for key in classes:
+        normalized_table[key] = {}
         div = sum(table[key].values())
         if div == 0:
             div = 1
         for item in classes:
-            new_table[key][item] = numpy.around(table[key][item] / div, 5)
-    return new_table
+            normalized_table[key][item] = custom_rounder(
+                table[key][item] / div, p)
+    return normalized_table
+
+
+def custom_rounder(input_number, p):
+    """
+    Return round of a input number respected to the digit.
+
+    :param input_number: number that should be round
+    :type input_number: float
+    :param p: 10 powered by number of digits the wanted to be rounded to
+    :type digit: int
+    :return: rounded number in float
+    """
+    return int(input_number * p + 0.5) / p
+
+
+def sparse_matrix_calc(classes, table):
+    """
+    Return sparse confusion table and it's classes.
+
+    :param classes: classes list
+    :type classes: list
+    :param table: table
+    :type table: dict
+    :return: a list containing 3 dicts(sparse_table, actual_classes, predict_classes)
+    """
+    sparse_table = {}
+    for key in table:
+        sparse_table[key] = table[key].copy()
+    predict_classes = classes.copy()
+    actual_classes = classes.copy()
+    for x in classes:
+        row_sum = 0
+        col_sum = 0
+        for y in classes:
+            row_sum += table[x][y]
+            col_sum += table[y][x]
+        if row_sum == 0:
+            del sparse_table[x]
+            actual_classes.remove(x)
+        if col_sum == 0:
+            for row in actual_classes:
+                del sparse_table[row][x]
+            predict_classes.remove(x)
+    return [sparse_table, actual_classes, predict_classes]
 
 
 def transpose_func(classes, table):
@@ -329,6 +375,20 @@ def binary_check(classes):
     if num_classes == 2:
         is_binary = True
     return is_binary
+
+
+def complement(input_number):
+    """
+    Calculate complement of input number.
+
+    :param input_number: input number
+    :type input_number: float
+    :return: complement as float
+    """
+    try:
+        return 1 - input_number
+    except Exception:
+        return "None"
 
 
 def statistic_recommend(classes, P):

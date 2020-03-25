@@ -2,6 +2,28 @@
 """Interpretation functions."""
 
 
+def Q_analysis(Q):
+    """
+    Analysis Q(Yule's Q) with interpretation table.
+
+    :param Q: Yule's Q
+    :type Q: float
+    :return: interpretation result as str
+    """
+    try:
+        if Q == "None":
+            return "None"
+        if Q < 0.25:
+            return "Negligible"
+        if Q >= 0.25 and Q < 0.5:
+            return "Weak"
+        if Q >= 0.5 and Q < 0.75:
+            return "Moderate"
+        return "Strong"
+    except Exception:
+        return "None"
+
+
 def MCC_analysis(MCC):
     """
     Analysis MCC(Matthews correlation coefficient) with interpretation table.
@@ -21,8 +43,7 @@ def MCC_analysis(MCC):
             return "Moderate"
         if MCC >= 0.7 and MCC < 0.9:
             return "Strong"
-        if MCC >= 0.9:
-            return "Very Strong"
+        return "Very Strong"
     except Exception:  # pragma: no cover
         return "None"
 
@@ -70,8 +91,7 @@ def V_analysis(V):
             return "Relatively Strong"
         if V >= 0.6 and V < 0.8:
             return "Strong"
-        if V >= 0.8:
-            return "Very Strong"
+        return "Very Strong"
     except Exception:  # pragma: no cover
         return "None"
 
@@ -206,8 +226,7 @@ def kappa_analysis_fleiss(kappa):
             return "Poor"
         if kappa >= 0.4 and kappa < 0.75:
             return "Intermediate to Good"
-        if kappa >= 0.75:
-            return "Excellent"
+        return "Excellent"
     except Exception:  # pragma: no cover
         return "None"
 

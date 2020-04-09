@@ -677,4 +677,3 @@ class ConfusionMatrix():
             return numpy.average(item_values,weights=weights)
         except Exception:
             return "None"
-

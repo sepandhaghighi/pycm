@@ -659,22 +659,6 @@ def macro_calc(item):
     except Exception:
         return "None"
 
-def weighted_calc(item1,item2):
-    """
-    Calculate PPV_Macro and TPR_Macro.
-
-    :param item1: F1
-    :type item1:dict
-    :param item2: P or Support
-    :type item2:dict
-    
-    :return: weighted average F1
-    """
-    try:
-        return numpy.average(list(item1.values()),weights=list(item2.values()))
-    except Exception:
-        return "None"
-
 def PC_AC1_calc(P, TOP, POP):
     """
     Calculate percent chance agreement for Gwet's AC1.

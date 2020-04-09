@@ -656,3 +656,26 @@ class ConfusionMatrix():
         self.FP = self.class_stat["FP"]
         self.FN = self.class_stat["FN"]
         __class_stat_init__(self)
+    def weighted_average(self, item, weights=None):
+        """
+        Calculate Weighted average of input parameter.
+
+        :param item: a class item for which weighted average has to be calculated
+        :type item1:str
+        :param weights: Explicitly passes weights or Support or P
+        :type item2:dict
+    
+        :return: weighted average of the input parameter
+        """
+        if not weights:
+            """ Set default weights to the Support or P"""
+            weights = list(self.class_stat["P"].values())
+        try:
+            item_values = list(self.class_stat[item].values())
+        except KeyError:
+            return "Error: Invalid item {}".format(item)
+        try:
+            return numpy.average(item_values,weights=weights)
+        except Exception:
+            return "None"
+

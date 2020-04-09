@@ -838,7 +838,6 @@ def overall_statistics(**kwargs):
         "FNR Micro": complement(TPR_PPV_F1_micro),
         "PPV Micro": TPR_PPV_F1_micro,
         "F1 Micro": TPR_PPV_F1_micro,
-        "F1 Weighted" : weighted_calc(kwargs["F1"],kwargs["P"]),
         "Scott PI": PI,
         "Gwet AC1": AC1,
         "Bennett S": S,

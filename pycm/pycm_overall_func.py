@@ -2,6 +2,7 @@
 """Overall statistics functions."""
 from __future__ import division
 import math
+import numpy
 import operator as op
 from functools import reduce
 from .pycm_interpret import *
@@ -658,6 +659,21 @@ def macro_calc(item):
     except Exception:
         return "None"
 
+def weighted_calc(item1,item2):
+    """
+    Calculate PPV_Macro and TPR_Macro.
+
+    :param item1: F1
+    :type item1:dict
+    :param item2: P or Support
+    :type item2:dict
+    
+    :return: weighted average F1
+    """
+    try:
+        return numpy.average(list(item1.values()),weights=list(item2.values()))
+    except Exception:
+        return "None"
 
 def PC_AC1_calc(P, TOP, POP):
     """
@@ -838,6 +854,7 @@ def overall_statistics(**kwargs):
         "FNR Micro": complement(TPR_PPV_F1_micro),
         "PPV Micro": TPR_PPV_F1_micro,
         "F1 Micro": TPR_PPV_F1_micro,
+        "F1 Weighted" : weighted_calc(kwargs["F1"],kwargs["P"]),
         "Scott PI": PI,
         "Gwet AC1": AC1,
         "Bennett S": S,

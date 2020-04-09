@@ -469,6 +469,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - documents and `README.md`
 
 [Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v2.6...dev
+
+### Added
+- Weighted average F1
 [2.6]: https://github.com/sepandhaghighi/pycm/compare/v2.5...v2.6
 [2.5]: https://github.com/sepandhaghighi/pycm/compare/v2.4...v2.5
 [2.4]: https://github.com/sepandhaghighi/pycm/compare/v2.3...v2.4

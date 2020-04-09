@@ -668,8 +668,7 @@ class ConfusionMatrix():
         :return: weighted average of the input parameter
         """
         if not weights:
-            """ Set default weights to the Support or P"""
-            weights = list(self.class_stat["P"].values())
+            weights = list(self.class_stat["P"].values()) # """ Set default weights to the Support or P"""
         try:
             item_values = list(self.class_stat[item].values())
         except KeyError:

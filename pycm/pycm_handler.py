@@ -106,7 +106,6 @@ def __overall_stat_init__(cm):
     cm.PPV_Micro = cm.overall_stat["PPV Micro"]
     cm.F1_Macro = cm.overall_stat["F1 Macro"]
     cm.F1_Micro = cm.overall_stat["F1 Micro"]
-    cm.F1_Weighted = cm.overall_stat["F1 Weighted"]
     cm.Overall_RACC = cm.overall_stat["Overall RACC"]
     cm.Overall_RACCU = cm.overall_stat["Overall RACCU"]
     cm.PI = cm.overall_stat["Scott PI"]

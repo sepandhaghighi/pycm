@@ -516,6 +516,6 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 >>> cm3.LambdaB
 0.35714285714285715
 
->>> cm.weighted_average("F2")
-0.5684946392350044
+>>> cm.weighted_average("PPV")
+0.575
 """

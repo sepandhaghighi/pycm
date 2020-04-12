@@ -2,7 +2,6 @@
 """Overall statistics functions."""
 from __future__ import division
 import math
-import numpy
 import operator as op
 from functools import reduce
 from .pycm_interpret import *

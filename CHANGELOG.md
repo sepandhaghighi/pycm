@@ -6,7 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ## [2.6] - 2020-03-25
-### Added
+## Added
+- Weighted average for various class stats
 - `custom_rounder` function
 - `complement` function
 - `sparse_matrix` attribute
@@ -470,8 +471,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 [Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v2.6...dev
 
-### Added
-- Weighted average for various class stats
 [2.6]: https://github.com/sepandhaghighi/pycm/compare/v2.5...v2.6
 [2.5]: https://github.com/sepandhaghighi/pycm/compare/v2.4...v2.5
 [2.4]: https://github.com/sepandhaghighi/pycm/compare/v2.3...v2.4

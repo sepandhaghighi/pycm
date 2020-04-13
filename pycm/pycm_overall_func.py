@@ -658,6 +658,7 @@ def macro_calc(item):
     except Exception:
         return "None"
 
+
 def PC_AC1_calc(P, TOP, POP):
     """
     Calculate percent chance agreement for Gwet's AC1.

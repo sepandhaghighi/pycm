@@ -5,9 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-## [2.6] - 2020-03-25
-## Added
+### Added
 - Weighted average for various class stats
+## [2.6] - 2020-03-25
+### Added
 - `custom_rounder` function
 - `complement` function
 - `sparse_matrix` attribute

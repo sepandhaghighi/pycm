@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix module."""
 from __future__ import division
-from .pycm_error import pycmVectorError, pycmMatrixError, pycmCIError
+from .pycm_error import pycmVectorError, pycmMatrixError, pycmCIError, pycmAverageError
 from .pycm_handler import __class_stat_init__, __overall_stat_init__
 from .pycm_handler import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__
 from .pycm_class_func import F_calc, IBA_calc, TI_calc, NB_calc
@@ -656,24 +656,40 @@ class ConfusionMatrix():
         self.FP = self.class_stat["FP"]
         self.FN = self.class_stat["FN"]
         __class_stat_init__(self)
-    def weighted_average(self, item, weights=None):
+
+    def weighted_average(self, item, weight=None, none_omit=False):
         """
-        Calculate Weighted average of input parameter.
+        Calculate weighted average of input parameter.
 
         :param item: a class item for which weighted average has to be calculated
-        :type item1:str
-        :param weights: Explicitly passes weights or Support or P
-        :type item2:dict
-    
+        :type item:str
+        :param weight: Explicitly passes weights or Support or P
+        :type weight:dict
+        :param none_omit: none items omit flag
+        :type none_omit: bool
         :return: weighted average of the input parameter
         """
-        if not weights:
-            weights = list(self.class_stat["P"].values()) # """ Set default weights to the Support or P"""
+        selected_weight = self.P.copy()
+        if weight is not None:
+            if not isinstance(weight, dict):
+                raise pycmAverageError(AVERAGE_WEIGHT_ERROR)
+            if list(weight.keys()) == self.classes and all(
+                    [isfloat(x) for x in weight.values()]):
+                selected_weight = weight.copy()
+            else:
+                raise pycmAverageError(AVERAGE_WEIGHT_ERROR)
+        if item in self.class_stat:
+            selected_item = self.class_stat[item]
+        else:
+            raise pycmAverageError(AVERAGE_WRONG_ERROR)
         try:
-            item_values = list(self.class_stat[item].values())
-        except KeyError:
-            return "Error: Invalid item {}".format(item)
-        try:
-            return numpy.average(item_values,weights=weights)
+            weight_list = []
+            item_list = []
+            for class_name in selected_item.keys():
+                if selected_item[class_name] == "None" and none_omit:
+                    continue
+                weight_list.append(selected_weight[class_name])
+                item_list.append(selected_item[class_name])
+            return numpy.average(item_list, weights=weight_list)
         except Exception:
             return "None"

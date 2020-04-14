@@ -39,6 +39,10 @@ COMPARE_WEIGHT_ERROR = "The weight type must be dictionary and also must be set 
 
 COMPARE_RESULT_WARNING = "Confusion matrices are too close and the best one can not be recognized."
 
+AVERAGE_WEIGHT_ERROR = "The weight type must be dictionary and also must be set for all classes."
+
+AVERAGE_WRONG_ERROR = "Wrong parameter!"
+
 CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won't be demonstrated properly.\n" \
                        "If confusion matrix has too many zeros (sparse matrix) you can set `sparse` flag to True in printing functions "\
                        "otherwise by using save_csv method to save the confusion matrix in csv format you'll have better demonstration."

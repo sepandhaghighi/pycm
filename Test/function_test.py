@@ -326,8 +326,12 @@ False
 'None'
 >>> cm.weighted_average("PPV",weight=cm.P)
 0.575
->>> cm.weighted_average("PPV",weight={'L1': 3, 'L3': 6, 'L2': 31})
-0.5225
+>>> cm.weighted_average("PPV",weight={'L1': 0, 'L3': 0, 'L2': 1})
+0.5
+>>> cm.weighted_average("PPV",weight={'L1': 0, 'L3': 1, 'L2': 1})
+0.55
+>>> cm.weighted_average("PPV",weight={'L1': 1, 'L3': 0, 'L2': 1})
+0.55
 >>> cm.F_beta(4)["L1"]
 0.9622641509433962
 >>> cm.F_beta(4)["L2"]

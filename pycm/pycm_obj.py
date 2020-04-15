@@ -663,7 +663,7 @@ class ConfusionMatrix():
 
         :param param: input parameter
         :type param: str
-        :param weight: Explicitly passes weights or Support or P
+        :param weight: explicitly passes weights
         :type weight:dict
         :param none_omit: none items omit flag
         :type none_omit: bool

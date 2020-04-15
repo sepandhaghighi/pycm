@@ -318,6 +318,12 @@ False
 'None'
 >>> ERR_calc(0.1)
 0.9
+>>> cm.weighted_average("PPV")
+0.575
+>>> cm.weighted_average("DOR",none_omit=True)
+2.666666666666666
+>>> cm.weighted_average("DOR")
+'None'
 >>> cm.F_beta(4)["L1"]
 0.9622641509433962
 >>> cm.F_beta(4)["L2"]
@@ -515,7 +521,4 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 0.4
 >>> cm3.LambdaB
 0.35714285714285715
-
->>> cm.weighted_average("PPV")
-0.575
 """

@@ -673,7 +673,7 @@ class ConfusionMatrix():
         if weight is not None:
             if not isinstance(weight, dict):
                 raise pycmAverageError(AVERAGE_WEIGHT_ERROR)
-            if list(weight.keys()) == self.classes and all(
+            if set(weight.keys()) == set(self.classes) and all(
                     [isfloat(x) for x in weight.values()]):
                 selected_weight = weight.copy()
             else:

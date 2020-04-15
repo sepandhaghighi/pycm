@@ -79,4 +79,16 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 Traceback (most recent call last):
         ...
 pycm.pycm_obj.pycmCIError: The input type is considered to be string but it's not!
+>>> cm.weighted_average("AUCC")
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmAverageError: Invalid parameter!
+>>> cm.weighted_average("AUC",weight=2)
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmAverageError: The weight type must be dictionary and also must be set for all classes.
+>>> cm.weighted_average("AUC",weight={1:23})
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmAverageError: The weight type must be dictionary and also must be set for all classes.
 """

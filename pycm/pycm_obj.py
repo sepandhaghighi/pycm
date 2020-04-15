@@ -681,7 +681,7 @@ class ConfusionMatrix():
         if param in self.class_stat:
             selected_param = self.class_stat[param]
         else:
-            raise pycmAverageError(AVERAGE_WRONG_ERROR)
+            raise pycmAverageError(AVERAGE_INVALID_ERROR)
         try:
             weight_list = []
             param_list = []

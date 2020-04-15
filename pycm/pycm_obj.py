@@ -657,12 +657,12 @@ class ConfusionMatrix():
         self.FN = self.class_stat["FN"]
         __class_stat_init__(self)
 
-    def weighted_average(self, item, weight=None, none_omit=False):
+    def weighted_average(self, param, weight=None, none_omit=False):
         """
         Calculate weighted average of input parameter.
 
-        :param item: a class item for which weighted average has to be calculated
-        :type item:str
+        :param param: input parameter
+        :type param: str
         :param weight: Explicitly passes weights or Support or P
         :type weight:dict
         :param none_omit: none items omit flag
@@ -678,18 +678,18 @@ class ConfusionMatrix():
                 selected_weight = weight.copy()
             else:
                 raise pycmAverageError(AVERAGE_WEIGHT_ERROR)
-        if item in self.class_stat:
-            selected_item = self.class_stat[item]
+        if param in self.class_stat:
+            selected_param = self.class_stat[param]
         else:
             raise pycmAverageError(AVERAGE_WRONG_ERROR)
         try:
             weight_list = []
-            item_list = []
-            for class_name in selected_item.keys():
-                if selected_item[class_name] == "None" and none_omit:
+            param_list = []
+            for class_name in selected_param.keys():
+                if selected_param[class_name] == "None" and none_omit:
                     continue
                 weight_list.append(selected_weight[class_name])
-                item_list.append(selected_item[class_name])
-            return numpy.average(item_list, weights=weight_list)
+                param_list.append(selected_param[class_name])
+            return numpy.average(param_list, weights=weight_list)
         except Exception:
             return "None"

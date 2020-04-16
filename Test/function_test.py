@@ -342,6 +342,7 @@ False
 True
 >>> cm.IBA_alpha(None) == {'L3': 'None', 'L1': 'None', 'L2': 'None'}
 True
+>>> cm.relabel({'L3': 6, 'L1': 3, 'L2': 3})
 >>> del cm.classes
 >>> del cm.TP
 >>> cm.IBA_alpha(2)

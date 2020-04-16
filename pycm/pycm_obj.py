@@ -629,7 +629,7 @@ class ConfusionMatrix():
         """
         if not isinstance(mapping, dict):
             raise pycmMatrixError(MAPPING_FORMAT_ERROR)
-        if self.classes != list(mapping.keys()):
+        if set(self.classes) != set(mapping.keys()):
             raise pycmMatrixError(MAPPING_CLASS_NAME_ERROR)
         for row in self.classes:
             temp_dict = {}

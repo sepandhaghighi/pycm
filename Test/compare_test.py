@@ -81,4 +81,10 @@ Rank  Name   Class-Score     Overall-Score
 <BLANKLINE>
 >>> cp3.best
 >>> cp3.best_name
+>>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
+>>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
+>>> cm = ConfusionMatrix(y_actu, y_pred)
+>>> cm.relabel({0:"L1",1:"L2",2:"L3"})
+>>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
+...     cp4 = Compare({"cm1":cm,"cm2":cm},weight={'L3': 6, 'L1': 3, 'L2': 3})
 """

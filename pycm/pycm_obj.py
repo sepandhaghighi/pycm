@@ -659,13 +659,13 @@ class ConfusionMatrix():
 
     def weighted_average(self, param, weight=None, none_omit=False):
         """
-        Calculate weighted average of input parameter.
+        Calculate the weighted average of the input parameter
 
         :param param: input parameter
         :type param: str
         :param weight: explicitly passes weights
         :type weight:dict
-        :param none_omit: none items omit flag
+        :param none_omit: none items omitting flag
         :type none_omit: bool
         :return: weighted average of the input parameter
         """

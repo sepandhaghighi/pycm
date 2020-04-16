@@ -6,7 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- Weighted average for various class stats
+- `weighted_average` method
+- `pycmAverageError` class
+### Changed
+- Document modified
 ## [2.6] - 2020-03-25
 ### Added
 - `custom_rounder` function

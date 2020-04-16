@@ -35,11 +35,11 @@ COMPARE_DOMAIN_ERROR = "The domain of all ConfusionMatrix objects must be same! 
 COMPARE_NUMBER_ERROR = "Lower than two confusion matrices is given for comparing. The minimum number of " \
                        "confusion matrix for comparing is 2."
 
-COMPARE_WEIGHT_ERROR = "The weight type must be dictionary and also must be set for all classes."
+COMPARE_WEIGHT_ERROR = "The weight type must be dictionary and also must be specified for all of the classes."
 
 COMPARE_RESULT_WARNING = "Confusion matrices are too close and the best one can not be recognized."
 
-AVERAGE_WEIGHT_ERROR = "The weight type must be dictionary and also must be set for all classes."
+AVERAGE_WEIGHT_ERROR = "The weight type must be dictionary and also must be specified for all of the classes."
 
 AVERAGE_INVALID_ERROR = "Invalid parameter!"
 

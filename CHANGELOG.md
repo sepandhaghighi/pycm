@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Document modified
 - `relabel` method bug fixed
 - Minor bug in `Compare` class fixed
+- Document modified
 ## [2.6] - 2020-03-25
 ### Added
 - `custom_rounder` function

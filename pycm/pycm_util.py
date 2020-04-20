@@ -101,7 +101,7 @@ def matrix_check(table):
         if len(table.keys()) == 0:
             return False
         for i in table.keys():
-            if table.keys() != table[i].keys() or vector_check(
+            if set(table.keys()) != set(table[i].keys()) or vector_check(
                     list(table[i].values())) is False:
                 return False
         return True

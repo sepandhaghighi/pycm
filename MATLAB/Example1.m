@@ -24,3 +24,9 @@ cm.print_matrix()
 cm.print_normalized_matrix();
 % Print stat
 cm.stat();
+% Save object
+cm.save_obj('cm1');
+% Save html
+cm.save_html('cm1');
+% Save csv
+cm.save_csv('cm1');

@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - `weighted_average` method
 - `pycmAverageError` class
+- MATLAB examples
+- Github action
 ### Changed
 - Document modified
 - `relabel` method bug fixed

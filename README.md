@@ -117,6 +117,19 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 - Run `easy_install --upgrade pycm` (Need root access)
 
+### MATLAB
+
+- Download and install [MATLAB](https://www.mathworks.com/products/matlab.html) (>=8.5, 64/32 bit)
+- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5, 64/32 bit) 
+	- [x] Select `Add to PATH` option
+	- [x] Select `Install pip` option
+- Run `pip install pycm` or `pip3 install pycm` (Need root access)
+- Configure Python interpreter
+```matlab
+>> pyversion PYTHON_EXECUTABLE_FULL_PATH
+```
+- Visit [MATLAB Examples](https://github.com/sepandhaghighi/pycm/tree/master/MATLAB)	
+
 ### Docker	
 
 - Run `docker pull sepandhaghighi/pycm` (Need root access)

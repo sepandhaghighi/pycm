@@ -98,10 +98,11 @@ def matrix_check(table):
     :return: bool
     """
     try:
-        if len(table.keys()) == 0:
+        table_keys = table.keys()
+        if len(table_keys) == 0:
             return False
-        for i in table.keys():
-            if table.keys() != table[i].keys() or vector_check(
+        for i in table_keys:
+            if set(table_keys) != set(table[i].keys()) or vector_check(
                     list(table[i].values())) is False:
                 return False
         return True

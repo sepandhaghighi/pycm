@@ -19,6 +19,7 @@ class pycmCIError(Exception):
 
     pass
 
+
 class pycmAverageError(Exception):
     """Average error class."""
 

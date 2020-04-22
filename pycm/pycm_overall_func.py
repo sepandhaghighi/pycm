@@ -346,7 +346,7 @@ def entropy_calc(item, POP):
         return "None"
 
 
-def weighted_kappa_calc(classes,table,P,TOP,POP,weight):
+def weighted_kappa_calc(classes, table, P, TOP, POP, weight):
     """
     Calculate weighted kappa.
 
@@ -370,11 +370,11 @@ def weighted_kappa_calc(classes,table,P,TOP,POP,weight):
         w_max = max(map(lambda x: max(x.values()), weight.values()))
         for i in classes:
             for j in classes:
-                v_i_j = 1 - weight[i][j]/w_max
-                if v_i_j !=0:
-                    p_e += P[i]*TOP[j]*v_i_j/(POP[i]**2)
-                    p_s += table[i][j]*v_i_j/POP[i]
-        weighted_kappa = reliability_calc(p_e,p_s)
+                v_i_j = 1 - weight[i][j] / w_max
+                if v_i_j != 0:
+                    p_e += P[i] * TOP[j] * v_i_j / (POP[i]**2)
+                    p_s += table[i][j] * v_i_j / POP[i]
+        weighted_kappa = reliability_calc(p_e, p_s)
         return weighted_kappa
     except Exception:
         return "None"

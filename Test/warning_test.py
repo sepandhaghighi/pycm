@@ -350,4 +350,7 @@ sInd(Similarity index)                                            1.0           
 >>> with warns(RuntimeWarning):
 ...	    cm.weighted_kappa()
 0.4959042218021425
+>>> with warns(RuntimeWarning):
+...	    cm.weighted_kappa(weight={1:{1:1,2:2},2:{1:2,2:1}})
+0.4959042218021425
 """

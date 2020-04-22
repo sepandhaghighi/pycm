@@ -695,7 +695,7 @@ class ConfusionMatrix():
         except Exception:
             return "None"
 
-    def weighted_kappa(self,weight):
+    def weighted_kappa(self,weight=None):
         """
         Calculate weighted kappa.
 
@@ -705,8 +705,8 @@ class ConfusionMatrix():
         """
         if matrix_check(weight) is False:
             warn(WEIGHTED_KAPPA_WARNING, RuntimeWarning)
-            return cm.Kappa
+            return self.Kappa
         if set(weight.keys()) != set(self.classes):
             warn(WEIGHTED_KAPPA_WARNING, RuntimeWarning)
-            return cm.Kappa
+            return self.Kappa
         return weighted_kappa_calc(self.classes,self.table,self.P,self.TOP,self.POP,weight)

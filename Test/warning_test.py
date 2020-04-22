@@ -346,4 +346,8 @@ sInd(Similarity index)                                            1.0           
 >>> with warns(RuntimeWarning):
 ...     cm.CI("TPR",alpha=2,one_sided=True)[1][1][1]
 1.0264713799292524
+>>> cm = ConfusionMatrix(matrix={"often":{"often":16,"seldom":6,"never":2},"seldom":{"often":4,"seldom":10,"never":1},"never":{"often":3,"seldom":0,"never":8}})
+>>> with warns(RuntimeWarning):
+...	    cm.weighted_kappa()
+0.4959042218021425
 """

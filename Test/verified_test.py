@@ -312,4 +312,9 @@ True
 0.6
 >>> cm.weighted_average("F1")
 0.6133333333333334
+>>> cm = ConfusionMatrix(matrix={"often":{"often":16,"seldom":6,"never":2},"seldom":{"often":4,"seldom":10,"never":1},"never":{"often":3,"seldom":0,"never":8}}) # Verified Case -- (https://bit.ly/3btZm7z)
+>>> cm.weighted_kappa(weight={"often":{"often":0,"seldom":1,"never":2},"seldom":{"often":1,"seldom":0,"never":1},"never":{"often":2,"seldom":1,"never":0}})
+0.5009505703422054
+>>> cm.weighted_kappa(weight={"often":{"often":0,"seldom":1,"never":1},"seldom":{"often":1,"seldom":0,"never":1},"never":{"often":1,"seldom":1,"never":0}})
+0.49590422180214233
 """

@@ -810,6 +810,10 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>69- J. M. Santos and M. Embrechts, "On the use of the adjusted rand index as a metric for evaluating supervised classification," in International conference on artificial neural networks, 2009: Springer, pp. 175-184.</blockquote>
 
+<blockquote>70- J. Cohen, "Weighted kappa: nominal scale agreement provision for scaled disagreement or partial credit," Psychological bulletin, vol. 70, no. 4, p. 213, 1968.</blockquote>
+
+<blockquote>71- R. Bakeman and J. M. Gottman, Observing interaction: An introduction to sequential analysis. Cambridge university press, 1997.</blockquote>
+
 
 
 ## Cite

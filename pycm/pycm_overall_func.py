@@ -346,6 +346,39 @@ def entropy_calc(item, POP):
         return "None"
 
 
+def weighted_kappa_calc(classes, table, P, TOP, POP, weight):
+    """
+    Calculate weighted kappa.
+
+    :param classes: confusion matrix classes
+    :type classes : list
+    :param table: confusion matrix table
+    :type table : dict
+    :param P: condition positive
+    :type P : dict
+    :param TOP: test outcome positive
+    :type TOP : dict
+    :param POP: population
+    :type POP : dict
+    :param weight: weight matrix
+    :type weight: dict
+    :return: weighted kappa as float
+    """
+    p_e = 0
+    p_s = 0
+    try:
+        w_max = max(map(lambda x: max(x.values()), weight.values()))
+        for i in classes:
+            for j in classes:
+                v_i_j = 1 - weight[i][j] / w_max
+                p_e += P[i] * TOP[j] * v_i_j / (POP[i]**2)
+                p_s += table[i][j] * v_i_j / POP[i]
+        weighted_kappa = reliability_calc(p_e, p_s)
+        return weighted_kappa
+    except Exception:
+        return "None"
+
+
 def kappa_no_prevalence_calc(overall_accuracy):
     """
     Calculate kappa no prevalence.

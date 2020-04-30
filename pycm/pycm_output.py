@@ -309,13 +309,13 @@ def table_print(classes, table):
     table_list = []
     for key in classes:
         table_list.extend(list(table[key].values()))
+    classes.sort()
     table_list.extend(classes)
     table_max_length = max(map(len, map(str, table_list)))
     shift = "%-" + str(7 + table_max_length) + "s"
     result = shift % "Predict" + shift * \
         classes_len % tuple(map(str, classes)) + "\n"
     result = result + "Actual\n"
-    classes.sort()
     for key in classes:
         row = [table[key][i] for i in classes]
         result += shift % str(key) + \

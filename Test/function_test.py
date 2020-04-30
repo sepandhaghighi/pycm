@@ -318,6 +318,12 @@ False
 'None'
 >>> ERR_calc(0.1)
 0.9
+>>> cm.average("PPV")
+0.5666666666666668
+>>> cm.average("DOR")
+'None'
+>>> cm.average("DOR", none_omit=True)
+2.9999999999999987
 >>> cm.weighted_average("PPV")
 0.575
 >>> cm.weighted_average("DOR",none_omit=True)

@@ -658,6 +658,31 @@ class ConfusionMatrix():
         self.FN = self.class_stat["FN"]
         __class_stat_init__(self)
 
+    def average(self, param, none_omit=False):
+        """
+        Calculate the average of the input parameter.
+
+        :param param: input parameter
+        :type param: str
+        :param none_omit: none items omitting flag
+        :type none_omit: bool
+        :return: average of the input parameter
+        """
+        if param in self.class_stat:
+            selected_param = self.class_stat[param]
+        else:
+            raise pycmAverageError(AVERAGE_INVALID_ERROR)
+        try:
+            weight_list = []
+            param_list = []
+            for class_name in selected_param.keys():
+                if selected_param[class_name] == "None" and none_omit:
+                    continue
+                param_list.append(selected_param[class_name])
+            return numpy.average(param_list)
+        except Exception:
+            return "None"
+
     def weighted_average(self, param, weight=None, none_omit=False):
         """
         Calculate the weighted average of the input parameter.

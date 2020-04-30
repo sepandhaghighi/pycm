@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `relabel` method bug fixed
 - `matrix_check` function bug fixed
 - Minor bug in `Compare` class fixed
-- Fixed rows/columns class name mismatch when printing out a confusion matrix
+- Class names mismatch bug fixed
 ## [2.6] - 2020-03-25
 ### Added
 - `custom_rounder` function

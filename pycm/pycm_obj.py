@@ -673,7 +673,6 @@ class ConfusionMatrix():
         else:
             raise pycmAverageError(AVERAGE_INVALID_ERROR)
         try:
-            weight_list = []
             param_list = []
             for class_name in selected_param.keys():
                 if selected_param[class_name] == "None" and none_omit:

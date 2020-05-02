@@ -306,6 +306,12 @@ True
 >>> cm.weighted_average("F1")
 0.26666666666666666
 >>> cm = ConfusionMatrix([0, 1, 2, 2, 2],[0, 0, 2, 2, 1]) # Verified Case -- (https://bit.ly/2yidCBo)
+>>> cm.average("PPV")
+0.5
+>>> cm.average("TPR")
+0.5555555555555555
+>>> cm.average("F1")
+0.48888888888888893
 >>> cm.weighted_average("PPV")
 0.7
 >>> cm.weighted_average("TPR")

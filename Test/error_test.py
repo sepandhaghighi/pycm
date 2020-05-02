@@ -79,6 +79,10 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 Traceback (most recent call last):
         ...
 pycm.pycm_obj.pycmCIError: The input type is considered to be string but it's not!
+>>> cm.average("AUCC")
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmAverageError: Invalid parameter!
 >>> cm.weighted_average("AUCC")
 Traceback (most recent call last):
         ...

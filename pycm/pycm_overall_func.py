@@ -935,4 +935,4 @@ def overall_statistics(**kwargs):
         "Pearson C": C,
         "CSI": CSI,
         "ARI": ARI,
-        "B": B}
+        "Bangdiwala B": B}

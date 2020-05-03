@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `weighted_average` method
 - `weighted_kappa` method
 - `pycmAverageError` class
+- Bangdiwala's B
 - MATLAB examples
 - Github action
 ### Changed

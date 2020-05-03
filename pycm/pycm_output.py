@@ -334,6 +334,8 @@ def sparse_table_print(sparse_matrix):
     :return: printable table as str
     """
     [sparse_table, actual_classes, predict_classes] = sparse_matrix
+    predict_classes.sort()
+    actual_classes.sort()
     classes_len = len(predict_classes)
     table_list = []
     for key in actual_classes:
@@ -344,8 +346,6 @@ def sparse_table_print(sparse_matrix):
     result = shift % "Predict" + shift * \
         classes_len % tuple(map(str, predict_classes)) + "\n"
     result = result + "Actual\n"
-    predict_classes.sort()
-    actual_classes.sort()
     for key in actual_classes:
         row = [sparse_table[key][i] for i in predict_classes]
         result += shift % str(key) + \

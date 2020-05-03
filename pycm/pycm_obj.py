@@ -652,6 +652,7 @@ class ConfusionMatrix():
                           ] = self.class_stat[param][classname]
             self.class_stat[param] = temp_dict
         self.classes = list(mapping.values())
+        self.classes.sort()
         self.TP = self.class_stat["TP"]
         self.TN = self.class_stat["TN"]
         self.FP = self.class_stat["FP"]

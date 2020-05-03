@@ -323,4 +323,10 @@ True
 0.5009505703422054
 >>> cm.weighted_kappa(weight={"often":{"often":0,"seldom":1,"never":1},"seldom":{"often":1,"seldom":0,"never":1},"never":{"often":1,"seldom":1,"never":0}})
 0.49590422180214233
+>>> cm = ConfusionMatrix(matrix={1:{1:60,2:10},2:{1:10,2:20}}) # Verified Case -- (Warrens, Raadt, 2019)
+>>> cm.B
+0.6896551724137931
+>>> cm = ConfusionMatrix(matrix={1:{1:10,2:10,3:0},2:{1:10,2:10,3:0},3:{1:0,2:0,3:60}}) # Verified Case -- (Warrens, Raadt, 2019)
+>>> cm.B
+0.8636363636363636
 """

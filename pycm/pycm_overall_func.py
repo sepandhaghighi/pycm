@@ -8,6 +8,7 @@ from .pycm_interpret import *
 from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
 from .pycm_util import complement
 
+
 def B_calc(classes, TP, TOP, P):
     """
     Calculate B (Bangdiwala's B).
@@ -27,11 +28,12 @@ def B_calc(classes, TP, TOP, P):
         down = 0
         for i in classes:
             up += TP[i]**2
-            down += TOP[i]*P[i]
-        B = up/down
+            down += TOP[i] * P[i]
+        B = up / down
         return B
     except Exception:
         return "None"
+
 
 def ARI_calc(classes, table, TOP, P, POP):
     """
@@ -872,7 +874,7 @@ def overall_statistics(**kwargs):
     ARI = ARI_calc(classes, table, TOP, P, population)
     TNR_micro = micro_calc(item1=kwargs["TN"], item2=kwargs["FP"])
     TNR_macro = macro_calc(kwargs["TNR"])
-    B = B_calc(classes,TP,TOP,P)
+    B = B_calc(classes, TP, TOP, P)
     return {
         "Overall ACC": overall_accuracy,
         "Kappa": overall_kappa,

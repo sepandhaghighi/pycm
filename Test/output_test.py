@@ -125,6 +125,7 @@ ACC Macro                                                        0.675
 ARI                                                              0.02298
 AUNP                                                             None
 AUNU                                                             None
+Bangdiwala B                                                     0.31356
 Bennett S                                                        0.13333
 CBA                                                              0.17708
 CSI                                                              None
@@ -322,6 +323,7 @@ ACC Macro                                                        0.74603
 ARI                                                              0.15323
 AUNP                                                             0.7
 AUNU                                                             0.70556
+Bangdiwala B                                                     0.44242
 Bennett S                                                        0.42857
 CBA                                                              0.47778
 CSI                                                              0.17222

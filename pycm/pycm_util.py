@@ -168,13 +168,13 @@ def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
     :type classes : list
     :param table: input matrix
     :type table : dict
-    :param TP: true positive dict for all classes
+    :param TP: true positive
     :type TP : dict
-    :param TN: true negative dict for all classes
+    :param TN: true negative
     :type TN : dict
-    :param FP: false positive dict for all classes
+    :param FP: false positive
     :type FP : dict
-    :param FN: false negative dict for all classes
+    :param FN: false negative
     :type FN : dict
     :param class_name : target class name for One-Vs-All mode
     :type class_name : any valid type

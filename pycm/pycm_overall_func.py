@@ -9,6 +9,32 @@ from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
 from .pycm_util import complement
 
 
+def B_calc(classes, TP, TOP, P):
+    """
+    Calculate B (Bangdiwala's B).
+
+    :param classes: classes
+    :type classes : list
+    :param TP: true positive
+    :type TP : dict
+    :param TOP: test outcome positive
+    :type TOP : dict
+    :param P: condition positive
+    :type P : dict
+    :return: B as float
+    """
+    try:
+        up = 0
+        down = 0
+        for i in classes:
+            up += TP[i]**2
+            down += TOP[i] * P[i]
+        B = up / down
+        return B
+    except Exception:
+        return "None"
+
+
 def ARI_calc(classes, table, TOP, P, POP):
     """
     Calculate ARI (Adjusted Rand index).
@@ -174,7 +200,7 @@ def convex_combination(classes, TP, TOP, P, class_name, modified=False):
 
     :param classes: classes
     :type classes : list
-    :param TP: true Positive Dict For All Classes
+    :param TP: true positive
     :type TP : dict
     :param TOP: test outcome positive
     :type TOP : dict
@@ -209,7 +235,7 @@ def overall_CEN_calc(classes, TP, TOP, P, CEN_dict, modified=False):
 
     :param classes: classes
     :type classes : list
-    :param TP: true positive dict for all classes
+    :param TP: true positive
     :type TP : dict
     :param TOP: test outcome positive
     :type TOP : dict
@@ -848,6 +874,7 @@ def overall_statistics(**kwargs):
     ARI = ARI_calc(classes, table, TOP, P, population)
     TNR_micro = micro_calc(item1=kwargs["TN"], item2=kwargs["FP"])
     TNR_macro = macro_calc(kwargs["TNR"])
+    B = B_calc(classes, TP, TOP, P)
     return {
         "Overall ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -909,4 +936,5 @@ def overall_statistics(**kwargs):
         "RCI": RCI,
         "Pearson C": C,
         "CSI": CSI,
-        "ARI": ARI}
+        "ARI": ARI,
+        "Bangdiwala B": B}

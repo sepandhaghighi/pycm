@@ -10,12 +10,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `weighted_average` method
 - `weighted_kappa` method
 - `pycmAverageError` class
+- Bangdiwala's B
 - MATLAB examples
 - Github action
 ### Changed
 - Document modified
 - `README.md` modified
 - `relabel` method bug fixed
+- `sparse_table_print` function bug fixed
 - `matrix_check` function bug fixed
 - Minor bug in `Compare` class fixed
 - Class names mismatch bug fixed

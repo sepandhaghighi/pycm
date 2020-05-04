@@ -814,7 +814,7 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>71- R. Bakeman and J. M. Gottman, Observing interaction: An introduction to sequential analysis. Cambridge university press, 1997.</blockquote>
 
-<blockquote>72- Bangwidala S (1985) A graphical test for observer agreement. Proc 45th Int Stats Institute Meeting, Amsterdam, 1, 307–308</blockquote>
+<blockquote>72-  S. Bangdiwala, "A graphical test for observer agreement," in 45th International Statistical Institute Meeting, 1985, vol. 1985, pp. 307-308.</blockquote>
 
 <blockquote>73- Bangdiwala K (1987) Using SAS software graphical procedures for the observer agreement chart. Proc SAS User's Group International Conference, 12, 1083-1088</blockquote>
 

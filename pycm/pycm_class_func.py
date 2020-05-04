@@ -664,13 +664,13 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     """
     Return all class statistics.
 
-    :param TP: true positive dict for all classes
+    :param TP: true positive
     :type TP : dict
-    :param TN: true negative dict for all classes
+    :param TN: true negative
     :type TN : dict
-    :param FP: false positive dict for all classes
+    :param FP: false positive
     :type FP : dict
-    :param FN: false negative dict for all classes
+    :param FN: false negative
     :type FN : dict
     :param classes: classes
     :type classes : list

@@ -15,7 +15,7 @@ def B_calc(classes, TP, TOP, P):
 
     :param classes: classes
     :type classes : list
-    :param TP: true Positive Dict For All Classes
+    :param TP: true positive
     :type TP : dict
     :param TOP: test outcome positive
     :type TOP : dict
@@ -200,7 +200,7 @@ def convex_combination(classes, TP, TOP, P, class_name, modified=False):
 
     :param classes: classes
     :type classes : list
-    :param TP: true Positive Dict For All Classes
+    :param TP: true positive
     :type TP : dict
     :param TOP: test outcome positive
     :type TOP : dict
@@ -235,7 +235,7 @@ def overall_CEN_calc(classes, TP, TOP, P, CEN_dict, modified=False):
 
     :param classes: classes
     :type classes : list
-    :param TP: true positive dict for all classes
+    :param TP: true positive
     :type TP : dict
     :param TOP: test outcome positive
     :type TOP : dict

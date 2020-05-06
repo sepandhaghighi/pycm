@@ -327,17 +327,17 @@ def sparse_table_print(sparse_matrix):
     """
     Return printable confusion matrix in sparse mode.
 
-    :param sparse_matrix: list of sparse matrix and it's classes 
+    :param sparse_matrix: list of sparse matrix and it's classes
     :type sparse_matrix:list
     :return: printable table as str
     """
-    [sparse_matrix, actual_classes, predict_classes] = sparse_matrix
+    [sparse_table, actual_classes, predict_classes] = sparse_matrix
     predict_classes.sort()
     actual_classes.sort()
     classes_len = len(predict_classes)
     table_list = []
     for key in actual_classes:
-        table_list.extend(list(sparse_matrix[key].values()))
+        table_list.extend(list(sparse_table[key].values()))
     table_list.extend(predict_classes)
     table_max_length = max(map(len, map(str, table_list)))
     shift = "%-" + str(7 + table_max_length) + "s"
@@ -345,7 +345,7 @@ def sparse_table_print(sparse_matrix):
         classes_len % tuple(map(str, predict_classes)) + "\n"
     result = result + "Actual\n"
     for key in actual_classes:
-        row = [sparse_matrix[key][i] for i in predict_classes]
+        row = [sparse_table[key][i] for i in predict_classes]
         result += shift % str(key) + \
             shift * classes_len % tuple(map(str, row)) + "\n\n"
     return result

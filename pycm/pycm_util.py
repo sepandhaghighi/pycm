@@ -229,13 +229,13 @@ def custom_rounder(input_number, p):
 
 def sparse_matrix_calc(classes, table):
     """
-    Return sparse confusion table and it's classes.
+    Return sparse confusion matrix and it's classes.
 
     :param classes: classes list
     :type classes: list
     :param table: table
     :type table: dict
-    :return: a list containing 3 dicts(sparse_table, actual_classes, predict_classes)
+    :return: a list containing 3 dicts [sparse_table, actual_classes, predict_classes]
     """
     sparse_table = {}
     for key in table:

@@ -309,13 +309,13 @@ def table_print(classes, table):
     table_list = []
     for key in classes:
         table_list.extend(list(table[key].values()))
+    classes.sort()
     table_list.extend(classes)
     table_max_length = max(map(len, map(str, table_list)))
     shift = "%-" + str(7 + table_max_length) + "s"
     result = shift % "Predict" + shift * \
         classes_len % tuple(map(str, classes)) + "\n"
     result = result + "Actual\n"
-    classes.sort()
     for key in classes:
         row = [table[key][i] for i in classes]
         result += shift % str(key) + \
@@ -325,15 +325,15 @@ def table_print(classes, table):
 
 def sparse_table_print(sparse_matrix):
     """
-    Return printable confusion matrix in sparse mode when there are too many zeros.
+    Return printable confusion matrix in sparse mode.
 
-    :param classes: classes list
-    :type classes:list
-    :param table: table
-    :type table:dict
+    :param sparse_matrix: list of sparse matrix and it's classes
+    :type sparse_matrix:list
     :return: printable table as str
     """
     [sparse_table, actual_classes, predict_classes] = sparse_matrix
+    predict_classes.sort()
+    actual_classes.sort()
     classes_len = len(predict_classes)
     table_list = []
     for key in actual_classes:
@@ -344,8 +344,6 @@ def sparse_table_print(sparse_matrix):
     result = shift % "Predict" + shift * \
         classes_len % tuple(map(str, predict_classes)) + "\n"
     result = result + "Actual\n"
-    predict_classes.sort()
-    actual_classes.sort()
     for key in actual_classes:
         row = [sparse_table[key][i] for i in predict_classes]
         result += shift % str(key) + \

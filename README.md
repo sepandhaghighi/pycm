@@ -98,7 +98,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ⚠️  PyCM 2.4 is the last version to support **Python 2.7** & **Python 3.4**
 
 ### Source code
-- Download [Version 2.6](https://github.com/sepandhaghighi/pycm/archive/v2.6.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 2.7](https://github.com/sepandhaghighi/pycm/archive/v2.7.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -106,7 +106,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==2.6` or `pip3 install pycm==2.6` (Need root access)
+- Run `pip install pycm==2.7` or `pip3 install pycm==2.7` (Need root access)
 
 ### Conda
 
@@ -116,6 +116,19 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ### Easy install
 
 - Run `easy_install --upgrade pycm` (Need root access)
+
+### MATLAB
+
+- Download and install [MATLAB](https://www.mathworks.com/products/matlab.html) (>=8.5, 64/32 bit)
+- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5, 64/32 bit) 
+	- [x] Select `Add to PATH` option
+	- [x] Select `Install pip` option
+- Run `pip install pycm` or `pip3 install pycm` (Need root access)
+- Configure Python interpreter
+```matlab
+>> pyversion PYTHON_EXECUTABLE_FULL_PATH
+```
+- Visit [MATLAB Examples](https://github.com/sepandhaghighi/pycm/tree/master/MATLAB)	
 
 ### Docker	
 
@@ -796,6 +809,14 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 <blockquote>68- W. M. Rand, "Objective criteria for the evaluation of clustering methods," Journal of the American Statistical association, vol. 66, no. 336, pp. 846-850, 1971.</blockquote>
 
 <blockquote>69- J. M. Santos and M. Embrechts, "On the use of the adjusted rand index as a metric for evaluating supervised classification," in International conference on artificial neural networks, 2009: Springer, pp. 175-184.</blockquote>
+
+<blockquote>70- J. Cohen, "Weighted kappa: nominal scale agreement provision for scaled disagreement or partial credit," Psychological bulletin, vol. 70, no. 4, p. 213, 1968.</blockquote>
+
+<blockquote>71- R. Bakeman and J. M. Gottman, Observing interaction: An introduction to sequential analysis. Cambridge university press, 1997.</blockquote>
+
+<blockquote>72- S. Bangdiwala, "A graphical test for observer agreement," in 45th International Statistical Institute Meeting, 1985, vol. 1985, pp. 307-308.</blockquote>
+
+<blockquote>73- K. Bangdiwala and H. Bryan, "Using SAS software graphical procedures for the observer agreement chart," in Proceedings of the SAS Users Group International Conference, 1987, vol. 12, pp. 1083-1088.</blockquote>
 
 
 

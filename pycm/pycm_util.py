@@ -98,10 +98,11 @@ def matrix_check(table):
     :return: bool
     """
     try:
-        if len(table.keys()) == 0:
+        table_keys = table.keys()
+        if len(table_keys) == 0:
             return False
-        for i in table.keys():
-            if table.keys() != table[i].keys() or vector_check(
+        for i in table_keys:
+            if set(table_keys) != set(table[i].keys()) or vector_check(
                     list(table[i].values())) is False:
                 return False
         return True
@@ -167,13 +168,13 @@ def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
     :type classes : list
     :param table: input matrix
     :type table : dict
-    :param TP: true positive dict for all classes
+    :param TP: true positive
     :type TP : dict
-    :param TN: true negative dict for all classes
+    :param TN: true negative
     :type TN : dict
-    :param FP: false positive dict for all classes
+    :param FP: false positive
     :type FP : dict
-    :param FN: false negative dict for all classes
+    :param FN: false negative
     :type FN : dict
     :param class_name : target class name for One-Vs-All mode
     :type class_name : any valid type
@@ -228,13 +229,13 @@ def custom_rounder(input_number, p):
 
 def sparse_matrix_calc(classes, table):
     """
-    Return sparse confusion table and it's classes.
+    Return sparse confusion matrix and it's classes.
 
     :param classes: classes list
     :type classes: list
     :param table: table
     :type table: dict
-    :return: a list containing 3 dicts(sparse_table, actual_classes, predict_classes)
+    :return: a list containing 3 dicts [sparse_table, actual_classes, predict_classes]
     """
     sparse_table = {}
     for key in table:

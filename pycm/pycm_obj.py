@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix module."""
 from __future__ import division
-from .pycm_error import pycmVectorError, pycmMatrixError, pycmCIError
+from .pycm_error import pycmVectorError, pycmMatrixError, pycmCIError, pycmAverageError
 from .pycm_handler import __class_stat_init__, __overall_stat_init__
 from .pycm_handler import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__
 from .pycm_class_func import F_calc, IBA_calc, TI_calc, NB_calc
+from .pycm_overall_func import weighted_kappa_calc
 from .pycm_output import *
 from .pycm_util import *
 from .pycm_param import *
@@ -629,7 +630,7 @@ class ConfusionMatrix():
         """
         if not isinstance(mapping, dict):
             raise pycmMatrixError(MAPPING_FORMAT_ERROR)
-        if self.classes != list(mapping.keys()):
+        if set(self.classes) != set(mapping.keys()):
             raise pycmMatrixError(MAPPING_CLASS_NAME_ERROR)
         for row in self.classes:
             temp_dict = {}
@@ -650,9 +651,92 @@ class ConfusionMatrix():
                 temp_dict[mapping[classname]
                           ] = self.class_stat[param][classname]
             self.class_stat[param] = temp_dict
-        self.classes = list(mapping.values())
+        self.classes = sorted(list(mapping.values()))
         self.TP = self.class_stat["TP"]
         self.TN = self.class_stat["TN"]
         self.FP = self.class_stat["FP"]
         self.FN = self.class_stat["FN"]
         __class_stat_init__(self)
+
+    def average(self, param, none_omit=False):
+        """
+        Calculate the average of the input parameter.
+
+        :param param: input parameter
+        :type param: str
+        :param none_omit: none items omitting flag
+        :type none_omit: bool
+        :return: average of the input parameter
+        """
+        if param in self.class_stat:
+            selected_param = self.class_stat[param]
+        else:
+            raise pycmAverageError(AVERAGE_INVALID_ERROR)
+        try:
+            param_list = []
+            for class_name in selected_param.keys():
+                if selected_param[class_name] == "None" and none_omit:
+                    continue
+                param_list.append(selected_param[class_name])
+            return numpy.average(param_list)
+        except Exception:
+            return "None"
+
+    def weighted_average(self, param, weight=None, none_omit=False):
+        """
+        Calculate the weighted average of the input parameter.
+
+        :param param: input parameter
+        :type param: str
+        :param weight: explicitly passes weights
+        :type weight:dict
+        :param none_omit: none items omitting flag
+        :type none_omit: bool
+        :return: weighted average of the input parameter
+        """
+        selected_weight = self.P.copy()
+        if weight is not None:
+            if not isinstance(weight, dict):
+                raise pycmAverageError(AVERAGE_WEIGHT_ERROR)
+            if set(weight.keys()) == set(self.classes) and all(
+                    [isfloat(x) for x in weight.values()]):
+                selected_weight = weight.copy()
+            else:
+                raise pycmAverageError(AVERAGE_WEIGHT_ERROR)
+        if param in self.class_stat:
+            selected_param = self.class_stat[param]
+        else:
+            raise pycmAverageError(AVERAGE_INVALID_ERROR)
+        try:
+            weight_list = []
+            param_list = []
+            for class_name in selected_param.keys():
+                if selected_param[class_name] == "None" and none_omit:
+                    continue
+                weight_list.append(selected_weight[class_name])
+                param_list.append(selected_param[class_name])
+            return numpy.average(param_list, weights=weight_list)
+        except Exception:
+            return "None"
+
+    def weighted_kappa(self, weight=None):
+        """
+        Calculate weighted kappa.
+
+        :param weight: weight matrix
+        :type weight: dict
+        :return: weighted kappa as float
+        """
+        if matrix_check(weight) is False:
+            warn(WEIGHTED_KAPPA_WARNING, RuntimeWarning)
+            return self.Kappa
+        if set(weight.keys()) != set(self.classes):
+            warn(WEIGHTED_KAPPA_WARNING, RuntimeWarning)
+            return self.Kappa
+        return weighted_kappa_calc(
+            self.classes,
+            self.table,
+            self.P,
+            self.TOP,
+            self.POP,
+            weight)

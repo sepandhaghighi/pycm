@@ -5,6 +5,23 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [2.7] - 2020-05-11
+### Added
+- `average` method
+- `weighted_average` method
+- `weighted_kappa` method
+- `pycmAverageError` class
+- Bangdiwala's B
+- MATLAB examples
+- Github action
+### Changed
+- Document modified
+- `README.md` modified
+- `relabel` method bug fixed
+- `sparse_table_print` function bug fixed
+- `matrix_check` function bug fixed
+- Minor bug in `Compare` class fixed
+- Class names mismatch bug fixed
 ## [2.6] - 2020-03-25
 ### Added
 - `custom_rounder` function
@@ -468,7 +485,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v2.6...dev
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v2.7...dev
+[2.7]: https://github.com/sepandhaghighi/pycm/compare/v2.6...v2.7
 [2.6]: https://github.com/sepandhaghighi/pycm/compare/v2.5...v2.6
 [2.5]: https://github.com/sepandhaghighi/pycm/compare/v2.4...v2.5
 [2.4]: https://github.com/sepandhaghighi/pycm/compare/v2.3...v2.4

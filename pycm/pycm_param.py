@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parameters and constants."""
-PYCM_VERSION = "2.6"
+PYCM_VERSION = "2.7"
 
 
 OVERVIEW = '''
@@ -35,9 +35,15 @@ COMPARE_DOMAIN_ERROR = "The domain of all ConfusionMatrix objects must be same! 
 COMPARE_NUMBER_ERROR = "Lower than two confusion matrices is given for comparing. The minimum number of " \
                        "confusion matrix for comparing is 2."
 
-COMPARE_WEIGHT_ERROR = "The weight type must be dictionary and also must be set for all classes."
+COMPARE_WEIGHT_ERROR = "The weight type must be dictionary and also must be specified for all of the classes."
 
 COMPARE_RESULT_WARNING = "Confusion matrices are too close and the best one can not be recognized."
+
+WEIGHTED_KAPPA_WARNING = "The weight format is wrong, the result is for unweighted kappa."
+
+AVERAGE_WEIGHT_ERROR = "The weight type must be dictionary and also must be specified for all of the classes."
+
+AVERAGE_INVALID_ERROR = "Invalid parameter!"
 
 CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won't be demonstrated properly.\n" \
                        "If confusion matrix has too many zeros (sparse matrix) you can set `sparse` flag to True in printing functions "\
@@ -440,7 +446,8 @@ PARAMS_LINK = {
     "ICSI": "ICSI-(Individual-classification-success-index)",
     "CSI": "CSI-(Classification-success-index)",
     "QI": "QI-(Yule's-Q-interpretation)",
-    "ARI": "ARI-(Adjusted-Rand-index)"}
+    "ARI": "ARI-(Adjusted-Rand-index)",
+    "Bangdiwala B": "Bangdiwala's-B"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC", "QI"]
 

@@ -302,4 +302,31 @@ True
 >>> cm = ConfusionMatrix([0, 0, 1, 2], [0, 0, 1, 1]) # Verified Case -- (https://bit.ly/30PNzvL)
 >>> cm.ARI
 0.5714285714285715
+>>> cm = ConfusionMatrix([0, 1, 2, 0, 1, 2],[0, 2, 1, 0, 0, 1]) # Verified Case -- (https://bit.ly/3egZBEG)
+>>> cm.weighted_average("F1")
+0.26666666666666666
+>>> cm = ConfusionMatrix([0, 1, 2, 2, 2],[0, 0, 2, 2, 1]) # Verified Case -- (https://bit.ly/2yidCBo)
+>>> cm.average("PPV")
+0.5
+>>> cm.average("TPR")
+0.5555555555555555
+>>> cm.average("F1")
+0.48888888888888893
+>>> cm.weighted_average("PPV")
+0.7
+>>> cm.weighted_average("TPR")
+0.6
+>>> cm.weighted_average("F1")
+0.6133333333333334
+>>> cm = ConfusionMatrix(matrix={"often":{"often":16,"seldom":6,"never":2},"seldom":{"often":4,"seldom":10,"never":1},"never":{"often":3,"seldom":0,"never":8}}) # Verified Case -- (https://bit.ly/3btZm7z)
+>>> cm.weighted_kappa(weight={"often":{"often":0,"seldom":1,"never":2},"seldom":{"often":1,"seldom":0,"never":1},"never":{"often":2,"seldom":1,"never":0}})
+0.5009505703422054
+>>> cm.weighted_kappa(weight={"often":{"often":0,"seldom":1,"never":1},"seldom":{"often":1,"seldom":0,"never":1},"never":{"often":1,"seldom":1,"never":0}})
+0.49590422180214233
+>>> cm = ConfusionMatrix(matrix={1:{1:60,2:10},2:{1:10,2:20}}) # Verified Case -- (Warrens, Raadt, 2019)
+>>> cm.B
+0.6896551724137931
+>>> cm = ConfusionMatrix(matrix={1:{1:10,2:10,3:0},2:{1:10,2:10,3:0},3:{1:0,2:0,3:60}}) # Verified Case -- (Warrens, Raadt, 2019)
+>>> cm.B
+0.8636363636363636
 """

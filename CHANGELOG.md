@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 - Single class bug fixed
+- `CLASS_NUMBER_ERROR` error type changed to `pycmMatrixError`
 ## [2.7] - 2020-05-11
 ### Added
 - `average` method

@@ -1325,23 +1325,23 @@ Actual
 Predict       1             ~other~
 Actual
 1             10            0
-
+<BLANKLINE>
 ~other~       0             0
-
-
+<BLANKLINE>
+<BLANKLINE>
 >>> cm.stat(overall_param=["Overall ACC"],class_param=["TPR","TNR","ACC","AUC"])
 Overall Statistics :
-
+<BLANKLINE>
 Overall ACC                                                       1.0
-
+<BLANKLINE>
 Class Statistics :
-
+<BLANKLINE>
 Classes                                                           1             ~other~
 ACC(Accuracy)                                                     1.0           1.0
 AUC(Area under the ROC curve)                                     None          None
 TNR(Specificity or true negative rate)                            None          1.0
 TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           None
-
+<BLANKLINE>
 >>> cm.classes
 ['1', '~other~']
 >>> cm
@@ -1353,23 +1353,23 @@ pycm.ConfusionMatrix(classes: ['1', '~other~'])
 Predict       1             ~other~
 Actual
 1             10            0
-
+<BLANKLINE>
 ~other~       0             0
-
-
+<BLANKLINE>
+<BLANKLINE>
 >>> cm.stat(overall_param=["Overall ACC"],class_param=["TPR","TNR","ACC","AUC"])
 Overall Statistics :
-
+<BLANKLINE>
 Overall ACC                                                       1.0
-
+<BLANKLINE>
 Class Statistics :
-
+<BLANKLINE>
 Classes                                                           1             ~other~
 ACC(Accuracy)                                                     1.0           1.0
 AUC(Area under the ROC curve)                                     None          None
 TNR(Specificity or true negative rate)                            None          1.0
 TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           None
-
+<BLANKLINE>
 >>> cm.classes
 ['1', '~other~']
 >>> cm

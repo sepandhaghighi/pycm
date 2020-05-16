@@ -1318,4 +1318,60 @@ Actual
 5         0.0       0.0       1.0       0.0
 <BLANKLINE>
 <BLANKLINE>
+>>> y_actu = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+>>> y_pred = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+>>> cm = ConfusionMatrix(y_actu, y_pred)
+>>> cm.print_matrix()
+Predict       1             ~other~
+Actual
+1             10            0
+
+~other~       0             0
+
+
+>>> cm.stat(overall_param=["Overall ACC"],class_param=["TPR","TNR","ACC","AUC"])
+Overall Statistics :
+
+Overall ACC                                                       1.0
+
+Class Statistics :
+
+Classes                                                           1             ~other~
+ACC(Accuracy)                                                     1.0           1.0
+AUC(Area under the ROC curve)                                     None          None
+TNR(Specificity or true negative rate)                            None          1.0
+TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           None
+
+>>> cm.classes
+['1', '~other~']
+>>> cm
+pycm.ConfusionMatrix(classes: ['1', '~other~'])
+>>> y_actu = ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1"]
+>>> y_pred = ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1"]
+>>> cm = ConfusionMatrix(y_actu, y_pred)
+>>> cm.print_matrix()
+Predict       1             ~other~
+Actual
+1             10            0
+
+~other~       0             0
+
+
+>>> cm.stat(overall_param=["Overall ACC"],class_param=["TPR","TNR","ACC","AUC"])
+Overall Statistics :
+
+Overall ACC                                                       1.0
+
+Class Statistics :
+
+Classes                                                           1             ~other~
+ACC(Accuracy)                                                     1.0           1.0
+AUC(Area under the ROC curve)                                     None          None
+TNR(Specificity or true negative rate)                            None          1.0
+TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           None
+
+>>> cm.classes
+['1', '~other~']
+>>> cm
+pycm.ConfusionMatrix(classes: ['1', '~other~'])
 """

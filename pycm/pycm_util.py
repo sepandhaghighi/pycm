@@ -328,6 +328,9 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     if isinstance(sample_weight, numpy.ndarray):
         sample_weight = sample_weight.tolist()
     classes = set(actual_vector).union(set(predict_vector))
+    if len(classes) == 1 :
+        classes = list(classes)
+        classes.append("~other~")
     classes = sorted(classes)
     map_dict = {k: 0 for k in classes}
     table = {k: map_dict.copy() for k in classes}

@@ -31,7 +31,7 @@ pycm.pycm_obj.pycmMatrixError: Type of the input matrix classes is assumed  be t
 >>> cm_5=ConfusionMatrix(matrix={1:{1:2}})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmVectorError: Number of the classes is lower than 2
+pycm.pycm_obj.pycmMatrixError: Number of the classes is lower than 2
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu,y_pred)

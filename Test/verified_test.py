@@ -332,6 +332,8 @@ True
 >>> cm = ConfusionMatrix(matrix={1:{1:13,2:0,3:0},2:{1:0,2:20,3:7},3:{1:0,2:4,3:56}}) # Verified Case -- (https://bit.ly/3fWUuKF)
 >>> cm.Alpha
 0.7972584977308513
+>>> cm.weighted_alpha(weight={1:{1:1,2:0,3:0},2:{1:0,2:1,3:0},3:{1:0,2:0,3:1}})
+0.7972584977308516
 >>> cm.Kappa
 0.7964094021839719
 >>> cm.PI

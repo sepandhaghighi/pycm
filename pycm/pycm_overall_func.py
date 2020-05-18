@@ -426,6 +426,7 @@ def weighted_kappa_calc(classes, table, P, TOP, POP, weight):
 def weighted_alpha_calc(classes, table, P, TOP, POP, weight):
     """
     Calculate weighted Krippendorff's alpha.
+    
     :param classes: confusion matrix classes
     :type classes : list
     :param table: confusion matrix table

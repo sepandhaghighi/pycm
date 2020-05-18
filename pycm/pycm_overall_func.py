@@ -51,10 +51,12 @@ def weighted_alpha_calc(classes, table, P, TOP, POP, weight):
     population = list(POP.values())[0]
     epsi = 1 / (2 * population)
     try:
+        w_max = max(map(lambda x: max(x.values()), weight.values()))
         for i in classes:
             for j in classes:
-                p_e += (((P[i] + TOP[j]) / (POP[i] * 2)) ** 2) * weight[i][j]
-                p_a += table[i][j] * weight[i][j] / POP[i]
+                v_i_j = 1 - weight[i][j] / w_max
+                p_e += (((P[i] + TOP[j]) / (POP[i] * 2)) ** 2) * v_i_j
+                p_a += table[i][j] * v_i_j / POP[i]
         p_a = (1-epsi)*p_a + epsi
         weighted_alpha = reliability_calc(p_e, p_a)
         return weighted_alpha

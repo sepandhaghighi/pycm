@@ -329,4 +329,7 @@ True
 >>> cm = ConfusionMatrix(matrix={1:{1:10,2:10,3:0},2:{1:10,2:10,3:0},3:{1:0,2:0,3:60}}) # Verified Case -- (Warrens, Raadt, 2019)
 >>> cm.B
 0.8636363636363636
+>>> cm = ConfusionMatrix(matrix={1:{1:13,2:0,3:0},2:{1:0,2:20,3:7},3:{1:0,2:4,3:56}}) # Verified Case -- (https://bit.ly/3fWUuKF)
+>>> cm.Alpha
+0.7972584977308513
 """

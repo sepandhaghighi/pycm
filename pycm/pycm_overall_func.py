@@ -404,6 +404,35 @@ def weighted_kappa_calc(classes, table, P, TOP, POP, weight):
     except Exception:
         return "None"
 
+def weighted_alpha_calc(classes, table, P, TOP, POP, weight):
+    """
+    Calculate weighted Krippendorff's alpha.
+    :param classes: confusion matrix classes
+    :type classes : list
+    :param table: confusion matrix table
+    :type table : dict
+    :param P: condition positive
+    :type P : dict
+    :param TOP: test outcome positive
+    :type TOP : dict
+    :param POP: population
+    :type POP : dict
+    :param weight: weight matrix
+    :type weight: dict
+    :return: weighted alpha as float
+    """
+    p_e = 0
+    p_s = 0
+    try:
+        for i in classes:
+            for j in classes:
+                p_e += (((P[i] + TOP[j]) / (POP[i] * 2)) ** 2) * weight[i][j]
+                p_s += table[i][j] * weight[i][j] / POP[i]
+        weighted_alpha = reliability_calc(p_e, p_s)
+        return weighted_alpha
+    except Exception:
+        return "None"
+
 
 def kappa_no_prevalence_calc(overall_accuracy):
     """

@@ -41,6 +41,8 @@ COMPARE_RESULT_WARNING = "Confusion matrices are too close and the best one can 
 
 WEIGHTED_KAPPA_WARNING = "The weight format is wrong, the result is for unweighted kappa."
 
+WEIGHTED_ALPHA_WARNING = "The weight format is wrong, the result is for unweighted alpha (kappa unbiased)."
+
 AVERAGE_WEIGHT_ERROR = "The weight type must be dictionary and also must be specified for all of the classes."
 
 AVERAGE_INVALID_ERROR = "Invalid parameter!"

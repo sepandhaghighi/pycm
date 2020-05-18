@@ -818,6 +818,8 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>73- K. Bangdiwala and H. Bryan, "Using SAS software graphical procedures for the observer agreement chart," in Proceedings of the SAS Users Group International Conference, 1987, vol. 12, pp. 1083-1088.</blockquote>
 
+<blockquote>74- Krippendorff, K. (2013) pp. 221–250 describes the mathematics of alpha and its use in content analysis since 1969.</blockquote>
+
 
 
 ## Cite

@@ -148,6 +148,7 @@ def __overall_stat_init__(cm):
     cm.CSI = cm.overall_stat["CSI"]
     cm.ARI = cm.overall_stat["ARI"]
     cm.B = cm.overall_stat["Bangdiwala B"]
+    cm.Alpha = cm.overall_stat["Krippendorff Alpha"]
 
 
 def __obj_assign_handler__(cm, matrix_param):

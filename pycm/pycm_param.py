@@ -449,7 +449,8 @@ PARAMS_LINK = {
     "CSI": "CSI-(Classification-success-index)",
     "QI": "QI-(Yule's-Q-interpretation)",
     "ARI": "ARI-(Adjusted-Rand-index)",
-    "Bangdiwala B": "Bangdiwala's-B"}
+    "Bangdiwala B": "Bangdiwala's-B",
+    "Krippendorff Alpha": ""}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC", "QI"]
 

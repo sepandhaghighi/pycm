@@ -920,6 +920,7 @@ def overall_statistics(**kwargs):
     TNR_micro = micro_calc(item1=kwargs["TN"], item2=kwargs["FP"])
     TNR_macro = macro_calc(kwargs["TNR"])
     B = B_calc(classes, TP, TOP, P)
+    alpha = alpha_calc(overall_random_accuracy_unbiased, overall_accuracy, population)
     return {
         "Overall ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -982,4 +983,5 @@ def overall_statistics(**kwargs):
         "Pearson C": C,
         "CSI": CSI,
         "ARI": ARI,
-        "Bangdiwala B": B}
+        "Bangdiwala B": B,
+        "Krippendorff Alpha": alpha}

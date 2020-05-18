@@ -359,8 +359,8 @@ sInd(Similarity index)                                            1.0           
 0.4959042218021425
 >>> with warns(RuntimeWarning):
 ...	    cm.weighted_alpha()
-0.7972584977308513
+0.5007878978884337
 >>> with warns(RuntimeWarning):
 ...	    cm.weighted_alpha(weight={1:{1:1,2:2},2:{1:2,2:1}})
-0.7972584977308513
+0.5007878978884337
 """

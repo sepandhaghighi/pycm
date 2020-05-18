@@ -84,6 +84,7 @@ Kappa 95% CI                                                      (0.48877,0.998
 Kappa No Prevalence                                               0.53846
 Kappa Standard Error                                              0.12992
 Kappa Unbiased                                                    0.74172
+Krippendorff Alpha                                                0.75166
 Lambda A                                                          0.72727
 Lambda B                                                          0.72727
 Mutual Information                                                2.77736
@@ -242,6 +243,7 @@ Kappa 95% CI                                                      (0.48877,0.998
 Kappa No Prevalence                                               0.53846
 Kappa Standard Error                                              0.12992
 Kappa Unbiased                                                    0.74172
+Krippendorff Alpha                                                0.75166
 Lambda A                                                          0.72727
 Lambda B                                                          0.72727
 Mutual Information                                                2.77736

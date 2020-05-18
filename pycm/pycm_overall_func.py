@@ -20,10 +20,13 @@ def alpha_calc(RACC, ACC, POP):
     :type POP : int
     :return: unweighted alpha as float
     """
-    epsi = 1/(2*POP)
-    pa = (1-epsi)*ACC + epsi
-    pe = RACC
-    return reliability_calc(pe,pa)
+    try:
+        epsi = 1/(2*POP)
+        pa = (1-epsi)*ACC + epsi
+        pe = RACC
+        return reliability_calc(pe,pa)
+    except Exception:
+        return "None"
 
 def B_calc(classes, TP, TOP, P):
     """

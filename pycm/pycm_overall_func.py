@@ -22,9 +22,42 @@ def alpha_calc(RACC, ACC, POP):
     """
     try:
         epsi = 1/(2*POP)
-        pa = (1-epsi)*ACC + epsi
-        pe = RACC
-        return reliability_calc(pe,pa)
+        p_a = (1-epsi)*ACC + epsi
+        p_e = RACC
+        return reliability_calc(p_e,p_a)
+    except Exception:
+        return "None"
+
+def weighted_alpha_calc(classes, table, P, TOP, POP, weight):
+    """
+    Calculate weighted Krippendorff's alpha.
+
+    :param classes: confusion matrix classes
+    :type classes : list
+    :param table: confusion matrix table
+    :type table : dict
+    :param P: condition positive
+    :type P : dict
+    :param TOP: test outcome positive
+    :type TOP : dict
+    :param POP: population
+    :type POP : dict
+    :param weight: weight matrix
+    :type weight: dict
+    :return: weighted alpha as float
+    """
+    p_e = 0
+    p_a = 0
+    population = list(POP.values())[0]
+    epsi = 1 / (2 * population)
+    try:
+        for i in classes:
+            for j in classes:
+                p_e += (((P[i] + TOP[j]) / (POP[i] * 2)) ** 2) * weight[i][j]
+                p_a += table[i][j] * weight[i][j] / POP[i]
+        p_a = (1-epsi)*p_a + epsi
+        weighted_alpha = reliability_calc(p_e, p_a)
+        return weighted_alpha
     except Exception:
         return "None"
 
@@ -420,36 +453,6 @@ def weighted_kappa_calc(classes, table, P, TOP, POP, weight):
                 p_s += table[i][j] * v_i_j / POP[i]
         weighted_kappa = reliability_calc(p_e, p_s)
         return weighted_kappa
-    except Exception:
-        return "None"
-
-def weighted_alpha_calc(classes, table, P, TOP, POP, weight):
-    """
-    Calculate weighted Krippendorff's alpha.
-
-    :param classes: confusion matrix classes
-    :type classes : list
-    :param table: confusion matrix table
-    :type table : dict
-    :param P: condition positive
-    :type P : dict
-    :param TOP: test outcome positive
-    :type TOP : dict
-    :param POP: population
-    :type POP : dict
-    :param weight: weight matrix
-    :type weight: dict
-    :return: weighted alpha as float
-    """
-    p_e = 0
-    p_s = 0
-    try:
-        for i in classes:
-            for j in classes:
-                p_e += (((P[i] + TOP[j]) / (POP[i] * 2)) ** 2) * weight[i][j]
-                p_s += table[i][j] * weight[i][j] / POP[i]
-        weighted_alpha = reliability_calc(p_e, p_s)
-        return weighted_alpha
     except Exception:
         return "None"
 

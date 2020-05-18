@@ -8,6 +8,22 @@ from .pycm_interpret import *
 from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
 from .pycm_util import complement
 
+def alpha_calc(RACC, ACC, POP):
+    """
+    Calculate unweighted Krippendorff's alpha.
+
+    :param RACC: random accuracy
+    :type RACC : float
+    :param ACC: accuracy
+    :type ACC : float
+    :param POP: population
+    :type POP : int
+    :return: unweighted alpha as float
+    """
+    epsi = 1/(2*POP)
+    pa = (1-epsi)*ACC + epsi
+    pe = RACC
+    return reliability_calc(pe,pa)
 
 def B_calc(classes, TP, TOP, P):
     """

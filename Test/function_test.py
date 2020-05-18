@@ -508,7 +508,7 @@ True
 >>> weighted_kappa_calc(cm2.classes,cm2.table,cm2.P,cm2.TOP,cm2.POP,{1:{1:2,2:2}})
 'None'
 >>> weighted_alpha_calc(cm2.classes,cm2.table,cm2.P,cm2.TOP,cm2.POP,cm2.table)
--0.4967741935483873
+-0.5255636070853462
 >>> weighted_alpha_calc(cm2.classes,cm2.table,cm2.P,cm2.TOP,cm2.POP,{1:{1:2,2:2}})
 'None'
 >>> kappa_no_prevalence_calc(cm2.Overall_ACC)

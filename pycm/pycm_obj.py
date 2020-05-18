@@ -751,10 +751,10 @@ class ConfusionMatrix():
         """
         if matrix_check(weight) is False:
             warn(WEIGHTED_ALPHA_WARNING, RuntimeWarning)
-            return self.KappaUnbiased
+            return self.Alpha
         if set(weight.keys()) != set(self.classes):
             warn(WEIGHTED_ALPHA_WARNING, RuntimeWarning)
-            return self.KappaUnbiased
+            return self.Alpha
         return weighted_alpha_calc(
             self.classes,
             self.table,

@@ -448,15 +448,15 @@ def weighted_kappa_calc(classes, table, P, TOP, POP, weight):
     :return: weighted kappa as float
     """
     p_e = 0
-    p_s = 0
+    p_a = 0
     try:
         w_max = max(map(lambda x: max(x.values()), weight.values()))
         for i in classes:
             for j in classes:
                 v_i_j = 1 - weight[i][j] / w_max
                 p_e += P[i] * TOP[j] * v_i_j / (POP[i]**2)
-                p_s += table[i][j] * v_i_j / POP[i]
-        weighted_kappa = reliability_calc(p_e, p_s)
+                p_a += table[i][j] * v_i_j / POP[i]
+        weighted_kappa = reliability_calc(p_e, p_a)
         return weighted_kappa
     except Exception:
         return "None"

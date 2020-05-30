@@ -5,7 +5,7 @@ from .pycm_error import pycmVectorError, pycmMatrixError, pycmCIError, pycmAvera
 from .pycm_handler import __class_stat_init__, __overall_stat_init__
 from .pycm_handler import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__
 from .pycm_class_func import F_calc, IBA_calc, TI_calc, NB_calc
-from .pycm_overall_func import weighted_kappa_calc
+from .pycm_overall_func import weighted_kappa_calc, weighted_alpha_calc
 from .pycm_output import *
 from .pycm_util import *
 from .pycm_param import *
@@ -734,6 +734,28 @@ class ConfusionMatrix():
             warn(WEIGHTED_KAPPA_WARNING, RuntimeWarning)
             return self.Kappa
         return weighted_kappa_calc(
+            self.classes,
+            self.table,
+            self.P,
+            self.TOP,
+            self.POP,
+            weight)
+
+    def weighted_alpha(self, weight=None):
+        """
+        Calculate weighted Krippendorff's alpha.
+
+        :param weight: weight matrix
+        :type weight: dict
+        :return: weighted alpha as float
+        """
+        if matrix_check(weight) is False:
+            warn(WEIGHTED_ALPHA_WARNING, RuntimeWarning)
+            return self.Alpha
+        if set(weight.keys()) != set(self.classes):
+            warn(WEIGHTED_ALPHA_WARNING, RuntimeWarning)
+            return self.Alpha
+        return weighted_alpha_calc(
             self.classes,
             self.table,
             self.P,

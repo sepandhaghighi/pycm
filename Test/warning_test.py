@@ -84,6 +84,7 @@ Kappa 95% CI                                                      (0.48877,0.998
 Kappa No Prevalence                                               0.53846
 Kappa Standard Error                                              0.12992
 Kappa Unbiased                                                    0.74172
+Krippendorff Alpha                                                0.75166
 Lambda A                                                          0.72727
 Lambda B                                                          0.72727
 Mutual Information                                                2.77736
@@ -242,6 +243,7 @@ Kappa 95% CI                                                      (0.48877,0.998
 Kappa No Prevalence                                               0.53846
 Kappa Standard Error                                              0.12992
 Kappa Unbiased                                                    0.74172
+Krippendorff Alpha                                                0.75166
 Lambda A                                                          0.72727
 Lambda B                                                          0.72727
 Mutual Information                                                2.77736
@@ -355,4 +357,10 @@ sInd(Similarity index)                                            1.0           
 >>> with warns(RuntimeWarning):
 ...	    cm.weighted_kappa(weight={1:{1:1,2:2},2:{1:2,2:1}})
 0.4959042218021425
+>>> with warns(RuntimeWarning):
+...	    cm.weighted_alpha()
+0.5007878978884337
+>>> with warns(RuntimeWarning):
+...	    cm.weighted_alpha(weight={1:{1:1,2:2},2:{1:2,2:1}})
+0.5007878978884337
 """

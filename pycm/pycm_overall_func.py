@@ -9,6 +9,63 @@ from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
 from .pycm_util import complement
 
 
+def alpha_calc(RACC, ACC, POP):
+    """
+    Calculate unweighted Krippendorff's alpha.
+
+    :param RACC: random accuracy
+    :type RACC : float
+    :param ACC: accuracy
+    :type ACC : float
+    :param POP: population
+    :type POP : int
+    :return: unweighted alpha as float
+    """
+    try:
+        epsi = 1 / (2 * POP)
+        p_a = (1 - epsi) * ACC + epsi
+        p_e = RACC
+        return reliability_calc(p_e, p_a)
+    except Exception:
+        return "None"
+
+
+def weighted_alpha_calc(classes, table, P, TOP, POP, weight):
+    """
+    Calculate weighted Krippendorff's alpha.
+
+    :param classes: confusion matrix classes
+    :type classes : list
+    :param table: confusion matrix table
+    :type table : dict
+    :param P: condition positive
+    :type P : dict
+    :param TOP: test outcome positive
+    :type TOP : dict
+    :param POP: population
+    :type POP : dict
+    :param weight: weight matrix
+    :type weight: dict
+    :return: weighted alpha as float
+    """
+    p_e = 0
+    p_a = 0
+    population = list(POP.values())[0]
+    epsi = 1 / (2 * population)
+    try:
+        w_max = max(map(lambda x: max(x.values()), weight.values()))
+        for i in classes:
+            for j in classes:
+                v_i_j = 1 - weight[i][j] / w_max
+                p_e += (((P[i] + TOP[j]) / (POP[i] * 2)) ** 2) * v_i_j
+                p_a += table[i][j] * v_i_j / POP[i]
+        p_a = (1 - epsi) * p_a + epsi
+        weighted_alpha = reliability_calc(p_e, p_a)
+        return weighted_alpha
+    except Exception:
+        return "None"
+
+
 def B_calc(classes, TP, TOP, P):
     """
     Calculate B (Bangdiwala's B).
@@ -391,15 +448,15 @@ def weighted_kappa_calc(classes, table, P, TOP, POP, weight):
     :return: weighted kappa as float
     """
     p_e = 0
-    p_s = 0
+    p_a = 0
     try:
         w_max = max(map(lambda x: max(x.values()), weight.values()))
         for i in classes:
             for j in classes:
                 v_i_j = 1 - weight[i][j] / w_max
                 p_e += P[i] * TOP[j] * v_i_j / (POP[i]**2)
-                p_s += table[i][j] * v_i_j / POP[i]
-        weighted_kappa = reliability_calc(p_e, p_s)
+                p_a += table[i][j] * v_i_j / POP[i]
+        weighted_kappa = reliability_calc(p_e, p_a)
         return weighted_kappa
     except Exception:
         return "None"
@@ -875,6 +932,10 @@ def overall_statistics(**kwargs):
     TNR_micro = micro_calc(item1=kwargs["TN"], item2=kwargs["FP"])
     TNR_macro = macro_calc(kwargs["TNR"])
     B = B_calc(classes, TP, TOP, P)
+    alpha = alpha_calc(
+        overall_random_accuracy_unbiased,
+        overall_accuracy,
+        population)
     return {
         "Overall ACC": overall_accuracy,
         "Kappa": overall_kappa,
@@ -937,4 +998,5 @@ def overall_statistics(**kwargs):
         "Pearson C": C,
         "CSI": CSI,
         "ARI": ARI,
-        "Bangdiwala B": B}
+        "Bangdiwala B": B,
+        "Krippendorff Alpha": alpha}

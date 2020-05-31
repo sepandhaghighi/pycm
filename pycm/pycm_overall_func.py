@@ -8,6 +8,7 @@ from .pycm_interpret import *
 from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
 from .pycm_util import complement
 
+
 def alpha2_calc(TOP, P, ACC, POP, classes, max_iter=200, epsilon=0.0001):
     """
     Calculate Aickin's alpha.
@@ -50,6 +51,7 @@ def alpha2_calc(TOP, P, ACC, POP, classes, max_iter=200, epsilon=0.0001):
         return alpha
     except Exception:
         return "None"
+
 
 def alpha_calc(RACC, ACC, POP):
     """

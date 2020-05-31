@@ -763,7 +763,7 @@ class ConfusionMatrix():
             self.POP,
             weight)
 
-    def aickin_alpha(self,max_iter=200,epsilon=0.0001):
+    def aickin_alpha(self, max_iter=200, epsilon=0.0001):
         """
         Calculate Aickin's alpha.
 
@@ -773,4 +773,11 @@ class ConfusionMatrix():
         :type epsilon: float
         :return: Aickin's alpha as float
         """
-        return alpha2_calc(self.TOP,self.P,self.ACC,self.POP,self.classes,max_iter,epsilon)
+        return alpha2_calc(
+            self.TOP,
+            self.P,
+            self.ACC,
+            self.POP,
+            self.classes,
+            max_iter,
+            epsilon)

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Krippendorff's Alpha
+- Aickin's Alpha
 - `weighted_alpha` method
 ### Changed
 - Single class bug fixed

@@ -776,7 +776,7 @@ class ConfusionMatrix():
         return alpha2_calc(
             self.TOP,
             self.P,
-            self.ACC,
+            self.Overall_ACC,
             self.POP,
             self.classes,
             max_iter,

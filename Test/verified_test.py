@@ -340,4 +340,7 @@ True
 0.7962396962119107
 >>> cm.AC1
 0.8493305482313461
+>>> cm = ConfusionMatrix(matrix={1:{1:55,2:10,3:2},2:{1:6,2:4,3:10},3:{1:2,2:5,3:6}}) # Verified Case -- (Gwet, Kilem L. Handbook of inter-rater reliability, 2014)
+>>> cm.aickin_alpha()
+0.40455288947232665
 """

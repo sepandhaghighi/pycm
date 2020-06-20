@@ -820,7 +820,7 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>74- A. F. Hayes and K. Krippendorff, "Answering the call for a standard reliability measure for coding data," Communication methods and measures, vol. 1, no. 1, pp. 77-89, 2007.</blockquote>
 
-<blockquote>75- Aickin, Mikel. "Maximum likelihood estimation of agreement in the constant predictive probability model, and its relation to Cohen's kappa." Biometrics (1990): 293-302.</blockquote>
+<blockquote>75- M. Aickin, "Maximum likelihood estimation of agreement in the constant predictive probability model, and its relation to Cohen's kappa," Biometrics, pp. 293-302, 1990.</blockquote>
 
 
 ## Cite

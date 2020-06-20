@@ -65,7 +65,7 @@
   - [x] Kappa
   - [x] Kappa Unbiased
   - [x] Kappa No Prevalence
-  - [ ] Aickin's alpha
+  - [x] Aickin's alpha
   - [x] Bennett S score
   - [x] Gwet's AC1
   - [x] Scott's pi

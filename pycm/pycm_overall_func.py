@@ -9,6 +9,50 @@ from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
 from .pycm_util import complement
 
 
+def alpha2_calc(TOP, P, ACC, POP, classes, max_iter=200, epsilon=0.0001):
+    """
+    Calculate Aickin's alpha.
+
+    :param TOP: test outcome positive
+    :type TOP : dict
+    :param P: condition positive
+    :type P : dict
+    :param ACC: accuracy
+    :type ACC : float
+    :param POP: population
+    :type POP : dict
+    :param classes: confusion matrix classes
+    :type classes : list
+    :param max_iter: maximum iteration
+    :type max_iter: int
+    :param epsilon: difference threshold
+    :type epsilon: float
+    :return: Aickin's alpha as float
+    """
+    try:
+        p_A = {i: TOP[i] / POP[i] for i in classes}
+        p_B = {i: P[i] / POP[i] for i in classes}
+        step = 1
+        alpha = 0
+        alpha_prev = 0
+        while(True):
+            p_e = 0
+            for i in classes:
+                p_e += (p_A[i] * p_B[i])
+            alpha_prev = alpha
+            alpha = reliability_calc(p_e, ACC)
+            for i in classes:
+                p_A[i] = TOP[i] / \
+                    (((1 - alpha) + alpha * p_B[i] / p_e) * POP[i])
+                p_B[i] = P[i] / (((1 - alpha) + alpha * p_A[i] / p_e) * POP[i])
+            if step > max_iter or abs(alpha - alpha_prev) < epsilon:
+                break
+            step += 1
+        return alpha
+    except Exception:
+        return "None"
+
+
 def alpha_calc(RACC, ACC, POP):
     """
     Calculate unweighted Krippendorff's alpha.

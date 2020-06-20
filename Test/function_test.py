@@ -340,6 +340,8 @@ False
 0.55
 >>> cm.weighted_average("PPV",weight={'L1': 1, 'L3': 0, 'L2': 1})
 0.55
+>>> cm.aickin_alpha(max_iter=None)
+'None'
 >>> cm.F_beta(4)["L1"]
 0.9622641509433962
 >>> cm.F_beta(4)["L2"]

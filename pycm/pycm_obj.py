@@ -5,7 +5,7 @@ from .pycm_error import pycmVectorError, pycmMatrixError, pycmCIError, pycmAvera
 from .pycm_handler import __class_stat_init__, __overall_stat_init__
 from .pycm_handler import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__
 from .pycm_class_func import F_calc, IBA_calc, TI_calc, NB_calc
-from .pycm_overall_func import weighted_kappa_calc, weighted_alpha_calc
+from .pycm_overall_func import weighted_kappa_calc, weighted_alpha_calc, alpha2_calc
 from .pycm_output import *
 from .pycm_util import *
 from .pycm_param import *
@@ -762,3 +762,22 @@ class ConfusionMatrix():
             self.TOP,
             self.POP,
             weight)
+
+    def aickin_alpha(self, max_iter=200, epsilon=0.0001):
+        """
+        Calculate Aickin's alpha.
+
+        :param max_iter: maximum iteration
+        :type max_iter: int
+        :param epsilon: difference threshold
+        :type epsilon: float
+        :return: Aickin's alpha as float
+        """
+        return alpha2_calc(
+            self.TOP,
+            self.P,
+            self.Overall_ACC,
+            self.POP,
+            self.classes,
+            max_iter,
+            epsilon)

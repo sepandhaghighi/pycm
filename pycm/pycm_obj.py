@@ -781,3 +781,30 @@ class ConfusionMatrix():
             self.classes,
             max_iter,
             epsilon)
+    
+    def position(self):
+        """
+        Return indexes of TP, FP, TN and FN in predict_vector.
+
+        :return: TP,FP,TN,FN indexes seperated for each class as dictionary
+        """
+        if self.predict_vector is None or self.actual_vector is None:
+            return "None"
+        classes = self.classes
+        positions = {_class : {'TP':[], 'FP':[], 'TN':[], 'FN':[]} for _class in classes}
+        predict_vector = self.predict_vector
+        actual_vector = self.actual_vector
+        for index, observation in enumerate(predict_vector):
+            if observation == actual_vector[index]:
+                for _class in classes:
+                    if _class == observation:
+                        positions[_class]['TP'].append(index)
+                    else:
+                        positions[_class]['TN'].append(index)
+            else:
+                for _class in classes:
+                    if _class == observation:
+                        positions[_class]['FP'].append(index)
+                    else:
+                        positions[_class]['FN'].append(index)
+        return positions

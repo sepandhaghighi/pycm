@@ -342,7 +342,6 @@ False
 0.55
 >>> cm.aickin_alpha(max_iter=None)
 'None'
->>> cm.relabel({"L1":0,"L2":1,"L3":2})
 >>> cm.positions
 >>> POS = cm.position()
 >>> POS == cm.positions
@@ -371,7 +370,6 @@ True
 [5, 10]
 >>> POS[2]['FN']
 [0, 3, 7]
->>> cm.relabel({0:"L1",1:"L2",2:"L3"})
 >>> cm.F_beta(4)["L1"]
 0.9622641509433962
 >>> cm.F_beta(4)["L2"]

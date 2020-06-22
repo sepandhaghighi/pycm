@@ -791,7 +791,7 @@ class ConfusionMatrix():
         """
         if self.predict_vector is None or self.actual_vector is None:
             raise pycmVectorError(VECTOR_EMPTY_ERROR)
-        classes = self.classes
+        classes = set.union(set(self.predict_vector), set(self.actual_vector))
         if self.positions is None:
             positions = {_class : {'TP':[], 'FP':[], 'TN':[], 'FN':[]} for _class in classes}
             predict_vector = self.predict_vector

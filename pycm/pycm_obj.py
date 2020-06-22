@@ -789,7 +789,7 @@ class ConfusionMatrix():
         :return: TP,FP,TN,FN indexes seperated for each class as dictionary
         """
         if self.predict_vector is None or self.actual_vector is None:
-            return "None"
+            raise pycmVectorError(VECTOR_EMPTY_ERROR)
         classes = self.classes
         positions = {_class : {'TP':[], 'FP':[], 'TN':[], 'FN':[]} for _class in classes}
         predict_vector = self.predict_vector

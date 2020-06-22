@@ -795,16 +795,17 @@ class ConfusionMatrix():
         predict_vector = self.predict_vector
         actual_vector = self.actual_vector
         for index, observation in enumerate(predict_vector):
-            if observation == actual_vector[index]:
-                for _class in classes:
+            for _class in classes:
+                if observation == actual_vector[index]:
                     if _class == observation:
                         positions[_class]['TP'].append(index)
                     else:
                         positions[_class]['TN'].append(index)
-            else:
-                for _class in classes:
+                else:
                     if _class == observation:
                         positions[_class]['FP'].append(index)
-                    else:
+                    elif _class == actual_vector[index]:
                         positions[_class]['FN'].append(index)
+                    else:
+                        positions[_class]['TN'].append(index)
         return positions

@@ -370,6 +370,27 @@ True
 [5, 10]
 >>> POS[2]['FN']
 [0, 3, 7]
+>>> y_actu = [0, 0, 1, 1, 0]
+>>> y_pred = [0, 1, 1, 0, 0]
+>>> cm2 = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred)
+>>> POS = cm.position()
+>>> POS[0]['TP']
+[1, 4, 9]
+>>> POS[0]['TN']
+[2, 3, 5, 6, 8, 10, 11]
+>>> POS[0]['FP']
+[0, 7]
+>>> POS[0]['FN']
+[]
+>>> POS[1]['TP']
+[6]
+>>> POS[1]['TN']
+[0, 1, 2, 4, 7, 8, 9, 11]
+>>> POS[1]['FP']
+[3]
+>>> POS[1]['FN']
+[5, 10]
+>>> cm2.relabel({0:'L1',1:'L2'})
 >>> cm.F_beta(4)["L1"]
 0.9622641509433962
 >>> cm.F_beta(4)["L2"]

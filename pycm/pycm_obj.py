@@ -85,6 +85,7 @@ class ConfusionMatrix():
         self.recommended_list = statistic_recommend(self.classes, self.P)
         self.sparse_matrix = None
         self.sparse_normalized_matrix = None
+        self.positions = None
 
     def print_matrix(self, one_vs_all=False, class_name=None, sparse=False):
         """
@@ -791,21 +792,23 @@ class ConfusionMatrix():
         if self.predict_vector is None or self.actual_vector is None:
             raise pycmVectorError(VECTOR_EMPTY_ERROR)
         classes = self.classes
-        positions = {_class : {'TP':[], 'FP':[], 'TN':[], 'FN':[]} for _class in classes}
-        predict_vector = self.predict_vector
-        actual_vector = self.actual_vector
-        for index, observation in enumerate(predict_vector):
-            for _class in classes:
-                if observation == actual_vector[index]:
-                    if _class == observation:
-                        positions[_class]['TP'].append(index)
+        if self.positions is None:
+            positions = {_class : {'TP':[], 'FP':[], 'TN':[], 'FN':[]} for _class in classes}
+            predict_vector = self.predict_vector
+            actual_vector = self.actual_vector
+            for index, observation in enumerate(predict_vector):
+                for _class in classes:
+                    if observation == actual_vector[index]:
+                        if _class == observation:
+                            positions[_class]['TP'].append(index)
+                        else:
+                            positions[_class]['TN'].append(index)
                     else:
-                        positions[_class]['TN'].append(index)
-                else:
-                    if _class == observation:
-                        positions[_class]['FP'].append(index)
-                    elif _class == actual_vector[index]:
-                        positions[_class]['FN'].append(index)
-                    else:
-                        positions[_class]['TN'].append(index)
-        return positions
+                        if _class == observation:
+                            positions[_class]['FP'].append(index)
+                        elif _class == actual_vector[index]:
+                            positions[_class]['FN'].append(index)
+                        else:
+                            positions[_class]['TN'].append(index)
+            self.positions = positions
+        return self.positions

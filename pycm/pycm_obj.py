@@ -657,6 +657,7 @@ class ConfusionMatrix():
         for prime_label, new_label in self.label_map.items():
             temp_label_map[prime_label] = mapping[new_label]
         self.label_map = temp_label_map
+        self.positions = None
         self.classes = sorted(list(mapping.values()))
         self.TP = self.class_stat["TP"]
         self.TN = self.class_stat["TN"]
@@ -798,22 +799,22 @@ class ConfusionMatrix():
             raise pycmVectorError(VECTOR_EMPTY_ERROR)
         classes = set.union(set(self.predict_vector), set(self.actual_vector))
         if self.positions is None:
-            positions = {_class : {'TP':[], 'FP':[], 'TN':[], 'FN':[]} for _class in classes}
+            positions = {self.label_map[_class] : {'TP':[], 'FP':[], 'TN':[], 'FN':[]} for _class in classes}
             predict_vector = self.predict_vector
             actual_vector = self.actual_vector
             for index, observation in enumerate(predict_vector):
                 for _class in classes:
                     if observation == actual_vector[index]:
                         if _class == observation:
-                            positions[_class]['TP'].append(index)
+                            positions[self.label_map[_class]]['TP'].append(index)
                         else:
-                            positions[_class]['TN'].append(index)
+                            positions[self.label_map[_class]]['TN'].append(index)
                     else:
                         if _class == observation:
-                            positions[_class]['FP'].append(index)
+                            positions[self.label_map[_class]]['FP'].append(index)
                         elif _class == actual_vector[index]:
-                            positions[_class]['FN'].append(index)
+                            positions[self.label_map[_class]]['FN'].append(index)
                         else:
-                            positions[_class]['TN'].append(index)
+                            positions[self.label_map[_class]]['TN'].append(index)
             self.positions = positions
         return self.positions

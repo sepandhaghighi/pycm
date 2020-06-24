@@ -653,6 +653,10 @@ class ConfusionMatrix():
                 temp_dict[mapping[classname]
                           ] = self.class_stat[param][classname]
             self.class_stat[param] = temp_dict
+        temp_label_map = {}
+        for prime_label, new_label in self.label_map.items():
+            temp_label_map[prime_label] = mapping[new_label]
+        self.label_map = temp_label_map
         self.classes = sorted(list(mapping.values()))
         self.TP = self.class_stat["TP"]
         self.TN = self.class_stat["TN"]

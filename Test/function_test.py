@@ -404,12 +404,32 @@ True
 [1]
 >>> POS[1]['FN']
 [3]
+>>> POS == cm2.positions
+True
 >>> cm2.relabel({0:'L1',1:'L2'})
+>>> cm2.positions
 >>> LBL_MP = cm2.label_map
 >>> LBL_MP[0]
 'L1'
 >>> LBL_MP[1]
 'L2'
+>>> POS = cm2.position()
+>>> POS['L1']['TP']
+[0, 4]
+>>> POS['L1']['TN']
+[2]
+>>> POS['L1']['FP']
+[3]
+>>> POS['L1']['FN']
+[1]
+>>> POS['L2']['TP']
+[2]
+>>> POS['L2']['TN']
+[0, 4]
+>>> POS['L2']['FP']
+[1]
+>>> POS['L2']['FN']
+[3]
 >>> cm.F_beta(4)["L1"]
 0.9622641509433962
 >>> cm.F_beta(4)["L2"]

@@ -86,6 +86,7 @@ class ConfusionMatrix():
         self.sparse_matrix = None
         self.sparse_normalized_matrix = None
         self.positions = None
+        self.label_map = {x:x for x in self.classes}
 
     def print_matrix(self, one_vs_all=False, class_name=None, sparse=False):
         """

@@ -6,7 +6,21 @@
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu, y_pred)
+>>> LBL_MP = cm.label_map
+>>> LBL_MP[0]
+0
+>>> LBL_MP[1]
+1
+>>> LBL_MP[2]
+2
 >>> cm.relabel({0:"L1",1:"L2",2:"L3"})
+>>> LBL_MP = cm.label_map
+>>> LBL_MP[0]
+'L1'
+>>> LBL_MP[1]
+'L2'
+>>> LBL_MP[2]
+'L3'
 >>> pycm_help()
 <BLANKLINE>
 PyCM is a multi-class confusion matrix library written in Python that
@@ -391,6 +405,11 @@ True
 >>> POS[1]['FN']
 [3]
 >>> cm2.relabel({0:'L1',1:'L2'})
+>>> LBL_MP = cm2.label_map
+>>> LBL_MP[0]
+'L1'
+>>> LBL_MP[1]
+'L2'
 >>> cm.F_beta(4)["L1"]
 0.9622641509433962
 >>> cm.F_beta(4)["L2"]
@@ -402,6 +421,13 @@ True
 >>> cm.IBA_alpha(None) == {'L3': 'None', 'L1': 'None', 'L2': 'None'}
 True
 >>> cm.relabel({'L3': 6, 'L1': 3, 'L2': 3})
+>>> LBL_MP = cm.label_map
+>>> LBL_MP[0]
+3
+>>> LBL_MP[1]
+3
+>>> LBL_MP[2]
+6
 >>> del cm.classes
 >>> del cm.TP
 >>> cm.IBA_alpha(2)

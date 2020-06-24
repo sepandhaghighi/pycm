@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- `positions` parameter
+- `positions` attribute
 - `position` method
 - Krippendorff's Alpha
 - Aickin's Alpha

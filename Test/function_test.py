@@ -3,6 +3,7 @@
 >>> from pycm import *
 >>> import os
 >>> import json
+>>> import numpy as np
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu, y_pred)
@@ -430,6 +431,26 @@ True
 [1]
 >>> POS['L2']['FN']
 [3]
+>>> y_actu = np.array([0, 0, 1, 1, 0])
+>>> y_pred = [0, 1, "1", 0, 0]
+>>> cm2 = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred)
+>>> POS = cm2.position()
+>>> POS["0"]['TP']
+[0, 4]
+>>> POS["0"]['TN']
+[2]
+>>> POS["0"]['FP']
+[3]
+>>> POS["0"]['FN']
+[1]
+>>> POS["1"]['TP']
+[2]
+>>> POS["1"]['TN']
+[0, 4]
+>>> POS["1"]['FP']
+[1]
+>>> POS["1"]['FN']
+[3]
 >>> cm.F_beta(4)["L1"]
 0.9622641509433962
 >>> cm.F_beta(4)["L2"]
@@ -440,14 +461,14 @@ True
 True
 >>> cm.IBA_alpha(None) == {'L3': 'None', 'L1': 'None', 'L2': 'None'}
 True
->>> cm.relabel({'L3': 6, 'L1': 3, 'L2': 3})
+>>> cm.relabel({"L1":"L4","L2":"L5","L3":"L6"})
 >>> LBL_MP = cm.label_map
 >>> LBL_MP[0]
-3
+'L4'
 >>> LBL_MP[1]
-3
+'L5'
 >>> LBL_MP[2]
-6
+'L6'
 >>> del cm.classes
 >>> del cm.TP
 >>> cm.IBA_alpha(2)

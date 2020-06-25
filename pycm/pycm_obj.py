@@ -788,7 +788,7 @@ class ConfusionMatrix():
             self.classes,
             max_iter,
             epsilon)
-    
+
     def position(self):
         """
         Return indexes of TP, FP, TN and FN in predict_vector.

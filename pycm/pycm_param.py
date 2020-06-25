@@ -26,6 +26,7 @@ MAPPING_CLASS_NAME_ERROR = "Mapping class names error"
 VECTOR_TYPE_ERROR = "The type of input vectors is assumed to be a list or a NumPy array"
 VECTOR_SIZE_ERROR = "Input vectors must have same length"
 VECTOR_EMPTY_ERROR = "Input vectors are empty"
+VECTOR_ONLY_ERROR = "This option only works in vector mode"
 CLASS_NUMBER_ERROR = "Number of the classes is lower than 2"
 COMPARE_FORMAT_ERROR = "The input type is considered to be dictionary but it's not!"
 

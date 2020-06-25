@@ -796,7 +796,7 @@ class ConfusionMatrix():
         :return: TP,FP,TN,FN indexes seperated for each class as dictionary
         """
         if self.predict_vector is None or self.actual_vector is None:
-            raise pycmVectorError(VECTOR_EMPTY_ERROR)
+            raise pycmVectorError(VECTOR_ONLY_ERROR)
         classes = set.union(set(self.predict_vector), set(self.actual_vector))
         if self.positions is None:
             positions = {self.label_map[_class] : {'TP':[], 'FP':[], 'TN':[], 'FN':[]} for _class in classes}

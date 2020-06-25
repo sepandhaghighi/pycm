@@ -797,11 +797,10 @@ class ConfusionMatrix():
         """
         if self.predict_vector is None or self.actual_vector is None:
             raise pycmVectorError(VECTOR_ONLY_ERROR)
-        classes = set.union(set(self.predict_vector), set(self.actual_vector))
         if self.positions is None:
+            classes = list(self.label_map.keys())
             positions = {self.label_map[_class] : {'TP':[], 'FP':[], 'TN':[], 'FN':[]} for _class in classes}
-            predict_vector = self.predict_vector
-            actual_vector = self.actual_vector
+            [actual_vector, predict_vector] = vector_filter(self.actual_vector, self.predict_vector)
             for index, observation in enumerate(predict_vector):
                 for _class in classes:
                     if observation == actual_vector[index]:

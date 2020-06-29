@@ -48,6 +48,10 @@ pycm.pycm_obj.pycmMatrixError: Mapping format error
 Traceback (most recent call last):
         ...
 pycm.pycm_obj.pycmMatrixError: Mapping class names error
+>>> cm.relabel({1:"L1",2:"L2",3:"L2"})
+Traceback (most recent call last):
+        ...
+pycm.pycm_obj.pycmMatrixError: Mapping class names error
 >>> cp = Compare([cm,cm])
 Traceback (most recent call last):
         ...

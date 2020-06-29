@@ -634,6 +634,8 @@ class ConfusionMatrix():
             raise pycmMatrixError(MAPPING_FORMAT_ERROR)
         if set(self.classes) != set(mapping.keys()):
             raise pycmMatrixError(MAPPING_CLASS_NAME_ERROR)
+        if len(self.classes) != len(set(mapping.values())):
+            raise pycmMatrixError(MAPPING_CLASS_NAME_ERROR)
         table_temp = {}
         normalized_table_temp = {}
         for row in self.classes:

@@ -86,7 +86,7 @@ class ConfusionMatrix():
         self.sparse_matrix = None
         self.sparse_normalized_matrix = None
         self.positions = None
-        self.label_map = {x:x for x in self.classes}
+        self.label_map = {x: x for x in self.classes}
 
     def print_matrix(self, one_vs_all=False, class_name=None, sparse=False):
         """
@@ -803,21 +803,32 @@ class ConfusionMatrix():
             raise pycmVectorError(VECTOR_ONLY_ERROR)
         if self.positions is None:
             classes = list(self.label_map.keys())
-            positions = {self.label_map[_class] : {'TP':[], 'FP':[], 'TN':[], 'FN':[]} for _class in classes}
-            [actual_vector, predict_vector] = vector_filter(self.actual_vector, self.predict_vector)
+            positions = {
+                self.label_map[_class]: {
+                    'TP': [],
+                    'FP': [],
+                    'TN': [],
+                    'FN': []} for _class in classes}
+            [actual_vector, predict_vector] = vector_filter(
+                self.actual_vector, self.predict_vector)
             for index, observation in enumerate(predict_vector):
                 for _class in classes:
                     if observation == actual_vector[index]:
                         if _class == observation:
-                            positions[self.label_map[_class]]['TP'].append(index)
+                            positions[self.label_map[_class]
+                                      ]['TP'].append(index)
                         else:
-                            positions[self.label_map[_class]]['TN'].append(index)
+                            positions[self.label_map[_class]
+                                      ]['TN'].append(index)
                     else:
                         if _class == observation:
-                            positions[self.label_map[_class]]['FP'].append(index)
+                            positions[self.label_map[_class]
+                                      ]['FP'].append(index)
                         elif _class == actual_vector[index]:
-                            positions[self.label_map[_class]]['FN'].append(index)
+                            positions[self.label_map[_class]
+                                      ]['FN'].append(index)
                         else:
-                            positions[self.label_map[_class]]['TN'].append(index)
+                            positions[self.label_map[_class]
+                                      ]['TN'].append(index)
             self.positions = positions
         return self.positions

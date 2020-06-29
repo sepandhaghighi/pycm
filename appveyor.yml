@@ -3,12 +3,6 @@ build: false
 environment:
   matrix:
 
-    - PYTHON: "C:\\Python35"
-      PYTHON_VERSION: "3.5.2"
-      PYTHON_ARCH: "64"
-    - PYTHON: "C:\\Python35"
-      PYTHON_VERSION: "3.5.2"
-      PYTHON_ARCH: "32"
     - PYTHON: "C:\\Python36"
       PYTHON_VERSION: "3.6.0"
       PYTHON_ARCH: "64"

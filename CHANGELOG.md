@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- `label_map` attribute
+- `positions` attribute
+- `position` method
 - Krippendorff's Alpha
 - Aickin's Alpha
 - `weighted_alpha` method

@@ -20,6 +20,11 @@ pycm.pycm_obj.pycmVectorError: Input vectors are empty
 Traceback (most recent call last):
         ...
 pycm.pycm_obj.pycmVectorError: Input vectors must have same length
+>>> cm_6 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
+>>> cm_6.position()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: Input vectors are empty
 >>> cm3=ConfusionMatrix(matrix={})
 Traceback (most recent call last):
         ...

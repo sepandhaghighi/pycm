@@ -3,10 +3,25 @@
 >>> from pycm import *
 >>> import os
 >>> import json
+>>> import numpy as np
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu, y_pred)
+>>> LBL_MP = cm.label_map
+>>> LBL_MP[0]
+0
+>>> LBL_MP[1]
+1
+>>> LBL_MP[2]
+2
 >>> cm.relabel({0:"L1",1:"L2",2:"L3"})
+>>> LBL_MP = cm.label_map
+>>> LBL_MP[0]
+'L1'
+>>> LBL_MP[1]
+'L2'
+>>> LBL_MP[2]
+'L3'
 >>> pycm_help()
 <BLANKLINE>
 PyCM is a multi-class confusion matrix library written in Python that
@@ -342,6 +357,100 @@ False
 0.55
 >>> cm.aickin_alpha(max_iter=None)
 'None'
+>>> cm.positions
+>>> POS = cm.position()
+>>> POS == cm.positions
+True
+>>> POS['L1']['TP']
+[1, 4, 9]
+>>> POS['L1']['TN']
+[2, 3, 5, 6, 8, 10, 11]
+>>> POS['L1']['FP']
+[0, 7]
+>>> POS['L1']['FN']
+[]
+>>> POS['L2']['TP']
+[6]
+>>> POS['L2']['TN']
+[0, 1, 2, 4, 7, 8, 9, 11]
+>>> POS['L2']['FP']
+[3]
+>>> POS['L2']['FN']
+[5, 10]
+>>> POS['L3']['TP']
+[2, 8, 11]
+>>> POS['L3']['TN']
+[1, 4, 6, 9]
+>>> POS['L3']['FP']
+[5, 10]
+>>> POS['L3']['FN']
+[0, 3, 7]
+>>> y_actu = [0, 0, 1, 1, 0]
+>>> y_pred = [0, 1, 1, 0, 0]
+>>> cm2 = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred)
+>>> POS = cm2.position()
+>>> POS[0]['TP']
+[0, 4]
+>>> POS[0]['TN']
+[2]
+>>> POS[0]['FP']
+[3]
+>>> POS[0]['FN']
+[1]
+>>> POS[1]['TP']
+[2]
+>>> POS[1]['TN']
+[0, 4]
+>>> POS[1]['FP']
+[1]
+>>> POS[1]['FN']
+[3]
+>>> POS == cm2.positions
+True
+>>> cm2.relabel({0:'L1',1:'L2'})
+>>> cm2.positions
+>>> LBL_MP = cm2.label_map
+>>> LBL_MP[0]
+'L1'
+>>> LBL_MP[1]
+'L2'
+>>> POS = cm2.position()
+>>> POS['L1']['TP']
+[0, 4]
+>>> POS['L1']['TN']
+[2]
+>>> POS['L1']['FP']
+[3]
+>>> POS['L1']['FN']
+[1]
+>>> POS['L2']['TP']
+[2]
+>>> POS['L2']['TN']
+[0, 4]
+>>> POS['L2']['FP']
+[1]
+>>> POS['L2']['FN']
+[3]
+>>> y_actu = np.array([0, 0, 1, 1, 0])
+>>> y_pred = [0, 1, "1", 0, 0]
+>>> cm2 = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred)
+>>> POS = cm2.position()
+>>> POS["0"]['TP']
+[0, 4]
+>>> POS["0"]['TN']
+[2]
+>>> POS["0"]['FP']
+[3]
+>>> POS["0"]['FN']
+[1]
+>>> POS["1"]['TP']
+[2]
+>>> POS["1"]['TN']
+[0, 4]
+>>> POS["1"]['FP']
+[1]
+>>> POS["1"]['FN']
+[3]
 >>> cm.F_beta(4)["L1"]
 0.9622641509433962
 >>> cm.F_beta(4)["L2"]
@@ -352,7 +461,14 @@ False
 True
 >>> cm.IBA_alpha(None) == {'L3': 'None', 'L1': 'None', 'L2': 'None'}
 True
->>> cm.relabel({'L3': 6, 'L1': 3, 'L2': 3})
+>>> cm.relabel({"L1":"L4","L2":"L5","L3":"L6"})
+>>> LBL_MP = cm.label_map
+>>> LBL_MP[0]
+'L4'
+>>> LBL_MP[1]
+'L5'
+>>> LBL_MP[2]
+'L6'
 >>> del cm.classes
 >>> del cm.TP
 >>> cm.IBA_alpha(2)

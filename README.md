@@ -537,6 +537,14 @@ For more information visit [Example5](http://www.pycm.ir/doc/Example5.html "Exam
 pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
 ```
 
+### Position		
+`position` method is added in `version 2.8` in order to find the indexes of observations in `predict_vector` which made TP, TN, FP, FN.	
+
+```pycon
+>>> cm.position()
+{0: {'FN': [], 'FP': [0, 7], 'TP': [1, 4, 9], 'TN': [2, 3, 5, 6, 8, 10, 11]}, 1: {'FN': [5, 10], 'FP': [3], 'TP': [6], 'TN': [0, 1, 2, 4, 7, 8, 9, 11]}, 2: {'FN': [0, 3, 7], 'FP': [5, 10], 'TP': [2, 8, 11], 'TN': [1, 4, 6, 9]}}
+```
+
 ### Online help
 
 `online_help` function is added in `version 1.1` in order to open each statistics definition in web browser

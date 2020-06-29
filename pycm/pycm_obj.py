@@ -85,6 +85,8 @@ class ConfusionMatrix():
         self.recommended_list = statistic_recommend(self.classes, self.P)
         self.sparse_matrix = None
         self.sparse_normalized_matrix = None
+        self.positions = None
+        self.label_map = {x:x for x in self.classes}
 
     def print_matrix(self, one_vs_all=False, class_name=None, sparse=False):
         """
@@ -651,6 +653,11 @@ class ConfusionMatrix():
                 temp_dict[mapping[classname]
                           ] = self.class_stat[param][classname]
             self.class_stat[param] = temp_dict
+        temp_label_map = {}
+        for prime_label, new_label in self.label_map.items():
+            temp_label_map[prime_label] = mapping[new_label]
+        self.label_map = temp_label_map
+        self.positions = None
         self.classes = sorted(list(mapping.values()))
         self.TP = self.class_stat["TP"]
         self.TN = self.class_stat["TN"]
@@ -781,3 +788,32 @@ class ConfusionMatrix():
             self.classes,
             max_iter,
             epsilon)
+
+    def position(self):
+        """
+        Return indexes of TP, FP, TN and FN in predict_vector.
+
+        :return: TP,FP,TN,FN indexes seperated for each class as dictionary
+        """
+        if self.predict_vector is None or self.actual_vector is None:
+            raise pycmVectorError(VECTOR_ONLY_ERROR)
+        if self.positions is None:
+            classes = list(self.label_map.keys())
+            positions = {self.label_map[_class] : {'TP':[], 'FP':[], 'TN':[], 'FN':[]} for _class in classes}
+            [actual_vector, predict_vector] = vector_filter(self.actual_vector, self.predict_vector)
+            for index, observation in enumerate(predict_vector):
+                for _class in classes:
+                    if observation == actual_vector[index]:
+                        if _class == observation:
+                            positions[self.label_map[_class]]['TP'].append(index)
+                        else:
+                            positions[self.label_map[_class]]['TN'].append(index)
+                    else:
+                        if _class == observation:
+                            positions[self.label_map[_class]]['FP'].append(index)
+                        elif _class == actual_vector[index]:
+                            positions[self.label_map[_class]]['FN'].append(index)
+                        else:
+                            positions[self.label_map[_class]]['TN'].append(index)
+            self.positions = positions
+        return self.positions

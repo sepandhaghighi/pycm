@@ -634,6 +634,8 @@ class ConfusionMatrix():
             raise pycmMatrixError(MAPPING_FORMAT_ERROR)
         if set(self.classes) != set(mapping.keys()):
             raise pycmMatrixError(MAPPING_CLASS_NAME_ERROR)
+        table_temp = {}
+        normalized_table_temp = {}
         for row in self.classes:
             temp_dict = {}
             temp_dict_normalized = {}
@@ -641,10 +643,10 @@ class ConfusionMatrix():
                 temp_dict[mapping[col]] = self.table[row][col]
                 temp_dict_normalized[mapping[col]
                                      ] = self.normalized_table[row][col]
-            del self.table[row]
-            self.table[mapping[row]] = temp_dict
-            del self.normalized_table[row]
-            self.normalized_table[mapping[row]] = temp_dict_normalized
+            table_temp[mapping[row]] = temp_dict
+            normalized_table_temp[mapping[row]] = temp_dict_normalized
+        self.table = table_temp
+        self.normalized_table = normalized_table_temp
         self.matrix = self.table
         self.normalized_matrix = self.normalized_table
         for param in self.class_stat.keys():

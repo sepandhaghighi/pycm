@@ -1381,4 +1381,16 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           
 ['1', '~other~']
 >>> cm
 pycm.ConfusionMatrix(classes: ['1', '~other~'])
+>>> actual = [1,0,0,0,1,2,0,2,1]
+>>> predict = [1,0,1,1,1,2,0,2,0]
+>>> cm = ConfusionMatrix(actual,predict)
+>>> cm.relabel({0:1,1:2,2:3})
+>>> cm
+pycm.ConfusionMatrix(classes: [1, 2, 3])
+>>> cm.label_map[0]
+1
+>>> cm.label_map[1]
+2
+>>> cm.label_map[2]
+3
 """

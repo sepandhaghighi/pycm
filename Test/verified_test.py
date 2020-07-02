@@ -5,6 +5,17 @@
 >>> from pycm.pycm_ci import AUC_SE_calc,CI_calc
 >>> NIR_calc({'Class2': 804, 'Class1': 196},1000) # Verified Case - (Caret package)
 0.804
+>>> cm = ConfusionMatrix([2, 0, 2, 2, 0, 1],[0, 0, 2, 2, 0, 2]) # Verified Case - (https://bit.ly/38nfMha)
+>>> cm.print_matrix()
+Predict 0       1       2
+Actual
+0       2       0       0
+<BLANKLINE>
+1       0       0       1
+<BLANKLINE>
+2       1       0       2
+<BLANKLINE>
+<BLANKLINE>
 >>> cm = ConfusionMatrix(matrix={0:{0:3,1:1},1:{0:4,1:2}})   # Verified Case - (https://bit.ly/2DHQvjn)
 >>> cm.LS[1]
 1.1111111111111112

@@ -172,6 +172,7 @@ ACC Macro                                                         0.72222
 ARI                                                               0.09206
 AUNP                                                              0.66667
 AUNU                                                              0.69444
+Bangdiwala B                                                      0.37255
 Bennett S                                                         0.375
 CBA                                                               0.47778
 CSI                                                               0.17778
@@ -195,6 +196,7 @@ Kappa 95% CI                                                      (-0.07708,0.78
 Kappa No Prevalence                                               0.16667
 Kappa Standard Error                                              0.22036
 Kappa Unbiased                                                    0.34426
+Krippendorff Alpha                                                0.37158
 Lambda A                                                          0.16667
 Lambda B                                                          0.42857
 Mutual Information                                                0.52421
@@ -345,6 +347,7 @@ ACC Macro                                                         0.75
 ARI                                                               0.17241
 AUNP                                                              0.66667
 AUNU                                                              0.66667
+Bangdiwala B                                                      0.68421
 Bennett S                                                         0.5
 CBA                                                               0.52381
 CSI                                                               0.52381
@@ -368,6 +371,7 @@ Kappa 95% CI                                                      (-0.354,1.1232
 Kappa No Prevalence                                               0.5
 Kappa Standard Error                                              0.37684
 Kappa Unbiased                                                    0.33333
+Krippendorff Alpha                                                0.375
 Lambda A                                                          0.33333
 Lambda B                                                          0.0
 Mutual Information                                                0.1992

@@ -26,6 +26,7 @@
    * [Contribution](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBUTING.md)
    * [References](https://github.com/sepandhaghighi/pycm#references)
    * [Cite](https://github.com/sepandhaghighi/pycm#cite)
+   * [Support](https://github.com/sepandhaghighi/pycm#support)
    * [Authors](https://github.com/sepandhaghighi/pycm/blob/master/AUTHORS.md)
    * [License](https://github.com/sepandhaghighi/pycm#license)
    * [Donate](https://github.com/sepandhaghighi/pycm#donate-to-our-project)
@@ -98,7 +99,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ⚠️  PyCM 2.4 is the last version to support **Python 2.7** & **Python 3.4**
 
 ### Source code
-- Download [Version 2.7](https://github.com/sepandhaghighi/pycm/archive/v2.7.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 2.8](https://github.com/sepandhaghighi/pycm/archive/v2.8.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -106,7 +107,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==2.7` or `pip3 install pycm==2.7` (Need root access)
+- Run `pip install pycm==2.8` or `pip3 install pycm==2.8` (Need root access)
 
 ### Conda
 
@@ -171,6 +172,7 @@ ACC Macro                                                         0.72222
 ARI                                                               0.09206
 AUNP                                                              0.66667
 AUNU                                                              0.69444
+Bangdiwala B                                                      0.37255
 Bennett S                                                         0.375
 CBA                                                               0.47778
 CSI                                                               0.17778
@@ -194,6 +196,7 @@ Kappa 95% CI                                                      (-0.07708,0.78
 Kappa No Prevalence                                               0.16667
 Kappa Standard Error                                              0.22036
 Kappa Unbiased                                                    0.34426
+Krippendorff Alpha                                                0.37158
 Lambda A                                                          0.16667
 Lambda B                                                          0.42857
 Mutual Information                                                0.52421
@@ -344,6 +347,7 @@ ACC Macro                                                         0.75
 ARI                                                               0.17241
 AUNP                                                              0.66667
 AUNU                                                              0.66667
+Bangdiwala B                                                      0.68421
 Bennett S                                                         0.5
 CBA                                                               0.52381
 CSI                                                               0.52381
@@ -367,6 +371,7 @@ Kappa 95% CI                                                      (-0.354,1.1232
 Kappa No Prevalence                                               0.5
 Kappa Standard Error                                              0.37684
 Kappa Unbiased                                                    0.33333
+Krippendorff Alpha                                                0.375
 Lambda A                                                          0.33333
 Lambda B                                                          0.0
 Mutual Information                                                0.1992
@@ -535,6 +540,14 @@ For more information visit [Example5](http://www.pycm.ir/doc/Example5.html "Exam
 >>> cm.relabel(mapping={0:"L1",1:"L2",2:"L3"})
 >>> cm
 pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
+```
+
+### Position		
+`position` method is added in `version 2.8` in order to find the indexes of observations in `predict_vector` which made TP, TN, FP, FN.	
+
+```pycon
+>>> cm.position()
+{0: {'FN': [], 'FP': [0, 7], 'TP': [1, 4, 9], 'TN': [2, 3, 5, 6, 8, 10, 11]}, 1: {'FN': [5, 10], 'FP': [3], 'TP': [6], 'TN': [0, 1, 2, 4, 7, 8, 9, 11]}, 2: {'FN': [0, 3, 7], 'FP': [5, 10], 'TP': [2, 8, 11], 'TN': [1, 4, 6, 9]}}
 ```
 
 ### Online help
@@ -818,6 +831,9 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>73- K. Bangdiwala and H. Bryan, "Using SAS software graphical procedures for the observer agreement chart," in Proceedings of the SAS Users Group International Conference, 1987, vol. 12, pp. 1083-1088.</blockquote>
 
+<blockquote>74- A. F. Hayes and K. Krippendorff, "Answering the call for a standard reliability measure for coding data," Communication methods and measures, vol. 1, no. 1, pp. 77-89, 2007.</blockquote>
+
+<blockquote>75- M. Aickin, "Maximum likelihood estimation of agreement in the constant predictive probability model, and its relation to Cohen's kappa," Biometrics, pp. 293-302, 1990.</blockquote>
 
 
 ## Cite
@@ -863,7 +879,12 @@ Download [PyCM.bib](http://www.pycm.ir/PYCM.bib)
 		<td align="center"><a href="https://www.researchgate.net/project/PYCM-python-confusion-matrix"><img src="https://img.shields.io/badge/Researchgate-PyCM-yellow.svg"></a></td>
 	</tr>
 </table>
-				
+
+## Support
+
+- Website : [https://www.pycm.ir](https://www.pycm.ir)		
+- Mailing List : [https://mail.python.org/mailman3/lists/pycm.python.org/](https://mail.python.org/mailman3/lists/pycm.python.org/)
+- Email : [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir")		
 
 
 ## License

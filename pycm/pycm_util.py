@@ -128,7 +128,7 @@ def vector_filter(actual_vector, predict_vector):
     temp.extend(actual_vector)
     temp.extend(predict_vector)
     types = set(map(type, temp))
-    if len(types) > 1:
+    if len(types) > 1 or len(set(temp)) == 1:
         return [list(map(str, actual_vector)), list(map(str, predict_vector))]
     return [actual_vector, predict_vector]
 
@@ -328,6 +328,8 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     if isinstance(sample_weight, numpy.ndarray):
         sample_weight = sample_weight.tolist()
     classes = set(actual_vector).union(set(predict_vector))
+    if len(classes) == 1:
+        classes.add("~other~")
     classes = sorted(classes)
     map_dict = {k: 0 for k in classes}
     table = {k: map_dict.copy() for k in classes}

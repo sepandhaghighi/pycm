@@ -3,10 +3,25 @@
 >>> from pycm import *
 >>> import os
 >>> import json
+>>> import numpy as np
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu, y_pred)
+>>> LBL_MP = cm.label_map
+>>> LBL_MP[0]
+0
+>>> LBL_MP[1]
+1
+>>> LBL_MP[2]
+2
 >>> cm.relabel({0:"L1",1:"L2",2:"L3"})
+>>> LBL_MP = cm.label_map
+>>> LBL_MP[0]
+'L1'
+>>> LBL_MP[1]
+'L2'
+>>> LBL_MP[2]
+'L3'
 >>> pycm_help()
 <BLANKLINE>
 PyCM is a multi-class confusion matrix library written in Python that
@@ -88,70 +103,71 @@ Example : online_help("J") or online_help(2)
 57-Kappa No Prevalence
 58-Kappa Standard Error
 59-Kappa Unbiased
-60-LS
-61-Lambda A
-62-Lambda B
-63-MCC
-64-MCCI
-65-MCEN
-66-MK
-67-Mutual Information
-68-N
-69-NIR
-70-NLR
-71-NLRI
-72-NPV
-73-OC
-74-OOC
-75-OP
-76-Overall ACC
-77-Overall CEN
-78-Overall J
-79-Overall MCC
-80-Overall MCEN
-81-Overall RACC
-82-Overall RACCU
-83-P
-84-P-Value
-85-PLR
-86-PLRI
-87-POP
-88-PPV
-89-PPV Macro
-90-PPV Micro
-91-PRE
-92-Pearson C
-93-Phi-Squared
-94-Q
-95-QI
-96-RACC
-97-RACCU
-98-RCI
-99-RR
-100-Reference Entropy
-101-Response Entropy
-102-SOA1(Landis & Koch)
-103-SOA2(Fleiss)
-104-SOA3(Altman)
-105-SOA4(Cicchetti)
-106-SOA5(Cramer)
-107-SOA6(Matthews)
-108-Scott PI
-109-Standard Error
-110-TN
-111-TNR
-112-TNR Macro
-113-TNR Micro
-114-TON
-115-TOP
-116-TP
-117-TPR
-118-TPR Macro
-119-TPR Micro
-120-Y
-121-Zero-one Loss
-122-dInd
-123-sInd
+60-Krippendorff Alpha
+61-LS
+62-Lambda A
+63-Lambda B
+64-MCC
+65-MCCI
+66-MCEN
+67-MK
+68-Mutual Information
+69-N
+70-NIR
+71-NLR
+72-NLRI
+73-NPV
+74-OC
+75-OOC
+76-OP
+77-Overall ACC
+78-Overall CEN
+79-Overall J
+80-Overall MCC
+81-Overall MCEN
+82-Overall RACC
+83-Overall RACCU
+84-P
+85-P-Value
+86-PLR
+87-PLRI
+88-POP
+89-PPV
+90-PPV Macro
+91-PPV Micro
+92-PRE
+93-Pearson C
+94-Phi-Squared
+95-Q
+96-QI
+97-RACC
+98-RACCU
+99-RCI
+100-RR
+101-Reference Entropy
+102-Response Entropy
+103-SOA1(Landis & Koch)
+104-SOA2(Fleiss)
+105-SOA3(Altman)
+106-SOA4(Cicchetti)
+107-SOA5(Cramer)
+108-SOA6(Matthews)
+109-Scott PI
+110-Standard Error
+111-TN
+112-TNR
+113-TNR Macro
+114-TNR Micro
+115-TON
+116-TOP
+117-TP
+118-TPR
+119-TPR Macro
+120-TPR Micro
+121-Y
+122-Zero-one Loss
+123-dInd
+124-sInd
 >>> online_help("J")
 ...
 >>> online_help("J",alt_link=True)
@@ -339,6 +355,102 @@ False
 0.55
 >>> cm.weighted_average("PPV",weight={'L1': 1, 'L3': 0, 'L2': 1})
 0.55
+>>> cm.aickin_alpha(max_iter=None)
+'None'
+>>> cm.positions
+>>> POS = cm.position()
+>>> POS == cm.positions
+True
+>>> POS['L1']['TP']
+[1, 4, 9]
+>>> POS['L1']['TN']
+[2, 3, 5, 6, 8, 10, 11]
+>>> POS['L1']['FP']
+[0, 7]
+>>> POS['L1']['FN']
+[]
+>>> POS['L2']['TP']
+[6]
+>>> POS['L2']['TN']
+[0, 1, 2, 4, 7, 8, 9, 11]
+>>> POS['L2']['FP']
+[3]
+>>> POS['L2']['FN']
+[5, 10]
+>>> POS['L3']['TP']
+[2, 8, 11]
+>>> POS['L3']['TN']
+[1, 4, 6, 9]
+>>> POS['L3']['FP']
+[5, 10]
+>>> POS['L3']['FN']
+[0, 3, 7]
+>>> y_actu = [0, 0, 1, 1, 0]
+>>> y_pred = [0, 1, 1, 0, 0]
+>>> cm2 = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred)
+>>> POS = cm2.position()
+>>> POS[0]['TP']
+[0, 4]
+>>> POS[0]['TN']
+[2]
+>>> POS[0]['FP']
+[3]
+>>> POS[0]['FN']
+[1]
+>>> POS[1]['TP']
+[2]
+>>> POS[1]['TN']
+[0, 4]
+>>> POS[1]['FP']
+[1]
+>>> POS[1]['FN']
+[3]
+>>> POS == cm2.positions
+True
+>>> cm2.relabel({0:'L1',1:'L2'})
+>>> cm2.positions
+>>> LBL_MP = cm2.label_map
+>>> LBL_MP[0]
+'L1'
+>>> LBL_MP[1]
+'L2'
+>>> POS = cm2.position()
+>>> POS['L1']['TP']
+[0, 4]
+>>> POS['L1']['TN']
+[2]
+>>> POS['L1']['FP']
+[3]
+>>> POS['L1']['FN']
+[1]
+>>> POS['L2']['TP']
+[2]
+>>> POS['L2']['TN']
+[0, 4]
+>>> POS['L2']['FP']
+[1]
+>>> POS['L2']['FN']
+[3]
+>>> y_actu = np.array([0, 0, 1, 1, 0])
+>>> y_pred = [0, 1, "1", 0, 0]
+>>> cm2 = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred)
+>>> POS = cm2.position()
+>>> POS["0"]['TP']
+[0, 4]
+>>> POS["0"]['TN']
+[2]
+>>> POS["0"]['FP']
+[3]
+>>> POS["0"]['FN']
+[1]
+>>> POS["1"]['TP']
+[2]
+>>> POS["1"]['TN']
+[0, 4]
+>>> POS["1"]['FP']
+[1]
+>>> POS["1"]['FN']
+[3]
 >>> cm.F_beta(4)["L1"]
 0.9622641509433962
 >>> cm.F_beta(4)["L2"]
@@ -349,7 +461,14 @@ False
 True
 >>> cm.IBA_alpha(None) == {'L3': 'None', 'L1': 'None', 'L2': 'None'}
 True
->>> cm.relabel({'L3': 6, 'L1': 3, 'L2': 3})
+>>> cm.relabel({"L1":"L4","L2":"L5","L3":"L6"})
+>>> LBL_MP = cm.label_map
+>>> LBL_MP[0]
+'L4'
+>>> LBL_MP[1]
+'L5'
+>>> LBL_MP[2]
+'L6'
 >>> del cm.classes
 >>> del cm.TP
 >>> cm.IBA_alpha(2)
@@ -505,6 +624,10 @@ True
 >>> weighted_kappa_calc(cm2.classes,cm2.table,cm2.P,cm2.TOP,cm2.POP,cm2.table)
 -0.3883495145631068
 >>> weighted_kappa_calc(cm2.classes,cm2.table,cm2.P,cm2.TOP,cm2.POP,{1:{1:2,2:2}})
+'None'
+>>> weighted_alpha_calc(cm2.classes,cm2.table,cm2.P,cm2.TOP,cm2.POP,cm2.table)
+-0.5255636070853462
+>>> weighted_alpha_calc(cm2.classes,cm2.table,cm2.P,cm2.TOP,cm2.POP,{1:{1:2,2:2}})
 'None'
 >>> kappa_no_prevalence_calc(cm2.Overall_ACC)
 0.33333333333333326

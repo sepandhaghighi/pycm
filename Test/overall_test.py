@@ -56,6 +56,7 @@ Kappa 95% CI                                                     (-0.07708,0.786
 Kappa No Prevalence                                              0.16667
 Kappa Standard Error                                             0.22036
 Kappa Unbiased                                                   0.34426
+Krippendorff Alpha                                               0.37158
 Lambda A                                                         0.16667
 Lambda B                                                         0.42857
 Mutual Information                                               0.52421
@@ -204,6 +205,7 @@ Kappa 95% CI                                                     (-0.07708,0.786
 Kappa No Prevalence                                              0.16667
 Kappa Standard Error                                             0.22036
 Kappa Unbiased                                                   0.34426
+Krippendorff Alpha                                               0.37158
 Lambda A                                                         0.16667
 Lambda B                                                         0.42857
 Mutual Information                                               0.52421
@@ -369,6 +371,7 @@ Kappa 95% CI                                                     (-0.2185,0.3745
 Kappa No Prevalence                                              -0.3
 Kappa Standard Error                                             0.15128
 Kappa Unbiased                                                   -0.12554
+Krippendorff Alpha                                               -0.0974
 Lambda A                                                         0.0
 Lambda B                                                         0.0
 Mutual Information                                               0.10088
@@ -500,6 +503,7 @@ Kappa 95% CI                                                     (-0.2185,0.3745
 Kappa No Prevalence                                              -0.3
 Kappa Standard Error                                             0.15128
 Kappa Unbiased                                                   -0.12554
+Krippendorff Alpha                                               -0.0974
 Lambda A                                                         0.0
 Lambda B                                                         0.0
 Mutual Information                                               0.10088
@@ -785,6 +789,7 @@ Kappa 95% CI                                                     (0.19345,0.7546
 Kappa No Prevalence                                              0.33333
 Kappa Standard Error                                             0.14315
 Kappa Unbiased                                                   0.47346
+Krippendorff Alpha                                               0.48321
 Lambda A                                                         0.4
 Lambda B                                                         0.35714
 Mutual Information                                               0.39731
@@ -933,6 +938,7 @@ Kappa 95% CI                                                     (0.19345,0.7546
 Kappa No Prevalence                                              0.33333
 Kappa Standard Error                                             0.14315
 Kappa Unbiased                                                   0.47346
+Krippendorff Alpha                                               0.48321
 Lambda A                                                         0.4
 Lambda B                                                         0.35714
 Mutual Information                                               0.39731
@@ -1083,6 +1089,7 @@ Kappa 95% CI                                                     (0.05943,0.7231
 Kappa No Prevalence                                              0.2381
 Kappa Standard Error                                             0.16932
 Kappa Unbiased                                                   0.37313
+Krippendorff Alpha                                               0.38806
 Lambda A                                                         0.22222
 Lambda B                                                         0.36364
 Mutual Information                                               0.47618
@@ -1318,4 +1325,72 @@ Actual
 5         0.0       0.0       1.0       0.0
 <BLANKLINE>
 <BLANKLINE>
+>>> y_actu = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+>>> y_pred = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+>>> cm = ConfusionMatrix(y_actu, y_pred)
+>>> cm.print_matrix()
+Predict       1             ~other~
+Actual
+1             10            0
+<BLANKLINE>
+~other~       0             0
+<BLANKLINE>
+<BLANKLINE>
+>>> cm.stat(overall_param=["Overall ACC"],class_param=["TPR","TNR","ACC","AUC"])
+Overall Statistics :
+<BLANKLINE>
+Overall ACC                                                       1.0
+<BLANKLINE>
+Class Statistics :
+<BLANKLINE>
+Classes                                                           1             ~other~
+ACC(Accuracy)                                                     1.0           1.0
+AUC(Area under the ROC curve)                                     None          None
+TNR(Specificity or true negative rate)                            None          1.0
+TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           None
+<BLANKLINE>
+>>> cm.classes
+['1', '~other~']
+>>> cm
+pycm.ConfusionMatrix(classes: ['1', '~other~'])
+>>> y_actu = ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1"]
+>>> y_pred = ["1", "1", "1", "1", "1", "1", "1", "1", "1", "1"]
+>>> cm = ConfusionMatrix(y_actu, y_pred)
+>>> cm.print_matrix()
+Predict       1             ~other~
+Actual
+1             10            0
+<BLANKLINE>
+~other~       0             0
+<BLANKLINE>
+<BLANKLINE>
+>>> cm.stat(overall_param=["Overall ACC"],class_param=["TPR","TNR","ACC","AUC"])
+Overall Statistics :
+<BLANKLINE>
+Overall ACC                                                       1.0
+<BLANKLINE>
+Class Statistics :
+<BLANKLINE>
+Classes                                                           1             ~other~
+ACC(Accuracy)                                                     1.0           1.0
+AUC(Area under the ROC curve)                                     None          None
+TNR(Specificity or true negative rate)                            None          1.0
+TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           None
+<BLANKLINE>
+>>> cm.classes
+['1', '~other~']
+>>> cm
+pycm.ConfusionMatrix(classes: ['1', '~other~'])
+>>> actual = [1,0,0,0,1,2,0,2,1]
+>>> predict = [1,0,1,1,1,2,0,2,0]
+>>> cm = ConfusionMatrix(actual,predict)
+>>> cm.relabel({0:1,1:2,2:3})
+>>> cm
+pycm.ConfusionMatrix(classes: [1, 2, 3])
+>>> cm.label_map[0]
+1
+>>> cm.label_map[1]
+2
+>>> cm.label_map[2]
+3
 """

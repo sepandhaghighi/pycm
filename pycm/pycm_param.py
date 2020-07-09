@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parameters and constants."""
-PYCM_VERSION = "2.7"
+PYCM_VERSION = "2.8"
 
 
 OVERVIEW = '''
@@ -26,6 +26,7 @@ MAPPING_CLASS_NAME_ERROR = "Mapping class names error"
 VECTOR_TYPE_ERROR = "The type of input vectors is assumed to be a list or a NumPy array"
 VECTOR_SIZE_ERROR = "Input vectors must have same length"
 VECTOR_EMPTY_ERROR = "Input vectors are empty"
+VECTOR_ONLY_ERROR = "This option only works in vector mode"
 CLASS_NUMBER_ERROR = "Number of the classes is lower than 2"
 COMPARE_FORMAT_ERROR = "The input type is considered to be dictionary but it's not!"
 
@@ -40,6 +41,8 @@ COMPARE_WEIGHT_ERROR = "The weight type must be dictionary and also must be spec
 COMPARE_RESULT_WARNING = "Confusion matrices are too close and the best one can not be recognized."
 
 WEIGHTED_KAPPA_WARNING = "The weight format is wrong, the result is for unweighted kappa."
+
+WEIGHTED_ALPHA_WARNING = "The weight format is wrong, the result is for unweighted alpha."
 
 AVERAGE_WEIGHT_ERROR = "The weight type must be dictionary and also must be specified for all of the classes."
 
@@ -447,7 +450,8 @@ PARAMS_LINK = {
     "CSI": "CSI-(Classification-success-index)",
     "QI": "QI-(Yule's-Q-interpretation)",
     "ARI": "ARI-(Adjusted-Rand-index)",
-    "Bangdiwala B": "Bangdiwala's-B"}
+    "Bangdiwala B": "Bangdiwala's-B",
+    "Krippendorff Alpha": "Krippendorff's-alpha"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC", "QI"]
 

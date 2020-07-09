@@ -5,7 +5,7 @@ from .pycm_error import pycmVectorError, pycmMatrixError, pycmCIError, pycmAvera
 from .pycm_handler import __class_stat_init__, __overall_stat_init__
 from .pycm_handler import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__
 from .pycm_class_func import F_calc, IBA_calc, TI_calc, NB_calc
-from .pycm_overall_func import weighted_kappa_calc
+from .pycm_overall_func import weighted_kappa_calc, weighted_alpha_calc, alpha2_calc
 from .pycm_output import *
 from .pycm_util import *
 from .pycm_param import *
@@ -76,7 +76,7 @@ class ConfusionMatrix():
             matrix_param = __obj_vector_handler__(
                 self, actual_vector, predict_vector, threshold, sample_weight)
         if len(matrix_param[0]) < 2:
-            raise pycmVectorError(CLASS_NUMBER_ERROR)
+            raise pycmMatrixError(CLASS_NUMBER_ERROR)
         __obj_assign_handler__(self, matrix_param)
         __class_stat_init__(self)
         __overall_stat_init__(self)
@@ -85,6 +85,8 @@ class ConfusionMatrix():
         self.recommended_list = statistic_recommend(self.classes, self.P)
         self.sparse_matrix = None
         self.sparse_normalized_matrix = None
+        self.positions = None
+        self.label_map = {x: x for x in self.classes}
 
     def print_matrix(self, one_vs_all=False, class_name=None, sparse=False):
         """
@@ -632,6 +634,10 @@ class ConfusionMatrix():
             raise pycmMatrixError(MAPPING_FORMAT_ERROR)
         if set(self.classes) != set(mapping.keys()):
             raise pycmMatrixError(MAPPING_CLASS_NAME_ERROR)
+        if len(self.classes) != len(set(mapping.values())):
+            raise pycmMatrixError(MAPPING_CLASS_NAME_ERROR)
+        table_temp = {}
+        normalized_table_temp = {}
         for row in self.classes:
             temp_dict = {}
             temp_dict_normalized = {}
@@ -639,10 +645,10 @@ class ConfusionMatrix():
                 temp_dict[mapping[col]] = self.table[row][col]
                 temp_dict_normalized[mapping[col]
                                      ] = self.normalized_table[row][col]
-            del self.table[row]
-            self.table[mapping[row]] = temp_dict
-            del self.normalized_table[row]
-            self.normalized_table[mapping[row]] = temp_dict_normalized
+            table_temp[mapping[row]] = temp_dict
+            normalized_table_temp[mapping[row]] = temp_dict_normalized
+        self.table = table_temp
+        self.normalized_table = normalized_table_temp
         self.matrix = self.table
         self.normalized_matrix = self.normalized_table
         for param in self.class_stat.keys():
@@ -651,6 +657,11 @@ class ConfusionMatrix():
                 temp_dict[mapping[classname]
                           ] = self.class_stat[param][classname]
             self.class_stat[param] = temp_dict
+        temp_label_map = {}
+        for prime_label, new_label in self.label_map.items():
+            temp_label_map[prime_label] = mapping[new_label]
+        self.label_map = temp_label_map
+        self.positions = None
         self.classes = sorted(list(mapping.values()))
         self.TP = self.class_stat["TP"]
         self.TN = self.class_stat["TN"]
@@ -740,3 +751,80 @@ class ConfusionMatrix():
             self.TOP,
             self.POP,
             weight)
+
+    def weighted_alpha(self, weight=None):
+        """
+        Calculate weighted Krippendorff's alpha.
+
+        :param weight: weight matrix
+        :type weight: dict
+        :return: weighted alpha as float
+        """
+        if matrix_check(weight) is False:
+            warn(WEIGHTED_ALPHA_WARNING, RuntimeWarning)
+            return self.Alpha
+        if set(weight.keys()) != set(self.classes):
+            warn(WEIGHTED_ALPHA_WARNING, RuntimeWarning)
+            return self.Alpha
+        return weighted_alpha_calc(
+            self.classes,
+            self.table,
+            self.P,
+            self.TOP,
+            self.POP,
+            weight)
+
+    def aickin_alpha(self, max_iter=200, epsilon=0.0001):
+        """
+        Calculate Aickin's alpha.
+
+        :param max_iter: maximum iteration
+        :type max_iter: int
+        :param epsilon: difference threshold
+        :type epsilon: float
+        :return: Aickin's alpha as float
+        """
+        return alpha2_calc(
+            self.TOP,
+            self.P,
+            self.Overall_ACC,
+            self.POP,
+            self.classes,
+            max_iter,
+            epsilon)
+
+    def position(self):
+        """
+        Return indexes of TP, FP, TN and FN in predict_vector.
+
+        :return: TP,FP,TN,FN indexes seperated for each class as dictionary
+        """
+        if self.predict_vector is None or self.actual_vector is None:
+            raise pycmVectorError(VECTOR_ONLY_ERROR)
+        if self.positions is None:
+            classes = list(self.label_map.keys())
+            positions = {
+                self.label_map[_class]: {
+                    'TP': [],
+                    'FP': [],
+                    'TN': [],
+                    'FN': []} for _class in classes}
+            [actual_vector, predict_vector] = vector_filter(
+                self.actual_vector, self.predict_vector)
+            for index, observation in enumerate(predict_vector):
+                for _class in classes:
+                    label = self.label_map[_class]
+                    if observation == actual_vector[index]:
+                        if _class == observation:
+                            positions[label]['TP'].append(index)
+                        else:
+                            positions[label]['TN'].append(index)
+                    else:
+                        if _class == observation:
+                            positions[label]['FP'].append(index)
+                        elif _class == actual_vector[index]:
+                            positions[label]['FN'].append(index)
+                        else:
+                            positions[label]['TN'].append(index)
+            self.positions = positions
+        return self.positions

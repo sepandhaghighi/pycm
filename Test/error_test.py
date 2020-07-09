@@ -20,6 +20,11 @@ pycm.pycm_obj.pycmVectorError: Input vectors are empty
 Traceback (most recent call last):
         ...
 pycm.pycm_obj.pycmVectorError: Input vectors must have same length
+>>> cm_6 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
+>>> cm_6.position()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: Input vectors are empty
 >>> cm3=ConfusionMatrix(matrix={})
 Traceback (most recent call last):
         ...
@@ -31,7 +36,7 @@ pycm.pycm_obj.pycmMatrixError: Type of the input matrix classes is assumed  be t
 >>> cm_5=ConfusionMatrix(matrix={1:{1:2}})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmVectorError: Number of the classes is lower than 2
+pycm.pycm_obj.pycmMatrixError: Number of the classes is lower than 2
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu,y_pred)
@@ -40,6 +45,10 @@ Traceback (most recent call last):
         ...
 pycm.pycm_obj.pycmMatrixError: Mapping format error
 >>> cm.relabel({1:"L1",2:"L2"})
+Traceback (most recent call last):
+        ...
+pycm.pycm_obj.pycmMatrixError: Mapping class names error
+>>> cm.relabel({0:"L1",1:"L2",2:"L2"})
 Traceback (most recent call last):
         ...
 pycm.pycm_obj.pycmMatrixError: Mapping class names error

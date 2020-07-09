@@ -5,6 +5,17 @@
 >>> from pycm.pycm_ci import AUC_SE_calc,CI_calc
 >>> NIR_calc({'Class2': 804, 'Class1': 196},1000) # Verified Case - (Caret package)
 0.804
+>>> cm = ConfusionMatrix([2, 0, 2, 2, 0, 1],[0, 0, 2, 2, 0, 2]) # Verified Case - (https://bit.ly/38nfMha)
+>>> cm.print_matrix()
+Predict 0       1       2
+Actual
+0       2       0       0
+<BLANKLINE>
+1       0       0       1
+<BLANKLINE>
+2       1       0       2
+<BLANKLINE>
+<BLANKLINE>
 >>> cm = ConfusionMatrix(matrix={0:{0:3,1:1},1:{0:4,1:2}})   # Verified Case - (https://bit.ly/2DHQvjn)
 >>> cm.LS[1]
 1.1111111111111112
@@ -329,4 +340,18 @@ True
 >>> cm = ConfusionMatrix(matrix={1:{1:10,2:10,3:0},2:{1:10,2:10,3:0},3:{1:0,2:0,3:60}}) # Verified Case -- (Warrens, Raadt, 2019)
 >>> cm.B
 0.8636363636363636
+>>> cm = ConfusionMatrix(matrix={1:{1:13,2:0,3:0},2:{1:0,2:20,3:7},3:{1:0,2:4,3:56}}) # Verified Case -- (https://bit.ly/3fWUuKF)
+>>> cm.Alpha
+0.7972584977308513
+>>> cm.weighted_alpha(weight={1:{1:0,2:1,3:1},2:{1:1,2:0,3:1},3:{1:1,2:1,3:0}})
+0.7972584977308516
+>>> cm.Kappa
+0.7964094021839719
+>>> cm.PI
+0.7962396962119107
+>>> cm.AC1
+0.8493305482313461
+>>> cm = ConfusionMatrix(matrix={1:{1:55,2:10,3:2},2:{1:6,2:4,3:10},3:{1:2,2:5,3:6}}) # Verified Case -- (Gwet, Kilem L. Handbook of inter-rater reliability, 2014)
+>>> cm.aickin_alpha()
+0.40455288947232665
 """

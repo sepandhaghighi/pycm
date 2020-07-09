@@ -65,11 +65,11 @@
   - [x] Kappa
   - [x] Kappa Unbiased
   - [x] Kappa No Prevalence
-  - [ ] Aickin's alpha
+  - [x] Aickin's alpha
   - [x] Bennett S score
   - [x] Gwet's AC1
   - [x] Scott's pi
-  - [ ] Krippendorff's alpha
+  - [x] Krippendorff's alpha
   - [x] Goodman and Kruskal's lambda A
   - [x] Goodman and Kruskal's lambda B
   - [x] Kullback-Liebler divergence

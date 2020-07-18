@@ -831,7 +831,7 @@ class ConfusionMatrix():
 
     def to_array(self, normalized=False, one_vs_all=False, class_name=None):
         """
-        Return the confusion matrix in form of  a numpy array
+        Return the confusion matrix in form of  a numpy array.
 
         :param normalized: A flag for getting normalized confusion matrix
         :type normalized: bool

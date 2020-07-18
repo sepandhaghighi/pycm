@@ -831,6 +831,7 @@ class ConfusionMatrix():
 
     def to_array(self, normalized=False, one_vs_all=False, class_name=None):
         classes = self.classes
+        classes.sort()
         if normalized:
             table = self.normalized_table
         else:

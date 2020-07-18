@@ -829,12 +829,15 @@ class ConfusionMatrix():
             self.positions = positions
         return self.positions
 
-    def to_array(self, normalized=False):
+    def to_array(self, normalized=False, one_vs_all=False, class_name=None):
         classes = self.classes
         if normalized:
             table = self.normalized_table
         else:
             table = self.table
+        if one_vs_all:
+            [classes, table] = one_vs_all_func(
+                classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
         array = []
         for key in classes:
             row = [table[key][i] for i in classes]

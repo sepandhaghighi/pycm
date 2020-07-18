@@ -830,6 +830,17 @@ class ConfusionMatrix():
         return self.positions
 
     def to_array(self, normalized=False, one_vs_all=False, class_name=None):
+        """
+        Returns the confusion matrix in form of  a numpy array
+
+        :param normalized: A flag for getting normalized confusion matrix
+        :type normalized: bool
+        :param one_vs_all : One-Vs-All mode flag
+        :type one_vs_all : bool
+        :param class_name : target class name for One-Vs-All mode
+        :type class_name : any valid type
+        :return: confusion matrix as a numpy.ndarray
+        """
         classes = self.classes
         classes.sort()
         if normalized:

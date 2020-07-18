@@ -828,3 +828,15 @@ class ConfusionMatrix():
                             positions[label]['TN'].append(index)
             self.positions = positions
         return self.positions
+
+    def to_array(self, normalized=False):
+        classes = self.classes
+        if normalized:
+            table = self.normalized_table
+        else:
+            table = self.table
+        array = []
+        for key in classes:
+            row = [table[key][i] for i in classes]
+            array.append(row)
+        return numpy.array(array)

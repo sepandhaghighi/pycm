@@ -1393,4 +1393,29 @@ pycm.ConfusionMatrix(classes: [1, 2, 3])
 2
 >>> cm.label_map[2]
 3
+>>> y_act = [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2]
+>>> y_pre = [0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,1,1,1,1,2,0,1,2,2,2,2]
+>>> cm = ConfusionMatrix(y_act,y_pre)
+>>> cm.to_array()
+array([[9, 3, 0],
+       [3, 5, 1],
+       [1, 1, 4]])
+>>> cm.to_array(normalized=True)
+array([[0.75   , 0.25   , 0.     ],
+       [0.33333, 0.55556, 0.11111],
+       [0.16667, 0.16667, 0.66667]])
+>>> cm.to_array(one_vs_all=True)
+array([[9, 3, 0],
+       [3, 5, 1],
+       [1, 1, 4]])
+>>> cm.to_array(normalized=True, one_vs_all=True)
+array([[0.75   , 0.25   , 0.     ],
+       [0.33333, 0.55556, 0.11111],
+       [0.16667, 0.16667, 0.66667]])
+>>> cm3.to_array(one_vs_all=True, class_name=0)
+array([[ 9,  3],
+       [ 4, 11]])
+>>> cm3.to_array(one_vs_all=True, normalized=True, class_name=0)
+array([[ 9,  3],
+       [ 4, 11]])
 """

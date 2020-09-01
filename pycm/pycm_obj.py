@@ -850,6 +850,8 @@ class ConfusionMatrix():
         if one_vs_all:
             [classes, table] = one_vs_all_func(
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
+            if normalized:
+                table = normalized_table_calc(classes, table)
         array = []
         for key in classes:
             row = [table[key][i] for i in classes]

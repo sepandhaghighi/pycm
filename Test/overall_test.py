@@ -1412,10 +1412,10 @@ array([[9, 3, 0],
 array([[0.75   , 0.25   , 0.     ],
        [0.33333, 0.55556, 0.11111],
        [0.16667, 0.16667, 0.66667]])
->>> cm3.to_array(one_vs_all=True, class_name=0)
+>>> cm.to_array(one_vs_all=True, class_name=0)
 array([[ 9,  3],
        [ 4, 11]])
->>> cm3.to_array(one_vs_all=True, normalized=True, class_name=0)
+>>> cm.to_array(one_vs_all=True, normalized=True, class_name=0)
 array([[ 9,  3],
        [ 4, 11]])
 """

@@ -1416,6 +1416,6 @@ array([[0.75   , 0.25   , 0.     ],
 array([[ 9,  3],
        [ 4, 11]])
 >>> cm.to_array(one_vs_all=True, normalized=True, class_name=0)
-array([[ 9,  3],
-       [ 4, 11]])
+array([[0.75   , 0.25   ],
+       [0.26667, 0.73333]])
 """

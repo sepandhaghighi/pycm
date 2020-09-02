@@ -843,10 +843,9 @@ class ConfusionMatrix():
         """
         classes = self.classes
         classes.sort()
+        table = self.table
         if normalized:
             table = self.normalized_table
-        else:
-            table = self.table
         if one_vs_all:
             [classes, table] = one_vs_all_func(
                 classes, table, self.TP, self.TN, self.FP, self.FN, class_name)

@@ -679,19 +679,10 @@ class ConfusionMatrix():
         :type none_omit: bool
         :return: average of the input parameter
         """
-        if param in self.class_stat:
-            selected_param = self.class_stat[param]
-        else:
-            raise pycmAverageError(AVERAGE_INVALID_ERROR)
-        try:
-            param_list = []
-            for class_name in selected_param.keys():
-                if selected_param[class_name] == "None" and none_omit:
-                    continue
-                param_list.append(selected_param[class_name])
-            return numpy.average(param_list)
-        except Exception:
-            return "None"
+        return self.weighted_average(
+            param=param,
+            weight=self.POP,
+            none_omit=none_omit)
 
     def weighted_average(self, param, weight=None, none_omit=False):
         """

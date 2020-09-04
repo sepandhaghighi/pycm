@@ -550,6 +550,23 @@ pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
 {0: {'FN': [], 'FP': [0, 7], 'TP': [1, 4, 9], 'TN': [2, 3, 5, 6, 8, 10, 11]}, 1: {'FN': [5, 10], 'FP': [3], 'TP': [6], 'TN': [0, 1, 2, 4, 7, 8, 9, 11]}, 2: {'FN': [0, 3, 7], 'FP': [5, 10], 'TP': [2, 8, 11], 'TN': [1, 4, 6, 9]}}
 ```
 
+### To array
+`to_array` method is added in `version 2.9` in order to returns the confusion matrix in the form of a NumPy array. This can be helpful to apply different operations over the confusion matrix for different purposes such as aggregation, normalization, and combination.
+
+```pycon
+>>> cm.to_array()
+array([[3, 0, 0],
+       [0, 1, 2],
+       [2, 1, 3]])
+>>> cm.to_array(normalized=True)
+array([[1.     , 0.     , 0.     ],
+       [0.     , 0.33333, 0.66667],
+       [0.33333, 0.16667, 0.5    ]])
+>>> cm.to_array(normalized=True,one_vs_all=True, class_name="L1")
+array([[1.     , 0.     ],
+       [0.22222, 0.77778]])
+```
+
 ### Online help
 
 `online_help` function is added in `version 1.1` in order to open each statistics definition in web browser

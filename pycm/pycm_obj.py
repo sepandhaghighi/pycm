@@ -828,3 +828,31 @@ class ConfusionMatrix():
                             positions[label]['TN'].append(index)
             self.positions = positions
         return self.positions
+
+    def to_array(self, normalized=False, one_vs_all=False, class_name=None):
+        """
+        Return the confusion matrix in form of  a numpy array.
+
+        :param normalized: A flag for getting normalized confusion matrix
+        :type normalized: bool
+        :param one_vs_all : One-Vs-All mode flag
+        :type one_vs_all : bool
+        :param class_name : target class name for One-Vs-All mode
+        :type class_name : any valid type
+        :return: confusion matrix as a numpy.ndarray
+        """
+        classes = self.classes
+        classes.sort()
+        table = self.table
+        if normalized:
+            table = self.normalized_table
+        if one_vs_all:
+            [classes, table] = one_vs_all_func(
+                classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
+            if normalized:
+                table = normalized_table_calc(classes, table)
+        array = []
+        for key in classes:
+            row = [table[key][i] for i in classes]
+            array.append(row)
+        return numpy.array(array)

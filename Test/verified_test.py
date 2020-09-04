@@ -322,7 +322,7 @@ True
 >>> cm.average("TPR")
 0.5555555555555555
 >>> cm.average("F1")
-0.48888888888888893
+0.4888888888888889
 >>> cm.weighted_average("PPV")
 0.7
 >>> cm.weighted_average("TPR")

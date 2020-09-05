@@ -627,7 +627,7 @@ class ConfusionMatrix():
         result = _class.__new__(_class)
         result.__dict__.update(self.__dict__)
         return result
-    
+
     def copy(self):
         return self.__copy__()
 

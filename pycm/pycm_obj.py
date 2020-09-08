@@ -624,7 +624,8 @@ class ConfusionMatrix():
 
     def __copy__(self):
         """
-        Returns a copy of ConfusionMatrix.
+        Return a copy of ConfusionMatrix.
+
         :return: copy of ConfusionMatrix
         """
         _class = self.__class__
@@ -634,7 +635,8 @@ class ConfusionMatrix():
 
     def copy(self):
         """
-        Returns a copy of ConfusionMatrix.
+        Return a copy of ConfusionMatrix.
+
         :return: copy of ConfusionMatrix
         """
         return self.__copy__()

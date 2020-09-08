@@ -336,7 +336,7 @@ False
 >>> ERR_calc(0.1)
 0.9
 >>> cm.average("F0.5")
-0.56121414817067
+0.5612141481706698
 >>> cm.average("DOR")
 'None'
 >>> cm.average("DOR", none_omit=True)

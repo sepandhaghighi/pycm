@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `to_array` method
+### Changed
+- `average` method refactored
 ## [2.8] - 2020-07-09
 ### Added
 - `label_map` attribute

@@ -623,12 +623,20 @@ class ConfusionMatrix():
         return not self.__eq__(other)
 
     def __copy__(self):
+        """
+        Returns a copy of ConfusionMatrix.
+        :return: copy of ConfusionMatrix
+        """
         _class = self.__class__
         result = _class.__new__(_class)
         result.__dict__.update(self.__dict__)
         return result
 
     def copy(self):
+        """
+        Returns a copy of ConfusionMatrix.
+        :return: copy of ConfusionMatrix
+        """
         return self.__copy__()
 
     def relabel(self, mapping):

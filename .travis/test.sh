@@ -10,7 +10,6 @@
   fi
   $PYTHON_COMMAND -m pytest Test --cov=pycm --cov-report=term
   $PYTHON_COMMAND Otherfiles/version_check.py
-  $PYTHON_COMMAND -m cProfile -s cumtime pycm/pycm_profile.py
   
   if [ "$CI" = 'true' ] && [ "$TRAVIS" = 'true' ]
   then
@@ -23,4 +22,4 @@
       $PYTHON_COMMAND -m bandit -r pycm -s B311
       $PYTHON_COMMAND -m pydocstyle --match-dir=pycm
   fi
-
+  $PYTHON_COMMAND -m cProfile -s cumtime pycm/pycm_profile.py

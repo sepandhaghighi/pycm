@@ -3,6 +3,7 @@
 >>> from pycm import *
 >>> import os
 >>> import json
+>>> import copy
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> y_actu_copy = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
@@ -1418,4 +1419,23 @@ array([[ 9,  3],
 >>> cm.to_array(one_vs_all=True, normalized=True, class_name=0)
 array([[0.75   , 0.25   ],
        [0.26667, 0.73333]])
+>>> cm = ConfusionMatrix([1,2,3,4],[1,2,3,3])
+>>> cm
+pycm.ConfusionMatrix(classes: [1, 2, 3, 4])
+>>> cm2 = cm.copy()
+>>> cm2
+pycm.ConfusionMatrix(classes: [1, 2, 3, 4])
+>>> cm3 = copy.copy(cm)
+>>> cm3
+pycm.ConfusionMatrix(classes: [1, 2, 3, 4])
+>>> cm == cm2
+True
+>>> cm == cm3
+True
+>>> id(cm) == id(cm2)
+False
+>>> id(cm) == id(cm3)
+False
+>>> id(cm2) == id(cm3)
+False
 """

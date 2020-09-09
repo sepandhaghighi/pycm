@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- `notebook_check.py`
 - `to_array` method
 - `__copy__` method
 - `copy` method

@@ -1,4 +1,4 @@
 art>=1.8
 numpy>=1.9.0
-
+notebook>=5.2.2
 

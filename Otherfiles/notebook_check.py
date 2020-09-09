@@ -19,7 +19,7 @@ EXTENSION = ".ipynb"
 if __name__ == "__main__":
     tprint("PYCM","bulbhead")
     tprint("Document","bulbhead")
-    ep = ExecutePreprocessor(timeout=600, kernel_name='python3')
+    ep = ExecutePreprocessor(timeout=6000, kernel_name='python3')
     print("Processing ...")
     for index, notebook in enumerate(NOTEBOOKS_LIST):
         path = os.path.join("Document", notebook)

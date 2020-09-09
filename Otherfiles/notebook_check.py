@@ -24,7 +24,7 @@ if __name__ == "__main__":
     for index, notebook in enumerate(NOTEBOOKS_LIST):
         path = os.path.join("Document", notebook)
         with open(path + EXTENSION) as f:
-            nb = nbformat.read(f, as_version=4)
+            nb = nbformat.read(f, as_version=4, encoding='utf-8')
             ep.preprocess(nb, {'metadata': {'path': 'Document/'}})
         with open(path + EXTENSION, 'w', encoding='utf-8') as f:
             nbformat.write(nb, f)

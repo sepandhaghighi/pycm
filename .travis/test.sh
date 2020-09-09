@@ -10,6 +10,7 @@
   fi
   $PYTHON_COMMAND -m pytest Test --cov=pycm --cov-report=term
   $PYTHON_COMMAND Otherfiles/version_check.py
+  $PYTHON_COMMAND Otherfiles/notebook_check.py
   
   if [ "$CI" = 'true' ] && [ "$TRAVIS" = 'true' ]
   then

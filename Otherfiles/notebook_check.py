@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+"""Notebook-check script."""
 import os
 import nbformat
 from nbconvert.preprocessors import ExecutePreprocessor

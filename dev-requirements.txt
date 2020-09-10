@@ -1,5 +1,6 @@
 art==4.7
 numpy==1.19.1
+notebook>=5.2.2
 codecov>=2.0.15
 pytest>=4.3.1
 pytest-cov>=2.6.1
@@ -7,5 +8,4 @@ setuptools>=40.8.0
 vulture>=1.0
 bandit>=1.5.1
 pydocstyle>=3.0.0
-notebook>=5.2.2
 

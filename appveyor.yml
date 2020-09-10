@@ -35,5 +35,4 @@ test_script:
   - "%PYTHON%/Scripts/pip.exe install --upgrade --upgrade-strategy=only-if-needed -r dev-requirements.txt"
   - "%PYTHON%/python.exe -m pytest Test --cov=pycm --cov-report=term"
   - "%PYTHON%/python.exe Otherfiles/version_check.py"
-  - "%PYTHON%/python.exe Otherfiles/notebook_check.py"
   - "%PYTHON%/python.exe -m cProfile -s cumtime pycm/pycm_profile.py"

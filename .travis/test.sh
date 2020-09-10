@@ -10,7 +10,6 @@
   fi
   $PYTHON_COMMAND -m pytest Test --cov=pycm --cov-report=term
   $PYTHON_COMMAND Otherfiles/version_check.py
-  $PYTHON_COMMAND Otherfiles/notebook_check.py
   
   if [ "$CI" = 'true' ] && [ "$TRAVIS" = 'true' ]
   then
@@ -22,5 +21,6 @@
       $PYTHON_COMMAND -m vulture pycm/ Otherfiles/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
       $PYTHON_COMMAND -m bandit -r pycm -s B311
       $PYTHON_COMMAND -m pydocstyle -v --match-dir=pycm
+      $PYTHON_COMMAND Otherfiles/notebook_check.py
   fi
   $PYTHON_COMMAND -m cProfile -s cumtime pycm/pycm_profile.py

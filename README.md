@@ -99,7 +99,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ⚠️  PyCM 2.4 is the last version to support **Python 2.7** & **Python 3.4**
 
 ### Source code
-- Download [Version 2.8](https://github.com/sepandhaghighi/pycm/archive/v2.8.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 2.9](https://github.com/sepandhaghighi/pycm/archive/v2.9.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -107,7 +107,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==2.8` or `pip3 install pycm==2.8` (Need root access)
+- Run `pip install pycm==2.9` or `pip3 install pycm==2.9` (Need root access)
 
 ### Conda
 

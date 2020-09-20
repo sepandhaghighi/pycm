@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [2.9] - 2020-09-23
 ### Added
 - `notebook_check.py`
 - `to_array` method
@@ -506,7 +507,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v2.8...dev
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v2.9...dev
+[2.9]: https://github.com/sepandhaghighi/pycm/compare/v2.8...v2.9
 [2.8]: https://github.com/sepandhaghighi/pycm/compare/v2.7...v2.8
 [2.7]: https://github.com/sepandhaghighi/pycm/compare/v2.6...v2.7
 [2.6]: https://github.com/sepandhaghighi/pycm/compare/v2.5...v2.6

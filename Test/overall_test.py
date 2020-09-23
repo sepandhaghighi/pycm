@@ -3,6 +3,7 @@
 >>> from pycm import *
 >>> import os
 >>> import json
+>>> import copy
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> y_actu_copy = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
@@ -1393,4 +1394,48 @@ pycm.ConfusionMatrix(classes: [1, 2, 3])
 2
 >>> cm.label_map[2]
 3
+>>> y_act = [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2]
+>>> y_pre = [0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,1,1,1,1,2,0,1,2,2,2,2]
+>>> cm = ConfusionMatrix(y_act,y_pre)
+>>> cm.to_array()
+array([[9, 3, 0],
+       [3, 5, 1],
+       [1, 1, 4]])
+>>> cm.to_array(normalized=True)
+array([[0.75   , 0.25   , 0.     ],
+       [0.33333, 0.55556, 0.11111],
+       [0.16667, 0.16667, 0.66667]])
+>>> cm.to_array(one_vs_all=True)
+array([[9, 3, 0],
+       [3, 5, 1],
+       [1, 1, 4]])
+>>> cm.to_array(normalized=True, one_vs_all=True)
+array([[0.75   , 0.25   , 0.     ],
+       [0.33333, 0.55556, 0.11111],
+       [0.16667, 0.16667, 0.66666]])
+>>> cm.to_array(one_vs_all=True, class_name=0)
+array([[ 9,  3],
+       [ 4, 11]])
+>>> cm.to_array(one_vs_all=True, normalized=True, class_name=0)
+array([[0.75   , 0.25   ],
+       [0.26667, 0.73333]])
+>>> cm = ConfusionMatrix([1,2,3,4],[1,2,3,3])
+>>> cm
+pycm.ConfusionMatrix(classes: [1, 2, 3, 4])
+>>> cm2 = cm.copy()
+>>> cm2
+pycm.ConfusionMatrix(classes: [1, 2, 3, 4])
+>>> cm3 = copy.copy(cm)
+>>> cm3
+pycm.ConfusionMatrix(classes: [1, 2, 3, 4])
+>>> cm == cm2
+True
+>>> cm == cm3
+True
+>>> id(cm) == id(cm2)
+False
+>>> id(cm) == id(cm3)
+False
+>>> id(cm2) == id(cm3)
+False
 """

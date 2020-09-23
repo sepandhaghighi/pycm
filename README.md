@@ -99,7 +99,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ⚠️  PyCM 2.4 is the last version to support **Python 2.7** & **Python 3.4**
 
 ### Source code
-- Download [Version 2.8](https://github.com/sepandhaghighi/pycm/archive/v2.8.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 2.9](https://github.com/sepandhaghighi/pycm/archive/v2.9.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -107,7 +107,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==2.8` or `pip3 install pycm==2.8` (Need root access)
+- Run `pip install pycm==2.9` or `pip3 install pycm==2.9` (Need root access)
 
 ### Conda
 
@@ -548,6 +548,23 @@ pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
 ```pycon
 >>> cm.position()
 {0: {'FN': [], 'FP': [0, 7], 'TP': [1, 4, 9], 'TN': [2, 3, 5, 6, 8, 10, 11]}, 1: {'FN': [5, 10], 'FP': [3], 'TP': [6], 'TN': [0, 1, 2, 4, 7, 8, 9, 11]}, 2: {'FN': [0, 3, 7], 'FP': [5, 10], 'TP': [2, 8, 11], 'TN': [1, 4, 6, 9]}}
+```
+
+### To array
+`to_array` method is added in `version 2.9` in order to returns the confusion matrix in the form of a NumPy array. This can be helpful to apply different operations over the confusion matrix for different purposes such as aggregation, normalization, and combination.
+
+```pycon
+>>> cm.to_array()
+array([[3, 0, 0],
+       [0, 1, 2],
+       [2, 1, 3]])
+>>> cm.to_array(normalized=True)
+array([[1.     , 0.     , 0.     ],
+       [0.     , 0.33333, 0.66667],
+       [0.33333, 0.16667, 0.5    ]])
+>>> cm.to_array(normalized=True,one_vs_all=True, class_name="L1")
+array([[1.     , 0.     ],
+       [0.22222, 0.77778]])
 ```
 
 ### Online help

@@ -622,6 +622,25 @@ class ConfusionMatrix():
         """
         return not self.__eq__(other)
 
+    def __copy__(self):
+        """
+        Return a copy of ConfusionMatrix.
+
+        :return: copy of ConfusionMatrix
+        """
+        _class = self.__class__
+        result = _class.__new__(_class)
+        result.__dict__.update(self.__dict__)
+        return result
+
+    def copy(self):
+        """
+        Return a copy of ConfusionMatrix.
+
+        :return: copy of ConfusionMatrix
+        """
+        return self.__copy__()
+
     def relabel(self, mapping):
         """
         Rename ConfusionMatrix classes.
@@ -679,19 +698,10 @@ class ConfusionMatrix():
         :type none_omit: bool
         :return: average of the input parameter
         """
-        if param in self.class_stat:
-            selected_param = self.class_stat[param]
-        else:
-            raise pycmAverageError(AVERAGE_INVALID_ERROR)
-        try:
-            param_list = []
-            for class_name in selected_param.keys():
-                if selected_param[class_name] == "None" and none_omit:
-                    continue
-                param_list.append(selected_param[class_name])
-            return numpy.average(param_list)
-        except Exception:
-            return "None"
+        return self.weighted_average(
+            param=param,
+            weight=self.POP,
+            none_omit=none_omit)
 
     def weighted_average(self, param, weight=None, none_omit=False):
         """
@@ -828,3 +838,31 @@ class ConfusionMatrix():
                             positions[label]['TN'].append(index)
             self.positions = positions
         return self.positions
+
+    def to_array(self, normalized=False, one_vs_all=False, class_name=None):
+        """
+        Return the confusion matrix in form of  a numpy array.
+
+        :param normalized: A flag for getting normalized confusion matrix
+        :type normalized: bool
+        :param one_vs_all : One-Vs-All mode flag
+        :type one_vs_all : bool
+        :param class_name : target class name for One-Vs-All mode
+        :type class_name : any valid type
+        :return: confusion matrix as a numpy.ndarray
+        """
+        classes = self.classes
+        classes.sort()
+        table = self.table
+        if normalized:
+            table = self.normalized_table
+        if one_vs_all:
+            [classes, table] = one_vs_all_func(
+                classes, table, self.TP, self.TN, self.FP, self.FN, class_name)
+            if normalized:
+                table = normalized_table_calc(classes, table)
+        array = []
+        for key in classes:
+            row = [table[key][i] for i in classes]
+            array.append(row)
+        return numpy.array(array)

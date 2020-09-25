@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `combine` method
+- `matrix_combine` function
 ## [2.9] - 2020-09-23
 ### Added
 - `notebook_check.py`

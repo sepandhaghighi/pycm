@@ -104,4 +104,8 @@ pycm.pycm_error.pycmAverageError: The weight type must be dictionary and also mu
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmAverageError: The weight type must be dictionary and also must be specified for all of the classes.
+>>> cm.combine(1)
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: The input type is considered to be pycm.ConfusionMatrix object but it's not!
 """

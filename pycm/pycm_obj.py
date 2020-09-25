@@ -877,4 +877,6 @@ class ConfusionMatrix():
         """
         if isinstance(other, ConfusionMatrix) is False:
             raise pycmMatrixError(COMBINE_TYPE_ERROR)
-        return ConfusionMatrix(matrix=matrix_combine(self.matrix, other.matrix))
+        return ConfusionMatrix(
+            matrix=matrix_combine(
+                self.matrix, other.matrix))

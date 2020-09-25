@@ -876,7 +876,7 @@ class ConfusionMatrix():
         :return: combine of two matrices as Confusion matrix
         """
         result_matrix = {}
-        classes = self.classes
+        classes = set(self.classes).intersection(set(other.classes))
         for class_1 in classes:
             temp_dict = {}
             for class_2 in classes:

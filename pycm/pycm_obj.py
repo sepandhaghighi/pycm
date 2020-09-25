@@ -875,4 +875,6 @@ class ConfusionMatrix():
         :type other: Confusion matrix
         :return: combine of two matrices as a new Confusion matrix
         """
-        return ConfusionMatrix(matrix=matrix_combine(self, other))
+        if isinstance(other, ConfusionMatrix) is False:
+            raise pycmMatrixError(COMBINE_TYPE_ERROR)
+        return ConfusionMatrix(matrix=matrix_combine(self.matrix, other.matrix))

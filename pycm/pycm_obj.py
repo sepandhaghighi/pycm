@@ -873,5 +873,14 @@ class ConfusionMatrix():
 
         :param other: Other matrix that is going to combine.
         :type other: Confusion matrix
-        :return: combine of two matrices as Confusion matrix 
+        :return: combine of two matrices as Confusion matrix
         """
+        result_matrix = {}
+        classes = self.classes
+        for class_1 in classes:
+            temp_dict = {}
+            for class_2 in classes:
+                temp_dict[class_2] = self.matrix[class_1][class_2] + \
+                    other.matrix[class_1][class_2]
+            result_matrix[class_1] = temp_dict
+        return ConfusionMatrix(matrix=result_matrix)

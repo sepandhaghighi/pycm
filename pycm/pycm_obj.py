@@ -871,20 +871,8 @@ class ConfusionMatrix():
         """
         Return the combine of self Confusion matrix and other one.
 
-        :param other: Other matrix that is going to combine.
+        :param other: Other matrix that is going to be combined.
         :type other: Confusion matrix
         :return: combine of two matrices as a new Confusion matrix
         """
-        result_matrix = {}
-        classes = set(self.classes).union(set(other.classes))
-        for class_1 in classes:
-            temp_dict = {}
-            for class_2 in classes:
-                tmp = 0
-                if class_1 in self.classes and class_2 in self.classes:
-                    tmp += self.matrix[class_1][class_2]
-                if class_1 in other.classes and class_2 in other.classes:
-                    tmp += other.matrix[class_1][class_2]
-                temp_dict[class_2] = tmp
-            result_matrix[class_1] = temp_dict
-        return ConfusionMatrix(matrix=result_matrix)
+        return ConfusionMatrix(matrix=matrix_combine(self, other))

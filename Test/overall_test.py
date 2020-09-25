@@ -1438,4 +1438,28 @@ False
 False
 >>> id(cm2) == id(cm3)
 False
+>>> cm1 = ConfusionMatrix([1,2,2,1],[1,2,2,2])
+>>> cm2 = ConfusionMatrix([2,2,2,1],[2,2,2,2])
+>>> cm_combined1 = cm1.combine(cm2)
+>>> cm_combined2 = cm2.combine(cm1)
+>>> cm_combined1 == cm_combined2
+True
+>>> cm1.matrix[1][1]
+1
+>>> cm2.matrix[1][1]
+0
+>>> cm_combined1.matrix[1][1]
+1
+>>> cm1.matrix[1][2]
+1
+>>> cm2.matrix[1][2]
+1
+>>> cm_combined1.matrix[1][2]
+2
+>>> cm3 = ConfusionMatrix([2,3,2,1],[2,2,2,3])
+>>> cm3.matrix[1][3]
+1
+>>> cm_combined3 = cm3.combine(cm_combined2)
+>>> cm_combined3.matrix[1][3]
+1
 """

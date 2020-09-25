@@ -38,6 +38,8 @@ COMPARE_NUMBER_ERROR = "Lower than two confusion matrices is given for comparing
 
 COMPARE_WEIGHT_ERROR = "The weight type must be dictionary and also must be specified for all of the classes."
 
+COMBINE_TYPE_ERROR = "The input type is considered to be pycm.ConfusionMatrix object but it's not!"
+
 COMPARE_RESULT_WARNING = "Confusion matrices are too close and the best one can not be recognized."
 
 WEIGHTED_KAPPA_WARNING = "The weight format is wrong, the result is for unweighted kappa."

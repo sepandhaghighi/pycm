@@ -1456,10 +1456,17 @@ True
 1
 >>> cm_combined1.matrix[1][2]
 2
->>> cm3 = ConfusionMatrix([2,3,2,1],[2,2,2,3])
->>> cm3.matrix[1][3]
+>>> cm3 = ConfusionMatrix([2,3,2,1,1,4,2],[2,2,2,3,1,2,3])
+>>> cm_combined3 = cm3.combine(cm_combined1)
+>>> cm_combined4 = cm_combined1.combine(cm3)
+>>> cm_combined3 == cm_combined4
+True
+>>> cm3.matrix[3][2]
 1
->>> cm_combined3 = cm3.combine(cm_combined2)
->>> cm_combined3.matrix[1][3]
+>>> cm_combined3.matrix[3][2]
+1
+>>> cm3.matrix[4][2]
+1
+>>> cm_combined3.matrix[4][2]
 1
 """

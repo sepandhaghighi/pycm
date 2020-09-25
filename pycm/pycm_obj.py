@@ -873,7 +873,7 @@ class ConfusionMatrix():
 
         :param other: Other matrix that is going to combine.
         :type other: Confusion matrix
-        :return: combine of two matrices as Confusion matrix
+        :return: combine of two matrices as a new Confusion matrix
         """
         result_matrix = {}
         classes = set(self.classes).union(set(other.classes))

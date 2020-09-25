@@ -876,11 +876,15 @@ class ConfusionMatrix():
         :return: combine of two matrices as Confusion matrix
         """
         result_matrix = {}
-        classes = set(self.classes).intersection(set(other.classes))
+        classes = set(self.classes).union(set(other.classes))
         for class_1 in classes:
             temp_dict = {}
             for class_2 in classes:
-                temp_dict[class_2] = self.matrix[class_1][class_2] + \
-                    other.matrix[class_1][class_2]
+                tmp = 0
+                if class_1 in self.classes and class_2 in self.classes:
+                    tmp += self.matrix[class_1][class_2]
+                if class_1 in other.classes and class_2 in other.classes:
+                    tmp += other.matrix[class_1][class_2]
+                temp_dict[class_2] = tmp
             result_matrix[class_1] = temp_dict
         return ConfusionMatrix(matrix=result_matrix)

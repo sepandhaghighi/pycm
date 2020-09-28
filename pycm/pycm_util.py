@@ -409,3 +409,29 @@ def statistic_recommend(classes, P):
     if binary_check(classes):
         return BINARY_RECOMMEND
     return MULTICLASS_RECOMMEND
+
+
+def matrix_combine(matrix_1, matrix_2):
+    """
+    Return the combine of two Confusion matrices.
+
+    :param matrix_1: First matrix that is going to be combined.
+    :type matrix_1: dict
+    :param matrix_2: Second matrix that is going to be combined.
+    :type matrix_2: dict
+    :return: combine of two matrices as a dict of dicts
+    """
+    result_matrix = {}
+    classes_1, classes_2 = matrix_1.keys(), matrix_2.keys()
+    classes = set(classes_1).union(set(classes_2))
+    for class_1 in classes:
+        temp_dict = {}
+        for class_2 in classes:
+            tmp = 0
+            if class_1 in classes_1 and class_2 in classes_1:
+                tmp += matrix_1[class_1][class_2]
+            if class_1 in classes_2 and class_2 in classes_2:
+                tmp += matrix_2[class_1][class_2]
+            temp_dict[class_2] = tmp
+        result_matrix[class_1] = temp_dict
+    return result_matrix

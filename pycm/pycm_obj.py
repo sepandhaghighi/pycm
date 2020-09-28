@@ -866,3 +866,17 @@ class ConfusionMatrix():
             row = [table[key][i] for i in classes]
             array.append(row)
         return numpy.array(array)
+
+    def combine(self, other):
+        """
+        Return the combine of self Confusion matrix and other one.
+
+        :param other: Other matrix that is going to be combined.
+        :type other: Confusion matrix
+        :return: combine of two matrices as a new Confusion matrix
+        """
+        if isinstance(other, ConfusionMatrix) is False:
+            raise pycmMatrixError(COMBINE_TYPE_ERROR)
+        return ConfusionMatrix(
+            matrix=matrix_combine(
+                self.matrix, other.matrix))

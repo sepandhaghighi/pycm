@@ -567,6 +567,20 @@ array([[1.     , 0.     ],
        [0.22222, 0.77778]])
 ```
 
+### Combine
+`combine` method is added in `version 3.0` in order to merge two confusion matrices. This option will be useful in mini-batch learning.	
+
+```pycon
+>>> cm_combined = cm2.combine(cm3)
+>>> cm_combined.print_matrix()
+Predict      Class1       Class2       
+Actual
+Class1       2            4            
+
+Class2       0            10           
+
+```	
+
 ### Online help
 
 `online_help` function is added in `version 1.1` in order to open each statistics definition in web browser

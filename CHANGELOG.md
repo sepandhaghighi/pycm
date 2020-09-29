@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- `plot` method
 - `combine` method
 - `matrix_combine` function
 ## [2.9] - 2020-09-23

@@ -880,3 +880,29 @@ class ConfusionMatrix():
         return ConfusionMatrix(
             matrix=matrix_combine(
                 self.matrix, other.matrix))
+
+    def plot(
+            self,
+            normalized=False,
+            title='Confusion Matrix',
+            plot_lib='matplotlib'):
+        """
+        Plot Confusion matrix.
+
+        :param normalized: normalized flag for matrix
+        :type normalized: bool
+        :param title: Plot title
+        :type title: string
+        :param plot_lib: Plotting Library
+        :type plot_lib: string
+        :return: plot axis
+        """
+        _title = title
+        if normalized:
+            _title += " (Normalized)"
+        if plot_lib == 'matplotlib':
+            import matplotlib.pyplot as plt
+        elif plot_lib == 'seaborn':
+            import seaborn as sns
+        else:
+            pass    #TODO: Proper ERROR.

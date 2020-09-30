@@ -899,15 +899,14 @@ class ConfusionMatrix():
         """
         # _title = title
         matrix = self.to_array(normalized=normalized)
-        print(matrix)
         if normalized:
             title += " (Normalized)"
         classes = [self.label_map[_class] for _class in sorted(self.label_map.keys())]
-        print(classes)
         if plot_lib == 'matplotlib':
             import matplotlib.pyplot as plt
             fig, ax = plt.subplots()
             plt.imshow(matrix, cmap=plt.cm.gray_r)
+            plt.colorbar()
             fig.canvas.set_window_title(title)
             ax.set_title(title)
             ax.set_xticks(range(len(classes)))

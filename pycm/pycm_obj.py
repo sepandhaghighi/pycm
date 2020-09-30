@@ -897,11 +897,24 @@ class ConfusionMatrix():
         :type plot_lib: string
         :return: plot axis
         """
-        _title = title
+        # _title = title
+        matrix = self.to_array(normalized=normalized)
+        print(matrix)
         if normalized:
-            _title += " (Normalized)"
+            title += " (Normalized)"
+        classes = [self.label_map[_class] for _class in sorted(self.label_map.keys())]
+        print(classes)
         if plot_lib == 'matplotlib':
             import matplotlib.pyplot as plt
+            fig, ax = plt.subplots()
+            plt.imshow(matrix, cmap=plt.cm.gray_r)
+            fig.canvas.set_window_title(title)
+            ax.set_title(title)
+            ax.set_xticks(range(len(classes)))
+            ax.set_xticklabels(classes)
+            ax.set_yticks(range(len(classes)))
+            ax.set_yticklabels(classes)
+            return ax
         elif plot_lib == 'seaborn':
             import seaborn as sns
         else:

@@ -30,3 +30,9 @@ class pycmCompareError(Exception):
     """Compare error class."""
 
     pass
+
+
+class pycmPlotError(Exception):
+    """Plot error class."""
+
+    pass

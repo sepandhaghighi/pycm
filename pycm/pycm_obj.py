@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix module."""
 from __future__ import division
-from .pycm_error import pycmVectorError, pycmMatrixError, pycmCIError, pycmAverageError
+from .pycm_error import pycmVectorError, pycmMatrixError, pycmCIError, pycmAverageError, pycmPlotError
 from .pycm_handler import __class_stat_init__, __overall_stat_init__
 from .pycm_handler import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__
 from .pycm_class_func import F_calc, IBA_calc, TI_calc, NB_calc
@@ -922,7 +922,10 @@ class ConfusionMatrix():
         if one_vs_all and class_name in classes:
             classes = [class_name, '~']
         if plot_lib == 'matplotlib':
-            from matplotlib import pyplot as plt
+            try:
+                from matplotlib import pyplot as plt
+            except ModuleNotFoundError:
+                raise pycmPlotError(MATPLOTLIB_PLOT_LIBRARY_ERROR)
             fig, ax = plt.subplots()
             if cmap is None:
                 cmap = plt.cm.gray_r
@@ -940,7 +943,10 @@ class ConfusionMatrix():
                 add_number_label(ax, classes, matrix, cmap, number_label_cmap)
             return ax
         elif plot_lib == 'seaborn':
-            import seaborn as sns
+            try:
+                import seaborn as sns
+            except ModuleNotFoundError:
+                raise pycmPlotError(SEABORN_PLOT_LIBRARY_ERROR)
             sns.matrix.heatmap(matrix, cmap=cmap)
         else:
-            pass  # TODO: Proper ERROR.
+            raise pycmPlotError(INVALID_PLOT_LIBRARY_ERROR)

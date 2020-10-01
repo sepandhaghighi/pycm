@@ -887,6 +887,9 @@ class ConfusionMatrix():
             one_vs_all=False,
             class_name=None,
             title='Confusion Matrix',
+            number_label=False,
+            cmap=None,
+            number_label_cmap=None,
             plot_lib='matplotlib'):
         """
         Plot Confusion matrix.
@@ -899,9 +902,15 @@ class ConfusionMatrix():
         :type class_name: bool
         :param title: Plot title
         :type title: string
+        :param number_label: number label flag
+        :type number_label: bool
+        :param cmap: color map
+        :type cmap: matplotlib.colors.ListedColormap
+        :param number_label_cmap: number label cmap
+        :type number_label_cmap: matplotlib.colors.ListedColormap
         :param plot_lib: Plotting Library
         :type plot_lib: string
-        :return: plot axis
+        :return: plot axes
         """
         matrix = self.to_array(
             normalized=normalized,
@@ -915,7 +924,9 @@ class ConfusionMatrix():
         if plot_lib == 'matplotlib':
             from matplotlib import pyplot as plt
             fig, ax = plt.subplots()
-            plt.imshow(matrix, cmap=plt.cm.gray_r)
+            if cmap is None:
+                cmap = plt.cm.gray_r
+            plt.imshow(matrix, cmap=cmap)
             plt.colorbar()
             fig.canvas.set_window_title(title)
             ax.set_title(title)
@@ -925,6 +936,8 @@ class ConfusionMatrix():
             ax.set_yticks(range(len(classes)))
             ax.set_yticklabels(classes)
             ax.set_ylabel("Actual Classes")
+            if number_label:
+                add_number_label(ax, classes, matrix, cmap, number_label_cmap)
             return ax
         elif plot_lib == 'seaborn':
             import seaborn as sns

@@ -435,3 +435,33 @@ def matrix_combine(matrix_1, matrix_2):
             temp_dict[class_2] = tmp
         result_matrix[class_1] = temp_dict
     return result_matrix
+
+
+def add_number_label(ax, classes, matrix, cmap, number_label_cmap):
+    """
+    Add Number labels to Confusion matrix plot.
+
+    :param ax: Confusion matrix axes
+    :type ax: matplotlib.axes
+    :param classes: classes of matrix
+    :type classes: list
+    :param matrix: derived matrix of Confusion matrix
+    :type matrix: numpy.array
+    :param cmap: color map
+    :type cmap: matplotlib.colors.ListedColormap
+    :param number_label_cmap: number label cmap
+    :type number_label_cmap: matplotlib.colors.ListedColormap
+    :return: none
+    """
+    for i in range(len(classes)):
+        for j in range(len(classes)):
+            color = cmap(1 - (float(matrix[i][j]) / float(matrix.max())))
+            if number_label_cmap is not None:
+                color = number_label_cmap(
+                    float(matrix[i][j]) / float(matrix.max()))
+            ax.text(i,
+                    j,
+                    str(matrix[i][j]),
+                    horizontalalignment='center',
+                    verticalalignment='center',
+                    color=color)

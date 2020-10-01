@@ -949,5 +949,5 @@ class ConfusionMatrix():
                 raise pycmPlotError(SEABORN_PLOT_LIBRARY_ERROR)
             ax = sns.matrix.heatmap(matrix, cmap=cmap)
         else:
-            raise pycmPlotError(INVALID_PLOT_LIBRARY_ERROR)
+            raise pycmPlotError(INVALID_PLOT_LIBRARY_ERROR.format(plot_lib))
         return ax

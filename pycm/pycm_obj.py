@@ -933,21 +933,12 @@ class ConfusionMatrix():
             plt.imshow(matrix, cmap=cmap)
             plt.colorbar()
             fig.canvas.set_window_title(title)
-            ax.set_title(title)
-            ax.set_xticks(range(len(classes)))
-            ax.set_xticklabels(classes)
-            ax.set_xlabel("Predicted Classes")
-            ax.set_yticks(range(len(classes)))
-            ax.set_yticklabels(classes)
-            ax.set_ylabel("Actual Classes")
-            if number_label:
-                add_number_label(ax, classes, matrix, cmap, number_label_cmap)
         elif plot_lib == 'seaborn':
             try:
                 import seaborn as sns
             except ModuleNotFoundError:
                 raise pycmPlotError(SEABORN_PLOT_LIBRARY_ERROR)
-            ax = sns.matrix.heatmap(matrix, cmap=cmap)
+            ax = sns.heatmap(matrix, cmap=cmap)
         else:
             raise pycmPlotError(INVALID_PLOT_LIBRARY_ERROR.format(plot_lib))
-        return ax
+        return axes_gen(ax, classes, matrix, title, cmap, number_label, number_label_cmap)

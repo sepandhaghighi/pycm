@@ -465,3 +465,35 @@ def add_number_label(ax, classes, matrix, cmap, number_label_cmap):
                     horizontalalignment='center',
                     verticalalignment='center',
                     color=color)
+
+
+def axes_gen(ax, classes, matrix, title, cmap, number_label, number_label_cmap):
+    """
+    Add Number labels to Confusion matrix plot.
+
+    :param ax: Confusion matrix axes
+    :type ax: matplotlib.axes
+    :param classes: classes of matrix
+    :type classes: list
+    :param matrix: derived matrix of Confusion matrix
+    :type matrix: numpy.array
+    :param title: Plot title
+    :type title: string
+    :param cmap: color map
+    :type cmap: matplotlib.colors.ListedColormap
+    :param number_label: number label flag
+    :type number_label: bool
+    :param number_label_cmap: number label cmap
+    :type number_label_cmap: matplotlib.colors.ListedColormap
+    :return: changed axes
+    """
+    ax.set_title(title)
+    ax.set_xticks(range(len(classes)), )
+    ax.set_xticklabels(classes)
+    ax.set_xlabel("Predicted Classes")
+    ax.set_yticks(range(len(classes)))
+    ax.set_yticklabels(classes)
+    ax.set_ylabel("Actual Classes")
+    if number_label:
+        add_number_label(ax, classes, matrix, cmap, number_label_cmap)
+    return ax

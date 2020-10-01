@@ -884,6 +884,8 @@ class ConfusionMatrix():
     def plot(
             self,
             normalized=False,
+            one_vs_all=False,
+            class_name=None,
             title='Confusion Matrix',
             plot_lib='matplotlib'):
         """
@@ -891,19 +893,27 @@ class ConfusionMatrix():
 
         :param normalized: normalized flag for matrix
         :type normalized: bool
+        :param one_vs_all: one_vs_all flag for matrix
+        :type one_vs_all: bool
+        :param class_name: class name of one_vs_all action
+        :type class_name: bool
         :param title: Plot title
         :type title: string
         :param plot_lib: Plotting Library
         :type plot_lib: string
         :return: plot axis
         """
-        # _title = title
-        matrix = self.to_array(normalized=normalized)
+        matrix = self.to_array(
+            normalized=normalized,
+            one_vs_all=one_vs_all,
+            class_name=class_name)
         if normalized:
             title += " (Normalized)"
-        classes = [self.label_map[_class] for _class in sorted(self.label_map.keys())]
+        classes = sorted(self.classes)
+        if one_vs_all and class_name in classes:
+            classes = [class_name, '~']
         if plot_lib == 'matplotlib':
-            import matplotlib.pyplot as plt
+            from matplotlib import pyplot as plt
             fig, ax = plt.subplots()
             plt.imshow(matrix, cmap=plt.cm.gray_r)
             plt.colorbar()
@@ -911,10 +921,12 @@ class ConfusionMatrix():
             ax.set_title(title)
             ax.set_xticks(range(len(classes)))
             ax.set_xticklabels(classes)
+            ax.set_xlabel("Predicted Classes")
             ax.set_yticks(range(len(classes)))
             ax.set_yticklabels(classes)
+            ax.set_ylabel("Actual Classes")
             return ax
         elif plot_lib == 'seaborn':
             import seaborn as sns
         else:
-            pass    #TODO: Proper ERROR.
+            pass  # TODO: Proper ERROR.

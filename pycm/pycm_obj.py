@@ -941,5 +941,6 @@ class ConfusionMatrix():
             return ax
         elif plot_lib == 'seaborn':
             import seaborn as sns
+            sns.matrix.heatmap(matrix, cmap=cmap)
         else:
             pass  # TODO: Proper ERROR.

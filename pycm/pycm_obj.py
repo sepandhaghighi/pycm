@@ -921,6 +921,7 @@ class ConfusionMatrix():
         classes = sorted(self.classes)
         if one_vs_all and class_name in classes:
             classes = [class_name, '~']
+        ax = None
         if plot_lib == 'matplotlib':
             try:
                 from matplotlib import pyplot as plt
@@ -941,12 +942,12 @@ class ConfusionMatrix():
             ax.set_ylabel("Actual Classes")
             if number_label:
                 add_number_label(ax, classes, matrix, cmap, number_label_cmap)
-            return ax
         elif plot_lib == 'seaborn':
             try:
                 import seaborn as sns
             except ModuleNotFoundError:
                 raise pycmPlotError(SEABORN_PLOT_LIBRARY_ERROR)
-            sns.matrix.heatmap(matrix, cmap=cmap)
+            ax = sns.matrix.heatmap(matrix, cmap=cmap)
         else:
             raise pycmPlotError(INVALID_PLOT_LIBRARY_ERROR)
+        return ax

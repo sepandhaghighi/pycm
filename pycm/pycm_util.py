@@ -453,9 +453,11 @@ def add_number_label(ax, classes, matrix, cmap, number_label_cmap):
     :type number_label_cmap: matplotlib.colors.ListedColormap
     :return: none
     """
+    diff_matrix = float(matrix.max()) - matrix
+    diff_matrix_max = float(diff_matrix.max())
     for i in range(len(classes)):
         for j in range(len(classes)):
-            color = cmap(1 - (float(matrix[i][j]) / float(matrix.max())))
+            color = cmap(round(diff_matrix[i][j]/diff_matrix_max))
             if number_label_cmap is not None:
                 color = number_label_cmap(
                     float(matrix[i][j]) / float(matrix.max()))

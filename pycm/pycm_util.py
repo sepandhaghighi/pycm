@@ -459,8 +459,8 @@ def add_number_label(ax, classes, matrix, cmap, number_label_cmap):
             if number_label_cmap is not None:
                 color = number_label_cmap(
                     float(matrix[i][j]) / float(matrix.max()))
-            ax.text(i,
-                    j,
+            ax.text(j,
+                    i,
                     str(matrix[i][j]),
                     horizontalalignment='center',
                     verticalalignment='center',

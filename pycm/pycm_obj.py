@@ -921,24 +921,35 @@ class ConfusionMatrix():
         classes = sorted(self.classes)
         if one_vs_all and class_name in classes:
             classes = [class_name, '~']
-        ax = None
-        if plot_lib == 'matplotlib':
-            try:
-                from matplotlib import pyplot as plt
-            except ModuleNotFoundError:
-                raise pycmPlotError(MATPLOTLIB_PLOT_LIBRARY_ERROR)
-            fig, ax = plt.subplots()
-            if cmap is None:
-                cmap = plt.cm.gray_r
-            plt.imshow(matrix, cmap=cmap)
-            plt.colorbar()
-            fig.canvas.set_window_title(title)
-        elif plot_lib == 'seaborn':
+        try:
+            from matplotlib import pyplot as plt
+        except ModuleNotFoundError:
+            raise pycmPlotError(MATPLOTLIB_PLOT_LIBRARY_ERROR)
+        if cmap is None:
+            cmap = plt.cm.gray_r
+        if plot_lib == 'seaborn':
             try:
                 import seaborn as sns
             except ModuleNotFoundError:
                 raise pycmPlotError(SEABORN_PLOT_LIBRARY_ERROR)
             ax = sns.heatmap(matrix, cmap=cmap)
-        else:
-            raise pycmPlotError(INVALID_PLOT_LIBRARY_ERROR.format(plot_lib))
-        return axes_gen(ax, classes, matrix, title, cmap, number_label, number_label_cmap)
+            return axes_gen(
+                ax,
+                classes,
+                matrix,
+                title,
+                cmap,
+                number_label,
+                number_label_cmap)
+        fig, ax = plt.subplots()
+        plt.imshow(matrix, cmap=cmap)
+        plt.colorbar()
+        fig.canvas.set_window_title(title)
+        return axes_gen(
+            ax,
+            classes,
+            matrix,
+            title,
+            cmap,
+            number_label,
+            number_label_cmap)

@@ -437,7 +437,7 @@ def matrix_combine(matrix_1, matrix_2):
     return result_matrix
 
 
-def add_number_label(ax, classes, matrix, cmap, number_label_cmap):
+def add_number_label(ax, classes, matrix, cmap, number_label_cmap, plot_lib):
     """
     Add Number labels to Confusion matrix plot.
 
@@ -451,18 +451,25 @@ def add_number_label(ax, classes, matrix, cmap, number_label_cmap):
     :type cmap: matplotlib.colors.ListedColormap
     :param number_label_cmap: number label cmap
     :type number_label_cmap: matplotlib.colors.ListedColormap
+    :param plot_lib: Plotting Library
+    :type plot_lib: string
     :return: none
     """
     diff_matrix = float(matrix.max()) - matrix
     diff_matrix_max = float(diff_matrix.max())
     for i in range(len(classes)):
         for j in range(len(classes)):
-            color = cmap(round(diff_matrix[i][j] / diff_matrix_max))
+            color = cmap(diff_matrix[i][j] / diff_matrix_max)
             if number_label_cmap is not None:
                 color = number_label_cmap(
                     float(matrix[i][j]) / float(matrix.max()))
-            ax.text(j,
-                    i,
+            x = j
+            y = i
+            if plot_lib == 'seaborn':
+                x += 0.5
+                y += 0.5
+            ax.text(x,
+                    y,
                     str(matrix[i][j]),
                     horizontalalignment='center',
                     verticalalignment='center',
@@ -476,7 +483,8 @@ def axes_gen(
         title,
         cmap,
         number_label,
-        number_label_cmap):
+        number_label_cmap,
+        plot_lib):
     """
     Add Number labels to Confusion matrix plot.
 
@@ -494,15 +502,26 @@ def axes_gen(
     :type number_label: bool
     :param number_label_cmap: number label cmap
     :type number_label_cmap: matplotlib.colors.ListedColormap
+    :param plot_lib: Plotting Library
+    :type plot_lib: string
     :return: changed axes
     """
     ax.set_title(title)
-    ax.set_xticks(range(len(classes)), )
+    positions = list(range(len(classes)))
+    if plot_lib == 'seaborn':
+        positions = list(map(lambda x: x + 0.5, positions))
+    ax.set_xticks(positions)
     ax.set_xticklabels(classes)
     ax.set_xlabel("Predicted Classes")
-    ax.set_yticks(range(len(classes)))
+    ax.set_yticks(positions)
     ax.set_yticklabels(classes)
     ax.set_ylabel("Actual Classes")
     if number_label:
-        add_number_label(ax, classes, matrix, cmap, number_label_cmap)
+        add_number_label(
+            ax,
+            classes,
+            matrix,
+            cmap,
+            number_label_cmap,
+            plot_lib)
     return ax

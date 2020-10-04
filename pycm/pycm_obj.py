@@ -927,6 +927,8 @@ class ConfusionMatrix():
             raise pycmPlotError(MATPLOTLIB_PLOT_LIBRARY_ERROR)
         if cmap is None:
             cmap = plt.cm.gray_r
+        fig, ax = plt.subplots()
+        fig.canvas.set_window_title(title)
         if plot_lib == 'seaborn':
             try:
                 import seaborn as sns
@@ -940,11 +942,10 @@ class ConfusionMatrix():
                 title,
                 cmap,
                 number_label,
-                number_label_cmap)
-        fig, ax = plt.subplots()
+                number_label_cmap,
+                plot_lib)
         plt.imshow(matrix, cmap=cmap)
         plt.colorbar()
-        fig.canvas.set_window_title(title)
         return axes_gen(
             ax,
             classes,
@@ -952,4 +953,5 @@ class ConfusionMatrix():
             title,
             cmap,
             number_label,
-            number_label_cmap)
+            number_label_cmap,
+            plot_lib)

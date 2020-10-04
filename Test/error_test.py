@@ -108,24 +108,4 @@ pycm.pycm_error.pycmAverageError: The weight type must be dictionary and also mu
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmMatrixError: The input type is considered to be pycm.ConfusionMatrix object but it's not!
->>> cm.plot(normalized=True, plot_lib="mathplotlib")
-Traceback (most recent call last):
-        ...
-pycm.pycm_error.pycmPlotError: mathplotlib is not a valid plotting library
->>> cm.plot(one_vs_all=True, class_name=0, plot_lib="mathplotlib")
-Traceback (most recent call last):
-        ...
-pycm.pycm_error.pycmPlotError: mathplotlib is not a valid plotting library
->>> cm.plot(normalized=True, one_vs_all=True, class_name=0, plot_lib="mathplotlib")
-Traceback (most recent call last):
-        ...
-pycm.pycm_error.pycmPlotError: mathplotlib is not a valid plotting library
->>> cm.plot(normalized=True, one_vs_all=True, plot_lib="mathplotlib")
-Traceback (most recent call last):
-        ...
-pycm.pycm_error.pycmPlotError: mathplotlib is not a valid plotting library
->>> cm.plot(one_vs_all=True, plot_lib="mathplotlib")
-Traceback (most recent call last):
-        ...
-pycm.pycm_error.pycmPlotError: mathplotlib is not a valid plotting library
 """

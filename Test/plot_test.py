@@ -179,9 +179,9 @@ array([0.5, 1.5, 2.5])
 >>> ax.get_title()
 'Confusion Matrix (Normalized)'
 >>> ax.get_xticklabels()
-[Text(0.5, 0, '0'), Text(1.5, 0, '~')]
+[Text(0.5, 0, '1'), Text(1.5, 0, '~')]
 >>> ax.get_yticklabels()
-[Text(0, 0.5, '0'), Text(0, 1.5, '~')]
+[Text(0, 0.5, '1'), Text(0, 1.5, '~')]
 >>> ax.texts
 []
 >>> ax = cm.plot(normalized=True, number_label=True, plot_lib='seaborn')

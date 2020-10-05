@@ -437,7 +437,7 @@ def matrix_combine(matrix_1, matrix_2):
     return result_matrix
 
 
-def add_number_label(ax, classes, matrix, cmap, number_label_cmap, plot_lib):
+def add_number_label(ax, classes, matrix, cmap, plot_lib):
     """
     Add Number labels to Confusion matrix plot.
 
@@ -449,8 +449,6 @@ def add_number_label(ax, classes, matrix, cmap, number_label_cmap, plot_lib):
     :type matrix: numpy.array
     :param cmap: color map
     :type cmap: matplotlib.colors.ListedColormap
-    :param number_label_cmap: number label cmap
-    :type number_label_cmap: matplotlib.colors.ListedColormap
     :param plot_lib: Plotting Library
     :type plot_lib: string
     :return: none
@@ -460,9 +458,6 @@ def add_number_label(ax, classes, matrix, cmap, number_label_cmap, plot_lib):
     for i in range(len(classes)):
         for j in range(len(classes)):
             color = cmap(diff_matrix[i][j] / diff_matrix_max)
-            if number_label_cmap is not None:
-                color = number_label_cmap(
-                    float(matrix[i][j]) / float(matrix.max()))
             x = j
             y = i
             if plot_lib == 'seaborn':
@@ -483,7 +478,6 @@ def axes_gen(
         title,
         cmap,
         number_label,
-        number_label_cmap,
         plot_lib):
     """
     Add Number labels to Confusion matrix plot.
@@ -522,6 +516,5 @@ def axes_gen(
             classes,
             matrix,
             cmap,
-            number_label_cmap,
             plot_lib)
     return ax

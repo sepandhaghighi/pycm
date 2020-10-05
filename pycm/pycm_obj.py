@@ -889,7 +889,6 @@ class ConfusionMatrix():
             title='Confusion Matrix',
             number_label=False,
             cmap=None,
-            number_label_cmap=None,
             plot_lib='matplotlib'):
         """
         Plot Confusion matrix.
@@ -906,8 +905,6 @@ class ConfusionMatrix():
         :type number_label: bool
         :param cmap: color map
         :type cmap: matplotlib.colors.ListedColormap
-        :param number_label_cmap: number label cmap
-        :type number_label_cmap: matplotlib.colors.ListedColormap
         :param plot_lib: Plotting Library
         :type plot_lib: string
         :return: plot axes
@@ -942,7 +939,6 @@ class ConfusionMatrix():
                 title,
                 cmap,
                 number_label,
-                number_label_cmap,
                 plot_lib)
         plt.imshow(matrix, cmap=cmap)
         plt.colorbar()
@@ -953,5 +949,4 @@ class ConfusionMatrix():
             title,
             cmap,
             number_label,
-            number_label_cmap,
             plot_lib)

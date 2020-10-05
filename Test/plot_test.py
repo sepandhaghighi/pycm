@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """
+>>> from pycm import *
 >>> from matplotlib import pyplot as plt
 >>> import seaborn as sns
 >>> y_act = [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2]

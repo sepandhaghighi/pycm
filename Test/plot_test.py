@@ -118,7 +118,7 @@ array([0.5, 1.5, 2.5])
 >>> ax.get_yticks()
 array([0.5, 1.5, 2.5])
 >>> ax.get_yticklabels()
-[Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
+[Text(0, 0.5, '0'), Text(0, 1.5, '1'), Text(0, 2.5, '2')]
 >>> ax.texts
 []
 >>> ax = cm.plot(normalized=True, plot_lib='seaborn')
@@ -127,7 +127,7 @@ array([0.5, 1.5, 2.5])
 >>> ax.get_xticklabels()
 [Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
 >>> ax.get_yticklabels()
-[Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
+[Text(0, 0.5, '0'), Text(0, 1.5, '1'), Text(0, 2.5, '2')]
 >>> ax.texts
 []
 >>> ax = cm.plot(one_vs_all=True, plot_lib='seaborn')
@@ -136,16 +136,16 @@ array([0.5, 1.5, 2.5])
 >>> ax.get_xticklabels()
 [Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
 >>> ax.get_yticklabels()
-[Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
+[Text(0, 0.5, '0'), Text(0, 1.5, '1'), Text(0, 2.5, '2')]
 >>> ax.texts
 []
 >>> ax = cm.plot(one_vs_all=True, class_name=0, plot_lib='seaborn')
 >>> ax.get_title()
 'Confusion Matrix'
 >>> ax.get_xticklabels()
-[Text(0.5, 0, '0'), Text(1.5, 0, '~')]
+[Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
 >>> ax.get_yticklabels()
-[Text(0, 0.5, '0'), Text(0, 1.5, '~')]
+[Text(0, 0.5, '0'), Text(0, 1.5, '1'), Text(0, 2.5, '2')]
 >>> ax.texts
 []
 >>> ax = cm.plot(title="test", plot_lib='seaborn')
@@ -154,7 +154,7 @@ array([0.5, 1.5, 2.5])
 >>> ax.get_xticklabels()
 [Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
 >>> ax.get_yticklabels()
-[Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
+[Text(0, 0.5, '0'), Text(0, 1.5, '1'), Text(0, 2.5, '2')]
 >>> ax.texts
 []
 >>> ax = cm.plot(number_label=True, plot_lib='seaborn')
@@ -163,7 +163,7 @@ array([0.5, 1.5, 2.5])
 >>> ax.get_xticklabels()
 [Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
 >>> ax.get_yticklabels()
-[Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
+[Text(0, 0.5, '0'), Text(0, 1.5, '1'), Text(0, 2.5, '2')]
 >>> ax.texts
 [Text(0.5, 0.5, '9'), Text(1.5, 0.5, '3'), Text(2.5, 0.5, '0'), Text(0.5, 1.5, '3'), Text(1.5, 1.5, '5'), Text(2.5, 1.5, '1'), Text(0.5, 2.5, '1'), Text(1.5, 2.5, '1'), Text(2.5, 2.5, '4')]
 >>> ax = cm.plot(cmap=plt.cm.Blues, plot_lib='seaborn')
@@ -172,7 +172,7 @@ array([0.5, 1.5, 2.5])
 >>> ax.get_xticklabels()
 [Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
 >>> ax.get_yticklabels()
-[Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
+[Text(0, 0.5, '0'), Text(0, 1.5, '1'), Text(0, 2.5, '2')]
 >>> ax.texts
 []
 >>> ax = cm.plot(normalized=True, one_vs_all=True, class_name=1, plot_lib='seaborn')
@@ -190,7 +190,7 @@ array([0.5, 1.5, 2.5])
 >>> ax.get_xticklabels()
 [Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
 >>> ax.get_yticklabels()
-[Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
+[Text(0, 0.5, '0'), Text(0, 1.5, '1'), Text(0, 2.5, '2')]
 >>> ax.texts
 [Text(0.5, 0.5, '0.75'), Text(1.5, 0.5, '0.25'), Text(2.5, 0.5, '0.0'), Text(0.5, 1.5, '0.33333'), Text(1.5, 1.5, '0.55556'), Text(2.5, 1.5, '0.11111'), Text(0.5, 2.5, '0.16667'), Text(1.5, 2.5, '0.16667'), Text(2.5, 2.5, '0.66667')]
 >>> ax = cm.plot(normalized=True, one_vs_all=True, class_name=1, number_label=True, plot_lib='seaborn')
@@ -199,7 +199,7 @@ array([0.5, 1.5, 2.5])
 >>> ax.get_xticklabels()
 [Text(0.5, 0, '1'), Text(1.5, 0, '~')]
 >>> ax.get_yticklabels()
-[Text(0.5, 0, '1'), Text(1.5, 0, '~')]
+[Text(0, 0.5, '1'), Text(0, 1.5, '~')]
 >>> ax.texts
 [Text(0.5, 0.5, '0.55556'), Text(1.5, 0.5, '0.44444'), Text(0.5, 1.5, '0.22222'), Text(1.5, 1.5, '0.77778')]
 """

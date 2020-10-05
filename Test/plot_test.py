@@ -143,9 +143,9 @@ array([0.5, 1.5, 2.5])
 >>> ax.get_title()
 'Confusion Matrix'
 >>> ax.get_xticklabels()
-[Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
+[Text(0.5, 0, '0'), Text(1.5, 0, '~')]
 >>> ax.get_yticklabels()
-[Text(0, 0.5, '0'), Text(0, 1.5, '1'), Text(0, 2.5, '2')]
+[Text(0, 0.5, '0'), Text(0, 1.5, '~')]
 >>> ax.texts
 []
 >>> ax = cm.plot(title="test", plot_lib='seaborn')

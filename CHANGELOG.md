@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- `plot_test.py` added
 - `axes_gen` function
 - `add_number_label` function
 - `plot` method

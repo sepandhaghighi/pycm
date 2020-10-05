@@ -4,8 +4,6 @@
 >>> import os
 >>> import json
 >>> import copy
->>> from matplotlib import pyplot as plt
->>> import seaborn as sns
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> y_actu_copy = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
@@ -1471,107 +1469,4 @@ True
 1
 >>> cm_combined3.matrix[4][2]
 1
->>> y_act = [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2]
->>> y_pre = [0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,1,1,1,1,2,0,1,2,2,2,2]
->>> cm = ConfusionMatrix(y_act,y_pre)
->>> ax = cm.plot()
->>> ax.get_title()
-'Confusion Matrix'
->>> ax.get_xlabel()
-'Predicted Classes'
->>> ax.get_ylabel()
-'Actual Classes'
->>> ax.get_xticks()
-array([0, 1, 2])
->>> ax.get_xticklabels()
-[Text(0, 0, '0'), Text(1, 0, '1'), Text(2, 0, '2')]
->>> ax.get_yticks()
-array([0, 1, 2])
->>> ax.get_yticklabels()
-[Text(0, 0, '0'), Text(0, 1, '1'), Text(0, 2, '2')]
->>> ax.texts
-[]
->>> ax = cm.plot(plot_lib="seaborn")
->>> ax.get_title()
-'Confusion Matrix'
->>> ax.get_xlabel()
-'Predicted Classes'
->>> ax.get_ylabel()
-'Actual Classes'
->>> ax.get_xticks()
-array([0, 1, 2])
->>> ax.get_yticks()
-array([0, 1, 2])
->>> ax.get_xticklabels()
-[Text(0, 0, '0'), Text(1, 0, '1'), Text(2, 0, '2')]
->>> ax.get_yticklabels()
-[Text(0, 0, '0'), Text(0, 1, '1'), Text(0, 2, '2')]
->>> ax.texts
-[]
->>> ax = cm.plot(normalized=True)
->>> ax.get_title()
-'Confusion Matrix (Normalized)'
->>> ax.get_xticklabels()
-[Text(0, 0, '0'), Text(1, 0, '1'), Text(2, 0, '2')]
->>> ax.get_yticklabels()
-[Text(0, 0, '0'), Text(0, 1, '1'), Text(0, 2, '2')]
->>> ax = cm.plot(normalized=True, plot_lib="seaborn")
->>> ax.get_title()
-'Confusion Matrix (Normalized)'
->>> ax.get_xticklabels()
-[Text(0, 0, '0'), Text(1, 0, '1'), Text(2, 0, '2')]
->>> ax.get_yticklabels()
-[Text(0, 0, '0'), Text(0, 1, '1'), Text(0, 2, '2')]
->>> ax = cm.plot(one_vs_all=True)
->>> ax.get_xticks()
-array([0, 1, 2])
->>> ax.get_yticks()
-array([0, 1, 2])
->>> ax.get_xticklabels()
-[Text(0, 0, '0'), Text(1, 0, '1'), Text(2, 0, '2')]
->>> ax.get_yticklabels()
-[Text(0, 0, '0'), Text(0, 1, '1'), Text(0, 2, '2')]
->>> ax = cm.plot(one_vs_all=True, class_name=0)
->>> ax.get_title()
-'Confusion Matrix'
->>> ax.get_xticklabels()
-[Text(0, 0, '0'), Text(1, 0, '~')]
->>> ax.get_yticklabels()
-[Text(0, 0, '0'), Text(0, 1, '~')]
->>> ax = cm.plot(normalized=True, one_vs_all=True, class_name=0)
->>> ax.get_title()
-'Confusion Matrix (Normalized)'
->>> ax = cm.plot(title="Number Labeled Matrix", number_label=True)
->>> ax.get_title()
-'Number Labeled Matrix'
->>> ax.texts
-[Text(0, 0, '9'), Text(0, 1, '3'), Text(0, 2, '0'), Text(1, 0, '3'), Text(1, 1, '5'), Text(1, 2, '1'), Text(2, 0, '1'), Text(2, 1, '1'), Text(2, 2, '4')]
->>> ax = cm.plot(normalized=True, title="Number Labeled Matrix", number_label=True)
->>> ax.get_title()
-'Number Labeled Matrix (Normalized)'
->>> ax.texts
-[Text(0, 0, '0.75'), Text(0, 1, '0.25'), Text(0, 2, '0.0'), Text(1, 0, '0.33333'), Text(1, 1, '0.55556'), Text(1, 2, '0.11111'), Text(2, 0, '0.16667'), Text(2, 1, '0.16667'), Text(2, 2, '0.66667')]
->>> ax = cm.plot(normalized=True, one_vs_all=True, class_name=0, title="Number Labeled Matrix", number_label=True)
->>> ax.texts
-[Text(0, 0, '0.75'), Text(0, 1, '0.25'), Text(1, 0, '0.26667'), Text(1, 1, '0.73333')]
->>> ax.get_yticklabels()
-[Text(0, 0, '0'), Text(0, 1, '~')]
->>> ax.get_xticklabels()
-[Text(0, 0, '0'), Text(1, 0, '~')]
->>> ax = cm.plot(normalized=True, one_vs_all=True, class_name=0, title="Number Labeled Matrix", number_label=True, cmap=plt.cm.Reds)
->>> ax.get_title()
-'Number Labeled Matrix (Normalized)'
->>> ax.get_xticklabels()
-[Text(0, 0, '0'), Text(1, 0, '~')]
->>> ax.get_yticklabels()
-[Text(0, 0, '0'), Text(0, 1, '~')]
->>> ax.texts
-[Text(0, 0, '0.75'), Text(0, 1, '0.25'), Text(1, 0, '0.26667'), Text(1, 1, '0.73333')]
->>> ax = cm.plot(normalized=True, one_vs_all=True, class_name=0, title="Number Labeled Matrix", number_label=True, number_label_cmap=plt.cm.Blues)
->>> ax = cm.plot(normalized=True, one_vs_all=True, class_name=0, title="Number Labeled Matrix", number_label=True, cmap=plt.cm.Reds, number_label_cmap=plt.cm.Blues)
->>> ax = cm.plot(normalized=True, one_vs_all=True, class_name=0, title="Number Labeled Matrix", number_label=True, cmap=plt.cm.Reds, number_label_cmap=plt.cm.Blues, plot_lib="seaborn")
->>> ax = cm.plot(normalized=True, one_vs_all=True, class_name=0, cmap=plt.cm.Reds, number_label_cmap=plt.cm.Blues, plot_lib="seaborn")
->>> ax = cm.plot(normalized=True, one_vs_all=True, cmap=plt.cm.Reds, number_label_cmap=plt.cm.Blues, plot_lib="seaborn")
->>> ax = cm.plot(normalized=True, cmap=plt.cm.Reds, number_label_cmap=plt.cm.Blues, plot_lib="seaborn")
->>> ax = cm.plot(cmap=plt.cm.Reds, number_label_cmap=plt.cm.Blues, plot_lib="seaborn")
 """

@@ -457,7 +457,8 @@ def add_number_label(ax, classes, matrix, cmap, plot_lib):
     diff_matrix_max = float(diff_matrix.max())
     for i in range(len(classes)):
         for j in range(len(classes)):
-            color = cmap(diff_matrix[i][j] / diff_matrix_max)
+            color_index = float(round(diff_matrix[i][j] / diff_matrix_max))
+            color = cmap(color_index)
             x = j
             y = i
             if plot_lib == 'seaborn':

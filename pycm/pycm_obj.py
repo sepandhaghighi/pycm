@@ -891,7 +891,7 @@ class ConfusionMatrix():
             cmap=None,
             plot_lib='matplotlib'):
         """
-        Plot Confusion matrix.
+        Plot confusion matrix.
 
         :param normalized: normalized flag for matrix
         :type normalized: bool
@@ -899,13 +899,13 @@ class ConfusionMatrix():
         :type one_vs_all: bool
         :param class_name: class name of one_vs_all action
         :type class_name: bool
-        :param title: Plot title
+        :param title: plot title
         :type title: string
         :param number_label: number label flag
         :type number_label: bool
         :param cmap: color map
         :type cmap: matplotlib.colors.ListedColormap
-        :param plot_lib: Plotting Library
+        :param plot_lib: plotting Library
         :type plot_lib: string
         :return: plot axes
         """

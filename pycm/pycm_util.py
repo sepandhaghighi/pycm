@@ -439,17 +439,17 @@ def matrix_combine(matrix_1, matrix_2):
 
 def add_number_label(ax, classes, matrix, cmap, plot_lib):
     """
-    Add Number labels to Confusion matrix plot.
+    Add number labels to confusion matrix plot.
 
-    :param ax: Confusion matrix axes
+    :param ax: confusion matrix axes
     :type ax: matplotlib.axes
     :param classes: classes of matrix
     :type classes: list
-    :param matrix: derived matrix of Confusion matrix
+    :param matrix: derived matrix of confusion matrix
     :type matrix: numpy.array
     :param cmap: color map
     :type cmap: matplotlib.colors.ListedColormap
-    :param plot_lib: Plotting Library
+    :param plot_lib: plotting Library
     :type plot_lib: string
     :return: none
     """
@@ -481,9 +481,9 @@ def axes_gen(
         number_label,
         plot_lib):
     """
-    Add Number labels to Confusion matrix plot.
+    Add extra descriptions to axes.
 
-    :param ax: Confusion matrix axes
+    :param ax: confusion matrix axes
     :type ax: matplotlib.axes
     :param classes: classes of matrix
     :type classes: list
@@ -495,9 +495,7 @@ def axes_gen(
     :type cmap: matplotlib.colors.ListedColormap
     :param number_label: number label flag
     :type number_label: bool
-    :param number_label_cmap: number label cmap
-    :type number_label_cmap: matplotlib.colors.ListedColormap
-    :param plot_lib: Plotting Library
+    :param plot_lib: plotting Library
     :type plot_lib: string
     :return: changed axes
     """

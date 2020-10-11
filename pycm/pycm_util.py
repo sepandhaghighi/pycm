@@ -449,9 +449,9 @@ def add_number_label(ax, classes, matrix, cmap, plot_lib):
     :type matrix: numpy.array
     :param cmap: color map
     :type cmap: matplotlib.colors.ListedColormap
-    :param plot_lib: plotting Library
-    :type plot_lib: string
-    :return: none
+    :param plot_lib: plotting library
+    :type plot_lib: str
+    :return: None
     """
     diff_matrix = float(matrix.max()) - matrix
     diff_matrix_max = float(diff_matrix.max())
@@ -487,16 +487,16 @@ def axes_gen(
     :type ax: matplotlib.axes
     :param classes: classes of matrix
     :type classes: list
-    :param matrix: derived matrix of Confusion matrix
+    :param matrix: derived matrix of confusion matrix
     :type matrix: numpy.array
-    :param title: Plot title
-    :type title: string
+    :param title: plot title
+    :type title: str
     :param cmap: color map
     :type cmap: matplotlib.colors.ListedColormap
     :param number_label: number label flag
     :type number_label: bool
-    :param plot_lib: plotting Library
-    :type plot_lib: string
+    :param plot_lib: plotting library
+    :type plot_lib: str
     :return: changed axes
     """
     ax.set_title(title)

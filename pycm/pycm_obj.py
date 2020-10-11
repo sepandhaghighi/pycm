@@ -900,13 +900,13 @@ class ConfusionMatrix():
         :param class_name: class name of one_vs_all action
         :type class_name: bool
         :param title: plot title
-        :type title: string
+        :type title: str
         :param number_label: number label flag
         :type number_label: bool
         :param cmap: color map
         :type cmap: matplotlib.colors.ListedColormap
-        :param plot_lib: plotting Library
-        :type plot_lib: string
+        :param plot_lib: plotting library
+        :type plot_lib: str
         :return: plot axes
         """
         matrix = self.to_array(

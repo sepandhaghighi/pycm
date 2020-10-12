@@ -98,6 +98,8 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 ⚠️  PyCM 2.4 is the last version to support **Python 2.7** & **Python 3.4**
 
+⚠️  PyCM plot method require **Matplotlib (>= 3.0.0)** or **Seaborn (>= 0.9.1)**   
+
 ### Source code
 - Download [Version 2.9](https://github.com/sepandhaghighi/pycm/archive/v2.9.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
@@ -580,6 +582,23 @@ Class1       2            4
 Class2       0            10           
 
 ```	
+
+### Plot
+`plot` method is added in `version 3.0` in order to plot a confusion matrix by use of matplotlib or seaborn.
+
+```pycon
+>>> cm.plot()
+```
+<img src="Otherfiles/plot1.png">
+```pycon
+>>> from matplotlib import pyplot as plt
+>>> cm.plot(cmap=plt.cm.Greens,number_label=True,plot_lib="matplotlib")
+```
+<img src="Otherfiles/plot2.png">
+```pycon
+>>> cm.plot(cmap=plt.cm.Reds,normalized=True,number_label=True,plot_lib="seaborn")
+```
+<img src="Otherfiles/plot3.png">
 
 ### Online help
 

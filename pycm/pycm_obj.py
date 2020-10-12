@@ -898,7 +898,7 @@ class ConfusionMatrix():
         :param one_vs_all: one_vs_all flag for matrix
         :type one_vs_all: bool
         :param class_name: class name of one_vs_all action
-        :type class_name: bool
+        :type class_name: any valid type
         :param title: plot title
         :type title: str
         :param number_label: number label flag

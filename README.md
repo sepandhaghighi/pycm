@@ -589,15 +589,19 @@ Class2       0            10
 ```pycon
 >>> cm.plot()
 ```
-<img src="Otherfiles/plot1.png">
+<img src="Otherfiles/plot1.png">	
+
 ```pycon
 >>> from matplotlib import pyplot as plt
 >>> cm.plot(cmap=plt.cm.Greens,number_label=True,plot_lib="matplotlib")
-```
-<img src="Otherfiles/plot2.png">
+```		
+
+<img src="Otherfiles/plot2.png">		
+
 ```pycon
 >>> cm.plot(cmap=plt.cm.Reds,normalized=True,number_label=True,plot_lib="seaborn")
-```
+```		
+
 <img src="Otherfiles/plot3.png">
 
 ### Online help

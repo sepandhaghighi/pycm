@@ -6,8 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- `plot_test.py`
+- `axes_gen` function
+- `add_number_label` function
+- `plot` method
 - `combine` method
 - `matrix_combine` function
+### Changed
+- Document modified
+- `README.md` modified
 ## [2.9] - 2020-09-23
 ### Added
 - `notebook_check.py`

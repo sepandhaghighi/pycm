@@ -920,7 +920,7 @@ class ConfusionMatrix():
             classes = [class_name, '~']
         try:
             from matplotlib import pyplot as plt
-        except ModuleNotFoundError:
+        except (ModuleNotFoundError, ImportError):
             raise pycmPlotError(MATPLOTLIB_PLOT_LIBRARY_ERROR)
         if cmap is None:
             cmap = plt.cm.gray_r
@@ -929,7 +929,7 @@ class ConfusionMatrix():
         if plot_lib == 'seaborn':
             try:
                 import seaborn as sns
-            except ModuleNotFoundError:
+            except (ModuleNotFoundError, ImportError):
                 raise pycmPlotError(SEABORN_PLOT_LIBRARY_ERROR)
             ax = sns.heatmap(matrix, cmap=cmap)
             return axes_gen(

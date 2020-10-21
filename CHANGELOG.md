@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Document modified
 - `README.md` modified
+- Example-2 deprecated
+- Example-7 deprecated
 ## [2.9] - 2020-09-23
 ### Added
 - `notebook_check.py`

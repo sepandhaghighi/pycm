@@ -1,1 +1,1 @@
-{"Actual-Vector": null, "Matrix": [["L1", [["L2", 0], ["L1", 3], ["L3", 2]]], ["L2", [["L2", 1], ["L1", 0], ["L3", 1]]], ["L3", [["L2", 2], ["L1", 0], ["L3", 3]]]], "Predict-Vector": null, "Transpose": true, "Sample-Weight": null, "Digit": 5}
+{"Matrix": [["L1", [["L2", 0], ["L3", 2], ["L1", 3]]], ["L2", [["L2", 1], ["L3", 1], ["L1", 0]]], ["L3", [["L2", 2], ["L3", 3], ["L1", 0]]]], "Actual-Vector": null, "Transpose": true, "Sample-Weight": null, "Predict-Vector": null, "Digit": 5}

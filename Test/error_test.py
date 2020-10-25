@@ -55,7 +55,7 @@ pycm.pycm_obj.pycmMatrixError: Mapping class names error
 >>> cp = Compare([cm,cm])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCompareError: The input type is considered to be dictionary but it's not!
+pycm.pycm_obj.pycmCompareError: The input type is supposed to be dictionary but it's not!
 >>> cp = Compare({"cm1":cm})
 Traceback (most recent call last):
         ...
@@ -63,7 +63,7 @@ pycm.pycm_obj.pycmCompareError: Lower than two confusion matrices is given for c
 >>> cp = Compare({"cm1":cm,"cm2":[]})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCompareError: The input is considered to consist of pycm.ConfusionMatrix object but it's not!
+pycm.pycm_obj.pycmCompareError: The input is supposed to consist of pycm.ConfusionMatrix object but it's not!
 >>> cm2 = ConfusionMatrix(matrix={"Class1":{"Class1":9,"Class2":3,"Class3":0},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":1,"Class2":1,"Class3":4}})
 >>> cp = Compare({"cm1":cm,"cm2":cm2})
 Traceback (most recent call last):
@@ -87,7 +87,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 >>> cm.CI(2)
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCIError: The input type is considered to be string but it's not!
+pycm.pycm_obj.pycmCIError: The input type is supposed to be string but it's not!
 >>> cm.average("AUCC")
 Traceback (most recent call last):
         ...
@@ -107,5 +107,5 @@ pycm.pycm_error.pycmAverageError: The weight type must be dictionary and also mu
 >>> cm.combine(1)
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMatrixError: The input type is considered to be pycm.ConfusionMatrix object but it's not!
+pycm.pycm_error.pycmMatrixError: The input type is supposed to be pycm.ConfusionMatrix object but it's not!
 """

@@ -413,13 +413,13 @@ def statistic_recommend(classes, P):
 
 def matrix_combine(matrix_1, matrix_2):
     """
-    Return the combine of two Confusion matrices.
+    Return the combination of two confusion matrices.
 
-    :param matrix_1: First matrix that is going to be combined.
+    :param matrix_1: first matrix that is going to be combined.
     :type matrix_1: dict
-    :param matrix_2: Second matrix that is going to be combined.
+    :param matrix_2: second matrix that is going to be combined.
     :type matrix_2: dict
-    :return: combine of two matrices as a dict of dicts
+    :return: the combination of two matrices as a dict of dicts
     """
     result_matrix = {}
     classes_1, classes_2 = matrix_1.keys(), matrix_2.keys()

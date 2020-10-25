@@ -843,7 +843,7 @@ class ConfusionMatrix():
         """
         Return the confusion matrix in form of  a numpy array.
 
-        :param normalized: A flag for getting normalized confusion matrix
+        :param normalized: a flag for getting normalized confusion matrix
         :type normalized: bool
         :param one_vs_all : One-Vs-All mode flag
         :type one_vs_all : bool
@@ -869,11 +869,11 @@ class ConfusionMatrix():
 
     def combine(self, other):
         """
-        Return the combine of self Confusion matrix and other one.
+        Return the combination of two confusion matrices.
 
-        :param other: Other matrix that is going to be combined.
-        :type other: Confusion matrix
-        :return: combine of two matrices as a new Confusion matrix
+        :param other: the other matrix that is going to be combined
+        :type other: pycm.ConfusionMatrix
+        :return: the combination of two matrices as a new confusion matrix
         """
         if isinstance(other, ConfusionMatrix) is False:
             raise pycmMatrixError(COMBINE_TYPE_ERROR)

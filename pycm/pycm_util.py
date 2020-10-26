@@ -409,3 +409,111 @@ def statistic_recommend(classes, P):
     if binary_check(classes):
         return BINARY_RECOMMEND
     return MULTICLASS_RECOMMEND
+
+
+def matrix_combine(matrix_1, matrix_2):
+    """
+    Return the combination of two confusion matrices.
+
+    :param matrix_1: first matrix that is going to be combined.
+    :type matrix_1: dict
+    :param matrix_2: second matrix that is going to be combined.
+    :type matrix_2: dict
+    :return: the combination of two matrices as a dict of dicts
+    """
+    result_matrix = {}
+    classes_1, classes_2 = matrix_1.keys(), matrix_2.keys()
+    classes = set(classes_1).union(set(classes_2))
+    for class_1 in classes:
+        temp_dict = {}
+        for class_2 in classes:
+            tmp = 0
+            if class_1 in classes_1 and class_2 in classes_1:
+                tmp += matrix_1[class_1][class_2]
+            if class_1 in classes_2 and class_2 in classes_2:
+                tmp += matrix_2[class_1][class_2]
+            temp_dict[class_2] = tmp
+        result_matrix[class_1] = temp_dict
+    return result_matrix
+
+
+def add_number_label(ax, classes, matrix, cmap, plot_lib):
+    """
+    Add number labels to confusion matrix plot.
+
+    :param ax: confusion matrix axes
+    :type ax: matplotlib.axes
+    :param classes: classes of matrix
+    :type classes: list
+    :param matrix: derived matrix of confusion matrix
+    :type matrix: numpy.array
+    :param cmap: color map
+    :type cmap: matplotlib.colors.ListedColormap
+    :param plot_lib: plotting library
+    :type plot_lib: str
+    :return: None
+    """
+    diff_matrix = float(matrix.max()) - matrix
+    diff_matrix_max = float(diff_matrix.max())
+    for i in range(len(classes)):
+        for j in range(len(classes)):
+            color_index = float(round(diff_matrix[i][j] / diff_matrix_max))
+            color = cmap(color_index)
+            x = j
+            y = i
+            if plot_lib == 'seaborn':
+                x += 0.5
+                y += 0.5
+            ax.text(x,
+                    y,
+                    str(matrix[i][j]),
+                    horizontalalignment='center',
+                    verticalalignment='center',
+                    color=color)
+
+
+def axes_gen(
+        ax,
+        classes,
+        matrix,
+        title,
+        cmap,
+        number_label,
+        plot_lib):
+    """
+    Add extra descriptions to axes.
+
+    :param ax: confusion matrix axes
+    :type ax: matplotlib.axes
+    :param classes: classes of matrix
+    :type classes: list
+    :param matrix: derived matrix of confusion matrix
+    :type matrix: numpy.array
+    :param title: plot title
+    :type title: str
+    :param cmap: color map
+    :type cmap: matplotlib.colors.ListedColormap
+    :param number_label: number label flag
+    :type number_label: bool
+    :param plot_lib: plotting library
+    :type plot_lib: str
+    :return: changed axes
+    """
+    ax.set_title(title)
+    positions = list(range(len(classes)))
+    if plot_lib == 'seaborn':
+        positions = list(map(lambda x: x + 0.5, positions))
+    ax.set_xticks(positions)
+    ax.set_xticklabels(classes)
+    ax.set_xlabel("Predicted Classes")
+    ax.set_yticks(positions)
+    ax.set_yticklabels(classes)
+    ax.set_ylabel("Actual Classes")
+    if number_label:
+        add_number_label(
+            ax,
+            classes,
+            matrix,
+            cmap,
+            plot_lib)
+    return ax

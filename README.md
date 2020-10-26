@@ -98,8 +98,10 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 ⚠️  PyCM 2.4 is the last version to support **Python 2.7** & **Python 3.4**
 
+⚠️  Plotting capability requires **Matplotlib (>= 3.0.0)** or **Seaborn (>= 0.9.1)**   
+
 ### Source code
-- Download [Version 2.9](https://github.com/sepandhaghighi/pycm/archive/v2.9.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 3.0](https://github.com/sepandhaghighi/pycm/archive/v3.0.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -107,7 +109,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==2.9` or `pip3 install pycm==2.9` (Need root access)
+- Run `pip install pycm==3.0` or `pip3 install pycm==3.0` (Need root access)
 
 ### Conda
 
@@ -566,6 +568,41 @@ array([[1.     , 0.     , 0.     ],
 array([[1.     , 0.     ],
        [0.22222, 0.77778]])
 ```
+
+### Combine
+`combine` method is added in `version 3.0` in order to merge two confusion matrices. This option will be useful in mini-batch learning.	
+
+```pycon
+>>> cm_combined = cm2.combine(cm3)
+>>> cm_combined.print_matrix()
+Predict      Class1       Class2       
+Actual
+Class1       2            4            
+
+Class2       0            10           
+
+```	
+
+### Plot
+`plot` method is added in `version 3.0` in order to plot a confusion matrix using Matplotlib or Seaborn.
+
+```pycon
+>>> cm.plot()
+```
+<img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/plot1.png">	
+
+```pycon
+>>> from matplotlib import pyplot as plt
+>>> cm.plot(cmap=plt.cm.Greens,number_label=True,plot_lib="matplotlib")
+```		
+
+<img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/plot2.png">		
+
+```pycon
+>>> cm.plot(cmap=plt.cm.Reds,normalized=True,number_label=True,plot_lib="seaborn")
+```		
+
+<img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/plot3.png">
 
 ### Online help
 

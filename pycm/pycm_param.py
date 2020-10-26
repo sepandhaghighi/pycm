@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parameters and constants."""
-PYCM_VERSION = "2.9"
+PYCM_VERSION = "3.0"
 
 
 OVERVIEW = '''
@@ -23,20 +23,24 @@ MATRIX_CLASS_TYPE_ERROR = "Type of the input matrix classes is assumed  be the s
 MATRIX_FORMAT_ERROR = "Input confusion matrix format error"
 MAPPING_FORMAT_ERROR = "Mapping format error"
 MAPPING_CLASS_NAME_ERROR = "Mapping class names error"
+SEABORN_PLOT_LIBRARY_ERROR = "Error in importing seaborn module. Please install it using this command: pip install seaborn"
+MATPLOTLIB_PLOT_LIBRARY_ERROR = "Error in importing matplotlib module. Please install it using this command: pip install matplotlib"
 VECTOR_TYPE_ERROR = "The type of input vectors is assumed to be a list or a NumPy array"
 VECTOR_SIZE_ERROR = "Input vectors must have same length"
 VECTOR_EMPTY_ERROR = "Input vectors are empty"
 VECTOR_ONLY_ERROR = "This option only works in vector mode"
 CLASS_NUMBER_ERROR = "Number of the classes is lower than 2"
-COMPARE_FORMAT_ERROR = "The input type is considered to be dictionary but it's not!"
+COMPARE_FORMAT_ERROR = "The input type is supposed to be dictionary but it's not!"
 
-COMPARE_TYPE_ERROR = "The input is considered to consist of pycm.ConfusionMatrix object but it's not!"
+COMPARE_TYPE_ERROR = "The input is supposed to consist of pycm.ConfusionMatrix object but it's not!"
 COMPARE_DOMAIN_ERROR = "The domain of all ConfusionMatrix objects must be same! The sample size or the number " \
                        "of classes are different."
 COMPARE_NUMBER_ERROR = "Lower than two confusion matrices is given for comparing. The minimum number of " \
                        "confusion matrix for comparing is 2."
 
 COMPARE_WEIGHT_ERROR = "The weight type must be dictionary and also must be specified for all of the classes."
+
+COMBINE_TYPE_ERROR = "The input type is supposed to be pycm.ConfusionMatrix object but it's not!"
 
 COMPARE_RESULT_WARNING = "Confusion matrices are too close and the best one can not be recognized."
 
@@ -125,7 +129,7 @@ CI_ALPHA_TWO_SIDE_WARNING = "The alpha value is invalid, automatically set to 0.
 CI_ALPHA_ONE_SIDE_WARNING = "The alpha value is invalid, automatically set to 0.05.\nSupported values (one-sided) : " + ",".join(
     map(str, sorted(list(ALPHA_ONE_SIDE_TABLE.keys()))))
 
-CI_FORMAT_ERROR = "The input type is considered to be string but it's not!"
+CI_FORMAT_ERROR = "The input type is supposed to be string but it's not!"
 
 CI_SUPPORT_ERROR = "CI calculation for this parameter is not supported on this version of pycm.\nSupported parameters : " + \
     ",".join(CI_CLASS_LIST) + "," + ",".join(CI_OVERALL_LIST)

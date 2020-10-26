@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix module."""
 from __future__ import division
-from .pycm_error import pycmVectorError, pycmMatrixError, pycmCIError, pycmAverageError
+from .pycm_error import pycmVectorError, pycmMatrixError, pycmCIError, pycmAverageError, pycmPlotError
 from .pycm_handler import __class_stat_init__, __overall_stat_init__
 from .pycm_handler import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__
 from .pycm_class_func import F_calc, IBA_calc, TI_calc, NB_calc
@@ -843,7 +843,7 @@ class ConfusionMatrix():
         """
         Return the confusion matrix in form of  a numpy array.
 
-        :param normalized: A flag for getting normalized confusion matrix
+        :param normalized: a flag for getting normalized confusion matrix
         :type normalized: bool
         :param one_vs_all : One-Vs-All mode flag
         :type one_vs_all : bool
@@ -866,3 +866,87 @@ class ConfusionMatrix():
             row = [table[key][i] for i in classes]
             array.append(row)
         return numpy.array(array)
+
+    def combine(self, other):
+        """
+        Return the combination of two confusion matrices.
+
+        :param other: the other matrix that is going to be combined
+        :type other: pycm.ConfusionMatrix
+        :return: the combination of two matrices as a new confusion matrix
+        """
+        if isinstance(other, ConfusionMatrix) is False:
+            raise pycmMatrixError(COMBINE_TYPE_ERROR)
+        return ConfusionMatrix(
+            matrix=matrix_combine(
+                self.matrix, other.matrix))
+
+    def plot(
+            self,
+            normalized=False,
+            one_vs_all=False,
+            class_name=None,
+            title='Confusion Matrix',
+            number_label=False,
+            cmap=None,
+            plot_lib='matplotlib'):
+        """
+        Plot confusion matrix.
+
+        :param normalized: normalized flag for matrix
+        :type normalized: bool
+        :param one_vs_all: one_vs_all flag for matrix
+        :type one_vs_all: bool
+        :param class_name: class name of one_vs_all action
+        :type class_name: any valid type
+        :param title: plot title
+        :type title: str
+        :param number_label: number label flag
+        :type number_label: bool
+        :param cmap: color map
+        :type cmap: matplotlib.colors.ListedColormap
+        :param plot_lib: plotting library
+        :type plot_lib: str
+        :return: plot axes
+        """
+        matrix = self.to_array(
+            normalized=normalized,
+            one_vs_all=one_vs_all,
+            class_name=class_name)
+        if normalized:
+            title += " (Normalized)"
+        classes = sorted(self.classes)
+        if one_vs_all and class_name in classes:
+            classes = [class_name, '~']
+        try:
+            from matplotlib import pyplot as plt
+        except (ModuleNotFoundError, ImportError):
+            raise pycmPlotError(MATPLOTLIB_PLOT_LIBRARY_ERROR)
+        if cmap is None:
+            cmap = plt.cm.gray_r
+        fig, ax = plt.subplots()
+        fig.canvas.set_window_title(title)
+        if plot_lib == 'seaborn':
+            try:
+                import seaborn as sns
+            except (ModuleNotFoundError, ImportError):
+                raise pycmPlotError(SEABORN_PLOT_LIBRARY_ERROR)
+            ax = sns.heatmap(matrix, cmap=cmap)
+            return axes_gen(
+                ax,
+                classes,
+                matrix,
+                title,
+                cmap,
+                number_label,
+                plot_lib)
+        plt.imshow(matrix, cmap=cmap)
+        plt.colorbar()
+        return axes_gen(
+            ax,
+            classes,
+            matrix,
+            title,
+            cmap,
+            number_label,
+            plot_lib)

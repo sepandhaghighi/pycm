@@ -1,4 +1,4 @@
-art==4.7
+art==4.9
 numpy==1.19.2
 codecov>=2.0.15
 pytest>=4.3.1
@@ -8,4 +8,6 @@ vulture>=1.0
 bandit>=1.5.1
 pydocstyle>=3.0.0
 notebook>=5.2.2
+matplotlib>=3.0.0
+seaborn>=0.9.1
 

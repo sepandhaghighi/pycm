@@ -969,7 +969,7 @@ def overall_statistics(**kwargs):
     AUNP = AUNP_calc(classes, P, POP, kwargs["AUC_dict"])
     RCI = RCI_calc(mutual_information, reference_entropy)
     C = pearson_C_calc(chi_squared, population)
-    TPR_PPV_F1_micro = micro_calc(item1=TP, item2=kwargs["FN"])
+    TPR_PPV_F1_micro = overall_accuracy
     TPR_macro = macro_calc(kwargs["TPR"])
     CSI = macro_calc(kwargs["ICSI_dict"])
     ARI = ARI_calc(classes, table, TOP, P, population)

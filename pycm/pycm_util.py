@@ -2,6 +2,7 @@
 """Utility module."""
 from __future__ import division
 import sys
+import math
 import numpy
 from .pycm_param import *
 
@@ -551,3 +552,40 @@ def p1evl(x, coefs, n):
     :return: result as float
     """
     return polevl(x, [1] + coefs, n)
+
+
+def ndtri(y):
+    """
+    Returns the argument x for which the area under the Gaussian probability density function (integrated from minus infinity to x) is equal to y.
+
+    :param y: function input
+    :type y: float
+    :return: ndtri as float
+    """
+    s2pi = 2.50662827463100050242
+    code = 1
+
+    if y > (1.0 - 0.13533528323661269189):
+        y = 1.0 - y
+        code = 0
+
+    if y > 0.13533528323661269189:
+        y = y - 0.5
+        y2 = y * y
+        x = y + y * (y2 * polevl(y2, NDTRI_P0, 4) / p1evl(y2, NDTRI_Q0, 8))
+        x = x * s2pi
+        return x
+
+    x = math.sqrt(-2.0 * math.log(y))
+    x0 = x - math.log(x) / x
+
+    z = 1.0 / x
+    if x < 8.0:
+        x1 = z * polevl(z, NDTRI_P1, 8) / p1evl(z, NDTRI_Q1, 8)
+    else:
+        x1 = z * polevl(z, NDTRI_P2, 8) / p1evl(z, NDTRI_Q2, 8)
+
+    x = x0 - x1
+    if code != 0:
+        x = -x
+    return x

@@ -517,3 +517,37 @@ def axes_gen(
             cmap,
             plot_lib)
     return ax
+
+
+def polevl(x, coefs, n):
+    """
+    Evaluates polynomial of degree n.
+
+    :param x: polynomial variable
+    :type x: float
+    :param coefs: polynomial coefficients
+    :type coefs: list
+    :param n: degree
+    :type n: int
+    :return: result as float
+    """
+    ans = 0
+    power = len(coefs) - 1
+    for coef in coefs:
+        ans += coef * x**power
+        power -= 1
+    return ans
+
+def p1evl(x, coefs, n):
+    """
+    Evaluate polynomial when coefficient of x^n is 1.
+
+    :param x: polynomial variable
+    :type x: float
+    :param coefs: polynomial coefficients
+    :type coefs: list
+    :param n: degree
+    :type n: int
+    :return: result as float
+    """
+    return polevl(x, [1] + coefs, n)

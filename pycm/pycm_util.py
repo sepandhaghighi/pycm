@@ -608,3 +608,20 @@ def inv_erf(z):
         return "None"
     result = ndtri((z + 1) / 2.0) / math.sqrt(2)
     return result
+
+def normal_quantile(p, mean=0, std=1):
+    """
+    Calculate normal distribution quantile.
+
+    :param p: probability
+    :type p: float
+    :param mean: mean
+    :type mean: float
+    :param std: standard deviation
+    :type std: float
+    :return: normal distribution quantile as float
+    """
+    try:
+        return mean + std*math.sqrt(2)*inv_erf((2*p)-1)
+    except Exception:
+        return "None"

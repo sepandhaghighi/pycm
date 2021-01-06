@@ -589,3 +589,22 @@ def ndtri(y):
     if code != 0:
         x = -x
     return x
+
+def inv_erf(z):
+    """
+    Inverse error function.
+
+    :param z: function input
+    :type z: float
+    :return: result as float
+    """
+    if z < -1 or z > 1:
+        return "None"
+    if z == 0:
+        return 0
+    if z == 1:
+        return "None"
+    if z == -1:
+        return "None"
+    result = ndtri((z + 1) / 2.0) / math.sqrt(2)
+    return result

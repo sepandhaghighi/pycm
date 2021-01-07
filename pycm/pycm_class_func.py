@@ -16,7 +16,10 @@ def sensitivity_index_calc(TPR, FPR):
     :type FPR: float
     :return: sensitivity index as float
     """
-    return normal_quantile(TPR) - normal_quantile(FPR)
+    try:
+        return normal_quantile(TPR) - normal_quantile(FPR)
+    except TypeError:
+        return "None"
 
 def NB_calc(TP, FP, POP, w):
     """

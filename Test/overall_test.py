@@ -1469,4 +1469,11 @@ True
 1
 >>> cm_combined3.matrix[4][2]
 1
+>>> cm = ConfusionMatrix(matrix={1:{1:10,2:1,3:0},2:{1:1,2:10,3:0},3:{1:0,2:0,3:0}})
+>>> cm.sensitivity_index()[1]
+2.6703554722378726
+>>> cm.sensitivity_index()[2]
+2.6703554722378726
+>>> cm.sensitivity_index()[3]
+'None'
 """

@@ -4,7 +4,7 @@ from __future__ import division
 from .pycm_error import pycmVectorError, pycmMatrixError, pycmCIError, pycmAverageError, pycmPlotError
 from .pycm_handler import __class_stat_init__, __overall_stat_init__
 from .pycm_handler import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__
-from .pycm_class_func import F_calc, IBA_calc, TI_calc, NB_calc
+from .pycm_class_func import F_calc, IBA_calc, TI_calc, NB_calc, sensitivity_index_calc
 from .pycm_overall_func import weighted_kappa_calc, weighted_alpha_calc, alpha2_calc
 from .pycm_output import *
 from .pycm_util import *
@@ -489,6 +489,17 @@ class ConfusionMatrix():
             return F_dict
         except Exception:
             return {}
+
+    def sensitivity_index(self):
+        """
+        Calculate sensitivity index.
+
+        :return: sensitivity index for classes as dict
+        """
+        sensitivity_index_dict = {}
+        for i in self.classes:
+            sensitivity_index_dict[i] = sensitivity_index_calc(self.TPR[i], self.FPR[i])
+        return sensitivity_index_dict
 
     def IBA_alpha(self, alpha):
         """

@@ -522,7 +522,7 @@ def axes_gen(
 
 def polevl(x, coefs, n):
     """
-    Evaluates polynomial of degree n.
+    Evaluate polynomial of degree n.
 
     :param x: polynomial variable
     :type x: float
@@ -556,7 +556,7 @@ def p1evl(x, coefs, n):
 
 def ndtri(y):
     """
-    Returns the argument x for which the area under the Gaussian probability density function (integrated from minus infinity to x) is equal to y.
+    Return the argument x for which the area under the Gaussian probability density function (integrated from minus infinity to x) is equal to y.
 
     :param y: function input
     :type y: float

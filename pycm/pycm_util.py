@@ -621,4 +621,3 @@ def normal_quantile(p, mean=0, std=1):
         return mean + std*math.sqrt(2)*inv_erf((2*p)-1)
     except Exception:
         return "None"
-    

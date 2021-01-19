@@ -889,7 +889,7 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>75- M. Aickin, "Maximum likelihood estimation of agreement in the constant predictive probability model, and its relation to Cohen's kappa," Biometrics, pp. 293-302, 1990.</blockquote>
 
-<blockquote>76- MacMillan, N.; Creelman, C. (2005). Detection Theory: A User's Guide. Lawrence Erlbaum Associates. ISBN 9781410611147.</blockquote>
+<blockquote>76- N.A. Macmillan and C. D. Creelman, *Detectiontheory: A user's guide*. Psychology press, 2004.</blockquote>
 
 
 ## Cite

@@ -354,4 +354,7 @@ True
 >>> cm = ConfusionMatrix(matrix={1:{1:55,2:10,3:2},2:{1:6,2:4,3:10},3:{1:2,2:5,3:6}}) # Verified Case -- (Gwet, Kilem L. Handbook of inter-rater reliability, 2014)
 >>> cm.aickin_alpha()
 0.40455288947232665
+>>> cm = ConfusionMatrix(matrix={1:{1:60,0:40},0:{0:80,1:20}}) # Verified Case -- (https://bit.ly/3ooCi0t)
+>>> cm.sensitivity_index()[1]
+1.094968336708714
 """

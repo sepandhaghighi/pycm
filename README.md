@@ -774,7 +774,7 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>18- I. Kononenko and I. Bratko, "Information-based evaluation criterion for classifier's performance," <i>Machine learning</i>, vol. 6, no. 1, pp. 67-80, 1991.</blockquote>
 
-<blockquote>19- R. Delgado and J. D. Núnez-González, "Enhancing confusion entropy as measure for evaluating classifiers,"in <i>The 13th International Conference on Soft Computing Models in Industrial and Environmental Applications</i>, 2018: Springer, pp. 79-89.</blockquote>
+<blockquote>19- R. Delgado and J. D. Núnez-González, "Enhancing confusion entropy as measure for evaluating classifiers," in <i>The 13th International Conference on Soft Computing Models in Industrial and Environmental Applications</i>, 2018: Springer, pp. 79-89.</blockquote>
 
 <blockquote>20- J. Gorodkin, "Comparing two K-category assignments by a K-category correlation coefficient," <i>Computational biology and chemistry</i>, vol.28, no. 5-6, pp. 367-374, 2004.</blockquote>
 

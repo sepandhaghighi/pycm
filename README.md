@@ -786,13 +786,13 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>24- J. Cohen, "A coefficient of agreement for nominal scales," <i>Educational and psychological measurement</i>, vol. 20, no. 1, pp. 37-46, 1960.</blockquote>
 
-<blockquote>25- S. Siegel, "Nonparametric statistics for the behavioral sciences," in 	New York : McGraw-Hill, 1956.</blockquote>
+<blockquote>25- S. Siegel, "Nonparametric statistics for the behavioral sciences," 1956.</blockquote>
 
-<blockquote>26- H. Cramér, "Mathematical methods of statistics (PMS-9),"in Princeton university press, 2016.</blockquote>
+<blockquote>26- H. Cramér, <i>Mathematical methods of statistics</i>. Princeton university press, 1999.</blockquote>
 
-<blockquote>27- B. W. J. B. e. B. A.-P. S. Matthews, "Comparison of the predicted and observed secondary structure of T4 phage lysozyme," in Biochimica et Biophysica Acta (BBA) - Protein Structure, pp. 442-451, 1975.</blockquote>
+<blockquote>27- B. W. Matthews, "Comparison of the predicted and observed secondary structure of T4 phage lysozyme," <i>Biochimica et Biophysica Acta (BBA)-Protein Structure</i>, vol. 405, no. 2, pp. 442-451, 1975.</blockquote>
 
-<blockquote>28- J. A. J. S. Swets, "The relative operating characteristic in psychology: a technique for isolating effects of response bias finds wide use in the study of perception and cognition," in American Association for the Advancement of Science, pp. 990-1000, 1973.</blockquote> 
+<blockquote>28- J. A. Swets, "The relative operating characteristic in psychology: a technique for isolating effects of response bias finds wide use in the study of perception and cognition," <i>Science</i>, vol. 182, no. 4116, pp. 990-1000, 1973.</blockquote> 
 
 <blockquote>29- P. J. B. S. V. S. N. Jaccard, "Étude comparative de la distribution florale dans une portion des Alpes et des Jura," in Bulletin de la Société vaudoise des sciences naturelles, pp. 547-579, 1901.</blockquote> 
 

@@ -738,14 +738,13 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 ## References			
 
-<blockquote>1- J. R. Landis, G. G. Koch, “The measurement of observer agreement for categorical data. Biometrics,” in International Biometric Society,  pp. 159–174, 1977. </blockquote>
+<blockquote>1- J. R. Landis and G. G. Koch, "The measurement of observer agreement for categorical data," <i>biometrics</i>, pp. 159-174, 1977.</blockquote>
 
-<blockquote>2- D. M. W. Powers, “Evaluation: from precision, recall and f-measure to roc, informedness, markedness & correlation,” in Journal of Machine Learning Technologies, pp.37-63, 2011.</blockquote>
+<blockquote>2- D. M. Powers, "Evaluation: from precision, recall and F-measure to ROC, informedness, markedness and correlation," <i>arXiv preprint arXiv:2010.16061</i>, 2020.</blockquote>
 
+<blockquote>3- C. Sammut and G. I. Webb, <i>Encyclopedia of machine learning</i>. Springer Science & Business Media, 2011.</blockquote>
 
-<blockquote>3-  C. Sammut, G. Webb, “Encyclopedia of Machine Learning” in Springer, 2011.</blockquote>
-
-<blockquote>4- J. L. Fleiss, “Measuring nominal scale agreement among many raters,” in Psychological Bulletin, pp. 378-382, 1971. </blockquote>
+<blockquote>4- J. L. Fleiss, "Measuring nominalscale agreement among many raters," Psychological bulletin, vol. 76, no. 5, p. 378, 1971.</blockquote>
 
 <blockquote>5- D.G. Altman, “Practical Statistics for Medical Research,” in Chapman and Hall, 1990.</blockquote>
 

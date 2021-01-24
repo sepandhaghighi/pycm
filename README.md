@@ -802,13 +802,13 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>32- V. Sindhwani, P. Bhattacharya, and S. Rakshit, "Information theoretic feature crediting in multiclass support vector machines," in <i>Proceedings of the 2001 SIAM International Conference on Data Mining</i>, 2001: SIAM, pp. 1-18.</blockquote> 
 
-<blockquote>33- M. Bekkar, H. K. Djemaa, and T. A. J. J. I. E. A. Alitouche, "Evaluation measures for models assessment over imbalanced data sets," in Journal of Information Engineering and Applications, 2013.</blockquote>
+<blockquote>33- M. Bekkar, H. K. Djemaa, and T. A. Alitouche, "Evaluation measures for models assessment over imbalanced datasets," <i>J Inf Eng Appl</i>, vol. 3, no. 10, 2013.</blockquote>
 
-<blockquote>34- W. J. J. C. Youden, "Index for rating diagnostic tests," in Cancer, pp. 32-35, 1950.</blockquote>
+<blockquote>34- W. J. Youden, "Index for rating diagnostic tests," <i>Cancer</i>, vol. 3, no. 1, pp. 32-35, 1950.</blockquote>
 
-<blockquote>35- S. Brin, R. Motwani, J. D. Ullman, and S. J. A. S. R. Tsur, "Dynamic itemset counting and implication rules for market basket data," in Proceedings of the 1997 ACM SIGMOD international conference on Management of datavol, pp. 255-264, 1997.</blockquote> 
+<blockquote>35- S. Brin, R. Motwani, J. D. Ullman, and S. Tsur, "Dynamic itemset counting and implication rules for market basket data," in <i>Proceedings of the 1997 ACM SIGMOD international conference on Management of data</i>, 1997, pp. 255-264.</blockquote> 
 
-<blockquote>36- S. J. T. J. o. O. S. S. Raschka, "MLxtend: Providing machine learning and data science utilities and extensions to Python’s scientific computing stack," in Journal of Open Source Software, 2018.</blockquote> 
+<blockquote>36- S. Raschka, "MLxtend: Providing machine learning and data science utilities and extensions to Python's scientific computing stack," <i>Journal of open source software</i>, vol. 3, no. 24, p. 638, 2018.</blockquote> 
 
 <blockquote>37- J. BRAy and J. CuRTIS, "An ordination of upland forest communities of southern Wisconsin.-ecological Monographs," in journal of Ecological Monographs, 1957.</blockquote>	
 

@@ -744,15 +744,15 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>3- C. Sammut and G. I. Webb, <i>Encyclopedia of machine learning</i>. Springer Science & Business Media, 2011.</blockquote>
 
-<blockquote>4- J. L. Fleiss, "Measuring nominalscale agreement among many raters," Psychological bulletin, vol. 76, no. 5, p. 378, 1971.</blockquote>
+<blockquote>4- J. L. Fleiss, "Measuring nominalscale agreement among many raters," <i>Psychological bulletin</i>, vol. 76, no. 5, p. 378, 1971.</blockquote>
 
-<blockquote>5- D.G. Altman, “Practical Statistics for Medical Research,” in Chapman and Hall, 1990.</blockquote>
+<blockquote>5- D. G. Altman, <i>Practical statistics for medical research</i>. CRC press, 1990.</blockquote>
 
-<blockquote>6- K. L. Gwet, “Computing inter-rater reliability and its variance in the presence of high agreement,” in The British Journal of Mathematical and Statistical Psychology, pp. 29–48, 2008.”</blockquote>
+<blockquote>6- K. L. Gwet, "Computing inter-rater reliability and its variance in the presence of high agreement," <i>British Journal of Mathematical and Statistical Psychology</i>, vol. 61, no. 1, pp. 29-48, 2008.</blockquote>
 
-<blockquote>7- W. A. Scott, “Reliability of content analysis: The case of nominal scaling,” in Public Opinion Quarterly, pp. 321–325, 1955.</blockquote>
+<blockquote>7- W. A. Scott, "Reliability of content analysis: The case of nominal scale coding," <i>Public opinion quarterly</i>, pp. 321-325, 1955.</blockquote>
 
-<blockquote>8- E. M. Bennett, R. Alpert, and A. C. Goldstein, “Communication through limited response questioning,” in The Public Opinion Quarterly, pp. 303–308, 1954.</blockquote>
+<blockquote>8- E. M. Bennett, R. Alpert, and A. Goldstein, "Communications through limited-response questioning," <i>Public Opinion Quarterly</i>, vol. 18, no. 3, pp. 303-308, 1954.</blockquote>
 
 <blockquote>9- D. V. Cicchetti, "Guidelines, criteria, and rules of thumb for evaluating normed and standardized assessment instruments in psychology," in Psychological Assessment, pp. 284–290, 1994.</blockquote>
 

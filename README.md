@@ -754,13 +754,13 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>8- E. M. Bennett, R. Alpert, and A. Goldstein, "Communications through limited-response questioning," <i>Public Opinion Quarterly</i>, vol. 18, no. 3, pp. 303-308, 1954.</blockquote>
 
-<blockquote>9- D. V. Cicchetti, "Guidelines, criteria, and rules of thumb for evaluating normed and standardized assessment instruments in psychology," in Psychological Assessment, pp. 284–290, 1994.</blockquote>
+<blockquote>9- D. V. Cicchetti, "Guidelines, criteria, and rules of thumb for evaluating normed and standardized assessment instruments in psychology," <i>Psychological assessment</i>, vol. 6, no. 4, p. 284, 1994.</blockquote>
 
-<blockquote>10- R.B. Davies, "Algorithm AS155: The Distributions of a Linear Combination of χ2 Random Variables," in Journal of the Royal Statistical Society, pp. 323–333, 1980.</blockquote>
+<blockquote>10- R. B. Davies, "Algorithm AS 155: The distribution of a linear combination of χ2 random variables," <i>Applied Statistics</i>, pp. 323-333, 1980.</blockquote>
 
-<blockquote>11- S. Kullback, R. A. Leibler "On information and sufficiency," in Annals of Mathematical Statistics, pp. 79–86, 1951.</blockquote>
+<blockquote>11- S. Kullback and R. A. Leibler, "On information and sufficiency," <i>The annals of mathematical statistics</i>, vol. 22, no. 1, pp. 79-86, 1951.</blockquote>
 
-<blockquote>12- L. A. Goodman, W. H. Kruskal, "Measures of Association for Cross Classifications, IV: Simplification of Asymptotic Variances," in Journal of the American Statistical Association, pp. 415–421, 1972.</blockquote>
+<blockquote>12- L. A. Goodman and W. H. Kruskal, "Measures of association for cross classifications, IV: Simplification of asymptotic variances," <i>Journal of the American Statistical Association</i>, vol. 67, no. 338, pp. 415-421, 1972.</blockquote>
 
 <blockquote>13- L. A. Goodman, W. H. Kruskal, "Measures of Association for Cross Classifications III: Approximate Sampling Theory," in Journal of the American Statistical Association, pp.  310–364, 1963. </blockquote>
 

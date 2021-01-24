@@ -770,13 +770,13 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>16- X. Deng, Q. Liu, Y. Deng, and S. Mahadevan, "An improved method to construct basic probability assignment based on the confusion matrix for classification problem," <i>Information Sciences</i>, vol. 340, pp. 250-261, 2016.</blockquote>
 
-<blockquote>17- J.-M. Wei, X.-J. Yuan, Q.-H. Hu, and S.-Q. J. E. S. w. A. Wang, "A novel measure for evaluating classifiers," in Expert Systems with Applications, pp. 3799-3809, 2010.</blockquote>
+<blockquote>17- J.-M. Wei, X.-J. Yuan, Q.-H. Hu, and S.-Q. Wang, "A novel measure for evaluating classifiers," <i>Expert Systems with Applications</i>, vol. 37, no. 5, pp. 3799-3809, 2010.</blockquote>
 
-<blockquote>18- I. Kononenko and I. J. M. L. Bratko, "Information-based evaluation criterion for classifier's performance," in Machine Learning, pp. 67-80, 1991.</blockquote>
+<blockquote>18- I. Kononenko and I. Bratko, "Information-based evaluation criterion for classifier's performance," <i>Machine learning</i>, vol. 6, no. 1, pp. 67-80, 1991.</blockquote>
 
-<blockquote>19- R. Delgado and J. D. Núñez-González, "Enhancing Confusion Entropy as Measure for Evaluating Classifiers," in The 13th International Conference on Soft Computing Models in Industrial and Environmental Applications, pp. 79-89, 2018: Springer.</blockquote>
+<blockquote>19- R. Delgado and J. D. Núnez-González, "Enhancing confusion entropy as measure for evaluating classifiers,"in <i>The 13th International Conference on Soft Computing Models in Industrial and Environmental Applications</i>, 2018: Springer, pp. 79-89.</blockquote>
 
-<blockquote>20- J. J. C. b. Gorodkin and chemistry, "Comparing two K-category assignments by a K-category correlation coefficient," in Computational Biology and chemistry, pp. 367-374, 2004.</blockquote>
+<blockquote>20- J. Gorodkin, "Comparing two K-category assignments by a K-category correlation coefficient," <i>Computational biology and chemistry<i>, vol.28, no. 5-6, pp. 367-374, 2004.</blockquote>
 
 <blockquote>21- C. O. Freitas, J. M. De Carvalho, J. Oliveira, S. B. Aires, and R. Sabourin, "Confusion matrix disagreement for multiple classifiers," in Iberoamerican Congress on Pattern Recognition, pp. 387-396, 2007.</blockquote>
 

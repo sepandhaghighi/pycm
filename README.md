@@ -762,11 +762,11 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>12- L. A. Goodman and W. H. Kruskal, "Measures of association for cross classifications, IV: Simplification of asymptotic variances," <i>Journal of the American Statistical Association</i>, vol. 67, no. 338, pp. 415-421, 1972.</blockquote>
 
-<blockquote>13- L. A. Goodman and W. H. Kruskal, "Measures of association for cross classifications III: Approximate sampling theory," <i>Journal of the American Statistical Association<i>, vol. 58, no. 302, pp. 310-364, 1963.</blockquote>
+<blockquote>13- L. A. Goodman and W. H. Kruskal, "Measures of association for cross classifications III: Approximate sampling theory," <i>Journal of the American Statistical Association</i>, vol. 58, no. 302, pp. 310-364, 1963.</blockquote>
 
 <blockquote>14- T. Byrt, J. Bishop, and J. B. Carlin, "Bias, prevalence and kappa," <i>Journal of clinical epidemiology</i>, vol. 46, no. 5, pp. 423-429, 1993.</blockquote>
 
-<blockquote>15- M. Shepperd, D. Bowes, and T. Hall, "Researcher bias: The use of machine learning in software defect prediction," <i>IEEE Transactions on Software Engineering<i>, vol. 40, no. 6, pp. 603-616, 2014.</blockquote>
+<blockquote>15- M. Shepperd, D. Bowes, and T. Hall, "Researcher bias: The use of machine learning in software defect prediction," <i>IEEE Transactions on Software Engineering</i>, vol. 40, no. 6, pp. 603-616, 2014.</blockquote>
 
 <blockquote>16- X. Deng, Q. Liu, Y. Deng, and S. Mahadevan, "An improved method to construct basic probability assignment based on the confusion matrix for classification problem," <i>Information Sciences</i>, vol. 340, pp. 250-261, 2016.</blockquote>
 
@@ -776,7 +776,7 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>19- R. Delgado and J. D. Núnez-González, "Enhancing confusion entropy as measure for evaluating classifiers,"in <i>The 13th International Conference on Soft Computing Models in Industrial and Environmental Applications</i>, 2018: Springer, pp. 79-89.</blockquote>
 
-<blockquote>20- J. Gorodkin, "Comparing two K-category assignments by a K-category correlation coefficient," <i>Computational biology and chemistry<i>, vol.28, no. 5-6, pp. 367-374, 2004.</blockquote>
+<blockquote>20- J. Gorodkin, "Comparing two K-category assignments by a K-category correlation coefficient," <i>Computational biology and chemistry</i>, vol.28, no. 5-6, pp. 367-374, 2004.</blockquote>
 
 <blockquote>21- C. O. Freitas, J. M. De Carvalho, J. Oliveira, S. B. Aires, and R. Sabourin, "Confusion matrix disagreement for multiple classifiers," in Iberoamerican Congress on Pattern Recognition, pp. 387-396, 2007.</blockquote>
 

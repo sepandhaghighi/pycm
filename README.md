@@ -850,13 +850,13 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>56- J. Davis and M. Goadrich, "The relationship between Precision-Recall and ROC curves," in <i>Proceedings of the 23rd international conference on Machine learning</i>, 2006, pp. 233-240.</blockquote>
 
-<blockquote>57- M. Kuhn, "Building predictive models in R using the caret package," Journal of statistical software, vol. 28, no. 5, pp. 1-26, 2008.</blockquote>
+<blockquote>57- M. Kuhn, "Building predictive models in R using the caret package," J Stat Softw, vol. 28, no. 5, pp. 1-26, 2008.</blockquote>
 
-<blockquote>58- V. Labatut and H. Cherifi, "Accuracy measures for the comparison of classifiers," arXiv preprint, 2012.</blockquote>
+<blockquote>58- V. Labatut and H. Cherifi, "Accuracy measures for the comparison of classifiers," <i>arXiv preprint arXiv:1207.3790</i>, 2012.</blockquote>
 
-<blockquote>59- S. Wallis, "Binomial confidence intervals and contingency tests: mathematical fundamentals and the evaluation of alternative methods," Journal of Quantitative Linguistics, vol. 20, no. 3, pp. 178-208, 2013.</blockquote>
+<blockquote>59- S. Wallis, "Binomial confidence intervals and contingency tests: mathematical fundamentals and the evaluation of alternative methods," <i>Journal of Quantitative Linguistics</i>, vol. 20, no. 3, pp. 178-208, 2013.</blockquote>
 
-<blockquote>60- D. Altman, D. Machin, T. Bryant, and M. Gardner, Statistics with confidence: confidence intervals and statistical guidelines. John Wiley & Sons, 2013.</blockquote>
+<blockquote>60- D. Altman, D. Machin, T. Bryant, and M. Gardner, <i>Statistics with confidence: confidence intervals and statistical guidelines</i>. John Wiley & Sons, 2013.</blockquote>
 
 <blockquote>61- J. A. Hanley and B. J. McNeil, "The meaning and use of the area under a receiver operating characteristic (ROC) curve," Radiology, vol. 143, no. 1, pp. 29-36, 1982.</blockquote>
 

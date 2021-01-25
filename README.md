@@ -858,13 +858,13 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>60- D. Altman, D. Machin, T. Bryant, and M. Gardner, <i>Statistics with confidence: confidence intervals and statistical guidelines</i>. John Wiley & Sons, 2013.</blockquote>
 
-<blockquote>61- J. A. Hanley and B. J. McNeil, "The meaning and use of the area under a receiver operating characteristic (ROC) curve," Radiology, vol. 143, no. 1, pp. 29-36, 1982.</blockquote>
+<blockquote>61- J. A. Hanley and B. J. McNeil, "The meaning and use of the area under a receiver operating characteristic (ROC) curve," <i>Radiology</i>, vol. 143, no. 1, pp. 29-36, 1982.</blockquote>
 
 <blockquote>62- E. B. Wilson, "Probable inference, the law of succession, and statistical inference," <i>Journal of the American Statistical Association</i>, vol. 22, no. 158, pp. 209-212, 1927.</blockquote>
 
-<blockquote>63- A. Agresti and B. A. Coull, "Approximateis better than “exact” for interval estimation of binomial proportions," <i>The American Statistician</i>, vol. 52, no. 2, pp. 119-126, 1998.</blockquote>
+<blockquote>63- A. Agresti and B. A. Coull, "Approximate is better than “exact” for interval estimation of binomial proportions," <i>The American Statistician</i>, vol. 52, no. 2, pp. 119-126, 1998.</blockquote>
 
-<blockquote>64- C. S. Peirce, "The numerical measure of the success of predictions," Science, no. 93, pp. 453-454, 1884.</blockquote>
+<blockquote>64- C. S. Peirce, "The numerical measure of the success of predictions," <i>Science</i>, no. 93, pp. 453-454, 1884.</blockquote>
 
 <blockquote>65- E. W. Steyerberg, B. Van Calster, and M. J. Pencina, "Performance measures for prediction models and markers: evaluation of predictions and classifications," Revista Española de Cardiología, vol. 64, no. 9, pp. 788-794, 2011.</blockquote>
 

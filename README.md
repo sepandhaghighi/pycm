@@ -818,13 +818,13 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>40- R. Ranawana and V. Palade, "Optimized precision-a new measure for classifier performance evaluation," in <i>2006 IEEE International Conference on Evolutionary Computation</i>, 2006: IEEE, pp. 2254-2261.</blockquote>	
 
-<blockquote>41- V. García, R. A. Mollineda, and J. S. Sánchez, "Index of balanced accuracy: A performance measure for skewed class distributions," in Iberian Conference on Pattern Recognition and Image Analysis, pp. 441-448, 2009.</blockquote> 
+<blockquote>41- V. García, R. A. Mollineda, and J. S.Sánchez, "Index of balanced accuracy: A performance measure for skewed class distributions," in <i>Iberian conference on pattern recognition and image analysis</i>, 2009: Springer, pp. 441-448.</blockquote> 
 
-<blockquote>42- P. Branco, L. Torgo, and R. P. J. A. C. S. Ribeiro, "A survey of predictive modeling on imbalanced domains," in Journal ACM Computing Surveys (CSUR), p. 31, 2016.</blockquote> 
+<blockquote>42- P. Branco, L. Torgo, and R. P. Ribeiro, "A survey of predictive modeling on imbalanced domains," <i>ACM Computing Surveys (CSUR)</i>, vol. 49, no. 2, pp. 1-50, 2016.</blockquote> 
 
-<blockquote>43- K. Pearson, "Notes on Regression and Inheritance in the Case of Two Parents," in Proceedings of the Royal Society of London, p. 240-242, 1895.</blockquote> 
+<blockquote>43- K. Pearson, "Notes on Regression and Inheritance in the Case of Two Parents," in <i>Proceedings of the Royal Society of London</i>, p. 240-242, 1895.</blockquote> 
 
-<blockquote>44- W. J. I. Conover, New York, "Practical Nonparametric Statistics," in John Wiley and Sons, 1999.</blockquote> 
+<blockquote>44- W. J. Conover, <i>Practical nonparametric statistics</i>. John Wiley & Sons, 1998.</blockquote> 
 
 <blockquote>45- Yule, G. U, "On the methods of measuring association between two attributes." in Journal of the Royal Statistical Society, pp. 579-652, 1912.</blockquote>
 

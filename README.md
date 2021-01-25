@@ -882,11 +882,11 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>72- S. Bangdiwala, "A graphical test for observer agreement," in <i>45th International Statistical Institute Meeting</i>, 1985, vol. 1985, p. 307.</blockquote>
 
-<blockquote>73- K. Bangdiwala and H. Bryan, "Using SAS software graphical procedures for the observer agreement chart," in Proceedings of the SAS Users Group International Conference, 1987, vol. 12, pp. 1083-1088.</blockquote>
+<blockquote>73- K. Bangdiwala and H. Bryan, "Using SAS software graphical procedures for the observer agreement chart," in <i>Proceedings of the SAS Users Group International Conference</i>, 1987, vol. 12, pp. 1083-1088.</blockquote>
 
-<blockquote>74- A. F. Hayes and K. Krippendorff, "Answering the call for a standard reliability measure for coding data," Communication methods and measures, vol. 1, no. 1, pp. 77-89, 2007.</blockquote>
+<blockquote>74- A. F. Hayes and K. Krippendorff, "Answering the call for a standard reliability measure for coding data," <i>Communication methods and measures</i>, vol. 1, no. 1, pp. 77-89, 2007.</blockquote>
 
-<blockquote>75- M. Aickin, "Maximum likelihood estimation of agreement in the constant predictive probability model, and its relation to Cohen's kappa," Biometrics, pp. 293-302, 1990.</blockquote>
+<blockquote>75- M. Aickin, "Maximum likelihood estimation of agreement in the constant predictive probability model, and its relation to Cohen's kappa," <i>Biometrics</i>, pp. 293-302, 1990.</blockquote>
 
 <blockquote>76- N. A. Macmillan and C. D. Creelman, <i>Detectiontheory: A user's guide</i>. Psychology press, 2004.</blockquote>
 

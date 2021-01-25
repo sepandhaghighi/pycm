@@ -878,7 +878,7 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>70- J. Cohen, "Weighted kappa: nominal scale agreement provision for scaled disagreement or partial credit," <i>Psychological bulletin</i>, vol. 70, no. 4, p. 213, 1968.</blockquote>
 
-<blockquote>71- R. Bakeman and J. M. Gottman, Observing interaction: An introduction to sequential analysis. Cambridge university press, 1997.</blockquote>
+<blockquote>71- R. Bakeman and J. M. Gottman, <i>Observing interaction: An introduction to sequential analysis</i>. Cambridge university press, 1997.</blockquote>
 
 <blockquote>72- S. Bangdiwala, "A graphical test for observer agreement," in <i>45th International Statistical Institute Meeting</i>, 1985, vol. 1985, p. 307.</blockquote>
 

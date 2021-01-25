@@ -842,13 +842,13 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>52- M. Vijaymeena and K. Kavitha, "A survey on similarity measures in text mining," <i>Machine Learning and Applications: An International Journal</i>, vol. 3, no. 2, pp. 19-28, 2016.</blockquote>
 
-<blockquote>53- Y. Otsuka, "The faunal character of the Japanese Pleistocene marine Mollusca, as evidence of climate having become colder during the Pleistocene in Japan," Biogeograph. Soc. Japan, vol. 6, pp. 165-170, 1936.</blockquote>
+<blockquote>53- Y. Otsuka, "The faunal character ofthe Japanese Pleistocene marine Mollusca, as evidence of climate having become colder during the Pleistocene in Japan," <i>Biogeograph Soc Japan</i>, vol. 6, no. 16, pp. 165-70, 1936.</blockquote>
 
-<blockquote>54- A. Tversky, "Features of similarity," Psychological review, vol. 84, no. 4, p. 327, 1977.</blockquote>
+<blockquote>54- A. Tversky, "Features of similarity," <i>Psychological review</i>, vol. 84, no. 4, p. 327, 1977.</blockquote>
 
-<blockquote>55- K. Boyd, K. H. Eng, and C. D. Page, "Area under the precision-recall curve: point estimates and confidence intervals," in Joint European conference on machine learning and knowledge discovery in databases, 2013, pp. 451-466: Springer.</blockquote>
+<blockquote>55- K. Boyd, K. H. Eng, and C. D. Page, "Area under the precision-recall curve: point estimates and confidence intervals," in <i>Joint European conferenceon machine learning and knowledge discovery in databases</i>, 2013: Springer, pp. 451-466.</blockquote>
 
-<blockquote>56- J. Davis and M. Goadrich, "The relationship between Precision-Recall and ROC curves," in Proceedings of the 23rd international conference on Machine learning, 2006, pp. 233-240: ACM.</blockquote>
+<blockquote>56- J. Davis and M. Goadrich, "The relationship between Precision-Recall and ROC curves," in <i>Proceedings of the 23rd international conference on Machine learning</i>, 2006, pp. 233-240.</blockquote>
 
 <blockquote>57- M. Kuhn, "Building predictive models in R using the caret package," Journal of statistical software, vol. 28, no. 5, pp. 1-26, 2008.</blockquote>
 

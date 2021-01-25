@@ -826,13 +826,13 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>44- W. J. Conover, <i>Practical nonparametric statistics</i>. John Wiley & Sons, 1998.</blockquote> 
 
-<blockquote>45- Yule, G. U, "On the methods of measuring association between two attributes." in Journal of the Royal Statistical Society, pp. 579-652, 1912.</blockquote>
+<blockquote>45- G. U. Yule, "On the methods of measuring association between two attributes," <i>Journal of the Royal Statistical Society</i>, vol. 75, no. 6, pp. 579-652, 1912.</blockquote>
 
-<blockquote>46- Batuwita, R. and Palade, V, "A new performance measure for class imbalance learning. application to bioinformatics problems," in Machine Learning and Applications, pp.545–550, 2009.</blockquote>
+<blockquote>46- R. Batuwita and V. Palade, "A new performance measure for class imbalance learning. application to bioinformatics problems," in <i>2009 International Conference on Machine Learning and Applications</i>, 2009: IEEE, pp. 545-550.</blockquote>
 
-<blockquote>47- D. K. Lee, "Alternatives to P value: confidence interval and effect size," Korean journal of anesthesiology, vol. 69, no. 6, p. 555, 2016.</blockquote>
+<blockquote>47- D. K. Lee, "Alternatives to P value: confidence interval and effect size," <i>Korean journal of anesthesiology</i>, vol. 69, no. 6, p. 555, 2016.</blockquote>
 
-<blockquote>48- M. A. Raslich, R. J. Markert, and S. A. Stutes, "Selecting and interpreting diagnostic tests," Biochemia medica: Biochemia medica, vol. 17, no. 2, pp. 151-161, 2007.</blockquote>
+<blockquote>48- M. A. Raslich, R. J. Markert, and S. A. Stutes, "Selecting and interpreting diagnostic tests," <i>Biochemia Medica</i>, vol. 17, no. 2, pp. 151-161, 2007.</blockquote>
 
 <blockquote>49- D. E. Hinkle, W. Wiersma, and S. G. Jurs, "Applied statistics for the behavioral sciences," 1988.</blockquote>
 

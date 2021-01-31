@@ -792,39 +792,39 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>27- B. W. Matthews, "Comparison of the predicted and observed secondary structure of T4 phage lysozyme," <i>Biochimica et Biophysica Acta (BBA)-Protein Structure</i>, vol. 405, no. 2, pp. 442-451, 1975.</blockquote>
 
-<blockquote>28- J. A. Swets, "The relative operating characteristic in psychology: a technique for isolating effects of response bias finds wide use in the study of perception and cognition," <i>Science</i>, vol. 182, no. 4116, pp. 990-1000, 1973.</blockquote> 
+<blockquote>28- J. A. Swets, "The relative operating characteristic in psychology: a technique for isolating effects of response bias finds wide use in the study of perception and cognition," <i>Science</i>, vol. 182, no. 4116, pp. 990-1000, 1973.</blockquote>
 
-<blockquote>29- P. Jaccard, "Étude comparative dela distribution florale dans une portion des Alpes et des Jura," <i>Bull Soc Vaudoise Sci Nat</i>, vol. 37, pp. 547-579, 1901.</blockquote> 
+<blockquote>29- P. Jaccard, "Étude comparative dela distribution florale dans une portion des Alpes et des Jura," <i>Bull Soc Vaudoise Sci Nat</i>, vol. 37, pp. 547-579, 1901.</blockquote>
 
-<blockquote>30- T. M. Cover and J. A. Thomas, <i>Elements of Information Theory</i>. John Wiley & Sons, 2012.</blockquote> 
+<blockquote>30- T. M. Cover and J. A. Thomas, <i>Elements of Information Theory</i>. John Wiley & Sons, 2012.</blockquote>
 
 <blockquote>31- E. S. Keeping, <i>Introduction to statistical inference</i>. Courier Corporation, 1995.</blockquote>
 
-<blockquote>32- V. Sindhwani, P. Bhattacharya, and S. Rakshit, "Information theoretic feature crediting in multiclass support vector machines," in <i>Proceedings of the 2001 SIAM International Conference on Data Mining</i>, 2001: SIAM, pp. 1-18.</blockquote> 
+<blockquote>32- V. Sindhwani, P. Bhattacharya, and S. Rakshit, "Information theoretic feature crediting in multiclass support vector machines," in <i>Proceedings of the 2001 SIAM International Conference on Data Mining</i>, 2001: SIAM, pp. 1-18.</blockquote>
 
 <blockquote>33- M. Bekkar, H. K. Djemaa, and T. A. Alitouche, "Evaluation measures for models assessment over imbalanced datasets," <i>J Inf Eng Appl</i>, vol. 3, no. 10, 2013.</blockquote>
 
 <blockquote>34- W. J. Youden, "Index for rating diagnostic tests," <i>Cancer</i>, vol. 3, no. 1, pp. 32-35, 1950.</blockquote>
 
-<blockquote>35- S. Brin, R. Motwani, J. D. Ullman, and S. Tsur, "Dynamic itemset counting and implication rules for market basket data," in <i>Proceedings of the 1997 ACM SIGMOD international conference on Management of data</i>, 1997, pp. 255-264.</blockquote> 
+<blockquote>35- S. Brin, R. Motwani, J. D. Ullman, and S. Tsur, "Dynamic itemset counting and implication rules for market basket data," in <i>Proceedings of the 1997 ACM SIGMOD international conference on Management of data</i>, 1997, pp. 255-264.</blockquote>
 
-<blockquote>36- S. Raschka, "MLxtend: Providing machine learning and data science utilities and extensions to Python's scientific computing stack," <i>Journal of open source software</i>, vol. 3, no. 24, p. 638, 2018.</blockquote> 
+<blockquote>36- S. Raschka, "MLxtend: Providing machine learning and data science utilities and extensions to Python's scientific computing stack," <i>Journal of open source software</i>, vol. 3, no. 24, p. 638, 2018.</blockquote>
 
-<blockquote>37- J. Bray and J. Curtis, "An ordination of upland forest communities of southern Wisconsin. Ecological Monographs (27)," ed: PRIMER-E Plymouth, 1957, pp. 325-349.</blockquote>	
+<blockquote>37- J. Bray and J. Curtis, "An ordination of upland forest communities of southern Wisconsin. Ecological Monographs (27)," ed: PRIMER-E Plymouth, 1957, pp. 325-349.</blockquote>
 
-<blockquote>38- J. L. Fleiss, J. Cohen, and B. S. Everitt, "Large sample standard errors of kappa and weighted kappa," <i>Psychological bulletin</i>, vol. 72, no. 5, p. 323, 1969.</blockquote> 	
+<blockquote>38- J. L. Fleiss, J. Cohen, and B. S. Everitt, "Large sample standard errors of kappa and weighted kappa," <i>Psychological bulletin</i>, vol. 72, no. 5, p. 323, 1969.</blockquote>
 
-<blockquote>39- M. Felkin, "Comparing classification results between n-ary and binary problems," in <i>Quality Measures in Data Mining</i>: Springer, 2007, pp. 277-301.</blockquote> 
+<blockquote>39- M. Felkin, "Comparing classification results between n-ary and binary problems," in <i>Quality Measures in Data Mining</i>: Springer, 2007, pp. 277-301.</blockquote>
 
-<blockquote>40- R. Ranawana and V. Palade, "Optimized precision-a new measure for classifier performance evaluation," in <i>2006 IEEE International Conference on Evolutionary Computation</i>, 2006: IEEE, pp. 2254-2261.</blockquote>	
+<blockquote>40- R. Ranawana and V. Palade, "Optimized precision-a new measure for classifier performance evaluation," in <i>2006 IEEE International Conference on Evolutionary Computation</i>, 2006: IEEE, pp. 2254-2261.</blockquote>
 
-<blockquote>41- V. García, R. A. Mollineda, and J. S. Sánchez, "Index of balanced accuracy: A performance measure for skewed class distributions," in <i>Iberian conference on pattern recognition and image analysis</i>, 2009: Springer, pp. 441-448.</blockquote> 
+<blockquote>41- V. García, R. A. Mollineda, and J. S. Sánchez, "Index of balanced accuracy: A performance measure for skewed class distributions," in <i>Iberian conference on pattern recognition and image analysis</i>, 2009: Springer, pp. 441-448.</blockquote>
 
-<blockquote>42- P. Branco, L. Torgo, and R. P. Ribeiro, "A survey of predictive modeling on imbalanced domains," <i>ACM Computing Surveys (CSUR)</i>, vol. 49, no. 2, pp. 1-50, 2016.</blockquote> 
+<blockquote>42- P. Branco, L. Torgo, and R. P. Ribeiro, "A survey of predictive modeling on imbalanced domains," <i>ACM Computing Surveys (CSUR)</i>, vol. 49, no. 2, pp. 1-50, 2016.</blockquote>
 
-<blockquote>43- K. Pearson, "Notes on Regression and Inheritance in the Case of Two Parents," in <i>Proceedings of the Royal Society of London</i>, p. 240-242, 1895.</blockquote> 
+<blockquote>43- K. Pearson, "Notes on Regression and Inheritance in the Case of Two Parents," in <i>Proceedings of the Royal Society of London</i>, p. 240-242, 1895.</blockquote>
 
-<blockquote>44- W. J. Conover, <i>Practical nonparametric statistics</i>. John Wiley & Sons, 1998.</blockquote> 
+<blockquote>44- W. J. Conover, <i>Practical nonparametric statistics</i>. John Wiley & Sons, 1998.</blockquote>
 
 <blockquote>45- G. U. Yule, "On the methods of measuring association between two attributes," <i>Journal of the Royal Statistical Society</i>, vol. 75, no. 6, pp. 579-652, 1912.</blockquote>
 

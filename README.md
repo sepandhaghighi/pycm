@@ -810,7 +810,7 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>36- S. Raschka, "MLxtend: Providing machine learning and data science utilities and extensions to Python's scientific computing stack," <i>Journal of open source software</i>, vol. 3, no. 24, p. 638, 2018.</blockquote>
 
-<blockquote>37- J. Bray and J. Curtis, "An ordination of upland forest communities of southern Wisconsin. Ecological Monographs (27)," ed: PRIMER-E Plymouth, 1957, pp. 325-349.</blockquote>
+<blockquote>37- J. R. Bray and J. T. Curtis, "An ordination of the upland forest communities of southern Wisconsin," Ecological monographs, vol. 27, no. 4, pp. 325-349, 1957.</blockquote>
 
 <blockquote>38- J. L. Fleiss, J. Cohen, and B. S. Everitt, "Large sample standard errors of kappa and weighted kappa," <i>Psychological bulletin</i>, vol. 72, no. 5, p. 323, 1969.</blockquote>
 

@@ -744,7 +744,7 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>3- C. Sammut and G. I. Webb, <i>Encyclopedia of machine learning</i>. Springer Science & Business Media, 2011.</blockquote>
 
-<blockquote>4- J. L. Fleiss, "Measuring nominalscale agreement among many raters," <i>Psychological bulletin</i>, vol. 76, no. 5, p. 378, 1971.</blockquote>
+<blockquote>4- J. L. Fleiss, "Measuring nominal scale agreement among many raters," <i>Psychological bulletin</i>, vol. 76, no. 5, p. 378, 1971.</blockquote>
 
 <blockquote>5- D. G. Altman, <i>Practical statistics for medical research</i>. CRC press, 1990.</blockquote>
 
@@ -780,7 +780,7 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>21- C. O. Freitas, J. M. De Carvalho, J. Oliveira, S. B. Aires, and R. Sabourin, "Confusion matrix disagreement for multiple classifiers," in <i>Iberoamerican Congress on Pattern Recognition</i>, 2007: Springer, pp. 387-396.</blockquote>
 
-<blockquote>22- P. Branco, L. Torgo, and R. P. Ribeiro, "Relevance-based evaluation metrics for multi-class imbalanced domains," in <i>Pacific-Asia Conferenceon Knowledge Discovery and Data Mining</i>, 2017: Springer, pp. 698-710.</blockquote>
+<blockquote>22- P. Branco, L. Torgo, and R. P. Ribeiro, "Relevance-based evaluation metrics for multi-class imbalanced domains," in <i>Pacific-Asia Conference on Knowledge Discovery and Data Mining</i>, 2017: Springer, pp. 698-710.</blockquote>
 
 <blockquote>23- D. Ballabio, F. Grisoni, and R. Todeschini, "Multivariate comparison of classification performance measures," <i>Chemometrics and Intelligent Laboratory Systems</i>, vol. 174, pp. 33-44, 2018.</blockquote>
 
@@ -794,7 +794,7 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>28- J. A. Swets, "The relative operating characteristic in psychology: a technique for isolating effects of response bias finds wide use in the study of perception and cognition," <i>Science</i>, vol. 182, no. 4116, pp. 990-1000, 1973.</blockquote>
 
-<blockquote>29- P. Jaccard, "Étude comparative dela distribution florale dans une portion des Alpes et des Jura," <i>Bull Soc Vaudoise Sci Nat</i>, vol. 37, pp. 547-579, 1901.</blockquote>
+<blockquote>29- P. Jaccard, "Étude comparative de la distribution florale dans une portion des Alpes et des Jura," <i>Bull Soc Vaudoise Sci Nat</i>, vol. 37, pp. 547-579, 1901.</blockquote>
 
 <blockquote>30- T. M. Cover and J. A. Thomas, <i>Elements of Information Theory</i>. John Wiley & Sons, 2012.</blockquote>
 
@@ -802,7 +802,7 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>32- V. Sindhwani, P. Bhattacharya, and S. Rakshit, "Information theoretic feature crediting in multiclass support vector machines," in <i>Proceedings of the 2001 SIAM International Conference on Data Mining</i>, 2001: SIAM, pp. 1-18.</blockquote>
 
-<blockquote>33- M. Bekkar, H. K. Djemaa, and T. A. Alitouche, "Evaluation measures for models assessment over imbalanced datasets," <i>J Inf Eng Appl</i>, vol. 3, no. 10, 2013.</blockquote>
+<blockquote>33- M. Bekkar, H. K. Djemaa, and T. A. Alitouche, "Evaluation measures for models assessment over imbalanced data sets," <i>J Inf Eng Appl</i>, vol. 3, no. 10, 2013.</blockquote>
 
 <blockquote>34- W. J. Youden, "Index for rating diagnostic tests," <i>Cancer</i>, vol. 3, no. 1, pp. 32-35, 1950.</blockquote>
 
@@ -842,11 +842,11 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>52- M. Vijaymeena and K. Kavitha, "A survey on similarity measures in text mining," <i>Machine Learning and Applications: An International Journal</i>, vol. 3, no. 2, pp. 19-28, 2016.</blockquote>
 
-<blockquote>53- Y. Otsuka, "The faunal character ofthe Japanese Pleistocene marine Mollusca, as evidence of climate having become colder during the Pleistocene in Japan," <i>Biogeograph Soc Japan</i>, vol. 6, no. 16, pp. 165-70, 1936.</blockquote>
+<blockquote>53- Y. Otsuka, "The faunal character of the Japanese Pleistocene marine Mollusca, as evidence of climate having become colder during the Pleistocene in Japan," <i>Biogeograph Soc Japan</i>, vol. 6, no. 16, pp. 165-70, 1936.</blockquote>
 
 <blockquote>54- A. Tversky, "Features of similarity," <i>Psychological review</i>, vol. 84, no. 4, p. 327, 1977.</blockquote>
 
-<blockquote>55- K. Boyd, K. H. Eng, and C. D. Page, "Area under the precision-recall curve: point estimates and confidence intervals," in <i>Joint European conferenceon machine learning and knowledge discovery in databases</i>, 2013: Springer, pp. 451-466.</blockquote>
+<blockquote>55- K. Boyd, K. H. Eng, and C. D. Page, "Area under the precision-recall curve: point estimates and confidence intervals," in <i>Joint European conference on machine learning and knowledge discovery in databases</i>, 2013: Springer, pp. 451-466.</blockquote>
 
 <blockquote>56- J. Davis and M. Goadrich, "The relationship between Precision-Recall and ROC curves," in <i>Proceedings of the 23rd international conference on Machine learning</i>, 2006, pp. 233-240.</blockquote>
 
@@ -872,7 +872,7 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>67- G. W. Bohrnstedt and D. Knoke,"Statistics for social data analysis," 1982.</blockquote>
 
-<blockquote>68- W. M. Rand, "Objective criteria forthe evaluation of clustering methods," <i>Journal of the American Statistical association</i>, vol. 66, no. 336, pp. 846-850, 1971.</blockquote>
+<blockquote>68- W. M. Rand, "Objective criteria for the evaluation of clustering methods," <i>Journal of the American Statistical association</i>, vol. 66, no. 336, pp. 846-850, 1971.</blockquote>
 
 <blockquote>69- J. M. Santos and M. Embrechts, "On the use of the adjusted rand index as a metric for evaluating supervised classification," in <i>International conference on artificial neural networks</i>, 2009: Springer, pp. 175-184.</blockquote>
 

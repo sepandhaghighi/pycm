@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `overall_statistics` function modified
 - Document modified
+- References format updated
+- `CONTRIBUTING.md` updated
 ## [3.0] - 2020-10-26
 ### Added
 - `plot_test.py`

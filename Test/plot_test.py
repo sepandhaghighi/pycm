@@ -15,9 +15,9 @@
 'Actual Classes'
 >>> ax.get_xticks()
 array([0, 1, 2])
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0, 0, '0'), Text(1, 0, '1'), Text(2, 0, '2')]
->>> list(ax.get_yticks())
+>>> ax.get_yticks()
 array([0, 1, 2])
 >>> list(ax.get_yticklabels())
 [Text(0, 0, '0'), Text(0, 1, '1'), Text(0, 2, '2')]
@@ -26,7 +26,7 @@ array([0, 1, 2])
 >>> ax = cm.plot(normalized=True)
 >>> ax.get_title()
 'Confusion Matrix (Normalized)'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0, 0, '0'), Text(1, 0, '1'), Text(2, 0, '2')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0, '0'), Text(0, 1, '1'), Text(0, 2, '2')]
@@ -35,7 +35,7 @@ array([0, 1, 2])
 >>> ax = cm.plot(one_vs_all=True)
 >>> ax.get_title()
 'Confusion Matrix'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0, 0, '0'), Text(1, 0, '1'), Text(2, 0, '2')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0, '0'), Text(0, 1, '1'), Text(0, 2, '2')]
@@ -44,7 +44,7 @@ array([0, 1, 2])
 >>> ax = cm.plot(one_vs_all=True, class_name=0)
 >>> ax.get_title()
 'Confusion Matrix'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0, 0, '0'), Text(1, 0, '~')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0, '0'), Text(0, 1, '~')]
@@ -53,7 +53,7 @@ array([0, 1, 2])
 >>> ax = cm.plot(title="test")
 >>> ax.get_title()
 'test'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0, 0, '0'), Text(1, 0, '1'), Text(2, 0, '2')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0, '0'), Text(0, 1, '1'), Text(0, 2, '2')]
@@ -62,7 +62,7 @@ array([0, 1, 2])
 >>> ax = cm.plot(number_label=True)
 >>> ax.get_title()
 'Confusion Matrix'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0, 0, '0'), Text(1, 0, '1'), Text(2, 0, '2')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0, '0'), Text(0, 1, '1'), Text(0, 2, '2')]
@@ -71,7 +71,7 @@ array([0, 1, 2])
 >>> ax = cm.plot(cmap=plt.cm.Blues)
 >>> ax.get_title()
 'Confusion Matrix'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0, 0, '0'), Text(1, 0, '1'), Text(2, 0, '2')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0, '0'), Text(0, 1, '1'), Text(0, 2, '2')]
@@ -80,7 +80,7 @@ array([0, 1, 2])
 >>> ax = cm.plot(normalized=True, one_vs_all=True, class_name=1)
 >>> ax.get_title()
 'Confusion Matrix (Normalized)'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0, 0, '1'), Text(1, 0, '~')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0, '1'), Text(0, 1, '~')]
@@ -89,7 +89,7 @@ array([0, 1, 2])
 >>> ax = cm.plot(normalized=True, number_label=True)
 >>> ax.get_title()
 'Confusion Matrix (Normalized)'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0, 0, '0'), Text(1, 0, '1'), Text(2, 0, '2')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0, '0'), Text(0, 1, '1'), Text(0, 2, '2')]
@@ -98,7 +98,7 @@ array([0, 1, 2])
 >>> ax = cm.plot(normalized=True, one_vs_all=True, class_name=1, number_label=True)
 >>> ax.get_title()
 'Confusion Matrix (Normalized)'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0, 0, '1'), Text(1, 0, '~')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0, '1'), Text(0, 1, '~')]
@@ -113,7 +113,7 @@ array([0, 1, 2])
 'Actual Classes'
 >>> ax.get_xticks()
 array([0.5, 1.5, 2.5])
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
 >>> ax.get_yticks()
 array([0.5, 1.5, 2.5])
@@ -124,7 +124,7 @@ array([0.5, 1.5, 2.5])
 >>> ax = cm.plot(normalized=True, plot_lib='seaborn')
 >>> ax.get_title()
 'Confusion Matrix (Normalized)'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0.5, '0'), Text(0, 1.5, '1'), Text(0, 2.5, '2')]
@@ -133,7 +133,7 @@ array([0.5, 1.5, 2.5])
 >>> ax = cm.plot(one_vs_all=True, plot_lib='seaborn')
 >>> ax.get_title()
 'Confusion Matrix'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0.5, '0'), Text(0, 1.5, '1'), Text(0, 2.5, '2')]
@@ -142,7 +142,7 @@ array([0.5, 1.5, 2.5])
 >>> ax = cm.plot(one_vs_all=True, class_name=0, plot_lib='seaborn')
 >>> ax.get_title()
 'Confusion Matrix'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0.5, 0, '0'), Text(1.5, 0, '~')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0.5, '0'), Text(0, 1.5, '~')]
@@ -151,7 +151,7 @@ array([0.5, 1.5, 2.5])
 >>> ax = cm.plot(title="test", plot_lib='seaborn')
 >>> ax.get_title()
 'test'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0.5, '0'), Text(0, 1.5, '1'), Text(0, 2.5, '2')]
@@ -160,7 +160,7 @@ array([0.5, 1.5, 2.5])
 >>> ax = cm.plot(number_label=True, plot_lib='seaborn')
 >>> ax.get_title()
 'Confusion Matrix'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0.5, '0'), Text(0, 1.5, '1'), Text(0, 2.5, '2')]
@@ -169,7 +169,7 @@ array([0.5, 1.5, 2.5])
 >>> ax = cm.plot(cmap=plt.cm.Blues, plot_lib='seaborn')
 >>> ax.get_title()
 'Confusion Matrix'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0.5, '0'), Text(0, 1.5, '1'), Text(0, 2.5, '2')]
@@ -178,7 +178,7 @@ array([0.5, 1.5, 2.5])
 >>> ax = cm.plot(normalized=True, one_vs_all=True, class_name=1, plot_lib='seaborn')
 >>> ax.get_title()
 'Confusion Matrix (Normalized)'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0.5, 0, '1'), Text(1.5, 0, '~')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0.5, '1'), Text(0, 1.5, '~')]
@@ -187,7 +187,7 @@ array([0.5, 1.5, 2.5])
 >>> ax = cm.plot(normalized=True, number_label=True, plot_lib='seaborn')
 >>> ax.get_title()
 'Confusion Matrix (Normalized)'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0.5, 0, '0'), Text(1.5, 0, '1'), Text(2.5, 0, '2')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0.5, '0'), Text(0, 1.5, '1'), Text(0, 2.5, '2')]
@@ -196,7 +196,7 @@ array([0.5, 1.5, 2.5])
 >>> ax = cm.plot(normalized=True, one_vs_all=True, class_name=1, number_label=True, plot_lib='seaborn')
 >>> ax.get_title()
 'Confusion Matrix (Normalized)'
->>> list(ax.get_xticklabels())
+>>> ax.get_xticklabels()
 [Text(0.5, 0, '1'), Text(1.5, 0, '~')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0.5, '1'), Text(0, 1.5, '~')]

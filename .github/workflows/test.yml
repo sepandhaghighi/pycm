@@ -41,6 +41,7 @@ jobs:
     - name: Notebook check
       run: |
         python Otherfiles/notebook_check.py
+      if: matrix.os == 'ubuntu-latest'
     - name: Other tests
       run: |
           python -m vulture pycm/ Otherfiles/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size

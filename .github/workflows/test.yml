@@ -39,7 +39,7 @@ jobs:
         python Otherfiles/notebook_check.py
     - name: Other tests
       run: |
-          python -m vulture --min-confidence 65 --exclude=__init__.py --sort-by-size pycm/ setup.py Otherfiles/version_check.py Otherfiles/notebook_check.py
+          python -m vulture pycm/ Otherfiles/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
           python -m bandit -r pycm -s B311
           python -m pydocstyle --match-dir=pycm
       if: matrix.python-version == 3.7

@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+"""Requirements splitter."""
+
 test_req = ""
 
 with open('dev-requirements.txt', 'r') as f:

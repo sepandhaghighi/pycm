@@ -70,15 +70,10 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 		<td align="center">master</td>	
 		<td align="center">dev</td>	
 	</tr>
-	<tr>
-		<td align="center">Travis</td>
-		<td align="center"><a href="https://travis-ci.org/sepandhaghighi/pycm"><img src="https://travis-ci.org/sepandhaghighi/pycm.svg?branch=master"></a></td>
-		<td align="center"><a href="https://travis-ci.org/sepandhaghighi/pycm"><img src="https://travis-ci.org/sepandhaghighi/pycm.svg?branch=dev"></a></td>
-	</tr>
-	<tr>
-		<td align="center">AppVeyor</td>
-		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/pycm"><img src="https://ci.appveyor.com/api/projects/status/nbe96d7gk2693ju0/branch/master?svg=true"></a></td>
-		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/pycm"><img src="https://ci.appveyor.com/api/projects/status/nbe96d7gk2693ju0/branch/dev?svg=true"></a></td>
+    <tr>
+		<td align="center">CI</td>
+		<td align="center"><img src="https://github.com/sepandhaghighi/pycm/workflows/CI/badge.svg?branch=master"></td>
+		<td align="center"><img src="https://github.com/sepandhaghighi/pycm/workflows/CI/badge.svg?branch=dev"></td>
 	</tr>
 </table>
 

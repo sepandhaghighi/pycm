@@ -70,6 +70,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 		<td align="center">master</td>	
 		<td align="center">dev</td>	
 	</tr>
+    <tr>
 		<td align="center">CI</td>
 		<td align="center"><img src="https://github.com/sepandhaghighi/pycm/workflows/CI/badge.svg?branch=master"></td>
 		<td align="center"><img src="https://github.com/sepandhaghighi/pycm/workflows/CI/badge.svg?branch=dev"></td>

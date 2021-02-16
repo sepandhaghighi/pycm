@@ -23,6 +23,10 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         python setup.py install
+    - name: First test
+      run: |
+        python -m pycm test
+        python -m pycm
     - name: Test requirements Installation
       run: |
         python Otherfiles/requirements-splitter.py
@@ -47,3 +51,6 @@ jobs:
       run: |
         codecov
       if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
+    - name: cProfile
+      run: |
+          python -m cProfile -s cumtime pycm/pycm_profile.py

@@ -18,17 +18,24 @@ https://doi.org/10.21105/joss.00729
 
 '''
 
+OG_IMAGE_URL = "http://www.pycm.ir/images/logo-og.png"
+OG_DESCRIPTION = "PyCM is a multi-class confusion matrix library written in Python : http://www.pycm.ir"
+
 HTML_INIT_TEMPLATE = '''
 <!doctype html>
 <html lang="en">
 <head>
 <title>{0}</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="description" content="{1}">
 <meta name="og:title" content="PyCM Report">
 <meta name="og:description" content="{1}">
 <meta name="og:url" content="http://www.pycm.ir">
+<meta property="og:image" content="{2}">
+<meta name="twitter:image:src" content="{2}">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="PyCM Report">
-<meta name="twitter:description" content="{1}">
+<meta name="twitter:description" content="PyCM is a multi-class confusion matrix library written in Python : http://www.pycm.ir">
 </head>
 <body>
 <h1 style="border-bottom:1px solid black;text-align:center;">PyCM Report</h1>

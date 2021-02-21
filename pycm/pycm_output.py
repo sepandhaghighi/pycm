@@ -15,7 +15,7 @@ def html_init(name):
     :type name : str
     :return: html_init as str
     """
-    result = ""
+    result = "<!doctype html>\n"
     result += "<html>\n"
     result += "<head>\n"
     result += "<title>" + str(name) + "</title>\n"

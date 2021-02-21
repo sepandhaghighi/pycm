@@ -20,11 +20,7 @@ https://doi.org/10.21105/joss.00729
 
 OG_IMAGE_URL = "http://www.pycm.ir/images/logo-og.png"
 
-OG_DESCRIPTION = '''
-PyCM is a multi-class confusion matrix library written in Python.
-Webpage : http://www.pycm.ir
-GitHub : https://github.com/sepandhaghighi/pycm
-'''
+OG_DESCRIPTION = "PyCM is a multi-class confusion matrix library written in Python. http://www.pycm.ir"
 
 HTML_INIT_TEMPLATE = '''
 <!doctype html>

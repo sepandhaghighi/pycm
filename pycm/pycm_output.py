@@ -15,7 +15,7 @@ def html_init(name):
     :type name : str
     :return: html_init as str
     """
-    result = HTML_INIT_TEMPLATE.format(str(name))
+    result = HTML_INIT_TEMPLATE.format(str(name),OVERVIEW)
     return result
 
 

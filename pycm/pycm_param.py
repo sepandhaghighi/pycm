@@ -24,6 +24,11 @@ HTML_INIT_TEMPLATE = '''
 <head>
 <title>{0}</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="og:title" content="PyCM Report">
+<meta name="og:description" content="{1}">
+<meta name="og:url" content="http://www.pycm.ir">
+<meta name="twitter:title" content="PyCM Report">
+<meta name="twitter:description" content="{1}">
 </head>
 <body>
 <h1 style="border-bottom:1px solid black;text-align:center;">PyCM Report</h1>

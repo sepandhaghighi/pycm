@@ -15,15 +15,7 @@ def html_init(name):
     :type name : str
     :return: html_init as str
     """
-    result = "<!doctype html>\n"
-    result += '<html lang="en">\n'
-    result += "<head>\n"
-    result += "<title>" + str(name) + "</title>\n"
-    result += "</head>\n"
-    result += "<body>\n"
-    result += '<meta http-equiv="content-type" content="text/html; charset=UTF-8">\n'
-    result += '<h1 style="border-bottom:1px solid ' \
-              'black;text-align:center;">PyCM Report</h1>'
+    result = HTML_INIT_TEMPLATE.format(str(name))
     return result
 
 

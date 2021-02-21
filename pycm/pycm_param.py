@@ -18,6 +18,17 @@ https://doi.org/10.21105/joss.00729
 
 '''
 
+HTML_INIT_TEMPLATE = '''
+<!doctype html>
+<html lang="en">
+<head>
+<title>{0}</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<h1 style="border-bottom:1px solid black;text-align:center;">PyCM Report</h1>
+'''
+
 
 MATRIX_CLASS_TYPE_ERROR = "Type of the input matrix classes is assumed  be the same"
 MATRIX_FORMAT_ERROR = "Input confusion matrix format error"

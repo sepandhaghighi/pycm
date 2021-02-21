@@ -113,14 +113,14 @@ def html_table(classes, table, rgb_color, normalize=False):
         result += "(Normalized)"
     result += ": </h2>\n"
     result += '<table>\n'
-    result += '<tr  align="center">' + "\n"
+    result += '<tr style="text-align:center;">' + "\n"
     result += '<td>Actual</td>\n'
     result += '<td>Predict\n'
     table_size = str((len(classes) + 1) * 7) + "em"
     result += '<table style="border:1px solid black;border-collapse: collapse;height:{0};width:{0};">\n'\
         .format(table_size)
     classes.sort()
-    result += '<tr align="center">\n<td></td>\n'
+    result += '<tr style="text-align:center;">\n<td></td>\n'
     part_2 = ""
     for i in classes:
         class_name = str(i)
@@ -129,7 +129,7 @@ def html_table(classes, table, rgb_color, normalize=False):
         result += '<td style="border:1px solid ' \
                   'black;padding:10px;height:7em;width:7em;">' + \
             class_name + '</td>\n'
-        part_2 += '<tr align="center">\n'
+        part_2 += '<tr style="text-align:center;">\n'
         part_2 += '<td style="border:1px solid ' \
                   'black;padding:10px;height:7em;width:7em;">' + \
             class_name + '</td>\n'
@@ -185,7 +185,7 @@ def html_overall_stat(
         background_color = DEFAULT_BACKGROUND_COLOR
         if i in recommended_list:
             background_color = RECOMMEND_BACKGROUND_COLOR
-        result += '<tr align="center">\n'
+        result += '<tr style="text-align:center;">\n'
         result += '<td style="border:1px solid black;padding:4px;text-align:left;background-color:{};"><a href="'.format(
             background_color) + document_link + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         if i in BENCHMARK_LIST:
@@ -230,7 +230,7 @@ def html_class_stat(
     result = ""
     result += "<h2>Class Statistics : </h2>\n"
     result += '<table style="border:1px solid black;border-collapse: collapse;">\n'
-    result += '<tr align="center">\n<td>Class</td>\n'
+    result += '<tr style="text-align:center;">\n<td>Class</td>\n'
     for i in classes:
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">' + \
             str(i) + '</td>\n'
@@ -247,7 +247,7 @@ def html_class_stat(
         background_color = DEFAULT_BACKGROUND_COLOR
         if i in recommended_list:
             background_color = RECOMMEND_BACKGROUND_COLOR
-        result += '<tr align="center" style="border:1px solid black;border-collapse: collapse;">\n'
+        result += '<tr style="text-align:center;border:1px solid black;border-collapse: collapse;">\n'
         result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};"><a href="'.format(
             background_color) + document_link + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         for j in classes:

@@ -498,7 +498,8 @@ class ConfusionMatrix():
         """
         sensitivity_index_dict = {}
         for i in self.classes:
-            sensitivity_index_dict[i] = sensitivity_index_calc(self.TPR[i], self.FPR[i])
+            sensitivity_index_dict[i] = sensitivity_index_calc(
+                self.TPR[i], self.FPR[i])
         return sensitivity_index_dict
 
     def IBA_alpha(self, alpha):
@@ -862,8 +863,7 @@ class ConfusionMatrix():
         :type class_name : any valid type
         :return: confusion matrix as a numpy.ndarray
         """
-        classes = self.classes
-        classes.sort()
+        classes = sorted(self.classes)
         table = self.table
         if normalized:
             table = self.normalized_table

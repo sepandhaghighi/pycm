@@ -21,6 +21,7 @@ def sensitivity_index_calc(TPR, FPR):
     except TypeError:
         return "None"
 
+
 def NB_calc(TP, FP, POP, w):
     """
     Calculate NB (Net Benefit).

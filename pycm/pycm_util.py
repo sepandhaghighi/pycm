@@ -539,6 +539,7 @@ def polevl(x, coefs, n):
         power -= 1
     return ans
 
+
 def p1evl(x, coefs, n):
     """
     Evaluate polynomial when coefficient of x^n is 1.
@@ -590,6 +591,7 @@ def ndtri(y):
         x = -x
     return x
 
+
 def inv_erf(z):
     """
     Inverse error function.
@@ -605,6 +607,7 @@ def inv_erf(z):
     result = ndtri((z + 1) / 2.0) / math.sqrt(2)
     return result
 
+
 def normal_quantile(p, mean=0, std=1):
     """
     Calculate normal distribution quantile.
@@ -618,6 +621,6 @@ def normal_quantile(p, mean=0, std=1):
     :return: normal distribution quantile as float
     """
     try:
-        return mean + std*math.sqrt(2)*inv_erf((2*p)-1)
+        return mean + std * math.sqrt(2) * inv_erf((2 * p) - 1)
     except Exception:
         return "None"

@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Test system modified
 - `overall_statistics` function modified
+- HTML report modified
 - Document modified
 - References format updated
 - `CONTRIBUTING.md` updated

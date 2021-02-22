@@ -36,7 +36,7 @@ HTML_INIT_TEMPLATE = '''
 <meta name="twitter:image:src" content="{2}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="PyCM Report (File Name : {0})">
-<meta name="twitter:description" content="PyCM is a multi-class confusion matrix library written in Python : http://www.pycm.ir">
+<meta name="twitter:description" content="{1}">
 </head>
 <body>
 <h1 style="border-bottom:1px solid black;text-align:center;">PyCM Report</h1>

@@ -15,8 +15,7 @@ def html_init(name):
     :type name : str
     :return: html_init as str
     """
-    result = HTML_INIT_TEMPLATE.format(str(name), OG_DESCRIPTION, OG_IMAGE_URL)
-    return result
+    return HTML_INIT_TEMPLATE.format(str(name), OG_DESCRIPTION, OG_IMAGE_URL)
 
 
 def html_dataset_type(is_binary, is_imbalanced):
@@ -269,8 +268,7 @@ def html_end(version):
     :type version:str
     :return: html_end as str
     """
-    result = HTML_END_TEMPLATE.format(version)
-    return result
+    return HTML_END_TEMPLATE.format(version)
 
 
 def pycm_help():

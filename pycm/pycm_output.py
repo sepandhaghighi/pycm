@@ -131,7 +131,7 @@ def html_table(classes, table, rgb_color, normalize=False):
             back_color = html_table_color(table[i], item, rgb_color)
             if min(back_color) < 128:
                 color = "white"
-            part_2 += '<td style="background-color:	rgb({0},{1},{2});color:{3};padding:10px;height:7em;width:7em;">'.format(
+            part_2 += '<td style="background-color:rgb({0},{1},{2});color:{3};padding:10px;height:7em;width:7em;">'.format(
                 str(back_color[0]), str(back_color[1]), str(back_color[2]), color) + str(item) + '</td>\n'
         part_2 += "</tr>\n"
     result += '</tr>\n'

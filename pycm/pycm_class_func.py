@@ -2,7 +2,24 @@
 """Class statistics functions."""
 from __future__ import division
 import math
+from .pycm_util import normal_quantile
 from .pycm_interpret import *
+
+
+def sensitivity_index_calc(TPR, FPR):
+    """
+    Calculate sensitivity index (d prime).
+
+    :param TPR: sensitivity, recall, hit rate, or true positive rate
+    :type TPR : float
+    :param FPR: fall-out or false positive rate
+    :type FPR: float
+    :return: sensitivity index as float
+    """
+    try:
+        return normal_quantile(TPR) - normal_quantile(FPR)
+    except TypeError:
+        return "None"
 
 
 def NB_calc(TP, FP, POP, w):

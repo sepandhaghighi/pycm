@@ -5,6 +5,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [3.1] - 2021-03-11
+### Added
+- `requirements-splitter.py`
+- `sensitivity_index` method
+### Changed
+- Test system modified
+- `overall_statistics` function modified
+- HTML report modified
+- Document modified
+- References format updated
+- `CONTRIBUTING.md` updated
 ## [3.0] - 2020-10-26
 ### Added
 - `plot_test.py`
@@ -521,7 +532,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v3.0...dev
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v3.1...dev
+[3.1]: https://github.com/sepandhaghighi/pycm/compare/v3.0...v3.1
 [3.0]: https://github.com/sepandhaghighi/pycm/compare/v2.9...v3.0
 [2.9]: https://github.com/sepandhaghighi/pycm/compare/v2.8...v2.9
 [2.8]: https://github.com/sepandhaghighi/pycm/compare/v2.7...v2.8

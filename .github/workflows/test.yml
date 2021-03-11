@@ -1,0 +1,63 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macOS-latest]
+        python-version: [3.5, 3.6, 3.7, 3.8, 3.9]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Installation
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        python setup.py install
+    - name: First test
+      run: |
+        python -m pycm test
+        python -m pycm
+    - name: Test requirements Installation
+      run: |
+        python Otherfiles/requirements-splitter.py
+        pip install --upgrade --upgrade-strategy=only-if-needed -r test-requirements.txt
+    - name: Test with pytest (Python > 3.5)
+      run: |
+        python -m pytest Test --cov=pycm --cov-report=term
+      if: matrix.python-version != 3.5
+    - name: Test with pytest (Python 3.5)
+      run: |
+        python -m pytest --ignore-glob="*plot_test.py" Test --cov=pycm --cov-report=term
+      if: matrix.python-version == 3.5
+    - name: Version check
+      run: |
+        python Otherfiles/version_check.py
+      if: matrix.python-version == 3.7
+    - name: Notebook check
+      run: |
+        python Otherfiles/notebook_check.py
+      if: matrix.os == 'ubuntu-latest'
+    - name: Other tests
+      run: |
+          python -m vulture pycm/ Otherfiles/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
+          python -m bandit -r pycm -s B311
+          python -m pydocstyle -v --match-dir=pycm
+      if: matrix.python-version == 3.7
+    - name: Codecov
+      run: |
+        codecov
+      if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
+    - name: cProfile
+      run: |
+          python -m cProfile -s cumtime pycm/pycm_profile.py

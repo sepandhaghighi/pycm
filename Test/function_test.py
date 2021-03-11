@@ -179,6 +179,26 @@ Example : online_help("J") or online_help(2)
 >>> from pycm.pycm_ci import *
 >>> from pycm.pycm_interpret import *
 >>> from pycm.pycm_util import *
+>>> inv_erf(-1)
+'None'
+>>> inv_erf(1)
+'None'
+>>> inv_erf(-2)
+'None'
+>>> inv_erf(2)
+'None'
+>>> inv_erf(0)
+0
+>>> inv_erf(-0.9999999999999749)
+-5.389154023751963
+>>> inv_erf(1.2490009027033011e-14)
+1.1019786822020638e-14
+>>> inv_erf(0.3)
+0.27246271472675443
+>>> inv_erf(0.8)
+0.9061938024368231
+>>> inv_erf(0.22)
+0.19750838337227367
 >>> complement(0.5)
 0.5
 >>> complement("None")

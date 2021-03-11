@@ -4,7 +4,7 @@ import os
 import sys
 import codecs
 Failed = 0
-PYCM_VERSION = "3.0"
+PYCM_VERSION = "3.1"
 
 
 SETUP_ITEMS = [

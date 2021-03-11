@@ -70,15 +70,10 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 		<td align="center">master</td>	
 		<td align="center">dev</td>	
 	</tr>
-	<tr>
-		<td align="center">Travis</td>
-		<td align="center"><a href="https://travis-ci.org/sepandhaghighi/pycm"><img src="https://travis-ci.org/sepandhaghighi/pycm.svg?branch=master"></a></td>
-		<td align="center"><a href="https://travis-ci.org/sepandhaghighi/pycm"><img src="https://travis-ci.org/sepandhaghighi/pycm.svg?branch=dev"></a></td>
-	</tr>
-	<tr>
-		<td align="center">AppVeyor</td>
-		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/pycm"><img src="https://ci.appveyor.com/api/projects/status/nbe96d7gk2693ju0/branch/master?svg=true"></a></td>
-		<td align="center"><a href="https://ci.appveyor.com/project/sepandhaghighi/pycm"><img src="https://ci.appveyor.com/api/projects/status/nbe96d7gk2693ju0/branch/dev?svg=true"></a></td>
+    <tr>
+		<td align="center">CI</td>
+		<td align="center"><img src="https://github.com/sepandhaghighi/pycm/workflows/CI/badge.svg?branch=master"></td>
+		<td align="center"><img src="https://github.com/sepandhaghighi/pycm/workflows/CI/badge.svg?branch=dev"></td>
 	</tr>
 </table>
 
@@ -101,7 +96,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ⚠️  Plotting capability requires **Matplotlib (>= 3.0.0)** or **Seaborn (>= 0.9.1)**   
 
 ### Source code
-- Download [Version 3.0](https://github.com/sepandhaghighi/pycm/archive/v3.0.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 3.1](https://github.com/sepandhaghighi/pycm/archive/v3.1.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -109,7 +104,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==3.0` or `pip3 install pycm==3.0` (Need root access)
+- Run `pip install pycm==3.1` or `pip3 install pycm==3.1` (Need root access)
 
 ### Conda
 
@@ -738,156 +733,157 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 ## References			
 
-<blockquote>1- J. R. Landis, G. G. Koch, “The measurement of observer agreement for categorical data. Biometrics,” in International Biometric Society,  pp. 159–174, 1977. </blockquote>
+<blockquote>1- J. R. Landis and G. G. Koch, "The measurement of observer agreement for categorical data," <i>biometrics</i>, pp. 159-174, 1977.</blockquote>
 
-<blockquote>2- D. M. W. Powers, “Evaluation: from precision, recall and f-measure to roc, informedness, markedness & correlation,” in Journal of Machine Learning Technologies, pp.37-63, 2011.</blockquote>
+<blockquote>2- D. M. Powers, "Evaluation: from precision, recall and F-measure to ROC, informedness, markedness and correlation," <i>arXiv preprint arXiv:2010.16061</i>, 2020.</blockquote>
 
+<blockquote>3- C. Sammut and G. I. Webb, <i>Encyclopedia of machine learning</i>. Springer Science & Business Media, 2011.</blockquote>
 
-<blockquote>3-  C. Sammut, G. Webb, “Encyclopedia of Machine Learning” in Springer, 2011.</blockquote>
+<blockquote>4- J. L. Fleiss, "Measuring nominal scale agreement among many raters," <i>Psychological bulletin</i>, vol. 76, no. 5, p. 378, 1971.</blockquote>
 
-<blockquote>4- J. L. Fleiss, “Measuring nominal scale agreement among many raters,” in Psychological Bulletin, pp. 378-382, 1971. </blockquote>
+<blockquote>5- D. G. Altman, <i>Practical statistics for medical research</i>. CRC press, 1990.</blockquote>
 
-<blockquote>5- D.G. Altman, “Practical Statistics for Medical Research,” in Chapman and Hall, 1990.</blockquote>
+<blockquote>6- K. L. Gwet, "Computing inter-rater reliability and its variance in the presence of high agreement," <i>British Journal of Mathematical and Statistical Psychology</i>, vol. 61, no. 1, pp. 29-48, 2008.</blockquote>
 
-<blockquote>6- K. L. Gwet, “Computing inter-rater reliability and its variance in the presence of high agreement,” in The British Journal of Mathematical and Statistical Psychology, pp. 29–48, 2008.”</blockquote>
+<blockquote>7- W. A. Scott, "Reliability of content analysis: The case of nominal scale coding," <i>Public opinion quarterly</i>, pp. 321-325, 1955.</blockquote>
 
-<blockquote>7- W. A. Scott, “Reliability of content analysis: The case of nominal scaling,” in Public Opinion Quarterly, pp. 321–325, 1955.</blockquote>
+<blockquote>8- E. M. Bennett, R. Alpert, and A. Goldstein, "Communications through limited-response questioning," <i>Public Opinion Quarterly</i>, vol. 18, no. 3, pp. 303-308, 1954.</blockquote>
 
-<blockquote>8- E. M. Bennett, R. Alpert, and A. C. Goldstein, “Communication through limited response questioning,” in The Public Opinion Quarterly, pp. 303–308, 1954.</blockquote>
+<blockquote>9- D. V. Cicchetti, "Guidelines, criteria, and rules of thumb for evaluating normed and standardized assessment instruments in psychology," <i>Psychological assessment</i>, vol. 6, no. 4, p. 284, 1994.</blockquote>
 
-<blockquote>9- D. V. Cicchetti, "Guidelines, criteria, and rules of thumb for evaluating normed and standardized assessment instruments in psychology," in Psychological Assessment, pp. 284–290, 1994.</blockquote>
+<blockquote>10- R. B. Davies, "Algorithm AS 155: The distribution of a linear combination of χ2 random variables," <i>Applied Statistics</i>, pp. 323-333, 1980.</blockquote>
 
-<blockquote>10- R.B. Davies, "Algorithm AS155: The Distributions of a Linear Combination of χ2 Random Variables," in Journal of the Royal Statistical Society, pp. 323–333, 1980.</blockquote>
+<blockquote>11- S. Kullback and R. A. Leibler, "On information and sufficiency," <i>The annals of mathematical statistics</i>, vol. 22, no. 1, pp. 79-86, 1951.</blockquote>
 
-<blockquote>11- S. Kullback, R. A. Leibler "On information and sufficiency," in Annals of Mathematical Statistics, pp. 79–86, 1951.</blockquote>
+<blockquote>12- L. A. Goodman and W. H. Kruskal, "Measures of association for cross classifications, IV: Simplification of asymptotic variances," <i>Journal of the American Statistical Association</i>, vol. 67, no. 338, pp. 415-421, 1972.</blockquote>
 
-<blockquote>12- L. A. Goodman, W. H. Kruskal, "Measures of Association for Cross Classifications, IV: Simplification of Asymptotic Variances," in Journal of the American Statistical Association, pp. 415–421, 1972.</blockquote>
+<blockquote>13- L. A. Goodman and W. H. Kruskal, "Measures of association for cross classifications III: Approximate sampling theory," <i>Journal of the American Statistical Association</i>, vol. 58, no. 302, pp. 310-364, 1963.</blockquote>
 
-<blockquote>13- L. A. Goodman, W. H. Kruskal, "Measures of Association for Cross Classifications III: Approximate Sampling Theory," in Journal of the American Statistical Association, pp.  310–364, 1963. </blockquote>
+<blockquote>14- T. Byrt, J. Bishop, and J. B. Carlin, "Bias, prevalence and kappa," <i>Journal of clinical epidemiology</i>, vol. 46, no. 5, pp. 423-429, 1993.</blockquote>
 
-<blockquote>14- T. Byrt, J. Bishop and J. B. Carlin, “Bias, prevalence, and kappa,” in Journal of Clinical Epidemiology pp. 423-429, 1993.</blockquote>
+<blockquote>15- M. Shepperd, D. Bowes, and T. Hall, "Researcher bias: The use of machine learning in software defect prediction," <i>IEEE Transactions on Software Engineering</i>, vol. 40, no. 6, pp. 603-616, 2014.</blockquote>
 
-<blockquote>15- M. Shepperd, D. Bowes, and T. Hall, “Researcher Bias: The Use of Machine Learning in Software Defect Prediction,” in IEEE Transactions on Software Engineering, pp. 603-616, 2014.</blockquote>
+<blockquote>16- X. Deng, Q. Liu, Y. Deng, and S. Mahadevan, "An improved method to construct basic probability assignment based on the confusion matrix for classification problem," <i>Information Sciences</i>, vol. 340, pp. 250-261, 2016.</blockquote>
 
-<blockquote>16- X. Deng, Q. Liu, Y. Deng, and S. Mahadevan, “An improved method to construct basic probability assignment based on the confusion matrix for classification problem, ” in Information Sciences, pp.250-261, 2016.</blockquote>
+<blockquote>17- J.-M. Wei, X.-J. Yuan, Q.-H. Hu, and S.-Q. Wang, "A novel measure for evaluating classifiers," <i>Expert Systems with Applications</i>, vol. 37, no. 5, pp. 3799-3809, 2010.</blockquote>
 
-<blockquote>17- J.-M. Wei, X.-J. Yuan, Q.-H. Hu, and S.-Q. J. E. S. w. A. Wang, "A novel measure for evaluating classifiers," in Expert Systems with Applications, pp. 3799-3809, 2010.</blockquote>
+<blockquote>18- I. Kononenko and I. Bratko, "Information-based evaluation criterion for classifier's performance," <i>Machine learning</i>, vol. 6, no. 1, pp. 67-80, 1991.</blockquote>
 
-<blockquote>18- I. Kononenko and I. J. M. L. Bratko, "Information-based evaluation criterion for classifier's performance," in Machine Learning, pp. 67-80, 1991.</blockquote>
+<blockquote>19- R. Delgado and J. D. Núnez-González, "Enhancing confusion entropy as measure for evaluating classifiers," in <i>The 13th International Conference on Soft Computing Models in Industrial and Environmental Applications</i>, 2018: Springer, pp. 79-89.</blockquote>
 
-<blockquote>19- R. Delgado and J. D. Núñez-González, "Enhancing Confusion Entropy as Measure for Evaluating Classifiers," in The 13th International Conference on Soft Computing Models in Industrial and Environmental Applications, pp. 79-89, 2018: Springer.</blockquote>
+<blockquote>20- J. Gorodkin, "Comparing two K-category assignments by a K-category correlation coefficient," <i>Computational biology and chemistry</i>, vol.28, no. 5-6, pp. 367-374, 2004.</blockquote>
 
-<blockquote>20- J. J. C. b. Gorodkin and chemistry, "Comparing two K-category assignments by a K-category correlation coefficient," in Computational Biology and chemistry, pp. 367-374, 2004.</blockquote>
+<blockquote>21- C. O. Freitas, J. M. De Carvalho, J. Oliveira, S. B. Aires, and R. Sabourin, "Confusion matrix disagreement for multiple classifiers," in <i>Iberoamerican Congress on Pattern Recognition</i>, 2007: Springer, pp. 387-396.</blockquote>
 
-<blockquote>21- C. O. Freitas, J. M. De Carvalho, J. Oliveira, S. B. Aires, and R. Sabourin, "Confusion matrix disagreement for multiple classifiers," in Iberoamerican Congress on Pattern Recognition, pp. 387-396, 2007.</blockquote>
+<blockquote>22- P. Branco, L. Torgo, and R. P. Ribeiro, "Relevance-based evaluation metrics for multi-class imbalanced domains," in <i>Pacific-Asia Conference on Knowledge Discovery and Data Mining</i>, 2017: Springer, pp. 698-710.</blockquote>
 
-<blockquote>22- P. Branco, L. Torgo, and R. P. Ribeiro, "Relevance-based evaluation metrics for multi-class imbalanced domains," in Pacific-Asia Conference on Knowledge Discovery and Data Mining, pp. 698-710, 2017. Springer.</blockquote>
+<blockquote>23- D. Ballabio, F. Grisoni, and R. Todeschini, "Multivariate comparison of classification performance measures," <i>Chemometrics and Intelligent Laboratory Systems</i>, vol. 174, pp. 33-44, 2018.</blockquote>
 
-<blockquote>23- D. Ballabio, F. Grisoni, R. J. C. Todeschini, and I. L. Systems, "Multivariate comparison of classification performance measures," in Chemometrics and Intelligent Laboratory Systems, pp. 33-44, 2018.</blockquote>
+<blockquote>24- J. Cohen, "A coefficient of agreement for nominal scales," <i>Educational and psychological measurement</i>, vol. 20, no. 1, pp. 37-46, 1960.</blockquote>
 
-<blockquote>24- J. J. E. Cohen and p. measurement, "A coefficient of agreement for nominal scales," in Educational and Psychological Measurement, pp. 37-46, 1960.</blockquote>
+<blockquote>25- S. Siegel, "Nonparametric statistics for the behavioral sciences," 1956.</blockquote>
 
-<blockquote>25- S. Siegel, "Nonparametric statistics for the behavioral sciences," in 	New York : McGraw-Hill, 1956.</blockquote>
+<blockquote>26- H. Cramér, <i>Mathematical methods of statistics</i>. Princeton university press, 1999.</blockquote>
 
-<blockquote>26- H. Cramér, "Mathematical methods of statistics (PMS-9),"in Princeton university press, 2016.</blockquote>
+<blockquote>27- B. W. Matthews, "Comparison of the predicted and observed secondary structure of T4 phage lysozyme," <i>Biochimica et Biophysica Acta (BBA)-Protein Structure</i>, vol. 405, no. 2, pp. 442-451, 1975.</blockquote>
 
-<blockquote>27- B. W. J. B. e. B. A.-P. S. Matthews, "Comparison of the predicted and observed secondary structure of T4 phage lysozyme," in Biochimica et Biophysica Acta (BBA) - Protein Structure, pp. 442-451, 1975.</blockquote>
+<blockquote>28- J. A. Swets, "The relative operating characteristic in psychology: a technique for isolating effects of response bias finds wide use in the study of perception and cognition," <i>Science</i>, vol. 182, no. 4116, pp. 990-1000, 1973.</blockquote>
 
-<blockquote>28- J. A. J. S. Swets, "The relative operating characteristic in psychology: a technique for isolating effects of response bias finds wide use in the study of perception and cognition," in American Association for the Advancement of Science, pp. 990-1000, 1973.</blockquote> 
+<blockquote>29- P. Jaccard, "Étude comparative de la distribution florale dans une portion des Alpes et des Jura," <i>Bull Soc Vaudoise Sci Nat</i>, vol. 37, pp. 547-579, 1901.</blockquote>
 
-<blockquote>29- P. J. B. S. V. S. N. Jaccard, "Étude comparative de la distribution florale dans une portion des Alpes et des Jura," in Bulletin de la Société vaudoise des sciences naturelles, pp. 547-579, 1901.</blockquote> 
+<blockquote>30- T. M. Cover and J. A. Thomas, <i>Elements of Information Theory</i>. John Wiley & Sons, 2012.</blockquote>
 
-<blockquote>30- T. M. Cover and J. A. Thomas, "Elements of information theory," in John Wiley & Sons, 2012.</blockquote> 
+<blockquote>31- E. S. Keeping, <i>Introduction to statistical inference</i>. Courier Corporation, 1995.</blockquote>
 
-<blockquote>31- E. S. Keeping, "Introduction to statistical inference," in Courier Corporation, 1995.</blockquote>
+<blockquote>32- V. Sindhwani, P. Bhattacharya, and S. Rakshit, "Information theoretic feature crediting in multiclass support vector machines," in <i>Proceedings of the 2001 SIAM International Conference on Data Mining</i>, 2001: SIAM, pp. 1-18.</blockquote>
 
-<blockquote>32- V. Sindhwani, P. Bhattacharya, and S. Rakshit, "Information theoretic feature crediting in multiclass support vector machines," in Proceedings of the 2001 SIAM International Conference on Data Mining, pp. 1-18, 2001.</blockquote> 
+<blockquote>33- M. Bekkar, H. K. Djemaa, and T. A. Alitouche, "Evaluation measures for models assessment over imbalanced data sets," <i>J Inf Eng Appl</i>, vol. 3, no. 10, 2013.</blockquote>
 
-<blockquote>33- M. Bekkar, H. K. Djemaa, and T. A. J. J. I. E. A. Alitouche, "Evaluation measures for models assessment over imbalanced data sets," in Journal of Information Engineering and Applications, 2013.</blockquote>
+<blockquote>34- W. J. Youden, "Index for rating diagnostic tests," <i>Cancer</i>, vol. 3, no. 1, pp. 32-35, 1950.</blockquote>
 
-<blockquote>34- W. J. J. C. Youden, "Index for rating diagnostic tests," in Cancer, pp. 32-35, 1950.</blockquote>
+<blockquote>35- S. Brin, R. Motwani, J. D. Ullman, and S. Tsur, "Dynamic itemset counting and implication rules for market basket data," in <i>Proceedings of the 1997 ACM SIGMOD international conference on Management of data</i>, 1997, pp. 255-264.</blockquote>
 
-<blockquote>35- S. Brin, R. Motwani, J. D. Ullman, and S. J. A. S. R. Tsur, "Dynamic itemset counting and implication rules for market basket data," in Proceedings of the 1997 ACM SIGMOD international conference on Management of datavol, pp. 255-264, 1997.</blockquote> 
+<blockquote>36- S. Raschka, "MLxtend: Providing machine learning and data science utilities and extensions to Python's scientific computing stack," <i>Journal of open source software</i>, vol. 3, no. 24, p. 638, 2018.</blockquote>
 
-<blockquote>36- S. J. T. J. o. O. S. S. Raschka, "MLxtend: Providing machine learning and data science utilities and extensions to Python’s scientific computing stack," in Journal of Open Source Software, 2018.</blockquote> 
+<blockquote>37- J. R. Bray and J. T. Curtis, "An ordination of the upland forest communities of southern Wisconsin," Ecological monographs, vol. 27, no. 4, pp. 325-349, 1957.</blockquote>
 
-<blockquote>37- J. BRAy and J. CuRTIS, "An ordination of upland forest communities of southern Wisconsin.-ecological Monographs," in journal of Ecological Monographs, 1957.</blockquote>	
+<blockquote>38- J. L. Fleiss, J. Cohen, and B. S. Everitt, "Large sample standard errors of kappa and weighted kappa," <i>Psychological bulletin</i>, vol. 72, no. 5, p. 323, 1969.</blockquote>
 
-<blockquote>38- J. L. Fleiss, J. Cohen, and B. S. J. P. B. Everitt, "Large sample standard errors of kappa and weighted kappa," in Psychological Bulletin, p. 323, 1969.</blockquote> 	
+<blockquote>39- M. Felkin, "Comparing classification results between n-ary and binary problems," in <i>Quality Measures in Data Mining</i>: Springer, 2007, pp. 277-301.</blockquote>
 
-<blockquote>39- M. Felkin, "Comparing classification results between n-ary and binary problems," in Quality Measures in Data Mining: Springer, pp. 277-301, 2007.</blockquote> 
+<blockquote>40- R. Ranawana and V. Palade, "Optimized precision-a new measure for classifier performance evaluation," in <i>2006 IEEE International Conference on Evolutionary Computation</i>, 2006: IEEE, pp. 2254-2261.</blockquote>
 
-<blockquote>40- R. Ranawana and V. Palade, "Optimized Precision-A new measure for classifier performance evaluation," in 2006 IEEE International Conference on Evolutionary Computation, pp. 2254-2261, 2006.</blockquote>	
+<blockquote>41- V. García, R. A. Mollineda, and J. S. Sánchez, "Index of balanced accuracy: A performance measure for skewed class distributions," in <i>Iberian conference on pattern recognition and image analysis</i>, 2009: Springer, pp. 441-448.</blockquote>
 
-<blockquote>41- V. García, R. A. Mollineda, and J. S. Sánchez, "Index of balanced accuracy: A performance measure for skewed class distributions," in Iberian Conference on Pattern Recognition and Image Analysis, pp. 441-448, 2009.</blockquote> 
+<blockquote>42- P. Branco, L. Torgo, and R. P. Ribeiro, "A survey of predictive modeling on imbalanced domains," <i>ACM Computing Surveys (CSUR)</i>, vol. 49, no. 2, pp. 1-50, 2016.</blockquote>
 
-<blockquote>42- P. Branco, L. Torgo, and R. P. J. A. C. S. Ribeiro, "A survey of predictive modeling on imbalanced domains," in Journal ACM Computing Surveys (CSUR), p. 31, 2016.</blockquote> 
+<blockquote>43- K. Pearson, "Notes on Regression and Inheritance in the Case of Two Parents," in <i>Proceedings of the Royal Society of London</i>, p. 240-242, 1895.</blockquote>
 
-<blockquote>43- K. Pearson, "Notes on Regression and Inheritance in the Case of Two Parents," in Proceedings of the Royal Society of London, p. 240-242, 1895.</blockquote> 
+<blockquote>44- W. J. Conover, <i>Practical nonparametric statistics</i>. John Wiley & Sons, 1998.</blockquote>
 
-<blockquote>44- W. J. I. Conover, New York, "Practical Nonparametric Statistics," in John Wiley and Sons, 1999.</blockquote> 
+<blockquote>45- G. U. Yule, "On the methods of measuring association between two attributes," <i>Journal of the Royal Statistical Society</i>, vol. 75, no. 6, pp. 579-652, 1912.</blockquote>
 
-<blockquote>45- Yule, G. U, "On the methods of measuring association between two attributes." in Journal of the Royal Statistical Society, pp. 579-652, 1912.</blockquote>
+<blockquote>46- R. Batuwita and V. Palade, "A new performance measure for class imbalance learning. application to bioinformatics problems," in <i>2009 International Conference on Machine Learning and Applications</i>, 2009: IEEE, pp. 545-550.</blockquote>
 
-<blockquote>46- Batuwita, R. and Palade, V, "A new performance measure for class imbalance learning. application to bioinformatics problems," in Machine Learning and Applications, pp.545–550, 2009.</blockquote>
+<blockquote>47- D. K. Lee, "Alternatives to P value: confidence interval and effect size," <i>Korean journal of anesthesiology</i>, vol. 69, no. 6, p. 555, 2016.</blockquote>
 
-<blockquote>47- D. K. Lee, "Alternatives to P value: confidence interval and effect size," Korean journal of anesthesiology, vol. 69, no. 6, p. 555, 2016.</blockquote>
+<blockquote>48- M. A. Raslich, R. J. Markert, and S. A. Stutes, "Selecting and interpreting diagnostic tests," <i>Biochemia Medica</i>, vol. 17, no. 2, pp. 151-161, 2007.</blockquote>
 
-<blockquote>48- M. A. Raslich, R. J. Markert, and S. A. Stutes, "Selecting and interpreting diagnostic tests," Biochemia medica: Biochemia medica, vol. 17, no. 2, pp. 151-161, 2007.</blockquote>
+<blockquote>49- D. E. Hinkle, W. Wiersma, and S. G. Jurs, <i>Applied statistics for the behavioral sciences</i>. Houghton Mifflin College Division, 2003.</blockquote>
 
-<blockquote>49- D. E. Hinkle, W. Wiersma, and S. G. Jurs, "Applied statistics for the behavioral sciences," 1988.</blockquote>
-
-<blockquote>50- A. Maratea, A. Petrosino, and M. Manzo, "Adjusted F-measure and kernel scaling for imbalanced data learning," Information Sciences, vol. 257, pp. 331-341, 2014.</blockquote>
+<blockquote>50- A. Maratea, A. Petrosino, and M. Manzo, "Adjusted F-measure and kernel scaling for imbalanced data learning," <i>Information Sciences</i>, vol. 257, pp. 331-341, 2014.</blockquote>
 
 <blockquote>51- L. Mosley, "A balanced approach to the multi-class imbalance problem," 2013.</blockquote>
 
-<blockquote>52- M. Vijaymeena and K. Kavitha, "A survey on similarity measures in text mining," Machine Learning and Applications: An International Journal, vol. 3, no. 2, pp. 19-28, 2016.</blockquote>
+<blockquote>52- M. Vijaymeena and K. Kavitha, "A survey on similarity measures in text mining," <i>Machine Learning and Applications: An International Journal</i>, vol. 3, no. 2, pp. 19-28, 2016.</blockquote>
 
-<blockquote>53- Y. Otsuka, "The faunal character of the Japanese Pleistocene marine Mollusca, as evidence of climate having become colder during the Pleistocene in Japan," Biogeograph. Soc. Japan, vol. 6, pp. 165-170, 1936.</blockquote>
+<blockquote>53- Y. Otsuka, "The faunal character of the Japanese Pleistocene marine Mollusca, as evidence of climate having become colder during the Pleistocene in Japan," <i>Biogeograph Soc Japan</i>, vol. 6, no. 16, pp. 165-170, 1936.</blockquote>
 
-<blockquote>54- A. Tversky, "Features of similarity," Psychological review, vol. 84, no. 4, p. 327, 1977.</blockquote>
+<blockquote>54- A. Tversky, "Features of similarity," <i>Psychological review</i>, vol. 84, no. 4, p. 327, 1977.</blockquote>
 
-<blockquote>55- K. Boyd, K. H. Eng, and C. D. Page, "Area under the precision-recall curve: point estimates and confidence intervals," in Joint European conference on machine learning and knowledge discovery in databases, 2013, pp. 451-466: Springer.</blockquote>
+<blockquote>55- K. Boyd, K. H. Eng, and C. D. Page, "Area under the precision-recall curve: point estimates and confidence intervals," in <i>Joint European conference on machine learning and knowledge discovery in databases</i>, 2013: Springer, pp. 451-466.</blockquote>
 
-<blockquote>56- J. Davis and M. Goadrich, "The relationship between Precision-Recall and ROC curves," in Proceedings of the 23rd international conference on Machine learning, 2006, pp. 233-240: ACM.</blockquote>
+<blockquote>56- J. Davis and M. Goadrich, "The relationship between Precision-Recall and ROC curves," in <i>Proceedings of the 23rd international conference on Machine learning</i>, 2006, pp. 233-240.</blockquote>
 
-<blockquote>57- M. Kuhn, "Building predictive models in R using the caret package," Journal of statistical software, vol. 28, no. 5, pp. 1-26, 2008.</blockquote>
+<blockquote>57- M. Kuhn, "Building predictive models in R using the caret package," <i>J Stat Softw</i>, vol. 28, no. 5, pp. 1-26, 2008.</blockquote>
 
-<blockquote>58- V. Labatut and H. Cherifi, "Accuracy measures for the comparison of classifiers," arXiv preprint, 2012.</blockquote>
+<blockquote>58- V. Labatut and H. Cherifi, "Accuracy measures for the comparison of classifiers," <i>arXiv preprint arXiv:1207.3790</i>, 2012.</blockquote>
 
-<blockquote>59- S. Wallis, "Binomial confidence intervals and contingency tests: mathematical fundamentals and the evaluation of alternative methods," Journal of Quantitative Linguistics, vol. 20, no. 3, pp. 178-208, 2013.</blockquote>
+<blockquote>59- S. Wallis, "Binomial confidence intervals and contingency tests: mathematical fundamentals and the evaluation of alternative methods," <i>Journal of Quantitative Linguistics</i>, vol. 20, no. 3, pp. 178-208, 2013.</blockquote>
 
-<blockquote>60- D. Altman, D. Machin, T. Bryant, and M. Gardner, Statistics with confidence: confidence intervals and statistical guidelines. John Wiley & Sons, 2013.</blockquote>
+<blockquote>60- D. Altman, D. Machin, T. Bryant, and M. Gardner, <i>Statistics with confidence: confidence intervals and statistical guidelines</i>. John Wiley & Sons, 2013.</blockquote>
 
-<blockquote>61- J. A. Hanley and B. J. McNeil, "The meaning and use of the area under a receiver operating characteristic (ROC) curve," Radiology, vol. 143, no. 1, pp. 29-36, 1982.</blockquote>
+<blockquote>61- J. A. Hanley and B. J. McNeil, "The meaning and use of the area under a receiver operating characteristic (ROC) curve," <i>Radiology</i>, vol. 143, no. 1, pp. 29-36, 1982.</blockquote>
 
-<blockquote>62- E. B. Wilson, "Probable inference, the law of succession, and statistical inference," Journal of the American Statistical Association, vol. 22, no. 158, pp. 209-212, 1927.</blockquote>
+<blockquote>62- E. B. Wilson, "Probable inference, the law of succession, and statistical inference," <i>Journal of the American Statistical Association</i>, vol. 22, no. 158, pp. 209-212, 1927.</blockquote>
 
-<blockquote>63- A. Agresti and B. A. Coull, "Approximate is better than “exact” for interval estimation of binomial proportions," The American Statistician, vol. 52, no. 2, pp. 119-126, 1998.</blockquote>
+<blockquote>63- A. Agresti and B. A. Coull, "Approximate is better than “exact” for interval estimation of binomial proportions," <i>The American Statistician</i>, vol. 52, no. 2, pp. 119-126, 1998.</blockquote>
 
-<blockquote>64- C. S. Peirce, "The numerical measure of the success of predictions," Science, no. 93, pp. 453-454, 1884.</blockquote>
+<blockquote>64- C. S. Peirce, "The numerical measure of the success of predictions," <i>Science</i>, no. 93, pp. 453-454, 1884.</blockquote>
 
-<blockquote>65- E. W. Steyerberg, B. Van Calster, and M. J. Pencina, "Performance measures for prediction models and markers: evaluation of predictions and classifications," Revista Española de Cardiología, vol. 64, no. 9, pp. 788-794, 2011.</blockquote>
+<blockquote>65- E. W. Steyerberg, B. Van Calster, and M. J. Pencina, "Performance measures for prediction models and markers: evaluation of predictions and classifications," <i>Revista Española de Cardiología (English Edition)</i>, vol. 64, no. 9, pp. 788-794, 2011.</blockquote>
 
-<blockquote>66- A. J. Vickers and E. B. Elkin, "Decision curve analysis: a novel method for evaluating prediction models," Medical Decision Making, vol. 26, no. 6, pp. 565-574, 2006.</blockquote>
+<blockquote>66- A. J. Vickers and E. B. Elkin, "Decision curve analysis: a novel method for evaluating prediction models," <i>Medical Decision Making</i>, vol. 26, no. 6, pp. 565-574, 2006.</blockquote>
 
-<blockquote>67- D. Knoke, G. W. Bohrnstedt, and A. P. Mee, Statistics for social data analysis. FE Peacock Publishers Itasca, IL, 2002</blockquote>
+<blockquote>67- G. W. Bohrnstedt and D. Knoke,"Statistics for social data analysis," 1982.</blockquote>
 
-<blockquote>68- W. M. Rand, "Objective criteria for the evaluation of clustering methods," Journal of the American Statistical association, vol. 66, no. 336, pp. 846-850, 1971.</blockquote>
+<blockquote>68- W. M. Rand, "Objective criteria for the evaluation of clustering methods," <i>Journal of the American Statistical association</i>, vol. 66, no. 336, pp. 846-850, 1971.</blockquote>
 
-<blockquote>69- J. M. Santos and M. Embrechts, "On the use of the adjusted rand index as a metric for evaluating supervised classification," in International conference on artificial neural networks, 2009: Springer, pp. 175-184.</blockquote>
+<blockquote>69- J. M. Santos and M. Embrechts, "On the use of the adjusted rand index as a metric for evaluating supervised classification," in <i>International conference on artificial neural networks</i>, 2009: Springer, pp. 175-184.</blockquote>
 
-<blockquote>70- J. Cohen, "Weighted kappa: nominal scale agreement provision for scaled disagreement or partial credit," Psychological bulletin, vol. 70, no. 4, p. 213, 1968.</blockquote>
+<blockquote>70- J. Cohen, "Weighted kappa: nominal scale agreement provision for scaled disagreement or partial credit," <i>Psychological bulletin</i>, vol. 70, no. 4, p. 213, 1968.</blockquote>
 
-<blockquote>71- R. Bakeman and J. M. Gottman, Observing interaction: An introduction to sequential analysis. Cambridge university press, 1997.</blockquote>
+<blockquote>71- R. Bakeman and J. M. Gottman, <i>Observing interaction: An introduction to sequential analysis</i>. Cambridge university press, 1997.</blockquote>
 
-<blockquote>72- S. Bangdiwala, "A graphical test for observer agreement," in 45th International Statistical Institute Meeting, 1985, vol. 1985, pp. 307-308.</blockquote>
+<blockquote>72- S. Bangdiwala, "A graphical test for observer agreement," in <i>45th International Statistical Institute Meeting</i>, 1985, vol. 1985, p. 307.</blockquote>
 
-<blockquote>73- K. Bangdiwala and H. Bryan, "Using SAS software graphical procedures for the observer agreement chart," in Proceedings of the SAS Users Group International Conference, 1987, vol. 12, pp. 1083-1088.</blockquote>
+<blockquote>73- K. Bangdiwala and H. Bryan, "Using SAS software graphical procedures for the observer agreement chart," in <i>Proceedings of the SAS Users Group International Conference</i>, 1987, vol. 12, pp. 1083-1088.</blockquote>
 
-<blockquote>74- A. F. Hayes and K. Krippendorff, "Answering the call for a standard reliability measure for coding data," Communication methods and measures, vol. 1, no. 1, pp. 77-89, 2007.</blockquote>
+<blockquote>74- A. F. Hayes and K. Krippendorff, "Answering the call for a standard reliability measure for coding data," <i>Communication methods and measures</i>, vol. 1, no. 1, pp. 77-89, 2007.</blockquote>
 
-<blockquote>75- M. Aickin, "Maximum likelihood estimation of agreement in the constant predictive probability model, and its relation to Cohen's kappa," Biometrics, pp. 293-302, 1990.</blockquote>
+<blockquote>75- M. Aickin, "Maximum likelihood estimation of agreement in the constant predictive probability model, and its relation to Cohen's kappa," <i>Biometrics</i>, pp. 293-302, 1990.</blockquote>
+
+<blockquote>76- N. A. Macmillan and C. D. Creelman, <i>Detectiontheory: A user's guide</i>. Psychology press, 2004.</blockquote>
 
 
 ## Cite

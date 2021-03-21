@@ -327,7 +327,7 @@ class ConfusionMatrix():
             if normalize:
                 table = self.normalized_table
             html_file = open(name + ".html", "w", encoding="utf-8")
-            html_file.write(html_init(name))
+            html_file.write(html_init())
             html_file.write(html_dataset_type(self.binary, self.imbalance))
             html_file.write(html_table(self.classes, table, color, normalize))
             html_file.write(

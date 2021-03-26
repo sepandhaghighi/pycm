@@ -7,15 +7,13 @@ from .pycm_util import rounder
 import webbrowser
 
 
-def html_init(name):
+def html_init():
     """
     Return HTML report file first lines.
 
-    :param name: name of file
-    :type name : str
     :return: html_init as str
     """
-    return HTML_INIT_TEMPLATE.format(str(name), OG_DESCRIPTION, OG_IMAGE_URL)
+    return HTML_INIT_TEMPLATE.format(OG_DESCRIPTION, OG_IMAGE_URL)
 
 
 def html_dataset_type(is_binary, is_imbalanced):

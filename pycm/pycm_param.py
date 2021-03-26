@@ -25,17 +25,17 @@ OG_DESCRIPTION = "PyCM is a multi-class confusion matrix library written in Pyth
 HTML_INIT_TEMPLATE = '''<!doctype html>
 <html lang="en">
 <head>
-<title>{0}</title>
+<title>PyCM Report</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<meta name="description" content="{1}">
-<meta name="og:title" content="PyCM Report (File Name : {0})">
-<meta name="og:description" content="{1}">
+<meta name="description" content="{0}">
+<meta name="og:title" content="PyCM Report">
+<meta name="og:description" content="{0}">
 <meta name="og:url" content="http://www.pycm.ir">
-<meta property="og:image" content="{2}">
-<meta name="twitter:image:src" content="{2}">
+<meta property="og:image" content="{1}">
+<meta name="twitter:image:src" content="{1}">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PyCM Report (File Name : {0})">
-<meta name="twitter:description" content="{1}">
+<meta name="twitter:title" content="PyCM Report">
+<meta name="twitter:description" content="{0}">
 </head>
 <body>
 <h1 style="border-bottom:1px solid black;text-align:center;">PyCM Report</h1>

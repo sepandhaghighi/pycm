@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `use_long_names` parameter added to `html_table` function
+- `use_long_names` parameter added to `save_html` function
 ### Changed
 - `name` parameter removed from `html_init` function
 - HTML report modified

@@ -101,7 +101,7 @@ def html_table(
     :param normalize : save normalize matrix flag
     :type normalize : bool
     :param shortener: flag which shows if long names are used
-    :type use_long_name: bool
+    :type shortener: bool
     :return: html_table as str
     """
     result = ""

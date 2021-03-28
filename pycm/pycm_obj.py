@@ -316,7 +316,7 @@ class ConfusionMatrix():
         :param alt_link: alternative link for document flag
         :type alt_link: bool
         :param shortener: flag which shows if long names are used
-        :type use_long_name: bool
+        :type shortener: bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
         try:

@@ -293,7 +293,7 @@ class ConfusionMatrix():
             normalize=False,
             summary=False,
             alt_link=False,
-            use_long_names=False):
+            shortener=True):
         """
         Save ConfusionMatrix in HTML file.
 
@@ -315,7 +315,7 @@ class ConfusionMatrix():
         :type summary : bool
         :param alt_link: alternative link for document flag
         :type alt_link: bool
-        :param use_long_names: flag which shows if long names are used
+        :param shortener: flag which shows if long names are used
         :type use_long_name: bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
@@ -338,7 +338,7 @@ class ConfusionMatrix():
                     table,
                     color,
                     normalize,
-                    use_long_names))
+                    shortener))
             html_file.write(
                 html_overall_stat(
                     self.overall_stat,

@@ -66,7 +66,7 @@ True
 >>> save_stat=long_name_cm.save_html("test_long_name",address=False,color="Pink")
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=long_name_cm.save_html("test_use_long_name",address=False,color="Pink",use_long_names=True)
+>>> save_stat=long_name_cm.save_html("test_use_long_name",address=False,color="Pink",shortener=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_html("/asdasd,qweqwe.eo/",address=True)

@@ -88,7 +88,7 @@ def html_table(
         table,
         rgb_color,
         normalize=False,
-        use_long_names=False):
+        shortener=True):
     """
     Return HTML report file confusion matrix.
 
@@ -100,7 +100,7 @@ def html_table(
     :type rgb_color : tuple
     :param normalize : save normalize matrix flag
     :type normalize : bool
-    :param use_long_names: flag which shows if long names are used
+    :param shortener: flag which shows if long names are used
     :type use_long_name: bool
     :return: html_table as str
     """
@@ -121,7 +121,7 @@ def html_table(
     part_2 = ""
     for i in classes:
         class_name = str(i)
-        if len(class_name) > 6 and not use_long_names:
+        if len(class_name) > 6 and shortener:
             class_name = class_name[:4] + "..."
         result += '<td style="border:1px solid ' \
                   'black;padding:10px;height:7em;width:7em;">' + \

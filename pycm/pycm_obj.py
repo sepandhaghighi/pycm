@@ -315,7 +315,7 @@ class ConfusionMatrix():
         :type summary : bool
         :param alt_link: alternative link for document flag
         :type alt_link: bool
-        :param shortener: flag which shows if long names are used
+        :param shortener: class name shortener flag
         :type shortener: bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """

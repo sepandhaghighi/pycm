@@ -100,7 +100,7 @@ def html_table(
     :type rgb_color : tuple
     :param normalize : save normalize matrix flag
     :type normalize : bool
-    :param shortener: flag which shows if long names are used
+    :param shortener: class name shortener flag
     :type shortener: bool
     :return: html_table as str
     """

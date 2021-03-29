@@ -38,7 +38,8 @@ class ConfusionMatrix():
             predict_vector=None,
             matrix=None,
             digit=5, threshold=None, file=None,
-            sample_weight=None, transpose=False):
+            sample_weight=None, transpose=False,
+            classes=None):
         """
         Init method.
 
@@ -58,6 +59,8 @@ class ConfusionMatrix():
         :type sample_weight : list
         :param transpose : transpose flag
         :type transpose : bool
+        :param classes: ordered labels of classes that are going to be used
+        :type classes: list
         """
         self.actual_vector = actual_vector
         self.predict_vector = predict_vector
@@ -80,6 +83,11 @@ class ConfusionMatrix():
         __obj_assign_handler__(self, matrix_param)
         __class_stat_init__(self)
         __overall_stat_init__(self)
+        if classes is not None:
+            if set(classes) == set(self.classes):
+                self.classes = classes
+            else:
+                warn(CLASSES_WARNING.format(self.classes), RuntimeWarning)
         self.imbalance = imbalance_check(self.P)
         self.binary = binary_check(self.classes)
         self.recommended_list = statistic_recommend(self.classes, self.P)

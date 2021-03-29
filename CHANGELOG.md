@@ -6,10 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- `shortener` parameter added to `html_table` function
-- `shortener` parameter added to `save_html` function
+
 ### Changed
 - `name` parameter removed from `html_init` function
+- `shortener` parameter added to `html_table` function
+- `shortener` parameter added to `save_html` function
 - HTML report modified
 ## [3.1] - 2021-03-11
 ### Added

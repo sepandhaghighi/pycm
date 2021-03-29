@@ -85,7 +85,7 @@ CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won'
                        "otherwise by using save_csv method to save the confusion matrix in csv format you'll have better demonstration."
 
 CLASSES_WARNING = "The class labels do not match used labels in actual and predict vectors.\n" \
-                  "Class labels are going to be assigned with {}"
+                  "Class labels are going to be assigned with {}."
 
 CLASS_NUMBER_THRESHOLD = 10
 

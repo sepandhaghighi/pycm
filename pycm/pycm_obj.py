@@ -871,7 +871,7 @@ class ConfusionMatrix():
         :type class_name : any valid type
         :return: confusion matrix as a numpy.ndarray
         """
-        classes = sorted(self.classes)
+        classes = self.classes
         table = self.table
         if normalized:
             table = self.normalized_table

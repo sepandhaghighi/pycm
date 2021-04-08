@@ -83,7 +83,12 @@ def html_table_color(row, item, color=(0, 0, 0)):
     return result
 
 
-def html_table(classes, table, rgb_color, normalize=False):
+def html_table(
+        classes,
+        table,
+        rgb_color,
+        normalize=False,
+        shortener=True):
     """
     Return HTML report file confusion matrix.
 
@@ -95,6 +100,8 @@ def html_table(classes, table, rgb_color, normalize=False):
     :type rgb_color : tuple
     :param normalize : save normalize matrix flag
     :type normalize : bool
+    :param shortener: class name shortener flag
+    :type shortener: bool
     :return: html_table as str
     """
     result = ""
@@ -114,7 +121,7 @@ def html_table(classes, table, rgb_color, normalize=False):
     part_2 = ""
     for i in classes:
         class_name = str(i)
-        if len(class_name) > 6:
+        if len(class_name) > 6 and shortener:
             class_name = class_name[:4] + "..."
         result += '<td style="border:1px solid ' \
                   'black;padding:10px;height:7em;width:7em;">' + \

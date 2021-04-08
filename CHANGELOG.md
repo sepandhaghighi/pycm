@@ -5,8 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+
 ### Changed
 - `name` parameter removed from `html_init` function
+- `shortener` parameter added to `html_table` function
+- `shortener` parameter added to `save_html` method
 - HTML report modified
 ## [3.1] - 2021-03-11
 ### Added

@@ -292,7 +292,8 @@ class ConfusionMatrix():
                 0),
             normalize=False,
             summary=False,
-            alt_link=False):
+            alt_link=False,
+            shortener=True):
         """
         Save ConfusionMatrix in HTML file.
 
@@ -314,6 +315,8 @@ class ConfusionMatrix():
         :type summary : bool
         :param alt_link: alternative link for document flag
         :type alt_link: bool
+        :param shortener: class name shortener flag
+        :type shortener: bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
         try:
@@ -329,7 +332,13 @@ class ConfusionMatrix():
             html_file = open(name + ".html", "w", encoding="utf-8")
             html_file.write(html_init())
             html_file.write(html_dataset_type(self.binary, self.imbalance))
-            html_file.write(html_table(self.classes, table, color, normalize))
+            html_file.write(
+                html_table(
+                    self.classes,
+                    table,
+                    color,
+                    normalize,
+                    shortener))
             html_file.write(
                 html_overall_stat(
                     self.overall_stat,

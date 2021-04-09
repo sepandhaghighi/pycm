@@ -347,7 +347,7 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight, classes):
             weight_vector = sample_weight
     for index, item in enumerate(actual_vector):
         table[item][predict_vector[index]] += 1 * weight_vector[index]
-    [classes_list, table, TP_dict, TN_dict, FP_dict,
+    [_, _, TP_dict, TN_dict, FP_dict,
         FN_dict] = matrix_params_from_table(table)
     return [classes_list, table, TP_dict, TN_dict, FP_dict, FN_dict]
 

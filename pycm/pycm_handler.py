@@ -9,6 +9,7 @@ from .pycm_param import *
 import json
 import types
 import numpy
+from warnings import warn
 
 
 def __class_stat_init__(cm):
@@ -266,7 +267,8 @@ def __obj_vector_handler__(
         actual_vector,
         predict_vector,
         threshold,
-        sample_weight):
+        sample_weight,
+        classes):
     """
     Handle object conditions for vectors.
 
@@ -280,6 +282,8 @@ def __obj_vector_handler__(
     :type threshold : FunctionType (function or lambda)
     :param sample_weight : sample weights list
     :type sample_weight : list
+    :param classes: ordered labels of classes
+    :type classes: list
     :return: matrix parameters as list
     """
     if isinstance(threshold, types.FunctionType):
@@ -296,5 +300,9 @@ def __obj_vector_handler__(
         actual_vector, predict_vector, sample_weight)
     if isinstance(sample_weight, (list, numpy.ndarray)):
         cm.weights = sample_weight
+    if isinstance(classes, list):
+        if not set(classes).issubset(set(matrix_param[0])):
+            warn(CLASSES_WARNING, RuntimeWarning)
+        matrix_param[0] = classes
 
     return matrix_param

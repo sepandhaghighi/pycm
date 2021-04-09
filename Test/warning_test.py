@@ -380,19 +380,19 @@ array([[5, 1, 3, 0],
 Predict 1       2       0       3       
 Actual
 1       5       1       3       0       
-
+<BLANKLINE>
 2       1       4       1       0       
-
+<BLANKLINE>
 0       3       0       9       0       
-
+<BLANKLINE>
 3       0       0       0       0       
-
-
-
-
-
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
 Overall Statistics : 
-
+<BLANKLINE>
 95% CI                                                            (0.48885,0.84448)
 ACC Macro                                                         0.83333
 ARI                                                               0.21053
@@ -456,9 +456,9 @@ TNR Micro                                                         0.88889
 TPR Macro                                                         None
 TPR Micro                                                         0.66667
 Zero-one Loss                                                     9
-
+<BLANKLINE>
 Class Statistics :
-
+<BLANKLINE>
 Classes                                                           1             2             0             3             
 ACC(Accuracy)                                                     0.7037        0.88889       0.74074       1.0           
 AGF(Adjusted F-score)                                             0.65734       0.79543       0.75595       None          
@@ -521,5 +521,5 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)         0.55556       
 Y(Youden index)                                                   0.33333       0.61905       0.48333       None          
 dInd(Distance index)                                              0.4969        0.33672       0.36553       None          
 sInd(Similarity index)                                            0.64864       0.7619        0.74153       None          
-
+<BLANKLINE>
 """

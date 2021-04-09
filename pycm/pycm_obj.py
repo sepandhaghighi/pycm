@@ -936,6 +936,7 @@ class ConfusionMatrix():
             normalized=normalized,
             one_vs_all=one_vs_all,
             class_name=class_name)
+        classes = self.classes
         if normalized:
             title += " (Normalized)"
         if one_vs_all and class_name in classes:

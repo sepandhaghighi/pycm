@@ -938,7 +938,6 @@ class ConfusionMatrix():
             class_name=class_name)
         if normalized:
             title += " (Normalized)"
-        classes = sorted(self.classes)
         if one_vs_all and class_name in classes:
             classes = [class_name, '~']
         try:

@@ -9,7 +9,6 @@ from .pycm_param import *
 import json
 import types
 import numpy
-from warnings import warn
 
 
 def __class_stat_init__(cm):
@@ -297,12 +296,8 @@ def __obj_vector_handler__(
     if len(actual_vector) == 0 or len(predict_vector) == 0:
         raise pycmVectorError(VECTOR_EMPTY_ERROR)
     matrix_param = matrix_params_calc(
-        actual_vector, predict_vector, sample_weight)
+        actual_vector, predict_vector, sample_weight, classes)
     if isinstance(sample_weight, (list, numpy.ndarray)):
         cm.weights = sample_weight
-    if isinstance(classes, list):
-        if not set(classes).issubset(set(matrix_param[0])):
-            warn(CLASSES_WARNING, RuntimeWarning)
-        matrix_param[0] = classes
 
     return matrix_param

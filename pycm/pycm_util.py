@@ -5,6 +5,7 @@ import sys
 import math
 import numpy
 from .pycm_param import *
+from warnings import warn
 
 
 def list_check_equal(input_list):
@@ -312,7 +313,7 @@ def matrix_params_from_table(table, transpose=False):
     return [classes, table_temp, TP_dict, TN_dict, FP_dict, FN_dict]
 
 
-def matrix_params_calc(actual_vector, predict_vector, sample_weight):
+def matrix_params_calc(actual_vector, predict_vector, sample_weight, classes):
     """
     Calculate TP,TN,FP,FN for each class.
 
@@ -322,27 +323,33 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     :type predict_vector : list
     :param sample_weight : sample weights list
     :type sample_weight : list
+    :param classes: ordered labels of classes
+    :type classes: list
     :return: [classes_list,table,TP,TN,FP,FN]
     """
     [actual_vector, predict_vector] = vector_filter(
         actual_vector, predict_vector)
     if isinstance(sample_weight, numpy.ndarray):
         sample_weight = sample_weight.tolist()
-    classes = set(actual_vector).union(set(predict_vector))
-    if len(classes) == 1:
-        classes.add("~other~")
-    classes = sorted(classes)
-    map_dict = {k: 0 for k in classes}
-    table = {k: map_dict.copy() for k in classes}
+    classes_list = set(actual_vector).union(set(predict_vector))
+    if len(classes_list) == 1:
+        classes_list.add("~other~")
+    classes_list = sorted(classes_list)
+    if isinstance(classes, list):
+        if not set(classes).issubset(classes_list):
+            warn(CLASSES_WARNING, RuntimeWarning)
+        classes_list = classes
+    map_dict = {k: 0 for k in classes_list}
+    table = {k: map_dict.copy() for k in classes_list}
     weight_vector = [1] * len(actual_vector)
     if isinstance(sample_weight, (list, numpy.ndarray)):
         if len(sample_weight) == len(actual_vector):
             weight_vector = sample_weight
     for index, item in enumerate(actual_vector):
         table[item][predict_vector[index]] += 1 * weight_vector[index]
-    [classes, table, TP_dict, TN_dict, FP_dict,
+    [classes_list, table, TP_dict, TN_dict, FP_dict,
         FN_dict] = matrix_params_from_table(table)
-    return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
+    return [classes_list, table, TP_dict, TN_dict, FP_dict, FN_dict]
 
 
 def imbalance_check(P):

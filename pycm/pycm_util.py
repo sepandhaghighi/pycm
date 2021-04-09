@@ -313,7 +313,11 @@ def matrix_params_from_table(table, transpose=False):
     return [classes, table_temp, TP_dict, TN_dict, FP_dict, FN_dict]
 
 
-def matrix_params_calc(actual_vector, predict_vector, sample_weight, classes):
+def matrix_params_calc(
+        actual_vector,
+        predict_vector,
+        sample_weight,
+        classes=None):
     """
     Calculate TP,TN,FP,FN for each class.
 

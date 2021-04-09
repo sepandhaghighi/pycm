@@ -59,7 +59,7 @@ class ConfusionMatrix():
         :type sample_weight : list
         :param transpose : transpose flag
         :type transpose : bool
-        :param classes: ordered labels of classes that are going to be used
+        :param classes: ordered labels of classes
         :type classes: list
         """
         self.actual_vector = actual_vector
@@ -77,17 +77,12 @@ class ConfusionMatrix():
             matrix_param = __obj_matrix_handler__(matrix, transpose)
         else:
             matrix_param = __obj_vector_handler__(
-                self, actual_vector, predict_vector, threshold, sample_weight)
+                self, actual_vector, predict_vector, threshold, sample_weight, classes)
         if len(matrix_param[0]) < 2:
             raise pycmMatrixError(CLASS_NUMBER_ERROR)
         __obj_assign_handler__(self, matrix_param)
         __class_stat_init__(self)
         __overall_stat_init__(self)
-        if classes is not None:
-            if set(classes) == set(self.classes):
-                self.classes = classes
-            else:
-                warn(CLASSES_WARNING.format(self.classes), RuntimeWarning)
         self.imbalance = imbalance_check(self.P)
         self.binary = binary_check(self.classes)
         self.recommended_list = statistic_recommend(self.classes, self.P)

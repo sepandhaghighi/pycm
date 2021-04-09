@@ -377,21 +377,21 @@ array([[5, 1, 3, 0],
        [3, 0, 9, 0],
        [0, 0, 0, 0]])
 >>> print(cm4)
-Predict 1       2       0       3       
+Predict 1       2       0       3
 Actual
-1       5       1       3       0       
+1       5       1       3       0
 <BLANKLINE>
-2       1       4       1       0       
+2       1       4       1       0
 <BLANKLINE>
-0       3       0       9       0       
+0       3       0       9       0
 <BLANKLINE>
-3       0       0       0       0       
-<BLANKLINE>
-<BLANKLINE>
+3       0       0       0       0
 <BLANKLINE>
 <BLANKLINE>
 <BLANKLINE>
-Overall Statistics : 
+<BLANKLINE>
+<BLANKLINE>
+Overall Statistics :
 <BLANKLINE>
 95% CI                                                            (0.48885,0.84448)
 ACC Macro                                                         0.83333
@@ -459,67 +459,67 @@ Zero-one Loss                                                     9
 <BLANKLINE>
 Class Statistics :
 <BLANKLINE>
-Classes                                                           1             2             0             3             
-ACC(Accuracy)                                                     0.7037        0.88889       0.74074       1.0           
-AGF(Adjusted F-score)                                             0.65734       0.79543       0.75595       None          
-AGM(Adjusted geometric mean)                                      0.70552       0.86488       0.73866       None          
-AM(Difference between automatic and manual classification)        0             -1            1             0             
-AUC(Area under the ROC curve)                                     0.66667       0.80952       0.74167       None          
-AUCI(AUC value interpretation)                                    Fair          Very Good     Good          None          
-AUPR(Area under the PR curve)                                     0.55556       0.73333       0.72115       None          
-BCD(Bray-Curtis dissimilarity)                                    0.0           0.01852       0.01852       0.0           
-BM(Informedness or bookmaker informedness)                        0.33333       0.61905       0.48333       None          
-CEN(Confusion entropy)                                            0.51257       0.36499       0.35586       None          
-DOR(Diagnostic odds ratio)                                        4.375         40.0          8.25          None          
-DP(Discriminant power)                                            0.35339       0.88326       0.50527       None          
-DPI(Discriminant power interpretation)                            Poor          Poor          Poor          None          
-ERR(Error rate)                                                   0.2963        0.11111       0.25926       0.0           
-F0.5(F0.5 score)                                                  0.55556       0.76923       0.70312       None          
-F1(F1 score - harmonic mean of precision and sensitivity)         0.55556       0.72727       0.72          None          
-F2(F2 score)                                                      0.55556       0.68966       0.7377        None          
-FDR(False discovery rate)                                         0.44444       0.2           0.30769       None          
-FN(False negative/miss/type 2 error)                              4             2             3             0             
-FNR(Miss rate or false negative rate)                             0.44444       0.33333       0.25          None          
-FOR(False omission rate)                                          0.22222       0.09091       0.21429       0.0           
-FP(False positive/type 1 error/false alarm)                       4             1             4             0             
-FPR(Fall-out or false positive rate)                              0.22222       0.04762       0.26667       0.0           
-G(G-measure geometric mean of precision and sensitivity)          0.55556       0.7303        0.72058       None          
-GI(Gini index)                                                    0.33333       0.61905       0.48333       None          
-GM(G-mean geometric mean of specificity and sensitivity)          0.65734       0.79682       0.74162       None          
-IBA(Index of balanced accuracy)                                   0.33608       0.45351       0.55917       None          
-ICSI(Individual classification success index)                     0.11111       0.46667       0.44231       None          
-IS(Information score)                                             0.73697       1.848         0.63941       None          
-J(Jaccard index)                                                  0.38462       0.57143       0.5625        None          
-LS(Lift score)                                                    1.66667       3.6           1.55769       None          
-MCC(Matthews correlation coefficient)                             0.33333       0.66254       0.48067       None          
-MCCI(Matthews correlation coefficient interpretation)             Weak          Moderate      Weak          None          
-MCEN(Modified confusion entropy)                                  0.59795       0.46544       0.44706       None          
-MK(Markedness)                                                    0.33333       0.70909       0.47802       None          
-N(Condition negative)                                             18            21            15            27            
-NLR(Negative likelihood ratio)                                    0.57143       0.35          0.34091       None          
-NLRI(Negative likelihood ratio interpretation)                    Negligible    Poor          Poor          None          
-NPV(Negative predictive value)                                    0.77778       0.90909       0.78571       1.0           
-OC(Overlap coefficient)                                           0.55556       0.8           0.75          None          
-OOC(Otsuka-Ochiai coefficient)                                    0.55556       0.7303        0.72058       None          
-OP(Optimized precision)                                           0.53704       0.71242       0.7295        None          
-P(Condition positive or support)                                  9             6             12            0             
-PLR(Positive likelihood ratio)                                    2.5           14.0          2.8125        None          
-PLRI(Positive likelihood ratio interpretation)                    Poor          Good          Poor          None          
-POP(Population)                                                   27            27            27            27            
-PPV(Precision or positive predictive value)                       0.55556       0.8           0.69231       None          
-PRE(Prevalence)                                                   0.33333       0.22222       0.44444       0.0           
-Q(Yule Q - coefficient of colligation)                            0.62791       0.95122       0.78378       None          
-QI(Yule Q interpretation)                                         Moderate      Strong        Strong        None          
-RACC(Random accuracy)                                             0.11111       0.04115       0.21399       0.0           
-RACCU(Random accuracy unbiased)                                   0.11111       0.0415        0.21433       0.0           
-TN(True negative/correct rejection)                               14            20            11            27            
-TNR(Specificity or true negative rate)                            0.77778       0.95238       0.73333       1.0           
-TON(Test outcome negative)                                        18            22            14            27            
-TOP(Test outcome positive)                                        9             5             13            0             
-TP(True positive/hit)                                             5             4             9             0             
-TPR(Sensitivity, recall, hit rate, or true positive rate)         0.55556       0.66667       0.75          None          
-Y(Youden index)                                                   0.33333       0.61905       0.48333       None          
-dInd(Distance index)                                              0.4969        0.33672       0.36553       None          
-sInd(Similarity index)                                            0.64864       0.7619        0.74153       None          
+Classes                                                           1             2             0             3
+ACC(Accuracy)                                                     0.7037        0.88889       0.74074       1.0
+AGF(Adjusted F-score)                                             0.65734       0.79543       0.75595       None
+AGM(Adjusted geometric mean)                                      0.70552       0.86488       0.73866       None
+AM(Difference between automatic and manual classification)        0             -1            1             0
+AUC(Area under the ROC curve)                                     0.66667       0.80952       0.74167       None
+AUCI(AUC value interpretation)                                    Fair          Very Good     Good          None
+AUPR(Area under the PR curve)                                     0.55556       0.73333       0.72115       None
+BCD(Bray-Curtis dissimilarity)                                    0.0           0.01852       0.01852       0.0
+BM(Informedness or bookmaker informedness)                        0.33333       0.61905       0.48333       None
+CEN(Confusion entropy)                                            0.51257       0.36499       0.35586       None
+DOR(Diagnostic odds ratio)                                        4.375         40.0          8.25          None
+DP(Discriminant power)                                            0.35339       0.88326       0.50527       None
+DPI(Discriminant power interpretation)                            Poor          Poor          Poor          None
+ERR(Error rate)                                                   0.2963        0.11111       0.25926       0.0
+F0.5(F0.5 score)                                                  0.55556       0.76923       0.70312       None
+F1(F1 score - harmonic mean of precision and sensitivity)         0.55556       0.72727       0.72          None
+F2(F2 score)                                                      0.55556       0.68966       0.7377        None
+FDR(False discovery rate)                                         0.44444       0.2           0.30769       None
+FN(False negative/miss/type 2 error)                              4             2             3             0
+FNR(Miss rate or false negative rate)                             0.44444       0.33333       0.25          None
+FOR(False omission rate)                                          0.22222       0.09091       0.21429       0.0
+FP(False positive/type 1 error/false alarm)                       4             1             4             0
+FPR(Fall-out or false positive rate)                              0.22222       0.04762       0.26667       0.0
+G(G-measure geometric mean of precision and sensitivity)          0.55556       0.7303        0.72058       None
+GI(Gini index)                                                    0.33333       0.61905       0.48333       None
+GM(G-mean geometric mean of specificity and sensitivity)          0.65734       0.79682       0.74162       None
+IBA(Index of balanced accuracy)                                   0.33608       0.45351       0.55917       None
+ICSI(Individual classification success index)                     0.11111       0.46667       0.44231       None
+IS(Information score)                                             0.73697       1.848         0.63941       None
+J(Jaccard index)                                                  0.38462       0.57143       0.5625        None
+LS(Lift score)                                                    1.66667       3.6           1.55769       None
+MCC(Matthews correlation coefficient)                             0.33333       0.66254       0.48067       None
+MCCI(Matthews correlation coefficient interpretation)             Weak          Moderate      Weak          None
+MCEN(Modified confusion entropy)                                  0.59795       0.46544       0.44706       None
+MK(Markedness)                                                    0.33333       0.70909       0.47802       None
+N(Condition negative)                                             18            21            15            27
+NLR(Negative likelihood ratio)                                    0.57143       0.35          0.34091       None
+NLRI(Negative likelihood ratio interpretation)                    Negligible    Poor          Poor          None
+NPV(Negative predictive value)                                    0.77778       0.90909       0.78571       1.0
+OC(Overlap coefficient)                                           0.55556       0.8           0.75          None
+OOC(Otsuka-Ochiai coefficient)                                    0.55556       0.7303        0.72058       None
+OP(Optimized precision)                                           0.53704       0.71242       0.7295        None
+P(Condition positive or support)                                  9             6             12            0
+PLR(Positive likelihood ratio)                                    2.5           14.0          2.8125        None
+PLRI(Positive likelihood ratio interpretation)                    Poor          Good          Poor          None
+POP(Population)                                                   27            27            27            27
+PPV(Precision or positive predictive value)                       0.55556       0.8           0.69231       None
+PRE(Prevalence)                                                   0.33333       0.22222       0.44444       0.0
+Q(Yule Q - coefficient of colligation)                            0.62791       0.95122       0.78378       None
+QI(Yule Q interpretation)                                         Moderate      Strong        Strong        None
+RACC(Random accuracy)                                             0.11111       0.04115       0.21399       0.0
+RACCU(Random accuracy unbiased)                                   0.11111       0.0415        0.21433       0.0
+TN(True negative/correct rejection)                               14            20            11            27
+TNR(Specificity or true negative rate)                            0.77778       0.95238       0.73333       1.0
+TON(Test outcome negative)                                        18            22            14            27
+TOP(Test outcome positive)                                        9             5             13            0
+TP(True positive/hit)                                             5             4             9             0
+TPR(Sensitivity, recall, hit rate, or true positive rate)         0.55556       0.66667       0.75          None
+Y(Youden index)                                                   0.33333       0.61905       0.48333       None
+dInd(Distance index)                                              0.4969        0.33672       0.36553       None
+sInd(Similarity index)                                            0.64864       0.7619        0.74153       None
 <BLANKLINE>
 """

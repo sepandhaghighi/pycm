@@ -295,7 +295,7 @@ def __obj_vector_handler__(
         raise pycmVectorError(VECTOR_SIZE_ERROR)
     if len(actual_vector) == 0 or len(predict_vector) == 0:
         raise pycmVectorError(VECTOR_EMPTY_ERROR)
-    if classes is not None and list(set(classes)) != classes:
+    if classes is not None and len(set(classes)) != len(classes):
         raise pycmVectorError(VECTOR_UNIQUE_CLASS_ERROR)
     matrix_param = matrix_params_calc(
         actual_vector, predict_vector, sample_weight, classes)

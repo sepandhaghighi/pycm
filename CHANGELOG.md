@@ -5,12 +5,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-### Added
-- `classes` added to `matrix_params_calc` method
-- `classes` added to `__obj_vector_handler__` method
-- `classes` added to ConfusionMatrix `__init__` method
-- `CLASSES_WARNING` added to pycm_param
 ### Changed
+- `classes` parameter added to `matrix_params_calc` method
+- `classes` parameter added to `__obj_vector_handler__` method
+- `classes` parameter added to ConfusionMatrix `__init__` method
 - `name` parameter removed from `html_init` function
 - `shortener` parameter added to `html_table` function
 - `shortener` parameter added to `save_html` method

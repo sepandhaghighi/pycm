@@ -25,6 +25,10 @@ pycm.pycm_obj.pycmVectorError: Input vectors must have same length
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmVectorError: Input vectors are empty
+>>> cm = ConfusionMatrix([1,2,3,4], [1,2,3,4], classes=[1,2,2,2])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: The classes list isn't unique. It contains duplicated labels.
 >>> cm3=ConfusionMatrix(matrix={})
 Traceback (most recent call last):
         ...

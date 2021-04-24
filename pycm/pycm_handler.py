@@ -295,6 +295,8 @@ def __obj_vector_handler__(
         raise pycmVectorError(VECTOR_SIZE_ERROR)
     if len(actual_vector) == 0 or len(predict_vector) == 0:
         raise pycmVectorError(VECTOR_EMPTY_ERROR)
+    if list(set(classes)) != classes:
+        raise pycmVectorError(VECTOR_UNIQUE_CLASS_ERROR)
     matrix_param = matrix_params_calc(
         actual_vector, predict_vector, sample_weight, classes)
     if isinstance(sample_weight, (list, numpy.ndarray)):

@@ -340,6 +340,12 @@ def matrix_params_calc(
         classes_list.add("~other~")
     classes_list = sorted(classes_list)
     if isinstance(classes, list):
+        classes_, _ = vector_filter(classes, [])
+        if classes != classes_:
+            actual_vector_ = [str(x) for x in actual_vector_]
+            predict_vector_ = [str(x) for x in predict_vector_]
+            classes_list = set(actual_vector_).union(set(predict_vector_))
+        classes = classes_
         if actual_vector_ != actual_vector or predict_vector_ != predict_vector:
             classes = [str(class_label) for class_label in classes]
         if not set(classes).issubset(classes_list):

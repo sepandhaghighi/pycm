@@ -522,4 +522,11 @@ Y(Youden index)                                                   0.33333       
 dInd(Distance index)                                              0.4969        0.33672       0.36553       None
 sInd(Similarity index)                                            0.64864       0.7619        0.74153       None
 <BLANKLINE>
+>>> with warns(RuntimeWarning):
+...     cm4 = ConfusionMatrix([1,1,1,1],[1,1,2,1],classes=[1,"s"])
+>>> cm4.to_array()
+array([[3, 0],
+       [0, 0]])
+>>> cm4
+pycm.ConfusionMatrix(classes: ['1', 's'])
 """

@@ -6,8 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Changed
-- `classes` parameter added to `matrix_params_calc` method
-- `classes` parameter added to `__obj_vector_handler__` method
+- `classes` parameter added to `matrix_params_calc` function
+- `classes` parameter added to `__obj_vector_handler__` function
 - `classes` parameter added to ConfusionMatrix `__init__` method
 - `name` parameter removed from `html_init` function
 - `shortener` parameter added to `html_table` function

@@ -333,28 +333,27 @@ def matrix_params_calc(
     """
     [actual_vector_, predict_vector_] = vector_filter(
         actual_vector, predict_vector)
-    if actual_vector_ != actual_vector or predict_vector_ != predict_vector:
-        classes = [str(class_label) for class_label in classes]
-    actual_vector, predict_vector = actual_vector_, predict_vector_
     if isinstance(sample_weight, numpy.ndarray):
         sample_weight = sample_weight.tolist()
-    classes_list = set(actual_vector).union(set(predict_vector))
+    classes_list = set(actual_vector_).union(set(predict_vector_))
     if len(classes_list) == 1:
         classes_list.add("~other~")
     classes_list = sorted(classes_list)
     if isinstance(classes, list):
+        if actual_vector_ != actual_vector or predict_vector_ != predict_vector:
+            classes = [str(class_label) for class_label in classes]
         if not set(classes).issubset(classes_list):
             warn(CLASSES_WARNING, RuntimeWarning)
         classes_list = classes
     map_dict = {k: 0 for k in classes_list}
     table = {k: map_dict.copy() for k in classes_list}
-    weight_vector = [1] * len(actual_vector)
+    weight_vector = [1] * len(actual_vector_)
     if isinstance(sample_weight, (list, numpy.ndarray)):
-        if len(sample_weight) == len(actual_vector):
+        if len(sample_weight) == len(actual_vector_):
             weight_vector = sample_weight
-    for index, item in enumerate(actual_vector):
-        if item in classes_list and predict_vector[index] in classes_list:
-            table[item][predict_vector[index]] += 1 * weight_vector[index]
+    for index, item in enumerate(actual_vector_):
+        if item in classes_list and predict_vector_[index] in classes_list:
+            table[item][predict_vector_[index]] += 1 * weight_vector[index]
     [_, _, TP_dict, TN_dict, FP_dict,
         FN_dict] = matrix_params_from_table(table)
     return [classes_list, table, TP_dict, TN_dict, FP_dict, FN_dict]

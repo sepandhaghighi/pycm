@@ -702,7 +702,7 @@ pycm.ConfusionMatrix(classes: [1, 2])
 array([[5, 1],
        [1, 4]])
 >>> cm4 = ConfusionMatrix(["1",1,1,1],[1,2,1,1],classes=[1,2])
->>> cm.to_array()
+>>> cm4.to_array()
 array([[3, 1],
        [0, 0]])
 """

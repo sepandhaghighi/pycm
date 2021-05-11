@@ -331,8 +331,11 @@ def matrix_params_calc(
     :type classes: list
     :return: [classes_list,table,TP,TN,FP,FN]
     """
-    [actual_vector, predict_vector] = vector_filter(
+    [actual_vector_, predict_vector_] = vector_filter(
         actual_vector, predict_vector)
+    if actual_vector_ != actual_vector or predict_vector_ != predict_vector:
+        classes = [str(class_label) for class_label in classes]
+    actual_vector, predict_vector = actual_vector_, predict_vector_
     if isinstance(sample_weight, numpy.ndarray):
         sample_weight = sample_weight.tolist()
     classes_list = set(actual_vector).union(set(predict_vector))

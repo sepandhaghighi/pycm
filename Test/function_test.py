@@ -705,4 +705,8 @@ array([[5, 1],
 >>> cm4.to_array()
 array([[3, 1],
        [0, 0]])
+>>> cm4 = ConfusionMatrix([1,1,1,1],["1",2,1,1],classes=[1,2])
+>>> cm4.to_array()
+array([[3, 1],
+       [0, 0]])
 """

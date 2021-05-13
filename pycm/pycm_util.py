@@ -335,6 +335,34 @@ def matrix_params_calc(
         actual_vector, predict_vector)
     if isinstance(sample_weight, numpy.ndarray):
         sample_weight = sample_weight.tolist()
+    [actual_vector, predict_vector, classes_list] = classes_filter(
+        actual_vector, predict_vector, classes)
+    map_dict = {k: 0 for k in classes_list}
+    table = {k: map_dict.copy() for k in classes_list}
+    weight_vector = [1] * len(actual_vector)
+    if isinstance(sample_weight, (list, numpy.ndarray)):
+        if len(sample_weight) == len(actual_vector):
+            weight_vector = sample_weight
+    for index, item in enumerate(actual_vector):
+        if item in classes_list and predict_vector[index] in classes_list:
+            table[item][predict_vector[index]] += 1 * weight_vector[index]
+    [_, _, TP_dict, TN_dict, FP_dict,
+        FN_dict] = matrix_params_from_table(table)
+    return [classes_list, table, TP_dict, TN_dict, FP_dict, FN_dict]
+
+
+def classes_filter(actual_vector, predict_vector, classes=None):
+    """
+    Return updated vectors and classes list.
+
+    :param actual_vector: actual values
+    :type actual_vector : list
+    :param predict_vector: predict value
+    :type predict_vector : list
+    :param classes: ordered labels of classes
+    :type classes: list
+    :return: [actual_vector, predict_vector, classes_list]
+    """
     classes_list = set(actual_vector).union(set(predict_vector))
     if len(classes_list) == 1:
         classes_list.add("~other~")
@@ -350,18 +378,7 @@ def matrix_params_calc(
         if not set(classes).issubset(classes_list):
             warn(CLASSES_WARNING, RuntimeWarning)
         classes_list = classes
-    map_dict = {k: 0 for k in classes_list}
-    table = {k: map_dict.copy() for k in classes_list}
-    weight_vector = [1] * len(actual_vector)
-    if isinstance(sample_weight, (list, numpy.ndarray)):
-        if len(sample_weight) == len(actual_vector):
-            weight_vector = sample_weight
-    for index, item in enumerate(actual_vector):
-        if item in classes_list and predict_vector[index] in classes_list:
-            table[item][predict_vector[index]] += 1 * weight_vector[index]
-    [_, _, TP_dict, TN_dict, FP_dict,
-        FN_dict] = matrix_params_from_table(table)
-    return [classes_list, table, TP_dict, TN_dict, FP_dict, FN_dict]
+    return [actual_vector, predict_vector, classes_list]
 
 
 def imbalance_check(P):

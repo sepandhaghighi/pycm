@@ -342,10 +342,10 @@ def matrix_params_calc(
     if isinstance(classes, list):
         classes, _ = vector_filter(classes, [])
         if isinstance(actual_vector[0], str):
-            classes = [str(x) for x in classes]
+            classes = list(map(str, classes))
         if isinstance(classes[0], str):
-            actual_vector = [str(x) for x in actual_vector]
-            predict_vector = [str(x) for x in predict_vector]
+            actual_vector = list(map(str, actual_vector))
+            predict_vector = list(map(str, predict_vector))
             classes_list = set(actual_vector).union(set(predict_vector))
         if not set(classes).issubset(classes_list):
             warn(CLASSES_WARNING, RuntimeWarning)

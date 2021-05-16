@@ -369,13 +369,14 @@ def classes_filter(actual_vector, predict_vector, classes=None):
     classes_list = sorted(classes_list)
     if isinstance(classes, list):
         classes, _ = vector_filter(classes, [])
+        classes_from_vectors = classes_list
         if isinstance(actual_vector[0], str):
             classes = list(map(str, classes))
         if isinstance(classes[0], str):
             actual_vector = list(map(str, actual_vector))
             predict_vector = list(map(str, predict_vector))
-            classes_list = set(actual_vector).union(set(predict_vector))
-        if not set(classes).issubset(classes_list):
+            classes_from_vectors = set(actual_vector).union(set(predict_vector))
+        if not set(classes).issubset(classes_from_vectors):
             warn(CLASSES_WARNING, RuntimeWarning)
         classes_list = classes
     return [actual_vector, predict_vector, classes_list]

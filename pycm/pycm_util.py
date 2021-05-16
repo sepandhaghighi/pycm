@@ -368,6 +368,8 @@ def classes_filter(actual_vector, predict_vector, classes=None):
         classes_list.add("~other~")
     classes_list = sorted(classes_list)
     if isinstance(classes, list):
+        if len(classes) == 0:
+            return [actual_vector, predict_vector, classes]
         classes, _ = vector_filter(classes, [])
         classes_from_vectors = classes_list
         if isinstance(actual_vector[0], str):

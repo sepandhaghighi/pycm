@@ -381,6 +381,8 @@ def classes_filter(actual_vector, predict_vector, classes=None):
         if not set(classes).issubset(classes_from_vectors):
             warn(CLASSES_WARNING, RuntimeWarning)
         classes_list = classes
+    elif classes is not None:
+        warn(CLASSES_TYPE_WARNING, RuntimeWarning)
     return [actual_vector, predict_vector, classes_list]
 
 

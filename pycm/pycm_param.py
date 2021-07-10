@@ -87,6 +87,8 @@ CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won'
 
 CLASSES_WARNING = "Used classes is not a subset of classes in actual and predict vectors."
 
+CLASSES_TYPE_WARNING = "The classes is neither a list nor None so it'll be ignored."
+
 CLASS_NUMBER_THRESHOLD = 10
 
 BALANCE_RATIO_THRESHOLD = 3

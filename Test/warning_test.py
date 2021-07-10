@@ -529,4 +529,11 @@ array([[3, 0],
        [0, 0]])
 >>> cm4
 pycm.ConfusionMatrix(classes: ['1', 's'])
+>>> with warns(RuntimeWarning):
+...     cm4 = ConfusionMatrix([1,1,1,1],[1,1,2,1],classes=(1,2))
+>>> cm4.to_array()
+array([[3, 1],
+       [0, 0]])
+>>> cm4
+pycm.ConfusionMatrix(classes: [1, 2])
 """

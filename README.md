@@ -316,7 +316,27 @@ Predict          0    ~
 Actual
 0                3    0    
 
-~                2    7    
+~                2    7  
+
+>>> cm = ConfusionMatrix(y_actu, y_pred, classes=[1,0,2])  # classes, new in version 3.2
+>>> cm.print_matrix()
+Predict 1       0       2       
+Actual
+1       1       0       2       
+
+0       0       3       0       
+
+2       1       2       3       
+
+>>> cm = ConfusionMatrix(y_actu, y_pred, classes=[1,0,4]) # classes, new in version 3.2
+>>> cm.print_matrix()
+Predict 1       0       4       
+Actual
+1       1       0       0       
+
+0       0       3       0       
+
+4       0       0       0       
 
 
 ```
@@ -673,6 +693,7 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 6. `file` : `File object`
 7. `sample_weight` : python `list` or numpy `array` of numbers
 8. `transpose` : `bool`
+9. `classes` : python `list`
 
 * Run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
 

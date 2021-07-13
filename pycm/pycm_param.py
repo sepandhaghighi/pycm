@@ -57,6 +57,7 @@ VECTOR_TYPE_ERROR = "The type of input vectors is assumed to be a list or a NumP
 VECTOR_SIZE_ERROR = "Input vectors must have same length"
 VECTOR_EMPTY_ERROR = "Input vectors are empty"
 VECTOR_ONLY_ERROR = "This option only works in vector mode"
+VECTOR_UNIQUE_CLASS_ERROR = "The classes list isn't unique. It contains duplicated labels."
 CLASS_NUMBER_ERROR = "Number of the classes is lower than 2"
 COMPARE_FORMAT_ERROR = "The input type is supposed to be dictionary but it's not!"
 
@@ -83,6 +84,10 @@ AVERAGE_INVALID_ERROR = "Invalid parameter!"
 CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won't be demonstrated properly.\n" \
                        "If confusion matrix has too many zeros (sparse matrix) you can set `sparse` flag to True in printing functions "\
                        "otherwise by using save_csv method to save the confusion matrix in csv format you'll have better demonstration."
+
+CLASSES_WARNING = "Used classes is not a subset of classes in actual and predict vectors."
+
+CLASSES_TYPE_WARNING = "The classes is neither a list nor None so it'll be ignored."
 
 CLASS_NUMBER_THRESHOLD = 10
 

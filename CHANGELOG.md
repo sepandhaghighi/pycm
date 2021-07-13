@@ -6,11 +6,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-
+- `classes_filter` function
 ### Changed
+- `classes` parameter added to `matrix_params_calc` function
+- `classes` parameter added to `__obj_vector_handler__` function
+- `classes` parameter added to ConfusionMatrix `__init__` method
 - `name` parameter removed from `html_init` function
 - `shortener` parameter added to `html_table` function
 - `shortener` parameter added to `save_html` method
+- Document modified
 - HTML report modified
 ## [3.1] - 2021-03-11
 ### Added

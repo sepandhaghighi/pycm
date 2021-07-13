@@ -7,15 +7,13 @@ from .pycm_util import rounder
 import webbrowser
 
 
-def html_init(name):
+def html_init():
     """
     Return HTML report file first lines.
 
-    :param name: name of file
-    :type name : str
     :return: html_init as str
     """
-    return HTML_INIT_TEMPLATE.format(str(name), OG_DESCRIPTION, OG_IMAGE_URL)
+    return HTML_INIT_TEMPLATE.format(OG_DESCRIPTION, OG_IMAGE_URL)
 
 
 def html_dataset_type(is_binary, is_imbalanced):
@@ -85,7 +83,12 @@ def html_table_color(row, item, color=(0, 0, 0)):
     return result
 
 
-def html_table(classes, table, rgb_color, normalize=False):
+def html_table(
+        classes,
+        table,
+        rgb_color,
+        normalize=False,
+        shortener=True):
     """
     Return HTML report file confusion matrix.
 
@@ -97,6 +100,8 @@ def html_table(classes, table, rgb_color, normalize=False):
     :type rgb_color : tuple
     :param normalize : save normalize matrix flag
     :type normalize : bool
+    :param shortener: class name shortener flag
+    :type shortener: bool
     :return: html_table as str
     """
     result = ""
@@ -111,12 +116,11 @@ def html_table(classes, table, rgb_color, normalize=False):
     table_size = str((len(classes) + 1) * 7) + "em"
     result += '<table style="border:1px solid black;border-collapse: collapse;height:{0};width:{0};">\n'\
         .format(table_size)
-    classes.sort()
     result += '<tr style="text-align:center;">\n<td></td>\n'
     part_2 = ""
     for i in classes:
         class_name = str(i)
-        if len(class_name) > 6:
+        if len(class_name) > 6 and shortener:
             class_name = class_name[:4] + "..."
         result += '<td style="border:1px solid ' \
                   'black;padding:10px;height:7em;width:7em;">' + \
@@ -232,7 +236,6 @@ def html_class_stat(
     if isinstance(class_param, list):
         if set(class_param) <= set(class_stat_keys):
             class_stat_keys = class_param
-    classes.sort()
     if len(classes) < 1 or len(class_stat_keys) < 1:
         return ""
     for i in class_stat_keys:
@@ -296,7 +299,6 @@ def table_print(classes, table):
     table_list = []
     for key in classes:
         table_list.extend(list(table[key].values()))
-    classes.sort()
     table_list.extend(classes)
     table_max_length = max(map(len, map(str, table_list)))
     shift = "%-" + str(7 + table_max_length) + "s"
@@ -352,7 +354,6 @@ def csv_matrix_print(classes, table, header=False):
     """
     result = ""
     header_section = ""
-    classes.sort()
     for i in classes:
         if header is True:
             header_section += '"' + str(i) + '"' + ","
@@ -380,7 +381,6 @@ def csv_print(classes, class_stat, digit=5, class_param=None):
     :return: csv file data as str
     """
     result = "Class"
-    classes.sort()
     for item in classes:
         result += ',"' + str(item) + '"'
     result += "\n"
@@ -437,7 +437,6 @@ def stat_print(
     if isinstance(class_param, list):
         if set(class_param) <= set(class_stat_keys):
             class_stat_keys = sorted(class_param)
-    classes.sort()
     if len(class_stat_keys) > 0 and len(classes) > 0:
         class_shift = max(
             max(map(lambda x: len(str(x)), classes)) + 5, digit + 6, 14)

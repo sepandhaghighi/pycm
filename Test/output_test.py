@@ -66,6 +66,9 @@ True
 >>> save_stat=long_name_cm.save_html("test_long_name",address=False,color="Pink")
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=long_name_cm.save_html("test_shortener",address=False,color="Pink",shortener=False)
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> save_stat=cm.save_html("/asdasd,qweqwe.eo/",address=True)
 >>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.html'"}
 True
@@ -539,6 +542,7 @@ True
 >>> os.remove("test_filtered4.html")
 >>> os.remove("test_filtered5.html")
 >>> os.remove("test_long_name.html")
+>>> os.remove("test_shortener.html")
 >>> os.remove("test_alt.html")
 >>> os.remove("test_summary.html")
 >>> os.remove("test_colored.html")

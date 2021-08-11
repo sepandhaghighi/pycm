@@ -1,2 +1,4 @@
+*.html linguist-detectable=false
+*.ipynb linguist-detectable=false
 Document/* linguist-vendored
 Otherfiles/test.html linguist-vendored

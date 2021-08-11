@@ -38,7 +38,8 @@ class ConfusionMatrix():
             predict_vector=None,
             matrix=None,
             digit=5, threshold=None, file=None,
-            sample_weight=None, transpose=False):
+            sample_weight=None, transpose=False,
+            classes=None):
         """
         Init method.
 
@@ -58,6 +59,8 @@ class ConfusionMatrix():
         :type sample_weight : list
         :param transpose : transpose flag
         :type transpose : bool
+        :param classes: ordered labels of classes
+        :type classes: list
         """
         self.actual_vector = actual_vector
         self.predict_vector = predict_vector
@@ -74,7 +77,7 @@ class ConfusionMatrix():
             matrix_param = __obj_matrix_handler__(matrix, transpose)
         else:
             matrix_param = __obj_vector_handler__(
-                self, actual_vector, predict_vector, threshold, sample_weight)
+                self, actual_vector, predict_vector, threshold, sample_weight, classes)
         if len(matrix_param[0]) < 2:
             raise pycmMatrixError(CLASS_NUMBER_ERROR)
         __obj_assign_handler__(self, matrix_param)
@@ -292,7 +295,8 @@ class ConfusionMatrix():
                 0),
             normalize=False,
             summary=False,
-            alt_link=False):
+            alt_link=False,
+            shortener=True):
         """
         Save ConfusionMatrix in HTML file.
 
@@ -314,6 +318,8 @@ class ConfusionMatrix():
         :type summary : bool
         :param alt_link: alternative link for document flag
         :type alt_link: bool
+        :param shortener: class name shortener flag
+        :type shortener: bool
         :return: saving Status as dict {"Status":bool , "Message":str}
         """
         try:
@@ -327,9 +333,15 @@ class ConfusionMatrix():
             if normalize:
                 table = self.normalized_table
             html_file = open(name + ".html", "w", encoding="utf-8")
-            html_file.write(html_init(name))
+            html_file.write(html_init())
             html_file.write(html_dataset_type(self.binary, self.imbalance))
-            html_file.write(html_table(self.classes, table, color, normalize))
+            html_file.write(
+                html_table(
+                    self.classes,
+                    table,
+                    color,
+                    normalize,
+                    shortener))
             html_file.write(
                 html_overall_stat(
                     self.overall_stat,
@@ -863,7 +875,7 @@ class ConfusionMatrix():
         :type class_name : any valid type
         :return: confusion matrix as a numpy.ndarray
         """
-        classes = sorted(self.classes)
+        classes = self.classes
         table = self.table
         if normalized:
             table = self.normalized_table
@@ -924,9 +936,9 @@ class ConfusionMatrix():
             normalized=normalized,
             one_vs_all=one_vs_all,
             class_name=class_name)
+        classes = self.classes
         if normalized:
             title += " (Normalized)"
-        classes = sorted(self.classes)
         if one_vs_all and class_name in classes:
             classes = [class_name, '~']
         try:

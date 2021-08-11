@@ -5,6 +5,7 @@ import sys
 import math
 import numpy
 from .pycm_param import *
+from warnings import warn
 
 
 def list_check_equal(input_list):
@@ -312,7 +313,11 @@ def matrix_params_from_table(table, transpose=False):
     return [classes, table_temp, TP_dict, TN_dict, FP_dict, FN_dict]
 
 
-def matrix_params_calc(actual_vector, predict_vector, sample_weight):
+def matrix_params_calc(
+        actual_vector,
+        predict_vector,
+        sample_weight,
+        classes=None):
     """
     Calculate TP,TN,FP,FN for each class.
 
@@ -322,27 +327,63 @@ def matrix_params_calc(actual_vector, predict_vector, sample_weight):
     :type predict_vector : list
     :param sample_weight : sample weights list
     :type sample_weight : list
+    :param classes: ordered labels of classes
+    :type classes: list
     :return: [classes_list,table,TP,TN,FP,FN]
     """
     [actual_vector, predict_vector] = vector_filter(
         actual_vector, predict_vector)
     if isinstance(sample_weight, numpy.ndarray):
         sample_weight = sample_weight.tolist()
-    classes = set(actual_vector).union(set(predict_vector))
-    if len(classes) == 1:
-        classes.add("~other~")
-    classes = sorted(classes)
-    map_dict = {k: 0 for k in classes}
-    table = {k: map_dict.copy() for k in classes}
+    [actual_vector, predict_vector, classes_list] = classes_filter(
+        actual_vector, predict_vector, classes)
+    map_dict = {k: 0 for k in classes_list}
+    table = {k: map_dict.copy() for k in classes_list}
     weight_vector = [1] * len(actual_vector)
     if isinstance(sample_weight, (list, numpy.ndarray)):
         if len(sample_weight) == len(actual_vector):
             weight_vector = sample_weight
     for index, item in enumerate(actual_vector):
-        table[item][predict_vector[index]] += 1 * weight_vector[index]
-    [classes, table, TP_dict, TN_dict, FP_dict,
+        if item in classes_list and predict_vector[index] in classes_list:
+            table[item][predict_vector[index]] += 1 * weight_vector[index]
+    [_, _, TP_dict, TN_dict, FP_dict,
         FN_dict] = matrix_params_from_table(table)
-    return [classes, table, TP_dict, TN_dict, FP_dict, FN_dict]
+    return [classes_list, table, TP_dict, TN_dict, FP_dict, FN_dict]
+
+
+def classes_filter(actual_vector, predict_vector, classes=None):
+    """
+    Return updated vectors and classes list.
+
+    :param actual_vector: actual values
+    :type actual_vector : list
+    :param predict_vector: predict value
+    :type predict_vector : list
+    :param classes: ordered labels of classes
+    :type classes: list
+    :return: [actual_vector, predict_vector, classes_list]
+    """
+    classes_list = set(actual_vector).union(set(predict_vector))
+    if len(classes_list) == 1:
+        classes_list.add("~other~")
+    classes_list = sorted(classes_list)
+    if isinstance(classes, list):
+        if len(classes) == 0:
+            return [actual_vector, predict_vector, classes]
+        classes, _ = vector_filter(classes, [])
+        classes_from_vectors = classes_list
+        if isinstance(actual_vector[0], str) and not isinstance(classes[0], str):
+            classes = list(map(str, classes))
+        elif isinstance(classes[0], str) and not isinstance(actual_vector[0], str):
+            actual_vector = list(map(str, actual_vector))
+            predict_vector = list(map(str, predict_vector))
+            classes_from_vectors = set(actual_vector).union(set(predict_vector))
+        if not set(classes).issubset(classes_from_vectors):
+            warn(CLASSES_WARNING, RuntimeWarning)
+        classes_list = classes
+    elif classes is not None:
+        warn(CLASSES_TYPE_WARNING, RuntimeWarning)
+    return [actual_vector, predict_vector, classes_list]
 
 
 def imbalance_check(P):

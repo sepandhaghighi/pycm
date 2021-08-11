@@ -266,7 +266,8 @@ def __obj_vector_handler__(
         actual_vector,
         predict_vector,
         threshold,
-        sample_weight):
+        sample_weight,
+        classes):
     """
     Handle object conditions for vectors.
 
@@ -280,6 +281,8 @@ def __obj_vector_handler__(
     :type threshold : FunctionType (function or lambda)
     :param sample_weight : sample weights list
     :type sample_weight : list
+    :param classes: ordered labels of classes
+    :type classes: list
     :return: matrix parameters as list
     """
     if isinstance(threshold, types.FunctionType):
@@ -292,8 +295,10 @@ def __obj_vector_handler__(
         raise pycmVectorError(VECTOR_SIZE_ERROR)
     if len(actual_vector) == 0 or len(predict_vector) == 0:
         raise pycmVectorError(VECTOR_EMPTY_ERROR)
+    if classes is not None and len(set(classes)) != len(classes):
+        raise pycmVectorError(VECTOR_UNIQUE_CLASS_ERROR)
     matrix_param = matrix_params_calc(
-        actual_vector, predict_vector, sample_weight)
+        actual_vector, predict_vector, sample_weight, classes)
     if isinstance(sample_weight, (list, numpy.ndarray)):
         cm.weights = sample_weight
 

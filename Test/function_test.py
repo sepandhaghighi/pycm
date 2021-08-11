@@ -684,4 +684,29 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 0.4
 >>> cm3.LambdaB
 0.35714285714285715
+>>> cm4 = ConfusionMatrix(y_act,y_pre,classes=[1,2,0])
+>>> cm4
+pycm.ConfusionMatrix(classes: [1, 2, 0])
+>>> cm4.classes
+[1, 2, 0]
+>>> cm4.to_array()
+array([[5, 1, 3],
+       [1, 4, 1],
+       [3, 0, 9]])
+>>> cm4 = ConfusionMatrix(y_act,y_pre,classes=[1,2])
+>>> cm4
+pycm.ConfusionMatrix(classes: [1, 2])
+>>> cm4.classes
+[1, 2]
+>>> cm4.to_array()
+array([[5, 1],
+       [1, 4]])
+>>> cm4 = ConfusionMatrix(["1",1,1,1],[1,2,1,1],classes=[1,2])
+>>> cm4.to_array()
+array([[3, 1],
+       [0, 0]])
+>>> cm4 = ConfusionMatrix([1,1,1,1],["1",2,1,1],classes=[1,2])
+>>> cm4.to_array()
+array([[3, 1],
+       [0, 0]])
 """

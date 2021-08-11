@@ -23,7 +23,7 @@ RUN usermod -a -G sudo user
 
 # Install necessary python libraries
 RUN python3.6 -m pip install pip --upgrade
-RUN sleep 40 && python3.6 -m pip install pycm
+RUN sleep 80 && python3.6 -m pip install pycm
 
 USER user
 WORKDIR /home/user

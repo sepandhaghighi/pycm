@@ -5,6 +5,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [3.2] - 2021-08-11
+### Added
+- `classes_filter` function
+### Changed
+- `classes` parameter added to `matrix_params_calc` function
+- `classes` parameter added to `__obj_vector_handler__` function
+- `classes` parameter added to ConfusionMatrix `__init__` method
+- `name` parameter removed from `html_init` function
+- `shortener` parameter added to `html_table` function
+- `shortener` parameter added to `save_html` method
+- Document modified
+- HTML report modified
 ## [3.1] - 2021-03-11
 ### Added
 - `requirements-splitter.py`
@@ -532,7 +544,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v3.1...dev
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v3.2...dev
+[3.2]: https://github.com/sepandhaghighi/pycm/compare/v3.1...v3.2
 [3.1]: https://github.com/sepandhaghighi/pycm/compare/v3.0...v3.1
 [3.0]: https://github.com/sepandhaghighi/pycm/compare/v2.9...v3.0
 [2.9]: https://github.com/sepandhaghighi/pycm/compare/v2.8...v2.9

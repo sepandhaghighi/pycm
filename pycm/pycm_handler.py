@@ -237,6 +237,10 @@ def __obj_file_handler__(cm, file):
             loaded_matrix[i] = dict(loaded_matrix[i])
         matrix_param = matrix_params_from_table(loaded_matrix)
     cm.digit = obj_data["Digit"]
+    try:
+        cm.imbalance = obj_data["Is_imbalanced"]
+    except Exception:
+        cm.imbalance = None
 
     return matrix_param
 

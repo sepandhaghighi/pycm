@@ -69,6 +69,7 @@ class ConfusionMatrix():
         self.digit = digit
         self.weights = None
         self.classes = None
+        self.imbalance = None
         if isinstance(transpose, bool):
             self.transpose = transpose
         else:
@@ -85,9 +86,10 @@ class ConfusionMatrix():
         __obj_assign_handler__(self, matrix_param)
         __class_stat_init__(self)
         __overall_stat_init__(self)
-        if is_imbalanced is None:
-            is_imbalanced = imbalance_check(self.P)
-        self.imbalance = is_imbalanced
+        if self.imbalance is None:
+            if is_imbalanced is None:
+                is_imbalanced = imbalance_check(self.P)
+            self.imbalance = is_imbalanced
         self.binary = binary_check(self.classes)
         self.recommended_list = statistic_recommend(self.classes, self.P)
         self.sparse_matrix = None
@@ -471,7 +473,8 @@ class ConfusionMatrix():
                          "Matrix": matrix_items,
                          "Digit": self.digit,
                          "Sample-Weight": weights_vector_temp,
-                         "Transpose": self.transpose}
+                         "Transpose": self.transpose,
+                         "Is_imbalanced": self.imbalance}
             if save_stat:
                 dump_dict["Class-Stat"] = self.class_stat
                 dump_dict["Overall-Stat"] = self.overall_stat

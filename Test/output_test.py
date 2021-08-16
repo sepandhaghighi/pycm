@@ -256,6 +256,8 @@ sInd(Similarity index)                                           None           
 >>> cm_no_vectors_file=ConfusionMatrix(file=open("test_no_vectors.obj","r"))
 >>> cm_stat_file==cm_file
 True
+>>> cm.imbalance == cm_file.imbalance
+True
 >>> cm_no_vectors_file==cm_file
 True
 >>> cm_no_vectors_dict = json.load(open("test_no_vectors.obj","r"))
@@ -488,11 +490,17 @@ True
 >>> cm_file.weights
 >>> cm_file.transpose
 False
+>>> cm_file.imbalance
+False
 >>> cm_file.matrix == {'1': {'1': 1, '2': 1, '0': 0}, '2': {'1': 2, '2': 3, '0': 0}, '0': {'1': 0, '2': 2, '0': 3}}
 True
 >>> cm_file.actual_vector == ['1', '1', '2', '2', '2', '2', '2', '0', '0', '0', '0', '0']
 True
 >>> cm_file.predict_vector == ['1', '2', '1', '1', '2', '2', '2', '2', '2', '0', '0', '0']
+True
+>>> json.dump({"Actual-Vector": ['1', '1', '2', '2', '2', '2', '2', '0', '0', '0', '0', '0'], "Digit": 5, "Predict-Vector": ['1', '2', '1', '1', '2', '2', '2', '2', '2', '0', '0', '0'], "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}, "Is_imbalanced": True},open("test8.obj","w"))
+>>> cm_file=ConfusionMatrix(file=open("test8.obj","r"))
+>>> cm_file.imbalance
 True
 >>> cm_comp1 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
 >>> cm_comp2 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
@@ -560,6 +568,7 @@ True
 >>> os.remove("test5.obj")
 >>> os.remove("test6.obj")
 >>> os.remove("test7.obj")
+>>> os.remove("test8.obj")
 >>> os.remove("test.pycm")
 >>> os.remove("test.comp")
 >>> os.remove("test_header.csv")

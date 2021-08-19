@@ -474,7 +474,7 @@ class ConfusionMatrix():
                          "Digit": self.digit,
                          "Sample-Weight": weights_vector_temp,
                          "Transpose": self.transpose,
-                         "Is_imbalanced": self.imbalance}
+                         "Imbalanced": self.imbalance}
             if save_stat:
                 dump_dict["Class-Stat"] = self.class_stat
                 dump_dict["Overall-Stat"] = self.overall_stat

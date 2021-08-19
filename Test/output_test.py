@@ -498,7 +498,7 @@ True
 True
 >>> cm_file.predict_vector == ['1', '2', '1', '1', '2', '2', '2', '2', '2', '0', '0', '0']
 True
->>> json.dump({"Actual-Vector": ['1', '1', '2', '2', '2', '2', '2', '0', '0', '0', '0', '0'], "Digit": 5, "Predict-Vector": ['1', '2', '1', '1', '2', '2', '2', '2', '2', '0', '0', '0'], "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}, "Is_imbalanced": True},open("test8.obj","w"))
+>>> json.dump({"Actual-Vector": ['1', '1', '2', '2', '2', '2', '2', '0', '0', '0', '0', '0'], "Digit": 5, "Predict-Vector": ['1', '2', '1', '1', '2', '2', '2', '2', '2', '0', '0', '0'], "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}, "Imbalanced": True},open("test8.obj","w"))
 >>> cm_file=ConfusionMatrix(file=open("test8.obj","r"))
 >>> cm_file.imbalance
 True

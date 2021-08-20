@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 - `is_imbalanced` parameter added to ConfusionMatrix `__init__` method
+- `statistic_recommend` function modified
 ## [3.2] - 2021-08-11
 ### Added
 - `classes_filter` function

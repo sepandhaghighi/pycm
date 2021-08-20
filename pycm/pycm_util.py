@@ -441,17 +441,17 @@ def complement(input_number):
         return "None"
 
 
-def statistic_recommend(classes, P):
+def statistic_recommend(classes, imbalance):
     """
     Return recommend parameters which are more suitable due to the input dataset characteristics.
 
     :param classes:  all classes name
     :type classes : list
-    :param P: condition positive
-    :type P : dict
+    :param imbalance : imbalance flag
+    :type imbalance : bool
     :return: recommendation_list as list
     """
-    if imbalance_check(P):
+    if imbalance:
         return IMBALANCED_RECOMMEND
     if binary_check(classes):
         return BINARY_RECOMMEND

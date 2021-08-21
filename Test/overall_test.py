@@ -1226,9 +1226,13 @@ True
 >>> cm = ConfusionMatrix(matrix={1:{1:295593,2:30516},2:{1:5108,2:295593}},transpose=True,is_imbalanced=True)
 >>> cm.imbalance
 True
+>>> set(cm.recommended_list) == set(IMBALANCED_RECOMMEND)
+True
 >>> cm = ConfusionMatrix(matrix={1:{1:295593,2:30516},2:{1:5108,2:295593}},transpose=True,is_imbalanced=False)
 >>> cm.imbalance
 False
+>>> set(cm.recommended_list) == set(BINARY_RECOMMEND)
+True
 >>> act = np.array([2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2])
 >>> pre = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(actual_vector=act, predict_vector=pre)

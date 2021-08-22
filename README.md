@@ -650,6 +650,17 @@ False
 >>> cm.recommended_list
 ['MCC', 'TPR Micro', 'ACC', 'PPV Macro', 'BCD', 'Overall MCC', 'Hamming Loss', 'TPR Macro', 'Zero-one Loss', 'ERR', 'PPV Micro', 'Overall ACC']
 
+```
+
+`is_imbalanced` parameter has been added in `version 3.3`, so the user can indicate whether the concerned dataset is imbalanced or not. As long as the user does not provide any information in this regard, the automatic detection algorithm will be used.
+
+```pycon
+>>> cm = ConfusionMatrix(y_actu, y_pred, is_imbalanced = True)
+>>> cm.imbalance
+True
+>>> cm = ConfusionMatrix(y_actu, y_pred, is_imbalanced = False)
+>>> cm.imbalance
+False
 ```	
 
 ### Compare

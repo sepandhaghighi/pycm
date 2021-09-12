@@ -86,11 +86,11 @@ pycm.pycm_obj.pycmCompareError: The domain of all ConfusionMatrix objects must b
 >>> cp = Compare({"cm1":cm,"cm2":cm3},by_class=True,weight={1:1,2:1})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCompareError: The weight type must be dictionary and also must be specified for all of the classes.
+pycm.pycm_obj.pycmCompareError: The class_weight type must be dictionary and also must be specified for all of the classes.
 >>> cp = Compare({"cm1":cm,"cm2":cm3},by_class=True,weight=[])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCompareError: The weight type must be dictionary and also must be specified for all of the classes.
+pycm.pycm_obj.pycmCompareError: The class_weight type must be dictionary and also must be specified for all of the classes.
 >>> cm.CI("MCC")
 Traceback (most recent call last):
         ...

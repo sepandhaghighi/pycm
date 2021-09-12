@@ -67,7 +67,7 @@ COMPARE_DOMAIN_ERROR = "The domain of all ConfusionMatrix objects must be same! 
 COMPARE_NUMBER_ERROR = "Lower than two confusion matrices is given for comparing. The minimum number of " \
                        "confusion matrix for comparing is 2."
 
-COMPARE_WEIGHT_ERROR = "The weight type must be dictionary and also must be specified for all of the classes."
+COMPARE_CLASS_WEIGHT_ERROR = "The class_weight type must be dictionary and also must be specified for all of the classes."
 
 COMBINE_TYPE_ERROR = "The input type is supposed to be pycm.ConfusionMatrix object but it's not!"
 

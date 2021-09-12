@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `is_imbalanced` parameter added to ConfusionMatrix `__init__` method
 - `statistic_recommend` function modified
+- Compare `weight` parameter renamed to `class_weight`
 - Document modified
 ## [3.2] - 2021-08-11
 ### Added

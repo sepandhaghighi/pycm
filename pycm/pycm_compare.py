@@ -136,6 +136,7 @@ def __compare_class_handler__(compare, cm_dict):
     :type cm_dict : dict
     :return: None
     """
+    class_weight_sum = sum(compare.class_weight.values())
     for c in compare.classes:
         for item in CLASS_BENCHMARK_SCORE_DICT.keys():
             max_item_score = len(CLASS_BENCHMARK_SCORE_DICT[item]) - 1
@@ -143,8 +144,8 @@ def __compare_class_handler__(compare, cm_dict):
                 cm.class_stat[item][c]] for cm in cm_dict.values()]
             if all([isinstance(x, int) for x in all_class_score]):
                 for cm_name in cm_dict.keys():
-                    compare.scores[cm_name]["class"] += compare.class_weight[c] * (
-                        CLASS_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].class_stat[item][c]] / max_item_score)
+                    score = (compare.class_weight[c] / class_weight_sum) * (CLASS_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].class_stat[item][c]] / max_item_score)
+                    compare.scores[cm_name]["class"] += score
 
 
 def __compare_overall_handler__(compare, cm_dict):

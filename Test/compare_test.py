@@ -70,6 +70,14 @@ Rank  Name   Class-Score    Overall-Score
 1     cm2    4.23333        5.8
 2     cm1    3.3            4.48333
 <BLANKLINE>
+>>> cp3 = Compare({"cm1":cm1,"cm2":cm2},class_weight={0:0,1:0,2:0})
+>>> print(cp3)
+Best : cm2
+<BLANKLINE>
+Rank  Name   Class-Score       Overall-Score
+1     cm2    4.23333           5.8
+2     cm1    3.3               4.48333
+<BLANKLINE>
 >>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
 ...     cp3 = Compare({"cm1":cm1,"cm2":cm2},class_weight={0:200,1:1,2:1})
 >>> print(cp3)

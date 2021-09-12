@@ -22,8 +22,8 @@ class Compare():
     Best : cm1
 
     Rank  Name   Class-Score         Overall-Score
-    1     cm1    4.15                1.48333
-    2     cm2    2.75                0.95
+    1     cm1    3.01667             2.55
+    2     cm2    2.01667             1.98333
 
     >>> cp.best
     pycm.ConfusionMatrix(classes: [0, 1, 2])

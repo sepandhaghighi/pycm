@@ -246,8 +246,8 @@ def __compare_assign_handler__(compare, cm_dict, class_weight, digit):
     if class_weight is not None:
         if not isinstance(class_weight, dict):
             raise pycmCompareError(COMPARE_CLASS_WEIGHT_ERROR)
-        if set(class_weight.keys()) == set(compare.classes) and all(
-                [isfloat(x) for x in class_weight.values()]):
-            compare.class_weight = class_weight
+        if set(class_weight.keys()) == set(compare.classes):
+            if all([isfloat(x) for x in class_weight.values()]) and sum(class_weight.values())!=0:
+                compare.class_weight = class_weight
         else:
             raise pycmCompareError(COMPARE_CLASS_WEIGHT_ERROR)

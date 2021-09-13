@@ -144,7 +144,8 @@ def __compare_class_handler__(compare, cm_dict):
                 cm.class_stat[item][c]] for cm in cm_dict.values()]
             if all([isinstance(x, int) for x in all_class_score]):
                 for cm_name in cm_dict.keys():
-                    score = (compare.class_weight[c] / class_weight_sum) * (CLASS_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].class_stat[item][c]] / max_item_score)
+                    score = (compare.class_weight[c] / class_weight_sum) * (
+                        CLASS_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].class_stat[item][c]] / max_item_score)
                     compare.scores[cm_name]["class"] += score
 
 
@@ -248,7 +249,8 @@ def __compare_assign_handler__(compare, cm_dict, class_weight, digit):
         if not isinstance(class_weight, dict):
             raise pycmCompareError(COMPARE_CLASS_WEIGHT_ERROR)
         if set(class_weight.keys()) == set(compare.classes):
-            if all([isfloat(x) for x in class_weight.values()]) and sum(class_weight.values())!=0:
+            if all([isfloat(x) for x in class_weight.values()]
+                   ) and sum(class_weight.values()) != 0:
                 compare.class_weight = class_weight
         else:
             raise pycmCompareError(COMPARE_CLASS_WEIGHT_ERROR)

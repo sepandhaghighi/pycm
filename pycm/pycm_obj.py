@@ -91,7 +91,8 @@ class ConfusionMatrix():
                 is_imbalanced = imbalance_check(self.P)
             self.imbalance = is_imbalanced
         self.binary = binary_check(self.classes)
-        self.recommended_list = statistic_recommend(self.classes, self.imbalance)
+        self.recommended_list = statistic_recommend(
+            self.classes, self.imbalance)
         self.sparse_matrix = None
         self.sparse_normalized_matrix = None
         self.positions = None

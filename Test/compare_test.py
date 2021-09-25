@@ -95,4 +95,6 @@ Rank  Name   Class-Score     Overall-Score
 >>> cm.relabel({0:"L1",1:"L2",2:"L3"})
 >>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
 ...     cp4 = Compare({"cm1":cm,"cm2":cm},class_weight={'L3': 6, 'L1': 3, 'L2': 3})
+>>> with warns(RuntimeWarning, match='The class_weight format is wrong, the result is for unweighted mode.'):
+...     cp5 = Compare({"cm1":cm1,"cm2":cm2},class_weight={0: 0, 1: 0, 2: 0})
 """

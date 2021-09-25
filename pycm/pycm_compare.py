@@ -252,5 +252,7 @@ def __compare_assign_handler__(compare, cm_dict, class_weight, digit):
             if all([isfloat(x) for x in class_weight.values()]
                    ) and sum(class_weight.values()) != 0:
                 compare.class_weight = class_weight
+            else:
+                warn(COMPARE_CLASS_WEIGHT_WARNING,RuntimeWarning)
         else:
             raise pycmCompareError(COMPARE_CLASS_WEIGHT_ERROR)

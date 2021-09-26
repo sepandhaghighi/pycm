@@ -18,7 +18,7 @@ True
 True
 >>> cp
 pycm.Compare(classes: [0, 1, 2])
->>> cp.scores == {'model2': {'overall': 1.98333, 'class': 6.05}, 'model1': {'overall': 2.55, 'class': 9.05}}
+>>> cp.scores == {'model2': {'overall': 1.98333, 'class': 2.01667}, 'model1': {'overall': 2.55, 'class': 3.01667}}
 True
 >>> cp.best
 pycm.ConfusionMatrix(classes: [0, 1, 2])
@@ -28,27 +28,27 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 Best : model1
 <BLANKLINE>
 Rank  Name      Class-Score    Overall-Score
-1     model1    9.05           2.55
-2     model2    6.05           1.98333
+1     model1    3.01667        2.55
+2     model2    2.01667        1.98333
 <BLANKLINE>
 >>> cp.print_report()
 Best : model1
 <BLANKLINE>
 Rank  Name      Class-Score    Overall-Score
-1     model1    9.05           2.55
-2     model2    6.05           1.98333
+1     model1    3.01667        2.55
+2     model2    2.01667        1.98333
 <BLANKLINE>
->>> weight = {0:5,1:1,2:1}
->>> weight_copy = {0:5,1:1,2:1}
->>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2},by_class=True,weight=weight)
->>> weight == weight_copy
+>>> class_weight = {0:5,1:1,2:1}
+>>> class_weight_copy = {0:5,1:1,2:1}
+>>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2},by_class=True,class_weight=class_weight)
+>>> class_weight == class_weight_copy
 True
 >>> print(cp)
 Best : model2
 <BLANKLINE>
 Rank  Name      Class-Score     Overall-Score
-1     model2    19.05           1.98333
-2     model1    14.65           2.55
+1     model2    2.72143         1.98333
+2     model1    2.09286         2.55
 <BLANKLINE>
 >>> cp.best
 pycm.ConfusionMatrix(classes: [0, 1, 2])
@@ -56,7 +56,7 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 'model2'
 >>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
 ...     cp2 = Compare({"model1":cm_comp1,"model2":cm_comp1})
->>> cp2.scores == {'model2': {'class': 9.05, 'overall': 2.55}, 'model1': {'class': 9.05, 'overall': 2.55}}
+>>> cp2.scores == {'model2': {'class': 3.01667, 'overall': 2.55}, 'model1': {'class': 3.01667, 'overall': 2.55}}
 True
 >>> cp2.best
 >>> cp2.best_name
@@ -67,17 +67,25 @@ True
 Best : cm2
 <BLANKLINE>
 Rank  Name   Class-Score    Overall-Score
-1     cm2    12.7           5.8
-2     cm1    9.9            4.48333
+1     cm2    4.23333        5.8
+2     cm1    3.3            4.48333
+<BLANKLINE>
+>>> cp3 = Compare({"cm1":cm1,"cm2":cm2},class_weight={0:0,1:0,2:0})
+>>> print(cp3)
+Best : cm2
+<BLANKLINE>
+Rank  Name   Class-Score       Overall-Score
+1     cm2    4.23333           5.8
+2     cm1    3.3               4.48333
 <BLANKLINE>
 >>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
-...     cp3 = Compare({"cm1":cm1,"cm2":cm2},weight={0:200,1:1,2:1})
+...     cp3 = Compare({"cm1":cm1,"cm2":cm2},class_weight={0:200,1:1,2:1})
 >>> print(cp3)
 Best : None
 <BLANKLINE>
 Rank  Name   Class-Score     Overall-Score
-1     cm1    606.9           4.48333
-2     cm2    569.9           5.8
+1     cm1    3.00446         4.48333
+2     cm2    2.82129         5.8
 <BLANKLINE>
 >>> cp3.best
 >>> cp3.best_name
@@ -86,5 +94,7 @@ Rank  Name   Class-Score     Overall-Score
 >>> cm = ConfusionMatrix(y_actu, y_pred)
 >>> cm.relabel({0:"L1",1:"L2",2:"L3"})
 >>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
-...     cp4 = Compare({"cm1":cm,"cm2":cm},weight={'L3': 6, 'L1': 3, 'L2': 3})
+...     cp4 = Compare({"cm1":cm,"cm2":cm},class_weight={'L3': 6, 'L1': 3, 'L2': 3})
+>>> with warns(RuntimeWarning, match='The class_weight format is wrong, the result is for unweighted mode.'):
+...     cp5 = Compare({"cm1":cm1,"cm2":cm2},class_weight={0: 0, 1: 0, 2: 0})
 """

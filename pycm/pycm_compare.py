@@ -33,7 +33,7 @@ class Compare():
     'cm1'
     """
 
-    def __init__(self, cm_dict, by_class=False, class_weight=None, digit=5):
+    def __init__(self, cm_dict, by_class=False, class_weight=None, class_benchmark_weight=None, overall_benchmark_weight=None, digit=5):
         """
         Init method.
 
@@ -43,6 +43,10 @@ class Compare():
         :type by_class: bool
         :param class_weight: class weights
         :type class_weight: dict
+        :param class_benchmark_weight: class benchmark weights
+        :type class_benchmark_weight: dict
+        :param overall_benchmark_weight: overall benchmark weights
+        :type overall_benchmark_weight: dict
         :param digit: precision digit (default value : 5)
         :type digit : int
         """
@@ -137,6 +141,7 @@ def __compare_class_handler__(compare, cm_dict):
     :return: None
     """
     class_weight_sum = sum(compare.class_weight.values())
+    class_benchmark_weight_sum = sum(compare.class_benchmark_weight)
     for c in compare.classes:
         for item in CLASS_BENCHMARK_SCORE_DICT.keys():
             max_item_score = len(CLASS_BENCHMARK_SCORE_DICT[item]) - 1
@@ -146,6 +151,7 @@ def __compare_class_handler__(compare, cm_dict):
                 for cm_name in cm_dict.keys():
                     score = (compare.class_weight[c] / class_weight_sum) * (
                         CLASS_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].class_stat[item][c]] / max_item_score)
+                    score = score * (compare.class_benchmark_weight[item] / class_benchmark_weight_sum)
                     compare.scores[cm_name]["class"] += score
 
 
@@ -159,13 +165,16 @@ def __compare_overall_handler__(compare, cm_dict):
     :type cm_dict : dict
     :return: None
     """
+    overall_benchmark_weight_sum = sum(compare.overall_benchmark_weight)
     for item in OVERALL_BENCHMARK_SCORE_DICT.keys():
         max_item_score = len(OVERALL_BENCHMARK_SCORE_DICT[item]) - 1
         all_overall_score = [OVERALL_BENCHMARK_SCORE_DICT[item][
             cm.overall_stat[item]] for cm in cm_dict.values()]
         if all([isinstance(x, int) for x in all_overall_score]):
             for cm_name in cm_dict.keys():
-                compare.scores[cm_name]["overall"] += OVERALL_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].overall_stat[item]] / max_item_score
+                score = OVERALL_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].overall_stat[item]] / max_item_score
+                score = score * (compare.overall_benchmark_weight[item] / overall_benchmark_weight_sum)
+                compare.scores[cm_name]["overall"] += score
 
 
 def __compare_rounder__(compare, cm_dict):
@@ -239,6 +248,8 @@ def __compare_assign_handler__(compare, cm_dict, class_weight, digit):
         raise pycmCompareError(COMPARE_NUMBER_ERROR)
     compare.classes = list(cm_dict.values())[0].classes
     compare.class_weight = {k: 1 for k in compare.classes}
+    compare.class_benchmark_weight = {k: 1 for k in CLASS_BENCHMARK_SCORE_DICT.keys()}
+    compare.overall_benchmark_weight = {k: 1 for k in OVERALL_BENCHMARK_SCORE_DICT.keys()}
     compare.digit = digit
     compare.best = None
     compare.best_name = None

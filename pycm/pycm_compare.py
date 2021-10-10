@@ -172,8 +172,8 @@ def __compare_overall_handler__(compare, cm_dict):
             cm.overall_stat[OVERALL_BENCHMARK_MAP[item]]] for cm in cm_dict.values()]
         if all([isinstance(x, int) for x in all_overall_score]):
             for cm_name in cm_dict.keys():
-                score = OVERALL_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].overall_stat[item]] / max_item_score
-                score = score * (compare.overall_benchmark_weight[OVERALL_BENCHMARK_MAP[item]] / overall_benchmark_weight_sum)
+                score = OVERALL_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].overall_stat[OVERALL_BENCHMARK_MAP[item]]] / max_item_score
+                score = score * (compare.overall_benchmark_weight[item] / overall_benchmark_weight_sum)
                 compare.scores[cm_name]["overall"] += score
 
 

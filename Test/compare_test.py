@@ -70,31 +70,54 @@ Rank  Name   Class-Score    Overall-Score
 1     cm2    0.70556        0.96667
 2     cm1    0.55           0.74722
 <BLANKLINE>
->>> cp3 = Compare({"cm1":cm1,"cm2":cm2},class_weight={0:0,1:0,2:0})
->>> print(cp3)
+>>> cp4 = Compare({"cm1":cm1,"cm2":cm2},class_weight={0:0,1:0,2:0})
+>>> print(cp4)
 Best : cm2
 <BLANKLINE>
 Rank  Name   Class-Score      Overall-Score
 1     cm2    0.70556          0.96667
 2     cm1    0.55             0.74722
 <BLANKLINE>
+>>> class_benchmark_weight = {"PLRI":0,"NLRI":0,"DPI":0,"AUCI":1,"MCCI":0,"QI":0}
+>>> cp5 = Compare({"cm1":cm1,"cm2":cm2},class_benchmark_weight=class_benchmark_weight)
+>>> print(cp5)
+Best : cm2
+
+Rank  Name   Class-Score       Overall-Score
+1     cm2    0.93333           0.96667
+2     cm1    0.73333           0.74722
+
+>>> overall_benchmark_weight = {"SOA1":1,"SOA2":0,"SOA3":0,"SOA4":0,"SOA5":0,"SOA6":1}
+>>> cp6 = Compare({"cm1":cm1,"cm2":cm2},class_benchmark_weight=class_benchmark_weight,overall_benchmark_weight=overall_benchmark_weight)
+>>> print(cp6)
+Best : cm2
+
+Rank  Name   Class-Score       Overall-Score
+1     cm2    0.93333           0.9
+2     cm1    0.73333           0.71667
 >>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
-...     cp3 = Compare({"cm1":cm1,"cm2":cm2},class_weight={0:200,1:1,2:1})
->>> print(cp3)
+...     cp7 = Compare({"cm1":cm1,"cm2":cm2},class_weight={0:200,1:1,2:1})
+>>> print(cp7)
 Best : None
 <BLANKLINE>
 Rank  Name   Class-Score     Overall-Score
 1     cm1    0.50074         0.74722
 2     cm2    0.47021         0.96667
 <BLANKLINE>
->>> cp3.best
->>> cp3.best_name
+>>> cp7.best
+>>> cp7.best_name
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu, y_pred)
 >>> cm.relabel({0:"L1",1:"L2",2:"L3"})
 >>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
-...     cp4 = Compare({"cm1":cm,"cm2":cm},class_weight={'L3': 6, 'L1': 3, 'L2': 3})
+...     cp8 = Compare({"cm1":cm,"cm2":cm},class_weight={'L3': 6, 'L1': 3, 'L2': 3})
 >>> with warns(RuntimeWarning, match='The class_weight format is wrong, the result is for unweighted mode.'):
-...     cp5 = Compare({"cm1":cm1,"cm2":cm2},class_weight={0: 0, 1: 0, 2: 0})
+...     cp9 = Compare({"cm1":cm1,"cm2":cm2},class_weight={0: 0, 1: 0, 2: 0})
+>>> class_benchmark_weight = {"PLRI":0,"NLRI":0,"DPI":0,"AUCI":0,"MCCI":0,"QI":0}
+>>> with warns(RuntimeWarning, match='The class_benchmark_weight format is wrong, the result is for unweighted mode.'):
+...     cp10 = Compare({"cm1":cm1,"cm2":cm2},class_benchmark_weight=class_benchmark_weight)
+>>> overall_benchmark_weight = {"SOA1":0,"SOA2":0,"SOA3":0,"SOA4":0,"SOA5":0,"SOA6":0}
+>>> with warns(RuntimeWarning, match='The overall_benchmark_weight format is wrong, the result is for unweighted mode.'):
+...     cp11 = Compare({"cm1":cm1,"cm2":cm2},overall_benchmark_weight=overall_benchmark_weight)
 """

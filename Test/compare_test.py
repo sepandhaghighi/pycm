@@ -82,19 +82,20 @@ Rank  Name   Class-Score      Overall-Score
 >>> cp5 = Compare({"cm1":cm1,"cm2":cm2},class_benchmark_weight=class_benchmark_weight)
 >>> print(cp5)
 Best : cm2
-
+<BLANKLINE>
 Rank  Name   Class-Score       Overall-Score
 1     cm2    0.93333           0.96667
 2     cm1    0.73333           0.74722
-
+<BLANKLINE>
 >>> overall_benchmark_weight = {"SOA1":1,"SOA2":0,"SOA3":0,"SOA4":0,"SOA5":0,"SOA6":1}
 >>> cp6 = Compare({"cm1":cm1,"cm2":cm2},class_benchmark_weight=class_benchmark_weight,overall_benchmark_weight=overall_benchmark_weight)
 >>> print(cp6)
 Best : cm2
-
+<BLANKLINE>
 Rank  Name   Class-Score       Overall-Score
 1     cm2    0.93333           0.9
 2     cm1    0.73333           0.71667
+<BLANKLINE>
 >>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
 ...     cp7 = Compare({"cm1":cm1,"cm2":cm2},class_weight={0:200,1:1,2:1})
 >>> print(cp7)

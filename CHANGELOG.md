@@ -5,8 +5,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- `__compare_weight_handler__` function
 ### Changed
 - `is_imbalanced` parameter added to ConfusionMatrix `__init__` method
+- `class_benchmark_weight` and `overall_benchmark_weight` parameters added to Compare `__init__` method
 - `statistic_recommend` function modified
 - Compare `weight` parameter renamed to `class_weight`
 - Document modified

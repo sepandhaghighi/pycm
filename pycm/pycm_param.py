@@ -69,7 +69,15 @@ COMPARE_NUMBER_ERROR = "Lower than two confusion matrices is given for comparing
 
 COMPARE_CLASS_WEIGHT_ERROR = "The class_weight type must be dictionary and also must be specified for all of the classes."
 
+COMPARE_CLASS_BENCHMARK_WEIGHT_ERROR = "The class_benchmark_weight type must be dictionary and also must be specified for all of the class benchmarks."
+
+COMPARE_OVERALL_BENCHMARK_WEIGHT_ERROR = "The overall_benchmark_weight type must be dictionary and also must be specified for all of the overall benchmarks."
+
 COMPARE_CLASS_WEIGHT_WARNING = "The class_weight format is wrong, the result is for unweighted mode."
+
+COMPARE_CLASS_BENCHMARK_WEIGHT_WARNING = "The class_benchmark_weight format is wrong, the result is for unweighted mode."
+
+COMPARE_OVERALL_BENCHMARK_WEIGHT_WARNING = "The overall_benchmark_weight format is wrong, the result is for unweighted mode."
 
 COMBINE_TYPE_ERROR = "The input type is supposed to be pycm.ConfusionMatrix object but it's not!"
 

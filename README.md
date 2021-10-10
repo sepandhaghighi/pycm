@@ -714,7 +714,9 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 1. `cm_dict` : python `dict` of `ConfusionMatrix` object (`str` : `ConfusionMatrix`)
 2. `by_class` : `bool`
 3. `class_weight` : python `dict` of class weights (`class_name` : `float`)
-4. `digit`: `int`
+4. `class_benchmark_weight`: python `dict` of class benchmark weights (`class_benchmark_name` : `float`) 
+5. `overall_benchmark_weight`: python `dict` of overall benchmark weights (`overall_benchmark_name` : `float`) 
+6. `digit`: `int`
 
 * Run `help(Compare)` for `Compare` object details
 

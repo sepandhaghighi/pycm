@@ -53,7 +53,7 @@ class Compare():
         self.scores = None
         self.sorted = None
         self.classes = None
-        __compare_assign_handler__(self, cm_dict, class_weight, digit)
+        __compare_assign_handler__(self, cm_dict, class_weight, class_benchmark_weight, overall_benchmark_weight, digit)
         __compare_class_handler__(self, cm_dict)
         __compare_overall_handler__(self, cm_dict)
         __compare_rounder__(self, cm_dict)

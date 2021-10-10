@@ -290,12 +290,14 @@ CLASS_BENCHMARK_SCORE_DICT = {
     "QI": QI_SCORE}
 
 OVERALL_BENCHMARK_SCORE_DICT = {
-    "SOA1(Landis & Koch)": SOA1_SCORE,
-    "SOA2(Fleiss)": SOA2_SCORE,
-    "SOA3(Altman)": SOA3_SCORE,
-    "SOA4(Cicchetti)": SOA4_SCORE,
-    "SOA5(Cramer)": SOA5_SCORE,
-    "SOA6(Matthews)": SOA6_SCORE}
+    "SOA1": SOA1_SCORE,
+    "SOA2": SOA2_SCORE,
+    "SOA3": SOA3_SCORE,
+    "SOA4": SOA4_SCORE,
+    "SOA5": SOA5_SCORE,
+    "SOA6": SOA6_SCORE}
+
+OVERALL_BENCHMARK_MAP = {"SOA1":"SOA1(Landis & Koch)","SOA2":"SOA2(Fleiss)","SOA3":"SOA3(Altman)","SOA4":"SOA4(Cicchetti)","SOA5":"SOA5(Cramer)","SOA6":"SOA6(Matthews)"}
 
 RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"

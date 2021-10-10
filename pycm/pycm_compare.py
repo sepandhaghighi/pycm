@@ -141,7 +141,7 @@ def __compare_class_handler__(compare, cm_dict):
     :return: None
     """
     class_weight_sum = sum(compare.class_weight.values())
-    class_benchmark_weight_sum = sum(compare.class_benchmark_weight)
+    class_benchmark_weight_sum = sum(compare.class_benchmark_weight.values())
     for c in compare.classes:
         for item in CLASS_BENCHMARK_SCORE_DICT.keys():
             max_item_score = len(CLASS_BENCHMARK_SCORE_DICT[item]) - 1
@@ -165,7 +165,7 @@ def __compare_overall_handler__(compare, cm_dict):
     :type cm_dict : dict
     :return: None
     """
-    overall_benchmark_weight_sum = sum(compare.overall_benchmark_weight)
+    overall_benchmark_weight_sum = sum(compare.overall_benchmark_weight.values())
     for item in OVERALL_BENCHMARK_SCORE_DICT.keys():
         max_item_score = len(OVERALL_BENCHMARK_SCORE_DICT[item]) - 1
         all_overall_score = [OVERALL_BENCHMARK_SCORE_DICT[item][

@@ -222,18 +222,22 @@ def __compare_sort_handler__(compare):
     return (max_overall_name, max_class_name)
 
 
-def __compare_assign_handler__(compare, cm_dict, class_weight, digit):
+def __compare_assign_handler__(compare, cm_dict, class_weight, class_benchmark_weight, overall_benchmark_weight, digit):
     """
-    Assign basic parameters to Comapre.
+    Assign basic parameters to Compare.
 
     :param compare: Compare
     :type compare : pycm.Compare object
     :param cm_dict: cm's dictionary
     :type cm_dict : dict
-    :param digit: precision digit (default value : 5)
-    :type digit : int
     :param class_weight: class weights
     :type class_weight: dict
+    :param class_benchmark_weight: class benchmark weights
+    :type class_benchmark_weight: dict
+    :param overall_benchmark_weight: overall benchmark weights
+    :type overall_benchmark_weight: dict
+    :param digit: precision digit (default value : 5)
+    :type digit : int
     :return: None
     """
     if not isinstance(cm_dict, dict):

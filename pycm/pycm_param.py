@@ -301,7 +301,13 @@ OVERALL_BENCHMARK_SCORE_DICT = {
 
 OVERALL_BENCHMARK_LIST = sorted(list(OVERALL_BENCHMARK_SCORE_DICT.keys()))
 
-OVERALL_BENCHMARK_MAP = {"SOA1":"SOA1(Landis & Koch)","SOA2":"SOA2(Fleiss)","SOA3":"SOA3(Altman)","SOA4":"SOA4(Cicchetti)","SOA5":"SOA5(Cramer)","SOA6":"SOA6(Matthews)"}
+OVERALL_BENCHMARK_MAP = {
+    "SOA1": "SOA1(Landis & Koch)",
+    "SOA2": "SOA2(Fleiss)",
+    "SOA3": "SOA3(Altman)",
+    "SOA4": "SOA4(Cicchetti)",
+    "SOA5": "SOA5(Cramer)",
+    "SOA6": "SOA6(Matthews)"}
 
 RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"

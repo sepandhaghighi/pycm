@@ -263,17 +263,18 @@ def __compare_weight_handler__(compare, weight, weight_type):
         "class_weight": COMPARE_CLASS_WEIGHT_WARNING,
         "class_benchmark_weight": COMPARE_CLASS_BENCHMARK_WEIGHT_WARNING,
         "overall_benchmark_weight": COMPARE_OVERALL_BENCHMARK_WEIGHT_WARNING}
-    if weight is not None:
-        if not isinstance(weight, dict):
-            raise pycmCompareError(error_dict[weight_type])
-        if set(weight.keys()) == set(valid_dict[weight_type]):
-            if all([isfloat(x) for x in weight.values()]
-                   ) and sum(weight.values()) != 0:
-                setattr(compare, weight_type, weight)
-            else:
-                warn(warning_dict[weight_type], RuntimeWarning)
+    if weight is None:
+        return None
+    if not isinstance(weight, dict):
+        raise pycmCompareError(error_dict[weight_type])
+    if set(weight.keys()) == set(valid_dict[weight_type]):
+        if all([isfloat(x) for x in weight.values()]
+                ) and sum(weight.values()) != 0:
+            setattr(compare, weight_type, weight)
         else:
-            raise pycmCompareError(error_dict[weight_type])
+            warn(warning_dict[weight_type], RuntimeWarning)
+    else:
+        raise pycmCompareError(error_dict[weight_type])
 
 
 def __compare_assign_handler__(

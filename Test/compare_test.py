@@ -78,7 +78,7 @@ Best : cm2
 <BLANKLINE>
 Rank  Name   Class-Score      Overall-Score
 1     cm2    0.825            0.96667
-2     cm1    0.575             0.74722
+2     cm1    0.575            0.74722
 <BLANKLINE>
 >>> class_benchmark_weight = {"PLRI":0,"NLRI":0,"DPI":0,"AUCI":1,"MCCI":0,"QI":0}
 >>> cp5 = Compare({"cm1":cm1,"cm2":cm2},class_benchmark_weight=class_benchmark_weight)

@@ -91,6 +91,14 @@ pycm.pycm_obj.pycmCompareError: The class_weight type must be dictionary and als
 Traceback (most recent call last):
         ...
 pycm.pycm_obj.pycmCompareError: The class_weight type must be dictionary and also must be specified for all of the classes.
+>>> cp = Compare({"cm1":cm,"cm2":cm3},by_class=True,class_benchmark_weight=[])
+Traceback (most recent call last):
+        ...
+pycm.pycm_obj.pycmCompareError: The class_benchmark_weight type must be dictionary and also must be specified for all of the class benchmarks.
+>>> cp = Compare({"cm1":cm,"cm2":cm3},by_class=True,overall_benchmark_weight=[])
+Traceback (most recent call last):
+        ...
+pycm.pycm_obj.pycmCompareError: The overall_benchmark_weight type must be dictionary and also must be specified for all of the overall benchmarks.
 >>> cm.CI("MCC")
 Traceback (most recent call last):
         ...

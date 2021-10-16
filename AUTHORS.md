@@ -1,17 +1,18 @@
 # Authors #
 
 ----------
-- Sepand Haghighi - Sharif University Of Technology ([shaghighi@ce.sharif.edu](mailto:shaghighi@ce.sharif.edu))
-- Masoomeh Jasemi - Sharif University Of Technology ([jasemi@ce.sharif.edu](mailto:jasemi@ce.sharif.edu))
-- Shaahin Hessabi - Sharif University Of Technology ([hessabi@sharif.edu](mailto:hessabi@sharif.edu))
-- Alireza Zolanvari  - Amirkabir University of Technology ([alirezazolanvari@aut.ac.ir](mailto:alirezazolanvari@aut.ac.ir))
+- Sepand Haghighi - Sharif University of Technology ([Github](https://github.com/sepandhaghighi)) **
+- Alireza Zolanvari  - University of Groningen ([Github](https://github.com/AlirezaZolanvari)) **
+- Sadra Sabouri - Sharif University of Technology ([Github](https://github.com/sadrasabouri)) **
+- Masoomeh Jasemi - Microsoft ([Github](https://github.com/MasoomehJasemi))
+- Shaahin Hessabi - Sharif University of Technology ([Email](mailto:hessabi@sharif.edu))
 
+** **Maintainer**
 
 # Other Contributors #
 ----------
 - [Sohee Yang](https://github.com/soheeyang)
 - [Mohammad Mahdi Rahimi](https://github.com/mahi97)
-- [Sadra Sabouri](https://github.com/sadrasabouri)
 - [Christian Clauss](https://github.com/cclauss)
 - [Negar Zabetian](https://github.com/negarzabetian)
 - [Ashwin Geet D'Sa](https://github.com/GeetDsa)

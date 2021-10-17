@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Document modified
 - License updated
 - `AUTHORS.md` updated
+- Block diagrams updated
 ## [3.2] - 2021-08-11
 ### Added
 - `classes_filter` function

@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- Python 3.10 test support
 - `__compare_weight_handler__` function
 ### Changed
 - `is_imbalanced` parameter added to ConfusionMatrix `__init__` method

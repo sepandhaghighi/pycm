@@ -5,6 +5,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [3.3] - 2021-10-27
+### Added
+- `__compare_weight_handler__` function
+### Changed
+- `is_imbalanced` parameter added to ConfusionMatrix `__init__` method
+- `class_benchmark_weight` and `overall_benchmark_weight` parameters added to Compare `__init__` method
+- `statistic_recommend` function modified
+- Compare `weight` parameter renamed to `class_weight`
+- Document modified
+- License updated
+- `AUTHORS.md` updated
+- `README.md` modified
+- Block diagrams updated
 ## [3.2] - 2021-08-11
 ### Added
 - `classes_filter` function
@@ -544,7 +557,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v3.2...dev
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v3.3...dev
+[3.3]: https://github.com/sepandhaghighi/pycm/compare/v3.2...v3.3
 [3.2]: https://github.com/sepandhaghighi/pycm/compare/v3.1...v3.2
 [3.1]: https://github.com/sepandhaghighi/pycm/compare/v3.0...v3.1
 [3.0]: https://github.com/sepandhaghighi/pycm/compare/v2.9...v3.0

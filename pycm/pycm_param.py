@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parameters and constants."""
-PYCM_VERSION = "3.2"
+PYCM_VERSION = "3.3"
 
 
 OVERVIEW = '''
@@ -67,7 +67,17 @@ COMPARE_DOMAIN_ERROR = "The domain of all ConfusionMatrix objects must be same! 
 COMPARE_NUMBER_ERROR = "Lower than two confusion matrices is given for comparing. The minimum number of " \
                        "confusion matrix for comparing is 2."
 
-COMPARE_WEIGHT_ERROR = "The weight type must be dictionary and also must be specified for all of the classes."
+COMPARE_CLASS_WEIGHT_ERROR = "The class_weight type must be dictionary and also must be specified for all of the classes."
+
+COMPARE_CLASS_BENCHMARK_WEIGHT_ERROR = "The class_benchmark_weight type must be dictionary and also must be specified for all of the class benchmarks."
+
+COMPARE_OVERALL_BENCHMARK_WEIGHT_ERROR = "The overall_benchmark_weight type must be dictionary and also must be specified for all of the overall benchmarks."
+
+COMPARE_CLASS_WEIGHT_WARNING = "The class_weight format is wrong, the result is for unweighted mode."
+
+COMPARE_CLASS_BENCHMARK_WEIGHT_WARNING = "The class_benchmark_weight format is wrong, the result is for unweighted mode."
+
+COMPARE_OVERALL_BENCHMARK_WEIGHT_WARNING = "The overall_benchmark_weight format is wrong, the result is for unweighted mode."
 
 COMBINE_TYPE_ERROR = "The input type is supposed to be pycm.ConfusionMatrix object but it's not!"
 
@@ -279,13 +289,25 @@ CLASS_BENCHMARK_SCORE_DICT = {
     "MCCI": SOA6_SCORE,
     "QI": QI_SCORE}
 
+CLASS_BENCHMARK_LIST = sorted(list(CLASS_BENCHMARK_SCORE_DICT.keys()))
+
 OVERALL_BENCHMARK_SCORE_DICT = {
-    "SOA1(Landis & Koch)": SOA1_SCORE,
-    "SOA2(Fleiss)": SOA2_SCORE,
-    "SOA3(Altman)": SOA3_SCORE,
-    "SOA4(Cicchetti)": SOA4_SCORE,
-    "SOA5(Cramer)": SOA5_SCORE,
-    "SOA6(Matthews)": SOA6_SCORE}
+    "SOA1": SOA1_SCORE,
+    "SOA2": SOA2_SCORE,
+    "SOA3": SOA3_SCORE,
+    "SOA4": SOA4_SCORE,
+    "SOA5": SOA5_SCORE,
+    "SOA6": SOA6_SCORE}
+
+OVERALL_BENCHMARK_LIST = sorted(list(OVERALL_BENCHMARK_SCORE_DICT.keys()))
+
+OVERALL_BENCHMARK_MAP = {
+    "SOA1": "SOA1(Landis & Koch)",
+    "SOA2": "SOA2(Fleiss)",
+    "SOA3": "SOA3(Altman)",
+    "SOA4": "SOA4(Cicchetti)",
+    "SOA5": "SOA5(Cramer)",
+    "SOA6": "SOA6(Matthews)"}
 
 RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"

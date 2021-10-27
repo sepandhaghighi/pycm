@@ -9,7 +9,6 @@
 </a>
 <a href="https://badge.fury.io/py/pycm"><img src="https://badge.fury.io/py/pycm.svg" alt="PyPI version" height="18"></a>
 <a href="https://anaconda.org/sepandhaghighi/pycm"><img src="https://anaconda.org/sepandhaghighi/pycm/badges/version.svg"></a>
-<a href = "https://hub.docker.com/r/sepandhaghighi/pycm"><img alt="Docker Cloud Build Status" src="https://img.shields.io/docker/cloud/build/sepandhaghighi/pycm"></a>
 </div>
 
 ----------
@@ -54,7 +53,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 	</tr>
 	<tr>
 		<td align="center">PyPI Counter</td>
-		<td align="center"><a href="http://pepy.tech/count/pycm"><img src="http://pepy.tech/badge/pycm"></a></td>
+		<td align="center"><a href="http://pepy.tech/project/pycm"><img src="http://pepy.tech/badge/pycm"></a></td>
 	</tr>
 	<tr>
 		<td align="center">Github Stars</td>
@@ -96,7 +95,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ⚠️  Plotting capability requires **Matplotlib (>= 3.0.0)** or **Seaborn (>= 0.9.1)**   
 
 ### Source code
-- Download [Version 3.2](https://github.com/sepandhaghighi/pycm/archive/v3.2.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 3.3](https://github.com/sepandhaghighi/pycm/archive/v3.3.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -104,12 +103,13 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==3.2` or `pip3 install pycm==3.2` (Need root access)
+- Run `pip install pycm==3.3` or `pip3 install pycm==3.3` (Need root access)
 
 ### Conda
 
 - Check [Conda Managing Package](https://conda.io/)
-- `conda install -c sepandhaghighi pycm` (Need root access)
+- Update Conda using `conda update conda` (Need root access)
+- Run `conda install -c sepandhaghighi pycm` (Need root access)
 
 ### Easy install
 
@@ -127,13 +127,6 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 >> pyversion PYTHON_EXECUTABLE_FULL_PATH
 ```
 - Visit [MATLAB Examples](https://github.com/sepandhaghighi/pycm/tree/master/MATLAB)	
-
-### Docker	
-
-- Run `docker pull sepandhaghighi/pycm` (Need root access)
-- Configuration :
-	- Ubuntu 16.04
-	- Python 3.6
 
 
 ## Usage
@@ -650,6 +643,17 @@ False
 >>> cm.recommended_list
 ['MCC', 'TPR Micro', 'ACC', 'PPV Macro', 'BCD', 'Overall MCC', 'Hamming Loss', 'TPR Macro', 'Zero-one Loss', 'ERR', 'PPV Micro', 'Overall ACC']
 
+```
+
+`is_imbalanced` parameter has been added in `version 3.3`, so the user can indicate whether the concerned dataset is imbalanced or not. As long as the user does not provide any information in this regard, the automatic detection algorithm will be used.
+
+```pycon
+>>> cm = ConfusionMatrix(y_actu, y_pred, is_imbalanced = True)
+>>> cm.imbalance
+True
+>>> cm = ConfusionMatrix(y_actu, y_pred, is_imbalanced = False)
+>>> cm.imbalance
+False
 ```	
 
 ### Compare
@@ -701,8 +705,10 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 
 1. `cm_dict` : python `dict` of `ConfusionMatrix` object (`str` : `ConfusionMatrix`)
 2. `by_class` : `bool`
-3. `weight` : python `dict` of class weights (`class_name` : `float`)
-4. `digit`: `int`
+3. `class_weight` : python `dict` of class weights (`class_name` : `float`)
+4. `class_benchmark_weight`: python `dict` of class benchmark weights (`class_benchmark_name` : `float`) 
+5. `overall_benchmark_weight`: python `dict` of overall benchmark weights (`overall_benchmark_name` : `float`) 
+6. `digit`: `int`
 
 * Run `help(Compare)` for `Compare` object details
 

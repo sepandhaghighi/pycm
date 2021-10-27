@@ -11787,7 +11787,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Version-:-3.2">Version : 3.2<a class="anchor-link" href="#Version-:-3.2">&#182;</a></h3><hr>
+<h3 id="Version-:-3.3">Version : 3.3<a class="anchor-link" href="#Version-:-3.3">&#182;</a></h3><hr>
 
 </div>
 </div>
@@ -12064,7 +12064,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Source-code">Source code<a class="anchor-link" href="#Source-code">&#182;</a></h3><ul>
-<li>Download <a href="https://github.com/sepandhaghighi/pycm/archive/v3.2.zip">Version 3.2</a> or <a href="https://github.com/sepandhaghighi/pycm/archive/dev.zip">Latest Source </a></li>
+<li>Download <a href="https://github.com/sepandhaghighi/pycm/archive/v3.3.zip">Version 3.3</a> or <a href="https://github.com/sepandhaghighi/pycm/archive/dev.zip">Latest Source </a></li>
 <li>Run <code>pip install -r requirements.txt</code> or <code>pip3 install -r requirements.txt</code> (Need root access)</li>
 <li>Run <code>python3 setup.py install</code> or <code>python setup.py install</code> (Need root access)</li>
 </ul>
@@ -12078,7 +12078,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="PyPI">PyPI<a class="anchor-link" href="#PyPI">&#182;</a></h3><ul>
 <li>Check <a href="https://packaging.python.org/installing/">Python Packaging User Guide</a>     </li>
-<li>Run <code>pip install pycm==3.2</code> or <code>pip3 install pycm==3.2</code> (Need root access)</li>
+<li>Run <code>pip install pycm==3.3</code> or <code>pip3 install pycm==3.3</code> (Need root access)</li>
 </ul>
 
 </div>
@@ -12934,7 +12934,7 @@ Actual
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-3.2-py3.5.egg\pycm\pycm_util.py:382: RuntimeWarning: Used classes is not a subset of classes in actual and predict vectors.
+<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-3.3-py3.5.egg\pycm\pycm_util.py:387: RuntimeWarning: Used classes is not a subset of classes in actual and predict vectors.
 </pre>
 </div>
 </div>
@@ -13973,7 +13973,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x46d7990&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x47ee350&gt;</pre>
 </div>
 
 </div>
@@ -14021,7 +14021,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x12a0d790&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x48882f0&gt;</pre>
 </div>
 
 </div>
@@ -14069,7 +14069,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x12a46870&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0xfe047d0&gt;</pre>
 </div>
 
 </div>
@@ -14117,7 +14117,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1c00da70&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1c1c2030&gt;</pre>
 </div>
 
 </div>
@@ -14165,7 +14165,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1c03e590&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1c200fd0&gt;</pre>
 </div>
 
 </div>
@@ -14510,6 +14510,33 @@ Example : online_help(&#34;J&#34;) or online_help(2)
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For determining if the dataset is imbalanced, we use the following strategy:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$R=\frac{Max(P)}{Min(P)}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$State=\begin{cases}Balance &amp; R\leq 3\\Imbalance &amp; R &gt; 3\end{cases}$$</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[47]:</div>
@@ -14626,6 +14653,83 @@ Example : online_help(&#34;J&#34;) or online_help(2)
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p><code>is_imbalanced</code> parameter has been added in <code>version 3.3</code>, so the user can indicate whether the concerned dataset is imbalanced or not. As long as the user does not provide any information in this regard, the automatic detection algorithm will be used.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm4</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_actu</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">is_imbalanced</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">cm4</span><span class="o">.</span><span class="n">imbalance</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[50]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>True</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm4</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_actu</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">is_imbalanced</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">cm4</span><span class="o">.</span><span class="n">imbalance</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[51]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>False</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
     <li><span style="color:red;">Notice </span> :  also available in HTML report </li>
 </ul>
@@ -14638,6 +14742,16 @@ Example : online_help(&#34;J&#34;) or online_help(2)
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
     <li><span style="color:red;">Notice </span> : The recommender system assumes that the input is the result of classification over the whole data rather than just a part of it. If the confusion matrix is the result of test data classification, the recommendation is not valid. </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  `is_imbalanced` , new in <span style="color:red;">version 3.3 </span> </li>
 </ul>
 </div>
 </div>
@@ -14672,9 +14786,63 @@ Example : online_help(&#34;J&#34;) or online_help(2)
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is how the overall and class-based scores are determined for each confusion matrix. Note that here $|Set|$ shows the cardinality of the set and the cardinality of each benchmark is equal to the maximum possible score for that benchmark.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$S_{Overall}=\sum_{i=1}^{|B_O|}\frac{W_{OB}(i)}{\sum W_{OB}}\times\frac{R_O(i)}{|B_O(i)|}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$S_{Class}=\sum_{i=1}^{|B_C|}\sum_{j=1}^{|C|}\frac{W_{CB}(i)}{\sum W_{CB}}\times\frac{W_C(j)}{\sum W_{C}}\times\frac{R_C(i,j)}{|B_C(i)|}$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$0\leq S_{Overall},S_{Class}\leq1$$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>$B_C$ : Class benchmarks</li>
+<li>$B_O$ : Overall benchmarks</li>
+<li>$C$ : Classes</li>
+<li>$W_{CB}$ : Class benchmark weights</li>
+<li>$W_{OB}$ : Overall benchmark weights</li>
+<li>$W_{C}$ : Class weights</li>
+<li>$R_C$ : Class benchmark result</li>
+<li>$R_O$ : Overall benchmark result</li>
+</ul>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="prompt input_prompt">In&nbsp;[52]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:{</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">},</span><span class="mi">1</span><span class="p">:{</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">50</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">},</span><span class="mi">2</span><span class="p">:{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">50</span><span class="p">}})</span>
@@ -14688,7 +14856,7 @@ Example : online_help(&#34;J&#34;) or online_help(2)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[51]:</div>
+<div class="prompt input_prompt">In&nbsp;[53]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span> <span class="o">=</span> <span class="n">Compare</span><span class="p">({</span><span class="s2">&quot;cm2&quot;</span><span class="p">:</span><span class="n">cm2</span><span class="p">,</span><span class="s2">&quot;cm3&quot;</span><span class="p">:</span><span class="n">cm3</span><span class="p">})</span>
@@ -14701,7 +14869,7 @@ Example : online_help(&#34;J&#34;) or online_help(2)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cp</span><span class="p">)</span>
@@ -14723,9 +14891,9 @@ Example : online_help(&#34;J&#34;) or online_help(2)
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Best : cm2
 
-Rank  Name   Class-Score    Overall-Score
-1     cm2    9.05           2.55
-2     cm3    6.05           1.98333
+Rank  Name   Class-Score       Overall-Score
+1     cm2    0.50278           0.425
+2     cm3    0.33611           0.33056
 
 </pre>
 </div>
@@ -14737,77 +14905,10 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span><span class="o">.</span><span class="n">scores</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[53]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>{&#39;cm2&#39;: {&#39;class&#39;: 9.05, &#39;overall&#39;: 2.55},
- &#39;cm3&#39;: {&#39;class&#39;: 6.05, &#39;overall&#39;: 1.98333}}</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[54]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span><span class="o">.</span><span class="n">sorted</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[54]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[&#39;cm2&#39;, &#39;cm3&#39;]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[55]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span><span class="o">.</span><span class="n">best</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span><span class="o">.</span><span class="n">scores</span>
 </pre></div>
 
 </div>
@@ -14826,7 +14927,8 @@ Rank  Name   Class-Score    Overall-Score
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>pycm.ConfusionMatrix(classes: [0, 1, 2])</pre>
+<pre>{&#39;cm2&#39;: {&#39;class&#39;: 0.50278, &#39;overall&#39;: 0.425},
+ &#39;cm3&#39;: {&#39;class&#39;: 0.33611, &#39;overall&#39;: 0.33056}}</pre>
 </div>
 
 </div>
@@ -14840,7 +14942,7 @@ Rank  Name   Class-Score    Overall-Score
 <div class="prompt input_prompt">In&nbsp;[56]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span><span class="o">.</span><span class="n">best_name</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span><span class="o">.</span><span class="n">sorted</span>
 </pre></div>
 
 </div>
@@ -14859,7 +14961,7 @@ Rank  Name   Class-Score    Overall-Score
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;cm2&#39;</pre>
+<pre>[&#39;cm2&#39;, &#39;cm3&#39;]</pre>
 </div>
 
 </div>
@@ -14873,7 +14975,73 @@ Rank  Name   Class-Score    Overall-Score
 <div class="prompt input_prompt">In&nbsp;[57]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp2</span> <span class="o">=</span> <span class="n">Compare</span><span class="p">({</span><span class="s2">&quot;cm2&quot;</span><span class="p">:</span><span class="n">cm2</span><span class="p">,</span><span class="s2">&quot;cm3&quot;</span><span class="p">:</span><span class="n">cm3</span><span class="p">},</span><span class="n">by_class</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span><span class="o">.</span><span class="n">best</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[57]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>pycm.ConfusionMatrix(classes: [0, 1, 2])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span><span class="o">.</span><span class="n">best_name</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[58]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;cm2&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp2</span> <span class="o">=</span> <span class="n">Compare</span><span class="p">({</span><span class="s2">&quot;cm2&quot;</span><span class="p">:</span><span class="n">cm2</span><span class="p">,</span><span class="s2">&quot;cm3&quot;</span><span class="p">:</span><span class="n">cm3</span><span class="p">},</span><span class="n">by_class</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
 </pre></div>
 
 </div>
@@ -14883,7 +15051,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[58]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cp2</span><span class="p">)</span>
@@ -14905,9 +15073,9 @@ Rank  Name   Class-Score    Overall-Score
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Best : cm3
 
-Rank  Name   Class-Score     Overall-Score
-1     cm3    19.05           1.98333
-2     cm2    14.65           2.55
+Rank  Name   Class-Score       Overall-Score
+1     cm3    0.45357           0.33056
+2     cm2    0.34881           0.425
 
 </pre>
 </div>
@@ -14916,6 +15084,157 @@ Rank  Name   Class-Score     Overall-Score
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp3</span> <span class="o">=</span> <span class="n">Compare</span><span class="p">({</span><span class="s2">&quot;cm2&quot;</span><span class="p">:</span><span class="n">cm2</span><span class="p">,</span><span class="s2">&quot;cm3&quot;</span><span class="p">:</span><span class="n">cm3</span><span class="p">},</span><span class="n">class_benchmark_weight</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;PLRI&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;NLRI&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;DPI&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;AUCI&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;MCCI&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;QI&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cp3</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Best : cm2
+
+Rank  Name   Class-Score       Overall-Score
+1     cm2    0.46667           0.425
+2     cm3    0.33333           0.33056
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp4</span> <span class="o">=</span> <span class="n">Compare</span><span class="p">({</span><span class="s2">&quot;cm2&quot;</span><span class="p">:</span><span class="n">cm2</span><span class="p">,</span><span class="s2">&quot;cm3&quot;</span><span class="p">:</span><span class="n">cm3</span><span class="p">},</span><span class="n">overall_benchmark_weight</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;SOA1&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;SOA2&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;SOA3&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;SOA4&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;SOA5&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;SOA6&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cp4</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Best : cm2
+
+Rank  Name   Class-Score       Overall-Score
+1     cm2    0.50278           0.45
+2     cm3    0.33611           0.18333
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Overall and class benchmark lists are available in <code>CLASS_BENCHMARK_LIST</code> and <code>OVERALL_BENCHMARK_LIST</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pycm</span> <span class="k">import</span> <span class="n">CLASS_BENCHMARK_LIST</span><span class="p">,</span><span class="n">OVERALL_BENCHMARK_LIST</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">CLASS_BENCHMARK_LIST</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">OVERALL_BENCHMARK_LIST</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;AUCI&#39;, &#39;DPI&#39;, &#39;MCCI&#39;, &#39;NLRI&#39;, &#39;PLRI&#39;, &#39;QI&#39;]
+[&#39;SOA1&#39;, &#39;SOA2&#39;, &#39;SOA3&#39;, &#39;SOA4&#39;, &#39;SOA5&#39;, &#39;SOA6&#39;]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  `overall_benchmark_weight` and `class_benchmark_weight`, new in <span style="color:red;">version 3.3 </span> </li>
+</ul>
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -14978,7 +15297,9 @@ Rank  Name   Class-Score     Overall-Score
 <ol>
 <li><code>cm_dict</code> : python <code>dict</code> of <code>ConfusionMatrix</code> object (<code>str</code> : <code>ConfusionMatrix</code>)</li>
 <li><code>by_class</code> : <code>bool</code></li>
-<li><code>weight</code> : python <code>dict</code> of class weights (<code>class_name</code> : <code>float</code>)</li>
+<li><code>class_weight</code> : python <code>dict</code> of class weights (<code>class_name</code> : <code>float</code>)</li>
+<li><code>class_benchmark_weight</code>: python <code>dict</code> of class benchmark weights (<code>class_benchmark_name</code> : <code>float</code>) </li>
+<li><code>overall_benchmark_weight</code>: python <code>dict</code> of overall benchmark weights (<code>overall_benchmark_name</code> : <code>float</code>) </li>
 <li><code>digit</code>: <code>int</code></li>
 </ol>
 
@@ -14993,6 +15314,26 @@ Rank  Name   Class-Score     Overall-Score
 <li>run <code>help(Compare)</code> for more information</li>
 </ul>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  `weight` renamed to `class_weight` in <span style="color:red;">version 3.3</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  `overall_benchmark_weight` and `class_benchmark_weight`, new in <span style="color:red;">version 3.3 </span> </li>
+</ul>
 </div>
 </div>
 </div>
@@ -15024,7 +15365,7 @@ condition is present (correctly identified) <a href="#ref3">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="prompt input_prompt">In&nbsp;[66]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TP</span>
@@ -15040,7 +15381,7 @@ condition is present (correctly identified) <a href="#ref3">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[59]:</div>
+<div class="prompt output_prompt">Out[66]:</div>
 
 
 
@@ -15075,7 +15416,7 @@ the condition is absent (correctly rejected) <a href="#ref3">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="prompt input_prompt">In&nbsp;[67]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TN</span>
@@ -15091,7 +15432,7 @@ the condition is absent (correctly rejected) <a href="#ref3">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[60]:</div>
+<div class="prompt output_prompt">Out[67]:</div>
 
 
 
@@ -15126,7 +15467,7 @@ condition is absent (incorrectly identified) <a href="#ref3">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[61]:</div>
+<div class="prompt input_prompt">In&nbsp;[68]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">FP</span>
@@ -15142,7 +15483,7 @@ condition is absent (incorrectly identified) <a href="#ref3">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[61]:</div>
+<div class="prompt output_prompt">Out[68]:</div>
 
 
 
@@ -15177,7 +15518,7 @@ the condition is present (incorrectly rejected) <a href="#ref3">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="prompt input_prompt">In&nbsp;[69]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">FN</span>
@@ -15193,7 +15534,7 @@ the condition is present (incorrectly rejected) <a href="#ref3">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[62]:</div>
+<div class="prompt output_prompt">Out[69]:</div>
 
 
 
@@ -15237,7 +15578,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[63]:</div>
+<div class="prompt input_prompt">In&nbsp;[70]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">P</span>
@@ -15253,7 +15594,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[63]:</div>
+<div class="prompt output_prompt">Out[70]:</div>
 
 
 
@@ -15296,7 +15637,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[64]:</div>
+<div class="prompt input_prompt">In&nbsp;[71]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">N</span>
@@ -15312,7 +15653,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[64]:</div>
+<div class="prompt output_prompt">Out[71]:</div>
 
 
 
@@ -15355,7 +15696,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[65]:</div>
+<div class="prompt input_prompt">In&nbsp;[72]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TOP</span>
@@ -15371,7 +15712,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[65]:</div>
+<div class="prompt output_prompt">Out[72]:</div>
 
 
 
@@ -15414,7 +15755,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[66]:</div>
+<div class="prompt input_prompt">In&nbsp;[73]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TON</span>
@@ -15430,7 +15771,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[66]:</div>
+<div class="prompt output_prompt">Out[73]:</div>
 
 
 
@@ -15473,7 +15814,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[67]:</div>
+<div class="prompt input_prompt">In&nbsp;[74]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">POP</span>
@@ -15489,7 +15830,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[67]:</div>
+<div class="prompt output_prompt">Out[74]:</div>
 
 
 
@@ -15552,7 +15893,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[68]:</div>
+<div class="prompt input_prompt">In&nbsp;[75]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TPR</span>
@@ -15568,7 +15909,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[68]:</div>
+<div class="prompt output_prompt">Out[75]:</div>
 
 
 
@@ -15612,7 +15953,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[69]:</div>
+<div class="prompt input_prompt">In&nbsp;[76]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TNR</span>
@@ -15628,7 +15969,7 @@ Also known as support (the number of occurrences of each class in y_true) <a hre
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[69]:</div>
+<div class="prompt output_prompt">Out[76]:</div>
 
 
 
@@ -15673,7 +16014,7 @@ the presence of the condition <a href="#ref3">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[77]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PPV</span>
@@ -15689,7 +16030,7 @@ the presence of the condition <a href="#ref3">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[70]:</div>
+<div class="prompt output_prompt">Out[77]:</div>
 
 
 
@@ -15734,7 +16075,7 @@ the absence of the condition <a href="#ref3">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[78]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">NPV</span>
@@ -15750,7 +16091,7 @@ the absence of the condition <a href="#ref3">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[71]:</div>
+<div class="prompt output_prompt">Out[78]:</div>
 
 
 
@@ -15794,7 +16135,7 @@ the absence of the condition <a href="#ref3">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[72]:</div>
+<div class="prompt input_prompt">In&nbsp;[79]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">FNR</span>
@@ -15810,7 +16151,7 @@ the absence of the condition <a href="#ref3">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[72]:</div>
+<div class="prompt output_prompt">Out[79]:</div>
 
 
 
@@ -15855,7 +16196,7 @@ the absence of the condition <a href="#ref3">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[73]:</div>
+<div class="prompt input_prompt">In&nbsp;[80]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">FPR</span>
@@ -15871,7 +16212,7 @@ the absence of the condition <a href="#ref3">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[73]:</div>
+<div class="prompt output_prompt">Out[80]:</div>
 
 
 
@@ -15915,7 +16256,7 @@ the absence of the condition <a href="#ref3">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[74]:</div>
+<div class="prompt input_prompt">In&nbsp;[81]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">FDR</span>
@@ -15931,7 +16272,7 @@ the absence of the condition <a href="#ref3">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[74]:</div>
+<div class="prompt output_prompt">Out[81]:</div>
 
 
 
@@ -15975,7 +16316,7 @@ the absence of the condition <a href="#ref3">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[75]:</div>
+<div class="prompt input_prompt">In&nbsp;[82]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">FOR</span>
@@ -15991,7 +16332,7 @@ the absence of the condition <a href="#ref3">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[75]:</div>
+<div class="prompt output_prompt">Out[82]:</div>
 
 
 
@@ -16037,7 +16378,7 @@ the absence of the condition <a href="#ref3">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[83]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ACC</span>
@@ -16053,7 +16394,7 @@ the absence of the condition <a href="#ref3">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[76]:</div>
+<div class="prompt output_prompt">Out[83]:</div>
 
 
 
@@ -16096,7 +16437,7 @@ the absence of the condition <a href="#ref3">[3]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[84]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ERR</span>
@@ -16112,7 +16453,7 @@ the absence of the condition <a href="#ref3">[3]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[77]:</div>
+<div class="prompt output_prompt">Out[84]:</div>
 
 
 
@@ -16167,7 +16508,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[85]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">F1</span>
@@ -16183,7 +16524,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[78]:</div>
+<div class="prompt output_prompt">Out[85]:</div>
 
 
 
@@ -16200,7 +16541,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[86]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">F05</span>
@@ -16216,7 +16557,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[79]:</div>
+<div class="prompt output_prompt">Out[86]:</div>
 
 
 
@@ -16233,7 +16574,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[87]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">F2</span>
@@ -16249,7 +16590,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[80]:</div>
+<div class="prompt output_prompt">Out[87]:</div>
 
 
 
@@ -16266,7 +16607,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[88]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">F_beta</span><span class="p">(</span><span class="n">beta</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
@@ -16282,7 +16623,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[81]:</div>
+<div class="prompt output_prompt">Out[88]:</div>
 
 
 
@@ -16373,7 +16714,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="prompt input_prompt">In&nbsp;[89]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">MCC</span>
@@ -16389,7 +16730,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[82]:</div>
+<div class="prompt output_prompt">Out[89]:</div>
 
 
 
@@ -16433,7 +16774,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="prompt input_prompt">In&nbsp;[90]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">BM</span>
@@ -16449,7 +16790,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[83]:</div>
+<div class="prompt output_prompt">Out[90]:</div>
 
 
 
@@ -16494,7 +16835,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="prompt input_prompt">In&nbsp;[91]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">MK</span>
@@ -16510,7 +16851,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[84]:</div>
+<div class="prompt output_prompt">Out[91]:</div>
 
 
 
@@ -16555,7 +16896,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="prompt input_prompt">In&nbsp;[92]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PLR</span>
@@ -16571,7 +16912,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[85]:</div>
+<div class="prompt output_prompt">Out[92]:</div>
 
 
 
@@ -16626,7 +16967,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="prompt input_prompt">In&nbsp;[93]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">NLR</span>
@@ -16642,7 +16983,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[86]:</div>
+<div class="prompt output_prompt">Out[93]:</div>
 
 
 
@@ -16696,7 +17037,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="prompt input_prompt">In&nbsp;[94]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">DOR</span>
@@ -16712,7 +17053,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[87]:</div>
+<div class="prompt output_prompt">Out[94]:</div>
 
 
 
@@ -16756,7 +17097,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[88]:</div>
+<div class="prompt input_prompt">In&nbsp;[95]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PRE</span>
@@ -16772,7 +17113,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[88]:</div>
+<div class="prompt output_prompt">Out[95]:</div>
 
 
 
@@ -16816,7 +17157,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[89]:</div>
+<div class="prompt input_prompt">In&nbsp;[96]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">G</span>
@@ -16832,7 +17173,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[89]:</div>
+<div class="prompt output_prompt">Out[96]:</div>
 
 
 
@@ -16875,7 +17216,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[90]:</div>
+<div class="prompt input_prompt">In&nbsp;[97]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">RACC</span>
@@ -16891,7 +17232,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[90]:</div>
+<div class="prompt output_prompt">Out[97]:</div>
 
 
 
@@ -16946,7 +17287,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[91]:</div>
+<div class="prompt input_prompt">In&nbsp;[98]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">RACCU</span>
@@ -16962,7 +17303,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[91]:</div>
+<div class="prompt output_prompt">Out[98]:</div>
 
 
 
@@ -17018,7 +17359,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[92]:</div>
+<div class="prompt input_prompt">In&nbsp;[99]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">J</span>
@@ -17034,7 +17375,7 @@ The F1 score is the harmonic average of the precision and recall, where F1 score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[92]:</div>
+<div class="prompt output_prompt">Out[99]:</div>
 
 
 
@@ -17088,7 +17429,7 @@ class C, whose prior probability is $ p(C) $, is defined as $ -\log_2(p(C)) $ <a
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[93]:</div>
+<div class="prompt input_prompt">In&nbsp;[100]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">IS</span>
@@ -17104,7 +17445,7 @@ class C, whose prior probability is $ p(C) $, is defined as $ -\log_2(p(C)) $ <a
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[93]:</div>
+<div class="prompt output_prompt">Out[100]:</div>
 
 
 
@@ -17177,7 +17518,7 @@ other. Hence the proposed measure is more precise than the two measures and can 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[94]:</div>
+<div class="prompt input_prompt">In&nbsp;[101]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CEN</span>
@@ -17193,7 +17534,7 @@ other. Hence the proposed measure is more precise than the two measures and can 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[94]:</div>
+<div class="prompt output_prompt">Out[101]:</div>
 
 
 
@@ -17274,7 +17615,7 @@ other. Hence the proposed measure is more precise than the two measures and can 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[95]:</div>
+<div class="prompt input_prompt">In&nbsp;[102]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">MCEN</span>
@@ -17290,7 +17631,7 @@ other. Hence the proposed measure is more precise than the two measures and can 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[95]:</div>
+<div class="prompt output_prompt">Out[102]:</div>
 
 
 
@@ -17345,7 +17686,7 @@ Thus, AUC corresponds to the arithmetic mean of sensitivity and specificity valu
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[96]:</div>
+<div class="prompt input_prompt">In&nbsp;[103]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AUC</span>
@@ -17361,7 +17702,7 @@ Thus, AUC corresponds to the arithmetic mean of sensitivity and specificity valu
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[96]:</div>
+<div class="prompt output_prompt">Out[103]:</div>
 
 
 
@@ -17415,7 +17756,7 @@ Thus, AUC corresponds to the arithmetic mean of sensitivity and specificity valu
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[97]:</div>
+<div class="prompt input_prompt">In&nbsp;[104]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">dInd</span>
@@ -17431,7 +17772,7 @@ Thus, AUC corresponds to the arithmetic mean of sensitivity and specificity valu
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[97]:</div>
+<div class="prompt output_prompt">Out[104]:</div>
 
 
 
@@ -17484,7 +17825,7 @@ Thus, AUC corresponds to the arithmetic mean of sensitivity and specificity valu
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[98]:</div>
+<div class="prompt input_prompt">In&nbsp;[105]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">sInd</span>
@@ -17500,7 +17841,7 @@ Thus, AUC corresponds to the arithmetic mean of sensitivity and specificity valu
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[98]:</div>
+<div class="prompt output_prompt">Out[105]:</div>
 
 
 
@@ -17573,7 +17914,7 @@ The DP has been used mainly in feature selection over imbalanced data <a href="#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="prompt input_prompt">In&nbsp;[106]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">DP</span>
@@ -17589,7 +17930,7 @@ The DP has been used mainly in feature selection over imbalanced data <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[99]:</div>
+<div class="prompt output_prompt">Out[106]:</div>
 
 
 
@@ -17649,7 +17990,7 @@ Telemedical prevention <a href="#ref33">[33]</a> <a href="#ref34">[34]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[100]:</div>
+<div class="prompt input_prompt">In&nbsp;[107]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Y</span>
@@ -17665,7 +18006,7 @@ Telemedical prevention <a href="#ref33">[33]</a> <a href="#ref34">[34]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[100]:</div>
+<div class="prompt output_prompt">Out[107]:</div>
 
 
 
@@ -17742,7 +18083,7 @@ Telemedical prevention <a href="#ref33">[33]</a> <a href="#ref34">[34]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[101]:</div>
+<div class="prompt input_prompt">In&nbsp;[108]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PLRI</span>
@@ -17758,7 +18099,7 @@ Telemedical prevention <a href="#ref33">[33]</a> <a href="#ref34">[34]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[101]:</div>
+<div class="prompt output_prompt">Out[108]:</div>
 
 
 
@@ -17833,7 +18174,7 @@ Telemedical prevention <a href="#ref33">[33]</a> <a href="#ref34">[34]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="prompt input_prompt">In&nbsp;[109]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">NLRI</span>
@@ -17849,7 +18190,7 @@ Telemedical prevention <a href="#ref33">[33]</a> <a href="#ref34">[34]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[102]:</div>
+<div class="prompt output_prompt">Out[109]:</div>
 
 
 
@@ -17924,7 +18265,7 @@ Telemedical prevention <a href="#ref33">[33]</a> <a href="#ref34">[34]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="prompt input_prompt">In&nbsp;[110]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">DPI</span>
@@ -17940,7 +18281,7 @@ Telemedical prevention <a href="#ref33">[33]</a> <a href="#ref34">[34]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[103]:</div>
+<div class="prompt output_prompt">Out[110]:</div>
 
 
 
@@ -18018,7 +18359,7 @@ Telemedical prevention <a href="#ref33">[33]</a> <a href="#ref34">[34]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[104]:</div>
+<div class="prompt input_prompt">In&nbsp;[111]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AUCI</span>
@@ -18034,7 +18375,7 @@ Telemedical prevention <a href="#ref33">[33]</a> <a href="#ref34">[34]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[104]:</div>
+<div class="prompt output_prompt">Out[111]:</div>
 
 
 
@@ -18113,7 +18454,7 @@ Telemedical prevention <a href="#ref33">[33]</a> <a href="#ref34">[34]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[105]:</div>
+<div class="prompt input_prompt">In&nbsp;[112]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">MCCI</span>
@@ -18129,7 +18470,7 @@ Telemedical prevention <a href="#ref33">[33]</a> <a href="#ref34">[34]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[105]:</div>
+<div class="prompt output_prompt">Out[112]:</div>
 
 
 
@@ -18214,7 +18555,7 @@ Telemedical prevention <a href="#ref33">[33]</a> <a href="#ref34">[34]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[106]:</div>
+<div class="prompt input_prompt">In&nbsp;[113]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">QI</span>
@@ -18230,7 +18571,7 @@ Telemedical prevention <a href="#ref33">[33]</a> <a href="#ref34">[34]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[106]:</div>
+<div class="prompt output_prompt">Out[113]:</div>
 
 
 
@@ -18286,7 +18627,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[107]:</div>
+<div class="prompt input_prompt">In&nbsp;[114]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">GI</span>
@@ -18302,7 +18643,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[107]:</div>
+<div class="prompt output_prompt">Out[114]:</div>
 
 
 
@@ -18357,7 +18698,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[108]:</div>
+<div class="prompt input_prompt">In&nbsp;[115]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">LS</span>
@@ -18373,7 +18714,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[108]:</div>
+<div class="prompt output_prompt">Out[115]:</div>
 
 
 
@@ -18426,7 +18767,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[109]:</div>
+<div class="prompt input_prompt">In&nbsp;[116]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AM</span>
@@ -18442,7 +18783,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[109]:</div>
+<div class="prompt output_prompt">Out[116]:</div>
 
 
 
@@ -18496,7 +18837,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[110]:</div>
+<div class="prompt input_prompt">In&nbsp;[117]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">BCD</span>
@@ -18512,7 +18853,7 @@ Gini coefficient is widespread use metric in imbalanced data learning <a href="#
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[110]:</div>
+<div class="prompt output_prompt">Out[117]:</div>
 
 
 
@@ -18570,7 +18911,7 @@ stabilizing and optimizing the accuracy performance when dealing with an imbalan
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[111]:</div>
+<div class="prompt input_prompt">In&nbsp;[118]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">OP</span>
@@ -18586,7 +18927,7 @@ stabilizing and optimizing the accuracy performance when dealing with an imbalan
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[111]:</div>
+<div class="prompt output_prompt">Out[118]:</div>
 
 
 
@@ -18640,7 +18981,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[112]:</div>
+<div class="prompt input_prompt">In&nbsp;[119]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">IBA</span>
@@ -18656,7 +18997,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[112]:</div>
+<div class="prompt output_prompt">Out[119]:</div>
 
 
 
@@ -18673,7 +19014,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[113]:</div>
+<div class="prompt input_prompt">In&nbsp;[120]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">IBA_alpha</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
@@ -18689,7 +19030,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[113]:</div>
+<div class="prompt output_prompt">Out[120]:</div>
 
 
 
@@ -18706,7 +19047,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[114]:</div>
+<div class="prompt input_prompt">In&nbsp;[121]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">IBA_alpha</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
@@ -18722,7 +19063,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[114]:</div>
+<div class="prompt output_prompt">Out[121]:</div>
 
 
 
@@ -18811,7 +19152,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[115]:</div>
+<div class="prompt input_prompt">In&nbsp;[122]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">GM</span>
@@ -18827,7 +19168,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[115]:</div>
+<div class="prompt output_prompt">Out[122]:</div>
 
 
 
@@ -18891,7 +19232,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[116]:</div>
+<div class="prompt input_prompt">In&nbsp;[123]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Q</span>
@@ -18907,7 +19248,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[116]:</div>
+<div class="prompt output_prompt">Out[123]:</div>
 
 
 
@@ -18978,7 +19319,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[117]:</div>
+<div class="prompt input_prompt">In&nbsp;[124]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AGM</span>
@@ -18994,7 +19335,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[117]:</div>
+<div class="prompt output_prompt">Out[124]:</div>
 
 
 
@@ -19065,7 +19406,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[118]:</div>
+<div class="prompt input_prompt">In&nbsp;[125]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AGF</span>
@@ -19081,7 +19422,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[118]:</div>
+<div class="prompt output_prompt">Out[125]:</div>
 
 
 
@@ -19135,7 +19476,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[119]:</div>
+<div class="prompt input_prompt">In&nbsp;[126]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">OC</span>
@@ -19151,7 +19492,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[119]:</div>
+<div class="prompt output_prompt">Out[126]:</div>
 
 
 
@@ -19205,7 +19546,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[120]:</div>
+<div class="prompt input_prompt">In&nbsp;[127]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">OOC</span>
@@ -19221,7 +19562,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[120]:</div>
+<div class="prompt output_prompt">Out[127]:</div>
 
 
 
@@ -19275,7 +19616,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[121]:</div>
+<div class="prompt input_prompt">In&nbsp;[128]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TI</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
@@ -19291,7 +19632,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[121]:</div>
+<div class="prompt output_prompt">Out[128]:</div>
 
 
 
@@ -19381,7 +19722,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[122]:</div>
+<div class="prompt input_prompt">In&nbsp;[129]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AUPR</span>
@@ -19397,7 +19738,7 @@ how dominant is the class with the highest individual accuracy rate <a href="#re
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[122]:</div>
+<div class="prompt output_prompt">Out[129]:</div>
 
 
 
@@ -19457,7 +19798,7 @@ to the arithmetic mean of TPR and PPV <a href="#ref58">[58]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[123]:</div>
+<div class="prompt input_prompt">In&nbsp;[130]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ICSI</span>
@@ -19473,7 +19814,7 @@ to the arithmetic mean of TPR and PPV <a href="#ref58">[58]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[123]:</div>
+<div class="prompt output_prompt">Out[130]:</div>
 
 
 
@@ -19592,7 +19933,7 @@ to the arithmetic mean of TPR and PPV <a href="#ref58">[58]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[124]:</div>
+<div class="prompt input_prompt">In&nbsp;[131]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CI</span><span class="p">(</span><span class="s2">&quot;TPR&quot;</span><span class="p">)</span>
@@ -19608,7 +19949,7 @@ to the arithmetic mean of TPR and PPV <a href="#ref58">[58]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[124]:</div>
+<div class="prompt output_prompt">Out[131]:</div>
 
 
 
@@ -19627,7 +19968,7 @@ to the arithmetic mean of TPR and PPV <a href="#ref58">[58]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[125]:</div>
+<div class="prompt input_prompt">In&nbsp;[132]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CI</span><span class="p">(</span><span class="s2">&quot;FNR&quot;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.001</span><span class="p">,</span><span class="n">one_sided</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -19643,7 +19984,7 @@ to the arithmetic mean of TPR and PPV <a href="#ref58">[58]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[125]:</div>
+<div class="prompt output_prompt">Out[132]:</div>
 
 
 
@@ -19662,7 +20003,7 @@ to the arithmetic mean of TPR and PPV <a href="#ref58">[58]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[126]:</div>
+<div class="prompt input_prompt">In&nbsp;[133]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CI</span><span class="p">(</span><span class="s2">&quot;PRE&quot;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span><span class="n">binom_method</span><span class="o">=</span><span class="s2">&quot;wilson&quot;</span><span class="p">)</span>
@@ -19678,7 +20019,7 @@ to the arithmetic mean of TPR and PPV <a href="#ref58">[58]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[126]:</div>
+<div class="prompt output_prompt">Out[133]:</div>
 
 
 
@@ -19697,7 +20038,7 @@ to the arithmetic mean of TPR and PPV <a href="#ref58">[58]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[127]:</div>
+<div class="prompt input_prompt">In&nbsp;[134]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CI</span><span class="p">(</span><span class="s2">&quot;Overall ACC&quot;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span><span class="n">binom_method</span><span class="o">=</span><span class="s2">&quot;agresti-coull&quot;</span><span class="p">)</span>
@@ -19713,7 +20054,7 @@ to the arithmetic mean of TPR and PPV <a href="#ref58">[58]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[127]:</div>
+<div class="prompt output_prompt">Out[134]:</div>
 
 
 
@@ -19730,7 +20071,7 @@ to the arithmetic mean of TPR and PPV <a href="#ref58">[58]</a>.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[128]:</div>
+<div class="prompt input_prompt">In&nbsp;[135]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CI</span><span class="p">(</span><span class="s2">&quot;Overall ACC&quot;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span><span class="p">)</span>
@@ -19746,7 +20087,7 @@ to the arithmetic mean of TPR and PPV <a href="#ref58">[58]</a>.</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[128]:</div>
+<div class="prompt output_prompt">Out[135]:</div>
 
 
 
@@ -19874,7 +20215,7 @@ $$w=\frac{p_t}{1-p_t}$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[129]:</div>
+<div class="prompt input_prompt">In&nbsp;[136]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">NB</span><span class="p">(</span><span class="n">w</span><span class="o">=</span><span class="mf">0.059</span><span class="p">)</span>
@@ -19890,7 +20231,7 @@ $$w=\frac{p_t}{1-p_t}$$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[129]:</div>
+<div class="prompt output_prompt">Out[136]:</div>
 
 
 
@@ -19971,7 +20312,7 @@ $$w=\frac{p_t}{1-p_t}$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[130]:</div>
+<div class="prompt input_prompt">In&nbsp;[137]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="s2">&quot;PPV&quot;</span><span class="p">)</span>
@@ -19987,7 +20328,7 @@ $$w=\frac{p_t}{1-p_t}$$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[130]:</div>
+<div class="prompt output_prompt">Out[137]:</div>
 
 
 
@@ -20004,7 +20345,7 @@ $$w=\frac{p_t}{1-p_t}$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[131]:</div>
+<div class="prompt input_prompt">In&nbsp;[138]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="s2">&quot;F1&quot;</span><span class="p">)</span>
@@ -20020,7 +20361,7 @@ $$w=\frac{p_t}{1-p_t}$$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[131]:</div>
+<div class="prompt output_prompt">Out[138]:</div>
 
 
 
@@ -20037,7 +20378,7 @@ $$w=\frac{p_t}{1-p_t}$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[132]:</div>
+<div class="prompt input_prompt">In&nbsp;[139]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">average</span><span class="p">(</span><span class="s2">&quot;DOR&quot;</span><span class="p">,</span><span class="n">none_omit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -20053,7 +20394,7 @@ $$w=\frac{p_t}{1-p_t}$$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[132]:</div>
+<div class="prompt output_prompt">Out[139]:</div>
 
 
 
@@ -20136,7 +20477,7 @@ $$w=\frac{p_t}{1-p_t}$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[133]:</div>
+<div class="prompt input_prompt">In&nbsp;[140]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">weighted_average</span><span class="p">(</span><span class="s2">&quot;PPV&quot;</span><span class="p">)</span>
@@ -20152,7 +20493,7 @@ $$w=\frac{p_t}{1-p_t}$$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[133]:</div>
+<div class="prompt output_prompt">Out[140]:</div>
 
 
 
@@ -20169,7 +20510,7 @@ $$w=\frac{p_t}{1-p_t}$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[134]:</div>
+<div class="prompt input_prompt">In&nbsp;[141]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">weighted_average</span><span class="p">(</span><span class="s2">&quot;F1&quot;</span><span class="p">)</span>
@@ -20185,7 +20526,7 @@ $$w=\frac{p_t}{1-p_t}$$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[134]:</div>
+<div class="prompt output_prompt">Out[141]:</div>
 
 
 
@@ -20202,7 +20543,7 @@ $$w=\frac{p_t}{1-p_t}$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[135]:</div>
+<div class="prompt input_prompt">In&nbsp;[142]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">weighted_average</span><span class="p">(</span><span class="s2">&quot;DOR&quot;</span><span class="p">,</span><span class="n">none_omit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -20218,7 +20559,7 @@ $$w=\frac{p_t}{1-p_t}$$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[135]:</div>
+<div class="prompt output_prompt">Out[142]:</div>
 
 
 
@@ -20235,7 +20576,7 @@ $$w=\frac{p_t}{1-p_t}$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[136]:</div>
+<div class="prompt input_prompt">In&nbsp;[143]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">weighted_average</span><span class="p">(</span><span class="s2">&quot;F1&quot;</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;L1&quot;</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span><span class="s2">&quot;L2&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;L3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
@@ -20251,7 +20592,7 @@ $$w=\frac{p_t}{1-p_t}$$</p>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[136]:</div>
+<div class="prompt output_prompt">Out[143]:</div>
 
 
 
@@ -20353,7 +20694,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[137]:</div>
+<div class="prompt input_prompt">In&nbsp;[144]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">sensitivity_index</span><span class="p">()</span>
@@ -20369,7 +20710,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[137]:</div>
+<div class="prompt output_prompt">Out[144]:</div>
 
 
 
@@ -20452,7 +20793,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[138]:</div>
+<div class="prompt input_prompt">In&nbsp;[145]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Kappa</span>
@@ -20468,7 +20809,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[138]:</div>
+<div class="prompt output_prompt">Out[145]:</div>
 
 
 
@@ -20522,7 +20863,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[139]:</div>
+<div class="prompt input_prompt">In&nbsp;[146]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">KappaUnbiased</span>
@@ -20538,7 +20879,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[139]:</div>
+<div class="prompt output_prompt">Out[146]:</div>
 
 
 
@@ -20591,7 +20932,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[140]:</div>
+<div class="prompt input_prompt">In&nbsp;[147]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">KappaNoPrevalence</span>
@@ -20607,7 +20948,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[140]:</div>
+<div class="prompt output_prompt">Out[147]:</div>
 
 
 
@@ -20687,7 +21028,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[141]:</div>
+<div class="prompt input_prompt">In&nbsp;[148]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">weighted_kappa</span><span class="p">(</span><span class="n">weight</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;L1&quot;</span><span class="p">:{</span><span class="s2">&quot;L1&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;L2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;L3&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">},</span><span class="s2">&quot;L2&quot;</span><span class="p">:{</span><span class="s2">&quot;L1&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;L2&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;L3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span><span class="s2">&quot;L3&quot;</span><span class="p">:{</span><span class="s2">&quot;L1&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;L2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;L3&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}})</span>
@@ -20703,7 +21044,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[141]:</div>
+<div class="prompt output_prompt">Out[148]:</div>
 
 
 
@@ -20720,7 +21061,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[142]:</div>
+<div class="prompt input_prompt">In&nbsp;[149]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">weighted_kappa</span><span class="p">()</span>
@@ -20740,14 +21081,14 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-3.2-py3.5.egg\pycm\pycm_obj.py:776: RuntimeWarning: The weight format is wrong, the result is for unweighted kappa.
+<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-3.3-py3.5.egg\pycm\pycm_obj.py:784: RuntimeWarning: The weight format is wrong, the result is for unweighted kappa.
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[142]:</div>
+<div class="prompt output_prompt">Out[149]:</div>
 
 
 
@@ -20836,7 +21177,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[143]:</div>
+<div class="prompt input_prompt">In&nbsp;[150]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Kappa_SE</span>
@@ -20852,7 +21193,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[143]:</div>
+<div class="prompt output_prompt">Out[150]:</div>
 
 
 
@@ -20905,7 +21246,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[144]:</div>
+<div class="prompt input_prompt">In&nbsp;[151]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Kappa_CI</span>
@@ -20921,7 +21262,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[144]:</div>
+<div class="prompt output_prompt">Out[151]:</div>
 
 
 
@@ -20984,7 +21325,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[145]:</div>
+<div class="prompt input_prompt">In&nbsp;[152]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Chi_Squared</span>
@@ -21000,7 +21341,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[145]:</div>
+<div class="prompt output_prompt">Out[152]:</div>
 
 
 
@@ -21053,7 +21394,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[146]:</div>
+<div class="prompt input_prompt">In&nbsp;[153]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">DF</span>
@@ -21069,7 +21410,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[146]:</div>
+<div class="prompt output_prompt">Out[153]:</div>
 
 
 
@@ -21123,7 +21464,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[147]:</div>
+<div class="prompt input_prompt">In&nbsp;[154]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Phi_Squared</span>
@@ -21139,7 +21480,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[147]:</div>
+<div class="prompt output_prompt">Out[154]:</div>
 
 
 
@@ -21194,7 +21535,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[148]:</div>
+<div class="prompt input_prompt">In&nbsp;[155]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">V</span>
@@ -21210,7 +21551,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[148]:</div>
+<div class="prompt output_prompt">Out[155]:</div>
 
 
 
@@ -21264,7 +21605,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[149]:</div>
+<div class="prompt input_prompt">In&nbsp;[156]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SE</span>
@@ -21280,7 +21621,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[149]:</div>
+<div class="prompt output_prompt">Out[156]:</div>
 
 
 
@@ -21334,7 +21675,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[150]:</div>
+<div class="prompt input_prompt">In&nbsp;[157]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CI95</span>
@@ -21350,7 +21691,7 @@ d′ can be estimated from the observed hit rate and false-alarm rate, as follow
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[150]:</div>
+<div class="prompt output_prompt">Out[157]:</div>
 
 
 
@@ -21424,7 +21765,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[151]:</div>
+<div class="prompt input_prompt">In&nbsp;[158]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">S</span>
@@ -21440,7 +21781,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[151]:</div>
+<div class="prompt output_prompt">Out[158]:</div>
 
 
 
@@ -21504,7 +21845,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[152]:</div>
+<div class="prompt input_prompt">In&nbsp;[159]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PI</span>
@@ -21520,7 +21861,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[152]:</div>
+<div class="prompt output_prompt">Out[159]:</div>
 
 
 
@@ -21591,7 +21932,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[153]:</div>
+<div class="prompt input_prompt">In&nbsp;[160]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AC1</span>
@@ -21607,7 +21948,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[153]:</div>
+<div class="prompt output_prompt">Out[160]:</div>
 
 
 
@@ -21678,7 +22019,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[154]:</div>
+<div class="prompt input_prompt">In&nbsp;[161]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ReferenceEntropy</span>
@@ -21694,7 +22035,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[154]:</div>
+<div class="prompt output_prompt">Out[161]:</div>
 
 
 
@@ -21765,7 +22106,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[155]:</div>
+<div class="prompt input_prompt">In&nbsp;[162]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ResponseEntropy</span>
@@ -21781,7 +22122,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[155]:</div>
+<div class="prompt output_prompt">Out[162]:</div>
 
 
 
@@ -21862,7 +22203,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[156]:</div>
+<div class="prompt input_prompt">In&nbsp;[163]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CrossEntropy</span>
@@ -21878,7 +22219,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[156]:</div>
+<div class="prompt output_prompt">Out[163]:</div>
 
 
 
@@ -21949,7 +22290,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[157]:</div>
+<div class="prompt input_prompt">In&nbsp;[164]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">JointEntropy</span>
@@ -21965,7 +22306,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[157]:</div>
+<div class="prompt output_prompt">Out[164]:</div>
 
 
 
@@ -22037,7 +22378,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[158]:</div>
+<div class="prompt input_prompt">In&nbsp;[165]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ConditionalEntropy</span>
@@ -22053,7 +22394,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[158]:</div>
+<div class="prompt output_prompt">Out[165]:</div>
 
 
 
@@ -22125,7 +22466,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[159]:</div>
+<div class="prompt input_prompt">In&nbsp;[166]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">KL</span>
@@ -22141,7 +22482,7 @@ Bennett et al. suggested adjusting inter-rater reliability to accommodate the pe
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[159]:</div>
+<div class="prompt output_prompt">Out[166]:</div>
 
 
 
@@ -22232,7 +22573,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[160]:</div>
+<div class="prompt input_prompt">In&nbsp;[167]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">MutualInformation</span>
@@ -22248,7 +22589,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[160]:</div>
+<div class="prompt output_prompt">Out[167]:</div>
 
 
 
@@ -22302,7 +22643,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[161]:</div>
+<div class="prompt input_prompt">In&nbsp;[168]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">LambdaA</span>
@@ -22318,7 +22659,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[161]:</div>
+<div class="prompt output_prompt">Out[168]:</div>
 
 
 
@@ -22372,7 +22713,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[162]:</div>
+<div class="prompt input_prompt">In&nbsp;[169]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">LambdaB</span>
@@ -22388,7 +22729,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[162]:</div>
+<div class="prompt output_prompt">Out[169]:</div>
 
 
 
@@ -22471,7 +22812,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[163]:</div>
+<div class="prompt input_prompt">In&nbsp;[170]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA1</span>
@@ -22487,7 +22828,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[163]:</div>
+<div class="prompt output_prompt">Out[170]:</div>
 
 
 
@@ -22558,7 +22899,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[164]:</div>
+<div class="prompt input_prompt">In&nbsp;[171]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA2</span>
@@ -22574,7 +22915,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[164]:</div>
+<div class="prompt output_prompt">Out[171]:</div>
 
 
 
@@ -22653,7 +22994,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[165]:</div>
+<div class="prompt input_prompt">In&nbsp;[172]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA3</span>
@@ -22669,7 +23010,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[165]:</div>
+<div class="prompt output_prompt">Out[172]:</div>
 
 
 
@@ -22744,7 +23085,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[166]:</div>
+<div class="prompt input_prompt">In&nbsp;[173]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA4</span>
@@ -22760,7 +23101,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[166]:</div>
+<div class="prompt output_prompt">Out[173]:</div>
 
 
 
@@ -22843,7 +23184,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[167]:</div>
+<div class="prompt input_prompt">In&nbsp;[174]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA5</span>
@@ -22859,7 +23200,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[167]:</div>
+<div class="prompt output_prompt">Out[174]:</div>
 
 
 
@@ -22938,7 +23279,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[168]:</div>
+<div class="prompt input_prompt">In&nbsp;[175]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">SOA6</span>
@@ -22954,7 +23295,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[168]:</div>
+<div class="prompt output_prompt">Out[175]:</div>
 
 
 
@@ -23026,7 +23367,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[169]:</div>
+<div class="prompt input_prompt">In&nbsp;[176]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_ACC</span>
@@ -23042,7 +23383,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[169]:</div>
+<div class="prompt output_prompt">Out[176]:</div>
 
 
 
@@ -23095,7 +23436,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[170]:</div>
+<div class="prompt input_prompt">In&nbsp;[177]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_RACC</span>
@@ -23111,7 +23452,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[170]:</div>
+<div class="prompt output_prompt">Out[177]:</div>
 
 
 
@@ -23164,7 +23505,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[171]:</div>
+<div class="prompt input_prompt">In&nbsp;[178]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_RACCU</span>
@@ -23180,7 +23521,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[171]:</div>
+<div class="prompt output_prompt">Out[178]:</div>
 
 
 
@@ -23242,7 +23583,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[172]:</div>
+<div class="prompt input_prompt">In&nbsp;[179]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PPV_Micro</span>
@@ -23258,7 +23599,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[172]:</div>
+<div class="prompt output_prompt">Out[179]:</div>
 
 
 
@@ -23320,7 +23661,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[173]:</div>
+<div class="prompt input_prompt">In&nbsp;[180]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TPR_Micro</span>
@@ -23336,7 +23677,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[173]:</div>
+<div class="prompt output_prompt">Out[180]:</div>
 
 
 
@@ -23389,7 +23730,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[174]:</div>
+<div class="prompt input_prompt">In&nbsp;[181]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TNR_Micro</span>
@@ -23405,7 +23746,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[174]:</div>
+<div class="prompt output_prompt">Out[181]:</div>
 
 
 
@@ -23458,7 +23799,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[175]:</div>
+<div class="prompt input_prompt">In&nbsp;[182]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">FPR_Micro</span>
@@ -23474,7 +23815,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[175]:</div>
+<div class="prompt output_prompt">Out[182]:</div>
 
 
 
@@ -23527,7 +23868,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[176]:</div>
+<div class="prompt input_prompt">In&nbsp;[183]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">FNR_Micro</span>
@@ -23543,7 +23884,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[176]:</div>
+<div class="prompt output_prompt">Out[183]:</div>
 
 
 
@@ -23605,7 +23946,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[177]:</div>
+<div class="prompt input_prompt">In&nbsp;[184]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">F1_Micro</span>
@@ -23621,7 +23962,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[177]:</div>
+<div class="prompt output_prompt">Out[184]:</div>
 
 
 
@@ -23674,7 +24015,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[178]:</div>
+<div class="prompt input_prompt">In&nbsp;[185]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PPV_Macro</span>
@@ -23690,7 +24031,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[178]:</div>
+<div class="prompt output_prompt">Out[185]:</div>
 
 
 
@@ -23743,7 +24084,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[179]:</div>
+<div class="prompt input_prompt">In&nbsp;[186]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TPR_Macro</span>
@@ -23759,7 +24100,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[179]:</div>
+<div class="prompt output_prompt">Out[186]:</div>
 
 
 
@@ -23812,7 +24153,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[180]:</div>
+<div class="prompt input_prompt">In&nbsp;[187]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TNR_Macro</span>
@@ -23828,7 +24169,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[180]:</div>
+<div class="prompt output_prompt">Out[187]:</div>
 
 
 
@@ -23881,7 +24222,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[181]:</div>
+<div class="prompt input_prompt">In&nbsp;[188]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">FPR_Macro</span>
@@ -23897,7 +24238,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[181]:</div>
+<div class="prompt output_prompt">Out[188]:</div>
 
 
 
@@ -23950,7 +24291,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[182]:</div>
+<div class="prompt input_prompt">In&nbsp;[189]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">FNR_Macro</span>
@@ -23966,7 +24307,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[182]:</div>
+<div class="prompt output_prompt">Out[189]:</div>
 
 
 
@@ -24019,7 +24360,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[183]:</div>
+<div class="prompt input_prompt">In&nbsp;[190]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">F1_Macro</span>
@@ -24035,7 +24376,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[183]:</div>
+<div class="prompt output_prompt">Out[190]:</div>
 
 
 
@@ -24088,7 +24429,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[184]:</div>
+<div class="prompt input_prompt">In&nbsp;[191]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ACC_Macro</span>
@@ -24104,7 +24445,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[184]:</div>
+<div class="prompt output_prompt">Out[191]:</div>
 
 
 
@@ -24175,7 +24516,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[185]:</div>
+<div class="prompt input_prompt">In&nbsp;[192]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_J</span>
@@ -24191,7 +24532,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[185]:</div>
+<div class="prompt output_prompt">Out[192]:</div>
 
 
 
@@ -24244,7 +24585,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[186]:</div>
+<div class="prompt input_prompt">In&nbsp;[193]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">HammingLoss</span>
@@ -24260,7 +24601,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[186]:</div>
+<div class="prompt output_prompt">Out[193]:</div>
 
 
 
@@ -24313,7 +24654,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[187]:</div>
+<div class="prompt input_prompt">In&nbsp;[194]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ZeroOneLoss</span>
@@ -24329,7 +24670,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[187]:</div>
+<div class="prompt output_prompt">Out[194]:</div>
 
 
 
@@ -24382,7 +24723,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[188]:</div>
+<div class="prompt input_prompt">In&nbsp;[195]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">NIR</span>
@@ -24398,7 +24739,7 @@ Mutual information is symmetric. We could also subtract the conditional entropy 
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[188]:</div>
+<div class="prompt output_prompt">Out[195]:</div>
 
 
 
@@ -24480,7 +24821,7 @@ Here a one-sided binomial test to see if the accuracy is better than the no info
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[189]:</div>
+<div class="prompt input_prompt">In&nbsp;[196]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PValue</span>
@@ -24496,7 +24837,7 @@ Here a one-sided binomial test to see if the accuracy is better than the no info
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[189]:</div>
+<div class="prompt output_prompt">Out[196]:</div>
 
 
 
@@ -24558,7 +24899,7 @@ Here a one-sided binomial test to see if the accuracy is better than the no info
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[190]:</div>
+<div class="prompt input_prompt">In&nbsp;[197]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_CEN</span>
@@ -24574,7 +24915,7 @@ Here a one-sided binomial test to see if the accuracy is better than the no info
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[190]:</div>
+<div class="prompt output_prompt">Out[197]:</div>
 
 
 
@@ -24645,7 +24986,7 @@ Here a one-sided binomial test to see if the accuracy is better than the no info
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[191]:</div>
+<div class="prompt input_prompt">In&nbsp;[198]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_MCEN</span>
@@ -24661,7 +25002,7 @@ Here a one-sided binomial test to see if the accuracy is better than the no info
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[191]:</div>
+<div class="prompt output_prompt">Out[198]:</div>
 
 
 
@@ -24742,7 +25083,7 @@ Here a one-sided binomial test to see if the accuracy is better than the no info
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[192]:</div>
+<div class="prompt input_prompt">In&nbsp;[199]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Overall_MCC</span>
@@ -24758,7 +25099,7 @@ Here a one-sided binomial test to see if the accuracy is better than the no info
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[192]:</div>
+<div class="prompt output_prompt">Out[199]:</div>
 
 
 
@@ -24811,7 +25152,7 @@ Here a one-sided binomial test to see if the accuracy is better than the no info
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[193]:</div>
+<div class="prompt input_prompt">In&nbsp;[200]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">RR</span>
@@ -24827,7 +25168,7 @@ Here a one-sided binomial test to see if the accuracy is better than the no info
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[193]:</div>
+<div class="prompt output_prompt">Out[200]:</div>
 
 
 
@@ -24882,7 +25223,7 @@ its ability to do so efficiently won’t fall below the bound <a href="#ref22">[
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[194]:</div>
+<div class="prompt input_prompt">In&nbsp;[201]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CBA</span>
@@ -24898,7 +25239,7 @@ its ability to do so efficiently won’t fall below the bound <a href="#ref22">[
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[194]:</div>
+<div class="prompt output_prompt">Out[201]:</div>
 
 
 
@@ -24951,7 +25292,7 @@ its ability to do so efficiently won’t fall below the bound <a href="#ref22">[
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[195]:</div>
+<div class="prompt input_prompt">In&nbsp;[202]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AUNU</span>
@@ -24967,7 +25308,7 @@ its ability to do so efficiently won’t fall below the bound <a href="#ref22">[
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[195]:</div>
+<div class="prompt output_prompt">Out[202]:</div>
 
 
 
@@ -25020,7 +25361,7 @@ its ability to do so efficiently won’t fall below the bound <a href="#ref22">[
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[196]:</div>
+<div class="prompt input_prompt">In&nbsp;[203]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">AUNP</span>
@@ -25036,7 +25377,7 @@ its ability to do so efficiently won’t fall below the bound <a href="#ref22">[
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[196]:</div>
+<div class="prompt output_prompt">Out[203]:</div>
 
 
 
@@ -25117,7 +25458,7 @@ comparing relative classifier information while classifier information (mutual i
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[197]:</div>
+<div class="prompt input_prompt">In&nbsp;[204]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">RCI</span>
@@ -25133,7 +25474,7 @@ comparing relative classifier information while classifier information (mutual i
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[197]:</div>
+<div class="prompt output_prompt">Out[204]:</div>
 
 
 
@@ -25186,7 +25527,7 @@ comparing relative classifier information while classifier information (mutual i
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[198]:</div>
+<div class="prompt input_prompt">In&nbsp;[205]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">C</span>
@@ -25202,7 +25543,7 @@ comparing relative classifier information while classifier information (mutual i
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[198]:</div>
+<div class="prompt output_prompt">Out[205]:</div>
 
 
 
@@ -25256,7 +25597,7 @@ measure defined by averaging ICSI over all classes <a href="#ref58">[58]</a>.</p
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[199]:</div>
+<div class="prompt input_prompt">In&nbsp;[206]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">CSI</span>
@@ -25272,7 +25613,7 @@ measure defined by averaging ICSI over all classes <a href="#ref58">[58]</a>.</p
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[199]:</div>
+<div class="prompt output_prompt">Out[206]:</div>
 
 
 
@@ -25336,7 +25677,7 @@ measure defined by averaging ICSI over all classes <a href="#ref58">[58]</a>.</p
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[200]:</div>
+<div class="prompt input_prompt">In&nbsp;[207]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">ARI</span>
@@ -25352,7 +25693,7 @@ measure defined by averaging ICSI over all classes <a href="#ref58">[58]</a>.</p
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[200]:</div>
+<div class="prompt output_prompt">Out[207]:</div>
 
 
 
@@ -25416,7 +25757,7 @@ measure defined by averaging ICSI over all classes <a href="#ref58">[58]</a>.</p
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[201]:</div>
+<div class="prompt input_prompt">In&nbsp;[208]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">B</span>
@@ -25432,7 +25773,7 @@ measure defined by averaging ICSI over all classes <a href="#ref58">[58]</a>.</p
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[201]:</div>
+<div class="prompt output_prompt">Out[208]:</div>
 
 
 
@@ -25514,7 +25855,7 @@ Krippendorff's alpha generalizes several known statistics, often called measures
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[202]:</div>
+<div class="prompt input_prompt">In&nbsp;[209]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">Alpha</span>
@@ -25530,7 +25871,7 @@ Krippendorff's alpha generalizes several known statistics, often called measures
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[202]:</div>
+<div class="prompt output_prompt">Out[209]:</div>
 
 
 
@@ -25628,7 +25969,7 @@ Krippendorff's alpha generalizes several known statistics, often called measures
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[203]:</div>
+<div class="prompt input_prompt">In&nbsp;[210]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">weighted_alpha</span><span class="p">(</span><span class="n">weight</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;L1&quot;</span><span class="p">:{</span><span class="s2">&quot;L1&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;L2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;L3&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">},</span><span class="s2">&quot;L2&quot;</span><span class="p">:{</span><span class="s2">&quot;L1&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;L2&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="s2">&quot;L3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span><span class="s2">&quot;L3&quot;</span><span class="p">:{</span><span class="s2">&quot;L1&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="s2">&quot;L2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="s2">&quot;L3&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">}})</span>
@@ -25644,7 +25985,7 @@ Krippendorff's alpha generalizes several known statistics, often called measures
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[203]:</div>
+<div class="prompt output_prompt">Out[210]:</div>
 
 
 
@@ -25661,7 +26002,7 @@ Krippendorff's alpha generalizes several known statistics, often called measures
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[204]:</div>
+<div class="prompt input_prompt">In&nbsp;[211]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">weighted_alpha</span><span class="p">()</span>
@@ -25681,14 +26022,14 @@ Krippendorff's alpha generalizes several known statistics, often called measures
 
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-3.2-py3.5.egg\pycm\pycm_obj.py:798: RuntimeWarning: The weight format is wrong, the result is for unweighted alpha.
+<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-3.3-py3.5.egg\pycm\pycm_obj.py:806: RuntimeWarning: The weight format is wrong, the result is for unweighted alpha.
 </pre>
 </div>
 </div>
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[204]:</div>
+<div class="prompt output_prompt">Out[211]:</div>
 
 
 
@@ -25822,7 +26163,7 @@ Krippendorff's alpha generalizes several known statistics, often called measures
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[205]:</div>
+<div class="prompt input_prompt">In&nbsp;[212]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">aickin_alpha</span><span class="p">()</span>
@@ -25838,7 +26179,7 @@ Krippendorff's alpha generalizes several known statistics, often called measures
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[205]:</div>
+<div class="prompt output_prompt">Out[212]:</div>
 
 
 
@@ -25855,7 +26196,7 @@ Krippendorff's alpha generalizes several known statistics, often called measures
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[206]:</div>
+<div class="prompt input_prompt">In&nbsp;[213]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">aickin_alpha</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span><span class="n">epsilon</span><span class="o">=</span><span class="mf">0.00003</span><span class="p">)</span>
@@ -25871,7 +26212,7 @@ Krippendorff's alpha generalizes several known statistics, often called measures
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[206]:</div>
+<div class="prompt output_prompt">Out[213]:</div>
 
 
 
@@ -25951,7 +26292,7 @@ Krippendorff's alpha generalizes several known statistics, often called measures
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[207]:</div>
+<div class="prompt input_prompt">In&nbsp;[214]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
@@ -26132,7 +26473,7 @@ sInd(Similarity index)                                            0.71716       
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[208]:</div>
+<div class="prompt input_prompt">In&nbsp;[215]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">print_matrix</span><span class="p">()</span>
@@ -26171,7 +26512,7 @@ L3       0        2        3
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[209]:</div>
+<div class="prompt input_prompt">In&nbsp;[216]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">matrix</span>
@@ -26187,7 +26528,7 @@ L3       0        2        3
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[209]:</div>
+<div class="prompt output_prompt">Out[216]:</div>
 
 
 
@@ -26206,7 +26547,7 @@ L3       0        2        3
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[210]:</div>
+<div class="prompt input_prompt">In&nbsp;[217]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">print_matrix</span><span class="p">(</span><span class="n">one_vs_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">class_name</span> <span class="o">=</span> <span class="s2">&quot;L1&quot;</span><span class="p">)</span>
@@ -26243,7 +26584,7 @@ L1       3        2
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[211]:</div>
+<div class="prompt input_prompt">In&nbsp;[218]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sparse_cm</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">:{</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">2</span><span class="p">},</span><span class="mi">2</span><span class="p">:{</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">18</span><span class="p">}})</span>
@@ -26256,7 +26597,7 @@ L1       3        2
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[212]:</div>
+<div class="prompt input_prompt">In&nbsp;[219]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sparse_cm</span><span class="o">.</span><span class="n">print_matrix</span><span class="p">(</span><span class="n">sparse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -26352,7 +26693,7 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[213]:</div>
+<div class="prompt input_prompt">In&nbsp;[220]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
@@ -26391,7 +26732,7 @@ L3        0.0       0.4       0.6
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[214]:</div>
+<div class="prompt input_prompt">In&nbsp;[221]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">normalized_matrix</span>
@@ -26407,7 +26748,7 @@ L3        0.0       0.4       0.6
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[214]:</div>
+<div class="prompt output_prompt">Out[221]:</div>
 
 
 
@@ -26426,7 +26767,7 @@ L3        0.0       0.4       0.6
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[215]:</div>
+<div class="prompt input_prompt">In&nbsp;[222]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">(</span><span class="n">one_vs_all</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">class_name</span> <span class="o">=</span> <span class="s2">&quot;L1&quot;</span><span class="p">)</span>
@@ -26463,7 +26804,7 @@ L1        0.6       0.4
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[216]:</div>
+<div class="prompt input_prompt">In&nbsp;[223]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sparse_cm</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">(</span><span class="n">sparse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -26559,7 +26900,7 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[217]:</div>
+<div class="prompt input_prompt">In&nbsp;[224]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span>
@@ -26720,7 +27061,7 @@ sInd(Similarity index)                                            0.71716       
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[218]:</div>
+<div class="prompt input_prompt">In&nbsp;[225]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">])</span>
@@ -26761,7 +27102,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)         0.6           
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[219]:</div>
+<div class="prompt input_prompt">In&nbsp;[226]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">],</span><span class="n">class_name</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;L1&quot;</span><span class="p">,</span><span class="s2">&quot;L3&quot;</span><span class="p">])</span>
@@ -26802,7 +27143,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)         0.6           
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[220]:</div>
+<div class="prompt input_prompt">In&nbsp;[227]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">stat</span><span class="p">(</span><span class="n">summary</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -26934,7 +27275,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)         0.6           
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[221]:</div>
+<div class="prompt input_prompt">In&nbsp;[228]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span><span class="o">.</span><span class="n">print_report</span><span class="p">()</span>
@@ -26956,9 +27297,9 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)         0.6           
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Best : cm2
 
-Rank  Name   Class-Score    Overall-Score
-1     cm2    9.05           2.55
-2     cm3    6.05           1.98333
+Rank  Name   Class-Score       Overall-Score
+1     cm2    0.50278           0.425
+2     cm3    0.33611           0.33056
 
 </pre>
 </div>
@@ -26970,7 +27311,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[222]:</div>
+<div class="prompt input_prompt">In&nbsp;[229]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cp</span><span class="p">)</span>
@@ -26992,9 +27333,9 @@ Rank  Name   Class-Score    Overall-Score
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Best : cm2
 
-Rank  Name   Class-Score    Overall-Score
-1     cm2    9.05           2.55
-2     cm3    6.05           1.98333
+Rank  Name   Class-Score       Overall-Score
+1     cm2    0.50278           0.425
+2     cm3    0.33611           0.33056
 
 </pre>
 </div>
@@ -27014,7 +27355,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[223]:</div>
+<div class="prompt input_prompt">In&nbsp;[230]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -27037,7 +27378,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[224]:</div>
+<div class="prompt input_prompt">In&nbsp;[231]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1&quot;</span><span class="p">))</span>
@@ -27053,7 +27394,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[224]:</div>
+<div class="prompt output_prompt">Out[231]:</div>
 
 
 
@@ -27080,7 +27421,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[225]:</div>
+<div class="prompt input_prompt">In&nbsp;[232]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_filtered&quot;</span><span class="p">),</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">])</span>
@@ -27096,7 +27437,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[225]:</div>
+<div class="prompt output_prompt">Out[232]:</div>
 
 
 
@@ -27123,7 +27464,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[226]:</div>
+<div class="prompt input_prompt">In&nbsp;[233]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_filtered2&quot;</span><span class="p">),</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">],</span><span class="n">class_name</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;L1&quot;</span><span class="p">])</span>
@@ -27139,7 +27480,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[226]:</div>
+<div class="prompt output_prompt">Out[233]:</div>
 
 
 
@@ -27166,7 +27507,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[227]:</div>
+<div class="prompt input_prompt">In&nbsp;[234]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_summary&quot;</span><span class="p">),</span><span class="n">summary</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -27182,7 +27523,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[227]:</div>
+<div class="prompt output_prompt">Out[234]:</div>
 
 
 
@@ -27209,7 +27550,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[228]:</div>
+<div class="prompt input_prompt">In&nbsp;[235]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">sparse_cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;sparse_cm&quot;</span><span class="p">),</span><span class="n">summary</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">sparse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -27225,7 +27566,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[228]:</div>
+<div class="prompt output_prompt">Out[235]:</div>
 
 
 
@@ -27252,7 +27593,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[229]:</div>
+<div class="prompt input_prompt">In&nbsp;[236]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_stat</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -27268,7 +27609,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[229]:</div>
+<div class="prompt output_prompt">Out[236]:</div>
 
 
 
@@ -27369,7 +27710,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[230]:</div>
+<div class="prompt input_prompt">In&nbsp;[237]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1&quot;</span><span class="p">))</span>
@@ -27385,7 +27726,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[230]:</div>
+<div class="prompt output_prompt">Out[237]:</div>
 
 
 
@@ -27412,7 +27753,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[231]:</div>
+<div class="prompt input_prompt">In&nbsp;[238]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_filtered&quot;</span><span class="p">),</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">])</span>
@@ -27428,7 +27769,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[231]:</div>
+<div class="prompt output_prompt">Out[238]:</div>
 
 
 
@@ -27455,7 +27796,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[232]:</div>
+<div class="prompt input_prompt">In&nbsp;[239]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_filtered2&quot;</span><span class="p">),</span><span class="n">overall_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Kappa&quot;</span><span class="p">],</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">],</span><span class="n">class_name</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;L1&quot;</span><span class="p">])</span>
@@ -27471,7 +27812,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[232]:</div>
+<div class="prompt output_prompt">Out[239]:</div>
 
 
 
@@ -27498,7 +27839,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[233]:</div>
+<div class="prompt input_prompt">In&nbsp;[240]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_colored&quot;</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">204</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
@@ -27514,7 +27855,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[233]:</div>
+<div class="prompt output_prompt">Out[240]:</div>
 
 
 
@@ -27541,7 +27882,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[234]:</div>
+<div class="prompt input_prompt">In&nbsp;[241]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_colored2&quot;</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;Crimson&quot;</span><span class="p">)</span>
@@ -27557,7 +27898,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[234]:</div>
+<div class="prompt output_prompt">Out[241]:</div>
 
 
 
@@ -27584,7 +27925,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[235]:</div>
+<div class="prompt input_prompt">In&nbsp;[242]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_normalized&quot;</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s2">&quot;Crimson&quot;</span><span class="p">,</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -27600,7 +27941,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[235]:</div>
+<div class="prompt output_prompt">Out[242]:</div>
 
 
 
@@ -27627,7 +27968,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[236]:</div>
+<div class="prompt input_prompt">In&nbsp;[243]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_summary&quot;</span><span class="p">),</span><span class="n">summary</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -27643,7 +27984,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[236]:</div>
+<div class="prompt output_prompt">Out[243]:</div>
 
 
 
@@ -27670,7 +28011,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[237]:</div>
+<div class="prompt input_prompt">In&nbsp;[244]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -27686,7 +28027,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[237]:</div>
+<div class="prompt output_prompt">Out[244]:</div>
 
 
 
@@ -27820,7 +28161,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[238]:</div>
+<div class="prompt input_prompt">In&nbsp;[245]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1&quot;</span><span class="p">))</span>
@@ -27836,7 +28177,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[238]:</div>
+<div class="prompt output_prompt">Out[245]:</div>
 
 
 
@@ -27865,7 +28206,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[239]:</div>
+<div class="prompt input_prompt">In&nbsp;[246]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_filtered&quot;</span><span class="p">),</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">])</span>
@@ -27881,7 +28222,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[239]:</div>
+<div class="prompt output_prompt">Out[246]:</div>
 
 
 
@@ -27910,7 +28251,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[240]:</div>
+<div class="prompt input_prompt">In&nbsp;[247]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_filtered2&quot;</span><span class="p">),</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">],</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -27926,7 +28267,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[240]:</div>
+<div class="prompt output_prompt">Out[247]:</div>
 
 
 
@@ -27955,7 +28296,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[241]:</div>
+<div class="prompt input_prompt">In&nbsp;[248]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_filtered3&quot;</span><span class="p">),</span><span class="n">class_param</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;ACC&quot;</span><span class="p">,</span><span class="s2">&quot;AUC&quot;</span><span class="p">,</span><span class="s2">&quot;TPR&quot;</span><span class="p">],</span><span class="n">class_name</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;L1&quot;</span><span class="p">])</span>
@@ -27971,7 +28312,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[241]:</div>
+<div class="prompt output_prompt">Out[248]:</div>
 
 
 
@@ -28000,7 +28341,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[242]:</div>
+<div class="prompt input_prompt">In&nbsp;[249]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_header&quot;</span><span class="p">),</span><span class="n">header</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -28016,7 +28357,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[242]:</div>
+<div class="prompt output_prompt">Out[249]:</div>
 
 
 
@@ -28045,7 +28386,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[243]:</div>
+<div class="prompt input_prompt">In&nbsp;[250]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_summary&quot;</span><span class="p">),</span><span class="n">summary</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">matrix_save</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -28061,7 +28402,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[243]:</div>
+<div class="prompt output_prompt">Out[250]:</div>
 
 
 
@@ -28088,7 +28429,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[244]:</div>
+<div class="prompt input_prompt">In&nbsp;[251]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_csv</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -28104,7 +28445,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[244]:</div>
+<div class="prompt output_prompt">Out[251]:</div>
 
 
 
@@ -28216,7 +28557,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[245]:</div>
+<div class="prompt input_prompt">In&nbsp;[252]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_obj</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1&quot;</span><span class="p">))</span>
@@ -28232,7 +28573,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[245]:</div>
+<div class="prompt output_prompt">Out[252]:</div>
 
 
 
@@ -28259,7 +28600,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[246]:</div>
+<div class="prompt input_prompt">In&nbsp;[253]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_obj</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_stat&quot;</span><span class="p">),</span><span class="n">save_stat</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -28275,7 +28616,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[246]:</div>
+<div class="prompt output_prompt">Out[253]:</div>
 
 
 
@@ -28302,7 +28643,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[247]:</div>
+<div class="prompt input_prompt">In&nbsp;[254]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_obj</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1_no_vectors&quot;</span><span class="p">),</span><span class="n">save_vector</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -28318,7 +28659,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[247]:</div>
+<div class="prompt output_prompt">Out[254]:</div>
 
 
 
@@ -28345,7 +28686,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[248]:</div>
+<div class="prompt input_prompt">In&nbsp;[255]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">save_obj</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -28361,7 +28702,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[248]:</div>
+<div class="prompt output_prompt">Out[255]:</div>
 
 
 
@@ -28439,7 +28780,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[249]:</div>
+<div class="prompt input_prompt">In&nbsp;[256]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span><span class="o">.</span><span class="n">save_report</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Document_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cp&quot;</span><span class="p">))</span>
@@ -28455,7 +28796,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[249]:</div>
+<div class="prompt output_prompt">Out[256]:</div>
 
 
 
@@ -28482,7 +28823,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[250]:</div>
+<div class="prompt input_prompt">In&nbsp;[257]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span><span class="o">.</span><span class="n">save_report</span><span class="p">(</span><span class="s2">&quot;cm1asdasd/&quot;</span><span class="p">)</span>
@@ -28498,7 +28839,7 @@ Rank  Name   Class-Score    Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[250]:</div>
+<div class="prompt output_prompt">Out[257]:</div>
 
 
 
@@ -28554,7 +28895,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[251]:</div>
+<div class="prompt input_prompt">In&nbsp;[258]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -28588,7 +28929,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[252]:</div>
+<div class="prompt input_prompt">In&nbsp;[259]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -28622,7 +28963,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[253]:</div>
+<div class="prompt input_prompt">In&nbsp;[260]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -28656,7 +28997,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[254]:</div>
+<div class="prompt input_prompt">In&nbsp;[261]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -28690,7 +29031,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[255]:</div>
+<div class="prompt input_prompt">In&nbsp;[262]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -28724,7 +29065,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[256]:</div>
+<div class="prompt input_prompt">In&nbsp;[263]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -28758,7 +29099,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[257]:</div>
+<div class="prompt input_prompt">In&nbsp;[264]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -28792,7 +29133,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[258]:</div>
+<div class="prompt input_prompt">In&nbsp;[265]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -28826,7 +29167,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[259]:</div>
+<div class="prompt input_prompt">In&nbsp;[266]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -28860,7 +29201,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[260]:</div>
+<div class="prompt input_prompt">In&nbsp;[267]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -28894,7 +29235,7 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[261]:</div>
+<div class="prompt input_prompt">In&nbsp;[268]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -28928,11 +29269,11 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[262]:</div>
+<div class="prompt input_prompt">In&nbsp;[269]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
-    <span class="n">cp</span><span class="o">=</span><span class="n">Compare</span><span class="p">({</span><span class="s2">&quot;cm1&quot;</span><span class="p">:</span><span class="n">cm2</span><span class="p">,</span><span class="s2">&quot;cm2&quot;</span><span class="p">:</span><span class="n">cm3</span><span class="p">},</span><span class="n">by_class</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">weight</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+    <span class="n">cp</span><span class="o">=</span><span class="n">Compare</span><span class="p">({</span><span class="s2">&quot;cm1&quot;</span><span class="p">:</span><span class="n">cm2</span><span class="p">,</span><span class="s2">&quot;cm2&quot;</span><span class="p">:</span><span class="n">cm3</span><span class="p">},</span><span class="n">by_class</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">class_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
 <span class="k">except</span> <span class="n">pycmCompareError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
 </pre></div>
@@ -28951,7 +29292,7 @@ Rank  Name   Class-Score    Overall-Score
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The weight type must be dictionary and also must be specified for all of the classes.
+<pre>The class_weight type must be dictionary and also must be specified for all of the classes.
 </pre>
 </div>
 </div>
@@ -28962,7 +29303,75 @@ Rank  Name   Class-Score    Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[263]:</div>
+<div class="prompt input_prompt">In&nbsp;[270]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">cp</span><span class="o">=</span><span class="n">Compare</span><span class="p">({</span><span class="s2">&quot;cm1&quot;</span><span class="p">:</span><span class="n">cm2</span><span class="p">,</span><span class="s2">&quot;cm2&quot;</span><span class="p">:</span><span class="n">cm3</span><span class="p">},</span><span class="n">class_benchmark_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+<span class="k">except</span> <span class="n">pycmCompareError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The class_benchmark_weight type must be dictionary and also must be specified for all of the class benchmarks.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[271]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">cp</span><span class="o">=</span><span class="n">Compare</span><span class="p">({</span><span class="s2">&quot;cm1&quot;</span><span class="p">:</span><span class="n">cm2</span><span class="p">,</span><span class="s2">&quot;cm2&quot;</span><span class="p">:</span><span class="n">cm3</span><span class="p">},</span><span class="n">overall_benchmark_weight</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+<span class="k">except</span> <span class="n">pycmCompareError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>The overall_benchmark_weight type must be dictionary and also must be specified for all of the overall benchmarks.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[272]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -28997,7 +29406,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[264]:</div>
+<div class="prompt input_prompt">In&nbsp;[273]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -29031,7 +29440,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[265]:</div>
+<div class="prompt input_prompt">In&nbsp;[274]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -29065,7 +29474,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[266]:</div>
+<div class="prompt input_prompt">In&nbsp;[275]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -29099,7 +29508,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[267]:</div>
+<div class="prompt input_prompt">In&nbsp;[276]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -29133,7 +29542,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[268]:</div>
+<div class="prompt input_prompt">In&nbsp;[277]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -29167,7 +29576,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[269]:</div>
+<div class="prompt input_prompt">In&nbsp;[278]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -29201,7 +29610,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[270]:</div>
+<div class="prompt input_prompt">In&nbsp;[279]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -29235,7 +29644,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[271]:</div>
+<div class="prompt input_prompt">In&nbsp;[280]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -29272,7 +29681,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-    <li><span style="color:red;">Notice </span> :  updated in <span style="color:red;">version 3.2</span> </li>
+    <li><span style="color:red;">Notice </span> :  updated in <span style="color:red;">version 3.3</span> </li>
 </ul>
 </div>
 </div>

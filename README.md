@@ -9,6 +9,9 @@
 </a>
 <a href="https://badge.fury.io/py/pycm"><img src="https://badge.fury.io/py/pycm.svg" alt="PyPI version" height="18"></a>
 <a href="https://anaconda.org/sepandhaghighi/pycm"><img src="https://anaconda.org/sepandhaghighi/pycm/badges/version.svg"></a>
+<a href="https://colab.research.google.com/github/sepandhaghighi/pycm/blob/master">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Document"/>
+</a>
 </div>
 
 ----------

@@ -724,9 +724,11 @@ For more information visit [here](https://github.com/sepandhaghighi/pycm/tree/ma
 </div>
 
 ## Try PyCM in your browser!
-PyCM can be used online in interactive Jupyter Notebooks via the Binder service! Try it out now! :
+PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab services! Try it out now! :
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sepandhaghighi/pycm/master)
+
+[![Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sepandhaghighi/pycm/blob/master)
 
 * Check `Examples` in `Document` folder 
 

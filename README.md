@@ -12,6 +12,9 @@
 <a href="https://colab.research.google.com/github/sepandhaghighi/pycm/blob/master">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Document"/>
 </a>
+<a href="https://discord.com/invite/zqpU2b3J3f">
+  <img src="https://img.shields.io/discord/901883546162065408.svg" alt="Discord Channel">
+</a>
 </div>
 
 ----------
@@ -734,10 +737,17 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab
 
 ## Issues & bug reports			
 
-Just fill an issue and describe it. We'll check it ASAP!							
-or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir"). 
+Just fill an issue and describe it. We'll check it ASAP!
 
-* Please complete the issue template
+- Please complete the issue template
+ 
+You can also join our discord server
+
+<div align="center">
+<a href="https://discord.com/invite/zqpU2b3J3f">
+  <img src="https://img.shields.io/discord/901883546162065408.svg?style=for-the-badge" alt="Discord Channel">
+</a>
+</div>
 
 
 ## Outputs	

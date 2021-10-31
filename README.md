@@ -31,7 +31,6 @@
    * [Contribution](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBUTING.md)
    * [References](https://github.com/sepandhaghighi/pycm#references)
    * [Cite](https://github.com/sepandhaghighi/pycm#cite)
-   * [Support](https://github.com/sepandhaghighi/pycm#support)
    * [Authors](https://github.com/sepandhaghighi/pycm/blob/master/AUTHORS.md)
    * [License](https://github.com/sepandhaghighi/pycm#license)
    * [Donate](https://github.com/sepandhaghighi/pycm#donate-to-our-project)
@@ -737,17 +736,18 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab
 
 ## Issues & bug reports			
 
-Just fill an issue and describe it. We'll check it ASAP!
-
-- Please complete the issue template
- 
-You can also join our discord server
+1. Just fill an issue and describe it. We'll check it ASAP! Please complete the issue template.
+2. You can join our discord server
 
 <div align="center">
 <a href="https://discord.com/invite/zqpU2b3J3f">
   <img src="https://img.shields.io/discord/901883546162065408.svg?style=for-the-badge" alt="Discord Channel">
 </a>
 </div>
+
+3. Website : [https://www.pycm.ir](https://www.pycm.ir)		
+4. Mailing List : [https://mail.python.org/mailman3/lists/pycm.python.org/](https://mail.python.org/mailman3/lists/pycm.python.org/)
+5. Email : [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir")		
 
 
 ## Outputs	
@@ -971,12 +971,6 @@ Download [PyCM.bib](http://www.pycm.ir/PYCM.bib)
 		<td align="center"><a href="https://www.researchgate.net/project/PYCM-python-confusion-matrix"><img src="https://img.shields.io/badge/Researchgate-PyCM-yellow.svg"></a></td>
 	</tr>
 </table>
-
-## Support
-
-- Website : [https://www.pycm.ir](https://www.pycm.ir)		
-- Mailing List : [https://mail.python.org/mailman3/lists/pycm.python.org/](https://mail.python.org/mailman3/lists/pycm.python.org/)
-- Email : [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir")		
 
 
 ## License

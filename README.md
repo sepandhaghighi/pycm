@@ -738,7 +738,7 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab
 
 1. Fill an issue and describe it. We'll check it ASAP! 
     - Please complete the issue template
-2. Discord : <a href="https://discord.com/invite/zqpU2b3J3f"><img src="https://img.shields.io/discord/901883546162065408.svg?style=for-the-badge" alt="Discord Channel"></a>
+2. Discord : [https://discord.com/invite/zqpU2b3J3f](https://discord.com/invite/zqpU2b3J3f)
 3. Website : [https://www.pycm.ir](https://www.pycm.ir)		
 4. Mailing List : [https://mail.python.org/mailman3/lists/pycm.python.org/](https://mail.python.org/mailman3/lists/pycm.python.org/)
 5. Email : [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir")		

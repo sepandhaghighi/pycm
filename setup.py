@@ -48,6 +48,7 @@ setup(
     project_urls={
         'Webpage': 'https://www.pycm.ir',
         'Source': 'https://github.com/sepandhaghighi/pycm',
+        'Discord': 'https://discord.com/invite/zqpU2b3J3f',
     },
     install_requires=get_requires(),
     python_requires='>=3.5',

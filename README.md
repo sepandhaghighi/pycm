@@ -9,6 +9,12 @@
 </a>
 <a href="https://badge.fury.io/py/pycm"><img src="https://badge.fury.io/py/pycm.svg" alt="PyPI version" height="18"></a>
 <a href="https://anaconda.org/sepandhaghighi/pycm"><img src="https://anaconda.org/sepandhaghighi/pycm/badges/version.svg"></a>
+<a href="https://colab.research.google.com/github/sepandhaghighi/pycm/blob/master">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Document"/>
+</a>
+<a href="https://discord.com/invite/zqpU2b3J3f">
+  <img src="https://img.shields.io/discord/901883546162065408.svg" alt="Discord Channel">
+</a>
 </div>
 
 ----------
@@ -25,7 +31,6 @@
    * [Contribution](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBUTING.md)
    * [References](https://github.com/sepandhaghighi/pycm#references)
    * [Cite](https://github.com/sepandhaghighi/pycm#cite)
-   * [Support](https://github.com/sepandhaghighi/pycm#support)
    * [Authors](https://github.com/sepandhaghighi/pycm/blob/master/AUTHORS.md)
    * [License](https://github.com/sepandhaghighi/pycm#license)
    * [Donate](https://github.com/sepandhaghighi/pycm#donate-to-our-project)
@@ -721,18 +726,22 @@ For more information visit [here](https://github.com/sepandhaghighi/pycm/tree/ma
 </div>
 
 ## Try PyCM in your browser!
-PyCM can be used online in interactive Jupyter Notebooks via the Binder service! Try it out now! :
+PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab services! Try it out now! :
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sepandhaghighi/pycm/master)
+
+[![Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sepandhaghighi/pycm/blob/master)
 
 * Check `Examples` in `Document` folder 
 
 ## Issues & bug reports			
 
-Just fill an issue and describe it. We'll check it ASAP!							
-or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir"). 
-
-* Please complete the issue template
+1. Fill an issue and describe it. We'll check it ASAP! 
+    - Please complete the issue template
+2. Discord : [https://discord.com/invite/zqpU2b3J3f](https://discord.com/invite/zqpU2b3J3f)
+3. Website : [https://www.pycm.ir](https://www.pycm.ir)		
+4. Mailing List : [https://mail.python.org/mailman3/lists/pycm.python.org/](https://mail.python.org/mailman3/lists/pycm.python.org/)
+5. Email : [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir")		
 
 
 ## Outputs	
@@ -956,12 +965,6 @@ Download [PyCM.bib](http://www.pycm.ir/PYCM.bib)
 		<td align="center"><a href="https://www.researchgate.net/project/PYCM-python-confusion-matrix"><img src="https://img.shields.io/badge/Researchgate-PyCM-yellow.svg"></a></td>
 	</tr>
 </table>
-
-## Support
-
-- Website : [https://www.pycm.ir](https://www.pycm.ir)		
-- Mailing List : [https://mail.python.org/mailman3/lists/pycm.python.org/](https://mail.python.org/mailman3/lists/pycm.python.org/)
-- Email : [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir")		
 
 
 ## License

@@ -33,7 +33,7 @@
    * [Cite](https://github.com/sepandhaghighi/pycm#cite)
    * [Authors](https://github.com/sepandhaghighi/pycm/blob/master/AUTHORS.md)
    * [License](https://github.com/sepandhaghighi/pycm/blob/master/LICENSE)
-   * [Donate](https://github.com/sepandhaghighi/pycm#donate-to-our-project)
+   * [Show Your Support](https://github.com/sepandhaghighi/pycm#show-your-support)
    * [Changelog](https://github.com/sepandhaghighi/pycm/blob/master/CHANGELOG.md)
    * [Code of Conduct](https://github.com/sepandhaghighi/pycm/blob/master/.github/CODE_OF_CONDUCT.md)
 
@@ -967,8 +967,14 @@ Download [PyCM.bib](http://www.pycm.ir/PYCM.bib)
 	</tr>
 </table>
 
+## Show your support
 
-## Donate to our project		
+### Star this repo				
+
+Give a ⭐️ if this project helped you!
+
+
+### Donate to our project		
 
 If you do like our project and we hope that you do, can you please support us? Our project is not and is never going to be working for profit. We need the money just so we can continue doing what we do ;-) .
 

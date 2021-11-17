@@ -703,6 +703,7 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 7. `sample_weight` : python `list` or numpy `array` of numbers
 8. `transpose` : `bool`
 9. `classes` : python `list`
+10. `is_imbalanced` : `bool`
 
 * Run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
 

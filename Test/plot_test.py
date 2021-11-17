@@ -66,7 +66,7 @@ array([0, 1, 2])
 [Text(0, 0, '0'), Text(1, 0, '1'), Text(2, 0, '2')]
 >>> list(ax.get_yticklabels())
 [Text(0, 0, '0'), Text(0, 1, '1'), Text(0, 2, '2')]
->>> ax.texts
+>>> list(ax.texts)
 [Text(0, 0, '9'), Text(1, 0, '3'), Text(2, 0, '0'), Text(0, 1, '3'), Text(1, 1, '5'), Text(2, 1, '1'), Text(0, 2, '1'), Text(1, 2, '1'), Text(2, 2, '4')]
 >>> ax = cm.plot(cmap=plt.cm.Blues)
 >>> ax.get_title()

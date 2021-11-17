@@ -32,7 +32,7 @@
    * [References](https://github.com/sepandhaghighi/pycm#references)
    * [Cite](https://github.com/sepandhaghighi/pycm#cite)
    * [Authors](https://github.com/sepandhaghighi/pycm/blob/master/AUTHORS.md)
-   * [License](https://github.com/sepandhaghighi/pycm#license)
+   * [License](https://github.com/sepandhaghighi/pycm/blob/master/LICENSE)
    * [Donate](https://github.com/sepandhaghighi/pycm#donate-to-our-project)
    * [Changelog](https://github.com/sepandhaghighi/pycm/blob/master/CHANGELOG.md)
    * [Code of Conduct](https://github.com/sepandhaghighi/pycm/blob/master/.github/CODE_OF_CONDUCT.md)
@@ -966,11 +966,6 @@ Download [PyCM.bib](http://www.pycm.ir/PYCM.bib)
 		<td align="center"><a href="https://www.researchgate.net/project/PYCM-python-confusion-matrix"><img src="https://img.shields.io/badge/Researchgate-PyCM-yellow.svg"></a></td>
 	</tr>
 </table>
-
-
-## License
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsepandhaghighi%2Fpycm.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsepandhaghighi%2Fpycm?ref=badge_large)
 
 
 ## Donate to our project		

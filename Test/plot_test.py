@@ -21,8 +21,8 @@ array([0, 1, 2])
 array([0, 1, 2])
 >>> list(ax.get_yticklabels())
 [Text(0, 0, '0'), Text(0, 1, '1'), Text(0, 2, '2')]
->>> ax.texts
-[]
+>>> len(ax.texts)
+0
 >>> ax = cm.plot(normalized=True)
 >>> ax.get_title()
 'Confusion Matrix (Normalized)'

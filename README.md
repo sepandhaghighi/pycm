@@ -32,8 +32,8 @@
    * [References](https://github.com/sepandhaghighi/pycm#references)
    * [Cite](https://github.com/sepandhaghighi/pycm#cite)
    * [Authors](https://github.com/sepandhaghighi/pycm/blob/master/AUTHORS.md)
-   * [License](https://github.com/sepandhaghighi/pycm#license)
-   * [Donate](https://github.com/sepandhaghighi/pycm#donate-to-our-project)
+   * [License](https://github.com/sepandhaghighi/pycm/blob/master/LICENSE)
+   * [Show Your Support](https://github.com/sepandhaghighi/pycm#show-your-support)
    * [Changelog](https://github.com/sepandhaghighi/pycm/blob/master/CHANGELOG.md)
    * [Code of Conduct](https://github.com/sepandhaghighi/pycm/blob/master/.github/CODE_OF_CONDUCT.md)
 
@@ -677,9 +677,9 @@ If the user sets the value of `by_class` boolean input `True`, the best confusio
 >>> print(cp)
 Best : cm2
 
-Rank  Name   Class-Score    Overall-Score
-1     cm2    9.05           2.55
-2     cm3    6.05           1.98333
+Rank  Name   Class-Score       Overall-Score
+1     cm2    0.50278           0.425
+2     cm3    0.33611           0.33056
 
 >>> cp.best
 pycm.ConfusionMatrix(classes: [0, 1, 2])
@@ -703,6 +703,7 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 7. `sample_weight` : python `list` or numpy `array` of numbers
 8. `transpose` : `bool`
 9. `classes` : python `list`
+10. `is_imbalanced` : `bool`
 
 * Run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
 
@@ -966,13 +967,14 @@ Download [PyCM.bib](http://www.pycm.ir/PYCM.bib)
 	</tr>
 </table>
 
+## Show your support
 
-## License
+### Star this repo
 
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsepandhaghighi%2Fpycm.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsepandhaghighi%2Fpycm?ref=badge_large)
+Give a ⭐️ if this project helped you!
 
 
-## Donate to our project		
+### Donate to our project
 
 If you do like our project and we hope that you do, can you please support us? Our project is not and is never going to be working for profit. We need the money just so we can continue doing what we do ;-) .
 

@@ -77,11 +77,11 @@ def LR_SE_calc(item1, item2, item3, item4):
     """
     Calculate likelihood ratio +/- standard error.
 
-    :param item1: number of true positives or false negatives (TP or FN)
+    :param item1: true positive or false negative (TP or FN)
     :type item1: int
     :param item2: number of positive cases (P)
     :type item2: int
-    :param item3: number of false positives or true negatives (FP or TN)
+    :param item3: false positive or true negative (FP or TN)
     :type item3: int
     :param item4: number of negative cases (N)
     :type item4: int

@@ -79,11 +79,11 @@ def LR_SE_calc(item1, item2, item3, item4):
 
     :param item1: true positive or false negative (TP or FN)
     :type item1: int
-    :param item2: number of positive cases (P)
+    :param item2: number of actual positives (P)
     :type item2: int
     :param item3: false positive or true negative (FP or TN)
     :type item3: int
-    :param item4: number of negative cases (N)
+    :param item4: number of actual negatives (N)
     :type item4: int
     :return: standard error as float
     """

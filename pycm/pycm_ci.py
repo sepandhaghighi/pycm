@@ -57,9 +57,9 @@ def AUC_SE_calc(AUC, P, N):
 
     :param AUC: AUC value
     :type AUC: float
-    :param P:  number of positive cases
+    :param P:  number of actual positives
     :type P : int
-    :param N: number of negative cases
+    :param N: number of actual negatives
     :type N : int
     :return: standard error as float
     """
@@ -158,7 +158,7 @@ def kappa_SE_calc(PA, PE, POP):
     :type PA : float
     :param PE:  hypothetical probability of chance agreement (random accuracy)
     :type PE : float
-    :param POP: population
+    :param POP: population or total number of samples
     :type POP:int
     :return: kappa standard error as float
     """

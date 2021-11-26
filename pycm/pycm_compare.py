@@ -44,7 +44,7 @@ class Compare():
         """
         Init method.
 
-        :param cm_dict: cm's dictionary
+        :param cm_dict: input confusion matrix
         :type cm_dict : dict
         :param by_class: compare by class flag
         :type by_class: bool
@@ -108,7 +108,7 @@ class Compare():
         :type name : str
         :param address: flag for address return
         :type address : bool
-        :return: saving Status as dict {"Status":bool , "Message":str}
+        :return: saving address as dict {"Status": bool , "Message": str}
         """
         try:
             message = None
@@ -149,7 +149,7 @@ def __compare_class_handler__(compare, cm_dict):
 
     :param compare: Compare
     :type compare : pycm.Compare object
-    :param cm_dict: cm's dictionary
+    :param cm_dict: input confusion matrix
     :type cm_dict : dict
     :return: None
     """
@@ -175,7 +175,7 @@ def __compare_overall_handler__(compare, cm_dict):
 
     :param compare: Compare
     :type compare : pycm.Compare object
-    :param cm_dict: cm's dictionary
+    :param cm_dict: input confusion matrix
     :type cm_dict : dict
     :return: None
     """
@@ -200,7 +200,7 @@ def __compare_rounder__(compare, cm_dict):
 
     :param compare: Compare
     :type compare : pycm.Compare object
-    :param cm_dict: cm's dictionary
+    :param cm_dict: input confusion matrix
     :type cm_dict : dict
     :return: None
     """
@@ -289,7 +289,7 @@ def __compare_assign_handler__(
 
     :param compare: Compare
     :type compare : pycm.Compare object
-    :param cm_dict: cm's dictionary
+    :param cm_dict: input confusion matrix
     :type cm_dict : dict
     :param class_weight: class weights
     :type class_weight: dict

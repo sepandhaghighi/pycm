@@ -446,7 +446,7 @@ def CEN_misclassification_calc(
     """
     Calculate Misclassification probability.
 
-    :param table: input matrix
+    :param table: input confusion matrix
     :type table : dict
     :param TOP: number of positives in predict vector
     :type TOP : int
@@ -478,7 +478,7 @@ def CEN_calc(classes, table, TOP, P, class_name, modified=False):
 
     :param classes: classes
     :type classes : list
-    :param table: input matrix
+    :param table: input confusion matrix
     :type table : dict
     :param TOP: number of positives in predict vector
     :type TOP : int
@@ -693,7 +693,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     :type FN : dict
     :param classes: classes
     :type classes : list
-    :param table: input matrix
+    :param table: input confusion matrix
     :type table : dict
     :return: classes' statistics as dict
     """

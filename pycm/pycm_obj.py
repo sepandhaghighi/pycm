@@ -168,7 +168,7 @@ class ConfusionMatrix():
 
         :param overall_param: overall parameters list for print, Example: ["Kappa", "Scott PI"]
         :type overall_param : list
-        :param class_param: class parameters list for print, Example : ["TPR", "TNR", "AUC"]
+        :param class_param: class parameters list for print, Example: ["TPR", "TNR", "AUC"]
         :type class_param : list
         :param class_name : class name (a sub set of classes names), Example :[1, 2, 3]
         :type class_name : list

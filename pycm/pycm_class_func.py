@@ -241,7 +241,7 @@ def F_calc(TP, FP, FN, beta):
     :type FP : int
     :param FN: false negative
     :type FN : int
-    :param beta : beta coefficient
+    :param beta: beta coefficient
     :type beta : float
     :return: F-score as float
     """

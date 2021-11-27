@@ -208,7 +208,7 @@ def __obj_file_handler__(cm, file):
 
     :param cm: confusion matrix
     :type cm : pycm.ConfusionMatrix object
-    :param file : saved confusion matrix file object
+    :param file: saved confusion matrix file object
     :type file : (io.IOBase & file)
     :return: matrix parameters as list
     """
@@ -251,7 +251,7 @@ def __obj_matrix_handler__(matrix, transpose):
 
     :param matrix: direct matrix
     :type matrix: dict
-    :param transpose : transpose flag
+    :param transpose: transpose flag
     :type transpose : bool
     :return: matrix parameters as list
     """
@@ -281,9 +281,9 @@ def __obj_vector_handler__(
     :type actual_vector: python list or numpy array of any stringable objects
     :param predict_vector: predicted vector
     :type predict_vector: python list or numpy array of any stringable objects
-    :param threshold : activation threshold function
+    :param threshold: activation threshold function
     :type threshold : FunctionType (function or lambda)
-    :param sample_weight : sample weights list
+    :param sample_weight: sample weights list
     :type sample_weight : list
     :param classes: ordered labels of classes
     :type classes: list

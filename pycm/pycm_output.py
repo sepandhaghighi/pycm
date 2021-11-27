@@ -20,9 +20,9 @@ def html_dataset_type(is_binary, is_imbalanced):
     """
     Return HTML report file dataset type.
 
-    :param is_binary: is_binary flag (binary : True , multi-class : False)
+    :param is_binary: is_binary flag (True: binary , False: multi-class)
     :type is_binary: bool
-    :param is_imbalanced: is_imbalanced flag (imbalance : True , balance : False)
+    :param is_imbalanced: is_imbalanced flag (True: imbalance, False: balance)
     :type is_imbalanced: bool
     :return: dataset_type as str
     """
@@ -62,7 +62,7 @@ def color_check(color):
 
 def html_table_color(row, item, color=(0, 0, 0)):
     """
-    Return background color of each cell of table.
+    Return background color of each cell of the table.
 
     :param row: row dictionary
     :type row : dict
@@ -70,7 +70,7 @@ def html_table_color(row, item, color=(0, 0, 0)):
     :type item : int
     :param color : input color
     :type color : tuple
-    :return: background color as list [R,G,B]
+    :return: background color as list [R, G, B]
     """
     result = [0, 0, 0]
     color_list = color_check(color)
@@ -90,15 +90,15 @@ def html_table(
         normalize=False,
         shortener=True):
     """
-    Return HTML report file confusion matrix.
+    Return the confusion matrix of the HTML report file.
 
-    :param classes: matrix classes
+    :param classes: confusion matrix classes
     :type classes: list
-    :param table: matrix
+    :param table: input confusion matrix
     :type table : dict
     :param rgb_color : input color
     :type rgb_color : tuple
-    :param normalize : save normalize matrix flag
+    :param normalize : save normalized matrix flag
     :type normalize : bool
     :param shortener: class name shortener flag
     :type shortener: bool
@@ -151,13 +151,13 @@ def html_overall_stat(
         recommended_list=(),
         alt_link=False):
     """
-    Return HTML report file overall stat.
+    Return the overall stats of HTML report file.
 
-    :param overall_stat: overall stat
+    :param overall_stat: overall stats
     :type overall_stat : dict
-    :param digit: scale (the number of digits to the right of the decimal point in a number.)
+    :param digit: scale (number of fraction digits)
     :type digit : int
-    :param overall_param : Overall parameters list for print, Example : ["Kappa","Scott PI]
+    :param overall_param: overall parameters list for print, Example: ["Kappa", "Scott PI"]
     :type overall_param : list
     :param recommended_list: recommended statistics list
     :type recommended_list : list or tuple
@@ -204,15 +204,15 @@ def html_class_stat(
         recommended_list=(),
         alt_link=False):
     """
-    Return HTML report file class_stat.
+    Return the class-based stats of HTML report file.
 
-    :param classes: matrix classes
+    :param classes: confusion matrix classes
     :type classes: list
     :param class_stat: class stat
     :type class_stat:dict
-    :param digit: scale (the number of digits to the right of the decimal point in a number.)
+    :param digit: scale (number of fraction digits)
     :type digit : int
-    :param class_param : Class parameters list for print, Example : ["TPR","TNR","AUC"]
+    :param class_param: class parameters list for print, Example: ["TPR", "TNR", "AUC"]
     :type class_param : list
     :param recommended_list: recommended statistics list
     :type recommended_list : list or tuple
@@ -268,7 +268,7 @@ def html_end(version):
     Return HTML report file end lines.
 
     :param version: pycm version
-    :type version:str
+    :type version: str
     :return: html_end as str
     """
     return HTML_END_TEMPLATE.format(version)
@@ -289,10 +289,10 @@ def table_print(classes, table):
     """
     Return printable confusion matrix.
 
-    :param classes: classes list
-    :type classes:list
-    :param table: table
-    :type table:dict
+    :param classes: confusion matrix classes
+    :type classes: list
+    :param table: input confusion matrix
+    :type table: dict
     :return: printable table as str
     """
     classes_len = len(classes)
@@ -316,8 +316,8 @@ def sparse_table_print(sparse_matrix):
     """
     Return printable confusion matrix in sparse mode.
 
-    :param sparse_matrix: list of sparse matrix and it's classes
-    :type sparse_matrix:list
+    :param sparse_matrix: list of the sparse matrix and it's classes
+    :type sparse_matrix: list
     :return: printable table as str
     """
     [sparse_table, actual_classes, predict_classes] = sparse_matrix
@@ -344,11 +344,11 @@ def csv_matrix_print(classes, table, header=False):
     """
     Return matrix as csv data.
 
-    :param classes: classes list
-    :type classes:list
-    :param table: table
-    :type table:dict
-    :param header: add headers to .csv file
+    :param classes: confusion matrix classes
+    :type classes: list
+    :param table: input confusion matrix
+    :type table: dict
+    :param header: add headers to csv file
     :type header: bool
     :return:
     """
@@ -370,13 +370,13 @@ def csv_print(classes, class_stat, digit=5, class_param=None):
     """
     Return csv file data.
 
-    :param classes: classes list
-    :type classes:list
+    :param classes: confusion matrix classes
+    :type classes: list
     :param class_stat: statistic result for each class
     :type class_stat:dict
-    :param digit: scale (the number of digits to the right of the decimal point in a number.)
+    :param digit: scale (number of fraction digits)
     :type digit : int
-    :param class_param : class parameters list for print, Example : ["TPR","TNR","AUC"]
+    :param class_param: class parameters list for print, Example: ["TPR", "TNR", "AUC"]
     :type class_param : list
     :return: csv file data as str
     """
@@ -407,17 +407,17 @@ def stat_print(
     """
     Return printable statistics table.
 
-    :param classes: classes list
-    :type classes:list
+    :param classes: confusion matrix classes
+    :type classes: list
     :param class_stat: statistic result for each class
-    :type class_stat:dict
-    :param overall_stat : overall statistic result
+    :type class_stat: dict
+    :param overall_stat: overall statistic result
     :type overall_stat:dict
-    :param digit: scale (the number of digits to the right of the decimal point in a number.)
+    :param digit: scale (number of fraction digits)
     :type digit : int
-    :param overall_param : overall parameters list for print, Example : ["Kappa","Scott PI]
+    :param overall_param: overall parameters list for print, Example: ["Kappa", "Scott PI"]
     :type overall_param : list
-    :param class_param : class parameters list for print, Example : ["TPR","TNR","AUC"]
+    :param class_param: class parameters list for print, Example: ["TPR", "TNR", "AUC"]
     :type class_param : list
     :return: printable result as str
     """
@@ -460,11 +460,11 @@ def compare_report_print(sorted_list, scores, best_name):
     """
     Return compare report.
 
-    :param sorted_list: sorted list of cm's
+    :param sorted_list: sorted list of confusion matrices
     :type sorted_list: list
-    :param scores: scores of cm's
+    :param scores: scores of confusion matrices
     :type scores: dict
-    :param best_name: best cm name
+    :param best_name: best confusion matrix name
     :type best_name: str
     :return: printable result as str
     """

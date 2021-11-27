@@ -54,7 +54,7 @@ class Compare():
         :type class_benchmark_weight: dict
         :param overall_benchmark_weight: overall benchmark weights
         :type overall_benchmark_weight: dict
-        :param digit: precision digit (default value : 5)
+        :param digit: scale (number of fraction digits)(default value: 5)
         :type digit : int
         """
         self.scores = None
@@ -297,7 +297,7 @@ def __compare_assign_handler__(
     :type class_benchmark_weight: dict
     :param overall_benchmark_weight: overall benchmark weights
     :type overall_benchmark_weight: dict
-    :param digit: precision digit (default value : 5)
+    :param digit: scale (number of fraction digits)(default value: 5)
     :type digit : int
     :return: None
     """

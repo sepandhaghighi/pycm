@@ -476,7 +476,7 @@ def CEN_calc(classes, table, TOP, P, class_name, modified=False):
     """
     Calculate Confusion Entropy (CEN) (or Modified Confusion Entropy (MCEN)).
 
-    :param classes: classes
+    :param classes: confusion matrix classes
     :type classes : list
     :param table: input confusion matrix
     :type table : dict
@@ -691,7 +691,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     :type FP : dict
     :param FN: false negative
     :type FN : dict
-    :param classes: classes
+    :param classes: confusion matrix classes
     :type classes : list
     :param table: input confusion matrix
     :type table : dict

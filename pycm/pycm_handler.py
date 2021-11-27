@@ -13,9 +13,9 @@ import numpy
 
 def __class_stat_init__(cm):
     """
-    Init individual class stat.
+    Init individual class stats.
 
-    :param cm : ConfusionMatrix
+    :param cm: confusion matrix
     :type cm : pycm.ConfusionMatrix object
     :return: None
     """
@@ -80,9 +80,9 @@ def __class_stat_init__(cm):
 
 def __overall_stat_init__(cm):
     """
-    Init individual overall stat.
+    Init individual overall stats.
 
-    :param cm: ConfusionMatrix
+    :param cm: confusion matrix
     :type cm : pycm.ConfusionMatrix object
     :return: None
     """
@@ -153,9 +153,9 @@ def __overall_stat_init__(cm):
 
 def __obj_assign_handler__(cm, matrix_param):
     """
-    Assign basic parameters to ConfusionMatrix.
+    Assign basic parameters to the input confusion matrix.
 
-    :param cm: ConfusionMatrix
+    :param cm: confusion matrix
     :type cm : pycm.ConfusionMatrix object
     :param matrix_param: matrix parameters
     :type matrix_param: dict
@@ -204,9 +204,9 @@ def __obj_assign_handler__(cm, matrix_param):
 
 def __obj_file_handler__(cm, file):
     """
-    Handle object conditions for file.
+    Handle object conditions for the input file.
 
-    :param cm: ConfusionMatrix
+    :param cm: confusion matrix
     :type cm : pycm.ConfusionMatrix object
     :param file : saved confusion matrix file object
     :type file : (io.IOBase & file)
@@ -247,7 +247,7 @@ def __obj_file_handler__(cm, file):
 
 def __obj_matrix_handler__(matrix, transpose):
     """
-    Handle object conditions for matrix.
+    Handle object conditions for the matrix.
 
     :param matrix: direct matrix
     :type matrix: dict
@@ -275,11 +275,11 @@ def __obj_vector_handler__(
     """
     Handle object conditions for vectors.
 
-    :param cm: ConfusionMatrix
+    :param cm: confusion matrix
     :type cm : pycm.ConfusionMatrix object
-    :param actual_vector: Actual Vector
+    :param actual_vector: actual vector
     :type actual_vector: python list or numpy array of any stringable objects
-    :param predict_vector: Predicted Vector
+    :param predict_vector: predicted vector
     :type predict_vector: python list or numpy array of any stringable objects
     :param threshold : activation threshold function
     :type threshold : FunctionType (function or lambda)

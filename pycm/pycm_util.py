@@ -10,7 +10,7 @@ from warnings import warn
 
 def list_check_equal(input_list):
     """
-    Check equality of input_list items.
+    Check equality of the input list items.
 
     :param input_list: input list
     :type input_list: list
@@ -24,8 +24,8 @@ def isfloat(value):
     Check input for float conversion.
 
     :param value: input value
-    :type value:str
-    :return: result as bool (true if input_value is a number and false otherwise)
+    :type value: str
+    :return: result as bool (True: input_value is a number, False: otherwise)
     """
     try:
         float(value)
@@ -36,11 +36,11 @@ def isfloat(value):
 
 def rounder(input_number, digit=5):
     """
-    Round input number and convert to str.
+    Round the input number and convert it to str.
 
     :param input_number: input number
     :type input_number : anything
-    :param digit: scale (the number of digits to the right of the decimal point in a number.)
+    :param digit: scale (number of fraction digits)
     :type digit : int
     :return: round number as str
     """
@@ -62,9 +62,9 @@ def class_filter(classes, class_name):
     """
     Filter classes by comparing two lists.
 
-    :param classes: matrix classes
+    :param classes: confusion matrix classes
     :type classes: list
-    :param class_name: sub set of classes
+    :param class_name: subset of classes list
     :type class_name : list
     :return: filtered classes as list
     """
@@ -95,7 +95,7 @@ def matrix_check(table):
     """
     Check input matrix format.
 
-    :param table: input matrix
+    :param table: input confusion matrix
     :type table : dict
     :return: bool
     """
@@ -118,9 +118,9 @@ def vector_filter(actual_vector, predict_vector):
 
     :param actual_vector: actual values
     :type actual_vector : list
-    :param predict_vector: predict value
+    :param predict_vector: predict values
     :type predict_vector : list
-    :return: new actual and predict vector
+    :return: new actual and predict vectors
     """
     if isinstance(actual_vector, numpy.ndarray):
         actual_vector = actual_vector.tolist()
@@ -164,11 +164,11 @@ def isfile(f):
 
 def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
     """
-    One-Vs-All mode handler.
+    One-vs-all mode handler.
 
-    :param classes: classes
+    :param classes: confusion matrix classes
     :type classes : list
-    :param table: input matrix
+    :param table: input confusion matrix
     :type table : dict
     :param TP: true positive
     :type TP : dict
@@ -178,9 +178,9 @@ def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
     :type FP : dict
     :param FN: false negative
     :type FN : dict
-    :param class_name : target class name for One-Vs-All mode
+    :param class_name: target class name for one-vs-all mode
     :type class_name : any valid type
-    :return: [classes , table ] as list
+    :return: [classes, table ] as list
     """
     try:
         report_classes = [str(class_name), "~"]
@@ -197,9 +197,9 @@ def normalized_table_calc(classes, table):
     """
     Return normalized confusion matrix.
 
-    :param classes: classes list
+    :param classes: confusion matrix classes
     :type classes: list
-    :param table: table
+    :param table: input confusion matrix
     :type table: dict
     :return: normalized table as dict
     """
@@ -218,12 +218,12 @@ def normalized_table_calc(classes, table):
 
 def custom_rounder(input_number, p):
     """
-    Return round of a input number respected to the digit.
+    Return round of the input number respected to the digit.
 
     :param input_number: number that should be round
     :type input_number: float
-    :param p: 10 powered by number of digits the wanted to be rounded to
-    :type digit: int
+    :param p: 10 powered by number of digits that wanted to be rounded to
+    :type p: int
     :return: rounded number in float
     """
     return int(input_number * p + 0.5) / p
@@ -231,11 +231,11 @@ def custom_rounder(input_number, p):
 
 def sparse_matrix_calc(classes, table):
     """
-    Return sparse confusion matrix and it's classes.
+    Return sparse confusion matrix and its classes.
 
-    :param classes: classes list
+    :param classes: confusion matrix classes
     :type classes: list
-    :param table: table
+    :param table: input confusion matrix
     :type table: dict
     :return: a list containing 3 dicts [sparse_table, actual_classes, predict_classes]
     """
@@ -264,9 +264,9 @@ def transpose_func(classes, table):
     """
     Transpose table.
 
-    :param classes: classes
+    :param classes: confusion matrix classes
     :type classes : list
-    :param table: input matrix
+    :param table: input confusion matrix
     :type table : dict
     :return: transposed table as dict
     """
@@ -282,13 +282,14 @@ def transpose_func(classes, table):
 
 def matrix_params_from_table(table, transpose=False):
     """
-    Calculate TP,TN,FP,FN from confusion matrix.
+    Calculate true positive (TP), true negative (TN), false positive (FP),
+    and false negative (FN) from the input confusion matrix.
 
-    :param table: input matrix
+    :param table: input confusion matrix
     :type table : dict
     :param transpose : transpose flag
     :type transpose : bool
-    :return: [classes_list,table,TP,TN,FP,FN]
+    :return: [classes_list, table, TP, TN, FP, FN]
     """
     classes = sorted(table.keys())
     table_temp = table
@@ -319,17 +320,17 @@ def matrix_params_calc(
         sample_weight,
         classes=None):
     """
-    Calculate TP,TN,FP,FN for each class.
+    Calculate true positive (TP), true negative (TN), false positive (FP), and false negative (FN) for each class.
 
     :param actual_vector: actual values
     :type actual_vector : list
-    :param predict_vector: predict value
+    :param predict_vector: predict values
     :type predict_vector : list
-    :param sample_weight : sample weights list
+    :param sample_weight: sample weights list
     :type sample_weight : list
     :param classes: ordered labels of classes
     :type classes: list
-    :return: [classes_list,table,TP,TN,FP,FN]
+    :return: [classes_list, table, TP, TN, FP, FN]
     """
     [actual_vector, predict_vector] = vector_filter(
         actual_vector, predict_vector)
@@ -357,7 +358,7 @@ def classes_filter(actual_vector, predict_vector, classes=None):
 
     :param actual_vector: actual values
     :type actual_vector : list
-    :param predict_vector: predict value
+    :param predict_vector: predict values
     :type predict_vector : list
     :param classes: ordered labels of classes
     :type classes: list
@@ -395,7 +396,7 @@ def imbalance_check(P):
     """
     Check if the dataset is imbalanced.
 
-    :param P: condition positive
+    number of actual positives per class
     :type P : dict
     :return: is_imbalanced as bool
     """
@@ -416,7 +417,7 @@ def binary_check(classes):
     """
     Check if the problem is a binary classification.
 
-    :param classes:  all classes name
+    :param classes:  confusion matrix classes
     :type classes : list
     :return: is_binary as bool
     """
@@ -445,11 +446,11 @@ def statistic_recommend(classes, imbalance):
     """
     Return recommend parameters which are more suitable due to the input dataset characteristics.
 
-    :param classes:  all classes name
+    :param classes:  confusion matrix classes
     :type classes : list
-    :param imbalance : imbalance flag
+    :param imbalance: imbalance flag (True: imbalance, False: balance)
     :type imbalance : bool
-    :return: recommendation_list as list
+    :return: recommendation metrics as list
     """
     if imbalance:
         return IMBALANCED_RECOMMEND
@@ -490,7 +491,7 @@ def add_number_label(ax, classes, matrix, cmap, plot_lib):
 
     :param ax: confusion matrix axes
     :type ax: matplotlib.axes
-    :param classes: classes of matrix
+    :param classes: confusion matrix classes
     :type classes: list
     :param matrix: derived matrix of confusion matrix
     :type matrix: numpy.array
@@ -532,7 +533,7 @@ def axes_gen(
 
     :param ax: confusion matrix axes
     :type ax: matplotlib.axes
-    :param classes: classes of matrix
+    :param classes: confusion matrix classes
     :type classes: list
     :param matrix: derived matrix of confusion matrix
     :type matrix: numpy.array
@@ -603,7 +604,8 @@ def p1evl(x, coefs, n):
 
 def ndtri(y):
     """
-    Return the argument x for which the area under the Gaussian probability density function (integrated from minus infinity to x) is equal to y.
+    Return the argument x for which the area under the Gaussian probability density function
+    (integrated from minus infinity to x) is equal to y.
 
     :param y: function input
     :type y: float

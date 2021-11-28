@@ -282,8 +282,7 @@ def transpose_func(classes, table):
 
 def matrix_params_from_table(table, transpose=False):
     """
-    Calculate true positive (TP), true negative (TN), false positive (FP),
-    and false negative (FN) from the input confusion matrix.
+    Calculate true positive (TP), true negative (TN), false positive (FP), and false negative (FN) from the input confusion matrix.
 
     :param table: input confusion matrix
     :type table : dict
@@ -604,8 +603,7 @@ def p1evl(x, coefs, n):
 
 def ndtri(y):
     """
-    Return the argument x for which the area under the Gaussian probability density function
-    (integrated from minus infinity to x) is equal to y.
+    Return the argument x for which the area under the Gaussian probability density function (integrated from minus infinity to x) is equal to y.
 
     :param y: function input
     :type y: float

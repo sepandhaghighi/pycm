@@ -178,8 +178,7 @@ def Q_calc(TP, TN, FP, FN):
 
 def TTPN_calc(item1, item2):
     """
-    Calculate True positive rate (TPR), True negative rate (TNR),
-    Positive predictive value (PPV), and Negative predictive value (NPV).
+    Calculate True positive rate (TPR), True negative rate (TNR), Positive predictive value (PPV), and Negative predictive value (NPV).
 
     :param item1: item1 in fractional expression
     :type item1 : int
@@ -196,8 +195,7 @@ def TTPN_calc(item1, item2):
 
 def FXR_calc(item):
     """
-    Calculate False negative rate (FNR), False positive rate (FPR),
-    False discovery rate (FDR), and False omission rate (FOR).
+    Calculate False negative rate (FNR), False positive rate (FPR), False discovery rate (FDR), and False omission rate (FOR).
 
     :param item: item In expression
     :type item:float

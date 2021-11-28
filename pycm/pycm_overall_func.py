@@ -787,8 +787,7 @@ def reliability_calc(RACC, ACC):
 
 def micro_calc(item1, item2):
     """
-    Calculate True positive rate (TPR), True negative rate (TNR), Positive predictive value (PPV),
-    False negative rate (FNR), False positive rate (FPR), or F1 micro.
+    Calculate True positive rate (TPR), True negative rate (TNR), Positive predictive value (PPV), False negative rate (FNR), False positive rate (FPR), or F1 micro.
 
     :param item1: item1 in micro averaging
     :type item1:dict

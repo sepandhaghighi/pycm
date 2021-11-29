@@ -20,7 +20,7 @@ def html_dataset_type(is_binary, is_imbalanced):
     """
     Return HTML report file dataset type.
 
-    :param is_binary: is_binary flag (True: binary , False: multi-class)
+    :param is_binary: is_binary flag (True: binary, False: multi-class)
     :type is_binary: bool
     :param is_imbalanced: is_imbalanced flag (True: imbalance, False: balance)
     :type is_imbalanced: bool
@@ -68,7 +68,7 @@ def html_table_color(row, item, color=(0, 0, 0)):
     :type row : dict
     :param item: cell number
     :type item : int
-    :param color : input color
+    :param color: input color
     :type color : tuple
     :return: background color as list [R, G, B]
     """
@@ -96,9 +96,9 @@ def html_table(
     :type classes: list
     :param table: input confusion matrix
     :type table : dict
-    :param rgb_color : input color
+    :param rgb_color: input color
     :type rgb_color : tuple
-    :param normalize : save normalized matrix flag
+    :param normalize: save normalized matrix flag
     :type normalize : bool
     :param shortener: class name shortener flag
     :type shortener: bool

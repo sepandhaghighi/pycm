@@ -286,7 +286,7 @@ def matrix_params_from_table(table, transpose=False):
 
     :param table: input confusion matrix
     :type table : dict
-    :param transpose : transpose flag
+    :param transpose: transpose flag
     :type transpose : bool
     :return: [classes_list, table, TP, TN, FP, FN]
     """
@@ -416,7 +416,7 @@ def binary_check(classes):
     """
     Check if the problem is a binary classification.
 
-    :param classes:  confusion matrix classes
+    :param classes: confusion matrix classes
     :type classes : list
     :return: is_binary as bool
     """
@@ -445,7 +445,7 @@ def statistic_recommend(classes, imbalance):
     """
     Return recommend parameters which are more suitable due to the input dataset characteristics.
 
-    :param classes:  confusion matrix classes
+    :param classes: confusion matrix classes
     :type classes : list
     :param imbalance: imbalance flag (True: imbalance, False: balance)
     :type imbalance : bool

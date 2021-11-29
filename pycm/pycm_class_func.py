@@ -74,7 +74,7 @@ def OOC_calc(TP, TOP, P):
     :type TP : int
     :param TOP: number of positives in predict vector
     :type TOP : int
-    :param P:  number of actual positives 
+    :param P: number of actual positives
     :type P : int
     :return: OOC as float
     """
@@ -93,7 +93,7 @@ def OC_calc(TP, TOP, P):
     :type TP : int
     :param TOP: number of positives in predict vector
     :type TOP : int
-    :param P:  number of actual positives 
+    :param P: number of actual positives
     :type P : int
     :return: overlap coefficient as float
     """
@@ -137,7 +137,7 @@ def AGM_calc(TPR, TNR, GM, N, POP):
     :type TPR : float
     :param GM: geometric mean
     :type GM : float
-    :param N:  number of actual negatives
+    :param N: number of actual negatives
     :type N : int
     :param POP: population or total number of samples
     :type POP : int
@@ -311,7 +311,7 @@ def PRE_calc(P, POP):
     """
     Calculate Prevalence.
 
-    :param P:  number of actual positives
+    :param P: number of actual positives
     :type P : int
     :param POP: population or total number of samples
     :type POP : int
@@ -347,7 +347,7 @@ def RACC_calc(TOP, P, POP):
 
     :param TOP: number of positives in predict vector
     :type TOP : int
-    :param P:  number of actual positives 
+    :param P: number of actual positives
     :type P : int
     :param POP: population or total number of samples
     :type POP:int
@@ -366,7 +366,7 @@ def RACCU_calc(TOP, P, POP):
 
     :param TOP: number of positives in predict vector
     :type TOP : int
-    :param P:  number of actual positives
+    :param P: number of actual positives
     :type P : int
     :param POP: population or total number of samples
     :type POP : int
@@ -401,7 +401,7 @@ def jaccard_index_calc(TP, TOP, P):
     :type TP : int
     :param TOP: number of positives in predict vector
     :type TOP : int
-    :param P:  number of actual positives 
+    :param P: number of actual positives
     :type P : int
     :return: Jaccard index as float
     """
@@ -448,7 +448,7 @@ def CEN_misclassification_calc(
     :type table : dict
     :param TOP: number of positives in predict vector
     :type TOP : int
-    :param P:  number of actual positives
+    :param P: number of actual positives
     :type P : int
     :param i: table row index (class name)
     :type i : any valid type
@@ -456,7 +456,7 @@ def CEN_misclassification_calc(
     :type j : any valid type
     :param subject_class: subject to class (class name)
     :type subject_class: any valid type
-    :param modified : modified mode flag
+    :param modified: modified mode flag
     :type modified : bool
     :return: misclassification probability as float
     """
@@ -480,11 +480,11 @@ def CEN_calc(classes, table, TOP, P, class_name, modified=False):
     :type table : dict
     :param TOP: number of positives in predict vector
     :type TOP : int
-    :param P:  number of actual positives
+    :param P: number of actual positives
     :type P : int
     :param class_name: reviewed class name
     :type class_name : any valid type
-    :param modified : modified mode flag
+    :param modified: modified mode flag
     :type modified : bool
     :return: CEN (or MCEN) as float
     """
@@ -591,7 +591,7 @@ def lift_calc(PPV, PRE):
     """
     Calculate Lift score.
 
-    :param PPV:  Positive predictive value (PPV)
+    :param PPV: Positive predictive value (PPV)
     :type PPV : float
     :param PRE: Prevalence
     :type PRE : float
@@ -609,7 +609,7 @@ def AM_calc(TOP, P):
 
     :param TOP: number of positives in predict vector
     :type TOP : int
-    :param P:  number of actual positives
+    :param P: number of actual positives
     :type P : int
     :return: AM as int
     """
@@ -646,7 +646,7 @@ def IBA_calc(TPR, TNR, alpha=1):
     :type TNR : float
     :param TPR: sensitivity, recall, hit rate, or true positive rate
     :type TPR : float
-    :param alpha : alpha coefficient
+    :param alpha: alpha coefficient
     :type alpha : float
     :return: IBA as float
     """
@@ -663,7 +663,7 @@ def BCD_calc(TOP, P, AM):
 
     :param TOP: number of positives in predict vector
     :type TOP : dict
-    :param P:  number of actual positives
+    :param P: number of actual positives
     :type P : dict
     :param AM: Automatic/Manual
     :type AM : int

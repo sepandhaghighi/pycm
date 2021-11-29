@@ -57,7 +57,7 @@ def AUC_SE_calc(AUC, P, N):
 
     :param AUC: AUC value
     :type AUC: float
-    :param P:  number of actual positives
+    :param P: number of actual positives
     :type P : int
     :param N: number of actual negatives
     :type N : int
@@ -156,7 +156,7 @@ def kappa_SE_calc(PA, PE, POP):
 
     :param PA: observed agreement among raters (overall accuracy)
     :type PA : float
-    :param PE:  hypothetical probability of chance agreement (random accuracy)
+    :param PE: hypothetical probability of chance agreement (random accuracy)
     :type PE : float
     :param POP: population or total number of samples
     :type POP:int

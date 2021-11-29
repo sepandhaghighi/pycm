@@ -108,7 +108,7 @@ class Compare():
         :type name : str
         :param address: flag for address return
         :type address : bool
-        :return: saving address as dict {"Status": bool , "Message": str}
+        :return: saving address as dict {"Status": bool, "Message": str}
         """
         try:
             message = None

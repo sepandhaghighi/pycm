@@ -39,9 +39,9 @@ def rounder(input_number, digit=5):
     Round the input number and convert it to str.
 
     :param input_number: input number
-    :type input_number : anything
+    :type input_number: anything
     :param digit: scale (number of fraction digits)
-    :type digit : int
+    :type digit: int
     :return: round number as str
     """
     if isinstance(input_number, tuple):
@@ -65,7 +65,7 @@ def class_filter(classes, class_name):
     :param classes: confusion matrix classes
     :type classes: list
     :param class_name: subset of classes list
-    :type class_name : list
+    :type class_name: list
     :return: filtered classes as list
     """
     result_classes = classes
@@ -80,7 +80,7 @@ def vector_check(vector):
     Check input vector items type.
 
     :param vector: input vector
-    :type vector : list
+    :type vector: list
     :return: bool
     """
     for i in vector:
@@ -96,7 +96,7 @@ def matrix_check(table):
     Check input matrix format.
 
     :param table: input confusion matrix
-    :type table : dict
+    :type table: dict
     :return: bool
     """
     try:
@@ -117,9 +117,9 @@ def vector_filter(actual_vector, predict_vector):
     Convert different type of items in vectors to str.
 
     :param actual_vector: actual values
-    :type actual_vector : list
+    :type actual_vector: list
     :param predict_vector: predict values
-    :type predict_vector : list
+    :type predict_vector: list
     :return: new actual and predict vectors
     """
     if isinstance(actual_vector, numpy.ndarray):
@@ -140,7 +140,7 @@ def class_check(vector):
     Check different items in matrix classes.
 
     :param vector: input vector
-    :type vector : list
+    :type vector: list
     :return: bool
     """
     for i in vector:
@@ -154,7 +154,7 @@ def isfile(f):
     Check file object in python 2.7 & 3.x.
 
     :param f: input object
-    :type f : file object
+    :type f: file object
     :return: file type check as boolean
     """
     return isinstance(
@@ -167,19 +167,19 @@ def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
     One-vs-all mode handler.
 
     :param classes: confusion matrix classes
-    :type classes : list
+    :type classes: list
     :param table: input confusion matrix
-    :type table : dict
+    :type table: dict
     :param TP: true positive
-    :type TP : dict
+    :type TP: dict
     :param TN: true negative
-    :type TN : dict
+    :type TN: dict
     :param FP: false positive
-    :type FP : dict
+    :type FP: dict
     :param FN: false negative
-    :type FN : dict
+    :type FN: dict
     :param class_name: target class name for one-vs-all mode
-    :type class_name : any valid type
+    :type class_name: any valid type
     :return: [classes, table ] as list
     """
     try:
@@ -265,9 +265,9 @@ def transpose_func(classes, table):
     Transpose table.
 
     :param classes: confusion matrix classes
-    :type classes : list
+    :type classes: list
     :param table: input confusion matrix
-    :type table : dict
+    :type table: dict
     :return: transposed table as dict
     """
     transposed_table = {k: table[k].copy() for k in classes}
@@ -282,12 +282,12 @@ def transpose_func(classes, table):
 
 def matrix_params_from_table(table, transpose=False):
     """
-    Calculate true positive (TP), true negative (TN), false positive (FP), and false negative (FN) from the input confusion matrix.
+    Calculate TP, TN, FP, and FN from the input confusion matrix.
 
     :param table: input confusion matrix
-    :type table : dict
+    :type table: dict
     :param transpose: transpose flag
-    :type transpose : bool
+    :type transpose: bool
     :return: [classes_list, table, TP, TN, FP, FN]
     """
     classes = sorted(table.keys())
@@ -322,11 +322,11 @@ def matrix_params_calc(
     Calculate true positive (TP), true negative (TN), false positive (FP), and false negative (FN) for each class.
 
     :param actual_vector: actual values
-    :type actual_vector : list
+    :type actual_vector: list
     :param predict_vector: predict values
-    :type predict_vector : list
+    :type predict_vector: list
     :param sample_weight: sample weights list
-    :type sample_weight : list
+    :type sample_weight: list
     :param classes: ordered labels of classes
     :type classes: list
     :return: [classes_list, table, TP, TN, FP, FN]
@@ -356,9 +356,9 @@ def classes_filter(actual_vector, predict_vector, classes=None):
     Return updated vectors and classes list.
 
     :param actual_vector: actual values
-    :type actual_vector : list
+    :type actual_vector: list
     :param predict_vector: predict values
-    :type predict_vector : list
+    :type predict_vector: list
     :param classes: ordered labels of classes
     :type classes: list
     :return: [actual_vector, predict_vector, classes_list]
@@ -395,8 +395,8 @@ def imbalance_check(P):
     """
     Check if the dataset is imbalanced.
 
-    number of actual positives per class
-    :type P : dict
+    :param P: number of actual positives per class
+    :type P: dict
     :return: is_imbalanced as bool
     """
     p_list = list(P.values())
@@ -417,7 +417,7 @@ def binary_check(classes):
     Check if the problem is a binary classification.
 
     :param classes: confusion matrix classes
-    :type classes : list
+    :type classes: list
     :return: is_binary as bool
     """
     num_classes = len(classes)
@@ -446,9 +446,9 @@ def statistic_recommend(classes, imbalance):
     Return recommend parameters which are more suitable due to the input dataset characteristics.
 
     :param classes: confusion matrix classes
-    :type classes : list
+    :type classes: list
     :param imbalance: imbalance flag (True: imbalance, False: balance)
-    :type imbalance : bool
+    :type imbalance: bool
     :return: recommendation metrics as list
     """
     if imbalance:

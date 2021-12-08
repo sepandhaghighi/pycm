@@ -11,7 +11,7 @@ def sensitivity_index_calc(TPR, FPR):
     Calculate Sensitivity index (d prime).
 
     :param TPR: sensitivity, recall, hit rate, or true positive rate
-    :type TPR : float
+    :type TPR: float
     :param FPR: fall-out or false positive rate
     :type FPR: float
     :return: sensitivity index as float
@@ -27,11 +27,11 @@ def NB_calc(TP, FP, POP, w):
     Calculate Net Benefit (NB).
 
     :param TP: true positive
-    :type TP : int
+    :type TP: int
     :param FP: false positive
-    :type FP : int
+    :type FP: int
     :param POP: population or total number of samples
-    :type POP : int
+    :type POP: int
     :param w: weight
     :type w: float
     :return: NB as float
@@ -48,13 +48,13 @@ def TI_calc(TP, FP, FN, alpha, beta):
     Calculate Tversky index (TI).
 
     :param TP: true positive
-    :type TP : int
+    :type TP: int
     :param FP: false positive
-    :type FP : int
+    :type FP: int
     :param FN: false negative
-    :type FN : int
+    :type FN: int
     :param alpha: alpha coefficient
-    :type alpha : float
+    :type alpha: float
     :param beta: beta coefficient
     :type beta: float
     :return: TI as float
@@ -71,11 +71,11 @@ def OOC_calc(TP, TOP, P):
     Calculate Otsuka-Ochiai coefficient (OOC).
 
     :param TP: true positive
-    :type TP : int
+    :type TP: int
     :param TOP: number of positives in predict vector
-    :type TOP : int
+    :type TOP: int
     :param P: number of actual positives
-    :type P : int
+    :type P: int
     :return: OOC as float
     """
     try:
@@ -90,11 +90,11 @@ def OC_calc(TP, TOP, P):
     Calculate Overlap coefficient (OC).
 
     :param TP: true positive
-    :type TP : int
+    :type TP: int
     :param TOP: number of positives in predict vector
-    :type TOP : int
+    :type TOP: int
     :param P: number of actual positives
-    :type P : int
+    :type P: int
     :return: overlap coefficient as float
     """
     try:
@@ -109,13 +109,13 @@ def AGF_calc(TP, FP, FN, TN):
     Calculate Adjusted F-score (AGF).
 
     :param TP: true positive
-    :type TP : int
+    :type TP: int
     :param TN: true negative
-    :type TN : int
+    :type TN: int
     :param FP: false positive
-    :type FP : int
+    :type FP: int
     :param FN: false negative
-    :type FN : int
+    :type FN: int
     :return: AGF as float
     """
     try:
@@ -132,15 +132,15 @@ def AGM_calc(TPR, TNR, GM, N, POP):
     Calculate Adjusted geometric mean (AGM).
 
     :param TNR: specificity or true negative rate
-    :type TNR : float
+    :type TNR: float
     :param TPR: sensitivity, recall, hit rate, or true positive rate
-    :type TPR : float
+    :type TPR: float
     :param GM: geometric mean
-    :type GM : float
+    :type GM: float
     :param N: number of actual negatives
-    :type N : int
+    :type N: int
     :param POP: population or total number of samples
-    :type POP : int
+    :type POP: int
     :return: AGM as float
     """
     try:
@@ -159,13 +159,13 @@ def Q_calc(TP, TN, FP, FN):
     Calculate Yule's Q.
 
     :param TP: true positive
-    :type TP : int
+    :type TP: int
     :param TN: true negative
-    :type TN : int
+    :type TN: int
     :param FP: false positive
-    :type FP : int
+    :type FP: int
     :param FN: false negative
-    :type FN : int
+    :type FN: int
     :return: Yule's Q as float
     """
     try:
@@ -178,10 +178,10 @@ def Q_calc(TP, TN, FP, FN):
 
 def TTPN_calc(item1, item2):
     """
-    Calculate True positive rate (TPR), True negative rate (TNR), Positive predictive value (PPV), and Negative predictive value (NPV).
+    Calculate TPR, TNR, PPV, and NPV.
 
     :param item1: item1 in fractional expression
-    :type item1 : int
+    :type item1: int
     :param item2: item2 in fractional expression
     :type item2: int
     :return: result as float
@@ -213,13 +213,13 @@ def ACC_calc(TP, TN, FP, FN):
     Calculate Accuracy.
 
     :param TP: true positive
-    :type TP : int
+    :type TP: int
     :param TN: true negative
-    :type TN : int
+    :type TN: int
     :param FP: false positive
-    :type FP : int
+    :type FP: int
     :param FN: false negative
-    :type FN : int
+    :type FN: int
     :return: accuracy as float
     """
     try:
@@ -234,13 +234,13 @@ def F_calc(TP, FP, FN, beta):
     Calculate F-score.
 
     :param TP: true positive
-    :type TP : int
+    :type TP: int
     :param FP: false positive
-    :type FP : int
+    :type FP: int
     :param FN: false negative
-    :type FN : int
+    :type FN: int
     :param beta: beta coefficient
-    :type beta : float
+    :type beta: float
     :return: F-score as float
     """
     try:
@@ -256,13 +256,13 @@ def MCC_calc(TP, TN, FP, FN):
     Calculate Matthews correlation coefficient (MCC).
 
     :param TP: true positive
-    :type TP : int
+    :type TP: int
     :param TN: true negative
-    :type TN : int
+    :type TN: int
     :param FP: false positive
-    :type FP : int
+    :type FP: int
     :param FN: false negative
-    :type FN : int
+    :type FN: int
     :return: MCC as float
     """
     try:
@@ -312,9 +312,9 @@ def PRE_calc(P, POP):
     Calculate Prevalence.
 
     :param P: number of actual positives
-    :type P : int
+    :type P: int
     :param POP: population or total number of samples
-    :type POP : int
+    :type POP: int
     :return: prevalence as float
     """
     try:
@@ -329,9 +329,9 @@ def G_calc(item1, item2):
     Calculate G-measure & G-mean.
 
     :param item1: True positive rate (TPR) or True negative rate (TNR) or Positive predictive value (PPV)
-    :type item1 : float
+    :type item1: float
     :param item2: True positive rate (TPR) or True negative rate (TNR) or Positive predictive value (PPV)
-    :type item2 : float
+    :type item2: float
     :return: G-measure or G-mean as float
     """
     try:
@@ -346,9 +346,9 @@ def RACC_calc(TOP, P, POP):
     Calculate Random accuracy (RACC).
 
     :param TOP: number of positives in predict vector
-    :type TOP : int
+    :type TOP: int
     :param P: number of actual positives
-    :type P : int
+    :type P: int
     :param POP: population or total number of samples
     :type POP:int
     :return: RACC as float
@@ -365,11 +365,11 @@ def RACCU_calc(TOP, P, POP):
     Calculate Random accuracy unbiased (RACCU).
 
     :param TOP: number of positives in predict vector
-    :type TOP : int
+    :type TOP: int
     :param P: number of actual positives
-    :type P : int
+    :type P: int
     :param POP: population or total number of samples
-    :type POP : int
+    :type POP: int
     :return: RACCU as float
     """
     try:
@@ -398,11 +398,11 @@ def jaccard_index_calc(TP, TOP, P):
     Calculate Jaccard index for each class.
 
     :param TP: true positive
-    :type TP : int
+    :type TP: int
     :param TOP: number of positives in predict vector
-    :type TOP : int
+    :type TOP: int
     :param P: number of actual positives
-    :type P : int
+    :type P: int
     :return: Jaccard index as float
     """
     try:
@@ -416,13 +416,13 @@ def IS_calc(TP, FP, FN, POP):
     Calculate Information score (IS).
 
     :param TP: true positive
-    :type TP : int
+    :type TP: int
     :param FP: false positive
-    :type FP : int
+    :type FP: int
     :param FN: false negative
-    :type FN : int
+    :type FN: int
     :param POP: population or total number of samples
-    :type POP : int
+    :type POP: int
     :return: IS as float
     """
     try:
@@ -445,19 +445,19 @@ def CEN_misclassification_calc(
     Calculate Misclassification probability.
 
     :param table: input confusion matrix
-    :type table : dict
+    :type table: dict
     :param TOP: number of positives in predict vector
-    :type TOP : int
+    :type TOP: int
     :param P: number of actual positives
-    :type P : int
+    :type P: int
     :param i: table row index (class name)
-    :type i : any valid type
+    :type i: any valid type
     :param j: table col index (class name)
-    :type j : any valid type
+    :type j: any valid type
     :param subject_class: subject to class (class name)
     :type subject_class: any valid type
     :param modified: modified mode flag
-    :type modified : bool
+    :type modified: bool
     :return: misclassification probability as float
     """
     try:
@@ -475,17 +475,17 @@ def CEN_calc(classes, table, TOP, P, class_name, modified=False):
     Calculate Confusion Entropy (CEN) (or Modified Confusion Entropy (MCEN)).
 
     :param classes: confusion matrix classes
-    :type classes : list
+    :type classes: list
     :param table: input confusion matrix
-    :type table : dict
+    :type table: dict
     :param TOP: number of positives in predict vector
-    :type TOP : int
+    :type TOP: int
     :param P: number of actual positives
-    :type P : int
+    :type P: int
     :param class_name: reviewed class name
-    :type class_name : any valid type
+    :type class_name: any valid type
     :param modified: modified mode flag
-    :type modified : bool
+    :type modified: bool
     :return: CEN (or MCEN) as float
     """
     try:
@@ -513,9 +513,9 @@ def AUC_calc(item, TPR):
     Calculate Area under the ROC/PR curve for each class (AUC/AUPR).
 
     :param item: True negative rate (TNR) or Positive predictive value (PPV)
-    :type item : float
+    :type item: float
     :param TPR: sensitivity, recall, hit rate, or true positive rate
-    :type TPR : float
+    :type TPR: float
     :return: AUC/AUPR as float
     """
     try:
@@ -529,9 +529,9 @@ def dInd_calc(TNR, TPR):
     Calculate Distance index (dInd).
 
     :param TNR: specificity or true negative rate
-    :type TNR : float
+    :type TNR: float
     :param TPR: sensitivity, recall, hit rate, or true positive rate
-    :type TPR : float
+    :type TPR: float
     :return: dInd as float
     """
     try:
@@ -546,7 +546,7 @@ def sInd_calc(dInd):
     Calculate Similarity index (sInd).
 
     :param dInd: dInd
-    :type dInd : float
+    :type dInd: float
     :return: sInd as float
     """
     try:
@@ -560,9 +560,9 @@ def DP_calc(TPR, TNR):
     Calculate Discriminant power (DP).
 
     :param TNR: specificity or true negative rate
-    :type TNR : float
+    :type TNR: float
     :param TPR: sensitivity, recall, hit rate, or true positive rate
-    :type TPR : float
+    :type TPR: float
     :return: DP as float
     """
     try:
@@ -592,9 +592,9 @@ def lift_calc(PPV, PRE):
     Calculate Lift score.
 
     :param PPV: Positive predictive value (PPV)
-    :type PPV : float
+    :type PPV: float
     :param PRE: Prevalence
-    :type PRE : float
+    :type PRE: float
     :return: lift score as float
     """
     try:
@@ -608,9 +608,9 @@ def AM_calc(TOP, P):
     Calculate Automatic/Manual (AM).
 
     :param TOP: number of positives in predict vector
-    :type TOP : int
+    :type TOP: int
     :param P: number of actual positives
-    :type P : int
+    :type P: int
     :return: AM as int
     """
     try:
@@ -624,11 +624,11 @@ def OP_calc(ACC, TPR, TNR):
     Calculate Optimized precision (OP).
 
     :param ACC: accuracy
-    :type ACC : float
+    :type ACC: float
     :param TNR: specificity or true negative rate
-    :type TNR : float
+    :type TNR: float
     :param TPR: sensitivity, recall, hit rate, or true positive rate
-    :type TPR : float
+    :type TPR: float
     :return: OP as float
     """
     try:
@@ -643,11 +643,11 @@ def IBA_calc(TPR, TNR, alpha=1):
     Calculate Index of balanced accuracy (IBA).
 
     :param TNR: specificity or true negative rate
-    :type TNR : float
+    :type TNR: float
     :param TPR: sensitivity, recall, hit rate, or true positive rate
-    :type TPR : float
+    :type TPR: float
     :param alpha: alpha coefficient
-    :type alpha : float
+    :type alpha: float
     :return: IBA as float
     """
     try:
@@ -662,11 +662,11 @@ def BCD_calc(TOP, P, AM):
     Calculate Bray-Curtis dissimilarity (BCD).
 
     :param TOP: number of positives in predict vector
-    :type TOP : dict
+    :type TOP: dict
     :param P: number of actual positives
-    :type P : dict
+    :type P: dict
     :param AM: Automatic/Manual
-    :type AM : int
+    :type AM: int
     :return: BCD as float
     """
     try:
@@ -682,17 +682,17 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     Return All statistics of classes.
 
     :param TP: true positive
-    :type TP : dict
+    :type TP: dict
     :param TN: true negative
-    :type TN : dict
+    :type TN: dict
     :param FP: false positive
-    :type FP : dict
+    :type FP: dict
     :param FN: false negative
-    :type FN : dict
+    :type FN: dict
     :param classes: confusion matrix classes
-    :type classes : list
+    :type classes: list
     :param table: input confusion matrix
-    :type table : dict
+    :type table: dict
     :return: classes' statistics as dict
     """
     TPR = {}

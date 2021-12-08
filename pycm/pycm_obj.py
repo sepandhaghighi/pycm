@@ -50,15 +50,15 @@ class ConfusionMatrix():
         :param matrix: directly imported confusion matrix
         :type matrix: dict
         :param digit: precision digit (default value: 5)
-        :type digit : int
+        :type digit: int
         :param threshold: activation threshold function
-        :type threshold : FunctionType (function or lambda)
+        :type threshold: FunctionType (function or lambda)
         :param file: saved confusion matrix file object
-        :type file : (io.IOBase & file)
+        :type file: (io.IOBase & file)
         :param sample_weight: sample weights list
-        :type sample_weight : list
+        :type sample_weight: list
         :param transpose: transpose flag
-        :type transpose : bool
+        :type transpose: bool
         :param classes: ordered labels of classes
         :type classes: list
         :param is_imbalanced: imbalance dataset flag
@@ -103,11 +103,11 @@ class ConfusionMatrix():
         Print confusion matrix.
 
         :param one_vs_all: one-vs-all mode flag
-        :type one_vs_all : bool
+        :type one_vs_all: bool
         :param class_name: target class name for one-vs-all mode
-        :type class_name : any valid type
+        :type class_name: any valid type
         :param sparse: sparse mode printing flag
-        :type sparse : bool
+        :type sparse: bool
         :return: None
         """
         classes = self.classes
@@ -133,11 +133,11 @@ class ConfusionMatrix():
         Print normalized confusion matrix.
 
         :param one_vs_all: one-vs-all mode flag
-        :type one_vs_all : bool
+        :type one_vs_all: bool
         :param class_name: target class name for one-vs-all mode
-        :type class_name : any valid type
+        :type class_name: any valid type
         :param sparse: sparse mode printing flag
-        :type sparse : bool
+        :type sparse: bool
         :return: None
         """
         classes = self.classes
@@ -167,13 +167,13 @@ class ConfusionMatrix():
         Print statistical measures table.
 
         :param overall_param: overall parameters list for print, Example: ["Kappa", "Scott PI"]
-        :type overall_param : list
+        :type overall_param: list
         :param class_param: class parameters list for print, Example: ["TPR", "TNR", "AUC"]
-        :type class_param : list
+        :type class_param: list
         :param class_name: class name (a subset of classes names), Example: [1, 2, 3]
-        :type class_name : list
+        :type class_name: list
         :param summary: summary mode flag
-        :type summary : bool
+        :type summary: bool
         :return: None
         """
         classes = class_filter(self.classes, class_name)
@@ -218,19 +218,19 @@ class ConfusionMatrix():
         Save the ConfusionMatrix object in .pycm (flat file format).
 
         :param name: filename
-        :type name : str
+        :type name: str
         :param address: flag for address return
-        :type address : bool
+        :type address: bool
         :param overall_param: overall parameters list for save, Example: ["Kappa", "Scott PI"]
-        :type overall_param : list
+        :type overall_param: list
         :param class_param: class parameters list for save, Example: ["TPR", "TNR", "AUC"]
         :type class_param: list
         :param class_name: class name (subset of classes names), Example: [1, 2, 3]
-        :type class_name : list
+        :type class_name: list
         :param summary: summary mode flag
-        :type summary : bool
+        :type summary: bool
         :param sparse: sparse mode printing flag
-        :type sparse : bool
+        :type sparse: bool
         :return: saving address as dict {"Status":bool, "Message":str}
         """
         try:
@@ -308,25 +308,25 @@ class ConfusionMatrix():
         Save ConfusionMatrix in HTML file.
 
         :param name: filename
-        :type name : str
+        :type name: str
         :param address: flag for address return
-        :type address : bool
+        :type address: bool
         :param overall_param: overall parameters list for save, Example: ["Kappa", "Scott PI"]
-        :type overall_param : list
+        :type overall_param: list
         :param class_param: class parameters list for save, Example: ["TPR", "TNR", "AUC"]
-        :type class_param : list
+        :type class_param: list
         :param class_name: class name (subset of classes names), Example: [1, 2, 3]
-        :type class_name : list
+        :type class_name: list
         :param color: matrix color in RGB as (R, G, B)
-        :type color : tuple
+        :type color: tuple
         :param normalize: save normalize matrix flag
-        :type normalize : bool
+        :type normalize: bool
         :param summary: summary mode flag
-        :type summary : bool
+        :type summary: bool
         :param alt_link: alternative link for document flag
-        :type alt_link : bool
+        :type alt_link: bool
         :param shortener: class name shortener flag
-        :type shortener : bool
+        :type shortener: bool
         :return: saving address as dict {"Status":bool, "Message":str}
         """
         try:
@@ -388,21 +388,21 @@ class ConfusionMatrix():
         Save ConfusionMatrix in CSV file.
 
         :param name: filename
-        :type name : str
+        :type name: str
         :param address: flag for address return
-        :type address : bool
+        :type address: bool
         :param class_param: class parameters list for save, Example: ["TPR", "TNR", "AUC"]
-        :type class_param : list
+        :type class_param: list
         :param class_name: class name (subset of classes names), Example: [1, 2, 3]
-        :type class_name : list
+        :type class_name: list
         :param matrix_save: save matrix flag
-        :type matrix_save : bool
+        :type matrix_save: bool
         :param normalize: save normalize matrix flag
-        :type normalize : bool
+        :type normalize: bool
         :param summary: summary mode flag
-        :type summary : bool
+        :type summary: bool
         :param header: add headers to .csv file
-        :type header : bool
+        :type header: bool
         :return: saving address as dict {"Status":bool, "Message":str}
         """
         try:
@@ -444,9 +444,9 @@ class ConfusionMatrix():
         Save ConfusionMatrix object in .obj file.
 
         :param name: filename
-        :type name : str
+        :type name: str
         :param address: flag for address return
-        :type address : bool
+        :type address: bool
         :param save_stat: save statistics flag
         :type save_stat: bool
         :param save_vector: save vectors flag
@@ -495,7 +495,7 @@ class ConfusionMatrix():
         Calculate FBeta score for all classes.
 
         :param beta: beta parameter
-        :type beta : float
+        :type beta: float
         :return: FBeta score for all classes as dict
         """
         try:
@@ -543,7 +543,7 @@ class ConfusionMatrix():
         Calculate Tversky index.
 
         :param alpha: alpha coefficient
-        :type alpha : float
+        :type alpha: float
         :param beta: beta coefficient
         :type beta: float
         :return: TI as float
@@ -678,7 +678,7 @@ class ConfusionMatrix():
         Rename the confusion matrix classes.
 
         :param mapping: mapping dictionary
-        :type mapping : dict
+        :type mapping: dict
         :return: None
         """
         if not isinstance(mapping, dict):
@@ -878,9 +878,9 @@ class ConfusionMatrix():
         :param normalized: a flag for getting normalized confusion matrix
         :type normalized: bool
         :param one_vs_all: one-vs-all mode flag
-        :type one_vs_all : bool
+        :type one_vs_all: bool
         :param class_name: target class name for one-vs-all mode
-        :type class_name : any valid type
+        :type class_name: any valid type
         :return: confusion matrix as a numpy.ndarray
         """
         classes = self.classes

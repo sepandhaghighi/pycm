@@ -9,9 +9,9 @@ def CI_calc_agresti(item1, item2, CV=1.96):
     Calculate confidence interval using Agresti-Coull method.
 
     :param item1: parameter
-    :type  item1 : float
+    :type  item1: float
     :param item2: number of observations
-    :type item2 : int
+    :type item2: int
     :param CV: critical value
     :type CV:float
     :return: confidence interval as tuple
@@ -32,9 +32,9 @@ def CI_calc_wilson(item1, item2, CV=1.96):
     Calculate confidence interval using Wilson method.
 
     :param item1: parameter
-    :type  item1 : float
+    :type  item1: float
     :param item2: number of observations
-    :type item2 : int
+    :type item2: int
     :param CV: critical value
     :type CV:float
     :return: confidence interval as tuple
@@ -58,9 +58,9 @@ def AUC_SE_calc(AUC, P, N):
     :param AUC: AUC value
     :type AUC: float
     :param P: number of actual positives
-    :type P : int
+    :type P: int
     :param N: number of actual negatives
-    :type N : int
+    :type N: int
     :return: standard error as float
     """
     try:
@@ -98,9 +98,9 @@ def LR_CI_calc(mean, SE, CV=1.96):
     Calculate confidence interval for likelihood ratio +/- using log method.
 
     :param mean: mean of data
-    :type mean : float
+    :type mean: float
     :param SE: standard error of data
-    :type SE : float
+    :type SE: float
     :param CV: critical value
     :type CV:float
     :return: confidence interval as tuple
@@ -118,9 +118,9 @@ def CI_calc(mean, SE, CV=1.96):
     Calculate confidence interval.
 
     :param mean: mean of data
-    :type mean : float
+    :type mean: float
     :param SE: standard error of data
-    :type SE : float
+    :type SE: float
     :param CV: critical value
     :type CV:float
     :return: confidence interval as tuple
@@ -138,9 +138,9 @@ def SE_calc(item1, item2):
     Calculate standard error with binomial distribution.
 
     :param item1: parameter
-    :type  item1 : float
+    :type  item1: float
     :param item2: number of observations
-    :type item2 : int
+    :type item2: int
     :return: standard error as float
     """
     try:
@@ -155,9 +155,9 @@ def kappa_SE_calc(PA, PE, POP):
     Calculate kappa standard error.
 
     :param PA: observed agreement among raters (overall accuracy)
-    :type PA : float
+    :type PA: float
     :param PE: hypothetical probability of chance agreement (random accuracy)
-    :type PE : float
+    :type PE: float
     :param POP: population or total number of samples
     :type POP:int
     :return: kappa standard error as float
@@ -174,7 +174,7 @@ def __CI_class_handler__(cm, param, CV, binom_method="normal-approx"):
     Handle CI calculation for class parameters.
 
     :param cm: confusion matrix
-    :type cm : pycm.ConfusionMatrix object
+    :type cm: pycm.ConfusionMatrix object
     :param param: input parameter
     :type param: str
     :param CV: critical value
@@ -225,7 +225,7 @@ def __CI_overall_handler__(cm, param, CV, binom_method="normal-approx"):
     Handle CI calculation for overall parameters.
 
     :param cm: confusion matrix
-    :type cm : pycm.ConfusionMatrix object
+    :type cm: pycm.ConfusionMatrix object
     :param param: input parameter
     :type param: str
     :param CV: critical value

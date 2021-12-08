@@ -46,7 +46,7 @@ def color_check(color):
     Check input color format.
 
     :param color: input color
-    :type color : tuple
+    :type color: tuple
     :return: color as list
     """
     if isinstance(color, (tuple, list)):
@@ -65,11 +65,11 @@ def html_table_color(row, item, color=(0, 0, 0)):
     Return background color of each cell of the table.
 
     :param row: row dictionary
-    :type row : dict
+    :type row: dict
     :param item: cell number
-    :type item : int
+    :type item: int
     :param color: input color
-    :type color : tuple
+    :type color: tuple
     :return: background color as list [R, G, B]
     """
     result = [0, 0, 0]
@@ -95,11 +95,11 @@ def html_table(
     :param classes: confusion matrix classes
     :type classes: list
     :param table: input confusion matrix
-    :type table : dict
+    :type table: dict
     :param rgb_color: input color
-    :type rgb_color : tuple
+    :type rgb_color: tuple
     :param normalize: save normalized matrix flag
-    :type normalize : bool
+    :type normalize: bool
     :param shortener: class name shortener flag
     :type shortener: bool
     :return: html_table as str
@@ -154,13 +154,13 @@ def html_overall_stat(
     Return the overall stats of HTML report file.
 
     :param overall_stat: overall stats
-    :type overall_stat : dict
+    :type overall_stat: dict
     :param digit: scale (number of fraction digits)
-    :type digit : int
+    :type digit: int
     :param overall_param: overall parameters list for print, Example: ["Kappa", "Scott PI"]
-    :type overall_param : list
+    :type overall_param: list
     :param recommended_list: recommended statistics list
-    :type recommended_list : list or tuple
+    :type recommended_list: list or tuple
     :param alt_link: alternative link for document flag
     :type alt_link: bool
     :return: html_overall_stat as str
@@ -211,11 +211,11 @@ def html_class_stat(
     :param class_stat: class stat
     :type class_stat:dict
     :param digit: scale (number of fraction digits)
-    :type digit : int
+    :type digit: int
     :param class_param: class parameters list for print, Example: ["TPR", "TNR", "AUC"]
-    :type class_param : list
+    :type class_param: list
     :param recommended_list: recommended statistics list
-    :type recommended_list : list or tuple
+    :type recommended_list: list or tuple
     :param alt_link: alternative link for document flag
     :type alt_link: bool
     :return: html_class_stat as str
@@ -375,9 +375,9 @@ def csv_print(classes, class_stat, digit=5, class_param=None):
     :param class_stat: statistic result for each class
     :type class_stat:dict
     :param digit: scale (number of fraction digits)
-    :type digit : int
+    :type digit: int
     :param class_param: class parameters list for print, Example: ["TPR", "TNR", "AUC"]
-    :type class_param : list
+    :type class_param: list
     :return: csv file data as str
     """
     result = "Class"
@@ -414,11 +414,11 @@ def stat_print(
     :param overall_stat: overall statistic result
     :type overall_stat:dict
     :param digit: scale (number of fraction digits)
-    :type digit : int
+    :type digit: int
     :param overall_param: overall parameters list for print, Example: ["Kappa", "Scott PI"]
-    :type overall_param : list
+    :type overall_param: list
     :param class_param: class parameters list for print, Example: ["TPR", "TNR", "AUC"]
-    :type class_param : list
+    :type class_param: list
     :return: printable result as str
     """
     shift = max(map(len, PARAMS_DESCRIPTION.values())) + 5
@@ -499,7 +499,7 @@ def online_help(param=None, alt_link=False):
     Open online document in web browser.
 
     :param param: input parameter
-    :type param : int or str
+    :type param: int or str
     :param alt_link: alternative link for document flag
     :type alt_link: bool
     :return: None

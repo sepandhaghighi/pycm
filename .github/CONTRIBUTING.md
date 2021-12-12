@@ -87,6 +87,7 @@ Here, the `docstring` format mainly follows the PEP suggested structure. Note th
    - Start the `docstring` description with uppercase letter and end it with a dot.
    - All other descriptions should be written in lowercase (unless exceptions).
    - Declare the abbreviations before using them.
+
 Example:
 
     def DF_calc(classes):

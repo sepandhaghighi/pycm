@@ -12,7 +12,7 @@ Please consider the following :
 	- To add a new class statistic visit [here](#class-statistic)
 	- To add a new overall statistic visit [here](#overall-statistic)
 	- To add a new interpretation visit [here](#interpretation)
-4. Add standard `docstring` to your functions/methods according to the [standard format](#standard-docstring-format).
+4. Add standard `docstring` to your functions/methods according to the [standard format](#standard-docstring-format)
 5. Add tests for your functions/methods (`doctest`, `Test` folder)
 6. Update `README.md` (if needed)
 7. Update `Document.ipynb` (if needed)
@@ -83,10 +83,10 @@ Please consider the following :
 7. Run `autopep8.bat`/`autopep8.sh` (*Optional*, need to install latest version of `autopep8` package)
 
 ## Standard docstring format
-Here, the `docstring` format mainly follows the PEP suggested structure. Note the following items.
-   - Start the `docstring` description with uppercase letter and end it with a dot.
-   - All other descriptions should be written in lowercase (unless exceptions).
-   - Declare the abbreviations before using them.
+Here, the `docstring` format mainly follows the PEP suggested structure. Note the following items
+   - Start the `docstring` description with uppercase letter and end it with a dot
+   - All other descriptions should be written in lowercase (unless exceptions)
+   - Declare the abbreviations before using them
 
 Example:
 

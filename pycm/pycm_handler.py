@@ -13,10 +13,10 @@ import numpy
 
 def __class_stat_init__(cm):
     """
-    Init individual class stat.
+    Init individual class stats.
 
-    :param cm : ConfusionMatrix
-    :type cm : pycm.ConfusionMatrix object
+    :param cm: confusion matrix
+    :type cm: pycm.ConfusionMatrix object
     :return: None
     """
     cm.TPR = cm.class_stat["TPR"]
@@ -80,10 +80,10 @@ def __class_stat_init__(cm):
 
 def __overall_stat_init__(cm):
     """
-    Init individual overall stat.
+    Init individual overall stats.
 
-    :param cm: ConfusionMatrix
-    :type cm : pycm.ConfusionMatrix object
+    :param cm: confusion matrix
+    :type cm: pycm.ConfusionMatrix object
     :return: None
     """
     cm.Overall_J = cm.overall_stat["Overall J"]
@@ -153,10 +153,10 @@ def __overall_stat_init__(cm):
 
 def __obj_assign_handler__(cm, matrix_param):
     """
-    Assign basic parameters to ConfusionMatrix.
+    Assign basic parameters to the input confusion matrix.
 
-    :param cm: ConfusionMatrix
-    :type cm : pycm.ConfusionMatrix object
+    :param cm: confusion matrix
+    :type cm: pycm.ConfusionMatrix object
     :param matrix_param: matrix parameters
     :type matrix_param: dict
     :return: None
@@ -204,12 +204,12 @@ def __obj_assign_handler__(cm, matrix_param):
 
 def __obj_file_handler__(cm, file):
     """
-    Handle object conditions for file.
+    Handle object conditions for the input file.
 
-    :param cm: ConfusionMatrix
-    :type cm : pycm.ConfusionMatrix object
-    :param file : saved confusion matrix file object
-    :type file : (io.IOBase & file)
+    :param cm: confusion matrix
+    :type cm: pycm.ConfusionMatrix object
+    :param file: saved confusion matrix file object
+    :type file: (io.IOBase & file)
     :return: matrix parameters as list
     """
     obj_data = json.load(file)
@@ -247,12 +247,12 @@ def __obj_file_handler__(cm, file):
 
 def __obj_matrix_handler__(matrix, transpose):
     """
-    Handle object conditions for matrix.
+    Handle object conditions for the matrix.
 
     :param matrix: direct matrix
     :type matrix: dict
-    :param transpose : transpose flag
-    :type transpose : bool
+    :param transpose: transpose flag
+    :type transpose: bool
     :return: matrix parameters as list
     """
     if matrix_check(matrix):
@@ -275,16 +275,16 @@ def __obj_vector_handler__(
     """
     Handle object conditions for vectors.
 
-    :param cm: ConfusionMatrix
-    :type cm : pycm.ConfusionMatrix object
-    :param actual_vector: Actual Vector
+    :param cm: confusion matrix
+    :type cm: pycm.ConfusionMatrix object
+    :param actual_vector: actual vector
     :type actual_vector: python list or numpy array of any stringable objects
-    :param predict_vector: Predicted Vector
+    :param predict_vector: predicted vector
     :type predict_vector: python list or numpy array of any stringable objects
-    :param threshold : activation threshold function
-    :type threshold : FunctionType (function or lambda)
-    :param sample_weight : sample weights list
-    :type sample_weight : list
+    :param threshold: activation threshold function
+    :type threshold: FunctionType (function or lambda)
+    :param sample_weight: sample weights list
+    :type sample_weight: list
     :param classes: ordered labels of classes
     :type classes: list
     :return: matrix parameters as list

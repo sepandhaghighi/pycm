@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `Python 3.10` added to `test.yml`
 - Example-3 updated
+- Docstrings of the functions updated
+- `CONTRIBUTING.md` updated
 ## [3.3] - 2021-10-27
 ### Added
 - `__compare_weight_handler__` function

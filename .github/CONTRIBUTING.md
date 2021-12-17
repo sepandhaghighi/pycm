@@ -12,7 +12,7 @@ Please consider the following :
 	- To add a new class statistic visit [here](#class-statistic)
 	- To add a new overall statistic visit [here](#overall-statistic)
 	- To add a new interpretation visit [here](#interpretation)
-4. Add standard `docstring` to your functions/methods according to the [standard fromat](#standard-docstring-format).
+4. Add standard `docstring` to your functions/methods according to the [standard format](#standard-docstring-format).
 5. Add tests for your functions/methods (`doctest`, `Test` folder)
 6. Update `README.md` (if needed)
 7. Update `Document.ipynb` (if needed)

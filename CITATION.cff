@@ -1,0 +1,39 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "pycm"
+abstract: "PyCM is a multi-class confusion matrix library written in Python that supports both input data vectors and direct matrix, and a proper tool for post-classification model evaluation that supports most classes and overall statistics parameters. PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scientists that need a broad array of metrics for predictive models and accurate evaluation of a large variety of classifiers."
+authors:
+  - family-names: "Haghighi"
+    given-names: "Sepand"
+  - family-names: "Zolanvari"
+    given-names: "Alireza"
+  - family-names: "Sabouri"
+    given-names: "Sadra"
+version: 3.3
+date-released: 2021-10-27
+repository-code: "https://github.com/sepandhaghighi/pycm"
+url: "https://www.pycm.ir"
+license: MIT
+keywords:
+    - "confusion matrix"
+    - "python"
+    - "F-score"
+    - "Accuracy"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Haghighi"
+    given-names: "Sepand"
+  - family-names: "Zolanvari"
+    given-names: "Alireza"
+  - family-names: "Sabouri"
+    given-names: "Sadra"
+  doi: "10.21105/joss.00729"
+  journal: "Journal of Open Source Software"
+  month: 5
+  start: 729 # First page number
+  end: 729 # Last page number
+  title: "PyCM: Multiclass confusion matrix library in Python"
+  issue: 25
+  volume: 3
+  year: 2018

@@ -17,3 +17,4 @@
 - [Negar Zabetian](https://github.com/negarzabetian)
 - [Ashwin Geet D'Sa](https://github.com/GeetDsa)
 - [Ilya Gubins](https://github.com/the-lay)
+- [Lewi Uberg](https://github.com/lewiuberg)

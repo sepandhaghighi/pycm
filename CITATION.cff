@@ -24,10 +24,16 @@ preferred-citation:
   authors:
   - family-names: "Haghighi"
     given-names: "Sepand"
+    orcid: "https://orcid.org/0000-0001-9450-2375"
+  - family-names: "Jasemi"
+    given-names: "Masoomeh"
+    orcid: "https://orcid.org/0000-0002-4831-1698"
+  - family-names: "Hessabi"
+    given-names: "Shaahin"
+    orcid: "https://orcid.org/0000-0003-3193-2567"
   - family-names: "Zolanvari"
     given-names: "Alireza"
-  - family-names: "Sabouri"
-    given-names: "Sadra"
+    orcid: "https://orcid.org/0000-0003-2367-8343"
   doi: "10.21105/joss.00729"
   journal: "Journal of Open Source Software"
   month: 5

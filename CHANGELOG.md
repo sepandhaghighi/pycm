@@ -6,10 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- `F*` class statistic
 - Colab badge
 - Discord badge
 ### Changed
+- `J (Jaccard index)` section in `Document.ipynb` updated
 - `Python 3.10` added to `test.yml`
 - Example-3 updated
 - Docstrings of the functions updated

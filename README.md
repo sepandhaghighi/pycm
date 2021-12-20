@@ -922,6 +922,8 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab
 
 <blockquote>76- N. A. Macmillan and C. D. Creelman, <i>Detectiontheory: A user's guide</i>. Psychology press, 2004.</blockquote>
 
+<blockquote>77- D. J. Hand, P. Christen, and N. Kirielle, "F*: an interpretable transformation of the F-measure," <i>Machine Learning</i>, vol. 110, no. 3, pp. 451-456, 2021.</blockquote>
+
 
 ## Cite
 

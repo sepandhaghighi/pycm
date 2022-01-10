@@ -849,9 +849,9 @@ class ConfusionMatrix():
         :return: Brier score as float
         """
         if self.prob_vector is None or not self.binary:
-            pass
+            raise pycmVectorError(BRIER_SCORE_PROB_ERROR)
         if pos_label is None and isinstance(self.classes[0],str):
-            pass
+            raise pycmVectorError(BRIER_SCORE_LABEL_ERROR)
         return brier_score_calc(self.classes,self.prob_vector,self.actual_vector,pos_label)
 
     def position(self):

@@ -26,19 +26,22 @@ def brier_score_calc(classes, prob_vector, actual_vector, sample_weight=None, po
     :type pos_class: int/str
     :return: Brier score as float
     """
-    vector_length = len(actual_vector)
-    if sample_weight is None:
-        sample_weight = [1] * vector_length
-    weight_sum = sum(sample_weight)
-    if pos_class is None:
-        pos_class = max(classes)
-    result = 0
-    for index, item in enumerate(actual_vector):
-        filtered_item = 0
-        if item == pos_class:
-            filtered_item = 1
-        result += (sample_weight[index]/weight_sum) * (filtered_item - prob_vector[index])**2
-    return result
+    try:
+        vector_length = len(actual_vector)
+        if sample_weight is None:
+            sample_weight = [1] * vector_length
+        weight_sum = sum(sample_weight)
+        if pos_class is None:
+            pos_class = max(classes)
+        result = 0
+        for index, item in enumerate(actual_vector):
+            filtered_item = 0
+            if item == pos_class:
+                filtered_item = 1
+            result += (sample_weight[index]/weight_sum) * (filtered_item - prob_vector[index])**2
+        return result
+    except Exception:
+        return "None"
 
 
 def alpha2_calc(TOP, P, ACC, POP, classes, max_iter=200, epsilon=0.0001):

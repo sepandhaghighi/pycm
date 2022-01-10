@@ -924,6 +924,10 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab
 
 <blockquote>77- D. J. Hand, P. Christen, and N. Kirielle, "F*: an interpretable transformation of the F-measure," <i>Machine Learning</i>, vol. 110, no. 3, pp. 451-456, 2021.</blockquote>
 
+<blockquote>78- Brier, Glenn W. "Verification of forecasts expressed in terms of probability." Monthly weather review 78.1 (1950): 1-3.</blockquote>
+
+<blockquote>79- Buitinck, Lars, et al. "API design for machine learning software: experiences from the scikit-learn project." arXiv preprint arXiv:1309.0238 (2013).</blockquote>
+
 
 ## Cite
 

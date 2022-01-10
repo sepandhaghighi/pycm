@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """
+>>> import numpy as np
 >>> from pycm import *
 >>> from pycm.pycm_overall_func import NIR_calc
 >>> from pycm.pycm_ci import AUC_SE_calc,CI_calc
@@ -357,4 +358,21 @@ True
 >>> cm = ConfusionMatrix(matrix={1:{1:60,0:40},0:{0:80,1:20}}) # Verified Case -- (https://bit.ly/3ooCi0t)
 >>> cm.sensitivity_index()[1]
 1.094968336708714
+>>> y_true = np.array([0, 1, 1, 0])
+>>> y_true_categorical = np.array(["spam", "ham", "ham", "spam"])
+>>> y_prob = np.array([0.1, 0.9, 0.8, 0.3])
+>>> cm1 = ConfusionMatrix(y_true, y_prob, threshold=lambda x: 1) # Verified Case -- (https://bit.ly/3n8Uo7R)
+>>> cm1.brier_score()
+0.03749999999999999
+>>> cm1.brier_score(pos_class=1)
+0.03749999999999999
+>>> cm2 = ConfusionMatrix(y_true, 1-y_prob, threshold=lambda x: 1) # Verified Case -- (https://bit.ly/3n8Uo7R)
+>>> cm2.brier_score(pos_class=0)
+0.0375
+>>> cm3 = ConfusionMatrix(y_true_categorical, y_prob, threshold=lambda x: "ham") # Verified Case -- (https://bit.ly/3n8Uo7R)
+>>> cm3.brier_score(pos_class="ham")
+0.03749999999999999
+>>> cm4 = ConfusionMatrix(y_true, np.array(y_prob) > 0.5, threshold=lambda x: 1) # Verified Case -- (https://bit.ly/3n8Uo7R)
+>>> cm4.brier_score()
+0.0
 """

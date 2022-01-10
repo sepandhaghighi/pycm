@@ -25,14 +25,14 @@ def brier_score_calc(classes, prob_vector, actual_vector, pos_class=None):
     :return: Brier score as float
     """
     if pos_class is None:
-        pos_label = max(classes)
-    actual_vector_filtered = np.array(actual_vector)
-    actual_vector_filtered = np.where(actual_vector_filtered != pos_label, 0, actual_vector_filtered)
-    actual_vector_filtered = np.where(actual_vector_filtered == pos_label, 1, actual_vector_filtered)
+        pos_class = max(classes)
     vector_length = len(actual_vector)
     result = 0
-    for i in range(vector_length):
-        result += (actual_vector_filtered[i] - prob_vector[i])**2
+    for index, item in enumerate(actual_vector):
+        filtered_item = 0
+        if item == pos_class:
+            filtered_item = 1
+        result += (filtered_item - prob_vector[index])**2
     result = result / vector_length
     return result
 

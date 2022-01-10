@@ -840,19 +840,19 @@ class ConfusionMatrix():
             max_iter,
             epsilon)
 
-    def brier_score(self, pos_label=None):
+    def brier_score(self, pos_class=None):
         """
         Calculate Brier score.
 
-        :param pos_label: positive label
-        :type pos_label: int/str
+        :param pos_class: positive class name
+        :type pos_class: int/str
         :return: Brier score as float
         """
         if self.prob_vector is None or not self.binary:
             raise pycmVectorError(BRIER_SCORE_PROB_ERROR)
-        if pos_label is None and isinstance(self.classes[0],str):
+        if pos_class is None and isinstance(self.classes[0],str):
             raise pycmVectorError(BRIER_SCORE_LABEL_ERROR)
-        return brier_score_calc(self.classes,self.prob_vector,self.actual_vector,pos_label)
+        return brier_score_calc(self.classes,self.prob_vector,self.actual_vector,pos_class)
 
     def position(self):
         """

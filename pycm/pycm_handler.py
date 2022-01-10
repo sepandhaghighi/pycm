@@ -215,16 +215,14 @@ def __obj_file_handler__(cm, file):
     obj_data = json.load(file)
     if obj_data["Actual-Vector"] is not None and obj_data[
             "Predict-Vector"] is not None:
-        try:
-            loaded_weights = obj_data["Sample-Weight"]
-        except Exception:
-            loaded_weights = None
+        loaded_weights = obj_data.get("Sample-Weight", None)
         matrix_param = matrix_params_calc(obj_data[
             "Actual-Vector"],
             obj_data[
             "Predict-Vector"], loaded_weights)
         cm.actual_vector = obj_data["Actual-Vector"]
         cm.predict_vector = obj_data["Predict-Vector"]
+        cm.prob_vector = obj_data.get("Prob-Vector", None)
         cm.weights = loaded_weights
     else:
         try:
@@ -237,10 +235,7 @@ def __obj_file_handler__(cm, file):
             loaded_matrix[i] = dict(loaded_matrix[i])
         matrix_param = matrix_params_from_table(loaded_matrix)
     cm.digit = obj_data["Digit"]
-    try:
-        cm.imbalance = obj_data["Imbalanced"]
-    except Exception:
-        cm.imbalance = None
+    cm.imbalance = obj_data.get("Imbalanced", None)
 
     return matrix_param
 
@@ -290,6 +285,7 @@ def __obj_vector_handler__(
     :return: matrix parameters as list
     """
     if isinstance(threshold, types.FunctionType):
+        cm.prob_vector = predict_vector
         predict_vector = list(map(threshold, predict_vector))
         cm.predict_vector = predict_vector
     if not isinstance(actual_vector, (list, numpy.ndarray)) or not \

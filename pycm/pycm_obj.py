@@ -66,6 +66,7 @@ class ConfusionMatrix():
         """
         self.actual_vector = actual_vector
         self.predict_vector = predict_vector
+        self.prob_vector = None
         self.digit = digit
         self.weights = None
         self.classes = None
@@ -458,6 +459,7 @@ class ConfusionMatrix():
             obj_file = open(name + ".obj", "w")
             actual_vector_temp = self.actual_vector
             predict_vector_temp = self.predict_vector
+            prob_vector_temp = self.prob_vector
             weights_vector_temp = self.weights
             matrix_temp = {k: self.table[k].copy() for k in self.classes}
             matrix_items = []
@@ -467,10 +469,13 @@ class ConfusionMatrix():
                 actual_vector_temp = actual_vector_temp.tolist()
             if isinstance(predict_vector_temp, numpy.ndarray):
                 predict_vector_temp = predict_vector_temp.tolist()
+            if isinstance(prob_vector_temp, numpy.ndarray):
+                prob_vector_temp = prob_vector_temp.tolist()
             if isinstance(weights_vector_temp, numpy.ndarray):
                 weights_vector_temp = weights_vector_temp.tolist()
             dump_dict = {"Actual-Vector": actual_vector_temp,
                          "Predict-Vector": predict_vector_temp,
+                         "Prob-Vector": prob_vector_temp,
                          "Matrix": matrix_items,
                          "Digit": self.digit,
                          "Sample-Weight": weights_vector_temp,
@@ -834,6 +839,16 @@ class ConfusionMatrix():
             self.classes,
             max_iter,
             epsilon)
+
+    def brier_score(self, pos_label=None):
+        """
+        Calculate Brier score.
+
+        :param pos_label: positive label
+        :type pos_label: int/str
+        :return: Brier score as float
+        """
+        pass
 
     def position(self):
         """

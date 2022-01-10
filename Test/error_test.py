@@ -128,4 +128,14 @@ pycm.pycm_error.pycmAverageError: The weight type must be dictionary and also mu
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmMatrixError: The input type is supposed to be pycm.ConfusionMatrix object but it's not!
+>>> cm = ConfusionMatrix([1,0,2,0],[1,1,2,1])
+>>> cm.brier_score()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: This option only works in binary probability mode
+>>> cm = ConfusionMatrix(["ham","spam","ham","ham"],[0.1,0.4,0.25,1],threshold=lambda x : "ham")
+>>> cm.brier_score()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: Actual vector contains string so pos_label should be explicitly specified
 """

@@ -731,6 +731,10 @@ Actual
 >>> y_pred_act = [0.87,0.34,0.9,0.12]
 >>> y_pred_act_copy = [0.87,0.34,0.9,0.12]
 >>> cm_6 = ConfusionMatrix([0,0,1,0],y_pred_act,threshold=activation, transpose=2)
+>>> cm_6.brier_score(pos_class=1)
+0.224225
+>>> cm_6.brier_score(pos_class=0)
+0.509225
 >>> y_pred_act_copy == y_pred_act
 True
 >>> cm_6.print_matrix()

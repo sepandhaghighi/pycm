@@ -265,6 +265,8 @@ True
 True
 >>> cm_no_vectors_dict["Predict-Vector"] == None
 True
+>>> cm_no_vectors_dict["Prob-Vector"] == None
+True
 >>> cm_stat_dict = json.load(open("test_stat.obj","r"))
 >>> cm_stat_dict["Class-Stat"]["MCC"] != None
 True

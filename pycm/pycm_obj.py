@@ -487,6 +487,7 @@ class ConfusionMatrix():
             if not save_vector:
                 dump_dict["Actual-Vector"] = None
                 dump_dict["Predict-Vector"] = None
+                dump_dict["Prob-Vector"] = None
             json.dump(dump_dict, obj_file)
             if address:
                 message = os.path.join(

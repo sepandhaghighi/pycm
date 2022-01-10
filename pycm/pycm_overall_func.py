@@ -10,7 +10,7 @@ from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
 from .pycm_util import complement, binary_check
 
 
-def brier_score_calc(classes, prob_vector, actual_vector, pos_class=None):
+def brier_score_calc(classes, prob_vector, actual_vector, sample_weight=None, pos_class=None):
     """
     Calculate Brier score.
 
@@ -20,20 +20,24 @@ def brier_score_calc(classes, prob_vector, actual_vector, pos_class=None):
     :type prob_vector: python list or numpy array
     :param actual_vector: actual vector
     :type actual_vector: python list or numpy array
+    :param sample_weight: sample weights list
+    :type sample_weight: list
     :param pos_class: positive class name
     :type pos_class: int/str
     :return: Brier score as float
     """
+    vector_length = len(actual_vector)
+    if sample_weight is None:
+        sample_weight = [1] * vector_length
+    weight_sum = sum(sample_weight)
     if pos_class is None:
         pos_class = max(classes)
-    vector_length = len(actual_vector)
     result = 0
     for index, item in enumerate(actual_vector):
         filtered_item = 0
         if item == pos_class:
             filtered_item = 1
-        result += (filtered_item - prob_vector[index])**2
-    result = result / vector_length
+        result += (sample_weight[index]/weight_sum) * (filtered_item - prob_vector[index])**2
     return result
 
 

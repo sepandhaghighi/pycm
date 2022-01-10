@@ -32,7 +32,7 @@ def brier_score_calc(classes, prob_vector, actual_vector, pos_label=None):
     vector_length = len(actual_vector)
     result = 0
     for i in range(vector_length):
-        result += (actual_vector_filtered[i] - prob_vector)**2
+        result += (actual_vector_filtered[i] - prob_vector[i])**2
     result = result / vector_length
     return result
 

@@ -851,9 +851,14 @@ class ConfusionMatrix():
         """
         if self.prob_vector is None or not self.binary:
             raise pycmVectorError(BRIER_SCORE_PROB_ERROR)
-        if pos_class is None and isinstance(self.classes[0],str):
+        if pos_class is None and isinstance(self.classes[0], str):
             raise pycmVectorError(BRIER_SCORE_LABEL_ERROR)
-        return brier_score_calc(self.classes,self.prob_vector,self.actual_vector,self.weights,pos_class)
+        return brier_score_calc(
+            self.classes,
+            self.prob_vector,
+            self.actual_vector,
+            self.weights,
+            pos_class)
 
     def position(self):
         """

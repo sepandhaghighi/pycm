@@ -269,7 +269,7 @@ def __compare_weight_handler__(compare, weight, weight_type):
         raise pycmCompareError(error_dict[weight_type])
     if set(weight.keys()) == set(valid_dict[weight_type]):
         if all([isfloat(x) for x in weight.values()]
-                ) and sum(weight.values()) != 0:
+               ) and sum(weight.values()) != 0:
             setattr(compare, weight_type, weight)
         else:
             warn(warning_dict[weight_type], RuntimeWarning)

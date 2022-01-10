@@ -372,7 +372,10 @@ True
 >>> cm3 = ConfusionMatrix(y_true_categorical, y_prob, threshold=lambda x: "ham") # Verified Case -- (https://bit.ly/3n8Uo7R)
 >>> cm3.brier_score(pos_class="ham")
 0.03749999999999999
->>> cm4 = ConfusionMatrix(y_true, np.array(y_prob) > 0.5, threshold=lambda x: 1) # Verified Case -- (https://bit.ly/3n8Uo7R)
+>>> cm4 = ConfusionMatrix(y_true, y_prob, sample_weight=[2,2,3,3],threshold=lambda x: 1)
 >>> cm4.brier_score()
+0.043
+>>> cm5 = ConfusionMatrix(y_true, np.array(y_prob) > 0.5, threshold=lambda x: 1) # Verified Case -- (https://bit.ly/3n8Uo7R)
+>>> cm5.brier_score()
 0.0
 """

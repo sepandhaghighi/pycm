@@ -3,10 +3,38 @@
 from __future__ import division
 import math
 import operator as op
+import numpy as np
 from functools import reduce
 from .pycm_interpret import *
 from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
-from .pycm_util import complement
+from .pycm_util import complement, binary_check
+
+
+def brier_score_calc(classes, prob_vector, actual_vector, pos_label=None):
+    """
+    Calculate Brier score.
+
+    :param classes: confusion matrix classes
+    :type classes: list
+    :param prob_vector: probability vector
+    :type prob_vector: python list or numpy array
+    :param actual_vector: actual vector
+    :type actual_vector: python list or numpy array
+    :param pos_label: positive label
+    :type pos_label: int/str
+    :return: Brier score as float
+    """
+    if pos_label is None:
+        pos_label = max(classes)
+    actual_vector_filtered = np.array(actual_vector)
+    actual_vector_filtered = np.where(actual_vector_filtered != pos_label, 0, actual_vector_filtered)
+    actual_vector_filtered = np.where(actual_vector_filtered == pos_label, 1, actual_vector_filtered)
+    vector_length = len(actual_vector)
+    result = 0
+    for i in range(vector_length):
+        result += (actual_vector_filtered[i] - prob_vector)**2
+    result = result / vector_length
+    return result
 
 
 def alpha2_calc(TOP, P, ACC, POP, classes, max_iter=200, epsilon=0.0001):

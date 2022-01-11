@@ -137,5 +137,5 @@ pycm.pycm_error.pycmVectorError: This option only works in binary probability mo
 >>> cm.brier_score()
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmVectorError: Actual vector contains string so pos_label should be explicitly specified
+pycm.pycm_error.pycmVectorError: Actual vector contains string so pos_class should be explicitly specified
 """

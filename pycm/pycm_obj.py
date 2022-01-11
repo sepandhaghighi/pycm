@@ -488,6 +488,7 @@ class ConfusionMatrix():
                 dump_dict["Actual-Vector"] = None
                 dump_dict["Predict-Vector"] = None
                 dump_dict["Prob-Vector"] = None
+                dump_dict["Sample-Weight"] = None
             json.dump(dump_dict, obj_file)
             if address:
                 message = os.path.join(

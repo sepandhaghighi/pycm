@@ -3,11 +3,10 @@
 from __future__ import division
 import math
 import operator as op
-import numpy as np
 from functools import reduce
 from .pycm_interpret import *
 from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
-from .pycm_util import complement, binary_check
+from .pycm_util import complement
 
 
 def brier_score_calc(

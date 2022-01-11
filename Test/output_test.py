@@ -293,6 +293,17 @@ Predict          0        1
 Actual
 0                1        2
 1                1        0
+>>> cm_7 = ConfusionMatrix([0,0,1,0],np.array([0.87,0.34,0.9,0.12]),threshold=activation)
+>>> isinstance(cm_7.prob_vector, np.ndarray)
+True
+>>> save_obj=cm_7.save_obj("test2",address=False)
+>>> save_obj=={'Status': True, 'Message': None}
+True
+>>> cm_file_2=ConfusionMatrix(file=open("test2.obj","r"))
+>>> cm_file_2.prob_vector
+[0.87, 0.34, 0.9, 0.12]
+>>> cm_file_2.prob_vector == cm_7.prob_vector.tolist()
+True
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2, 0, 1, 0, 2, 1, 0, 0, 0, 1, 2, 4, 5]
 >>> y_pred = [2, 0, 2, 2, 0, 2, 2, 2, 2, 0, 0, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 2, 5, 3]
 >>> cm = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred)

@@ -8,8 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - Colab badge
 - Discord badge
+- `brier_score` method
 ### Changed
 - `J (Jaccard index)` section in `Document.ipynb` updated
+- `save_obj` method updated
 - `Python 3.10` added to `test.yml`
 - Example-3 updated
 - Docstrings of the functions updated

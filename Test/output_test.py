@@ -265,6 +265,8 @@ True
 True
 >>> cm_no_vectors_dict["Predict-Vector"] == None
 True
+>>> cm_no_vectors_dict["Prob-Vector"] == None
+True
 >>> cm_stat_dict = json.load(open("test_stat.obj","r"))
 >>> cm_stat_dict["Class-Stat"]["MCC"] != None
 True
@@ -276,15 +278,32 @@ True
 ...	    else:
 ...		    return 0
 >>> cm_6 = ConfusionMatrix([0,0,1,0],[0.87,0.34,0.9,0.12],threshold=activation)
+>>> cm_6.prob_vector
+[0.87, 0.34, 0.9, 0.12]
 >>> save_obj=cm_6.save_obj("test2",address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
 >>> cm_file_2=ConfusionMatrix(file=open("test2.obj","r"))
+>>> cm_file_2.prob_vector
+[0.87, 0.34, 0.9, 0.12]
+>>> cm_file_2.prob_vector == cm_6.prob_vector
+True
 >>> cm_file_2.print_matrix()
 Predict          0        1
 Actual
 0                1        2
 1                1        0
+>>> cm_7 = ConfusionMatrix([0,0,1,0],np.array([0.87,0.34,0.9,0.12]),threshold=activation)
+>>> isinstance(cm_7.prob_vector, np.ndarray)
+True
+>>> save_obj=cm_7.save_obj("test2",address=False)
+>>> save_obj=={'Status': True, 'Message': None}
+True
+>>> cm_file_2=ConfusionMatrix(file=open("test2.obj","r"))
+>>> cm_file_2.prob_vector
+[0.87, 0.34, 0.9, 0.12]
+>>> cm_file_2.prob_vector == cm_7.prob_vector.tolist()
+True
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2, 0, 1, 0, 2, 1, 0, 0, 0, 1, 2, 4, 5]
 >>> y_pred = [2, 0, 2, 2, 0, 2, 2, 2, 2, 0, 0, 2, 0, 0, 0, 2, 2, 0, 0, 0, 0, 2, 5, 3]
 >>> cm = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred)

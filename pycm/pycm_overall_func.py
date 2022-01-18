@@ -9,6 +9,46 @@ from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
 from .pycm_util import complement
 
 
+def brier_score_calc(
+        classes,
+        prob_vector,
+        actual_vector,
+        sample_weight=None,
+        pos_class=None):
+    """
+    Calculate Brier score.
+
+    :param classes: confusion matrix classes
+    :type classes: list
+    :param prob_vector: probability vector
+    :type prob_vector: python list or numpy array
+    :param actual_vector: actual vector
+    :type actual_vector: python list or numpy array
+    :param sample_weight: sample weights list
+    :type sample_weight: list
+    :param pos_class: positive class name
+    :type pos_class: int/str
+    :return: Brier score as float
+    """
+    try:
+        vector_length = len(actual_vector)
+        if sample_weight is None:
+            sample_weight = [1] * vector_length
+        weight_sum = sum(sample_weight)
+        if pos_class is None:
+            pos_class = max(classes)
+        result = 0
+        for index, item in enumerate(actual_vector):
+            filtered_item = 0
+            if item == pos_class:
+                filtered_item = 1
+            result += (sample_weight[index] / weight_sum) * \
+                (filtered_item - prob_vector[index])**2
+        return result
+    except Exception:
+        return "None"
+
+
 def alpha2_calc(TOP, P, ACC, POP, classes, max_iter=200, epsilon=0.0001):
     """
     Calculate Aickin's alpha.

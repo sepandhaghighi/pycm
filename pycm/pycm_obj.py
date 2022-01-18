@@ -5,7 +5,7 @@ from .pycm_error import pycmVectorError, pycmMatrixError, pycmCIError, pycmAvera
 from .pycm_handler import __class_stat_init__, __overall_stat_init__
 from .pycm_handler import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__
 from .pycm_class_func import F_calc, IBA_calc, TI_calc, NB_calc, sensitivity_index_calc
-from .pycm_overall_func import weighted_kappa_calc, weighted_alpha_calc, alpha2_calc
+from .pycm_overall_func import weighted_kappa_calc, weighted_alpha_calc, alpha2_calc, brier_score_calc
 from .pycm_output import *
 from .pycm_util import *
 from .pycm_param import *
@@ -66,6 +66,7 @@ class ConfusionMatrix():
         """
         self.actual_vector = actual_vector
         self.predict_vector = predict_vector
+        self.prob_vector = None
         self.digit = digit
         self.weights = None
         self.classes = None
@@ -458,6 +459,7 @@ class ConfusionMatrix():
             obj_file = open(name + ".obj", "w")
             actual_vector_temp = self.actual_vector
             predict_vector_temp = self.predict_vector
+            prob_vector_temp = self.prob_vector
             weights_vector_temp = self.weights
             matrix_temp = {k: self.table[k].copy() for k in self.classes}
             matrix_items = []
@@ -467,10 +469,13 @@ class ConfusionMatrix():
                 actual_vector_temp = actual_vector_temp.tolist()
             if isinstance(predict_vector_temp, numpy.ndarray):
                 predict_vector_temp = predict_vector_temp.tolist()
+            if isinstance(prob_vector_temp, numpy.ndarray):
+                prob_vector_temp = prob_vector_temp.tolist()
             if isinstance(weights_vector_temp, numpy.ndarray):
                 weights_vector_temp = weights_vector_temp.tolist()
             dump_dict = {"Actual-Vector": actual_vector_temp,
                          "Predict-Vector": predict_vector_temp,
+                         "Prob-Vector": prob_vector_temp,
                          "Matrix": matrix_items,
                          "Digit": self.digit,
                          "Sample-Weight": weights_vector_temp,
@@ -482,6 +487,8 @@ class ConfusionMatrix():
             if not save_vector:
                 dump_dict["Actual-Vector"] = None
                 dump_dict["Predict-Vector"] = None
+                dump_dict["Prob-Vector"] = None
+                dump_dict["Sample-Weight"] = None
             json.dump(dump_dict, obj_file)
             if address:
                 message = os.path.join(
@@ -834,6 +841,25 @@ class ConfusionMatrix():
             self.classes,
             max_iter,
             epsilon)
+
+    def brier_score(self, pos_class=None):
+        """
+        Calculate Brier score.
+
+        :param pos_class: positive class name
+        :type pos_class: int/str
+        :return: Brier score as float
+        """
+        if self.prob_vector is None or not self.binary:
+            raise pycmVectorError(BRIER_SCORE_PROB_ERROR)
+        if pos_class is None and isinstance(self.classes[0], str):
+            raise pycmVectorError(BRIER_SCORE_CLASS_ERROR)
+        return brier_score_calc(
+            self.classes,
+            self.prob_vector,
+            self.actual_vector,
+            self.weights,
+            pos_class)
 
     def position(self):
         """

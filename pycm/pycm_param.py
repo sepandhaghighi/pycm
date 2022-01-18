@@ -91,6 +91,10 @@ AVERAGE_WEIGHT_ERROR = "The weight type must be dictionary and also must be spec
 
 AVERAGE_INVALID_ERROR = "Invalid parameter!"
 
+BRIER_SCORE_CLASS_ERROR = "Actual vector contains string so pos_class should be explicitly specified"
+
+BRIER_SCORE_PROB_ERROR = "This option only works in binary probability mode"
+
 CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won't be demonstrated properly.\n" \
                        "If confusion matrix has too many zeros (sparse matrix) you can set `sparse` flag to True in printing functions "\
                        "otherwise by using save_csv method to save the confusion matrix in csv format you'll have better demonstration."

@@ -155,7 +155,7 @@ def html_overall_stat(
 
     :param overall_stat: overall stats
     :type overall_stat: dict
-    :param digit: scale (number of fraction digits)
+    :param digit: scale (number of fraction digits)(default value: 5)
     :type digit: int
     :param overall_param: overall parameters list for print, Example: ["Kappa", "Scott PI"]
     :type overall_param: list
@@ -210,7 +210,7 @@ def html_class_stat(
     :type classes: list
     :param class_stat: class stat
     :type class_stat:dict
-    :param digit: scale (number of fraction digits)
+    :param digit: scale (number of fraction digits)(default value: 5)
     :type digit: int
     :param class_param: class parameters list for print, Example: ["TPR", "TNR", "AUC"]
     :type class_param: list
@@ -374,7 +374,7 @@ def csv_print(classes, class_stat, digit=5, class_param=None):
     :type classes: list
     :param class_stat: statistic result for each class
     :type class_stat:dict
-    :param digit: scale (number of fraction digits)
+    :param digit: scale (number of fraction digits)(default value: 5)
     :type digit: int
     :param class_param: class parameters list for print, Example: ["TPR", "TNR", "AUC"]
     :type class_param: list
@@ -413,7 +413,7 @@ def stat_print(
     :type class_stat: dict
     :param overall_stat: overall statistic result
     :type overall_stat:dict
-    :param digit: scale (number of fraction digits)
+    :param digit: scale (number of fraction digits)(default value: 5)
     :type digit: int
     :param overall_param: overall parameters list for print, Example: ["Kappa", "Scott PI"]
     :type overall_param: list

@@ -47,7 +47,7 @@ class ConfusionMatrix():
         :type actual_vector: python list or numpy array of any stringable objects
         :param predict_vector: vector of predictions
         :type predict_vector: python list or numpy array of any stringable objects
-        :param matrix: directly imported confusion matrix
+        :param matrix: the confusion matrix in dict form
         :type matrix: dict
         :param digit: scale (number of fraction digits)(default value: 5)
         :type digit: int

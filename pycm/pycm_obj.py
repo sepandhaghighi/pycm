@@ -45,7 +45,7 @@ class ConfusionMatrix():
 
         :param actual_vector: actual vector
         :type actual_vector: python list or numpy array of any stringable objects
-        :param predict_vector: predicted vector
+        :param predict_vector: vector of predictions
         :type predict_vector: python list or numpy array of any stringable objects
         :param matrix: directly imported confusion matrix
         :type matrix: dict

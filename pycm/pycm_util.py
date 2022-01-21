@@ -492,7 +492,7 @@ def add_number_label(ax, classes, matrix, cmap, plot_lib):
     :type ax: matplotlib.axes
     :param classes: confusion matrix classes
     :type classes: list
-    :param matrix: derived matrix of confusion matrix
+    :param matrix: the confusion matrix in array form
     :type matrix: numpy.array
     :param cmap: color map
     :type cmap: matplotlib.colors.ListedColormap
@@ -534,7 +534,7 @@ def axes_gen(
     :type ax: matplotlib.axes
     :param classes: confusion matrix classes
     :type classes: list
-    :param matrix: derived matrix of confusion matrix
+    :param matrix: the confusion matrix in array form
     :type matrix: numpy.array
     :param title: plot title
     :type title: str

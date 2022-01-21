@@ -386,7 +386,7 @@ class ConfusionMatrix():
             summary=False,
             header=False):
         """
-        Save ConfusionMatrix in CSV file.
+        Save ConfusionMatrix in csv file.
 
         :param name: filename
         :type name: str
@@ -402,7 +402,7 @@ class ConfusionMatrix():
         :type normalize: bool
         :param summary: summary mode flag
         :type summary: bool
-        :param header: add headers to .csv file
+        :param header: add headers to csv file
         :type header: bool
         :return: saving address as dict {"Status":bool, "Message":str}
         """

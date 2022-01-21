@@ -49,7 +49,7 @@ class ConfusionMatrix():
         :type predict_vector: python list or numpy array of any stringable objects
         :param matrix: directly imported confusion matrix
         :type matrix: dict
-        :param digit: precision digit (default value: 5)
+        :param digit: scale (number of fraction digits)(default value: 5)
         :type digit: int
         :param threshold: activation threshold function
         :type threshold: FunctionType (function or lambda)

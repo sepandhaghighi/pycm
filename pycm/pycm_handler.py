@@ -274,7 +274,7 @@ def __obj_vector_handler__(
     :type cm: pycm.ConfusionMatrix object
     :param actual_vector: actual vector
     :type actual_vector: python list or numpy array of any stringable objects
-    :param predict_vector: predicted vector
+    :param predict_vector: vector of predictions
     :type predict_vector: python list or numpy array of any stringable objects
     :param threshold: activation threshold function
     :type threshold: FunctionType (function or lambda)

@@ -40,7 +40,7 @@ def rounder(input_number, digit=5):
 
     :param input_number: input number
     :type input_number: anything
-    :param digit: scale (number of fraction digits)
+    :param digit: scale (number of fraction digits)(default value: 5)
     :type digit: int
     :return: round number as str
     """

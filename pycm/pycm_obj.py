@@ -171,7 +171,7 @@ class ConfusionMatrix():
         :type overall_param: list
         :param class_param: class parameters list for print, Example: ["TPR", "TNR", "AUC"]
         :type class_param: list
-        :param class_name: class name (a subset of classes names), Example: [1, 2, 3]
+        :param class_name: class name (a subset of confusion matrix classes), Example: [1, 2, 3]
         :type class_name: list
         :param summary: summary mode flag
         :type summary: bool

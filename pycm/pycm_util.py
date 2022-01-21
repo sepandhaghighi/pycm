@@ -118,7 +118,7 @@ def vector_filter(actual_vector, predict_vector):
 
     :param actual_vector: actual values
     :type actual_vector: list
-    :param predict_vector: predict values
+    :param predict_vector: vector of predictions
     :type predict_vector: list
     :return: new actual and predict vectors
     """
@@ -323,7 +323,7 @@ def matrix_params_calc(
 
     :param actual_vector: actual values
     :type actual_vector: list
-    :param predict_vector: predict values
+    :param predict_vector: vector of predictions
     :type predict_vector: list
     :param sample_weight: sample weights list
     :type sample_weight: list
@@ -357,7 +357,7 @@ def classes_filter(actual_vector, predict_vector, classes=None):
 
     :param actual_vector: actual values
     :type actual_vector: list
-    :param predict_vector: predict values
+    :param predict_vector: vector of predictions
     :type predict_vector: list
     :param classes: ordered labels of classes
     :type classes: list

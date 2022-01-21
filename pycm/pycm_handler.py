@@ -244,7 +244,7 @@ def __obj_matrix_handler__(matrix, transpose):
     """
     Handle object conditions for the matrix.
 
-    :param matrix: direct matrix
+    :param matrix: the confusion matrix in dict form
     :type matrix: dict
     :param transpose: transpose flag
     :type transpose: bool

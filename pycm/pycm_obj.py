@@ -45,11 +45,11 @@ class ConfusionMatrix():
 
         :param actual_vector: actual vector
         :type actual_vector: python list or numpy array of any stringable objects
-        :param predict_vector: predicted vector
+        :param predict_vector: vector of predictions
         :type predict_vector: python list or numpy array of any stringable objects
-        :param matrix: directly imported confusion matrix
+        :param matrix: the confusion matrix in dict form
         :type matrix: dict
-        :param digit: precision digit (default value: 5)
+        :param digit: scale (number of fraction digits)(default value: 5)
         :type digit: int
         :param threshold: activation threshold function
         :type threshold: FunctionType (function or lambda)
@@ -171,7 +171,7 @@ class ConfusionMatrix():
         :type overall_param: list
         :param class_param: class parameters list for print, Example: ["TPR", "TNR", "AUC"]
         :type class_param: list
-        :param class_name: class name (a subset of classes names), Example: [1, 2, 3]
+        :param class_name: class name (a subset of confusion matrix classes), Example: [1, 2, 3]
         :type class_name: list
         :param summary: summary mode flag
         :type summary: bool
@@ -386,7 +386,7 @@ class ConfusionMatrix():
             summary=False,
             header=False):
         """
-        Save ConfusionMatrix in CSV file.
+        Save ConfusionMatrix in csv file.
 
         :param name: filename
         :type name: str
@@ -402,7 +402,7 @@ class ConfusionMatrix():
         :type normalize: bool
         :param summary: summary mode flag
         :type summary: bool
-        :param header: add headers to .csv file
+        :param header: add headers to csv file
         :type header: bool
         :return: saving address as dict {"Status":bool, "Message":str}
         """

@@ -195,7 +195,7 @@ def TTPN_calc(item1, item2):
 
 def FXR_calc(item):
     """
-    Calculate False negative rate (FNR), False positive rate (FPR), False discovery rate (FDR), and False omission rate (FOR).
+    Calculate False negative rate, False positive rate, False discovery rate (FDR), and False omission rate (FOR).
 
     :param item: item In expression
     :type item:float

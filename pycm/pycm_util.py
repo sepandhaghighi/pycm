@@ -40,7 +40,7 @@ def rounder(input_number, digit=5):
 
     :param input_number: input number
     :type input_number: anything
-    :param digit: scale (number of fraction digits)
+    :param digit: scale (number of fraction digits)(default value: 5)
     :type digit: int
     :return: round number as str
     """
@@ -118,7 +118,7 @@ def vector_filter(actual_vector, predict_vector):
 
     :param actual_vector: actual values
     :type actual_vector: list
-    :param predict_vector: predict values
+    :param predict_vector: vector of predictions
     :type predict_vector: list
     :return: new actual and predict vectors
     """
@@ -323,7 +323,7 @@ def matrix_params_calc(
 
     :param actual_vector: actual values
     :type actual_vector: list
-    :param predict_vector: predict values
+    :param predict_vector: vector of predictions
     :type predict_vector: list
     :param sample_weight: sample weights list
     :type sample_weight: list
@@ -357,7 +357,7 @@ def classes_filter(actual_vector, predict_vector, classes=None):
 
     :param actual_vector: actual values
     :type actual_vector: list
-    :param predict_vector: predict values
+    :param predict_vector: vector of predictions
     :type predict_vector: list
     :param classes: ordered labels of classes
     :type classes: list
@@ -492,7 +492,7 @@ def add_number_label(ax, classes, matrix, cmap, plot_lib):
     :type ax: matplotlib.axes
     :param classes: confusion matrix classes
     :type classes: list
-    :param matrix: derived matrix of confusion matrix
+    :param matrix: the confusion matrix in array form
     :type matrix: numpy.array
     :param cmap: color map
     :type cmap: matplotlib.colors.ListedColormap
@@ -534,7 +534,7 @@ def axes_gen(
     :type ax: matplotlib.axes
     :param classes: confusion matrix classes
     :type classes: list
-    :param matrix: derived matrix of confusion matrix
+    :param matrix: the confusion matrix in array form
     :type matrix: numpy.array
     :param title: plot title
     :type title: str

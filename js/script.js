@@ -2,7 +2,7 @@
 function redirect(flag){
     switch(flag){
         case 1:
-            window.open("https://www.paypal.me/masijsm");
+            window.open("https://www.paypal.me/AlirezaZol");
             break;
         case 2:
             window.open("https://www.pycm.ir/wallets.html");

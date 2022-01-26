@@ -11787,7 +11787,16 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Install-matplotlib">Install matplotlib<a class="anchor-link" href="#Install-matplotlib">&#182;</a></h2>
+<h2 id="Environment-check">Environment check<a class="anchor-link" href="#Environment-check">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Checking that the notebook is running on Google Colab or not.</p>
+
 </div>
 </div>
 </div>
@@ -11797,7 +11806,32 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="o">!{</span>sys.executable<span class="o">}</span> -m pip -q -q install matplotlib<span class="p">;</span>
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">google.colab</span>
+  <span class="o">!{</span>sys.executable<span class="o">}</span> -m pip -q -q install pycm
+<span class="k">except</span><span class="p">:</span>
+  <span class="k">pass</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Install-matplotlib">Install matplotlib<a class="anchor-link" href="#Install-matplotlib">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!{</span>sys.executable<span class="o">}</span> -m pip -q -q install matplotlib<span class="p">;</span>
 </pre></div>
 
 </div>
@@ -11815,7 +11849,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -11889,7 +11923,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">pycm</span><span class="o">.</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:{</span><span class="mi">0</span><span class="p">:</span><span class="mi">13</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">},</span><span class="mi">1</span><span class="p">:{</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">},</span><span class="mi">2</span><span class="p">:{</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">:</span><span class="mi">9</span><span class="p">}})</span>
@@ -11910,7 +11944,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_ci</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span><span class="n">param</span><span class="o">=</span><span class="s2">&quot;TPR&quot;</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;normal-approx&quot;</span><span class="p">)</span>
@@ -11959,7 +11993,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_ci</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span><span class="n">param</span><span class="o">=</span><span class="s2">&quot;TPR&quot;</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;wilson&quot;</span><span class="p">)</span>
@@ -12008,7 +12042,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_ci</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span><span class="n">param</span><span class="o">=</span><span class="s2">&quot;TPR&quot;</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;agresti-coull&quot;</span><span class="p">)</span>
@@ -12065,7 +12099,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_ci</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span><span class="n">param</span><span class="o">=</span><span class="s2">&quot;FPR&quot;</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;normal-approx&quot;</span><span class="p">)</span>
@@ -12114,7 +12148,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_ci</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span><span class="n">param</span><span class="o">=</span><span class="s2">&quot;FPR&quot;</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;wilson&quot;</span><span class="p">)</span>
@@ -12163,7 +12197,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_ci</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span><span class="n">param</span><span class="o">=</span><span class="s2">&quot;FPR&quot;</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;agresti-coull&quot;</span><span class="p">)</span>
@@ -12220,7 +12254,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_ci</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span><span class="n">param</span><span class="o">=</span><span class="s2">&quot;AUC&quot;</span><span class="p">)</span>
@@ -12277,7 +12311,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_ci</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span><span class="n">param</span><span class="o">=</span><span class="s2">&quot;PLR&quot;</span><span class="p">)</span>
@@ -12334,7 +12368,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_ci</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span><span class="n">param</span><span class="o">=</span><span class="s2">&quot;Overall ACC&quot;</span><span class="p">)</span>
@@ -12389,7 +12423,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plot_ci</span><span class="p">(</span><span class="n">cm</span><span class="p">,</span><span class="n">param</span><span class="o">=</span><span class="s2">&quot;Kappa&quot;</span><span class="p">)</span>

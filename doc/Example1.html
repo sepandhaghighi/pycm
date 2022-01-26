@@ -11797,7 +11797,16 @@ The iris dataset is a classic and very easy multi-class classification dataset.<
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Install-scikit-learn">Install scikit-learn<a class="anchor-link" href="#Install-scikit-learn">&#182;</a></h2>
+<h2 id="Environment-check">Environment check<a class="anchor-link" href="#Environment-check">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Checking that the notebook is running on Google Colab or not.</p>
+
 </div>
 </div>
 </div>
@@ -11807,7 +11816,32 @@ The iris dataset is a classic and very easy multi-class classification dataset.<
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">google.colab</span>
+  <span class="o">!{</span>sys.executable<span class="o">}</span> -m pip -q -q install pycm
+<span class="k">except</span><span class="p">:</span>
+  <span class="k">pass</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Install-scikit-learn">Install scikit-learn<a class="anchor-link" href="#Install-scikit-learn">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="o">!{</span>sys.executable<span class="o">}</span> -m pip -q -q install scikit-learn
 <span class="k">if</span> <span class="s2">&quot;Example1_Files&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">():</span>
     <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;Example1_Files&quot;</span><span class="p">)</span>
@@ -11828,7 +11862,7 @@ The iris dataset is a classic and very easy multi-class classification dataset.<
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">datasets</span>
@@ -11855,7 +11889,7 @@ The iris dataset is a classic and very easy multi-class classification dataset.<
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="k">import</span> <span class="n">svm</span>
@@ -11869,7 +11903,7 @@ The iris dataset is a classic and very easy multi-class classification dataset.<
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_pred_1</span> <span class="o">=</span> <span class="n">classifier_1</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -11882,7 +11916,7 @@ The iris dataset is a classic and very easy multi-class classification dataset.<
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred_1</span><span class="p">)</span>
@@ -11922,7 +11956,7 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
@@ -11961,43 +11995,10 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">Kappa</span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[7]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>0.7673469387755101</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">Overall_ACC</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">Kappa</span> 
 </pre></div>
 
 </div>
@@ -12016,7 +12017,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.8421052631578947</pre>
+<pre>0.7673469387755101</pre>
 </div>
 
 </div>
@@ -12030,7 +12031,7 @@ Actual
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">SOA1</span>  <span class="c1"># Landis and Koch benchmark</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">Overall_ACC</span>
 </pre></div>
 
 </div>
@@ -12049,7 +12050,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Substantial&#39;</pre>
+<pre>0.8421052631578947</pre>
 </div>
 
 </div>
@@ -12063,7 +12064,7 @@ Actual
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">SOA2</span>  <span class="c1"># Fleiss’ benchmark</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">SOA1</span>  <span class="c1"># Landis and Koch benchmark</span>
 </pre></div>
 
 </div>
@@ -12082,7 +12083,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Excellent&#39;</pre>
+<pre>&#39;Substantial&#39;</pre>
 </div>
 
 </div>
@@ -12096,7 +12097,7 @@ Actual
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">SOA3</span>  <span class="c1"># Altman’s benchmark</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">SOA2</span>  <span class="c1"># Fleiss’ benchmark</span>
 </pre></div>
 
 </div>
@@ -12115,7 +12116,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Good&#39;</pre>
+<pre>&#39;Excellent&#39;</pre>
 </div>
 
 </div>
@@ -12129,7 +12130,7 @@ Actual
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">SOA4</span>  <span class="c1"># Cicchetti’s benchmark</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">SOA3</span>  <span class="c1"># Altman’s benchmark</span>
 </pre></div>
 
 </div>
@@ -12148,7 +12149,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Excellent&#39;</pre>
+<pre>&#39;Good&#39;</pre>
 </div>
 
 </div>
@@ -12160,6 +12161,39 @@ Actual
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">SOA4</span>  <span class="c1"># Cicchetti’s benchmark</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[13]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Excellent&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example1_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1&quot;</span><span class="p">))</span>
@@ -12175,7 +12209,7 @@ Actual
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[13]:</div>
+<div class="prompt output_prompt">Out[14]:</div>
 
 
 
@@ -12210,7 +12244,7 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="k">import</span> <span class="n">DecisionTreeClassifier</span>
@@ -12224,7 +12258,7 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_pred_2</span> <span class="o">=</span> <span class="n">classifier_2</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -12237,7 +12271,7 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred_2</span><span class="p">)</span>
@@ -12277,7 +12311,7 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
@@ -12316,43 +12350,10 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">Kappa</span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[18]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>0.95978835978836</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">Overall_ACC</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">Kappa</span> 
 </pre></div>
 
 </div>
@@ -12371,7 +12372,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.9736842105263158</pre>
+<pre>0.95978835978836</pre>
 </div>
 
 </div>
@@ -12385,7 +12386,7 @@ Actual
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">SOA1</span>  <span class="c1"># Landis and Koch benchmark</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">Overall_ACC</span>
 </pre></div>
 
 </div>
@@ -12404,7 +12405,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Almost Perfect&#39;</pre>
+<pre>0.9736842105263158</pre>
 </div>
 
 </div>
@@ -12418,7 +12419,7 @@ Actual
 <div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">SOA2</span>  <span class="c1"># Fleiss’ benchmark</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">SOA1</span>  <span class="c1"># Landis and Koch benchmark</span>
 </pre></div>
 
 </div>
@@ -12437,7 +12438,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Excellent&#39;</pre>
+<pre>&#39;Almost Perfect&#39;</pre>
 </div>
 
 </div>
@@ -12451,7 +12452,7 @@ Actual
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">SOA3</span>  <span class="c1"># Altman’s benchmark</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">SOA2</span>  <span class="c1"># Fleiss’ benchmark</span>
 </pre></div>
 
 </div>
@@ -12470,7 +12471,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Very Good&#39;</pre>
+<pre>&#39;Excellent&#39;</pre>
 </div>
 
 </div>
@@ -12484,7 +12485,7 @@ Actual
 <div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">SOA4</span>  <span class="c1"># Cicchetti’s benchmark</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">SOA3</span>  <span class="c1"># Altman’s benchmark</span>
 </pre></div>
 
 </div>
@@ -12503,7 +12504,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Excellent&#39;</pre>
+<pre>&#39;Very Good&#39;</pre>
 </div>
 
 </div>
@@ -12515,6 +12516,39 @@ Actual
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">SOA4</span>  <span class="c1"># Cicchetti’s benchmark</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Excellent&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example1_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm2&quot;</span><span class="p">))</span>
@@ -12530,7 +12564,7 @@ Actual
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[24]:</div>
+<div class="prompt output_prompt">Out[25]:</div>
 
 
 
@@ -12565,7 +12599,7 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">AdaBoostClassifier</span>
@@ -12579,7 +12613,7 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_pred_3</span> <span class="o">=</span> <span class="n">classifier_3</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
@@ -12592,7 +12626,7 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred_3</span><span class="p">)</span>
@@ -12632,7 +12666,7 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
@@ -12671,43 +12705,10 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">Kappa</span> 
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[29]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>0.8354978354978355</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">Overall_ACC</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">Kappa</span> 
 </pre></div>
 
 </div>
@@ -12726,7 +12727,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.8947368421052632</pre>
+<pre>0.8354978354978355</pre>
 </div>
 
 </div>
@@ -12740,7 +12741,7 @@ Actual
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">SOA1</span>  <span class="c1"># Landis and Koch benchmark</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">Overall_ACC</span>
 </pre></div>
 
 </div>
@@ -12759,7 +12760,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Almost Perfect&#39;</pre>
+<pre>0.8947368421052632</pre>
 </div>
 
 </div>
@@ -12773,7 +12774,7 @@ Actual
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">SOA2</span>  <span class="c1"># Fleiss’ benchmark</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">SOA1</span>  <span class="c1"># Landis and Koch benchmark</span>
 </pre></div>
 
 </div>
@@ -12792,7 +12793,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Excellent&#39;</pre>
+<pre>&#39;Almost Perfect&#39;</pre>
 </div>
 
 </div>
@@ -12806,7 +12807,7 @@ Actual
 <div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">SOA3</span>  <span class="c1"># Altman’s benchmark</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">SOA2</span>  <span class="c1"># Fleiss’ benchmark</span>
 </pre></div>
 
 </div>
@@ -12825,7 +12826,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Very Good&#39;</pre>
+<pre>&#39;Excellent&#39;</pre>
 </div>
 
 </div>
@@ -12839,7 +12840,7 @@ Actual
 <div class="prompt input_prompt">In&nbsp;[34]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">SOA4</span>  <span class="c1"># Cicchetti’s benchmark</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">SOA3</span>  <span class="c1"># Altman’s benchmark</span>
 </pre></div>
 
 </div>
@@ -12858,7 +12859,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&#39;Excellent&#39;</pre>
+<pre>&#39;Very Good&#39;</pre>
 </div>
 
 </div>
@@ -12870,6 +12871,39 @@ Actual
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">SOA4</span>  <span class="c1"># Cicchetti’s benchmark</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[35]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&#39;Excellent&#39;</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example1_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm3&quot;</span><span class="p">))</span>
@@ -12885,7 +12919,7 @@ Actual
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[35]:</div>
+<div class="prompt output_prompt">Out[36]:</div>
 
 
 
@@ -12920,7 +12954,7 @@ Actual
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pycm</span> <span class="k">import</span> <span class="n">Compare</span>
@@ -12960,7 +12994,7 @@ Rank   Name                Class-Score       Overall-Score
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span><span class="o">.</span><span class="n">save_report</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example1_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cp&quot;</span><span class="p">))</span>
@@ -12976,7 +13010,7 @@ Rank   Name                Class-Score       Overall-Score
 
 <div class="output_area">
 
-<div class="prompt output_prompt">Out[37]:</div>
+<div class="prompt output_prompt">Out[38]:</div>
 
 
 

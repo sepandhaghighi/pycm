@@ -9,6 +9,12 @@
 </a>
 <a href="https://badge.fury.io/py/pycm"><img src="https://badge.fury.io/py/pycm.svg" alt="PyPI version" height="18"></a>
 <a href="https://anaconda.org/sepandhaghighi/pycm"><img src="https://anaconda.org/sepandhaghighi/pycm/badges/version.svg"></a>
+<a href="https://colab.research.google.com/github/sepandhaghighi/pycm/blob/master">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Document"/>
+</a>
+<a href="https://discord.com/invite/zqpU2b3J3f">
+  <img src="https://img.shields.io/discord/901883546162065408.svg" alt="Discord Channel">
+</a>
 </div>
 
 ----------
@@ -25,10 +31,9 @@
    * [Contribution](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBUTING.md)
    * [References](https://github.com/sepandhaghighi/pycm#references)
    * [Cite](https://github.com/sepandhaghighi/pycm#cite)
-   * [Support](https://github.com/sepandhaghighi/pycm#support)
    * [Authors](https://github.com/sepandhaghighi/pycm/blob/master/AUTHORS.md)
-   * [License](https://github.com/sepandhaghighi/pycm#license)
-   * [Donate](https://github.com/sepandhaghighi/pycm#donate-to-our-project)
+   * [License](https://github.com/sepandhaghighi/pycm/blob/master/LICENSE)
+   * [Show Your Support](https://github.com/sepandhaghighi/pycm#show-your-support)
    * [Changelog](https://github.com/sepandhaghighi/pycm/blob/master/CHANGELOG.md)
    * [Code of Conduct](https://github.com/sepandhaghighi/pycm/blob/master/.github/CODE_OF_CONDUCT.md)
 
@@ -95,7 +100,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ⚠️  Plotting capability requires **Matplotlib (>= 3.0.0)** or **Seaborn (>= 0.9.1)**   
 
 ### Source code
-- Download [Version 3.3](https://github.com/sepandhaghighi/pycm/archive/v3.3.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 3.4](https://github.com/sepandhaghighi/pycm/archive/v3.4.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -103,7 +108,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==3.3` or `pip3 install pycm==3.3` (Need root access)
+- Run `pip install pycm==3.4` or `pip3 install pycm==3.4` (Need root access)
 
 ### Conda
 
@@ -672,9 +677,9 @@ If the user sets the value of `by_class` boolean input `True`, the best confusio
 >>> print(cp)
 Best : cm2
 
-Rank  Name   Class-Score    Overall-Score
-1     cm2    9.05           2.55
-2     cm3    6.05           1.98333
+Rank  Name   Class-Score       Overall-Score
+1     cm2    0.50278           0.425
+2     cm3    0.33611           0.33056
 
 >>> cp.best
 pycm.ConfusionMatrix(classes: [0, 1, 2])
@@ -698,6 +703,7 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 7. `sample_weight` : python `list` or numpy `array` of numbers
 8. `transpose` : `bool`
 9. `classes` : python `list`
+10. `is_imbalanced` : `bool`
 
 * Run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
 
@@ -721,18 +727,22 @@ For more information visit [here](https://github.com/sepandhaghighi/pycm/tree/ma
 </div>
 
 ## Try PyCM in your browser!
-PyCM can be used online in interactive Jupyter Notebooks via the Binder service! Try it out now! :
+PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab services! Try it out now! :
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sepandhaghighi/pycm/master)
+
+[![Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sepandhaghighi/pycm/blob/master)
 
 * Check `Examples` in `Document` folder 
 
 ## Issues & bug reports			
 
-Just fill an issue and describe it. We'll check it ASAP!							
-or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir"). 
-
-* Please complete the issue template
+1. Fill an issue and describe it. We'll check it ASAP! 
+    - Please complete the issue template
+2. Discord : [https://discord.com/invite/zqpU2b3J3f](https://discord.com/invite/zqpU2b3J3f)
+3. Website : [https://www.pycm.ir](https://www.pycm.ir)		
+4. Mailing List : [https://mail.python.org/mailman3/lists/pycm.python.org/](https://mail.python.org/mailman3/lists/pycm.python.org/)
+5. Email : [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir")		
 
 
 ## Outputs	
@@ -912,6 +922,12 @@ or send an email to [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir").
 
 <blockquote>76- N. A. Macmillan and C. D. Creelman, <i>Detectiontheory: A user's guide</i>. Psychology press, 2004.</blockquote>
 
+<blockquote>77- D. J. Hand, P. Christen, and N. Kirielle, "F*: an interpretable transformation of the F-measure," <i>Machine Learning</i>, vol. 110, no. 3, pp. 451-456, 2021.</blockquote>
+
+<blockquote>78- G. W. Brier, "Verification of forecasts expressed in terms of probability," <i>Monthly weather review</i>, vol. 78, no. 1, pp. 1-3, 1950.</blockquote>
+
+<blockquote>79- L. Buitinck et al., "API design for machine learning software: experiences from the scikit-learn project," <i>arXiv preprint arXiv:1309.0238</i>, 2013.</blockquote>
+
 
 ## Cite
 
@@ -957,19 +973,14 @@ Download [PyCM.bib](http://www.pycm.ir/PYCM.bib)
 	</tr>
 </table>
 
-## Support
+## Show your support
 
-- Website : [https://www.pycm.ir](https://www.pycm.ir)		
-- Mailing List : [https://mail.python.org/mailman3/lists/pycm.python.org/](https://mail.python.org/mailman3/lists/pycm.python.org/)
-- Email : [info@pycm.ir](mailto:info@pycm.ir "info@pycm.ir")		
+### Star this repo
 
-
-## License
-
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsepandhaghighi%2Fpycm.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsepandhaghighi%2Fpycm?ref=badge_large)
+Give a ⭐️ if this project helped you!
 
 
-## Donate to our project		
+### Donate to our project
 
 If you do like our project and we hope that you do, can you please support us? Our project is not and is never going to be working for profit. We need the money just so we can continue doing what we do ;-) .
 

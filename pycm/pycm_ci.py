@@ -6,12 +6,12 @@ import math
 
 def CI_calc_agresti(item1, item2, CV=1.96):
     """
-    Calculate confidence interval by using of Agresti and Coull method.
+    Calculate confidence interval using Agresti-Coull method.
 
     :param item1: parameter
-    :type  item1 : float
-    :param item2: number of experiments
-    :type item2 : int
+    :type  item1: float
+    :param item2: number of observations
+    :type item2: int
     :param CV: critical value
     :type CV:float
     :return: confidence interval as tuple
@@ -29,12 +29,12 @@ def CI_calc_agresti(item1, item2, CV=1.96):
 
 def CI_calc_wilson(item1, item2, CV=1.96):
     """
-    Calculate confidence interval by using of Wilson method.
+    Calculate confidence interval using Wilson method.
 
     :param item1: parameter
-    :type  item1 : float
-    :param item2: number of experiments
-    :type item2 : int
+    :type  item1: float
+    :param item2: number of observations
+    :type item2: int
     :param CV: critical value
     :type CV:float
     :return: confidence interval as tuple
@@ -57,10 +57,10 @@ def AUC_SE_calc(AUC, P, N):
 
     :param AUC: AUC value
     :type AUC: float
-    :param P:  condition positive
-    :type P : int
-    :param N: condition negative
-    :type N : int
+    :param P: number of actual positives
+    :type P: int
+    :param N: number of actual negatives
+    :type N: int
     :return: standard error as float
     """
     try:
@@ -77,13 +77,13 @@ def LR_SE_calc(item1, item2, item3, item4):
     """
     Calculate likelihood ratio +/- standard error.
 
-    :param item1: first item (TP or FN)
+    :param item1: true positive or false negative (TP or FN)
     :type item1: int
-    :param item2: second item (P)
+    :param item2: number of actual positives (P)
     :type item2: int
-    :param item3: third item (FP or TN)
+    :param item3: false positive or true negative (FP or TN)
     :type item3: int
-    :param item4: fourth item (N)
+    :param item4: number of actual negatives (N)
     :type item4: int
     :return: standard error as float
     """
@@ -95,12 +95,12 @@ def LR_SE_calc(item1, item2, item3, item4):
 
 def LR_CI_calc(mean, SE, CV=1.96):
     """
-    Calculate confidence interval for likelihood ratio +/- by using of log method.
+    Calculate confidence interval for likelihood ratio +/- using log method.
 
     :param mean: mean of data
-    :type mean : float
+    :type mean: float
     :param SE: standard error of data
-    :type SE : float
+    :type SE: float
     :param CV: critical value
     :type CV:float
     :return: confidence interval as tuple
@@ -118,9 +118,9 @@ def CI_calc(mean, SE, CV=1.96):
     Calculate confidence interval.
 
     :param mean: mean of data
-    :type mean : float
+    :type mean: float
     :param SE: standard error of data
-    :type SE : float
+    :type SE: float
     :param CV: critical value
     :type CV:float
     :return: confidence interval as tuple
@@ -138,9 +138,9 @@ def SE_calc(item1, item2):
     Calculate standard error with binomial distribution.
 
     :param item1: parameter
-    :type  item1 : float
-    :param item2: number of experiments
-    :type item2 : int
+    :type  item1: float
+    :param item2: number of observations
+    :type item2: int
     :return: standard error as float
     """
     try:
@@ -155,10 +155,10 @@ def kappa_SE_calc(PA, PE, POP):
     Calculate kappa standard error.
 
     :param PA: observed agreement among raters (overall accuracy)
-    :type PA : float
-    :param PE:  hypothetical probability of chance agreement (random accuracy)
-    :type PE : float
-    :param POP: population
+    :type PA: float
+    :param PE: hypothetical probability of chance agreement (random accuracy)
+    :type PE: float
+    :param POP: population or total number of samples
     :type POP:int
     :return: kappa standard error as float
     """
@@ -173,13 +173,13 @@ def __CI_class_handler__(cm, param, CV, binom_method="normal-approx"):
     """
     Handle CI calculation for class parameters.
 
-    :param cm: ConfusionMatrix
-    :type cm : pycm.ConfusionMatrix object
+    :param cm: confusion matrix
+    :type cm: pycm.ConfusionMatrix object
     :param param: input parameter
     :type param: str
     :param CV: critical value
     :type CV: float
-    :param binom_method: binomial confidence intervals method
+    :param binom_method: binomial confidence interval method
     :type binom_method: str
     :return: result as dictionary
     """
@@ -224,15 +224,15 @@ def __CI_overall_handler__(cm, param, CV, binom_method="normal-approx"):
     """
     Handle CI calculation for overall parameters.
 
-    :param cm: ConfusionMatrix
-    :type cm : pycm.ConfusionMatrix object
+    :param cm: confusion matrix
+    :type cm: pycm.ConfusionMatrix object
     :param param: input parameter
     :type param: str
     :param CV: critical value
     :type CV: float
-    :param binom_method: binomial confidence intervals method
+    :param binom_method: binomial confidence interval method
     :type binom_method: str
-    :return: result as list [SE,(CI_DOWN,DI_UP)]
+    :return: result as list [SE, (CI_DOWN, DI_UP)]
     """
     result = []
     population = list(cm.POP.values())[0]

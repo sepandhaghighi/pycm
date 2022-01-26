@@ -44,8 +44,8 @@ class Compare():
         """
         Init method.
 
-        :param cm_dict: cm's dictionary
-        :type cm_dict : dict
+        :param cm_dict: dictionary of confusion matrices
+        :type cm_dict: dict
         :param by_class: compare by class flag
         :type by_class: bool
         :param class_weight: class weights
@@ -54,8 +54,8 @@ class Compare():
         :type class_benchmark_weight: dict
         :param overall_benchmark_weight: overall benchmark weights
         :type overall_benchmark_weight: dict
-        :param digit: precision digit (default value : 5)
-        :type digit : int
+        :param digit: scale (number of fraction digits)(default value: 5)
+        :type digit: int
         """
         self.scores = None
         self.sorted = None
@@ -105,10 +105,10 @@ class Compare():
         Save Compare report in .comp (flat file format).
 
         :param name: filename
-        :type name : str
+        :type name: str
         :param address: flag for address return
-        :type address : bool
-        :return: saving Status as dict {"Status":bool , "Message":str}
+        :type address: bool
+        :return: saving address as dict {"Status": bool, "Message": str}
         """
         try:
             message = None
@@ -148,9 +148,9 @@ def __compare_class_handler__(compare, cm_dict):
     Handle class score of Compare class.
 
     :param compare: Compare
-    :type compare : pycm.Compare object
-    :param cm_dict: cm's dictionary
-    :type cm_dict : dict
+    :type compare: pycm.Compare object
+    :param cm_dict: dictionary of confusion matrices
+    :type cm_dict: dict
     :return: None
     """
     class_weight_sum = sum(compare.class_weight.values())
@@ -174,9 +174,9 @@ def __compare_overall_handler__(compare, cm_dict):
     Handle overall score of Compare class.
 
     :param compare: Compare
-    :type compare : pycm.Compare object
-    :param cm_dict: cm's dictionary
-    :type cm_dict : dict
+    :type compare: pycm.Compare object
+    :param cm_dict: dictionary of confusion matrices
+    :type cm_dict: dict
     :return: None
     """
     overall_benchmark_weight_sum = sum(
@@ -199,9 +199,9 @@ def __compare_rounder__(compare, cm_dict):
     Round Compare.scores .
 
     :param compare: Compare
-    :type compare : pycm.Compare object
-    :param cm_dict: cm's dictionary
-    :type cm_dict : dict
+    :type compare: pycm.Compare object
+    :param cm_dict: dictionary of confusion matrices
+    :type cm_dict: dict
     :return: None
     """
     for cm_name in cm_dict.keys():
@@ -216,7 +216,7 @@ def __compare_sort_handler__(compare):
     Handle sorting of scores.
 
     :param compare: Compare
-    :type compare : pycm.Compare object
+    :type compare: pycm.Compare object
     :return: (max_overall_name,max_class_name) as tuple
     """
     sorted_by_class = sorted(
@@ -244,7 +244,7 @@ def __compare_weight_handler__(compare, weight, weight_type):
     Handle different weights validation.
 
     :param compare: Compare
-    :type compare : pycm.Compare object
+    :type compare: pycm.Compare object
     :param weight: input weight
     :type weight: dict
     :param weight_type: input weight type
@@ -269,7 +269,7 @@ def __compare_weight_handler__(compare, weight, weight_type):
         raise pycmCompareError(error_dict[weight_type])
     if set(weight.keys()) == set(valid_dict[weight_type]):
         if all([isfloat(x) for x in weight.values()]
-                ) and sum(weight.values()) != 0:
+               ) and sum(weight.values()) != 0:
             setattr(compare, weight_type, weight)
         else:
             warn(warning_dict[weight_type], RuntimeWarning)
@@ -288,17 +288,17 @@ def __compare_assign_handler__(
     Assign basic parameters to Compare.
 
     :param compare: Compare
-    :type compare : pycm.Compare object
-    :param cm_dict: cm's dictionary
-    :type cm_dict : dict
+    :type compare: pycm.Compare object
+    :param cm_dict: dictionary of confusion matrices
+    :type cm_dict: dict
     :param class_weight: class weights
     :type class_weight: dict
     :param class_benchmark_weight: class benchmark weights
     :type class_benchmark_weight: dict
     :param overall_benchmark_weight: overall benchmark weights
     :type overall_benchmark_weight: dict
-    :param digit: precision digit (default value : 5)
-    :type digit : int
+    :param digit: scale (number of fraction digits)(default value: 5)
+    :type digit: int
     :return: None
     """
     if not isinstance(cm_dict, dict):

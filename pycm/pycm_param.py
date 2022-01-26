@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parameters and constants."""
-PYCM_VERSION = "3.3"
+PYCM_VERSION = "3.4"
 
 
 OVERVIEW = '''
@@ -90,6 +90,10 @@ WEIGHTED_ALPHA_WARNING = "The weight format is wrong, the result is for unweight
 AVERAGE_WEIGHT_ERROR = "The weight type must be dictionary and also must be specified for all of the classes."
 
 AVERAGE_INVALID_ERROR = "Invalid parameter!"
+
+BRIER_SCORE_CLASS_ERROR = "Actual vector contains string so pos_class should be explicitly specified"
+
+BRIER_SCORE_PROB_ERROR = "This option only works in binary probability mode"
 
 CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won't be demonstrated properly.\n" \
                        "If confusion matrix has too many zeros (sparse matrix) you can set `sparse` flag to True in printing functions "\

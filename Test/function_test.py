@@ -287,6 +287,10 @@ True
 'None'
 >>> CEN_misclassification_calc({1:{1:0,2:0},2:{1:0,2:0}},{1:0,2:0},{1:0,2:0},1,1,2)
 'None'
+>>> brier_score_calc([1,0], [0.8,0.3,0.2,0.4], [1,1,0,1], sample_weight=None, pos_class=None)
+0.23249999999999998
+>>> brier_score_calc([1,"0"], [0.8,0.3,0.2,0.4], [1,1,0,1], sample_weight=None, pos_class=None)
+'None'
 >>> vector_check([1,2,3,0.4])
 False
 >>> vector_check([1,2,3,-2])

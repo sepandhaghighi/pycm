@@ -696,9 +696,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     :type table: dict
     :return: classes' statistics as dict
     """
-    result = {}
-    for i in CLASS_PARAMS:
-        result[i] = {}
+    result = dict(zip(CLASS_PARAMS,[{}]*len(CLASS_PARAMS)))
     result["TP"] = TP
     result["TN"] = TN
     result["FP"] = FP

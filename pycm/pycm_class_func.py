@@ -678,6 +678,29 @@ def BCD_calc(TOP, P, AM):
         return "None"
 
 
+def basic_statistics(TP, TN, FP, FN):
+    """
+    Initalize classes' statistics.
+
+    :param TP: true positive
+    :type TP: dict
+    :param TN: true negative
+    :type TN: dict
+    :param FP: false positive
+    :type FP: dict
+    :param FN: false negative
+    :type FN: dict
+    :return: basic statistics as dict
+    """
+    result = {}
+    for i in CLASS_PARAMS:
+        result[i] = {}
+    result["TP"] = TP
+    result["TN"] = TN
+    result["FP"] = FP
+    result["FN"] = FN
+    return  result
+
 def class_statistics(TP, TN, FP, FN, classes, table):
     """
     Return All statistics of classes.
@@ -696,11 +719,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     :type table: dict
     :return: classes' statistics as dict
     """
-    result = dict(zip(CLASS_PARAMS, [{}] * len(CLASS_PARAMS)))
-    result["TP"] = TP
-    result["TN"] = TN
-    result["FP"] = FP
-    result["FN"] = FN
+    result = basic_statistics(TP, TN, FP, FN)
     for i in TP.keys():
         result["POP"][i] = TP[i] + TN[i] + FP[i] + FN[i]
         result["P"][i] = TP[i] + FN[i]

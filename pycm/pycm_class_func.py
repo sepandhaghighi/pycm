@@ -699,6 +699,10 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     result = {}
     for i in CLASS_PARAMS:
         result[i] = {}
+    result["TP"] = TP
+    result["TN"] = TN
+    result["FP"] = FP
+    result["FN"] = FN
     for i in TP.keys():
         result["POP"][i] = TP[i] + TN[i] + FP[i] + FN[i]
         result["P"][i] = TP[i] + FN[i]

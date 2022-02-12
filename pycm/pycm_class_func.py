@@ -699,7 +699,8 @@ def basic_statistics(TP, TN, FP, FN):
     result["TN"] = TN
     result["FP"] = FP
     result["FN"] = FN
-    return  result
+    return result
+
 
 def class_statistics(TP, TN, FP, FN, classes, table):
     """

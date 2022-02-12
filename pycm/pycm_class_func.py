@@ -696,7 +696,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     :type table: dict
     :return: classes' statistics as dict
     """
-    result = dict(zip(CLASS_PARAMS,[{}]*len(CLASS_PARAMS)))
+    result = dict(zip(CLASS_PARAMS, [{}] * len(CLASS_PARAMS)))
     result["TP"] = TP
     result["TN"] = TN
     result["FP"] = FP
@@ -727,13 +727,23 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         result["DOR"][i] = LR_calc(result["PLR"][i], result["NLR"][i])
         result["PRE"][i] = PRE_calc(result["P"][i], result["POP"][i])
         result["G"][i] = G_calc(result["PPV"][i], result["TPR"][i])
-        result["RACC"][i] = RACC_calc(result["TOP"][i], result["P"][i], result["POP"][i])
+        result["RACC"][i] = RACC_calc(
+            result["TOP"][i], result["P"][i], result["POP"][i])
         result["ERR"][i] = ERR_calc(result["ACC"][i])
-        result["RACCU"][i] = RACCU_calc(result["TOP"][i], result["P"][i], result["POP"][i])
-        result["J"][i] = jaccard_index_calc(TP[i], result["TOP"][i], result["P"][i])
+        result["RACCU"][i] = RACCU_calc(
+            result["TOP"][i], result["P"][i], result["POP"][i])
+        result["J"][i] = jaccard_index_calc(
+            TP[i], result["TOP"][i], result["P"][i])
         result["IS"][i] = IS_calc(TP[i], FP[i], FN[i], result["POP"][i])
-        result["CEN"][i] = CEN_calc(classes, table, result["TOP"][i], result["P"][i], i)
-        result["MCEN"][i] = CEN_calc(classes, table, result["TOP"][i], result["P"][i], i, True)
+        result["CEN"][i] = CEN_calc(
+            classes, table, result["TOP"][i], result["P"][i], i)
+        result["MCEN"][i] = CEN_calc(
+            classes,
+            table,
+            result["TOP"][i],
+            result["P"][i],
+            i,
+            True)
         result["AUC"][i] = AUC_calc(result["TNR"][i], result["TPR"][i])
         result["dInd"][i] = dInd_calc(result["TNR"][i], result["TPR"][i])
         result["sInd"][i] = sInd_calc(result["dInd"][i])
@@ -746,12 +756,20 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         result["GI"][i] = GI_calc(result["AUC"][i])
         result["LS"][i] = lift_calc(result["PPV"][i], result["PRE"][i])
         result["AM"][i] = AM_calc(result["TOP"][i], result["P"][i])
-        result["OP"][i] = OP_calc(result["ACC"][i], result["TPR"][i], result["TNR"][i])
+        result["OP"][i] = OP_calc(
+            result["ACC"][i],
+            result["TPR"][i],
+            result["TNR"][i])
         result["IBA"][i] = IBA_calc(result["TPR"][i], result["TNR"][i])
         result["GM"][i] = G_calc(result["TNR"][i], result["TPR"][i])
         result["Q"][i] = Q_calc(TP[i], TN[i], FP[i], FN[i])
         result["QI"][i] = Q_analysis(result["Q"][i])
-        result["AGM"][i] = AGM_calc(result["TPR"][i], result["TNR"][i], result["GM"][i], result["N"][i], result["POP"][i])
+        result["AGM"][i] = AGM_calc(
+            result["TPR"][i],
+            result["TNR"][i],
+            result["GM"][i],
+            result["N"][i],
+            result["POP"][i])
         result["MCCI"][i] = MCC_analysis(result["MCC"][i])
         result["AGF"][i] = AGF_calc(TP[i], FP[i], FN[i], TN[i])
         result["OC"][i] = OC_calc(TP[i], result["TOP"][i], result["P"][i])
@@ -759,5 +777,6 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         result["AUPR"][i] = AUC_calc(result["PPV"][i], result["TPR"][i])
         result["ICSI"][i] = MK_BM_calc(result["PPV"][i], result["TPR"][i])
     for i in TP.keys():
-        result["BCD"][i] = BCD_calc(result["TOP"], result["P"], result["AM"][i])
+        result["BCD"][i] = BCD_calc(
+            result["TOP"], result["P"], result["AM"][i])
     return result

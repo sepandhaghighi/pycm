@@ -680,7 +680,7 @@ def BCD_calc(TOP, P, AM):
 
 def basic_statistics(TP, TN, FP, FN):
     """
-    Initalize classes' statistics.
+    Init classes' statistics.
 
     :param TP: true positive
     :type TP: dict

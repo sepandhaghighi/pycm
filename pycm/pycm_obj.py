@@ -982,7 +982,7 @@ class ConfusionMatrix():
         if cmap is None:
             cmap = plt.cm.gray_r
         fig, ax = plt.subplots()
-        fig.canvas.set_window_title(title)
+        fig.canvas.manager.set_window_title(title)
         if plot_lib == 'seaborn':
             try:
                 import seaborn as sns

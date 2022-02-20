@@ -27,22 +27,21 @@ Please consider the following :
 ## Class statistic 
 
 1. Add new functions to `pycm_class_func.py`
-2. Update `class_statistics` function in `pycm_class_func.py`
-	- Define a new variable as a dictionary
-	- Call statistic function and store result in this variable
-	- Add this variable to `result` dictionary
-3. Update `__class_stat_init__` function in `pycm_handler.py` by a new attribute
-4. Update `PARAMS_DESCRIPTION` dictionary in `pycm_param.py` by a short description
+2. Update `CLASS_PARAMS` list in `pycm_param.py`
+3. Update `class_statistics` function in `pycm_class_func.py`
+	- Call statistic function and store result in `result` dictionary
+4. Update `__class_stat_init__` function in `pycm_handler.py` by a new attribute
+5. Update `PARAMS_DESCRIPTION` dictionary in `pycm_param.py` by a short description
 	- If you don't want capitalization, update `CAPITALIZE_FILTER` list in `pycm_param.py` (*Optional*)
-5. Update `References` section in `Document.ipynb` and `README.md` (`IEEE` format)
-6. Add description to `Class Statistics` section in `Document.ipynb`
+6. Update `References` section in `Document.ipynb` and `README.md` (`IEEE` format)
+7. Add description to `Class Statistics` section in `Document.ipynb`
 	- Cite reference
 	- Update table of contents
 	- Use `LaTeX` for formula
-7. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document tag (without `#`)
-8. Add tests to `overall_test.py` and `function_test.py` in `TEST` folder
+8. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document tag (without `#`)
+9. Add tests to `overall_test.py` and `function_test.py` in `TEST` folder
 	- If you have any verified test add them to `verified_test.py`
-9. Run `autopep8.bat`/`autopep8.sh` (*Optional*, need to install latest version of `autopep8` package)
+10. Run `autopep8.bat`/`autopep8.sh` (*Optional*, need to install latest version of `autopep8` package)
 
 
 

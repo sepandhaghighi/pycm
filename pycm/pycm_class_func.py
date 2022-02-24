@@ -658,22 +658,18 @@ def IBA_calc(TPR, TNR, alpha=1):
         return "None"
 
 
-def BCD_calc(TOP, P, AM):
+def BCD_calc(AM, POP):
     """
     Calculate Bray-Curtis dissimilarity (BCD).
 
-    :param TOP: number of positives in predict vector
-    :type TOP: dict
-    :param P: number of actual positives
-    :type P: dict
     :param AM: Automatic/Manual
     :type AM: int
+    :param POP: population or total number of samples
+    :type POP: int
     :return: BCD as float
     """
     try:
-        TOP_sum = sum(TOP.values())
-        P_sum = sum(P.values())
-        return abs(AM) / (P_sum + TOP_sum)
+        return abs(AM) / (2 * POP)
     except (ZeroDivisionError, TypeError, AttributeError):
         return "None"
 
@@ -796,7 +792,5 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         result["OOC"][i] = OOC_calc(TP[i], result["TOP"][i], result["P"][i])
         result["AUPR"][i] = AUC_calc(result["PPV"][i], result["TPR"][i])
         result["ICSI"][i] = MK_BM_calc(result["PPV"][i], result["TPR"][i])
-    for i in TP.keys():
-        result["BCD"][i] = BCD_calc(
-            result["TOP"], result["P"], result["AM"][i])
+        result["BCD"][i] = BCD_calc(result["AM"][i], result["POP"][i])
     return result

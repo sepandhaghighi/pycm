@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `plot` method updated
 - `class_statistics` function modified
 - `overall_statistics` function modified 
+- `BCD_calc` function modified
 - `CONTRIBUTING.md` updated
 ## [3.4] - 2022-01-26
 ### Added

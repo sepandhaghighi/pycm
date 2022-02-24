@@ -964,7 +964,8 @@ def overall_statistics(**kwargs):
     result["Overall RACCU"] = overall_random_accuracy_calc(
         kwargs["RACCU"])
     result["Overall RACC"] = overall_random_accuracy_calc(kwargs["RACC"])
-    result["Kappa"] = reliability_calc(result["Overall RACC"], result["Overall ACC"])
+    result["Kappa"] = reliability_calc(
+        result["Overall RACC"], result["Overall ACC"])
     PC_AC1 = PC_AC1_calc(P, TOP, POP)
     PC_S = PC_S_calc(classes)
     result["Gwet AC1"] = reliability_calc(PC_AC1, result["Overall ACC"])
@@ -976,8 +977,10 @@ def overall_statistics(**kwargs):
         result["Overall RACCU"],
         result["Overall ACC"])
     result["Scott PI"] = result["Kappa Unbiased"]
-    result["Kappa No Prevalence"] = kappa_no_prevalence_calc(result["Overall ACC"])
-    result["Kappa 95% CI"] = CI_calc(result["Kappa"], result["Kappa Standard Error"])
+    result["Kappa No Prevalence"] = kappa_no_prevalence_calc(
+        result["Overall ACC"])
+    result["Kappa 95% CI"] = CI_calc(
+        result["Kappa"], result["Kappa Standard Error"])
     result["Standard Error"] = SE_calc(result["Overall ACC"], population)
     result["95% CI"] = CI_calc(result["Overall ACC"], result["Standard Error"])
     result["Chi-Squared"] = chi_square_calc(classes, table, TOP, P, POP)
@@ -987,7 +990,8 @@ def overall_statistics(**kwargs):
     result["Reference Entropy"] = entropy_calc(P, POP)
     result["Cross Entropy"] = cross_entropy_calc(TOP, P, POP)
     result["Joint Entropy"] = joint_entropy_calc(classes, table, POP)
-    result["Conditional Entropy"] = conditional_entropy_calc(classes, table, P, POP)
+    result["Conditional Entropy"] = conditional_entropy_calc(
+        classes, table, P, POP)
     result["Mutual Information"] = mutual_information_calc(
         result["Response Entropy"], result["Conditional Entropy"])
     result["KL Divergence"] = kl_divergence_calc(P, TOP, POP)
@@ -1000,7 +1004,8 @@ def overall_statistics(**kwargs):
     result["Zero-one Loss"] = zero_one_loss_calc(TP, population)
     result["NIR"] = NIR_calc(P, population)
     result["P-Value"] = p_value_calc(TP, population, result["NIR"])
-    result["Overall CEN"] = overall_CEN_calc(classes, TP, TOP, P, kwargs["CEN_dict"])
+    result["Overall CEN"] = overall_CEN_calc(
+        classes, TP, TOP, P, kwargs["CEN_dict"])
     result["Overall MCEN"] = overall_CEN_calc(
         classes, TP, TOP, P, kwargs["MCEN_dict"], True)
     result["Overall MCC"] = overall_MCC_calc(classes, table, TOP, P)
@@ -1008,7 +1013,9 @@ def overall_statistics(**kwargs):
     result["CBA"] = CBA_calc(classes, table, TOP, P)
     result["AUNU"] = macro_calc(kwargs["AUC_dict"])
     result["AUNP"] = AUNP_calc(classes, P, POP, kwargs["AUC_dict"])
-    result["RCI"] = RCI_calc(result["Mutual Information"], result["Reference Entropy"])
+    result["RCI"] = RCI_calc(
+        result["Mutual Information"],
+        result["Reference Entropy"])
     result["Pearson C"] = pearson_C_calc(result["Chi-Squared"], population)
     result["TPR Micro"] = result["Overall ACC"]
     result["TPR Macro"] = macro_calc(kwargs["TPR"])
@@ -1022,17 +1029,17 @@ def overall_statistics(**kwargs):
         result["Overall ACC"],
         population)
     result["SOA1(Landis & Koch)"] = kappa_analysis_koch(result["Kappa"])
-    result["SOA2(Fleiss)"] =  kappa_analysis_fleiss(result["Kappa"])
-    result["SOA3(Altman)"] =  kappa_analysis_altman(result["Kappa"])
+    result["SOA2(Fleiss)"] = kappa_analysis_fleiss(result["Kappa"])
+    result["SOA3(Altman)"] = kappa_analysis_altman(result["Kappa"])
     result["SOA4(Cicchetti)"] = kappa_analysis_cicchetti(result["Kappa"])
-    result["SOA5(Cramer)"] =  V_analysis(result["Cramer V"])
-    result["SOA6(Matthews)"] =  MCC_analysis(result["Overall MCC"])
+    result["SOA5(Cramer)"] = V_analysis(result["Cramer V"])
+    result["SOA6(Matthews)"] = MCC_analysis(result["Overall MCC"])
     result["FPR Macro"] = complement(result["TNR Macro"])
     result["FNR Macro"] = complement(result["TPR Macro"])
-    result["PPV Macro"] =  macro_calc(kwargs["PPV"])
+    result["PPV Macro"] = macro_calc(kwargs["PPV"])
     result["ACC Macro"] = macro_calc(kwargs["ACC"])
     result["F1 Macro"] = macro_calc(kwargs["F1"])
-    result["FPR Micro"] =  complement(result["TNR Micro"])
+    result["FPR Micro"] = complement(result["TNR Micro"])
     result["FNR Micro"] = complement(result["TPR Micro"])
     result["PPV Micro"] = result["TPR Micro"]
     result["F1 Micro"] = result["TPR Micro"]

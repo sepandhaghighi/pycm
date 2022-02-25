@@ -213,7 +213,7 @@ True
 'None'
 >>> ARI_calc([1,2],{1:{1:0,2:0},2:{1:0,2:0}},{1:0,2:0},{1:0,2:0},0)
 'None'
->>> BCD_calc(2, 2, "None")
+>>> BCD_calc(2, "None")
 'None'
 >>> AM_calc(3, "None")
 'None'

@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `overall_statistics` function modified 
 - `BCD_calc` function modified
 - `CONTRIBUTING.md` updated
+- `CODE_OF_CONDUCT.md` updated
 - Document modified
 ## [3.4] - 2022-01-26
 ### Added

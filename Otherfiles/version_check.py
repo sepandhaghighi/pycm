@@ -25,7 +25,9 @@ DOCUMENT_ITEMS = [
     "pip3 install pycm=={0}"]
 HTML_ITEMS = ["Version {0}"]
 PARAMS_ITEMS = ['PYCM_VERSION = "{0}"']
+META_ITEMS = ['% set version = "{0}" %']
 FILES = {
+    os.path.join("Otherfiles", "meta.yaml"): META_ITEMS,
     "setup.py": SETUP_ITEMS, "README.md": README_ITEMS, "CHANGELOG.md": CHANGELOG_ITEMS, os.path.join(
         "Document", "Document.ipynb"): DOCUMENT_ITEMS, os.path.join(
             "Document", "Example1_Files", "cm1.html"): HTML_ITEMS, os.path.join(

@@ -1,0 +1,36 @@
+{% set name = "pycm" %}
+{% set version = "3.4" %}
+
+package:
+    name: {{ name|lower }}
+    version: {{ version }}
+source:
+    git_url: https://github.com/sepandhaghighi/pycm
+    git_rev: v{{ version }}
+build:
+    noarch: python
+    number: 0
+    script: {{ PYTHON }} -m pip install . -vv
+requirements:
+    host:
+        - pip
+        - setuptools
+        - python >=3.5
+    run:
+        - art >=1.8
+        - numpy >=1.9.0
+        - python >=3.5
+about:
+    home: https://github.com/sepandhaghighi/pycm
+    license: MIT
+    license_family: MIT
+    summary: Multi-class confusion matrix library in Python
+    description: |
+        PyCM is a multi-class confusion matrix library written in Python that supports both input data vectors and direct matrix, and a proper tool for post-classification model evaluation that supports most classes and overall statistics parameters. PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scientists that need a broad array of metrics for predictive models and accurate evaluation of a large variety of classifiers.
+
+        Website: https://www.pycm.ir
+
+        Repo: https://github.com/sepandhaghighi/pycm
+extra:
+    recipe-maintainers:
+        - sepandhaghighi

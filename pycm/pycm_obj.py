@@ -208,7 +208,7 @@ class ConfusionMatrix():
 
     def __iter__(self):
         """
-        Iteration over confusion matrix.
+        Iterate through confusion matrix.
 
         :return: None
         """

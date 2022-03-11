@@ -157,6 +157,8 @@ Y(Youden index)                                                  0.77778        
 dInd(Distance index)                                             0.22222                 0.67586                 0.60093
 sInd(Similarity index)                                           0.84287                 0.52209                 0.57508
 <BLANKLINE>
+>>> cm.matrix == dict(cm)
+True
 >>> cm.relabel({0:"L1",1:"L2",2:"L3"})
 >>> y_actu == y_actu_copy
 True

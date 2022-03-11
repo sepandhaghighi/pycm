@@ -209,7 +209,7 @@ class ConfusionMatrix():
     def __iter__(self):
         """
         Iteration over confusion matrix.
-        
+
         :return: None
         """
         for key in self.matrix.keys():

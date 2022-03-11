@@ -206,6 +206,15 @@ class ConfusionMatrix():
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
         return result
 
+    def __iter__(self):
+        """
+        Iteration over confusion matrix.
+        
+        :return: None
+        """
+        for key in self.matrix.keys():
+            yield key, self.matrix[key]
+
     def save_stat(
             self,
             name,

@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Anaconda workflow
+- Custom iterating setting
+- Custom casting setting
 ### Changed
 - `plot` method updated
 - `class_statistics` function modified

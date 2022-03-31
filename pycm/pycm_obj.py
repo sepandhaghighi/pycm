@@ -154,7 +154,9 @@ class ConfusionMatrix():
                     classes, normalized_table)
             print(sparse_table_print(self.sparse_normalized_matrix))
         else:
-            print(table_print(classes, normalized_table))
+            # Band aid for #430 :- using a dictionary  comprehension to round the values of normalized_table
+            normalized_table_ = {outer_k: {inner_k: round(inner_v,self.digit) for inner_k, inner_v in outer_v.items()} for outer_k, outer_v in normalized_table.items()}
+            print(table_print(classes, normalized_table_))
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 

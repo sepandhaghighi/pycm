@@ -691,7 +691,7 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 
 ### Acceptable data types	
 
-#### ConfusionMatrix
+**ConfusionMatrix**
 
 		
 1. `actual_vector` : python `list` or numpy `array` of any stringable objects
@@ -707,7 +707,7 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 
 * Run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
 
-#### Compare
+**Compare**
 
 1. `cm_dict` : python `dict` of `ConfusionMatrix` object (`str` : `ConfusionMatrix`)
 2. `by_class` : `bool`

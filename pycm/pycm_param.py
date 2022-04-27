@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parameters and constants."""
-PYCM_VERSION = "3.4"
+PYCM_VERSION = "3.5"
 
 
 OVERVIEW = '''
@@ -106,6 +106,69 @@ CLASSES_TYPE_WARNING = "The classes is neither a list nor None so it'll be ignor
 CLASS_NUMBER_THRESHOLD = 10
 
 BALANCE_RATIO_THRESHOLD = 3
+
+CLASS_PARAMS = [
+    "TPR",
+    "TNR",
+    "PPV",
+    "NPV",
+    "FNR",
+    "FPR",
+    "FDR",
+    "FOR",
+    "ACC",
+    "F1",
+    "MCC",
+    "BM",
+    "MK",
+    "PLR",
+    "NLR",
+    "DOR",
+    "TP",
+    "TN",
+    "FP",
+    "FN",
+    "POP",
+    "P",
+    "N",
+    "TOP",
+    "TON",
+    "PRE",
+    "G",
+    "RACC",
+    "F0.5",
+    "F2",
+    "ERR",
+    "RACCU",
+    "J",
+    "IS",
+    "CEN",
+    "MCEN",
+    "AUC",
+    "sInd",
+    "dInd",
+    "DP",
+    "Y",
+    "PLRI",
+    "DPI",
+    "AUCI",
+    "GI",
+    "LS",
+    "AM",
+    "BCD",
+    "OP",
+    "IBA",
+    "GM",
+    "Q",
+    "AGM",
+    "NLRI",
+    "MCCI",
+    "AGF",
+    "OC",
+    "OOC",
+    "AUPR",
+    "ICSI",
+    "QI"]
 
 SUMMARY_OVERALL = [
     "ACC Macro",

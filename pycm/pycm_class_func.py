@@ -4,6 +4,7 @@ from __future__ import division
 import math
 from .pycm_util import normal_quantile
 from .pycm_interpret import *
+from .pycm_param import CLASS_PARAMS
 
 
 def sensitivity_index_calc(TPR, FPR):
@@ -657,24 +658,44 @@ def IBA_calc(TPR, TNR, alpha=1):
         return "None"
 
 
-def BCD_calc(TOP, P, AM):
+def BCD_calc(AM, POP):
     """
     Calculate Bray-Curtis dissimilarity (BCD).
 
-    :param TOP: number of positives in predict vector
-    :type TOP: dict
-    :param P: number of actual positives
-    :type P: dict
     :param AM: Automatic/Manual
     :type AM: int
+    :param POP: population or total number of samples
+    :type POP: int
     :return: BCD as float
     """
     try:
-        TOP_sum = sum(TOP.values())
-        P_sum = sum(P.values())
-        return abs(AM) / (P_sum + TOP_sum)
+        return abs(AM) / (2 * POP)
     except (ZeroDivisionError, TypeError, AttributeError):
         return "None"
+
+
+def basic_statistics(TP, TN, FP, FN):
+    """
+    Init classes' statistics.
+
+    :param TP: true positive
+    :type TP: dict
+    :param TN: true negative
+    :type TN: dict
+    :param FP: false positive
+    :type FP: dict
+    :param FN: false negative
+    :type FN: dict
+    :return: basic statistics as dict
+    """
+    result = {}
+    for i in CLASS_PARAMS:
+        result[i] = {}
+    result["TP"] = TP
+    result["TN"] = TN
+    result["FP"] = FP
+    result["FN"] = FN
+    return result
 
 
 def class_statistics(TP, TN, FP, FN, classes, table):
@@ -695,182 +716,81 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     :type table: dict
     :return: classes' statistics as dict
     """
-    TPR = {}
-    TNR = {}
-    PPV = {}
-    NPV = {}
-    FNR = {}
-    FPR = {}
-    FDR = {}
-    FOR = {}
-    ACC = {}
-    F1_SCORE = {}
-    MCC = {}
-    BM = {}
-    MK = {}
-    PLR = {}
-    NLR = {}
-    DOR = {}
-    POP = {}
-    P = {}
-    N = {}
-    TOP = {}
-    TON = {}
-    PRE = {}
-    G = {}
-    RACC = {}
-    F05_Score = {}
-    F2_Score = {}
-    ERR = {}
-    RACCU = {}
-    Jaccrd_Index = {}
-    IS = {}
-    CEN = {}
-    MCEN = {}
-    AUC = {}
-    dInd = {}
-    sInd = {}
-    DP = {}
-    Y = {}
-    PLRI = {}
-    NLRI = {}
-    DPI = {}
-    AUCI = {}
-    GI = {}
-    LS = {}
-    AM = {}
-    BCD = {}
-    OP = {}
-    IBA = {}
-    GM = {}
-    Q = {}
-    QI = {}
-    AGM = {}
-    MCCI = {}
-    AGF = {}
-    OC = {}
-    OOC = {}
-    AUPR = {}
-    ICSI = {}
+    result = basic_statistics(TP, TN, FP, FN)
     for i in TP.keys():
-        POP[i] = TP[i] + TN[i] + FP[i] + FN[i]
-        P[i] = TP[i] + FN[i]
-        N[i] = TN[i] + FP[i]
-        TOP[i] = TP[i] + FP[i]
-        TON[i] = TN[i] + FN[i]
-        TPR[i] = TTPN_calc(TP[i], FN[i])
-        TNR[i] = TTPN_calc(TN[i], FP[i])
-        PPV[i] = TTPN_calc(TP[i], FP[i])
-        NPV[i] = TTPN_calc(TN[i], FN[i])
-        FNR[i] = FXR_calc(TPR[i])
-        FPR[i] = FXR_calc(TNR[i])
-        FDR[i] = FXR_calc(PPV[i])
-        FOR[i] = FXR_calc(NPV[i])
-        ACC[i] = ACC_calc(TP[i], TN[i], FP[i], FN[i])
-        F1_SCORE[i] = F_calc(TP[i], FP[i], FN[i], 1)
-        F05_Score[i] = F_calc(TP[i], FP[i], FN[i], 0.5)
-        F2_Score[i] = F_calc(TP[i], FP[i], FN[i], 2)
-        MCC[i] = MCC_calc(TP[i], TN[i], FP[i], FN[i])
-        BM[i] = MK_BM_calc(TPR[i], TNR[i])
-        MK[i] = MK_BM_calc(PPV[i], NPV[i])
-        PLR[i] = LR_calc(TPR[i], FPR[i])
-        NLR[i] = LR_calc(FNR[i], TNR[i])
-        DOR[i] = LR_calc(PLR[i], NLR[i])
-        PRE[i] = PRE_calc(P[i], POP[i])
-        G[i] = G_calc(PPV[i], TPR[i])
-        RACC[i] = RACC_calc(TOP[i], P[i], POP[i])
-        ERR[i] = ERR_calc(ACC[i])
-        RACCU[i] = RACCU_calc(TOP[i], P[i], POP[i])
-        Jaccrd_Index[i] = jaccard_index_calc(TP[i], TOP[i], P[i])
-        IS[i] = IS_calc(TP[i], FP[i], FN[i], POP[i])
-        CEN[i] = CEN_calc(classes, table, TOP[i], P[i], i)
-        MCEN[i] = CEN_calc(classes, table, TOP[i], P[i], i, True)
-        AUC[i] = AUC_calc(TNR[i], TPR[i])
-        dInd[i] = dInd_calc(TNR[i], TPR[i])
-        sInd[i] = sInd_calc(dInd[i])
-        DP[i] = DP_calc(TPR[i], TNR[i])
-        Y[i] = BM[i]
-        PLRI[i] = PLR_analysis(PLR[i])
-        NLRI[i] = NLR_analysis(NLR[i])
-        DPI[i] = DP_analysis(DP[i])
-        AUCI[i] = AUC_analysis(AUC[i])
-        GI[i] = GI_calc(AUC[i])
-        LS[i] = lift_calc(PPV[i], PRE[i])
-        AM[i] = AM_calc(TOP[i], P[i])
-        OP[i] = OP_calc(ACC[i], TPR[i], TNR[i])
-        IBA[i] = IBA_calc(TPR[i], TNR[i])
-        GM[i] = G_calc(TNR[i], TPR[i])
-        Q[i] = Q_calc(TP[i], TN[i], FP[i], FN[i])
-        QI[i] = Q_analysis(Q[i])
-        AGM[i] = AGM_calc(TPR[i], TNR[i], GM[i], N[i], POP[i])
-        MCCI[i] = MCC_analysis(MCC[i])
-        AGF[i] = AGF_calc(TP[i], FP[i], FN[i], TN[i])
-        OC[i] = OC_calc(TP[i], TOP[i], P[i])
-        OOC[i] = OOC_calc(TP[i], TOP[i], P[i])
-        AUPR[i] = AUC_calc(PPV[i], TPR[i])
-        ICSI[i] = MK_BM_calc(PPV[i], TPR[i])
-    for i in TP.keys():
-        BCD[i] = BCD_calc(TOP, P, AM[i])
-    result = {
-        "TPR": TPR,
-        "TNR": TNR,
-        "PPV": PPV,
-        "NPV": NPV,
-        "FNR": FNR,
-        "FPR": FPR,
-        "FDR": FDR,
-        "FOR": FOR,
-        "ACC": ACC,
-        "F1": F1_SCORE,
-        "MCC": MCC,
-        "BM": BM,
-        "MK": MK,
-        "PLR": PLR,
-        "NLR": NLR,
-        "DOR": DOR,
-        "TP": TP,
-        "TN": TN,
-        "FP": FP,
-        "FN": FN,
-        "POP": POP,
-        "P": P,
-        "N": N,
-        "TOP": TOP,
-        "TON": TON,
-        "PRE": PRE,
-        "G": G,
-        "RACC": RACC,
-        "F0.5": F05_Score,
-        "F2": F2_Score,
-        "ERR": ERR,
-        "RACCU": RACCU,
-        "J": Jaccrd_Index,
-        "IS": IS,
-        "CEN": CEN,
-        "MCEN": MCEN,
-        "AUC": AUC,
-        "sInd": sInd,
-        "dInd": dInd,
-        "DP": DP,
-        "Y": Y,
-        "PLRI": PLRI,
-        "DPI": DPI,
-        "AUCI": AUCI,
-        "GI": GI,
-        "LS": LS,
-        "AM": AM,
-        "BCD": BCD,
-        "OP": OP,
-        "IBA": IBA,
-        "GM": GM,
-        "Q": Q,
-        "AGM": AGM,
-        "NLRI": NLRI,
-        "MCCI": MCCI,
-        "AGF": AGF,
-        "OC": OC,
-        "OOC": OOC,
-        "AUPR": AUPR,
-        "ICSI": ICSI,
-        "QI": QI}
+        result["POP"][i] = TP[i] + TN[i] + FP[i] + FN[i]
+        result["P"][i] = TP[i] + FN[i]
+        result["N"][i] = TN[i] + FP[i]
+        result["TOP"][i] = TP[i] + FP[i]
+        result["TON"][i] = TN[i] + FN[i]
+        result["TPR"][i] = TTPN_calc(TP[i], FN[i])
+        result["TNR"][i] = TTPN_calc(TN[i], FP[i])
+        result["PPV"][i] = TTPN_calc(TP[i], FP[i])
+        result["NPV"][i] = TTPN_calc(TN[i], FN[i])
+        result["FNR"][i] = FXR_calc(result["TPR"][i])
+        result["FPR"][i] = FXR_calc(result["TNR"][i])
+        result["FDR"][i] = FXR_calc(result["PPV"][i])
+        result["FOR"][i] = FXR_calc(result["NPV"][i])
+        result["ACC"][i] = ACC_calc(TP[i], TN[i], FP[i], FN[i])
+        result["F1"][i] = F_calc(TP[i], FP[i], FN[i], 1)
+        result["F0.5"][i] = F_calc(TP[i], FP[i], FN[i], 0.5)
+        result["F2"][i] = F_calc(TP[i], FP[i], FN[i], 2)
+        result["MCC"][i] = MCC_calc(TP[i], TN[i], FP[i], FN[i])
+        result["BM"][i] = MK_BM_calc(result["TPR"][i], result["TNR"][i])
+        result["MK"][i] = MK_BM_calc(result["PPV"][i], result["NPV"][i])
+        result["PLR"][i] = LR_calc(result["TPR"][i], result["FPR"][i])
+        result["NLR"][i] = LR_calc(result["FNR"][i], result["TNR"][i])
+        result["DOR"][i] = LR_calc(result["PLR"][i], result["NLR"][i])
+        result["PRE"][i] = PRE_calc(result["P"][i], result["POP"][i])
+        result["G"][i] = G_calc(result["PPV"][i], result["TPR"][i])
+        result["RACC"][i] = RACC_calc(
+            result["TOP"][i], result["P"][i], result["POP"][i])
+        result["ERR"][i] = ERR_calc(result["ACC"][i])
+        result["RACCU"][i] = RACCU_calc(
+            result["TOP"][i], result["P"][i], result["POP"][i])
+        result["J"][i] = jaccard_index_calc(
+            TP[i], result["TOP"][i], result["P"][i])
+        result["IS"][i] = IS_calc(TP[i], FP[i], FN[i], result["POP"][i])
+        result["CEN"][i] = CEN_calc(
+            classes, table, result["TOP"][i], result["P"][i], i)
+        result["MCEN"][i] = CEN_calc(
+            classes,
+            table,
+            result["TOP"][i],
+            result["P"][i],
+            i,
+            True)
+        result["AUC"][i] = AUC_calc(result["TNR"][i], result["TPR"][i])
+        result["dInd"][i] = dInd_calc(result["TNR"][i], result["TPR"][i])
+        result["sInd"][i] = sInd_calc(result["dInd"][i])
+        result["DP"][i] = DP_calc(result["TPR"][i], result["TNR"][i])
+        result["Y"][i] = result["BM"][i]
+        result["PLRI"][i] = PLR_analysis(result["PLR"][i])
+        result["NLRI"][i] = NLR_analysis(result["NLR"][i])
+        result["DPI"][i] = DP_analysis(result["DP"][i])
+        result["AUCI"][i] = AUC_analysis(result["AUC"][i])
+        result["GI"][i] = GI_calc(result["AUC"][i])
+        result["LS"][i] = lift_calc(result["PPV"][i], result["PRE"][i])
+        result["AM"][i] = AM_calc(result["TOP"][i], result["P"][i])
+        result["OP"][i] = OP_calc(
+            result["ACC"][i],
+            result["TPR"][i],
+            result["TNR"][i])
+        result["IBA"][i] = IBA_calc(result["TPR"][i], result["TNR"][i])
+        result["GM"][i] = G_calc(result["TNR"][i], result["TPR"][i])
+        result["Q"][i] = Q_calc(TP[i], TN[i], FP[i], FN[i])
+        result["QI"][i] = Q_analysis(result["Q"][i])
+        result["AGM"][i] = AGM_calc(
+            result["TPR"][i],
+            result["TNR"][i],
+            result["GM"][i],
+            result["N"][i],
+            result["POP"][i])
+        result["MCCI"][i] = MCC_analysis(result["MCC"][i])
+        result["AGF"][i] = AGF_calc(TP[i], FP[i], FN[i], TN[i])
+        result["OC"][i] = OC_calc(TP[i], result["TOP"][i], result["P"][i])
+        result["OOC"][i] = OOC_calc(TP[i], result["TOP"][i], result["P"][i])
+        result["AUPR"][i] = AUC_calc(result["PPV"][i], result["TPR"][i])
+        result["ICSI"][i] = MK_BM_calc(result["PPV"][i], result["TPR"][i])
+        result["BCD"][i] = BCD_calc(result["AM"][i], result["POP"][i])
     return result

@@ -952,6 +952,7 @@ def overall_statistics(**kwargs):
     :type kwargs: dict
     :return: overall statistics as dict
     """
+    result = {}
     POP = kwargs["POP"]
     population = list(POP.values())[0]
     TP = kwargs["TP"]
@@ -959,128 +960,87 @@ def overall_statistics(**kwargs):
     TOP = kwargs["TOP"]
     table = kwargs["table"]
     classes = kwargs["classes"]
-    overall_accuracy = overall_accuracy_calc(TP, population)
-    overall_random_accuracy_unbiased = overall_random_accuracy_calc(
+    result["Overall ACC"] = overall_accuracy_calc(TP, population)
+    result["Overall RACCU"] = overall_random_accuracy_calc(
         kwargs["RACCU"])
-    overall_random_accuracy = overall_random_accuracy_calc(kwargs["RACC"])
-    overall_kappa = reliability_calc(overall_random_accuracy, overall_accuracy)
+    result["Overall RACC"] = overall_random_accuracy_calc(kwargs["RACC"])
+    result["Kappa"] = reliability_calc(
+        result["Overall RACC"], result["Overall ACC"])
     PC_AC1 = PC_AC1_calc(P, TOP, POP)
     PC_S = PC_S_calc(classes)
-    AC1 = reliability_calc(PC_AC1, overall_accuracy)
-    S = reliability_calc(PC_S, overall_accuracy)
-    kappa_SE = kappa_SE_calc(
-        overall_accuracy,
-        overall_random_accuracy, population)
-    kappa_unbiased = reliability_calc(
-        overall_random_accuracy_unbiased,
-        overall_accuracy)
-    PI = kappa_unbiased
-    kappa_no_prevalence = kappa_no_prevalence_calc(overall_accuracy)
-    kappa_CI = CI_calc(overall_kappa, kappa_SE)
-    overall_accuracy_se = SE_calc(overall_accuracy, population)
-    overall_accuracy_CI = CI_calc(overall_accuracy, overall_accuracy_se)
-    chi_squared = chi_square_calc(classes, table, TOP, P, POP)
-    phi_squared = phi_square_calc(chi_squared, population)
-    cramer_V = cramers_V_calc(phi_squared, classes)
-    response_entropy = entropy_calc(TOP, POP)
-    reference_entropy = entropy_calc(P, POP)
-    cross_entropy = cross_entropy_calc(TOP, P, POP)
-    join_entropy = joint_entropy_calc(classes, table, POP)
-    conditional_entropy = conditional_entropy_calc(classes, table, P, POP)
-    mutual_information = mutual_information_calc(
-        response_entropy, conditional_entropy)
-    kl_divergence = kl_divergence_calc(P, TOP, POP)
-    lambda_B = lambda_B_calc(classes, table, TOP, population)
-    lambda_A = lambda_A_calc(classes, table, P, population)
-    DF = DF_calc(classes)
-    overall_jaccard_index = overall_jaccard_index_calc(list(
+    result["Gwet AC1"] = reliability_calc(PC_AC1, result["Overall ACC"])
+    result["Bennett S"] = reliability_calc(PC_S, result["Overall ACC"])
+    result["Kappa Standard Error"] = kappa_SE_calc(
+        result["Overall ACC"],
+        result["Overall RACC"], population)
+    result["Kappa Unbiased"] = reliability_calc(
+        result["Overall RACCU"],
+        result["Overall ACC"])
+    result["Scott PI"] = result["Kappa Unbiased"]
+    result["Kappa No Prevalence"] = kappa_no_prevalence_calc(
+        result["Overall ACC"])
+    result["Kappa 95% CI"] = CI_calc(
+        result["Kappa"], result["Kappa Standard Error"])
+    result["Standard Error"] = SE_calc(result["Overall ACC"], population)
+    result["95% CI"] = CI_calc(result["Overall ACC"], result["Standard Error"])
+    result["Chi-Squared"] = chi_square_calc(classes, table, TOP, P, POP)
+    result["Phi-Squared"] = phi_square_calc(result["Chi-Squared"], population)
+    result["Cramer V"] = cramers_V_calc(result["Phi-Squared"], classes)
+    result["Response Entropy"] = entropy_calc(TOP, POP)
+    result["Reference Entropy"] = entropy_calc(P, POP)
+    result["Cross Entropy"] = cross_entropy_calc(TOP, P, POP)
+    result["Joint Entropy"] = joint_entropy_calc(classes, table, POP)
+    result["Conditional Entropy"] = conditional_entropy_calc(
+        classes, table, P, POP)
+    result["Mutual Information"] = mutual_information_calc(
+        result["Response Entropy"], result["Conditional Entropy"])
+    result["KL Divergence"] = kl_divergence_calc(P, TOP, POP)
+    result["Lambda B"] = lambda_B_calc(classes, table, TOP, population)
+    result["Lambda A"] = lambda_A_calc(classes, table, P, population)
+    result["Chi-Squared DF"] = DF_calc(classes)
+    result["Overall J"] = overall_jaccard_index_calc(list(
         kwargs["jaccard_list"].values()))
-    hamming_loss = hamming_calc(TP, population)
-    zero_one_loss = zero_one_loss_calc(TP, population)
-    NIR = NIR_calc(P, population)
-    p_value = p_value_calc(TP, population, NIR)
-    overall_CEN = overall_CEN_calc(classes, TP, TOP, P, kwargs["CEN_dict"])
-    overall_MCEN = overall_CEN_calc(
+    result["Hamming Loss"] = hamming_calc(TP, population)
+    result["Zero-one Loss"] = zero_one_loss_calc(TP, population)
+    result["NIR"] = NIR_calc(P, population)
+    result["P-Value"] = p_value_calc(TP, population, result["NIR"])
+    result["Overall CEN"] = overall_CEN_calc(
+        classes, TP, TOP, P, kwargs["CEN_dict"])
+    result["Overall MCEN"] = overall_CEN_calc(
         classes, TP, TOP, P, kwargs["MCEN_dict"], True)
-    overall_MCC = overall_MCC_calc(classes, table, TOP, P)
-    RR = RR_calc(classes, TOP)
-    CBA = CBA_calc(classes, table, TOP, P)
-    AUNU = macro_calc(kwargs["AUC_dict"])
-    AUNP = AUNP_calc(classes, P, POP, kwargs["AUC_dict"])
-    RCI = RCI_calc(mutual_information, reference_entropy)
-    C = pearson_C_calc(chi_squared, population)
-    TPR_PPV_F1_micro = overall_accuracy
-    TPR_macro = macro_calc(kwargs["TPR"])
-    CSI = macro_calc(kwargs["ICSI_dict"])
-    ARI = ARI_calc(classes, table, TOP, P, population)
-    TNR_micro = micro_calc(item1=kwargs["TN"], item2=kwargs["FP"])
-    TNR_macro = macro_calc(kwargs["TNR"])
-    B = B_calc(classes, TP, TOP, P)
-    alpha = alpha_calc(
-        overall_random_accuracy_unbiased,
-        overall_accuracy,
+    result["Overall MCC"] = overall_MCC_calc(classes, table, TOP, P)
+    result["RR"] = RR_calc(classes, TOP)
+    result["CBA"] = CBA_calc(classes, table, TOP, P)
+    result["AUNU"] = macro_calc(kwargs["AUC_dict"])
+    result["AUNP"] = AUNP_calc(classes, P, POP, kwargs["AUC_dict"])
+    result["RCI"] = RCI_calc(
+        result["Mutual Information"],
+        result["Reference Entropy"])
+    result["Pearson C"] = pearson_C_calc(result["Chi-Squared"], population)
+    result["TPR Micro"] = result["Overall ACC"]
+    result["TPR Macro"] = macro_calc(kwargs["TPR"])
+    result["CSI"] = macro_calc(kwargs["ICSI_dict"])
+    result["ARI"] = ARI_calc(classes, table, TOP, P, population)
+    result["TNR Micro"] = micro_calc(item1=kwargs["TN"], item2=kwargs["FP"])
+    result["TNR Macro"] = macro_calc(kwargs["TNR"])
+    result["Bangdiwala B"] = B_calc(classes, TP, TOP, P)
+    result["Krippendorff Alpha"] = alpha_calc(
+        result["Overall RACCU"],
+        result["Overall ACC"],
         population)
-    return {
-        "Overall ACC": overall_accuracy,
-        "Kappa": overall_kappa,
-        "Overall RACC": overall_random_accuracy,
-        "SOA1(Landis & Koch)": kappa_analysis_koch(overall_kappa),
-        "SOA2(Fleiss)": kappa_analysis_fleiss(overall_kappa),
-        "SOA3(Altman)": kappa_analysis_altman(overall_kappa),
-        "SOA4(Cicchetti)": kappa_analysis_cicchetti(overall_kappa),
-        "SOA5(Cramer)": V_analysis(cramer_V),
-        "SOA6(Matthews)": MCC_analysis(overall_MCC),
-        "TNR Macro": TNR_macro,
-        "TPR Macro": TPR_macro,
-        "FPR Macro": complement(TNR_macro),
-        "FNR Macro": complement(TPR_macro),
-        "PPV Macro": macro_calc(kwargs["PPV"]),
-        "ACC Macro": macro_calc(kwargs["ACC"]),
-        "F1 Macro": macro_calc(kwargs["F1"]),
-        "TNR Micro": TNR_micro,
-        "FPR Micro": complement(TNR_micro),
-        "TPR Micro": TPR_PPV_F1_micro,
-        "FNR Micro": complement(TPR_PPV_F1_micro),
-        "PPV Micro": TPR_PPV_F1_micro,
-        "F1 Micro": TPR_PPV_F1_micro,
-        "Scott PI": PI,
-        "Gwet AC1": AC1,
-        "Bennett S": S,
-        "Kappa Standard Error": kappa_SE,
-        "Kappa 95% CI": kappa_CI,
-        "Chi-Squared": chi_squared,
-        "Phi-Squared": phi_squared,
-        "Cramer V": cramer_V,
-        "Chi-Squared DF": DF,
-        "95% CI": overall_accuracy_CI,
-        "Standard Error": overall_accuracy_se,
-        "Response Entropy": response_entropy,
-        "Reference Entropy": reference_entropy,
-        "Cross Entropy": cross_entropy,
-        "Joint Entropy": join_entropy,
-        "Conditional Entropy": conditional_entropy,
-        "KL Divergence": kl_divergence,
-        "Lambda B": lambda_B,
-        "Lambda A": lambda_A,
-        "Kappa Unbiased": kappa_unbiased,
-        "Overall RACCU": overall_random_accuracy_unbiased,
-        "Kappa No Prevalence": kappa_no_prevalence,
-        "Mutual Information": mutual_information,
-        "Overall J": overall_jaccard_index,
-        "Hamming Loss": hamming_loss,
-        "Zero-one Loss": zero_one_loss,
-        "NIR": NIR,
-        "P-Value": p_value,
-        "Overall CEN": overall_CEN,
-        "Overall MCEN": overall_MCEN,
-        "Overall MCC": overall_MCC,
-        "RR": RR,
-        "CBA": CBA,
-        "AUNU": AUNU,
-        "AUNP": AUNP,
-        "RCI": RCI,
-        "Pearson C": C,
-        "CSI": CSI,
-        "ARI": ARI,
-        "Bangdiwala B": B,
-        "Krippendorff Alpha": alpha}
+    result["SOA1(Landis & Koch)"] = kappa_analysis_koch(result["Kappa"])
+    result["SOA2(Fleiss)"] = kappa_analysis_fleiss(result["Kappa"])
+    result["SOA3(Altman)"] = kappa_analysis_altman(result["Kappa"])
+    result["SOA4(Cicchetti)"] = kappa_analysis_cicchetti(result["Kappa"])
+    result["SOA5(Cramer)"] = V_analysis(result["Cramer V"])
+    result["SOA6(Matthews)"] = MCC_analysis(result["Overall MCC"])
+    result["FPR Macro"] = complement(result["TNR Macro"])
+    result["FNR Macro"] = complement(result["TPR Macro"])
+    result["PPV Macro"] = macro_calc(kwargs["PPV"])
+    result["ACC Macro"] = macro_calc(kwargs["ACC"])
+    result["F1 Macro"] = macro_calc(kwargs["F1"])
+    result["FPR Micro"] = complement(result["TNR Micro"])
+    result["FNR Micro"] = complement(result["TPR Micro"])
+    result["PPV Micro"] = result["TPR Micro"]
+    result["F1 Micro"] = result["TPR Micro"]
+    return result

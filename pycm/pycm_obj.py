@@ -206,6 +206,15 @@ class ConfusionMatrix():
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
         return result
 
+    def __iter__(self):
+        """
+        Iterate through confusion matrix.
+
+        :return: None
+        """
+        for key in self.matrix.keys():
+            yield key, self.matrix[key]
+
     def save_stat(
             self,
             name,
@@ -982,7 +991,7 @@ class ConfusionMatrix():
         if cmap is None:
             cmap = plt.cm.gray_r
         fig, ax = plt.subplots()
-        fig.canvas.set_window_title(title)
+        fig.canvas.manager.set_window_title(title)
         if plot_lib == 'seaborn':
             try:
                 import seaborn as sns

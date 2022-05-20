@@ -12,7 +12,7 @@ authors:
 version: 3.3
 date-released: 2021-10-27
 repository-code: "https://github.com/sepandhaghighi/pycm"
-url: "https://www.pycm.ir"
+url: "https://www.pycm.io"
 license: MIT
 keywords:
     - "confusion matrix"

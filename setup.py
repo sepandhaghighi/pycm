@@ -40,7 +40,7 @@ setup(
     description='Multi-class confusion matrix library in Python',
     long_description=read_description(),
     long_description_content_type='text/markdown',
-    author='Sepand Haghighi',
+    author='PyCM Development Team',
     author_email='info@pycm.io',
     url='https://github.com/sepandhaghighi/pycm',
     download_url='https://github.com/sepandhaghighi/pycm/tarball/v3.5',

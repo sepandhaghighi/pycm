@@ -8,6 +8,12 @@ class pycmVectorError(Exception):
     pass
 
 
+class pycmArrayError(Exception):
+    """Array error class."""
+
+    pass
+
+
 class pycmMatrixError(Exception):
     """Matrix error class."""
 

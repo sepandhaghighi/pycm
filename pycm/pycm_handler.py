@@ -2,7 +2,7 @@
 """ConfusionMatrix handlers."""
 from __future__ import division
 from .pycm_class_func import class_statistics
-from .pycm_error import pycmVectorError, pycmMatrixError
+from .pycm_error import pycmVectorError, pycmMatrixError, pycmArrayError
 from .pycm_overall_func import overall_statistics
 from .pycm_util import *
 from .pycm_param import *
@@ -258,6 +258,27 @@ def __obj_matrix_handler__(matrix, transpose):
         raise pycmMatrixError(MATRIX_FORMAT_ERROR)
 
     return matrix_param
+
+
+def __obj_array_handler__(array, classes):
+    """
+    Handle object conditions for the array.
+
+    :param matrix: the confusion matrix in array form
+    :type matrix: list or np.array
+    :param classes: ordered labels of classes
+    :type classes: list
+    :return: matrix parameters as list
+    """
+    if classes is not None and len(set(classes)) != len(classes):
+        raise pycmArrayError(VECTOR_UNIQUE_CLASS_ERROR)
+    n = len(array)
+    if classes is None:
+        classes = list(range(n))
+    matrix = {}
+    for i in range(n):
+        matrix[classes[i]] = {classes[j]: x for j, x in enumerate(array[i])}
+    return __obj_matrix_handler__(matrix, False)
 
 
 def __obj_vector_handler__(

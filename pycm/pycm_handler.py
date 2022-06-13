@@ -272,11 +272,10 @@ def __obj_array_handler__(array, classes):
     """
     if classes is not None and len(set(classes)) != len(classes):
         raise pycmArrayError(VECTOR_UNIQUE_CLASS_ERROR)
-    n = len(array)
     if classes is None:
-        classes = list(range(n))
+        classes = list(range(len(array)))
     matrix = {}
-    for i in range(n):
+    for i in range(len(array)):
         matrix[classes[i]] = {classes[j]: x for j, x in enumerate(array[i])}
     return __obj_matrix_handler__(matrix, False)
 

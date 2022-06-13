@@ -47,8 +47,8 @@ class ConfusionMatrix():
         :type actual_vector: python list or numpy array of any stringable objects
         :param predict_vector: vector of predictions
         :type predict_vector: python list or numpy array of any stringable objects
-        :param matrix: the confusion matrix in dict form
-        :type matrix: dict
+        :param matrix: the confusion matrix
+        :type matrix: dict or list
         :param digit: scale (number of fraction digits)(default value: 5)
         :type digit: int
         :param threshold: activation threshold function
@@ -79,6 +79,8 @@ class ConfusionMatrix():
             matrix_param = __obj_file_handler__(self, file)
         elif isinstance(matrix, dict):
             matrix_param = __obj_matrix_handler__(matrix, transpose)
+        elif isinstance(matrix, (list, numpy.ndarray)):
+            matrix_param = __obj_array_handler__(matrix, classes)
         else:
             matrix_param = __obj_vector_handler__(
                 self, actual_vector, predict_vector, threshold, sample_weight, classes)

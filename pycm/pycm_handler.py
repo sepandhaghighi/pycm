@@ -2,7 +2,7 @@
 """ConfusionMatrix handlers."""
 from __future__ import division
 from .pycm_class_func import class_statistics
-from .pycm_error import pycmVectorError, pycmMatrixError, pycmArrayError
+from .pycm_error import pycmVectorError, pycmMatrixError
 from .pycm_overall_func import overall_statistics
 from .pycm_util import *
 from .pycm_param import *
@@ -271,7 +271,7 @@ def __obj_array_handler__(array, classes):
     :return: matrix parameters as list
     """
     if classes is not None and len(set(classes)) != len(classes):
-        raise pycmArrayError(VECTOR_UNIQUE_CLASS_ERROR)
+        raise pycmMatrixError(VECTOR_UNIQUE_CLASS_ERROR)
     if classes is None:
         classes = list(range(len(array)))
     matrix = {}

@@ -260,7 +260,7 @@ def __obj_matrix_handler__(matrix, transpose):
     return matrix_param
 
 
-def __obj_array_handler__(array, classes):
+def __obj_array_handler__(array, classes, transpose):
     """
     Handle object conditions for the array.
 
@@ -268,6 +268,8 @@ def __obj_array_handler__(array, classes):
     :type matrix: list or np.array
     :param classes: ordered labels of classes
     :type classes: list
+    :param transpose: transpose flag
+    :type transpose: bool
     :return: matrix parameters as list
     """
     if classes is not None and len(set(classes)) != len(classes):
@@ -277,7 +279,7 @@ def __obj_array_handler__(array, classes):
     matrix = {}
     for i in range(len(array)):
         matrix[classes[i]] = {classes[j]: x for j, x in enumerate(array[i])}
-    return __obj_matrix_handler__(matrix, False)
+    return __obj_matrix_handler__(matrix, transpose)
 
 
 def __obj_vector_handler__(

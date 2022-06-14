@@ -80,7 +80,7 @@ class ConfusionMatrix():
         elif isinstance(matrix, dict):
             matrix_param = __obj_matrix_handler__(matrix, transpose)
         elif isinstance(matrix, (list, numpy.ndarray)):
-            matrix_param = __obj_array_handler__(matrix, classes)
+            matrix_param = __obj_array_handler__(matrix, classes, self.transpose)
         else:
             matrix_param = __obj_vector_handler__(
                 self, actual_vector, predict_vector, threshold, sample_weight, classes)

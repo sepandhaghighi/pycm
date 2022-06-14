@@ -138,4 +138,9 @@ pycm.pycm_error.pycmVectorError: This option only works in binary probability mo
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmVectorError: Actual vector contains string so pos_class should be explicitly specified
+>>> matrix = [[1,2,3],[4,6,1],[1,2,3]]
+>>> cm = ConfusionMatrix(matrix=matrix, classes=["L1","L1","L3","L2"])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: The classes list isn't unique. It contains duplicated labels.
 """

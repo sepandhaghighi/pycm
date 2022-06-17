@@ -1517,13 +1517,13 @@ L3       1        2        3
 <BLANKLINE>
 >>> cm = ConfusionMatrix(matrix=matrix, classes=["L1","L3","L2"])
 >>> cm.print_matrix()
-Predict  L1       L2       L3       
+Predict  L1       L3       L2       
 Actual
-L1       1        3        2        
+L1       1        2        3        
 <BLANKLINE>
-L2       1        3        2        
+L3       4        6        1        
 <BLANKLINE>
-L3       4        1        6        
+L2       1        2        3        
 <BLANKLINE>
 <BLANKLINE>
 """

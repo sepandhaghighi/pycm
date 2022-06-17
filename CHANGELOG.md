@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Changed
+- `classes` parameter added to `matrix_params_from_table`
 - matrices with `numpy.int64` elemnets are now accepted
 - arrays added to `matrix` parameter accepting formats
 - Website changed to [http://www.pycm.io](http://www.pycm.io)

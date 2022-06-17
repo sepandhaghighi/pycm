@@ -84,8 +84,6 @@ class ConfusionMatrix():
         else:
             matrix_param = __obj_vector_handler__(
                 self, actual_vector, predict_vector, threshold, sample_weight, classes)
-        if len(matrix_param[0]) < 2:
-            raise pycmMatrixError(CLASS_NUMBER_ERROR)
         __obj_assign_handler__(self, matrix_param)
         __class_stat_init__(self)
         __overall_stat_init__(self)

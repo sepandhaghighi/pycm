@@ -240,7 +240,7 @@ def __obj_file_handler__(cm, file):
     return matrix_param
 
 
-def __obj_matrix_handler__(matrix, transpose):
+def __obj_matrix_handler__(matrix, transpose, classes=None):
     """
     Handle object conditions for the matrix.
 
@@ -253,7 +253,7 @@ def __obj_matrix_handler__(matrix, transpose):
     if matrix_check(matrix):
         if class_check(list(matrix.keys())) is False:
             raise pycmMatrixError(MATRIX_CLASS_TYPE_ERROR)
-        matrix_param = matrix_params_from_table(matrix, transpose)
+        matrix_param = matrix_params_from_table(matrix, classes, transpose)
     else:
         raise pycmMatrixError(MATRIX_FORMAT_ERROR)
 
@@ -279,7 +279,7 @@ def __obj_array_handler__(array, classes, transpose):
     matrix = {}
     for i in range(len(array)):
         matrix[classes[i]] = {classes[j]: x for j, x in enumerate(array[i])}
-    return __obj_matrix_handler__(matrix, transpose)
+    return __obj_matrix_handler__(matrix, transpose, classes)
 
 
 def __obj_vector_handler__(

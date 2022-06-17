@@ -5,6 +5,7 @@ import sys
 import math
 import numpy
 from .pycm_param import *
+from .pycm_error import pycmMatrixError
 from warnings import warn
 
 
@@ -280,17 +281,22 @@ def transpose_func(classes, table):
     return transposed_table
 
 
-def matrix_params_from_table(table, transpose=False):
+def matrix_params_from_table(table, classes=None, transpose=False):
     """
     Calculate TP, TN, FP, and FN from the input confusion matrix.
 
     :param table: input confusion matrix
     :type table: dict
+    :param classes: ordered labels of classes
+    :type classes: list
     :param transpose: transpose flag
     :type transpose: bool
     :return: [classes_list, table, TP, TN, FP, FN]
     """
-    classes = sorted(table.keys())
+    if classes is None:
+        classes = sorted(table.keys())
+    if len(classes) < 2:
+        raise pycmMatrixError(CLASS_NUMBER_ERROR)
     table_temp = table
     map_dict = {k: 0 for k in classes}
     TP_dict = map_dict.copy()
@@ -347,7 +353,7 @@ def matrix_params_calc(
         if item in classes_list and predict_vector[index] in classes_list:
             table[item][predict_vector[index]] += 1 * weight_vector[index]
     [_, _, TP_dict, TN_dict, FP_dict,
-        FN_dict] = matrix_params_from_table(table)
+        FN_dict] = matrix_params_from_table(table, classes_list)
     return [classes_list, table, TP_dict, TN_dict, FP_dict, FN_dict]
 
 

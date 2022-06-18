@@ -143,4 +143,8 @@ pycm.pycm_error.pycmVectorError: Actual vector contains string so pos_class shou
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmMatrixError: The classes list isn't unique. It contains duplicated labels.
+>>> cm = ConfusionMatrix(matrix=matrix, classes=[1, 2])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: Used classes has not the length equals to array length.
 """

@@ -276,6 +276,8 @@ def __obj_array_handler__(array, classes, transpose):
         raise pycmMatrixError(VECTOR_UNIQUE_CLASS_ERROR)
     if classes is None:
         classes = list(range(len(array)))
+    if len(classes) != len(array):
+        raise pycmMatrixError(CLASSES_LENGHT_ERROR)
     matrix = {}
     for i in range(len(array)):
         matrix[classes[i]] = {classes[j]: x for j, x in enumerate(array[i])}

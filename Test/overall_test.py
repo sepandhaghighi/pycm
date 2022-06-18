@@ -1495,35 +1495,35 @@ True
 >>> matrix = [[1,2,3],[4,6,1],[1,2,3]]
 >>> cm = ConfusionMatrix(matrix=matrix)
 >>> cm.print_matrix()
-Predict 0       1       2       
+Predict 0       1       2
 Actual
-0       1       2       3       
+0       1       2       3
 <BLANKLINE>
-1       4       6       1       
+1       4       6       1
 <BLANKLINE>
-2       1       2       3       
+2       1       2       3
 <BLANKLINE>
 <BLANKLINE>
 >>> cm = ConfusionMatrix(matrix=matrix, classes=["L1","L2","L3"])
 >>> cm.print_matrix()
-Predict  L1       L2       L3       
+Predict  L1       L2       L3
 Actual
-L1       1        2        3        
+L1       1        2        3
 <BLANKLINE>
-L2       4        6        1        
+L2       4        6        1
 <BLANKLINE>
-L3       1        2        3        
+L3       1        2        3
 <BLANKLINE>
 <BLANKLINE>
 >>> cm = ConfusionMatrix(matrix=matrix, classes=["L1","L3","L2"])
 >>> cm.print_matrix()
-Predict  L1       L3       L2       
+Predict  L1       L3       L2
 Actual
-L1       1        2        3        
+L1       1        2        3
 <BLANKLINE>
-L3       4        6        1        
+L3       4        6        1
 <BLANKLINE>
-L2       1        2        3        
+L2       1        2        3
 <BLANKLINE>
 <BLANKLINE>
 """

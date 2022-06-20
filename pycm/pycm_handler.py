@@ -240,7 +240,7 @@ def __obj_file_handler__(cm, file):
     return matrix_param
 
 
-def __obj_matrix_handler__(matrix, transpose, classes=None):
+def __obj_matrix_handler__(matrix, classes, transpose):
     """
     Handle object conditions for the matrix.
 
@@ -281,7 +281,7 @@ def __obj_array_handler__(array, classes, transpose):
     matrix = {}
     for i in range(len(array)):
         matrix[classes[i]] = {classes[j]: x for j, x in enumerate(array[i])}
-    return __obj_matrix_handler__(matrix, transpose, classes)
+    return __obj_matrix_handler__(matrix, classes, transpose)
 
 
 def __obj_vector_handler__(

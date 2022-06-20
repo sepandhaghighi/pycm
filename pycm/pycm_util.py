@@ -85,7 +85,7 @@ def vector_check(vector):
     :return: bool
     """
     for i in vector:
-        if isinstance(i, (int, numpy.int64)) is False:
+        if isinstance(i, (int, numpy.integer)) is False:
             return False
         if i < 0:
             return False

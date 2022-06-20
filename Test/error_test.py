@@ -84,7 +84,7 @@ pycm.pycm_obj.pycmCompareError: The domain of all ConfusionMatrix objects must b
 >>> cm = ConfusionMatrix(matrix={1:{1:9,2:3},2:{1:3,2:5}}, classes=[1, 2, 3])
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMatrixError: Used classes is not a subset of table's classes.
+pycm.pycm_error.pycmMatrixError: Used classes is not a subset of matrix's classes.
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 1]
 >>> cm3 = ConfusionMatrix(y_actu,y_pred)
 >>> cp = Compare({"cm1":cm,"cm2":cm3},by_class=True,class_weight={1:1,2:1})

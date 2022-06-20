@@ -1526,4 +1526,16 @@ L3       4        6        1
 L2       1        2        3
 <BLANKLINE>
 <BLANKLINE>
+>>> matrix = np.array([[1,2,3],[4,6,1],[1,2,3]])
+>>> cm = ConfusionMatrix(matrix=matrix)
+>>> cm.print_matrix()
+Predict 0       1       2
+Actual
+0       1       2       3
+<BLANKLINE>
+1       4       6       1
+<BLANKLINE>
+2       1       2       3
+<BLANKLINE>
+<BLANKLINE>
 """

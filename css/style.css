@@ -23,6 +23,7 @@
 .github iframe{
     display: inline;
     text-align: left;
+    border: 0px;
 }
 .pip span{
     color:crimson;

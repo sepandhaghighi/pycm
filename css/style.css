@@ -121,12 +121,12 @@ hr{
 }
 
 
-#login-footer p{
+#pycm-footer p{
     font-family: "baloo";
     vertical-align: center;
     margin:auto;
 }
-#login-footer{
+#pycm-footer{
     color: white;
     width: 100%;
     bottom: 0;
@@ -257,15 +257,15 @@ button {
 .reset:hover:after {
     top: 0;
 }
-#login-footer p {
+#pycm-footer p {
     vertical-align: center;
     margin: auto;
     color: #fafafa;
 }
-#login-footer p {
+#pycm-footer p {
     color: #fafafa;
 }
-#login-footer {
+#pycm-footer {
     background: transparent;
     width: 100%;
     bottom: 0;
@@ -319,13 +319,13 @@ button {
     .consola{
         font-size: 13px;
     }
-  #login-footer {
+  #pycm-footer {
         position: relative;
         display: none;
         font-size: 30px;
         height: auto;
     }
-    #login-footer p {
+    #pycm-footer p {
         margin: auto;
         padding: auto;
     }

@@ -216,7 +216,7 @@ button {
     -webkit-transition: 0.08s ease-in;
 }
 
-#back a:hover {
+.back a:hover {
     cursor: pointer;
 }
 

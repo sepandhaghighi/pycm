@@ -27,11 +27,12 @@
 .pip span{
     color:crimson;
 }
-.pip p{
+.pip{
     border: 5px solid black;
     border-radius: 15px;
     text-align: center;
     padding: 20px;
+    font-family: "consola";
     
 }
 .note{

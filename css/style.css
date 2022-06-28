@@ -66,6 +66,7 @@
     margin: auto;
     padding: auto;
     margin-top: 10px;
+    text-align: center;
 }
 
 .consola{
@@ -96,6 +97,7 @@ li { list-style-position: inside }
 .button{
     padding-top: 80px;
     padding-bottom: 30px;
+    text-align: center;
 }
 
 a{

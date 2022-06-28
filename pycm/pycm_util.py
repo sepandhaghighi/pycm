@@ -295,10 +295,11 @@ def matrix_params_from_table(table, classes=None, transpose=False):
     """
     if classes is None:
         classes = sorted(table.keys())
-    if set(classes) > set(table.keys()):
-        raise pycmMatrixError(CLASSES_ERROR)
-    if len(classes) < 2:
+    classes_set = set(classes)
+    if len(classes_set) < 2:
         raise pycmMatrixError(CLASS_NUMBER_ERROR)
+    if classes_set > set(table.keys()):
+        raise pycmMatrixError(CLASSES_ERROR)
     table_temp = table
     map_dict = {k: 0 for k in classes}
     TP_dict = map_dict.copy()

@@ -101,6 +101,11 @@ li { list-style-position: inside }
     text-align: center;
 }
 
+.button img{
+    height: 128px;
+    width: 128px;
+}
+
 a{
   opacity: 1; 
   transition: opacity 3s;
@@ -376,5 +381,9 @@ button{
     }
     .button{
         margin-bottom: 60px;
+    }
+    .button img{
+    height: 85px;
+    width: 85px;
     }
 }

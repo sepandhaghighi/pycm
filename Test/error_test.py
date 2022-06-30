@@ -150,5 +150,5 @@ pycm.pycm_error.pycmMatrixError: The classes list isn't unique. It contains dupl
 >>> cm = ConfusionMatrix(matrix=matrix, classes=[1, 2])
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMatrixError: Used classes has not the length equals to array length.
+pycm.pycm_error.pycmMatrixError: Classes length is not equal to the array length.
 """

@@ -246,6 +246,8 @@ def __obj_matrix_handler__(matrix, classes, transpose):
 
     :param matrix: the confusion matrix in dict form
     :type matrix: dict
+    :param classes: ordered labels of classes
+    :type classes: list
     :param transpose: transpose flag
     :type transpose: bool
     :return: matrix parameters as list

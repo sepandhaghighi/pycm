@@ -3,7 +3,7 @@
 from __future__ import division
 from .pycm_error import pycmVectorError, pycmMatrixError, pycmCIError, pycmAverageError, pycmPlotError
 from .pycm_handler import __class_stat_init__, __overall_stat_init__
-from .pycm_handler import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__
+from .pycm_handler import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__, __obj_array_handler__
 from .pycm_class_func import F_calc, IBA_calc, TI_calc, NB_calc, sensitivity_index_calc
 from .pycm_overall_func import weighted_kappa_calc, weighted_alpha_calc, alpha2_calc, brier_score_calc
 from .pycm_output import *
@@ -47,8 +47,8 @@ class ConfusionMatrix():
         :type actual_vector: python list or numpy array of any stringable objects
         :param predict_vector: vector of predictions
         :type predict_vector: python list or numpy array of any stringable objects
-        :param matrix: the confusion matrix in dict form
-        :type matrix: dict
+        :param matrix: the confusion matrix
+        :type matrix: dict, list or numpy array
         :param digit: scale (number of fraction digits)(default value: 5)
         :type digit: int
         :param threshold: activation threshold function
@@ -78,12 +78,12 @@ class ConfusionMatrix():
         if isfile(file):
             matrix_param = __obj_file_handler__(self, file)
         elif isinstance(matrix, dict):
-            matrix_param = __obj_matrix_handler__(matrix, transpose)
+            matrix_param = __obj_matrix_handler__(matrix, classes, self.transpose)
+        elif isinstance(matrix, (list, numpy.ndarray)):
+            matrix_param = __obj_array_handler__(matrix, classes, self.transpose)
         else:
             matrix_param = __obj_vector_handler__(
                 self, actual_vector, predict_vector, threshold, sample_weight, classes)
-        if len(matrix_param[0]) < 2:
-            raise pycmMatrixError(CLASS_NUMBER_ERROR)
         __obj_assign_handler__(self, matrix_param)
         __class_stat_init__(self)
         __overall_stat_init__(self)

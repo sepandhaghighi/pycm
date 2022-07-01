@@ -59,7 +59,9 @@ VECTOR_EMPTY_ERROR = "Input vectors are empty"
 VECTOR_ONLY_ERROR = "This option only works in vector mode"
 VECTOR_UNIQUE_CLASS_ERROR = "The classes list isn't unique. It contains duplicated labels."
 CLASS_NUMBER_ERROR = "Number of the classes is lower than 2"
+CLASSES_ERROR = "Used classes is not a subset of matrix's classes."
 COMPARE_FORMAT_ERROR = "The input type is supposed to be dictionary but it's not!"
+CLASSES_LENGHT_ERROR = "Classes length is not equal to the array length."
 
 COMPARE_TYPE_ERROR = "The input is supposed to consist of pycm.ConfusionMatrix object but it's not!"
 COMPARE_DOMAIN_ERROR = "The domain of all ConfusionMatrix objects must be same! The sample size or the number " \

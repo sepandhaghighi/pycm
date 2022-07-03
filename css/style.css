@@ -61,6 +61,7 @@
 }
 .version{
     color: darkorange;
+    font-weight: bold;
 }
 .logo{
     vertical-align: middle;

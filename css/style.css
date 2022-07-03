@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "baloo";
-    src: url("../fonts/Baloo.ttf");
+    font-family: "overpass";
+    src: url("../fonts/overpass.ttf");
 }
 @font-face {
     font-family: "consola";
@@ -80,7 +80,7 @@
 }
 body{
     background-color: azure;
-    font-family: "baloo";
+    font-family: "overpass";
     margin: 0;
     
 }
@@ -131,7 +131,7 @@ hr{
 
 
 #pycm-footer p{
-    font-family: "baloo";
+    font-family: "overpass";
     vertical-align: center;
     margin:auto;
 }

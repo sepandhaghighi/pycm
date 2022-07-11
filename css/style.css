@@ -7,6 +7,12 @@
     src: url("../fonts/consola.ttf");
 }
 
+.announcement{
+   border: 5px solid black;
+   border-radius: 15px; 
+   padding: 20px;
+}
+
 .github{
     overflow-y: hidden;
     float: left;

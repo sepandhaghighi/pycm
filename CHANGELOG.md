@@ -5,10 +5,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- Hamming distance
 ### Changed
 - `classes` parameter added to `matrix_params_from_table` function
-- matrices with `numpy.integer` elemnets are now accepted
-- arrays added to `matrix` parameter accepting formats
+- Matrices with `numpy.integer` elements are now accepted
+- Arrays added to `matrix` parameter accepting formats
 - Website changed to [http://www.pycm.io](http://www.pycm.io)
 ## [3.5] - 2022-04-27
 ### Added

@@ -121,6 +121,7 @@ FPR(Fall-out or false positive rate)                             0.22222        
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
 GI(Gini index)                                                   0.77778                 0.22222                 0.16667
 GM(G-mean geometric mean of specificity and sensitivity)         0.88192                 0.54433                 0.57735
+HD(Hamming distance)                                              2                      3                       5
 IBA(Index of balanced accuracy)                                  0.95062                 0.13169                 0.27778
 ICSI(Individual classification success index)                    0.6                     -0.16667                0.1
 IS(Information score)                                            1.26303                 1.0                     0.26303
@@ -272,6 +273,7 @@ FPR(Fall-out or false positive rate)                             0.22222        
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.40825                 0.54772
 GI(Gini index)                                                   0.77778                 0.22222                 0.16667
 GM(G-mean geometric mean of specificity and sensitivity)         0.88192                 0.54433                 0.57735
+HD(Hamming distance)                                              2                      3                       5
 IBA(Index of balanced accuracy)                                  0.95062                 0.13169                 0.27778
 ICSI(Individual classification success index)                    0.6                     -0.16667                0.1
 IS(Information score)                                            1.26303                 1.0                     0.26303
@@ -438,6 +440,7 @@ FPR(Fall-out or false positive rate)                             0.55           
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
 GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
 GM(G-mean geometric mean of specificity and sensitivity)         None                    0.53033                 0.56011                 0.0
+HD(Hamming distance)                                             11                      11                      3                       1
 IBA(Index of balanced accuracy)                                  None                    0.17578                 0.12303                 0.0
 ICSI(Individual classification success index)                    None                    0.23214                 -0.16667                None
 IS(Information score)                                            None                    0.09954                 1.73697                 None
@@ -570,6 +573,7 @@ FPR(Fall-out or false positive rate)                             0.55           
 G(G-measure geometric mean of precision and sensitivity)         None                    0.56695                 0.40825                 None
 GI(Gini index)                                                   None                    0.125                   0.27451                 0.0
 GM(G-mean geometric mean of specificity and sensitivity)         None                    0.53033                 0.56011                 0.0
+HD(Hamming distance)                                             11                      11                      3                       1
 IBA(Index of balanced accuracy)                                  None                    0.17578                 0.12303                 0.0
 ICSI(Individual classification success index)                    None                    0.23214                 -0.16667                None
 IS(Information score)                                            None                    0.09954                 1.73697                 None
@@ -860,6 +864,7 @@ FPR(Fall-out or false positive rate)                             0.26667        
 G(G-measure geometric mean of precision and sensitivity)         0.72058                 0.55556                 0.7303
 GI(Gini index)                                                   0.48333                 0.33333                 0.61905
 GM(G-mean geometric mean of specificity and sensitivity)          0.74162                 0.65734                 0.79682
+HD(Hamming distance)                                              7                       8                      3
 IBA(Index of balanced accuracy)                                  0.55917                 0.33608                 0.45351
 ICSI(Individual classification success index)                    0.44231                 0.11111                 0.46667
 IS(Information score)                                            0.63941                 0.73697                 1.848
@@ -1009,6 +1014,7 @@ FPR(Fall-out or false positive rate)                             0.26667        
 G(G-measure geometric mean of precision and sensitivity)         0.72058                 0.55556                 0.7303
 GI(Gini index)                                                   0.48333                 0.33333                 0.61905
 GM(G-mean geometric mean of specificity and sensitivity)         0.74162                 0.65734                 0.79682
+HD(Hamming distance)                                             7                       8                       3
 IBA(Index of balanced accuracy)                                  0.55917                 0.33608                 0.45351
 ICSI(Individual classification success index)                    0.44231                 0.11111                 0.46667
 IS(Information score)                                            0.63941                 0.73697                 1.848
@@ -1160,6 +1166,7 @@ FPR(Fall-out or false positive rate)                             0.26667        
 G(G-measure geometric mean of precision and sensitivity)         0.7746                  0.33333                 0.61237
 GI(Gini index)                                                   0.73333                 0.22222                 0.27778
 GM(G-mean geometric mean of specificity and sensitivity)         0.85635                 0.54433                 0.62361
+HD(Hamming distance)                                             4                       4                       8
 IBA(Index of balanced accuracy)                                  0.92889                 0.13169                 0.28086
 ICSI(Individual classification success index)                    0.6                     -0.33333                0.25
 IS(Information score)                                            1.07039                 1.22239                 0.39232

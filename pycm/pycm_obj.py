@@ -78,9 +78,11 @@ class ConfusionMatrix():
         if isfile(file):
             matrix_param = __obj_file_handler__(self, file)
         elif isinstance(matrix, dict):
-            matrix_param = __obj_matrix_handler__(matrix, classes, self.transpose)
+            matrix_param = __obj_matrix_handler__(
+                matrix, classes, self.transpose)
         elif isinstance(matrix, (list, numpy.ndarray)):
-            matrix_param = __obj_array_handler__(matrix, classes, self.transpose)
+            matrix_param = __obj_array_handler__(
+                matrix, classes, self.transpose)
         else:
             matrix_param = __obj_vector_handler__(
                 self, actual_vector, predict_vector, threshold, sample_weight, classes)

@@ -91,83 +91,84 @@ Example : online_help("J") or online_help(2)
 45-GI
 46-GM
 47-Gwet AC1
-48-Hamming Loss
-49-IBA
-50-ICSI
-51-IS
-52-J
-53-Joint Entropy
-54-KL Divergence
-55-Kappa
-56-Kappa 95% CI
-57-Kappa No Prevalence
-58-Kappa Standard Error
-59-Kappa Unbiased
-60-Krippendorff Alpha
-61-LS
-62-Lambda A
-63-Lambda B
-64-MCC
-65-MCCI
-66-MCEN
-67-MK
-68-Mutual Information
-69-N
-70-NIR
-71-NLR
-72-NLRI
-73-NPV
-74-OC
-75-OOC
-76-OP
-77-Overall ACC
-78-Overall CEN
-79-Overall J
-80-Overall MCC
-81-Overall MCEN
-82-Overall RACC
-83-Overall RACCU
-84-P
-85-P-Value
-86-PLR
-87-PLRI
-88-POP
-89-PPV
-90-PPV Macro
-91-PPV Micro
-92-PRE
-93-Pearson C
-94-Phi-Squared
-95-Q
-96-QI
-97-RACC
-98-RACCU
-99-RCI
-100-RR
-101-Reference Entropy
-102-Response Entropy
-103-SOA1(Landis & Koch)
-104-SOA2(Fleiss)
-105-SOA3(Altman)
-106-SOA4(Cicchetti)
-107-SOA5(Cramer)
-108-SOA6(Matthews)
-109-Scott PI
-110-Standard Error
-111-TN
-112-TNR
-113-TNR Macro
-114-TNR Micro
-115-TON
-116-TOP
-117-TP
-118-TPR
-119-TPR Macro
-120-TPR Micro
-121-Y
-122-Zero-one Loss
-123-dInd
-124-sInd
+48-HD
+49-Hamming Loss
+50-IBA
+51-ICSI
+52-IS
+53-J
+54-Joint Entropy
+55-KL Divergence
+56-Kappa
+57-Kappa 95% CI
+58-Kappa No Prevalence
+59-Kappa Standard Error
+60-Kappa Unbiased
+61-Krippendorff Alpha
+62-LS
+63-Lambda A
+64-Lambda B
+65-MCC
+66-MCCI
+67-MCEN
+68-MK
+69-Mutual Information
+70-N
+71-NIR
+72-NLR
+73-NLRI
+74-NPV
+75-OC
+76-OOC
+77-OP
+78-Overall ACC
+79-Overall CEN
+80-Overall J
+81-Overall MCC
+82-Overall MCEN
+83-Overall RACC
+84-Overall RACCU
+85-P
+86-P-Value
+87-PLR
+88-PLRI
+89-POP
+90-PPV
+91-PPV Macro
+92-PPV Micro
+93-PRE
+94-Pearson C
+95-Phi-Squared
+96-Q
+97-QI
+98-RACC
+99-RACCU
+100-RCI
+101-RR
+102-Reference Entropy
+103-Response Entropy
+104-SOA1(Landis & Koch)
+105-SOA2(Fleiss)
+106-SOA3(Altman)
+107-SOA4(Cicchetti)
+108-SOA5(Cramer)
+109-SOA6(Matthews)
+110-Scott PI
+111-Standard Error
+112-TN
+113-TNR
+114-TNR Macro
+115-TNR Micro
+116-TON
+117-TOP
+118-TP
+119-TPR
+120-TPR Macro
+121-TPR Micro
+122-Y
+123-Zero-one Loss
+124-dInd
+125-sInd
 >>> online_help("J")
 ...
 >>> online_help("J",alt_link=True)

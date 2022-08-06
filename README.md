@@ -928,6 +928,10 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab
 
 <blockquote>79- L. Buitinck et al., "API design for machine learning software: experiences from the scikit-learn project," <i>arXiv preprint arXiv:1309.0238</i>, 2013.</blockquote>
 
+<blockquote>80- R. W. Hamming, "Error detecting and error correcting codes," The Bell system technical journal, vol. 29, no. 2, pp. 147-160, 1950.</blockquote>
+
+<blockquote>81- S. S. Choi, S. H. Cha, and C. C. Tappert, "A survey of binary similarity and distance measures," Journal of systemics, cybernetics and informatics, vol. 8, no. 1, pp. 43-48, 2010.</blockquote>
+
 
 ## Cite
 

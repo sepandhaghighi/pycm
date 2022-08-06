@@ -378,4 +378,18 @@ True
 >>> cm5 = ConfusionMatrix(y_true, np.array(y_prob) > 0.5, threshold=lambda x: 1) # Verified Case -- (https://bit.ly/3n8Uo7R)
 >>> cm5.brier_score()
 0.0
+>>> y1 = [1,1,0,0,0,1]
+>>> y2 = [1,0,1,1,0,1]
+>>> cm1 = ConfusionMatrix(y1, y2) # Verified Case -- (https://bit.ly/3OWrZ00)
+>>> cm1.HD[1]
+3
+>>> cm1.HD[0]
+3
+>>> y1 = [1,1,0,1,0,0,1,1,1,1]
+>>> y2 = [1,0,1,1,0,1,0,1,0,1]
+>>> cm2 = ConfusionMatrix(y1,y2) # Verified Case -- (https://bit.ly/3zVWUoV)
+>>> cm2.HD[1]
+5
+>>> cm2.HD[0]
+5
 """

@@ -723,6 +723,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         result["N"][i] = TN[i] + FP[i]
         result["TOP"][i] = TP[i] + FP[i]
         result["TON"][i] = TN[i] + FN[i]
+        result["HD"][i] = FP[i] + FN[i]
         result["TPR"][i] = TTPN_calc(TP[i], FN[i])
         result["TNR"][i] = TTPN_calc(TN[i], FP[i])
         result["PPV"][i] = TTPN_calc(TP[i], FP[i])

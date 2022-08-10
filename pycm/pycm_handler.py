@@ -79,6 +79,7 @@ def __class_stat_init__(cm):
     cm.HD = cm.class_stat["HD"]
     cm.BB = cm.class_stat["BB"]
 
+
 def __overall_stat_init__(cm):
     """
     Init individual overall stats.

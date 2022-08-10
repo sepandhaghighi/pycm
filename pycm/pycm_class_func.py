@@ -104,6 +104,7 @@ def OC_calc(TP, TOP, P):
     except (ZeroDivisionError, TypeError):
         return "None"
 
+
 def BB_calc(TP, TOP, P):
     """
     Calculate Braun-Blanquet similarity (BB).

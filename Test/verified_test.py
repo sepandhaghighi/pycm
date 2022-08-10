@@ -392,4 +392,10 @@ True
 5
 >>> cm2.HD[0]
 5
+>>> cm1 = ConfusionMatrix(matrix = {1:{1:2,0:2},0:{0:778,1:2}})  # Verified Case -- (https://bit.ly/3BVdNBp)
+>>> cm1.BB[1]
+0.5
+>>> cm2 = ConfusionMatrix(matrix = {1:{1:2,0:3},0:{0:775,1:4}})  # Verified Case -- (https://bit.ly/3BVdNBp)
+>>> cm2.BB[1]
+0.3333333333333333
 """

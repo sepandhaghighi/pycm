@@ -932,6 +932,10 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab
 
 <blockquote>81- S. S. Choi, S. H. Cha, and C. C. Tappert, "A survey of binary similarity and distance measures," Journal of systemics, cybernetics and informatics, vol. 8, no. 1, pp. 43-48, 2010.</blockquote>
 
+<blockquote>82- J. Braun-Blanquet, "Plant sociology. The study of plant communities," Plant sociology. The study of plant communities. First ed., 1932.</blockquote>
+
+<blockquote>83- C. C. Little, "Abydos Documentation," 2018.</blockquote>
+
 
 ## Cite
 

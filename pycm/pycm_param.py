@@ -587,7 +587,7 @@ PARAMS_LINK = {
     "HD": "HD-(Hamming-distance)",
     "BB": "BB-(Braun-Blanquet-similarity)"}
 
-CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC", "QI"]
+CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC", "QI", "BB"]
 
 BENCHMARK_COLOR = {
     "PLRI": {

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - Hamming distance
+- Braun-Blanquet similarity
 ### Changed
 - `classes` parameter added to `matrix_params_from_table` function
 - Matrices with `numpy.integer` elements are now accepted

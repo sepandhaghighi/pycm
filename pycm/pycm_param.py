@@ -171,7 +171,8 @@ CLASS_PARAMS = [
     "AUPR",
     "ICSI",
     "QI",
-    "HD"]
+    "HD",
+    "BB"]
 
 SUMMARY_OVERALL = [
     "ACC Macro",
@@ -455,7 +456,8 @@ PARAMS_DESCRIPTION = {
     "OOC": "Otsuka-Ochiai coefficient",
     "AUPR": "Area under the PR curve",
     "ICSI": "Individual classification success index",
-    "HD": "Hamming distance"}
+    "HD": "Hamming distance",
+    "BB": "Braun-Blanquet similarity"}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -582,7 +584,8 @@ PARAMS_LINK = {
     "ARI": "ARI-(Adjusted-Rand-index)",
     "Bangdiwala B": "Bangdiwala's-B",
     "Krippendorff Alpha": "Krippendorff's-alpha",
-    "HD": "HD-(Hamming-distance)"}
+    "HD": "HD-(Hamming-distance)",
+    "BB": "BB-(Braun-Blanquet-similarity)"}
 
 CAPITALIZE_FILTER = ["BCD", "AUCI", "Q", "AGF", "OOC", "AUPR", "AUC", "QI"]
 

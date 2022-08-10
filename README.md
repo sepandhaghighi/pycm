@@ -934,7 +934,7 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab
 
 <blockquote>82- J. Braun-Blanquet, "Plant sociology. The study of plant communities," Plant sociology. The study of plant communities. First ed., 1932.</blockquote>
 
-<blockquote>83- C. C. Little, "Abydos Documentation," 2018.</blockquote>
+<blockquote>83- C. C. Little, "Abydos Documentation," 2020.</blockquote>
 
 
 ## Cite

@@ -396,6 +396,6 @@ True
 >>> cm1.BB[1]
 0.5
 >>> cm2 = ConfusionMatrix(matrix = {1:{1:2,0:3},0:{0:775,1:4}})  # Verified Case -- (https://bit.ly/3BVdNBp)
->>> cm1.BB[1]
+>>> cm2.BB[1]
 0.3333333333333333
 """

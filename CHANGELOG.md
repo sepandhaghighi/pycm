@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Matrices with `numpy.integer` elements are now accepted
 - Arrays added to `matrix` parameter accepting formats
 - Website changed to [http://www.pycm.io](http://www.pycm.io)
+- Document modified
+- `README.md` modified
 ## [3.5] - 2022-04-27
 ### Added
 - Anaconda workflow

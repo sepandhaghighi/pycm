@@ -140,9 +140,9 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ### From vector
 ```pycon
 >>> from pycm import *
->>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2] # or y_actu = numpy.array([2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2])
->>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2] # or y_pred = numpy.array([0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2])
->>> cm = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred) # Create CM From Data
+>>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
+>>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
+>>> cm = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred)
 >>> cm.classes
 [0, 1, 2]
 >>> cm.table
@@ -202,7 +202,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           
 ### Direct CM
 ```pycon
 >>> from pycm import *
->>> cm2 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":2}, "Class2": {"Class1": 0, "Class2": 5}}) # Create CM Directly
+>>> cm2 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":2}, "Class2": {"Class1": 0, "Class2": 5}})
 >>> cm2
 pycm.ConfusionMatrix(classes: ['Class1', 'Class2'])
 >>> cm2.classes

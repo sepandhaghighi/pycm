@@ -1,3 +1,8 @@
 @echo off
-
-for %%f in (*.ipynb) do (python -m nbconvert %%f --execute --clear-output)
+call python -m art text "Doc Run Script"
+for %%f in (Document\*.ipynb) do (
+echo %%f is running!
+call python -m nbconvert %%f --execute --clear-output --log-level=ERROR
+if ERRORLEVEL 1 (echo %%f Failed! & exit /b 0) else (echo Done!)
+echo --------------------------
+)

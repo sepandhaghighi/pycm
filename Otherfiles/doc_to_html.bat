@@ -1,6 +1,7 @@
 @echo off
 
 if not exist "doc_html" mkdir doc_html
+for %%f in (doc_html\*) do (del %%f)
 copy ..\Document\*.ipynb doc_html
 cd doc_html
 python -m nbconvert --to html_toc --execute Document.ipynb --no-prompt --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags={\"html_hide\"}

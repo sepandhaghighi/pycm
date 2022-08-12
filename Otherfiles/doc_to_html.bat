@@ -3,7 +3,7 @@
 call python -m art text "Doc 2 HTML"
 if not exist "doc_html" mkdir doc_html
 for %%f in (doc_html\*) do (del %%f)
-copy ..\Document\*.ipynb doc_html
+copy Document\*.ipynb doc_html
 cd doc_html
 echo --------------------------
 echo Document.ipynb is running!

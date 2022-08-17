@@ -76,6 +76,8 @@ def __class_stat_init__(cm):
     cm.OOC = cm.class_stat["OOC"]
     cm.AUPR = cm.class_stat["AUPR"]
     cm.ICSI = cm.class_stat["ICSI"]
+    cm.HD = cm.class_stat["HD"]
+    cm.BB = cm.class_stat["BB"]
 
 
 def __overall_stat_init__(cm):
@@ -240,12 +242,14 @@ def __obj_file_handler__(cm, file):
     return matrix_param
 
 
-def __obj_matrix_handler__(matrix, transpose):
+def __obj_matrix_handler__(matrix, classes, transpose):
     """
     Handle object conditions for the matrix.
 
     :param matrix: the confusion matrix in dict form
     :type matrix: dict
+    :param classes: ordered labels of classes
+    :type classes: list
     :param transpose: transpose flag
     :type transpose: bool
     :return: matrix parameters as list
@@ -253,11 +257,35 @@ def __obj_matrix_handler__(matrix, transpose):
     if matrix_check(matrix):
         if class_check(list(matrix.keys())) is False:
             raise pycmMatrixError(MATRIX_CLASS_TYPE_ERROR)
-        matrix_param = matrix_params_from_table(matrix, transpose)
+        matrix_param = matrix_params_from_table(matrix, classes, transpose)
     else:
         raise pycmMatrixError(MATRIX_FORMAT_ERROR)
 
     return matrix_param
+
+
+def __obj_array_handler__(array, classes, transpose):
+    """
+    Handle object conditions for the array.
+
+    :param matrix: the confusion matrix in array form
+    :type matrix: list or np.array
+    :param classes: ordered labels of classes
+    :type classes: list
+    :param transpose: transpose flag
+    :type transpose: bool
+    :return: matrix parameters as list
+    """
+    if classes is not None and len(set(classes)) != len(classes):
+        raise pycmMatrixError(VECTOR_UNIQUE_CLASS_ERROR)
+    if classes is None:
+        classes = list(range(len(array)))
+    if len(classes) != len(array):
+        raise pycmMatrixError(CLASSES_LENGHT_ERROR)
+    matrix = {}
+    for i in range(len(array)):
+        matrix[classes[i]] = {classes[j]: x for j, x in enumerate(array[i])}
+    return __obj_matrix_handler__(matrix, classes, transpose)
 
 
 def __obj_vector_handler__(

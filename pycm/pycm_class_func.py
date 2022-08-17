@@ -105,6 +105,25 @@ def OC_calc(TP, TOP, P):
         return "None"
 
 
+def BB_calc(TP, TOP, P):
+    """
+    Calculate Braun-Blanquet similarity (BB).
+
+    :param TP: true positive
+    :type TP: int
+    :param TOP: number of positives in predict vector
+    :type TOP: int
+    :param P: number of actual positives
+    :type P: int
+    :return: BB as float
+    """
+    try:
+        BB = TP / max(TOP, P)
+        return BB
+    except (ZeroDivisionError, TypeError):
+        return "None"
+
+
 def AGF_calc(TP, FP, FN, TN):
     """
     Calculate Adjusted F-score (AGF).
@@ -723,6 +742,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         result["N"][i] = TN[i] + FP[i]
         result["TOP"][i] = TP[i] + FP[i]
         result["TON"][i] = TN[i] + FN[i]
+        result["HD"][i] = FP[i] + FN[i]
         result["TPR"][i] = TTPN_calc(TP[i], FN[i])
         result["TNR"][i] = TTPN_calc(TN[i], FP[i])
         result["PPV"][i] = TTPN_calc(TP[i], FP[i])
@@ -789,6 +809,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         result["MCCI"][i] = MCC_analysis(result["MCC"][i])
         result["AGF"][i] = AGF_calc(TP[i], FP[i], FN[i], TN[i])
         result["OC"][i] = OC_calc(TP[i], result["TOP"][i], result["P"][i])
+        result["BB"][i] = BB_calc(TP[i], result["TOP"][i], result["P"][i])
         result["OOC"][i] = OOC_calc(TP[i], result["TOP"][i], result["P"][i])
         result["AUPR"][i] = AUC_calc(result["PPV"][i], result["TPR"][i])
         result["ICSI"][i] = MK_BM_calc(result["PPV"][i], result["TPR"][i])

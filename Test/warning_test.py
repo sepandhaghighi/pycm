@@ -129,6 +129,7 @@ AM(Difference between automatic and manual classification)        0             
 AUC(Area under the ROC curve)                                     1.0           0.95833       0.70455       0.75          1.0           0.75          1.0           0.95833       1.0           1.0
 AUCI(AUC value interpretation)                                    Excellent     Excellent     Good          Good          Excellent     Good          Excellent     Excellent     Excellent     Excellent
 AUPR(Area under the PR curve)                                     1.0           0.75          0.5           0.75          1.0           0.75          1.0           0.75          1.0           1.0
+BB(Braun-Blanquet similarity)                                     1.0           0.5           0.5           0.5           1.0           0.5           1.0           0.5           1.0           1.0
 BCD(Bray-Curtis dissimilarity)                                    0.0           0.03846       0.0           0.03846       0.0           0.03846       0.0           0.03846       0.0           0.0
 BM(Informedness or bookmaker informedness)                        1.0           0.91667       0.40909       0.5           1.0           0.5           1.0           0.91667       1.0           1.0
 CEN(Confusion entropy)                                            0             0.1267        0.23981       0.1267        0             0.1267        0             0.1267        0             0
@@ -148,6 +149,7 @@ FPR(Fall-out or false positive rate)                              0.0           
 G(G-measure geometric mean of precision and sensitivity)          1.0           0.70711       0.5           0.70711       1.0           0.70711       1.0           0.70711       1.0           1.0
 GI(Gini index)                                                    1.0           0.91667       0.40909       0.5           1.0           0.5           1.0           0.91667       1.0           1.0
 GM(G-mean geometric mean of specificity and sensitivity)          1.0           0.95743       0.6742        0.70711       1.0           0.70711       1.0           0.95743       1.0           1.0
+HD(Hamming distance)                                              0             1             2             1             0             1             0             1             0             0
 IBA(Index of balanced accuracy)                                   1.0           0.99306       0.2686        0.25          1.0           0.25          1.0           0.99306       1.0           1.0
 ICSI(Individual classification success index)                     1.0           0.5           0.0           0.5           1.0           0.5           1.0           0.5           1.0           1.0
 IS(Information score)                                             3.70044       2.70044       1.70044       2.70044       3.70044       2.70044       3.70044       2.70044       3.70044       3.70044
@@ -288,6 +290,7 @@ AM(Difference between automatic and manual classification)        0             
 AUC(Area under the ROC curve)                                     1.0           0.95833       0.70455       0.75          1.0           0.75          1.0           0.95833       1.0           1.0
 AUCI(AUC value interpretation)                                    Excellent     Excellent     Good          Good          Excellent     Good          Excellent     Excellent     Excellent     Excellent
 AUPR(Area under the PR curve)                                     1.0           0.75          0.5           0.75          1.0           0.75          1.0           0.75          1.0           1.0
+BB(Braun-Blanquet similarity)                                     1.0           0.5           0.5           0.5           1.0           0.5           1.0           0.5           1.0           1.0
 BCD(Bray-Curtis dissimilarity)                                    0.0           0.03846       0.0           0.03846       0.0           0.03846       0.0           0.03846       0.0           0.0
 BM(Informedness or bookmaker informedness)                        1.0           0.91667       0.40909       0.5           1.0           0.5           1.0           0.91667       1.0           1.0
 CEN(Confusion entropy)                                            0             0.1267        0.23981       0.1267        0             0.1267        0             0.1267        0             0
@@ -307,6 +310,7 @@ FPR(Fall-out or false positive rate)                              0.0           
 G(G-measure geometric mean of precision and sensitivity)          1.0           0.70711       0.5           0.70711       1.0           0.70711       1.0           0.70711       1.0           1.0
 GI(Gini index)                                                    1.0           0.91667       0.40909       0.5           1.0           0.5           1.0           0.91667       1.0           1.0
 GM(G-mean geometric mean of specificity and sensitivity)          1.0           0.95743       0.6742        0.70711       1.0           0.70711       1.0           0.95743       1.0           1.0
+HD(Hamming distance)                                              0             1             2             1             0             1             0             1             0             0
 IBA(Index of balanced accuracy)                                   1.0           0.99306       0.2686        0.25          1.0           0.25          1.0           0.99306       1.0           1.0
 ICSI(Individual classification success index)                     1.0           0.5           0.0           0.5           1.0           0.5           1.0           0.5           1.0           1.0
 IS(Information score)                                             3.70044       2.70044       1.70044       2.70044       3.70044       2.70044       3.70044       2.70044       3.70044       3.70044
@@ -467,6 +471,7 @@ AM(Difference between automatic and manual classification)        0             
 AUC(Area under the ROC curve)                                     0.66667       0.80952       0.74167       None
 AUCI(AUC value interpretation)                                    Fair          Very Good     Good          None
 AUPR(Area under the PR curve)                                     0.55556       0.73333       0.72115       None
+BB(Braun-Blanquet similarity)                                     0.55556       0.66667       0.69231       None
 BCD(Bray-Curtis dissimilarity)                                    0.0           0.01852       0.01852       0.0
 BM(Informedness or bookmaker informedness)                        0.33333       0.61905       0.48333       None
 CEN(Confusion entropy)                                            0.51257       0.36499       0.35586       None
@@ -486,6 +491,7 @@ FPR(Fall-out or false positive rate)                              0.22222       
 G(G-measure geometric mean of precision and sensitivity)          0.55556       0.7303        0.72058       None
 GI(Gini index)                                                    0.33333       0.61905       0.48333       None
 GM(G-mean geometric mean of specificity and sensitivity)          0.65734       0.79682       0.74162       None
+HD(Hamming distance)                                              8             3             7             0
 IBA(Index of balanced accuracy)                                   0.33608       0.45351       0.55917       None
 ICSI(Individual classification success index)                     0.11111       0.46667       0.44231       None
 IS(Information score)                                             0.73697       1.848         0.63941       None

@@ -356,7 +356,7 @@ def matrix_params_calc(
         try:
             table[item][predict_vector[index]] += 1 * weight_vector[index]
         except KeyError:
-            pass
+            continue
     [_, _, TP_dict, TN_dict, FP_dict,
         FN_dict] = matrix_params_from_table(table, classes_list)
     return [classes_list, table, TP_dict, TN_dict, FP_dict, FN_dict]

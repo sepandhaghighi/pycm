@@ -33,7 +33,7 @@ Please consider the following :
 4. Update `__class_stat_init__` function in `pycm_handler.py` by a new attribute
 5. Update `PARAMS_DESCRIPTION` dictionary in `pycm_param.py` by a short description
 	- If you don't want capitalization, update `CAPITALIZE_FILTER` list in `pycm_param.py` (*Optional*)
-6. Update `References` section in `Document.ipynb` and `README.md` (`IEEE` format)
+6. Update `References` section in `Document.ipynb` (`IEEE` format)
 7. Add description to `Class Statistics` section in `Document.ipynb`
 	- Cite reference
 	- Update table of contents
@@ -52,7 +52,7 @@ Please consider the following :
 	- Call statistic function and store result in a variable
 	- Add this variable to output
 3. Update `__overall_stat_init__` function in `pycm_handler.py` by a new attribute
-4. Update `References` section in `Document.ipynb` and `README.md` (`IEEE` format)
+4. Update `References` section in `Document.ipynb` (`IEEE` format)
 5. Add description to `Overall Statistics` section in `Document.ipynb`
 	- Cite reference
 	- Update table of contents

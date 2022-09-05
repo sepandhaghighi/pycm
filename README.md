@@ -1,5 +1,6 @@
 <div align="center">
-<img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/logo.png">
+<img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/logo.png" width="550">
+<h1>PyCM: Python Confusion Matrix</h1>
 <br/>
 <br/>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>

@@ -17,7 +17,7 @@
 </a>
 </div>
 
-----------
+
 ## Table of contents					
    * [Overview](https://github.com/sepandhaghighi/pycm#overview)
    * [Installation](https://github.com/sepandhaghighi/pycm#installation)

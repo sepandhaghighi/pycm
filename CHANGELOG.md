@@ -7,8 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 - `CONTRIBUTING.md` updated
-- `references` section removed from `README.md`
 - `matrix_params_calc` function optimized
+- `README.md` modified
 ## [3.6] - 2022-08-17
 ### Added
 - Hamming distance

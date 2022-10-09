@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `CONTRIBUTING.md` updated
 - `matrix_params_calc` function optimized
 - `README.md` modified
+- Test system modified
 ## [3.6] - 2022-08-17
 ### Added
 - Hamming distance

@@ -681,3 +681,40 @@ def normal_quantile(p, mean=0, std=1):
         return mean + std * math.sqrt(2) * inv_erf((2 * p) - 1)
     except Exception:
         return "None"
+
+def threshold_func(item, class_index, classes, threshold):
+    """
+    Threshold function.
+
+    :param item: probability item
+    :type item: list
+    :param class_index: class index
+    :type classes: int
+    :param classes: ordered labels of classes
+    :type classes: list
+    :param threshold: threshold value
+    :type threshold: float
+    :return: selected class name
+    """
+    class_name = classes[class_index]
+    if item[class_index] >= threshold:
+        return class_name
+    _classes = classes[:]
+    _classes.remove(class_name)
+    return _classes[0]
+
+
+def thresholds_calc(prob_vector):
+    """
+    Calculate thresholds from probabilities vector.
+
+    :param prob_vector: vector of probabilities
+    :type prob_vector: python list or numpy array of any stringable objects
+    :return: thresholds as list
+    """
+    thresholds = []
+    for item in prob_vector:
+        thresholds.extend(item)
+    thresholds = list(set(thresholds))
+    thresholds.sort()
+    return thresholds

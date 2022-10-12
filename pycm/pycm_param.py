@@ -46,7 +46,14 @@ HTML_END_TEMPLATE = '''<p style="text-align:center;border-top:1px solid black;">
 </html>
 '''
 
-
+PROBABILITY_SIZE_ERROR = "Probability vector elements must have same length"
+PROBABILITY_TYPE_ERROR = "The elements of the probability vector can only contain numeric values"
+PROBABILITY_SUM_ERROR = "The sum of probability values must be one"
+THRESHOLDS_NUMBER_ERROR = "Number of the thresholds is lower than 2"
+THRESHOLDS_TYPE_ERROR = "The type of thresholds is assumed to be a list or a NumPy array"
+THRESHOLDS_NUMERIC_ERROR = "The thresholds can only contain numeric values"
+CLASSES_TYPE_ERROR = "The type of classes is assumed to be a list"
+CLASSES_MATCH_ERROR = "The classes don't match to actual_vector"
 MATRIX_CLASS_TYPE_ERROR = "Type of the input matrix classes is assumed  be the same"
 MATRIX_FORMAT_ERROR = "Input confusion matrix format error"
 MAPPING_FORMAT_ERROR = "Mapping format error"
@@ -219,6 +226,8 @@ CI_CLASS_LIST = [
     "PRE"]
 
 CI_OVERALL_LIST = ["Kappa", "Overall ACC"]
+
+CURVE_PARAMS = ["TPR", "FPR", "TNR", "PPV"]
 
 ALPHA_TWO_SIDE_TABLE = {
     0.2: 1.28,

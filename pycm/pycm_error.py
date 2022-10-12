@@ -36,3 +36,8 @@ class pycmPlotError(Exception):
     """Plot error class."""
 
     pass
+
+class pycmCurveError(Exception):
+    """Curve error class."""
+
+    pass

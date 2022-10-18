@@ -704,16 +704,16 @@ def threshold_func(item, class_index, classes, threshold):
     return _classes[0]
 
 
-def thresholds_calc(prob_vector):
+def thresholds_calc(probs):
     """
     Calculate thresholds from probabilities vector.
 
-    :param prob_vector: vector of probabilities
-    :type prob_vector: python list or numpy array of any stringable objects
+    :param probs: probabilities
+    :type probs: python list or numpy array
     :return: thresholds as list
     """
     thresholds = []
-    for item in prob_vector:
+    for item in probs:
         thresholds.extend(item)
     thresholds = list(set(thresholds))
     thresholds.sort()

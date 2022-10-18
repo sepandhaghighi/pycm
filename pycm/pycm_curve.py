@@ -13,14 +13,14 @@ class Curve:
     Curve class.
     """
 
-    def __init__(self, actual_vector, prob_vector, classes, thresholds=None, sample_weight=None):
+    def __init__(self, actual_vector, probs, classes, thresholds=None, sample_weight=None):
         """
         Init method.
 
         :param actual_vector: actual vector
         :type actual_vector: python list or numpy array of any stringable objects
-        :param prob_vector: vector of probabilities
-        :type prob_vector: python list or numpy array of any stringable objects
+        :param probs: probabilities
+        :type probs: python list or numpy array
         :param classes: ordered labels of classes
         :type classes: list
         :param thresholds: thresholds list
@@ -30,16 +30,16 @@ class Curve:
         """
         self.data = {}
         self.thresholds = []
-        __curve_validation__(actual_vector, prob_vector)
+        __curve_validation__(actual_vector, probs)
         self.actual_vector = actual_vector
-        self.prob_vector = prob_vector
+        self.probs = probs
         __curve_classes_handler__(self, classes)
         __curve_thresholds_handler__(self, thresholds)
         for c_index , c in enumerate(self.classes):
             data_temp = {item:[] for item in CURVE_PARAMS}
             for t in self.thresholds:
                 lambda_fun = lambda x: threshold_func(x, c_index, classes, t)
-                cm = ConfusionMatrix(actual_vector=self.actual_vector, predict_vector=self.prob_vector, threshold=lambda_fun, sample_weight=sample_weight)
+                cm = ConfusionMatrix(actual_vector=self.actual_vector, predict_vector=self.probs, threshold=lambda_fun, sample_weight=sample_weight)
                 for item in CURVE_PARAMS:
                     data_temp[item].append(getattr(cm, item)[c])
             self.data[c] = data_temp
@@ -53,23 +53,23 @@ class Curve:
         pass
 
 
-def __curve_validation__(actual_vector, prob_vector):
+def __curve_validation__(actual_vector, probs):
     """
     Curve input validation.
 
     :param actual_vector: actual vector
     :type actual_vector: python list or numpy array of any stringable objects
-    :param prob_vector: vector of probabilities
-    :type prob_vector: python list or numpy array of any stringable objects
+    :param probs: probabilities
+    :type probs: python list or numpy array
     :return: None
     """
-    if not isinstance(actual_vector, (list, numpy.ndarray)) or not isinstance(prob_vector, (list, numpy.ndarray)):
+    if not isinstance(actual_vector, (list, numpy.ndarray)) or not isinstance(probs, (list, numpy.ndarray)):
         raise pycmCurveError(VECTOR_TYPE_ERROR)
-    if len(actual_vector) != len(prob_vector):
+    if len(actual_vector) != len(probs):
         raise pycmCurveError(VECTOR_SIZE_ERROR)
-    if len(set(map(len, prob_vector))) != 1:
+    if len(set(map(len, probs))) != 1:
         raise pycmCurveError(PROBABILITY_SIZE_ERROR)
-    for item in prob_vector:
+    for item in probs:
         if not all(map(isfloat, item)):
             raise pycmCurveError(PROBABILITY_TYPE_ERROR)
         if sum(item) != 1:
@@ -110,7 +110,7 @@ def __curve_thresholds_handler__(curve, thresholds):
     :return: None
     """
     if thresholds is None:
-        curve.thresholds = thresholds_calc(curve.prob_vector)
+        curve.thresholds = thresholds_calc(curve.probs)
     else:
         if not isinstance(thresholds, (list, numpy.ndarray)):
             raise pycmCurveError(THRESHOLDS_TYPE_ERROR)

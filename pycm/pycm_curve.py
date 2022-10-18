@@ -30,9 +30,7 @@ class Curve:
         """
         self.data = {}
         self.thresholds = []
-        __curve_validation__(actual_vector, probs)
-        self.actual_vector = actual_vector
-        self.probs = probs
+        __curve_validation__(self, actual_vector, probs)
         __curve_classes_handler__(self, classes)
         __curve_thresholds_handler__(self, thresholds)
         for c_index , c in enumerate(self.classes):
@@ -53,10 +51,12 @@ class Curve:
         pass
 
 
-def __curve_validation__(actual_vector, probs):
+def __curve_validation__(curve, actual_vector, probs):
     """
     Curve input validation.
 
+    :param curve: curve
+    :type curve: pycm.Curve object
     :param actual_vector: actual vector
     :type actual_vector: python list or numpy array of any stringable objects
     :param probs: probabilities
@@ -75,6 +75,8 @@ def __curve_validation__(actual_vector, probs):
             raise pycmCurveError(PROBABILITY_TYPE_ERROR)
         if sum(item) != 1:
             raise pycmCurveError(PROBABILITY_SUM_ERROR)
+    curve.actual_vector = actual_vector
+    curve.probs = probs
 
 
 def __curve_classes_handler__(curve, classes):

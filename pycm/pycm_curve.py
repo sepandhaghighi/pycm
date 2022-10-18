@@ -55,11 +55,11 @@ class Curve:
         self.plot_y_axis = None
 
     def area(self):
-        "Area method."
+        """Area method."""
         pass
 
     def plot(self):
-        "Plot method."
+        """Plot method."""
         pass
 
 

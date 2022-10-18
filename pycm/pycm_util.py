@@ -712,9 +712,7 @@ def thresholds_calc(probs):
     :type probs: python list or numpy array
     :return: thresholds as list
     """
-    thresholds = []
-    for item in probs:
-        thresholds.extend(item)
+    thresholds = numpy.ravel(probs)
     thresholds = list(set(thresholds))
     thresholds.sort()
     return thresholds

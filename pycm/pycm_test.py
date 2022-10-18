@@ -20,7 +20,7 @@ pycm.ConfusionMatrix(classes: ['Class1', 'Class2', 'Class3'])
 pycm.Compare(classes: ['Class1', 'Class2', 'Class3'])
 >>> cv = Curve(actual_vector = [1, 1, 2, 2], probs = [[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]], classes=[2,1])
 >>> cv.classes
-[2,1]
+[2, 1]
 >>> cv.thresholds
 [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
 >>> cv.data[2]["TPR"]

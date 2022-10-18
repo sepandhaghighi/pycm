@@ -18,5 +18,14 @@ pycm.ConfusionMatrix(classes: ['Class1', 'Class2', 'Class3'])
 >>> cp = Compare({"cm1":cm,"cm2":cm2})
 >>> cp
 pycm.Compare(classes: ['Class1', 'Class2', 'Class3'])
+>>> cv = Curve(actual_vector = [1, 1, 2, 2], probs = [[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]], classes=[2,1])
+>>> cm.classes
+[2,1]
+>>> cv.thresholds
+[0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
+>>> cv.data[2]["TPR"]
+[1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 0.5, 0.0]
+>>> cv.data[2]["FPR"]
+[1.0, 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.0]
 
 """

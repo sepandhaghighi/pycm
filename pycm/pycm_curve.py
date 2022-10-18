@@ -11,6 +11,16 @@ import numpy
 class Curve:
     """
     Curve class.
+
+    >>> cv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2,1])
+    >>> cm.classes
+    [2,1]
+    >>> cv.thresholds
+    [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
+    >>> cv.data[2]["TPR"]
+    [1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 0.5, 0.0]
+    >>> cv.data[2]["FPR"]
+    [1.0, 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.0]
     """
 
     def __init__(self, actual_vector, probs, classes, thresholds=None, sample_weight=None):
@@ -45,9 +55,11 @@ class Curve:
         self.plot_y_axis = None
 
     def area(self):
+        "Area method."
         pass
 
     def plot(self):
+        "Plot method."
         pass
 
 

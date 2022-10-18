@@ -63,8 +63,9 @@ def __curve_validation__(actual_vector, probs):
     :type probs: python list or numpy array
     :return: None
     """
-    if not isinstance(actual_vector, (list, numpy.ndarray)) or not isinstance(probs, (list, numpy.ndarray)):
-        raise pycmCurveError(VECTOR_TYPE_ERROR)
+    for item in [actual_vector, probs]:
+        if not isinstance(item, (list, numpy.ndarray)):
+            raise pycmCurveError(VECTOR_TYPE_ERROR)
     if len(actual_vector) != len(probs):
         raise pycmCurveError(VECTOR_SIZE_ERROR)
     if len(set(map(len, probs))) != 1:

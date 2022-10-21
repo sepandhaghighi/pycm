@@ -40,6 +40,7 @@ class Curve:
         """
         self.data = {}
         self.thresholds = []
+        self.binary = False
         __curve_validation__(self, actual_vector, probs)
         __curve_classes_handler__(self, classes)
         __curve_thresholds_handler__(self, thresholds)
@@ -109,6 +110,8 @@ def __curve_classes_handler__(curve, classes):
         raise pycmCurveError(CLASSES_MATCH_ERROR)
     if len(set(classes)) < 2:
         raise pycmCurveError(CLASS_NUMBER_ERROR)
+    if len(set(classes)) == 2:
+        curve.binary = True
     curve.classes = classes
     if len(set(map(type, curve.actual_vector))) > 1:
         curve.classes = list(map(str, curve.classes))

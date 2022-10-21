@@ -23,7 +23,13 @@ class Curve:
     [1.0, 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.0]
     """
 
-    def __init__(self, actual_vector, probs, classes, thresholds=None, sample_weight=None):
+    def __init__(
+            self,
+            actual_vector,
+            probs,
+            classes,
+            thresholds=None,
+            sample_weight=None):
         """
         Init method.
 
@@ -44,11 +50,16 @@ class Curve:
         __curve_validation__(self, actual_vector, probs)
         __curve_classes_handler__(self, classes)
         __curve_thresholds_handler__(self, thresholds)
-        for c_index , c in enumerate(self.classes):
-            data_temp = {item:[] for item in CURVE_PARAMS}
+        for c_index, c in enumerate(self.classes):
+            data_temp = {item: [] for item in CURVE_PARAMS}
             for t in self.thresholds:
-                lambda_fun = lambda x: threshold_func(x, c_index, classes, t)
-                cm = ConfusionMatrix(actual_vector=self.actual_vector, predict_vector=self.probs, threshold=lambda_fun, sample_weight=sample_weight)
+                def lambda_fun(x): return threshold_func(
+                    x, c_index, classes, t)
+                cm = ConfusionMatrix(
+                    actual_vector=self.actual_vector,
+                    predict_vector=self.probs,
+                    threshold=lambda_fun,
+                    sample_weight=sample_weight)
                 for item in CURVE_PARAMS:
                     data_temp[item].append(getattr(cm, item)[c])
             self.data[c] = data_temp
@@ -137,5 +148,3 @@ def __curve_thresholds_handler__(curve, thresholds):
         if not all(map(isfloat, thresholds)):
             raise pycmCurveError(THRESHOLDS_NUMERIC_ERROR)
         curve.thresholds = thresholds
-
-

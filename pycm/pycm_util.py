@@ -682,6 +682,7 @@ def normal_quantile(p, mean=0, std=1):
     except Exception:
         return "None"
 
+
 def threshold_func(item, class_index, classes, threshold):
     """
     Threshold function.
@@ -713,6 +714,5 @@ def thresholds_calc(probs):
     :return: thresholds as list
     """
     thresholds = numpy.ravel(probs)
-    thresholds = list(set(thresholds))
-    thresholds.sort()
+    thresholds = sorted(set(thresholds))
     return thresholds

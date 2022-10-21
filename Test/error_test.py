@@ -183,4 +183,16 @@ pycm.pycm_error.pycmCurveError: Number of the classes is lower than 2
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: The elements of the probability vector can only contain numeric values
+>>> cv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.8]], classes=[1,2], thresholds={1,2})
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: The type of thresholds is assumed to be a list or a NumPy array
+>>> cv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.8]], classes=[1,2], thresholds=[0.1])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: Number of the thresholds is lower than 2
+>>> cv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.8]], classes=[1,2], thresholds=[0.1, "q"])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: The thresholds can only contain numeric values
 """

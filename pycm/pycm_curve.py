@@ -34,9 +34,9 @@ class Curve:
         Init method.
 
         :param actual_vector: actual vector
-        :type actual_vector: python list or numpy array of any stringable objects
+        :type actual_vector: list or numpy array of any stringable objects
         :param probs: probabilities
-        :type probs: python list or numpy array
+        :type probs: list or numpy array
         :param classes: ordered labels of classes
         :type classes: list
         :param thresholds: thresholds list
@@ -82,9 +82,9 @@ def __curve_validation__(curve, actual_vector, probs):
     :param curve: curve
     :type curve: pycm.Curve object
     :param actual_vector: actual vector
-    :type actual_vector: python list or numpy array of any stringable objects
+    :type actual_vector: list or numpy array of any stringable objects
     :param probs: probabilities
-    :type probs: python list or numpy array
+    :type probs: list or numpy array
     :return: None
     """
     for item in [actual_vector, probs]:
@@ -135,7 +135,7 @@ def __curve_thresholds_handler__(curve, thresholds):
     :param curve: curve
     :type curve: pycm.Curve object
     :param thresholds: thresholds list
-    :type thresholds: list
+    :type thresholds: list or numpy array
     :return: None
     """
     if thresholds is None:

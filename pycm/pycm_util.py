@@ -710,7 +710,7 @@ def thresholds_calc(probs):
     Calculate thresholds from probabilities vector.
 
     :param probs: probabilities
-    :type probs: python list or numpy array
+    :type probs: list or numpy array
     :return: thresholds as list
     """
     thresholds = numpy.ravel(probs)

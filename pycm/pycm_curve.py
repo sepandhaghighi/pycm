@@ -117,11 +117,11 @@ def __curve_classes_handler__(curve, classes):
         raise pycmCurveError(VECTOR_UNIQUE_CLASS_ERROR)
     if set(classes) != set(curve.actual_vector):
         raise pycmCurveError(CLASSES_MATCH_ERROR)
-    if len(set(classes)) < 2:
+    if len(classes) < 2:
         raise pycmCurveError(CLASS_NUMBER_ERROR)
     if set(map(len, curve.probs)) != {len(classes)}:
         raise pycmCurveError(PROBABILITY_SIZE_ERROR)
-    if len(set(classes)) == 2:
+    if len(classes) == 2:
         curve.binary = True
     curve.classes = classes
     if len(set(map(type, curve.actual_vector))) > 1:

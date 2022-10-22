@@ -202,5 +202,9 @@ pycm.pycm_error.pycmCurveError: The classes list isn't unique. It contains dupli
 >>> cv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.8,0.1], [0.2,0.8]], classes=[1,2])
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmCurveError: Probability vector elements must have same length
+pycm.pycm_error.pycmCurveError: Probability vector elements must have same length and equal to classes
+>>> cv = Curve([1,2,2,1],[[1], [1], [1], [1]], classes=[1,2])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: Probability vector elements must have same length and equal to classes
 """

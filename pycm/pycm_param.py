@@ -46,7 +46,7 @@ HTML_END_TEMPLATE = '''<p style="text-align:center;border-top:1px solid black;">
 </html>
 '''
 
-PROBABILITY_SIZE_ERROR = "Probability vector elements must have same length"
+PROBABILITY_SIZE_ERROR = "Probability vector elements must have same length and equal to classes"
 PROBABILITY_TYPE_ERROR = "The elements of the probability vector can only contain numeric values"
 PROBABILITY_SUM_ERROR = "The sum of probability values must be one"
 THRESHOLDS_NUMBER_ERROR = "Number of the thresholds is lower than 2"

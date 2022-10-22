@@ -92,8 +92,6 @@ def __curve_validation__(curve, actual_vector, probs):
             raise pycmCurveError(VECTOR_TYPE_ERROR)
     if len(actual_vector) != len(probs):
         raise pycmCurveError(VECTOR_SIZE_ERROR)
-    if len(set(map(len, probs))) != 1:
-        raise pycmCurveError(PROBABILITY_SIZE_ERROR)
     for item in probs:
         if not all(map(isfloat, item)):
             raise pycmCurveError(PROBABILITY_TYPE_ERROR)
@@ -121,6 +119,8 @@ def __curve_classes_handler__(curve, classes):
         raise pycmCurveError(CLASSES_MATCH_ERROR)
     if len(set(classes)) < 2:
         raise pycmCurveError(CLASS_NUMBER_ERROR)
+    if set(map(len, curve.probs)) != set(len(classes)):
+        raise pycmCurveError(PROBABILITY_SIZE_ERROR)
     if len(set(classes)) == 2:
         curve.binary = True
     curve.classes = classes

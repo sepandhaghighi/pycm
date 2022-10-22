@@ -40,7 +40,7 @@ class Curve:
         :param classes: ordered labels of classes
         :type classes: list
         :param thresholds: thresholds list
-        :type thresholds: list
+        :type thresholds: list or numpy array
         :param sample_weight: sample weights list
         :type sample_weight: list
         """
@@ -148,3 +148,5 @@ def __curve_thresholds_handler__(curve, thresholds):
         if not all(map(isfloat, thresholds)):
             raise pycmCurveError(THRESHOLDS_NUMERIC_ERROR)
         curve.thresholds = thresholds
+        if isinstance(curve.thresholds, numpy.ndarray):
+            curve.thresholds = curve.thresholds.tolist()

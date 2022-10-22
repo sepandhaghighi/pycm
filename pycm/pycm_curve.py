@@ -54,7 +54,7 @@ class Curve:
             data_temp = {item: [] for item in CURVE_PARAMS}
             for t in self.thresholds:
                 def lambda_fun(x): return threshold_func(
-                    x, c_index, classes, t)
+                    x, c_index, self.classes, t)
                 cm = ConfusionMatrix(
                     actual_vector=self.actual_vector,
                     predict_vector=self.probs,

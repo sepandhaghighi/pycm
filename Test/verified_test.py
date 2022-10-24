@@ -398,7 +398,7 @@ True
 >>> cm2 = ConfusionMatrix(matrix = {1:{1:2,0:3},0:{0:775,1:4}})  # Verified Case -- (https://bit.ly/3BVdNBp)
 >>> cm2.BB[1]
 0.3333333333333333
->>> cv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2,1])  # Verified Case -- (https://bit.ly/3MIMk9z)
+>>> cv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])  # Verified Case -- (https://bit.ly/3MIMk9z)
 >>> cv.thresholds
 [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
 >>> cv.data[2]["TPR"]

@@ -170,7 +170,7 @@ pycm.pycm_error.pycmCurveError: The sum of probability values must be one
 >>> cv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.1,0.9]], classes={1,2})
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmCurveError: The type of classes is assumed to be a list
+pycm.pycm_error.pycmCurveError: The type of classes is assumed to be list
 >>> cv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.1,0.9]], classes=[1,2,3])
 Traceback (most recent call last):
         ...
@@ -186,7 +186,7 @@ pycm.pycm_error.pycmCurveError: The elements of the probability vector can only 
 >>> cv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.8]], classes=[1,2], thresholds={1,2})
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmCurveError: The type of thresholds is assumed to be a list or a NumPy array
+pycm.pycm_error.pycmCurveError: The type of thresholds is assumed to be list or NumPy array
 >>> cv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.8]], classes=[1,2], thresholds=[0.1])
 Traceback (most recent call last):
         ...

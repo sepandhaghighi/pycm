@@ -151,59 +151,59 @@ pycm.pycm_error.pycmMatrixError: The classes list isn't unique. It contains dupl
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmMatrixError: Classes length is not equal to the array length.
->>> cv = Curve([1,2,2,1],{1,2,2,1}, classes=[1,2])
+>>> crv = Curve([1,2,2,1],{1,2,2,1}, classes=[1,2])
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: The type of input vectors is assumed to be a list or a NumPy array
->>> cv = Curve({1,2,2,1},[1,2,2,1], classes=[1,2])
+>>> crv = Curve({1,2,2,1},[1,2,2,1], classes=[1,2])
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: The type of input vectors is assumed to be a list or a NumPy array
->>> cv = Curve([1,2,2,1],[[0.1,0.9]], classes=[1,2])
+>>> crv = Curve([1,2,2,1],[[0.1,0.9]], classes=[1,2])
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: Input vectors must have same length
->>> cv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.9]], classes=[1,2])
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.9]], classes=[1,2])
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: The sum of probability values must be one
->>> cv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.1,0.9]], classes={1,2})
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.1,0.9]], classes={1,2})
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: The type of classes is assumed to be list
->>> cv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.1,0.9]], classes=[1,2,3])
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.1,0.9]], classes=[1,2,3])
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: The classes don't match to actual_vector
->>> cv = Curve([1,1,1,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.1,0.9]], classes=[1])
+>>> crv = Curve([1,1,1,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.1,0.9]], classes=[1])
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: Number of the classes is lower than 2
->>> cv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,"salam"]], classes=[1,2])
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,"salam"]], classes=[1,2])
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: The elements of the probability vector can only contain numeric values
->>> cv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.8]], classes=[1,2], thresholds={1,2})
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.8]], classes=[1,2], thresholds={1,2})
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: The type of thresholds is assumed to be list or NumPy array
->>> cv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.8]], classes=[1,2], thresholds=[0.1])
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.8]], classes=[1,2], thresholds=[0.1])
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: Number of the thresholds is lower than 2
->>> cv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.8]], classes=[1,2], thresholds=[0.1, "q"])
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.8]], classes=[1,2], thresholds=[0.1, "q"])
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: The thresholds can only contain numeric values
->>> cv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.8]], classes=[1,1,2])
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.8]], classes=[1,1,2])
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: The classes list isn't unique. It contains duplicated labels.
->>> cv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.8,0.1], [0.2,0.8]], classes=[1,2])
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.8,0.1], [0.2,0.8]], classes=[1,2])
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: Probability vector elements must have same length and equal to classes
->>> cv = Curve([1,2,2,1],[[1], [1], [1], [1]], classes=[1,2])
+>>> crv = Curve([1,2,2,1],[[1], [1], [1], [1]], classes=[1,2])
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: Probability vector elements must have same length and equal to classes

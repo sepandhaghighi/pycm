@@ -2,47 +2,47 @@
 """
 >>> from pycm import Curve
 >>> import numpy as np
->>> cv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
->>> cv.binary
+>>> crv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
+>>> crv.binary
 True
->>> cv.classes
+>>> crv.classes
 [2, 1]
->>> cv.thresholds
+>>> crv.thresholds
 [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
->>> cv.data[2]["TPR"]
+>>> crv.data[2]["TPR"]
 [1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 0.5, 0.0]
->>> cv.data[2]["FPR"]
+>>> crv.data[2]["FPR"]
 [1.0, 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.0]
->>> cv = Curve(actual_vector = [1, 1, "2", "2"], probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[1, "2"])
->>> cv.classes
+>>> crv = Curve(actual_vector = [1, 1, "2", "2"], probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[1, "2"])
+>>> crv.classes
 ['1', '2']
->>> cv.data["1"]["TPR"]
+>>> crv.data["1"]["TPR"]
 [1.0, 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.0]
->>> cv.data["2"]["TPR"]
+>>> crv.data["2"]["TPR"]
 [1.0, 1.0, 0.5, 0.5, 0.5, 0.5, 0.0, 0.0]
->>> cv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1], thresholds=[1.8 , 0.8 , 0.4 , 0.35, 0.1 ])
->>> cv.thresholds
+>>> crv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1], thresholds=[1.8 , 0.8 , 0.4 , 0.35, 0.1 ])
+>>> crv.thresholds
 [1.8, 0.8, 0.4, 0.35, 0.1]
->>> cv.data[2]["TPR"]
+>>> crv.data[2]["TPR"]
 [0.0, 0.5, 0.5, 1.0, 1.0]
->>> cv.data[2]["FPR"]
+>>> crv.data[2]["FPR"]
 [0.0, 0.0, 0.5, 0.5, 1.0]
->>> cv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1], thresholds=np.array([1.8 , 0.8 , 0.4 , 0.35, 0.1 ]))
->>> cv.thresholds
+>>> crv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1], thresholds=np.array([1.8 , 0.8 , 0.4 , 0.35, 0.1 ]))
+>>> crv.thresholds
 [1.8, 0.8, 0.4, 0.35, 0.1]
->>> cv.data[2]["TPR"]
+>>> crv.data[2]["TPR"]
 [0.0, 0.5, 0.5, 1.0, 1.0]
->>> cv.data[2]["FPR"]
+>>> crv.data[2]["FPR"]
 [0.0, 0.0, 0.5, 0.5, 1.0]
->>> cv = Curve(actual_vector = np.array([0, 1, 1, 2, 2]), probs = np.array([[0.01, 0.09, 0.9], [0.01, 0.09, 0.9], [0.1, 0.3, 0.6], [0.2, 0.35, 0.45], [0.1, 0.7, 0.2]]), classes=[0, 2, 1])
->>> cv.classes
+>>> crv = Curve(actual_vector = np.array([0, 1, 1, 2, 2]), probs = np.array([[0.01, 0.09, 0.9], [0.01, 0.09, 0.9], [0.1, 0.3, 0.6], [0.2, 0.35, 0.45], [0.1, 0.7, 0.2]]), classes=[0, 2, 1])
+>>> crv.classes
 [0, 2, 1]
->>> cv.binary
+>>> crv.binary
 False
->>> cv.data[2]["TPR"]
+>>> crv.data[2]["TPR"]
 [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 0.0]
->>> cv.data[1]["TPR"]
+>>> crv.data[1]["TPR"]
 [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 0.5]
->>> cv.data[0]["TPR"]
+>>> crv.data[0]["TPR"]
 [1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 """

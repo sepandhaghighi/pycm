@@ -500,6 +500,10 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab
 
 <a href="https://nlnet.nl"><img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/NlNet.svg" height="50px" alt="NLnet foundation"></a> &nbsp;  <a href="https://nlnet.nl/assure"><img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/NGIAssure.svg" height="50px" alt="NGI Assure"></a>
 
+[Python Software Foundation (PSF)](https://www.python.org/psf/) grants PyCM library partially for version **3.7**. [PSF](https://www.python.org/psf/) is the organization behind Python. Their mission is to promote, protect, and advance the Python programming language and to support and facilitate the growth of a diverse and international community of Python programmers.
+
+<a href="https://www.python.org/psf/"><img src="https://github.com/sepandhaghighi/pycm/raw/psf/Otherfiles/psf.png" height="50px" alt="Python Software Foundation"></a>
+
 ## Cite
 
 If you use PyCM in your research, we would appreciate citations to the following paper :

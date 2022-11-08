@@ -502,7 +502,7 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab
 
 [Python Software Foundation (PSF)](https://www.python.org/psf/) grants PyCM library partially for version **3.7**. [PSF](https://www.python.org/psf/) is the organization behind Python. Their mission is to promote, protect, and advance the Python programming language and to support and facilitate the growth of a diverse and international community of Python programmers.
 
-<a href="https://www.python.org/psf/"><img src="https://github.com/sepandhaghighi/pycm/raw/psf/Otherfiles/psf.png" height="50px" alt="Python Software Foundation"></a>
+<a href="https://www.python.org/psf/"><img src="https://github.com/sepandhaghighi/pycm/raw/psf/Otherfiles/PSF.png" height="50px" alt="Python Software Foundation"></a>
 
 ## Cite
 

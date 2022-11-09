@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `matrix_params_calc` function optimized
 - `README.md` modified
 - Test system modified
+- `Python 3.11` added to `test.yml`
 ## [3.6] - 2022-08-17
 ### Added
 - Hamming distance

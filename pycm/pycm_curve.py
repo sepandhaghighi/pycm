@@ -63,12 +63,30 @@ class Curve:
                 for item in CURVE_PARAMS:
                     data_temp[item].append(getattr(cm, item)[c])
             self.data[c] = data_temp
+        self.auc = None
         self.plot_x_axis = None
         self.plot_y_axis = None
 
-    def area(self):
-        """Area method."""
-        pass
+    def area(self, method="trapezoidal"):
+        """
+        Compute Area Under the Curve (AUC) using a user-specified numerical integral techniques.
+        The methods can be picked out of trapezoidal, midpoint, or Simpson's rule.
+
+        :param method: numerical integral technique (trapezoidal, midpoint, or simpson)
+        :type method: str
+        :return: None
+        """
+        x = self.plot_x_axis
+        y = self.plot_y_axis
+        auc = None
+        if method == "trapezoidal":
+            auc = __trapz_numeric_integral__(x, y)
+        elif method == "midpoint":
+            auc = __midpoint_numeric_integral__(x, y)
+        else:
+            # unknown method error
+            pass
+        self.auc = auc
 
     def plot(self):
         """Plot method."""
@@ -150,3 +168,38 @@ def __curve_thresholds_handler__(curve, thresholds):
         curve.thresholds = thresholds
         if isinstance(curve.thresholds, numpy.ndarray):
             curve.thresholds = curve.thresholds.tolist()
+
+
+def __trapz_numeric_integral__(x, y):
+    """
+    Compute numeric integral using the trapezoidal rule.
+
+    :param x: the x coordinate of the curve
+    :type x: list or numpy array
+    :param y: the y coordinate of the curve
+    :type y: list or numpy array
+    :return: numeric integral value as float
+    """
+    area = numpy.trapz(y, x)
+    if isinstance(area, numpy.memmap):
+        area = area.dtype.type(area)
+    return area
+
+
+def __midpoint_numeric_integral__(x, y):
+    """
+    Compute numeric integral using the midpoint rule.
+
+    :param x: The x coordinate of the curve
+    :type x: list or numpy array
+    :param y: The y coordinate of the curve
+    :type y: list or numpy array
+    :return: numeric integral value as float
+    """
+    if not isinstance(y, numpy.ndarray):
+        y = numpy.array(y)
+    dx = numpy.diff(x)
+    y_midpoints = 0.5*(y[:-1]+y[1:])
+    area = numpy.sum(dx*y_midpoints)
+    return area
+

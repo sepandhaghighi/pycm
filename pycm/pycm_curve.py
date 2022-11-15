@@ -69,10 +69,10 @@ class Curve:
 
     def area(self, method="trapezoidal"):
         """
-        Compute Area Under the Curve (AUC) using a user-specified numerical integral techniques.
-        The methods can be picked out of trapezoidal, midpoint, or Simpson's rule.
+        Compute Area Under (AUC) using a user-specified numerical integral techniques.
+        The methods can be picked between trapezoidal and midpoint rules.
 
-        :param method: numerical integral technique (trapezoidal, midpoint, or simpson)
+        :param method: numerical integral technique (trapezoidal or midpoint)
         :type method: str
         :return: None
         """

@@ -80,12 +80,11 @@ class Curve:
         y = self.plot_y_axis
         auc = None
         if method == "trapezoidal":
-            auc = __trapz_numeric_integral__(x, y)
+            auc = __trapezoidal_numeric_integral__(x, y)
         elif method == "midpoint":
             auc = __midpoint_numeric_integral__(x, y)
         else:
-            # unknown method error
-            pass
+            pycmCurveError(AREA_METHOD_ERROR)
         self.auc = auc
 
     def plot(self):
@@ -170,7 +169,7 @@ def __curve_thresholds_handler__(curve, thresholds):
             curve.thresholds = curve.thresholds.tolist()
 
 
-def __trapz_numeric_integral__(x, y):
+def __trapezoidal_numeric_integral__(x, y):
     """
     Compute numeric integral using the trapezoidal rule.
 

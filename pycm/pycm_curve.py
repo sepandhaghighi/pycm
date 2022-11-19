@@ -21,9 +21,13 @@ class Curve:
     [1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 0.5, 0.0]
     >>> crv.data[2]["FPR"]
     [1.0, 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.0]
-    >>> abs(crv.area()-0.75) < 0.001
+    >>> abs(crv.area()[1]-0.75) < 0.001
     True
-    >>> abs(crv.area(method="midpoint")-0.75) < 0.001
+    >>> abs(crv.area()[2]-0.75) < 0.001
+    True
+    >>> abs(crv.area(method="midpoint")[1]-0.75) < 0.001
+    True
+    >>> abs(crv.area(method="midpoint")[2]-0.75) < 0.001
     True
     """
 

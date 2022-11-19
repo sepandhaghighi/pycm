@@ -67,9 +67,9 @@ class Curve:
                 for item in CURVE_PARAMS:
                     data_temp[item].append(getattr(cm, item)[c])
             self.data[c] = data_temp
-        self.auc = None
-        self.plot_x_axis = self.data[self.classes[0]]["FPR"]
-        self.plot_y_axis = self.data[self.classes[0]]["TPR"]
+        self.auc = {}
+        self.plot_x_axis = "FPR"
+        self.plot_y_axis = "TPR"
 
     def area(self, method="trapezoidal"):
         """
@@ -77,16 +77,17 @@ class Curve:
 
         :param method: numerical integral technique (trapezoidal or midpoint)
         :type method: str
-        :return: Area Under Curve (AUC) value as float
+        :return: Area Under Curve (AUC) values of all classes as dict
         """
-        x = self.plot_x_axis
-        y = self.plot_y_axis
-        if method == "trapezoidal":
-            self.auc = __trapezoidal_numeric_integral__(x, y)
-        elif method == "midpoint":
-            self.auc = __midpoint_numeric_integral__(x, y)
-        else:
-            pycmCurveError(AREA_METHOD_ERROR)
+        for c in self.classes:
+            x = self.data[c][self.plot_x_axis]
+            y = self.data[c][self.plot_y_axis]
+            if method == "trapezoidal":
+                self.auc[c] = __trapezoidal_numeric_integral__(x, y)
+            elif method == "midpoint":
+                self.auc[c] = __midpoint_numeric_integral__(x, y)
+            else:
+                raise pycmCurveError(AREA_METHOD_ERROR)
         return self.auc
 
     def plot(self):

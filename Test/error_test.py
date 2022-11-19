@@ -207,4 +207,8 @@ pycm.pycm_error.pycmCurveError: Probability vector elements must have same lengt
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: Probability vector elements must have same length and equal to classes
+>>> crv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: The numeric integral method can only be selected between 'trapezoidal' and 'midpoint'!
 """

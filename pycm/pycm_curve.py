@@ -21,6 +21,10 @@ class Curve:
     [1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 0.5, 0.0]
     >>> crv.data[2]["FPR"]
     [1.0, 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.0]
+    >>> abs(crv.area()-0.75) < 0.001
+    True
+    >>> abs(crv.area(method="midpoint")-0.75) < 0.001
+    True
     """
 
     def __init__(
@@ -64,8 +68,8 @@ class Curve:
                     data_temp[item].append(getattr(cm, item)[c])
             self.data[c] = data_temp
         self.auc = None
-        self.plot_x_axis = None
-        self.plot_y_axis = None
+        self.plot_x_axis = self.data[self.classes[0]]["FPR"]
+        self.plot_y_axis = self.data[self.classes[0]]["TPR"]
 
     def area(self, method="trapezoidal"):
         """
@@ -74,18 +78,17 @@ class Curve:
 
         :param method: numerical integral technique (trapezoidal or midpoint)
         :type method: str
-        :return: None
+        :return: Area Under Curve (AUC) value as float
         """
         x = self.plot_x_axis
         y = self.plot_y_axis
-        auc = None
         if method == "trapezoidal":
-            auc = __trapezoidal_numeric_integral__(x, y)
+            self.auc = __trapezoidal_numeric_integral__(x, y)
         elif method == "midpoint":
-            auc = __midpoint_numeric_integral__(x, y)
+            self.auc = __midpoint_numeric_integral__(x, y)
         else:
             pycmCurveError(AREA_METHOD_ERROR)
-        self.auc = auc
+        return self.auc
 
     def plot(self):
         """Plot method."""
@@ -182,7 +185,7 @@ def __trapezoidal_numeric_integral__(x, y):
     area = numpy.trapz(y, x)
     if isinstance(area, numpy.memmap):
         area = area.dtype.type(area)
-    return area
+    return abs(area)
 
 
 def __midpoint_numeric_integral__(x, y):
@@ -200,5 +203,5 @@ def __midpoint_numeric_integral__(x, y):
     dx = numpy.diff(x)
     y_midpoints = 0.5*(y[:-1]+y[1:])
     area = numpy.sum(dx*y_midpoints)
-    return area
+    return abs(area)
 

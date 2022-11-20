@@ -21,14 +21,16 @@ class Curve:
     [1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 0.5, 0.0]
     >>> crv.data[2]["FPR"]
     [1.0, 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.0]
-    >>> abs(crv.area()[1]-0.75) < 0.001
-    True
-    >>> abs(crv.area()[2]-0.75) < 0.001
-    True
-    >>> abs(crv.area(method="midpoint")[1]-0.75) < 0.001
-    True
-    >>> abs(crv.area(method="midpoint")[2]-0.75) < 0.001
-    True
+    >>> auc_trp = crv.area()
+    >>> auc_trp[1]
+    0.75
+    >>> auc_trp[2]
+    0.75
+    >>> auc_mid = crv.area(method="midpoint")
+    >>> auc_mid[1]
+    0.75
+    >>> auc_mid[2]
+    0.75
     """
 
     def __init__(
@@ -205,7 +207,7 @@ def __midpoint_numeric_integral__(x, y):
     if not isinstance(y, numpy.ndarray):
         y = numpy.array(y)
     dx = numpy.diff(x)
-    y_midpoints = 0.5*(y[:-1]+y[1:])
-    area = numpy.sum(dx*y_midpoints)
+    y_midpoints = 0.5 * (y[:-1] + y[1:])
+    area = numpy.sum(dx * y_midpoints)
     return abs(area)
 

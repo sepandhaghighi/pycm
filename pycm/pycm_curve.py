@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Curve module."""
 from __future__ import division
-from .pycm_error import pycmCurveError
+from .pycm_error import pycmCurveError, pycmPlotError
 from .pycm_util import threshold_func, thresholds_calc, isfloat
 from .pycm_param import *
 from .pycm_obj import ConfusionMatrix
@@ -96,9 +96,44 @@ class Curve:
                 raise pycmCurveError(AREA_METHOD_ERROR)
         return self.auc
 
-    def plot(self):
-        """Plot method."""
-        pass
+    def plot(
+            self,
+            classes=None,
+            area=False,
+            method="trapezoidal",
+            colors=None,
+            marker=None,
+            linewidth=1):
+        """Plot the given curve.
+
+        :param classes: ordered labels of classes
+        :type classes: list
+        :param area: area flag
+        :type area: bool
+        :param method: numerical integral technique (trapezoidal or midpoint)
+        :type method: str
+        :param colors: color for each class in plot
+        :type colors: list
+        :param marker: plot marker
+        :type marker: str
+        :param linewidth: plot line width
+        :type linewidth: float
+        :return: plot axes
+        """
+        try:
+            from matplotlib import pyplot as plt
+        except (ModuleNotFoundError, ImportError):
+            raise pycmPlotError(MATPLOTLIB_PLOT_LIBRARY_ERROR)
+        if classes is None:
+            classes = self.classes
+        if area == True:
+            self.area(method=method)
+        fig, ax = plt.subplots()
+        ax.set_xlabel(self.plot_x_axis)
+        ax.set_ylabel(self.plot_y_axis)
+        for c in classes:
+            ax.plot(self.data[c][self.plot_x_axis], self.data[c][self.plot_y_axis])
+        return ax
 
 
 def __curve_validation__(curve, actual_vector, probs):
@@ -210,4 +245,3 @@ def __midpoint_numeric_integral__(x, y):
     y_midpoints = 0.5 * (y[:-1] + y[1:])
     area = numpy.sum(dx * y_midpoints)
     return abs(area)
-

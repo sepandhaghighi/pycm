@@ -21,6 +21,16 @@ class Curve:
     [1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 0.5, 0.0]
     >>> crv.data[2]["FPR"]
     [1.0, 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.0]
+    >>> auc_trp = crv.area()
+    >>> auc_trp[1]
+    0.75
+    >>> auc_trp[2]
+    0.75
+    >>> auc_mid = crv.area(method="midpoint")
+    >>> auc_mid[1]
+    0.75
+    >>> auc_mid[2]
+    0.75
     """
 
     def __init__(
@@ -63,12 +73,28 @@ class Curve:
                 for item in CURVE_PARAMS:
                     data_temp[item].append(getattr(cm, item)[c])
             self.data[c] = data_temp
-        self.plot_x_axis = None
-        self.plot_y_axis = None
+        self.auc = {}
+        self.plot_x_axis = "FPR"
+        self.plot_y_axis = "TPR"
 
-    def area(self):
-        """Area method."""
-        pass
+    def area(self, method="trapezoidal"):
+        """
+        Compute Area Under Curve (AUC) using trapezoidal or midpoint numerical integral technique.
+
+        :param method: numerical integral technique (trapezoidal or midpoint)
+        :type method: str
+        :return: Area Under Curve (AUC) values of all classes as dict
+        """
+        for c in self.classes:
+            x = self.data[c][self.plot_x_axis]
+            y = self.data[c][self.plot_y_axis]
+            if method == "trapezoidal":
+                self.auc[c] = __trapezoidal_numeric_integral__(x, y)
+            elif method == "midpoint":
+                self.auc[c] = __midpoint_numeric_integral__(x, y)
+            else:
+                raise pycmCurveError(AREA_METHOD_ERROR)
+        return self.auc
 
     def plot(self):
         """Plot method."""
@@ -150,3 +176,38 @@ def __curve_thresholds_handler__(curve, thresholds):
         curve.thresholds = thresholds
         if isinstance(curve.thresholds, numpy.ndarray):
             curve.thresholds = curve.thresholds.tolist()
+
+
+def __trapezoidal_numeric_integral__(x, y):
+    """
+    Compute numeric integral using the trapezoidal rule.
+
+    :param x: the x coordinate of the curve
+    :type x: list or numpy array
+    :param y: the y coordinate of the curve
+    :type y: list or numpy array
+    :return: numeric integral value as float
+    """
+    area = numpy.trapz(y, x)
+    if isinstance(area, numpy.memmap):
+        area = area.dtype.type(area)
+    return abs(area)
+
+
+def __midpoint_numeric_integral__(x, y):
+    """
+    Compute numeric integral using the midpoint rule.
+
+    :param x: The x coordinate of the curve
+    :type x: list or numpy array
+    :param y: The y coordinate of the curve
+    :type y: list or numpy array
+    :return: numeric integral value as float
+    """
+    if not isinstance(y, numpy.ndarray):
+        y = numpy.array(y)
+    dx = numpy.diff(x)
+    y_midpoints = 0.5 * (y[:-1] + y[1:])
+    area = numpy.sum(dx * y_midpoints)
+    return abs(area)
+

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Curve module."""
 from __future__ import division
+from turtle import color
 from .pycm_error import pycmCurveError, pycmPlotError
 from .pycm_util import threshold_func, thresholds_calc, isfloat
 from .pycm_param import *
@@ -128,20 +129,26 @@ class Curve:
             classes = self.classes
         if area:
             self.area(method=method)
+        if len(classes) != len(colors):
+            raise pycmPlotError(PLOT_COLORS_CLASS_MISMATCH_ERROR)
         fig, ax = plt.subplots()
         x, y = self.plot_x_axis, self.plot_y_axis
         ax.set_xlabel(x)
         ax.set_ylabel(y)
         fig.suptitle(f"{x} per {y}")
-        for c in classes:
+        for c_index, c in enumerate(classes):
             label = f"class {c}"
             if area:
                 label += f"(area={self.auc[c]:.3f})"
+            color = None
+            if colors is not None:
+                color = colors[c_index]
             ax.plot(self.data[c][x],
                     self.data[c][y],
                     linewidth=linewidth,
                     marker=marker,
-                    label=label)
+                    label=label,
+                    color=color)
             ax.legend()
         return ax
 

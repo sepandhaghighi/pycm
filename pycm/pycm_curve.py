@@ -126,13 +126,23 @@ class Curve:
             raise pycmPlotError(MATPLOTLIB_PLOT_LIBRARY_ERROR)
         if classes is None:
             classes = self.classes
-        if area == True:
+        if area:
             self.area(method=method)
         fig, ax = plt.subplots()
-        ax.set_xlabel(self.plot_x_axis)
-        ax.set_ylabel(self.plot_y_axis)
+        x, y = self.plot_x_axis, self.plot_y_axis
+        ax.set_xlabel(x)
+        ax.set_ylabel(y)
+        fig.suptitle(f"{x} per {y}")
         for c in classes:
-            ax.plot(self.data[c][self.plot_x_axis], self.data[c][self.plot_y_axis])
+            label = f"class {c}"
+            if area:
+                label += f"(area={self.auc[c]:.3f})"
+            ax.plot(self.data[c][x],
+                    self.data[c][y],
+                    linewidth=linewidth,
+                    marker=marker,
+                    label=label)
+            ax.legend()
         return ax
 
 

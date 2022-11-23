@@ -205,10 +205,10 @@ array([0.5, 1.5, 2.5])
 [Text(0.5, 0.5, '0.55556'), Text(1.5, 0.5, '0.44444'), Text(0.5, 1.5, '0.22222'), Text(1.5, 1.5, '0.77778')]
 >>> crv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
 >>> ax = crv.plot(classes=[1])
->>> ax.get_title()
+>>> ax.get_figure()._suptitle.get_text().get_title()
 'FPR per TPR'
 >>> ax = crv.plot(area=True)
->>> ax.get_title()
+>>> ax.get_figure()._suptitle.get_text().get_title()
 'FPR per TPR'
 >>> ax.get_legend().get_texts()[0]
 Text(0, 0, 'class 2(area=0.567)')

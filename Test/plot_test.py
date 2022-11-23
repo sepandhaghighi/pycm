@@ -2,6 +2,7 @@
 """
 >>> from pycm import *
 >>> from matplotlib import pyplot as plt
+>>> import numpy as np
 >>> import seaborn as sns
 >>> y_act = [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2]
 >>> y_pre = [0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,1,1,1,1,2,0,1,2,2,2,2]

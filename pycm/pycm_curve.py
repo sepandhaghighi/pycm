@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """Curve module."""
 from __future__ import division
-from turtle import color
 from .pycm_error import pycmCurveError, pycmPlotError
 from .pycm_util import threshold_func, thresholds_calc, isfloat
 from .pycm_param import *

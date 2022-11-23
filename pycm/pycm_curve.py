@@ -135,11 +135,11 @@ class Curve:
         x, y = self.plot_x_axis, self.plot_y_axis
         ax.set_xlabel(x)
         ax.set_ylabel(y)
-        fig.suptitle(f"{x} per {y}")
+        fig.suptitle("{} per {}".format(x, y))
         for c_index, c in enumerate(classes):
             label = f"class {c}"
             if area:
-                label += f"(area={self.auc[c]:.3f})"
+                label += "(area={:.3f})".format(self.auc[c])
             color = None
             if colors is not None:
                 color = colors[c_index]

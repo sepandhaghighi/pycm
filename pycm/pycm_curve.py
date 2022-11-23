@@ -123,7 +123,7 @@ class Curve:
         """
         try:
             from matplotlib import pyplot as plt
-        except (ModuleNotFoundError, ImportError):
+        except Exception:
             raise pycmPlotError(MATPLOTLIB_PLOT_LIBRARY_ERROR)
         if classes is None:
             classes = self.classes

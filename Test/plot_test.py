@@ -214,4 +214,11 @@ array([0.5, 1.5, 2.5])
 Text(0, 0, 'class 2(area=0.750)')
 >>> ax.get_legend().get_texts()[1]
 Text(0, 0, 'class 1(area=0.750)')
+>>> ax = crv.plot(colors=['r', 'g'])
+>>> ax.get_figure()._suptitle.get_text()
+'FPR per TPR'
+>>> ax.get_lines()[0].get_color()
+'r'
+>>> ax.get_lines()[1].get_color()
+'g'
 """

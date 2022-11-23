@@ -137,7 +137,7 @@ class Curve:
         ax.set_ylabel(y)
         fig.suptitle("{} per {}".format(x, y))
         for c_index, c in enumerate(classes):
-            label = f"class {c}"
+            label = "class {}".format(c)
             if area:
                 label += "(area={:.3f})".format(self.auc[c])
             color = None

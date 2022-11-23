@@ -129,7 +129,7 @@ class Curve:
             classes = self.classes
         if area:
             self.area(method=method)
-        if len(classes) != len(colors):
+        if colors is not None and len(classes) != len(colors):
             raise pycmPlotError(PLOT_COLORS_CLASS_MISMATCH_ERROR)
         fig, ax = plt.subplots()
         x, y = self.plot_x_axis, self.plot_y_axis

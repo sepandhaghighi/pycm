@@ -211,7 +211,7 @@ array([0.5, 1.5, 2.5])
 >>> ax.get_figure()._suptitle.get_text()
 'FPR per TPR'
 >>> ax.get_legend().get_texts()[0]
-Text(0, 0, 'class 2(area=0.567)')
+Text(0, 0, 'class 2(area=0.750)')
 >>> ax.get_legend().get_texts()[1]
-Text(0, 0, 'class 1(area=0.567)')
+Text(0, 0, 'class 1(area=0.750)')
 """

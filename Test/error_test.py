@@ -213,4 +213,8 @@ pycm.pycm_error.pycmCurveError: Probability vector elements must have same lengt
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: The numeric integral method can only be selected between 'trapezoidal' and 'midpoint'!
+>>> crv.plot(colors=['c'])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmPlotError: Given colors and classes have not the same length.
 """

@@ -143,7 +143,8 @@ class Curve:
                     marker=marker,
                     label=label,
                     color=color)
-            ax.legend()
+        ax.plot(numpy.linspace(0, 1), numpy.linspace(0, 1), 'k--', alpha=0.2)
+        ax.legend()
         return ax
 
 

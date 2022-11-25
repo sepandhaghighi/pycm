@@ -106,7 +106,8 @@ class Curve:
             colors=None,
             markers=None,
             linewidth=1):
-        """Plot the given curve.
+        """
+        Plot the given curve.
 
         :param classes: ordered labels of classes
         :type classes: list

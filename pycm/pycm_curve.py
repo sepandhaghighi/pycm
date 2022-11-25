@@ -102,7 +102,7 @@ class Curve:
             area=False,
             area_method="trapezoidal",
             colors=None,
-            marker=None,
+            markers=None,
             linewidth=1):
         """Plot the given curve.
 
@@ -114,8 +114,8 @@ class Curve:
         :type area_method: str
         :param colors: color for each class in plot
         :type colors: list
-        :param marker: plot marker
-        :type marker: str
+        :param markers: plot marker
+        :type markers: list
         :param linewidth: plot line width
         :type linewidth: float
         :return: plot axes
@@ -142,6 +142,9 @@ class Curve:
             color = None
             if colors is not None:
                 color = colors[c_index]
+            marker = None
+            if markers is not None:
+                marker = markers[c_index]
             ax.plot(self.data[c][x],
                     self.data[c][y],
                     linewidth=linewidth,

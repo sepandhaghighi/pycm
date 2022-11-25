@@ -221,4 +221,11 @@ Text(0, 0, 'class 1(area=0.750)')
 'r'
 >>> ax.get_lines()[1].get_color()
 'g'
+>>> ax = crv.plot(markers=['+', '*'])
+>>> ax.get_figure()._suptitle.get_text()
+'FPR per TPR'
+>>> ax.get_lines()[0].get_marker()
+'+'
+>>> ax.get_lines()[1].get_marker()
+'*'
 """

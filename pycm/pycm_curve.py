@@ -77,7 +77,6 @@ class Curve:
         self.plot_x_axis = "FPR"
         self.plot_y_axis = "TPR"
 
-
     def area(self, method="trapezoidal"):
         """
         Compute Area Under Curve (AUC) using trapezoidal or midpoint numerical integral technique.
@@ -96,7 +95,6 @@ class Curve:
             else:
                 raise pycmCurveError(AREA_METHOD_ERROR)
         return self.auc
-
 
     def plot(
             self,
@@ -123,19 +121,8 @@ class Curve:
         :type linewidth: float
         :return: plot axes
         """
-        try:
-            from matplotlib import pyplot as plt
-        except Exception:
-            raise pycmPlotError(MATPLOTLIB_PLOT_LIBRARY_ERROR)
-        if classes is None:
-            classes = self.classes
-        if area:
-            self.area(method=area_method)
-        if colors is not None and len(classes) != len(colors):
-            raise pycmPlotError(PLOT_COLORS_CLASS_MISMATCH_ERROR)
-        if markers is not None and len(classes) != len(markers):
-            raise pycmPlotError(PLOT_MARKERS_CLASS_MISMATCH_ERROR)
-        fig, ax = plt.subplots()
+        fig, ax, classes = __plot_validation__(
+            self, classes, area, area_method, colors, markers)
         x, y = self.plot_x_axis, self.plot_y_axis
         ax.set_xlabel(x)
         ax.set_ylabel(y)
@@ -184,6 +171,40 @@ def __curve_validation__(curve, actual_vector, probs):
             raise pycmCurveError(PROBABILITY_SUM_ERROR)
     curve.actual_vector = actual_vector
     curve.probs = probs
+
+
+def __plot_validation__(curve, classes, area, area_method, colors, markers):
+    """
+    Plot input validation.
+
+    :param curve: curve
+    :type curve: pycm.Curve object
+    :param classes: ordered labels of classes
+    :type classes: list
+    :param area: area flag
+    :type area: bool
+    :param area_method: numerical integral technique (trapezoidal or midpoint)
+    :type area_method: str
+    :param colors: color for each class in plot
+    :type colors: list
+    :param markers: plot marker
+    :type markers: list
+    :return: figure, axis and classes
+    """
+    try:
+        from matplotlib import pyplot as plt
+    except Exception:
+        raise pycmPlotError(MATPLOTLIB_PLOT_LIBRARY_ERROR)
+    if classes is None:
+        classes = curve.classes
+    if area:
+        curve.area(method=area_method)
+    if colors is not None and len(classes) != len(colors):
+        raise pycmPlotError(PLOT_COLORS_CLASS_MISMATCH_ERROR)
+    if markers is not None and len(classes) != len(markers):
+        raise pycmPlotError(PLOT_MARKERS_CLASS_MISMATCH_ERROR)
+    fig, ax = plt.subplots()
+    return fig, ax, classes
 
 
 def __curve_classes_handler__(curve, classes):

@@ -38,6 +38,7 @@ class Curve:
             actual_vector,
             probs,
             classes,
+            title=None,
             thresholds=None,
             sample_weight=None):
         """
@@ -49,6 +50,8 @@ class Curve:
         :type probs: list or numpy array
         :param classes: ordered labels of classes
         :type classes: list
+        :param title: curve title
+        :type title: str
         :param thresholds: thresholds list
         :type thresholds: list or numpy array
         :param sample_weight: sample weights list
@@ -76,6 +79,9 @@ class Curve:
         self.auc = {}
         self.plot_x_axis = "FPR"
         self.plot_y_axis = "TPR"
+        self.title = "{} per {}".format(self.plot_x_axis, self.plot_y_axis)
+        if title is not None:
+            self.title = title
 
     def area(self, method="trapezoidal"):
         """
@@ -123,10 +129,9 @@ class Curve:
         """
         fig, ax, classes = __plot_validation__(
             self, classes, area, area_method, colors, markers)
-        x, y = self.plot_x_axis, self.plot_y_axis
-        ax.set_xlabel(x)
-        ax.set_ylabel(y)
-        fig.suptitle("{} per {}".format(x, y))
+        ax.set_xlabel(self.plot_x_axis)
+        ax.set_ylabel(self.plot_y_axis)
+        fig.suptitle(self.title)
         for c_index, c in enumerate(classes):
             label = "class {}".format(c)
             if area:
@@ -137,8 +142,8 @@ class Curve:
             marker = None
             if markers is not None:
                 marker = markers[c_index]
-            ax.plot(self.data[c][x],
-                    self.data[c][y],
+            ax.plot(self.data[c][self.plot_y_axis],
+                    self.data[c][self.plot_y_axis],
                     linewidth=linewidth,
                     marker=marker,
                     label=label,

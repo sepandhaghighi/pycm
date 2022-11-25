@@ -132,6 +132,8 @@ class Curve:
             self.area(method=area_method)
         if colors is not None and len(classes) != len(colors):
             raise pycmPlotError(PLOT_COLORS_CLASS_MISMATCH_ERROR)
+        if markers is not None and len(classes) != len(markers):
+            raise pycmPlotError(PLOT_MARKERS_CLASS_MISMATCH_ERROR)
         fig, ax = plt.subplots()
         x, y = self.plot_x_axis, self.plot_y_axis
         ax.set_xlabel(x)

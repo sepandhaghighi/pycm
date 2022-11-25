@@ -217,4 +217,8 @@ pycm.pycm_error.pycmCurveError: The numeric integral method can only be selected
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmPlotError: Given colors and classes have not the same length.
+>>> crv.plot(markers=['*'])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmPlotError: Given markers and classes have not the same length.
 """

@@ -38,7 +38,6 @@ class Curve:
             actual_vector,
             probs,
             classes,
-            title=None,
             thresholds=None,
             sample_weight=None):
         """
@@ -50,8 +49,6 @@ class Curve:
         :type probs: list or numpy array
         :param classes: ordered labels of classes
         :type classes: list
-        :param title: curve title
-        :type title: str
         :param thresholds: thresholds list
         :type thresholds: list or numpy array
         :param sample_weight: sample weights list
@@ -79,9 +76,8 @@ class Curve:
         self.auc = {}
         self.plot_x_axis = "FPR"
         self.plot_y_axis = "TPR"
-        self.title = "{} per {}".format(self.plot_x_axis, self.plot_y_axis)
-        if title is not None:
-            self.title = title
+        self.title = "{0} per {1}".format(self.plot_x_axis, self.plot_y_axis)
+
 
     def area(self, method="trapezoidal"):
         """

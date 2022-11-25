@@ -100,7 +100,7 @@ class Curve:
             self,
             classes=None,
             area=False,
-            method="trapezoidal",
+            area_method="trapezoidal",
             colors=None,
             marker=None,
             linewidth=1):
@@ -110,8 +110,8 @@ class Curve:
         :type classes: list
         :param area: area flag
         :type area: bool
-        :param method: numerical integral technique (trapezoidal or midpoint)
-        :type method: str
+        :param area_method: numerical integral technique (trapezoidal or midpoint)
+        :type area_method: str
         :param colors: color for each class in plot
         :type colors: list
         :param marker: plot marker
@@ -127,7 +127,7 @@ class Curve:
         if classes is None:
             classes = self.classes
         if area:
-            self.area(method=method)
+            self.area(method=area_method)
         if colors is not None and len(classes) != len(colors):
             raise pycmPlotError(PLOT_COLORS_CLASS_MISMATCH_ERROR)
         fig, ax = plt.subplots()

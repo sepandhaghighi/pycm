@@ -77,6 +77,7 @@ class Curve:
         self.plot_x_axis = "FPR"
         self.plot_y_axis = "TPR"
 
+
     def area(self, method="trapezoidal"):
         """
         Compute Area Under Curve (AUC) using trapezoidal or midpoint numerical integral technique.
@@ -95,6 +96,7 @@ class Curve:
             else:
                 raise pycmCurveError(AREA_METHOD_ERROR)
         return self.auc
+
 
     def plot(
             self,

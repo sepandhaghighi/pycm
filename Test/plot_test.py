@@ -207,23 +207,39 @@ array([0.5, 1.5, 2.5])
 >>> ax = crv.plot(classes=[1])
 >>> ax.get_figure()._suptitle.get_text()
 'FPR per TPR'
+>>> ax.get_xlabel() == crv.plot_x_axis
+True
+>>> ax.get_ylabel() == crv.plot_y_axis
+True
 >>> ax = crv.plot(area=True)
->>> ax.get_figure()._suptitle.get_text()
-'FPR per TPR'
+>>> ax.get_figure()._suptitle.get_text() == crv.title
+True
+>>> ax.get_xlabel() == crv.plot_x_axis
+True
+>>> ax.get_ylabel() == crv.plot_y_axis
+True
 >>> ax.get_legend().get_texts()[0]
-Text(0, 0, 'class 2(area=0.750)')
+Text(0, 0, '2(area=0.750)')
 >>> ax.get_legend().get_texts()[1]
-Text(0, 0, 'class 1(area=0.750)')
+Text(0, 0, '1(area=0.750)')
 >>> ax = crv.plot(colors=['r', 'g'])
->>> ax.get_figure()._suptitle.get_text()
-'FPR per TPR'
+>>> ax.get_figure()._suptitle.get_text() == crv.title
+True
+>>> ax.get_xlabel() == crv.plot_x_axis
+True
+>>> ax.get_ylabel() == crv.plot_y_axis
+True
 >>> ax.get_lines()[0].get_color()
 'r'
 >>> ax.get_lines()[1].get_color()
 'g'
 >>> ax = crv.plot(markers=['+', '*'])
->>> ax.get_figure()._suptitle.get_text()
-'FPR per TPR'
+>>> ax.get_figure()._suptitle.get_text() == crv.title
+True
+>>> ax.get_xlabel() == crv.plot_x_axis
+True
+>>> ax.get_ylabel() == crv.plot_y_axis
+True
 >>> ax.get_lines()[0].get_marker()
 '+'
 >>> ax.get_lines()[1].get_marker()

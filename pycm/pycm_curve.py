@@ -138,7 +138,7 @@ class Curve:
             marker = None
             if markers is not None:
                 marker = markers[c_index]
-            ax.plot(self.data[c][self.plot_y_axis],
+            ax.plot(self.data[c][self.plot_x_axis],
                     self.data[c][self.plot_y_axis],
                     linewidth=linewidth,
                     marker=marker,

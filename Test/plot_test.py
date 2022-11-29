@@ -2,6 +2,7 @@
 """
 >>> from pycm import *
 >>> from matplotlib import pyplot as plt
+>>> import numpy as np
 >>> import seaborn as sns
 >>> y_act = [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2]
 >>> y_pre = [0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,1,1,1,1,2,0,1,2,2,2,2]
@@ -202,4 +203,45 @@ array([0.5, 1.5, 2.5])
 [Text(0, 0.5, '1'), Text(0, 1.5, '~')]
 >>> list(ax.texts)
 [Text(0.5, 0.5, '0.55556'), Text(1.5, 0.5, '0.44444'), Text(0.5, 1.5, '0.22222'), Text(1.5, 1.5, '0.77778')]
+>>> crv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
+>>> ax = crv.plot(classes=[1])
+>>> ax.get_figure()._suptitle.get_text()
+'FPR per TPR'
+>>> ax.get_xlabel() == crv.plot_x_axis
+True
+>>> ax.get_ylabel() == crv.plot_y_axis
+True
+>>> ax = crv.plot(area=True)
+>>> ax.get_figure()._suptitle.get_text() == crv.title
+True
+>>> ax.get_xlabel() == crv.plot_x_axis
+True
+>>> ax.get_ylabel() == crv.plot_y_axis
+True
+>>> ax.get_legend().get_texts()[0]
+Text(0, 0, '2(area=0.750)')
+>>> ax.get_legend().get_texts()[1]
+Text(0, 0, '1(area=0.750)')
+>>> ax = crv.plot(colors=['r', 'g'])
+>>> ax.get_figure()._suptitle.get_text() == crv.title
+True
+>>> ax.get_xlabel() == crv.plot_x_axis
+True
+>>> ax.get_ylabel() == crv.plot_y_axis
+True
+>>> ax.get_lines()[0].get_color()
+'r'
+>>> ax.get_lines()[1].get_color()
+'g'
+>>> ax = crv.plot(markers=['+', '*'])
+>>> ax.get_figure()._suptitle.get_text() == crv.title
+True
+>>> ax.get_xlabel() == crv.plot_x_axis
+True
+>>> ax.get_ylabel() == crv.plot_y_axis
+True
+>>> ax.get_lines()[0].get_marker()
+'+'
+>>> ax.get_lines()[1].get_marker()
+'*'
 """

@@ -168,6 +168,16 @@ class ROCCurve(Curve):
         self.plot_y_axis = "TPR"
         self.title = "ROC Curve"
 
+class PRCurve(Curve):
+    """
+    PRCurve class.
+    """
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.plot_x_axis = "TPR"
+        self.plot_y_axis = "PPV"
+        self.title = "PR Curve"
+
 
 def __curve_validation__(curve, actual_vector, probs):
     """

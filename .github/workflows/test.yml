@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-20.04, windows-latest, macOS-latest]
         python-version: [3.5, 3.6, 3.7, 3.8, 3.9, 3.10.0, 3.11.0]
     steps:
     - uses: actions/checkout@v2
@@ -48,7 +48,7 @@ jobs:
       run: |
         pip install notebook>=5.2.2
         python Otherfiles/notebook_check.py
-      if: matrix.python-version == 3.8 && matrix.os == 'ubuntu-latest'
+      if: matrix.python-version == 3.8 && matrix.os == 'ubuntu-20.04'
     - name: Other tests
       run: |
           python -m vulture pycm/ Otherfiles/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
@@ -58,7 +58,7 @@ jobs:
     - name: Codecov
       run: |
         codecov
-      if: matrix.python-version == 3.8 && matrix.os == 'ubuntu-latest'
+      if: matrix.python-version == 3.8 && matrix.os == 'ubuntu-20.04'
     - name: cProfile
       run: |
           python -m cProfile -s cumtime pycm/pycm_profile.py

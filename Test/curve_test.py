@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
->>> from pycm import Curve
+>>> from pycm import Curve, ROCCurve, PRCurve
 >>> import numpy as np
 >>> crv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
 >>> crv.binary

@@ -152,6 +152,15 @@ class Curve:
 class ROCCurve(Curve):
     """
     ROCCurve class.
+
+    >>> crv = ROCCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
+    >>> crv.thresholds
+    [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
+    >>> auc_trp = crv.area()
+    >>> auc_trp[1]
+    0.75
+    >>> auc_trp[2]
+    0.75
     """
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

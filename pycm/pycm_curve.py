@@ -149,6 +149,17 @@ class Curve:
         return ax
 
 
+class ROCCurve(Curve):
+    """
+    ROCCurve class.
+    """
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.plot_x_axis = "FPR"
+        self.plot_y_axis = "TPR"
+        self.title = "ROC Curve"
+
+
 def __curve_validation__(curve, actual_vector, probs):
     """
     Curve input validation.

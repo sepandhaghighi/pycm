@@ -164,6 +164,12 @@ class ROCCurve(Curve):
     0.75
     """
     def __init__(self, **kwargs):
+        """
+        Init method.
+
+        :param kwargs: arguments
+        :type kwargs: dict
+        """
         super().__init__(**kwargs)
         self.plot_x_axis = "FPR"
         self.plot_y_axis = "TPR"
@@ -177,8 +183,19 @@ class PRCurve(Curve):
     >>> crv = PRCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
     >>> crv.thresholds
     [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
+    >>> auc_trp = crv.area()
+    >>> auc_trp[1]
+    0.29166666666666663
+    >>> auc_trp[2]
+    0.29166666666666663
     """
     def __init__(self, **kwargs):
+        """
+        Init method.
+
+        :param kwargs: arguments
+        :type kwargs: dict
+        """
         super().__init__(**kwargs)
         self.plot_x_axis = "TPR"
         self.plot_y_axis = "PPV"

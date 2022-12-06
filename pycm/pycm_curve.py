@@ -5,6 +5,7 @@ from .pycm_error import pycmCurveError, pycmPlotError
 from .pycm_util import threshold_func, thresholds_calc, isfloat
 from .pycm_param import *
 from .pycm_obj import ConfusionMatrix
+from warnings import warn
 import numpy
 
 
@@ -167,6 +168,7 @@ class ROCCurve(Curve):
         self.plot_x_axis = "FPR"
         self.plot_y_axis = "TPR"
         self.title = "ROC Curve"
+        __curve_data_filter__(self)
 
 class PRCurve(Curve):
     """
@@ -181,6 +183,7 @@ class PRCurve(Curve):
         self.plot_x_axis = "TPR"
         self.plot_y_axis = "PPV"
         self.title = "PR Curve"
+        __curve_data_filter__(self)
 
 
 def __curve_validation__(curve, actual_vector, probs):
@@ -292,6 +295,30 @@ def __curve_thresholds_handler__(curve, thresholds):
         curve.thresholds = thresholds
         if isinstance(curve.thresholds, numpy.ndarray):
             curve.thresholds = curve.thresholds.tolist()
+
+
+def __curve_data_filter__(curve):
+    """
+    Filter data.
+
+    :param curve: curve
+    :type curve: pycm.Curve object
+    :return: None
+    """
+    none_warning = False
+    for c_index, c in enumerate(curve.classes):
+        data_temp = {curve.plot_x_axis: [], curve.plot_y_axis: []}
+        x_data = curve.data[c][curve.plot_x_axis]
+        y_data = curve.data[c][curve.plot_y_axis]
+        for index, item in enumerate(x_data):
+            if item != "None" and y_data[index] != "None":
+                data_temp[curve.plot_x_axis].append(item)
+                data_temp[curve.plot_y_axis].append(y_data[index])
+            else:
+                none_warning = True
+        curve.data[c] = data_temp
+    if none_warning:
+        warn(CURVE_NONE_WARNING, RuntimeWarning)
 
 
 def __trapezoidal_numeric_integral__(x, y):

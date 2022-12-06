@@ -72,4 +72,21 @@ False
 'FPR'
 >>> crv.plot_y_axis
 'TPR'
+>>> crv = PRCurve(actual_vector = np.array([0, 1, 1, 2, 2]), probs = np.array([[0.01, 0.09, 0.9], [0.01, 0.09, 0.9], [0.1, 0.3, 0.6], [0.2, 0.35, 0.45], [0.1, 0.7, 0.2]]), classes=[0, 2, 1])
+>>> crv.classes
+[0, 2, 1]
+>>> crv.binary
+False
+>>> crv.data[2]["TPR"]
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 0.5, 0.5]
+>>> crv.data[1]["TPR"]
+[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5, 0.5]
+>>> crv.data[0]["TPR"]
+[1.0, 0.0, 0.0, 0.0]
+>>> crv.title
+'PR Curve'
+>>> crv.plot_x_axis
+'TPR'
+>>> crv.plot_y_axis
+'PPV'
 """

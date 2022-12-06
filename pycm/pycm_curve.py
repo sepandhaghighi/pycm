@@ -151,7 +151,7 @@ class Curve:
 
     def __repr__(self):
         """
-        Curve object representation method.
+        Representation method.
 
         :return: representation as str
         """
@@ -171,6 +171,7 @@ class ROCCurve(Curve):
     >>> auc_trp[2]
     0.75
     """
+
     def __init__(self, **kwargs):
         """
         Init method.
@@ -186,7 +187,7 @@ class ROCCurve(Curve):
 
     def __repr__(self):
         """
-        ROCCurve object representation method.
+        Representation method.
 
         :return: representation as str
         """
@@ -205,6 +206,7 @@ class PRCurve(Curve):
     >>> auc_trp[2]
     0.29166666666666663
     """
+
     def __init__(self, **kwargs):
         """
         Init method.
@@ -220,7 +222,7 @@ class PRCurve(Curve):
 
     def __repr__(self):
         """
-        PRCurve object representation method.
+        Representation method.
 
         :return: representation as str
         """

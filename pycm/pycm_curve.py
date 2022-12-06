@@ -149,6 +149,14 @@ class Curve:
         ax.legend()
         return ax
 
+    def __repr__(self):
+        """
+        Curve object representation method.
+
+        :return: representation as str
+        """
+        return "pycm.Curve(classes: " + str(self.classes) + ")"
+
 
 class ROCCurve(Curve):
     """
@@ -176,6 +184,14 @@ class ROCCurve(Curve):
         self.title = "ROC Curve"
         __curve_data_filter__(self)
 
+    def __repr__(self):
+        """
+        ROCCurve object representation method.
+
+        :return: representation as str
+        """
+        return "pycm.ROCCurve(classes: " + str(self.classes) + ")"
+
 class PRCurve(Curve):
     """
     PRCurve class.
@@ -201,6 +217,14 @@ class PRCurve(Curve):
         self.plot_y_axis = "PPV"
         self.title = "PR Curve"
         __curve_data_filter__(self)
+
+    def __repr__(self):
+        """
+        PRCurve object representation method.
+
+        :return: representation as str
+        """
+        return "pycm.PRCurve(classes: " + str(self.classes) + ")"
 
 
 def __curve_validation__(curve, actual_vector, probs):

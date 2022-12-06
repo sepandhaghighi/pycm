@@ -3,6 +3,8 @@
 >>> from pycm import Curve, ROCCurve, PRCurve
 >>> import numpy as np
 >>> crv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
+>>> crv
+pycm.Curve(classes: [2, 1])
 >>> crv.binary
 True
 >>> crv.classes
@@ -56,6 +58,8 @@ False
 >>> crv.title
 'FPR per TPR'
 >>> crv = ROCCurve(actual_vector = np.array([0, 1, 1, 2, 2]), probs = np.array([[0.01, 0.09, 0.9], [0.01, 0.09, 0.9], [0.1, 0.3, 0.6], [0.2, 0.35, 0.45], [0.1, 0.7, 0.2]]), classes=[0, 2, 1])
+>>> crv
+pycm.ROCCurve(classes: [0, 2, 1])
 >>> crv.classes
 [0, 2, 1]
 >>> crv.binary
@@ -73,6 +77,8 @@ False
 >>> crv.plot_y_axis
 'TPR'
 >>> crv = PRCurve(actual_vector = np.array([0, 1, 1, 2, 2]), probs = np.array([[0.01, 0.09, 0.9], [0.01, 0.09, 0.9], [0.1, 0.3, 0.6], [0.2, 0.35, 0.45], [0.1, 0.7, 0.2]]), classes=[0, 2, 1])
+>>> crv
+pycm.PRCurve(classes: [0, 2, 1])
 >>> crv.classes
 [0, 2, 1]
 >>> crv.binary

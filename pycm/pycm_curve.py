@@ -338,6 +338,7 @@ def __curve_thresholds_handler__(curve, thresholds):
         curve.thresholds = thresholds
         if isinstance(curve.thresholds, numpy.ndarray):
             curve.thresholds = curve.thresholds.tolist()
+        curve.thresholds = sorted(curve.thresholds)
 
 
 def __curve_data_filter__(curve):

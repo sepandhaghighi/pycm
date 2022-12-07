@@ -412,7 +412,7 @@ True
 [1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 0.5, 0.0, 0]
 >>> crv.data[2]["FPR"]
 [1.0, 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.0, 0]
->>> abs(crv.area()[2]-0.75) < 0.001
+>>> abs(crv.area()[2] - 0.75) < 0.001
 True
 >>> abs(crv.area(method="midpoint")[1]-0.75) < 0.001
 True
@@ -423,8 +423,8 @@ True
 [1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 0.5]
 >>> crv.data[2]["PPV"]
 [0.5, 0.6666666666666666, 0.6666666666666666, 0.5, 1.0, 1.0, 1.0]
->>> abs(crv.area()[2]-0.2916) < 0.001      # Verified Case -- (https://bit.ly/2Hqg0Ix)
+>>> abs(crv.area()[2] - 0.2916) < 0.001      # Verified Case -- (https://bit.ly/2Hqg0Ix)
 True
->>> abs(crv.area(method="midpoint")[2]-0.2916) < 0.001
+>>> abs(crv.area(method="midpoint")[2] - 0.2916) < 0.001
 True
 """

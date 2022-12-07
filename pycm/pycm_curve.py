@@ -249,7 +249,7 @@ def __curve_validation__(curve, actual_vector, probs):
     for item in probs:
         if not all(map(isfloat, item)):
             raise pycmCurveError(PROBABILITY_TYPE_ERROR)
-        if sum(item) != 1:
+        if abs(sum(item) - 1) > 0.001:
             raise pycmCurveError(PROBABILITY_SUM_ERROR)
     curve.actual_vector = actual_vector
     curve.probs = probs

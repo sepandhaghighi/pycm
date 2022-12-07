@@ -79,7 +79,6 @@ class Curve:
         self.plot_y_axis = "TPR"
         self.title = "{0} per {1}".format(self.plot_x_axis, self.plot_y_axis)
 
-
     def area(self, method="trapezoidal"):
         """
         Compute Area Under Curve (AUC) using trapezoidal or midpoint numerical integral technique.
@@ -195,6 +194,7 @@ class ROCCurve(Curve):
         :return: representation as str
         """
         return "pycm.ROCCurve(classes: " + str(self.classes) + ")"
+
 
 class PRCurve(Curve):
     """

@@ -184,6 +184,9 @@ class ROCCurve(Curve):
         self.plot_y_axis = "TPR"
         self.title = "ROC Curve"
         __curve_data_filter__(self)
+        for c in self.classes:
+            self.data[c][self.plot_x_axis].append(0)
+            self.data[c][self.plot_y_axis].append(0)
 
     def __repr__(self):
         """

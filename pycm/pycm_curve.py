@@ -346,7 +346,7 @@ def __curve_thresholds_handler__(curve, thresholds):
 
 def __curve_data_filter__(curve):
     """
-    Filter data.
+    Eliminate and refine the points at which the curve is undefined.
 
     :param curve: curve
     :type curve: pycm.Curve object

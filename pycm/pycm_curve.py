@@ -5,6 +5,7 @@ from .pycm_error import pycmCurveError, pycmPlotError
 from .pycm_util import threshold_func, thresholds_calc, isfloat
 from .pycm_param import *
 from .pycm_obj import ConfusionMatrix
+from warnings import warn
 import numpy
 
 
@@ -78,7 +79,6 @@ class Curve:
         self.plot_y_axis = "TPR"
         self.title = "{0} per {1}".format(self.plot_x_axis, self.plot_y_axis)
 
-
     def area(self, method="trapezoidal"):
         """
         Compute Area Under Curve (AUC) using trapezoidal or midpoint numerical integral technique.
@@ -148,6 +148,89 @@ class Curve:
         ax.legend()
         return ax
 
+    def __repr__(self):
+        """
+        Representation method.
+
+        :return: representation as str
+        """
+        return "pycm.Curve(classes: " + str(self.classes) + ")"
+
+
+class ROCCurve(Curve):
+    """
+    ROCCurve class.
+
+    >>> crv = ROCCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
+    >>> crv.thresholds
+    [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
+    >>> auc_trp = crv.area()
+    >>> auc_trp[1]
+    0.75
+    >>> auc_trp[2]
+    0.75
+    """
+
+    def __init__(self, **kwargs):
+        """
+        Init method.
+
+        :param kwargs: arguments
+        :type kwargs: dict
+        """
+        super().__init__(**kwargs)
+        self.plot_x_axis = "FPR"
+        self.plot_y_axis = "TPR"
+        self.title = "ROC Curve"
+        __curve_data_filter__(self)
+        for c in self.classes:
+            self.data[c][self.plot_x_axis].append(0)
+            self.data[c][self.plot_y_axis].append(0)
+
+    def __repr__(self):
+        """
+        Representation method.
+
+        :return: representation as str
+        """
+        return "pycm.ROCCurve(classes: " + str(self.classes) + ")"
+
+
+class PRCurve(Curve):
+    """
+    PRCurve class.
+
+    >>> crv = PRCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
+    >>> crv.thresholds
+    [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
+    >>> auc_trp = crv.area()
+    >>> auc_trp[1]
+    0.29166666666666663
+    >>> auc_trp[2]
+    0.29166666666666663
+    """
+
+    def __init__(self, **kwargs):
+        """
+        Init method.
+
+        :param kwargs: arguments
+        :type kwargs: dict
+        """
+        super().__init__(**kwargs)
+        self.plot_x_axis = "TPR"
+        self.plot_y_axis = "PPV"
+        self.title = "PR Curve"
+        __curve_data_filter__(self)
+
+    def __repr__(self):
+        """
+        Representation method.
+
+        :return: representation as str
+        """
+        return "pycm.PRCurve(classes: " + str(self.classes) + ")"
+
 
 def __curve_validation__(curve, actual_vector, probs):
     """
@@ -169,7 +252,7 @@ def __curve_validation__(curve, actual_vector, probs):
     for item in probs:
         if not all(map(isfloat, item)):
             raise pycmCurveError(PROBABILITY_TYPE_ERROR)
-        if sum(item) != 1:
+        if abs(sum(item) - 1) > 0.001:
             raise pycmCurveError(PROBABILITY_SUM_ERROR)
     curve.actual_vector = actual_vector
     curve.probs = probs
@@ -258,6 +341,31 @@ def __curve_thresholds_handler__(curve, thresholds):
         curve.thresholds = thresholds
         if isinstance(curve.thresholds, numpy.ndarray):
             curve.thresholds = curve.thresholds.tolist()
+        curve.thresholds = sorted(curve.thresholds)
+
+
+def __curve_data_filter__(curve):
+    """
+    Eliminate and refine the points at which the curve is undefined.
+
+    :param curve: curve
+    :type curve: pycm.Curve object
+    :return: None
+    """
+    none_warning = False
+    for c_index, c in enumerate(curve.classes):
+        data_temp = {curve.plot_x_axis: [], curve.plot_y_axis: []}
+        x_data = curve.data[c][curve.plot_x_axis]
+        y_data = curve.data[c][curve.plot_y_axis]
+        for x, y in zip(x_data, y_data):
+            if x != "None" and y != "None":
+                data_temp[curve.plot_x_axis].append(x)
+                data_temp[curve.plot_y_axis].append(y)
+            else:
+                none_warning = True
+        curve.data[c] = data_temp
+    if none_warning:
+        warn(CURVE_NONE_WARNING, RuntimeWarning)
 
 
 def __trapezoidal_numeric_integral__(x, y):

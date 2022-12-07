@@ -26,7 +26,6 @@
    * [Try PyCM in Your Browser](https://github.com/sepandhaghighi/pycm#try-pycm-in-your-browser)
    * [Issues & Bug Reports](https://github.com/sepandhaghighi/pycm#issues--bug-reports)
    * [Todo](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
-   * [Dependencies](https://github.com/sepandhaghighi/pycm#dependencies)
    * [Contribution](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBUTING.md)
    * [Acknowledgments](https://github.com/sepandhaghighi/pycm#acknowledgments)
    * [Cite](https://github.com/sepandhaghighi/pycm#cite)
@@ -470,19 +469,6 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab
 4. Mailing List : [https://mail.python.org/mailman3/lists/pycm.python.org/](https://mail.python.org/mailman3/lists/pycm.python.org/)
 5. Email : [info@pycm.io](mailto:info@pycm.io "info@pycm.io")
 
-
-## Dependencies
-
-<table>
-	<tr> 
-		<td align="center">master</td>	
-		<td align="center">dev</td>	
-	</tr>
-	<tr>
-		<td align="center"><a href="https://requires.io/github/sepandhaghighi/pycm/requirements/?branch=master"><img src="https://requires.io/github/sepandhaghighi/pycm/requirements.svg?branch=master" alt="Requirements Status" /></a></td>
-		<td align="center"><a href="https://requires.io/github/sepandhaghighi/pycm/requirements/?branch=dev"><img src="https://requires.io/github/sepandhaghighi/pycm/requirements.svg?branch=dev" alt="Requirements Status" /></a></td>
-	</tr>
-</table>
 
 ## Acknowledgments
 

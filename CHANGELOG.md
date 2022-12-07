@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `Curve` class
+- `ROCCurve` class
+- `PRCurve` class
 - `pycmCurveError` class
 ### Changed
 - `CONTRIBUTING.md` updated

@@ -357,10 +357,10 @@ def __curve_data_filter__(curve):
         data_temp = {curve.plot_x_axis: [], curve.plot_y_axis: []}
         x_data = curve.data[c][curve.plot_x_axis]
         y_data = curve.data[c][curve.plot_y_axis]
-        for index, item in enumerate(x_data):
-            if item != "None" and y_data[index] != "None":
-                data_temp[curve.plot_x_axis].append(item)
-                data_temp[curve.plot_y_axis].append(y_data[index])
+        for x, y in zip(x_data, y_data):
+            if x != "None" and y != "None":
+                data_temp[curve.plot_x_axis].append(x)
+                data_temp[curve.plot_y_axis].append(y)
             else:
                 none_warning = True
         curve.data[c] = data_temp

@@ -115,7 +115,7 @@ CLASSES_WARNING = "Used classes is not a subset of classes in actual and predict
 
 CLASSES_TYPE_WARNING = "The classes is neither a list nor None so it'll be ignored."
 
-CURVE_NONE_WARNING = "The curve is undefined at some points."
+CURVE_NONE_WARNING = "The curve axes contain non-numerical value(s)."
 
 CLASS_NUMBER_THRESHOLD = 10
 

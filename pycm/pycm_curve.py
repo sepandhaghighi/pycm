@@ -93,8 +93,8 @@ class Curve:
             dx = numpy.diff(x)
             if numpy.any(dx < 0) and numpy.any(dx > 0):
                 sort_indices = numpy.argsort(x, kind="mergesort")
-                self.data[c][self.plot_x_axis] = x = x[sort_indices]
-                self.data[c][self.plot_y_axis] = y = y[sort_indices]
+                self.data[c][self.plot_x_axis] = x = numpy.array(x)[sort_indices].tolist()
+                self.data[c][self.plot_y_axis] = y = numpy.array(y)[sort_indices].tolist()
             if method == "trapezoidal":
                 self.auc[c] = __trapezoidal_numeric_integral__(x, y)
             elif method == "midpoint":

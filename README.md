@@ -319,7 +319,7 @@ Class1       2            4
 
 Class2       0            10           
 
-```	
+```
 
 ### Plot
 `plot` method is added in `version 3.0` in order to plot a confusion matrix using Matplotlib or Seaborn.
@@ -342,21 +342,35 @@ Class2       0            10
 
 <img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/plot3.png">
 
-### Online help
+### ROC curve
 
-`online_help` function is added in `version 1.1` in order to open each statistics definition in web browser
-
+`ROCCurve`, added in `version 3.7`, is devised to compute the Receiver operating characteristic (ROC) or simply ROC curve. In ROC curves, the Y axis represents the True Positive Rate, and the X axis represents the False Positive Rate. Thus, the ideal point is located at the top left of the curve, and a larger area under the curve represents better performance. ROC curve is a graphical representation of binary classifiers' performance. In PyCM, `ROCCurve` binarizes the output based on the "One vs. Rest" strategy to provide an extension of ROC for multi-class classifiers. Getting the actual labels vector, the target probability estimates of the positive classes, and the list of ordered labels of classes, this method is able to compute and plot TPR-FPR pairs for different discrimination thresholds and compute the area under the ROC curve. 
 
 ```pycon
+    >>> crv = ROCCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
+    >>> crv.thresholds
+    [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
+    >>> auc_trp = crv.area()
+    >>> auc_trp[1]
+    0.75
+    >>> auc_trp[2]
+    0.75
+```	
 
->>> from pycm import online_help
->>> online_help("J")
->>> online_help("SOA1(Landis & Koch)")
->>> online_help(2)
+### Precision-Recall curve
 
-```
-* List of items are available by calling `online_help()` (without argument)		
-* If PyCM website is not available, set `alt_link = True` (new in `version 2.4`)
+`PRCurve`, added in `version 3.7`, is devised to compute the Precision-Recall curve in which the Y axis represents the Precision, and the X axis represents the Recall of a classifier. Thus, the ideal point is located at the top right of the curve, and a larger area under the curve represents better performance. Precision-Recall curve is a graphical representation of binary classifiers' performance. In PyCM, `PRCurve` binarizes the output based on the "One vs. Rest" strategy to provide an extension of this curve for multi-class classifiers. Getting the actual labels vector, the target probability estimates of the positive classes, and the list of ordered labels of classes, this method is able to compute and plot Precision-Recall pairs for different discrimination thresholds and compute the area under the curve.
+
+```pycon
+    >>> crv = PRCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
+    >>> crv.thresholds
+    [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
+    >>> auc_trp = crv.area()
+    >>> auc_trp[1]
+    0.29166666666666663
+    >>> auc_trp[2]
+    0.29166666666666663
+```	
 
 ### Parameter recommender
 
@@ -414,6 +428,22 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 'cm2'
 ```	
 
+### Online help
+
+`online_help` function is added in `version 1.1` in order to open each statistics definition in web browser
+
+
+```pycon
+
+>>> from pycm import online_help
+>>> online_help("J")
+>>> online_help("SOA1(Landis & Koch)")
+>>> online_help(2)
+
+```
+* List of items are available by calling `online_help()` (without argument)		
+* If PyCM website is not available, set `alt_link = True` (new in `version 2.4`)
+
 ### Acceptable data types	
 
 **ConfusionMatrix**
@@ -443,6 +473,21 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 
 * Run `help(Compare)` for `Compare` object details
 
+**ROCCurve**
+
+1. `actual_vector` : python `list` or numpy `array` of any stringable objects
+2. `probs` : python `list` or numpy `array`
+3. `classes` : python `list`
+4. `thresholds`: python `list` or numpy `array` 
+5. `sample_weight`: python `list`
+
+**PRCurve**
+
+1. `actual_vector` : python `list` or numpy `array` of any stringable objects
+2. `probs` : python `list` or numpy `array`
+3. `classes` : python `list`
+4. `thresholds`: python `list` or numpy `array` 
+5. `sample_weight`: python `list`
 
 For more information visit [here](https://github.com/sepandhaghighi/pycm/tree/master/Document "Document")
 

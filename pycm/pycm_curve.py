@@ -176,14 +176,16 @@ class ROCCurve(Curve):
     0.75
     """
 
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
         """
         Init method.
 
-        :param kwargs: arguments
+        :param args: positional arguments
+        :type args: list
+        :param kwargs: keyword arguments
         :type kwargs: dict
         """
-        super().__init__(**kwargs)
+        super().__init__(*args, **kwargs)
         self.plot_x_axis = "FPR"
         self.plot_y_axis = "TPR"
         self.title = "ROC Curve"
@@ -215,14 +217,16 @@ class PRCurve(Curve):
     0.29166666666666663
     """
 
-    def __init__(self, **kwargs):
+    def __init__(self, *args, **kwargs):
         """
         Init method.
 
-        :param kwargs: arguments
+        :param args: positional arguments
+        :type args: list
+        :param kwargs: keyword arguments
         :type kwargs: dict
         """
-        super().__init__(**kwargs)
+        super().__init__(*args, **kwargs)
         self.plot_x_axis = "TPR"
         self.plot_y_axis = "PPV"
         self.title = "PR Curve"

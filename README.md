@@ -98,7 +98,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ⚠️  Plotting capability requires **Matplotlib (>= 3.0.0)** or **Seaborn (>= 0.9.1)**   
 
 ### Source code
-- Download [Version 3.6](https://github.com/sepandhaghighi/pycm/archive/v3.6.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 3.7](https://github.com/sepandhaghighi/pycm/archive/v3.7.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -106,7 +106,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==3.6` or `pip3 install pycm==3.6` (Need root access)
+- Run `pip install pycm==3.7` or `pip3 install pycm==3.7` (Need root access)
 
 ### Conda
 

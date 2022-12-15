@@ -542,4 +542,8 @@ array([[3, 1],
        [0, 0]])
 >>> cm4
 pycm.ConfusionMatrix(classes: [1, 2])
+>>> with warns(RuntimeWarning):
+...     crv = PRCurve(actual_vector = [1, 1, 2, 2], probs = [[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]], classes=[2, 1])
+>>> crv
+pycm.PRCurve(classes: [2, 1])
 """

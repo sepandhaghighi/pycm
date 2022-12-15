@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 >>> from pycm import *
+>>> import numpy as np
 >>> import os
 >>> import json
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
@@ -151,4 +152,73 @@ pycm.pycm_error.pycmMatrixError: The classes list isn't unique. It contains dupl
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmMatrixError: Classes length is not equal to the array length.
+>>> crv = Curve([1,2,2,1],{1,2,2,1}, classes=[1,2])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: The type of input vectors is assumed to be a list or a NumPy array
+>>> crv = Curve({1,2,2,1},[1,2,2,1], classes=[1,2])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: The type of input vectors is assumed to be a list or a NumPy array
+>>> crv = Curve([1,2,2,1],[[0.1,0.9]], classes=[1,2])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: Input vectors must have same length
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.9]], classes=[1,2])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: The sum of probability values must be one
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.1,0.9]], classes={1,2})
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: The type of classes is assumed to be list
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.1,0.9]], classes=[1,2,3])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: The classes don't match to actual_vector
+>>> crv = Curve([1,1,1,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.1,0.9]], classes=[1])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: Number of the classes is lower than 2
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,"salam"]], classes=[1,2])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: The elements of the probability vector can only contain numeric values
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.8]], classes=[1,2], thresholds={1,2})
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: The type of thresholds is assumed to be list or NumPy array
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.8]], classes=[1,2], thresholds=[0.1])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: Number of the thresholds is lower than 2
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.8]], classes=[1,2], thresholds=[0.1, "q"])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: The thresholds can only contain numeric values
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.9], [0.2,0.8]], classes=[1,1,2])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: The classes list isn't unique. It contains duplicated labels.
+>>> crv = Curve([1,2,2,1],[[0.1,0.9], [0.1,0.9], [0.1,0.8,0.1], [0.2,0.8]], classes=[1,2])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: Probability vector elements must have same length and equal to classes
+>>> crv = Curve([1,2,2,1],[[1], [1], [1], [1]], classes=[1,2])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: Probability vector elements must have same length and equal to classes
+>>> crv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
+>>> crv.area(method="trpz")
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCurveError: The numeric integral method can only be selected between 'trapezoidal' and 'midpoint'!
+>>> crv.plot(colors=['c'])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmPlotError: Given colors and classes have not the same length.
+>>> crv.plot(markers=['*'])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmPlotError: Given markers and classes have not the same length.
 """

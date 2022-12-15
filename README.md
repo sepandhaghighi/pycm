@@ -1,6 +1,6 @@
 <div align="center">
-<img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/logo.png">
-<br/>
+<img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/logo.png" width="550">
+<h1>PyCM: Python Confusion Matrix</h1>
 <br/>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
 <a href="/Document"><img src="https://img.shields.io/badge/doc-latest-orange.svg"></a>
@@ -17,7 +17,7 @@
 </a>
 </div>
 
-----------
+
 ## Table of contents					
    * [Overview](https://github.com/sepandhaghighi/pycm#overview)
    * [Installation](https://github.com/sepandhaghighi/pycm#installation)
@@ -26,11 +26,8 @@
    * [Try PyCM in Your Browser](https://github.com/sepandhaghighi/pycm#try-pycm-in-your-browser)
    * [Issues & Bug Reports](https://github.com/sepandhaghighi/pycm#issues--bug-reports)
    * [Todo](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
-   * [Outputs](https://github.com/sepandhaghighi/pycm#outputs)
-   * [Dependencies](https://github.com/sepandhaghighi/pycm#dependencies)
    * [Contribution](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBUTING.md)
    * [Acknowledgments](https://github.com/sepandhaghighi/pycm#acknowledgments)
-   * [References](https://github.com/sepandhaghighi/pycm#references)
    * [Cite](https://github.com/sepandhaghighi/pycm#cite)
    * [Authors](https://github.com/sepandhaghighi/pycm/blob/master/AUTHORS.md)
    * [License](https://github.com/sepandhaghighi/pycm/blob/master/LICENSE)
@@ -101,7 +98,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ⚠️  Plotting capability requires **Matplotlib (>= 3.0.0)** or **Seaborn (>= 0.9.1)**   
 
 ### Source code
-- Download [Version 3.6](https://github.com/sepandhaghighi/pycm/archive/v3.6.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 3.7](https://github.com/sepandhaghighi/pycm/archive/v3.7.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
 - Run `python3 setup.py install` or `python setup.py install` (Need root access)				
 
@@ -109,7 +106,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
-- Run `pip install pycm==3.6` or `pip3 install pycm==3.6` (Need root access)
+- Run `pip install pycm==3.7` or `pip3 install pycm==3.7` (Need root access)
 
 ### Conda
 
@@ -322,7 +319,7 @@ Class1       2            4
 
 Class2       0            10           
 
-```	
+```
 
 ### Plot
 `plot` method is added in `version 3.0` in order to plot a confusion matrix using Matplotlib or Seaborn.
@@ -345,21 +342,35 @@ Class2       0            10
 
 <img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/plot3.png">
 
-### Online help
+### ROC curve
 
-`online_help` function is added in `version 1.1` in order to open each statistics definition in web browser
-
+`ROCCurve`, added in `version 3.7`, is devised to compute the Receiver Operating Characteristic (ROC) or simply ROC curve. In ROC curves, the Y axis represents the True Positive Rate, and the X axis represents the False Positive Rate. Thus, the ideal point is located at the top left of the curve, and a larger area under the curve represents better performance. ROC curve is a graphical representation of binary classifiers' performance. In PyCM, `ROCCurve` binarizes the output based on the "One vs. Rest" strategy to provide an extension of ROC for multi-class classifiers. Getting the actual labels vector, the target probability estimates of the positive classes, and the list of ordered labels of classes, this method is able to compute and plot TPR-FPR pairs for different discrimination thresholds and compute the area under the ROC curve. 
 
 ```pycon
+    >>> crv = ROCCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
+    >>> crv.thresholds
+    [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
+    >>> auc_trp = crv.area()
+    >>> auc_trp[1]
+    0.75
+    >>> auc_trp[2]
+    0.75
+```	
 
->>> from pycm import online_help
->>> online_help("J")
->>> online_help("SOA1(Landis & Koch)")
->>> online_help(2)
+### Precision-Recall curve
 
-```
-* List of items are available by calling `online_help()` (without argument)		
-* If PyCM website is not available, set `alt_link = True` (new in `version 2.4`)
+`PRCurve`, added in `version 3.7`, is devised to compute the Precision-Recall curve in which the Y axis represents the Precision, and the X axis represents the Recall of a classifier. Thus, the ideal point is located at the top right of the curve, and a larger area under the curve represents better performance. Precision-Recall curve is a graphical representation of binary classifiers' performance. In PyCM, `PRCurve` binarizes the output based on the "One vs. Rest" strategy to provide an extension of this curve for multi-class classifiers. Getting the actual labels vector, the target probability estimates of the positive classes, and the list of ordered labels of classes, this method is able to compute and plot Precision-Recall pairs for different discrimination thresholds and compute the area under the curve.
+
+```pycon
+    >>> crv = PRCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
+    >>> crv.thresholds
+    [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
+    >>> auc_trp = crv.area()
+    >>> auc_trp[1]
+    0.29166666666666663
+    >>> auc_trp[2]
+    0.29166666666666663
+```	
 
 ### Parameter recommender
 
@@ -417,6 +428,22 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 'cm2'
 ```	
 
+### Online help
+
+`online_help` function is added in `version 1.1` in order to open each statistics definition in web browser
+
+
+```pycon
+
+>>> from pycm import online_help
+>>> online_help("J")
+>>> online_help("SOA1(Landis & Koch)")
+>>> online_help(2)
+
+```
+* List of items are available by calling `online_help()` (without argument)		
+* If PyCM website is not available, set `alt_link = True` (new in `version 2.4`)
+
 ### Acceptable data types	
 
 **ConfusionMatrix**
@@ -446,6 +473,21 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 
 * Run `help(Compare)` for `Compare` object details
 
+**ROCCurve**
+
+1. `actual_vector` : python `list` or numpy `array` of any stringable objects
+2. `probs` : python `list` or numpy `array`
+3. `classes` : python `list`
+4. `thresholds`: python `list` or numpy `array` 
+5. `sample_weight`: python `list`
+
+**PRCurve**
+
+1. `actual_vector` : python `list` or numpy `array` of any stringable objects
+2. `probs` : python `list` or numpy `array`
+3. `classes` : python `list`
+4. `thresholds`: python `list` or numpy `array` 
+5. `sample_weight`: python `list`
 
 For more information visit [here](https://github.com/sepandhaghighi/pycm/tree/master/Document "Document")
 
@@ -470,30 +512,8 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab
 2. Discord : [https://discord.com/invite/zqpU2b3J3f](https://discord.com/invite/zqpU2b3J3f)
 3. Website : [https://www.pycm.io](https://www.pycm.io)		
 4. Mailing List : [https://mail.python.org/mailman3/lists/pycm.python.org/](https://mail.python.org/mailman3/lists/pycm.python.org/)
-5. Email : [info@pycm.io](mailto:info@pycm.io "info@pycm.io")		
+5. Email : [info@pycm.io](mailto:info@pycm.io "info@pycm.io")
 
-
-## Outputs	
-
-1. [HTML](http://www.pycm.io/test.html)
-2. [CSV](https://github.com/sepandhaghighi/pycm/blob/master/Otherfiles/test.csv)
-3. [PyCM](https://github.com/sepandhaghighi/pycm/blob/master/Otherfiles/test.pycm)			
-4. [OBJ](https://github.com/sepandhaghighi/pycm/blob/master/Otherfiles/test.obj)	
-5. [COMP](https://github.com/sepandhaghighi/pycm/blob/master/Otherfiles/test.comp)
-
-
-## Dependencies
-
-<table>
-	<tr> 
-		<td align="center">master</td>	
-		<td align="center">dev</td>	
-	</tr>
-	<tr>
-		<td align="center"><a href="https://requires.io/github/sepandhaghighi/pycm/requirements/?branch=master"><img src="https://requires.io/github/sepandhaghighi/pycm/requirements.svg?branch=master" alt="Requirements Status" /></a></td>
-		<td align="center"><a href="https://requires.io/github/sepandhaghighi/pycm/requirements/?branch=dev"><img src="https://requires.io/github/sepandhaghighi/pycm/requirements.svg?branch=dev" alt="Requirements Status" /></a></td>
-	</tr>
-</table>
 
 ## Acknowledgments
 
@@ -501,174 +521,9 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab
 
 <a href="https://nlnet.nl"><img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/NlNet.svg" height="50px" alt="NLnet foundation"></a> &nbsp;  <a href="https://nlnet.nl/assure"><img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/NGIAssure.svg" height="50px" alt="NGI Assure"></a>
 
-## References			
+[Python Software Foundation (PSF)](https://www.python.org/psf/) grants PyCM library partially for version **3.7**. [PSF](https://www.python.org/psf/) is the organization behind Python. Their mission is to promote, protect, and advance the Python programming language and to support and facilitate the growth of a diverse and international community of Python programmers.
 
-<blockquote>1- J. R. Landis and G. G. Koch, "The measurement of observer agreement for categorical data," <i>biometrics</i>, pp. 159-174, 1977.</blockquote>
-
-<blockquote>2- D. M. Powers, "Evaluation: from precision, recall and F-measure to ROC, informedness, markedness and correlation," <i>arXiv preprint arXiv:2010.16061</i>, 2020.</blockquote>
-
-<blockquote>3- C. Sammut and G. I. Webb, <i>Encyclopedia of machine learning</i>. Springer Science & Business Media, 2011.</blockquote>
-
-<blockquote>4- J. L. Fleiss, "Measuring nominal scale agreement among many raters," <i>Psychological bulletin</i>, vol. 76, no. 5, p. 378, 1971.</blockquote>
-
-<blockquote>5- D. G. Altman, <i>Practical statistics for medical research</i>. CRC press, 1990.</blockquote>
-
-<blockquote>6- K. L. Gwet, "Computing inter-rater reliability and its variance in the presence of high agreement," <i>British Journal of Mathematical and Statistical Psychology</i>, vol. 61, no. 1, pp. 29-48, 2008.</blockquote>
-
-<blockquote>7- W. A. Scott, "Reliability of content analysis: The case of nominal scale coding," <i>Public opinion quarterly</i>, pp. 321-325, 1955.</blockquote>
-
-<blockquote>8- E. M. Bennett, R. Alpert, and A. Goldstein, "Communications through limited-response questioning," <i>Public Opinion Quarterly</i>, vol. 18, no. 3, pp. 303-308, 1954.</blockquote>
-
-<blockquote>9- D. V. Cicchetti, "Guidelines, criteria, and rules of thumb for evaluating normed and standardized assessment instruments in psychology," <i>Psychological assessment</i>, vol. 6, no. 4, p. 284, 1994.</blockquote>
-
-<blockquote>10- R. B. Davies, "Algorithm AS 155: The distribution of a linear combination of χ2 random variables," <i>Applied Statistics</i>, pp. 323-333, 1980.</blockquote>
-
-<blockquote>11- S. Kullback and R. A. Leibler, "On information and sufficiency," <i>The annals of mathematical statistics</i>, vol. 22, no. 1, pp. 79-86, 1951.</blockquote>
-
-<blockquote>12- L. A. Goodman and W. H. Kruskal, "Measures of association for cross classifications, IV: Simplification of asymptotic variances," <i>Journal of the American Statistical Association</i>, vol. 67, no. 338, pp. 415-421, 1972.</blockquote>
-
-<blockquote>13- L. A. Goodman and W. H. Kruskal, "Measures of association for cross classifications III: Approximate sampling theory," <i>Journal of the American Statistical Association</i>, vol. 58, no. 302, pp. 310-364, 1963.</blockquote>
-
-<blockquote>14- T. Byrt, J. Bishop, and J. B. Carlin, "Bias, prevalence and kappa," <i>Journal of clinical epidemiology</i>, vol. 46, no. 5, pp. 423-429, 1993.</blockquote>
-
-<blockquote>15- M. Shepperd, D. Bowes, and T. Hall, "Researcher bias: The use of machine learning in software defect prediction," <i>IEEE Transactions on Software Engineering</i>, vol. 40, no. 6, pp. 603-616, 2014.</blockquote>
-
-<blockquote>16- X. Deng, Q. Liu, Y. Deng, and S. Mahadevan, "An improved method to construct basic probability assignment based on the confusion matrix for classification problem," <i>Information Sciences</i>, vol. 340, pp. 250-261, 2016.</blockquote>
-
-<blockquote>17- J.-M. Wei, X.-J. Yuan, Q.-H. Hu, and S.-Q. Wang, "A novel measure for evaluating classifiers," <i>Expert Systems with Applications</i>, vol. 37, no. 5, pp. 3799-3809, 2010.</blockquote>
-
-<blockquote>18- I. Kononenko and I. Bratko, "Information-based evaluation criterion for classifier's performance," <i>Machine learning</i>, vol. 6, no. 1, pp. 67-80, 1991.</blockquote>
-
-<blockquote>19- R. Delgado and J. D. Núnez-González, "Enhancing confusion entropy as measure for evaluating classifiers," in <i>The 13th International Conference on Soft Computing Models in Industrial and Environmental Applications</i>, 2018: Springer, pp. 79-89.</blockquote>
-
-<blockquote>20- J. Gorodkin, "Comparing two K-category assignments by a K-category correlation coefficient," <i>Computational biology and chemistry</i>, vol.28, no. 5-6, pp. 367-374, 2004.</blockquote>
-
-<blockquote>21- C. O. Freitas, J. M. De Carvalho, J. Oliveira, S. B. Aires, and R. Sabourin, "Confusion matrix disagreement for multiple classifiers," in <i>Iberoamerican Congress on Pattern Recognition</i>, 2007: Springer, pp. 387-396.</blockquote>
-
-<blockquote>22- P. Branco, L. Torgo, and R. P. Ribeiro, "Relevance-based evaluation metrics for multi-class imbalanced domains," in <i>Pacific-Asia Conference on Knowledge Discovery and Data Mining</i>, 2017: Springer, pp. 698-710.</blockquote>
-
-<blockquote>23- D. Ballabio, F. Grisoni, and R. Todeschini, "Multivariate comparison of classification performance measures," <i>Chemometrics and Intelligent Laboratory Systems</i>, vol. 174, pp. 33-44, 2018.</blockquote>
-
-<blockquote>24- J. Cohen, "A coefficient of agreement for nominal scales," <i>Educational and psychological measurement</i>, vol. 20, no. 1, pp. 37-46, 1960.</blockquote>
-
-<blockquote>25- S. Siegel, "Nonparametric statistics for the behavioral sciences," 1956.</blockquote>
-
-<blockquote>26- H. Cramér, <i>Mathematical methods of statistics</i>. Princeton university press, 1999.</blockquote>
-
-<blockquote>27- B. W. Matthews, "Comparison of the predicted and observed secondary structure of T4 phage lysozyme," <i>Biochimica et Biophysica Acta (BBA)-Protein Structure</i>, vol. 405, no. 2, pp. 442-451, 1975.</blockquote>
-
-<blockquote>28- J. A. Swets, "The relative operating characteristic in psychology: a technique for isolating effects of response bias finds wide use in the study of perception and cognition," <i>Science</i>, vol. 182, no. 4116, pp. 990-1000, 1973.</blockquote>
-
-<blockquote>29- P. Jaccard, "Étude comparative de la distribution florale dans une portion des Alpes et des Jura," <i>Bull Soc Vaudoise Sci Nat</i>, vol. 37, pp. 547-579, 1901.</blockquote>
-
-<blockquote>30- T. M. Cover and J. A. Thomas, <i>Elements of Information Theory</i>. John Wiley & Sons, 2012.</blockquote>
-
-<blockquote>31- E. S. Keeping, <i>Introduction to statistical inference</i>. Courier Corporation, 1995.</blockquote>
-
-<blockquote>32- V. Sindhwani, P. Bhattacharya, and S. Rakshit, "Information theoretic feature crediting in multiclass support vector machines," in <i>Proceedings of the 2001 SIAM International Conference on Data Mining</i>, 2001: SIAM, pp. 1-18.</blockquote>
-
-<blockquote>33- M. Bekkar, H. K. Djemaa, and T. A. Alitouche, "Evaluation measures for models assessment over imbalanced data sets," <i>J Inf Eng Appl</i>, vol. 3, no. 10, 2013.</blockquote>
-
-<blockquote>34- W. J. Youden, "Index for rating diagnostic tests," <i>Cancer</i>, vol. 3, no. 1, pp. 32-35, 1950.</blockquote>
-
-<blockquote>35- S. Brin, R. Motwani, J. D. Ullman, and S. Tsur, "Dynamic itemset counting and implication rules for market basket data," in <i>Proceedings of the 1997 ACM SIGMOD international conference on Management of data</i>, 1997, pp. 255-264.</blockquote>
-
-<blockquote>36- S. Raschka, "MLxtend: Providing machine learning and data science utilities and extensions to Python's scientific computing stack," <i>Journal of open source software</i>, vol. 3, no. 24, p. 638, 2018.</blockquote>
-
-<blockquote>37- J. R. Bray and J. T. Curtis, "An ordination of the upland forest communities of southern Wisconsin," Ecological monographs, vol. 27, no. 4, pp. 325-349, 1957.</blockquote>
-
-<blockquote>38- J. L. Fleiss, J. Cohen, and B. S. Everitt, "Large sample standard errors of kappa and weighted kappa," <i>Psychological bulletin</i>, vol. 72, no. 5, p. 323, 1969.</blockquote>
-
-<blockquote>39- M. Felkin, "Comparing classification results between n-ary and binary problems," in <i>Quality Measures in Data Mining</i>: Springer, 2007, pp. 277-301.</blockquote>
-
-<blockquote>40- R. Ranawana and V. Palade, "Optimized precision-a new measure for classifier performance evaluation," in <i>2006 IEEE International Conference on Evolutionary Computation</i>, 2006: IEEE, pp. 2254-2261.</blockquote>
-
-<blockquote>41- V. García, R. A. Mollineda, and J. S. Sánchez, "Index of balanced accuracy: A performance measure for skewed class distributions," in <i>Iberian conference on pattern recognition and image analysis</i>, 2009: Springer, pp. 441-448.</blockquote>
-
-<blockquote>42- P. Branco, L. Torgo, and R. P. Ribeiro, "A survey of predictive modeling on imbalanced domains," <i>ACM Computing Surveys (CSUR)</i>, vol. 49, no. 2, pp. 1-50, 2016.</blockquote>
-
-<blockquote>43- K. Pearson, "Notes on Regression and Inheritance in the Case of Two Parents," in <i>Proceedings of the Royal Society of London</i>, p. 240-242, 1895.</blockquote>
-
-<blockquote>44- W. J. Conover, <i>Practical nonparametric statistics</i>. John Wiley & Sons, 1998.</blockquote>
-
-<blockquote>45- G. U. Yule, "On the methods of measuring association between two attributes," <i>Journal of the Royal Statistical Society</i>, vol. 75, no. 6, pp. 579-652, 1912.</blockquote>
-
-<blockquote>46- R. Batuwita and V. Palade, "A new performance measure for class imbalance learning. application to bioinformatics problems," in <i>2009 International Conference on Machine Learning and Applications</i>, 2009: IEEE, pp. 545-550.</blockquote>
-
-<blockquote>47- D. K. Lee, "Alternatives to P value: confidence interval and effect size," <i>Korean journal of anesthesiology</i>, vol. 69, no. 6, p. 555, 2016.</blockquote>
-
-<blockquote>48- M. A. Raslich, R. J. Markert, and S. A. Stutes, "Selecting and interpreting diagnostic tests," <i>Biochemia Medica</i>, vol. 17, no. 2, pp. 151-161, 2007.</blockquote>
-
-<blockquote>49- D. E. Hinkle, W. Wiersma, and S. G. Jurs, <i>Applied statistics for the behavioral sciences</i>. Houghton Mifflin College Division, 2003.</blockquote>
-
-<blockquote>50- A. Maratea, A. Petrosino, and M. Manzo, "Adjusted F-measure and kernel scaling for imbalanced data learning," <i>Information Sciences</i>, vol. 257, pp. 331-341, 2014.</blockquote>
-
-<blockquote>51- L. Mosley, "A balanced approach to the multi-class imbalance problem," 2013.</blockquote>
-
-<blockquote>52- M. Vijaymeena and K. Kavitha, "A survey on similarity measures in text mining," <i>Machine Learning and Applications: An International Journal</i>, vol. 3, no. 2, pp. 19-28, 2016.</blockquote>
-
-<blockquote>53- Y. Otsuka, "The faunal character of the Japanese Pleistocene marine Mollusca, as evidence of climate having become colder during the Pleistocene in Japan," <i>Biogeograph Soc Japan</i>, vol. 6, no. 16, pp. 165-170, 1936.</blockquote>
-
-<blockquote>54- A. Tversky, "Features of similarity," <i>Psychological review</i>, vol. 84, no. 4, p. 327, 1977.</blockquote>
-
-<blockquote>55- K. Boyd, K. H. Eng, and C. D. Page, "Area under the precision-recall curve: point estimates and confidence intervals," in <i>Joint European conference on machine learning and knowledge discovery in databases</i>, 2013: Springer, pp. 451-466.</blockquote>
-
-<blockquote>56- J. Davis and M. Goadrich, "The relationship between Precision-Recall and ROC curves," in <i>Proceedings of the 23rd international conference on Machine learning</i>, 2006, pp. 233-240.</blockquote>
-
-<blockquote>57- M. Kuhn, "Building predictive models in R using the caret package," <i>J Stat Softw</i>, vol. 28, no. 5, pp. 1-26, 2008.</blockquote>
-
-<blockquote>58- V. Labatut and H. Cherifi, "Accuracy measures for the comparison of classifiers," <i>arXiv preprint arXiv:1207.3790</i>, 2012.</blockquote>
-
-<blockquote>59- S. Wallis, "Binomial confidence intervals and contingency tests: mathematical fundamentals and the evaluation of alternative methods," <i>Journal of Quantitative Linguistics</i>, vol. 20, no. 3, pp. 178-208, 2013.</blockquote>
-
-<blockquote>60- D. Altman, D. Machin, T. Bryant, and M. Gardner, <i>Statistics with confidence: confidence intervals and statistical guidelines</i>. John Wiley & Sons, 2013.</blockquote>
-
-<blockquote>61- J. A. Hanley and B. J. McNeil, "The meaning and use of the area under a receiver operating characteristic (ROC) curve," <i>Radiology</i>, vol. 143, no. 1, pp. 29-36, 1982.</blockquote>
-
-<blockquote>62- E. B. Wilson, "Probable inference, the law of succession, and statistical inference," <i>Journal of the American Statistical Association</i>, vol. 22, no. 158, pp. 209-212, 1927.</blockquote>
-
-<blockquote>63- A. Agresti and B. A. Coull, "Approximate is better than “exact” for interval estimation of binomial proportions," <i>The American Statistician</i>, vol. 52, no. 2, pp. 119-126, 1998.</blockquote>
-
-<blockquote>64- C. S. Peirce, "The numerical measure of the success of predictions," <i>Science</i>, no. 93, pp. 453-454, 1884.</blockquote>
-
-<blockquote>65- E. W. Steyerberg, B. Van Calster, and M. J. Pencina, "Performance measures for prediction models and markers: evaluation of predictions and classifications," <i>Revista Española de Cardiología (English Edition)</i>, vol. 64, no. 9, pp. 788-794, 2011.</blockquote>
-
-<blockquote>66- A. J. Vickers and E. B. Elkin, "Decision curve analysis: a novel method for evaluating prediction models," <i>Medical Decision Making</i>, vol. 26, no. 6, pp. 565-574, 2006.</blockquote>
-
-<blockquote>67- G. W. Bohrnstedt and D. Knoke,"Statistics for social data analysis," 1982.</blockquote>
-
-<blockquote>68- W. M. Rand, "Objective criteria for the evaluation of clustering methods," <i>Journal of the American Statistical association</i>, vol. 66, no. 336, pp. 846-850, 1971.</blockquote>
-
-<blockquote>69- J. M. Santos and M. Embrechts, "On the use of the adjusted rand index as a metric for evaluating supervised classification," in <i>International conference on artificial neural networks</i>, 2009: Springer, pp. 175-184.</blockquote>
-
-<blockquote>70- J. Cohen, "Weighted kappa: nominal scale agreement provision for scaled disagreement or partial credit," <i>Psychological bulletin</i>, vol. 70, no. 4, p. 213, 1968.</blockquote>
-
-<blockquote>71- R. Bakeman and J. M. Gottman, <i>Observing interaction: An introduction to sequential analysis</i>. Cambridge university press, 1997.</blockquote>
-
-<blockquote>72- S. Bangdiwala, "A graphical test for observer agreement," in <i>45th International Statistical Institute Meeting</i>, 1985, vol. 1985, p. 307.</blockquote>
-
-<blockquote>73- K. Bangdiwala and H. Bryan, "Using SAS software graphical procedures for the observer agreement chart," in <i>Proceedings of the SAS Users Group International Conference</i>, 1987, vol. 12, pp. 1083-1088.</blockquote>
-
-<blockquote>74- A. F. Hayes and K. Krippendorff, "Answering the call for a standard reliability measure for coding data," <i>Communication methods and measures</i>, vol. 1, no. 1, pp. 77-89, 2007.</blockquote>
-
-<blockquote>75- M. Aickin, "Maximum likelihood estimation of agreement in the constant predictive probability model, and its relation to Cohen's kappa," <i>Biometrics</i>, pp. 293-302, 1990.</blockquote>
-
-<blockquote>76- N. A. Macmillan and C. D. Creelman, <i>Detectiontheory: A user's guide</i>. Psychology press, 2004.</blockquote>
-
-<blockquote>77- D. J. Hand, P. Christen, and N. Kirielle, "F*: an interpretable transformation of the F-measure," <i>Machine Learning</i>, vol. 110, no. 3, pp. 451-456, 2021.</blockquote>
-
-<blockquote>78- G. W. Brier, "Verification of forecasts expressed in terms of probability," <i>Monthly weather review</i>, vol. 78, no. 1, pp. 1-3, 1950.</blockquote>
-
-<blockquote>79- L. Buitinck et al., "API design for machine learning software: experiences from the scikit-learn project," <i>arXiv preprint arXiv:1309.0238</i>, 2013.</blockquote>
-
-<blockquote>80- R. W. Hamming, "Error detecting and error correcting codes," The Bell system technical journal, vol. 29, no. 2, pp. 147-160, 1950.</blockquote>
-
-<blockquote>81- S. S. Choi, S. H. Cha, and C. C. Tappert, "A survey of binary similarity and distance measures," Journal of systemics, cybernetics and informatics, vol. 8, no. 1, pp. 43-48, 2010.</blockquote>
-
-<blockquote>82- J. Braun-Blanquet, "Plant sociology. The study of plant communities," Plant sociology. The study of plant communities. First ed., 1932.</blockquote>
-
-<blockquote>83- C. C. Little, "Abydos Documentation," 2020.</blockquote>
-
+<a href="https://www.python.org/psf/"><img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/PSF.png" height="55px" alt="Python Software Foundation"></a>
 
 ## Cite
 

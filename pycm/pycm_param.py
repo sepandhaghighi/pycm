@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parameters and constants."""
-PYCM_VERSION = "3.6"
+PYCM_VERSION = "3.7"
 
 
 OVERVIEW = '''
@@ -46,13 +46,22 @@ HTML_END_TEMPLATE = '''<p style="text-align:center;border-top:1px solid black;">
 </html>
 '''
 
-
+PROBABILITY_SIZE_ERROR = "Probability vector elements must have same length and equal to classes"
+PROBABILITY_TYPE_ERROR = "The elements of the probability vector can only contain numeric values"
+PROBABILITY_SUM_ERROR = "The sum of probability values must be one"
+THRESHOLDS_NUMBER_ERROR = "Number of the thresholds is lower than 2"
+THRESHOLDS_TYPE_ERROR = "The type of thresholds is assumed to be list or NumPy array"
+THRESHOLDS_NUMERIC_ERROR = "The thresholds can only contain numeric values"
+CLASSES_TYPE_ERROR = "The type of classes is assumed to be list"
+CLASSES_MATCH_ERROR = "The classes don't match to actual_vector"
 MATRIX_CLASS_TYPE_ERROR = "Type of the input matrix classes is assumed  be the same"
 MATRIX_FORMAT_ERROR = "Input confusion matrix format error"
 MAPPING_FORMAT_ERROR = "Mapping format error"
 MAPPING_CLASS_NAME_ERROR = "Mapping class names error"
 SEABORN_PLOT_LIBRARY_ERROR = "Error in importing seaborn module. Please install it using this command: pip install seaborn"
 MATPLOTLIB_PLOT_LIBRARY_ERROR = "Error in importing matplotlib module. Please install it using this command: pip install matplotlib"
+PLOT_COLORS_CLASS_MISMATCH_ERROR = "Given colors and classes have not the same length."
+PLOT_MARKERS_CLASS_MISMATCH_ERROR = "Given markers and classes have not the same length."
 VECTOR_TYPE_ERROR = "The type of input vectors is assumed to be a list or a NumPy array"
 VECTOR_SIZE_ERROR = "Input vectors must have same length"
 VECTOR_EMPTY_ERROR = "Input vectors are empty"
@@ -62,6 +71,7 @@ CLASS_NUMBER_ERROR = "Number of the classes is lower than 2"
 CLASSES_ERROR = "Used classes is not a subset of matrix's classes."
 COMPARE_FORMAT_ERROR = "The input type is supposed to be dictionary but it's not!"
 CLASSES_LENGHT_ERROR = "Classes length is not equal to the array length."
+AREA_METHOD_ERROR = "The numeric integral method can only be selected between 'trapezoidal' and 'midpoint'!"
 
 COMPARE_TYPE_ERROR = "The input is supposed to consist of pycm.ConfusionMatrix object but it's not!"
 COMPARE_DOMAIN_ERROR = "The domain of all ConfusionMatrix objects must be same! The sample size or the number " \
@@ -104,6 +114,8 @@ CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won'
 CLASSES_WARNING = "Used classes is not a subset of classes in actual and predict vectors."
 
 CLASSES_TYPE_WARNING = "The classes is neither a list nor None so it'll be ignored."
+
+CURVE_NONE_WARNING = "The curve axes contain non-numerical value(s)."
 
 CLASS_NUMBER_THRESHOLD = 10
 
@@ -219,6 +231,8 @@ CI_CLASS_LIST = [
     "PRE"]
 
 CI_OVERALL_LIST = ["Kappa", "Overall ACC"]
+
+CURVE_PARAMS = ["TPR", "FPR", "TNR", "PPV"]
 
 ALPHA_TWO_SIDE_TABLE = {
     0.2: 1.28,

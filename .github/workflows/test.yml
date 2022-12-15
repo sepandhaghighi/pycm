@@ -11,8 +11,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
-        python-version: [3.5, 3.6, 3.7, 3.8, 3.9, 3.10.0]
+        os: [ubuntu-20.04, windows-latest, macOS-latest]
+        python-version: [3.5, 3.6, 3.7, 3.8, 3.9, 3.10.0, 3.11.0]
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
@@ -43,22 +43,22 @@ jobs:
     - name: Version check
       run: |
         python Otherfiles/version_check.py
-      if: matrix.python-version == 3.7
+      if: matrix.python-version == 3.8
     - name: Notebook check
       run: |
         pip install notebook>=5.2.2
         python Otherfiles/notebook_check.py
-      if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
+      if: matrix.python-version == 3.8 && matrix.os == 'ubuntu-20.04'
     - name: Other tests
       run: |
           python -m vulture pycm/ Otherfiles/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size
           python -m bandit -r pycm -s B311
           python -m pydocstyle -v --match-dir=pycm
-      if: matrix.python-version == 3.7
+      if: matrix.python-version == 3.8
     - name: Codecov
       run: |
         codecov
-      if: matrix.python-version == 3.7 && matrix.os == 'ubuntu-latest'
+      if: matrix.python-version == 3.8 && matrix.os == 'ubuntu-20.04'
     - name: cProfile
       run: |
           python -m cProfile -s cumtime pycm/pycm_profile.py

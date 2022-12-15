@@ -398,4 +398,33 @@ True
 >>> cm2 = ConfusionMatrix(matrix = {1:{1:2,0:3},0:{0:775,1:4}})  # Verified Case -- (https://bit.ly/3BVdNBp)
 >>> cm2.BB[1]
 0.3333333333333333
+>>> crv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])  # Verified Case -- (https://bit.ly/3MIMk9z)
+>>> crv.thresholds
+[0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
+>>> crv.data[2]["TPR"]
+[1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 0.5, 0.0]
+>>> crv.data[2]["FPR"]
+[1.0, 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.0]
+>>> crv = ROCCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1]) # Verified Case -- (https://bit.ly/2Hqg0Ix)
+>>> crv.thresholds
+[0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
+>>> crv.data[2]["TPR"]
+[1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 0.5, 0.0, 0]
+>>> crv.data[2]["FPR"]
+[1.0, 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.0, 0]
+>>> abs(crv.area()[2] - 0.75) < 0.001
+True
+>>> abs(crv.area(method="midpoint")[1]-0.75) < 0.001
+True
+>>> abs(crv.area(method="midpoint")[2]-0.75) < 0.001
+True
+>>> crv = PRCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1]) # Verified Case -- (https://bit.ly/2PqUeKx)
+>>> crv.data[2]["TPR"]
+[1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 0.5]
+>>> crv.data[2]["PPV"]
+[0.5, 0.6666666666666666, 0.6666666666666666, 0.5, 1.0, 1.0, 1.0]
+>>> abs(crv.area()[2] - 0.2916) < 0.001      # Verified Case -- (https://bit.ly/2Hqg0Ix)
+True
+>>> abs(crv.area(method="midpoint")[2] - 0.2916) < 0.001
+True
 """

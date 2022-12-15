@@ -5,6 +5,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [3.7] - 2022-12-15
+### Added
+- `Curve` class
+- `ROCCurve` class
+- `PRCurve` class
+- `pycmCurveError` class
+### Changed
+- `CONTRIBUTING.md` updated
+- `matrix_params_calc` function optimized
+- `README.md` modified
+- Document modified
+- Test system modified
+- `Python 3.11` added to `test.yml`
 ## [3.6] - 2022-08-17
 ### Added
 - Hamming distance
@@ -593,7 +606,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v3.6...dev
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v3.7...dev
+[3.7]: https://github.com/sepandhaghighi/pycm/compare/v3.6...v3.7
 [3.6]: https://github.com/sepandhaghighi/pycm/compare/v3.5...v3.6
 [3.5]: https://github.com/sepandhaghighi/pycm/compare/v3.4...v3.5
 [3.4]: https://github.com/sepandhaghighi/pycm/compare/v3.3...v3.4

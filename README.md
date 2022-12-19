@@ -17,8 +17,7 @@
 </a>
 </div>
 
-
-## Table of contents					
+## Table of contents
    * [Overview](https://github.com/sepandhaghighi/pycm#overview)
    * [Installation](https://github.com/sepandhaghighi/pycm#installation)
    * [Usage](https://github.com/sepandhaghighi/pycm#usage)
@@ -38,7 +37,7 @@
 ## Overview
 
 <p align="justify">	
-PyCM is a multi-class confusion matrix library written in Python that supports both input data vectors and direct matrix, and a proper tool for post-classification model evaluation that supports most classes and overall statistics parameters.	
+PyCM is a multi-class confusion matrix library written in Python that supports both input data vectors and direct matrix, and a proper tool for post-classification model evaluation that supports most classes and overall statistics parameters.
 PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scientists that need a broad array of metrics for predictive models and accurate evaluation of a large variety of classifiers.
 
 </p>
@@ -48,11 +47,10 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <p>Fig1. ConfusionMatrix Block Diagram</p>
 </div>
 
-
 <table>
-	<tr> 
+	<tr>
 		<td align="center">Open Hub</td>
-		<td align="center"><a href="https://www.openhub.net/p/pycm"><img src="https://www.openhub.net/p/pycm/widgets/project_thin_badge.gif"></a></td>	
+		<td align="center"><a href="https://www.openhub.net/p/pycm"><img src="https://www.openhub.net/p/pycm/widgets/project_thin_badge.gif"></a></td>
 	</tr>
 	<tr>
 		<td align="center">PyPI Counter</td>
@@ -69,8 +67,8 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <table>
 	<tr> 
 		<td align="center">Branch</td>
-		<td align="center">master</td>	
-		<td align="center">dev</td>	
+		<td align="center">master</td>
+		<td align="center">dev</td>
 	</tr>
     <tr>
 		<td align="center">CI</td>
@@ -83,29 +81,26 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <table>
 	<tr> 
 		<td align="center">Code Quality</td>
-		<td align="center"><a class="badge-align" href="https://www.codacy.com/app/sepand-haghighi/pycm?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/pycm&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/5d9463998a0040d09afc2b80c389365c"/></a></td>	
-		<td align="center"><a href="https://www.codefactor.io/repository/github/sepandhaghighi/pycm/overview/dev"><img src="https://www.codefactor.io/repository/github/sepandhaghighi/pycm/badge/dev" alt="CodeFactor" /></a></td>	
-		<td align="center"><a href="https://codebeat.co/projects/github-com-sepandhaghighi-pycm-dev"><img alt="codebeat badge" src="https://codebeat.co/badges/f6642af1-c343-48c2-bd3e-eee802facf39" /></a></td>	
+		<td align="center"><a class="badge-align" href="https://www.codacy.com/app/sepand-haghighi/pycm?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sepandhaghighi/pycm&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/5d9463998a0040d09afc2b80c389365c"/></a></td>
+		<td align="center"><a href="https://www.codefactor.io/repository/github/sepandhaghighi/pycm/overview/dev"><img src="https://www.codefactor.io/repository/github/sepandhaghighi/pycm/badge/dev" alt="CodeFactor" /></a></td>
+		<td align="center"><a href="https://codebeat.co/projects/github-com-sepandhaghighi-pycm-dev"><img alt="codebeat badge" src="https://codebeat.co/badges/f6642af1-c343-48c2-bd3e-eee802facf39" /></a></td>
 	</tr>
 </table>
 
-
-
-## Installation		
+## Installation
 
 ⚠️  PyCM 2.4 is the last version to support **Python 2.7** & **Python 3.4**
 
-⚠️  Plotting capability requires **Matplotlib (>= 3.0.0)** or **Seaborn (>= 0.9.1)**   
+⚠️  Plotting capability requires **Matplotlib (>= 3.0.0)** or **Seaborn (>= 0.9.1)**
 
 ### Source code
 - Download [Version 3.7](https://github.com/sepandhaghighi/pycm/archive/v3.7.zip) or [Latest Source ](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install -r requirements.txt` or `pip3 install -r requirements.txt` (Need root access)
-- Run `python3 setup.py install` or `python setup.py install` (Need root access)				
+- Run `python3 setup.py install` or `python setup.py install` (Need root access)
 
 ### PyPI
 
-
-- Check [Python Packaging User Guide](https://packaging.python.org/installing/)     
+- Check [Python Packaging User Guide](https://packaging.python.org/installing/)
 - Run `pip install pycm==3.7` or `pip3 install pycm==3.7` (Need root access)
 
 ### Conda
@@ -121,21 +116,22 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ### MATLAB
 
 - Download and install [MATLAB](https://www.mathworks.com/products/matlab.html) (>=8.5, 64/32 bit)
-- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5, 64/32 bit) 
+- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5, 64/32 bit)
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
 - Run `pip install pycm` or `pip3 install pycm` (Need root access)
 - Configure Python interpreter
+
 ```matlab
 >> pyversion PYTHON_EXECUTABLE_FULL_PATH
 ```
-- Visit [MATLAB Examples](https://github.com/sepandhaghighi/pycm/tree/master/MATLAB)	
 
+- Visit [MATLAB Examples](https://github.com/sepandhaghighi/pycm/tree/master/MATLAB)
 
 ## Usage
 
-		
 ### From vector
+
 ```pycon
 >>> from pycm import *
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
@@ -197,7 +193,9 @@ TP(True positive/hit)                                             3             
 TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           0.33333       0.5 
 
 ```
+
 ### Direct CM
+
 ```pycon
 >>> from pycm import *
 >>> cm2 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":2}, "Class2": {"Class1": 0, "Class2": 5}})
@@ -253,28 +251,33 @@ TP(True positive/hit)                                             1             
 TPR(Sensitivity, recall, hit rate, or true positive rate)         0.33333       1.0
      
 ```
-* `matrix()` and `normalized_matrix()` renamed to `print_matrix()` and `print_normalized_matrix()` in `version 1.5`			
+
+* `matrix()` and `normalized_matrix()` renamed to `print_matrix()` and `print_normalized_matrix()` in `version 1.5`
 
 ### Activation threshold
-`threshold` is added in `version 0.9` for real value prediction.			
-						
+
+`threshold` is added in `version 0.9` for real value prediction.
 For more information visit [Example3](http://www.pycm.io/doc/Example3.html "Example3")
 
-### Load from file			
+### Load from file
+
 `file` is added in `version 0.9.5` in order to load saved confusion matrix with `.obj` format generated by `save_obj` method.
 
 For more information visit [Example4](http://www.pycm.io/doc/Example4.html "Example4")
 
 ### Sample weights
+
 `sample_weight` is added in `version 1.2`
 
 For more information visit [Example5](http://www.pycm.io/doc/Example5.html "Example5")
 
 ### Transpose
+
 `transpose` is added in `version 1.2` in order to transpose input matrix (only in `Direct CM` mode)
 
-### Relabel		
-`relabel` method is added in `version 1.5` in order to change ConfusionMatrix classnames.		
+### Relabel
+
+`relabel` method is added in `version 1.5` in order to change ConfusionMatrix classnames.
 
 ```pycon
 >>> cm.relabel(mapping={0:"L1",1:"L2",2:"L3"})
@@ -282,8 +285,9 @@ For more information visit [Example5](http://www.pycm.io/doc/Example5.html "Exam
 pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
 ```
 
-### Position		
-`position` method is added in `version 2.8` in order to find the indexes of observations in `predict_vector` which made TP, TN, FP, FN.	
+### Position
+
+`position` method is added in `version 2.8` in order to find the indexes of observations in `predict_vector` which made TP, TN, FP, FN.
 
 ```pycon
 >>> cm.position()
@@ -291,6 +295,7 @@ pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
 ```
 
 ### To array
+
 `to_array` method is added in `version 2.9` in order to returns the confusion matrix in the form of a NumPy array. This can be helpful to apply different operations over the confusion matrix for different purposes such as aggregation, normalization, and combination.
 
 ```pycon
@@ -302,13 +307,14 @@ array([[3, 0, 0],
 array([[1.     , 0.     , 0.     ],
        [0.     , 0.33333, 0.66667],
        [0.33333, 0.16667, 0.5    ]])
->>> cm.to_array(normalized=True,one_vs_all=True, class_name="L1")
+>>> cm.to_array(normalized=True, one_vs_all=True, class_name="L1")
 array([[1.     , 0.     ],
        [0.22222, 0.77778]])
 ```
 
 ### Combine
-`combine` method is added in `version 3.0` in order to merge two confusion matrices. This option will be useful in mini-batch learning.	
+
+`combine` method is added in `version 3.0` in order to merge two confusion matrices. This option will be useful in mini-batch learning.
 
 ```pycon
 >>> cm_combined = cm2.combine(cm3)
@@ -322,61 +328,63 @@ Class2       0            10
 ```
 
 ### Plot
+
 `plot` method is added in `version 3.0` in order to plot a confusion matrix using Matplotlib or Seaborn.
 
 ```pycon
 >>> cm.plot()
 ```
-<img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/plot1.png">	
+
+<img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/plot1.png">
 
 ```pycon
 >>> from matplotlib import pyplot as plt
->>> cm.plot(cmap=plt.cm.Greens,number_label=True,plot_lib="matplotlib")
-```		
+>>> cm.plot(cmap=plt.cm.Greens, number_label=True, plot_lib="matplotlib")
+```
 
 <img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/plot2.png">		
 
 ```pycon
->>> cm.plot(cmap=plt.cm.Reds,normalized=True,number_label=True,plot_lib="seaborn")
-```		
+>>> cm.plot(cmap=plt.cm.Reds, normalized=True, number_label=True, plot_lib="seaborn")
+```
 
 <img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/plot3.png">
 
 ### ROC curve
 
-`ROCCurve`, added in `version 3.7`, is devised to compute the Receiver Operating Characteristic (ROC) or simply ROC curve. In ROC curves, the Y axis represents the True Positive Rate, and the X axis represents the False Positive Rate. Thus, the ideal point is located at the top left of the curve, and a larger area under the curve represents better performance. ROC curve is a graphical representation of binary classifiers' performance. In PyCM, `ROCCurve` binarizes the output based on the "One vs. Rest" strategy to provide an extension of ROC for multi-class classifiers. Getting the actual labels vector, the target probability estimates of the positive classes, and the list of ordered labels of classes, this method is able to compute and plot TPR-FPR pairs for different discrimination thresholds and compute the area under the ROC curve. 
+`ROCCurve`, added in `version 3.7`, is devised to compute the Receiver Operating Characteristic (ROC) or simply ROC curve. In ROC curves, the Y axis represents the True Positive Rate, and the X axis represents the False Positive Rate. Thus, the ideal point is located at the top left of the curve, and a larger area under the curve represents better performance. ROC curve is a graphical representation of binary classifiers' performance. In PyCM, `ROCCurve` binarizes the output based on the "One vs. Rest" strategy to provide an extension of ROC for multi-class classifiers. Getting the actual labels vector, the target probability estimates of the positive classes, and the list of ordered labels of classes, this method is able to compute and plot TPR-FPR pairs for different discrimination thresholds and compute the area under the ROC curve.
 
 ```pycon
-    >>> crv = ROCCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
-    >>> crv.thresholds
-    [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
-    >>> auc_trp = crv.area()
-    >>> auc_trp[1]
-    0.75
-    >>> auc_trp[2]
-    0.75
-```	
+>>> crv = ROCCurve(actual_vector=np.array([1, 1, 2, 2]), probs=np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
+>>> crv.thresholds
+[0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
+>>> auc_trp = crv.area()
+>>> auc_trp[1]
+0.75
+>>> auc_trp[2]
+0.75
+```
 
 ### Precision-Recall curve
 
 `PRCurve`, added in `version 3.7`, is devised to compute the Precision-Recall curve in which the Y axis represents the Precision, and the X axis represents the Recall of a classifier. Thus, the ideal point is located at the top right of the curve, and a larger area under the curve represents better performance. Precision-Recall curve is a graphical representation of binary classifiers' performance. In PyCM, `PRCurve` binarizes the output based on the "One vs. Rest" strategy to provide an extension of this curve for multi-class classifiers. Getting the actual labels vector, the target probability estimates of the positive classes, and the list of ordered labels of classes, this method is able to compute and plot Precision-Recall pairs for different discrimination thresholds and compute the area under the curve.
 
 ```pycon
-    >>> crv = PRCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
-    >>> crv.thresholds
-    [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
-    >>> auc_trp = crv.area()
-    >>> auc_trp[1]
-    0.29166666666666663
-    >>> auc_trp[2]
-    0.29166666666666663
-```	
+>>> crv = PRCurve(actual_vector=np.array([1, 1, 2, 2]), probs=np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
+>>> crv.thresholds
+[0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
+>>> auc_trp = crv.area()
+>>> auc_trp[1]
+0.29166666666666663
+>>> auc_trp[2]
+0.29166666666666663
+```
 
 ### Parameter recommender
 
-This option has been added in `version 1.9` to recommend the most related parameters considering the characteristics of the input dataset. 
+This option has been added in `version 1.9` to recommend the most related parameters considering the characteristics of the input dataset.
 The suggested parameters are selected according to some characteristics of the input such as being balance/imbalance and binary/multi-class.
-All suggestions can be categorized into three main groups: imbalanced dataset, binary classification for a balanced dataset, and multi-class classification for a balanced dataset. 
+All suggestions can be categorized into three main groups: imbalanced dataset, binary classification for a balanced dataset, and multi-class classification for a balanced dataset.
 The recommendation lists have been gathered according to the respective paper of each parameter and the capabilities which had been claimed by the paper.
 
 ```pycon
@@ -398,7 +406,7 @@ True
 >>> cm = ConfusionMatrix(y_actu, y_pred, is_imbalanced = False)
 >>> cm.imbalance
 False
-```	
+```
 
 ### Compare
 
@@ -408,11 +416,10 @@ After that, two scores are calculated for each confusion matrices, overall and c
 
 If the user sets the value of `by_class` boolean input `True`, the best confusion matrix is the one with the maximum class-based score. Otherwise, if a confusion matrix obtains the maximum of both overall and class-based scores, that will be reported as the best confusion matrix, but in any other case, the compared object doesn’t select the best confusion matrix.
 
-
 ```pycon
->>> cm2 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
->>> cm3 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
->>> cp = Compare({"cm2":cm2,"cm3":cm3})
+>>> cm2 = ConfusionMatrix(matrix={0:{0:2, 1:50, 2:6}, 1:{0:5, 1:50, 2:3}, 2:{0:1, 1:7, 2:50}})
+>>> cm3 = ConfusionMatrix(matrix={0:{0:50, 1:2, 2:6}, 1:{0:50, 1:5, 2:3}, 2:{0:1, 1:55, 2:2}})
+>>> cp = Compare({"cm2":cm2, "cm3":cm3})
 >>> print(cp)
 Best : cm2
 
@@ -426,34 +433,31 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 ['cm2', 'cm3']
 >>> cp.best_name
 'cm2'
-```	
+```
 
 ### Online help
 
 `online_help` function is added in `version 1.1` in order to open each statistics definition in web browser
 
-
 ```pycon
-
 >>> from pycm import online_help
 >>> online_help("J")
 >>> online_help("SOA1(Landis & Koch)")
 >>> online_help(2)
-
 ```
-* List of items are available by calling `online_help()` (without argument)		
+
+* List of items are available by calling `online_help()` (without argument)
 * If PyCM website is not available, set `alt_link = True` (new in `version 2.4`)
 
-### Acceptable data types	
+### Acceptable data types
 
 **ConfusionMatrix**
 
-		
 1. `actual_vector` : python `list` or numpy `array` of any stringable objects
 2. `predict_vector` : python `list` or numpy `array` of any stringable objects
 3. `matrix` : `dict`
-4. `digit`: `int`	
-5. `threshold` : `FunctionType (function or lambda)`	
+4. `digit`: `int`
+5. `threshold` : `FunctionType (function or lambda)`
 6. `file` : `File object`
 7. `sample_weight` : python `list` or numpy `array` of numbers
 8. `transpose` : `bool`
@@ -467,8 +471,8 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 1. `cm_dict` : python `dict` of `ConfusionMatrix` object (`str` : `ConfusionMatrix`)
 2. `by_class` : `bool`
 3. `class_weight` : python `dict` of class weights (`class_name` : `float`)
-4. `class_benchmark_weight`: python `dict` of class benchmark weights (`class_benchmark_name` : `float`) 
-5. `overall_benchmark_weight`: python `dict` of overall benchmark weights (`overall_benchmark_name` : `float`) 
+4. `class_benchmark_weight`: python `dict` of class benchmark weights (`class_benchmark_name` : `float`)
+5. `overall_benchmark_weight`: python `dict` of overall benchmark weights (`overall_benchmark_name` : `float`)
 6. `digit`: `int`
 
 * Run `help(Compare)` for `Compare` object details
@@ -493,27 +497,27 @@ For more information visit [here](https://github.com/sepandhaghighi/pycm/tree/ma
 
 <div align="center">
 
-<a href="https://asciinema.org/a/171863" target="_blank"><img src="https://asciinema.org/a/171863.png" /></a>
+<a href="https://asciinema.org/a/171863" target="_blank"><img src="https://asciinema.org/a/171863.png"/></a>
 </div>
 
 ## Try PyCM in your browser!
+
 PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab services! Try it out now! :
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sepandhaghighi/pycm/master)
 
 [![Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sepandhaghighi/pycm/blob/master)
 
-* Check `Examples` in `Document` folder 
+* Check `Examples` in `Document` folder
 
-## Issues & bug reports			
+## Issues & bug reports
 
-1. Fill an issue and describe it. We'll check it ASAP! 
+1. Fill an issue and describe it. We'll check it ASAP!
     - Please complete the issue template
 2. Discord : [https://discord.com/invite/zqpU2b3J3f](https://discord.com/invite/zqpU2b3J3f)
-3. Website : [https://www.pycm.io](https://www.pycm.io)		
+3. Website : [https://www.pycm.io](https://www.pycm.io)
 4. Mailing List : [https://mail.python.org/mailman3/lists/pycm.python.org/](https://mail.python.org/mailman3/lists/pycm.python.org/)
 5. Email : [info@pycm.io](mailto:info@pycm.io "info@pycm.io")
-
 
 ## Acknowledgments
 
@@ -548,16 +552,14 @@ Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A. (2018). PyCM: Multiclass
   journal = {Journal of Open Source Software}
 }
 
-
 </pre>
 
-Download [PyCM.bib](http://www.pycm.io/PYCM.bib)	
-
+Download [PyCM.bib](http://www.pycm.io/PYCM.bib)
 
 <table>
 	<tr> 
 		<td align="center">JOSS</td>
-		<td align="center"><a href="https://doi.org/10.21105/joss.00729"><img src="http://joss.theoj.org/papers/10.21105/joss.00729/status.svg"></a></td>	
+		<td align="center"><a href="https://doi.org/10.21105/joss.00729"><img src="http://joss.theoj.org/papers/10.21105/joss.00729/status.svg"></a></td>
 	</tr>
 	<tr>
 		<td align="center">Zenodo</td>
@@ -575,11 +577,8 @@ Download [PyCM.bib](http://www.pycm.io/PYCM.bib)
 
 Give a ⭐️ if this project helped you!
 
-
 ### Donate to our project
 
 If you do like our project and we hope that you do, can you please support us? Our project is not and is never going to be working for profit. We need the money just so we can continue doing what we do ;-) .
 
 <a href="http://www.pycm.io/donate.html" target="_blank"><img src="http://www.pycm.io/images/Donate-Button.png" height="90px" width="270px" alt="PyCM Donation"></a>
-
-

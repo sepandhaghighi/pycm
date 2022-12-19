@@ -478,16 +478,16 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 1. `actual_vector` : python `list` or numpy `array` of any stringable objects
 2. `probs` : python `list` or numpy `array`
 3. `classes` : python `list`
-4. `thresholds`: python `list` or numpy `array` 
-5. `sample_weight`: python `list`
+4. `thresholds`: python `list` or numpy `array`
+5. `sample_weight`: python `list` or numpy `array`
 
 **PRCurve**
 
 1. `actual_vector` : python `list` or numpy `array` of any stringable objects
 2. `probs` : python `list` or numpy `array`
 3. `classes` : python `list`
-4. `thresholds`: python `list` or numpy `array` 
-5. `sample_weight`: python `list`
+4. `thresholds`: python `list` or numpy `array`
+5. `sample_weight`: python `list` or numpy `array`
 
 For more information visit [here](https://github.com/sepandhaghighi/pycm/tree/master/Document "Document")
 

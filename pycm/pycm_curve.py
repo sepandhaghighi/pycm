@@ -362,7 +362,7 @@ def __curve_data_filter__(curve):
     :return: None
     """
     none_warning = False
-    for c_index, c in enumerate(curve.classes):
+    for c in curve.classes:
         data_temp = {curve.plot_x_axis: [], curve.plot_y_axis: []}
         x_data = curve.data[c][curve.plot_x_axis]
         y_data = curve.data[c][curve.plot_y_axis]

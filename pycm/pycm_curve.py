@@ -53,7 +53,7 @@ class Curve:
         :param thresholds: thresholds list
         :type thresholds: list or numpy array
         :param sample_weight: sample weights list
-        :type sample_weight: list
+        :type sample_weight: list or numpy array
         """
         self.data = {}
         self.thresholds = []

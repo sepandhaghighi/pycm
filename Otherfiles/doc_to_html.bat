@@ -1,6 +1,7 @@
 @echo off
 
 call python -m art text "Doc 2 HTML"
+call python setup.py install
 if not exist "doc_html" mkdir doc_html
 for %%f in (doc_html\*) do (del %%f)
 copy Document\*.ipynb doc_html
@@ -20,3 +21,4 @@ echo --------------------------
 del %%f
 )
 cd ..
+call python Otherfiles\version_check.py

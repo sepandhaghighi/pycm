@@ -602,7 +602,7 @@ class ConfusionMatrix():
         """
         distance_dict = {}
         if not isinstance(metric, DistanceType):
-            pycmMatrixError(DISTANCE_METRIC_TYPE_ERROR)
+            raise pycmMatrixError(DISTANCE_METRIC_TYPE_ERROR)
         for i in self.classes:
             distance_dict[i] = DISTANCE_MAPPER[metric](TP = self.TP[i], FP = self.FP[i], FN = self.FN[i], TN = self.TN[i])
         return distance_dict

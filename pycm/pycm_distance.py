@@ -35,6 +35,7 @@ class DistanceType(Enum):
     BaulieuXV = "BaulieuXV"
     BeniniI = "BeniniI"
     BeniniII = "BeniniII"
+    Canberra = "Canberra"
 
 
 def AMPLE_calc(TP, FP, FN, TN):
@@ -522,6 +523,26 @@ def BeniniII_calc(TP, FP, FN, TN):
         return "None"
 
 
+def Canberra_calc(TP, FP, FN, TN):
+    """
+    Calculate Canberra distance.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Canberra distance as float
+    """
+    try:
+        return (FP + FN) / ((TP + FP) + (TP + FN))
+    except Exception:
+        return "None"
+
+
 DISTANCE_MAPPER = {
     DistanceType.AMPLE: AMPLE_calc,
     DistanceType.Anderberg: Anderberg_calc,
@@ -546,4 +567,5 @@ DISTANCE_MAPPER = {
     DistanceType.BaulieuXV: BaulieuXV_calc,
     DistanceType.BeniniI: BeniniI_calc,
     DistanceType.BeniniII: BeniniII_calc,
+    DistanceType.Canberra: Canberra_calc,
     }

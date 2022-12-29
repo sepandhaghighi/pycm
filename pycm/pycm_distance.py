@@ -4,10 +4,11 @@ from __future__ import division
 from enum import Enum
 import math
 
+
 class DistanceType(Enum):
     """
     Distance metric type class.
-    
+
     >>> pycm.DistanceType.AMPLE
     """
 
@@ -16,6 +17,7 @@ class DistanceType(Enum):
     AndresMarzoDelta = "AndresMarzoDelta"
     BaroniUrbaniBuserI = "BaroniUrbaniBuserI"
     BaroniUrbaniBuserII = "BaroniUrbaniBuserII"
+
 
 def AMPLE_calc(TP, FP, FN, TN):
     """
@@ -32,11 +34,12 @@ def AMPLE_calc(TP, FP, FN, TN):
     :return: AMPLE as float
     """
     try:
-        part1 = TP/(TP + FP)
-        part2 = FN/(FN + TN)
+        part1 = TP / (TP + FP)
+        part2 = FN / (FN + TN)
         return abs(part1 - part2)
     except Exception:
         return "None"
+
 
 def Anderberg_calc(TP, FP, FN, TN):
     """
@@ -82,6 +85,7 @@ def AndresMarzoDelta_calc(TP, FP, FN, TN):
     except Exception:
         return "None"
 
+
 def BaroniUrbaniBuserI_calc(TP, FP, FN, TN):
     """
     Calculate Baroni-Urbani & Buser I.
@@ -102,6 +106,7 @@ def BaroniUrbaniBuserI_calc(TP, FP, FN, TN):
         return part1 / part2
     except Exception:
         return "None"
+
 
 def BaroniUrbaniBuserII_calc(TP, FP, FN, TN):
     """
@@ -125,6 +130,10 @@ def BaroniUrbaniBuserII_calc(TP, FP, FN, TN):
         return "None"
 
 
-
-DISTANCE_MAPPER = {DistanceType.AMPLE: AMPLE_calc, DistanceType.Anderberg: Anderberg_calc, DistanceType.AndresMarzoDelta: AndresMarzoDelta_calc, DistanceType.BaroniUrbaniBuserI:
-    BaroniUrbaniBuserI_calc, DistanceType.BaroniUrbaniBuserII: BaroniUrbaniBuserII_calc}
+DISTANCE_MAPPER = {
+    DistanceType.AMPLE: AMPLE_calc,
+    DistanceType.Anderberg: Anderberg_calc,
+    DistanceType.AndresMarzoDelta: AndresMarzoDelta_calc,
+    DistanceType.BaroniUrbaniBuserI: BaroniUrbaniBuserI_calc,
+    DistanceType.BaroniUrbaniBuserII: BaroniUrbaniBuserII_calc,
+    }

@@ -34,6 +34,7 @@ class DistanceType(Enum):
     BaulieuXIV = "BaulieuXIV"
     BaulieuXV = "BaulieuXV"
     BeniniI = "BeniniI"
+    BeniniII = "BeniniII"
 
 
 def AMPLE_calc(TP, FP, FN, TN):
@@ -500,6 +501,27 @@ def BeniniI_calc(TP, FP, FN, TN):
         return "None"
 
 
+def BeniniII_calc(TP, FP, FN, TN):
+    """
+    Calculate Benini II correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Benini II correlation as float
+    """
+    try:
+        part2 = min((TP + FN) * (FN + TN), (TP + FP) * (FP + TN))
+        return (TP * TN - FP * FN) / part2
+    except Exception:
+        return "None"
+
+
 DISTANCE_MAPPER = {
     DistanceType.AMPLE: AMPLE_calc,
     DistanceType.Anderberg: Anderberg_calc,
@@ -523,4 +545,5 @@ DISTANCE_MAPPER = {
     DistanceType.BaulieuXIV: BaulieuXIV_calc,
     DistanceType.BaulieuXV: BaulieuXV_calc,
     DistanceType.BeniniI: BeniniI_calc,
+    DistanceType.BeniniII: BeniniII_calc,
     }

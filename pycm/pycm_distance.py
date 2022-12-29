@@ -36,6 +36,7 @@ class DistanceType(Enum):
     BeniniI = "BeniniI"
     BeniniII = "BeniniII"
     Canberra = "Canberra"
+    Clement = "Clement"
 
 
 def AMPLE_calc(TP, FP, FN, TN):
@@ -543,6 +544,29 @@ def Canberra_calc(TP, FP, FN, TN):
         return "None"
 
 
+def Clement_calc(TP, FP, FN, TN):
+    """
+    Calculate Clement similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Clement similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        term1 = (TP / (TP + FP)) * (1 - (TP + FP) / n)
+        term2 = (TN / (FN + TN)) * (1 - (FN + TN) / n)
+        return term1 + term2
+    except Exception:
+        return "None"
+
+
 DISTANCE_MAPPER = {
     DistanceType.AMPLE: AMPLE_calc,
     DistanceType.Anderberg: Anderberg_calc,
@@ -568,4 +592,5 @@ DISTANCE_MAPPER = {
     DistanceType.BeniniI: BeniniI_calc,
     DistanceType.BeniniII: BeniniII_calc,
     DistanceType.Canberra: Canberra_calc,
+    DistanceType.Clement: Clement_calc,
     }

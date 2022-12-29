@@ -7,6 +7,7 @@ import math
 class DistanceType(Enum):
     """
     Distance metric type class.
+    
     >>> pycm.DistanceType.AMPLE
     """
 

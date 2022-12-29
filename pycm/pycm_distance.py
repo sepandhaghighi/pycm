@@ -17,6 +17,7 @@ class DistanceType(Enum):
     AndresMarzoDelta = "AndresMarzoDelta"
     BaroniUrbaniBuserI = "BaroniUrbaniBuserI"
     BaroniUrbaniBuserII = "BaroniUrbaniBuserII"
+    BatageljBren = "BatageljBren"
 
 
 def AMPLE_calc(TP, FP, FN, TN):
@@ -130,10 +131,31 @@ def BaroniUrbaniBuserII_calc(TP, FP, FN, TN):
         return "None"
 
 
+def BatageljBren_calc(TP, FP, FN, TN):
+    """
+    Calculate Batagelj & Bren.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Batagelj & Bren as float
+    """
+    try:
+        return (FP * FN) / (TP * TN)
+    except Exception:
+        return "None"
+
+
 DISTANCE_MAPPER = {
     DistanceType.AMPLE: AMPLE_calc,
     DistanceType.Anderberg: Anderberg_calc,
     DistanceType.AndresMarzoDelta: AndresMarzoDelta_calc,
     DistanceType.BaroniUrbaniBuserI: BaroniUrbaniBuserI_calc,
     DistanceType.BaroniUrbaniBuserII: BaroniUrbaniBuserII_calc,
+    DistanceType.BatageljBren: BatageljBren_calc,
     }

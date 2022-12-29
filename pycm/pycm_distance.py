@@ -41,6 +41,7 @@ class DistanceType(Enum):
     ConsonniTodeschiniII = "ConsonniTodeschiniII"
     ConsonniTodeschiniIII = "ConsonniTodeschiniIII"
     ConsonniTodeschiniIV = "ConsonniTodeschiniIV"
+    ConsonniTodeschiniV = "ConsonniTodeschiniV"
 
 
 def AMPLE_calc(TP, FP, FN, TN):
@@ -655,6 +656,29 @@ def ConsonniTodeschiniIV_calc(TP, FP, FN, TN):
         return "None"
 
 
+def ConsonniTodeschiniV_calc(TP, FP, FN, TN):
+    """
+    Calculate Consonni & Todeschini V similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Consonni & Todeschini V similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = math.log(1 + TP * TN) - math.log(1 + FP * FN)
+        part2 = math.log(1 + n * n / 4)
+        return part1 / part2
+    except Exception:
+        return "None"
+
+
 DISTANCE_MAPPER = {
     DistanceType.AMPLE: AMPLE_calc,
     DistanceType.Anderberg: Anderberg_calc,
@@ -685,4 +709,5 @@ DISTANCE_MAPPER = {
     DistanceType.ConsonniTodeschiniII: ConsonniTodeschiniII_calc,
     DistanceType.ConsonniTodeschiniIII: ConsonniTodeschiniIII_calc,
     DistanceType.ConsonniTodeschiniIV: ConsonniTodeschiniIV_calc,
+    DistanceType.ConsonniTodeschiniV: ConsonniTodeschiniV_calc,
     }

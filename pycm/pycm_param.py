@@ -117,6 +117,8 @@ CLASSES_TYPE_WARNING = "The classes is neither a list nor None so it'll be ignor
 
 CURVE_NONE_WARNING = "The curve axes contain non-numerical value(s)."
 
+DISTANCE_METRIC_TYPE_ERROR = "The metric type must be DistanceType"
+
 CLASS_NUMBER_THRESHOLD = 10
 
 BALANCE_RATIO_THRESHOLD = 3

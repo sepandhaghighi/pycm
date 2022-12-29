@@ -21,6 +21,7 @@ class DistanceType(Enum):
     BaulieuI = "BaulieuI"
     BaulieuII = "BaulieuII"
     BaulieuIII = "BaulieuIII"
+    BaulieuIV = "BaulieuIV"
 
 
 def AMPLE_calc(TP, FP, FN, TN):
@@ -219,6 +220,28 @@ def BaulieuIII_calc(TP, FP, FN, TN):
         return "None"
 
 
+def BaulieuIV_calc(TP, FP, FN, TN):
+    """
+    Calculate Baulieu IV.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Baulieu IV as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = FP + FN - (TP + 0.5) * (TN + 0.5) * TN * math.e
+        return part1 / n
+    except Exception:
+        return "None"
+
+
 DISTANCE_MAPPER = {
     DistanceType.AMPLE: AMPLE_calc,
     DistanceType.Anderberg: Anderberg_calc,
@@ -229,4 +252,5 @@ DISTANCE_MAPPER = {
     DistanceType.BaulieuI: BaulieuI_calc,
     DistanceType.BaulieuII: BaulieuII_calc,
     DistanceType.BaulieuIII: BaulieuIII_calc,
+    DistanceType.BaulieuIV: BaulieuIV_calc,
     }

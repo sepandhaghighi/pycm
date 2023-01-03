@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 >>> from pycm import *
+>>> from pycm.pycm_distance import DISTANCE_MAPPER
 >>> import os
 >>> import json
 >>> import numpy as np
@@ -717,4 +718,9 @@ array([[3, 1],
 >>> cm4.to_array()
 array([[3, 1],
        [0, 0]])
+>>> result = []
+>>> for item in DISTANCE_MAPPER.values():
+...     result.append(item(TP=2, TN=2, FP=1, FN="2"))
+>>> all(list(map(lambda x: x=="None", result)))
+True
 """

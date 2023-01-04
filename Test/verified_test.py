@@ -427,8 +427,8 @@ True
 True
 >>> abs(crv.area(method="midpoint")[2] - 0.2916) < 0.001
 True
->>> cm1 = ConfusionMatrix(matrix = {1:{1:2,0:2},0:{0:778,1:2}})  # Verified Case -- (https://bit.ly/3BVdNBp)
->>> cm2 = ConfusionMatrix(matrix = {1:{1:2,0:3},0:{0:775,1:4}})  # Verified Case -- (https://bit.ly/3BVdNBp)
+>>> cm1 = ConfusionMatrix(matrix = {1:{1:2,0:2},0:{0:778,1:2}})  # Verified Case -- (https://bit.ly/3vVMWRT)
+>>> cm2 = ConfusionMatrix(matrix = {1:{1:2,0:3},0:{0:775,1:4}})  # Verified Case -- (https://bit.ly/3vVMWRT)
 >>> cm1.distance(metric=DistanceType.AMPLE)[1]
 0.49743589743589745
 >>> cm2.distance(metric=DistanceType.AMPLE)[1]

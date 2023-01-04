@@ -8,7 +8,12 @@
 ## Document	
 
 - [Jupyter Notebook](https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Document.ipynb)
-- [HTML](http://www.pycm.io/doc/)				
+- [HTML](http://www.pycm.io/doc/)	
+
+## Distance
+
+- [Jupyter Notebook](https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Distance.ipynb)
+- [HTML](http://www.pycm.io/doc/Distance.html)				
 
 
 ## Example-1 (Comparison of three different classifiers)	

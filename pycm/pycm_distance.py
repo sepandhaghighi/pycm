@@ -710,4 +710,4 @@ DISTANCE_MAPPER = {
     DistanceType.ConsonniTodeschiniIII: ConsonniTodeschiniIII_calc,
     DistanceType.ConsonniTodeschiniIV: ConsonniTodeschiniIV_calc,
     DistanceType.ConsonniTodeschiniV: ConsonniTodeschiniV_calc,
-    }
+}

@@ -7,6 +7,7 @@ from art import tprint
 
 NOTEBOOKS_LIST = [
     "Document",
+    "Distance",
     "Example1",
     "Example2",
     "Example3",

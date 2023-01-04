@@ -598,7 +598,7 @@ class ConfusionMatrix():
 
         :param metric: metric
         :type metric: DistanceType
-        :return: result as float
+        :return: result as dict
         """
         distance_dict = {}
         if not isinstance(metric, DistanceType):

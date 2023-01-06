@@ -53,6 +53,10 @@ pycm.pycm_error.pycmMatrixError: Number of the classes is lower than 2
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu,y_pred)
+>>> cm.distance(metric = 2)
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: The metric type must be DistanceType
 >>> cm.relabel([1,2,3])
 Traceback (most recent call last):
         ...

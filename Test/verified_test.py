@@ -427,4 +427,127 @@ True
 True
 >>> abs(crv.area(method="midpoint")[2] - 0.2916) < 0.001
 True
+>>> cm1 = ConfusionMatrix(matrix = {1:{1:2,0:2},0:{0:778,1:2}})  # Verified Case -- (https://bit.ly/3vVMWRT)
+>>> cm2 = ConfusionMatrix(matrix = {1:{1:2,0:3},0:{0:775,1:4}})  # Verified Case -- (https://bit.ly/3vVMWRT)
+>>> cm1.distance(metric=DistanceType.AMPLE)[1]
+0.49743589743589745
+>>> cm2.distance(metric=DistanceType.AMPLE)[1]
+0.32947729220222793
+>>> cm1.distance(metric=DistanceType.Anderberg)[1]
+0.0
+>>> cm2.distance(metric=DistanceType.Anderberg)[1]
+0.0
+>>> cm1.distance(metric=DistanceType.AndresMarzoDelta)[1]
+0.9897959183673469
+>>> cm2.distance(metric=DistanceType.AndresMarzoDelta)[1]
+0.9822344346552608
+>>> cm1.distance(metric=DistanceType.BaroniUrbaniBuserI)[1]
+0.9119837740878104
+>>> cm2.distance(metric=DistanceType.BaroniUrbaniBuserI)[1]
+0.8552823175014205
+>>> cm1.distance(metric=DistanceType.BaroniUrbaniBuserII)[1]
+0.8239675481756209
+>>> cm2.distance(metric=DistanceType.BaroniUrbaniBuserII)[1]
+0.7105646350028408
+>>> cm1.distance(metric=DistanceType.BatageljBren)[1]
+0.002570694087403599
+>>> cm2.distance(metric=DistanceType.BatageljBren)[1]
+0.007741935483870968
+>>> cm1.distance(metric=DistanceType.BaulieuI)[1]
+0.75
+>>> cm2.distance(metric=DistanceType.BaulieuI)[1]
+0.8666666666666667
+>>> cm1.distance(metric=DistanceType.BaulieuII)[1]
+0.24871959237343852
+>>> cm2.distance(metric=DistanceType.BaulieuII)[1]
+0.13213719608444902
+>>> cm1.distance(metric=DistanceType.BaulieuIII)[1]
+0.4949500208246564
+>>> cm2.distance(metric=DistanceType.BaulieuIII)[1]
+0.4949955747605165
+>>> cm1.distance(metric=DistanceType.BaulieuIV)[1]
+-5249.96272285802
+>>> cm2.distance(metric=DistanceType.BaulieuIV)[1]
+-5209.561726488335
+>>> cm1.distance(metric=DistanceType.BaulieuV)[1]
+0.7142857142857143
+>>> cm2.distance(metric=DistanceType.BaulieuV)[1]
+0.8
+>>> cm1.distance(metric=DistanceType.BaulieuVI)[1]
+0.5714285714285714
+>>> cm2.distance(metric=DistanceType.BaulieuVI)[1]
+0.7
+>>> cm1.distance(metric=DistanceType.BaulieuVII)[1]
+0.005050505050505051
+>>> cm2.distance(metric=DistanceType.BaulieuVII)[1]
+0.008838383838383838
+>>> cm1.distance(metric=DistanceType.BaulieuVIII)[1]
+0.0
+>>> cm2.distance(metric=DistanceType.BaulieuVIII)[1]
+1.6269262807163682e-06
+>>> cm1.distance(metric=DistanceType.BaulieuIX)[1]
+0.007633587786259542
+>>> cm2.distance(metric=DistanceType.BaulieuIX)[1]
+0.012706480304955527
+>>> cm1.distance(metric=DistanceType.BaulieuX)[1]
+0.007633587786259542
+>>> cm2.distance(metric=DistanceType.BaulieuX)[1]
+0.013959390862944163
+>>> cm1.distance(metric=DistanceType.BaulieuXI)[1]
+0.005115089514066497
+>>> cm2.distance(metric=DistanceType.BaulieuXI)[1]
+0.008951406649616368
+>>> cm1.distance(metric=DistanceType.BaulieuXII)[1]
+0.8
+>>> cm2.distance(metric=DistanceType.BaulieuXII)[1]
+0.875
+>>> cm1.distance(metric=DistanceType.BaulieuXIII)[1]
+0.2857142857142857
+>>> cm2.distance(metric=DistanceType.BaulieuXIII)[1]
+0.4117647058823529
+>>> cm1.distance(metric=DistanceType.BaulieuXIV)[1]
+0.75
+>>> cm2.distance(metric=DistanceType.BaulieuXIV)[1]
+0.8333333333333334
+>>> cm1.distance(metric=DistanceType.BaulieuXV)[1]
+0.75
+>>> cm2.distance(metric=DistanceType.BaulieuXV)[1]
+0.8461538461538461
+>>> cm1.distance(metric=DistanceType.BeniniI)[1]
+0.49743589743589745
+>>> cm2.distance(metric=DistanceType.BeniniI)[1]
+0.3953727506426735
+>>> cm1.distance(metric=DistanceType.BeniniII)[1]
+0.49743589743589745
+>>> cm2.distance(metric=DistanceType.BeniniII)[1]
+0.3953727506426735
+>>> cm1.distance(metric=DistanceType.Canberra)[1]
+0.5
+>>> cm2.distance(metric=DistanceType.Canberra)[1]
+0.6363636363636364
+>>> cm1.distance(metric=DistanceType.Clement)[1]
+0.5025379382522239
+>>> cm2.distance(metric=DistanceType.Clement)[1]
+0.33840586363079933
+>>> cm1.distance(metric=DistanceType.ConsonniTodeschiniI)[1]
+0.9992336018090547
+>>> cm2.distance(metric=DistanceType.ConsonniTodeschiniI)[1]
+0.998656222829757
+>>> cm1.distance(metric=DistanceType.ConsonniTodeschiniII)[1]
+0.7585487129939101
+>>> cm2.distance(metric=DistanceType.ConsonniTodeschiniII)[1]
+0.6880377723094788
+>>> cm1.distance(metric=DistanceType.ConsonniTodeschiniIII)[1]
+0.16481614417697044
+>>> cm2.distance(metric=DistanceType.ConsonniTodeschiniIII)[1]
+0.16481614417697044
+>>> cm1.distance(metric=DistanceType.ConsonniTodeschiniIV)[1]
+0.5645750340535797
+>>> cm2.distance(metric=DistanceType.ConsonniTodeschiniIV)[1]
+0.47712125471966244
+>>> cm1.distance(metric=DistanceType.ConsonniTodeschiniV)[1]
+0.48072545510682463
+>>> cm2.distance(metric=DistanceType.ConsonniTodeschiniV)[1]
+0.4003930264973547
+
 """

@@ -5,6 +5,39 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- `distance` method
+- 30 new distance/similarity
+	1. AMPLE
+	2. Anderberg's D
+	3. Andres & Marzo's Delta
+	4. Baroni-Urbani & Buser I
+	5. Baroni-Urbani & Buser II
+	6. Batagelj & Bren
+	7. Baulieu I
+	8. Baulieu II
+	9. Baulieu III
+	10. Baulieu IV
+	11. Baulieu V
+	12. Baulieu VI
+	13. Baulieu VII
+	14. Baulieu VIII
+	15. Baulieu IX
+	16. Baulieu X
+	17. Baulieu XI
+	18. Baulieu XII
+	19. Baulieu XIII
+	20. Baulieu XIV
+	21. Baulieu XV
+	22. Benini I
+	23. Benini II
+	24. Canberra
+	25. Clement
+	26. Consonni & Todeschini I
+	27. Consonni & Todeschini II
+	28. Consonni & Todeschini III
+	29. Consonni & Todeschini IV
+	30. Consonni & Todeschini V
 ### Changed
 - `README.md` modified
 - Document modified

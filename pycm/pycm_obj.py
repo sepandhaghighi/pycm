@@ -6,6 +6,7 @@ from .pycm_handler import __class_stat_init__, __overall_stat_init__
 from .pycm_handler import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__, __obj_array_handler__
 from .pycm_class_func import F_calc, IBA_calc, TI_calc, NB_calc, sensitivity_index_calc
 from .pycm_overall_func import weighted_kappa_calc, weighted_alpha_calc, alpha2_calc, brier_score_calc
+from .pycm_distance import DistanceType, DISTANCE_MAPPER
 from .pycm_output import *
 from .pycm_util import *
 from .pycm_param import *
@@ -590,6 +591,22 @@ class ConfusionMatrix():
             return NB_dict
         except Exception:
             return {}
+
+    def distance(self, metric):
+        """
+        Calculate distance/similarity for all classes.
+
+        :param metric: metric
+        :type metric: DistanceType
+        :return: result as dict
+        """
+        distance_dict = {}
+        if not isinstance(metric, DistanceType):
+            raise pycmMatrixError(DISTANCE_METRIC_TYPE_ERROR)
+        for i in self.classes:
+            distance_dict[i] = DISTANCE_MAPPER[metric](
+                TP=self.TP[i], FP=self.FP[i], FN=self.FN[i], TN=self.TN[i])
+        return distance_dict
 
     def CI(
             self,

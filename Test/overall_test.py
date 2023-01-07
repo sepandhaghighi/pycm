@@ -1552,4 +1552,11 @@ Actual
 2       1       2       3
 <BLANKLINE>
 <BLANKLINE>
+>>> cm = ConfusionMatrix([1,1,1,1,0],[1,1,1,1,1])
+>>> 1 in cm
+True
+>>> 0 in cm
+True
+>>> -1 in cm
+False
 """

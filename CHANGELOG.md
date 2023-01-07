@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `distance` method
+- `__contains__` method
 - 30 new distance/similarity
 	1. AMPLE
 	2. Anderberg's D

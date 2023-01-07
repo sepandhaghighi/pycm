@@ -220,7 +220,7 @@ class ConfusionMatrix():
 
     def __contains__(self, c):
         """
-        Check if given the confusion matrix contains given class
+        Check if given the confusion matrix contains given class.
 
         :param c: given class
         :param c: Any

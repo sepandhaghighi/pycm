@@ -1559,4 +1559,12 @@ True
 True
 >>> -1 in cm
 False
+>>> cm[0]
+array([0, 1])
+>>> cm[:, 0]
+array([0, 0])
+>>> cm[0, :]
+array([0, 1])
+>>> cm[1][1]
+4
 """

@@ -101,16 +101,6 @@ class ConfusionMatrix():
         self.sparse_normalized_matrix = None
         self.positions = None
         self.label_map = {x: x for x in self.classes}
-    
-    def __contains__(self, c):
-        """
-        Check if given the confusion matrix contains given class
-
-        :param c: given class
-        :param c: Any
-        :return: True if c is a class in confusion matrix
-        """
-        return c in self.classes
 
     def print_matrix(self, one_vs_all=False, class_name=None, sparse=False):
         """
@@ -237,6 +227,16 @@ class ConfusionMatrix():
         :return: True if c is a class in confusion matrix
         """
         return c in self.classes
+
+    def __getitem__(self, i):
+        """
+        Return i'th row of the confusion matrix.
+
+        :param i: given index
+        :type i: int
+        :return: i'th row of confusion matrix.
+        """
+        return self.to_array()[i]
 
     def save_stat(
             self,

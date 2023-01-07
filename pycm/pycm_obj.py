@@ -236,7 +236,7 @@ class ConfusionMatrix():
         :type i: int
         :return: i'th row of confusion matrix.
         """
-        return self.to_array()[i]
+        return self.matrix[i]
 
     def save_stat(
             self,

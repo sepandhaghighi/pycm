@@ -228,15 +228,15 @@ class ConfusionMatrix():
         """
         return c in self.classes
 
-    def __getitem__(self, i):
+    def __getitem__(self, class_name):
         """
-        Return i'th row of the confusion matrix.
+        Return value in matrix corresponding to given class name.
 
-        :param i: given index
-        :type i: int
-        :return: i'th row of confusion matrix.
+        :param class_name: given class name
+        :type class_name: Any
+        :return: 
         """
-        return self.matrix[i]
+        return self.matrix[class_name]
 
     def save_stat(
             self,

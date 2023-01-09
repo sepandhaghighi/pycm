@@ -230,11 +230,11 @@ class ConfusionMatrix():
 
     def __getitem__(self, class_name):
         """
-        Return value in matrix corresponding to given class name.
+        Return value in matrix corresponding to the given class name.
 
         :param class_name: given class name
         :type class_name: Any
-        :return: 
+        :return: value in matrix corresponding to the given class name.
         """
         return self.matrix[class_name]
 

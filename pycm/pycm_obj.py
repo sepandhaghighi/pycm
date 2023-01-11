@@ -218,22 +218,22 @@ class ConfusionMatrix():
         for key in self.matrix.keys():
             yield key, self.matrix[key]
 
-    def __contains__(self, c):
+    def __contains__(self, class_name):
         """
         Check if given the confusion matrix contains given class.
 
-        :param c: given class
-        :param c: Any
+        :param class_name: given class name
+        :param class_name: any valid type
         :return: True if c is a class in confusion matrix
         """
-        return c in self.classes
+        return class_name in self.classes
 
     def __getitem__(self, class_name):
         """
         Return value in matrix corresponding to the given class name.
 
         :param class_name: given class name
-        :type class_name: Any
+        :type class_name: any valid type
         :return: value in matrix corresponding to the given class name.
         """
         return self.matrix[class_name]

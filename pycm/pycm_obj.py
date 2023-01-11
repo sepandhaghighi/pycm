@@ -220,7 +220,7 @@ class ConfusionMatrix():
 
     def __contains__(self, class_name):
         """
-        Check if given the confusion matrix contains given class name.
+        Check if the confusion matrix contains given class name.
 
         :param class_name: given class name
         :param class_name: any valid type
@@ -234,7 +234,7 @@ class ConfusionMatrix():
 
         :param class_name: given class name
         :type class_name: any valid type
-        :return: value in matrix corresponding to the given class name.
+        :return: value in matrix corresponding to the given class name
         """
         return self.matrix[class_name]
 

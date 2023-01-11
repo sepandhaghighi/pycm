@@ -234,7 +234,7 @@ class ConfusionMatrix():
 
         :param class_name: given class name
         :type class_name: any valid type
-        :return: value in matrix corresponding to the given class name
+        :return: the element(s) in matrix corresponding to the given class name
         """
         return self.matrix[class_name]
 

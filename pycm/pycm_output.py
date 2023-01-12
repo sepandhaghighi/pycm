@@ -519,5 +519,5 @@ def online_help(param=None, alt_link=False):
             print('Example : online_help("J") or online_help(2)\n')
             for index, item in enumerate(params_link_keys):
                 print(str(index + 1) + "-" + item)
-    except Exception:
+    except Exception: # pragma: no cover
         print("Error in online help")

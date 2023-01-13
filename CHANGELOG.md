@@ -43,6 +43,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `README.md` modified
 - Document modified
+- Test system modified
 ## [3.7] - 2022-12-15
 ### Added
 - `Curve` class

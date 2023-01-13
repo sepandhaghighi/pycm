@@ -414,6 +414,9 @@ True
 [5, 10]
 >>> POS['L3']['FN']
 [0, 3, 7]
+>>> POS = cm.position()
+>>> POS == cm.positions
+True
 >>> y_actu = [0, 0, 1, 1, 0]
 >>> y_pred = [0, 1, 1, 0, 0]
 >>> cm2 = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred)

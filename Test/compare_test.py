@@ -119,6 +119,7 @@ Rank  Name   Class-Score     Overall-Score
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu, y_pred)
 >>> cm.relabel({0:"L1",1:"L2",2:"L3"})
+>>> cm_null = ConfusionMatrix(matrix={0:{0:0,1:0,2:0},1:{0:0,1:0,2:0},2:{0:0,1:0,2:0}})
 >>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
 ...     cp8 = Compare({"cm1":cm,"cm2":cm},class_weight={'L3': 6, 'L1': 3, 'L2': 3})
 >>> with warns(RuntimeWarning, match='The class_weight format is wrong, the result is for unweighted mode.'):
@@ -129,4 +130,6 @@ Rank  Name   Class-Score     Overall-Score
 >>> overall_benchmark_weight = {"SOA1":0,"SOA2":0,"SOA3":0,"SOA4":0,"SOA5":0,"SOA6":0}
 >>> with warns(RuntimeWarning, match='The overall_benchmark_weight format is wrong, the result is for unweighted mode.'):
 ...     cp11 = Compare({"cm1":cm1,"cm2":cm2},overall_benchmark_weight=overall_benchmark_weight)
+>>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
+...     cp12 = Compare({"cm1":cm_null,"cm2":cm_null})
 """

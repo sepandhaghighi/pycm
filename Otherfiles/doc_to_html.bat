@@ -13,6 +13,11 @@ move Document.html index.html
 if ERRORLEVEL 1 (echo Document.ipynb Failed! & cd .. & exit /b 0) else (echo Document.ipynb Done!)
 echo --------------------------
 del Document.ipynb
+echo Distance.ipynb is running!
+call python -m nbconvert --to html_toc --execute Distance.ipynb --no-prompt --TagRemovePreprocessor.enabled=True --TagRemovePreprocessor.remove_cell_tags={\"html_hide\"} --log-level=ERROR
+if ERRORLEVEL 1 (echo Distance.ipynb Failed! & cd .. & exit /b 0) else (echo Distance.ipynb Done!)
+echo --------------------------
+del Distance.ipynb
 for %%f in (*.ipynb) do (
 echo %%f is running!
 call python -m nbconvert --to html --execute %%f --no-prompt --log-level=ERROR

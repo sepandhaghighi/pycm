@@ -253,3 +253,28 @@ def kappa_analysis_altman(kappa):
         return "None"
     except Exception:  # pragma: no cover
         return "None"
+
+
+def lambda_analysis(lambda_):
+    """
+    Analysis of lambda (A or B) value with interpretation table.
+
+    :param lambda_: lambda (A or B) value
+    :type lambda_ : float
+    :return: strength of agreement as str
+    """
+    try:
+        if 0 < lambda_ < 0.2:
+            return "Very Weak"
+        if 0.2 <= lambda_ < 0.4:
+            return "Weak"
+        if 0.4 <= lambda_ < 0.6:
+            return "Moderate"
+        if 0.6 <= lambda_ < 0.8:
+            return "Strong"
+        if 0.8 <= lambda_ <= 1:
+            return "Very Strong"
+        return "None"
+    except Exception:  # pragma: no cover
+        return "None"
+

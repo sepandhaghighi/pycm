@@ -298,3 +298,24 @@ def alpha_analysis(alpha):
     except Exception:  # pragma: no cover
         return "None"
 
+
+def pearson_C_analysis(pearson_C):
+    """
+    Analysis of Pearson's coefficient value with interpretation table.
+
+    :param pearson_C: Pearson's coefficient value
+    :type pearson_C: float
+    :return: strength of agreement as str
+    """
+    try:
+        if 0 < pearson_C < 0.1:
+            return "Not Appreciable"
+        if 0.1 <= pearson_C < 0.2:
+            return "Weak"
+        if 0.2 <= pearson_C < 0.3:
+            return "Medium"
+        if pearson_C >= 0.3:
+            return "Strong"
+        return "None"
+    except Exception:  # pragma: no cover
+        return "None"

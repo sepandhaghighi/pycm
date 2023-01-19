@@ -278,3 +278,23 @@ def lambda_analysis(lambda_):
     except Exception:  # pragma: no cover
         return "None"
 
+
+def alpha_analysis(alpha):
+    """
+    Analysis of Krippendorff's alpha value with interpretation table.
+
+    :param alpha: Krippendorff's alpha value
+    :type alpha: float
+    :return: strength of agreement as str
+    """
+    try:
+        if alpha < 0.667:
+            return "Low"
+        if 0.667 <= alpha < 0.8:
+            return "Tentative"
+        if alpha >= 0.8:
+            return "High"
+        return "None"
+    except Exception:  # pragma: no cover
+        return "None"
+

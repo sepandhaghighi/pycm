@@ -261,7 +261,7 @@ def lambda_analysis(lambda_):
 
     :param lambda_: lambda (A or B) value
     :type lambda_ : float
-    :return: strength of agreement as str
+    :return: interpretation result as str
     """
     try:
         if 0 < lambda_ < 0.2:
@@ -285,7 +285,7 @@ def alpha_analysis(alpha):
 
     :param alpha: Krippendorff's alpha value
     :type alpha: float
-    :return: strength of agreement as str
+    :return: interpretation result as str
     """
     try:
         if alpha < 0.667:
@@ -305,7 +305,7 @@ def pearson_C_analysis(pearson_C):
 
     :param pearson_C: Pearson's coefficient value
     :type pearson_C: float
-    :return: strength of agreement as str
+    :return: interpretation result as str
     """
     try:
         if 0 < pearson_C < 0.1:

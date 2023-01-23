@@ -726,5 +726,6 @@ def sort_char_num(input_list):
     :type input_list: iterable
     :return: a sorted list of strings
     """
-    return sorted(input_list, key=lambda x: [(x, False) if not re.findall(r'\d+', x)
-                                             else (x[:re.search(r'\d+', x).start()], int(re.findall(r'\d+', x)[0]))])
+    return sorted(input_list, key=lambda x: [(x, False, False) if not re.findall(r'\d+', x)
+                                             else (x[:re.search(r'\d+', x).start()], int(re.findall(r'\d+', x)[0]),
+                                                   x[re.search(r'\d+', x).end():])])

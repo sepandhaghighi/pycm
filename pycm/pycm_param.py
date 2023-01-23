@@ -368,6 +368,36 @@ SOA6_SCORE = {
     "None": "None"}
 
 
+SOA7_SCORE = {
+    "Very Strong": 5,
+    "Strong": 4,
+    "Moderate": 3,
+    "Weak": 2,
+    "Very Weak": 1,
+    "None": "None"}
+
+SOA8_SCORE = {
+    "Very Strong": 5,
+    "Strong": 4,
+    "Moderate": 3,
+    "Weak": 2,
+    "Very Weak": 1,
+    "None": "None"}
+
+SOA9_SCORE = {
+    "High": 3,
+    "Tentative": 2,
+    "Low": 1,
+    "None": "None"}
+
+SOA10_SCORE = {
+    "Strong": 4,
+    "Medium": 3,
+    "Weak": 2,
+    "Not Appreciable": 1,
+    "None": "None"}
+
+
 CLASS_BENCHMARK_SCORE_DICT = {
     "PLRI": PLRI_SCORE,
     "NLRI": NLRI_SCORE,
@@ -384,10 +414,14 @@ OVERALL_BENCHMARK_SCORE_DICT = {
     "SOA3": SOA3_SCORE,
     "SOA4": SOA4_SCORE,
     "SOA5": SOA5_SCORE,
-    "SOA6": SOA6_SCORE}
+    "SOA6": SOA6_SCORE,
+    "SOA7": SOA7_SCORE,
+    "SOA8": SOA8_SCORE,
+    "SOA9": SOA9_SCORE,
+    "SOA10": SOA10_SCORE}
 
 OVERALL_BENCHMARK_LIST = sorted(list(OVERALL_BENCHMARK_SCORE_DICT.keys()))
-KAPPA_BENCHMARK_LIST = OVERALL_BENCHMARK_LIST[:4]
+KAPPA_BENCHMARK_LIST = ["SOA1", "SOA2", "SOA3", "SOA4"]
 
 OVERALL_BENCHMARK_MAP = {
     "SOA1": "SOA1(Landis & Koch)",
@@ -395,7 +429,11 @@ OVERALL_BENCHMARK_MAP = {
     "SOA3": "SOA3(Altman)",
     "SOA4": "SOA4(Cicchetti)",
     "SOA5": "SOA5(Cramer)",
-    "SOA6": "SOA6(Matthews)"}
+    "SOA6": "SOA6(Matthews)",
+    "SOA7": "SOA7(Lambda A)",
+    "SOA8": "SOA8(Lambda B)",
+    "SOA9": "SOA9(Krippendorff Alpha)",
+    "SOA10": "SOA10(Pearson C)"}
 
 RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"
@@ -602,7 +640,11 @@ PARAMS_LINK = {
     "Bangdiwala B": "Bangdiwala's-B",
     "Krippendorff Alpha": "Krippendorff's-alpha",
     "HD": "HD-(Hamming-distance)",
-    "BB": "BB-(Braun-Blanquet-similarity)"}
+    "BB": "BB-(Braun-Blanquet-similarity)",
+    "SOA7(Lambda A)": "Goodman-&-Kruskal's-lambda-A-interpretation",
+    "SOA8(Lambda B)": "Goodman-&-Kruskal's-lambda-B-interpretation",
+    "SOA9(Krippendorff Alpha)": "Krippendorff's-alpha-interpretation",
+    "SOA10(Pearson C)": "Pearson's-C-interpretation"}
 
 CAPITALIZE_FILTER = [
     "BCD",
@@ -694,7 +736,33 @@ BENCHMARK_COLOR = {
         "Moderate": "Yellow",
         "Strong": "LawnGreen",
         "Very Strong": "Green",
-        "None": "White"}}
+        "None": "White"},
+    "SOA7(Lambda A)": {
+        "Very Weak": "Red",
+        "Weak": "Orange",
+        "Moderate": "Yellow",
+        "Strong": "LawnGreen",
+        "Very Strong": "Green",
+        "None": "White"},
+    "SOA8(Lambda B)": {
+        "Very Weak": "Red",
+        "Weak": "Orange",
+        "Moderate": "Yellow",
+        "Strong": "LawnGreen",
+        "Very Strong": "Green",
+        "None": "White"},
+    "SOA9(Krippendorff Alpha)": {
+        "Low": "Red",
+        "Tentative": "LawnGreen",
+        "High": "Green",
+        "None": "White"},
+    "SOA10(Pearson C)": {
+        "Not Appreciable": "Red",
+        "Weak": "Orange",
+        "Medium": "LawnGreen",
+        "Strong": "Green",
+        "None": "White"}
+    }
 
 BENCHMARK_LIST = list(BENCHMARK_COLOR.keys())
 

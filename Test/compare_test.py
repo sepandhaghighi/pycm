@@ -18,7 +18,7 @@ True
 True
 >>> cp
 pycm.Compare(classes: [0, 1, 2])
->>> cp.scores == {'model2': {'overall': 0.5619, 'class': 0.33611}, 'model1': {'overall': 0.61429, 'class': 0.50278}}
+>>> cp.scores == {'model2': {'overall': 0.52857, 'class': 0.33611}, 'model1': {'overall': 0.58095, 'class': 0.50278}}
 True
 >>> cp.best
 pycm.ConfusionMatrix(classes: [0, 1, 2])
@@ -28,15 +28,15 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 Best : model1
 <BLANKLINE>
 Rank  Name      Class-Score       Overall-Score
-1     model1    0.50278           0.61429
-2     model2    0.33611           0.5619
+1     model1    0.50278           0.58095
+2     model2    0.33611           0.52857
 <BLANKLINE>
 >>> cp.print_report()
 Best : model1
 <BLANKLINE>
 Rank  Name      Class-Score       Overall-Score
-1     model1    0.50278           0.61429
-2     model2    0.33611           0.5619
+1     model1    0.50278           0.58095
+2     model2    0.33611           0.52857
 <BLANKLINE>
 >>> class_weight = {0:5,1:1,2:1}
 >>> class_weight_copy = {0:5,1:1,2:1}
@@ -47,8 +47,8 @@ True
 Best : model2
 <BLANKLINE>
 Rank  Name      Class-Score       Overall-Score
-1     model2    0.45357           0.5619
-2     model1    0.34881           0.61429
+1     model2    0.45357           0.52857
+2     model1    0.34881           0.58095
 <BLANKLINE>
 >>> cp.best
 pycm.ConfusionMatrix(classes: [0, 1, 2])
@@ -56,7 +56,7 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 'model2'
 >>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
 ...     cp2 = Compare({"model1":cm_comp1,"model2":cm_comp1})
->>> cp2.scores == {'model2': {'class': 0.50278, 'overall': 0.61429}, 'model1': {'class': 0.50278, 'overall': 0.61429}}
+>>> cp2.scores == {'model2': {'class': 0.50278, 'overall': 0.58095}, 'model1': {'class': 0.50278, 'overall': 0.58095}}
 True
 >>> cp2.best
 >>> cp2.best_name
@@ -67,8 +67,8 @@ True
 Best : cm2
 <BLANKLINE>
 Rank  Name   Class-Score       Overall-Score
-1     cm2    0.70556           0.97143
-2     cm1    0.55              0.79048
+1     cm2    0.70556           0.92381
+2     cm1    0.55              0.75238
 <BLANKLINE>
 >>> cp4 = Compare({"cm1":cm1,"cm2":cm2},class_weight={0:0,1:1,2:1})
 >>> cp4.class_weight == {0:0,1:1,2:1}
@@ -77,8 +77,8 @@ True
 Best : cm2
 <BLANKLINE>
 Rank  Name   Class-Score     Overall-Score
-1     cm2    0.825           0.97143
-2     cm1    0.575           0.79048
+1     cm2    0.825           0.92381
+2     cm1    0.575           0.75238
 <BLANKLINE>
 >>> class_benchmark_weight = {"PLRI":0,"NLRI":0,"DPI":0,"AUCI":1,"MCCI":0,"QI":0}
 >>> cp5 = Compare({"cm1":cm1,"cm2":cm2},class_benchmark_weight=class_benchmark_weight)
@@ -88,8 +88,8 @@ True
 Best : cm2
 <BLANKLINE>
 Rank  Name   Class-Score       Overall-Score
-1     cm2    0.93333           0.97143
-2     cm1    0.73333           0.79048
+1     cm2    0.93333           0.92381
+2     cm1    0.73333           0.75238
 <BLANKLINE>
 >>> overall_benchmark_weight = {"SOA1":1,"SOA2":0,"SOA3":0,"SOA4":0,"SOA5":0,"SOA6":1,"SOA7":0,"SOA8":0,"SOA9":0,"SOA10":0}
 >>> cp6 = Compare({"cm1":cm1,"cm2":cm2},class_benchmark_weight=class_benchmark_weight,overall_benchmark_weight=overall_benchmark_weight)
@@ -110,8 +110,8 @@ True
 Best : None
 <BLANKLINE>
 Rank  Name   Class-Score       Overall-Score
-1     cm1    0.50074           0.79048
-2     cm2    0.47021           0.97143
+1     cm1    0.50074           0.75238
+2     cm2    0.47021           0.92381
 <BLANKLINE>
 >>> cp7.best
 >>> cp7.best_name

@@ -4,6 +4,7 @@ from __future__ import division
 import sys
 import math
 import numpy
+import re
 from .pycm_param import *
 from .pycm_error import pycmMatrixError
 from warnings import warn
@@ -716,3 +717,14 @@ def thresholds_calc(probs):
     thresholds = numpy.ravel(probs)
     thresholds = sorted(set(thresholds))
     return thresholds
+
+
+def sort_char_num(input_list):
+    """
+    Sort a list of strings first alphabetically and then numerically.
+    :param input_list: input list of strings
+    :type input_list: iterable
+    :return: a sorted list of strings
+    """
+    return sorted(input_list, key=lambda x: [(x, False) if not re.findall(r'\d+', x)
+                                             else (x[:re.search(r'\d+', x).start()], int(re.findall(r'\d+', x)[0]))])

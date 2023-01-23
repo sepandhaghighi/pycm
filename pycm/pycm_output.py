@@ -3,7 +3,7 @@
 from __future__ import division
 from functools import partial
 from .pycm_param import *
-from .pycm_util import rounder
+from .pycm_util import rounder, sort_char_num
 import webbrowser
 
 
@@ -171,10 +171,10 @@ def html_overall_stat(
     result = ""
     result += "<h2>Overall Statistics : </h2>\n"
     result += '<table style="border:1px solid black;border-collapse: collapse;">\n'
-    overall_stat_keys = sorted(overall_stat.keys())
+    overall_stat_keys = sort_char_num(overall_stat.keys())
     if isinstance(overall_param, list):
         if set(overall_param) <= set(overall_stat_keys):
-            overall_stat_keys = sorted(overall_param)
+            overall_stat_keys = sort_char_num(overall_param)
     if len(overall_stat_keys) < 1:
         return ""
     for i in overall_stat_keys:
@@ -423,11 +423,11 @@ def stat_print(
     """
     shift = max(map(len, PARAMS_DESCRIPTION.values())) + 5
     classes_len = len(classes)
-    overall_stat_keys = sorted(overall_stat.keys())
+    overall_stat_keys = sort_char_num(overall_stat.keys())
     result = ""
     if isinstance(overall_param, list):
         if set(overall_param) <= set(overall_stat_keys):
-            overall_stat_keys = sorted(overall_param)
+            overall_stat_keys = sort_char_num(overall_param)
     if len(overall_stat_keys) > 0:
         result = "Overall Statistics : " + "\n\n"
         for key in overall_stat_keys:
@@ -508,7 +508,7 @@ def online_help(param=None, alt_link=False):
         document_link = DOCUMENT_ADR
         if alt_link:
             document_link = DOCUMENT_ADR_ALT
-        params_link_keys = sorted(PARAMS_LINK.keys())
+        params_link_keys = sort_char_num(PARAMS_LINK.keys())
         if param in params_link_keys:
             webbrowser.open_new_tab(document_link + PARAMS_LINK[param])
         elif param in range(1, len(params_link_keys) + 1):

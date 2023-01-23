@@ -272,8 +272,10 @@ def lambda_analysis(lambda_):
             return "Moderate"
         if 0.6 <= lambda_ < 0.8:
             return "Strong"
-        if 0.8 <= lambda_ <= 1:
+        if 0.8 <= lambda_ < 1:
             return "Very Strong"
+        if lambda_ == 1:
+            return "Perfect"
         return "None"
     except Exception:  # pragma: no cover
         return "None"

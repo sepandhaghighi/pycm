@@ -369,6 +369,7 @@ SOA6_SCORE = {
 
 
 SOA7_SCORE = {
+    "Perfect": 6,
     "Very Strong": 5,
     "Strong": 4,
     "Moderate": 3,
@@ -377,6 +378,7 @@ SOA7_SCORE = {
     "None": "None"}
 
 SOA8_SCORE = {
+    "Perfect": 6,
     "Very Strong": 5,
     "Strong": 4,
     "Moderate": 3,
@@ -739,17 +741,19 @@ BENCHMARK_COLOR = {
         "None": "White"},
     "SOA7(Lambda A)": {
         "Very Weak": "Red",
-        "Weak": "Orange",
-        "Moderate": "Yellow",
-        "Strong": "LawnGreen",
-        "Very Strong": "Green",
+        "Weak": "OrangeRed",
+        "Moderate": "Orange",
+        "Strong": "Yellow",
+        "Very Strong": "LawnGreen",
+        "Perfect": "Green",
         "None": "White"},
     "SOA8(Lambda B)": {
         "Very Weak": "Red",
-        "Weak": "Orange",
-        "Moderate": "Yellow",
-        "Strong": "LawnGreen",
-        "Very Strong": "Green",
+        "Weak": "OrangeRed",
+        "Moderate": "Orange",
+        "Strong": "Yellow",
+        "Very Strong": "LawnGreen",
+        "Perfect": "Green",
         "None": "White"},
     "SOA9(Krippendorff Alpha)": {
         "Low": "Red",

@@ -722,6 +722,7 @@ def thresholds_calc(probs):
 def sort_char_num(input_list):
     """
     Sort a list of strings first alphabetically and then numerically.
+    
     :param input_list: input list of strings
     :type input_list: iterable
     :return: a sorted list of strings

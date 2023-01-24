@@ -375,7 +375,8 @@ SOA7_SCORE = {
     "Moderate": 3,
     "Weak": 2,
     "Very Weak": 1,
-    "None": "None"}
+    "None": "None"
+}
 
 SOA8_SCORE = {
     "Perfect": 6,
@@ -384,20 +385,23 @@ SOA8_SCORE = {
     "Moderate": 3,
     "Weak": 2,
     "Very Weak": 1,
-    "None": "None"}
+    "None": "None"
+}
 
 SOA9_SCORE = {
     "High": 3,
     "Tentative": 2,
     "Low": 1,
-    "None": "None"}
+    "None": "None"
+}
 
 SOA10_SCORE = {
     "Strong": 4,
     "Medium": 3,
     "Weak": 2,
     "Not Appreciable": 1,
-    "None": "None"}
+    "None": "None"
+}
 
 
 CLASS_BENCHMARK_SCORE_DICT = {
@@ -435,7 +439,8 @@ OVERALL_BENCHMARK_MAP = {
     "SOA7": "SOA7(Lambda A)",
     "SOA8": "SOA8(Lambda B)",
     "SOA9": "SOA9(Krippendorff Alpha)",
-    "SOA10": "SOA10(Pearson C)"}
+    "SOA10": "SOA10(Pearson C)"
+}
 
 RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"
@@ -646,7 +651,8 @@ PARAMS_LINK = {
     "SOA7(Lambda A)": "Goodman-&-Kruskal's-lambda-A-interpretation",
     "SOA8(Lambda B)": "Goodman-&-Kruskal's-lambda-B-interpretation",
     "SOA9(Krippendorff Alpha)": "Krippendorff's-alpha-interpretation",
-    "SOA10(Pearson C)": "Pearson's-C-interpretation"}
+    "SOA10(Pearson C)": "Pearson's-C-interpretation"
+}
 
 CAPITALIZE_FILTER = [
     "BCD",

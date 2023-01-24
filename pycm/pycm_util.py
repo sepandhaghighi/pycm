@@ -722,11 +722,13 @@ def thresholds_calc(probs):
 def sort_char_num(input_list):
     """
     Sort a list of strings first alphabetically and then numerically.
-    
+
     :param input_list: input list of strings
     :type input_list: iterable
     :return: a sorted list of strings
     """
-    return sorted(input_list, key=lambda x: [(x, False, False) if not re.findall(r'\d+', x)
-                                             else (x[:re.search(r'\d+', x).start()], int(re.findall(r'\d+', x)[0]),
-                                                   x[re.search(r'\d+', x).end():])])
+    sort_by = lambda x: [(x, False, False) if not re.findall(r'\d+', x)
+                         else (x[:re.search(r'\d+', x).start()],
+                               int(re.findall(r'\d+', x)[0]),
+                               x[re.search(r'\d+', x).end():])]
+    return sorted(input_list, key=sort_by)

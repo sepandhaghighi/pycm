@@ -648,10 +648,10 @@ PARAMS_LINK = {
     "Krippendorff Alpha": "Krippendorff's-alpha",
     "HD": "HD-(Hamming-distance)",
     "BB": "BB-(Braun-Blanquet-similarity)",
-    "SOA7(Lambda A)": "Goodman-&-Kruskal's-lambda-A-interpretation",
-    "SOA8(Lambda B)": "Goodman-&-Kruskal's-lambda-B-interpretation",
-    "SOA9(Krippendorff Alpha)": "Krippendorff's-alpha-interpretation",
-    "SOA10(Pearson C)": "Pearson's-C-interpretation"
+    "SOA7(Lambda A)": "SOA7-(Goodman-&-Kruskal's-lambda-A-benchmark)",
+    "SOA8(Lambda B)": "SOA8-(Goodman-&-Kruskal's-lambda-B-benchmark)",
+    "SOA9(Krippendorff Alpha)": "SOA9-(Krippendorff's-alpha-benchmark)",
+    "SOA10(Pearson C)": "SOA10-(Pearson's-C-benchmark)"
 }
 
 CAPITALIZE_FILTER = [

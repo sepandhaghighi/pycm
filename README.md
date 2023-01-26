@@ -424,8 +424,8 @@ If the user sets the value of `by_class` boolean input `True`, the best confusio
 Best : cm2
 
 Rank  Name   Class-Score       Overall-Score
-1     cm2    0.50278           0.425
-2     cm3    0.33611           0.33056
+1     cm2    0.50278           0.58095
+2     cm3    0.33611           0.52857
 
 >>> cp.best
 pycm.ConfusionMatrix(classes: [0, 1, 2])

@@ -1443,7 +1443,28 @@ pycm.ConfusionMatrix(classes: ['1', '~other~'])
 >>> actual = [1,0,0,0,1,2,0,2,1]
 >>> predict = [1,0,1,1,1,2,0,2,0]
 >>> cm = ConfusionMatrix(actual,predict)
->>> cm.relabel({0:1,1:2,2:3})
+>>> cm.print_matrix()
+Predict 0       1       2
+Actual
+0       2       2       0
+<BLANKLINE>
+1       1       2       0
+<BLANKLINE>
+2       0       0       2
+<BLANKLINE>
+<BLANKLINE>
+>>> cm.relabel({0:"Z", 1:"A", 2:"B"})
+>>> cm.print_matrix()
+Predict Z       A       B
+Actual
+Z       2       2       0
+<BLANKLINE>
+A       1       2       0
+<BLANKLINE>
+B       0       0       2
+<BLANKLINE>
+<BLANKLINE>
+>>> cm.relabel({"Z":1, "A":2, "B":3})
 >>> cm
 pycm.ConfusionMatrix(classes: [1, 2, 3])
 >>> cm.label_map[0]

@@ -768,7 +768,7 @@ class ConfusionMatrix():
             temp_label_map[prime_label] = mapping[new_label]
         self.label_map = temp_label_map
         self.positions = None
-        self.classes = list(mapping.values())
+        self.classes = [mapping[x] for x in self.classes]
         self.TP = self.class_stat["TP"]
         self.TN = self.class_stat["TN"]
         self.FP = self.class_stat["FP"]

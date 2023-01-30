@@ -45,6 +45,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 	29. Consonni & Todeschini IV
 	30. Consonni & Todeschini V
 ### Changed
+- `relabel` method functionality
 - `README.md` modified
 - Document modified
 - Test system modified

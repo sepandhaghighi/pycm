@@ -253,3 +253,71 @@ def kappa_analysis_altman(kappa):
         return "None"
     except Exception:  # pragma: no cover
         return "None"
+
+
+def lambda_analysis(lambda_):
+    """
+    Analysis of lambda (A or B) value with interpretation table.
+
+    :param lambda_: lambda (A or B) value
+    :type lambda_ : float
+    :return: interpretation result as str
+    """
+    try:
+        if 0 < lambda_ < 0.2:
+            return "Very Weak"
+        if 0.2 <= lambda_ < 0.4:
+            return "Weak"
+        if 0.4 <= lambda_ < 0.6:
+            return "Moderate"
+        if 0.6 <= lambda_ < 0.8:
+            return "Strong"
+        if 0.8 <= lambda_ < 1:
+            return "Very Strong"
+        if lambda_ == 1:
+            return "Perfect"
+        return "None"
+    except Exception:  # pragma: no cover
+        return "None"
+
+
+def alpha_analysis(alpha):
+    """
+    Analysis of Krippendorff's alpha value with interpretation table.
+
+    :param alpha: Krippendorff's alpha value
+    :type alpha: float
+    :return: interpretation result as str
+    """
+    try:
+        if alpha < 0.667:
+            return "Low"
+        if 0.667 <= alpha < 0.8:
+            return "Tentative"
+        if alpha >= 0.8:
+            return "High"
+        return "None"
+    except Exception:  # pragma: no cover
+        return "None"
+
+
+def pearson_C_analysis(pearson_C):
+    """
+    Analysis of Pearson's coefficient value with interpretation table.
+
+    :param pearson_C: Pearson's coefficient value
+    :type pearson_C: float
+    :return: interpretation result as str
+    """
+    try:
+        if 0 < pearson_C < 0.1:
+            return "Not Appreciable"
+        if 0.1 <= pearson_C < 0.2:
+            return "Weak"
+        if 0.2 <= pearson_C < 0.3:
+            return "Medium"
+        if pearson_C >= 0.3:
+            return "Strong"
+        return "None"
+    except Exception:  # pragma: no cover
+        return "None"

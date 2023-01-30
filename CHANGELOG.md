@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `distance` method
 - `__contains__` method
 - `__getitem__` method
+- Goodman-Kruskal's Lambda A benchmark
+- Goodman-Kruskal's Lambda B benchmark
+- Krippendorff's Alpha benchmark
+- Pearson's C benchmark
 - 30 new distance/similarity
 	1. AMPLE
 	2. Anderberg's D

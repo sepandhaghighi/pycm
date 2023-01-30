@@ -84,6 +84,10 @@ SOA3(Altman)                                                     Fair
 SOA4(Cicchetti)                                                  Poor
 SOA5(Cramer)                                                     Relatively Strong
 SOA6(Matthews)                                                   Weak
+SOA7(Lambda A)                                                   Very Weak
+SOA8(Lambda B)                                                   Moderate
+SOA9(Krippendorff Alpha)                                         Low
+SOA10(Pearson C)                                                 Strong
 Scott PI                                                         0.34426
 Standard Error                                                   0.14232
 TNR Macro                                                        0.77778
@@ -237,6 +241,10 @@ SOA3(Altman)                                                     Fair
 SOA4(Cicchetti)                                                  Poor
 SOA5(Cramer)                                                     Relatively Strong
 SOA6(Matthews)                                                   Weak
+SOA7(Lambda A)                                                   Very Weak
+SOA8(Lambda B)                                                   Moderate
+SOA9(Krippendorff Alpha)                                         Low
+SOA10(Pearson C)                                                 Strong
 Scott PI                                                         0.34426
 Standard Error                                                   0.14232
 TNR Macro                                                        0.77778
@@ -405,6 +413,10 @@ SOA3(Altman)                                                     Poor
 SOA4(Cicchetti)                                                  Poor
 SOA5(Cramer)                                                     None
 SOA6(Matthews)                                                   Negligible
+SOA7(Lambda A)                                                   None
+SOA8(Lambda B)                                                   None
+SOA9(Krippendorff Alpha)                                         Low
+SOA10(Pearson C)                                                 None
 Scott PI                                                         -0.12554
 Standard Error                                                   0.10665
 TNR Macro                                                        0.78529
@@ -539,6 +551,10 @@ SOA3(Altman)                                                     Poor
 SOA4(Cicchetti)                                                  Poor
 SOA5(Cramer)                                                     None
 SOA6(Matthews)                                                   Negligible
+SOA7(Lambda A)                                                   None
+SOA8(Lambda B)                                                   None
+SOA9(Krippendorff Alpha)                                         Low
+SOA10(Pearson C)                                                 None
 Scott PI                                                         -0.12554
 Standard Error                                                   0.10665
 TNR Macro                                                        0.78529
@@ -831,6 +847,10 @@ SOA3(Altman)                                                     Moderate
 SOA4(Cicchetti)                                                  Fair
 SOA5(Cramer)                                                     Relatively Strong
 SOA6(Matthews)                                                   Weak
+SOA7(Lambda A)                                                   Moderate
+SOA8(Lambda B)                                                   Weak
+SOA9(Krippendorff Alpha)                                         Low
+SOA10(Pearson C)                                                 Strong
 Scott PI                                                         0.47346
 Standard Error                                                   0.09072
 TNR Macro                                                        0.82116
@@ -982,6 +1002,10 @@ SOA3(Altman)                                                     Moderate
 SOA4(Cicchetti)                                                  Fair
 SOA5(Cramer)                                                     Relatively Strong
 SOA6(Matthews)                                                   Weak
+SOA7(Lambda A)                                                   Moderate
+SOA8(Lambda B)                                                   Weak
+SOA9(Krippendorff Alpha)                                         Low
+SOA10(Pearson C)                                                 Strong
 Scott PI                                                         0.47346
 Standard Error                                                   0.09072
 TNR Macro                                                        0.82116
@@ -1135,6 +1159,10 @@ SOA3(Altman)                                                     Fair
 SOA4(Cicchetti)                                                  Poor
 SOA5(Cramer)                                                     Relatively Strong
 SOA6(Matthews)                                                   Weak
+SOA7(Lambda A)                                                   Weak
+SOA8(Lambda B)                                                   Weak
+SOA9(Krippendorff Alpha)                                         Low
+SOA10(Pearson C)                                                 Strong
 Scott PI                                                         0.37313
 Standard Error                                                   0.10597
 TNR Macro                                                        0.8

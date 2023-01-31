@@ -48,6 +48,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `relabel` method sort bug fixed
 - `README.md` modified
+- `Compare` overall benchmarks default weights updated
 - Document modified
 - Test system modified
 ## [3.7] - 2022-12-15

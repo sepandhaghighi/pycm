@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [3.8] - 2023-02-01
 ### Added
 - `distance` method
 - `__contains__` method
@@ -650,7 +651,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v3.7...dev
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v3.8...dev
+[3.8]: https://github.com/sepandhaghighi/pycm/compare/v3.7...v3.8
 [3.7]: https://github.com/sepandhaghighi/pycm/compare/v3.6...v3.7
 [3.6]: https://github.com/sepandhaghighi/pycm/compare/v3.5...v3.6
 [3.5]: https://github.com/sepandhaghighi/pycm/compare/v3.4...v3.5

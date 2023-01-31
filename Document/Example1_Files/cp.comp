@@ -1,6 +1,6 @@
 Best : Decision tree
 
 Rank   Name                Class-Score       Overall-Score
-1      Decision tree       0.55556           1.0
-2      AdaBoost            0.48333           0.96667
-3      C-Support vector    0.44444           0.90556
+1      Decision tree       0.55556           0.95238
+2      AdaBoost            0.48333           0.92381
+3      C-Support vector    0.44444           0.80476

@@ -6,6 +6,7 @@ from .pycm_handler import __class_stat_init__, __overall_stat_init__
 from .pycm_handler import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__, __obj_array_handler__
 from .pycm_class_func import F_calc, IBA_calc, TI_calc, NB_calc, sensitivity_index_calc
 from .pycm_overall_func import weighted_kappa_calc, weighted_alpha_calc, alpha2_calc, brier_score_calc
+from .pycm_distance import DistanceType, DISTANCE_MAPPER
 from .pycm_output import *
 from .pycm_util import *
 from .pycm_param import *
@@ -216,6 +217,26 @@ class ConfusionMatrix():
         """
         for key in self.matrix.keys():
             yield key, self.matrix[key]
+
+    def __contains__(self, class_name):
+        """
+        Check if the confusion matrix contains the given class name.
+
+        :param class_name: given class name
+        :param class_name: any valid type
+        :return: True if class_name is a class in confusion matrix
+        """
+        return class_name in self.classes
+
+    def __getitem__(self, class_name):
+        """
+        Return the element(s) in the matrix corresponding to the given class name.
+
+        :param class_name: given class name
+        :type class_name: any valid type
+        :return: the element(s) in matrix corresponding to the given class name
+        """
+        return self.matrix[class_name]
 
     def save_stat(
             self,
@@ -591,6 +612,22 @@ class ConfusionMatrix():
         except Exception:
             return {}
 
+    def distance(self, metric):
+        """
+        Calculate distance/similarity for all classes.
+
+        :param metric: metric
+        :type metric: DistanceType
+        :return: result as dict
+        """
+        distance_dict = {}
+        if not isinstance(metric, DistanceType):
+            raise pycmMatrixError(DISTANCE_METRIC_TYPE_ERROR)
+        for i in self.classes:
+            distance_dict[i] = DISTANCE_MAPPER[metric](
+                TP=self.TP[i], FP=self.FP[i], FN=self.FN[i], TN=self.TN[i])
+        return distance_dict
+
     def CI(
             self,
             param,
@@ -731,7 +768,7 @@ class ConfusionMatrix():
             temp_label_map[prime_label] = mapping[new_label]
         self.label_map = temp_label_map
         self.positions = None
-        self.classes = sorted(list(mapping.values()))
+        self.classes = [mapping[x] for x in self.classes]
         self.TP = self.class_stat["TP"]
         self.TN = self.class_stat["TN"]
         self.FP = self.class_stat["FP"]

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Parameters and constants."""
-PYCM_VERSION = "3.7"
+PYCM_VERSION = "3.8"
 
 
 OVERVIEW = '''
@@ -116,6 +116,8 @@ CLASSES_WARNING = "Used classes is not a subset of classes in actual and predict
 CLASSES_TYPE_WARNING = "The classes is neither a list nor None so it'll be ignored."
 
 CURVE_NONE_WARNING = "The curve axes contain non-numerical value(s)."
+
+DISTANCE_METRIC_TYPE_ERROR = "The metric type must be DistanceType"
 
 CLASS_NUMBER_THRESHOLD = 10
 
@@ -366,6 +368,42 @@ SOA6_SCORE = {
     "None": "None"}
 
 
+SOA7_SCORE = {
+    "Perfect": 6,
+    "Very Strong": 5,
+    "Strong": 4,
+    "Moderate": 3,
+    "Weak": 2,
+    "Very Weak": 1,
+    "None": "None"
+}
+
+SOA8_SCORE = {
+    "Perfect": 6,
+    "Very Strong": 5,
+    "Strong": 4,
+    "Moderate": 3,
+    "Weak": 2,
+    "Very Weak": 1,
+    "None": "None"
+}
+
+SOA9_SCORE = {
+    "High": 3,
+    "Tentative": 2,
+    "Low": 1,
+    "None": "None"
+}
+
+SOA10_SCORE = {
+    "Strong": 4,
+    "Medium": 3,
+    "Weak": 2,
+    "Not Appreciable": 1,
+    "None": "None"
+}
+
+
 CLASS_BENCHMARK_SCORE_DICT = {
     "PLRI": PLRI_SCORE,
     "NLRI": NLRI_SCORE,
@@ -382,9 +420,14 @@ OVERALL_BENCHMARK_SCORE_DICT = {
     "SOA3": SOA3_SCORE,
     "SOA4": SOA4_SCORE,
     "SOA5": SOA5_SCORE,
-    "SOA6": SOA6_SCORE}
+    "SOA6": SOA6_SCORE,
+    "SOA7": SOA7_SCORE,
+    "SOA8": SOA8_SCORE,
+    "SOA9": SOA9_SCORE,
+    "SOA10": SOA10_SCORE}
 
 OVERALL_BENCHMARK_LIST = sorted(list(OVERALL_BENCHMARK_SCORE_DICT.keys()))
+KAPPA_BENCHMARK_LIST = ["SOA1", "SOA2", "SOA3", "SOA4"]
 
 OVERALL_BENCHMARK_MAP = {
     "SOA1": "SOA1(Landis & Koch)",
@@ -392,7 +435,12 @@ OVERALL_BENCHMARK_MAP = {
     "SOA3": "SOA3(Altman)",
     "SOA4": "SOA4(Cicchetti)",
     "SOA5": "SOA5(Cramer)",
-    "SOA6": "SOA6(Matthews)"}
+    "SOA6": "SOA6(Matthews)",
+    "SOA7": "SOA7(Lambda A)",
+    "SOA8": "SOA8(Lambda B)",
+    "SOA9": "SOA9(Krippendorff Alpha)",
+    "SOA10": "SOA10(Pearson C)"
+}
 
 RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"
@@ -599,7 +647,12 @@ PARAMS_LINK = {
     "Bangdiwala B": "Bangdiwala's-B",
     "Krippendorff Alpha": "Krippendorff's-alpha",
     "HD": "HD-(Hamming-distance)",
-    "BB": "BB-(Braun-Blanquet-similarity)"}
+    "BB": "BB-(Braun-Blanquet-similarity)",
+    "SOA7(Lambda A)": "SOA7-(Goodman-&-Kruskal's-lambda-A-benchmark)",
+    "SOA8(Lambda B)": "SOA8-(Goodman-&-Kruskal's-lambda-B-benchmark)",
+    "SOA9(Krippendorff Alpha)": "SOA9-(Krippendorff's-alpha-benchmark)",
+    "SOA10(Pearson C)": "SOA10-(Pearson's-C-benchmark)"
+}
 
 CAPITALIZE_FILTER = [
     "BCD",
@@ -691,7 +744,35 @@ BENCHMARK_COLOR = {
         "Moderate": "Yellow",
         "Strong": "LawnGreen",
         "Very Strong": "Green",
-        "None": "White"}}
+        "None": "White"},
+    "SOA7(Lambda A)": {
+        "Very Weak": "Red",
+        "Weak": "OrangeRed",
+        "Moderate": "Orange",
+        "Strong": "Yellow",
+        "Very Strong": "LawnGreen",
+        "Perfect": "Green",
+        "None": "White"},
+    "SOA8(Lambda B)": {
+        "Very Weak": "Red",
+        "Weak": "OrangeRed",
+        "Moderate": "Orange",
+        "Strong": "Yellow",
+        "Very Strong": "LawnGreen",
+        "Perfect": "Green",
+        "None": "White"},
+    "SOA9(Krippendorff Alpha)": {
+        "Low": "Red",
+        "Tentative": "LawnGreen",
+        "High": "Green",
+        "None": "White"},
+    "SOA10(Pearson C)": {
+        "Not Appreciable": "Red",
+        "Weak": "Orange",
+        "Medium": "LawnGreen",
+        "Strong": "Green",
+        "None": "White"}
+    }
 
 BENCHMARK_LIST = list(BENCHMARK_COLOR.keys())
 

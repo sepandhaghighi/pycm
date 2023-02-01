@@ -84,6 +84,10 @@ SOA3(Altman)                                                     Fair
 SOA4(Cicchetti)                                                  Poor
 SOA5(Cramer)                                                     Relatively Strong
 SOA6(Matthews)                                                   Weak
+SOA7(Lambda A)                                                   Very Weak
+SOA8(Lambda B)                                                   Moderate
+SOA9(Krippendorff Alpha)                                         Low
+SOA10(Pearson C)                                                 Strong
 Scott PI                                                         0.34426
 Standard Error                                                   0.14232
 TNR Macro                                                        0.77778
@@ -237,6 +241,10 @@ SOA3(Altman)                                                     Fair
 SOA4(Cicchetti)                                                  Poor
 SOA5(Cramer)                                                     Relatively Strong
 SOA6(Matthews)                                                   Weak
+SOA7(Lambda A)                                                   Very Weak
+SOA8(Lambda B)                                                   Moderate
+SOA9(Krippendorff Alpha)                                         Low
+SOA10(Pearson C)                                                 Strong
 Scott PI                                                         0.34426
 Standard Error                                                   0.14232
 TNR Macro                                                        0.77778
@@ -405,6 +413,10 @@ SOA3(Altman)                                                     Poor
 SOA4(Cicchetti)                                                  Poor
 SOA5(Cramer)                                                     None
 SOA6(Matthews)                                                   Negligible
+SOA7(Lambda A)                                                   None
+SOA8(Lambda B)                                                   None
+SOA9(Krippendorff Alpha)                                         Low
+SOA10(Pearson C)                                                 None
 Scott PI                                                         -0.12554
 Standard Error                                                   0.10665
 TNR Macro                                                        0.78529
@@ -539,6 +551,10 @@ SOA3(Altman)                                                     Poor
 SOA4(Cicchetti)                                                  Poor
 SOA5(Cramer)                                                     None
 SOA6(Matthews)                                                   Negligible
+SOA7(Lambda A)                                                   None
+SOA8(Lambda B)                                                   None
+SOA9(Krippendorff Alpha)                                         Low
+SOA10(Pearson C)                                                 None
 Scott PI                                                         -0.12554
 Standard Error                                                   0.10665
 TNR Macro                                                        0.78529
@@ -831,6 +847,10 @@ SOA3(Altman)                                                     Moderate
 SOA4(Cicchetti)                                                  Fair
 SOA5(Cramer)                                                     Relatively Strong
 SOA6(Matthews)                                                   Weak
+SOA7(Lambda A)                                                   Moderate
+SOA8(Lambda B)                                                   Weak
+SOA9(Krippendorff Alpha)                                         Low
+SOA10(Pearson C)                                                 Strong
 Scott PI                                                         0.47346
 Standard Error                                                   0.09072
 TNR Macro                                                        0.82116
@@ -982,6 +1002,10 @@ SOA3(Altman)                                                     Moderate
 SOA4(Cicchetti)                                                  Fair
 SOA5(Cramer)                                                     Relatively Strong
 SOA6(Matthews)                                                   Weak
+SOA7(Lambda A)                                                   Moderate
+SOA8(Lambda B)                                                   Weak
+SOA9(Krippendorff Alpha)                                         Low
+SOA10(Pearson C)                                                 Strong
 Scott PI                                                         0.47346
 Standard Error                                                   0.09072
 TNR Macro                                                        0.82116
@@ -1135,6 +1159,10 @@ SOA3(Altman)                                                     Fair
 SOA4(Cicchetti)                                                  Poor
 SOA5(Cramer)                                                     Relatively Strong
 SOA6(Matthews)                                                   Weak
+SOA7(Lambda A)                                                   Weak
+SOA8(Lambda B)                                                   Weak
+SOA9(Krippendorff Alpha)                                         Low
+SOA10(Pearson C)                                                 Strong
 Scott PI                                                         0.37313
 Standard Error                                                   0.10597
 TNR Macro                                                        0.8
@@ -1415,7 +1443,28 @@ pycm.ConfusionMatrix(classes: ['1', '~other~'])
 >>> actual = [1,0,0,0,1,2,0,2,1]
 >>> predict = [1,0,1,1,1,2,0,2,0]
 >>> cm = ConfusionMatrix(actual,predict)
->>> cm.relabel({0:1,1:2,2:3})
+>>> cm.print_matrix()
+Predict 0       1       2
+Actual
+0       2       2       0
+<BLANKLINE>
+1       1       2       0
+<BLANKLINE>
+2       0       0       2
+<BLANKLINE>
+<BLANKLINE>
+>>> cm.relabel({0:"Z", 1:"A", 2:"B"})
+>>> cm.print_matrix()
+Predict Z       A       B
+Actual
+Z       2       2       0
+<BLANKLINE>
+A       1       2       0
+<BLANKLINE>
+B       0       0       2
+<BLANKLINE>
+<BLANKLINE>
+>>> cm.relabel({"Z":1, "A":2, "B":3})
 >>> cm
 pycm.ConfusionMatrix(classes: [1, 2, 3])
 >>> cm.label_map[0]
@@ -1552,4 +1601,19 @@ Actual
 2       1       2       3
 <BLANKLINE>
 <BLANKLINE>
+>>> cm = ConfusionMatrix([1,1,1,1,0],[1,1,1,1,1])
+>>> 1 in cm
+True
+>>> 0 in cm
+True
+>>> -1 in cm
+False
+>>> cm[0][0]
+0
+>>> cm[0][1]
+1
+>>> cm[1][0]
+0
+>>> cm[1][1]
+4
 """

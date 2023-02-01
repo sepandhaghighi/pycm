@@ -151,6 +151,10 @@ def __overall_stat_init__(cm):
     cm.ARI = cm.overall_stat["ARI"]
     cm.B = cm.overall_stat["Bangdiwala B"]
     cm.Alpha = cm.overall_stat["Krippendorff Alpha"]
+    cm.SOA7 = cm.overall_stat["SOA7(Lambda A)"]
+    cm.SOA8 = cm.overall_stat["SOA8(Lambda B)"]
+    cm.SOA9 = cm.overall_stat["SOA9(Krippendorff Alpha)"]
+    cm.SOA10 = cm.overall_stat["SOA10(Pearson C)"]
 
 
 def __obj_assign_handler__(cm, matrix_param):

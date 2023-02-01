@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 >>> from pycm import *
+>>> from pycm.pycm_distance import DISTANCE_MAPPER
 >>> import os
 >>> import json
 >>> import numpy as np
@@ -154,22 +155,26 @@ Example : online_help("J") or online_help(2)
 108-SOA4(Cicchetti)
 109-SOA5(Cramer)
 110-SOA6(Matthews)
-111-Scott PI
-112-Standard Error
-113-TN
-114-TNR
-115-TNR Macro
-116-TNR Micro
-117-TON
-118-TOP
-119-TP
-120-TPR
-121-TPR Macro
-122-TPR Micro
-123-Y
-124-Zero-one Loss
-125-dInd
-126-sInd
+111-SOA7(Lambda A)
+112-SOA8(Lambda B)
+113-SOA9(Krippendorff Alpha)
+114-SOA10(Pearson C)
+115-Scott PI
+116-Standard Error
+117-TN
+118-TNR
+119-TNR Macro
+120-TNR Micro
+121-TON
+122-TOP
+123-TP
+124-TPR
+125-TPR Macro
+126-TPR Micro
+127-Y
+128-Zero-one Loss
+129-dInd
+130-sInd
 >>> online_help("J")
 ...
 >>> online_help("J",alt_link=True)
@@ -413,6 +418,9 @@ True
 [5, 10]
 >>> POS['L3']['FN']
 [0, 3, 7]
+>>> POS = cm.position()
+>>> POS == cm.positions
+True
 >>> y_actu = [0, 0, 1, 1, 0]
 >>> y_pred = [0, 1, 1, 0, 0]
 >>> cm2 = ConfusionMatrix(actual_vector=y_actu, predict_vector=y_pred)
@@ -567,6 +575,36 @@ True
 'Excellent'
 >>> kappa_analysis_cicchetti(1.2)
 'None'
+>>> lambda_analysis(0)
+'None'
+>>> lambda_analysis(0.1)
+'Very Weak'
+>>> lambda_analysis(0.3)
+'Weak'
+>>> lambda_analysis(0.5)
+'Moderate'
+>>> lambda_analysis(0.7)
+'Strong'
+>>> lambda_analysis(0.9)
+'Very Strong'
+>>> lambda_analysis(1)
+'Perfect'
+>>> alpha_analysis(0)
+'Low'
+>>> alpha_analysis(0.667)
+'Tentative'
+>>> alpha_analysis(0.8)
+'High'
+>>> pearson_C_analysis(0)
+'None'
+>>> pearson_C_analysis(0.05)
+'Not Appreciable'
+>>> pearson_C_analysis(0.1)
+'Weak'
+>>> pearson_C_analysis(0.2)
+'Medium'
+>>> pearson_C_analysis(0.3)
+'Strong'
 >>> PLR_analysis("None")
 'None'
 >>> PLR_analysis(1)
@@ -717,4 +755,9 @@ array([[3, 1],
 >>> cm4.to_array()
 array([[3, 1],
        [0, 0]])
+>>> result = []
+>>> for item in DISTANCE_MAPPER.values():
+...     result.append(item(TP=2, TN=2, FP=1, FN="2"))
+>>> all(list(map(lambda x: x=="None", result)))
+True
 """

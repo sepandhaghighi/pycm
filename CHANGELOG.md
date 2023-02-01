@@ -5,6 +5,52 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [3.8] - 2023-02-01
+### Added
+- `distance` method
+- `__contains__` method
+- `__getitem__` method
+- Goodman-Kruskal's Lambda A benchmark
+- Goodman-Kruskal's Lambda B benchmark
+- Krippendorff's Alpha benchmark
+- Pearson's C benchmark
+- 30 new distance/similarity
+	1. AMPLE
+	2. Anderberg's D
+	3. Andres & Marzo's Delta
+	4. Baroni-Urbani & Buser I
+	5. Baroni-Urbani & Buser II
+	6. Batagelj & Bren
+	7. Baulieu I
+	8. Baulieu II
+	9. Baulieu III
+	10. Baulieu IV
+	11. Baulieu V
+	12. Baulieu VI
+	13. Baulieu VII
+	14. Baulieu VIII
+	15. Baulieu IX
+	16. Baulieu X
+	17. Baulieu XI
+	18. Baulieu XII
+	19. Baulieu XIII
+	20. Baulieu XIV
+	21. Baulieu XV
+	22. Benini I
+	23. Benini II
+	24. Canberra
+	25. Clement
+	26. Consonni & Todeschini I
+	27. Consonni & Todeschini II
+	28. Consonni & Todeschini III
+	29. Consonni & Todeschini IV
+	30. Consonni & Todeschini V
+### Changed
+- `relabel` method sort bug fixed
+- `README.md` modified
+- `Compare` overall benchmarks default weights updated
+- Document modified
+- Test system modified
 ## [3.7] - 2022-12-15
 ### Added
 - `Curve` class
@@ -606,7 +652,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v3.7...dev
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v3.8...dev
+[3.8]: https://github.com/sepandhaghighi/pycm/compare/v3.7...v3.8
 [3.7]: https://github.com/sepandhaghighi/pycm/compare/v3.6...v3.7
 [3.6]: https://github.com/sepandhaghighi/pycm/compare/v3.5...v3.6
 [3.5]: https://github.com/sepandhaghighi/pycm/compare/v3.4...v3.5

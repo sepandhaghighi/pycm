@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>Example3</title>
+<title>Distance</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13081,6 +13081,28 @@ div#notebook {
     });
     </script>
     <!-- End of mathjax configuration --></head>
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css">
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://rawgit.com/ipython-contrib/jupyter_contrib_nbextensions/master/src/jupyter_contrib_nbextensions/nbextensions/toc2/main.css">
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script src="https://rawgit.com/ipython-contrib/jupyter_contrib_nbextensions/master/src/jupyter_contrib_nbextensions/nbextensions/toc2/toc2.js"></script>
+
+<script>
+$( document ).ready(function(){
+
+            var cfg = {"base_numbering": 1, "nav_menu": {}, "number_sections": false, "sideBar": true, "skip_h1_title": true, "title_cell": "Table of Contents", "title_sidebar": "Distance/Similarity", "toc_cell": false, "toc_position": {}, "toc_section_display": true, "toc_window_display": false};
+
+            // fire the main function with these parameters
+            require(['nbextensions/toc2/toc2'], function (toc2) {
+                toc2.table_of_contents(cfg);
+            });
+    });
+</script>
 <body>
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
@@ -13093,19 +13115,13 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Example-3-(Activation-threshold)">Example-3 (Activation threshold)<a class="anchor-link" href="#Example-3-(Activation-threshold)">&#182;</a></h1>
+<h1 id="Distance/Similarity">Distance/Similarity<a class="anchor-link" href="#Distance/Similarity">&#182;</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Environment-check">Environment check<a class="anchor-link" href="#Environment-check">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Checking that the notebook is running on Google Colab or not.</p>
+<p>PyCM's <code>distance</code> method provides users with a wide range of string distance/similarity metrics to evaluate a confusion matrix by measuring its distance to a perfect confusion matrix. Distance/Similarity metrics measure the distance between two vectors of numbers. Small distances between two objects indicate similarity. In the PyCM's <code>distance</code> method, a distance measure can be chosen from <code>DistanceType</code>. The measures' names are chosen based on the namig style suggested in <a href="#ref1">[1]</a>.</p>
 
 </div>
 </div>
@@ -13115,37 +13131,7 @@ div#notebook {
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="k">try</span><span class="p">:</span>
-  <span class="kn">import</span> <span class="nn">google.colab</span>
-  <span class="o">!{</span>sys.executable<span class="o">}</span> -m pip -q -q install pycm
-<span class="k">except</span><span class="p">:</span>
-  <span class="k">pass</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Binary-classification">Binary classification<a class="anchor-link" href="#Binary-classification">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pycm</span> <span class="k">import</span> <span class="n">ConfusionMatrix</span>
-
-<span class="k">def</span> <span class="nf">activation1</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">i</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pycm</span> <span class="k">import</span> <span class="n">ConfusionMatrix</span><span class="p">,</span> <span class="n">DistanceType</span>
 </pre></div>
 
     </div>
@@ -13158,8 +13144,7 @@ div#notebook {
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_actual</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.65</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.54</span><span class="p">,</span><span class="mf">0.82</span><span class="p">,</span><span class="mf">0.9</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span> <span class="mi">1</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="mi">2</span><span class="p">:</span> <span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="mi">3</span><span class="p">}})</span>
 </pre></div>
 
     </div>
@@ -13167,13 +13152,37 @@ div#notebook {
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$TP \rightarrow True Positive$$$$TN \rightarrow True Negative$$$$FP \rightarrow False Positive$$$$FN \rightarrow False Negative$$$$POP \rightarrow Population$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="AMPLE">AMPLE<a class="anchor-link" href="#AMPLE">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>AMPLE similarity <a href="#ref2">[2]</a> <a href="#ref3">[3]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{AMPLE}=|\frac{TP}{TP+FP}-\frac{FN}{FN+TN}|$$
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_actual</span><span class="p">,</span><span class="n">y_pred</span><span class="p">,</span><span class="n">threshold</span><span class="o">=</span><span class="n">activation1</span><span class="p">)</span>
-<span class="n">cm</span><span class="o">.</span><span class="n">classes</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">AMPLE</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13188,182 +13197,9 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[0, 1]</pre>
+<pre>{0: 0.6, 1: 0.3, 2: 0.17142857142857143}</pre>
 </div>
 
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cm</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict 0       1       
-Actual
-0       1       1       
-
-1       0       4       
-
-
-
-
-
-Overall Statistics : 
-
-95% CI                                                            (0.53513,1.13154)
-ACC Macro                                                         0.83333
-ARI                                                               0.34783
-AUNP                                                              0.75
-AUNU                                                              0.75
-Bangdiwala B                                                      0.77273
-Bennett S                                                         0.66667
-CBA                                                               0.65
-CSI                                                               0.65
-Chi-Squared                                                       2.4
-Chi-Squared DF                                                    1
-Conditional Entropy                                               0.33333
-Cramer V                                                          0.63246
-Cross Entropy                                                     1.03701
-F1 Macro                                                          0.77778
-F1 Micro                                                          0.83333
-FNR Macro                                                         0.25
-FNR Micro                                                         0.16667
-FPR Macro                                                         0.25
-FPR Micro                                                         0.16667
-Gwet AC1                                                          0.73333
-Hamming Loss                                                      0.16667
-Joint Entropy                                                     1.25163
-KL Divergence                                                     0.11871
-Kappa                                                             0.57143
-Kappa 95% CI                                                      (-0.19538,1.33824)
-Kappa No Prevalence                                               0.66667
-Kappa Standard Error                                              0.39123
-Kappa Unbiased                                                    0.55556
-Krippendorff Alpha                                                0.59259
-Lambda A                                                          0.5
-Lambda B                                                          0.0
-Mutual Information                                                0.31669
-NIR                                                               0.66667
-Overall ACC                                                       0.83333
-Overall CEN                                                       0.39624
-Overall J                                                         (1.3,0.65)
-Overall MCC                                                       0.63246
-Overall MCEN                                                      0.27683
-Overall RACC                                                      0.61111
-Overall RACCU                                                     0.625
-P-Value                                                           0.35117
-PPV Macro                                                         0.9
-PPV Micro                                                         0.83333
-Pearson C                                                         0.53452
-Phi-Squared                                                       0.4
-RCI                                                               0.34487
-RR                                                                3.0
-Reference Entropy                                                 0.9183
-Response Entropy                                                  0.65002
-SOA1(Landis &amp; Koch)                                               Moderate
-SOA2(Fleiss)                                                      Intermediate to Good
-SOA3(Altman)                                                      Moderate
-SOA4(Cicchetti)                                                   Fair
-SOA5(Cramer)                                                      Strong
-SOA6(Matthews)                                                    Moderate
-SOA7(Lambda A)                                                    Moderate
-SOA8(Lambda B)                                                    None
-SOA9(Krippendorff Alpha)                                          Low
-SOA10(Pearson C)                                                  Strong
-Scott PI                                                          0.55556
-Standard Error                                                    0.15215
-TNR Macro                                                         0.75
-TNR Micro                                                         0.83333
-TPR Macro                                                         0.75
-TPR Micro                                                         0.83333
-Zero-one Loss                                                     1
-
-Class Statistics :
-
-Classes                                                           0             1             
-ACC(Accuracy)                                                     0.83333       0.83333       
-AGF(Adjusted F-score)                                             0.68041       0.89087       
-AGM(Adjusted geometric mean)                                      0.82426       0.65533       
-AM(Difference between automatic and manual classification)        -1            1             
-AUC(Area under the ROC curve)                                     0.75          0.75          
-AUCI(AUC value interpretation)                                    Good          Good          
-AUPR(Area under the PR curve)                                     0.75          0.9           
-BB(Braun-Blanquet similarity)                                     0.5           0.8           
-BCD(Bray-Curtis dissimilarity)                                    0.08333       0.08333       
-BM(Informedness or bookmaker informedness)                        0.5           0.5           
-CEN(Confusion entropy)                                            0.52832       0.35221       
-DOR(Diagnostic odds ratio)                                        None          None          
-DP(Discriminant power)                                            None          None          
-DPI(Discriminant power interpretation)                            None          None          
-ERR(Error rate)                                                   0.16667       0.16667       
-F0.5(F0.5 score)                                                  0.83333       0.83333       
-F1(F1 score - harmonic mean of precision and sensitivity)         0.66667       0.88889       
-F2(F2 score)                                                      0.55556       0.95238       
-FDR(False discovery rate)                                         0.0           0.2           
-FN(False negative/miss/type 2 error)                              1             0             
-FNR(Miss rate or false negative rate)                             0.5           0.0           
-FOR(False omission rate)                                          0.2           0.0           
-FP(False positive/type 1 error/false alarm)                       0             1             
-FPR(Fall-out or false positive rate)                              0.0           0.5           
-G(G-measure geometric mean of precision and sensitivity)          0.70711       0.89443       
-GI(Gini index)                                                    0.5           0.5           
-GM(G-mean geometric mean of specificity and sensitivity)          0.70711       0.70711       
-HD(Hamming distance)                                              1             1             
-IBA(Index of balanced accuracy)                                   0.25          0.75          
-ICSI(Individual classification success index)                     0.5           0.8           
-IS(Information score)                                             1.58496       0.26303       
-J(Jaccard index)                                                  0.5           0.8           
-LS(Lift score)                                                    3.0           1.2           
-MCC(Matthews correlation coefficient)                             0.63246       0.63246       
-MCCI(Matthews correlation coefficient interpretation)             Moderate      Moderate      
-MCEN(Modified confusion entropy)                                  0.5           0.46439       
-MK(Markedness)                                                    0.8           0.8           
-N(Condition negative)                                             4             2             
-NLR(Negative likelihood ratio)                                    0.5           0.0           
-NLRI(Negative likelihood ratio interpretation)                    Negligible    Good          
-NPV(Negative predictive value)                                    0.8           1.0           
-OC(Overlap coefficient)                                           1.0           1.0           
-OOC(Otsuka-Ochiai coefficient)                                    0.70711       0.89443       
-OP(Optimized precision)                                           0.5           0.5           
-P(Condition positive or support)                                  2             4             
-PLR(Positive likelihood ratio)                                    None          2.0           
-PLRI(Positive likelihood ratio interpretation)                    None          Poor          
-POP(Population)                                                   6             6             
-PPV(Precision or positive predictive value)                       1.0           0.8           
-PRE(Prevalence)                                                   0.33333       0.66667       
-Q(Yule Q - coefficient of colligation)                            None          None          
-QI(Yule Q interpretation)                                         None          None          
-RACC(Random accuracy)                                             0.05556       0.55556       
-RACCU(Random accuracy unbiased)                                   0.0625        0.5625        
-TN(True negative/correct rejection)                               4             1             
-TNR(Specificity or true negative rate)                            1.0           0.5           
-TON(Test outcome negative)                                        5             1             
-TOP(Test outcome positive)                                        1             5             
-TP(True positive/hit)                                             1             4             
-TPR(Sensitivity, recall, hit rate, or true positive rate)         0.5           1.0           
-Y(Youden index)                                                   0.5           0.5           
-dInd(Distance index)                                              0.5           0.5           
-sInd(Similarity index)                                            0.64645       0.64645       
-
-</pre>
-</div>
 </div>
 
 </div>
@@ -13372,7 +13208,30 @@ sInd(Similarity index)                                            0.64645       
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Multiclass-classification">Multiclass classification<a class="anchor-link" href="#Multiclass-classification">&#182;</a></h2>
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Anderberg's-D">Anderberg's D<a class="anchor-link" href="#Anderberg's-D">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Anderberg's D <a href="#ref4">[4]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{Anderberg} =
+\frac{(max(TP,FP)+max(FN,TN)+max(TP,FN)+max(FP,TN))-
+(max(TP+FP,FP+TN)+max(TP+FP,FN+TN))}{2\times POP}$$
 </div>
 </div>
 </div>
@@ -13381,37 +13240,7 @@ sInd(Similarity index)                                            0.64645       
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">activation2</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="n">ref</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span><span class="s2">&quot;ship&quot;</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">ref</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">i</span><span class="p">))]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_actual</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ship&quot;</span><span class="p">,</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span><span class="s2">&quot;ship&quot;</span><span class="p">]</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.39</span><span class="p">,</span> <span class="mf">0.53</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.77</span><span class="p">,</span> <span class="mf">0.22</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.17</span><span class="p">,</span> <span class="mf">0.13</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.28</span><span class="p">,</span> <span class="mf">0.71</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_actual</span><span class="p">,</span><span class="n">y_pred</span><span class="p">,</span><span class="n">threshold</span><span class="o">=</span><span class="n">activation2</span><span class="p">)</span>
-<span class="n">cm2</span><span class="o">.</span><span class="n">classes</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">Anderberg</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13426,7 +13255,7 @@ sInd(Similarity index)                                            0.64645       
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&#39;cat&#39;, &#39;dog&#39;, &#39;ship&#39;]</pre>
+<pre>{0: 0.16666666666666666, 1: 0.0, 2: 0.041666666666666664}</pre>
 </div>
 
 </div>
@@ -13434,13 +13263,41 @@ sInd(Similarity index)                                            0.64645       
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Andres-&amp;-Marzo's-Delta">Andres &amp; Marzo's Delta<a class="anchor-link" href="#Andres-&amp;-Marzo's-Delta">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Andres &amp; Marzo's Delta correlation <a href="#ref5">[5]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$corr_{AndresMarzo_\Delta} = \Delta =
+\frac{TP+TN-2 \times \sqrt{FP \times FN}}{POP}$$
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">cm2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">AndresMarzoDelta</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13452,163 +13309,1572 @@ sInd(Similarity index)                                            0.64645       
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Predict    cat        dog        ship       
-Actual
-cat        2          0          0          
-
-dog        1          1          0          
-
-ship       0          0          2          
 
 
-
-
-
-Overall Statistics : 
-
-95% CI                                                            (0.53513,1.13154)
-ACC Macro                                                         0.88889
-ARI                                                               0.44444
-AUNP                                                              0.875
-AUNU                                                              0.875
-Bangdiwala B                                                      0.75
-Bennett S                                                         0.75
-CBA                                                               0.72222
-CSI                                                               0.72222
-Chi-Squared                                                       8.0
-Chi-Squared DF                                                    4
-Conditional Entropy                                               0.33333
-Cramer V                                                          0.8165
-Cross Entropy                                                     1.72331
-F1 Macro                                                          0.82222
-F1 Micro                                                          0.83333
-FNR Macro                                                         0.16667
-FNR Micro                                                         0.16667
-FPR Macro                                                         0.08333
-FPR Micro                                                         0.08333
-Gwet AC1                                                          0.75258
-Hamming Loss                                                      0.16667
-Joint Entropy                                                     1.9183
-KL Divergence                                                     0.13835
-Kappa                                                             0.75
-Kappa 95% CI                                                      (0.30269,1.19731)
-Kappa No Prevalence                                               0.66667
-Kappa Standard Error                                              0.22822
-Kappa Unbiased                                                    0.74468
-Krippendorff Alpha                                                0.76596
-Lambda A                                                          0.75
-Lambda B                                                          0.66667
-Mutual Information                                                1.12581
-NIR                                                               0.33333
-Overall ACC                                                       0.83333
-Overall CEN                                                       0.16279
-Overall J                                                         (2.16667,0.72222)
-Overall MCC                                                       0.78335
-Overall MCEN                                                      0.18464
-Overall RACC                                                      0.33333
-Overall RACCU                                                     0.34722
-P-Value                                                           0.01783
-PPV Macro                                                         0.88889
-PPV Micro                                                         0.83333
-Pearson C                                                         0.75593
-Phi-Squared                                                       1.33333
-RCI                                                               0.71031
-RR                                                                2.0
-Reference Entropy                                                 1.58496
-Response Entropy                                                  1.45915
-SOA1(Landis &amp; Koch)                                               Substantial
-SOA2(Fleiss)                                                      Intermediate to Good
-SOA3(Altman)                                                      Good
-SOA4(Cicchetti)                                                   Excellent
-SOA5(Cramer)                                                      Very Strong
-SOA6(Matthews)                                                    Strong
-SOA7(Lambda A)                                                    Strong
-SOA8(Lambda B)                                                    Strong
-SOA9(Krippendorff Alpha)                                          Tentative
-SOA10(Pearson C)                                                  Strong
-Scott PI                                                          0.74468
-Standard Error                                                    0.15215
-TNR Macro                                                         0.91667
-TNR Micro                                                         0.91667
-TPR Macro                                                         0.83333
-TPR Micro                                                         0.83333
-Zero-one Loss                                                     1
-
-Class Statistics :
-
-Classes                                                           cat           dog           ship          
-ACC(Accuracy)                                                     0.83333       0.83333       1.0           
-AGF(Adjusted F-score)                                             0.92319       0.68041       1.0           
-AGM(Adjusted geometric mean)                                      0.81962       0.82426       1.0           
-AM(Difference between automatic and manual classification)        1             -1            0             
-AUC(Area under the ROC curve)                                     0.875         0.75          1.0           
-AUCI(AUC value interpretation)                                    Very Good     Good          Excellent     
-AUPR(Area under the PR curve)                                     0.83333       0.75          1.0           
-BB(Braun-Blanquet similarity)                                     0.66667       0.5           1.0           
-BCD(Bray-Curtis dissimilarity)                                    0.08333       0.08333       0.0           
-BM(Informedness or bookmaker informedness)                        0.75          0.5           1.0           
-CEN(Confusion entropy)                                            0.23219       0.26416       0             
-DOR(Diagnostic odds ratio)                                        None          None          None          
-DP(Discriminant power)                                            None          None          None          
-DPI(Discriminant power interpretation)                            None          None          None          
-ERR(Error rate)                                                   0.16667       0.16667       0.0           
-F0.5(F0.5 score)                                                  0.71429       0.83333       1.0           
-F1(F1 score - harmonic mean of precision and sensitivity)         0.8           0.66667       1.0           
-F2(F2 score)                                                      0.90909       0.55556       1.0           
-FDR(False discovery rate)                                         0.33333       0.0           0.0           
-FN(False negative/miss/type 2 error)                              0             1             0             
-FNR(Miss rate or false negative rate)                             0.0           0.5           0.0           
-FOR(False omission rate)                                          0.0           0.2           0.0           
-FP(False positive/type 1 error/false alarm)                       1             0             0             
-FPR(Fall-out or false positive rate)                              0.25          0.0           0.0           
-G(G-measure geometric mean of precision and sensitivity)          0.8165        0.70711       1.0           
-GI(Gini index)                                                    0.75          0.5           1.0           
-GM(G-mean geometric mean of specificity and sensitivity)          0.86603       0.70711       1.0           
-HD(Hamming distance)                                              1             1             0             
-IBA(Index of balanced accuracy)                                   0.9375        0.25          1.0           
-ICSI(Individual classification success index)                     0.66667       0.5           1.0           
-IS(Information score)                                             1.0           1.58496       1.58496       
-J(Jaccard index)                                                  0.66667       0.5           1.0           
-LS(Lift score)                                                    2.0           3.0           3.0           
-MCC(Matthews correlation coefficient)                             0.70711       0.63246       1.0           
-MCCI(Matthews correlation coefficient interpretation)             Strong        Moderate      Very Strong   
-MCEN(Modified confusion entropy)                                  0.26416       0.25          0             
-MK(Markedness)                                                    0.66667       0.8           1.0           
-N(Condition negative)                                             4             4             4             
-NLR(Negative likelihood ratio)                                    0.0           0.5           0.0           
-NLRI(Negative likelihood ratio interpretation)                    Good          Negligible    Good          
-NPV(Negative predictive value)                                    1.0           0.8           1.0           
-OC(Overlap coefficient)                                           1.0           1.0           1.0           
-OOC(Otsuka-Ochiai coefficient)                                    0.8165        0.70711       1.0           
-OP(Optimized precision)                                           0.69048       0.5           1.0           
-P(Condition positive or support)                                  2             2             2             
-PLR(Positive likelihood ratio)                                    4.0           None          None          
-PLRI(Positive likelihood ratio interpretation)                    Poor          None          None          
-POP(Population)                                                   6             6             6             
-PPV(Precision or positive predictive value)                       0.66667       1.0           1.0           
-PRE(Prevalence)                                                   0.33333       0.33333       0.33333       
-Q(Yule Q - coefficient of colligation)                            None          None          None          
-QI(Yule Q interpretation)                                         None          None          None          
-RACC(Random accuracy)                                             0.16667       0.05556       0.11111       
-RACCU(Random accuracy unbiased)                                   0.17361       0.0625        0.11111       
-TN(True negative/correct rejection)                               3             4             4             
-TNR(Specificity or true negative rate)                            0.75          1.0           1.0           
-TON(Test outcome negative)                                        3             5             4             
-TOP(Test outcome positive)                                        3             1             2             
-TP(True positive/hit)                                             2             1             2             
-TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           0.5           1.0           
-Y(Youden index)                                                   0.75          0.5           1.0           
-dInd(Distance index)                                              0.25          0.5           0.0           
-sInd(Similarity index)                                            0.82322       0.64645       1.0           
-
-</pre>
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.8333333333333334, 1: 0.5142977396044842, 2: 0.17508504286947035}</pre>
 </div>
+
 </div>
 
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baroni-Urbani-&amp;-Buser-I">Baroni-Urbani &amp; Buser I<a class="anchor-link" href="#Baroni-Urbani-&amp;-Buser-I">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Baroni-Urbani &amp; Buser I similarity <a href="#ref6">[6]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{BaroniUrbaniBuserI} =
+\frac{\sqrt{TP\times TN}+TP}{\sqrt{TP\times TN}+TP+FP+FN}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BaroniUrbaniBuserI</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.79128784747792, 1: 0.5606601717798213, 2: 0.5638559245324765}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baroni-Urbani-&amp;-Buser-II">Baroni-Urbani &amp; Buser II<a class="anchor-link" href="#Baroni-Urbani-&amp;-Buser-II">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Baroni-Urbani &amp; Buser II correlation <a href="#ref6">[6]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$corr_{BaroniUrbaniBuserII} =
+\frac{\sqrt{TP \times TN}+TP-FP-FN}{\sqrt{TP \times TN}+TP+FP+FN}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BaroniUrbaniBuserII</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.58257569495584, 1: 0.12132034355964261, 2: 0.1277118490649528}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Batagelj-&amp;-Bren">Batagelj &amp; Bren<a class="anchor-link" href="#Batagelj-&amp;-Bren">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Batagelj &amp; Bren distance <a href="#ref7">[7]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$dist_{BatageljBren} =
+\frac{FP \times FN}{TP \times TN}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BatageljBren</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.0, 1: 0.25, 2: 0.5}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baulieu-I">Baulieu I<a class="anchor-link" href="#Baulieu-I">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Baulieu I distance <a href="#ref8">[8]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{BaulieuI} =
+\frac{(TP+FP) \times (TP+FN)-TP^2}{(TP+FP) \times (TP+FN)}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BaulieuI</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.4, 1: 0.8333333333333334, 2: 0.7}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baulieu-II">Baulieu II<a class="anchor-link" href="#Baulieu-II">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Baulieu II similarity <a href="#ref8">[8]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{BaulieuII} =
+\frac{TP^2 \times TN^2}{(TP+FP) \times (TP+FN) \times (FP+TN) \times (FN+TN)}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BaulieuII</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.4666666666666667, 1: 0.11851851851851852, 2: 0.11428571428571428}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baulieu-III">Baulieu III<a class="anchor-link" href="#Baulieu-III">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Baulieu III distance <a href="#ref8">[8]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{BaulieuIII} =
+\frac{POP^2 - 4 \times (TP \times TN-FP \times FN)}{2 \times POP^2}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BaulieuIII</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.20833333333333334, 1: 0.4166666666666667, 2: 0.4166666666666667}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baulieu-IV">Baulieu IV<a class="anchor-link" href="#Baulieu-IV">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Baulieu IV distance <a href="#ref9">[9]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$dist_{BaulieuIV} = \frac{FP+FN-(TP+\frac{1}{2})\times(TN+\frac{1}{2})\times TN  \times k}{POP}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BaulieuIV</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: -41.45702383161246, 1: -22.855395541901885, 2: -13.85431293274332}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>The default value of k is Euler's number $e$</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baulieu-V">Baulieu V<a class="anchor-link" href="#Baulieu-V">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Baulieu V distance <a href="#ref9">[9]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$dist_{BaulieuV} = \frac{FP+FN+1}{TP+FP+FN+1}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BaulieuV</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.5, 1: 0.8, 2: 0.6666666666666666}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baulieu-VI">Baulieu VI<a class="anchor-link" href="#Baulieu-VI">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Baulieu VI distance <a href="#ref9">[9]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$dist_{BaulieuVI} = \frac{FP+FN}{TP+FP+FN+1}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BaulieuVI</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.3333333333333333, 1: 0.6, 2: 0.5555555555555556}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baulieu-VII">Baulieu VII<a class="anchor-link" href="#Baulieu-VII">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Baulieu VII distance <a href="#ref9">[9]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$dist_{BaulieuVII} = \frac{FP+FN}{POP + TP \times (TP-4)^2}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BaulieuVII</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.13333333333333333, 1: 0.14285714285714285, 2: 0.3333333333333333}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baulieu-VIII">Baulieu VIII<a class="anchor-link" href="#Baulieu-VIII">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Baulieu VIII distance <a href="#ref9">[9]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$dist_{BaulieuVIII} = \frac{(FP-FN)^2}{POP^2}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BaulieuVIII</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.027777777777777776, 1: 0.006944444444444444, 2: 0.006944444444444444}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baulieu-IX">Baulieu IX<a class="anchor-link" href="#Baulieu-IX">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Baulieu IX distance <a href="#ref9">[9]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$dist_{BaulieuIX} = \frac{FP+2 \times FN}{TP+FP+2 \times FN+TN}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BaulieuIX</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.16666666666666666, 1: 0.35714285714285715, 2: 0.5333333333333333}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baulieu-X">Baulieu X<a class="anchor-link" href="#Baulieu-X">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Baulieu X distance <a href="#ref9">[9]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$dist_{BaulieuX} = \frac{FP+FN+max(FP,FN)}{POP+max(FP,FN)}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BaulieuX</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.2857142857142857, 1: 0.35714285714285715, 2: 0.5333333333333333}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baulieu-XI">Baulieu XI<a class="anchor-link" href="#Baulieu-XI">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Baulieu XI distance <a href="#ref9">[9]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$dist_{BaulieuXI} = \frac{FP+FN}{FP+FN+TN}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BaulieuXI</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.2222222222222222, 1: 0.2727272727272727, 2: 0.5555555555555556}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baulieu-XII">Baulieu XII<a class="anchor-link" href="#Baulieu-XII">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Baulieu XII distance <a href="#ref9">[9]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$dist_{BaulieuXII} = \frac{FP+FN}{TP+FP+FN-1}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BaulieuXII</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.5, 1: 1.0, 2: 0.7142857142857143}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baulieu-XIII">Baulieu XIII<a class="anchor-link" href="#Baulieu-XIII">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Baulieu XIII distance <a href="#ref9">[9]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$dist_{BaulieuXIII} = \frac{FP+FN}{TP+FP+FN+TP \times (TP-4)^2}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BaulieuXIII</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.25, 1: 0.23076923076923078, 2: 0.45454545454545453}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baulieu-XIV">Baulieu XIV<a class="anchor-link" href="#Baulieu-XIV">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Baulieu XIV distance <a href="#ref9">[9]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$dist_{BaulieuXIV} = \frac{FP+2 \times FN}{TP+FP+2 \times FN}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BaulieuXIV</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.4, 1: 0.8333333333333334, 2: 0.7272727272727273}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Baulieu-XV">Baulieu XV<a class="anchor-link" href="#Baulieu-XV">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Baulieu XV distance <a href="#ref9">[9]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$dist_{BaulieuXV} = \frac{FP+FN+max(FP, FN)}{TP+FP+FN+max(FP, FN)}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BaulieuXV</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.5714285714285714, 1: 0.8333333333333334, 2: 0.7272727272727273}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Benini-I">Benini I<a class="anchor-link" href="#Benini-I">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Benini I correlation <a href="#ref10">[10]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$corr_{BeniniI} = \frac{TP \times TN-FP \times FN}{(TP+FN)\times(FN+TN)}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BeniniI</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 1.0, 1: 0.2, 2: 0.14285714285714285}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Benini-II">Benini II<a class="anchor-link" href="#Benini-II">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Benini II correlation <a href="#ref10">[10]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$corr_{BeniniII} = \frac{TP \times TN-FP \times FN}{min((TP+FN)\times(FN+TN), (TP+FP)\times(FP+TN))}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">BeniniII</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 1.0, 1: 0.3333333333333333, 2: 0.2}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Canberra">Canberra<a class="anchor-link" href="#Canberra">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Canberra distance <a href="#ref11">[11]</a> <a href="#ref12">[12]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{Canberra} =
+\frac{FP+FN}{(TP+FP)+(TP+FN)}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">Canberra</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.25, 1: 0.6, 2: 0.45454545454545453}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Clement">Clement<a class="anchor-link" href="#Clement">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Clement similarity <a href="#ref13">[13]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{Clement} =
+\frac{TP}{TP+FP}\times\Big(1 - \frac{TP+FP}{POP}\Big) +
+\frac{TN}{FN+TN}\times\Big(1 - \frac{FN+TN}{POP}\Big)$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">Clement</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.7666666666666666, 1: 0.55, 2: 0.588095238095238}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Consonni-&amp;-Todeschini-I">Consonni &amp; Todeschini I<a class="anchor-link" href="#Consonni-&amp;-Todeschini-I">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Consonni &amp; Todeschini I similarity <a href="#ref14">[14]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{ConsonniTodeschiniI} =
+\frac{log(1+TP+TN)}{log(1+POP)}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">ConsonniTodeschiniI</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.9348704159880586, 1: 0.8977117175026231, 2: 0.8107144632819592}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Consonni-&amp;-Todeschini-II">Consonni &amp; Todeschini II<a class="anchor-link" href="#Consonni-&amp;-Todeschini-II">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Consonni &amp; Todeschini II similarity <a href="#ref14">[14]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{ConsonniTodeschiniII} =
+\frac{log(1+POP)-log(1+FP+FN)}{log(1+POP)}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">ConsonniTodeschiniII</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.5716826589686053, 1: 0.4595236911453605, 2: 0.3014445045412856}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Consonni-&amp;-Todeschini-III">Consonni &amp; Todeschini III<a class="anchor-link" href="#Consonni-&amp;-Todeschini-III">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Consonni &amp; Todeschini III similarity <a href="#ref14">[14]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{ConsonniTodeschiniIII} =
+\frac{log(1+TP)}{log(1+POP)}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">ConsonniTodeschiniIII</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.5404763088546395, 1: 0.27023815442731974, 2: 0.5404763088546395}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Consonni-&amp;-Todeschini-IV">Consonni &amp; Todeschini IV<a class="anchor-link" href="#Consonni-&amp;-Todeschini-IV">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Consonni &amp; Todeschini IV similarity <a href="#ref14">[14]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{ConsonniTodeschiniIV} =
+\frac{log(1+TP)}{log(1+TP+FP+FN)}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">ConsonniTodeschiniIV</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.7737056144690831, 1: 0.43067655807339306, 2: 0.6309297535714574}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Consonni-&amp;-Todeschini-V">Consonni &amp; Todeschini V<a class="anchor-link" href="#Consonni-&amp;-Todeschini-V">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Consonni &amp; Todeschini V correlation <a href="#ref14">[14]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$corr_{ConsonniTodeschiniV} =
+\frac{log(1+TP \times TN)-log(1+FP \times FN)}{log(1+\frac{POP^2}{4})}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">ConsonniTodeschiniV</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.8560267854703983, 1: 0.30424737289682985, 2: 0.17143541431350617}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.8</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote id="ref1">1- C. C. Little, "Abydos Documentation," 2018.</blockquote><blockquote id="ref2">2- V. Dallmeier, C. Lindig, and A. Zeller, "Lightweight defect localization for Java," in <i>European conference on object-oriented programming</i>, 2005: Springer, pp. 528-550.</blockquote><blockquote id="ref3">3- R. Abreu, P. Zoeteweij, and A. J. Van Gemund, "An evaluation of similarity coefficients for software fault localization," in 2006 <i>12th Pacific Rim International Symposium on Dependable Computing (PRDC'06)</i>, 2006: IEEE, pp. 39-46.</blockquote><blockquote id="ref4">4- M. R. Anderberg, <i>Cluster analysis for applications: probability and mathematical statistics: a series of monographs and textbooks</i>. Academic press, 2014.</blockquote><blockquote id="ref5">5- A. M. Andrés and P. F. Marzo, "Delta: A new measure of agreement between two raters," <i>British journal of mathematical and statistical psychology</i>, vol. 57, no. 1, pp. 1-19, 2004.</blockquote><blockquote id="ref6">6- C. Baroni-Urbani and M. W. Buser, "Similarity of binary data," <i>Systematic Zoology</i>, vol. 25, no. 3, pp. 251-259, 1976.</blockquote><blockquote id="ref7">7- V. Batagelj and M. Bren, "Comparing resemblance measures," <i>Journal of classification</i>, vol. 12, no. 1, pp. 73-90, 1995.</blockquote><blockquote id="ref8">8- F. B. Baulieu, "A classification of presence/absence based dissimilarity coefficients," <i>Journal of Classification</i>, vol. 6, no. 1, pp. 233-246, 1989.</blockquote><blockquote id="ref9">9- F. B. Baulieu, "Two variant axiom systems for presence/absence based dissimilarity coefficients," <i>Journal of Classification</i>, vol. 14, no. 1, pp. 0159-0170, 1997.</blockquote><blockquote id="ref10">10- R. Benini, <i>Principii di demografia</i>. Barbera, 1901.</blockquote><blockquote id="ref11">11- G. N. Lance and W. T. Williams, "Computer programs for hierarchical polythetic classification (“similarity analyses”)," <i>The Computer Journal</i>, vol. 9, no. 1, pp. 60-64, 1966.</blockquote><blockquote id="ref12">12- G. N. Lance and W. T. Williams, "Mixed-Data Classificatory Programs I - Agglomerative Systems," <i>Australian Computer Journal</i>, vol. 1, no. 1, pp. 15-20, 1967.</blockquote><blockquote id="ref13">13- P. W. Clement, "A formula for computing inter-observer agreement," <i>Psychological Reports</i>, vol. 39, no. 1, pp. 257-258, 1976.</blockquote><blockquote id="ref14">14- V. Consonni and R. Todeschini, "New similarity coefficients for binary data," <i>Match-Communications in Mathematical and Computer Chemistry</i>, vol. 68, no. 2, p. 581, 2012.</blockquote>
+</div>
+</div>
 </div>
     </div>
   </div>

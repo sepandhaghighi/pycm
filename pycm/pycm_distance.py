@@ -47,6 +47,11 @@ class DistanceType(Enum):
     Dispersion = "Dispersion"
     Doolittle = "Doolittle"
     Dunning = "Dunning"
+    Eyraud = "Eyraud"
+    FagerMcGowan = "FagerMcGowan"
+    Faith = "Faith"
+    FleissLevinPaik = "FleissLevinPaik"
+    ForbesI = "ForbesI"
 
 
 def AMPLE_calc(TP, FP, FN, TN):
@@ -797,6 +802,114 @@ def Dunning_calc(TP, FP, FN, TN):
         return "None"
 
 
+def Eyraud_calc(TP, FP, FN, TN):
+    """
+    Calculate Eyraud similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Eyraud similarity as float
+    """
+    try:
+        part1 = (TP + FP) * (TP + FN)
+        part2 = (TN + FP) * (TN + FN)
+        return (TP - part1) / (part1 * part2)
+    except Exception:
+        return "None"
+
+
+def FagerMcGowan_calc(TP, FP, FN, TN):
+    """
+    Calculate Fager & McGowan similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Fager & McGowan similarity as float
+    """
+    try:
+        part1 = math.sqrt((TP + FP) * (TP + FN))
+        part2 = math.sqrt(max((TP + FP), (TP + FN)))
+        return (TP / part1) - (1 / (2 * part2))
+    except Exception:
+        return "None"
+
+
+def Faith_calc(TP, FP, FN, TN):
+    """
+    Calculate Faith similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Faith similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        return (TP + (TN / 2)) / n
+    except Exception:
+        return "None"
+
+
+def FleissLevinPaik_calc(TP, FP, FN, TN):
+    """
+    Calculate Fleiss-Levin-Paik similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Fleiss-Levin-Paik similarity as float
+    """
+    try:
+        part1 = 2 * TN
+        return part1 / (part1 + FP + FN)
+    except Exception:
+        return "None"
+
+
+def ForbesI_calc(TP, FP, FN, TN):
+    """
+    Calculate Forbes I similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Forbes I similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = (TP + FP) * (TP + FN)
+        return (n * TP) / part1
+    except Exception:
+        return "None"
+
+
 DISTANCE_MAPPER = {
     DistanceType.AMPLE: AMPLE_calc,
     DistanceType.Anderberg: Anderberg_calc,
@@ -832,5 +945,11 @@ DISTANCE_MAPPER = {
     DistanceType.Digby: Digby_calc,
     DistanceType.Dispersion: Dispersion_calc,
     DistanceType.Doolittle: Doolittle_calc,
-    DistanceType.Dunning: Dunning_calc
+    DistanceType.Dunning: Dunning_calc,
+    DistanceType.Eyraud: Eyraud_calc,
+    DistanceType.FagerMcGowan: FagerMcGowan_calc,
+    DistanceType.Faith: Faith_calc,
+    DistanceType.FleissLevinPaik: FleissLevinPaik_calc,
+    DistanceType.ForbesI: ForbesI_calc
 }
+

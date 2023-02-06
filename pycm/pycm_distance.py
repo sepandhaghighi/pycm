@@ -42,6 +42,11 @@ class DistanceType(Enum):
     ConsonniTodeschiniIII = "ConsonniTodeschiniIII"
     ConsonniTodeschiniIV = "ConsonniTodeschiniIV"
     ConsonniTodeschiniV = "ConsonniTodeschiniV"
+    Dennis = "Dennis"
+    Digby = "Digby"
+    Dispersion = "Dispersion"
+    Doolittle = "Doolittle"
+    Dunning = "Dunning"
 
 
 def AMPLE_calc(TP, FP, FN, TN):
@@ -679,6 +684,119 @@ def ConsonniTodeschiniV_calc(TP, FP, FN, TN):
         return "None"
 
 
+def Dennis_calc(TP, FP, FN, TN):
+    """
+    Calculate Dennis similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Dennis similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = ((TP + FP) * (TP + FN)) / n
+        return (TP - part1) / math.sqrt(part1)
+    except Exception:
+        return "None"
+
+
+def Digby_calc(TP, FP, FN, TN):
+    """
+    Calculate Digby correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Digby correlation as float
+    """
+    try:
+        part1 = (TP * TN) ** 0.75
+        part2 = (FP * FN) ** 0.75
+        return (part1 - part2) / (part1 + part2)
+    except Exception:
+        return "None"
+
+
+def Dispersion_calc(TP, FP, FN, TN):
+    """
+    Calculate Dispersion correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Dispersion correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = TP * TN
+        part2 = FP * FN
+        return (part1 - part2) / (n ** 2)
+    except Exception:
+        return "None"
+
+
+def Doolittle_calc(TP, FP, FN, TN):
+    """
+    Calculate Doolittle similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Doolittle similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = (TP + FP) * (TP + FN)
+        part2 = (TN + FP) * (TN + FN)
+        return ((TP * n - part1) ** 2) / (part1 * part2)
+    except Exception:
+        return "None"
+
+
+def Dunning_calc(TP, FP, FN, TN):
+    """
+    Calculate Dunning similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Dunning similarity as float
+    """
+    try:
+        part1 = (TP * math.log2(TP)) + (FP * math.log2(FP)) + (FN * math.log2(FN)) + (TN * math.log2(TN))
+        part2 = ((TP + FP) * math.log2(TP + FP)) + ((TP + FN) * math.log2(TP + FN)) + ((TN + FP) * math.log2(TN + FP))\
+            + ((TN + FN) * math.log2(TN + FN))
+        return part1 - part2
+    except Exception:
+        return "None"
+
+
 DISTANCE_MAPPER = {
     DistanceType.AMPLE: AMPLE_calc,
     DistanceType.Anderberg: Anderberg_calc,
@@ -710,4 +828,9 @@ DISTANCE_MAPPER = {
     DistanceType.ConsonniTodeschiniIII: ConsonniTodeschiniIII_calc,
     DistanceType.ConsonniTodeschiniIV: ConsonniTodeschiniIV_calc,
     DistanceType.ConsonniTodeschiniV: ConsonniTodeschiniV_calc,
+    DistanceType.Dennis: Dennis_calc,
+    DistanceType.Digby: Digby_calc,
+    DistanceType.Dispersion: Dispersion_calc,
+    DistanceType.Doolittle: Doolittle_calc,
+    DistanceType.Dunning: Dunning_calc
 }

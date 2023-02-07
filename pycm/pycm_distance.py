@@ -67,6 +67,11 @@ class DistanceType(Enum):
     GuttmanLambdaB = "GuttmanLambdaB"
     Hamann = "Hamann"
     HarrisLahey = "HarrisLahey"
+    HawkinsDotson = "HawkinsDotson"
+    Hurlbert = "Hurlbert"
+    KendallTau = "KendallTau"
+    KentFosterI = "KentFosterI"
+    KentFosterII = "KentFosterII"
 
 
 def AMPLE_calc(TP, FP, FN, TN):
@@ -1267,6 +1272,123 @@ def HarrisLahey_calc(TP, FP, FN, TN):
         return "None"
 
 
+def HawkinsDotson_calc(TP, FP, FN, TN):
+    """
+    Calculate Hawkins & Dotson similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Hawkins & Dotson similarity as float
+    """
+    try:
+        return 0.5 * ((TP / (TP + FP + FN)) + (TN / (TN + FN + FP)))
+    except Exception:
+        return "None"
+
+
+def Hurlbert_calc(TP, FP, FN, TN):
+    """
+    Calculate Hurlbert correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Hurlbert correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        ObsX2 = (((TP * TN - FP * FN) ** 2) * n) / ((TP + FP) * (TP * FN) * (FP + TN) * (FN + TN))
+        a_hat = ((TP + FP) * (TP + FN)) / n
+        if (TP * TN) >= (FP * FN):
+            g = math.ceil(a_hat)
+            MaxX2 = ((TP + FP) * (FP * TN) * n) / ((TP + FN) * (FN + TN))
+        else:
+            g = math.floor(a_hat)
+            if TP <= TN:
+                MaxX2 = ((TP + FP) * (TP * FN) * n) / ((TN + FP) * (FN + TN))
+            else:
+                MaxX2 = ((FP + TN) * (FN + TN) * n) / ((TP + FP) * (TP * FN))
+        MinX2 = ((n ** 3) * ((a_hat - g) ** 2)) / ((TP + FP) * (TP * FN) * (FP + TN) * (FN + TN))
+
+        return ((TP * TN - FP * FN) / abs(TP * TN - FP * FN)) * math.sqrt((ObsX2 - MinX2) / (MaxX2 - MinX2))
+    except Exception:
+        return "None"
+
+
+def KendallTau_calc(TP, FP, FN, TN):
+    """
+    Calculate Kendall's Tau correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Kendall's Tau correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        return (2 * (TP + TN - FP - FN)) / (n * (n - 1))
+    except Exception:
+        return "None"
+
+
+def KentFosterI_calc(TP, FP, FN, TN):
+    """
+    Calculate Kent & Foster I similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Kent & Foster I similarity as float
+    """
+    try:
+        part1 = ((TP + FP) * (TP + FN)) / (TP + FP + FN)
+        return (TP - part1) / (TP - part1 + FP + FN)
+    except Exception:
+        return "None"
+
+
+def KentFosterII_calc(TP, FP, FN, TN):
+    """
+    Calculate Kent & Foster II similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Kent & Foster II similarity as float
+    """
+    try:
+        part1 = ((TN + FP) * (TN + FN)) / (TN + FP + FN)
+        return (TN - part1) / (TN - part1 + FP + FN)
+    except Exception:
+        return "None"
+
+
 DISTANCE_MAPPER = {
     DistanceType.AMPLE: AMPLE_calc,
     DistanceType.Anderberg: Anderberg_calc,
@@ -1322,6 +1444,15 @@ DISTANCE_MAPPER = {
     DistanceType.GuttmanLambdaA: GuttmanLambdaA_calc,
     DistanceType.GuttmanLambdaB: GuttmanLambdaB_calc,
     DistanceType.Hamann: Hamann_calc,
-    DistanceType.HarrisLahey: HarrisLahey_calc
+    DistanceType.HarrisLahey: HarrisLahey_calc,
+    DistanceType.HawkinsDotson: HawkinsDotson_calc,
+    DistanceType.Hurlbert: Hurlbert_calc,
+    DistanceType.KendallTau: KendallTau_calc,
+    DistanceType.KentFosterI: KentFosterI_calc,
+    DistanceType.KentFosterII: KentFosterII_calc
 }
+
+
+
+
 

@@ -57,6 +57,11 @@ class DistanceType(Enum):
     Gilbert = "Gilbert"
     GilbertWells = "GilbertWells"
     GiniI = "GiniI"
+    GiniII = "GiniII"
+    Goodall = "Goodall"
+    GoodmanKruskalLambda = "GoodmanKruskalLambda"
+    GoodmanKruskalLambdaR = "GoodmanKruskalLambdaR"
+    GoodmanKruskalTauA = "GoodmanKruskalTauA"
 
 
 def AMPLE_calc(TP, FP, FN, TN):
@@ -1032,6 +1037,117 @@ def GiniI_calc(TP, FP, FN, TN):
         return "None"
 
 
+def GiniII_calc(TP, FP, FN, TN):
+    """
+    Calculate Gini II distance.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Gini II distance as float
+    """
+    try:
+        part1 = ((TP + FP) * (TP + FN) + (FP + TN) * (FN + TN))
+        return (TP + TN - part1) / (1 - abs(FP - FN) - part1)
+    except Exception:
+        return "None"
+
+
+def Goodall_calc(TP, FP, FN, TN):
+    """
+    Calculate Goodall similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Goodall similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = math.sqrt((TP + TN) / n)
+        return 2 / (math.pi * math.sin(part1))
+    except Exception:
+        return "None"
+
+
+def GoodmanKruskalLambda_calc(TP, FP, FN, TN):
+    """
+    Calculate Goodman & Kruskal's Lambda similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Goodman & Kruskal's Lambda similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = max(TP, FP) + max(FN, TN) + max(TP, FN) + max(FP, TN)
+        part2 = max(TP + FP, FN + TN) + max(TP + FN, FP + TN)
+        return (0.5 * (part1 - part2)) / (n - 0.5 * part2)
+    except Exception:
+        return "None"
+
+
+def GoodmanKruskalLambdaR_calc(TP, FP, FN, TN):
+    """
+    Calculate Goodman & Kruskal Lambda-r correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Goodman & Kruskal Lambda-r correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = 0.5 * (max(TP + FP, FN + TN) + max(TP + FN, FP + TN))
+        return (TP + TN - part1) / (n - part1)
+    except Exception:
+        return "None"
+
+
+def GoodmanKruskalTauA_calc(TP, FP, FN, TN):
+    """
+    Calculate Goodman & Kruskal's Tau A similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Goodman & Kruskal's Tau A similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = ((TP ** 2 + FN ** 2) / (TP + FN)) + ((TN ** 2 + FP ** 2) / (TN + FP))
+        part2 = (TP + FP) ** 2 + (TN + FN) ** 2
+        return (part1 - part2) / (1 - part2)
+    except Exception:
+        return "None"
+
+
 DISTANCE_MAPPER = {
     DistanceType.AMPLE: AMPLE_calc,
     DistanceType.Anderberg: Anderberg_calc,
@@ -1077,6 +1193,11 @@ DISTANCE_MAPPER = {
     DistanceType.Fossum: Fossum_calc,
     DistanceType.Gilbert: Gilbert_calc,
     DistanceType.GilbertWells: GilbertWells_calc,
-    DistanceType.GiniI: GiniI_calc
+    DistanceType.GiniI: GiniI_calc,
+    DistanceType.GiniII: GiniII_calc,
+    DistanceType.Goodall: Goodall_calc,
+    DistanceType.GoodmanKruskalLambda: GoodmanKruskalLambda_calc,
+    DistanceType.GoodmanKruskalLambdaR: GoodmanKruskalLambdaR_calc,
+    DistanceType.GoodmanKruskalTauA: GoodmanKruskalTauA_calc
 }
 

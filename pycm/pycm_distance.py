@@ -1140,10 +1140,124 @@ def GoodmanKruskalTauA_calc(TP, FP, FN, TN):
     :return: Goodman & Kruskal's Tau A similarity as float
     """
     try:
-        n = TP + FP + FN + TN
         part1 = ((TP ** 2 + FN ** 2) / (TP + FN)) + ((TN ** 2 + FP ** 2) / (TN + FP))
         part2 = (TP + FP) ** 2 + (TN + FN) ** 2
         return (part1 - part2) / (1 - part2)
+    except Exception:
+        return "None"
+
+
+def GoodmanKruskalTauB_calc(TP, FP, FN, TN):
+    """
+    Calculate Goodman & Kruskal's Tau B similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Goodman & Kruskal's Tau B similarity as float
+    """
+    try:
+        part1 = ((TP ** 2 + FP ** 2) / (TP + FP)) + ((TN ** 2 + FN ** 2) / (TN + FN))
+        part2 = (TP + FN) ** 2 + (TN + FP) ** 2
+        return (part1 - part2) / (1 - part2)
+    except Exception:
+        return "None"
+
+
+def GuttmanLambdaA_calc(TP, FP, FN, TN):
+    """
+    Calculate Guttman's Lambda A similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Guttman's Lambda A similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = max(TP, FN) + max(FP, TN)
+        part2 = max(TP + FP, FN + TN)
+        return (part1 - part2) / (n - part2)
+    except Exception:
+        return "None"
+
+
+def GuttmanLambdaB_calc(TP, FP, FN, TN):
+    """
+    Calculate Guttman's Lambda B similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Guttman's Lambda B similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = max(TP, FP) + max(FN, TN)
+        part2 = max(TP + FN, FP + TN)
+        return (part1 - part2) / (n - part2)
+    except Exception:
+        return "None"
+
+
+def Hamann_calc(TP, FP, FN, TN):
+    """
+    Calculate Hamann correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Hamann correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+
+        return (TP + TN - FP - FN) / n
+    except Exception:
+        return "None"
+
+
+def HarrisLahey_calc(TP, FP, FN, TN):
+    """
+    Calculate Harris & Lahey similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Harris & Lahey similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = TP / (TP + FP + FN)
+        part2 = (2 * TN + FP + FN) / (2 * n)
+        part3 = TN / (TN + FP + FN)
+        part4 = (2 * TP + FP + FN) / (2 * n)
+        return part1 * part2 + part3 * part4
     except Exception:
         return "None"
 

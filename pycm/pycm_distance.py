@@ -62,6 +62,11 @@ class DistanceType(Enum):
     GoodmanKruskalLambda = "GoodmanKruskalLambda"
     GoodmanKruskalLambdaR = "GoodmanKruskalLambdaR"
     GoodmanKruskalTauA = "GoodmanKruskalTauA"
+    GoodmanKruskalTauB = "GoodmanKruskalTauB"
+    GuttmanLambdaA = "GuttmanLambdaA"
+    GuttmanLambdaB = "GuttmanLambdaB"
+    Hamann = "Hamann"
+    HarrisLahey = "HarrisLahey"
 
 
 def AMPLE_calc(TP, FP, FN, TN):
@@ -1312,6 +1317,11 @@ DISTANCE_MAPPER = {
     DistanceType.Goodall: Goodall_calc,
     DistanceType.GoodmanKruskalLambda: GoodmanKruskalLambda_calc,
     DistanceType.GoodmanKruskalLambdaR: GoodmanKruskalLambdaR_calc,
-    DistanceType.GoodmanKruskalTauA: GoodmanKruskalTauA_calc
+    DistanceType.GoodmanKruskalTauA: GoodmanKruskalTauA_calc,
+    DistanceType.GoodmanKruskalTauB: GoodmanKruskalTauB_calc,
+    DistanceType.GuttmanLambdaA: GuttmanLambdaA_calc,
+    DistanceType.GuttmanLambdaB: GuttmanLambdaB_calc,
+    DistanceType.Hamann: Hamann_calc,
+    DistanceType.HarrisLahey: HarrisLahey_calc
 }
 

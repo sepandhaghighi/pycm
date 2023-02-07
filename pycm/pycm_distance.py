@@ -52,6 +52,11 @@ class DistanceType(Enum):
     Faith = "Faith"
     FleissLevinPaik = "FleissLevinPaik"
     ForbesI = "ForbesI"
+    ForbesII = "ForbesII"
+    Fossum = "Fossum"
+    Gilbert = "Gilbert"
+    GilbertWells = "GilbertWells"
+    GiniI = "GiniI"
 
 
 def AMPLE_calc(TP, FP, FN, TN):
@@ -910,6 +915,123 @@ def ForbesI_calc(TP, FP, FN, TN):
         return "None"
 
 
+def ForbesII_calc(TP, FP, FN, TN):
+    """
+    Calculate Forbes II correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Forbes II correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = (FP * FN) - (TP * TN)
+        part2 = (TP + FP) * (TP + FN)
+        part3 = min((TP + FP), (TP + FN))
+        return part1 / (part2 - (n * part3))
+    except Exception:
+        return "None"
+
+
+def Fossum_calc(TP, FP, FN, TN):
+    """
+    Calculate Fossum similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Fossum similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = (TP - 0.5) ** 2
+        part2 = (TP + FP) * (TP + FN)
+        return (n * part1) / part2
+    except Exception:
+        return "None"
+
+
+def Gilbert_calc(TP, FP, FN, TN):
+    """
+    Calculate Gilbert correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Gilbert correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = (TP * TN) - (FN * TN)
+        part2 = n ** 2 + FP ** 2 + FN ** 2 - TP ** 2 - TN ** 2
+        return (2 * part1) / part2
+    except Exception:
+        return "None"
+
+
+def GilbertWells_calc(TP, FP, FN, TN):
+    """
+    Calculate Gilbert & Wells similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Gilbert & Wells similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = (TP + FP) * (TP + FN) * (TN + FP) * (TN + FN)
+        part2 = math.factorial(TP + FP) * math.factorial(TP + FN) * math.factorial(TN + FP) * math.factorial(TN + FN)
+        part3 = math.factorial(n) * math.factorial(TP) * math.factorial(FP) * math.factorial(FN) * math.factorial(TN)
+        return math.log(n ** 3 / (2 * math.pi * part1)) + 2 * math.log(part2 / part3)
+    except Exception:
+        return "None"
+
+
+def GiniI_calc(TP, FP, FN, TN):
+    """
+    Calculate Gini I correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Gini I correlation as float
+    """
+    try:
+        part1 = (TP + TN) - (TP + FN) * (TP + FP) + (TN + FN) * (TN + FP)
+        part2 = (TP + FP) ** 2 + (TN + FN) ** 2
+        part3 = (TP + FN) ** 2 + (TN + FP) ** 2
+        return part1 / math.sqrt((1 - part2) * (1 - part3))
+    except Exception:
+        return "None"
+
+
 DISTANCE_MAPPER = {
     DistanceType.AMPLE: AMPLE_calc,
     DistanceType.Anderberg: Anderberg_calc,
@@ -950,6 +1072,11 @@ DISTANCE_MAPPER = {
     DistanceType.FagerMcGowan: FagerMcGowan_calc,
     DistanceType.Faith: Faith_calc,
     DistanceType.FleissLevinPaik: FleissLevinPaik_calc,
-    DistanceType.ForbesI: ForbesI_calc
+    DistanceType.ForbesI: ForbesI_calc,
+    DistanceType.ForbesII: ForbesII_calc,
+    DistanceType.Fossum: Fossum_calc,
+    DistanceType.Gilbert: Gilbert_calc,
+    DistanceType.GilbertWells: GilbertWells_calc,
+    DistanceType.GiniI: GiniI_calc
 }
 

@@ -814,7 +814,8 @@ def Dunning_calc(TP, FP, FN, TN):
     :return: Dunning similarity as float
     """
     try:
-        part1 = (TP * math.log2(TP)) + (FP * math.log2(FP)) + (FN * math.log2(FN)) + (TN * math.log2(TN))
+        part1 = (TP * math.log2(TP)) + (FP * math.log2(FP)) + \
+            (FN * math.log2(FN)) + (TN * math.log2(TN))
         part2 = ((TP + FP) * math.log2(TP + FP)) + ((TP + FN) * math.log2(TP + FN)) + ((TN + FP) * math.log2(TN + FP))\
             + ((TN + FN) * math.log2(TN + FN))
         return part1 - part2
@@ -1017,8 +1018,10 @@ def GilbertWells_calc(TP, FP, FN, TN):
     try:
         n = TP + FP + FN + TN
         part1 = (TP + FP) * (TP + FN) * (TN + FP) * (TN + FN)
-        part2 = math.factorial(TP + FP) * math.factorial(TP + FN) * math.factorial(TN + FP) * math.factorial(TN + FN)
-        part3 = math.factorial(n) * math.factorial(TP) * math.factorial(FP) * math.factorial(FN) * math.factorial(TN)
+        part2 = math.factorial(TP + FP) * math.factorial(TP + FN) * \
+            math.factorial(TN + FP) * math.factorial(TN + FN)
+        part3 = math.factorial(n) * math.factorial(TP) * \
+            math.factorial(FP) * math.factorial(FN) * math.factorial(TN)
         return math.log(n ** 3 / (2 * math.pi * part1)) + 2 * math.log(part2 / part3)
     except Exception:
         return "None"
@@ -1150,7 +1153,8 @@ def GoodmanKruskalTauA_calc(TP, FP, FN, TN):
     :return: Goodman & Kruskal's Tau A similarity as float
     """
     try:
-        part1 = ((TP ** 2 + FN ** 2) / (TP + FN)) + ((TN ** 2 + FP ** 2) / (TN + FP))
+        part1 = ((TP ** 2 + FN ** 2) / (TP + FN)) + \
+            ((TN ** 2 + FP ** 2) / (TN + FP))
         part2 = (TP + FP) ** 2 + (TN + FN) ** 2
         return (part1 - part2) / (1 - part2)
     except Exception:
@@ -1172,7 +1176,8 @@ def GoodmanKruskalTauB_calc(TP, FP, FN, TN):
     :return: Goodman & Kruskal's Tau B similarity as float
     """
     try:
-        part1 = ((TP ** 2 + FP ** 2) / (TP + FP)) + ((TN ** 2 + FN ** 2) / (TN + FN))
+        part1 = ((TP ** 2 + FP ** 2) / (TP + FP)) + \
+            ((TN ** 2 + FN ** 2) / (TN + FN))
         part2 = (TP + FN) ** 2 + (TN + FP) ** 2
         return (part1 - part2) / (1 - part2)
     except Exception:
@@ -1308,7 +1313,8 @@ def Hurlbert_calc(TP, FP, FN, TN):
     """
     try:
         n = TP + FP + FN + TN
-        ObsX2 = (((TP * TN - FP * FN) ** 2) * n) / ((TP + FP) * (TP * FN) * (FP + TN) * (FN + TN))
+        ObsX2 = (((TP * TN - FP * FN) ** 2) * n) / \
+            ((TP + FP) * (TP * FN) * (FP + TN) * (FN + TN))
         a_hat = ((TP + FP) * (TP + FN)) / n
         if (TP * TN) >= (FP * FN):
             g = math.ceil(a_hat)
@@ -1319,7 +1325,8 @@ def Hurlbert_calc(TP, FP, FN, TN):
                 MaxX2 = ((TP + FP) * (TP * FN) * n) / ((TN + FP) * (FN + TN))
             else:
                 MaxX2 = ((FP + TN) * (FN + TN) * n) / ((TP + FP) * (TP * FN))
-        MinX2 = ((n ** 3) * ((a_hat - g) ** 2)) / ((TP + FP) * (TP * FN) * (FP + TN) * (FN + TN))
+        MinX2 = ((n ** 3) * ((a_hat - g) ** 2)) / \
+            ((TP + FP) * (TP * FN) * (FP + TN) * (FN + TN))
 
         return ((TP * TN - FP * FN) / abs(TP * TN - FP * FN)) * math.sqrt((ObsX2 - MinX2) / (MaxX2 - MinX2))
     except Exception:
@@ -1451,8 +1458,3 @@ DISTANCE_MAPPER = {
     DistanceType.KentFosterI: KentFosterI_calc,
     DistanceType.KentFosterII: KentFosterII_calc
 }
-
-
-
-
-

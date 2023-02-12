@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Changed
+- `sort` parameter added to `relabel` method
 - Document modified
 ## [3.8] - 2023-02-01
 ### Added

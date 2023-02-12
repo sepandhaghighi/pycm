@@ -728,12 +728,14 @@ class ConfusionMatrix():
         """
         return self.__copy__()
 
-    def relabel(self, mapping):
+    def relabel(self, mapping, sort=False):
         """
         Rename the confusion matrix classes.
 
         :param mapping: mapping dictionary
         :type mapping: dict
+        :param sort: flag for sorting new classes
+        :type sort: bool
         :return: None
         """
         if not isinstance(mapping, dict):
@@ -769,6 +771,8 @@ class ConfusionMatrix():
         self.label_map = temp_label_map
         self.positions = None
         self.classes = [mapping[x] for x in self.classes]
+        if sort:
+            self.classes = sorted(self.classes)
         self.TP = self.class_stat["TP"]
         self.TN = self.class_stat["TN"]
         self.FP = self.class_stat["FP"]

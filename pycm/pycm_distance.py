@@ -1318,7 +1318,7 @@ def Hurlbert_calc(TP, FP, FN, TN):
         a_hat = ((TP + FP) * (TP + FN)) / n
         if (TP * TN) >= (FP * FN):
             g = math.ceil(a_hat)
-            MaxX2 = ((TP + FP) * (FP * TN) * n) / ((TP + FN) * (FN + TN))
+            MaxX2 = ((TP + FP) * (FP + TN) * n) / ((TP + FN) * (FN + TN))
         else:
             g = math.floor(a_hat)
             if TP <= TN:

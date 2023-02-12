@@ -642,5 +642,4 @@ True
 >>> cm2.distance(metric=DistanceType.KentFosterII)[1]
 -0.002196997436837158
 
-
 """

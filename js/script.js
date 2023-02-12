@@ -10,6 +10,9 @@ function redirect(flag){
         case 3:
             window.open("https://www.coffeete.ir/opensource");
             break;
+        case 4:
+            window.open("https://www.buymeacoffee.com/pycm");
+            break;
         default:
             window.open("https://www.paypal.me/AlirezaZol");
             

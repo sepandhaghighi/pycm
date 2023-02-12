@@ -1454,6 +1454,8 @@ Actual
 <BLANKLINE>
 <BLANKLINE>
 >>> cm.relabel({0:"Z", 1:"A", 2:"B"})
+>>> cm
+pycm.ConfusionMatrix(classes: ['Z', 'A', 'B'])
 >>> cm.print_matrix()
 Predict Z       A       B
 Actual
@@ -1473,6 +1475,19 @@ pycm.ConfusionMatrix(classes: [1, 2, 3])
 2
 >>> cm.label_map[2]
 3
+>>> cm.relabel({1:3, 2:2, 3:1}, sort=True)
+>>> cm
+pycm.ConfusionMatrix(classes: [1, 2, 3])
+>>> cm.print_matrix()
+Predict 1       2       3
+Actual
+1       2       0       0
+<BLANKLINE>
+2       0       2       1
+<BLANKLINE>
+3       0       2       2
+<BLANKLINE>
+<BLANKLINE>
 >>> y_act = [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2]
 >>> y_pre = [0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,1,1,1,1,2,0,1,2,2,2,2]
 >>> cm = ConfusionMatrix(y_act,y_pre)

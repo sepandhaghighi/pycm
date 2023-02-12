@@ -600,7 +600,7 @@ True
 >>> cm1.distance(metric=DistanceType.Goodall)[1]
 0.9544884026871964
 >>> cm2.distance(metric=DistanceType.Goodall)[1]
-0.9397552079794622
+0.9397552079794624
 >>> cm1.distance(metric=DistanceType.GoodmanKruskalLambda)[1]
 0.0
 >>> cm2.distance(metric=DistanceType.GoodmanKruskalLambda)[1]

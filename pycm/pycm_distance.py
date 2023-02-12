@@ -1088,7 +1088,7 @@ def Goodall_calc(TP, FP, FN, TN):
     try:
         n = TP + FP + FN + TN
         part1 = math.sqrt((TP + TN) / n)
-        return 2 / (math.pi * math.sin(part1))
+        return (2 / math.pi) * math.asin(part1)
     except Exception:
         return "None"
 

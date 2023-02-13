@@ -597,10 +597,10 @@ True
 20.176174477346354
 >>> cm2.distance(metric=DistanceType.GilbertWells)[1]
 16.717742356979358
->>> cm1.distance(metric=DistanceType.Goodall)[1]
-0.9544884026871964
->>> cm2.distance(metric=DistanceType.Goodall)[1]
-0.9397552079794624
+>>> abs(cm1.distance(metric=DistanceType.Goodall)[1] - 0.9544884026871964) < 1e-15
+True
+>>> abs(cm2.distance(metric=DistanceType.Goodall)[1] - 0.9397552079794624) < 1e-15
+True
 >>> cm1.distance(metric=DistanceType.GoodmanKruskalLambda)[1]
 0.0
 >>> cm2.distance(metric=DistanceType.GoodmanKruskalLambda)[1]

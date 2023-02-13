@@ -46,7 +46,6 @@ class DistanceType(Enum):
     Digby = "Digby"
     Dispersion = "Dispersion"
     Doolittle = "Doolittle"
-    Dunning = "Dunning"
     Eyraud = "Eyraud"
     FagerMcGowan = "FagerMcGowan"
     Faith = "Faith"
@@ -54,21 +53,15 @@ class DistanceType(Enum):
     ForbesI = "ForbesI"
     ForbesII = "ForbesII"
     Fossum = "Fossum"
-    Gilbert = "Gilbert"
     GilbertWells = "GilbertWells"
-    GiniI = "GiniI"
-    GiniII = "GiniII"
     Goodall = "Goodall"
     GoodmanKruskalLambda = "GoodmanKruskalLambda"
     GoodmanKruskalLambdaR = "GoodmanKruskalLambdaR"
-    GoodmanKruskalTauA = "GoodmanKruskalTauA"
-    GoodmanKruskalTauB = "GoodmanKruskalTauB"
     GuttmanLambdaA = "GuttmanLambdaA"
     GuttmanLambdaB = "GuttmanLambdaB"
     Hamann = "Hamann"
     HarrisLahey = "HarrisLahey"
     HawkinsDotson = "HawkinsDotson"
-    Hurlbert = "Hurlbert"
     KendallTau = "KendallTau"
     KentFosterI = "KentFosterI"
     KentFosterII = "KentFosterII"
@@ -799,30 +792,6 @@ def Doolittle_calc(TP, FP, FN, TN):
         return "None"
 
 
-def Dunning_calc(TP, FP, FN, TN):
-    """
-    Calculate Dunning similarity.
-
-    :param TP: true positive
-    :type TP: int
-    :param TN: true negative
-    :type TN: int
-    :param FP: false positive
-    :type FP: int
-    :param FN: false negative
-    :type FN: int
-    :return: Dunning similarity as float
-    """
-    try:
-        part1 = (TP * math.log2(TP)) + (FP * math.log2(FP)) + \
-            (FN * math.log2(FN)) + (TN * math.log2(TN))
-        part2 = ((TP + FP) * math.log2(TP + FP)) + ((TP + FN) * math.log2(TP + FN)) + ((TN + FP) * math.log2(TN + FP))\
-            + ((TN + FN) * math.log2(TN + FN))
-        return part1 - part2
-    except Exception:
-        return "None"
-
-
 def Eyraud_calc(TP, FP, FN, TN):
     """
     Calculate Eyraud similarity.
@@ -978,29 +947,6 @@ def Fossum_calc(TP, FP, FN, TN):
         return "None"
 
 
-def Gilbert_calc(TP, FP, FN, TN):
-    """
-    Calculate Gilbert correlation.
-
-    :param TP: true positive
-    :type TP: int
-    :param TN: true negative
-    :type TN: int
-    :param FP: false positive
-    :type FP: int
-    :param FN: false negative
-    :type FN: int
-    :return: Gilbert correlation as float
-    """
-    try:
-        n = TP + FP + FN + TN
-        part1 = (TP * TN) - (FN * TN)
-        part2 = n ** 2 + FP ** 2 + FN ** 2 - TP ** 2 - TN ** 2
-        return (2 * part1) / part2
-    except Exception:
-        return "None"
-
-
 def GilbertWells_calc(TP, FP, FN, TN):
     """
     Calculate Gilbert & Wells similarity.
@@ -1023,50 +969,6 @@ def GilbertWells_calc(TP, FP, FN, TN):
         part3 = math.factorial(n) * math.factorial(TP) * \
             math.factorial(FP) * math.factorial(FN) * math.factorial(TN)
         return math.log(n ** 3 / (2 * math.pi * part1)) + 2 * math.log(part3 / part2)
-    except Exception:
-        return "None"
-
-
-def GiniI_calc(TP, FP, FN, TN):
-    """
-    Calculate Gini I correlation.
-
-    :param TP: true positive
-    :type TP: int
-    :param TN: true negative
-    :type TN: int
-    :param FP: false positive
-    :type FP: int
-    :param FN: false negative
-    :type FN: int
-    :return: Gini I correlation as float
-    """
-    try:
-        part1 = (TP + TN) - (TP + FN) * (TP + FP) + (TN + FN) * (TN + FP)
-        part2 = (TP + FP) ** 2 + (TN + FN) ** 2
-        part3 = (TP + FN) ** 2 + (TN + FP) ** 2
-        return part1 / math.sqrt((1 - part2) * (1 - part3))
-    except Exception:
-        return "None"
-
-
-def GiniII_calc(TP, FP, FN, TN):
-    """
-    Calculate Gini II distance.
-
-    :param TP: true positive
-    :type TP: int
-    :param TN: true negative
-    :type TN: int
-    :param FP: false positive
-    :type FP: int
-    :param FN: false negative
-    :type FN: int
-    :return: Gini II distance as float
-    """
-    try:
-        part1 = ((TP + FP) * (TP + FN) + (FP + TN) * (FN + TN))
-        return (TP + TN - part1) / (1 - abs(FP - FN) - part1)
     except Exception:
         return "None"
 
@@ -1134,52 +1036,6 @@ def GoodmanKruskalLambdaR_calc(TP, FP, FN, TN):
         n = TP + FP + FN + TN
         part1 = 0.5 * (max(TP + FP, FN + TN) + max(TP + FN, FP + TN))
         return (TP + TN - part1) / (n - part1)
-    except Exception:
-        return "None"
-
-
-def GoodmanKruskalTauA_calc(TP, FP, FN, TN):
-    """
-    Calculate Goodman & Kruskal's Tau A similarity.
-
-    :param TP: true positive
-    :type TP: int
-    :param TN: true negative
-    :type TN: int
-    :param FP: false positive
-    :type FP: int
-    :param FN: false negative
-    :type FN: int
-    :return: Goodman & Kruskal's Tau A similarity as float
-    """
-    try:
-        part1 = ((TP ** 2 + FN ** 2) / (TP + FN)) + \
-            ((TN ** 2 + FP ** 2) / (TN + FP))
-        part2 = (TP + FP) ** 2 + (TN + FN) ** 2
-        return (part1 - part2) / (1 - part2)
-    except Exception:
-        return "None"
-
-
-def GoodmanKruskalTauB_calc(TP, FP, FN, TN):
-    """
-    Calculate Goodman & Kruskal's Tau B similarity.
-
-    :param TP: true positive
-    :type TP: int
-    :param TN: true negative
-    :type TN: int
-    :param FP: false positive
-    :type FP: int
-    :param FN: false negative
-    :type FN: int
-    :return: Goodman & Kruskal's Tau B similarity as float
-    """
-    try:
-        part1 = ((TP ** 2 + FP ** 2) / (TP + FP)) + \
-            ((TN ** 2 + FN ** 2) / (TN + FN))
-        part2 = (TP + FN) ** 2 + (TN + FP) ** 2
-        return (part1 - part2) / (1 - part2)
     except Exception:
         return "None"
 
@@ -1297,42 +1153,6 @@ def HawkinsDotson_calc(TP, FP, FN, TN):
         return "None"
 
 
-def Hurlbert_calc(TP, FP, FN, TN):
-    """
-    Calculate Hurlbert correlation.
-
-    :param TP: true positive
-    :type TP: int
-    :param TN: true negative
-    :type TN: int
-    :param FP: false positive
-    :type FP: int
-    :param FN: false negative
-    :type FN: int
-    :return: Hurlbert correlation as float
-    """
-    try:
-        n = TP + FP + FN + TN
-        ObsX2 = (((TP * TN - FP * FN) ** 2) * n) / \
-            ((TP + FP) * (TP * FN) * (FP + TN) * (FN + TN))
-        a_hat = ((TP + FP) * (TP + FN)) / n
-        if (TP * TN) >= (FP * FN):
-            g = math.ceil(a_hat)
-            MaxX2 = ((TP + FP) * (FP + TN) * n) / ((TP + FN) * (FN + TN))
-        else:
-            g = math.floor(a_hat)
-            if TP <= TN:
-                MaxX2 = ((TP + FP) * (TP * FN) * n) / ((TN + FP) * (FN + TN))
-            else:
-                MaxX2 = ((FP + TN) * (FN + TN) * n) / ((TP + FP) * (TP * FN))
-        MinX2 = ((n ** 3) * ((a_hat - g) ** 2)) / \
-            ((TP + FP) * (TP * FN) * (FP + TN) * (FN + TN))
-
-        return ((TP * TN - FP * FN) / abs(TP * TN - FP * FN)) * math.sqrt((ObsX2 - MinX2) / (MaxX2 - MinX2))
-    except Exception:
-        return "None"
-
-
 def KendallTau_calc(TP, FP, FN, TN):
     """
     Calculate Kendall's Tau correlation.
@@ -1431,7 +1251,6 @@ DISTANCE_MAPPER = {
     DistanceType.Digby: Digby_calc,
     DistanceType.Dispersion: Dispersion_calc,
     DistanceType.Doolittle: Doolittle_calc,
-    DistanceType.Dunning: Dunning_calc,
     DistanceType.Eyraud: Eyraud_calc,
     DistanceType.FagerMcGowan: FagerMcGowan_calc,
     DistanceType.Faith: Faith_calc,
@@ -1439,21 +1258,15 @@ DISTANCE_MAPPER = {
     DistanceType.ForbesI: ForbesI_calc,
     DistanceType.ForbesII: ForbesII_calc,
     DistanceType.Fossum: Fossum_calc,
-    DistanceType.Gilbert: Gilbert_calc,
     DistanceType.GilbertWells: GilbertWells_calc,
-    DistanceType.GiniI: GiniI_calc,
-    DistanceType.GiniII: GiniII_calc,
     DistanceType.Goodall: Goodall_calc,
     DistanceType.GoodmanKruskalLambda: GoodmanKruskalLambda_calc,
     DistanceType.GoodmanKruskalLambdaR: GoodmanKruskalLambdaR_calc,
-    DistanceType.GoodmanKruskalTauA: GoodmanKruskalTauA_calc,
-    DistanceType.GoodmanKruskalTauB: GoodmanKruskalTauB_calc,
     DistanceType.GuttmanLambdaA: GuttmanLambdaA_calc,
     DistanceType.GuttmanLambdaB: GuttmanLambdaB_calc,
     DistanceType.Hamann: Hamann_calc,
     DistanceType.HarrisLahey: HarrisLahey_calc,
     DistanceType.HawkinsDotson: HawkinsDotson_calc,
-    DistanceType.Hurlbert: Hurlbert_calc,
     DistanceType.KendallTau: KendallTau_calc,
     DistanceType.KentFosterI: KentFosterI_calc,
     DistanceType.KentFosterII: KentFosterII_calc

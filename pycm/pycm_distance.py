@@ -968,7 +968,8 @@ def GilbertWells_calc(TP, FP, FN, TN):
             math.factorial(TN + FP) * math.factorial(TN + FN)
         part3 = math.factorial(n) * math.factorial(TP) * \
             math.factorial(FP) * math.factorial(FN) * math.factorial(TN)
-        return math.log(n ** 3 / (2 * math.pi * part1)) + 2 * math.log(part3 / part2)
+        return math.log(n ** 3 / (2 * math.pi * part1)) + \
+            2 * math.log(part3 / part2)
     except Exception:
         return "None"
 

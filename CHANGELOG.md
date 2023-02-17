@@ -5,6 +5,31 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- 23 new distance/similarity
+	1. Dennis 
+	2. Digby
+	3. Dispersion
+	4. Doolittle
+	5. Eyraud
+	6. Fager & McGowan
+	7. Faith
+	8. Fleiss-Levin-Paik
+	9. Forbes I
+	10. Forbes II
+	11. Fossum
+	12. Gilbert & Wells
+	13. Goodall
+	14. Goodman & Kruskal's Lambda
+	15. Goodman & Kruskal Lambda-r
+	16. Guttman's Lambda A
+	17. Guttman's Lambda B
+	18. Hamann
+	19. Harris & Lahey
+	20. Hawkins & Dotson
+	21. Kendall's Tau
+	22. Kent & Foster I
+	23. Kent & Foster II
 ### Changed
 - `sort` parameter added to `relabel` method
 - Document modified

@@ -728,9 +728,9 @@ def char_num_transformer(input_item):
     :return: key as tuple
     """
     return [(input_item, False, False) if not re.findall(r'\d+', input_item)
-                        else (input_item[:re.search(r'\d+', input_item).start()],
-                              int(re.findall(r'\d+', input_item)[0]),
-                              input_item[re.search(r'\d+', input_item).end():])]
+            else (input_item[:re.search(r'\d+', input_item).start()],
+                  int(re.findall(r'\d+', input_item)[0]),
+                  input_item[re.search(r'\d+', input_item).end():])]
 
 
 def sort_char_num(input_list):

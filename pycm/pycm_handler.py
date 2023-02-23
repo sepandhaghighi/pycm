@@ -20,7 +20,7 @@ def __class_stat_init__(cm):
     :return: None
     """
     for stat, value in cm.class_stat.items():
-        setattr(cm, 'stat', value)
+        setattr(cm, stat, value)
 
 
 def __overall_stat_init__(cm):

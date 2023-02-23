@@ -11,8 +11,6 @@ def Q_analysis(Q):
     :return: interpretation result as str
     """
     try:
-        if Q == "None":
-            return "None"
         if Q < 0.25:
             return "Negligible"
         if Q >= 0.25 and Q < 0.5:
@@ -33,8 +31,6 @@ def MCC_analysis(MCC):
     :return: interpretation result as str
     """
     try:
-        if MCC == "None":
-            return "None"
         if MCC < 0.3:
             return "Negligible"
         if MCC >= 0.3 and MCC < 0.5:
@@ -57,8 +53,6 @@ def NLR_analysis(NLR):
     :return: interpretation result as str
     """
     try:
-        if NLR == "None":
-            return "None"
         if NLR < 0.1:
             return "Good"
         if NLR >= 0.1 and NLR < 0.2:
@@ -79,8 +73,6 @@ def V_analysis(V):
     :return: interpretation result as str
     """
     try:
-        if V == "None":
-            return "None"
         if V < 0.1:
             return "Negligible"
         if V >= 0.1 and V < 0.2:
@@ -105,9 +97,6 @@ def PLR_analysis(PLR):
     :return: interpretation result as str
     """
     try:
-
-        if PLR == "None":
-            return "None"
         if PLR < 1:
             return "Negligible"
         if PLR >= 1 and PLR < 5:
@@ -128,8 +117,6 @@ def DP_analysis(DP):
     :return: interpretation result as str
     """
     try:
-        if DP == "None":
-            return "None"
         if DP < 1:
             return "Poor"
         if DP >= 1 and DP < 2:
@@ -150,8 +137,6 @@ def AUC_analysis(AUC):
     :return: interpretation result as str
     """
     try:
-        if AUC == "None":
-            return "None"
         if AUC < 0.6:
             return "Poor"
         if AUC >= 0.6 and AUC < 0.7:

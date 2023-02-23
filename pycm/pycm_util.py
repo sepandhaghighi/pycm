@@ -69,7 +69,6 @@ def stat_filter(stat_name):
     :return: filtered statistic name
     """
     stat_name = stat_name.replace('.', '')
-    stat_name = stat_name.replace(' ', '_')
     return stat_name
 
 

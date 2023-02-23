@@ -496,21 +496,17 @@ class ConfusionMatrix():
             matrix_items = []
             for i in self.classes:
                 matrix_items.append((i, list(matrix_temp[i].items())))
-            for vector in [
-                    actual_vector_temp,
-                    predict_vector_temp,
-                    prob_vector_temp,
-                    weights_vector_temp]:
-                if isinstance(vector, numpy.ndarray):
-                    vector = vector.tolist()
+            actual_vector_temp, predict_vector_temp, prob_vector_temp, weights_vector_temp = map(
+                vector_serializer, [
+                    actual_vector_temp, predict_vector_temp, prob_vector_temp, weights_vector_temp])
             dump_dict = {"Actual-Vector": actual_vector_temp,
-                         "Predict-Vector": predict_vector_temp,
-                         "Prob-Vector": prob_vector_temp,
-                         "Matrix": matrix_items,
-                         "Digit": self.digit,
-                         "Sample-Weight": weights_vector_temp,
-                         "Transpose": self.transpose,
-                         "Imbalanced": self.imbalance}
+                        "Predict-Vector": predict_vector_temp,
+                        "Prob-Vector": prob_vector_temp,
+                        "Matrix": matrix_items,
+                        "Digit": self.digit,
+                        "Sample-Weight": weights_vector_temp,
+                        "Transpose": self.transpose,
+                        "Imbalanced": self.imbalance}
             if save_stat:
                 dump_dict["Class-Stat"] = self.class_stat
                 dump_dict["Overall-Stat"] = self.overall_stat

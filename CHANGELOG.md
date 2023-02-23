@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `__imbalacement_handler__` function
+- `stat_filter` function
+- `vector_serializer` function
 - 23 new distance/similarity
 	1. Dennis 
 	2. Digby

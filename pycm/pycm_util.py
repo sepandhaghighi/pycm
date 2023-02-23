@@ -755,3 +755,16 @@ def sort_char_num(input_list):
     :return: a sorted list of strings
     """
     return sorted(input_list, key=char_num_transformer)
+
+
+def vector_serializer(vector):
+    """
+    Return given vector in serializable mode
+
+    :param vector: the given vector
+    :type: list or numpy array
+    :retun: a serializable format for vector
+    """
+    if isinstance(vector, numpy.ndarray):
+        vector = vector.tolist()
+    return vector

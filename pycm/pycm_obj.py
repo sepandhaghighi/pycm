@@ -496,14 +496,13 @@ class ConfusionMatrix():
             matrix_items = []
             for i in self.classes:
                 matrix_items.append((i, list(matrix_temp[i].items())))
-            if isinstance(actual_vector_temp, numpy.ndarray):
-                actual_vector_temp = actual_vector_temp.tolist()
-            if isinstance(predict_vector_temp, numpy.ndarray):
-                predict_vector_temp = predict_vector_temp.tolist()
-            if isinstance(prob_vector_temp, numpy.ndarray):
-                prob_vector_temp = prob_vector_temp.tolist()
-            if isinstance(weights_vector_temp, numpy.ndarray):
-                weights_vector_temp = weights_vector_temp.tolist()
+            for vector in [
+                    actual_vector_temp,
+                    predict_vector_temp,
+                    prob_vector_temp,
+                    weights_vector_temp]:
+                if isinstance(vector, numpy.ndarray):
+                    vector = vector.tolist()
             dump_dict = {"Actual-Vector": actual_vector_temp,
                          "Predict-Vector": predict_vector_temp,
                          "Prob-Vector": prob_vector_temp,

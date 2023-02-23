@@ -75,7 +75,7 @@ def alpha2_calc(TOP, P, ACC, POP, classes, max_iter=200, epsilon=0.0001):
         step = 1
         alpha = 0
         alpha_prev = 0
-        while(True):
+        while True:
             p_e = 0
             for i in classes:
                 p_e += (p_A[i] * p_B[i])

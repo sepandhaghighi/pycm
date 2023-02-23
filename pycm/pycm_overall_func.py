@@ -1036,7 +1036,8 @@ def overall_statistics(**kwargs):
     result["SOA6(Matthews)"] = MCC_analysis(result["Overall MCC"])
     result["SOA7(Lambda A)"] = lambda_analysis(result["Lambda A"])
     result["SOA8(Lambda B)"] = lambda_analysis(result["Lambda B"])
-    result["SOA9(Krippendorff Alpha)"] = alpha_analysis(result["Krippendorff Alpha"])
+    result["SOA9(Krippendorff Alpha)"] = alpha_analysis(
+        result["Krippendorff Alpha"])
     result["SOA10(Pearson C)"] = pearson_C_analysis(result["Pearson C"])
     result["FPR Macro"] = complement(result["TNR Macro"])
     result["FNR Macro"] = complement(result["TPR Macro"])

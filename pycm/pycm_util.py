@@ -719,6 +719,20 @@ def thresholds_calc(probs):
     return thresholds
 
 
+def char_num_transformer(input_item):
+    """
+    Transform the input string to a proper key for char-num sorting.
+
+    :param input_item: input item
+    :type input_item: str
+    :return: key as tuple
+    """
+    return [(input_item, False, False) if not re.findall(r'\d+', input_item)
+            else (input_item[:re.search(r'\d+', input_item).start()],
+                  int(re.findall(r'\d+', input_item)[0]),
+                  input_item[re.search(r'\d+', input_item).end():])]
+
+
 def sort_char_num(input_list):
     """
     Sort a list of strings first alphabetically and then numerically.
@@ -727,8 +741,4 @@ def sort_char_num(input_list):
     :type input_list: iterable
     :return: a sorted list of strings
     """
-    sort_by = lambda x: [(x, False, False) if not re.findall(r'\d+', x)
-                         else (x[:re.search(r'\d+', x).start()],
-                               int(re.findall(r'\d+', x)[0]),
-                               x[re.search(r'\d+', x).end():])]
-    return sorted(input_list, key=sort_by)
+    return sorted(input_list, key=char_num_transformer)

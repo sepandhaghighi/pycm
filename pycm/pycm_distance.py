@@ -42,6 +42,29 @@ class DistanceType(Enum):
     ConsonniTodeschiniIII = "ConsonniTodeschiniIII"
     ConsonniTodeschiniIV = "ConsonniTodeschiniIV"
     ConsonniTodeschiniV = "ConsonniTodeschiniV"
+    Dennis = "Dennis"
+    Digby = "Digby"
+    Dispersion = "Dispersion"
+    Doolittle = "Doolittle"
+    Eyraud = "Eyraud"
+    FagerMcGowan = "FagerMcGowan"
+    Faith = "Faith"
+    FleissLevinPaik = "FleissLevinPaik"
+    ForbesI = "ForbesI"
+    ForbesII = "ForbesII"
+    Fossum = "Fossum"
+    GilbertWells = "GilbertWells"
+    Goodall = "Goodall"
+    GoodmanKruskalLambda = "GoodmanKruskalLambda"
+    GoodmanKruskalLambdaR = "GoodmanKruskalLambdaR"
+    GuttmanLambdaA = "GuttmanLambdaA"
+    GuttmanLambdaB = "GuttmanLambdaB"
+    Hamann = "Hamann"
+    HarrisLahey = "HarrisLahey"
+    HawkinsDotson = "HawkinsDotson"
+    KendallTau = "KendallTau"
+    KentFosterI = "KentFosterI"
+    KentFosterII = "KentFosterII"
 
 
 def AMPLE_calc(TP, FP, FN, TN):
@@ -679,6 +702,521 @@ def ConsonniTodeschiniV_calc(TP, FP, FN, TN):
         return "None"
 
 
+def Dennis_calc(TP, FP, FN, TN):
+    """
+    Calculate Dennis similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Dennis similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = ((TP + FP) * (TP + FN)) / n
+        return (TP - part1) / math.sqrt(part1)
+    except Exception:
+        return "None"
+
+
+def Digby_calc(TP, FP, FN, TN):
+    """
+    Calculate Digby correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Digby correlation as float
+    """
+    try:
+        part1 = (TP * TN) ** 0.75
+        part2 = (FP * FN) ** 0.75
+        return (part1 - part2) / (part1 + part2)
+    except Exception:
+        return "None"
+
+
+def Dispersion_calc(TP, FP, FN, TN):
+    """
+    Calculate Dispersion correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Dispersion correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = TP * TN
+        part2 = FP * FN
+        return (part1 - part2) / (n ** 2)
+    except Exception:
+        return "None"
+
+
+def Doolittle_calc(TP, FP, FN, TN):
+    """
+    Calculate Doolittle similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Doolittle similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = (TP + FP) * (TP + FN)
+        part2 = (TN + FP) * (TN + FN)
+        return ((TP * n - part1) ** 2) / (part1 * part2)
+    except Exception:
+        return "None"
+
+
+def Eyraud_calc(TP, FP, FN, TN):
+    """
+    Calculate Eyraud similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Eyraud similarity as float
+    """
+    try:
+        part1 = (TP + FP) * (TP + FN)
+        part2 = (TN + FP) * (TN + FN)
+        return (TP - part1) / (part1 * part2)
+    except Exception:
+        return "None"
+
+
+def FagerMcGowan_calc(TP, FP, FN, TN):
+    """
+    Calculate Fager & McGowan similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Fager & McGowan similarity as float
+    """
+    try:
+        part1 = math.sqrt((TP + FP) * (TP + FN))
+        part2 = math.sqrt(max((TP + FP), (TP + FN)))
+        return (TP / part1) - (1 / (2 * part2))
+    except Exception:
+        return "None"
+
+
+def Faith_calc(TP, FP, FN, TN):
+    """
+    Calculate Faith similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Faith similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        return (TP + (TN / 2)) / n
+    except Exception:
+        return "None"
+
+
+def FleissLevinPaik_calc(TP, FP, FN, TN):
+    """
+    Calculate Fleiss-Levin-Paik similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Fleiss-Levin-Paik similarity as float
+    """
+    try:
+        part1 = 2 * TN
+        return part1 / (part1 + FP + FN)
+    except Exception:
+        return "None"
+
+
+def ForbesI_calc(TP, FP, FN, TN):
+    """
+    Calculate Forbes I similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Forbes I similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = (TP + FP) * (TP + FN)
+        return (n * TP) / part1
+    except Exception:
+        return "None"
+
+
+def ForbesII_calc(TP, FP, FN, TN):
+    """
+    Calculate Forbes II correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Forbes II correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = (FP * FN) - (TP * TN)
+        part2 = (TP + FP) * (TP + FN)
+        part3 = min((TP + FP), (TP + FN))
+        return part1 / (part2 - (n * part3))
+    except Exception:
+        return "None"
+
+
+def Fossum_calc(TP, FP, FN, TN):
+    """
+    Calculate Fossum similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Fossum similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = (TP - 0.5) ** 2
+        part2 = (TP + FP) * (TP + FN)
+        return (n * part1) / part2
+    except Exception:
+        return "None"
+
+
+def GilbertWells_calc(TP, FP, FN, TN):
+    """
+    Calculate Gilbert & Wells similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Gilbert & Wells similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = (TP + FP) * (TP + FN) * (TN + FP) * (TN + FN)
+        part2 = math.factorial(TP + FP) * math.factorial(TP + FN) * \
+            math.factorial(TN + FP) * math.factorial(TN + FN)
+        part3 = math.factorial(n) * math.factorial(TP) * \
+            math.factorial(FP) * math.factorial(FN) * math.factorial(TN)
+        return math.log((n ** 3) / (2 * math.pi * part1)) + \
+            2 * math.log(part3 / part2)
+    except Exception:
+        return "None"
+
+
+def Goodall_calc(TP, FP, FN, TN):
+    """
+    Calculate Goodall similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Goodall similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = math.sqrt((TP + TN) / n)
+        return (2 / math.pi) * math.asin(part1)
+    except Exception:
+        return "None"
+
+
+def GoodmanKruskalLambda_calc(TP, FP, FN, TN):
+    """
+    Calculate Goodman & Kruskal's Lambda similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Goodman & Kruskal's Lambda similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = max(TP, FP) + max(FN, TN) + max(TP, FN) + max(FP, TN)
+        part2 = max(TP + FP, FN + TN) + max(TP + FN, FP + TN)
+        return (0.5 * (part1 - part2)) / (n - 0.5 * part2)
+    except Exception:
+        return "None"
+
+
+def GoodmanKruskalLambdaR_calc(TP, FP, FN, TN):
+    """
+    Calculate Goodman & Kruskal Lambda-r correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Goodman & Kruskal Lambda-r correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = 0.5 * (max(TP + FP, FN + TN) + max(TP + FN, FP + TN))
+        return (TP + TN - part1) / (n - part1)
+    except Exception:
+        return "None"
+
+
+def GuttmanLambdaA_calc(TP, FP, FN, TN):
+    """
+    Calculate Guttman's Lambda A similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Guttman's Lambda A similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = max(TP, FN) + max(FP, TN)
+        part2 = max(TP + FP, FN + TN)
+        return (part1 - part2) / (n - part2)
+    except Exception:
+        return "None"
+
+
+def GuttmanLambdaB_calc(TP, FP, FN, TN):
+    """
+    Calculate Guttman's Lambda B similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Guttman's Lambda B similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = max(TP, FP) + max(FN, TN)
+        part2 = max(TP + FN, FP + TN)
+        return (part1 - part2) / (n - part2)
+    except Exception:
+        return "None"
+
+
+def Hamann_calc(TP, FP, FN, TN):
+    """
+    Calculate Hamann correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Hamann correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+
+        return (TP + TN - FP - FN) / n
+    except Exception:
+        return "None"
+
+
+def HarrisLahey_calc(TP, FP, FN, TN):
+    """
+    Calculate Harris & Lahey similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Harris & Lahey similarity as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        part1 = TP / (TP + FP + FN)
+        part2 = (2 * TN + FP + FN) / (2 * n)
+        part3 = TN / (TN + FP + FN)
+        part4 = (2 * TP + FP + FN) / (2 * n)
+        return part1 * part2 + part3 * part4
+    except Exception:
+        return "None"
+
+
+def HawkinsDotson_calc(TP, FP, FN, TN):
+    """
+    Calculate Hawkins & Dotson similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Hawkins & Dotson similarity as float
+    """
+    try:
+        return 0.5 * ((TP / (TP + FP + FN)) + (TN / (TN + FN + FP)))
+    except Exception:
+        return "None"
+
+
+def KendallTau_calc(TP, FP, FN, TN):
+    """
+    Calculate Kendall's Tau correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Kendall's Tau correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        return (2 * (TP + TN - FP - FN)) / (n * (n - 1))
+    except Exception:
+        return "None"
+
+
+def KentFosterI_calc(TP, FP, FN, TN):
+    """
+    Calculate Kent & Foster I similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Kent & Foster I similarity as float
+    """
+    try:
+        part1 = ((TP + FP) * (TP + FN)) / (TP + FP + FN)
+        return (TP - part1) / (TP - part1 + FP + FN)
+    except Exception:
+        return "None"
+
+
+def KentFosterII_calc(TP, FP, FN, TN):
+    """
+    Calculate Kent & Foster II similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Kent & Foster II similarity as float
+    """
+    try:
+        part1 = ((TN + FP) * (TN + FN)) / (TN + FP + FN)
+        return (TN - part1) / (TN - part1 + FP + FN)
+    except Exception:
+        return "None"
+
+
 DISTANCE_MAPPER = {
     DistanceType.AMPLE: AMPLE_calc,
     DistanceType.Anderberg: Anderberg_calc,
@@ -710,4 +1248,27 @@ DISTANCE_MAPPER = {
     DistanceType.ConsonniTodeschiniIII: ConsonniTodeschiniIII_calc,
     DistanceType.ConsonniTodeschiniIV: ConsonniTodeschiniIV_calc,
     DistanceType.ConsonniTodeschiniV: ConsonniTodeschiniV_calc,
+    DistanceType.Dennis: Dennis_calc,
+    DistanceType.Digby: Digby_calc,
+    DistanceType.Dispersion: Dispersion_calc,
+    DistanceType.Doolittle: Doolittle_calc,
+    DistanceType.Eyraud: Eyraud_calc,
+    DistanceType.FagerMcGowan: FagerMcGowan_calc,
+    DistanceType.Faith: Faith_calc,
+    DistanceType.FleissLevinPaik: FleissLevinPaik_calc,
+    DistanceType.ForbesI: ForbesI_calc,
+    DistanceType.ForbesII: ForbesII_calc,
+    DistanceType.Fossum: Fossum_calc,
+    DistanceType.GilbertWells: GilbertWells_calc,
+    DistanceType.Goodall: Goodall_calc,
+    DistanceType.GoodmanKruskalLambda: GoodmanKruskalLambda_calc,
+    DistanceType.GoodmanKruskalLambdaR: GoodmanKruskalLambdaR_calc,
+    DistanceType.GuttmanLambdaA: GuttmanLambdaA_calc,
+    DistanceType.GuttmanLambdaB: GuttmanLambdaB_calc,
+    DistanceType.Hamann: Hamann_calc,
+    DistanceType.HarrisLahey: HarrisLahey_calc,
+    DistanceType.HawkinsDotson: HawkinsDotson_calc,
+    DistanceType.KendallTau: KendallTau_calc,
+    DistanceType.KentFosterI: KentFosterI_calc,
+    DistanceType.KentFosterII: KentFosterII_calc
 }

@@ -314,7 +314,8 @@ def __compare_assign_handler__(
     compare.classes = list(cm_dict.values())[0].classes
     compare.class_weight = {k: 1 for k in compare.classes}
     compare.class_benchmark_weight = {k: 1 for k in CLASS_BENCHMARK_LIST}
-    compare.overall_benchmark_weight = {k: 0 if k in KAPPA_BENCHMARK_LIST[1:] else 1 for k in OVERALL_BENCHMARK_LIST}
+    compare.overall_benchmark_weight = {
+        k: 0 if k in KAPPA_BENCHMARK_LIST[1:] else 1 for k in OVERALL_BENCHMARK_LIST}
     compare.digit = digit
     compare.best = None
     compare.best_name = None

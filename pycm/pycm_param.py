@@ -772,7 +772,7 @@ BENCHMARK_COLOR = {
         "Medium": "LawnGreen",
         "Strong": "Green",
         "None": "White"}
-    }
+}
 
 BENCHMARK_LIST = list(BENCHMARK_COLOR.keys())
 

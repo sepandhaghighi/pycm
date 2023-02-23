@@ -549,5 +549,97 @@ True
 0.48072545510682463
 >>> cm2.distance(metric=DistanceType.ConsonniTodeschiniV)[1]
 0.4003930264973547
+>>> cm1.distance(metric=DistanceType.Dennis)[1]
+13.857142857142858
+>>> cm2.distance(metric=DistanceType.Dennis)[1]
+10.028539207654113
+>>> cm1.distance(metric=DistanceType.Digby)[1]
+0.9774244829419212
+>>> cm2.distance(metric=DistanceType.Digby)[1]
+0.9491281473458171
+>>> cm1.distance(metric=DistanceType.Dispersion)[1]
+0.002524989587671803
+>>> cm2.distance(metric=DistanceType.Dispersion)[1]
+0.002502212619741774
+>>> cm1.distance(metric=DistanceType.Doolittle)[1]
+0.24744247205785666
+>>> cm2.distance(metric=DistanceType.Doolittle)[1]
+0.13009912077202224
+>>> cm1.distance(metric=DistanceType.Eyraud)[1]
+-1.438198553583169e-06
+>>> cm2.distance(metric=DistanceType.Eyraud)[1]
+-1.5399964580081465e-06
+>>> cm1.distance(metric=DistanceType.FagerMcGowan)[1]
+0.25
+>>> cm2.distance(metric=DistanceType.FagerMcGowan)[1]
+0.16102422643817918
+>>> cm1.distance(metric=DistanceType.Faith)[1]
+0.4987244897959184
+>>> cm2.distance(metric=DistanceType.Faith)[1]
+0.4968112244897959
+>>> cm1.distance(metric=DistanceType.FleissLevinPaik)[1]
+0.9974358974358974
+>>> cm2.distance(metric=DistanceType.FleissLevinPaik)[1]
+0.9955041746949261
+>>> cm1.distance(metric=DistanceType.ForbesI)[1]
+98.0
+>>> cm2.distance(metric=DistanceType.ForbesI)[1]
+52.266666666666666
+>>> cm1.distance(metric=DistanceType.ForbesII)[1]
+0.49743589743589745
+>>> cm2.distance(metric=DistanceType.ForbesII)[1]
+0.3953727506426735
+>>> cm1.distance(metric=DistanceType.Fossum)[1]
+110.25
+>>> cm2.distance(metric=DistanceType.Fossum)[1]
+58.8
+>>> cm1.distance(metric=DistanceType.GilbertWells)[1]
+20.176174477346354
+>>> cm2.distance(metric=DistanceType.GilbertWells)[1]
+16.717742356979358
+>>> abs(cm1.distance(metric=DistanceType.Goodall)[1] - 0.9544884026871964) < 1e-15
+True
+>>> abs(cm2.distance(metric=DistanceType.Goodall)[1] - 0.9397552079794624) < 1e-15
+True
+>>> cm1.distance(metric=DistanceType.GoodmanKruskalLambda)[1]
+0.0
+>>> cm2.distance(metric=DistanceType.GoodmanKruskalLambda)[1]
+0.0
+>>> cm1.distance(metric=DistanceType.GoodmanKruskalLambdaR)[1]
+0.0
+>>> cm2.distance(metric=DistanceType.GoodmanKruskalLambdaR)[1]
+-0.2727272727272727
+>>> cm1.distance(metric=DistanceType.GuttmanLambdaA)[1]
+0.0
+>>> cm2.distance(metric=DistanceType.GuttmanLambdaA)[1]
+0.0
+>>> cm1.distance(metric=DistanceType.GuttmanLambdaB)[1]
+0.0
+>>> cm2.distance(metric=DistanceType.GuttmanLambdaB)[1]
+0.0
+>>> cm1.distance(metric=DistanceType.Hamann)[1]
+0.9897959183673469
+>>> cm2.distance(metric=DistanceType.Hamann)[1]
+0.9821428571428571
+>>> cm1.distance(metric=DistanceType.HarrisLahey)[1]
+0.3367085964820711
+>>> cm2.distance(metric=DistanceType.HarrisLahey)[1]
+0.22761577457069784
+>>> cm1.distance(metric=DistanceType.HawkinsDotson)[1]
+0.6641091219096334
+>>> cm2.distance(metric=DistanceType.HawkinsDotson)[1]
+0.606635407786303
+>>> cm1.distance(metric=DistanceType.KendallTau)[1]
+0.0025282143508744493
+>>> cm2.distance(metric=DistanceType.KendallTau)[1]
+0.00250866630176975
+>>> cm1.distance(metric=DistanceType.KentFosterI)[1]
+-0.19999999999999996
+>>> cm2.distance(metric=DistanceType.KentFosterI)[1]
+-0.23529411764705888
+>>> cm1.distance(metric=DistanceType.KentFosterII)[1]
+-0.0012804097311239404
+>>> cm2.distance(metric=DistanceType.KentFosterII)[1]
+-0.002196997436837158
 
 """

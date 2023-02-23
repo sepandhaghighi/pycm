@@ -34,7 +34,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 	22. Kent & Foster I
 	23. Kent & Foster II
 ### Changed
-- code style updated
+- code style
 - `sort` parameter added to `relabel` method
 - Document modified
 ## [3.8] - 2023-02-01

@@ -2,9 +2,9 @@ close all
 
 try
     python_version = pyversion;
-    fprintf(2,'** Python Version : %s\n',python_version);
+    fprintf(2,'** Python Version : %s\n', python_version);
 catch e
-    fprintf(2,'** Error : %s\n',e.message);
+    fprintf(2,'** Error : %s\n', e.message);
 end
 
 % Import pycm lib
@@ -17,7 +17,7 @@ y_pred2 = py.list(['1', '2', '2', '2', '2', '2', '1', '2', '2', '0', '2', '2']);
 cm1 = pycmlib.ConfusionMatrix(y_actu, y_pred1);
 cm2 = pycmlib.ConfusionMatrix(y_actu, y_pred2);
 % Compare object
-cp = pycmlib.Compare(py.dict(pyargs('cm1',cm1,'cm2',cm2)));
+cp = pycmlib.Compare(py.dict(pyargs('cm1', cm1, 'cm2', cm2)));
 % Best
 best_cm = cp.best;
 best_cm.print_matrix()

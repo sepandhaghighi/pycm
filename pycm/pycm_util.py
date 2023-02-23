@@ -758,7 +758,7 @@ def sort_char_num(input_list):
 
 def vector_serializer(vector):
     """
-    Return given vector in serializable mode
+    Return given vector in serializable mode.
 
     :param vector: the given vector
     :type: list or numpy array

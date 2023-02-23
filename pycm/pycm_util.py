@@ -60,6 +60,19 @@ def rounder(input_number, digit=5):
     return str(input_number)
 
 
+def stat_filter(stat_name):
+    """
+    Filter statistic names.
+
+    :param stat_name: the statistic name
+    :type stat_name: str
+    :return: filtered statistic name
+    """
+    stat_name = stat_name.replace('.', '')
+    stat_name = stat_name.replace(' ', '_')
+    return stat_name
+
+
 def class_filter(classes, class_name):
     """
     Filter classes by comparing two lists.

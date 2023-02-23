@@ -113,7 +113,7 @@ def __imbalacement_handler__(cm, is_imbalanced):
     if cm.imbalance is None:
         if is_imbalanced is None:
             is_imbalanced = imbalance_check(cm.P)
-    cm.imbalance = is_imbalanced
+        cm.imbalance = is_imbalanced
 
 
 def __obj_assign_handler__(cm, matrix_param):

@@ -2,7 +2,7 @@
 """
 >>> from pycm import *
 >>> from pytest import warns
->>> large_cm = ConfusionMatrix(list(range(10))+[2,3,5],list(range(10))+[1,7,2])
+>>> large_cm = ConfusionMatrix(list(range(10)) + [2, 3, 5], list(range(10)) + [1, 7, 2])
 >>> with warns(RuntimeWarning, match='The confusion matrix is a high dimension matrix'):
 ...     large_cm.print_matrix()
 Predict 0       1       2       3       4       5       6       7       8       9
@@ -355,30 +355,30 @@ Y(Youden index)                                                   1.0           
 dInd(Distance index)                                              0.0           0.08333       0.5082        0.5           0.0           0.5           0.0           0.08333       0.0           0.0
 sInd(Similarity index)                                            1.0           0.94107       0.64065       0.64645       1.0           0.64645       1.0           0.94107       1.0           1.0
 <BLANKLINE>
->>> cm = ConfusionMatrix(matrix={1:{1:22,0:54},0:{1:1,0:57}},transpose=True)
+>>> cm = ConfusionMatrix(matrix={1: {1: 22, 0: 54}, 0: {1: 1, 0: 57}}, transpose=True)
 >>> with warns(RuntimeWarning):
-...     cm.CI("TPR",alpha=2)[1][1][1]
+...     cm.CI("TPR", alpha=2)[1][1][1]
 1.0398659919971112
 >>> with warns(RuntimeWarning):
-...     cm.CI("TPR",alpha=2,one_sided=True)[1][1][1]
+...     cm.CI("TPR", alpha=2, one_sided=True)[1][1][1]
 1.0264713799292524
->>> cm = ConfusionMatrix(matrix={"often":{"often":16,"seldom":6,"never":2},"seldom":{"often":4,"seldom":10,"never":1},"never":{"often":3,"seldom":0,"never":8}})
+>>> cm = ConfusionMatrix(matrix={"often": {"often": 16, "seldom": 6, "never": 2}, "seldom": {"often": 4, "seldom": 10, "never": 1}, "never": {"often": 3, "seldom": 0, "never": 8}})
 >>> with warns(RuntimeWarning):
 ...	    cm.weighted_kappa()
 0.4959042218021425
 >>> with warns(RuntimeWarning):
-...	    cm.weighted_kappa(weight={1:{1:1,2:2},2:{1:2,2:1}})
+...	    cm.weighted_kappa(weight={1: {1: 1, 2: 2}, 2: {1: 2, 2: 1}})
 0.4959042218021425
 >>> with warns(RuntimeWarning):
 ...	    cm.weighted_alpha()
 0.5007878978884337
 >>> with warns(RuntimeWarning):
-...	    cm.weighted_alpha(weight={1:{1:1,2:2},2:{1:2,2:1}})
+...	    cm.weighted_alpha(weight={1: {1: 1, 2: 2}, 2: {1: 2, 2: 1}})
 0.5007878978884337
->>> y_act=[0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2]
->>> y_pre=[0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,1,1,1,1,2,0,1,2,2,2,2]
+>>> y_act=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2]
+>>> y_pre=[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 2, 0, 1, 2, 2, 2, 2]
 >>> with warns(RuntimeWarning):
-...     cm4 = ConfusionMatrix(y_act,y_pre,classes=[1,2,0,3])
+...     cm4 = ConfusionMatrix(y_act, y_pre, classes=[1, 2, 0, 3])
 >>> cm4
 pycm.ConfusionMatrix(classes: [1, 2, 0, 3])
 >>> cm4.classes
@@ -541,21 +541,21 @@ dInd(Distance index)                                              0.4969        
 sInd(Similarity index)                                            0.64864       0.7619        0.74153       None
 <BLANKLINE>
 >>> with warns(RuntimeWarning):
-...     cm4 = ConfusionMatrix([1,1,1,1],[1,1,2,1],classes=[1,"s"])
+...     cm4 = ConfusionMatrix([1, 1, 1, 1], [1, 1, 2, 1], classes=[1, "s"])
 >>> cm4.to_array()
 array([[3, 0],
        [0, 0]])
 >>> cm4
 pycm.ConfusionMatrix(classes: ['1', 's'])
 >>> with warns(RuntimeWarning):
-...     cm4 = ConfusionMatrix([1,1,1,1],[1,1,2,1],classes=(1,2))
+...     cm4 = ConfusionMatrix([1, 1, 1, 1], [1, 1, 2, 1], classes=(1, 2))
 >>> cm4.to_array()
 array([[3, 1],
        [0, 0]])
 >>> cm4
 pycm.ConfusionMatrix(classes: [1, 2])
 >>> with warns(RuntimeWarning):
-...     crv = PRCurve(actual_vector = [1, 1, 2, 2], probs = [[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]], classes=[2, 1])
+...     crv = PRCurve(actual_vector=[1, 1, 2, 2], probs=[[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]], classes=[2, 1])
 >>> crv
 pycm.PRCurve(classes: [2, 1])
 """

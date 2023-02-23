@@ -165,7 +165,7 @@ sInd(Similarity index)                                           0.84287        
 <BLANKLINE>
 >>> cm.matrix == dict(cm)
 True
->>> cm.relabel({0:"L1",1:"L2",2:"L3"})
+>>> cm.relabel({0: "L1", 1: "L2", 2: "L3"})
 >>> y_actu == y_actu_copy
 True
 >>> y_pred == y_pred_copy
@@ -663,7 +663,7 @@ TOP(Test outcome positive)                                        11            
 TP(True positive/hit)                                             0             6             1             0
 TPR(Sensitivity, recall, hit rate, or true positive rate)         None          0.375         0.33333       0.0
 <BLANKLINE>
->>> cm.stat(overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"])
+>>> cm.stat(overall_param=["Kappa", "Scott PI"], class_param=["TPR", "TNR", "ACC", "AUC"])
 Overall Statistics :
 <BLANKLINE>
 Kappa                                                            0.07801
@@ -677,7 +677,7 @@ AUC(Area under the ROC curve)                                    None           
 TNR(Specificity or true negative rate)                           0.45                    0.75                    0.94118                 1.0
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None                    0.375                   0.33333                 0.0
 <BLANKLINE>
->>> cm.stat(overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[100])
+>>> cm.stat(overall_param=["Kappa", "Scott PI"], class_param=["TPR", "TNR", "ACC", "AUC"], class_name=[100])
 Overall Statistics :
 <BLANKLINE>
 Kappa                                                            0.07801
@@ -691,19 +691,19 @@ AUC(Area under the ROC curve)                                    None
 TNR(Specificity or true negative rate)                           0.45
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None
 <BLANKLINE>
->>> cm.stat(overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[])
+>>> cm.stat(overall_param=["Kappa", "Scott PI"], class_param=["TPR", "TNR", "ACC", "AUC"], class_name=[])
 Overall Statistics :
 <BLANKLINE>
 Kappa                                                            0.07801
 Scott PI                                                         -0.12554
 <BLANKLINE>
->>> cm.stat(overall_param=["Kappa","Scott PI"],class_param=[],class_name=[100])
+>>> cm.stat(overall_param=["Kappa", "Scott PI"], class_param=[], class_name=[100])
 Overall Statistics :
 <BLANKLINE>
 Kappa                                                            0.07801
 Scott PI                                                         -0.12554
 <BLANKLINE>
->>> cm.stat(overall_param=["Kappa","Scott PI"],class_param=["TPR"],class_name=[100])
+>>> cm.stat(overall_param=["Kappa", "Scott PI"], class_param=["TPR"], class_name=[100])
 Overall Statistics :
 <BLANKLINE>
 Kappa                                                            0.07801
@@ -714,7 +714,7 @@ Class Statistics :
 Classes                                                          100
 TPR(Sensitivity, recall, hit rate, or true positive rate)        None
 <BLANKLINE>
->>> cm.stat(overall_param=[],class_param=["TPR"],class_name=[100])
+>>> cm.stat(overall_param=[], class_param=["TPR"], class_name=[100])
 <BLANKLINE>
 Class Statistics :
 <BLANKLINE>
@@ -737,13 +737,13 @@ Actual
 500              1        1        1        0
 600              1        0        0        0
 <BLANKLINE>
->>> cm.print_matrix(one_vs_all=True,class_name=200)
+>>> cm.print_matrix(one_vs_all=True, class_name=200)
 Predict          200    ~
 Actual
 200              6      10
 ~                1      3
 <BLANKLINE>
->>> cm.print_normalized_matrix(one_vs_all=True,class_name=200)
+>>> cm.print_normalized_matrix(one_vs_all=True, class_name=200)
 Predict          200               ~
 Actual
 200              0.375             0.625
@@ -754,9 +754,9 @@ Actual
 ...		    return 1
 ...	    else:
 ...		    return 0
->>> y_pred_act = [0.87,0.34,0.9,0.12]
->>> y_pred_act_copy = [0.87,0.34,0.9,0.12]
->>> cm_6 = ConfusionMatrix([0,0,1,0],y_pred_act,threshold=activation, transpose=2)
+>>> y_pred_act = [0.87, 0.34, 0.9, 0.12]
+>>> y_pred_act_copy = [0.87, 0.34, 0.9, 0.12]
+>>> cm_6 = ConfusionMatrix([0, 0, 1, 0], y_pred_act, threshold=activation, transpose=2)
 >>> cm_6.brier_score(pos_class=1)
 0.224225
 >>> cm_6.brier_score(pos_class=0)
@@ -768,11 +768,11 @@ Predict          0        1
 Actual
 0                1        2
 1                1        0
->>> cm = ConfusionMatrix(matrix={1:{1:0,2:0},2:{1:0,2:0}})
+>>> cm = ConfusionMatrix(matrix={1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}})
 >>> cm
 pycm.ConfusionMatrix(classes: [1, 2])
->>> matrix1 = {"Class1":{"Class1":9,"Class2":3,"Class3":0},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":1,"Class2":1,"Class3":4}}
->>> matrix1_copy = {"Class1":{"Class1":9,"Class2":3,"Class3":0},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":1,"Class2":1,"Class3":4}}
+>>> matrix1 = {"Class1": {"Class1": 9, "Class2": 3, "Class3": 0}, "Class2": {"Class1": 3, "Class2": 5, "Class3": 1}, "Class3": {"Class1": 1, "Class2": 1, "Class3": 4}}
+>>> matrix1_copy = {"Class1": {"Class1": 9, "Class2": 3, "Class3": 0}, "Class2": {"Class1": 3, "Class2": 5, "Class3": 1}, "Class3": {"Class1": 1, "Class2": 1, "Class3": 4}}
 >>> cm = ConfusionMatrix(matrix=matrix1)
 >>> matrix1 == matrix1_copy
 True
@@ -926,9 +926,9 @@ Y(Youden index)                                                  0.48333        
 dInd(Distance index)                                             0.36553                 0.4969                  0.33672
 sInd(Similarity index)                                           0.74153                 0.64864                 0.7619
 <BLANKLINE>
->>> matrix1 = {"Class1":{"Class1":9,"Class2":3,"Class3":1},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":0,"Class2":1,"Class3":4}}
->>> matrix1_copy = {"Class1":{"Class1":9,"Class2":3,"Class3":1},"Class2":{"Class1":3,"Class2":5,"Class3":1},"Class3":{"Class1":0,"Class2":1,"Class3":4}}
->>> cm = ConfusionMatrix(matrix=matrix1,transpose=True)
+>>> matrix1 = {"Class1": {"Class1": 9, "Class2": 3, "Class3": 1}, "Class2": {"Class1": 3, "Class2": 5, "Class3": 1}, "Class3": {"Class1": 0, "Class2": 1, "Class3": 4}}
+>>> matrix1_copy = {"Class1": {"Class1": 9, "Class2": 3, "Class3": 1}, "Class2": {"Class1": 3, "Class2": 5, "Class3": 1}, "Class3": {"Class1": 0, "Class2": 1, "Class3": 4}}
+>>> cm = ConfusionMatrix(matrix=matrix1, transpose=True)
 >>> matrix1 == matrix1_copy
 True
 >>> print(cm)
@@ -1239,7 +1239,7 @@ dInd(Distance index)                                             0.26667        
 sInd(Similarity index)                                           0.81144                 0.52209                 0.6131
 <BLANKLINE>
 >>> cm2 = ConfusionMatrix(y_actu, y_pred, sample_weight=np.array(weight))
->>> isinstance(cm2.weights,np.ndarray)
+>>> isinstance(cm2.weights, np.ndarray)
 True
 >>> cm2 == cm
 True
@@ -1247,10 +1247,10 @@ True
 False
 >>> cm2 != cm
 False
->>> cm = ConfusionMatrix([1,2,3,4],[1,2,3,"4"])
+>>> cm = ConfusionMatrix([1, 2, 3, 4], [1, 2, 3, "4"])
 >>> cm
 pycm.ConfusionMatrix(classes: ['1', '2', '3', '4'])
->>> cm = ConfusionMatrix(matrix={1:{1:13182,2:30516},2:{1:5108,2:295593}},transpose=True) # Verified Case
+>>> cm = ConfusionMatrix(matrix={1: {1: 13182, 2: 30516}, 2: {1: 5108, 2: 295593}}, transpose=True) # Verified Case
 >>> cm.binary
 True
 >>> cm.imbalance
@@ -1258,25 +1258,25 @@ True
 >>> from pycm.pycm_param import IMBALANCED_RECOMMEND, MULTICLASS_RECOMMEND, BINARY_RECOMMEND
 >>> set(cm.recommended_list) == set(IMBALANCED_RECOMMEND)
 True
->>> cm = ConfusionMatrix(matrix={1:{1:60,2:9,3:1,4:0,5:0,6:0},2:{1:23,2:48,3:0,4:2,5:2,6:1},3:{1:11,2:5,3:1,4:0,5:0,6:0},4:{1:0,2:2,3:0,4:7,5:1,6:3},5:{1:2,2:1,3:0,4:0,5:4,6:2},6:{1:1,2:2,3:0,4:2,5:1,6:23}}) # Verified Case
+>>> cm = ConfusionMatrix(matrix={1: {1: 60, 2: 9, 3: 1, 4: 0, 5: 0, 6: 0}, 2: {1: 23, 2: 48, 3: 0, 4: 2, 5: 2, 6: 1}, 3: {1: 11, 2: 5, 3: 1, 4: 0, 5: 0, 6: 0}, 4: {1: 0, 2: 2, 3: 0, 4: 7, 5: 1, 6: 3}, 5: {1: 2, 2: 1, 3: 0, 4: 0, 5: 4, 6: 2}, 6: {1: 1, 2: 2, 3: 0, 4: 2, 5: 1, 6: 23}}) # Verified Case
 >>> cm.binary
 False
 >>> set(cm.recommended_list) == set(IMBALANCED_RECOMMEND)
 True
->>> cm = ConfusionMatrix(matrix={1:{1:295593,2:30516},2:{1:5108,2:295593}},transpose=True)
+>>> cm = ConfusionMatrix(matrix={1: {1: 295593, 2: 30516}, 2: {1: 5108, 2: 295593}}, transpose=True)
 >>> cm.imbalance
 False
 >>> set(cm.recommended_list) == set(BINARY_RECOMMEND)
 True
->>> cm = ConfusionMatrix(matrix={1:{1:60,2:9,3:1,4:0,5:0,6:0},2:{1:23,2:48,3:0,4:2,5:2,6:1},3:{1:11,2:5,3:60,4:0,5:0,6:0},4:{1:0,2:2,3:0,4:60,5:1,6:3},5:{1:2,2:1,3:0,4:0,5:60,6:2},6:{1:1,2:2,3:0,4:2,5:1,6:60}})
+>>> cm = ConfusionMatrix(matrix={1: {1: 60, 2: 9, 3: 1, 4: 0, 5: 0, 6: 0}, 2: {1: 23, 2: 48, 3: 0, 4: 2, 5: 2, 6: 1}, 3: {1: 11, 2: 5, 3: 60, 4: 0, 5: 0, 6: 0}, 4: {1: 0, 2: 2, 3: 0, 4: 60, 5: 1, 6: 3}, 5: {1: 2, 2: 1, 3: 0, 4: 0, 5: 60, 6: 2}, 6: {1: 1, 2: 2, 3: 0, 4: 2, 5: 1, 6: 60}})
 >>> set(cm.recommended_list) == set(MULTICLASS_RECOMMEND)
 True
->>> cm = ConfusionMatrix(matrix={1:{1:295593,2:30516},2:{1:5108,2:295593}},transpose=True,is_imbalanced=True)
+>>> cm = ConfusionMatrix(matrix={1: {1: 295593, 2: 30516}, 2: {1: 5108, 2: 295593}}, transpose=True, is_imbalanced=True)
 >>> cm.imbalance
 True
 >>> set(cm.recommended_list) == set(IMBALANCED_RECOMMEND)
 True
->>> cm = ConfusionMatrix(matrix={1:{1:295593,2:30516},2:{1:5108,2:295593}},transpose=True,is_imbalanced=False)
+>>> cm = ConfusionMatrix(matrix={1: {1: 295593, 2: 30516}, 2: {1: 5108, 2: 295593}}, transpose=True, is_imbalanced=False)
 >>> cm.imbalance
 False
 >>> set(cm.recommended_list) == set(BINARY_RECOMMEND)
@@ -1370,7 +1370,7 @@ Actual
 <BLANKLINE>
 >>> cm.sparse_normalized_matrix
 [{0: {0: 1.0, 2: 0.0, 3: 0.0, 5: 0.0}, 1: {0: 0.5, 2: 0.5, 3: 0.0, 5: 0.0}, 2: {0: 0.0, 2: 1.0, 3: 0.0, 5: 0.0}, 4: {0: 0.0, 2: 0.0, 3: 0.0, 5: 1.0}, 5: {0: 0.0, 2: 0.0, 3: 1.0, 5: 0.0}}, [0, 1, 2, 4, 5], [0, 2, 3, 5]]
->>> cm.print_normalized_matrix(sparse = True)
+>>> cm.print_normalized_matrix(sparse=True)
 Predict   0         2         3         5
 Actual
 0         1.0       0.0       0.0       0.0
@@ -1395,7 +1395,7 @@ Actual
 ~other~       0             0
 <BLANKLINE>
 <BLANKLINE>
->>> cm.stat(overall_param=["Overall ACC"],class_param=["TPR","TNR","ACC","AUC"])
+>>> cm.stat(overall_param=["Overall ACC"], class_param=["TPR", "TNR", "ACC", "AUC"])
 Overall Statistics :
 <BLANKLINE>
 Overall ACC                                                       1.0
@@ -1423,7 +1423,7 @@ Actual
 ~other~       0             0
 <BLANKLINE>
 <BLANKLINE>
->>> cm.stat(overall_param=["Overall ACC"],class_param=["TPR","TNR","ACC","AUC"])
+>>> cm.stat(overall_param=["Overall ACC"], class_param=["TPR", "TNR", "ACC", "AUC"])
 Overall Statistics :
 <BLANKLINE>
 Overall ACC                                                       1.0
@@ -1440,9 +1440,9 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           
 ['1', '~other~']
 >>> cm
 pycm.ConfusionMatrix(classes: ['1', '~other~'])
->>> actual = [1,0,0,0,1,2,0,2,1]
->>> predict = [1,0,1,1,1,2,0,2,0]
->>> cm = ConfusionMatrix(actual,predict)
+>>> actual = [1, 0, 0, 0, 1, 2, 0, 2, 1]
+>>> predict = [1, 0, 1, 1, 1, 2, 0, 2, 0]
+>>> cm = ConfusionMatrix(actual, predict)
 >>> cm.print_matrix()
 Predict 0       1       2
 Actual
@@ -1453,7 +1453,7 @@ Actual
 2       0       0       2
 <BLANKLINE>
 <BLANKLINE>
->>> cm.relabel({0:"Z", 1:"A", 2:"B"})
+>>> cm.relabel({0: "Z", 1: "A", 2: "B"})
 >>> cm
 pycm.ConfusionMatrix(classes: ['Z', 'A', 'B'])
 >>> cm.print_matrix()
@@ -1466,7 +1466,7 @@ A       1       2       0
 B       0       0       2
 <BLANKLINE>
 <BLANKLINE>
->>> cm.relabel({"Z":1, "A":2, "B":3})
+>>> cm.relabel({"Z": 1, "A": 2, "B": 3})
 >>> cm
 pycm.ConfusionMatrix(classes: [1, 2, 3])
 >>> cm.label_map[0]
@@ -1475,7 +1475,7 @@ pycm.ConfusionMatrix(classes: [1, 2, 3])
 2
 >>> cm.label_map[2]
 3
->>> cm.relabel({1:3, 2:2, 3:1}, sort=True)
+>>> cm.relabel({1: 3, 2: 2, 3: 1}, sort=True)
 >>> cm
 pycm.ConfusionMatrix(classes: [1, 2, 3])
 >>> cm.print_matrix()
@@ -1488,9 +1488,9 @@ Actual
 3       0       2       2
 <BLANKLINE>
 <BLANKLINE>
->>> y_act = [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2]
->>> y_pre = [0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,1,1,1,1,2,0,1,2,2,2,2]
->>> cm = ConfusionMatrix(y_act,y_pre)
+>>> y_act = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2]
+>>> y_pre = [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 2, 0, 1, 2, 2, 2, 2]
+>>> cm = ConfusionMatrix(y_act, y_pre)
 >>> cm.to_array()
 array([[9, 3, 0],
        [3, 5, 1],
@@ -1513,7 +1513,7 @@ array([[ 9,  3],
 >>> cm.to_array(one_vs_all=True, normalized=True, class_name=0)
 array([[0.75   , 0.25   ],
        [0.26667, 0.73333]])
->>> cm = ConfusionMatrix([1,2,3,4],[1,2,3,3])
+>>> cm = ConfusionMatrix([1, 2, 3, 4], [1, 2, 3, 3])
 >>> cm
 pycm.ConfusionMatrix(classes: [1, 2, 3, 4])
 >>> cm2 = cm.copy()
@@ -1532,8 +1532,8 @@ False
 False
 >>> id(cm2) == id(cm3)
 False
->>> cm1 = ConfusionMatrix([1,2,2,1],[1,2,2,2])
->>> cm2 = ConfusionMatrix([2,2,2,1],[2,2,2,2])
+>>> cm1 = ConfusionMatrix([1, 2, 2, 1], [1, 2, 2, 2])
+>>> cm2 = ConfusionMatrix([2, 2, 2, 1], [2, 2, 2, 2])
 >>> cm_combined1 = cm1.combine(cm2)
 >>> cm_combined2 = cm2.combine(cm1)
 >>> cm_combined1 == cm_combined2
@@ -1550,7 +1550,7 @@ True
 1
 >>> cm_combined1.matrix[1][2]
 2
->>> cm3 = ConfusionMatrix([2,3,2,1,1,4,2],[2,2,2,3,1,2,3])
+>>> cm3 = ConfusionMatrix([2, 3, 2, 1, 1, 4, 2], [2, 2, 2, 3, 1, 2, 3])
 >>> cm_combined3 = cm3.combine(cm_combined1)
 >>> cm_combined4 = cm_combined1.combine(cm3)
 >>> cm_combined3 == cm_combined4
@@ -1563,14 +1563,14 @@ True
 1
 >>> cm_combined3.matrix[4][2]
 1
->>> cm = ConfusionMatrix(matrix={1:{1:10,2:1,3:0},2:{1:1,2:10,3:0},3:{1:0,2:0,3:0}})
+>>> cm = ConfusionMatrix(matrix={1: {1: 10, 2: 1, 3: 0}, 2: {1: 1, 2: 10, 3: 0}, 3: {1: 0, 2: 0, 3: 0}})
 >>> cm.sensitivity_index()[1]
 2.6703554722378726
 >>> cm.sensitivity_index()[2]
 2.6703554722378726
 >>> cm.sensitivity_index()[3]
 'None'
->>> matrix = [[1,2,3],[4,6,1],[1,2,3]]
+>>> matrix = [[1, 2, 3], [4, 6, 1], [1, 2, 3]]
 >>> cm = ConfusionMatrix(matrix=matrix)
 >>> cm.print_matrix()
 Predict 0       1       2
@@ -1582,7 +1582,7 @@ Actual
 2       1       2       3
 <BLANKLINE>
 <BLANKLINE>
->>> cm = ConfusionMatrix(matrix=matrix, classes=["L1","L2","L3"])
+>>> cm = ConfusionMatrix(matrix=matrix, classes=["L1", "L2", "L3"])
 >>> cm.print_matrix()
 Predict  L1       L2       L3
 Actual
@@ -1593,7 +1593,7 @@ L2       4        6        1
 L3       1        2        3
 <BLANKLINE>
 <BLANKLINE>
->>> cm = ConfusionMatrix(matrix=matrix, classes=["L1","L3","L2"])
+>>> cm = ConfusionMatrix(matrix=matrix, classes=["L1", "L3", "L2"])
 >>> cm.print_matrix()
 Predict  L1       L3       L2
 Actual
@@ -1604,7 +1604,7 @@ L3       4        6        1
 L2       1        2        3
 <BLANKLINE>
 <BLANKLINE>
->>> matrix = np.array([[1,2,3],[4,6,1],[1,2,3]])
+>>> matrix = np.array([[1, 2, 3], [4, 6, 1], [1, 2, 3]])
 >>> cm = ConfusionMatrix(matrix=matrix)
 >>> cm.print_matrix()
 Predict 0       1       2
@@ -1616,7 +1616,7 @@ Actual
 2       1       2       3
 <BLANKLINE>
 <BLANKLINE>
->>> cm = ConfusionMatrix([1,1,1,1,0],[1,1,1,1,1])
+>>> cm = ConfusionMatrix([1, 1, 1, 1, 0], [1, 1, 1, 1, 1])
 >>> 1 in cm
 True
 >>> 0 in cm

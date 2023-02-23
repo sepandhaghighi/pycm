@@ -100,6 +100,22 @@ def __overall_stat_init__(cm):
     cm.SOA10 = cm.overall_stat["SOA10(Pearson C)"]
 
 
+def __imbalacement_handler__(cm, is_imbalanced):
+    """
+    Check if the confusion matrix is imbalanced.
+
+    :param cm: confusion matrix
+    :type cm: pycm.ConfusionMatrix object
+    :param is_imbalanced: is imbalanced flag passed to __init__
+    :type is_imbalanced: bool
+    :return: None
+    """
+    if cm.imbalance is None:
+        if is_imbalanced is None:
+            is_imbalanced = imbalance_check(cm.P)
+    cm.imbalance = is_imbalanced
+
+
 def __obj_assign_handler__(cm, matrix_param):
     """
     Assign basic parameters to the input confusion matrix.

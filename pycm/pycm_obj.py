@@ -28,7 +28,7 @@ class ConfusionMatrix():
     [0, 1, 2]
     >>> cm.table
     {0: {0: 3, 1: 0, 2: 0}, 1: {0: 0, 1: 1, 2: 2}, 2: {0: 2, 1: 1, 2: 3}}
-    >>> cm2 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":2},"Class2": {"Class1": 0, "Class2": 5}})
+    >>> cm2 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2": 2}, "Class2": {"Class1": 0, "Class2": 5}})
     >>> cm2
     pycm.ConfusionMatrix(classes: ['Class1', 'Class2'])
     """
@@ -38,9 +38,13 @@ class ConfusionMatrix():
             actual_vector=None,
             predict_vector=None,
             matrix=None,
-            digit=5, threshold=None, file=None,
-            sample_weight=None, transpose=False,
-            classes=None, is_imbalanced=None):
+            digit=5,
+            threshold=None,
+            file=None,
+            sample_weight=None,
+            transpose=False,
+            classes=None,
+            is_imbalanced=None):
         """
         Init method.
 
@@ -329,10 +333,7 @@ class ConfusionMatrix():
             overall_param=None,
             class_param=None,
             class_name=None,
-            color=(
-                0,
-                0,
-                0),
+            color=(0, 0, 0),
             normalize=False,
             summary=False,
             alt_link=False,

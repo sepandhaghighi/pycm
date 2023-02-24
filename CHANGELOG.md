@@ -6,8 +6,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- `OVERALL_PARAMS`
 - `__imbalancement_handler__` function
-- `stat_filter` function
 - `vector_serializer` function
 - 23 new distance/similarity
 	1. Dennis 
@@ -34,6 +34,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 	22. Kent & Foster I
 	23. Kent & Foster II
 ### Changed
+- `CLASS_PARAMS` changed to a dictionary
 - code style
 - `sort` parameter added to `relabel` method
 - Document modified

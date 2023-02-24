@@ -19,8 +19,8 @@ def __class_stat_init__(cm):
     :type cm: pycm.ConfusionMatrix object
     :return: None
     """
-    for stat, value in cm.class_stat.items():
-        setattr(cm, stat_filter(stat), value)
+    for stat, field_name in CLASS_PARAMS.items():
+        setattr(cm, field_name, cm.class_stat[stat])
 
 
 def __overall_stat_init__(cm):
@@ -31,7 +31,7 @@ def __overall_stat_init__(cm):
     :type cm: pycm.ConfusionMatrix object
     :return: None
     """
-    for stat, field_name in OVERALL_PARAMS2FIELD_NAME.items():
+    for stat, field_name in OVERALL_PARAMS.items():
         setattr(cm, field_name, cm.overall_stat[stat])
 
 

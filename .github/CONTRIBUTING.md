@@ -27,31 +27,30 @@ Please consider the following :
 ## Class statistic 
 
 1. Add new functions to `pycm_class_func.py`
-2. Update `CLASS_PARAMS` list in `pycm_param.py`
+2. Update `CLASS_PARAMS` dictionary in `pycm_param.py`
 3. Update `class_statistics` function in `pycm_class_func.py`
 	- Call statistic function and store result in `result` dictionary
-4. Update `__class_stat_init__` function in `pycm_handler.py` by a new attribute
-5. Update `PARAMS_DESCRIPTION` dictionary in `pycm_param.py` by a short description
+4. Update `PARAMS_DESCRIPTION` dictionary in `pycm_param.py` by a short description
 	- If you don't want capitalization, update `CAPITALIZE_FILTER` list in `pycm_param.py` (*Optional*)
-6. Update `References` section in `Document.ipynb` (`IEEE` format)
-7. Add description to `Class Statistics` section in `Document.ipynb`
+5. Update `References` section in `Document.ipynb` (`IEEE` format)
+6. Add description to `Class Statistics` section in `Document.ipynb`
 	- Cite reference
 	- Update table of contents
 	- Use `LaTeX` for formula
-8. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document tag (without `#`)
-9. Add tests to `overall_test.py` and `function_test.py` in `TEST` folder
+7. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document tag (without `#`)
+8. Add tests to `overall_test.py` and `function_test.py` in `TEST` folder
 	- If you have any verified test add them to `verified_test.py`
-10. Run `autopep8.bat`/`autopep8.sh` (*Optional*, need to install latest version of `autopep8` package)
+9.  Run `autopep8.bat`/`autopep8.sh` (*Optional*, need to install latest version of `autopep8` package)
 
 
 
 ## Overall statistic 
 
 1. Add new functions to `pycm_overall_func.py`
-2. Update `overall_statistics` function in `pycm_class_func.py`
+2. Update `OVERALL_PARAMS` dictionary in `pycm_param.py`
+3. Update `overall_statistics` function in `pycm_class_func.py`
 	- Call statistic function and store result in a variable
 	- Add this variable to output
-3. Update `__overall_stat_init__` function in `pycm_handler.py` by a new attribute
 4. Update `References` section in `Document.ipynb` (`IEEE` format)
 5. Add description to `Overall Statistics` section in `Document.ipynb`
 	- Cite reference

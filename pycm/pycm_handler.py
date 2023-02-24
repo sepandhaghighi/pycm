@@ -35,7 +35,7 @@ def __overall_stat_init__(cm):
         setattr(cm, field_name, cm.overall_stat[stat])
 
 
-def __imbalacement_handler__(cm, is_imbalanced):
+def __imbalancement_handler__(cm, is_imbalanced):
     """
     Check if the confusion matrix is imbalanced.
 

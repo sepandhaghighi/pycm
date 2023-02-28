@@ -7,105 +7,105 @@
 >>> y_test = np.array([600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200])
 >>> y_pred = np.array([100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200])
 >>> cm=ConfusionMatrix(y_test, y_pred)
->>> save_stat=cm.save_stat("test",address=False)
+>>> save_stat=cm.save_stat("test", address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_stat("test_filtered",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"])
+>>> save_stat=cm.save_stat("test_filtered", address=False, overall_param=["Kappa", "Scott PI"], class_param=["TPR", "TNR", "ACC", "AUC"])
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_stat("test_summary",address=False,summary=True)
+>>> save_stat=cm.save_stat("test_summary", address=False, summary=True)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_stat("test_filtered2",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=["L1","L2"])
+>>> save_stat=cm.save_stat("test_filtered2", address=False, overall_param=["Kappa", "Scott PI"], class_param=["TPR", "TNR", "ACC", "AUC"], class_name=["L1", "L2"])
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_stat("test_filtered3",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[])
+>>> save_stat=cm.save_stat("test_filtered3", address=False, overall_param=["Kappa", "Scott PI"], class_param=["TPR", "TNR", "ACC", "AUC"], class_name=[])
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> large_cm = ConfusionMatrix(list(range(20)),list(range(20)))
->>> save_stat = large_cm.save_stat("test_large",address=False)
+>>> large_cm = ConfusionMatrix(list(range(20)), list(range(20)))
+>>> save_stat = large_cm.save_stat("test_large", address=False)
 >>> save_stat == {'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_stat("/asdasd,qweqwe.eo/",address=True)
->>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.pycm'"}
+>>> save_stat=cm.save_stat("/asdasd, qweqwe.eo/", address=True)
+>>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd, qweqwe.eo/.pycm'"}
 True
->>> save_stat=cm.save_html("test",address=False)
+>>> save_stat=cm.save_html("test", address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_html("test_normalized",address=False,normalize=True)
+>>> save_stat=cm.save_html("test_normalized", address=False, normalize=True)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_html("test_alt",address=False,normalize=True,alt_link=True)
+>>> save_stat=cm.save_html("test_alt", address=False, normalize=True, alt_link=True)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_html("test_summary",address=False,summary=True)
+>>> save_stat=cm.save_html("test_summary", address=False, summary=True)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_html("test_filtered",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"])
+>>> save_stat=cm.save_html("test_filtered", address=False, overall_param=["Kappa", "Scott PI"], class_param=["TPR", "TNR", "ACC", "AUC"])
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_html("test_filtered2",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[100])
+>>> save_stat=cm.save_html("test_filtered2", address=False, overall_param=["Kappa", "Scott PI"], class_param=["TPR", "TNR", "ACC", "AUC"], class_name=[100])
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_html("test_filtered3",address=False,overall_param=["Kappa","Scott PI"],class_param=["TPR","TNR","ACC","AUC"],class_name=[],color=(-2,-2,-2))
+>>> save_stat=cm.save_html("test_filtered3", address=False, overall_param=["Kappa", "Scott PI"], class_param=["TPR", "TNR", "ACC", "AUC"], class_name=[], color=(-2,-2,-2))
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_html("test_filtered4",address=False,overall_param=["Kappa","Scott PI"],class_param=[],class_name=[100],color={})
+>>> save_stat=cm.save_html("test_filtered4", address=False, overall_param=["Kappa", "Scott PI"], class_param=[], class_name=[100], color={})
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_html("test_filtered5",address=False,overall_param=[],class_param=["TPR","TNR","ACC","AUC"],class_name=[100])
+>>> save_stat=cm.save_html("test_filtered5", address=False, overall_param=[], class_param=["TPR", "TNR", "ACC", "AUC"], class_name=[100])
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_html("test_colored",address=False,color=(130,100,200))
+>>> save_stat=cm.save_html("test_colored", address=False, color=(130, 100, 200))
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_html("test_colored2",address=False,color="Beige")
+>>> save_stat=cm.save_html("test_colored2", address=False, color="Beige")
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> long_name_cm = ConfusionMatrix(matrix={'SVM-Classifier':{'SVM-Classifier':25,'NN-Classifier':2},'NN-Classifier':{'SVM-Classifier':3,'NN-Classifier':50}})
->>> save_stat=long_name_cm.save_html("test_long_name",address=False,color="Pink")
+>>> long_name_cm = ConfusionMatrix(matrix={'SVM-Classifier': {'SVM-Classifier': 25, 'NN-Classifier': 2}, 'NN-Classifier': {'SVM-Classifier': 3, 'NN-Classifier': 50}})
+>>> save_stat=long_name_cm.save_html("test_long_name", address=False, color="Pink")
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=long_name_cm.save_html("test_shortener",address=False,color="Pink",shortener=False)
+>>> save_stat=long_name_cm.save_html("test_shortener", address=False, color="Pink", shortener=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_html("/asdasd,qweqwe.eo/",address=True)
->>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.html'"}
+>>> save_stat=cm.save_html("/asdasd, qweqwe.eo/", address=True)
+>>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd, qweqwe.eo/.html'"}
 True
->>> save_stat=cm.save_csv("test",address=False)
+>>> save_stat=cm.save_csv("test", address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_csv("test_normalized",address=False,normalize=True)
+>>> save_stat=cm.save_csv("test_normalized", address=False, normalize=True)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_csv("test_summary",address=False,summary=True,matrix_save=False)
+>>> save_stat=cm.save_csv("test_summary", address=False, summary=True, matrix_save=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_csv("test_filtered",address=False,class_param=["TPR","TNR","ACC","AUC"])
+>>> save_stat=cm.save_csv("test_filtered", address=False, class_param=["TPR", "TNR", "ACC", "AUC"])
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_csv("test_filtered2",address=False,class_param=["TPR","TNR","ACC","AUC"],class_name=[100],matrix_save=False)
+>>> save_stat=cm.save_csv("test_filtered2", address=False, class_param=["TPR", "TNR", "ACC", "AUC"], class_name=[100], matrix_save=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_csv("test_filtered3",address=False,class_param=["TPR","TNR","ACC","AUC"],class_name=[],matrix_save=False)
+>>> save_stat=cm.save_csv("test_filtered3", address=False, class_param=["TPR", "TNR", "ACC", "AUC"], class_name=[], matrix_save=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_csv("test_filtered4",address=False,class_param=[],class_name=[100],matrix_save=False)
+>>> save_stat=cm.save_csv("test_filtered4", address=False, class_param=[], class_name=[100], matrix_save=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_csv("/asdasd,qweqwe.eo/",address=True)
->>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.csv'"}
+>>> save_stat=cm.save_csv("/asdasd, qweqwe.eo/", address=True)
+>>> save_stat=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd, qweqwe.eo/.csv'"}
 True
->>> save_obj=cm.save_obj("test",address=False)
+>>> save_obj=cm.save_obj("test", address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
->>> save_obj=cm.save_obj("test_stat",address=False,save_stat=True)
+>>> save_obj=cm.save_obj("test_stat", address=False, save_stat=True)
 >>> save_obj=={'Status': True, 'Message': None}
 True
->>> save_obj=cm.save_obj("test_no_vectors",address=False,save_vector=False)
+>>> save_obj=cm.save_obj("test_no_vectors", address=False, save_vector=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
->>> cm_file=ConfusionMatrix(file=open("test.obj","r"))
+>>> cm_file=ConfusionMatrix(file=open("test.obj", "r"))
 >>> print(cm_file)
 Predict          100    200    500    600
 Actual
@@ -258,22 +258,22 @@ Y(Youden index)                                                   None          
 dInd(Distance index)                                              None          0.67315       0.66926       1.0
 sInd(Similarity index)                                            None          0.52401       0.52676       0.29289
 <BLANKLINE>
->>> cm_stat_file=ConfusionMatrix(file=open("test_stat.obj","r"))
->>> cm_no_vectors_file=ConfusionMatrix(file=open("test_no_vectors.obj","r"))
+>>> cm_stat_file=ConfusionMatrix(file=open("test_stat.obj", "r"))
+>>> cm_no_vectors_file=ConfusionMatrix(file=open("test_no_vectors.obj", "r"))
 >>> cm_stat_file==cm_file
 True
 >>> cm.imbalance == cm_file.imbalance
 True
 >>> cm_no_vectors_file==cm_file
 True
->>> cm_no_vectors_dict = json.load(open("test_no_vectors.obj","r"))
+>>> cm_no_vectors_dict = json.load(open("test_no_vectors.obj", "r"))
 >>> cm_no_vectors_dict["Actual-Vector"] == None
 True
 >>> cm_no_vectors_dict["Predict-Vector"] == None
 True
 >>> cm_no_vectors_dict["Prob-Vector"] == None
 True
->>> cm_stat_dict = json.load(open("test_stat.obj","r"))
+>>> cm_stat_dict = json.load(open("test_stat.obj", "r"))
 >>> cm_stat_dict["Class-Stat"]["MCC"] != None
 True
 >>> cm_stat_dict["Overall-Stat"]["Overall MCC"] != None
@@ -283,13 +283,13 @@ True
 ...		    return 1
 ...	    else:
 ...		    return 0
->>> cm_6 = ConfusionMatrix([0,0,1,0],[0.87,0.34,0.9,0.12],threshold=activation)
+>>> cm_6 = ConfusionMatrix([0, 0, 1, 0], [0.87, 0.34, 0.9, 0.12], threshold=activation)
 >>> cm_6.prob_vector
 [0.87, 0.34, 0.9, 0.12]
->>> save_obj=cm_6.save_obj("test2",address=False)
+>>> save_obj=cm_6.save_obj("test2", address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
->>> cm_file_2=ConfusionMatrix(file=open("test2.obj","r"))
+>>> cm_file_2=ConfusionMatrix(file=open("test2.obj", "r"))
 >>> cm_file_2.prob_vector
 [0.87, 0.34, 0.9, 0.12]
 >>> cm_file_2.prob_vector == cm_6.prob_vector
@@ -299,13 +299,13 @@ Predict          0        1
 Actual
 0                1        2
 1                1        0
->>> cm_7 = ConfusionMatrix([0,0,1,0],np.array([0.87,0.34,0.9,0.12]),threshold=activation)
+>>> cm_7 = ConfusionMatrix([0, 0, 1, 0], np.array([0.87, 0.34, 0.9, 0.12]), threshold=activation)
 >>> isinstance(cm_7.prob_vector, np.ndarray)
 True
->>> save_obj=cm_7.save_obj("test2",address=False)
+>>> save_obj=cm_7.save_obj("test2", address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
->>> cm_file_2=ConfusionMatrix(file=open("test2.obj","r"))
+>>> cm_file_2=ConfusionMatrix(file=open("test2.obj", "r"))
 >>> cm_file_2.prob_vector
 [0.87, 0.34, 0.9, 0.12]
 >>> cm_file_2.prob_vector == cm_7.prob_vector.tolist()
@@ -328,15 +328,15 @@ True
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu, y_pred, sample_weight=[2, 2, 2, 2, 3, 1, 1, 2, 2, 1, 1, 2])
->>> save_obj=cm.save_obj("test3",address=False)
+>>> save_obj=cm.save_obj("test3", address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
->>> cm_file_3=ConfusionMatrix(file=open("test3.obj","r"))
+>>> cm_file_3=ConfusionMatrix(file=open("test3.obj", "r"))
 >>> cm = ConfusionMatrix(y_actu, y_pred, sample_weight=np.array([2, 2, 2, 2, 3, 1, 1, 2, 2, 1, 1, 2]))
->>> save_obj=cm.save_obj("test3_np",address=False)
+>>> save_obj=cm.save_obj("test3_np", address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
->>> cm_file_3_np=ConfusionMatrix(file=open("test3_np.obj","r"))
+>>> cm_file_3_np=ConfusionMatrix(file=open("test3_np.obj", "r"))
 >>> cm_file_3_np == cm_file_3
 True
 >>> cm_file_3.print_matrix()
@@ -483,14 +483,14 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           
 Y(Youden index)                                                   0.73333       0.22222       0.27778
 dInd(Distance index)                                              0.26667       0.67586       0.54716
 sInd(Similarity index)                                            0.81144       0.52209       0.6131
->>> cm = ConfusionMatrix(matrix={1:{1:13182,2:30516},2:{1:5108,2:295593}},transpose=True) # Verified Case
->>> save_obj = cm.save_obj("test4",address=False)
+>>> cm = ConfusionMatrix(matrix={1: {1: 13182, 2: 30516}, 2: {1: 5108, 2: 295593}}, transpose=True) # Verified Case
+>>> save_obj = cm.save_obj("test4", address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
->>> save_obj = cm.save_obj("/asdasd,qweqwe.eo/",address=False)
->>> save_obj=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.obj'"}
+>>> save_obj = cm.save_obj("/asdasd, qweqwe.eo/", address=False)
+>>> save_obj=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd, qweqwe.eo/.obj'"}
 True
->>> cm_file=ConfusionMatrix(file=open("test4.obj","r"))
+>>> cm_file=ConfusionMatrix(file=open("test4.obj", "r"))
 >>> cm_file.DP[1]
 0.770700985610517
 >>> cm_file.Y[1]
@@ -503,21 +503,21 @@ True
 True
 >>> cm.normalized_matrix == cm_file.normalized_matrix
 True
->>> json.dump({"Actual-Vector": None, "Digit": 5, "Predict-Vector": None, "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}, "Transpose": True,"Sample-Weight": None},open("test5.obj","w"))
->>> cm_file=ConfusionMatrix(file=open("test5.obj","r"))
+>>> json.dump({"Actual-Vector": None, "Digit": 5, "Predict-Vector": None, "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}, "Transpose": True, "Sample-Weight": None}, open("test5.obj", "w"))
+>>> cm_file=ConfusionMatrix(file=open("test5.obj", "r"))
 >>> cm_file.transpose
 True
 >>> cm_file.matrix == {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}
 True
->>> json.dump({"Actual-Vector": None, "Digit": 5, "Predict-Vector": None, "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}},open("test6.obj","w"))
->>> cm_file=ConfusionMatrix(file=open("test6.obj","r"))
+>>> json.dump({"Actual-Vector": None, "Digit": 5, "Predict-Vector": None, "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}}, open("test6.obj", "w"))
+>>> cm_file=ConfusionMatrix(file=open("test6.obj", "r"))
 >>> cm_file.weights
 >>> cm_file.transpose
 False
 >>> cm_file.matrix == {'1': {'1': 1, '2': 1, '0': 0}, '2': {'1': 2, '2': 3, '0': 0}, '0': {'1': 0, '2': 2, '0': 3}}
 True
->>> json.dump({"Actual-Vector": ['1', '1', '2', '2', '2', '2', '2', '0', '0', '0', '0', '0'], "Digit": 5, "Predict-Vector": ['1', '2', '1', '1', '2', '2', '2', '2', '2', '0', '0', '0'], "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}},open("test7.obj","w"))
->>> cm_file=ConfusionMatrix(file=open("test7.obj","r"))
+>>> json.dump({"Actual-Vector": ['1', '1', '2', '2', '2', '2', '2', '0', '0', '0', '0', '0'], "Digit": 5, "Predict-Vector": ['1', '2', '1', '1', '2', '2', '2', '2', '2', '0', '0', '0'], "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}}, open("test7.obj", "w"))
+>>> cm_file=ConfusionMatrix(file=open("test7.obj", "r"))
 >>> cm_file.weights
 >>> cm_file.transpose
 False
@@ -529,20 +529,20 @@ True
 True
 >>> cm_file.predict_vector == ['1', '2', '1', '1', '2', '2', '2', '2', '2', '0', '0', '0']
 True
->>> json.dump({"Actual-Vector": ['1', '1', '2', '2', '2', '2', '2', '0', '0', '0', '0', '0'], "Digit": 5, "Predict-Vector": ['1', '2', '1', '1', '2', '2', '2', '2', '2', '0', '0', '0'], "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}, "Imbalanced": True},open("test8.obj","w"))
->>> cm_file=ConfusionMatrix(file=open("test8.obj","r"))
+>>> json.dump({"Actual-Vector": ['1', '1', '2', '2', '2', '2', '2', '0', '0', '0', '0', '0'], "Digit": 5, "Predict-Vector": ['1', '2', '1', '1', '2', '2', '2', '2', '2', '0', '0', '0'], "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}, "Imbalanced": True}, open("test8.obj", "w"))
+>>> cm_file=ConfusionMatrix(file=open("test8.obj", "r"))
 >>> cm_file.imbalance
 True
->>> cm_comp1 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
->>> cm_comp2 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
->>> cp = Compare({"model1":cm_comp1,"model2":cm_comp2})
->>> save_report = cp.save_report("test",address=False)
+>>> cm_comp1 = ConfusionMatrix(matrix={0: {0: 2, 1: 50, 2: 6}, 1: {0: 5, 1: 50, 2: 3}, 2: {0: 1, 1: 7, 2: 50}})
+>>> cm_comp2 = ConfusionMatrix(matrix={0: {0: 50, 1: 2, 2: 6}, 1: {0: 50, 1: 5, 2: 3}, 2: {0: 1, 1: 55, 2: 2}})
+>>> cp = Compare({"model1": cm_comp1, "model2": cm_comp2})
+>>> save_report = cp.save_report("test", address=False)
 >>> save_report == {'Status': True, 'Message': None}
 True
->>> save_report = cp.save_report("/asdasd,qweqwe.eo/",address=False)
->>> save_report == {'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd,qweqwe.eo/.comp'"}
+>>> save_report = cp.save_report("/asdasd, qweqwe.eo/", address=False)
+>>> save_report == {'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd, qweqwe.eo/.comp'"}
 True
->>> cm = ConfusionMatrix(["¢ℓαѕѕ1","¢ℓαѕѕ2"],["¢ℓαѕѕ1","¢ℓαѕѕ2"])
+>>> cm = ConfusionMatrix(["¢ℓαѕѕ1", "¢ℓαѕѕ2"], ["¢ℓαѕѕ1", "¢ℓαѕѕ2"])
 >>> save_stat_data = cm.save_stat("test")
 >>> save_stat_data["Status"]
 True
@@ -558,7 +558,7 @@ True
 >>> save_csv_data = cm.save_csv("test_header", header=True)
 >>> save_csv_data["Status"]
 True
->>> save_csv_data = cm.save_csv("test_header", header=True,matrix_save=True)
+>>> save_csv_data = cm.save_csv("test_header", header=True, matrix_save=True)
 >>> save_csv_data["Status"]
 True
 >>> os.remove("test.csv")

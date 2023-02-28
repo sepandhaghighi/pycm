@@ -708,7 +708,7 @@ def basic_statistics(TP, TN, FP, FN):
     :return: basic statistics as dict
     """
     result = {}
-    for i in CLASS_PARAMS:
+    for i in CLASS_PARAMS.keys():
         result[i] = {}
     result["TP"] = TP
     result["TN"] = TN

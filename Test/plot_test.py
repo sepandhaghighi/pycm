@@ -4,9 +4,9 @@
 >>> from matplotlib import pyplot as plt
 >>> import numpy as np
 >>> import seaborn as sns
->>> y_act = [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2]
->>> y_pre = [0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,1,1,1,1,2,0,1,2,2,2,2]
->>> cm = ConfusionMatrix(y_act,y_pre)
+>>> y_act = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2]
+>>> y_pre = [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 2, 0, 1, 2, 2, 2, 2]
+>>> cm = ConfusionMatrix(y_act, y_pre)
 >>> ax = cm.plot()
 >>> ax.get_title()
 'Confusion Matrix'

@@ -15,9 +15,9 @@ class Compare():
     """
     Compare class.
 
-    >>> cm1 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6},1:{0:5,1:50,2:3},2:{0:1,1:7,2:50}})
-    >>> cm2 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6},1:{0:50,1:5,2:3},2:{0:1,1:55,2:2}})
-    >>> cp = Compare({"cm1":cm1,"cm2":cm2})
+    >>> cm1 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6}, 1:{0:5,1:50,2:3}, 2:{0:1,1:7,2:50}})
+    >>> cm2 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6}, 1:{0:50,1:5,2:3}, 2:{0:1,1:55,2:2}})
+    >>> cp = Compare({"cm1":cm1, "cm2":cm2})
     >>> print(cp)
     Best : cm1
 
@@ -82,10 +82,8 @@ class Compare():
                     self.best_name = max_overall_name
                 else:
                     warn(COMPARE_RESULT_WARNING, RuntimeWarning)
-                    # print('Warning: ' + COMPARE_RESULT_WARNING)
         else:
             warn(COMPARE_RESULT_WARNING, RuntimeWarning)
-            # print('Warning: ' + COMPARE_RESULT_WARNING)
 
     def print_report(self):
         """
@@ -234,8 +232,6 @@ def __compare_sort_handler__(compare):
     compare.sorted = sorted_by_class
     max_overall_name = sorted_by_overall[0]
     max_class_name = sorted_by_class[0]
-    #max_class_score = compare.scores[max_class_name]["class"]
-    #max_overall_score = compare.scores[max_overall_name]["overall"]
     return (max_overall_name, max_class_name)
 
 

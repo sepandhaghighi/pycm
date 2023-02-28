@@ -198,7 +198,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           
 
 ```pycon
 >>> from pycm import *
->>> cm2 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":2}, "Class2": {"Class1": 0, "Class2": 5}})
+>>> cm2 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2": 2}, "Class2": {"Class1": 0, "Class2": 5}})
 >>> cm2
 pycm.ConfusionMatrix(classes: ['Class1', 'Class2'])
 >>> cm2.classes
@@ -280,7 +280,7 @@ For more information visit [Example5](http://www.pycm.io/doc/Example5.html "Exam
 `relabel` method is added in `version 1.5` in order to change ConfusionMatrix classnames.
 
 ```pycon
->>> cm.relabel(mapping={0:"L1",1:"L2",2:"L3"})
+>>> cm.relabel(mapping={0: "L1", 1: "L2", 2: "L3"})
 >>> cm
 pycm.ConfusionMatrix(classes: ['L1', 'L2', 'L3'])
 ```
@@ -400,10 +400,10 @@ False
 `is_imbalanced` parameter has been added in `version 3.3`, so the user can indicate whether the concerned dataset is imbalanced or not. As long as the user does not provide any information in this regard, the automatic detection algorithm will be used.
 
 ```pycon
->>> cm = ConfusionMatrix(y_actu, y_pred, is_imbalanced = True)
+>>> cm = ConfusionMatrix(y_actu, y_pred, is_imbalanced=True)
 >>> cm.imbalance
 True
->>> cm = ConfusionMatrix(y_actu, y_pred, is_imbalanced = False)
+>>> cm = ConfusionMatrix(y_actu, y_pred, is_imbalanced=False)
 >>> cm.imbalance
 False
 ```
@@ -417,9 +417,9 @@ After that, two scores are calculated for each confusion matrices, overall and c
 If the user sets the value of `by_class` boolean input `True`, the best confusion matrix is the one with the maximum class-based score. Otherwise, if a confusion matrix obtains the maximum of both overall and class-based scores, that will be reported as the best confusion matrix, but in any other case, the compared object doesn’t select the best confusion matrix.
 
 ```pycon
->>> cm2 = ConfusionMatrix(matrix={0:{0:2, 1:50, 2:6}, 1:{0:5, 1:50, 2:3}, 2:{0:1, 1:7, 2:50}})
->>> cm3 = ConfusionMatrix(matrix={0:{0:50, 1:2, 2:6}, 1:{0:50, 1:5, 2:3}, 2:{0:1, 1:55, 2:2}})
->>> cp = Compare({"cm2":cm2, "cm3":cm3})
+>>> cm2 = ConfusionMatrix(matrix={0: {0: 2, 1: 50, 2: 6}, 1: {0: 5, 1: 50, 2: 3}, 2: {0: 1, 1: 7, 2: 50}})
+>>> cm3 = ConfusionMatrix(matrix={0: {0: 50, 1: 2, 2: 6}, 1: {0: 50, 1: 5, 2: 3}, 2: {0: 1, 1: 55, 2: 2}})
+>>> cp = Compare({"cm2": cm2, "cm3": cm3})
 >>> print(cp)
 Best : cm2
 

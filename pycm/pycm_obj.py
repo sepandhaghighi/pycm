@@ -4,6 +4,7 @@ from __future__ import division
 from .pycm_error import pycmVectorError, pycmMatrixError, pycmCIError, pycmAverageError, pycmPlotError
 from .pycm_handler import __class_stat_init__, __overall_stat_init__
 from .pycm_handler import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__, __obj_array_handler__
+from .pycm_handler import __imbalancement_handler__
 from .pycm_class_func import F_calc, IBA_calc, TI_calc, NB_calc, sensitivity_index_calc
 from .pycm_overall_func import weighted_kappa_calc, weighted_alpha_calc, alpha2_calc, brier_score_calc
 from .pycm_distance import DistanceType, DISTANCE_MAPPER
@@ -28,7 +29,7 @@ class ConfusionMatrix():
     [0, 1, 2]
     >>> cm.table
     {0: {0: 3, 1: 0, 2: 0}, 1: {0: 0, 1: 1, 2: 2}, 2: {0: 2, 1: 1, 2: 3}}
-    >>> cm2 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2":2},"Class2": {"Class1": 0, "Class2": 5}})
+    >>> cm2 = ConfusionMatrix(matrix={"Class1": {"Class1": 1, "Class2": 2}, "Class2": {"Class1": 0, "Class2": 5}})
     >>> cm2
     pycm.ConfusionMatrix(classes: ['Class1', 'Class2'])
     """
@@ -38,9 +39,13 @@ class ConfusionMatrix():
             actual_vector=None,
             predict_vector=None,
             matrix=None,
-            digit=5, threshold=None, file=None,
-            sample_weight=None, transpose=False,
-            classes=None, is_imbalanced=None):
+            digit=5,
+            threshold=None,
+            file=None,
+            sample_weight=None,
+            transpose=False,
+            classes=None,
+            is_imbalanced=None):
         """
         Init method.
 
@@ -90,10 +95,7 @@ class ConfusionMatrix():
         __obj_assign_handler__(self, matrix_param)
         __class_stat_init__(self)
         __overall_stat_init__(self)
-        if self.imbalance is None:
-            if is_imbalanced is None:
-                is_imbalanced = imbalance_check(self.P)
-            self.imbalance = is_imbalanced
+        __imbalancement_handler__(self, is_imbalanced)
         self.binary = binary_check(self.classes)
         self.recommended_list = statistic_recommend(
             self.classes, self.imbalance)
@@ -329,10 +331,7 @@ class ConfusionMatrix():
             overall_param=None,
             class_param=None,
             class_name=None,
-            color=(
-                0,
-                0,
-                0),
+            color=(0, 0, 0),
             normalize=False,
             summary=False,
             alt_link=False,
@@ -497,22 +496,17 @@ class ConfusionMatrix():
             matrix_items = []
             for i in self.classes:
                 matrix_items.append((i, list(matrix_temp[i].items())))
-            if isinstance(actual_vector_temp, numpy.ndarray):
-                actual_vector_temp = actual_vector_temp.tolist()
-            if isinstance(predict_vector_temp, numpy.ndarray):
-                predict_vector_temp = predict_vector_temp.tolist()
-            if isinstance(prob_vector_temp, numpy.ndarray):
-                prob_vector_temp = prob_vector_temp.tolist()
-            if isinstance(weights_vector_temp, numpy.ndarray):
-                weights_vector_temp = weights_vector_temp.tolist()
+            actual_vector_temp, predict_vector_temp, prob_vector_temp, weights_vector_temp = map(
+                vector_serializer, [
+                    actual_vector_temp, predict_vector_temp, prob_vector_temp, weights_vector_temp])
             dump_dict = {"Actual-Vector": actual_vector_temp,
-                         "Predict-Vector": predict_vector_temp,
-                         "Prob-Vector": prob_vector_temp,
-                         "Matrix": matrix_items,
-                         "Digit": self.digit,
-                         "Sample-Weight": weights_vector_temp,
-                         "Transpose": self.transpose,
-                         "Imbalanced": self.imbalance}
+                        "Predict-Vector": predict_vector_temp,
+                        "Prob-Vector": prob_vector_temp,
+                        "Matrix": matrix_items,
+                        "Digit": self.digit,
+                        "Sample-Weight": weights_vector_temp,
+                        "Transpose": self.transpose,
+                        "Imbalanced": self.imbalance}
             if save_stat:
                 dump_dict["Class-Stat"] = self.class_stat
                 dump_dict["Overall-Stat"] = self.overall_stat

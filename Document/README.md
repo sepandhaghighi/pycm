@@ -5,7 +5,7 @@
 ----------
 
 
-## Document	
+## Document
 
 - [Jupyter Notebook](https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Document.ipynb)
 - [HTML](http://www.pycm.io/doc/)	
@@ -16,7 +16,7 @@
 - [HTML](http://www.pycm.io/doc/Distance.html)				
 
 
-## Example-1 (Comparison of three different classifiers)	
+## Example-1 (Comparison of three different classifiers)
 
 - [Jupyter Notebook](https://nbviewer.jupyter.org/github/sepandhaghighi/pycm/blob/master/Document/Example1.ipynb)
 - [HTML](http://www.pycm.io/doc/Example1.html)
@@ -66,8 +66,4 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab
 
 [![Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sepandhaghighi/pycm/blob/master)
 
-* Check `Examples` in `Document` folder 
-
-
-
-																												
+* Check `Examples` in `Document` folder

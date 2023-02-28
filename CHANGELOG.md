@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- `OVERALL_PARAMS`
+- `__imbalancement_handler__` function
+- `vector_serializer` function
 - 23 new distance/similarity
 	1. Dennis 
 	2. Digby
@@ -31,6 +34,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 	22. Kent & Foster I
 	23. Kent & Foster II
 ### Changed
+- `CLASS_PARAMS` changed to a dictionary
+- code style
 - `sort` parameter added to `relabel` method
 - Document modified
 ## [3.8] - 2023-02-01
@@ -722,6 +727,3 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 [0.3]: https://github.com/sepandhaghighi/pycm/compare/v0.2...v0.3
 [0.2]: https://github.com/sepandhaghighi/pycm/compare/v0.1...v0.2
 [0.1]: https://github.com/sepandhaghighi/pycm/compare/1e238cd...v0.1
-
-
-

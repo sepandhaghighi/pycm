@@ -2,9 +2,9 @@ close all
 
 try
     python_version = pyversion;
-    fprintf(2,'** Python Version : %s\n',python_version);
+    fprintf(2, '** Python Version : %s\n', python_version);
 catch e
-    fprintf(2,'** Error : %s\n',e.message);
+    fprintf(2, '** Error : %s\n', e.message);
 end
 
 % Import pycm lib

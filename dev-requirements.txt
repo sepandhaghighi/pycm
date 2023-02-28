@@ -9,4 +9,3 @@ bandit>=1.5.1
 pydocstyle>=3.0.0
 matplotlib>=3.0.0
 seaborn>=0.9.1
-

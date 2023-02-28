@@ -15,7 +15,7 @@
 1
 >>> LBL_MP[2]
 2
->>> cm.relabel({0:"L1",1:"L2",2:"L3"})
+>>> cm.relabel({0: "L1", 1: "L2", 2: "L3"})
 >>> LBL_MP = cm.label_map
 >>> LBL_MP[0]
 'L1'
@@ -177,7 +177,7 @@ Example : online_help("J") or online_help(2)
 130-sInd
 >>> online_help("J")
 ...
->>> online_help("J",alt_link=True)
+>>> online_help("J", alt_link=True)
 ...
 >>> online_help(4)
 ...
@@ -210,51 +210,51 @@ Example : online_help("J") or online_help(2)
 0.5
 >>> complement("None")
 'None'
->>> rounder((1,2,"None"), digit=5)
+>>> rounder((1, 2, "None"), digit=5)
 '(1,2,None)'
->>> one_vs_all_func([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, {1:0,2:0}, 3) == [[1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}]
+>>> one_vs_all_func([1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}, {1: 0, 2: 0}, {1: 0, 2: 0}, {1: 0, 2: 0}, {1: 0, 2: 0}, 3) == [[1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}]
 True
->>> Q_calc(1,2,3,"None")
+>>> Q_calc(1, 2, 3, "None")
 'None'
->>> AGM_calc(2,2,2,2,"None")
+>>> AGM_calc(2, 2, 2, 2, "None")
 'None'
->>> ARI_calc([1,2],{1:{1:0,2:0},2:{1:0,2:0}},{1:0,2:0},{1:0,2:0},0)
+>>> ARI_calc([1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}, {1: 0, 2: 0}, {1: 0, 2: 0}, 0)
 'None'
 >>> BCD_calc(2, "None")
 'None'
 >>> AM_calc(3, "None")
 'None'
->>> RCI_calc(24,0)
+>>> RCI_calc(24, 0)
 'None'
->>> BB_calc(0,0,0)
+>>> BB_calc(0, 0, 0)
 'None'
->>> CEN_calc([1,2,3], {1:{1:0,2:0},2:{1:0,2:0}}, {1:2,2:3}, {1:2,2:3}, 2, modified=False)
+>>> CEN_calc([1, 2, 3], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}, {1: 2, 2: 3}, {1: 2, 2: 3}, 2, modified=False)
 'None'
->>> convex_combination([1,2,3], {1:{1:0,2:0},2:{1:0,2:0}}, {1:2,2:3}, {1:2,2:3}, 2, modified=False)
+>>> convex_combination([1, 2, 3], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}, {1: 2, 2: 3}, {1: 2, 2: 3}, 2, modified=False)
 'None'
->>> overall_CEN_calc([1,2], {1:2,2:3},{1:2,2:3}, {1:2,2:3}, {1:2,2:"None"}, modified=False)
+>>> overall_CEN_calc([1, 2], {1: 2, 2: 3}, {1: 2, 2: 3}, {1: 2, 2: 3}, {1: 2, 2: "None"}, modified=False)
 'None'
->>> NIR_calc({1:0,2:0}, 0)
+>>> NIR_calc({1: 0, 2: 0}, 0)
 'None'
->>> hamming_calc({1:0,2:0}, 0)
+>>> hamming_calc({1: 0, 2: 0}, 0)
 'None'
->>> zero_one_loss_calc({1:0,2:0}, "None")
+>>> zero_one_loss_calc({1: 0, 2: 0}, "None")
 'None'
->>> entropy_calc({1:0,2:0}, {1:0,2:0})
+>>> entropy_calc({1: 0, 2: 0}, {1: 0, 2: 0})
 'None'
 >>> kappa_no_prevalence_calc("None")
 'None'
->>> cross_entropy_calc({1:0,2:0}, {1:0,2:0}, {1:0,2:0})
+>>> cross_entropy_calc({1: 0, 2: 0}, {1: 0, 2: 0}, {1: 0, 2: 0})
 'None'
->>> joint_entropy_calc([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0})
+>>> joint_entropy_calc([1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}, {1: 0, 2: 0})
 'None'
->>> conditional_entropy_calc([1,2],{1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0})
+>>> conditional_entropy_calc([1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}, {1: 0, 2: 0}, {1: 0, 2: 0})
 'None'
 >>> mutual_information_calc(2, "None")
 'None'
->>> lambda_B_calc([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0})
+>>> lambda_B_calc([1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}, {1: 0, 2: 0}, {1: 0, 2: 0})
 'None'
->>> lambda_A_calc([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0})
+>>> lambda_A_calc([1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}, {1: 0, 2: 0}, {1: 0, 2: 0})
 'None'
 >>> DF_calc(2)
 'None'
@@ -262,11 +262,11 @@ True
 'None'
 >>> CI_calc(23, "None", CV=1.96)
 ('None', 'None')
->>> CI_calc_agresti("None",20,CV=1.96)
+>>> CI_calc_agresti("None", 20, CV=1.96)
 ('None', 'None')
->>> CI_calc_wilson(200,0,CV=1.96)
+>>> CI_calc_wilson(200, 0, CV=1.96)
 ('None', 'None')
->>> CI_calc_wilson(200,"None",CV=1.96)
+>>> CI_calc_wilson(200, "None", CV=1.96)
 ('None', 'None')
 >>> AUC_SE_calc(0.52, 0, 0)
 'None'
@@ -284,85 +284,85 @@ True
 'None'
 >>> overall_jaccard_index_calc([])
 'None'
->>> overall_accuracy_calc({1:0,2:0}, 0)
+>>> overall_accuracy_calc({1: 0, 2: 0}, 0)
 'None'
->>> overall_random_accuracy_calc({1:0,2:None})
+>>> overall_random_accuracy_calc({1: 0, 2: None})
 'None'
->>> CBA_calc([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0})
+>>> CBA_calc([1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}, {1: 0, 2: 0}, {1: 0, 2: 0})
 'None'
->>> RR_calc([], {1:0,2:0})
+>>> RR_calc([], {1: 0, 2: 0})
 'None'
->>> overall_MCC_calc([1,2], {1:{1:0,2:0},2:{1:0,2:0}}, {1:0,2:0}, {1:0,2:0})
+>>> overall_MCC_calc([1, 2], {1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}, {1: 0, 2: 0}, {1: 0, 2: 0})
 'None'
->>> CEN_misclassification_calc({1:{1:0,2:0},2:{1:0,2:0}},{1:0,2:0},{1:0,2:0},1,1,2)
+>>> CEN_misclassification_calc({1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}, {1: 0, 2: 0}, {1: 0, 2: 0}, 1, 1, 2)
 'None'
->>> brier_score_calc([1,0], [0.8,0.3,0.2,0.4], [1,1,0,1], sample_weight=None, pos_class=None)
+>>> brier_score_calc([1, 0], [0.8, 0.3, 0.2, 0.4], [1, 1, 0, 1], sample_weight=None, pos_class=None)
 0.23249999999999998
->>> brier_score_calc([1,"0"], [0.8,0.3,0.2,0.4], [1,1,0,1], sample_weight=None, pos_class=None)
+>>> brier_score_calc([1, "0"], [0.8, 0.3, 0.2, 0.4], [1, 1, 0, 1], sample_weight=None, pos_class=None)
 'None'
->>> vector_check([1,2,3,0.4])
+>>> vector_check([1, 2, 3, 0.4])
 False
->>> vector_check([1,2,3,-2])
+>>> vector_check([1, 2, 3,-2])
 False
->>> matrix_check({1:{1:0.5,2:0},2:{1:0,2:0}})
+>>> matrix_check({1: {1: 0.5, 2: 0}, 2: {1: 0, 2: 0}})
 False
 >>> matrix_check([])
 False
->>> TTPN_calc(0,0)
+>>> TTPN_calc(0, 0)
 'None'
->>> TTPN_calc(1,4)
+>>> TTPN_calc(1, 4)
 0.2
 >>> FXR_calc(None)
 'None'
 >>> FXR_calc(0.2)
 0.8
->>> ACC_calc(0,0,0,0)
+>>> ACC_calc(0, 0, 0, 0)
 'None'
->>> ACC_calc(1,1,3,4)
+>>> ACC_calc(1, 1, 3, 4)
 0.2222222222222222
->>> MCC_calc(0,2,0,2)
+>>> MCC_calc(0, 2, 0, 2)
 'None'
->>> MCC_calc(1,2,3,4)
+>>> MCC_calc(1, 2, 3, 4)
 -0.408248290463863
->>> LR_calc(1,2)
+>>> LR_calc(1, 2)
 0.5
->>> LR_calc(1,0)
+>>> LR_calc(1, 0)
 'None'
->>> MK_BM_calc(2,"None")
+>>> MK_BM_calc(2, "None")
 'None'
->>> MK_BM_calc(1,2)
+>>> MK_BM_calc(1, 2)
 2
->>> PRE_calc(None,2)
+>>> PRE_calc(None, 2)
 'None'
->>> PRE_calc(1,5)
+>>> PRE_calc(1, 5)
 0.2
->>> PRE_calc(1,0)
+>>> PRE_calc(1, 0)
 'None'
->>> G_calc(None,2)
+>>> G_calc(None, 2)
 'None'
->>> G_calc(1,2)
+>>> G_calc(1, 2)
 1.4142135623730951
->>> RACC_calc(2,3,4)
+>>> RACC_calc(2, 3, 4)
 0.375
->>> reliability_calc(1,None)
+>>> reliability_calc(1, None)
 'None'
->>> reliability_calc(2,0.3)
+>>> reliability_calc(2, 0.3)
 1.7
->>> micro_calc({1:2,2:3},{1:1,2:4})
+>>> micro_calc({1: 2, 2: 3}, {1: 1, 2: 4})
 0.5
->>> micro_calc({1:2,2:3},None)
+>>> micro_calc({1: 2, 2: 3}, None)
 'None'
 >>> macro_calc(None)
 'None'
->>> macro_calc({1:2,2:3})
+>>> macro_calc({1: 2, 2: 3})
 2.5
->>> F_calc(TP=0,FP=0,FN=0,beta=1)
+>>> F_calc(TP=0, FP=0, FN=0, beta=1)
 'None'
->>> F_calc(TP=3,FP=2,FN=1,beta=5)
+>>> F_calc(TP=3, FP=2, FN=1, beta=5)
 0.7428571428571429
->>> TI_calc("None",0,0,0,0)
+>>> TI_calc("None", 0, 0, 0, 0)
 'None'
->>> NB_calc(1,2,4,"None")
+>>> NB_calc(1, 2, 4, "None")
 'None'
 >>> ERR_calc(None)
 'None'
@@ -376,17 +376,17 @@ False
 2.9999999999999987
 >>> cm.weighted_average("PPV")
 0.575
->>> cm.weighted_average("DOR",none_omit=True)
+>>> cm.weighted_average("DOR", none_omit=True)
 2.666666666666666
 >>> cm.weighted_average("DOR")
 'None'
->>> cm.weighted_average("PPV",weight=cm.P)
+>>> cm.weighted_average("PPV", weight=cm.P)
 0.575
->>> cm.weighted_average("PPV",weight={'L1': 0, 'L3': 0, 'L2': 1})
+>>> cm.weighted_average("PPV", weight={'L1': 0, 'L3': 0, 'L2': 1})
 0.5
->>> cm.weighted_average("PPV",weight={'L1': 0, 'L3': 1, 'L2': 1})
+>>> cm.weighted_average("PPV", weight={'L1': 0, 'L3': 1, 'L2': 1})
 0.55
->>> cm.weighted_average("PPV",weight={'L1': 1, 'L3': 0, 'L2': 1})
+>>> cm.weighted_average("PPV", weight={'L1': 1, 'L3': 0, 'L2': 1})
 0.55
 >>> cm.aickin_alpha(max_iter=None)
 'None'
@@ -443,7 +443,7 @@ True
 [3]
 >>> POS == cm2.positions
 True
->>> cm2.relabel({0:'L1',1:'L2'})
+>>> cm2.relabel({0: 'L1', 1: 'L2'})
 >>> cm2.positions
 >>> LBL_MP = cm2.label_map
 >>> LBL_MP[0]
@@ -497,7 +497,7 @@ True
 True
 >>> cm.IBA_alpha(None) == {'L3': 'None', 'L1': 'None', 'L2': 'None'}
 True
->>> cm.relabel({"L1":"L4","L2":"L5","L3":"L6"})
+>>> cm.relabel({"L1": "L4", "L2": "L5", "L3": "L6"})
 >>> LBL_MP = cm.label_map
 >>> LBL_MP[0]
 'L4'
@@ -509,7 +509,7 @@ True
 >>> del cm.TP
 >>> cm.IBA_alpha(2)
 {}
->>> cm.TI(2,3)
+>>> cm.TI(2, 3)
 {}
 >>> cm.F_beta(2)
 {}
@@ -635,71 +635,71 @@ True
 'Excellent'
 >>> AUC_analysis(1.0)
 'Excellent'
->>> PC_AC1_calc(1,1,1)
+>>> PC_AC1_calc(1, 1, 1)
 'None'
->>> PC_AC1_calc({1:123,2:2},{1:120,2:5},{1:125,2:125})
+>>> PC_AC1_calc({1: 123, 2: 2}, {1: 120, 2: 5}, {1: 125, 2: 125})
 0.05443200000000002
->>> y_act=[0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,2,2,2]
->>> y_pre=[0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,1,1,1,1,2,0,1,2,2,2,2]
->>> cm2=ConfusionMatrix(y_act,y_pre)
->>> chi_squared=chi_square_calc(cm2.classes,cm2.table,cm2.TOP,cm2.P,cm2.POP)
+>>> y_act=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2]
+>>> y_pre=[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 2, 0, 1, 2, 2, 2, 2]
+>>> cm2=ConfusionMatrix(y_act, y_pre)
+>>> chi_squared=chi_square_calc(cm2.classes, cm2.table, cm2.TOP, cm2.P, cm2.POP)
 >>> chi_squared
 15.525641025641026
 >>> population = list(cm2.POP.values())[0]
->>> phi_squared=phi_square_calc(chi_squared,population)
+>>> phi_squared=phi_square_calc(chi_squared, population)
 >>> phi_squared
 0.5750237416904084
->>> V=cramers_V_calc(phi_squared,cm2.classes)
+>>> V=cramers_V_calc(phi_squared, cm2.classes)
 >>> V
 0.5362013342441477
 >>> DF=DF_calc(cm2.classes)
 >>> DF
 4
->>> SE=SE_calc(cm2.Overall_ACC,population)
+>>> SE=SE_calc(cm2.Overall_ACC, population)
 >>> SE
 0.09072184232530289
->>> CI=CI_calc(cm2.Overall_ACC,SE)
+>>> CI=CI_calc(cm2.Overall_ACC, SE)
 >>> CI
 (0.48885185570907297, 0.8444814776242603)
->>> response_entropy=entropy_calc(cm2.TOP,cm2.POP)
+>>> response_entropy=entropy_calc(cm2.TOP, cm2.POP)
 >>> response_entropy
 1.486565953154142
->>> reference_entropy=entropy_calc(cm2.P,cm2.POP)
+>>> reference_entropy=entropy_calc(cm2.P, cm2.POP)
 >>> reference_entropy
 1.5304930567574824
->>> cross_entropy = cross_entropy_calc(cm2.TOP,cm2.P,cm2.POP)
+>>> cross_entropy = cross_entropy_calc(cm2.TOP, cm2.P, cm2.POP)
 >>> cross_entropy
 1.5376219392005763
->>> join_entropy = joint_entropy_calc(cm2.classes,cm2.table,cm2.POP)
+>>> join_entropy = joint_entropy_calc(cm2.classes, cm2.table, cm2.POP)
 >>> join_entropy
 2.619748965432189
->>> conditional_entropy = conditional_entropy_calc(cm2.classes,cm2.table,cm2.P,cm2.POP)
+>>> conditional_entropy = conditional_entropy_calc(cm2.classes, cm2.table, cm2.P, cm2.POP)
 >>> conditional_entropy
 1.089255908674706
->>> kl_divergence=kl_divergence_calc(cm2.P,cm2.TOP,cm2.POP)
+>>> kl_divergence=kl_divergence_calc(cm2.P, cm2.TOP, cm2.POP)
 >>> kl_divergence
 0.007128882443093773
->>> lambda_B=lambda_B_calc(cm2.classes,cm2.table,cm2.TOP,population)
+>>> lambda_B=lambda_B_calc(cm2.classes, cm2.table, cm2.TOP, population)
 >>> lambda_B
 0.35714285714285715
->>> lambda_A=lambda_A_calc(cm2.classes,cm2.table,cm2.P,population)
+>>> lambda_A=lambda_A_calc(cm2.classes, cm2.table, cm2.P, population)
 >>> lambda_A
 0.4
->>> IS_calc(13,0,0,38)
+>>> IS_calc(13, 0, 0, 38)
 1.5474877953024933
->>> weighted_kappa_calc(cm2.classes,cm2.table,cm2.P,cm2.TOP,cm2.POP,cm2.table)
+>>> weighted_kappa_calc(cm2.classes, cm2.table, cm2.P, cm2.TOP, cm2.POP, cm2.table)
 -0.3883495145631068
->>> weighted_kappa_calc(cm2.classes,cm2.table,cm2.P,cm2.TOP,cm2.POP,{1:{1:2,2:2}})
+>>> weighted_kappa_calc(cm2.classes, cm2.table, cm2.P, cm2.TOP, cm2.POP, {1: {1: 2, 2: 2}})
 'None'
->>> weighted_alpha_calc(cm2.classes,cm2.table,cm2.P,cm2.TOP,cm2.POP,cm2.table)
+>>> weighted_alpha_calc(cm2.classes, cm2.table, cm2.P, cm2.TOP, cm2.POP, cm2.table)
 -0.5255636070853462
->>> weighted_alpha_calc(cm2.classes,cm2.table,cm2.P,cm2.TOP,cm2.POP,{1:{1:2,2:2}})
+>>> weighted_alpha_calc(cm2.classes, cm2.table, cm2.P, cm2.TOP, cm2.POP, {1: {1: 2, 2: 2}})
 'None'
 >>> kappa_no_prevalence_calc(cm2.Overall_ACC)
 0.33333333333333326
->>> reliability_calc(cm2.Overall_RACC,cm2.Overall_ACC)
+>>> reliability_calc(cm2.Overall_RACC, cm2.Overall_ACC)
 0.4740259740259741
->>> mutual_information_calc(cm2.ResponseEntropy,cm2.ConditionalEntropy)
+>>> mutual_information_calc(cm2.ResponseEntropy, cm2.ConditionalEntropy)
 0.39731004447943596
 >>> cm3=ConfusionMatrix(matrix=cm2.table)
 >>> cm3
@@ -730,7 +730,7 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 0.4
 >>> cm3.LambdaB
 0.35714285714285715
->>> cm4 = ConfusionMatrix(y_act,y_pre,classes=[1,2,0])
+>>> cm4 = ConfusionMatrix(y_act, y_pre, classes=[1, 2, 0])
 >>> cm4
 pycm.ConfusionMatrix(classes: [1, 2, 0])
 >>> cm4.classes
@@ -739,7 +739,7 @@ pycm.ConfusionMatrix(classes: [1, 2, 0])
 array([[5, 1, 3],
        [1, 4, 1],
        [3, 0, 9]])
->>> cm4 = ConfusionMatrix(y_act,y_pre,classes=[1,2])
+>>> cm4 = ConfusionMatrix(y_act, y_pre, classes=[1, 2])
 >>> cm4
 pycm.ConfusionMatrix(classes: [1, 2])
 >>> cm4.classes
@@ -747,11 +747,11 @@ pycm.ConfusionMatrix(classes: [1, 2])
 >>> cm4.to_array()
 array([[5, 1],
        [1, 4]])
->>> cm4 = ConfusionMatrix(["1",1,1,1],[1,2,1,1],classes=[1,2])
+>>> cm4 = ConfusionMatrix(["1", 1, 1, 1], [1, 2, 1, 1], classes=[1, 2])
 >>> cm4.to_array()
 array([[3, 1],
        [0, 0]])
->>> cm4 = ConfusionMatrix([1,1,1,1],["1",2,1,1],classes=[1,2])
+>>> cm4 = ConfusionMatrix([1, 1, 1, 1], ["1", 2, 1, 1], classes=[1, 2])
 >>> cm4.to_array()
 array([[3, 1],
        [0, 0]])

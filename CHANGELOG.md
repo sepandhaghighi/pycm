@@ -35,7 +35,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 	23. Kent & Foster II
 ### Changed
 - `CLASS_PARAMS` changed to a dictionary
-- code style
+- Code style modified
 - `sort` parameter added to `relabel` method
 - Document modified
 - `CONTRIBUTING.md` updated

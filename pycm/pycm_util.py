@@ -750,7 +750,7 @@ def vector_serializer(vector):
 
     :param vector: the given vector
     :type: list or numpy array
-    :retun: a serializable format for vector
+    :retun: a serializable format of vector
     """
     if isinstance(vector, numpy.ndarray):
         vector = vector.tolist()

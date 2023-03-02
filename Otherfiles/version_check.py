@@ -30,9 +30,9 @@ FILES = {
     os.path.join("Otherfiles", "meta.yaml"): META_ITEMS,
     "setup.py": SETUP_ITEMS, "README.md": README_ITEMS, "CHANGELOG.md": CHANGELOG_ITEMS, os.path.join(
         "Document", "Document.ipynb"): DOCUMENT_ITEMS, os.path.join(
-            "Document", "Example1_Files", "cm1.html"): HTML_ITEMS, os.path.join(
-                "Document", "Example1_Files", "cm2.html"): HTML_ITEMS, os.path.join(
-                    "Document", "Example1_Files", "cm3.html"): HTML_ITEMS, os.path.join(
+            "Document", "Example1_files", "cm1.html"): HTML_ITEMS, os.path.join(
+                "Document", "Example1_files", "cm2.html"): HTML_ITEMS, os.path.join(
+                    "Document", "Example1_files", "cm3.html"): HTML_ITEMS, os.path.join(
                         "Otherfiles", "test.html"): HTML_ITEMS, os.path.join(
                             "pycm", "pycm_param.py"): PARAMS_ITEMS}
 

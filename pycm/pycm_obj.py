@@ -45,7 +45,8 @@ class ConfusionMatrix():
             sample_weight=None,
             transpose=False,
             classes=None,
-            is_imbalanced=None):
+            is_imbalanced=None,
+            metrics_off=False):
         """
         Init method.
 
@@ -69,9 +70,12 @@ class ConfusionMatrix():
         :type classes: list
         :param is_imbalanced: imbalance dataset flag
         :type is_imbalanced: bool
+        :param metrics_off: metrics off flag
+        :type metrics_off: bool
         """
         self.actual_vector = actual_vector
         self.predict_vector = predict_vector
+        self.metrics_off = metrics_off
         self.prob_vector = None
         self.digit = digit
         self.weights = None
@@ -93,9 +97,10 @@ class ConfusionMatrix():
             matrix_param = __obj_vector_handler__(
                 self, actual_vector, predict_vector, threshold, sample_weight, classes)
         __obj_assign_handler__(self, matrix_param)
-        __class_stat_init__(self)
-        __overall_stat_init__(self)
-        __imbalancement_handler__(self, is_imbalanced)
+        if not metrics_off:
+            __class_stat_init__(self)
+            __overall_stat_init__(self)
+            __imbalancement_handler__(self, is_imbalanced)
         self.binary = binary_check(self.classes)
         self.recommended_list = statistic_recommend(
             self.classes, self.imbalance)

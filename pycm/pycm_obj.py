@@ -168,6 +168,7 @@ class ConfusionMatrix():
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 
+    @metrics_off_check
     def stat(
             self,
             overall_param=None,
@@ -548,6 +549,7 @@ class ConfusionMatrix():
         except Exception:
             return {}
 
+    @metrics_off_check
     def sensitivity_index(self):
         """
         Calculate sensitivity index for all classes.
@@ -560,6 +562,7 @@ class ConfusionMatrix():
                 self.TPR[i], self.FPR[i])
         return sensitivity_index_dict
 
+    @metrics_off_check
     def IBA_alpha(self, alpha):
         """
         Calculate IBA_alpha score for all classes.
@@ -595,6 +598,7 @@ class ConfusionMatrix():
         except Exception:
             return {}
 
+    @metrics_off_check
     def NB(self, w=1):
         """
         Calculate Net benefit for all classes.
@@ -627,6 +631,7 @@ class ConfusionMatrix():
                 TP=self.TP[i], FP=self.FP[i], FN=self.FN[i], TN=self.TN[i])
         return distance_dict
 
+    @metrics_off_check
     def CI(
             self,
             param,
@@ -778,6 +783,7 @@ class ConfusionMatrix():
         self.FN = self.class_stat["FN"]
         __class_stat_init__(self)
 
+    @metrics_off_check
     def average(self, param, none_omit=False):
         """
         Calculate the average of the input parameter.
@@ -793,6 +799,7 @@ class ConfusionMatrix():
             weight=self.POP,
             none_omit=none_omit)
 
+    @metrics_off_check
     def weighted_average(self, param, weight=None, none_omit=False):
         """
         Calculate the weighted average of the input parameter.
@@ -830,6 +837,7 @@ class ConfusionMatrix():
         except Exception:
             return "None"
 
+    @metrics_off_check
     def weighted_kappa(self, weight=None):
         """
         Calculate weighted kappa.
@@ -852,6 +860,7 @@ class ConfusionMatrix():
             self.POP,
             weight)
 
+    @metrics_off_check
     def weighted_alpha(self, weight=None):
         """
         Calculate weighted Krippendorff's alpha.
@@ -874,6 +883,7 @@ class ConfusionMatrix():
             self.POP,
             weight)
 
+    @metrics_off_check
     def aickin_alpha(self, max_iter=200, epsilon=0.0001):
         """
         Calculate Aickin's alpha.

@@ -8,6 +8,7 @@ import re
 from .pycm_param import *
 from .pycm_error import pycmMatrixError
 from warnings import warn
+from functools import wraps
 
 
 def list_check_equal(input_list):
@@ -755,3 +756,28 @@ def vector_serializer(vector):
     if isinstance(vector, numpy.ndarray):
         vector = vector.tolist()
     return vector
+
+
+def metrics_off_check(func):
+    """
+    Check metrics_off flag decorator.
+
+    :param func: input function
+    :type func: function
+    :return: inner function
+    """
+    @wraps(func)
+    def inner_function(*args, **kwargs):
+        """
+        Inner function.
+
+        :param args: non-keyword arguments
+        :type args: list
+        :param kwargs: keyword arguments
+        :type kwargs: dict
+        :return: None
+        """
+        if args[0].metrics_off:
+            raise pycmMatrixError(METRICS_OFF_ERROR)
+        return func(*args, **kwargs)
+    return inner_function

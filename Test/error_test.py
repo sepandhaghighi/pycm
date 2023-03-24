@@ -225,7 +225,7 @@ pycm.pycm_error.pycmPlotError: Given colors and classes have not the same length
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmPlotError: Given markers and classes have not the same length.
->>> cm = ConfusionMatrix(y_actu, y_pred, metric_off=True)
+>>> cm = ConfusionMatrix(y_actu, y_pred, metrics_off=True)
 >>> cm.stat()
 Traceback (most recent call last):
         ...

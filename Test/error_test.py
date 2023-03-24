@@ -225,4 +225,45 @@ pycm.pycm_error.pycmPlotError: Given colors and classes have not the same length
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmPlotError: Given markers and classes have not the same length.
+>>> cm = ConfusionMatrix(y_actu, y_pred, metric_off=True)
+>>> cm.stat()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+>>> cm.sensitivity_index()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+>>> cm.IBA_alpha(0.2)
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+>>> cm.NB()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+>>> cm.CI("Kappa")
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+>>> cm.average("ACC")
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+>>> cm.weighted_average("ACC")
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+>>> cm.weighted_kappa()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+>>> cm.weighted_alpha()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+>>> cm.aickin_alpha()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
 """

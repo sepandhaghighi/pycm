@@ -244,4 +244,22 @@ True
 '+'
 >>> ax.get_lines()[1].get_marker()
 '*'
+>>> cm = ConfusionMatrix(y_act, y_pre, metrics_off=True)
+>>> ax = cm.plot()
+>>> ax.get_title()
+'Confusion Matrix'
+>>> ax.get_xlabel()
+'Predicted Classes'
+>>> ax.get_ylabel()
+'Actual Classes'
+>>> ax.get_xticks()
+array([0, 1, 2])
+>>> ax.get_xticklabels()
+[Text(0, 0, '0'), Text(1, 0, '1'), Text(2, 0, '2')]
+>>> ax.get_yticks()
+array([0, 1, 2])
+>>> list(ax.get_yticklabels())
+[Text(0, 0, '0'), Text(0, 1, '1'), Text(0, 2, '2')]
+>>> list(ax.texts)
+[]
 """

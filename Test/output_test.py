@@ -581,19 +581,19 @@ True
 Predict   100       200       500       600
 Actual
 100       0         0         0         0
-
+<BLANKLINE>
 200       9         6         1         0
-
+<BLANKLINE>
 500       1         1         1         0
-
+<BLANKLINE>
 600       1         0         0         0
-
-
-
-
-
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
 Overall Statistics :
-
+<BLANKLINE>
 95% CI                                                            None
 ACC Macro                                                         None
 ARI                                                               None
@@ -661,9 +661,9 @@ TNR Micro                                                         None
 TPR Macro                                                         None
 TPR Micro                                                         None
 Zero-one Loss                                                     None
-
+<BLANKLINE>
 Class Statistics :
-
+<BLANKLINE>
 Classes                                                           100           200           500           600
 ACC(Accuracy)                                                     None          None          None          None
 AGF(Adjusted F-score)                                             None          None          None          None
@@ -728,6 +728,7 @@ TPR(Sensitivity, recall, hit rate, or true positive rate)         None          
 Y(Youden index)                                                   None          None          None          None
 dInd(Distance index)                                              None          None          None          None
 sInd(Similarity index)                                            None          None          None          None
+<BLANKLINE>
 >>> os.remove("test.csv")
 >>> os.remove("test_matrix.csv")
 >>> os.remove("test_normalized.csv")

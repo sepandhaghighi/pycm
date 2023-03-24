@@ -561,6 +561,8 @@ True
 >>> save_csv_data = cm.save_csv("test_header", header=True, matrix_save=True)
 >>> save_csv_data["Status"]
 True
+>>> y_test = np.array([600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200])
+>>> y_pred = np.array([100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200])
 >>> cm=ConfusionMatrix(y_test, y_pred, metrics_off=True)
 >>> save_stat=cm.save_stat("test_metrics_off", address=False)
 >>> save_stat=={'Status': True, 'Message': None}

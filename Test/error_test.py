@@ -229,41 +229,41 @@ pycm.pycm_error.pycmPlotError: Given markers and classes have not the same lengt
 >>> cm.stat()
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
 >>> cm.sensitivity_index()
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
 >>> cm.IBA_alpha(0.2)
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
 >>> cm.NB()
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
 >>> cm.CI("Kappa")
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
 >>> cm.average("ACC")
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
 >>> cm.weighted_average("ACC")
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
 >>> cm.weighted_kappa()
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
 >>> cm.weighted_alpha()
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
 >>> cm.aickin_alpha()
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMatrixError: This method doesn't work in `metrics off` mode.
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
 """

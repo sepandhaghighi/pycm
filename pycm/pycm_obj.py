@@ -985,19 +985,21 @@ class ConfusionMatrix():
             array.append(row)
         return numpy.array(array)
 
-    def combine(self, other):
+    def combine(self, other, metrics_off=False):
         """
         Return the combination of two confusion matrices.
 
         :param other: the other matrix that is going to be combined
         :type other: pycm.ConfusionMatrix
+        :param metrics_off: metrics off flag
+        :type metrics_off: bool
         :return: the combination of two matrices as a new confusion matrix
         """
         if isinstance(other, ConfusionMatrix) is False:
             raise pycmMatrixError(COMBINE_TYPE_ERROR)
         return ConfusionMatrix(
             matrix=matrix_combine(
-                self.matrix, other.matrix))
+                self.matrix, other.matrix), metrics_off=metrics_off)
 
     def plot(
             self,

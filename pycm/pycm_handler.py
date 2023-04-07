@@ -102,8 +102,10 @@ def __obj_assign_handler__(cm, matrix_param):
             TN=statistic_result["TN"],
             FP=statistic_result["FP"])
     else:
-        cm.class_stat = dict(zip(CLASS_PARAMS.keys(), len(CLASS_PARAMS) * [{i: "None" for i in cm.classes}]))
-        cm.overall_stat = dict(zip(OVERALL_PARAMS.keys(), len(OVERALL_PARAMS) * ["None"]))
+        cm.class_stat = dict(zip(CLASS_PARAMS.keys(), len(
+            CLASS_PARAMS) * [{i: "None" for i in cm.classes}]))
+        cm.overall_stat = dict(
+            zip(OVERALL_PARAMS.keys(), len(OVERALL_PARAMS) * ["None"]))
 
 
 def __obj_file_handler__(cm, file):

@@ -506,13 +506,13 @@ class ConfusionMatrix():
                 vector_serializer, [
                     actual_vector_temp, predict_vector_temp, prob_vector_temp, weights_vector_temp])
             dump_dict = {"Actual-Vector": actual_vector_temp,
-                        "Predict-Vector": predict_vector_temp,
-                        "Prob-Vector": prob_vector_temp,
-                        "Matrix": matrix_items,
-                        "Digit": self.digit,
-                        "Sample-Weight": weights_vector_temp,
-                        "Transpose": self.transpose,
-                        "Imbalanced": self.imbalance}
+                         "Predict-Vector": predict_vector_temp,
+                         "Prob-Vector": prob_vector_temp,
+                         "Matrix": matrix_items,
+                         "Digit": self.digit,
+                         "Sample-Weight": weights_vector_temp,
+                         "Transpose": self.transpose,
+                         "Imbalanced": self.imbalance}
             if save_stat:
                 dump_dict["Class-Stat"] = self.class_stat
                 dump_dict["Overall-Stat"] = self.overall_stat

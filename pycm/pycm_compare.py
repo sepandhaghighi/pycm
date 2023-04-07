@@ -307,6 +307,8 @@ def __compare_assign_handler__(
         raise pycmCompareError(COMPARE_DOMAIN_ERROR)
     if len(cm_dict) < 2:
         raise pycmCompareError(COMPARE_NUMBER_ERROR)
+    if not all(item.metrics_off for item in cm_dict.values()):
+        raise pycmCompareError(COMPARE_METRICS_OFF_ERROR)
     compare.classes = list(cm_dict.values())[0].classes
     compare.class_weight = {k: 1 for k in compare.classes}
     compare.class_benchmark_weight = {k: 1 for k in CLASS_BENCHMARK_LIST}

@@ -92,6 +92,8 @@ COMPARE_CLASS_BENCHMARK_WEIGHT_WARNING = "The class_benchmark_weight format is w
 
 COMPARE_OVERALL_BENCHMARK_WEIGHT_WARNING = "The overall_benchmark_weight format is wrong, the result is for unweighted mode."
 
+COMPARE_METRICS_OFF_ERROR = "Compare cannot be executed while in either of matrices 'metrics_off=True'."
+
 COMBINE_TYPE_ERROR = "The input type is supposed to be pycm.ConfusionMatrix object but it's not!"
 
 COMPARE_RESULT_WARNING = "Confusion matrices are too close and the best one can not be recognized."

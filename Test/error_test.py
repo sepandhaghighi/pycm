@@ -108,6 +108,12 @@ pycm.pycm_obj.pycmCompareError: The class_benchmark_weight type must be dictiona
 Traceback (most recent call last):
         ...
 pycm.pycm_obj.pycmCompareError: The overall_benchmark_weight type must be dictionary and also must be specified for all of the overall benchmarks.
+>>> cm1 = ConfusionMatrix([1, 1, 1, 0], [1, 0, 1, 1], metrics_off=True)
+>>> cm2 = ConfusionMatrix([1, 1, 1, 0], [1, 0, 1, 1], metrics_off=False)
+>>> cp = Compare({"cm1":cm1, "cm2":cm2})
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCompareError: Compare cannot be executed while in either of matrices 'metrics_off=True'.
 >>> cm.CI("MCC")
 Traceback (most recent call last):
         ...

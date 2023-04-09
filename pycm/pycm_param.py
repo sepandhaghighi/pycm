@@ -68,6 +68,7 @@ VECTOR_EMPTY_ERROR = "Input vectors are empty"
 VECTOR_ONLY_ERROR = "This option only works in vector mode"
 VECTOR_UNIQUE_CLASS_ERROR = "The classes list isn't unique. It contains duplicated labels."
 CLASS_NUMBER_ERROR = "Number of the classes is lower than 2"
+METRICS_OFF_ERROR = "This method cannot be executed while 'metrics_off=True'."
 CLASSES_ERROR = "Used classes is not a subset of matrix's classes."
 COMPARE_FORMAT_ERROR = "The input type is supposed to be dictionary but it's not!"
 CLASSES_LENGHT_ERROR = "Classes length is not equal to the array length."
@@ -90,6 +91,8 @@ COMPARE_CLASS_WEIGHT_WARNING = "The class_weight format is wrong, the result is 
 COMPARE_CLASS_BENCHMARK_WEIGHT_WARNING = "The class_benchmark_weight format is wrong, the result is for unweighted mode."
 
 COMPARE_OVERALL_BENCHMARK_WEIGHT_WARNING = "The overall_benchmark_weight format is wrong, the result is for unweighted mode."
+
+COMPARE_METRICS_OFF_ERROR = "Compare cannot be executed while in either of matrices 'metrics_off=True'."
 
 COMBINE_TYPE_ERROR = "The input type is supposed to be pycm.ConfusionMatrix object but it's not!"
 

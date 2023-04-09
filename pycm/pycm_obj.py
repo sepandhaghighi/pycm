@@ -45,7 +45,8 @@ class ConfusionMatrix():
             sample_weight=None,
             transpose=False,
             classes=None,
-            is_imbalanced=None):
+            is_imbalanced=None,
+            metrics_off=False):
         """
         Init method.
 
@@ -69,9 +70,12 @@ class ConfusionMatrix():
         :type classes: list
         :param is_imbalanced: imbalance dataset flag
         :type is_imbalanced: bool
+        :param metrics_off: metrics off flag
+        :type metrics_off: bool
         """
         self.actual_vector = actual_vector
         self.predict_vector = predict_vector
+        self.metrics_off = metrics_off
         self.prob_vector = None
         self.digit = digit
         self.weights = None
@@ -93,9 +97,10 @@ class ConfusionMatrix():
             matrix_param = __obj_vector_handler__(
                 self, actual_vector, predict_vector, threshold, sample_weight, classes)
         __obj_assign_handler__(self, matrix_param)
-        __class_stat_init__(self)
-        __overall_stat_init__(self)
-        __imbalancement_handler__(self, is_imbalanced)
+        if not metrics_off:
+            __class_stat_init__(self)
+            __overall_stat_init__(self)
+            __imbalancement_handler__(self, is_imbalanced)
         self.binary = binary_check(self.classes)
         self.recommended_list = statistic_recommend(
             self.classes, self.imbalance)
@@ -163,6 +168,7 @@ class ConfusionMatrix():
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 
+    @metrics_off_check
     def stat(
             self,
             overall_param=None,
@@ -500,13 +506,13 @@ class ConfusionMatrix():
                 vector_serializer, [
                     actual_vector_temp, predict_vector_temp, prob_vector_temp, weights_vector_temp])
             dump_dict = {"Actual-Vector": actual_vector_temp,
-                        "Predict-Vector": predict_vector_temp,
-                        "Prob-Vector": prob_vector_temp,
-                        "Matrix": matrix_items,
-                        "Digit": self.digit,
-                        "Sample-Weight": weights_vector_temp,
-                        "Transpose": self.transpose,
-                        "Imbalanced": self.imbalance}
+                         "Predict-Vector": predict_vector_temp,
+                         "Prob-Vector": prob_vector_temp,
+                         "Matrix": matrix_items,
+                         "Digit": self.digit,
+                         "Sample-Weight": weights_vector_temp,
+                         "Transpose": self.transpose,
+                         "Imbalanced": self.imbalance}
             if save_stat:
                 dump_dict["Class-Stat"] = self.class_stat
                 dump_dict["Overall-Stat"] = self.overall_stat
@@ -543,6 +549,7 @@ class ConfusionMatrix():
         except Exception:
             return {}
 
+    @metrics_off_check
     def sensitivity_index(self):
         """
         Calculate sensitivity index for all classes.
@@ -555,6 +562,7 @@ class ConfusionMatrix():
                 self.TPR[i], self.FPR[i])
         return sensitivity_index_dict
 
+    @metrics_off_check
     def IBA_alpha(self, alpha):
         """
         Calculate IBA_alpha score for all classes.
@@ -590,6 +598,7 @@ class ConfusionMatrix():
         except Exception:
             return {}
 
+    @metrics_off_check
     def NB(self, w=1):
         """
         Calculate Net benefit for all classes.
@@ -622,6 +631,7 @@ class ConfusionMatrix():
                 TP=self.TP[i], FP=self.FP[i], FN=self.FN[i], TN=self.TN[i])
         return distance_dict
 
+    @metrics_off_check
     def CI(
             self,
             param,
@@ -773,6 +783,7 @@ class ConfusionMatrix():
         self.FN = self.class_stat["FN"]
         __class_stat_init__(self)
 
+    @metrics_off_check
     def average(self, param, none_omit=False):
         """
         Calculate the average of the input parameter.
@@ -788,6 +799,7 @@ class ConfusionMatrix():
             weight=self.POP,
             none_omit=none_omit)
 
+    @metrics_off_check
     def weighted_average(self, param, weight=None, none_omit=False):
         """
         Calculate the weighted average of the input parameter.
@@ -825,6 +837,7 @@ class ConfusionMatrix():
         except Exception:
             return "None"
 
+    @metrics_off_check
     def weighted_kappa(self, weight=None):
         """
         Calculate weighted kappa.
@@ -847,6 +860,7 @@ class ConfusionMatrix():
             self.POP,
             weight)
 
+    @metrics_off_check
     def weighted_alpha(self, weight=None):
         """
         Calculate weighted Krippendorff's alpha.
@@ -869,6 +883,7 @@ class ConfusionMatrix():
             self.POP,
             weight)
 
+    @metrics_off_check
     def aickin_alpha(self, max_iter=200, epsilon=0.0001):
         """
         Calculate Aickin's alpha.
@@ -970,19 +985,21 @@ class ConfusionMatrix():
             array.append(row)
         return numpy.array(array)
 
-    def combine(self, other):
+    def combine(self, other, metrics_off=False):
         """
         Return the combination of two confusion matrices.
 
         :param other: the other matrix that is going to be combined
         :type other: pycm.ConfusionMatrix
+        :param metrics_off: metrics off flag
+        :type metrics_off: bool
         :return: the combination of two matrices as a new confusion matrix
         """
         if isinstance(other, ConfusionMatrix) is False:
             raise pycmMatrixError(COMBINE_TYPE_ERROR)
         return ConfusionMatrix(
             matrix=matrix_combine(
-                self.matrix, other.matrix))
+                self.matrix, other.matrix), metrics_off=metrics_off)
 
     def plot(
             self,

@@ -561,6 +561,174 @@ True
 >>> save_csv_data = cm.save_csv("test_header", header=True, matrix_save=True)
 >>> save_csv_data["Status"]
 True
+>>> y_test = np.array([600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200])
+>>> y_pred = np.array([100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200])
+>>> cm = ConfusionMatrix(y_test, y_pred, metrics_off=True)
+>>> save_stat = cm.save_stat("test_metrics_off", address=False)
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat = cm.save_html("test_metrics_off", address=False)
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat = cm.save_csv("test_metrics_off", address=False)
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_obj = cm.save_obj("test_metrics_off", address=False)
+>>> save_obj=={'Status': True, 'Message': None}
+True
+>>> cm_file_metrics_off = ConfusionMatrix(file=open("test_metrics_off.obj", "r"), metrics_off=True)
+>>> print(cm_file_metrics_off)
+Predict   100       200       500       600
+Actual
+100       0         0         0         0
+<BLANKLINE>
+200       9         6         1         0
+<BLANKLINE>
+500       1         1         1         0
+<BLANKLINE>
+600       1         0         0         0
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+Overall Statistics :
+<BLANKLINE>
+95% CI                                                            None
+ACC Macro                                                         None
+ARI                                                               None
+AUNP                                                              None
+AUNU                                                              None
+Bangdiwala B                                                      None
+Bennett S                                                         None
+CBA                                                               None
+CSI                                                               None
+Chi-Squared                                                       None
+Chi-Squared DF                                                    None
+Conditional Entropy                                               None
+Cramer V                                                          None
+Cross Entropy                                                     None
+F1 Macro                                                          None
+F1 Micro                                                          None
+FNR Macro                                                         None
+FNR Micro                                                         None
+FPR Macro                                                         None
+FPR Micro                                                         None
+Gwet AC1                                                          None
+Hamming Loss                                                      None
+Joint Entropy                                                     None
+KL Divergence                                                     None
+Kappa                                                             None
+Kappa 95% CI                                                      None
+Kappa No Prevalence                                               None
+Kappa Standard Error                                              None
+Kappa Unbiased                                                    None
+Krippendorff Alpha                                                None
+Lambda A                                                          None
+Lambda B                                                          None
+Mutual Information                                                None
+NIR                                                               None
+Overall ACC                                                       None
+Overall CEN                                                       None
+Overall J                                                         None
+Overall MCC                                                       None
+Overall MCEN                                                      None
+Overall RACC                                                      None
+Overall RACCU                                                     None
+P-Value                                                           None
+PPV Macro                                                         None
+PPV Micro                                                         None
+Pearson C                                                         None
+Phi-Squared                                                       None
+RCI                                                               None
+RR                                                                None
+Reference Entropy                                                 None
+Response Entropy                                                  None
+SOA1(Landis & Koch)                                               None
+SOA2(Fleiss)                                                      None
+SOA3(Altman)                                                      None
+SOA4(Cicchetti)                                                   None
+SOA5(Cramer)                                                      None
+SOA6(Matthews)                                                    None
+SOA7(Lambda A)                                                    None
+SOA8(Lambda B)                                                    None
+SOA9(Krippendorff Alpha)                                          None
+SOA10(Pearson C)                                                  None
+Scott PI                                                          None
+Standard Error                                                    None
+TNR Macro                                                         None
+TNR Micro                                                         None
+TPR Macro                                                         None
+TPR Micro                                                         None
+Zero-one Loss                                                     None
+<BLANKLINE>
+Class Statistics :
+<BLANKLINE>
+Classes                                                           100           200           500           600
+ACC(Accuracy)                                                     None          None          None          None
+AGF(Adjusted F-score)                                             None          None          None          None
+AGM(Adjusted geometric mean)                                      None          None          None          None
+AM(Difference between automatic and manual classification)        None          None          None          None
+AUC(Area under the ROC curve)                                     None          None          None          None
+AUCI(AUC value interpretation)                                    None          None          None          None
+AUPR(Area under the PR curve)                                     None          None          None          None
+BB(Braun-Blanquet similarity)                                     None          None          None          None
+BCD(Bray-Curtis dissimilarity)                                    None          None          None          None
+BM(Informedness or bookmaker informedness)                        None          None          None          None
+CEN(Confusion entropy)                                            None          None          None          None
+DOR(Diagnostic odds ratio)                                        None          None          None          None
+DP(Discriminant power)                                            None          None          None          None
+DPI(Discriminant power interpretation)                            None          None          None          None
+ERR(Error rate)                                                   None          None          None          None
+F0.5(F0.5 score)                                                  None          None          None          None
+F1(F1 score - harmonic mean of precision and sensitivity)         None          None          None          None
+F2(F2 score)                                                      None          None          None          None
+FDR(False discovery rate)                                         None          None          None          None
+FN(False negative/miss/type 2 error)                              None          None          None          None
+FNR(Miss rate or false negative rate)                             None          None          None          None
+FOR(False omission rate)                                          None          None          None          None
+FP(False positive/type 1 error/false alarm)                       None          None          None          None
+FPR(Fall-out or false positive rate)                              None          None          None          None
+G(G-measure geometric mean of precision and sensitivity)          None          None          None          None
+GI(Gini index)                                                    None          None          None          None
+GM(G-mean geometric mean of specificity and sensitivity)          None          None          None          None
+HD(Hamming distance)                                              None          None          None          None
+IBA(Index of balanced accuracy)                                   None          None          None          None
+ICSI(Individual classification success index)                     None          None          None          None
+IS(Information score)                                             None          None          None          None
+J(Jaccard index)                                                  None          None          None          None
+LS(Lift score)                                                    None          None          None          None
+MCC(Matthews correlation coefficient)                             None          None          None          None
+MCCI(Matthews correlation coefficient interpretation)             None          None          None          None
+MCEN(Modified confusion entropy)                                  None          None          None          None
+MK(Markedness)                                                    None          None          None          None
+N(Condition negative)                                             None          None          None          None
+NLR(Negative likelihood ratio)                                    None          None          None          None
+NLRI(Negative likelihood ratio interpretation)                    None          None          None          None
+NPV(Negative predictive value)                                    None          None          None          None
+OC(Overlap coefficient)                                           None          None          None          None
+OOC(Otsuka-Ochiai coefficient)                                    None          None          None          None
+OP(Optimized precision)                                           None          None          None          None
+P(Condition positive or support)                                  None          None          None          None
+PLR(Positive likelihood ratio)                                    None          None          None          None
+PLRI(Positive likelihood ratio interpretation)                    None          None          None          None
+POP(Population)                                                   None          None          None          None
+PPV(Precision or positive predictive value)                       None          None          None          None
+PRE(Prevalence)                                                   None          None          None          None
+Q(Yule Q - coefficient of colligation)                            None          None          None          None
+QI(Yule Q interpretation)                                         None          None          None          None
+RACC(Random accuracy)                                             None          None          None          None
+RACCU(Random accuracy unbiased)                                   None          None          None          None
+TN(True negative/correct rejection)                               None          None          None          None
+TNR(Specificity or true negative rate)                            None          None          None          None
+TON(Test outcome negative)                                        None          None          None          None
+TOP(Test outcome positive)                                        None          None          None          None
+TP(True positive/hit)                                             None          None          None          None
+TPR(Sensitivity, recall, hit rate, or true positive rate)         None          None          None          None
+Y(Youden index)                                                   None          None          None          None
+dInd(Distance index)                                              None          None          None          None
+sInd(Similarity index)                                            None          None          None          None
+<BLANKLINE>
 >>> os.remove("test.csv")
 >>> os.remove("test_matrix.csv")
 >>> os.remove("test_normalized.csv")
@@ -604,4 +772,8 @@ True
 >>> os.remove("test.comp")
 >>> os.remove("test_header.csv")
 >>> os.remove("test_header_matrix.csv")
+>>> os.remove("test_metrics_off.pycm")
+>>> os.remove("test_metrics_off.html")
+>>> os.remove("test_metrics_off.csv")
+>>> os.remove("test_metrics_off.obj")
 """

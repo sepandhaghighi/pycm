@@ -1631,4 +1631,63 @@ False
 0
 >>> cm[1][1]
 4
+>>> cm = ConfusionMatrix([1, 1, 1, 1, 0], [1, 1, 1, 1, 1], metrics_off=True)
+>>> cm.print_matrix()
+Predict 0       1
+Actual
+0       0       1
+<BLANKLINE>
+1       0       4
+<BLANKLINE>
+>>> cm[0][0]
+0
+>>> cm[0][1]
+1
+>>> cm[1][0]
+0
+>>> cm[1][1]
+4
+>>> cm.print_normalized_matrix()
+Predict   0         1
+Actual
+0         0.0       1.0
+<BLANKLINE>
+1         0.0       1.0
+<BLANKLINE>
+<BLANKLINE>
+>>> cm.F_beta(1)[1]
+0.8888888888888888
+>>> cm.TI(0.1,0.1)[1]
+0.9756097560975611
+>>> cm.distance(DistanceType.Anderberg)[1]
+-0.1
+>>> cm.relabel(mapping = {1:"One",0:"Zero"})
+>>> cm.print_matrix()
+Predict    Zero       One
+Actual
+Zero       0          1
+<BLANKLINE>
+One        0          4
+<BLANKLINE>
+<BLANKLINE>
+>>> cm.position() == {'Zero': {'TP': [], 'FP': [], 'TN': [0, 1, 2, 3], 'FN': [4]}, 'One': {'TP': [0, 1, 2, 3], 'FP': [4], 'TN': [], 'FN': []}}
+True
+>>> cm.to_array()
+array([[0, 1],
+       [0, 4]])
+>>> cm2 = cm.combine(cm)
+>>> cm2.print_matrix()
+Predict    One        Zero
+Actual
+One        8          0
+<BLANKLINE>
+Zero       2          0
+<BLANKLINE>
+<BLANKLINE>
+>>> y_pred_act = [0.87, 0.34, 0.9, 0.12]
+>>> cm = ConfusionMatrix([0, 0, 1, 0], y_pred_act, threshold=activation, transpose=2, metrics_off=True)
+>>> cm.brier_score(pos_class=1)
+0.224225
+>>> cm.brier_score(pos_class=0)
+0.509225
 """

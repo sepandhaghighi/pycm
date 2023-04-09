@@ -302,6 +302,8 @@ def __compare_assign_handler__(
     if not all(isinstance(item, ConfusionMatrix)
                for item in cm_dict.values()):
         raise pycmCompareError(COMPARE_TYPE_ERROR)
+    if any(item.metrics_off for item in cm_dict.values()):
+        raise pycmCompareError(COMPARE_METRICS_OFF_ERROR)
     if not list_check_equal([getattr(item, "POP")
                              for item in cm_dict.values()]):
         raise pycmCompareError(COMPARE_DOMAIN_ERROR)

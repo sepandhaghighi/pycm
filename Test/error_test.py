@@ -108,6 +108,12 @@ pycm.pycm_obj.pycmCompareError: The class_benchmark_weight type must be dictiona
 Traceback (most recent call last):
         ...
 pycm.pycm_obj.pycmCompareError: The overall_benchmark_weight type must be dictionary and also must be specified for all of the overall benchmarks.
+>>> cm1 = ConfusionMatrix([1, 1, 1, 0], [1, 0, 1, 1], metrics_off=True)
+>>> cm2 = ConfusionMatrix([1, 1, 1, 0], [1, 0, 1, 1], metrics_off=False)
+>>> cp = Compare({"cm1":cm1, "cm2":cm2})
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmCompareError: Compare cannot be executed while in either of matrices 'metrics_off=True'.
 >>> cm.CI("MCC")
 Traceback (most recent call last):
         ...
@@ -225,4 +231,45 @@ pycm.pycm_error.pycmPlotError: Given colors and classes have not the same length
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmPlotError: Given markers and classes have not the same length.
+>>> cm = ConfusionMatrix(y_actu, y_pred, metrics_off=True)
+>>> cm.stat()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
+>>> cm.sensitivity_index()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
+>>> cm.IBA_alpha(0.2)
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
+>>> cm.NB()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
+>>> cm.CI("Kappa")
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
+>>> cm.average("ACC")
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
+>>> cm.weighted_average("ACC")
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
+>>> cm.weighted_kappa()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
+>>> cm.weighted_alpha()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
+>>> cm.aickin_alpha()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
 """

@@ -70,36 +70,42 @@ def __obj_assign_handler__(cm, matrix_param):
     cm.TN = matrix_param[3]
     cm.FP = matrix_param[4]
     cm.FN = matrix_param[5]
-    statistic_result = class_statistics(
-        TP=matrix_param[2],
-        TN=matrix_param[3],
-        FP=matrix_param[4],
-        FN=matrix_param[5],
-        classes=matrix_param[0],
-        table=matrix_param[1])
-    cm.class_stat = statistic_result
-    cm.overall_stat = overall_statistics(
-        RACC=statistic_result["RACC"],
-        RACCU=statistic_result["RACCU"],
-        TPR=statistic_result["TPR"],
-        PPV=statistic_result["PPV"],
-        F1=statistic_result["F1"],
-        TP=statistic_result["TP"],
-        FN=statistic_result["FN"],
-        ACC=statistic_result["ACC"],
-        POP=statistic_result["POP"],
-        P=statistic_result["P"],
-        TOP=statistic_result["TOP"],
-        jaccard_list=statistic_result["J"],
-        classes=cm.classes,
-        table=cm.table,
-        CEN_dict=statistic_result["CEN"],
-        MCEN_dict=statistic_result["MCEN"],
-        AUC_dict=statistic_result["AUC"],
-        ICSI_dict=statistic_result["ICSI"],
-        TNR=statistic_result["TNR"],
-        TN=statistic_result["TN"],
-        FP=statistic_result["FP"])
+    if not cm.metrics_off:
+        statistic_result = class_statistics(
+            TP=matrix_param[2],
+            TN=matrix_param[3],
+            FP=matrix_param[4],
+            FN=matrix_param[5],
+            classes=matrix_param[0],
+            table=matrix_param[1])
+        cm.class_stat = statistic_result
+        cm.overall_stat = overall_statistics(
+            RACC=statistic_result["RACC"],
+            RACCU=statistic_result["RACCU"],
+            TPR=statistic_result["TPR"],
+            PPV=statistic_result["PPV"],
+            F1=statistic_result["F1"],
+            TP=statistic_result["TP"],
+            FN=statistic_result["FN"],
+            ACC=statistic_result["ACC"],
+            POP=statistic_result["POP"],
+            P=statistic_result["P"],
+            TOP=statistic_result["TOP"],
+            jaccard_list=statistic_result["J"],
+            classes=cm.classes,
+            table=cm.table,
+            CEN_dict=statistic_result["CEN"],
+            MCEN_dict=statistic_result["MCEN"],
+            AUC_dict=statistic_result["AUC"],
+            ICSI_dict=statistic_result["ICSI"],
+            TNR=statistic_result["TNR"],
+            TN=statistic_result["TN"],
+            FP=statistic_result["FP"])
+    else:
+        cm.class_stat = dict(zip(CLASS_PARAMS.keys(), len(
+            CLASS_PARAMS) * [{i: "None" for i in cm.classes}]))
+        cm.overall_stat = dict(
+            zip(OVERALL_PARAMS.keys(), len(OVERALL_PARAMS) * ["None"]))
 
 
 def __obj_file_handler__(cm, file):

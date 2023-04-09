@@ -34,6 +34,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 	22. Kent & Foster I
 	23. Kent & Foster II
 ### Changed
+- `metrics_off` parameter added to ConfusionMatrix `__init__` method
 - `CLASS_PARAMS` changed to a dictionary
 - Code style modified
 - `sort` parameter added to `relabel` method

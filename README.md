@@ -463,6 +463,7 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 8. `transpose` : `bool`
 9. `classes` : python `list`
 10. `is_imbalanced` : `bool`
+11. `metrics_off` : `bool`
 
 * Run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
 

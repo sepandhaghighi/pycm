@@ -563,20 +563,20 @@ True
 True
 >>> y_test = np.array([600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200])
 >>> y_pred = np.array([100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200])
->>> cm=ConfusionMatrix(y_test, y_pred, metrics_off=True)
->>> save_stat=cm.save_stat("test_metrics_off", address=False)
+>>> cm = ConfusionMatrix(y_test, y_pred, metrics_off=True)
+>>> save_stat = cm.save_stat("test_metrics_off", address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_html("test_metrics_off", address=False)
+>>> save_stat = cm.save_html("test_metrics_off", address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_csv("test_metrics_off", address=False)
+>>> save_stat = cm.save_csv("test_metrics_off", address=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_obj=cm.save_obj("test_metrics_off", address=False)
+>>> save_obj = cm.save_obj("test_metrics_off", address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
->>> cm_file_metrics_off=ConfusionMatrix(file=open("test_metrics_off.obj", "r"), metrics_off=True)
+>>> cm_file_metrics_off = ConfusionMatrix(file=open("test_metrics_off.obj", "r"), metrics_off=True)
 >>> print(cm_file_metrics_off)
 Predict   100       200       500       600
 Actual

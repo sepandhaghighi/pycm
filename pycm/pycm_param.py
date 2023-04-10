@@ -254,11 +254,13 @@ OVERALL_PARAMS = {
     'FPR Macro': 'FPR_Macro',
     'FNR Macro': 'FNR_Macro',
     'PPV Macro': 'PPV_Macro',
+    'NPV Macro': 'NPV_Macro',
     'ACC Macro': 'ACC_Macro',
     'F1 Macro': 'F1_Macro',
     'FPR Micro': 'FPR_Micro',
     'FNR Micro': 'FNR_Micro',
     'PPV Micro': 'PPV_Micro',
+    'NPV Micro': 'NPV_Micro',
     'F1 Micro': 'F1_Micro',
 }
 
@@ -271,6 +273,7 @@ SUMMARY_OVERALL = [
     "F1 Macro",
     "TPR Macro",
     "PPV Macro",
+    "NPV Macro",
     "FPR Macro"]
 
 SUMMARY_CLASS = [

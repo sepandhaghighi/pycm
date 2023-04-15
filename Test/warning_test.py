@@ -89,6 +89,8 @@ Lambda A                                                          0.72727
 Lambda B                                                          0.72727
 Mutual Information                                                2.77736
 NIR                                                               0.15385
+NPV Macro                                                         0.97424
+NPV Micro                                                         0.97436
 Overall ACC                                                       0.76923
 Overall CEN                                                       0.09537
 Overall J                                                         (7.33333,0.73333)
@@ -254,6 +256,8 @@ Lambda A                                                          0.72727
 Lambda B                                                          0.72727
 Mutual Information                                                2.77736
 NIR                                                               0.15385
+NPV Macro                                                         0.97424
+NPV Micro                                                         0.97436
 Overall ACC                                                       0.76923
 Overall CEN                                                       0.09537
 Overall J                                                         (7.33333,0.73333)
@@ -439,6 +443,8 @@ Lambda A                                                          0.4
 Lambda B                                                          0.35714
 Mutual Information                                                0.39731
 NIR                                                               0.44444
+NPV Macro                                                         0.86815
+NPV Micro                                                         0.88889
 Overall ACC                                                       0.66667
 Overall CEN                                                       None
 Overall J                                                         None

@@ -827,13 +827,13 @@ def reliability_calc(RACC, ACC):
 
 def micro_calc(item1, item2):
     """
-    Calculate TPR, TNR, PPV, FNR, FPR, or F1 micro.
+    Calculate TPR, TNR, PPV, NPV, FNR, FPR, or F1 micro.
 
     :param item1: item1 in micro averaging
     :type item1:dict
     :param item2: item2 in micro averaging
     :type item2: dict
-    :return: PPV, TPR, TNR, FNR, FPR, or F1 micro as float
+    :return: PPV, NPV, TPR, TNR, FNR, FPR, or F1 micro as float
     """
     try:
         item1_sum = sum(item1.values())
@@ -845,11 +845,11 @@ def micro_calc(item1, item2):
 
 def macro_calc(item):
     """
-    Calculate PPV_Macro and TPR_Macro.
+    Calculate PPV_Macro, NPV_Macro, and TPR_Macro.
 
     :param item: True positive rate (TPR) or Positive predictive value (PPV)
     :type item:dict
-    :return: PPV_Macro or TPR_Macro as float
+    :return: PPV_Macro, NPV_Macro, or TPR_Macro as float
     """
     try:
         item_sum = sum(item.values())
@@ -1042,10 +1042,12 @@ def overall_statistics(**kwargs):
     result["FPR Macro"] = complement(result["TNR Macro"])
     result["FNR Macro"] = complement(result["TPR Macro"])
     result["PPV Macro"] = macro_calc(kwargs["PPV"])
+    result["NPV Macro"] = macro_calc(kwargs["NPV"])
     result["ACC Macro"] = macro_calc(kwargs["ACC"])
     result["F1 Macro"] = macro_calc(kwargs["F1"])
     result["FPR Micro"] = complement(result["TNR Micro"])
     result["FNR Micro"] = complement(result["TPR Micro"])
     result["PPV Micro"] = result["TPR Micro"]
     result["F1 Micro"] = result["TPR Micro"]
+    result["NPV Micro"] = micro_calc(item1=kwargs["TN"], item2=kwargs["FN"])
     return result

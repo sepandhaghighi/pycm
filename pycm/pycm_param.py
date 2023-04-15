@@ -254,11 +254,13 @@ OVERALL_PARAMS = {
     'FPR Macro': 'FPR_Macro',
     'FNR Macro': 'FNR_Macro',
     'PPV Macro': 'PPV_Macro',
+    'NPV Macro': 'NPV_Macro',
     'ACC Macro': 'ACC_Macro',
     'F1 Macro': 'F1_Macro',
     'FPR Micro': 'FPR_Micro',
     'FNR Micro': 'FNR_Micro',
     'PPV Micro': 'PPV_Micro',
+    'NPV Micro': 'NPV_Micro',
     'F1 Micro': 'F1_Micro',
 }
 
@@ -271,6 +273,7 @@ SUMMARY_OVERALL = [
     "F1 Macro",
     "TPR Macro",
     "PPV Macro",
+    "NPV Macro",
     "FPR Macro"]
 
 SUMMARY_CLASS = [
@@ -345,6 +348,7 @@ MULTICLASS_RECOMMEND = [
     "TPR Macro",
     "F1 Macro",
     "PPV Macro",
+    "NPV Macro",
     "ACC",
     "Overall ACC",
     "MCC",
@@ -640,6 +644,7 @@ PARAMS_LINK = {
     "TNR Macro": "TNR_Macro",
     "FPR Macro": "FPR_Macro",
     "PPV Macro": "PPV_Macro",
+    "NPV Macro": "NPV_Macro",
     "F1 Macro": "F1_Macro",
     "F1 Micro": "F1_Micro",
     "ACC Macro": "ACC_Macro",
@@ -648,6 +653,7 @@ PARAMS_LINK = {
     "TNR Micro": "TNR_Micro",
     "FPR Micro": "FPR_Micro",
     "PPV Micro": "PPV_Micro",
+    "NPV Micro": "NPV_Micro",
     "Scott PI": "Scott's-Pi",
     "Gwet AC1": "Gwet's-AC1",
     "Bennett S": "Bennett's-S",

@@ -120,61 +120,63 @@ Example : online_help("J") or online_help(2)
 73-NLR
 74-NLRI
 75-NPV
-76-OC
-77-OOC
-78-OP
-79-Overall ACC
-80-Overall CEN
-81-Overall J
-82-Overall MCC
-83-Overall MCEN
-84-Overall RACC
-85-Overall RACCU
-86-P
-87-P-Value
-88-PLR
-89-PLRI
-90-POP
-91-PPV
-92-PPV Macro
-93-PPV Micro
-94-PRE
-95-Pearson C
-96-Phi-Squared
-97-Q
-98-QI
-99-RACC
-100-RACCU
-101-RCI
-102-RR
-103-Reference Entropy
-104-Response Entropy
-105-SOA1(Landis & Koch)
-106-SOA2(Fleiss)
-107-SOA3(Altman)
-108-SOA4(Cicchetti)
-109-SOA5(Cramer)
-110-SOA6(Matthews)
-111-SOA7(Lambda A)
-112-SOA8(Lambda B)
-113-SOA9(Krippendorff Alpha)
-114-SOA10(Pearson C)
-115-Scott PI
-116-Standard Error
-117-TN
-118-TNR
-119-TNR Macro
-120-TNR Micro
-121-TON
-122-TOP
-123-TP
-124-TPR
-125-TPR Macro
-126-TPR Micro
-127-Y
-128-Zero-one Loss
-129-dInd
-130-sInd
+76-NPV Macro
+77-NPV Micro
+78-OC
+79-OOC
+80-OP
+81-Overall ACC
+82-Overall CEN
+83-Overall J
+84-Overall MCC
+85-Overall MCEN
+86-Overall RACC
+87-Overall RACCU
+88-P
+89-P-Value
+90-PLR
+91-PLRI
+92-POP
+93-PPV
+94-PPV Macro
+95-PPV Micro
+96-PRE
+97-Pearson C
+98-Phi-Squared
+99-Q
+100-QI
+101-RACC
+102-RACCU
+103-RCI
+104-RR
+105-Reference Entropy
+106-Response Entropy
+107-SOA1(Landis & Koch)
+108-SOA2(Fleiss)
+109-SOA3(Altman)
+110-SOA4(Cicchetti)
+111-SOA5(Cramer)
+112-SOA6(Matthews)
+113-SOA7(Lambda A)
+114-SOA8(Lambda B)
+115-SOA9(Krippendorff Alpha)
+116-SOA10(Pearson C)
+117-Scott PI
+118-Standard Error
+119-TN
+120-TNR
+121-TNR Macro
+122-TNR Micro
+123-TON
+124-TOP
+125-TP
+126-TPR
+127-TPR Macro
+128-TPR Micro
+129-Y
+130-Zero-one Loss
+131-dInd
+132-sInd
 >>> online_help("J")
 ...
 >>> online_help("J", alt_link=True)

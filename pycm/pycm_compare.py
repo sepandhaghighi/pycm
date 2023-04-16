@@ -17,7 +17,7 @@ class Compare():
 
     >>> cm1 = ConfusionMatrix(matrix={0:{0:2,1:50,2:6}, 1:{0:5,1:50,2:3}, 2:{0:1,1:7,2:50}})
     >>> cm2 = ConfusionMatrix(matrix={0:{0:50,1:2,2:6}, 1:{0:50,1:5,2:3}, 2:{0:1,1:55,2:2}})
-    >>> cp = Compare({"cm1":cm1, "cm2":cm2})
+    >>> cp = Compare({"cm1": cm1, "cm2": cm2})
     >>> print(cp)
     Best : cm1
 

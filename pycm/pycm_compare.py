@@ -20,11 +20,11 @@ class Compare():
     >>> cp = Compare({"cm1": cm1, "cm2": cm2})
     >>> print(cp)
     Best : cm1
-
-    Rank  Name   Class-Score         Overall-Score
-    1     cm1    3.01667             2.55
-    2     cm2    2.01667             1.98333
-
+    <BLANKLINE>
+    Rank  Name   Class-Score       Overall-Score
+    1     cm1    0.50278           0.58095
+    2     cm2    0.33611           0.52857
+    <BLANKLINE>
     >>> cp.best
     pycm.ConfusionMatrix(classes: [0, 1, 2])
     >>> cp.sorted

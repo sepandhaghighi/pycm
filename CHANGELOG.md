@@ -43,6 +43,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `CONTRIBUTING.md` updated
 - `codecov` removed from `dev-requirements.txt`
 - Test system modified
+- Doctests modified
 ## [3.8] - 2023-02-01
 ### Added
 - `distance` method

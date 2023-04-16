@@ -34,11 +34,11 @@ jobs:
         pip install --upgrade --upgrade-strategy=only-if-needed -r test-requirements.txt
     - name: Test with pytest (Python > 3.5)
       run: |
-        python -m pytest --cov=pycm --cov-report=term
+        python -m pytest Test --cov=pycm --cov-report=term
       if: matrix.python-version != 3.5
     - name: Test with pytest (Python 3.5)
       run: |
-        python -m pytest --ignore-glob="*plot_test.py" --cov=pycm --cov-report=term
+        python -m pytest --ignore-glob="*plot_test.py" Test --cov=pycm --cov-report=term
       if: matrix.python-version == 3.5
     - name: Version check
       run: |

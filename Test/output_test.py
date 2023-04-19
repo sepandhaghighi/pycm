@@ -781,5 +781,6 @@ sInd(Similarity index)                                            None          
 >>> os.remove("test_metrics_off.pycm")
 >>> os.remove("test_metrics_off.html")
 >>> os.remove("test_metrics_off.csv")
+>>> os.remove("test_metrics_off_matrix.csv")
 >>> os.remove("test_metrics_off.obj")
 """

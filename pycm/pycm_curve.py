@@ -13,6 +13,7 @@ class Curve:
     """
     Curve class.
 
+    >>> import numpy as np
     >>> crv = Curve(actual_vector=np.array([1, 1, 2, 2]), probs=np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
     >>> crv.classes
     [2, 1]
@@ -168,6 +169,7 @@ class ROCCurve(Curve):
     """
     ROCCurve class.
 
+    >>> import numpy as np
     >>> crv = ROCCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
     >>> crv.thresholds
     [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
@@ -209,6 +211,7 @@ class PRCurve(Curve):
     """
     PRCurve class.
 
+    >>> import numpy as np
     >>> crv = PRCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
     >>> crv.thresholds
     [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]

@@ -9,7 +9,9 @@ class DistanceType(Enum):
     """
     Distance metric type class.
 
+    >>> import pycm
     >>> pycm.DistanceType.AMPLE
+    <DistanceType.AMPLE: 'AMPLE'>
     """
 
     AMPLE = "AMPLE"

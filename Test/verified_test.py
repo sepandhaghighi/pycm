@@ -381,20 +381,20 @@ True
 >>> y_true = np.array([0, 1, 1, 0])
 >>> y_true_categorical = np.array(["spam", "ham", "ham", "spam"])
 >>> y_prob = np.array([0.1, 0.9, 0.8, 0.35])
->>> cm1 = ConfusionMatrix(y_true, y_prob, threshold=lambda x: 1)
+>>> cm1 = ConfusionMatrix(y_true, y_prob, threshold=lambda x: 1) # Verified Case -- (https://bit.ly/420uyVW)
 >>> cm1.log_loss()
 0.21616187468057912
 >>> cm1.log_loss(pos_class=1)
 0.21616187468057912
->>> cm2 = ConfusionMatrix(y_true, 1-y_prob, threshold=lambda x: 1)
+>>> cm2 = ConfusionMatrix(y_true, 1-y_prob, threshold=lambda x: 1) # Verified Case -- (https://bit.ly/420uyVW)
 >>> cm2.log_loss(pos_class=0)
 0.21616187468057912
->>> cm3 = ConfusionMatrix(y_true_categorical, y_prob, threshold=lambda x: "ham")
+>>> cm3 = ConfusionMatrix(y_true_categorical, y_prob, threshold=lambda x: "ham") # Verified Case -- (https://bit.ly/420uyVW)
 >>> cm3.log_loss(pos_class="ham")
 0.21616187468057912
 >>> cm3.log_loss(pos_class="ham", normalize=False)
 0.8646474987223165
->>> cm4 = ConfusionMatrix(y_true, y_prob, sample_weight=[2, 2, 3, 3], threshold=lambda x: 1)
+>>> cm4 = ConfusionMatrix(y_true, y_prob, sample_weight=[2, 2, 3, 3], threshold=lambda x: 1) # Verified Case -- (https://bit.ly/420uyVW)
 >>> cm4.log_loss()
 0.2383221464851297
 >>> cm4.log_loss(normalize=False)

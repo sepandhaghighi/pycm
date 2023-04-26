@@ -912,9 +912,9 @@ class ConfusionMatrix():
         :return: Brier score as float
         """
         if self.prob_vector is None or not self.binary:
-            raise pycmVectorError(BRIER_SCORE_PROB_ERROR)
+            raise pycmVectorError(BRIER_LOG_LOSS_PROB_ERROR)
         if pos_class is None and isinstance(self.classes[0], str):
-            raise pycmVectorError(BRIER_SCORE_CLASS_ERROR)
+            raise pycmVectorError(BRIER_LOG_LOSS_CLASS_ERROR)
         return brier_score_calc(
             self.classes,
             self.prob_vector,
@@ -933,9 +933,9 @@ class ConfusionMatrix():
         :return: Log loss as float
         """
         if self.prob_vector is None or not self.binary:
-            raise pycmVectorError(BRIER_SCORE_PROB_ERROR)
+            raise pycmVectorError(BRIER_LOG_LOSS_PROB_ERROR)
         if pos_class is None and isinstance(self.classes[0], str):
-            raise pycmVectorError(BRIER_SCORE_CLASS_ERROR)
+            raise pycmVectorError(BRIER_LOG_LOSS_CLASS_ERROR)
         return log_loss_calc(
             self.classes,
             self.prob_vector,

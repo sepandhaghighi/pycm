@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `__imbalancement_handler__` function
 - `vector_serializer` function
 - NPV micro/macro
+- `log_loss` method
 - 23 new distance/similarity
 	1. Dennis 
 	2. Digby

@@ -45,8 +45,8 @@ def log_loss_calc(
             if item == pos_class:
                 filtered_item = 1
             result += -1 * (sample_weight[index] / weight_sum) * ((filtered_item * math.log(prob_vector[index])) + (1 - filtered_item) * math.log(1 - prob_vector[index]))
-        if normalize:
-            result = result / vector_length
+        if not normalize:
+            result = result * weight_sum
         return result
     except Exception:
         return "None"

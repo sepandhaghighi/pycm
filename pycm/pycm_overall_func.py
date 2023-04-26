@@ -8,6 +8,7 @@ from .pycm_interpret import *
 from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
 from .pycm_util import complement
 
+
 def log_loss_calc(
         classes,
         prob_vector,
@@ -44,12 +45,14 @@ def log_loss_calc(
             filtered_item = 0
             if item == pos_class:
                 filtered_item = 1
-            result += -1 * (sample_weight[index] / weight_sum) * ((filtered_item * math.log(prob_vector[index])) + (1 - filtered_item) * math.log(1 - prob_vector[index]))
+            result += -1 * (sample_weight[index] / weight_sum) * ((filtered_item * math.log(
+                prob_vector[index])) + (1 - filtered_item) * math.log(1 - prob_vector[index]))
         if not normalize:
             result = result * weight_sum
         return result
     except Exception:
         return "None"
+
 
 def brier_score_calc(
         classes,
@@ -89,7 +92,6 @@ def brier_score_calc(
         return result
     except Exception:
         return "None"
-
 
 
 def alpha2_calc(TOP, P, ACC, POP, classes, max_iter=200, epsilon=0.0001):

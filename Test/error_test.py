@@ -148,8 +148,16 @@ pycm.pycm_error.pycmMatrixError: The input type is supposed to be pycm.Confusion
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmVectorError: This option only works in binary probability mode
+>>> cm.log_loss()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: This option only works in binary probability mode
 >>> cm = ConfusionMatrix(["ham", "spam", "ham", "ham"], [0.1, 0.4, 0.25, 1], threshold=lambda x : "ham")
 >>> cm.brier_score()
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: Actual vector contains string so pos_class should be explicitly specified
+>>> cm.log_loss()
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmVectorError: Actual vector contains string so pos_class should be explicitly specified

@@ -300,7 +300,11 @@ True
 'None'
 >>> brier_score_calc([1, 0], [0.8, 0.3, 0.2, 0.4], [1, 1, 0, 1], sample_weight=None, pos_class=None)
 0.23249999999999998
+>>> log_loss_calc([1, 0], [0.8, 0.3, 0.2, 0.4], [1, 1, 0, 1], sample_weight=None, pos_class=None)
+0.6416376597071276
 >>> brier_score_calc([1, "0"], [0.8, 0.3, 0.2, 0.4], [1, 1, 0, 1], sample_weight=None, pos_class=None)
+'None'
+>>> log_loss_calc([1, "0"], [0.8, 0.3, 0.2, 0.4], [1, 1, 0, 1], sample_weight=None, pos_class=None)
 'None'
 >>> vector_check([1, 2, 3, 0.4])
 False

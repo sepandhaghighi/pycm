@@ -31,7 +31,7 @@ def log_loss_calc(
     :type sample_weight: list
     :param pos_class: positive class name
     :type pos_class: int/str
-    :return: c as float
+    :return: Log loss as float
     """
     try:
         vector_length = len(actual_vector)

@@ -48,7 +48,7 @@ jobs:
       run: |
         pip install notebook>=5.2.2
         python Otherfiles/notebook_check.py
-      if: matrix.python-version == 3.8 && matrix.os == 'ubuntu-20.04'
+      if: matrix.python-version == 3.9 && matrix.os == 'ubuntu-20.04'
     - name: Other tests
       run: |
           python -m vulture pycm/ Otherfiles/ setup.py --min-confidence 65 --exclude=__init__.py --sort-by-size

@@ -28,6 +28,7 @@ ACC Macro                                                         0.72222
 F1 Macro                                                          0.56515
 FPR Macro                                                         0.20952
 Kappa                                                             0.35484
+NPV Macro                                                         0.77778
 Overall ACC                                                       0.58333
 PPV Macro                                                         0.61111
 SOA1(Landis & Koch)                                               Fair

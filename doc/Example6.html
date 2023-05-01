@@ -13164,16 +13164,16 @@ $$Case_1=\begin{bmatrix}26900 &amp; 40 \\25 &amp; 500 \end{bmatrix}$$
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case1</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">26900</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">}})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case1</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">26900</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">}})</span>
 <span class="n">case1</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13193,11 +13193,11 @@ Class1        0.99852       0.00148
 Class2        0.04762       0.95238       
 
 
-ACC: {&#39;Class2&#39;: 0.9976333515383216, &#39;Class1&#39;: 0.9976333515383216}
-MCC: {&#39;Class2&#39;: 0.9378574017402594, &#39;Class1&#39;: 0.9378574017402594}
-CEN: {&#39;Class2&#39;: 0.30489006849060607, &#39;Class1&#39;: 0.012858728415908176}
-MCEN: {&#39;Class2&#39;: 0.46949279678726225, &#39;Class1&#39;: 0.023280122318969122}
-DP: {&#39;Class2&#39;: 2.276283896527635, &#39;Class1&#39;: 2.276283896527635}
+ACC: {&#39;Class1&#39;: 0.9976333515383216, &#39;Class2&#39;: 0.9976333515383216}
+MCC: {&#39;Class1&#39;: 0.9378574017402594, &#39;Class2&#39;: 0.9378574017402594}
+CEN: {&#39;Class1&#39;: 0.012858728415908176, &#39;Class2&#39;: 0.30489006849060607}
+MCEN: {&#39;Class1&#39;: 0.023280122318969122, &#39;Class2&#39;: 0.46949279678726225}
+DP: {&#39;Class1&#39;: 2.276283896527635, &#39;Class2&#39;: 2.276283896527635}
 Kappa: 0.9377606597584491
 RCI: 0.8682877002417864
 SOA1: Almost Perfect
@@ -13226,16 +13226,16 @@ $$Case_2=\begin{bmatrix}26900 &amp; 40 \\500 &amp; 25 \end{bmatrix}$$
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case2</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">29600</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">40</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">}})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case2</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">29600</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">}})</span>
 <span class="n">case2</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13255,11 +13255,11 @@ Class1        0.99865       0.00135
 Class2        0.95238       0.04762       
 
 
-ACC: {&#39;Class2&#39;: 0.982098458478369, &#39;Class1&#39;: 0.982098458478369}
-MCC: {&#39;Class2&#39;: 0.13048897476798949, &#39;Class1&#39;: 0.13048897476798949}
-CEN: {&#39;Class2&#39;: 0.4655917826576813, &#39;Class1&#39;: 0.06481573363174531}
-MCEN: {&#39;Class2&#39;: 0.4264929996758212, &#39;Class1&#39;: 0.11078640690031397}
-DP: {&#39;Class2&#39;: 0.864594924328404, &#39;Class1&#39;: 0.864594924328404}
+ACC: {&#39;Class1&#39;: 0.982098458478369, &#39;Class2&#39;: 0.982098458478369}
+MCC: {&#39;Class1&#39;: 0.13048897476798949, &#39;Class2&#39;: 0.13048897476798949}
+CEN: {&#39;Class1&#39;: 0.06481573363174531, &#39;Class2&#39;: 0.4655917826576813}
+MCEN: {&#39;Class1&#39;: 0.11078640690031397, &#39;Class2&#39;: 0.4264929996758212}
+DP: {&#39;Class1&#39;: 0.864594924328404, &#39;Class2&#39;: 0.864594924328404}
 Kappa: 0.08122239707598865
 RCI: 0.022375346499017443
 SOA1: Slight
@@ -13288,16 +13288,16 @@ $$Case_3=\begin{bmatrix}40 &amp; 26900 \\25 &amp; 500 \end{bmatrix}$$
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case3</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">26900</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">}})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case3</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">26900</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">}})</span>
 <span class="n">case3</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13317,11 +13317,11 @@ Class1        0.00148       0.99852
 Class2        0.04762       0.95238       
 
 
-ACC: {&#39;Class2&#39;: 0.019661387220098307, &#39;Class1&#39;: 0.019661387220098307}
-MCC: {&#39;Class2&#39;: -0.13000800945464058, &#39;Class1&#39;: -0.13000800945464058}
-CEN: {&#39;Class2&#39;: 0.06103563616795208, &#39;Class1&#39;: 0.014927427128936136}
-MCEN: {&#39;Class2&#39;: 0.03655796690365652, &#39;Class1&#39;: 0.01281422838054554}
-DP: {&#39;Class2&#39;: -0.8416930356875597, &#39;Class1&#39;: -0.8416930356875597}
+ACC: {&#39;Class1&#39;: 0.019661387220098307, &#39;Class2&#39;: 0.019661387220098307}
+MCC: {&#39;Class1&#39;: -0.13000800945464058, &#39;Class2&#39;: -0.13000800945464058}
+CEN: {&#39;Class1&#39;: 0.014927427128936136, &#39;Class2&#39;: 0.06103563616795208}
+MCEN: {&#39;Class1&#39;: 0.01281422838054554, &#39;Class2&#39;: 0.03655796690365652}
+DP: {&#39;Class1&#39;: -0.8416930356875597, &#39;Class2&#39;: -0.8416930356875597}
 Kappa: -0.0017678372492452412
 RCI: 0.02192606003351106
 SOA1: Poor
@@ -13356,17 +13356,21 @@ $$Case_1=\begin{bmatrix}4 &amp; 0 &amp;0&amp;1 \\0 &amp; 4&amp;1&amp;0\\0&amp;1&
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case1</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">},</span>
-                                        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">},</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">40000</span><span class="p">}})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case1</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
+    <span class="n">matrix</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+        <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">40000</span><span class="p">}})</span>
 <span class="n">case1</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case1</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13390,13 +13394,13 @@ Class3        0.0           0.2           0.8           0.0
 Class4        0.0           0.0           2e-05         0.99998       
 
 
-ACC: {&#39;Class3&#39;: 0.9999250299880048, &#39;Class4&#39;: 0.9999500199920032, &#39;Class2&#39;: 0.9999500199920032, &#39;Class1&#39;: 0.9999750099960016}
-MCC: {&#39;Class3&#39;: 0.7302602381427055, &#39;Class4&#39;: 0.9333083339583177, &#39;Class2&#39;: 0.7999750068731099, &#39;Class1&#39;: 0.8944160139432883}
-CEN: {&#39;Class3&#39;: 0.3649884090288471, &#39;Class4&#39;: 0.0001575200922489127, &#39;Class2&#39;: 0.25701944178769376, &#39;Class1&#39;: 0.13625493172565745}
-MCEN: {&#39;Class3&#39;: 0.4654427710721536, &#39;Class4&#39;: 0.00029569133318617423, &#39;Class2&#39;: 0.3333333333333333, &#39;Class1&#39;: 0.17964888034078544}
-DP: {&#39;Class3&#39;: 2.7032690544190636, &#39;Class4&#39;: 3.1691421556058055, &#39;Class2&#39;: 2.869241573973406, &#39;Class1&#39;: &#39;None&#39;}
+ACC: {&#39;Class1&#39;: 0.9999750099960016, &#39;Class2&#39;: 0.9999500199920032, &#39;Class3&#39;: 0.9999250299880048, &#39;Class4&#39;: 0.9999500199920032}
+MCC: {&#39;Class1&#39;: 0.8944160139432883, &#39;Class2&#39;: 0.7999750068731099, &#39;Class3&#39;: 0.7302602381427055, &#39;Class4&#39;: 0.9333083339583177}
+CEN: {&#39;Class1&#39;: 0.13625493172565745, &#39;Class2&#39;: 0.25701944178769376, &#39;Class3&#39;: 0.3649884090288471, &#39;Class4&#39;: 0.0001575200922489127}
+MCEN: {&#39;Class1&#39;: 0.17964888034078544, &#39;Class2&#39;: 0.3333333333333333, &#39;Class3&#39;: 0.4654427710721536, &#39;Class4&#39;: 0.00029569133318617423}
+DP: {&#39;Class1&#39;: &#39;None&#39;, &#39;Class2&#39;: 2.869241573973406, &#39;Class3&#39;: 2.7032690544190636, &#39;Class4&#39;: 3.1691421556058055}
 Kappa: 0.8666333383326446
-RCI: 0.8711441699127427
+RCI: 0.8711441699127425
 SOA1: Almost Perfect
 </pre>
 </div>
@@ -13423,17 +13427,21 @@ $$Case_2=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case2</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
-                                        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case2</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
+    <span class="n">matrix</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}})</span>
 <span class="n">case2</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case2</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13457,11 +13465,11 @@ Class3       0.25         0.25         0.25         0.25
 Class4       0.25         0.25         0.25         0.25         
 
 
-ACC: {&#39;Class3&#39;: 0.625, &#39;Class4&#39;: 0.625, &#39;Class2&#39;: 0.625, &#39;Class1&#39;: 0.625}
-MCC: {&#39;Class3&#39;: 0.0, &#39;Class4&#39;: 0.0, &#39;Class2&#39;: 0.0, &#39;Class1&#39;: 0.0}
-CEN: {&#39;Class3&#39;: 0.8704188162777186, &#39;Class4&#39;: 0.8704188162777186, &#39;Class2&#39;: 0.8704188162777186, &#39;Class1&#39;: 0.8704188162777186}
-MCEN: {&#39;Class3&#39;: 0.9308855421443073, &#39;Class4&#39;: 0.9308855421443073, &#39;Class2&#39;: 0.9308855421443073, &#39;Class1&#39;: 0.9308855421443073}
-DP: {&#39;Class3&#39;: 0.0, &#39;Class4&#39;: 0.0, &#39;Class2&#39;: 0.0, &#39;Class1&#39;: 0.0}
+ACC: {&#39;Class1&#39;: 0.625, &#39;Class2&#39;: 0.625, &#39;Class3&#39;: 0.625, &#39;Class4&#39;: 0.625}
+MCC: {&#39;Class1&#39;: 0.0, &#39;Class2&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class4&#39;: 0.0}
+CEN: {&#39;Class1&#39;: 0.8704188162777186, &#39;Class2&#39;: 0.8704188162777186, &#39;Class3&#39;: 0.8704188162777186, &#39;Class4&#39;: 0.8704188162777186}
+MCEN: {&#39;Class1&#39;: 0.9308855421443073, &#39;Class2&#39;: 0.9308855421443073, &#39;Class3&#39;: 0.9308855421443073, &#39;Class4&#39;: 0.9308855421443073}
+DP: {&#39;Class1&#39;: 0.0, &#39;Class2&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class4&#39;: 0.0}
 Kappa: 0.0
 RCI: 0.0
 SOA1: Slight
@@ -13490,17 +13498,21 @@ $$Case_3=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case3</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
-                                        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case3</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
+    <span class="n">matrix</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}})</span>
 <span class="n">case3</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case3</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13524,13 +13536,13 @@ Class3        0.25          0.25          0.25          0.25
 Class4        0.76923       0.07692       0.07692       0.07692       
 
 
-ACC: {&#39;Class3&#39;: 0.76, &#39;Class4&#39;: 0.4, &#39;Class2&#39;: 0.76, &#39;Class1&#39;: 0.4}
-MCC: {&#39;Class3&#39;: 0.10714285714285714, &#39;Class4&#39;: -0.2358640882624316, &#39;Class2&#39;: 0.10714285714285714, &#39;Class1&#39;: -0.2358640882624316}
-CEN: {&#39;Class3&#39;: 0.8704188162777186, &#39;Class4&#39;: 0.6392779429225796, &#39;Class2&#39;: 0.8704188162777186, &#39;Class1&#39;: 0.6392779429225794}
-MCEN: {&#39;Class3&#39;: 0.9308855421443073, &#39;Class4&#39;: 0.647512271542988, &#39;Class2&#39;: 0.9308855421443073, &#39;Class1&#39;: 0.647512271542988}
-DP: {&#39;Class3&#39;: 0.16596653499824943, &#39;Class4&#39;: -0.3319330699964992, &#39;Class2&#39;: 0.16596653499824943, &#39;Class1&#39;: -0.33193306999649924}
+ACC: {&#39;Class1&#39;: 0.4, &#39;Class2&#39;: 0.76, &#39;Class3&#39;: 0.76, &#39;Class4&#39;: 0.4}
+MCC: {&#39;Class1&#39;: -0.2358640882624316, &#39;Class2&#39;: 0.10714285714285714, &#39;Class3&#39;: 0.10714285714285714, &#39;Class4&#39;: -0.2358640882624316}
+CEN: {&#39;Class1&#39;: 0.6392779429225794, &#39;Class2&#39;: 0.8704188162777186, &#39;Class3&#39;: 0.8704188162777186, &#39;Class4&#39;: 0.6392779429225796}
+MCEN: {&#39;Class1&#39;: 0.647512271542988, &#39;Class2&#39;: 0.9308855421443073, &#39;Class3&#39;: 0.9308855421443073, &#39;Class4&#39;: 0.647512271542988}
+DP: {&#39;Class1&#39;: -0.33193306999649924, &#39;Class2&#39;: 0.16596653499824943, &#39;Class3&#39;: 0.16596653499824943, &#39;Class4&#39;: -0.3319330699964992}
 Kappa: -0.07361963190184047
-RCI: 0.11603030564493627
+RCI: 0.11603030564493641
 SOA1: Poor
 </pre>
 </div>
@@ -13557,17 +13569,21 @@ $$Case_4=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case4</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
-                                        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">}})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case4</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
+    <span class="n">matrix</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}})</span>
 <span class="n">case3</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case4</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case4</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case4</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case4</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case4</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case4</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case4</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case4</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13591,13 +13607,13 @@ Class3        0.25          0.25          0.25          0.25
 Class4        0.76923       0.07692       0.07692       0.07692       
 
 
-ACC: {&#39;Class3&#39;: 0.999400898652022, &#39;Class4&#39;: 0.000998502246630055, &#39;Class2&#39;: 0.999400898652022, &#39;Class1&#39;: 0.000998502246630055}
-MCC: {&#39;Class3&#39;: 0.24970032963739885, &#39;Class4&#39;: -0.43266656861311537, &#39;Class2&#39;: 0.24970032963739885, &#39;Class1&#39;: -0.43266656861311537}
-CEN: {&#39;Class3&#39;: 0.8704188162777186, &#39;Class4&#39;: 0.0029588592520426657, &#39;Class2&#39;: 0.8704188162777186, &#39;Class1&#39;: 0.0029588592520426657}
-MCEN: {&#39;Class3&#39;: 0.9308855421443073, &#39;Class4&#39;: 0.002903385725603509, &#39;Class2&#39;: 0.9308855421443073, &#39;Class1&#39;: 0.002903385725603509}
-DP: {&#39;Class3&#39;: 1.6794055876913858, &#39;Class4&#39;: -1.9423127303715728, &#39;Class2&#39;: 1.6794055876913858, &#39;Class1&#39;: -1.9423127303715728}
+ACC: {&#39;Class1&#39;: 0.000998502246630055, &#39;Class2&#39;: 0.999400898652022, &#39;Class3&#39;: 0.999400898652022, &#39;Class4&#39;: 0.000998502246630055}
+MCC: {&#39;Class1&#39;: -0.43266656861311537, &#39;Class2&#39;: 0.24970032963739885, &#39;Class3&#39;: 0.24970032963739885, &#39;Class4&#39;: -0.43266656861311537}
+CEN: {&#39;Class1&#39;: 0.0029588592520426657, &#39;Class2&#39;: 0.8704188162777186, &#39;Class3&#39;: 0.8704188162777186, &#39;Class4&#39;: 0.0029588592520426657}
+MCEN: {&#39;Class1&#39;: 0.002903385725603509, &#39;Class2&#39;: 0.9308855421443073, &#39;Class3&#39;: 0.9308855421443073, &#39;Class4&#39;: 0.002903385725603509}
+DP: {&#39;Class1&#39;: -1.9423127303715728, &#39;Class2&#39;: 1.6794055876913858, &#39;Class3&#39;: 1.6794055876913858, &#39;Class4&#39;: -1.9423127303715728}
 Kappa: -0.0003990813465900262
-RCI: 0.5536610475678804
+RCI: 0.5536610475678805
 SOA1: Poor
 </pre>
 </div>
@@ -13624,17 +13640,21 @@ $$Case_5=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case5</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
-                                        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">10</span><span class="p">}})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case5</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
+    <span class="n">matrix</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}})</span>
 <span class="n">case5</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case5</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case5</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case5</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case5</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case5</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case5</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case5</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case5</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13658,11 +13678,11 @@ Class3       0.25         0.25         0.25         0.25
 Class4       0.25         0.25         0.25         0.25         
 
 
-ACC: {&#39;Class3&#39;: 0.7115384615384616, &#39;Class4&#39;: 0.36538461538461536, &#39;Class2&#39;: 0.7115384615384616, &#39;Class1&#39;: 0.7115384615384616}
-MCC: {&#39;Class3&#39;: 0.0, &#39;Class4&#39;: 0.0, &#39;Class2&#39;: 0.0, &#39;Class1&#39;: 0.0}
-CEN: {&#39;Class3&#39;: 0.6392779429225794, &#39;Class4&#39;: 0.6522742127953861, &#39;Class2&#39;: 0.6392779429225794, &#39;Class1&#39;: 0.6392779429225794}
-MCEN: {&#39;Class3&#39;: 0.647512271542988, &#39;Class4&#39;: 0.7144082229288313, &#39;Class2&#39;: 0.647512271542988, &#39;Class1&#39;: 0.647512271542988}
-DP: {&#39;Class3&#39;: 0.0, &#39;Class4&#39;: 0.0, &#39;Class2&#39;: 0.0, &#39;Class1&#39;: 0.0}
+ACC: {&#39;Class1&#39;: 0.7115384615384616, &#39;Class2&#39;: 0.7115384615384616, &#39;Class3&#39;: 0.7115384615384616, &#39;Class4&#39;: 0.36538461538461536}
+MCC: {&#39;Class1&#39;: 0.0, &#39;Class2&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class4&#39;: 0.0}
+CEN: {&#39;Class1&#39;: 0.6392779429225794, &#39;Class2&#39;: 0.6392779429225794, &#39;Class3&#39;: 0.6392779429225794, &#39;Class4&#39;: 0.6522742127953861}
+MCEN: {&#39;Class1&#39;: 0.647512271542988, &#39;Class2&#39;: 0.647512271542988, &#39;Class3&#39;: 0.647512271542988, &#39;Class4&#39;: 0.7144082229288313}
+DP: {&#39;Class1&#39;: 0.0, &#39;Class2&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class4&#39;: 0.0}
 Kappa: 0.0
 RCI: 0.0
 SOA1: Slight
@@ -13691,17 +13711,21 @@ $$Case_6=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case6</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span>
-                                        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">},</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span><span class="mi">10000</span><span class="p">}})</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case6</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
+    <span class="n">matrix</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">}})</span>
 <span class="n">case6</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span><span class="n">case6</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span><span class="n">case6</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span><span class="n">case6</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span><span class="n">case6</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span><span class="n">case6</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span><span class="n">case6</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span><span class="n">case6</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span><span class="n">case6</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13725,11 +13749,11 @@ Class3       0.25         0.25         0.25         0.25
 Class4       0.25         0.25         0.25         0.25         
 
 
-ACC: {&#39;Class3&#39;: 0.7499500149955014, &#39;Class4&#39;: 0.25014995501349596, &#39;Class2&#39;: 0.7499500149955014, &#39;Class1&#39;: 0.7499500149955014}
-MCC: {&#39;Class3&#39;: 0.0, &#39;Class4&#39;: 0.0, &#39;Class2&#39;: 0.0, &#39;Class1&#39;: 0.0}
-CEN: {&#39;Class3&#39;: 0.0029588592520426657, &#39;Class4&#39;: 0.539296694603886, &#39;Class2&#39;: 0.0029588592520426657, &#39;Class1&#39;: 0.0029588592520426657}
-MCEN: {&#39;Class3&#39;: 0.002903385725603509, &#39;Class4&#39;: 0.580710610324597, &#39;Class2&#39;: 0.002903385725603509, &#39;Class1&#39;: 0.002903385725603509}
-DP: {&#39;Class3&#39;: 0.0, &#39;Class4&#39;: 0.0, &#39;Class2&#39;: 0.0, &#39;Class1&#39;: 0.0}
+ACC: {&#39;Class1&#39;: 0.7499500149955014, &#39;Class2&#39;: 0.7499500149955014, &#39;Class3&#39;: 0.7499500149955014, &#39;Class4&#39;: 0.25014995501349596}
+MCC: {&#39;Class1&#39;: 0.0, &#39;Class2&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class4&#39;: 0.0}
+CEN: {&#39;Class1&#39;: 0.0029588592520426657, &#39;Class2&#39;: 0.0029588592520426657, &#39;Class3&#39;: 0.0029588592520426657, &#39;Class4&#39;: 0.539296694603886}
+MCEN: {&#39;Class1&#39;: 0.002903385725603509, &#39;Class2&#39;: 0.002903385725603509, &#39;Class3&#39;: 0.002903385725603509, &#39;Class4&#39;: 0.580710610324597}
+DP: {&#39;Class1&#39;: 0.0, &#39;Class2&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class4&#39;: 0.0}
 Kappa: 0.0
 RCI: 0.0
 SOA1: Slight
@@ -13740,6 +13764,22 @@ SOA1: Slight
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><script type="text/javascript">
+var sc_project=12845182; 
+var sc_invisible=1; 
+var sc_security="001dde8f"; 
+</script></p>
+<p><script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js" async></script></p>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/12845182/0/001dde8f/1/" alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+</div>
+</div>
 </div>
     </div>
   </div>

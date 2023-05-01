@@ -13158,8 +13158,8 @@ div#notebook {
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_actual</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.65</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.54</span><span class="p">,</span><span class="mf">0.82</span><span class="p">,</span><span class="mf">0.9</span><span class="p">]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_actual</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.65</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.54</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -13172,7 +13172,7 @@ div#notebook {
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_actual</span><span class="p">,</span><span class="n">y_pred</span><span class="p">,</span><span class="n">threshold</span><span class="o">=</span><span class="n">activation1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_actual</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="n">activation1</span><span class="p">)</span>
 <span class="n">cm</span><span class="o">.</span><span class="n">classes</span>
 </pre></div>
 
@@ -13261,6 +13261,8 @@ Lambda A                                                          0.5
 Lambda B                                                          0.0
 Mutual Information                                                0.31669
 NIR                                                               0.66667
+NPV Macro                                                         0.9
+NPV Micro                                                         0.83333
 Overall ACC                                                       0.83333
 Overall CEN                                                       0.39624
 Overall J                                                         (1.3,0.65)
@@ -13382,7 +13384,7 @@ sInd(Similarity index)                                            0.64645       
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">activation2</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
-    <span class="n">ref</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span><span class="s2">&quot;ship&quot;</span><span class="p">]</span>
+    <span class="n">ref</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;ship&quot;</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">ref</span><span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">i</span><span class="p">))]</span>
 </pre></div>
 
@@ -13396,8 +13398,14 @@ sInd(Similarity index)                                            0.64645       
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_actual</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ship&quot;</span><span class="p">,</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span><span class="s2">&quot;cat&quot;</span><span class="p">,</span><span class="s2">&quot;dog&quot;</span><span class="p">,</span><span class="s2">&quot;ship&quot;</span><span class="p">]</span>
-<span class="n">y_pred</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.39</span><span class="p">,</span> <span class="mf">0.53</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.77</span><span class="p">,</span> <span class="mf">0.22</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.17</span><span class="p">,</span> <span class="mf">0.13</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.28</span><span class="p">,</span> <span class="mf">0.71</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span> <span class="p">[</span><span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]]</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_actual</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ship&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;cat&quot;</span><span class="p">,</span> <span class="s2">&quot;dog&quot;</span><span class="p">,</span> <span class="s2">&quot;ship&quot;</span><span class="p">]</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.39</span><span class="p">,</span> <span class="mf">0.53</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.77</span><span class="p">,</span> <span class="mf">0.22</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.45</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.17</span><span class="p">,</span> <span class="mf">0.13</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.28</span><span class="p">,</span> <span class="mf">0.71</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span>
+    <span class="p">[</span><span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">,</span> <span class="mf">0.85</span><span class="p">]]</span>
 </pre></div>
 
     </div>
@@ -13410,7 +13418,7 @@ sInd(Similarity index)                                            0.64645       
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_actual</span><span class="p">,</span><span class="n">y_pred</span><span class="p">,</span><span class="n">threshold</span><span class="o">=</span><span class="n">activation2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_actual</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">threshold</span><span class="o">=</span><span class="n">activation2</span><span class="p">)</span>
 <span class="n">cm2</span><span class="o">.</span><span class="n">classes</span>
 </pre></div>
 
@@ -13501,6 +13509,8 @@ Lambda A                                                          0.75
 Lambda B                                                          0.66667
 Mutual Information                                                1.12581
 NIR                                                               0.33333
+NPV Macro                                                         0.93333
+NPV Micro                                                         0.91667
 Overall ACC                                                       0.83333
 Overall CEN                                                       0.16279
 Overall J                                                         (2.16667,0.72222)
@@ -13609,6 +13619,22 @@ sInd(Similarity index)                                            0.82322       
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><script type="text/javascript">
+var sc_project=12845182; 
+var sc_invisible=1; 
+var sc_security="001dde8f"; 
+</script></p>
+<p><script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js" async></script></p>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/12845182/0/001dde8f/1/" alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+</div>
+</div>
 </div>
     </div>
   </div>

@@ -13245,6 +13245,8 @@ Lambda A                                                          0.16667
 Lambda B                                                          0.42857
 Mutual Information                                                0.52421
 NIR                                                               0.5
+NPV Macro                                                         0.79048
+NPV Micro                                                         0.79167
 Overall ACC                                                       0.58333
 Overall CEN                                                       0.46381
 Overall J                                                         (1.225,0.40833)
@@ -13367,7 +13369,7 @@ sInd(Similarity index)                                            0.84287       
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="k">import</span> <span class="n">randint</span><span class="p">,</span><span class="n">seed</span>
 <span class="n">seed</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">))]</span>
+<span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">y_test</span><span class="p">))]</span>
 <span class="n">weights</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*=</span><span class="mi">9</span>
 </pre></div>
 
@@ -13381,7 +13383,7 @@ sInd(Similarity index)                                            0.84287       
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">sample_weight</span> <span class="o">=</span> <span class="n">weights</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
 <span class="n">cm2</span>
 </pre></div>
 
@@ -13472,6 +13474,8 @@ Lambda A                                                          0.41026
 Lambda B                                                          0.52174
 Mutual Information                                                0.5544
 NIR                                                               0.7
+NPV Macro                                                         0.86908
+NPV Micro                                                         0.91154
 Overall ACC                                                       0.82308
 Overall CEN                                                       0.28807
 Overall J                                                         (1.82323,0.60774)
@@ -13580,6 +13584,22 @@ sInd(Similarity index)                                            0.91995       
 </div>
 </div>
 
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><script type="text/javascript">
+var sc_project=12845182; 
+var sc_invisible=1; 
+var sc_security="001dde8f"; 
+</script></p>
+<p><script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js" async></script></p>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/12845182/0/001dde8f/1/" alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+</div>
+</div>
 </div>
     </div>
   </div>

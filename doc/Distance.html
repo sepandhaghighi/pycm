@@ -13109,7 +13109,16 @@ $( document ).ready(function(){
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p  style="z-index: 101;background: #fde073;text-align: center;line-height: 2.5;overflow: hidden;font-size:22px;">Please <a href="https://www.pycm.io/doc/#Cite" target="_blank">cite us</a> if you use the software</p>
+<p  style="z-index: 101;background: #fde073;text-align: center;line-height: 2.5;overflow: hidden;font-size:22px;">Please <a href="https://www.pycm.io/doc/#Cite" target="_blank">cite us</a> if you use the software</p><p><script type="text/javascript">
+      var sc_project = 12845182;
+      var sc_invisible = 1;
+      var sc_security = "001dde8f";
+   </script>
+   <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+   <noscript>
+      <div class="statcounter"><a title="Web Analytics" href="https://statcounter.com/" target="_blank"><img class="statcounter" src="https://c.statcounter.com/12845182/0/001dde8f/1/" alt="Web Analytics" referrerPolicy="no-referrer-when-downgrade"></a></div>
+</noscript></p>
+
 </div>
 </div>
 </div>
@@ -14866,13 +14875,1340 @@ $$corr_{ConsonniTodeschiniV} =
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Dennis">Dennis<a class="anchor-link" href="#Dennis">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Dennis similarity <a href="#ref15">[15]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{Dennis} =
+\frac{TP-\frac{(TP+FP)\times(TP+FN)}{POP}}{\sqrt{\frac{(TP+FP)\times(TP+FN)}{POP}}}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">Dennis</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 1.5652475842498528, 1: 0.7071067811865475, 2: 0.31622776601683794}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Digby">Digby<a class="anchor-link" href="#Digby">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Digby correlation <a href="#ref16">[16]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$corr_{Digby} =
+\frac{(TP \times TN) ^\frac{3}{4}-(FP \times FN)^\frac{3}{4}}{(TP \times TN)^\frac{3}{4}+(FP \times FN)^\frac{3}{4}}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">Digby</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 1.0, 1: 0.47759225007251715, 2: 0.2542302383508219}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Dispersion">Dispersion<a class="anchor-link" href="#Dispersion">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Dispersion correlation <a href="#ref17">[17]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$corr_{dispersion} =
+\frac{TP \times TN -FP \times FN}{POP^2}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">Dispersion</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.14583333333333334, 1: 0.041666666666666664, 2: 0.041666666666666664}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Doolittle">Doolittle<a class="anchor-link" href="#Doolittle">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Doolittle similarity <a href="#ref18">[18]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{Doolittle} =
+\frac{(TP\times POP - (TP+FP)\times(TP+FN))^2}{(TP+FP)\times(TP+FN)\times(FP+TN)\times(FN+TN)}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">Doolittle</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.4666666666666667, 1: 0.06666666666666667, 2: 0.02857142857142857}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Eyraud">Eyraud<a class="anchor-link" href="#Eyraud">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Eyraud similarity <a href="#ref19">[19]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{Eyraud} =
+\frac{TP-(TP+FP)\times(TP+FN)}{(TP+FP)\times(TP+FN)\times(FP+TN)\times(FN+TN)}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">Eyraud</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: -0.012698412698412698, 1: -0.009259259259259259, 2: -0.02142857142857143}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Fager-&amp;-McGowan">Fager &amp; McGowan<a class="anchor-link" href="#Fager-&amp;-McGowan">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Fager &amp; McGowan similarity <a href="#ref20">[20]</a> <a href="#ref21">[21]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{FagerMcGowan} =
+\frac{TP}{\sqrt{(TP+FP)\times(TP+FN)}} - \frac{1}{2\sqrt{max(TP+FP, TP+FN)}}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">FagerMcGowan</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.5509898714915045, 1: 0.11957315586905015, 2: 0.3435984122732345}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Faith">Faith<a class="anchor-link" href="#Faith">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Faith similarity <a href="#ref22">[22]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{Faith} =
+\frac{TP+\frac{TN}{2}}{POP}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">Faith</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.5416666666666666, 1: 0.4166666666666667, 2: 0.4166666666666667}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Fleiss-Levin-Paik">Fleiss-Levin-Paik<a class="anchor-link" href="#Fleiss-Levin-Paik">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Fleiss-Levin-Paik similarity <a href="#ref23">[23]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{FleissLevinPaik} =
+\frac{2 \times TN}{2 \times TN + FP + FN}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">FleissLevinPaik</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.875, 1: 0.8421052631578947, 2: 0.6153846153846154}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Forbes-I">Forbes I<a class="anchor-link" href="#Forbes-I">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Forbes I similarity <a href="#ref24">[24]</a> <a href="#ref25">[25]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{ForbesI} =
+\frac{POP \times TP}{(TP+FP)\times(TP+FN)}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">ForbesI</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 2.4, 1: 2.0, 2: 1.2}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Forbes-II">Forbes II<a class="anchor-link" href="#Forbes-II">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Forbes II correlation <a href="#ref26">[26]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$corr_{ForbesII} =
+\frac{FP \times FN-TP \times TN}{(TP+FP)\times(TP+FN) - POP \times min(TP+FP, TP+FN)}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">ForbesII</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 1.0, 1: 0.3333333333333333, 2: 0.2}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Fossum">Fossum<a class="anchor-link" href="#Fossum">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Fossum similarity <a href="#ref27">[27]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{Fossum} =
+\frac{POP \times (TP-\frac{1}{2})^2}{(TP+FP)\times(TP+FN)}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">Fossum</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 5.0, 1: 0.5, 2: 2.5}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Gilbert-&amp;-Wells">Gilbert &amp; Wells<a class="anchor-link" href="#Gilbert-&amp;-Wells">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Gilbert &amp; Wells similarity <a href="#ref28">[28]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{GilbertWells} =
+ln \frac{POP^3}{2\pi (TP+FP)\times(TP+FN)\times(FP+TN)\times(FN+TN)} +
+2ln \frac{POP! \times TP! \times FP! \times FN! \times TN!}{(TP+FP)! \times (TP+FN)! \times (FP+TN)! \times (FN+TN)!}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">GilbertWells</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 4.947742862177545, 1: 1.1129094954405283, 2: 0.4195337173255813}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goodall">Goodall<a class="anchor-link" href="#Goodall">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Goodall similarity <a href="#ref29">[29]</a> <a href="#ref30">[30]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{Goodall} =\frac{2}{\pi} \sin^{-1}\Big(
+\sqrt{\frac{TP + TN}{POP}}
+\Big)$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">Goodall</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.7322795271987701, 1: 0.6666666666666666, 2: 0.5533003790381138}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goodman-&amp;-Kruskal's-Lambda">Goodman &amp; Kruskal's Lambda<a class="anchor-link" href="#Goodman-&amp;-Kruskal's-Lambda">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Goodman &amp; Kruskal's Lambda similarity <a href="#ref31">[31]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{GK_\lambda} =
+\frac{\frac{1}{2}((max(TP,FP)+max(FN,TN)+max(TP,FN)+max(FP,TN))-
+(max(TP+FP,FN+TN)+max(TP+FN,FP+TN)))}
+{POP-\frac{1}{2}(max(TP+FP,FN+TN)+max(TP+FN,FP+TN))}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">GoodmanKruskalLambda</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.5, 1: 0.0, 2: 0.09090909090909091}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Goodman-&amp;-Kruskal-Lambda-r">Goodman &amp; Kruskal Lambda-r<a class="anchor-link" href="#Goodman-&amp;-Kruskal-Lambda-r">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Goodman &amp; Kruskal Lambda-r correlation <a href="#ref31">[31]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$corr_{GK_{\lambda_r}} =
+\frac{TP + TN - \frac{1}{2}(max(TP+FP,FN+TN)+max(TP+FN,FP+TN))}
+{POP - \frac{1}{2}(max(TP+FP,FN+TN)+max(TP+FN,FP+TN))}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">GoodmanKruskalLambdaR</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.5, 1: -0.2, 2: 0.09090909090909091}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Guttman's-Lambda-A">Guttman's Lambda A<a class="anchor-link" href="#Guttman's-Lambda-A">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Guttman's Lambda A similarity <a href="#ref32">[32]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{Guttman_{\lambda_a}} =
+\frac{max(TP, FN) + max(FP, TN) - max(TP+FP, FN+TN)}{POP - max(TP+FP, FN+TN)}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">GuttmanLambdaA</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.6, 1: 0.0, 2: 0.0}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Guttman's-Lambda-B">Guttman's Lambda B<a class="anchor-link" href="#Guttman's-Lambda-B">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Guttman's Lambda B similarity <a href="#ref32">[32]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{Guttman_{\lambda_b}} =
+\frac{max(TP, FP) + max(FN, TN) - max(TP+FN, FP+TN)}{POP - max(TP+FN, FP+TN)}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">GuttmanLambdaB</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.3333333333333333, 1: 0.0, 2: 0.16666666666666666}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hamann">Hamann<a class="anchor-link" href="#Hamann">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Hamann correlation <a href="#ref33">[33]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$corr_{Hamann} =
+\frac{TP+TN-FP-FN}{POP}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">Hamann</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.6666666666666666, 1: 0.5, 2: 0.16666666666666666}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Harris-&amp;-Lahey">Harris &amp; Lahey<a class="anchor-link" href="#Harris-&amp;-Lahey">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Harris &amp; Lahey similarity <a href="#ref34">[34]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{HarrisLahey} =
+\frac{TP}{TP+FP+FN} \times \frac{2TN+FP+FN}{2POP}+
+\frac{TN}{TN+FP+FN} \times \frac{2TP+FP+FN}{2POP}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">HarrisLahey</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.6592592592592592, 1: 0.3494318181818182, 2: 0.4068287037037037}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Hawkins-&amp;-Dotson">Hawkins &amp; Dotson<a class="anchor-link" href="#Hawkins-&amp;-Dotson">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Hawkins &amp; Dotson similarity <a href="#ref35">[35]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{HawkinsDotson} =
+\frac{1}{2} \times \Big(\frac{TP}{TP+FP+FN}+\frac{TN}{FP+FN+TN}\Big)
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">HawkinsDotson</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.6888888888888889, 1: 0.48863636363636365, 2: 0.4097222222222222}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Kendall's-Tau">Kendall's Tau<a class="anchor-link" href="#Kendall's-Tau">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Kendall's Tau correlation <a href="#ref36">[36]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$corr_{KendallTau} =
+\frac{2 \times (TP+TN-FP-FN)}{POP \times (POP-1)}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">KendallTau</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.12121212121212122, 1: 0.09090909090909091, 2: 0.030303030303030304}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Kent-&amp;-Foster-I">Kent &amp; Foster I<a class="anchor-link" href="#Kent-&amp;-Foster-I">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Kent &amp; Foster I similarity <a href="#ref37">[37]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{KentFosterI} =
+\frac{TP-\frac{(TP+FP)\times(TP+FN)}{TP+FP+FN}}{TP-\frac{(TP+FP)\times(TP+FN)}{TP+FP+FN}+FP+FN}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">KentFosterI</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.0, 1: -0.2, 2: -0.17647058823529413}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Kent-&amp;-Foster-II">Kent &amp; Foster II<a class="anchor-link" href="#Kent-&amp;-Foster-II">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Kent &amp; Foster II similarity <a href="#ref37">[37]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$sim_{KentFosterII} =
+\frac{TN-\frac{(FP+TN)\times(FN+TN)}{FP+FN+TN}}{TN-\frac{(FP+TN)\times(FP+TN)}{FP+FN+TN}+FP+FN}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">KentFosterII</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.0, 1: -0.06451612903225801, 2: -0.15384615384615394}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 3.9</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote id="ref1">1- C. C. Little, "Abydos Documentation," 2018.</blockquote><blockquote id="ref2">2- V. Dallmeier, C. Lindig, and A. Zeller, "Lightweight defect localization for Java," in <i>European conference on object-oriented programming</i>, 2005: Springer, pp. 528-550.</blockquote><blockquote id="ref3">3- R. Abreu, P. Zoeteweij, and A. J. Van Gemund, "An evaluation of similarity coefficients for software fault localization," in 2006 <i>12th Pacific Rim International Symposium on Dependable Computing (PRDC'06)</i>, 2006: IEEE, pp. 39-46.</blockquote><blockquote id="ref4">4- M. R. Anderberg, <i>Cluster analysis for applications: probability and mathematical statistics: a series of monographs and textbooks</i>. Academic press, 2014.</blockquote><blockquote id="ref5">5- A. M. Andrés and P. F. Marzo, "Delta: A new measure of agreement between two raters," <i>British journal of mathematical and statistical psychology</i>, vol. 57, no. 1, pp. 1-19, 2004.</blockquote><blockquote id="ref6">6- C. Baroni-Urbani and M. W. Buser, "Similarity of binary data," <i>Systematic Zoology</i>, vol. 25, no. 3, pp. 251-259, 1976.</blockquote><blockquote id="ref7">7- V. Batagelj and M. Bren, "Comparing resemblance measures," <i>Journal of classification</i>, vol. 12, no. 1, pp. 73-90, 1995.</blockquote><blockquote id="ref8">8- F. B. Baulieu, "A classification of presence/absence based dissimilarity coefficients," <i>Journal of Classification</i>, vol. 6, no. 1, pp. 233-246, 1989.</blockquote><blockquote id="ref9">9- F. B. Baulieu, "Two variant axiom systems for presence/absence based dissimilarity coefficients," <i>Journal of Classification</i>, vol. 14, no. 1, pp. 0159-0170, 1997.</blockquote><blockquote id="ref10">10- R. Benini, <i>Principii di demografia</i>. Barbera, 1901.</blockquote><blockquote id="ref11">11- G. N. Lance and W. T. Williams, "Computer programs for hierarchical polythetic classification (“similarity analyses”)," <i>The Computer Journal</i>, vol. 9, no. 1, pp. 60-64, 1966.</blockquote><blockquote id="ref12">12- G. N. Lance and W. T. Williams, "Mixed-Data Classificatory Programs I - Agglomerative Systems," <i>Australian Computer Journal</i>, vol. 1, no. 1, pp. 15-20, 1967.</blockquote><blockquote id="ref13">13- P. W. Clement, "A formula for computing inter-observer agreement," <i>Psychological Reports</i>, vol. 39, no. 1, pp. 257-258, 1976.</blockquote><blockquote id="ref14">14- V. Consonni and R. Todeschini, "New similarity coefficients for binary data," <i>Match-Communications in Mathematical and Computer Chemistry</i>, vol. 68, no. 2, p. 581, 2012.</blockquote>
+<blockquote id="ref1">1- C. C. Little, "Abydos Documentation," 2018.</blockquote><blockquote id="ref2">2- V. Dallmeier, C. Lindig, and A. Zeller, "Lightweight defect localization for Java," in <i>European conference on object-oriented programming</i>, 2005: Springer, pp. 528-550.</blockquote><blockquote id="ref3">3- R. Abreu, P. Zoeteweij, and A. J. Van Gemund, "An evaluation of similarity coefficients for software fault localization," in 2006 <i>12th Pacific Rim International Symposium on Dependable Computing (PRDC'06)</i>, 2006: IEEE, pp. 39-46.</blockquote><blockquote id="ref4">4- M. R. Anderberg, <i>Cluster analysis for applications: probability and mathematical statistics: a series of monographs and textbooks</i>. Academic press, 2014.</blockquote><blockquote id="ref5">5- A. M. Andrés and P. F. Marzo, "Delta: A new measure of agreement between two raters," <i>British journal of mathematical and statistical psychology</i>, vol. 57, no. 1, pp. 1-19, 2004.</blockquote><blockquote id="ref6">6- C. Baroni-Urbani and M. W. Buser, "Similarity of binary data," <i>Systematic Zoology</i>, vol. 25, no. 3, pp. 251-259, 1976.</blockquote><blockquote id="ref7">7- V. Batagelj and M. Bren, "Comparing resemblance measures," <i>Journal of classification</i>, vol. 12, no. 1, pp. 73-90, 1995.</blockquote><blockquote id="ref8">8- F. B. Baulieu, "A classification of presence/absence based dissimilarity coefficients," <i>Journal of Classification</i>, vol. 6, no. 1, pp. 233-246, 1989.</blockquote><blockquote id="ref9">9- F. B. Baulieu, "Two variant axiom systems for presence/absence based dissimilarity coefficients," <i>Journal of Classification</i>, vol. 14, no. 1, pp. 0159-0170, 1997.</blockquote><blockquote id="ref10">10- R. Benini, <i>Principii di demografia</i>. Barbera, 1901.</blockquote><blockquote id="ref11">11- G. N. Lance and W. T. Williams, "Computer programs for hierarchical polythetic classification (“similarity analyses”)," <i>The Computer Journal</i>, vol. 9, no. 1, pp. 60-64, 1966.</blockquote><blockquote id="ref12">12- G. N. Lance and W. T. Williams, "Mixed-Data Classificatory Programs I - Agglomerative Systems," <i>Australian Computer Journal</i>, vol. 1, no. 1, pp. 15-20, 1967.</blockquote><blockquote id="ref13">13- P. W. Clement, "A formula for computing inter-observer agreement," <i>Psychological Reports</i>, vol. 39, no. 1, pp. 257-258, 1976.</blockquote><blockquote id="ref14">14- V. Consonni and R. Todeschini, "New similarity coefficients for binary data," <i>Match-Communications in Mathematical and Computer Chemistry</i>, vol. 68, no. 2, p. 581, 2012.</blockquote><blockquote id="ref15">15- S. F. Dennis, "The Construction of a Thesaurus Automatically From," in <i>Statistical Association Methods for Mechanized Documentation: Symposium Proceedings</i>, 1965, vol. 269: US Government Printing Office, p. 61.</blockquote><blockquote id="ref16">16- P. G. Digby, "Approximating the tetrachoric correlation coefficient," <i>Biometrics</i>, pp. 753-757, 1983.</blockquote><blockquote id="ref17">17- IBM Corp, "IBM SPSS Statistics Algorithms," <i>ed: IBM Corp Armonk</i>, NY, USA, 2017.</blockquote><blockquote id="ref18">18- M. H. Doolittle, "The verification of predictions," <i>Bulletin of the Philosophical Society of Washington</i>, vol. 7, pp. 122-127, 1885.</blockquote><blockquote id="ref19">19- H. Eyraud, "Les principes de la mesure des correlations," <i>Ann. Univ. Lyon</i>, III. Ser., Sect. A, vol. 1, no. 30-47, p. 111, 1936.</blockquote><blockquote id="ref20">20- E. W. Fager, "Determination and analysis of recurrent groups," <i>Ecology</i>, vol. 38, no. 4, pp. 586-595, 1957.</blockquote><blockquote id="ref21">21- E. W. Fager and J. A. McGowan, "Zooplankton Species Groups in the North Pacific: Co-occurrences of species can be used to derive groups whose members react similarly to water-mass types," <i>Science</i>, vol. 140, no. 3566, pp. 453-460, 1963.</blockquote><blockquote id="ref22">22- D. P. Faith, "Asymmetric binary similarity measures," <i>Oecologia</i>, vol. 57, pp. 287-290, 1983.</blockquote><blockquote id="ref23">23- J. L. Fleiss, B. Levin, and M. C. Paik, <i>Statistical methods for rates and proportions.</i> john wiley & sons, 2013.</blockquote><blockquote id="ref24">24- S. A. Forbes, <i>On the local distribution of certain Illinois fishes: an essay in statistical ecology.</i> Illinois State Laboratory of Natural History, 1907.</blockquote><blockquote id="ref25">25- A. Mozley, "The statistical analysis of the distribution of pond molluscs in western Canada," <i>The American Naturalist</i>, vol. 70, no. 728, pp. 237-244, 1936.</blockquote><blockquote id="ref26">26- S. A. Forbes, "Method of determining and measuring the associative relations of species," <i>Science</i>, vol. 61, no. 1585, pp. 518-524, 1925.</blockquote><blockquote id="ref27">27- E. G. Fossum and G. Kaskey, "Optimization and standardization of information retrieval language and systems," <i>SPERRY RAND CORP PHILADELPHIA PA UNIVAC DIV</i>, 1966.</blockquote><blockquote id="ref28">28- N. Gilbert and T. C. Wells, "Analysis of quadrat data," <i>The Journal of Ecology</i>, pp. 675-685, 1966.</blockquote><blockquote id="ref29">29- D. W. Goodall, "The distribution of the matching coefficient," <i>Biometrics</i>, pp. 647-656, 1967.</blockquote><blockquote id="ref30">30- B. Austin and R. R. Colwell, "Evaluation of some coefficients for use in numerical taxonomy of microorganisms," <i>International Journal of Systematic and Evolutionary Microbiology</i>, vol. 27, no. 3, pp. 204-210, 1977.</blockquote><blockquote id="ref31">31- L. A. Goodman, W. H. Kruskal, L. A. Goodman, and W. H. Kruskal, <i>Measures of association for cross classifications.</i> Springer, 1979.</blockquote><blockquote id="ref32">32- L. Guttman, "An outline of the statistical theory of prediction," <i>The prediction of personal adjustment</i>, vol. 48, pp. 253-318, 1941.</blockquote><blockquote id="ref33">33- U. Hamann, "Merkmalsbestand und verwandtschaftsbeziehungen der farinosae: ein beitrag zum system der monokotyledonen," <i>Willdenowia</i>, pp. 639-768, 1961.</blockquote><blockquote id="ref34">34- F. C. Harris and B. B. Lahey, "A method for combining occurrence and nonoccurrence interobserver agreement scores," <i>Journal of Applied Behavior Analysis</i>, vol. 11, no. 4, pp. 523-527, 1978.</blockquote><blockquote id="ref35">35- R. P. Hawkins and V. A. Dotson, "Reliability Scores That Delude: An Alice in Wonderland Trip Through the Misleading Characteristics of Inter-Observer Agreement Scores in Interval Recording," 1973.</blockquote><blockquote id="ref36">36- M. G. Kendall, "A new measure of rank correlation," <i>Biometrika</i>, vol. 30, no. 1/2, pp. 81-93, 1938.</blockquote><blockquote id="ref37">37- R. N. Kent and S. L. Foster, "Direct observational procedures: Methodological issues in naturalistic settings," <i>Handbook of behavioral assessment</i>, pp. 279-328, 1977.</blockquote>
 </div>
 </div>
 </div>

@@ -24,6 +24,7 @@ ACC Macro                                                         0.9
 F1 Macro                                                          0.47368
 FPR Macro                                                         0.5
 Kappa                                                             0.0
+NPV Macro                                                         None
 Overall ACC                                                       0.9
 PPV Macro                                                         None
 SOA1(Landis & Koch)                                               Slight

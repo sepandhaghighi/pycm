@@ -58,6 +58,8 @@ Lambda A                                                          0.42857
 Lambda B                                                          0.16667
 Mutual Information                                                0.52421
 NIR                                                               0.41667
+NPV Macro                                                         0.77778
+NPV Micro                                                         0.79167
 Overall ACC                                                       0.58333
 Overall CEN                                                       0.46381
 Overall J                                                         (1.225,0.40833)

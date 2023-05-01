@@ -13149,8 +13149,8 @@ The iris dataset is a classic and very easy multi-class classification dataset.<
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="o">!{</span>sys.executable<span class="o">}</span> -m pip -q -q install scikit-learn
-<span class="k">if</span> <span class="s2">&quot;Example1_Files&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">():</span>
-    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;Example1_Files&quot;</span><span class="p">)</span>
+<span class="k">if</span> <span class="s2">&quot;Example1_files&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">():</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;Example1_files&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13221,7 +13221,7 @@ The iris dataset is a classic and very easy multi-class classification dataset.<
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred_1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_1</span><span class="p">)</span>
 <span class="n">cm1</span><span class="o">.</span><span class="n">print_matrix</span><span class="p">()</span>
 </pre></div>
 
@@ -13466,7 +13466,7 @@ Actual
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example1_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm1&quot;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm1</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example1_files&quot;</span><span class="p">,</span> <span class="s2">&quot;cm1&quot;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13481,7 +13481,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\doc_html\\Example1_Files\\cm1.html&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\doc_html\\Example1_files\\cm1.html&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -13493,7 +13493,7 @@ Actual
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="Example1_Files\cm1.html">Open File</a></p>
+<p><a href="Example1_files\cm1.html">Open File</a></p>
 
 </div>
 </div>
@@ -13536,7 +13536,7 @@ Actual
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred_2</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_2</span><span class="p">)</span>
 <span class="n">cm2</span><span class="o">.</span><span class="n">print_matrix</span><span class="p">()</span>
 </pre></div>
 
@@ -13781,7 +13781,7 @@ Actual
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example1_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm2&quot;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm2</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example1_files&quot;</span><span class="p">,</span><span class="s2">&quot;cm2&quot;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -13796,7 +13796,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\doc_html\\Example1_Files\\cm2.html&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\doc_html\\Example1_files\\cm2.html&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -13808,7 +13808,7 @@ Actual
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="Example1_Files\cm2.html">Open File</a></p>
+<p><a href="Example1_files\cm2.html">Open File</a></p>
 
 </div>
 </div>
@@ -13851,7 +13851,7 @@ Actual
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_pred_3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">=</span><span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_3</span><span class="p">)</span>
 <span class="n">cm3</span><span class="o">.</span><span class="n">print_matrix</span><span class="p">()</span>
 </pre></div>
 
@@ -14096,7 +14096,7 @@ Actual
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example1_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cm3&quot;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm3</span><span class="o">.</span><span class="n">save_html</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example1_files&quot;</span><span class="p">,</span> <span class="s2">&quot;cm3&quot;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -14111,7 +14111,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\doc_html\\Example1_Files\\cm3.html&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\doc_html\\Example1_files\\cm3.html&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -14123,7 +14123,7 @@ Actual
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="Example1_Files\cm3.html">Open File</a></p>
+<p><a href="Example1_files\cm3.html">Open File</a></p>
 
 </div>
 </div>
@@ -14141,7 +14141,7 @@ Actual
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pycm</span> <span class="k">import</span> <span class="n">Compare</span>
 
-<span class="n">cp</span> <span class="o">=</span> <span class="n">Compare</span><span class="p">({</span><span class="s2">&quot;C-Support vector&quot;</span><span class="p">:</span><span class="n">cm1</span><span class="p">,</span><span class="s2">&quot;Decision tree&quot;</span><span class="p">:</span><span class="n">cm2</span><span class="p">,</span><span class="s2">&quot;AdaBoost&quot;</span><span class="p">:</span><span class="n">cm3</span><span class="p">})</span>
+<span class="n">cp</span> <span class="o">=</span> <span class="n">Compare</span><span class="p">({</span><span class="s2">&quot;C-Support vector&quot;</span><span class="p">:</span> <span class="n">cm1</span><span class="p">,</span> <span class="s2">&quot;Decision tree&quot;</span><span class="p">:</span> <span class="n">cm2</span><span class="p">,</span> <span class="s2">&quot;AdaBoost&quot;</span><span class="p">:</span> <span class="n">cm3</span><span class="p">})</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cp</span><span class="p">)</span>
 </pre></div>
 
@@ -14175,7 +14175,7 @@ Rank   Name                Class-Score       Overall-Score
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span><span class="o">.</span><span class="n">save_report</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example1_Files&quot;</span><span class="p">,</span><span class="s2">&quot;cp&quot;</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cp</span><span class="o">.</span><span class="n">save_report</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;Example1_files&quot;</span><span class="p">,</span> <span class="s2">&quot;cp&quot;</span><span class="p">))</span>
 </pre></div>
 
     </div>
@@ -14190,7 +14190,7 @@ Rank   Name                Class-Score       Overall-Score
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\doc_html\\Example1_Files\\cp.comp&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\doc_html\\Example1_files\\cp.comp&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -14202,8 +14202,24 @@ Rank   Name                Class-Score       Overall-Score
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="Example1_Files\cp.comp">Open File</a></p>
+<p><a href="Example1_files\cp.comp">Open File</a></p>
 
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><script type="text/javascript">
+var sc_project=12845182; 
+var sc_invisible=1; 
+var sc_security="001dde8f"; 
+</script></p>
+<p><script type="text/javascript"
+src="https://www.statcounter.com/counter/counter.js" async></script></p>
+<noscript><div class="statcounter"><a title="Web Analytics"
+href="https://statcounter.com/" target="_blank"><img class="statcounter"
+src="https://c.statcounter.com/12845182/0/001dde8f/1/" alt="Web Analytics"
+referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 </div>
 </div>
 </div>

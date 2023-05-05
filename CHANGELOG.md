@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 - Test system modified
+- Python 3.5 support dropped
 ## [3.9] - 2023-05-01
 ### Added
 - `OVERALL_PARAMS` dictionary

@@ -781,3 +781,31 @@ def metrics_off_check(func):
             raise pycmMatrixError(METRICS_OFF_ERROR)
         return func(*args, **kwargs)
     return inner_function
+
+
+def deprecated(func):
+    """
+    Send a warning for decorated function's deprication while using it.
+
+    :param func: input function
+    :type func: function
+    :return: inner function
+    """
+    @wraps(func)
+    def inner_function(*args, **kwargs):
+        """
+        Inner function.
+
+        :param args: non-keyword arguments
+        :type args: list
+        :param kwargs: keyword arguments
+        :type kwargs: dict
+        :return: None
+        """
+        warn(
+            DEPRECATION_WARNING.format(
+                func.__name__),
+            category=DeprecationWarning,
+            stacklevel=2)
+        return func(*args, **kwargs)
+    return inner_function

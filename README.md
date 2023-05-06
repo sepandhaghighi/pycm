@@ -89,6 +89,8 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 ## Installation
 
+⚠️  PyCM 3.9 is the last version to support **Python 3.5**
+
 ⚠️  PyCM 2.4 is the last version to support **Python 2.7** & **Python 3.4**
 
 ⚠️  Plotting capability requires **Matplotlib (>= 3.0.0)** or **Seaborn (>= 0.9.1)**
@@ -116,7 +118,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ### MATLAB
 
 - Download and install [MATLAB](https://www.mathworks.com/products/matlab.html) (>=8.5, 64/32 bit)
-- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.5, 64/32 bit)
+- Download and install [Python3.x](https://www.python.org/downloads/) (>=3.6, 64/32 bit)
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
 - Run `pip install pycm` or `pip3 install pycm` (Need root access)

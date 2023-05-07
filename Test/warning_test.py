@@ -568,6 +568,6 @@ pycm.PRCurve(classes: [2, 1])
 >>> @deprecated
 ... def test_deprecated():
 ...    return
->>> with warns(DeprecationWarning, match='`test_deprecated` function is deprecated and may be removed in future releases.'):
+>>> with warns(DeprecationWarning, match='`test_deprecated` is deprecated and may be removed in future releases.'):
 ...    test_deprecated()
 """

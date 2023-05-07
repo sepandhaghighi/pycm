@@ -775,7 +775,7 @@ def metrics_off_check(func):
         :type args: list
         :param kwargs: keyword arguments
         :type kwargs: dict
-        :return: None
+        :return: modified function result
         """
         if args[0].metrics_off:
             raise pycmMatrixError(METRICS_OFF_ERROR)
@@ -785,7 +785,7 @@ def metrics_off_check(func):
 
 def deprecated(func):
     """
-    Send a warning regarding decorated function's deprication.
+    Send a warning regarding decorated function's deprecation.
 
     :param func: input function
     :type func: function
@@ -800,7 +800,7 @@ def deprecated(func):
         :type args: list
         :param kwargs: keyword arguments
         :type kwargs: dict
-        :return: None
+        :return: modified function result
         """
         warn(
             DEPRECATION_WARNING.format(

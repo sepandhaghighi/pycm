@@ -120,7 +120,7 @@ CLASSES_TYPE_WARNING = "The classes is neither a list nor None so it'll be ignor
 
 CURVE_NONE_WARNING = "The curve axes contain non-numerical value(s)."
 
-DEPRECATION_WARNING = "`{}` function is deprecated and may be removed in future releases."
+DEPRECATION_WARNING = "`{}` is deprecated and may be removed in future releases."
 
 DISTANCE_METRIC_TYPE_ERROR = "The metric type must be DistanceType"
 

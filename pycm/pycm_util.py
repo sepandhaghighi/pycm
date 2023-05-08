@@ -785,7 +785,7 @@ def metrics_off_check(func):
 
 def deprecated(func):
     """
-    Send a warning regarding decorated function's deprecation.
+    Send a warning regarding function's deprecation.
 
     :param func: input function
     :type func: function

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 >>> from pycm import *
+>>> from pycm.pycm_util import deprecated
 >>> from pytest import warns
 >>> large_cm = ConfusionMatrix(list(range(10)) + [2, 3, 5], list(range(10)) + [1, 7, 2])
 >>> with warns(RuntimeWarning, match='The confusion matrix is a high dimension matrix'):
@@ -564,4 +565,9 @@ pycm.ConfusionMatrix(classes: [1, 2])
 ...     crv = PRCurve(actual_vector=[1, 1, 2, 2], probs=[[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]], classes=[2, 1])
 >>> crv
 pycm.PRCurve(classes: [2, 1])
+>>> @deprecated
+... def test_deprecated():
+...    return
+>>> with warns(DeprecationWarning, match='`test_deprecated` is deprecated and may be removed in future releases.'):
+...    test_deprecated()
 """

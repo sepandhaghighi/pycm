@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - `deprecated` function
 ### Changed
+- Document modified
+- Example-4 modified
 - Test system modified
 - Python 3.5 support dropped
 ## [3.9] - 2023-05-01

@@ -42,3 +42,15 @@ class pycmCurveError(Exception):
     """Curve error class."""
 
     pass
+
+
+class pycmIndexError(Exception):
+    """Index error class."""
+
+    pass
+
+
+class pycmNotWorkingError(Exception):
+    """Not working error class."""
+
+    pass

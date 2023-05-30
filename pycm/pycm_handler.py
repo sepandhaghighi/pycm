@@ -237,6 +237,7 @@ def __obj_vector_handler__(
 
     return matrix_param
 
+
 def __mlcm_vector_handler__(
         mlcm,
         actual_vector,
@@ -269,6 +270,7 @@ def __mlcm_vector_handler__(
         raise pycmVectorError(VECTOR_UNIQUE_CLASS_ERROR)
     if isinstance(sample_weight, (list, numpy.ndarray)):
         mlcm.weights = sample_weight
+
 
 def __mlcm_assign_classes__(
         mlcm,

@@ -3,6 +3,7 @@
 from __future__ import division
 from .pycm_handler import __mlcm_vector_handler__, __mlcm_assign_classes__
 
+
 class MultiLabelCM():
     """
     Multilabel confusion matrix class.
@@ -39,7 +40,12 @@ class MultiLabelCM():
         self.weights = None
         self.classes = None
         self.cms = {}
-        __mlcm_vector_handler__(self, actual_vector, predict_vector, sample_weight, classes)
+        __mlcm_vector_handler__(
+            self,
+            actual_vector,
+            predict_vector,
+            sample_weight,
+            classes)
         __mlcm_assign_classes__(self, actual_vector, predict_vector, classes)
         pass
 

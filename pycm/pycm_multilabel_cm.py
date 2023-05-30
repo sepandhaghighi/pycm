@@ -66,6 +66,11 @@ class MultiLabelCM():
             pass
 
     def __str__(self):
+        """
+        MultiLabelCM object string representation method.
+
+        :return: representation as str
+        """
         pass
 
     def __repr__(self):

@@ -13,8 +13,13 @@ class MultiLabelCM():
 
     >>> mlcm = MultiLabelCM([[0, 1], [1, 1]], [[1, 0], [1, 0]])
     >>> #TODO: example
-    >>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat'}])
-    >>> #TODO: example
+    >>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat'}], samplewise=True)
+    >>> mlcm.cms
+    [pycm.ConfusionMatrix(classes: [0, 1]), pycm.ConfusionMatrix(classes: [0, 1])]
+    >>> mlcm.actual_vector
+    [[0, 1], [1, 1]]
+    >>> mlcm.predict_vector
+    [[1, 0], [1, 0]]
     """
 
     def __init__(
@@ -54,6 +59,7 @@ class MultiLabelCM():
             self.cms = []
             for actual, predict in zip(
                     self.actual_vector, self.predict_vector):
+                print(actual, predict)
                 self.cms.append(ConfusionMatrix(actual, predict))
         else:
             self.cms = {}
@@ -153,12 +159,12 @@ def __mlcm_vector_filter__(mlcm):
     :type classes: list
     :return: None
     """
-    for x in mlcm.actual_vector:
+    for i, x in enumerate(mlcm.actual_vector):
         if isinstance(x, set):
-            x = __set_to_multihot__(x, mlcm.classes)
-    for x in mlcm.predict_vector:
+            mlcm.actual_vector[i] = __set_to_multihot__(x, mlcm.classes)
+    for i, x in enumerate(mlcm.predict_vector):
         if isinstance(x, set):
-            x = __set_to_multihot__(x, mlcm.classes)
+            mlcm.predict_vector[i] = __set_to_multihot__(x, mlcm.classes)
 
 
 def __set_to_multihot__(S, classes):

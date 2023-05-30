@@ -17,9 +17,9 @@ class MultiLabelCM():
     >>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat'}], samplewise=True)
     >>> mlcm.cms
     [pycm.ConfusionMatrix(classes: [0, 1]), pycm.ConfusionMatrix(classes: [0, 1])]
-    >>> mlcm.actual_vector
+    >>> mlcm.actual_vector_multihot
     [[0, 1], [1, 1]]
-    >>> mlcm.predict_vector
+    >>> mlcm.predict_vector_multihot
     [[1, 0], [1, 0]]
     """
 

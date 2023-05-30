@@ -11,7 +11,6 @@ class MultiLabelCM():
     """
     Multilabel confusion matrix class.
 
-    >>> from pycm import MultiLabelCM
     >>> mlcm = MultiLabelCM([[0, 1], [1, 1]], [[1, 0], [1, 0]])
     >>> #TODO: example
     >>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat'}], samplewise=True)

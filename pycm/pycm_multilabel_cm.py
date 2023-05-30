@@ -11,6 +11,7 @@ class MultiLabelCM():
     """
     Multilabel confusion matrix class.
 
+    >>> from pycm import MultiLabelCM
     >>> mlcm = MultiLabelCM([[0, 1], [1, 1]], [[1, 0], [1, 0]])
     >>> #TODO: example
     >>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat'}], samplewise=True)
@@ -59,7 +60,6 @@ class MultiLabelCM():
             self.cms = []
             for actual, predict in zip(
                     self.actual_vector, self.predict_vector):
-                print(actual, predict)
                 self.cms.append(ConfusionMatrix(actual, predict))
         else:
             self.cms = {}

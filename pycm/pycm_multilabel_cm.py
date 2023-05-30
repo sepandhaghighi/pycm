@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """MultiLabelCM module."""
 from __future__ import division
-from .pycm_error import pycmVectorError, pycmMatrixError
+from .pycm_error import pycmVectorError, pycmIndexError, pycmNotWorkingError
 from .pycm_param import *
 from .pycm_obj import ConfusionMatrix
 import numpy
@@ -12,10 +12,7 @@ class MultiLabelCM():
     Multilabel confusion matrix class.
 
     >>> mlcm = MultiLabelCM([[0, 1], [1, 1]], [[1, 0], [1, 0]])
-    >>> #TODO: example
-    >>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat'}], samplewise=True)
-    >>> mlcm.cms
-    [pycm.ConfusionMatrix(classes: [0, 1]), pycm.ConfusionMatrix(classes: [0, 1])]
+    >>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat'}])
     >>> mlcm.actual_vector_multihot
     [[0, 1], [1, 1]]
     >>> mlcm.predict_vector_multihot
@@ -26,7 +23,6 @@ class MultiLabelCM():
             self,
             actual_vector,
             predict_vector,
-            samplewise=False,
             sample_weight=None,
             classes=None):
         """
@@ -36,8 +32,6 @@ class MultiLabelCM():
         :type actual_vector: python list or numpy array of list or set
         :param predict_vector: vector of predictions
         :type predict_vector: python list or numpy array of list or set
-        :param samplewise: flag to calculate confusion matrices per sample
-        :type samplewise: bool
         :param sample_weight: sample weights list
         :type sample_weight: list
         :param classes: ordered labels of classes
@@ -49,6 +43,8 @@ class MultiLabelCM():
         self.predict_vector_multihot = []
         self.weights = None
         self.classes = None
+        self.classwise_cms = {}
+        self.samplewise_cms = {}
         __mlcm_vector_handler__(
             self,
             actual_vector,
@@ -57,14 +53,50 @@ class MultiLabelCM():
             classes)
         __mlcm_assign_classes__(self, actual_vector, predict_vector, classes)
         __mlcm_vectors_filter__(self)
-        if samplewise:
-            self.cms = []
-            for actual, predict in zip(
-                    self.actual_vector_multihot, self.predict_vector_multihot):
-                self.cms.append(ConfusionMatrix(actual, predict))
-        else:
-            self.cms = {}
-            pass
+
+    def classwise_cm(self, class_name):
+        """
+        Return confusion matrices based on classes.
+
+        :param class_name: target class name for confusion matrix
+        :type class_name: any valid type
+        :return: confusion matrix corresponding to the given class name
+        """
+        if self.classes is None:
+            raise pycmNotWorkingError(CLASSWISE_CM_NOT_WORKING_ERROR)
+        if class_name not in self.classwise_cms:
+            class_index = self.classes.index(class_name)
+            actual_vector_temp = []
+            predict_vector_temp = []
+            for item1, item2 in zip(self.actual_vector_multihot, self.predict_vector_multihot):
+                actual_vector_temp.append(item1[class_index])
+                predict_vector_temp.append(item2[class_index])
+            cm = ConfusionMatrix(
+                actual_vector_temp,
+                predict_vector_temp,
+                sample_weight=self.weights)
+            self.classwise_cms[class_name] = cm
+            return cm
+        return self.classwise_cms[class_name]
+
+    def samplewise_cm(self, index):
+        """
+        Return confusion matrices based on samples.
+
+        :param index: sample index for confusion matrix
+        :type index: int
+        :return: confusion matrix corresponding to the given sample number
+        """
+        if index < 0 or index >= len(self.actual_vector):
+            raise pycmIndexError(VECTOR_INDEX_ERROR)
+        if index not in self.samplewise_cms:
+            cm = ConfusionMatrix(
+                self.actual_vector_multihot[index],
+                self.predict_vector_multihot[index],
+                sample_weight=self.weights)
+            self.samplewise_cms[index] = cm
+            return cm
+        return self.samplewise_cms[index]
 
     def __str__(self):
         """

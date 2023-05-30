@@ -236,3 +236,61 @@ def __obj_vector_handler__(
         cm.weights = sample_weight
 
     return matrix_param
+
+def __mlcm_vector_handler__(
+        mlcm,
+        actual_vector,
+        predict_vector,
+        sample_weight,
+        classes):
+    """
+    Handle multilabel object conditions for vectors.
+
+    :param mlcm: multilabel confusion matrix
+    :type mlcm: pycm.MultiLabelCM object
+    :param actual_vector: actual vector
+    :type actual_vector: python list or numpy array of any stringable objects
+    :param predict_vector: vector of predictions
+    :type predict_vector: python list or numpy array of any stringable objects
+    :param sample_weight: sample weights list
+    :type sample_weight: list
+    :param classes: ordered labels of classes
+    :type classes: list
+    :return: None
+    """
+    if not isinstance(actual_vector, (list, numpy.ndarray)) or not \
+            isinstance(predict_vector, (list, numpy.ndarray)):
+        raise pycmVectorError(VECTOR_TYPE_ERROR)
+    if len(actual_vector) != len(predict_vector):
+        raise pycmVectorError(VECTOR_SIZE_ERROR)
+    if len(actual_vector) == 0 or len(predict_vector) == 0:
+        raise pycmVectorError(VECTOR_EMPTY_ERROR)
+    if classes is not None and len(set(classes)) != len(classes):
+        raise pycmVectorError(VECTOR_UNIQUE_CLASS_ERROR)
+    if isinstance(sample_weight, (list, numpy.ndarray)):
+        mlcm.weights = sample_weight
+
+def __mlcm_assign_classes__(
+        mlcm,
+        actual_vector,
+        predict_vector,
+        classes):
+    """
+    Handle multilabel object class assignment.
+
+    :param mlcm: multilabel confusion matrix
+    :type mlcm: pycm.MultiLabelCM object
+    :param actual_vector: actual vector
+    :type actual_vector: python list or numpy array of any stringable objects
+    :param predict_vector: vector of predictions
+    :type predict_vector: python list or numpy array of any stringable objects
+    :param classes: ordered labels of classes
+    :type classes: list
+    :return: None
+    """
+    mlcm.classes = classes
+    if classes is None:
+        try:
+            mlcm.classes = set.union(*actual_vector, *predict_vector)
+        except TypeError:
+            pass

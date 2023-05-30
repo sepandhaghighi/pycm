@@ -82,7 +82,7 @@ class MultiLabelCM():
 
         :return: length as int
         """
-        return len(self.cms)
+        return len(self.classes)
 
 
 def __mlcm_vector_handler__(

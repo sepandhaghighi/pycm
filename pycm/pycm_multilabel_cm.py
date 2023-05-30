@@ -69,7 +69,7 @@ class MultiLabelCM():
 
     def __str__(self):
         """
-        MultiLabelCM object string representation method.
+        MultiLabel confusion matrix object string representation method.
 
         :return: representation as str
         """

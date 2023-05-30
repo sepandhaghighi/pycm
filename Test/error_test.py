@@ -280,4 +280,18 @@ pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_o
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
+>>> mlcm = MultiLabelCM([[0, 1], [1, 1]], [[1, 0], [1, 0]])
+>>> mlcm.classwise_cm(1)
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmNotWorkingError: Since classes is None, classwise confusion matrices is not working.
+>>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat'}])
+>>> mlcm.classwise_cm(1)
+Traceback (most recent call last):
+        ...
+ValueError: 1 is not in list
+>>> mlcm.samplewise_cm(2)
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmIndexError: The given index is invalid.
 """

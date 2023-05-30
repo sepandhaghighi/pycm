@@ -209,17 +209,17 @@ def __mlcm_vectors_filter__(mlcm):
         mlcm.predict_vector_multihot.append(item)
 
 
-def __set_to_multihot__(S, classes):
+def __set_to_multihot__(input_set, classes):
     """
     Convert a set into a multi-hot vector based in classes.
 
-    :param S: input set
-    :type S: set
+    :param input_set: input set
+    :type input_set: set
     :param classes: ordered labels of classes
     :type classes: list
     :return: multi-hot vector as a list
     """
     result = [0] * len(classes)
-    for x in S:
+    for x in input_set:
         result[classes.index(x)] = 1
     return result

@@ -3,6 +3,7 @@
 from __future__ import division
 from .pycm_error import pycmVectorError, pycmMatrixError
 from .pycm_param import *
+from .pycm_obj import ConfusionMatrix
 import numpy
 
 
@@ -41,7 +42,6 @@ class MultiLabelCM():
         self.predict_vector = predict_vector
         self.weights = None
         self.classes = None
-        self.cms = {}
         __mlcm_vector_handler__(
             self,
             actual_vector,
@@ -49,8 +49,15 @@ class MultiLabelCM():
             sample_weight,
             classes)
         __mlcm_assign_classes__(self, actual_vector, predict_vector, classes)
-        __mlcm_vector_filter__(self, classes)
-        pass
+        __mlcm_vector_filter__(self)
+        if samplewise:
+            self.cms = []
+            for actual, predict in zip(
+                    self.actual_vector, self.predict_vector):
+                self.cms.append(ConfusionMatrix(actual, predict))
+        else:
+            self.cms = {}
+            pass
 
     def __str__(self):
         pass
@@ -70,6 +77,7 @@ class MultiLabelCM():
         :return: length as int
         """
         return len(self.cms)
+
 
 def __mlcm_vector_handler__(
         mlcm,
@@ -126,12 +134,16 @@ def __mlcm_assign_classes__(
     mlcm.classes = classes
     if classes is None:
         try:
-            mlcm.classes = set.union(*actual_vector, *predict_vector)
+            mlcm.classes = sorted(
+                list(
+                    set.union(
+                        *actual_vector,
+                        *predict_vector)))
         except TypeError:
             pass
 
 
-def __mlcm_vector_filter__(mlcm, classes):
+def __mlcm_vector_filter__(mlcm):
     """
     Normalize multilabel object vectors.
 
@@ -143,10 +155,11 @@ def __mlcm_vector_filter__(mlcm, classes):
     """
     for x in mlcm.actual_vector:
         if isinstance(x, set):
-            x = __set_to_multihot__(x, classes)
+            x = __set_to_multihot__(x, mlcm.classes)
     for x in mlcm.predict_vector:
         if isinstance(x, set):
-            x = __set_to_multihot__(x, classes)
+            x = __set_to_multihot__(x, mlcm.classes)
+
 
 def __set_to_multihot__(S, classes):
     """

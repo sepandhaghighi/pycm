@@ -104,7 +104,7 @@ class MultiLabelCM():
 
         :return: representation as str
         """
-        pass
+        return self.__repr__()
 
     def __repr__(self):
         """

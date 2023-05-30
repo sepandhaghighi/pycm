@@ -45,7 +45,9 @@ class MultiLabelCM():
         :type classes: list
         """
         self.actual_vector = actual_vector
+        self.actual_vector_multihot = []
         self.predict_vector = predict_vector
+        self.predict_vector_multihot = []
         self.weights = None
         self.classes = None
         __mlcm_vector_handler__(
@@ -55,11 +57,11 @@ class MultiLabelCM():
             sample_weight,
             classes)
         __mlcm_assign_classes__(self, actual_vector, predict_vector, classes)
-        __mlcm_vector_filter__(self)
+        __mlcm_vectors_filter__(self)
         if samplewise:
             self.cms = []
             for actual, predict in zip(
-                    self.actual_vector, self.predict_vector):
+                    self.actual_vector_multihot, self.predict_vector_multihot):
                 self.cms.append(ConfusionMatrix(actual, predict))
         else:
             self.cms = {}
@@ -154,7 +156,7 @@ def __mlcm_assign_classes__(
             pass
 
 
-def __mlcm_vector_filter__(mlcm):
+def __mlcm_vectors_filter__(mlcm):
     """
     Normalize multilabel object vectors.
 
@@ -164,12 +166,16 @@ def __mlcm_vector_filter__(mlcm):
     :type classes: list
     :return: None
     """
-    for i, x in enumerate(mlcm.actual_vector):
+    for x in mlcm.actual_vector:
+        item = x
         if isinstance(x, set):
-            mlcm.actual_vector[i] = __set_to_multihot__(x, mlcm.classes)
-    for i, x in enumerate(mlcm.predict_vector):
+            item = __set_to_multihot__(x, mlcm.classes)
+        mlcm.actual_vector_multihot.append(item)
+    for x in mlcm.predict_vector:
+        item = x
         if isinstance(x, set):
-            mlcm.predict_vector[i] = __set_to_multihot__(x, mlcm.classes)
+            item = __set_to_multihot__(x, mlcm.classes)
+        mlcm.predict_vector_multihot.append(item)
 
 
 def __set_to_multihot__(S, classes):

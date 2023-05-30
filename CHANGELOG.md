@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `MultiLabelCM` class
 - `__mlcm_vector_handler__` function
 - `__mlcm_assign_classes__` function
+- `__mlcm_vectors_filter__` function
+- `__set_to_multihot__` function
 - `deprecated` function
 ### Changed
 - Document modified

@@ -68,7 +68,7 @@ class MultiLabelCM():
 
     def __str__(self):
         """
-        MultiLabel confusion matrix object string representation method.
+        Multilabel confusion matrix object string representation method.
 
         :return: representation as str
         """

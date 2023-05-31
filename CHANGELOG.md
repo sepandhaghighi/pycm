@@ -6,8 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- `pycmIndexError` class
-- `pycmNotWorkingError` class
+- `pycmMultiLabelError` class
 - `MultiLabelCM` class
 - `classwise_cm` method
 - `samplewise_cm` method

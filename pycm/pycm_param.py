@@ -67,14 +67,16 @@ VECTOR_SIZE_ERROR = "Input vectors must have same length"
 VECTOR_EMPTY_ERROR = "Input vectors are empty"
 VECTOR_ONLY_ERROR = "This option only works in vector mode"
 VECTOR_UNIQUE_CLASS_ERROR = "The classes list isn't unique. It contains duplicated labels."
-VECTOR_INDEX_ERROR = "The given index is invalid."
 CLASS_NUMBER_ERROR = "Number of the classes is lower than 2"
 METRICS_OFF_ERROR = "This method cannot be executed while 'metrics_off=True'."
 CLASSES_ERROR = "Used classes is not a subset of matrix's classes."
 COMPARE_FORMAT_ERROR = "The input type is supposed to be dictionary but it's not!"
 CLASSES_LENGHT_ERROR = "Classes length is not equal to the array length."
 AREA_METHOD_ERROR = "The numeric integral method can only be selected between 'trapezoidal' and 'midpoint'!"
-CLASSWISE_CM_NOT_WORKING_ERROR = "Since classes is None, classwise confusion matrices is not working."
+
+VECTOR_INDEX_ERROR = "Given index is out of vector's range."
+NOT_ALL_SET_VECTOR_ERROR = "Class extraction from input failed because at least one of your input vectors contains non-set items."
+INVALID_CLASS_NAME_ERROR = "Given class name is not among problem's classes."
 
 COMPARE_TYPE_ERROR = "The input is supposed to consist of pycm.ConfusionMatrix object but it's not!"
 COMPARE_DOMAIN_ERROR = "The domain of all ConfusionMatrix objects must be same! The sample size or the number " \

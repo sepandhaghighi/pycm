@@ -44,13 +44,7 @@ class pycmCurveError(Exception):
     pass
 
 
-class pycmIndexError(Exception):
-    """Index error class."""
-
-    pass
-
-
-class pycmNotWorkingError(Exception):
-    """Not working error class."""
+class pycmMultiLabelError(Exception):
+    """Multilabel error class."""
 
     pass

@@ -281,17 +281,21 @@ Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
 >>> mlcm = MultiLabelCM([[0, 1], [1, 1]], [[1, 0], [1, 0]])
->>> mlcm.classwise_cm(1)
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmNotWorkingError: Since classes is None, classwise confusion matrices is not working.
+pycm.pycm_error.pycmMultiLabelError: Class extraction failed because at least one of your input vectors contains non-set items.
 >>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat'}])
 >>> mlcm.classwise_cm(1)
 Traceback (most recent call last):
         ...
-ValueError: 1 is not in list
+pycm.pycm_error.pycmMultiLabelError: Given class name is not among problem's classes.
 >>> mlcm.samplewise_cm(2)
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmIndexError: The given index is invalid.
+pycm.pycm_error.pycmMultiLabelError: Given index is out of vector's range.
+>>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat', 'bird'}], classes=['dog', 'cat'])
+>>> mlcm.classwise_cm('bird')
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMultiLabelError: Given class name is not among problem's classes.
 """

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """MultiLabelCM module."""
 from __future__ import division
-from .pycm_error import pycmVectorError, pycmIndexError, pycmNotWorkingError
+from .pycm_error import pycmVectorError, pycmMultiLabelError
 from .pycm_param import *
 from .pycm_obj import ConfusionMatrix
 import numpy
@@ -11,7 +11,6 @@ class MultiLabelCM():
     """
     Multilabel confusion matrix class.
 
-    >>> mlcm = MultiLabelCM([[0, 1], [1, 1]], [[1, 0], [1, 0]])
     >>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat'}])
     >>> mlcm.actual_vector_multihot
     [[0, 1], [1, 1]]
@@ -51,7 +50,7 @@ class MultiLabelCM():
             predict_vector,
             sample_weight,
             classes)
-        __mlcm_assign_classes__(self, actual_vector, predict_vector, classes)
+        __mlcm_assign_classes__(self, classes)
         __mlcm_vectors_filter__(self)
 
     def classwise_cm(self, class_name):
@@ -62,13 +61,15 @@ class MultiLabelCM():
         :type class_name: any valid type
         :return: confusion matrix corresponding to the given class name
         """
-        if self.classes is None:
-            raise pycmNotWorkingError(CLASSWISE_CM_NOT_WORKING_ERROR)
         if class_name not in self.classwise_cms:
-            class_index = self.classes.index(class_name)
+            try:
+                class_index = self.classes.index(class_name)
+            except ValueError:
+                raise pycmMultiLabelError(INVALID_CLASS_NAME_ERROR)
             actual_vector_temp = []
             predict_vector_temp = []
-            for item1, item2 in zip(self.actual_vector_multihot, self.predict_vector_multihot):
+            for item1, item2 in zip(
+                    self.actual_vector_multihot, self.predict_vector_multihot):
                 actual_vector_temp.append(item1[class_index])
                 predict_vector_temp.append(item2[class_index])
             cm = ConfusionMatrix(
@@ -88,7 +89,7 @@ class MultiLabelCM():
         :return: confusion matrix corresponding to the given sample number
         """
         if index < 0 or index >= len(self.actual_vector):
-            raise pycmIndexError(VECTOR_INDEX_ERROR)
+            raise pycmMultiLabelError(VECTOR_INDEX_ERROR)
         if index not in self.samplewise_cms:
             cm = ConfusionMatrix(
                 self.actual_vector_multihot[index],
@@ -159,18 +160,12 @@ def __mlcm_vector_handler__(
 
 def __mlcm_assign_classes__(
         mlcm,
-        actual_vector,
-        predict_vector,
         classes):
     """
     Assign multilabel object class.
 
     :param mlcm: multilabel confusion matrix
     :type mlcm: pycm.MultiLabelCM object
-    :param actual_vector: actual vector
-    :type actual_vector: python list or numpy array of any stringable objects
-    :param predict_vector: vector of predictions
-    :type predict_vector: python list or numpy array of any stringable objects
     :param classes: ordered labels of classes
     :type classes: list
     :return: None
@@ -181,10 +176,10 @@ def __mlcm_assign_classes__(
             mlcm.classes = sorted(
                 list(
                     set.union(
-                        *actual_vector,
-                        *predict_vector)))
+                        *mlcm.actual_vector,
+                        *mlcm.predict_vector)))
         except TypeError:
-            pass
+            raise pycmMultiLabelError(NOT_ALL_SET_VECTOR_ERROR)
 
 
 def __mlcm_vectors_filter__(mlcm):
@@ -197,16 +192,10 @@ def __mlcm_vectors_filter__(mlcm):
     :type classes: list
     :return: None
     """
-    for x in mlcm.actual_vector:
-        item = x
-        if isinstance(x, set):
-            item = __set_to_multihot__(x, mlcm.classes)
-        mlcm.actual_vector_multihot.append(item)
-    for x in mlcm.predict_vector:
-        item = x
-        if isinstance(x, set):
-            item = __set_to_multihot__(x, mlcm.classes)
-        mlcm.predict_vector_multihot.append(item)
+    mlcm.actual_vector_multihot = [__set_to_multihot__(
+        x, mlcm.classes) for x in mlcm.actual_vector]
+    mlcm.predict_vector_multihot = [__set_to_multihot__(
+        x, mlcm.classes) for x in mlcm.predict_vector]
 
 
 def __set_to_multihot__(input_set, classes):
@@ -220,6 +209,7 @@ def __set_to_multihot__(input_set, classes):
     :return: multi-hot vector as a list
     """
     result = [0] * len(classes)
-    for x in input_set:
-        result[classes.index(x)] = 1
+    for i, x in enumerate(classes):
+        if x in input_set:
+            result[i] = 1
     return result

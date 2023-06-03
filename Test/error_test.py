@@ -298,4 +298,20 @@ pycm.pycm_error.pycmMultiLabelError: Given index is out of vector's range.
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmMultiLabelError: Given class name is not among problem's classes.
+>>> mlcm = MultiLabelCM(2, [[1, 0], [1, 0]])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: The type of input vectors is assumed to be a list or a NumPy array
+>>> mlcm = MultiLabelCM([[1, 0], [1, 0], [1,1]], [[1, 0], [1, 0]])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: Input vectors must have same length
+>>> mlcm = MultiLabelCM([], [])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: Input vectors are empty
+>>> mlcm = MultiLabelCM([[1, 0], [1, 0]], [[1, 0], [1, 0]], classes=[1,0,1])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: The classes list isn't unique. It contains duplicated labels.
 """

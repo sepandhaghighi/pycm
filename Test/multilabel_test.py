@@ -29,4 +29,7 @@ pycm.ConfusionMatrix(classes: [0, 1])
 pycm.ConfusionMatrix(classes: [0, 1])
 >>> mlcm.classwise_cms['dog'] != mlcm.classwise_cms['cat']
 True
+>>> mlcm2 = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat'}], sample_weight=[2, 5])
+>>> mlcm2.classwise_cm("dog")
+pycm.ConfusionMatrix(classes: [0, 1])
 """

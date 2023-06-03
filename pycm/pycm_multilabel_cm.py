@@ -53,7 +53,7 @@ class MultiLabelCM():
         __mlcm_assign_classes__(self, classes)
         __mlcm_vectors_filter__(self)
 
-    def classwise_cm(self, class_name):
+    def get_cm_by_class(self, class_name):
         """
         Return confusion matrices based on classes.
 

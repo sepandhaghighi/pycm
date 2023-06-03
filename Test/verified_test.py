@@ -667,7 +667,7 @@ True
 [[1, 0, 1], [0, 1, 0]]
 >>> mlcm.predict_vector_multihot
 [[1, 0, 0], [0, 1, 1]]
->>> mlcm.classwise_cm("cat").print_matrix()
+>>> mlcm.get_cm_by_class("cat").print_matrix()
 Predict 0       1
 Actual
 0       1       0
@@ -675,7 +675,7 @@ Actual
 1       0       1
 <BLANKLINE>
 <BLANKLINE>
->>> mlcm.classwise_cm("dog").print_matrix()
+>>> mlcm.get_cm_by_class("dog").print_matrix()
 Predict 0       1
 Actual
 0       1       0
@@ -683,7 +683,7 @@ Actual
 1       0       1
 <BLANKLINE>
 <BLANKLINE>
->>> mlcm.classwise_cm("bird").print_matrix()
+>>> mlcm.get_cm_by_class("bird").print_matrix()
 Predict 0       1
 Actual
 0       0       1

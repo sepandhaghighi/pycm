@@ -285,7 +285,7 @@ Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmMultiLabelError: Class extraction from input failed. Input vectors should be a list of sets with unified types.
 >>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat'}])
->>> mlcm.classwise_cm(1)
+>>> mlcm.get_cm_by_class(1)
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmMultiLabelError: Given class name is not among problem's classes.
@@ -294,7 +294,7 @@ Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmMultiLabelError: Given index is out of vector's range.
 >>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat', 'bird'}], classes=['dog', 'cat'])
->>> mlcm.classwise_cm('bird')
+>>> mlcm.get_cm_by_class('bird')
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmMultiLabelError: Given class name is not among problem's classes.

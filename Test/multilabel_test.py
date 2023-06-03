@@ -14,22 +14,22 @@ pycm.ConfusionMatrix(classes: [0, 1])
 pycm.ConfusionMatrix(classes: [0, 1])
 >>> mlcm.get_cm_by_sample(1)
 pycm.ConfusionMatrix(classes: [0, 1])
->>> mlcm.classwise_cm('cat')
+>>> mlcm.get_cm_by_class('cat')
 pycm.ConfusionMatrix(classes: [0, 1])
->>> mlcm.classwise_cm('cat')
+>>> mlcm.get_cm_by_class('cat')
 pycm.ConfusionMatrix(classes: [0, 1])
->>> mlcm.classwise_cm('dog')
+>>> mlcm.get_cm_by_class('dog')
 pycm.ConfusionMatrix(classes: [0, 1])
 >>> mlcm.samplewise_cms[0] != mlcm.samplewise_cms[1]
 True
 >>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat', 'bird'}], classes=['dog', 'cat'])
->>> mlcm.classwise_cm('cat')
+>>> mlcm.get_cm_by_class('cat')
 pycm.ConfusionMatrix(classes: [0, 1])
->>> mlcm.classwise_cm('dog')
+>>> mlcm.get_cm_by_class('dog')
 pycm.ConfusionMatrix(classes: [0, 1])
 >>> mlcm.classwise_cms['dog'] != mlcm.classwise_cms['cat']
 True
 >>> mlcm2 = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat'}], sample_weight=[2, 5])
->>> mlcm2.classwise_cm("dog")
+>>> mlcm2.get_cm_by_class("dog")
 pycm.ConfusionMatrix(classes: [0, 1])
 """

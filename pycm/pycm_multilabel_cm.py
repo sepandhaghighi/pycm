@@ -80,7 +80,7 @@ class MultiLabelCM():
             return cm
         return self.classwise_cms[class_name]
 
-    def samplewise_cm(self, index):
+    def get_cm_by_sample(self, index):
         """
         Return confusion matrices based on samples.
 

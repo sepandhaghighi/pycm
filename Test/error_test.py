@@ -289,7 +289,7 @@ pycm.pycm_error.pycmMultiLabelError: Class extraction from input failed. Input v
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmMultiLabelError: Given class name is not among problem's classes.
->>> mlcm.samplewise_cm(2)
+>>> mlcm.get_cm_by_sample(2)
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmMultiLabelError: Given index is out of vector's range.

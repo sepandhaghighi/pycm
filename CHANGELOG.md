@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `pycmMultiLabelError` class
 - `MultiLabelCM` class
 - `classwise_cm` method
-- `samplewise_cm` method
+- `get_cm_by_sample` method
 - `__mlcm_vector_handler__` function
 - `__mlcm_assign_classes__` function
 - `__mlcm_vectors_filter__` function

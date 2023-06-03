@@ -691,7 +691,7 @@ Actual
 1       1       0
 <BLANKLINE>
 <BLANKLINE>
->>> mlcm.samplewise_cm(0).print_matrix()
+>>> mlcm.get_cm_by_sample(0).print_matrix()
 Predict 0       1
 Actual
 0       1       0
@@ -699,7 +699,7 @@ Actual
 1       1       1
 <BLANKLINE>
 <BLANKLINE>
->>> mlcm.samplewise_cm(1).print_matrix()
+>>> mlcm.get_cm_by_sample(1).print_matrix()
 Predict 0       1
 Actual
 0       1       1

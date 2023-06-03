@@ -75,7 +75,7 @@ CLASSES_LENGHT_ERROR = "Classes length is not equal to the array length."
 AREA_METHOD_ERROR = "The numeric integral method can only be selected between 'trapezoidal' and 'midpoint'!"
 
 VECTOR_INDEX_ERROR = "Given index is out of vector's range."
-NOT_ALL_SET_VECTOR_ERROR = "Class extraction from input failed because at least one of your input vectors contains non-set items."
+NOT_ALL_SET_VECTOR_ERROR = "Class extraction from input failed. Input vectors should be a list of sets with unified types."
 INVALID_CLASS_NAME_ERROR = "Given class name is not among problem's classes."
 
 COMPARE_TYPE_ERROR = "The input is supposed to consist of pycm.ConfusionMatrix object but it's not!"

@@ -662,5 +662,49 @@ True
 -0.0012804097311239404
 >>> cm2.distance(metric=DistanceType.KentFosterII)[1]
 -0.002196997436837158
-
+>>> mcm = MultiLabelCM(actual_vector=[{"cat", "bird"}, {"dog"}], predict_vector=[{"cat"}, {"dog", "bird"}], classes=["cat", "dog", "bird"]) # Verified Case -- (http://bitly.ws/GNq2)
+>>> mcm.actual_vector_multihot
+[[1, 0, 1], [0, 1, 0]]
+>>> mcm.predict_vector_multihot
+[[1, 0, 0], [0, 1, 1]]
+>>> mcm.classwise_cm("cat").print_matrix()
+Predict 0       1
+Actual
+0       1       0
+<BLANKLINE>
+1       0       1
+<BLANKLINE>
+<BLANKLINE>
+>>> mcm.classwise_cm("dog").print_matrix()
+Predict 0       1
+Actual
+0       1       0
+<BLANKLINE>
+1       0       1
+<BLANKLINE>
+<BLANKLINE>
+>>> mcm.classwise_cm("bird").print_matrix()
+Predict 0       1
+Actual
+0       0       1
+<BLANKLINE>
+1       1       0
+<BLANKLINE>
+<BLANKLINE>
+>>> mcm.samplewise_cm(0).print_matrix()
+Predict 0       1
+Actual
+0       1       0
+<BLANKLINE>
+1       1       1
+<BLANKLINE>
+<BLANKLINE>
+>>> mcm.samplewise_cm(1).print_matrix()
+Predict 0       1
+Actual
+0       1       1
+<BLANKLINE>
+1       0       1
+<BLANKLINE>
+<BLANKLINE>
 """

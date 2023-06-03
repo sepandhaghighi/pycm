@@ -2,9 +2,19 @@
 """
 >>> from pycm import *
 >>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat'}])
+>>> len(mlcm)
+2
+>>> print(mlcm)
+pycm.MultiLabelCM(classes: ['cat', 'dog'])
+>>> mlcm
+pycm.MultiLabelCM(classes: ['cat', 'dog'])
+>>> mlcm.samplewise_cm(0)
+pycm.ConfusionMatrix(classes: [0, 1])
 >>> mlcm.samplewise_cm(0)
 pycm.ConfusionMatrix(classes: [0, 1])
 >>> mlcm.samplewise_cm(1)
+pycm.ConfusionMatrix(classes: [0, 1])
+>>> mlcm.classwise_cm('cat')
 pycm.ConfusionMatrix(classes: [0, 1])
 >>> mlcm.classwise_cm('cat')
 pycm.ConfusionMatrix(classes: [0, 1])

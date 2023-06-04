@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `deprecated` function
 ### Changed
 - Document modified
+- `README.md` modified
 - Example-4 modified
 - Test system modified
 - Python 3.5 support dropped

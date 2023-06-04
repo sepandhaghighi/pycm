@@ -437,6 +437,18 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 'cm2'
 ```
 
+### Multilabel confusion matrix
+
+From `version 4.0`, `MultiLabelCM` has been added to calculate class-wise or sample-wise multilabel confusion matrices. In class-wise mode, confusion matrices are calculated for each class, and in sample-wise mode, they are generated per sample. All generated confusion matrices are binarized with a one-vs-rest transformation.
+
+```pycon
+>>> mlcm = MultiLabelCM(actual_vector=[{"cat", "bird"}, {"dog"}], predict_vector=[{"cat"}, {"dog", "bird"}], classes=["cat", "dog", "bird"])
+>>> print(mlcm.actual_vector_multihot)
+>>> print(mlcm.predict_vector_multihot)
+>>> mlcm.get_cm_by_class("cat").print_matrix()
+>>> mlcm.get_cm_by_sample(0).print_matrix()
+```
+
 ### Online help
 
 `online_help` function is added in `version 1.1` in order to open each statistics definition in web browser
@@ -495,6 +507,13 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 3. `classes` : python `list`
 4. `thresholds`: python `list` or numpy `array`
 5. `sample_weight`: python `list` or numpy `array`
+
+**MultiLabelCM**
+
+1. `actual_vector` : python `list` or numpy array of `list` or `set`
+2. `predict_vector` : python `list` or numpy array of `list` or `set`
+3. `sample_weight`: python `list` or numpy `array`
+4. `classes` : python `list`
 
 For more information visit [here](https://github.com/sepandhaghighi/pycm/tree/master/Document "Document")
 

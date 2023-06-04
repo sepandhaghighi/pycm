@@ -28,11 +28,11 @@ class MultiLabelCM():
         Init method.
 
         :param actual_vector: actual vector
-        :type actual_vector: python list or numpy array of list or set
+        :type actual_vector: python list or numpy array of sets
         :param predict_vector: vector of predictions
-        :type predict_vector: python list or numpy array of list or set
+        :type predict_vector: python list or numpy array of sets
         :param sample_weight: sample weights list
-        :type sample_weight: list
+        :type sample_weight: python list or numpy array
         :param classes: ordered labels of classes
         :type classes: list
         """
@@ -136,11 +136,11 @@ def __mlcm_vector_handler__(
     :param mlcm: multilabel confusion matrix
     :type mlcm: pycm.MultiLabelCM object
     :param actual_vector: actual vector
-    :type actual_vector: python list or numpy array of any stringable objects
+    :type actual_vector: python list or numpy array of sets
     :param predict_vector: vector of predictions
-    :type predict_vector: python list or numpy array of any stringable objects
+    :type predict_vector: python list or numpy array of sets
     :param sample_weight: sample weights list
-    :type sample_weight: list
+    :type sample_weight: python list or numpy array
     :param classes: ordered labels of classes
     :type classes: list
     :return: None

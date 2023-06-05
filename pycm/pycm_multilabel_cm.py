@@ -152,6 +152,10 @@ def __mlcm_vector_handler__(
         raise pycmVectorError(VECTOR_SIZE_ERROR)
     if len(actual_vector) == 0 or len(predict_vector) == 0:
         raise pycmVectorError(VECTOR_EMPTY_ERROR)
+    if not all(map(lambda x: isinstance(x, set), actual_vector)):
+        raise pycmVectorError(NOT_ALL_SET_VECTOR_ERROR)
+    if not all(map(lambda x: isinstance(x, set), predict_vector)):
+        raise pycmVectorError(NOT_ALL_SET_VECTOR_ERROR)
     if classes is not None and len(set(classes)) != len(classes):
         raise pycmVectorError(VECTOR_UNIQUE_CLASS_ERROR)
     if isinstance(sample_weight, (list, numpy.ndarray)):
@@ -172,14 +176,11 @@ def __mlcm_assign_classes__(
     """
     mlcm.classes = classes
     if classes is None:
-        try:
-            mlcm.classes = sorted(
-                list(
-                    set.union(
-                        *mlcm.actual_vector,
-                        *mlcm.predict_vector)))
-        except TypeError:
-            raise pycmMultiLabelError(NOT_ALL_SET_VECTOR_ERROR)
+        mlcm.classes = sorted(
+            list(
+                set.union(
+                    *mlcm.actual_vector,
+                    *mlcm.predict_vector)))
 
 
 def __mlcm_vectors_filter__(mlcm):

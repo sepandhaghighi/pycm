@@ -283,7 +283,15 @@ pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_o
 >>> mlcm = MultiLabelCM([[0, 1], [1, 1]], [[1, 0], [1, 0]])
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMultiLabelError: Class extraction from input failed. Input vectors should be a list of sets with unified types.
+pycm.pycm_error.pycmVectorError: Class extraction from input failed. Input vectors should be a list of sets with unified types.
+>>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], ['cat', {'cat'}])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: Class extraction from input failed. Input vectors should be a list of sets with unified types.
+>>> mlcm = MultiLabelCM(['dog', {'cat', 'dog'}], [{'cat'}, {'cat'}])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: Class extraction from input failed. Input vectors should be a list of sets with unified types.
 >>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat'}])
 >>> mlcm.get_cm_by_class(1)
 Traceback (most recent call last):

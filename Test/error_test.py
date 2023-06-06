@@ -280,4 +280,46 @@ pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_o
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmMatrixError: This method cannot be executed while 'metrics_off=True'.
+>>> mlcm = MultiLabelCM([[0, 1], [1, 1]], [[1, 0], [1, 0]])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: Class extraction from input failed. Input vectors should be a list of sets with unified types.
+>>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], ['cat', {'cat'}])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: Class extraction from input failed. Input vectors should be a list of sets with unified types.
+>>> mlcm = MultiLabelCM(['dog', {'cat', 'dog'}], [{'cat'}, {'cat'}])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: Class extraction from input failed. Input vectors should be a list of sets with unified types.
+>>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat'}])
+>>> mlcm.get_cm_by_class(1)
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMultiLabelError: Given class name is not among problem's classes.
+>>> mlcm.get_cm_by_sample(2)
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMultiLabelError: Given index is out of vector's range.
+>>> mlcm = MultiLabelCM([{'dog'}, {'cat', 'dog'}], [{'cat'}, {'cat', 'bird'}], classes=['dog', 'cat'])
+>>> mlcm.get_cm_by_class('bird')
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmMultiLabelError: Given class name is not among problem's classes.
+>>> mlcm = MultiLabelCM(2, [[1, 0], [1, 0]])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: The type of input vectors is assumed to be a list or a NumPy array
+>>> mlcm = MultiLabelCM([{1, 0}, {1, 0}, {1,1}], [{1, 0}, {1, 0}])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: Input vectors must have same length
+>>> mlcm = MultiLabelCM([], [])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: Input vectors are empty
+>>> mlcm = MultiLabelCM([{1, 0}, {1, 0}], [{1, 0}, {1, 0}], classes=[1,0,1])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmVectorError: The classes list isn't unique. It contains duplicated labels.
 """

@@ -42,3 +42,9 @@ class pycmCurveError(Exception):
     """Curve error class."""
 
     pass
+
+
+class pycmMultiLabelError(Exception):
+    """Multilabel error class."""
+
+    pass

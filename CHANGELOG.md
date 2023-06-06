@@ -6,9 +6,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- `pycmMultiLabelError` class
+- `MultiLabelCM` class
+- `get_cm_by_class` method
+- `get_cm_by_sample` method
+- `__mlcm_vector_handler__` function
+- `__mlcm_assign_classes__` function
+- `__mlcm_vectors_filter__` function
+- `__set_to_multihot__` function
 - `deprecated` function
 ### Changed
 - Document modified
+- `README.md` modified
 - Example-4 modified
 - Test system modified
 - Python 3.5 support dropped

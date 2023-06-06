@@ -437,6 +437,32 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 'cm2'
 ```
 
+### Multilabel confusion matrix
+
+From `version 4.0`, `MultiLabelCM` has been added to calculate class-wise or sample-wise multilabel confusion matrices. In class-wise mode, confusion matrices are calculated for each class, and in sample-wise mode, they are generated per sample. All generated confusion matrices are binarized with a one-vs-rest transformation.
+
+```pycon
+>>> mlcm = MultiLabelCM(actual_vector=[{"cat", "bird"}, {"dog"}], predict_vector=[{"cat"}, {"dog", "bird"}], classes=["cat", "dog", "bird"])
+>>> mlcm.actual_vector_multihot
+[[1, 0, 1], [0, 1, 0]]
+>>> mlcm.predict_vector_multihot
+[[1, 0, 0], [0, 1, 1]]
+>>> mlcm.get_cm_by_class("cat").print_matrix()
+Predict 0       1       
+Actual
+0       1       0       
+
+1       0       1       
+
+>>> mlcm.get_cm_by_sample(0).print_matrix()
+Predict 0       1       
+Actual
+0       1       0       
+
+1       1       1 
+
+```
+
 ### Online help
 
 `online_help` function is added in `version 1.1` in order to open each statistics definition in web browser
@@ -451,55 +477,9 @@ pycm.ConfusionMatrix(classes: [0, 1, 2])
 * List of items are available by calling `online_help()` (without argument)
 * If PyCM website is not available, set `alt_link = True` (new in `version 2.4`)
 
-### Acceptable data types
-
-**ConfusionMatrix**
-
-1. `actual_vector` : python `list` or numpy `array` of any stringable objects
-2. `predict_vector` : python `list` or numpy `array` of any stringable objects
-3. `matrix` : `dict`
-4. `digit`: `int`
-5. `threshold` : `FunctionType (function or lambda)`
-6. `file` : `File object`
-7. `sample_weight` : python `list` or numpy `array` of numbers
-8. `transpose` : `bool`
-9. `classes` : python `list`
-10. `is_imbalanced` : `bool`
-11. `metrics_off` : `bool`
-
-* Run `help(ConfusionMatrix)` for `ConfusionMatrix` object details
-
-**Compare**
-
-1. `cm_dict` : python `dict` of `ConfusionMatrix` object (`str` : `ConfusionMatrix`)
-2. `by_class` : `bool`
-3. `class_weight` : python `dict` of class weights (`class_name` : `float`)
-4. `class_benchmark_weight`: python `dict` of class benchmark weights (`class_benchmark_name` : `float`)
-5. `overall_benchmark_weight`: python `dict` of overall benchmark weights (`overall_benchmark_name` : `float`)
-6. `digit`: `int`
-
-* Run `help(Compare)` for `Compare` object details
-
-**ROCCurve**
-
-1. `actual_vector` : python `list` or numpy `array` of any stringable objects
-2. `probs` : python `list` or numpy `array`
-3. `classes` : python `list`
-4. `thresholds`: python `list` or numpy `array`
-5. `sample_weight`: python `list` or numpy `array`
-
-**PRCurve**
-
-1. `actual_vector` : python `list` or numpy `array` of any stringable objects
-2. `probs` : python `list` or numpy `array`
-3. `classes` : python `list`
-4. `thresholds`: python `list` or numpy `array`
-5. `sample_weight`: python `list` or numpy `array`
-
-For more information visit [here](https://github.com/sepandhaghighi/pycm/tree/master/Document "Document")
+### Screen record
 
 <div align="center">
-
 <a href="https://asciinema.org/a/171863" target="_blank"><img src="https://asciinema.org/a/171863.png"/></a>
 </div>
 

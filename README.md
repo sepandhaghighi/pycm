@@ -443,10 +443,24 @@ From `version 4.0`, `MultiLabelCM` has been added to calculate class-wise or sam
 
 ```pycon
 >>> mlcm = MultiLabelCM(actual_vector=[{"cat", "bird"}, {"dog"}], predict_vector=[{"cat"}, {"dog", "bird"}], classes=["cat", "dog", "bird"])
->>> print(mlcm.actual_vector_multihot)
->>> print(mlcm.predict_vector_multihot)
+>>> mlcm.actual_vector_multihot
+[[1, 0, 1], [0, 1, 0]]
+>>> mlcm.predict_vector_multihot
+[[1, 0, 0], [0, 1, 1]]
 >>> mlcm.get_cm_by_class("cat").print_matrix()
+Predict 0       1       
+Actual
+0       1       0       
+
+1       0       1       
+
 >>> mlcm.get_cm_by_sample(0).print_matrix()
+Predict 0       1       
+Actual
+0       1       0       
+
+1       1       1 
+
 ```
 
 ### Online help

@@ -20,8 +20,7 @@ CHANGELOG_ITEMS = [
 DOCUMENT_ITEMS = [
     "### Version : {0}",
     "[Version {0}](https://github.com/sepandhaghighi/pycm/archive/v{0}.zip)",
-    "pip install pycm=={0}",
-    "pip3 install pycm=={0}"]
+    "pip install pycm=={0}"]
 HTML_ITEMS = ["Version {0}"]
 PARAMS_ITEMS = ['PYCM_VERSION = "{0}"']
 META_ITEMS = ['% set version = "{0}" %']

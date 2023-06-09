@@ -12,8 +12,7 @@ SETUP_ITEMS = [
     'https://github.com/sepandhaghighi/pycm/tarball/v{0}']
 README_ITEMS = [
     "[Version {0}](https://github.com/sepandhaghighi/pycm/archive/v{0}.zip)",
-    "pip install pycm=={0}",
-    "pip3 install pycm=={0}"]
+    "pip install pycm=={0}"]
 CHANGELOG_ITEMS = [
     "## [{0}]",
     "https://github.com/sepandhaghighi/pycm/compare/v{0}...dev",

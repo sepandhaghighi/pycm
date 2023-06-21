@@ -15,8 +15,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-20.04, windows-latest, macOS-latest]
-        python-version: [3.6, 3.7, 3.8, 3.9, 3.10.0, 3.11.0]
+        os: [ubuntu-20.04, windows-2022, macOS-12]
+        python-version: [3.6, 3.7.9, 3.8, 3.9, 3.10.0, 3.11.0]
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
@@ -57,7 +57,7 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
-          fail_ci_if_error: true
+          fail_ci_if_error: false
       if: matrix.python-version == env.TEST_PYTHON_VERSION && matrix.os == env.TEST_OS
     - name: cProfile
       run: |

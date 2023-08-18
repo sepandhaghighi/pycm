@@ -3,6 +3,7 @@
 from __future__ import division
 import math
 import operator as op
+import numpy as np
 from functools import reduce
 from .pycm_interpret import *
 from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
@@ -210,11 +211,8 @@ def B_calc(classes, TP, TOP, P):
     :return: B as float
     """
     try:
-        up = 0
-        down = 0
-        for i in classes:
-            up += TP[i]**2
-            down += TOP[i] * P[i]
+        up = np.sum([TP[i]**2 for i in classes])
+        down = np.dot([TOP[i] for i in classes],[P[i] for i in classes])
         B = up / down
         return B
     except Exception:

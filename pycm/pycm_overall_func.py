@@ -212,7 +212,7 @@ def B_calc(classes, TP, TOP, P):
     """
     try:
         up = np.sum([TP[i]**2 for i in classes])
-        down = np.dot([TOP[i] for i in classes],[P[i] for i in classes])
+        down = np.dot([TOP[i] for i in classes], [P[i] for i in classes])
         B = up / down
         return B
     except Exception:

@@ -6,6 +6,7 @@
 - Sadra Sabouri - Sharif University of Technology ([Github](https://github.com/sadrasabouri)) **
 - Masoomeh Jasemi - Microsoft ([Github](https://github.com/MasoomehJasemi))
 - Shaahin Hessabi - Sharif University of Technology ([Email](mailto:hessabi@sharif.edu))
+- Malinda Dilhara - University of Colorado Boulder ([Email](mailto:malinda.dilhara@gmail.com))
 
 ** **Maintainer**
 
@@ -18,3 +19,4 @@
 - [Ashwin Geet D'Sa](https://github.com/GeetDsa)
 - [Ilya Gubins](https://github.com/the-lay)
 - [Lewi Uberg](https://github.com/lewiuberg)
+- [Malinda Dilhara](https://maldil.github.io)

@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 - `B_calc` function modified
+- Document modified
+- `README.md` modified
+- Test system modified
+
 ## [4.0] - 2023-06-07
 ### Added
 - `pycmMultiLabelError` class

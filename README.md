@@ -24,7 +24,6 @@
    * [Document](https://github.com/sepandhaghighi/pycm/tree/master/Document)
    * [Try PyCM in Your Browser](https://github.com/sepandhaghighi/pycm#try-pycm-in-your-browser)
    * [Issues & Bug Reports](https://github.com/sepandhaghighi/pycm#issues--bug-reports)
-   * [Todo](https://github.com/sepandhaghighi/pycm/blob/master/TODO.md)
    * [Contribution](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBUTING.md)
    * [Acknowledgments](https://github.com/sepandhaghighi/pycm#acknowledgments)
    * [Cite](https://github.com/sepandhaghighi/pycm#cite)

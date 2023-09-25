@@ -22,10 +22,11 @@
 	2. Tag all related issues
 	3. Labels: `release`
 	4. Set milestone
-	5. Wait for all CI pass
-	6. Need review (**2** reviewers)
+	5. Set project
+	6. Wait for all CI pass
+	7. Need review (**2** reviewers)
 6. Merge `dev` branch into `master`
-	1. Checkout to `master`
+	1. `git checkout master`
 	2. `git merge dev`
 	3. `git push origin master`
 	4. Wait for all CI pass
@@ -38,10 +39,11 @@
 8. Bump!!
 9. Close this version issues
 10. Close milestone
-11. Generate HTML files
+11. Close project
+12. Generate HTML files
 	1. Run `Otherfiles/doc_to_html.bat`
 	2. Copy `doc` folder for the next steps
-12. Update website
+13. Update website
 	1. `git checkout gh-pages`
 	2. Update `download.html` page
 		1. Add a new section

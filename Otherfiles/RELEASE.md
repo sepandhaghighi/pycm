@@ -1,7 +1,7 @@
 
 # PyCM Release Instructions
 
-#### Last Update: 2023-08-22
+#### Last Update: 2023-09-25
 
 1. Create the `release` branch under `dev`
 2. Update all version tags
@@ -40,7 +40,7 @@
 10. Close milestone
 11. Generate HTML files
 	1. Run `Otherfiles/doc_to_html.bat`
-	2. Copy `doc_html` folder for the next steps
+	2. Copy `doc` folder for the next steps
 12. Update website
 	1. `git checkout gh-pages`
 	2. Update `download.html` page
@@ -50,8 +50,5 @@
 		1. `index.html`
 	4. Update size of files
 		1. `index.html`
-	5. Update document
-		1. Remove `doc` folder
-		2. Copy/Paste `doc_html` folder (Step **11**)
-		3. Rename `doc_html` folder to `doc`
+	5. Update `doc` folder (Step **11.2**)
 	6. Copy `doc/Document_files/cm1.html` to `test.html`

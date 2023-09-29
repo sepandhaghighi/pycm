@@ -1,5 +1,5 @@
 art==6.0
-numpy==1.25.1
+numpy==1.26.0
 pytest>=4.3.1
 pytest-cov>=2.6.1
 setuptools>=40.8.0

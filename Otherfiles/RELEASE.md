@@ -52,5 +52,5 @@
 		1. `index.html`
 	4. Update size of files
 		1. `index.html`
-	5. Update `doc` folder (Step **11.2**)
+	5. Update `doc` folder (Step **12.2**)
 	6. Copy `doc/Document_files/cm1.html` to `test.html`

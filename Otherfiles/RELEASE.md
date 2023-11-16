@@ -15,9 +15,11 @@
 	1. Add a new header under `Unreleased` section (Example: `## [0.1] - 2022-08-17`)
 	2. Add a new compare link to the end of the file (Example: `[0.2]: https://github.com/sepandhaghighi/pycm/compare/v0.1...v0.2`)
 	3. Update `dev` compare link (Example: `[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v0.2...dev`)
-4. Update Document
+4. Update `bug_report.yaml`
+   1. Add new version tag to `version` dropbox options
+5. Update Document
 	1. Run `Otherfiles/doc_run.bat`
-5. Create a PR from `release` to `dev`
+6. Create a PR from `release` to `dev`
 	1. Title: `Version x.x` (Example: `Version 0.1`)
 	2. Tag all related issues
 	3. Labels: `release`
@@ -25,25 +27,25 @@
 	5. Set project
 	6. Wait for all CI pass
 	7. Need review (**2** reviewers)
-6. Merge `dev` branch into `master`
+7. Merge `dev` branch into `master`
 	1. `git checkout master`
 	2. `git merge dev`
 	3. `git push origin master`
 	4. Wait for all CI pass
-7. Create a new release
+8. Create a new release
 	1. Target branch: `master`
 	2. Tag: `vx.x` (Example: `v0.1`)
 	3. Title: `Version x.x` (Example: `Version 0.1`)
 	4. Copy changelogs
 	5. Tag all related issues
-8. Bump!!
-9. Close this version issues
-10. Close milestone
-11. Close project
-12. Generate HTML files
+9.  Bump!!
+10. Close this version issues
+11. Close milestone
+12. Close project
+13. Generate HTML files
 	1. Run `Otherfiles/doc_to_html.bat`
 	2. Copy `doc` folder for the next steps
-13. Update website
+14. Update website
 	1. `git checkout gh-pages`
 	2. Update `download.html` page
 		1. Add a new section

@@ -24,13 +24,7 @@ DOCUMENT_ITEMS = [
 HTML_ITEMS = ["Version {0}"]
 PARAMS_ITEMS = ['PYCM_VERSION = "{0}"']
 META_ITEMS = ['% set version = "{0}" %']
-ISSUE_TEMPLATE_ITEMS = [
-    """    id: version
-    attributes:
-      label: Version
-      description: What version of PyCM are you using?
-      options:
-        - {0}"""]
+ISSUE_TEMPLATE_ITEMS = ["- PyCM {0}"]
 FILES = {
     os.path.join("Otherfiles", "meta.yaml"): META_ITEMS,
     "setup.py": SETUP_ITEMS, "README.md": README_ITEMS,

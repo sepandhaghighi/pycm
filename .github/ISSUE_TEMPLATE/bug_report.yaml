@@ -64,14 +64,14 @@ body:
       label: Python version
       description: Which version of Python are you using?
       options:
-        - 3.12
-        - 3.11
-        - 3.10
-        - 3.9
-        - 3.8
-        - 3.7
-        - 3.6
-        - 3.5
+        - Python 3.12
+        - Python 3.11
+        - Python 3.10
+        - Python 3.9
+        - Python 3.8
+        - Python 3.7
+        - Python 3.6
+        - Python 3.5
       default: 1
     validations:
       required: true
@@ -81,49 +81,49 @@ body:
       label: Version
       description: What version of PyCM are you using?
       options:
-        - 4.0
-        - 3.9
-        - 3.8
-        - 3.7
-        - 3.6
-        - 3.5
-        - 3.4
-        - 3.3
-        - 3.2
-        - 3.1
-        - 3.0
-        - 2.9
-        - 2.8
-        - 2.7
-        - 2.6
-        - 2.5
-        - 2.4
-        - 2.3
-        - 2.2
-        - 2.1
-        - 2.0
-        - 1.9
-        - 1.8
-        - 1.7
-        - 1.6
-        - 1.5
-        - 1.4
-        - 1.3
-        - 1.2
-        - 1.1
-        - 1.0
-        - 0.9.5
-        - 0.9
-        - 0.8.6
-        - 0.8.5
-        - 0.8.1
-        - 0.7
-        - 0.6
-        - 0.5
-        - 0.4
-        - 0.3
-        - 0.2
-        - 0.1
+        - PyCM 4.0
+        - PyCM 3.9
+        - PyCM 3.8
+        - PyCM 3.7
+        - PyCM 3.6
+        - PyCM 3.5
+        - PyCM 3.4
+        - PyCM 3.3
+        - PyCM 3.2
+        - PyCM 3.1
+        - PyCM 3.0
+        - PyCM 2.9
+        - PyCM 2.8
+        - PyCM 2.7
+        - PyCM 2.6
+        - PyCM 2.5
+        - PyCM 2.4
+        - PyCM 2.3
+        - PyCM 2.2
+        - PyCM 2.1
+        - PyCM 2.0
+        - PyCM 1.9
+        - PyCM 1.8
+        - PyCM 1.7
+        - PyCM 1.6
+        - PyCM 1.5
+        - PyCM 1.4
+        - PyCM 1.3
+        - PyCM 1.2
+        - PyCM 1.1
+        - PyCM 1.0
+        - PyCM 0.9.5
+        - PyCM 0.9
+        - PyCM 0.8.6
+        - PyCM 0.8.5
+        - PyCM 0.8.1
+        - PyCM 0.7
+        - PyCM 0.6
+        - PyCM 0.5
+        - PyCM 0.4
+        - PyCM 0.3
+        - PyCM 0.2
+        - PyCM 0.1
       default: 0
     validations:
       required: true

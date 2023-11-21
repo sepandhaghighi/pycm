@@ -29,7 +29,7 @@ body:
       description: Provide details of how to reproduce the bug.
       placeholder: ex. 1. Go to '...'
     validations:
-      required: false
+      required: true
   - type: textarea
     id: expected-behavior
     attributes:
@@ -37,7 +37,7 @@ body:
       description: What you expected to happen?
       placeholder: ex. I expected '...' to happen
     validations:
-      required: false
+      required: true
   - type: textarea
     id: actual-behavior
     attributes:
@@ -45,7 +45,7 @@ body:
       description: What actually happened?
       placeholder: ex. Instead '...' happened
     validations:
-      required: false
+      required: true
   - type: dropdown
     id: operating-system
     attributes:
@@ -64,14 +64,14 @@ body:
       label: Python version
       description: Which version of Python are you using?
       options:
-        - 3.12.0 
-        - 3.11.0 (Default)
-        - 3.10.0
-        - 3.9.0
-        - 3.8.0
-        - 3.7.0
-        - 3.6.0
-        - 3.5.0
+        - 3.12
+        - 3.11
+        - 3.10
+        - 3.9
+        - 3.8
+        - 3.7
+        - 3.6
+        - 3.5
       default: 1
     validations:
       required: true
@@ -81,7 +81,7 @@ body:
       label: Version
       description: What version of PyCM are you using?
       options:
-        - 4.0 (Default)
+        - 4.0
         - 3.9
         - 3.8
         - 3.7
@@ -112,8 +112,11 @@ body:
         - 1.2
         - 1.1
         - 1.0
+        - 0.9.5
         - 0.9
-        - 0.8
+        - 0.8.6
+        - 0.8.5
+        - 0.8.1
         - 0.7
         - 0.6
         - 0.5

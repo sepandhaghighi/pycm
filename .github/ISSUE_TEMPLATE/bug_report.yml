@@ -76,9 +76,9 @@ body:
     validations:
       required: true
   - type: dropdown
-    id: version
+    id: pycm-version
     attributes:
-      label: Version
+      label: PyCM version
       description: What version of PyCM are you using?
       options:
         - PyCM 4.0

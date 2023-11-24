@@ -35,7 +35,7 @@ FILES = {
     os.path.join("Document", "Example1_files", "cm3.html"): HTML_ITEMS,
     os.path.join("Otherfiles", "test.html"): HTML_ITEMS,
     os.path.join("pycm", "pycm_param.py"): PARAMS_ITEMS,
-    os.path.join(".github", "ISSUE_TEMPLATE", "bug_report.yaml"): ISSUE_TEMPLATE_ITEMS,
+    os.path.join(".github", "ISSUE_TEMPLATE", "bug_report.yml"): ISSUE_TEMPLATE_ITEMS,
 }
 
 TEST_NUMBER = len(FILES.keys())

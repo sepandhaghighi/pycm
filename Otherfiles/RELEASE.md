@@ -16,7 +16,7 @@
 	2. Add a new compare link to the end of the file (Example: `[0.2]: https://github.com/sepandhaghighi/pycm/compare/v0.1...v0.2`)
 	3. Update `dev` compare link (Example: `[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v0.2...dev`)
 4. Update `bug_report.yaml`
-   1. Add new version tag to `version` dropbox options
+   1. Add new version tag to `PyCM version` dropbox options
 5. Update Document
 	1. Run `Otherfiles/doc_run.bat`
 6. Create a PR from `release` to `dev`

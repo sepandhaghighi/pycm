@@ -24,15 +24,19 @@ DOCUMENT_ITEMS = [
 HTML_ITEMS = ["Version {0}"]
 PARAMS_ITEMS = ['PYCM_VERSION = "{0}"']
 META_ITEMS = ['% set version = "{0}" %']
+ISSUE_TEMPLATE_ITEMS = ["- PyCM {0}"]
 FILES = {
     os.path.join("Otherfiles", "meta.yaml"): META_ITEMS,
-    "setup.py": SETUP_ITEMS, "README.md": README_ITEMS, "CHANGELOG.md": CHANGELOG_ITEMS, os.path.join(
-        "Document", "Document.ipynb"): DOCUMENT_ITEMS, os.path.join(
-            "Document", "Example1_files", "cm1.html"): HTML_ITEMS, os.path.join(
-                "Document", "Example1_files", "cm2.html"): HTML_ITEMS, os.path.join(
-                    "Document", "Example1_files", "cm3.html"): HTML_ITEMS, os.path.join(
-                        "Otherfiles", "test.html"): HTML_ITEMS, os.path.join(
-                            "pycm", "pycm_param.py"): PARAMS_ITEMS}
+    "setup.py": SETUP_ITEMS, "README.md": README_ITEMS,
+    "CHANGELOG.md": CHANGELOG_ITEMS,
+    os.path.join("Document", "Document.ipynb"): DOCUMENT_ITEMS,
+    os.path.join("Document", "Example1_files", "cm1.html"): HTML_ITEMS,
+    os.path.join("Document", "Example1_files", "cm2.html"): HTML_ITEMS,
+    os.path.join("Document", "Example1_files", "cm3.html"): HTML_ITEMS,
+    os.path.join("Otherfiles", "test.html"): HTML_ITEMS,
+    os.path.join("pycm", "pycm_param.py"): PARAMS_ITEMS,
+    os.path.join(".github", "ISSUE_TEMPLATE", "bug_report.yml"): ISSUE_TEMPLATE_ITEMS,
+}
 
 TEST_NUMBER = len(FILES.keys())
 

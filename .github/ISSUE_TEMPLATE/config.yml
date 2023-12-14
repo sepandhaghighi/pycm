@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Discord
+    url: https://discord.com/invite/zqpU2b3J3f
+    about: Ask questions and discuss with other PyCM community members 
+  - name: Mailing List
+    url: https://mail.python.org/mailman3/lists/pycm.python.org/
+    about: Ask questions and discuss with other PyCM community members

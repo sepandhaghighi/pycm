@@ -1,0 +1,135 @@
+name: Bug Report
+description: File a bug report
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your time to fill out this bug report!
+  - type: input
+    id: contact
+    attributes:
+      label: Contact details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Provide a clear and concise description of what the bug is.
+      placeholder: Tell us a description of the bug.
+    validations:
+      required: true
+  - type: textarea
+    id: step-to-reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Provide details of how to reproduce the bug.
+      placeholder: ex. 1. Go to '...'
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen?
+      placeholder: ex. I expected '...' to happen
+    validations:
+      required: true
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual behavior
+      description: What did actually happen?
+      placeholder: ex. Instead '...' happened
+    validations:
+      required: true
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating system
+      description: Which operating system are you using?
+      options:
+        - Windows
+        - macOS
+        - Linux
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
+    id: python-version
+    attributes:
+      label: Python version
+      description: Which version of Python are you using?
+      options:
+        - Python 3.12
+        - Python 3.11
+        - Python 3.10
+        - Python 3.9
+        - Python 3.8
+        - Python 3.7
+        - Python 3.6
+        - Python 3.5
+      default: 1
+    validations:
+      required: true
+  - type: dropdown
+    id: pycm-version
+    attributes:
+      label: PyCM version
+      description: Which version of PyCM are you using?
+      options:
+        - PyCM 4.0
+        - PyCM 3.9
+        - PyCM 3.8
+        - PyCM 3.7
+        - PyCM 3.6
+        - PyCM 3.5
+        - PyCM 3.4
+        - PyCM 3.3
+        - PyCM 3.2
+        - PyCM 3.1
+        - PyCM 3.0
+        - PyCM 2.9
+        - PyCM 2.8
+        - PyCM 2.7
+        - PyCM 2.6
+        - PyCM 2.5
+        - PyCM 2.4
+        - PyCM 2.3
+        - PyCM 2.2
+        - PyCM 2.1
+        - PyCM 2.0
+        - PyCM 1.9
+        - PyCM 1.8
+        - PyCM 1.7
+        - PyCM 1.6
+        - PyCM 1.5
+        - PyCM 1.4
+        - PyCM 1.3
+        - PyCM 1.2
+        - PyCM 1.1
+        - PyCM 1.0
+        - PyCM 0.9.5
+        - PyCM 0.9
+        - PyCM 0.8.6
+        - PyCM 0.8.5
+        - PyCM 0.8.1
+        - PyCM 0.7
+        - PyCM 0.6
+        - PyCM 0.5
+        - PyCM 0.4
+        - PyCM 0.3
+        - PyCM 0.2
+        - PyCM 0.1
+      default: 0
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell

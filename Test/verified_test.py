@@ -7,8 +7,7 @@
 >>> from pycm.pycm_ci import AUC_SE_calc, CI_calc
 >>> ABS_TOL = 1e-12
 >>> REL_TOL = 0
->>> assert isclose(, abs_tol=ABS_TOL, rel_tol=REL_TOL)NIR_calc({'Class2': 804, 'Class1': 196}, 1000) # Verified Case - (Caret package)
-0.804
+>>> assert isclose(NIR_calc({'Class2': 804, 'Class1': 196}, 1000), 0.804, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case - (Caret package)
 >>> cm = ConfusionMatrix([2, 0, 2, 2, 0, 1], [0, 0, 2, 2, 0, 2]) # Verified Case - (https: //bit.ly/38nfMha)
 >>> cm.print_matrix()
 Predict 0       1       2

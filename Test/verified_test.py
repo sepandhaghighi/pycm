@@ -115,7 +115,7 @@ Actual
 >>> assert isclose(cm.OC[1], 0.9636363636363636, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.OOC[1], 0.9383838571303771, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm = ConfusionMatrix(matrix={1: {1: 63, 0: 1}, 0: {0: 50, 1: 2}})
->>> assert isclose(cm.TI(alpha=1, beta=1)[1], 0.9545454545454546 abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.TI(alpha=1, beta=1)[1], 0.9545454545454546, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm.TI(alpha=0.5, beta=0.5)[1] == cm.F1[1]
 True
 >>> cm.TI(alpha=0.5, beta=0.5)[0] == cm.F1[0]

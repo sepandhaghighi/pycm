@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 """
 >>> from pycm import *
+>>> from math import isclose
 >>> import os
 >>> import json
 >>> import numpy as np
+>>> ABS_TOL = 1e-12
+>>> REL_TOL = 0
 >>> y_test = np.array([600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200])
 >>> y_pred = np.array([100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200])
 >>> cm=ConfusionMatrix(y_test, y_pred)
@@ -495,12 +498,9 @@ True
 >>> save_obj=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd, qweqwe.eo/.obj'"}
 True
 >>> cm_file=ConfusionMatrix(file=open("test4.obj", "r"))
->>> cm_file.DP[1]
-0.770700985610517
->>> cm_file.Y[1]
-0.627145631592811
->>> cm_file.BM[1]
-0.627145631592811
+>>> assert isclose(cm_file.DP[1], 0.770700985610517, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm_file.Y[1], 0.627145631592811, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm_file.BM[1], 0.627145631592811, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm_file.transpose
 True
 >>> cm.matrix == cm_file.matrix

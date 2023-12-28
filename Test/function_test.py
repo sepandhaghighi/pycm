@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 """
+>>> from math import isclose
 >>> from pycm import *
 >>> from pycm.pycm_distance import DISTANCE_MAPPER
 >>> import os
 >>> import json
 >>> import numpy as np
+>>> ABS_TOL = 1e-12
+>>> REL_TOL = 0
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> cm = ConfusionMatrix(y_actu, y_pred)
@@ -198,18 +201,12 @@ Example : online_help("J") or online_help(2)
 'None'
 >>> inv_erf(0)
 0
->>> inv_erf(-0.9999999999999749)
--5.389154023751963
->>> inv_erf(1.2490009027033011e-14)
-1.1019786822020638e-14
->>> inv_erf(0.3)
-0.27246271472675443
->>> inv_erf(0.8)
-0.9061938024368231
->>> inv_erf(0.22)
-0.19750838337227367
->>> complement(0.5)
-0.5
+>>> assert isclose(inv_erf(-0.9999999999999749), -5.389154023751963, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(inv_erf(1.2490009027033011e-14), 1.1019786822020638e-14, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(inv_erf(0.3), 0.27246271472675443, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(inv_erf(0.8), 0.9061938024368231, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(inv_erf(0.22), 0.19750838337227367, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(complement(0.5), 0.5, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> complement("None")
 'None'
 >>> rounder((1, 2, "None"), digit=5)
@@ -298,10 +295,8 @@ True
 'None'
 >>> CEN_misclassification_calc({1: {1: 0, 2: 0}, 2: {1: 0, 2: 0}}, {1: 0, 2: 0}, {1: 0, 2: 0}, 1, 1, 2)
 'None'
->>> brier_score_calc([1, 0], [0.8, 0.3, 0.2, 0.4], [1, 1, 0, 1], sample_weight=None, pos_class=None)
-0.23249999999999998
->>> log_loss_calc([1, 0], [0.8, 0.3, 0.2, 0.4], [1, 1, 0, 1], sample_weight=None, pos_class=None)
-0.6416376597071276
+>>> assert isclose(brier_score_calc([1, 0], [0.8, 0.3, 0.2, 0.4], [1, 1, 0, 1], sample_weight=None, pos_class=None), 0.23249999999999998, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(log_loss_calc([1, 0], [0.8, 0.3, 0.2, 0.4], [1, 1, 0, 1], sample_weight=None, pos_class=None), 0.6416376597071276, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> brier_score_calc([1, "0"], [0.8, 0.3, 0.2, 0.4], [1, 1, 0, 1], sample_weight=None, pos_class=None)
 'None'
 >>> log_loss_calc([1, "0"], [0.8, 0.3, 0.2, 0.4], [1, 1, 0, 1], sample_weight=None, pos_class=None)
@@ -316,22 +311,17 @@ False
 False
 >>> TTPN_calc(0, 0)
 'None'
->>> TTPN_calc(1, 4)
-0.2
+>>> assert isclose(TTPN_calc(1, 4), 0.2, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> FXR_calc(None)
 'None'
->>> FXR_calc(0.2)
-0.8
+>>> assert isclose(FXR_calc(0.2), 0.8, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> ACC_calc(0, 0, 0, 0)
 'None'
->>> ACC_calc(1, 1, 3, 4)
-0.2222222222222222
+>>> assert isclose(ACC_calc(1, 1, 3, 4), 0.2222222222222222, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> MCC_calc(0, 2, 0, 2)
 'None'
->>> MCC_calc(1, 2, 3, 4)
--0.408248290463863
->>> LR_calc(1, 2)
-0.5
+>>> assert isclose(MCC_calc(1, 2, 3, 4), -0.408248290463863, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(LR_calc(1, 2), 0.5, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> LR_calc(1, 0)
 'None'
 >>> MK_BM_calc(2, "None")
@@ -340,60 +330,44 @@ False
 2
 >>> PRE_calc(None, 2)
 'None'
->>> PRE_calc(1, 5)
-0.2
+>>> assert isclose(PRE_calc(1, 5), 0.2, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> PRE_calc(1, 0)
 'None'
 >>> G_calc(None, 2)
 'None'
->>> G_calc(1, 2)
-1.4142135623730951
->>> RACC_calc(2, 3, 4)
-0.375
+>>> assert isclose(G_calc(1, 2), 1.4142135623730951, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(RACC_calc(2, 3, 4), 0.375, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> reliability_calc(1, None)
 'None'
->>> reliability_calc(2, 0.3)
-1.7
->>> micro_calc({1: 2, 2: 3}, {1: 1, 2: 4})
-0.5
+>>> assert isclose(reliability_calc(2, 0.3), 1.7, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(micro_calc({1: 2, 2: 3}, {1: 1, 2: 4}), 0.5, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> micro_calc({1: 2, 2: 3}, None)
 'None'
 >>> macro_calc(None)
 'None'
->>> macro_calc({1: 2, 2: 3})
-2.5
+>>> assert isclose(macro_calc({1: 2, 2: 3}), 2.5, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> F_calc(TP=0, FP=0, FN=0, beta=1)
 'None'
->>> F_calc(TP=3, FP=2, FN=1, beta=5)
-0.7428571428571429
+>>> assert isclose(F_calc(TP=3, FP=2, FN=1, beta=5), 0.7428571428571429, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> TI_calc("None", 0, 0, 0, 0)
 'None'
 >>> NB_calc(1, 2, 4, "None")
 'None'
 >>> ERR_calc(None)
 'None'
->>> ERR_calc(0.1)
-0.9
->>> cm.average("F0.5")
-0.5612141481706698
+>>> assert isclose(ERR_calc(0.1), 0.9, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.average("F0.5"), 0.5612141481706698, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm.average("DOR")
 'None'
->>> cm.average("DOR", none_omit=True)
-2.9999999999999987
->>> cm.weighted_average("PPV")
-0.575
->>> cm.weighted_average("DOR", none_omit=True)
-2.666666666666666
+>>> assert isclose(cm.average("DOR", none_omit=True), 2.9999999999999987, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.weighted_average("PPV"), 0.575, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.weighted_average("DOR", none_omit=True), 2.666666666666666, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm.weighted_average("DOR")
 'None'
->>> cm.weighted_average("PPV", weight=cm.P)
-0.575
->>> cm.weighted_average("PPV", weight={'L1': 0, 'L3': 0, 'L2': 1})
-0.5
->>> cm.weighted_average("PPV", weight={'L1': 0, 'L3': 1, 'L2': 1})
-0.55
->>> cm.weighted_average("PPV", weight={'L1': 1, 'L3': 0, 'L2': 1})
-0.55
+>>> assert isclose(cm.weighted_average("PPV", weight=cm.P), 0.575, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.weighted_average("PPV", weight={'L1': 0, 'L3': 0, 'L2': 1}), 0.5, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.weighted_average("PPV", weight={'L1': 0, 'L3': 1, 'L2': 1}), 0.55, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.weighted_average("PPV", weight={'L1': 1, 'L3': 0, 'L2': 1}), 0.55, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm.aickin_alpha(max_iter=None)
 'None'
 >>> cm.positions
@@ -493,12 +467,9 @@ True
 [1]
 >>> POS["1"]['FN']
 [3]
->>> cm.F_beta(4)["L1"]
-0.9622641509433962
->>> cm.F_beta(4)["L2"]
-0.34
->>> cm.F_beta(4)["L3"]
-0.504950495049505
+>>> assert isclose(cm.F_beta(4)["L1"], 0.9622641509433962, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.F_beta(4)["L2"], 0.34, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.F_beta(4)["L3"], 0.504950495049505, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm.F_beta(None) == {'L3': 'None', 'L1': 'None', 'L2': 'None'}
 True
 >>> cm.IBA_alpha(None) == {'L3': 'None', 'L1': 'None', 'L2': 'None'}
@@ -643,99 +614,69 @@ True
 'Excellent'
 >>> PC_AC1_calc(1, 1, 1)
 'None'
->>> PC_AC1_calc({1: 123, 2: 2}, {1: 120, 2: 5}, {1: 125, 2: 125})
-0.05443200000000002
+>>> assert isclose(PC_AC1_calc({1: 123, 2: 2}, {1: 120, 2: 5}, {1: 125, 2: 125}), 0.05443200000000002, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> y_act=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2]
 >>> y_pre=[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 2, 0, 1, 2, 2, 2, 2]
 >>> cm2=ConfusionMatrix(y_act, y_pre)
 >>> chi_squared=chi_square_calc(cm2.classes, cm2.table, cm2.TOP, cm2.P, cm2.POP)
->>> chi_squared
-15.525641025641026
+>>> assert isclose(chi_squared, 15.525641025641026, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> population = list(cm2.POP.values())[0]
 >>> phi_squared=phi_square_calc(chi_squared, population)
->>> phi_squared
-0.5750237416904084
+>>> assert isclose(phi_squared, 0.5750237416904084, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> V=cramers_V_calc(phi_squared, cm2.classes)
->>> V
-0.5362013342441477
+>>> assert isclose(V, 0.5362013342441477, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> DF=DF_calc(cm2.classes)
 >>> DF
 4
 >>> SE=SE_calc(cm2.Overall_ACC, population)
->>> SE
-0.09072184232530289
+>>> assert isclose(SE, 0.09072184232530289, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> CI=CI_calc(cm2.Overall_ACC, SE)
->>> CI
-(0.48885185570907297, 0.8444814776242603)
+>>> assert isclose(CI[0], 0.48885185570907297, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(CI[1], 0.8444814776242603, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> response_entropy=entropy_calc(cm2.TOP, cm2.POP)
->>> response_entropy
-1.486565953154142
+>>> assert isclose(response_entropy, 1.486565953154142, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> reference_entropy=entropy_calc(cm2.P, cm2.POP)
->>> reference_entropy
-1.5304930567574824
+>>> assert isclose(reference_entropy, 1.5304930567574824, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cross_entropy = cross_entropy_calc(cm2.TOP, cm2.P, cm2.POP)
->>> cross_entropy
-1.5376219392005763
+>>> assert isclose(cross_entropy, 1.5376219392005763, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> join_entropy = joint_entropy_calc(cm2.classes, cm2.table, cm2.POP)
->>> join_entropy
-2.619748965432189
+>>> assert isclose(join_entropy, 2.619748965432189, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> conditional_entropy = conditional_entropy_calc(cm2.classes, cm2.table, cm2.P, cm2.POP)
->>> conditional_entropy
-1.089255908674706
+>>> assert isclose(conditional_entropy, 1.089255908674706, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> kl_divergence=kl_divergence_calc(cm2.P, cm2.TOP, cm2.POP)
->>> kl_divergence
-0.007128882443093773
+>>> assert isclose(kl_divergence, 0.007128882443093773, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> lambda_B=lambda_B_calc(cm2.classes, cm2.table, cm2.TOP, population)
->>> lambda_B
-0.35714285714285715
+>>> assert isclose(lambda_B, 0.35714285714285715, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> lambda_A=lambda_A_calc(cm2.classes, cm2.table, cm2.P, population)
->>> lambda_A
-0.4
->>> IS_calc(13, 0, 0, 38)
-1.5474877953024933
->>> weighted_kappa_calc(cm2.classes, cm2.table, cm2.P, cm2.TOP, cm2.POP, cm2.table)
--0.3883495145631068
+>>> assert isclose(lambda_A, 0.4, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(IS_calc(13, 0, 0, 38), 1.5474877953024933, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(weighted_kappa_calc(cm2.classes, cm2.table, cm2.P, cm2.TOP, cm2.POP, cm2.table), -0.3883495145631068, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> weighted_kappa_calc(cm2.classes, cm2.table, cm2.P, cm2.TOP, cm2.POP, {1: {1: 2, 2: 2}})
 'None'
->>> weighted_alpha_calc(cm2.classes, cm2.table, cm2.P, cm2.TOP, cm2.POP, cm2.table)
--0.5255636070853462
+>>> assert isclose(weighted_alpha_calc(cm2.classes, cm2.table, cm2.P, cm2.TOP, cm2.POP, cm2.table), -0.5255636070853462, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> weighted_alpha_calc(cm2.classes, cm2.table, cm2.P, cm2.TOP, cm2.POP, {1: {1: 2, 2: 2}})
 'None'
->>> kappa_no_prevalence_calc(cm2.Overall_ACC)
-0.33333333333333326
->>> reliability_calc(cm2.Overall_RACC, cm2.Overall_ACC)
-0.4740259740259741
->>> mutual_information_calc(cm2.ResponseEntropy, cm2.ConditionalEntropy)
-0.39731004447943596
+>>> assert isclose(kappa_no_prevalence_calc(cm2.Overall_ACC), 0.33333333333333326, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(reliability_calc(cm2.Overall_RACC, cm2.Overall_ACC), 0.4740259740259741, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(mutual_information_calc(cm2.ResponseEntropy, cm2.ConditionalEntropy), 0.39731004447943596, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm3=ConfusionMatrix(matrix=cm2.table)
 >>> cm3
 pycm.ConfusionMatrix(classes: [0, 1, 2])
->>> cm3.CI95
-(0.48885185570907297, 0.8444814776242603)
->>> cm3.Chi_Squared
-15.525641025641026
->>> cm3.Phi_Squared
-0.5750237416904084
->>> cm3.V
-0.5362013342441477
+>>> assert isclose(cm3.CI95[0], 0.48885185570907297, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm3.CI95[1], 0.8444814776242603, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm3.Chi_Squared, 15.525641025641026, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm3.Phi_Squared, 0.5750237416904084, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm3.V, 0.5362013342441477, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm3.DF
 4
->>> cm3.ResponseEntropy
-1.486565953154142
->>> cm3.ReferenceEntropy
-1.5304930567574824
->>> cm3.CrossEntropy
-1.5376219392005763
->>> cm3.JointEntropy
-2.619748965432189
->>> cm3.ConditionalEntropy
-1.089255908674706
->>> cm3.KL
-0.007128882443093773
->>> cm3.LambdaA
-0.4
->>> cm3.LambdaB
-0.35714285714285715
+>>> assert isclose(cm3.ResponseEntropy, 1.486565953154142, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm3.ReferenceEntropy, 1.5304930567574824, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm3.CrossEntropy, 1.5376219392005763, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm3.JointEntropy, 2.619748965432189, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm3.ConditionalEntropy, 1.089255908674706, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm3.KL, 0.007128882443093773, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm3.LambdaA, 0.4, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm3.LambdaB, 0.35714285714285715, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm4 = ConfusionMatrix(y_act, y_pre, classes=[1, 2, 0])
 >>> cm4
 pycm.ConfusionMatrix(classes: [1, 2, 0])

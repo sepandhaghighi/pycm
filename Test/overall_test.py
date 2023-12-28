@@ -1,9 +1,12 @@
 # -*- coding: utf-8 -*-
 """
 >>> from pycm import *
+>>> from math import isclose
 >>> import os
 >>> import json
 >>> import copy
+>>> ABS_TOL = 1e-12
+>>> REL_TOL = 0
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
 >>> y_pred = [0, 0, 2, 1, 0, 2, 1, 0, 2, 0, 2, 2]
 >>> y_actu_copy = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
@@ -332,8 +335,7 @@ True
 True
 >>> cm.normalized_matrix == cm.normalized_table
 True
->>> cm.Y["L2"]
-0.2222222222222221
+>>> assert isclose(cm.Y["L2"], 0.2222222222222221, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> import numpy as np
 >>> y_test = np.array([600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200])
 >>> y_test_copy = np.array([600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200])
@@ -766,10 +768,8 @@ Actual
 >>> y_pred_act = [0.87, 0.34, 0.9, 0.12]
 >>> y_pred_act_copy = [0.87, 0.34, 0.9, 0.12]
 >>> cm_6 = ConfusionMatrix([0, 0, 1, 0], y_pred_act, threshold=activation, transpose=2)
->>> cm_6.brier_score(pos_class=1)
-0.224225
->>> cm_6.brier_score(pos_class=0)
-0.509225
+>>> assert isclose(cm_6.brier_score(pos_class=1), 0.224225, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm_6.brier_score(pos_class=0), 0.509225, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> y_pred_act_copy == y_pred_act
 True
 >>> cm_6.print_matrix()
@@ -1579,10 +1579,8 @@ True
 >>> cm_combined3.matrix[4][2]
 1
 >>> cm = ConfusionMatrix(matrix={1: {1: 10, 2: 1, 3: 0}, 2: {1: 1, 2: 10, 3: 0}, 3: {1: 0, 2: 0, 3: 0}})
->>> cm.sensitivity_index()[1]
-2.6703554722378726
->>> cm.sensitivity_index()[2]
-2.6703554722378726
+>>> assert isclose(cm.sensitivity_index()[1], 2.6703554722378726, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.sensitivity_index()[2], 2.6703554722378726, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm.sensitivity_index()[3]
 'None'
 >>> matrix = [[1, 2, 3], [4, 6, 1], [1, 2, 3]]
@@ -1670,12 +1668,9 @@ Actual
 1         0.0       1.0
 <BLANKLINE>
 <BLANKLINE>
->>> cm.F_beta(1)[1]
-0.8888888888888888
->>> cm.TI(0.1,0.1)[1]
-0.9756097560975611
->>> cm.distance(DistanceType.Anderberg)[1]
--0.1
+>>> assert isclose(cm.F_beta(1)[1], 0.8888888888888888, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.TI(0.1,0.1)[1], 0.9756097560975611, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.distance(DistanceType.Anderberg)[1], -0.1, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm.relabel(mapping = {1:"One",0:"Zero"})
 >>> cm.print_matrix()
 Predict    Zero       One
@@ -1701,8 +1696,6 @@ Zero       2          0
 <BLANKLINE>
 >>> y_pred_act = [0.87, 0.34, 0.9, 0.12]
 >>> cm = ConfusionMatrix([0, 0, 1, 0], y_pred_act, threshold=activation, transpose=2, metrics_off=True)
->>> cm.brier_score(pos_class=1)
-0.224225
->>> cm.brier_score(pos_class=0)
-0.509225
+>>> assert isclose(cm.brier_score(pos_class=1), 0.224225, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.brier_score(pos_class=0), 0.509225, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 """

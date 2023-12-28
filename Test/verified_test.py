@@ -384,10 +384,8 @@ True
 >>> assert isclose(cm2.distance(metric=DistanceType.Fossum)[1], 58.8, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm1.distance(metric=DistanceType.GilbertWells)[1], 20.176174477346354, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm2.distance(metric=DistanceType.GilbertWells)[1], 16.717742356979358, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> abs(cm1.distance(metric=DistanceType.Goodall)[1] - 0.9544884026871964) < 1e-15
-True
->>> abs(cm2.distance(metric=DistanceType.Goodall)[1] - 0.9397552079794624) < 1e-15
-True
+>>> assert isclose(cm1.distance(metric=DistanceType.Goodall)[1], 0.9544884026871964, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm2.distance(metric=DistanceType.Goodall)[1], 0.9397552079794624, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm1.distance(metric=DistanceType.GoodmanKruskalLambda)[1], 0.0, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm2.distance(metric=DistanceType.GoodmanKruskalLambda)[1], 0.0, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm1.distance(metric=DistanceType.GoodmanKruskalLambdaR)[1], 0.0, abs_tol=ABS_TOL, rel_tol=REL_TOL)

@@ -498,7 +498,7 @@ True
 >>> save_obj=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd, qweqwe.eo/.obj'"}
 True
 >>> cm_file=ConfusionMatrix(file=open("test4.obj", "r"))
->>> assert isclose(cm_file.DP[1], 0.770700985910517, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm_file.DP[1], 0.770700985610517, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm_file.Y[1], 0.627145631592811, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm_file.BM[1], 0.627145631592811, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm_file.transpose

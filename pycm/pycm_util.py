@@ -103,11 +103,10 @@ def matrix_check(table):
     :return: bool
     """
     try:
-        table_keys = table.keys()
-        if len(table_keys) == 0:
+        if len(table) == 0:
             return False
-        for i in table_keys:
-            if set(table_keys) != set(table[i].keys()) or vector_check(
+        for i in table:
+            if set(table) != set(table[i]) or vector_check(
                     list(table[i].values())) is False:
                 return False
         return True
@@ -296,11 +295,11 @@ def matrix_params_from_table(table, classes=None, transpose=False):
     :return: [classes_list, table, TP, TN, FP, FN]
     """
     if classes is None:
-        classes = sorted(table.keys())
+        classes = sorted(table)
     classes_set = set(classes)
     if len(classes_set) < 2:
         raise pycmMatrixError(CLASS_NUMBER_ERROR)
-    if classes_set > set(table.keys()):
+    if classes_set > set(table):
         raise pycmMatrixError(CLASSES_ERROR)
     table_temp = table
     map_dict = {k: 0 for k in classes}

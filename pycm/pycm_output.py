@@ -55,7 +55,7 @@ def color_check(color):
                 return list(color)
     if isinstance(color, str):
         color_lower = color.lower()
-        if color_lower in TABLE_COLOR.keys():
+        if color_lower in TABLE_COLOR:
             return TABLE_COLOR[color_lower]
     return [0, 0, 0]
 
@@ -232,7 +232,7 @@ def html_class_stat(
             str(i) + '</td>\n'
     result += '<td>Description</td>\n'
     result += '</tr>\n'
-    class_stat_keys = sorted(class_stat.keys())
+    class_stat_keys = sorted(class_stat)
     if isinstance(class_param, list):
         if set(class_param) <= set(class_stat_keys):
             class_stat_keys = class_param
@@ -384,7 +384,7 @@ def csv_print(classes, class_stat, digit=5, class_param=None):
     for item in classes:
         result += ',"' + str(item) + '"'
     result += "\n"
-    class_stat_keys = sorted(class_stat.keys())
+    class_stat_keys = sorted(class_stat)
     if isinstance(class_param, list):
         if set(class_param) <= set(class_stat_keys):
             class_stat_keys = class_param
@@ -433,7 +433,7 @@ def stat_print(
         for key in overall_stat_keys:
             result += key + " " * (shift - len(key) + 7) + \
                 rounder(overall_stat[key], digit) + "\n"
-    class_stat_keys = sorted(class_stat.keys())
+    class_stat_keys = sorted(class_stat)
     if isinstance(class_param, list):
         if set(class_param) <= set(class_stat_keys):
             class_stat_keys = sorted(class_param)

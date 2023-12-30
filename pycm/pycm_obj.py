@@ -223,7 +223,7 @@ class ConfusionMatrix():
 
         :return: None
         """
-        for key in self.matrix.keys():
+        for key in self.matrix:
             yield key, self.matrix[key]
 
     def __contains__(self, class_name):
@@ -539,7 +539,7 @@ class ConfusionMatrix():
         """
         try:
             F_dict = {}
-            for i in self.TP.keys():
+            for i in self.TP:
                 F_dict[i] = F_calc(
                     TP=self.TP[i],
                     FP=self.FP[i],
@@ -656,13 +656,13 @@ class ConfusionMatrix():
             if isinstance(binom_method, str):
                 method = binom_method.lower()
             if one_sided:
-                if alpha in ALPHA_ONE_SIDE_TABLE.keys():
+                if alpha in ALPHA_ONE_SIDE_TABLE:
                     CV = ALPHA_ONE_SIDE_TABLE[alpha]
                 else:
                     CV = ALPHA_ONE_SIDE_TABLE[0.05]
                     warn(CI_ALPHA_ONE_SIDE_WARNING, RuntimeWarning)
             else:
-                if alpha in ALPHA_TWO_SIDE_TABLE.keys():
+                if alpha in ALPHA_TWO_SIDE_TABLE:
                     CV = ALPHA_TWO_SIDE_TABLE[alpha]
                 else:
                     CV = ALPHA_TWO_SIDE_TABLE[0.05]
@@ -744,7 +744,7 @@ class ConfusionMatrix():
         """
         if not isinstance(mapping, dict):
             raise pycmMatrixError(MAPPING_FORMAT_ERROR)
-        if set(self.classes) != set(mapping.keys()):
+        if set(self.classes) != set(mapping):
             raise pycmMatrixError(MAPPING_CLASS_NAME_ERROR)
         if len(self.classes) != len(set(mapping.values())):
             raise pycmMatrixError(MAPPING_CLASS_NAME_ERROR)
@@ -763,7 +763,7 @@ class ConfusionMatrix():
         self.normalized_table = normalized_table_temp
         self.matrix = self.table
         self.normalized_matrix = self.normalized_table
-        for param in self.class_stat.keys():
+        for param in self.class_stat:
             temp_dict = {}
             for classname in self.classes:
                 temp_dict[mapping[classname]
@@ -816,7 +816,7 @@ class ConfusionMatrix():
         if weight is not None:
             if not isinstance(weight, dict):
                 raise pycmAverageError(AVERAGE_WEIGHT_ERROR)
-            if set(weight.keys()) == set(self.classes) and all(
+            if set(weight) == set(self.classes) and all(
                     [isfloat(x) for x in weight.values()]):
                 selected_weight = weight.copy()
             else:
@@ -828,7 +828,7 @@ class ConfusionMatrix():
         try:
             weight_list = []
             param_list = []
-            for class_name in selected_param.keys():
+            for class_name in selected_param:
                 if selected_param[class_name] == "None" and none_omit:
                     continue
                 weight_list.append(selected_weight[class_name])
@@ -849,7 +849,7 @@ class ConfusionMatrix():
         if matrix_check(weight) is False:
             warn(WEIGHTED_KAPPA_WARNING, RuntimeWarning)
             return self.Kappa
-        if set(weight.keys()) != set(self.classes):
+        if set(weight) != set(self.classes):
             warn(WEIGHTED_KAPPA_WARNING, RuntimeWarning)
             return self.Kappa
         return weighted_kappa_calc(
@@ -872,7 +872,7 @@ class ConfusionMatrix():
         if matrix_check(weight) is False:
             warn(WEIGHTED_ALPHA_WARNING, RuntimeWarning)
             return self.Alpha
-        if set(weight.keys()) != set(self.classes):
+        if set(weight) != set(self.classes):
             warn(WEIGHTED_ALPHA_WARNING, RuntimeWarning)
             return self.Alpha
         return weighted_alpha_calc(
@@ -953,7 +953,7 @@ class ConfusionMatrix():
         if self.predict_vector is None or self.actual_vector is None:
             raise pycmVectorError(VECTOR_ONLY_ERROR)
         if self.positions is None:
-            classes = list(self.label_map.keys())
+            classes = list(self.label_map)
             positions = {
                 self.label_map[_class]: {
                     'TP': [],

@@ -549,7 +549,7 @@ def entropy_calc(item, POP):
     """
     try:
         result = 0
-        for i in item.keys():
+        for i in item:
             likelihood = item[i] / POP[i]
             if likelihood != 0:
                 result += likelihood * math.log(likelihood, 2)
@@ -620,7 +620,7 @@ def cross_entropy_calc(TOP, P, POP):
     """
     try:
         result = 0
-        for i in TOP.keys():
+        for i in TOP:
             reference_likelihood = P[i] / POP[i]
             response_likelihood = TOP[i] / POP[i]
             if response_likelihood != 0 and reference_likelihood != 0:
@@ -715,7 +715,7 @@ def kl_divergence_calc(P, TOP, POP):
     """
     try:
         result = 0
-        for i in TOP.keys():
+        for i in TOP:
             reference_likelihood = P[i] / POP[i]
             response_likelihood = TOP[i] / POP[i]
             result += reference_likelihood * \
@@ -918,7 +918,7 @@ def PC_AC1_calc(P, TOP, POP):
     """
     try:
         result = 0
-        classes = list(P.keys())
+        classes = list(P)
         for i in classes:
             pi = ((P[i] + TOP[i]) / (2 * POP[i]))
             result += pi * (1 - pi)

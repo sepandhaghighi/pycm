@@ -154,12 +154,12 @@ def __compare_class_handler__(compare, cm_dict):
     class_weight_sum = sum(compare.class_weight.values())
     class_benchmark_weight_sum = sum(compare.class_benchmark_weight.values())
     for c in compare.classes:
-        for item in CLASS_BENCHMARK_SCORE_DICT.keys():
+        for item in CLASS_BENCHMARK_SCORE_DICT:
             max_item_score = len(CLASS_BENCHMARK_SCORE_DICT[item]) - 1
             all_class_score = [CLASS_BENCHMARK_SCORE_DICT[item][
                 cm.class_stat[item][c]] for cm in cm_dict.values()]
             if all([isinstance(x, int) for x in all_class_score]):
-                for cm_name in cm_dict.keys():
+                for cm_name in cm_dict:
                     score = (compare.class_weight[c] / class_weight_sum) * (
                         CLASS_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name].class_stat[item][c]] / max_item_score)
                     score = score * \
@@ -179,12 +179,12 @@ def __compare_overall_handler__(compare, cm_dict):
     """
     overall_benchmark_weight_sum = sum(
         compare.overall_benchmark_weight.values())
-    for item in OVERALL_BENCHMARK_SCORE_DICT.keys():
+    for item in OVERALL_BENCHMARK_SCORE_DICT:
         max_item_score = len(OVERALL_BENCHMARK_SCORE_DICT[item]) - 1
         all_overall_score = [OVERALL_BENCHMARK_SCORE_DICT[item][
             cm.overall_stat[OVERALL_BENCHMARK_MAP[item]]] for cm in cm_dict.values()]
         if all([isinstance(x, int) for x in all_overall_score]):
-            for cm_name in cm_dict.keys():
+            for cm_name in cm_dict:
                 score = OVERALL_BENCHMARK_SCORE_DICT[item][cm_dict[cm_name]
                                                            .overall_stat[OVERALL_BENCHMARK_MAP[item]]] / max_item_score
                 score = score * \
@@ -202,7 +202,7 @@ def __compare_rounder__(compare, cm_dict):
     :type cm_dict: dict
     :return: None
     """
-    for cm_name in cm_dict.keys():
+    for cm_name in cm_dict:
         compare.scores[cm_name]["overall"] = numpy.around(
             compare.scores[cm_name]["overall"], compare.digit)
         compare.scores[cm_name]["class"] = numpy.around(
@@ -263,7 +263,7 @@ def __compare_weight_handler__(compare, weight, weight_type):
         return None
     if not isinstance(weight, dict):
         raise pycmCompareError(error_dict[weight_type])
-    if set(weight.keys()) == set(valid_dict[weight_type]):
+    if set(weight) == set(valid_dict[weight_type]):
         if all([isfloat(x) for x in weight.values()]
                ) and sum(weight.values()) != 0:
             setattr(compare, weight_type, weight)
@@ -319,7 +319,7 @@ def __compare_assign_handler__(
     compare.best_name = None
     compare.sorted = None
     compare.scores = {k: {"overall": 0, "class": 0}.copy()
-                      for k in cm_dict.keys()}
+                      for k in cm_dict}
     __compare_weight_handler__(compare, class_weight, "class_weight")
     __compare_weight_handler__(
         compare,

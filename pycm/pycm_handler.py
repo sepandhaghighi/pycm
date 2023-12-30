@@ -138,7 +138,7 @@ def __obj_file_handler__(cm, file):
             loaded_transpose = False
         cm.transpose = loaded_transpose
         loaded_matrix = dict(obj_data["Matrix"])
-        for i in loaded_matrix.keys():
+        for i in loaded_matrix:
             loaded_matrix[i] = dict(loaded_matrix[i])
         matrix_param = matrix_params_from_table(loaded_matrix)
     cm.digit = obj_data["Digit"]
@@ -160,7 +160,7 @@ def __obj_matrix_handler__(matrix, classes, transpose):
     :return: matrix parameters as list
     """
     if matrix_check(matrix):
-        if class_check(list(matrix.keys())) is False:
+        if class_check(list(matrix)) is False:
             raise pycmMatrixError(MATRIX_CLASS_TYPE_ERROR)
         matrix_param = matrix_params_from_table(matrix, classes, transpose)
     else:

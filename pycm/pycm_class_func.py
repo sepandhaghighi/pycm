@@ -708,7 +708,7 @@ def basic_statistics(TP, TN, FP, FN):
     :return: basic statistics as dict
     """
     result = {}
-    for i in CLASS_PARAMS.keys():
+    for i in CLASS_PARAMS:
         result[i] = {}
     result["TP"] = TP
     result["TN"] = TN
@@ -736,7 +736,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
     :return: classes' statistics as dict
     """
     result = basic_statistics(TP, TN, FP, FN)
-    for i in TP.keys():
+    for i in TP:
         result["POP"][i] = TP[i] + TN[i] + FP[i] + FN[i]
         result["P"][i] = TP[i] + FN[i]
         result["N"][i] = TN[i] + FP[i]

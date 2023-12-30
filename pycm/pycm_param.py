@@ -337,10 +337,10 @@ ALPHA_ONE_SIDE_TABLE = {
     0.0005: 3.29}
 
 CI_ALPHA_TWO_SIDE_WARNING = "The alpha value is invalid, automatically set to 0.05.\nSupported values (two-sided) : " + ",".join(
-    map(str, sorted(list(ALPHA_TWO_SIDE_TABLE.keys()))))
+    map(str, sorted(ALPHA_TWO_SIDE_TABLE)))
 
 CI_ALPHA_ONE_SIDE_WARNING = "The alpha value is invalid, automatically set to 0.05.\nSupported values (one-sided) : " + ",".join(
-    map(str, sorted(list(ALPHA_ONE_SIDE_TABLE.keys()))))
+    map(str, sorted(ALPHA_ONE_SIDE_TABLE)))
 
 CI_FORMAT_ERROR = "The input type is supposed to be string but it's not!"
 
@@ -496,7 +496,7 @@ CLASS_BENCHMARK_SCORE_DICT = {
     "MCCI": SOA6_SCORE,
     "QI": QI_SCORE}
 
-CLASS_BENCHMARK_LIST = sorted(list(CLASS_BENCHMARK_SCORE_DICT.keys()))
+CLASS_BENCHMARK_LIST = sorted(CLASS_BENCHMARK_SCORE_DICT)
 
 OVERALL_BENCHMARK_SCORE_DICT = {
     "SOA1": SOA1_SCORE,
@@ -510,7 +510,7 @@ OVERALL_BENCHMARK_SCORE_DICT = {
     "SOA9": SOA9_SCORE,
     "SOA10": SOA10_SCORE}
 
-OVERALL_BENCHMARK_LIST = sorted(list(OVERALL_BENCHMARK_SCORE_DICT.keys()))
+OVERALL_BENCHMARK_LIST = sorted(OVERALL_BENCHMARK_SCORE_DICT)
 KAPPA_BENCHMARK_LIST = ["SOA1", "SOA2", "SOA3", "SOA4"]
 
 OVERALL_BENCHMARK_MAP = {
@@ -860,7 +860,7 @@ BENCHMARK_COLOR = {
         "None": "White"}
 }
 
-BENCHMARK_LIST = list(BENCHMARK_COLOR.keys())
+BENCHMARK_LIST = list(BENCHMARK_COLOR)
 
 
 TABLE_COLOR = {

@@ -35,6 +35,9 @@ jobs:
       run: |
         python Otherfiles/requirements-splitter.py
         pip install --upgrade --upgrade-strategy=only-if-needed -r test-requirements.txt
+    - name: Plot requirements Installation
+      run: |
+        pip install --upgrade --upgrade-strategy=only-if-needed -r plot-requirements.txt
     - name: Test with pytest
       run: |
         python -m pytest --cov=pycm --cov-report=term

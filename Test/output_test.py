@@ -25,6 +25,9 @@ True
 >>> save_stat=cm.save_stat("test_filtered3", address=False, overall_param=["Kappa", "Scott PI"], class_param=["TPR", "TNR", "ACC", "AUC"], class_name=[])
 >>> save_stat=={'Status': True, 'Message': None}
 True
+>>> save_stat=cm.save_stat("test_filtered4", address=False, overall_param=["Wrong_param"], class_param=["Wrong_param"], class_name=["L1", "L2"])
+>>> save_stat=={'Status': True, 'Message': None}
+True
 >>> large_cm = ConfusionMatrix(list(range(20)), list(range(20)))
 >>> save_stat = large_cm.save_stat("test_large", address=False)
 >>> save_stat == {'Status': True, 'Message': None}
@@ -57,6 +60,9 @@ True
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_html("test_filtered5", address=False, overall_param=[], class_param=["TPR", "TNR", "ACC", "AUC"], class_name=[100])
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_html("test_filtered6", address=False, overall_param=["Wrong_param], class_param=["Wrong_param], class_name=[100])
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_html("test_colored", address=False, color=(130, 100, 200))
@@ -94,6 +100,9 @@ True
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_csv("test_filtered4", address=False, class_param=[], class_name=[100], matrix_save=False)
+>>> save_stat=={'Status': True, 'Message': None}
+True
+>>> save_stat=cm.save_csv("test_filtered5", address=False, class_param=["Wrong_param"], class_name=[100], matrix_save=False)
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_csv("/asdasd, qweqwe.eo/", address=True)
@@ -754,6 +763,7 @@ sInd(Similarity index)                                            None          
 >>> os.remove("test_filtered3.html")
 >>> os.remove("test_filtered4.html")
 >>> os.remove("test_filtered5.html")
+>>> os.remove("test_filtered6.html")
 >>> os.remove("test_long_name.html")
 >>> os.remove("test_shortener.html")
 >>> os.remove("test_alt.html")
@@ -763,9 +773,11 @@ sInd(Similarity index)                                            None          
 >>> os.remove("test_filtered2.csv")
 >>> os.remove("test_filtered3.csv")
 >>> os.remove("test_filtered4.csv")
+>>> os.remove("test_filtered5.csv")
 >>> os.remove("test_summary.csv")
 >>> os.remove("test_filtered2.pycm")
 >>> os.remove("test_filtered3.pycm")
+>>> os.remove("test_filtered4.pycm")
 >>> os.remove("test2.obj")
 >>> os.remove("test3.obj")
 >>> os.remove("test3_np.obj")

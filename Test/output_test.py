@@ -62,7 +62,7 @@ True
 >>> save_stat=cm.save_html("test_filtered5", address=False, overall_param=[], class_param=["TPR", "TNR", "ACC", "AUC"], class_name=[100])
 >>> save_stat=={'Status': True, 'Message': None}
 True
->>> save_stat=cm.save_html("test_filtered6", address=False, overall_param=["Wrong_param], class_param=["Wrong_param], class_name=[100])
+>>> save_stat=cm.save_html("test_filtered6", address=False, overall_param=["Wrong_param"], class_param=["Wrong_param"], class_name=[100])
 >>> save_stat=={'Status': True, 'Message': None}
 True
 >>> save_stat=cm.save_html("test_colored", address=False, color=(130, 100, 200))

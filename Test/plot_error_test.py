@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 >>> from pycm import *
+>>> import numpy as np
 >>> y_act = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2]
 >>> y_pre = [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 2, 0, 1, 2, 2, 2, 2]
 >>> cm = ConfusionMatrix(y_act, y_pre)

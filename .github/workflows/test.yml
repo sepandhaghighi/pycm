@@ -35,12 +35,15 @@ jobs:
       run: |
         python Otherfiles/requirements-splitter.py
         pip install --upgrade --upgrade-strategy=only-if-needed -r test-requirements.txt
+    - name: Test with pytest (Basic)
+      run: |
+        python -m pytest --cov=pycm --cov-report=term --ignore-glob=Test/plot_test.py
     - name: Plot requirements Installation
       run: |
         pip install --upgrade --upgrade-strategy=only-if-needed -r plot-requirements.txt
-    - name: Test with pytest
+    - name: Test with pytest (+Plot)
       run: |
-        python -m pytest --cov=pycm --cov-report=term
+        python -m pytest --cov=pycm --cov-report=term --ignore-glob=Test/plot_error_test.py
     - name: Version check
       run: |
         python Otherfiles/version_check.py

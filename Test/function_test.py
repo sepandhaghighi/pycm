@@ -186,11 +186,20 @@ Example : online_help("J") or online_help(2)
 ...
 >>> online_help(4)
 ...
+>>> from pycm.pycm_output import *
 >>> from pycm.pycm_overall_func import *
 >>> from pycm.pycm_class_func import *
 >>> from pycm.pycm_ci import *
 >>> from pycm.pycm_interpret import *
 >>> from pycm.pycm_util import *
+>>> color_check("red")
+[255, 0, 0]
+>>> color_check((255,2,2))
+[255, 2, 2]
+>>> color_check(None)
+[0, 0, 0]
+>>> color_check("wrong_color")
+[0, 0, 0]
 >>> inv_erf(-1)
 'None'
 >>> inv_erf(1)

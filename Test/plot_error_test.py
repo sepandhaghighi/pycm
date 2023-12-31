@@ -22,4 +22,9 @@ pycm.pycm_error.pycmPlotError: Error in importing matplotlib module. Please inst
 Traceback (most recent call last):
     ...
 pycm.pycm_error.pycmPlotError: Error in importing seaborn module. Please install it using this command: pip install seaborn
+>>> crv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
+>>> ax = crv.plot(classes=[1])
+Traceback (most recent call last):
+    ...
+pycm.pycm_error.pycmPlotError: Error in importing matplotlib module. Please install it using this command: pip install matplotlib
 """

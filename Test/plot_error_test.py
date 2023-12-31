@@ -17,9 +17,9 @@ Actual
 >>> ax = cm.plot()
 Traceback (most recent call last):
     ...
-ImportError: No module named 'matplotlib'
+pycm.pycm_error.pycmPlotError: Error in importing matplotlib module. Please install it using this command: pip install matplotlib
 >>> ax = cm.plot(plot_lib='seaborn')
 Traceback (most recent call last):
     ...
-ImportError: No module named 'matplotlib'
+pycm.pycm_error.pycmPlotError: Error in importing seaborn module. Please install it using this command: pip install seaborn
 """

@@ -336,6 +336,8 @@ True
 >>> cm.normalized_matrix == cm.normalized_table
 True
 >>> assert isclose(cm.Y["L2"], 0.2222222222222221, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.CI("TPR")["L2"][0], 0.2721655269759087, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.CI("TPR", binom_method=None)["L2"][0], 0.2721655269759087, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> import numpy as np
 >>> y_test = np.array([600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200])
 >>> y_test_copy = np.array([600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200])

@@ -15,7 +15,7 @@
 	1. Add a new header under `Unreleased` section (Example: `## [0.1] - 2022-08-17`)
 	2. Add a new compare link to the end of the file (Example: `[0.2]: https://github.com/sepandhaghighi/pycm/compare/v0.1...v0.2`)
 	3. Update `dev` compare link (Example: `[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v0.2...dev`)
-4. Update `bug_report.yml`
+4. Update `.github/ISSUE_TEMPLATE/bug_report.yml`
    1. Add new version tag to `PyCM version` dropbox options
 5. Update Document
 	1. Run `Otherfiles/doc_run.bat`
@@ -38,7 +38,7 @@
 	3. Title: `Version x.x` (Example: `Version 0.1`)
 	4. Copy changelogs
 	5. Tag all related issues
-9.  Bump!!
+9. Bump!!
 10. Close this version issues
 11. Close milestone
 12. Close project

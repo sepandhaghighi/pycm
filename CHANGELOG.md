@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `config.yml` for issue template
 ### Changed
 - Bug report template modified
+- Diagrams updated
 - Document modified
 - `README.md` modified
 - Test system modified

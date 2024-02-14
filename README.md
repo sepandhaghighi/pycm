@@ -42,7 +42,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 </p>
 
 <div align="center">
-<img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/block_diagram.jpg">
+<img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/block_diagram.jpg" width="700">
 <p>Fig1. ConfusionMatrix Block Diagram</p>
 </div>
 

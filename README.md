@@ -2,36 +2,14 @@
 <img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/logo.png" width="550">
 <h1>PyCM: Python Confusion Matrix</h1>
 <br/>
-<a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3" /></a>
+<a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3"></a>
 <a href="/Document"><img src="https://img.shields.io/badge/doc-latest-orange.svg"></a>
-<a href="https://codecov.io/gh/sepandhaghighi/pycm">
-  <img src="https://codecov.io/gh/sepandhaghighi/pycm/branch/master/graph/badge.svg" />
-</a>
+<a href="https://codecov.io/gh/sepandhaghighi/pycm"><img src="https://codecov.io/gh/sepandhaghighi/pycm/branch/master/graph/badge.svg"></a>
 <a href="https://badge.fury.io/py/pycm"><img src="https://badge.fury.io/py/pycm.svg" alt="PyPI version" height="18"></a>
 <a href="https://anaconda.org/sepandhaghighi/pycm"><img src="https://anaconda.org/sepandhaghighi/pycm/badges/version.svg"></a>
-<a href="https://colab.research.google.com/github/sepandhaghighi/pycm/blob/master">
-  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Document"/>
-</a>
-<a href="https://discord.com/invite/zqpU2b3J3f">
-  <img src="https://img.shields.io/discord/901883546162065408.svg" alt="Discord Channel">
-</a>
+<a href="https://colab.research.google.com/github/sepandhaghighi/pycm/blob/master"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Document"></a>
+<a href="https://discord.com/invite/zqpU2b3J3f"><img src="https://img.shields.io/discord/901883546162065408.svg" alt="Discord Channel"></a>
 </div>
-
-## Table of contents
-   * [Overview](https://github.com/sepandhaghighi/pycm#overview)
-   * [Installation](https://github.com/sepandhaghighi/pycm#installation)
-   * [Usage](https://github.com/sepandhaghighi/pycm#usage)
-   * [Document](https://github.com/sepandhaghighi/pycm/tree/master/Document)
-   * [Try PyCM in Your Browser](https://github.com/sepandhaghighi/pycm#try-pycm-in-your-browser)
-   * [Issues & Bug Reports](https://github.com/sepandhaghighi/pycm#issues--bug-reports)
-   * [Contribution](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBUTING.md)
-   * [Acknowledgments](https://github.com/sepandhaghighi/pycm#acknowledgments)
-   * [Cite](https://github.com/sepandhaghighi/pycm#cite)
-   * [Authors](https://github.com/sepandhaghighi/pycm/blob/master/AUTHORS.md)
-   * [License](https://github.com/sepandhaghighi/pycm/blob/master/LICENSE)
-   * [Show Your Support](https://github.com/sepandhaghighi/pycm#show-your-support)
-   * [Changelog](https://github.com/sepandhaghighi/pycm/blob/master/CHANGELOG.md)
-   * [Code of Conduct](https://github.com/sepandhaghighi/pycm/blob/master/.github/CODE_OF_CONDUCT.md)
 
 ## Overview
 
@@ -541,10 +519,6 @@ Download [PyCM.bib](http://www.pycm.io/PYCM.bib)
 	<tr>
 		<td align="center">Zenodo</td>
 		<td align="center"><a href="https://doi.org/10.5281/zenodo.1157173"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1157173.svg" alt="DOI"></a></td>
-	</tr>
-	<tr>
-		<td align="center">Researchgate</td>
-		<td align="center"><a href="https://www.researchgate.net/project/PYCM-python-confusion-matrix"><img src="https://img.shields.io/badge/Researchgate-PyCM-yellow.svg"></a></td>
 	</tr>
 </table>
 

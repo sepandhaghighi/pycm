@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Bug report template modified
 - Diagrams updated
 - Document modified
+- `AUTHORS.md` updated
 - `README.md` modified
 - Test system modified
 - `Python 3.12` added to `test.yml`

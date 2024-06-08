@@ -17,22 +17,6 @@
 </a>
 </div>
 
-## Table of contents
-   * [Overview](https://github.com/sepandhaghighi/pycm#overview)
-   * [Installation](https://github.com/sepandhaghighi/pycm#installation)
-   * [Usage](https://github.com/sepandhaghighi/pycm#usage)
-   * [Document](https://github.com/sepandhaghighi/pycm/tree/master/Document)
-   * [Try PyCM in Your Browser](https://github.com/sepandhaghighi/pycm#try-pycm-in-your-browser)
-   * [Issues & Bug Reports](https://github.com/sepandhaghighi/pycm#issues--bug-reports)
-   * [Contribution](https://github.com/sepandhaghighi/pycm/blob/master/.github/CONTRIBUTING.md)
-   * [Acknowledgments](https://github.com/sepandhaghighi/pycm#acknowledgments)
-   * [Cite](https://github.com/sepandhaghighi/pycm#cite)
-   * [Authors](https://github.com/sepandhaghighi/pycm/blob/master/AUTHORS.md)
-   * [License](https://github.com/sepandhaghighi/pycm/blob/master/LICENSE)
-   * [Show Your Support](https://github.com/sepandhaghighi/pycm#show-your-support)
-   * [Changelog](https://github.com/sepandhaghighi/pycm/blob/master/CHANGELOG.md)
-   * [Code of Conduct](https://github.com/sepandhaghighi/pycm/blob/master/.github/CODE_OF_CONDUCT.md)
-
 ## Overview
 
 <p align="justify">	

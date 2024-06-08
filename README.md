@@ -520,10 +520,6 @@ Download [PyCM.bib](http://www.pycm.io/PYCM.bib)
 		<td align="center">Zenodo</td>
 		<td align="center"><a href="https://doi.org/10.5281/zenodo.1157173"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1157173.svg" alt="DOI"></a></td>
 	</tr>
-	<tr>
-		<td align="center">Researchgate</td>
-		<td align="center"><a href="https://www.researchgate.net/project/PYCM-python-confusion-matrix"><img src="https://img.shields.io/badge/Researchgate-PyCM-yellow.svg"></a></td>
-	</tr>
 </table>
 
 ## Show your support

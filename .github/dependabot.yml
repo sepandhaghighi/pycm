@@ -7,8 +7,6 @@ updates:
     time: "01:30"
   open-pull-requests-limit: 10
   target-branch: dev
-  ignore:
-  - dependency-name: numpy
-    versions:
-    - 1.19.5
-    - 1.20.0
+  assignees:
+      - "sadrasabouri"
+      - "sepandhaghighi"

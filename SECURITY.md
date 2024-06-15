@@ -1,13 +1,13 @@
-# Security Policy
+# Security policy
 
-## Supported Versions
+## Supported versions
 
 | Version       | Supported          |
 | ------------- | ------------------ |
 | 4.0           | :white_check_mark: |
 | < 4.0         | :x:                |
 
-## Reporting a Vulnerability
+## Reporting a vulnerability
 
 Please report security vulnerabilities by email to [info@pycm.io](mailto:info@pycm.io "info@pycm.io").
 

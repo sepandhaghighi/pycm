@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - `feature_request.yml` template
 - `config.yml` for issue template
+- `SECURITY.md`
 ### Changed
 - Bug report template modified
 - Diagrams updated

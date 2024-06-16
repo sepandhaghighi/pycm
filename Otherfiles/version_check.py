@@ -25,10 +25,12 @@ HTML_ITEMS = ["Version {0}"]
 PARAMS_ITEMS = ['PYCM_VERSION = "{0}"']
 META_ITEMS = ['% set version = "{0}" %']
 ISSUE_TEMPLATE_ITEMS = ["- PyCM {0}"]
+SECURITY_ITEMS = ["| {0}           | :white_check_mark: |", "| < {0}         | :x:                |"]
 FILES = {
     os.path.join("Otherfiles", "meta.yaml"): META_ITEMS,
     "setup.py": SETUP_ITEMS, "README.md": README_ITEMS,
     "CHANGELOG.md": CHANGELOG_ITEMS,
+    "SECURITY.md": SECURITY_ITEMS,
     os.path.join("Document", "Document.ipynb"): DOCUMENT_ITEMS,
     os.path.join("Document", "Example1_files", "cm1.html"): HTML_ITEMS,
     os.path.join("Document", "Example1_files", "cm2.html"): HTML_ITEMS,

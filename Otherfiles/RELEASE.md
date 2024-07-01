@@ -1,7 +1,7 @@
 
 # PyCM Release Instructions
 
-#### Last Update: 2023-11-25
+**Last Update: 2024-07-02**
 
 1. Create the `release` branch under `dev`
 2. Update all version tags
@@ -54,5 +54,5 @@
 		1. `index.html`
 	4. Update size of files
 		1. `index.html`
-	5. Update `doc` folder (Step **12.2**)
+	5. Update `doc` folder (Step **13.2**)
 	6. Copy `doc/Document_files/cm1.html` to `test.html`

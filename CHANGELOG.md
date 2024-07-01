@@ -12,6 +12,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Bug report template modified
 - `thresholds_calc` function updated
+- `__midpoint_numeric_integral__` function updated
+- `__trapezoidal_numeric_integral__` function updated
 - Diagrams updated
 - Document modified
 - `AUTHORS.md` updated

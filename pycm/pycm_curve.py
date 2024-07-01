@@ -395,7 +395,7 @@ def __trapezoidal_numeric_integral__(x, y):
     area = numpy.trapz(y, x)
     if isinstance(area, numpy.memmap):
         area = area.dtype.type(area)
-    return abs(area)
+    return abs(float(area))
 
 
 def __midpoint_numeric_integral__(x, y):
@@ -413,4 +413,4 @@ def __midpoint_numeric_integral__(x, y):
     dx = numpy.diff(x)
     y_midpoints = 0.5 * (y[:-1] + y[1:])
     area = numpy.sum(dx * y_midpoints)
-    return abs(area)
+    return abs(float(area))

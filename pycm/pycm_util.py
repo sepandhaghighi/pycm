@@ -715,7 +715,7 @@ def thresholds_calc(probs):
     :return: thresholds as list
     """
     thresholds = numpy.ravel(probs)
-    thresholds = sorted(set(thresholds))
+    thresholds = sorted(set(thresholds.tolist()))
     return thresholds
 
 

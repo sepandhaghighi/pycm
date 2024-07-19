@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `__trapezoidal_numeric_integral__` function updated
 - Diagrams updated
 - Document modified
+- Document build system updated
 - `AUTHORS.md` updated
 - `README.md` modified
 - Test system modified

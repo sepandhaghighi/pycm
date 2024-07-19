@@ -52,7 +52,7 @@ jobs:
     - name: Notebook check
       run: |
         pip install notebook>=5.2.2
-        python Otherfiles/notebook_check.py
+        python Otherfiles/notebook_run.py
       if: matrix.python-version == env.TEST_PYTHON_VERSION && matrix.os == env.TEST_OS
     - name: Other tests
       run: |

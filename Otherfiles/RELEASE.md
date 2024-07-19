@@ -1,7 +1,7 @@
 
 # PyCM Release Instructions
 
-**Last Update: 2024-07-02**
+**Last Update: 2024-07-19**
 
 1. Create the `release` branch under `dev`
 2. Update all version tags
@@ -18,7 +18,7 @@
 4. Update `.github/ISSUE_TEMPLATE/bug_report.yml`
    1. Add new version tag to `PyCM version` dropbox options
 5. Update Document
-	1. Run `Otherfiles/doc_run.bat`
+	1. Run `Otherfiles/notebook_run.py`
 6. Create a PR from `release` to `dev`
 	1. Title: `Version x.x` (Example: `Version 0.1`)
 	2. Tag all related issues

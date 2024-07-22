@@ -34,12 +34,14 @@ if __name__ == "__main__":
     tprint("PYCM", "bulbhead")
     tprint("v{0}".format(pycm.__version__), "bulbhead")
     tprint("Notebook Convert", "amc3line")
-    print("Processing ...")
     if OUTPUT_FOLDER_PATH in os.listdir():
         shutil.rmtree(OUTPUT_FOLDER_PATH)
     time.sleep(5)
     os.mkdir(OUTPUT_FOLDER_PATH)
-    for index, notebook in enumerate(sorted(EXAMPLES_LIST)):
+
+    print("Documents:")
+    print("Processing ...")
+    for index, notebook in enumerate(sorted(MAIN_DOC_LIS)):
         notebook_path = os.path.join(
             DOCUMENTS_FOLDER_PATH, notebook + NOTEBOOK_EXTENSION)
         notebook_copy_path = os.path.join(
@@ -65,7 +67,9 @@ if __name__ == "__main__":
         os.remove(notebook_copy_path)
         print("\t{0}.{1} [OK]".format(index + 1, notebook))
 
-    for index, notebook in enumerate(sorted(MAIN_DOC_LIS)):
+    print("\nExamples:")
+    print("Processing ...")
+    for index, notebook in enumerate(sorted(EXAMPLES_LIST)):
         notebook_path = os.path.join(
             DOCUMENTS_FOLDER_PATH, notebook + NOTEBOOK_EXTENSION)
         notebook_copy_path = os.path.join(

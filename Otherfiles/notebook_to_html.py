@@ -19,7 +19,7 @@ EXAMPLES_LIST = ["Example1",
                  "Example7",
                  "Example8"]
 
-MAIN_DOC_LIS = ["Distance",
+MAIN_DOCS_LIST = ["Distance",
                 "Document"]
 
 NOTEBOOK_EXTENSION = ".ipynb"
@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
     print("Documents:")
     print("Processing ...")
-    for index, notebook in enumerate(sorted(MAIN_DOC_LIS)):
+    for index, notebook in enumerate(sorted(MAIN_DOCS_LIST)):
         notebook_path = os.path.join(
             DOCUMENTS_FOLDER_PATH, notebook + NOTEBOOK_EXTENSION)
         notebook_copy_path = os.path.join(

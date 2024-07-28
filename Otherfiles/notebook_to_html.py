@@ -8,6 +8,7 @@ import nbformat
 from traitlets.config import Config
 from nbconvert.preprocessors import ExecutePreprocessor
 from nbconvert import HTMLExporter
+from jupyter_contrib_nbextensions.nbconvert_support import TocExporter
 from art import tprint
 
 
@@ -64,7 +65,7 @@ if __name__ == "__main__":
                         'path': OUTPUT_FOLDER_PATH}})
         with open(notebook_copy_path, 'w', encoding='utf-8') as f:
             nbformat.write(nb, f)
-        exporter = HTMLExporter(config=c)
+        exporter = TocExporter(config=c)
         output_notebook = nbformat.read(notebook_copy_path, as_version=4)
         output, resources = exporter.from_notebook_node(
             output_notebook, {'metadata': {'name': notebook}})

@@ -1,7 +1,7 @@
 
 # PyCM Release Instructions
 
-**Last Update: 2024-07-19**
+**Last Update: 2024-07-28**
 
 1. Create the `release` branch under `dev`
 2. Update all version tags
@@ -43,7 +43,7 @@
 11. Close milestone
 12. Close project
 13. Generate HTML files
-	1. Run `Otherfiles/doc_to_html.bat`
+	1. Run `Otherfiles/notebook_to_html.py`
 	2. Copy `doc` folder for the next steps
 14. Update website
 	1. `git checkout gh-pages`

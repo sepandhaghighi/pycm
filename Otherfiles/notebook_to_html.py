@@ -5,6 +5,7 @@ import time
 import shutil
 import pycm
 import nbformat
+from traitlets.config import Config
 from nbconvert.preprocessors import ExecutePreprocessor
 from nbconvert import HTMLExporter
 from art import tprint
@@ -41,6 +42,11 @@ if __name__ == "__main__":
 
     print("Documents:")
     print("Processing ...")
+    c1 = Config()
+    c1.TagRemovePreprocessor.remove_cell_tags = ("html_hide",)
+    c1.TagRemovePreprocessor.enabled = True
+    c1.TemplateExporter.exclude_input_prompt = False
+    c1.HTMLExporter.preprocessors = ["nbconvert.preprocessors.TagRemovePreprocessor"]
     for index, notebook in enumerate(sorted(MAIN_DOCS_LIST)):
         notebook_path = os.path.join(
             DOCUMENTS_FOLDER_PATH, notebook + NOTEBOOK_EXTENSION)
@@ -58,7 +64,7 @@ if __name__ == "__main__":
                         'path': OUTPUT_FOLDER_PATH}})
         with open(notebook_copy_path, 'w', encoding='utf-8') as f:
             nbformat.write(nb, f)
-        exporter = HTMLExporter()
+        exporter = HTMLExporter(config=c1)
         output_notebook = nbformat.read(notebook_copy_path, as_version=4)
         output, resources = exporter.from_notebook_node(
             output_notebook, {'metadata': {'name': notebook}})
@@ -86,7 +92,7 @@ if __name__ == "__main__":
                         'path': OUTPUT_FOLDER_PATH}})
         with open(notebook_copy_path, 'w', encoding='utf-8') as f:
             nbformat.write(nb, f)
-        exporter = HTMLExporter()
+        exporter = HTMLExporter(config=c1)
         output_notebook = nbformat.read(notebook_copy_path, as_version=4)
         output, resources = exporter.from_notebook_node(
             output_notebook, {'metadata': {'name': notebook}})

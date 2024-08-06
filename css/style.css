@@ -112,6 +112,18 @@ li { list-style-position: inside }
     width: 100px;
 }
 
+.sponsor{
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.sponsor img{
+    width: 15em;
+    margin-left: 10px;
+    margin-top: 15px;
+}
+
 a{
   opacity: 1; 
   transition: opacity 3s;

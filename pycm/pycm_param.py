@@ -71,7 +71,7 @@ NOT_ALL_SET_VECTOR_ERROR = "Failed to extract classes from input. Input vectors 
 CLASS_NUMBER_ERROR = "The number of classes must be at least 2."
 METRICS_OFF_ERROR = "This method cannot be executed when `metrics_off=True`."
 CLASSES_ERROR = "The specified classes are not a subset of the matrix's classes."
-COMPARE_FORMAT_ERROR = "Input must be a dictionary."
+COMPARE_FORMAT_ERROR = "Input must be provided as a dictionary."
 CLASSES_LENGTH_ERROR = "The length of the classes does not match the length of the array."
 AREA_METHOD_ERROR = "The integral method must be either 'trapezoidal' or 'midpoint'."
 
@@ -333,8 +333,8 @@ CI_ALPHA_ONE_SIDE_WARNING = ("Invalid alpha value; automatically set to 0.05. Su
 
 CI_FORMAT_ERROR = "Input must be provided as a string."
 
-CI_SUPPORT_ERROR = ("Confidence interval calculation for this parameter is not supported in this version of pycm."
-                    " Supported parameters are: ") + ",".join(CI_CLASS_LIST) + "," + ",".join(CI_OVERALL_LIST)
+CI_SUPPORT_ERROR = ("Confidence interval calculation for this parameter is not supported in this version of pycm.\n"
+                    " Supported parameters are: ") + ", ".join(CI_CLASS_LIST) + ", " + ", ".join(CI_OVERALL_LIST)
 
 
 

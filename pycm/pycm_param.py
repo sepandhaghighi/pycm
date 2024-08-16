@@ -82,13 +82,13 @@ COMPARE_TYPE_ERROR = "Input must be an instance of pycm.ConfusionMatrix."
 COMPARE_DOMAIN_ERROR = "All ConfusionMatrix objects must have the same domain (same sample size and number of classes)."
 COMPARE_NUMBER_ERROR = "At least 2 confusion matrices are required for comparison."
 
-COMPARE_CLASS_WEIGHT_ERROR = "class_weight must be a dictionary and specified for all classes."
-COMPARE_CLASS_BENCHMARK_WEIGHT_ERROR = "class_benchmark_weight must be a dictionary and specified for all class benchmarks."
-COMPARE_OVERALL_BENCHMARK_WEIGHT_ERROR = "overall_benchmark_weight must be a dictionary and specified for all overall benchmarks."
+COMPARE_CLASS_WEIGHT_ERROR = "`class_weight` must be a dictionary and specified for all classes."
+COMPARE_CLASS_BENCHMARK_WEIGHT_ERROR = "`class_benchmark_weight` must be a dictionary and specified for all class benchmarks."
+COMPARE_OVERALL_BENCHMARK_WEIGHT_ERROR = "`overall_benchmark_weight` must be a dictionary and specified for all overall benchmarks."
 
-COMPARE_CLASS_WEIGHT_WARNING = "Invalid class_weight format; the result is for unweighted mode."
-COMPARE_CLASS_BENCHMARK_WEIGHT_WARNING = "Invalid class_benchmark_weight format; the result is for unweighted mode."
-COMPARE_OVERALL_BENCHMARK_WEIGHT_WARNING = "Invalid overall_benchmark_weight format; the result is for unweighted mode."
+COMPARE_CLASS_WEIGHT_WARNING = "Invalid `class_weight` format; the result is for unweighted mode."
+COMPARE_CLASS_BENCHMARK_WEIGHT_WARNING = "Invalid `class_benchmark_weight` format; the result is for unweighted mode."
+COMPARE_OVERALL_BENCHMARK_WEIGHT_WARNING = "Invalid `overall_benchmark_weight` format; the result is for unweighted mode."
 
 COMPARE_METRICS_OFF_ERROR = "Comparison cannot be performed when `metrics_off=True` in any matrix."
 
@@ -102,7 +102,7 @@ WEIGHTED_ALPHA_WARNING = "Invalid weight format; the result is for unweighted al
 AVERAGE_WEIGHT_ERROR = "weight must be a dictionary and specified for all classes."
 AVERAGE_INVALID_ERROR = "Invalid parameter!"
 
-BRIER_LOG_LOSS_CLASS_ERROR = "Actual vector contains strings; pos_class must be explicitly specified."
+BRIER_LOG_LOSS_CLASS_ERROR = "Actual vector contains strings; `pos_class` must be explicitly specified."
 BRIER_LOG_LOSS_PROB_ERROR = "This option is only available in binary probability mode."
 
 CLASS_NUMBER_WARNING = "Confusion matrix is high-dimensional and may not display properly. Consider using the `sparse` flag in printing functions, or save it as a CSV file for better visualization."

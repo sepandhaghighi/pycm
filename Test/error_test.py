@@ -95,19 +95,19 @@ pycm.pycm_error.pycmMatrixError: The specified classes are not a subset of the m
 >>> cp = Compare({"cm1": cm, "cm2": cm3}, by_class=True, class_weight={1: 1, 2: 1})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCompareError: class_weight must be a dictionary and specified for all classes.
+pycm.pycm_obj.pycmCompareError: `class_weight` must be a dictionary and specified for all classes.
 >>> cp = Compare({"cm1": cm, "cm2": cm3}, by_class=True, class_weight=[])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCompareError: class_weight must be a dictionary and specified for all classes.
+pycm.pycm_obj.pycmCompareError: `class_weight` must be a dictionary and specified for all classes.
 >>> cp = Compare({"cm1": cm, "cm2": cm3}, by_class=True, class_benchmark_weight=[])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCompareError: class_benchmark_weight must be a dictionary and specified for all class benchmarks.
+pycm.pycm_obj.pycmCompareError: `class_benchmark_weight` must be a dictionary and specified for all class benchmarks.
 >>> cp = Compare({"cm1": cm, "cm2": cm3}, by_class=True, overall_benchmark_weight=[])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCompareError: overall_benchmark_weight must be a dictionary and specified for all overall benchmarks.
+pycm.pycm_obj.pycmCompareError: `overall_benchmark_weight` must be a dictionary and specified for all overall benchmarks.
 >>> cm1 = ConfusionMatrix([1, 1, 1, 0], [1, 0, 1, 1], metrics_off=True)
 >>> cm2 = ConfusionMatrix([1, 1, 1, 0], [1, 0, 1, 1], metrics_off=False)
 >>> cp = Compare({"cm1":cm1, "cm2":cm2})
@@ -156,11 +156,11 @@ pycm.pycm_error.pycmVectorError: This option is only available in binary probabi
 >>> cm.brier_score()
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmVectorError: Actual vector contains strings; pos_class must be explicitly specified.
+pycm.pycm_error.pycmVectorError: Actual vector contains strings; `pos_class` must be explicitly specified.
 >>> cm.log_loss()
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmVectorError: Actual vector contains strings; pos_class must be explicitly specified.
+pycm.pycm_error.pycmVectorError: Actual vector contains strings; `pos_class` must be explicitly specified.
 >>> matrix = [[1, 2, 3], [4, 6, 1], [1, 2, 3]]
 >>> cm = ConfusionMatrix(matrix=matrix, classes=["L1", "L1", "L3", "L2"])
 Traceback (most recent call last):

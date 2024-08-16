@@ -76,7 +76,7 @@ CLASSES_LENGTH_ERROR = "The length of the classes does not match the length of t
 AREA_METHOD_ERROR = "The integral method must be either 'trapezoidal' or 'midpoint'."
 
 VECTOR_INDEX_ERROR = "Index is out of range for the given vector."
-INVALID_CLASS_NAME_ERROR = "The specified class name is not among the problem's classes."
+INVALID_CLASS_NAME_ERROR = "The specified class name is not among the confusion matrix's classes."
 
 COMPARE_TYPE_ERROR = "Input must be an instance of pycm.ConfusionMatrix."
 COMPARE_DOMAIN_ERROR = "All ConfusionMatrix objects must have the same domain (same sample size and number of classes)."

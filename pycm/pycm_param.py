@@ -50,10 +50,10 @@ PROBABILITY_SIZE_ERROR = "All elements of the probability vector must have the s
 PROBABILITY_TYPE_ERROR = "Probability vector elements must be numeric."
 PROBABILITY_SUM_ERROR = "The sum of the probability values must equal 1."
 THRESHOLDS_NUMBER_ERROR = "The number of thresholds must be at least 2."
-THRESHOLDS_TYPE_ERROR = "Thresholds must be provided as a list or a NumPy array."
-THRESHOLDS_NUMERIC_ERROR = "Thresholds must contain only numeric values."
-CLASSES_TYPE_ERROR = "Classes must be provided as a list."
-CLASSES_MATCH_ERROR = "The provided classes do not match the actual vector."
+THRESHOLDS_TYPE_ERROR = "`thresholds` must be provided as a list or a NumPy array."
+THRESHOLDS_NUMERIC_ERROR = "`thresholds` must contain only numeric values."
+CLASSES_TYPE_ERROR = "`classes` must be provided as a list."
+CLASSES_MATCH_ERROR = "`classes` does not match the actual vector."
 MATRIX_CLASS_TYPE_ERROR = "All input matrix classes must be of the same type."
 MATRIX_FORMAT_ERROR = "Invalid input confusion matrix format."
 MAPPING_FORMAT_ERROR = "Invalid mapping format."
@@ -66,7 +66,7 @@ VECTOR_TYPE_ERROR = "Input vectors must be provided as a list or a NumPy array."
 VECTOR_SIZE_ERROR = "Input vectors must have the same length."
 VECTOR_EMPTY_ERROR = "Input vectors must not be empty."
 VECTOR_ONLY_ERROR = "This option is only available in vector mode."
-VECTOR_UNIQUE_CLASS_ERROR = "The classes list must contain unique labels with no duplicates."
+VECTOR_UNIQUE_CLASS_ERROR = "`classes` must contain unique labels with no duplicates."
 NOT_ALL_SET_VECTOR_ERROR = "Failed to extract classes from input. Input vectors should be a list of sets with unified types."
 CLASS_NUMBER_ERROR = "The number of classes must be at least 2."
 METRICS_OFF_ERROR = "This method cannot be executed when `metrics_off=True`."
@@ -99,7 +99,7 @@ COMPARE_RESULT_WARNING = "Confusion matrices are too similar to identify a clear
 WEIGHTED_KAPPA_WARNING = "Invalid weight format; the result is for unweighted kappa."
 WEIGHTED_ALPHA_WARNING = "Invalid weight format; the result is for unweighted alpha."
 
-AVERAGE_WEIGHT_ERROR = "weight must be a dictionary and specified for all classes."
+AVERAGE_WEIGHT_ERROR = "`weight` must be a dictionary and specified for all classes."
 AVERAGE_INVALID_ERROR = "Invalid parameter!"
 
 BRIER_LOG_LOSS_CLASS_ERROR = "Actual vector contains strings; `pos_class` must be explicitly specified."
@@ -114,7 +114,7 @@ CURVE_NONE_WARNING = "The curve contains non-numerical value(s)."
 
 DEPRECATION_WARNING = "`{}` is deprecated and may be removed in future releases."
 
-DISTANCE_METRIC_TYPE_ERROR = "The metric type must be DistanceType."
+DISTANCE_METRIC_TYPE_ERROR = "`metric` type must be DistanceType."
 
 
 CLASS_NUMBER_THRESHOLD = 10

@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `README.md` modified
 - Test system modified
 - `Python 3.12` added to `test.yml`
-- Warning and error messages
+- Warning and error messages updated
 ## [4.0] - 2023-06-07
 ### Added
 - `pycmMultiLabelError` class

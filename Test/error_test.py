@@ -29,7 +29,7 @@ pycm.pycm_error.pycmVectorError: This option is only available in vector mode.
 >>> cm = ConfusionMatrix([1, 2, 3, 4], [1, 2, 3, 4], classes=[1, 2, 2, 2])
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmVectorError: The classes list must contain unique labels with no duplicates.
+pycm.pycm_error.pycmVectorError: `classes` must contain unique labels with no duplicates.
 >>> cm3=ConfusionMatrix(matrix={})
 Traceback (most recent call last):
         ...
@@ -56,7 +56,7 @@ pycm.pycm_error.pycmMatrixError: The number of classes must be at least 2.
 >>> cm.distance(metric = 2)
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMatrixError: The metric type must be DistanceType.
+pycm.pycm_error.pycmMatrixError: `metric` type must be DistanceType.
 >>> cm.relabel([1, 2, 3])
 Traceback (most recent call last):
         ...
@@ -134,11 +134,11 @@ pycm.pycm_error.pycmAverageError: Invalid parameter!
 >>> cm.weighted_average("AUC", weight=2)
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmAverageError: weight must be a dictionary and specified for all classes.
+pycm.pycm_error.pycmAverageError: `weight` must be a dictionary and specified for all classes.
 >>> cm.weighted_average("AUC", weight={1: 23})
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmAverageError: weight must be a dictionary and specified for all classes.
+pycm.pycm_error.pycmAverageError: `weight` must be a dictionary and specified for all classes.
 >>> cm.combine(1)
 Traceback (most recent call last):
         ...
@@ -165,7 +165,7 @@ pycm.pycm_error.pycmVectorError: Actual vector contains strings; `pos_class` mus
 >>> cm = ConfusionMatrix(matrix=matrix, classes=["L1", "L1", "L3", "L2"])
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMatrixError: The classes list must contain unique labels with no duplicates.
+pycm.pycm_error.pycmMatrixError: `classes` must contain unique labels with no duplicates.
 >>> cm = ConfusionMatrix(matrix=matrix, classes=[1, 2])
 Traceback (most recent call last):
         ...
@@ -189,11 +189,11 @@ pycm.pycm_error.pycmCurveError: The sum of the probability values must equal 1.
 >>> crv = Curve([1, 2, 2, 1], [[0.1, 0.9], [0.1, 0.9], [0.1, 0.9], [0.1, 0.9]], classes={1, 2})
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmCurveError: Classes must be provided as a list.
+pycm.pycm_error.pycmCurveError: `classes` must be provided as a list.
 >>> crv = Curve([1, 2, 2, 1], [[0.1, 0.9], [0.1, 0.9], [0.1, 0.9], [0.1, 0.9]], classes=[1, 2, 3])
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmCurveError: The provided classes do not match the actual vector.
+pycm.pycm_error.pycmCurveError: `classes` does not match the actual vector.
 >>> crv = Curve([1, 1, 1, 1], [[0.1, 0.9], [0.1, 0.9], [0.1, 0.9], [0.1, 0.9]], classes=[1])
 Traceback (most recent call last):
         ...
@@ -205,7 +205,7 @@ pycm.pycm_error.pycmCurveError: Probability vector elements must be numeric.
 >>> crv = Curve([1, 2, 2, 1], [[0.1, 0.9], [0.1, 0.9], [0.1, 0.9], [0.2, 0.8]], classes=[1, 2], thresholds={1, 2})
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmCurveError: Thresholds must be provided as a list or a NumPy array.
+pycm.pycm_error.pycmCurveError: `thresholds` must be provided as a list or a NumPy array.
 >>> crv = Curve([1, 2, 2, 1], [[0.1, 0.9], [0.1, 0.9], [0.1, 0.9], [0.2, 0.8]], classes=[1, 2], thresholds=[0.1])
 Traceback (most recent call last):
         ...
@@ -213,11 +213,11 @@ pycm.pycm_error.pycmCurveError: The number of thresholds must be at least 2.
 >>> crv = Curve([1, 2, 2, 1], [[0.1, 0.9], [0.1, 0.9], [0.1, 0.9], [0.2, 0.8]], classes=[1, 2], thresholds=[0.1, "q"])
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmCurveError: Thresholds must contain only numeric values.
+pycm.pycm_error.pycmCurveError: `thresholds` must contain only numeric values.
 >>> crv = Curve([1, 2, 2, 1], [[0.1, 0.9], [0.1, 0.9], [0.1, 0.9], [0.2, 0.8]], classes=[1, 1, 2])
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmCurveError: The classes list must contain unique labels with no duplicates.
+pycm.pycm_error.pycmCurveError: `classes` must contain unique labels with no duplicates.
 >>> crv = Curve([1, 2, 2, 1], [[0.1, 0.9], [0.1, 0.9], [0.1, 0.8, 0.1], [0.2, 0.8]], classes=[1, 2])
 Traceback (most recent call last):
         ...
@@ -321,5 +321,5 @@ pycm.pycm_error.pycmVectorError: Input vectors must not be empty.
 >>> mlcm = MultiLabelCM([{1, 0}, {1, 0}], [{1, 0}, {1, 0}], classes=[1,0,1])
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmVectorError: The classes list must contain unique labels with no duplicates.
+pycm.pycm_error.pycmVectorError: `classes` must contain unique labels with no duplicates.
 """

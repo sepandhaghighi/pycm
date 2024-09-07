@@ -80,7 +80,7 @@ pycm.pycm_obj.pycmCompareError: At least 2 confusion matrices are required for c
 >>> cp = Compare({"cm1": cm, "cm2": []})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCompareError: Input must be an instance of pycm.ConfusionMatrix.
+pycm.pycm_obj.pycmCompareError: Input must be a dictionary containing pycm.ConfusionMatrix objects.
 >>> cm2 = ConfusionMatrix(matrix={"Class1": {"Class1": 9, "Class2": 3, "Class3": 0}, "Class2": {"Class1": 3, "Class2": 5, "Class3": 1}, "Class3": {"Class1": 1, "Class2": 1, "Class3": 4}})
 >>> cp = Compare({"cm1": cm, "cm2": cm2})
 Traceback (most recent call last):
@@ -142,7 +142,7 @@ pycm.pycm_error.pycmAverageError: `weight` must be a dictionary and specified fo
 >>> cm.combine(1)
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMatrixError: Input must be an instance of pycm.ConfusionMatrix.
+pycm.pycm_error.pycmMatrixError: Input must be a dictionary containing pycm.ConfusionMatrix objects.
 >>> cm = ConfusionMatrix([1, 0, 2, 0], [1, 1, 2, 1])
 >>> cm.brier_score()
 Traceback (most recent call last):

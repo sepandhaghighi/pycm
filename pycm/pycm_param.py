@@ -92,7 +92,7 @@ COMPARE_OVERALL_BENCHMARK_WEIGHT_WARNING = "Invalid `overall_benchmark_weight` f
 
 COMPARE_METRICS_OFF_ERROR = "Comparison cannot be performed when `metrics_off=True` in any matrix."
 
-COMBINE_TYPE_ERROR = "Input must be an instance of pycm.ConfusionMatrix."
+COMBINE_TYPE_ERROR = "Input must be a dictionary containing pycm.ConfusionMatrix objects."
 
 COMPARE_RESULT_WARNING = "Confusion matrices are too similar to identify a clear best option."
 

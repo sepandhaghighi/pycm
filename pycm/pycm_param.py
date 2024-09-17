@@ -78,7 +78,7 @@ AREA_METHOD_ERROR = "The integral method must be either 'trapezoidal' or 'midpoi
 VECTOR_INDEX_ERROR = "Index is out of range for the given vector."
 INVALID_CLASS_NAME_ERROR = "The specified class name is not among the confusion matrix's classes."
 
-COMPARE_TYPE_ERROR = "Input must be an instance of pycm.ConfusionMatrix."
+COMPARE_TYPE_ERROR = "Input must be a dictionary containing pycm.ConfusionMatrix objects."
 COMPARE_DOMAIN_ERROR = "All ConfusionMatrix objects must have the same domain (same sample size and number of classes)."
 COMPARE_NUMBER_ERROR = "At least 2 confusion matrices are required for comparison."
 
@@ -92,7 +92,7 @@ COMPARE_OVERALL_BENCHMARK_WEIGHT_WARNING = "Invalid `overall_benchmark_weight` f
 
 COMPARE_METRICS_OFF_ERROR = "Comparison cannot be performed when `metrics_off=True` in any matrix."
 
-COMBINE_TYPE_ERROR = "Input must be a dictionary containing pycm.ConfusionMatrix objects."
+COMBINE_TYPE_ERROR = "Input must be an instance of pycm.ConfusionMatrix."
 
 COMPARE_RESULT_WARNING = "Confusion matrices are too similar to identify a clear best option."
 

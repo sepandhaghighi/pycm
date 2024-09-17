@@ -142,7 +142,7 @@ pycm.pycm_error.pycmAverageError: `weight` must be a dictionary and specified fo
 >>> cm.combine(1)
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMatrixError: Input must be a dictionary containing pycm.ConfusionMatrix objects.
+pycm.pycm_error.pycmMatrixError: Input must be an instance of pycm.ConfusionMatrix.
 >>> cm = ConfusionMatrix([1, 0, 2, 0], [1, 1, 2, 1])
 >>> cm.brier_score()
 Traceback (most recent call last):

@@ -46,87 +46,76 @@ HTML_END_TEMPLATE = '''<p style="text-align:center;border-top:1px solid black;">
 </html>
 '''
 
-PROBABILITY_SIZE_ERROR = "Probability vector elements must have same length and equal to classes"
-PROBABILITY_TYPE_ERROR = "The elements of the probability vector can only contain numeric values"
-PROBABILITY_SUM_ERROR = "The sum of probability values must be one"
-THRESHOLDS_NUMBER_ERROR = "Number of the thresholds is lower than 2"
-THRESHOLDS_TYPE_ERROR = "The type of thresholds is assumed to be list or NumPy array"
-THRESHOLDS_NUMERIC_ERROR = "The thresholds can only contain numeric values"
-CLASSES_TYPE_ERROR = "The type of classes is assumed to be list"
-CLASSES_MATCH_ERROR = "The classes don't match to actual_vector"
-MATRIX_CLASS_TYPE_ERROR = "Type of the input matrix classes is assumed  be the same"
-MATRIX_FORMAT_ERROR = "Input confusion matrix format error"
-MAPPING_FORMAT_ERROR = "Mapping format error"
-MAPPING_CLASS_NAME_ERROR = "Mapping class names error"
-SEABORN_PLOT_LIBRARY_ERROR = "Error in importing seaborn module. Please install it using this command: pip install seaborn"
-MATPLOTLIB_PLOT_LIBRARY_ERROR = "Error in importing matplotlib module. Please install it using this command: pip install matplotlib"
-PLOT_COLORS_CLASS_MISMATCH_ERROR = "Given colors and classes have not the same length."
-PLOT_MARKERS_CLASS_MISMATCH_ERROR = "Given markers and classes have not the same length."
-VECTOR_TYPE_ERROR = "The type of input vectors is assumed to be a list or a NumPy array"
-VECTOR_SIZE_ERROR = "Input vectors must have same length"
-VECTOR_EMPTY_ERROR = "Input vectors are empty"
-VECTOR_ONLY_ERROR = "This option only works in vector mode"
-VECTOR_UNIQUE_CLASS_ERROR = "The classes list isn't unique. It contains duplicated labels."
-NOT_ALL_SET_VECTOR_ERROR = "Class extraction from input failed. Input vectors should be a list of sets with unified types."
-CLASS_NUMBER_ERROR = "Number of the classes is lower than 2"
-METRICS_OFF_ERROR = "This method cannot be executed while 'metrics_off=True'."
-CLASSES_ERROR = "Used classes is not a subset of matrix's classes."
-COMPARE_FORMAT_ERROR = "The input type is supposed to be dictionary but it's not!"
-CLASSES_LENGHT_ERROR = "Classes length is not equal to the array length."
-AREA_METHOD_ERROR = "The numeric integral method can only be selected between 'trapezoidal' and 'midpoint'!"
+PROBABILITY_SIZE_ERROR = "All elements of the probability vector must have the same length and match the number of classes."
+PROBABILITY_TYPE_ERROR = "Probability vector elements must be numeric."
+PROBABILITY_SUM_ERROR = "The sum of the probability values must equal 1."
+THRESHOLDS_NUMBER_ERROR = "The number of thresholds must be at least 2."
+THRESHOLDS_TYPE_ERROR = "`thresholds` must be provided as a list or a NumPy array."
+THRESHOLDS_NUMERIC_ERROR = "`thresholds` must contain only numeric values."
+CLASSES_TYPE_ERROR = "`classes` must be provided as a list."
+CLASSES_MATCH_ERROR = "`classes` does not match the actual vector."
+MATRIX_CLASS_TYPE_ERROR = "All input matrix classes must be of the same type."
+MATRIX_FORMAT_ERROR = "Invalid input confusion matrix format."
+MAPPING_FORMAT_ERROR = "Invalid mapping format."
+MAPPING_CLASS_NAME_ERROR = "Invalid mapping class names."
+SEABORN_PLOT_LIBRARY_ERROR = "Failed to import seaborn module. Please install it using: `pip install seaborn`."
+MATPLOTLIB_PLOT_LIBRARY_ERROR = "Failed to import matplotlib module. Please install it using: `pip install matplotlib`."
+PLOT_COLORS_CLASS_MISMATCH_ERROR = "The number of colors does not match the number of classes."
+PLOT_MARKERS_CLASS_MISMATCH_ERROR = "The number of markers does not match the number of classes."
+VECTOR_TYPE_ERROR = "Input vectors must be provided as a list or a NumPy array."
+VECTOR_SIZE_ERROR = "Input vectors must have the same length."
+VECTOR_EMPTY_ERROR = "Input vectors must not be empty."
+VECTOR_ONLY_ERROR = "This option is only available in vector mode."
+VECTOR_UNIQUE_CLASS_ERROR = "`classes` must contain unique labels with no duplicates."
+NOT_ALL_SET_VECTOR_ERROR = "Failed to extract classes from input. Input vectors should be a list of sets with unified types."
+CLASS_NUMBER_ERROR = "The number of classes must be at least 2."
+METRICS_OFF_ERROR = "This method cannot be executed when `metrics_off=True`."
+CLASSES_ERROR = "The specified classes are not a subset of the matrix's classes."
+COMPARE_FORMAT_ERROR = "Input must be provided as a dictionary."
+CLASSES_LENGTH_ERROR = "The length of the classes does not match the length of the array."
+AREA_METHOD_ERROR = "The integral method must be either 'trapezoidal' or 'midpoint'."
 
-VECTOR_INDEX_ERROR = "Given index is out of vector's range."
-INVALID_CLASS_NAME_ERROR = "Given class name is not among problem's classes."
+VECTOR_INDEX_ERROR = "Index is out of range for the given vector."
+INVALID_CLASS_NAME_ERROR = "The specified class name is not among the confusion matrix's classes."
 
-COMPARE_TYPE_ERROR = "The input is supposed to consist of pycm.ConfusionMatrix object but it's not!"
-COMPARE_DOMAIN_ERROR = "The domain of all ConfusionMatrix objects must be same! The sample size or the number " \
-                       "of classes are different."
-COMPARE_NUMBER_ERROR = "Lower than two confusion matrices is given for comparing. The minimum number of " \
-                       "confusion matrix for comparing is 2."
+COMPARE_TYPE_ERROR = "Input must be a dictionary containing pycm.ConfusionMatrix objects."
+COMPARE_DOMAIN_ERROR = "All ConfusionMatrix objects must have the same domain (same sample size and number of classes)."
+COMPARE_NUMBER_ERROR = "At least 2 confusion matrices are required for comparison."
 
-COMPARE_CLASS_WEIGHT_ERROR = "The class_weight type must be dictionary and also must be specified for all of the classes."
+COMPARE_CLASS_WEIGHT_ERROR = "`class_weight` must be a dictionary and specified for all classes."
+COMPARE_CLASS_BENCHMARK_WEIGHT_ERROR = "`class_benchmark_weight` must be a dictionary and specified for all class benchmarks."
+COMPARE_OVERALL_BENCHMARK_WEIGHT_ERROR = "`overall_benchmark_weight` must be a dictionary and specified for all overall benchmarks."
 
-COMPARE_CLASS_BENCHMARK_WEIGHT_ERROR = "The class_benchmark_weight type must be dictionary and also must be specified for all of the class benchmarks."
+COMPARE_CLASS_WEIGHT_WARNING = "Invalid `class_weight` format; the result is for unweighted mode."
+COMPARE_CLASS_BENCHMARK_WEIGHT_WARNING = "Invalid `class_benchmark_weight` format; the result is for unweighted mode."
+COMPARE_OVERALL_BENCHMARK_WEIGHT_WARNING = "Invalid `overall_benchmark_weight` format; the result is for unweighted mode."
 
-COMPARE_OVERALL_BENCHMARK_WEIGHT_ERROR = "The overall_benchmark_weight type must be dictionary and also must be specified for all of the overall benchmarks."
+COMPARE_METRICS_OFF_ERROR = "Comparison cannot be performed when `metrics_off=True` in any matrix."
 
-COMPARE_CLASS_WEIGHT_WARNING = "The class_weight format is wrong, the result is for unweighted mode."
+COMBINE_TYPE_ERROR = "Input must be an instance of pycm.ConfusionMatrix."
 
-COMPARE_CLASS_BENCHMARK_WEIGHT_WARNING = "The class_benchmark_weight format is wrong, the result is for unweighted mode."
+COMPARE_RESULT_WARNING = "Confusion matrices are too similar to identify a clear best option."
 
-COMPARE_OVERALL_BENCHMARK_WEIGHT_WARNING = "The overall_benchmark_weight format is wrong, the result is for unweighted mode."
+WEIGHTED_KAPPA_WARNING = "Invalid weight format; the result is for unweighted kappa."
+WEIGHTED_ALPHA_WARNING = "Invalid weight format; the result is for unweighted alpha."
 
-COMPARE_METRICS_OFF_ERROR = "Compare cannot be executed while in either of matrices 'metrics_off=True'."
-
-COMBINE_TYPE_ERROR = "The input type is supposed to be pycm.ConfusionMatrix object but it's not!"
-
-COMPARE_RESULT_WARNING = "Confusion matrices are too close and the best one can not be recognized."
-
-WEIGHTED_KAPPA_WARNING = "The weight format is wrong, the result is for unweighted kappa."
-
-WEIGHTED_ALPHA_WARNING = "The weight format is wrong, the result is for unweighted alpha."
-
-AVERAGE_WEIGHT_ERROR = "The weight type must be dictionary and also must be specified for all of the classes."
-
+AVERAGE_WEIGHT_ERROR = "`weight` must be a dictionary and specified for all classes."
 AVERAGE_INVALID_ERROR = "Invalid parameter!"
 
-BRIER_LOG_LOSS_CLASS_ERROR = "Actual vector contains string so pos_class should be explicitly specified"
+BRIER_LOG_LOSS_CLASS_ERROR = "Actual vector contains strings; `pos_class` must be explicitly specified."
+BRIER_LOG_LOSS_PROB_ERROR = "This option is only available in binary probability mode."
 
-BRIER_LOG_LOSS_PROB_ERROR = "This option only works in binary probability mode"
+CLASS_NUMBER_WARNING = "Confusion matrix is high-dimensional and may not display properly. Consider using the `sparse` flag in printing functions, or save it as a CSV file for better visualization."
 
-CLASS_NUMBER_WARNING = "The confusion matrix is a high dimension matrix and won't be demonstrated properly.\n" \
-                       "If confusion matrix has too many zeros (sparse matrix) you can set `sparse` flag to True in printing functions "\
-                       "otherwise by using save_csv method to save the confusion matrix in csv format you'll have better demonstration."
+CLASSES_WARNING = "Specified classes are not a subset of the classes in the actual and predicted vectors."
+CLASSES_TYPE_WARNING = "Classes is neither a list nor None, so it will be ignored."
 
-CLASSES_WARNING = "Used classes is not a subset of classes in actual and predict vectors."
-
-CLASSES_TYPE_WARNING = "The classes is neither a list nor None so it'll be ignored."
-
-CURVE_NONE_WARNING = "The curve axes contain non-numerical value(s)."
+CURVE_NONE_WARNING = "The curve contains non-numerical value(s)."
 
 DEPRECATION_WARNING = "`{}` is deprecated and may be removed in future releases."
 
-DISTANCE_METRIC_TYPE_ERROR = "The metric type must be DistanceType"
+DISTANCE_METRIC_TYPE_ERROR = "`metric` type must be DistanceType."
+
 
 CLASS_NUMBER_THRESHOLD = 10
 
@@ -336,16 +325,17 @@ ALPHA_ONE_SIDE_TABLE = {
     0.001: 3.09,
     0.0005: 3.29}
 
-CI_ALPHA_TWO_SIDE_WARNING = "The alpha value is invalid, automatically set to 0.05.\nSupported values (two-sided) : " + ",".join(
-    map(str, sorted(ALPHA_TWO_SIDE_TABLE)))
+CI_ALPHA_TWO_SIDE_WARNING = ("Invalid alpha value; automatically set to 0.05. Supported two-sided values are: "
+                             + ", ".join(map(str, sorted(ALPHA_TWO_SIDE_TABLE))))
 
-CI_ALPHA_ONE_SIDE_WARNING = "The alpha value is invalid, automatically set to 0.05.\nSupported values (one-sided) : " + ",".join(
-    map(str, sorted(ALPHA_ONE_SIDE_TABLE)))
+CI_ALPHA_ONE_SIDE_WARNING = ("Invalid alpha value; automatically set to 0.05. Supported one-sided values are: "
+                             + ", ".join(map(str, sorted(ALPHA_ONE_SIDE_TABLE))))
 
-CI_FORMAT_ERROR = "The input type is supposed to be string but it's not!"
+CI_FORMAT_ERROR = "Input must be provided as a string."
 
-CI_SUPPORT_ERROR = "CI calculation for this parameter is not supported on this version of pycm.\nSupported parameters : " + \
-    ",".join(CI_CLASS_LIST) + "," + ",".join(CI_OVERALL_LIST)
+CI_SUPPORT_ERROR = ("Confidence interval calculation for this parameter is not supported in this version of pycm.\n"
+                    " Supported parameters are: ") + ", ".join(CI_CLASS_LIST) + ", " + ", ".join(CI_OVERALL_LIST)
+
 
 
 MULTICLASS_RECOMMEND = [
@@ -530,9 +520,10 @@ RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"
 RECOMMEND_HTML_MESSAGE = '<span style="color:red;">Note 1</span> : Recommended statistics for this type of classification highlighted in <span style="color :{0};">{0}</span>'.format(
     RECOMMEND_BACKGROUND_COLOR)
-RECOMMEND_WARNING = "The recommender system assumes that the input is the result of classification over the whole data" \
-                    " rather than just a part of it.\nIf the confusion matrix is the result of test data classification" \
-                    ", the recommendation is not valid."
+RECOMMEND_WARNING = ("The recommendation system assumes the input is the result of classification over the entire"
+                     " dataset, not just a subset. If the confusion matrix is based on test data classification,"
+                     " the recommendation may not be valid.")
+
 RECOMMEND_HTML_MESSAGE2 = '<span style="color:red;">Note 2</span> : {0}'.format(
     RECOMMEND_WARNING)
 

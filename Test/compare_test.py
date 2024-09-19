@@ -54,7 +54,7 @@ Rank  Name      Class-Score       Overall-Score
 pycm.ConfusionMatrix(classes: [0, 1, 2])
 >>> cp.best_name
 'model2'
->>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
+>>> with warns(RuntimeWarning, match='Confusion matrices are too similar to identify a clear best option.'):
 ...     cp2 = Compare({"model1": cm_comp1, "model2": cm_comp1})
 >>> cp2.scores == {'model2': {'class': 0.50278, 'overall': 0.58095}, 'model1': {'class': 0.50278, 'overall': 0.58095}}
 True
@@ -102,7 +102,7 @@ Rank  Name   Class-Score       Overall-Score
 1     cm2    0.93333           0.9
 2     cm1    0.73333           0.71667
 <BLANKLINE>
->>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
+>>> with warns(RuntimeWarning, match='Confusion matrices are too similar to identify a clear best option.'):
 ...     cp7 = Compare({"cm1": cm1, "cm2": cm2}, class_weight={0: 200, 1: 1, 2: 1})
 >>> cp7.class_weight == {0: 200, 1: 1, 2: 1}
 True
@@ -120,16 +120,16 @@ Rank  Name   Class-Score       Overall-Score
 >>> cm = ConfusionMatrix(y_actu, y_pred)
 >>> cm.relabel({0: "L1", 1: "L2", 2: "L3"})
 >>> cm_null = ConfusionMatrix(matrix={0: {0: 0, 1: 0, 2: 0}, 1: {0: 0, 1: 0, 2: 0}, 2: {0: 0, 1: 0, 2: 0}})
->>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
+>>> with warns(RuntimeWarning, match='Confusion matrices are too similar to identify a clear best option.'):
 ...     cp8 = Compare({"cm1": cm, "cm2": cm}, class_weight={'L3': 6, 'L1': 3, 'L2': 3})
->>> with warns(RuntimeWarning, match='The class_weight format is wrong, the result is for unweighted mode.'):
+>>> with warns(RuntimeWarning, match='Invalid `class_weight` format; the result is for unweighted mode.'):
 ...     cp9 = Compare({"cm1": cm1, "cm2": cm2}, class_weight={0: 0, 1: 0, 2: 0})
 >>> class_benchmark_weight = {"PLRI": 0, "NLRI": 0, "DPI": 0, "AUCI": 0, "MCCI": 0, "QI": 0}
->>> with warns(RuntimeWarning, match='The class_benchmark_weight format is wrong, the result is for unweighted mode.'):
+>>> with warns(RuntimeWarning, match='Invalid `class_benchmark_weight` format; the result is for unweighted mode.'):
 ...     cp10 = Compare({"cm1": cm1, "cm2": cm2}, class_benchmark_weight=class_benchmark_weight)
 >>> overall_benchmark_weight = {"SOA1": 0, "SOA2": 0, "SOA3": 0, "SOA4": 0, "SOA5": 0, "SOA6": 0, "SOA7": 0, "SOA8": 0, "SOA9": 0, "SOA10": 0}
->>> with warns(RuntimeWarning, match='The overall_benchmark_weight format is wrong, the result is for unweighted mode.'):
+>>> with warns(RuntimeWarning, match='Invalid `overall_benchmark_weight` format; the result is for unweighted mode.'):
 ...     cp11 = Compare({"cm1": cm1, "cm2": cm2}, overall_benchmark_weight=overall_benchmark_weight)
->>> with warns(RuntimeWarning, match='Confusion matrices are too close'):
+>>> with warns(RuntimeWarning, match='Confusion matrices are too similar to identify a clear best option.'):
 ...     cp12 = Compare({"cm1": cm_null, "cm2": cm_null})
 """

@@ -4,7 +4,7 @@
 >>> from pycm.pycm_util import deprecated
 >>> from pytest import warns
 >>> large_cm = ConfusionMatrix(list(range(10)) + [2, 3, 5], list(range(10)) + [1, 7, 2])
->>> with warns(RuntimeWarning, match='The confusion matrix is a high dimension matrix'):
+>>> with warns(RuntimeWarning, match='Confusion matrix is high-dimensional and may not display properly. Consider using the `sparse` flag in printing functions, or save it as a CSV file for better visualization.'):
 ...     large_cm.print_matrix()
 Predict 0       1       2       3       4       5       6       7       8       9
 Actual
@@ -28,7 +28,7 @@ Actual
 <BLANKLINE>
 9       0       0       0       0       0       0       0       0       0       1
 <BLANKLINE>
->>> with warns(RuntimeWarning, match='The confusion matrix is a high dimension matrix'):
+>>> with warns(RuntimeWarning, match='Confusion matrix is high-dimensional and may not display properly. Consider using the `sparse` flag in printing functions, or save it as a CSV file for better visualization.'):
 ...     large_cm.print_normalized_matrix()
 Predict   0         1         2         3         4         5         6         7         8         9
 Actual
@@ -52,7 +52,7 @@ Actual
 <BLANKLINE>
 9         0.0       0.0       0.0       0.0       0.0       0.0       0.0       0.0       0.0       1.0
 <BLANKLINE>
->>> with warns(RuntimeWarning, match='The confusion matrix is a high dimension matrix'):
+>>> with warns(RuntimeWarning, match='Confusion matrix is high-dimensional and may not display properly. Consider using the `sparse` flag in printing functions, or save it as a CSV file for better visualization.'):
 ...     large_cm.stat()
 Overall Statistics :
 <BLANKLINE>
@@ -193,7 +193,7 @@ Y(Youden index)                                                   1.0           
 dInd(Distance index)                                              0.0           0.08333       0.5082        0.5           0.0           0.5           0.0           0.08333       0.0           0.0
 sInd(Similarity index)                                            1.0           0.94107       0.64065       0.64645       1.0           0.64645       1.0           0.94107       1.0           1.0
 <BLANKLINE>
->>> with warns(RuntimeWarning, match='The confusion matrix is a high dimension matrix'):
+>>> with warns(RuntimeWarning, match='Confusion matrix is high-dimensional and may not display properly. Consider using the `sparse` flag in printing functions, or save it as a CSV file for better visualization.'):
 ...     print(large_cm)
 Predict 0       1       2       3       4       5       6       7       8       9
 Actual

@@ -231,14 +231,6 @@ pycm.pycm_error.pycmCurveError: All elements of the probability vector must have
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: The integral method must be either 'trapezoidal' or 'midpoint'.
->>> crv.plot(colors=['c'])
-Traceback (most recent call last):
-        ...
-pycm.pycm_error.pycmPlotError: The number of colors does not match the number of classes.
->>> crv.plot(markers=['*'])
-Traceback (most recent call last):
-        ...
-pycm.pycm_error.pycmPlotError: The number of markers does not match the number of classes.
 >>> cm = ConfusionMatrix(y_actu, y_pred, metrics_off=True)
 >>> cm.stat()
 Traceback (most recent call last):

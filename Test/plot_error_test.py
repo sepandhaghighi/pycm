@@ -28,4 +28,12 @@ pycm.pycm_error.pycmPlotError: Failed to import seaborn module. Please install i
 Traceback (most recent call last):
     ...
 pycm.pycm_error.pycmPlotError: Failed to import matplotlib module. Please install it using: `pip install matplotlib`.
+>>> crv.plot(colors=['c'])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmPlotError: The number of colors does not match the number of classes.
+>>> crv.plot(markers=['*'])
+Traceback (most recent call last):
+        ...
+pycm.pycm_error.pycmPlotError: The number of markers does not match the number of classes.
 """

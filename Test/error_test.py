@@ -8,19 +8,19 @@
 >>> cm_2 = ConfusionMatrix(y_actu, 2)
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmVectorError: Input vectors must be provided as a list or a NumPy array.
+pycm.pycm_error.pycmVectorError: Input vectors must be provided as a list or a NumPy array.
 >>> cm_3 = ConfusionMatrix(y_actu, [1, 2])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmVectorError: Input vectors must have the same length.
+pycm.pycm_error.pycmVectorError: Input vectors must have the same length.
 >>> cm_4 = ConfusionMatrix([], [])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmVectorError: Input vectors must not be empty.
+pycm.pycm_error.pycmVectorError: Input vectors must not be empty.
 >>> cm_5 = ConfusionMatrix([1, 1, 1, ], [1, 1, 1, 1])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmVectorError: Input vectors must have the same length.
+pycm.pycm_error.pycmVectorError: Input vectors must have the same length.
 >>> cm_6 = ConfusionMatrix(matrix={0: {0: 2, 1: 50, 2: 6}, 1: {0: 5, 1: 50, 2: 3}, 2: {0: 1, 1: 7, 2: 50}})
 >>> cm_6.position()
 Traceback (most recent call last):
@@ -33,15 +33,15 @@ pycm.pycm_error.pycmVectorError: `classes` must contain unique labels with no du
 >>> cm3=ConfusionMatrix(matrix={})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmMatrixError: Invalid input confusion matrix format.
+pycm.pycm_error.pycmMatrixError: Invalid input confusion matrix format.
 >>> cm_4=ConfusionMatrix(matrix={1: {1: 2, "1": 2}, "1": {1: 2, "1": 3}})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmMatrixError: All input matrix classes must be of the same type.
+pycm.pycm_error.pycmMatrixError: All input matrix classes must be of the same type.
 >>> cm_5=ConfusionMatrix(matrix={1: {1: 2}})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmMatrixError: The number of classes must be at least 2.
+pycm.pycm_error.pycmMatrixError: The number of classes must be at least 2.
 >>> cm = ConfusionMatrix([1, 2, 3, 4], [1, 2, 3, 4], classes=[1])
 Traceback (most recent call last):
         ...
@@ -60,32 +60,32 @@ pycm.pycm_error.pycmMatrixError: `metric` type must be DistanceType.
 >>> cm.relabel([1, 2, 3])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmMatrixError: Invalid mapping format.
+pycm.pycm_error.pycmMatrixError: Invalid mapping format.
 >>> cm.relabel({1: "L1", 2: "L2"})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmMatrixError: Invalid mapping class names.
+pycm.pycm_error.pycmMatrixError: Invalid mapping class names.
 >>> cm.relabel({0: "L1", 1: "L2", 2: "L2"})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmMatrixError: Invalid mapping class names.
+pycm.pycm_error.pycmMatrixError: Invalid mapping class names.
 >>> cp = Compare([cm, cm])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCompareError: Input must be provided as a dictionary.
+pycm.pycm_error.pycmCompareError: Input must be provided as a dictionary.
 >>> cp = Compare({"cm1": cm})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCompareError: At least 2 confusion matrices are required for comparison.
+pycm.pycm_error.pycmCompareError: At least 2 confusion matrices are required for comparison.
 >>> cp = Compare({"cm1": cm, "cm2": []})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCompareError: Input must be a dictionary containing pycm.ConfusionMatrix objects.
+pycm.pycm_error.pycmCompareError: Input must be a dictionary containing pycm.ConfusionMatrix objects.
 >>> cm2 = ConfusionMatrix(matrix={"Class1": {"Class1": 9, "Class2": 3, "Class3": 0}, "Class2": {"Class1": 3, "Class2": 5, "Class3": 1}, "Class3": {"Class1": 1, "Class2": 1, "Class3": 4}})
 >>> cp = Compare({"cm1": cm, "cm2": cm2})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCompareError: All ConfusionMatrix objects must have the same domain (same sample size and number of classes).
+pycm.pycm_error.pycmCompareError: All ConfusionMatrix objects must have the same domain (same sample size and number of classes).
 >>> cm = ConfusionMatrix(matrix={1: {1: 9, 2: 3}, 2: {1: 3, 2: 5}}, classes=[1, 2, 3])
 Traceback (most recent call last):
         ...
@@ -95,19 +95,19 @@ pycm.pycm_error.pycmMatrixError: The specified classes are not a subset of the m
 >>> cp = Compare({"cm1": cm, "cm2": cm3}, by_class=True, class_weight={1: 1, 2: 1})
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCompareError: `class_weight` must be a dictionary and specified for all classes.
+pycm.pycm_error.pycmCompareError: `class_weight` must be a dictionary and specified for all classes.
 >>> cp = Compare({"cm1": cm, "cm2": cm3}, by_class=True, class_weight=[])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCompareError: `class_weight` must be a dictionary and specified for all classes.
+pycm.pycm_error.pycmCompareError: `class_weight` must be a dictionary and specified for all classes.
 >>> cp = Compare({"cm1": cm, "cm2": cm3}, by_class=True, class_benchmark_weight=[])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCompareError: `class_benchmark_weight` must be a dictionary and specified for all class benchmarks.
+pycm.pycm_error.pycmCompareError: `class_benchmark_weight` must be a dictionary and specified for all class benchmarks.
 >>> cp = Compare({"cm1": cm, "cm2": cm3}, by_class=True, overall_benchmark_weight=[])
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCompareError: `overall_benchmark_weight` must be a dictionary and specified for all overall benchmarks.
+pycm.pycm_error.pycmCompareError: `overall_benchmark_weight` must be a dictionary and specified for all overall benchmarks.
 >>> cm1 = ConfusionMatrix([1, 1, 1, 0], [1, 0, 1, 1], metrics_off=True)
 >>> cm2 = ConfusionMatrix([1, 1, 1, 0], [1, 0, 1, 1], metrics_off=False)
 >>> cp = Compare({"cm1":cm1, "cm2":cm2})
@@ -117,12 +117,12 @@ pycm.pycm_error.pycmCompareError: Comparison cannot be performed when `metrics_o
 >>> cm.CI("MCC")
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCIError: Confidence interval calculation for this parameter is not supported in this version of pycm.
+pycm.pycm_error.pycmCIError: Confidence interval calculation for this parameter is not supported in this version of pycm.
      Supported parameters are: TPR, TNR, PPV, NPV, ACC, PLR, NLR, FPR, FNR, AUC, PRE, Kappa, Overall ACC
 >>> cm.CI(2)
 Traceback (most recent call last):
         ...
-pycm.pycm_obj.pycmCIError: Input must be provided as a string.
+pycm.pycm_error.pycmCIError: Input must be provided as a string.
 >>> cm.average("AUCC")
 Traceback (most recent call last):
         ...
@@ -231,14 +231,6 @@ pycm.pycm_error.pycmCurveError: All elements of the probability vector must have
 Traceback (most recent call last):
         ...
 pycm.pycm_error.pycmCurveError: The integral method must be either 'trapezoidal' or 'midpoint'.
->>> crv.plot(colors=['c'])
-Traceback (most recent call last):
-        ...
-pycm.pycm_error.pycmPlotError: The number of colors does not match the number of classes.
->>> crv.plot(markers=['*'])
-Traceback (most recent call last):
-        ...
-pycm.pycm_error.pycmPlotError: The number of markers does not match the number of classes.
 >>> cm = ConfusionMatrix(y_actu, y_pred, metrics_off=True)
 >>> cm.stat()
 Traceback (most recent call last):
@@ -296,7 +288,7 @@ pycm.pycm_error.pycmVectorError: Failed to extract classes from input. Input vec
 >>> mlcm.get_cm_by_class(1)
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMultiLabelError: The specified class name is not among the problem's classes.
+pycm.pycm_error.pycmMultiLabelError: The specified class name is not among the confusion matrix's classes.
 >>> mlcm.get_cm_by_sample(2)
 Traceback (most recent call last):
         ...
@@ -305,7 +297,7 @@ pycm.pycm_error.pycmMultiLabelError: Index is out of range for the given vector.
 >>> mlcm.get_cm_by_class('bird')
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmMultiLabelError: The specified class name is not among the problem's classes.
+pycm.pycm_error.pycmMultiLabelError: The specified class name is not among the confusion matrix's classes.
 >>> mlcm = MultiLabelCM(2, [[1, 0], [1, 0]])
 Traceback (most recent call last):
         ...

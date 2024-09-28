@@ -67,6 +67,11 @@ class DistanceType(Enum):
     KendallTau = "KendallTau"
     KentFosterI = "KentFosterI"
     KentFosterII = "KentFosterII"
+    KoppenI = "KoppenI"
+    KoppenII = "KoppenII"
+    KuderRichardson = "KuderRichardson"
+    KuhnsI = "KuhnsI"
+    KuhnsII = "KuhnsII"
 
 
 def AMPLE_calc(TP, FP, FN, TN):
@@ -1219,6 +1224,118 @@ def KentFosterII_calc(TP, FP, FN, TN):
         return "None"
 
 
+def KoppenI_calc(TP, FP, FN, TN):
+    """
+    Calculate Koppen I similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Koppen I similarity as float
+    """
+    try:
+        part1 = (2 * TP + FP + FN) / 2
+        part2 = (2 * TN + FP + FN) / 2
+        part3 = part1 * part2
+        part4 = (FP + FN) / 2
+        return (part3 - part4) / part3
+    except Exception:
+        return "None"
+
+
+def KoppenII_calc(TP, FP, FN, TN):
+    """
+    Calculate Koppen II similarity.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Koppen II similarity as float
+    """
+    try:
+        return TP + (FP + FN) / 2
+    except Exception:
+        return "None"
+
+
+def KuderRichardson_calc(TP, FP, FN, TN):
+    """
+    Calculate Kuder & Richardson correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Kuder & Richardson correlation as float
+    """
+    try:
+        part1 = 4 * (TP * TN - FP * FN)
+        part2 = (TP + FP) * (TP + FN) * (FP + TN)
+        part3 = 2 * (TP * TN - FP * FN)
+        return part1 / (part2 + part3)
+    except Exception:
+        return "None"
+
+
+def KuhnsI_calc(TP, FP, FN, TN):
+    """
+    Calculate Kuhns I correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Kuhns I correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        delta = TP - ((TP + FP) * (TP + FN)) / n
+        return 2 * delta / n
+    except Exception:
+        return "None"
+
+
+def KuhnsII_calc(TP, FP, FN, TN):
+    """
+    Calculate Kuhns II correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Kuhns II correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        delta = TP - ((TP + FP) * (TP + FN)) / n
+        part1 = max(TP + FP, TP + FN)
+        return delta / part1
+    except Exception:
+        return "None"
+
+
 DISTANCE_MAPPER = {
     DistanceType.AMPLE: AMPLE_calc,
     DistanceType.Anderberg: Anderberg_calc,
@@ -1272,5 +1389,10 @@ DISTANCE_MAPPER = {
     DistanceType.HawkinsDotson: HawkinsDotson_calc,
     DistanceType.KendallTau: KendallTau_calc,
     DistanceType.KentFosterI: KentFosterI_calc,
-    DistanceType.KentFosterII: KentFosterII_calc
+    DistanceType.KentFosterII: KentFosterII_calc,
+    DistanceType.KoppenI: KoppenI_calc,
+    DistanceType.KoppenII: KoppenII_calc,
+    DistanceType.KuderRichardson: KuderRichardson_calc,
+    DistanceType.KuhnsI: KuhnsI_calc,
+    DistanceType.KuhnsII: KuhnsII_calc,
 }

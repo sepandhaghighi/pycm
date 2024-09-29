@@ -1289,7 +1289,7 @@ def KuderRichardson_calc(TP, FP, FN, TN):
     """
     try:
         part1 = 4 * (TP * TN - FP * FN)
-        part2 = (TP + FP) * (TP + FN) * (FP + TN)
+        part2 = (TP + FP) * (FN + TN) + (TP + FN) * (FP + TN)
         part3 = 2 * (TP * TN - FP * FN)
         return part1 / (part2 + part3)
     except Exception:

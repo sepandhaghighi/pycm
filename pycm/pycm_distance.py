@@ -1226,7 +1226,7 @@ def KentFosterII_calc(TP, FP, FN, TN):
 
 def KoppenI_calc(TP, FP, FN, TN):
     """
-    Calculate Koppen I similarity.
+    Calculate Koppen I correlation.
 
     :param TP: true positive
     :type TP: int
@@ -1236,13 +1236,18 @@ def KoppenI_calc(TP, FP, FN, TN):
     :type FP: int
     :param FN: false negative
     :type FN: int
-    :return: Koppen I similarity as float
+    :return: Koppen I correlation as float
     """
     try:
-        part1 = (2 * TP + FP + FN) / 2
-        part2 = (2 * TN + FP + FN) / 2
+        n = TP + FP + FN + TN
+        a = TP / n
+        b = FP / n
+        c = FN / n
+        d = TN / n
+        part1 = (2 * a + b + c) / 2
+        part2 = (2 * d + b + c) / 2
         part3 = part1 * part2
-        part4 = (FP + FN) / 2
+        part4 = (b + c) / 2
         return (part3 - part4) / part3
     except Exception:
         return "None"

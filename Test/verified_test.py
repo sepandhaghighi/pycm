@@ -406,8 +406,8 @@ True
 >>> assert isclose(cm2.distance(metric=DistanceType.KentFosterI)[1], -0.23529411764705888, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm1.distance(metric=DistanceType.KentFosterII)[1], -0.0012804097311239404, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm2.distance(metric=DistanceType.KentFosterII)[1], -0.002196997436837158, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> assert isclose(cm1.distance(metric=DistanceType.KoppenI)[1], 0.49743589743589745, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> assert isclose(cm2.distance(metric=DistanceType.KoppenI)[1], 0.35914053833128967, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm1.distance(metric=DistanceType.KoppenI)[1], 0.9993589743589744, abs_tol=ABS_TOL, rel_tol=REL_TOL) # normalizer: None
+>>> assert isclose(cm2.distance(metric=DistanceType.KoppenI)[1], 0.9991825772172593, abs_tol=ABS_TOL, rel_tol=REL_TOL) # normalizer: None
 >>> assert isclose(cm1.distance(metric=DistanceType.KoppenII)[1], 4.0, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm2.distance(metric=DistanceType.KoppenII)[1], 5.5, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm1.distance(metric=DistanceType.KuderRichardson)[1], 0.6643835616438356, abs_tol=ABS_TOL, rel_tol=REL_TOL)

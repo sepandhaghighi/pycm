@@ -22,7 +22,7 @@ EXAMPLES_LIST = ["Example1",
                  "Example8"]
 
 MAIN_DOCS_LIST = ["Distance",
-                "Document"]
+                  "Document"]
 
 NOTEBOOK_EXTENSION = ".ipynb"
 
@@ -61,7 +61,7 @@ if __name__ == "__main__":
             nb = nbformat.read(f, as_version=4)
             ep.preprocess(
                 nb, {
-                        'metadata': {
+                    'metadata': {
                         'path': OUTPUT_FOLDER_PATH}})
         with open(notebook_copy_path, 'w', encoding='utf-8') as f:
             nbformat.write(nb, f)
@@ -89,7 +89,7 @@ if __name__ == "__main__":
             nb = nbformat.read(f, as_version=4)
             ep.preprocess(
                 nb, {
-                        'metadata': {
+                    'metadata': {
                         'path': OUTPUT_FOLDER_PATH}})
         with open(notebook_copy_path, 'w', encoding='utf-8') as f:
             nbformat.write(nb, f)

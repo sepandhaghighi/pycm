@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
+- 5 new distance/similarity
+	1. KoppenI
+	2. KoppenII
+	3. KuderRichardson
+	4. KuhnsI
+	5. KuhnsII
 - `feature_request.yml` template
 - `config.yml` for issue template
 - `SECURITY.md`

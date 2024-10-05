@@ -337,7 +337,6 @@ CI_SUPPORT_ERROR = ("Confidence interval calculation for this parameter is not s
                     " Supported parameters are: ") + ", ".join(CI_CLASS_LIST) + ", " + ", ".join(CI_OVERALL_LIST)
 
 
-
 MULTICLASS_RECOMMEND = [
     "ERR",
     "TPR Micro",

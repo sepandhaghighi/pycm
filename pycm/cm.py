@@ -2,9 +2,9 @@
 """ConfusionMatrix module."""
 from __future__ import division
 from .pycm_error import pycmVectorError, pycmMatrixError, pycmCIError, pycmAverageError, pycmPlotError
-from .pycm_handler import __class_stat_init__, __overall_stat_init__
-from .pycm_handler import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__, __obj_array_handler__
-from .pycm_handler import __imbalancement_handler__
+from .handlers import __class_stat_init__, __overall_stat_init__
+from .handlers import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__, __obj_array_handler__
+from .handlers import __imbalancement_handler__
 from .pycm_class_func import F_calc, IBA_calc, TI_calc, NB_calc, sensitivity_index_calc
 from .overall_funcs import weighted_kappa_calc, weighted_alpha_calc, alpha2_calc, brier_score_calc, log_loss_calc
 from .pycm_distance import DistanceType, DISTANCE_MAPPER

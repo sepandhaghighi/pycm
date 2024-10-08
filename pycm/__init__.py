@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """PyCM modules."""
 from .params import PYCM_VERSION, OVERALL_BENCHMARK_LIST, CLASS_BENCHMARK_LIST
-from .pycm_error import *
+from .errors import *
 from .output import pycm_help, online_help
 from .pycm_distance import DistanceType
 from .cm import ConfusionMatrix

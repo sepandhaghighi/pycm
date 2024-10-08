@@ -2,7 +2,7 @@
 """ConfusionMatrix handlers."""
 from __future__ import division
 from .pycm_class_func import class_statistics
-from .pycm_error import pycmVectorError, pycmMatrixError
+from .errors import pycmVectorError, pycmMatrixError
 from .overall_funcs import overall_statistics
 from .utils import *
 from .params import *

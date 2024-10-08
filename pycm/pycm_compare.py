@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Compare module."""
 from __future__ import division
-from .pycm_error import pycmCompareError
+from .errors import pycmCompareError
 from .output import *
 from .utils import *
 from .params import *

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """MultiLabelCM module."""
 from __future__ import division
-from .pycm_error import pycmVectorError, pycmMultiLabelError
+from .errors import pycmVectorError, pycmMultiLabelError
 from .params import *
 from .cm import ConfusionMatrix
 import numpy

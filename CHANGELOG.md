@@ -38,6 +38,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `pycm_multilabel_cm.py` renamed to `multilabel_cm.py`
 - `pycm_interpret.py` renamed to `interpret.py`
 - `pycm_handler.py` renamed to `handlers.py`
+- `pycm_error.py` renamed to `errors.py`
 ## [4.0] - 2023-06-07
 ### Added
 - `pycmMultiLabelError` class

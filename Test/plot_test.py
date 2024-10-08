@@ -207,11 +207,11 @@ array([0.5, 1.5, 2.5])
 >>> crv.plot(colors=['c'])
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmPlotError: The number of colors does not match the number of classes.
+pycm.errors.pycmPlotError: The number of colors does not match the number of classes.
 >>> crv.plot(markers=['*'])
 Traceback (most recent call last):
         ...
-pycm.pycm_error.pycmPlotError: The number of markers does not match the number of classes.
+pycm.errors.pycmPlotError: The number of markers does not match the number of classes.
 >>> ax = crv.plot(classes=[1])
 >>> ax.get_figure()._suptitle.get_text()
 'FPR per TPR'

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Curve module."""
 from __future__ import division
-from .pycm_error import pycmCurveError, pycmPlotError
+from .errors import pycmCurveError, pycmPlotError
 from .utils import threshold_func, thresholds_calc, isfloat
 from .params import *
 from .cm import ConfusionMatrix

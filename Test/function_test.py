@@ -2,7 +2,7 @@
 """
 >>> from math import isclose
 >>> from pycm import *
->>> from pycm.pycm_distance import DISTANCE_MAPPER
+>>> from pycm.distance import DISTANCE_MAPPER
 >>> import os
 >>> import json
 >>> import numpy as np

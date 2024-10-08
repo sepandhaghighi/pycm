@@ -42,6 +42,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `pycm_distance.py` renamed to `distance.py`
 - `pycm_curve.py` renamed to `curve.py`
 - `pycm_compare.py` renamed to `compare.py`
+- `pycm_class_func.py` renamed to `class_funcs.py`
 ## [4.0] - 2023-06-07
 ### Added
 - `pycmMultiLabelError` class

@@ -5,7 +5,7 @@ from .errors import *
 from .output import pycm_help, online_help
 from .distance import DistanceType
 from .cm import ConfusionMatrix
-from .pycm_compare import Compare
+from .compare import Compare
 from .multilabel_cm import MultiLabelCM
 from .curve import Curve, ROCCurve, PRCurve
 __version__ = PYCM_VERSION

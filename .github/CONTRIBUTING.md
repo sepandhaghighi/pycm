@@ -64,7 +64,7 @@ Please consider the following :
 
 ## Interpretation
 
-1. Add new interpretation table as a function to `pycm_interpret.py`
+1. Add new interpretation table as a function to `interpret.py`
 2. Add a score dictionary to `params.py`
 	- Example : ```PLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}```
 3. Add a color dictionary to `BENCHMARK_COLOR` in `params.py`

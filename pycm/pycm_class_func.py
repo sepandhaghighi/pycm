@@ -3,7 +3,7 @@
 from __future__ import division
 import math
 from .utils import normal_quantile
-from .pycm_interpret import *
+from .interpret import *
 from .params import CLASS_PARAMS
 
 

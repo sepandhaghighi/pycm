@@ -4,7 +4,7 @@ from __future__ import division
 import math
 import operator as op
 from functools import reduce
-from .pycm_interpret import *
+from .interpret import *
 from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
 from .utils import complement
 

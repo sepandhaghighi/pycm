@@ -10,7 +10,7 @@ from .pycm_overall_func import weighted_kappa_calc, weighted_alpha_calc, alpha2_
 from .pycm_distance import DistanceType, DISTANCE_MAPPER
 from .pycm_output import *
 from .utils import *
-from .pycm_param import *
+from .params import *
 from .pycm_ci import __CI_overall_handler__, __CI_class_handler__
 import os
 import json

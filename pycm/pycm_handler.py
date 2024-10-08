@@ -5,7 +5,7 @@ from .pycm_class_func import class_statistics
 from .pycm_error import pycmVectorError, pycmMatrixError
 from .pycm_overall_func import overall_statistics
 from .utils import *
-from .pycm_param import *
+from .params import *
 import json
 import types
 import numpy

@@ -36,7 +36,7 @@ FILES = {
     os.path.join("Document", "Example1_files", "cm2.html"): HTML_ITEMS,
     os.path.join("Document", "Example1_files", "cm3.html"): HTML_ITEMS,
     os.path.join("Otherfiles", "test.html"): HTML_ITEMS,
-    os.path.join("pycm", "pycm_param.py"): PARAMS_ITEMS,
+    os.path.join("pycm", "params.py"): PARAMS_ITEMS,
     os.path.join(".github", "ISSUE_TEMPLATE", "bug_report.yml"): ISSUE_TEMPLATE_ITEMS,
 }
 

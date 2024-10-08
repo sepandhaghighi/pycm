@@ -4,7 +4,7 @@ from __future__ import division
 from .pycm_error import pycmCompareError
 from .pycm_output import *
 from .utils import *
-from .pycm_param import *
+from .params import *
 from .pycm_obj import ConfusionMatrix
 import os
 import numpy

@@ -3,7 +3,7 @@
 from __future__ import division
 from .pycm_error import pycmCurveError, pycmPlotError
 from .utils import threshold_func, thresholds_calc, isfloat
-from .pycm_param import *
+from .params import *
 from .pycm_obj import ConfusionMatrix
 from warnings import warn
 import numpy

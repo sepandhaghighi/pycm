@@ -2,7 +2,7 @@
 """MultiLabelCM module."""
 from __future__ import division
 from .pycm_error import pycmVectorError, pycmMultiLabelError
-from .pycm_param import *
+from .params import *
 from .pycm_obj import ConfusionMatrix
 import numpy
 

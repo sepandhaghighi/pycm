@@ -13,7 +13,7 @@ if __name__ == "__main__":
     if len(args) > 1:
         if args[1].upper() == "TEST":
             error_flag = doctest.testfile(
-                "pycm_test.py",
+                "basic_test.py",
                 optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS
                 | doctest.IGNORE_EXCEPTION_DETAIL,
                 verbose=False)[0]

@@ -2,7 +2,7 @@
 """Class statistics functions."""
 from __future__ import division
 import math
-from .pycm_util import normal_quantile
+from .utils import normal_quantile
 from .pycm_interpret import *
 from .pycm_param import CLASS_PARAMS
 

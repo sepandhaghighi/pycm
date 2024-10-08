@@ -191,7 +191,7 @@ Example : online_help("J") or online_help(2)
 >>> from pycm.pycm_class_func import *
 >>> from pycm.pycm_ci import *
 >>> from pycm.pycm_interpret import *
->>> from pycm.pycm_util import *
+>>> from pycm.utils import *
 >>> color_check("red")
 [255, 0, 0]
 >>> color_check((255,2,2))

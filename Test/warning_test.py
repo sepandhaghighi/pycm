@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 >>> from pycm import *
->>> from pycm.pycm_util import deprecated
+>>> from pycm.utils import deprecated
 >>> from pytest import warns
 >>> large_cm = ConfusionMatrix(list(range(10)) + [2, 3, 5], list(range(10)) + [1, 7, 2])
 >>> with warns(RuntimeWarning, match='Confusion matrix is high-dimensional and may not display properly. Consider using the `sparse` flag in printing functions, or save it as a CSV file for better visualization.'):

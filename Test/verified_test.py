@@ -3,7 +3,7 @@
 >>> import numpy as np
 >>> from math import isclose
 >>> from pycm import *
->>> from pycm.pycm_overall_func import NIR_calc
+>>> from pycm.overall_funcs import NIR_calc
 >>> from pycm.pycm_ci import AUC_SE_calc, CI_calc
 >>> ABS_TOL = 1e-12
 >>> REL_TOL = 0

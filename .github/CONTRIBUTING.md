@@ -46,7 +46,7 @@ Please consider the following :
 
 ## Overall statistic 
 
-1. Add new functions to `pycm_overall_func.py`
+1. Add new functions to `overall_funcs.py`
 2. Update `OVERALL_PARAMS` dictionary in `params.py`
 3. Update `overall_statistics` function in `pycm_class_func.py`
 	- Call statistic function and store result in a variable

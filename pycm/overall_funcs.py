@@ -5,7 +5,7 @@ import math
 import operator as op
 from functools import reduce
 from .interpret import *
-from .pycm_ci import kappa_SE_calc, CI_calc, SE_calc
+from .ci import kappa_SE_calc, CI_calc, SE_calc
 from .utils import complement
 
 

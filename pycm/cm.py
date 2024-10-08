@@ -11,7 +11,7 @@ from .distance import DistanceType, DISTANCE_MAPPER
 from .output import *
 from .utils import *
 from .params import *
-from .pycm_ci import __CI_overall_handler__, __CI_class_handler__
+from .ci import __CI_overall_handler__, __CI_class_handler__
 import os
 import json
 import numpy

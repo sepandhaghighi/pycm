@@ -189,7 +189,7 @@ Example : online_help("J") or online_help(2)
 >>> from pycm.output import *
 >>> from pycm.overall_funcs import *
 >>> from pycm.class_funcs import *
->>> from pycm.pycm_ci import *
+>>> from pycm.ci import *
 >>> from pycm.interpret import *
 >>> from pycm.utils import *
 >>> color_check("red")

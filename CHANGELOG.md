@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Warning and error messages updated
 - `pycm_util.py` renamed to `utils.py`
 - `pycm_test.py` renamed to `basic_test.py`
+- `pycm_profile.py` renamed to `profile.py`
 ## [4.0] - 2023-06-07
 ### Added
 - `pycmMultiLabelError` class

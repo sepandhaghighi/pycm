@@ -3,7 +3,7 @@ branch = True
 omit =
     */pycm/__main__.py
     */pycm/__init__.py
-	*/pycm/pycm_profile.py
+	*/pycm/profile.py
 	*/pycm/basic_test.py
 [report]
 # Regexes for lines to exclude from consideration

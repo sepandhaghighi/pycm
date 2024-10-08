@@ -3,7 +3,7 @@
 from __future__ import division
 from .pycm_error import pycmVectorError, pycmMultiLabelError
 from .params import *
-from .pycm_obj import ConfusionMatrix
+from .cm import ConfusionMatrix
 import numpy
 
 

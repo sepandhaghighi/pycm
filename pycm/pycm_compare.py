@@ -5,7 +5,7 @@ from .pycm_error import pycmCompareError
 from .output import *
 from .utils import *
 from .params import *
-from .pycm_obj import ConfusionMatrix
+from .cm import ConfusionMatrix
 import os
 import numpy
 from warnings import warn

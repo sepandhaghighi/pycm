@@ -3,7 +3,7 @@
 
 import doctest
 import sys
-from .pycm_obj import *
+from .cm import *
 from .output import *
 from art import tprint
 

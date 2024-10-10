@@ -68,4 +68,4 @@ jobs:
       if: matrix.python-version == env.TEST_PYTHON_VERSION && matrix.os == env.TEST_OS
     - name: cProfile
       run: |
-          python -m cProfile -s cumtime pycm/pycm_profile.py
+          python -m cProfile -s cumtime pycm/profile.py

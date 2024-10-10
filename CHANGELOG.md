@@ -28,6 +28,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Test system modified
 - `Python 3.12` added to `test.yml`
 - Warning and error messages updated
+- `pycm_util.py` renamed to `utils.py`
+- `pycm_test.py` renamed to `basic_test.py`
+- `pycm_profile.py` renamed to `profile.py`
+- `pycm_param.py` renamed to `params.py`
+- `pycm_overall_func.py` renamed to `overall_funcs.py`
+- `pycm_output.py` renamed to `output.py`
+- `pycm_obj.py` renamed to `cm.py`
+- `pycm_multilabel_cm.py` renamed to `multilabel_cm.py`
+- `pycm_interpret.py` renamed to `interpret.py`
+- `pycm_handler.py` renamed to `handlers.py`
+- `pycm_error.py` renamed to `errors.py`
+- `pycm_distance.py` renamed to `distance.py`
+- `pycm_curve.py` renamed to `curve.py`
+- `pycm_compare.py` renamed to `compare.py`
+- `pycm_class_func.py` renamed to `class_funcs.py`
+- `pycm_ci.py` renamed to `ci.py`
 ## [4.0] - 2023-06-07
 ### Added
 - `pycmMultiLabelError` class

@@ -5,8 +5,8 @@ import sys
 import math
 import numpy
 import re
-from .pycm_param import *
-from .pycm_error import pycmMatrixError
+from .params import *
+from .errors import pycmMatrixError
 from warnings import warn
 from functools import wraps
 

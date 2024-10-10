@@ -2,7 +2,7 @@
 """
 >>> from math import isclose
 >>> from pycm import *
->>> from pycm.pycm_distance import DISTANCE_MAPPER
+>>> from pycm.distance import DISTANCE_MAPPER
 >>> import os
 >>> import json
 >>> import numpy as np
@@ -186,12 +186,12 @@ Example : online_help("J") or online_help(2)
 ...
 >>> online_help(4)
 ...
->>> from pycm.pycm_output import *
->>> from pycm.pycm_overall_func import *
->>> from pycm.pycm_class_func import *
->>> from pycm.pycm_ci import *
->>> from pycm.pycm_interpret import *
->>> from pycm.pycm_util import *
+>>> from pycm.output import *
+>>> from pycm.overall_funcs import *
+>>> from pycm.class_funcs import *
+>>> from pycm.ci import *
+>>> from pycm.interpret import *
+>>> from pycm.utils import *
 >>> color_check("red")
 [255, 0, 0]
 >>> color_check((255,2,2))

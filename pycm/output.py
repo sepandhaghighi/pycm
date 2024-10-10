@@ -2,8 +2,8 @@
 """Outputs functions."""
 from __future__ import division
 from functools import partial
-from .pycm_param import *
-from .pycm_util import rounder, sort_char_num
+from .params import *
+from .utils import rounder, sort_char_num
 import webbrowser
 
 

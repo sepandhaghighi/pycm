@@ -9,7 +9,7 @@
 	2. `README.md`
 	3. `Otherfiles/version_check.py`
 	4. `Otherfiles/meta.yaml`
-	5. `pycm/pycm_param.py`
+	5. `pycm/params.py`
 	6. `Document/Document.ipynb`
 3. Update `CHANGELOG.md`
 	1. Add a new header under `Unreleased` section (Example: `## [0.1] - 2022-08-17`)

@@ -1,4 +1,6 @@
-# Contribution			
+# Contribution
+
+**Last Update: 2024-10-08**			
 
 Changes and improvements are more than welcome! ❤️ Feel free to fork and open a pull request.		
 
@@ -26,18 +28,18 @@ Please consider the following :
 
 ## Class statistic 
 
-1. Add new functions to `pycm_class_func.py`
-2. Update `CLASS_PARAMS` dictionary in `pycm_param.py`
-3. Update `class_statistics` function in `pycm_class_func.py`
+1. Add new functions to `class_funcs.py`
+2. Update `CLASS_PARAMS` dictionary in `params.py`
+3. Update `class_statistics` function in `class_funcs.py`
 	- Call statistic function and store result in `result` dictionary
-4. Update `PARAMS_DESCRIPTION` dictionary in `pycm_param.py` by a short description
-	- If you don't want capitalization, update `CAPITALIZE_FILTER` list in `pycm_param.py` (*Optional*)
+4. Update `PARAMS_DESCRIPTION` dictionary in `params.py` by a short description
+	- If you don't want capitalization, update `CAPITALIZE_FILTER` list in `params.py` (*Optional*)
 5. Update `References` section in `Document.ipynb` (`IEEE` format)
 6. Add description to `Class Statistics` section in `Document.ipynb`
 	- Cite reference
 	- Update table of contents
 	- Use `LaTeX` for formula
-7. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document tag (without `#`)
+7. Update `PARAMS_LINK` dictionary in `params.py` by document tag (without `#`)
 8. Add tests to `overall_test.py` and `function_test.py` in `TEST` folder
 	- If you have any verified test add them to `verified_test.py`
 9.  Run `autopep8.bat`/`autopep8.sh` (*Optional*, need to install latest version of `autopep8` package)
@@ -46,9 +48,9 @@ Please consider the following :
 
 ## Overall statistic 
 
-1. Add new functions to `pycm_overall_func.py`
-2. Update `OVERALL_PARAMS` dictionary in `pycm_param.py`
-3. Update `overall_statistics` function in `pycm_class_func.py`
+1. Add new functions to `overall_funcs.py`
+2. Update `OVERALL_PARAMS` dictionary in `params.py`
+3. Update `overall_statistics` function in `class_funcs.py`
 	- Call statistic function and store result in a variable
 	- Add this variable to output
 4. Update `References` section in `Document.ipynb` (`IEEE` format)
@@ -56,7 +58,7 @@ Please consider the following :
 	- Cite reference
 	- Update table of contents
 	- Use `LaTeX` for formula
-6. Update `PARAMS_LINK` dictionary in `pycm_param.py` by document tag (without `#`)
+6. Update `PARAMS_LINK` dictionary in `params.py` by document tag (without `#`)
 7. Add tests to `overall_test.py` and `function_test.py` in `TEST` folder
 	- If you have any verified test add them to `verified_test.py`
 8. Run `autopep8.bat`/`autopep8.sh` (*Optional*, need to install latest version of `autopep8` package)
@@ -64,18 +66,18 @@ Please consider the following :
 
 ## Interpretation
 
-1. Add new interpretation table as a function to `pycm_interpret.py`
-2. Add a score dictionary to `pycm_param.py`
+1. Add new interpretation table as a function to `interpret.py`
+2. Add a score dictionary to `params.py`
 	- Example : ```PLRI_SCORE = {"Good": 4, "Fair": 3, "Poor": 2, "Negligible": 1, "None": "None"}```
-3. Add a color dictionary to `BENCHMARK_COLOR` in `pycm_param.py`
+3. Add a color dictionary to `BENCHMARK_COLOR` in `params.py`
 	- Example : 
 		```"PLRI": {"Negligible": "Red","Poor": "Orange","Fair": "Yellow","Good": "Green","None": "White"}```
 4. If interpretation table is for a class statistic:
 	- Step 2-7 [class statistic](#class-statistic)
-	- Update `CLASS_BENCHMARK_SCORE_DICT` in `pycm_param.py`
+	- Update `CLASS_BENCHMARK_SCORE_DICT` in `params.py`
 5. If interpretation table is for a overall statistic:
 	- Step 2-6 [overall statistic](#overall-statistic)
-	- Update `OVERALL_BENCHMARK_SCORE_DICT` in `pycm_param.py`
+	- Update `OVERALL_BENCHMARK_SCORE_DICT` in `params.py`
 6. Add tests to `compare_test.py`, `overall_test.py` and `function_test.py` in `TEST` folder
 	- If you have any verified test add them to `verified_test.py`
 7. Run `autopep8.bat`/`autopep8.sh` (*Optional*, need to install latest version of `autopep8` package)

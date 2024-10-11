@@ -1,7 +1,7 @@
 
 # PyCM Release Instructions
 
-**Last Update: 2024-08-06**
+**Last Update: 2024-10-11**
 
 1. Create the `release` branch under `dev`
 2. Update all version tags

@@ -93,7 +93,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.6, 64/32 bit)
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
-- Run `pip install pycm` or `pip3 install pycm`
+- Run `pip install pycm`
 - Configure Python interpreter
 
 ```matlab

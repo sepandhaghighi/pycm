@@ -49,8 +49,8 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 	</tr>
     <tr>
 		<td align="center">CI</td>
-		<td align="center"><img src="https://github.com/sepandhaghighi/pycm/workflows/CI/badge.svg?branch=master"></td>
-		<td align="center"><img src="https://github.com/sepandhaghighi/pycm/workflows/CI/badge.svg?branch=dev"></td>
+		<td align="center"><img src="https://github.com/sepandhaghighi/pycm/actions/workflows/test.yml/badge.svg?branch=master"></td>
+		<td align="center"><img src="https://github.com/sepandhaghighi/pycm/actions/workflows/test.yml/badge.svg?branch=dev"></td>
 	</tr>
 </table>
 
@@ -75,17 +75,17 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ### PyPI
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)
-- Run `pip install pycm==4.0` (Need root access)
+- Run `pip install pycm==4.0`
 
 ### Source code
 - Download [Version 4.0](https://github.com/sepandhaghighi/pycm/archive/v4.0.zip) or [Latest Source](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
-- Run `pip install .` (Need root access)
+- Run `pip install .`
 
 ### Conda
 
 - Check [Conda Managing Package](https://conda.io/)
-- Update Conda using `conda update conda` (Need root access)
-- Run `conda install -c sepandhaghighi pycm` (Need root access)
+- Update Conda using `conda update conda`
+- Run `conda install -c sepandhaghighi pycm`
 
 ### MATLAB
 
@@ -93,7 +93,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 - Download and install [Python3.x](https://www.python.org/downloads/) (>=3.6, 64/32 bit)
 	- [x] Select `Add to PATH` option
 	- [x] Select `Install pip` option
-- Run `pip install pycm` or `pip3 install pycm` (Need root access)
+- Run `pip install pycm`
 - Configure Python interpreter
 
 ```matlab

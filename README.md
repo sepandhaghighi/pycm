@@ -75,10 +75,10 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ### PyPI
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)
-- Run `pip install pycm==4.0`
+- Run `pip install pycm==4.1`
 
 ### Source code
-- Download [Version 4.0](https://github.com/sepandhaghighi/pycm/archive/v4.0.zip) or [Latest Source](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 4.1](https://github.com/sepandhaghighi/pycm/archive/v4.1.zip) or [Latest Source](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install .`
 
 ### Conda
@@ -483,6 +483,13 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab
 [Python Software Foundation (PSF)](https://www.python.org/psf/) grants PyCM library partially for version **3.7**. [PSF](https://www.python.org/psf/) is the organization behind Python. Their mission is to promote, protect, and advance the Python programming language and to support and facilitate the growth of a diverse and international community of Python programmers.
 
 <a href="https://www.python.org/psf/"><img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/PSF.png" height="55px" alt="Python Software Foundation"></a>
+
+Some parts of the infrastructure for this project are supported by:
+<p>
+  <a href="https://www.digitalocean.com/">
+    <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg" width="201px" alt="DigitalOcean">
+  </a>
+</p>
 
 ## Cite
 

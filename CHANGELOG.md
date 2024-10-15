@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [4.1] - 2024-10-17
 ### Added
 - 5 new distance/similarity
 	1. KoppenI
@@ -749,7 +750,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v4.0...dev
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v4.1...dev
+[4.1]: https://github.com/sepandhaghighi/pycm/compare/v4.0...v4.1
 [4.0]: https://github.com/sepandhaghighi/pycm/compare/v3.9...v4.0
 [3.9]: https://github.com/sepandhaghighi/pycm/compare/v3.8...v3.9
 [3.8]: https://github.com/sepandhaghighi/pycm/compare/v3.7...v3.8

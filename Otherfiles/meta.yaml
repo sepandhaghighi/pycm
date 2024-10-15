@@ -1,5 +1,5 @@
 {% set name = "pycm" %}
-{% set version = "4.0" %}
+{% set version = "4.1" %}
 
 package:
     name: {{ name|lower }}

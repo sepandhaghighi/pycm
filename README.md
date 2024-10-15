@@ -484,6 +484,13 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab
 
 <a href="https://www.python.org/psf/"><img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/PSF.png" height="55px" alt="Python Software Foundation"></a>
 
+Some parts of the infrastructure for this project are supported by:
+<p>
+  <a href="https://www.digitalocean.com/">
+    <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg" width="201px" alt="DigitalOcean">
+  </a>
+</p>
+
 ## Cite
 
 If you use PyCM in your research, we would appreciate citations to the following paper :

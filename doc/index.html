@@ -13121,7 +13121,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Version-:-4.0-">Version : 4.0 <a class="tocSkip" /><a class="anchor-link" href="#Version-:-4.0-">&#182;</a></h3>
+<h3 id="Version-:-4.1-">Version : 4.1 <a class="tocSkip" /><a class="anchor-link" href="#Version-:-4.1-">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13150,7 +13150,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><div style="text-align:center;">
-    <img src="../Otherfiles/block_diagram.jpg" onerror='this.src="../images/block_diagram.jpg"'>
+    <img src="../Otherfiles/block_diagram.jpg" onerror='this.src="../images/block_diagram.jpg"' width="700">
 </div></p>
 <center><p style="text-align:center;">Fig1. ConfusionMatrix Block Diagram</p></center>
 </div>
@@ -13185,10 +13185,9 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Source-code">Source code<a class="anchor-link" href="#Source-code">&#182;</a></h3><ul>
-<li>Download <a href="https://github.com/sepandhaghighi/pycm/archive/v4.0.zip">Version 4.0</a> or <a href="https://github.com/sepandhaghighi/pycm/archive/dev.zip">Latest Source</a></li>
-<li>Run <code>pip install -r requirements.txt</code> or <code>pip3 install -r requirements.txt</code> (Need root access)</li>
-<li>Run <code>python3 setup.py install</code> or <code>python setup.py install</code> (Need root access)</li>
+<h3 id="PyPI">PyPI<a class="anchor-link" href="#PyPI">&#182;</a></h3><ul>
+<li>Check <a href="https://packaging.python.org/installing/">Python Packaging User Guide</a>     </li>
+<li>Run <code>pip install pycm==4.1</code></li>
 </ul>
 
 </div>
@@ -13196,9 +13195,9 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="PyPI">PyPI<a class="anchor-link" href="#PyPI">&#182;</a></h3><ul>
-<li>Check <a href="https://packaging.python.org/installing/">Python Packaging User Guide</a>     </li>
-<li>Run <code>pip install pycm==4.0</code> or <code>pip3 install pycm==4.0</code> (Need root access)</li>
+<h3 id="Source-code">Source code<a class="anchor-link" href="#Source-code">&#182;</a></h3><ul>
+<li>Download <a href="https://github.com/sepandhaghighi/pycm/archive/v4.1.zip">Version 4.1</a> or <a href="https://github.com/sepandhaghighi/pycm/archive/dev.zip">Latest Source</a></li>
+<li>Run <code>pip install .</code></li>
 </ul>
 
 </div>
@@ -13208,16 +13207,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Conda">Conda<a class="anchor-link" href="#Conda">&#182;</a></h3><ul>
 <li>Check <a href="https://conda.io/docs/user-guide/tasks/manage-pkgs.html#installing-packages-from-anaconda-org">Conda Managing Package</a></li>
-<li><code>conda install -c sepandhaghighi pycm</code> (Need root access)</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Easy-install">Easy install<a class="anchor-link" href="#Easy-install">&#182;</a></h3><ul>
-<li>Run <code>easy_install --upgrade pycm</code> (Need root access)</li>
+<li><code>conda install -c sepandhaghighi pycm</code></li>
 </ul>
 
 </div>
@@ -13238,7 +13228,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <li>Select <code>Install pip</code> option</li>
 </ul>
 </li>
-<li>Run <code>pip install pycm</code> or <code>pip3 install pycm</code> (Need root access)</li>
+<li>Run <code>pip install pycm</code> or <code>pip3 install pycm</code></li>
 <li>Configure Python interpreter
 <pre><code>&gt;&gt; pyversion PYTHON_EXECUTABLE_FULL_PATH</code></pre>
 </li>
@@ -13997,7 +13987,7 @@ Actual
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-4.0-py3.5.egg\pycm\pycm_util.py:400: RuntimeWarning: Used classes is not a subset of classes in actual and predict vectors.
+<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-4.1-py3.5.egg\pycm\utils.py:399: RuntimeWarning: Specified classes are not a subset of the classes in the actual and predicted vectors.
 </pre>
 </div>
 </div>
@@ -14845,9 +14835,9 @@ Actual
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>L3 {&#39;L3&#39;: 3, &#39;L2&#39;: 2, &#39;L1&#39;: 1}
-L2 {&#39;L3&#39;: 1, &#39;L2&#39;: 6, &#39;L1&#39;: 4}
-L1 {&#39;L3&#39;: 3, &#39;L2&#39;: 2, &#39;L1&#39;: 1}
+<pre>L1 {&#39;L1&#39;: 1, &#39;L3&#39;: 3, &#39;L2&#39;: 2}
+L3 {&#39;L1&#39;: 1, &#39;L3&#39;: 3, &#39;L2&#39;: 2}
+L2 {&#39;L1&#39;: 4, &#39;L3&#39;: 1, &#39;L2&#39;: 6}
 </pre>
 </div>
 </div>
@@ -14877,7 +14867,7 @@ L1 {&#39;L3&#39;: 3, &#39;L2&#39;: 2, &#39;L1&#39;: 1}
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(&#39;L3&#39;, {&#39;L1&#39;: 1, &#39;L2&#39;: 2, &#39;L3&#39;: 3})</pre>
+<pre>(&#39;L1&#39;, {&#39;L1&#39;: 1, &#39;L2&#39;: 2, &#39;L3&#39;: 3})</pre>
 </div>
 
 </div>
@@ -14939,9 +14929,9 @@ L1 {&#39;L3&#39;: 3, &#39;L2&#39;: 2, &#39;L1&#39;: 1}
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[(&#39;L3&#39;, {&#39;L1&#39;: 1, &#39;L2&#39;: 2, &#39;L3&#39;: 3}),
- (&#39;L2&#39;, {&#39;L1&#39;: 4, &#39;L2&#39;: 6, &#39;L3&#39;: 1}),
- (&#39;L1&#39;, {&#39;L1&#39;: 1, &#39;L2&#39;: 2, &#39;L3&#39;: 3})]</pre>
+<pre>[(&#39;L1&#39;, {&#39;L1&#39;: 1, &#39;L2&#39;: 2, &#39;L3&#39;: 3}),
+ (&#39;L3&#39;, {&#39;L1&#39;: 1, &#39;L2&#39;: 2, &#39;L3&#39;: 3}),
+ (&#39;L2&#39;, {&#39;L1&#39;: 4, &#39;L2&#39;: 6, &#39;L3&#39;: 1})]</pre>
 </div>
 
 </div>
@@ -15719,6 +15709,21 @@ Actual
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Keyring is skipped due to an exception: invalid syntax (core.py, line 48)
+Keyring is skipped due to an exception: invalid syntax (core.py, line 48)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -15740,7 +15745,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x4210290&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x51e0e50&gt;</pre>
 </div>
 
 </div>
@@ -15750,7 +15755,7 @@ Actual
 
 
 <div class="output_png output_subarea ">
-<img src="Document_files/Document_142_1.png"
+<img src="Document_files/Document_141_1.png"
 >
 </div>
 
@@ -15780,7 +15785,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x428cbb0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x132c15b0&gt;</pre>
 </div>
 
 </div>
@@ -15790,7 +15795,7 @@ Actual
 
 
 <div class="output_png output_subarea ">
-<img src="Document_files/Document_143_1.png"
+<img src="Document_files/Document_142_1.png"
 >
 </div>
 
@@ -15820,7 +15825,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0xfc75af0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x13303d50&gt;</pre>
 </div>
 
 </div>
@@ -15830,7 +15835,7 @@ Actual
 
 
 <div class="output_png output_subarea ">
-<img src="Document_files/Document_144_1.png"
+<img src="Document_files/Document_143_1.png"
 >
 </div>
 
@@ -15860,7 +15865,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1b8e4cd0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1e1a3d30&gt;</pre>
 </div>
 
 </div>
@@ -15870,7 +15875,7 @@ Actual
 
 
 <div class="output_png output_subarea ">
-<img src="Document_files/Document_145_1.png"
+<img src="Document_files/Document_144_1.png"
 >
 </div>
 
@@ -15900,7 +15905,7 @@ Actual
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0xfc65d10&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1e1d1830&gt;</pre>
 </div>
 
 </div>
@@ -15910,7 +15915,7 @@ Actual
 
 
 <div class="output_png output_subarea ">
-<img src="Document_files/Document_146_1.png"
+<img src="Document_files/Document_145_1.png"
 >
 </div>
 
@@ -16002,7 +16007,7 @@ Actual
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><div style="text-align:center;">
-    <img src="../Otherfiles/recommendation_block_diagram.jpg" onerror='this.src="../images/recommendation_block_diagram.jpg"'>
+    <img src="../Otherfiles/recommendation_block_diagram.jpg" onerror='this.src="../images/recommendation_block_diagram.jpg"' width="400">
 </div></p>
 <center><p style="text-align:center;">Fig2. Parameter Recommender Block Diagram</p></center>
 </div>
@@ -16237,7 +16242,7 @@ $$State=\begin{cases}Balance &amp; R\leq 3\\Imbalance &amp; R &gt; 3\end{cases}$
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><div style="text-align:center;">
-    <img src="../Otherfiles/compare_block_diagram.jpg" onerror='this.src="../images/compare_block_diagram.jpg"'>
+    <img src="../Otherfiles/compare_block_diagram.jpg" onerror='this.src="../images/compare_block_diagram.jpg"' width="500">
 </div></p>
 <center><p style="text-align:center;">Fig3. Compare Block Diagram</p></center>
 </div>
@@ -16721,7 +16726,7 @@ The thresholds for which the TPR-FPR pairs are calculated can be either specifie
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1b95bc50&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1f1e30f0&gt;</pre>
 </div>
 
 </div>
@@ -16731,7 +16736,7 @@ The thresholds for which the TPR-FPR pairs are calculated can be either specifie
 
 
 <div class="output_png output_subarea ">
-<img src="Document_files/Document_198_1.png"
+<img src="Document_files/Document_197_1.png"
 >
 </div>
 
@@ -16789,7 +16794,7 @@ The thresholds for which the Precision-Recall pairs are calculated can be either
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-4.0-py3.5.egg\pycm\pycm_curve.py:382: RuntimeWarning: The curve axes contain non-numerical value(s).
+<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-4.1-py3.5.egg\pycm\curve.py:382: RuntimeWarning: The curve contains non-numerical value(s).
 </pre>
 </div>
 </div>
@@ -16828,7 +16833,7 @@ The thresholds for which the Precision-Recall pairs are calculated can be either
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1b9328b0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1f21b930&gt;</pre>
 </div>
 
 </div>
@@ -16838,7 +16843,7 @@ The thresholds for which the Precision-Recall pairs are calculated can be either
 
 
 <div class="output_png output_subarea ">
-<img src="Document_files/Document_203_1.png"
+<img src="Document_files/Document_202_1.png"
 >
 </div>
 
@@ -21655,7 +21660,7 @@ $$p_t=threshold$$$$w=\frac{p_t}{1-p_t}$$
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.606439393939394</pre>
+<pre>0.6064393939393938</pre>
 </div>
 
 </div>
@@ -21713,7 +21718,7 @@ $$p_t=threshold$$$$w=\frac{p_t}{1-p_t}$$
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.7152097902097901</pre>
+<pre>0.7152097902097903</pre>
 </div>
 
 </div>
@@ -22034,7 +22039,7 @@ $$Kappa_{Unbiased}=\frac{ACC_{Overall}-RACCU_{Overall}}{1-RACCU_{Overall}}$$
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The kappa statistic adjusted for prevalence <a href="#ref14">[14]</a>.</p>
+<p>Prevalence-adjusted and bias-adjusted kappa (PABAK) <a href="#ref14">[14]</a>.</p>
 
 </div>
 </div>
@@ -22170,7 +22175,7 @@ $$Kappa_{Weighted}=\frac{P_a-P_e}{1-P_e}$$
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-4.0-py3.5.egg\pycm\pycm_obj.py:850: RuntimeWarning: The weight format is wrong, the result is for unweighted kappa.
+<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-4.1-py3.5.egg\pycm\cm.py:850: RuntimeWarning: Invalid weight format; the result is for unweighted kappa.
 </pre>
 </div>
 </div>
@@ -26598,7 +26603,7 @@ $$\alpha_{Weighted}=\frac{P_a-P_e}{1-P_e}$$
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-4.0-py3.5.egg\pycm\pycm_obj.py:873: RuntimeWarning: The weight format is wrong, the result is for unweighted alpha.
+<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-4.1-py3.5.egg\pycm\cm.py:873: RuntimeWarning: Invalid weight format; the result is for unweighted alpha.
 </pre>
 </div>
 </div>
@@ -29435,7 +29440,7 @@ Rank  Name   Class-Score       Overall-Score
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The type of input vectors is assumed to be a list or a NumPy array
+<pre>Input vectors must be provided as a list or a NumPy array.
 </pre>
 </div>
 </div>
@@ -29465,7 +29470,7 @@ Rank  Name   Class-Score       Overall-Score
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Input vectors must have same length
+<pre>Input vectors must have the same length.
 </pre>
 </div>
 </div>
@@ -29495,7 +29500,7 @@ Rank  Name   Class-Score       Overall-Score
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Input vectors are empty
+<pre>Input vectors must not be empty.
 </pre>
 </div>
 </div>
@@ -29525,7 +29530,7 @@ Rank  Name   Class-Score       Overall-Score
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Input vectors must have same length
+<pre>Input vectors must have the same length.
 </pre>
 </div>
 </div>
@@ -29555,7 +29560,7 @@ Rank  Name   Class-Score       Overall-Score
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Input confusion matrix format error
+<pre>Invalid input confusion matrix format.
 </pre>
 </div>
 </div>
@@ -29585,7 +29590,7 @@ Rank  Name   Class-Score       Overall-Score
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Type of the input matrix classes is assumed  be the same
+<pre>All input matrix classes must be of the same type.
 </pre>
 </div>
 </div>
@@ -29615,7 +29620,7 @@ Rank  Name   Class-Score       Overall-Score
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Number of the classes is lower than 2
+<pre>The number of classes must be at least 2.
 </pre>
 </div>
 </div>
@@ -29645,7 +29650,7 @@ Rank  Name   Class-Score       Overall-Score
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The input type is supposed to be dictionary but it&#39;s not!
+<pre>Input must be provided as a dictionary.
 </pre>
 </div>
 </div>
@@ -29675,7 +29680,7 @@ Rank  Name   Class-Score       Overall-Score
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The domain of all ConfusionMatrix objects must be same! The sample size or the number of classes are different.
+<pre>All ConfusionMatrix objects must have the same domain (same sample size and number of classes).
 </pre>
 </div>
 </div>
@@ -29705,7 +29710,7 @@ Rank  Name   Class-Score       Overall-Score
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The input is supposed to consist of pycm.ConfusionMatrix object but it&#39;s not!
+<pre>Input must be a dictionary containing pycm.ConfusionMatrix objects.
 </pre>
 </div>
 </div>
@@ -29735,7 +29740,7 @@ Rank  Name   Class-Score       Overall-Score
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Lower than two confusion matrices is given for comparing. The minimum number of confusion matrix for comparing is 2.
+<pre>At least 2 confusion matrices are required for comparison.
 </pre>
 </div>
 </div>
@@ -29768,7 +29773,7 @@ Rank  Name   Class-Score       Overall-Score
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The class_weight type must be dictionary and also must be specified for all of the classes.
+<pre>`class_weight` must be a dictionary and specified for all classes.
 </pre>
 </div>
 </div>
@@ -29800,7 +29805,7 @@ Rank  Name   Class-Score       Overall-Score
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The class_benchmark_weight type must be dictionary and also must be specified for all of the class benchmarks.
+<pre>`class_benchmark_weight` must be a dictionary and specified for all class benchmarks.
 </pre>
 </div>
 </div>
@@ -29832,7 +29837,7 @@ Rank  Name   Class-Score       Overall-Score
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The overall_benchmark_weight type must be dictionary and also must be specified for all of the overall benchmarks.
+<pre>`overall_benchmark_weight` must be a dictionary and specified for all overall benchmarks.
 </pre>
 </div>
 </div>
@@ -29862,8 +29867,8 @@ Rank  Name   Class-Score       Overall-Score
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>CI calculation for this parameter is not supported on this version of pycm.
-Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall ACC
+<pre>Confidence interval calculation for this parameter is not supported in this version of pycm.
+ Supported parameters are: TPR, TNR, PPV, NPV, ACC, PLR, NLR, FPR, FNR, AUC, PRE, Kappa, Overall ACC
 </pre>
 </div>
 </div>
@@ -29893,7 +29898,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The input type is supposed to be string but it&#39;s not!
+<pre>Input must be provided as a string.
 </pre>
 </div>
 </div>
@@ -29983,7 +29988,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The weight type must be dictionary and also must be specified for all of the classes.
+<pre>`weight` must be a dictionary and specified for all classes.
 </pre>
 </div>
 </div>
@@ -30013,7 +30018,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>This option only works in vector mode
+<pre>This option is only available in vector mode.
 </pre>
 </div>
 </div>
@@ -30043,7 +30048,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The input type is supposed to be pycm.ConfusionMatrix object but it&#39;s not!
+<pre>Input must be an instance of pycm.ConfusionMatrix.
 </pre>
 </div>
 </div>
@@ -30073,7 +30078,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Number of the classes is lower than 2
+<pre>The number of classes must be at least 2.
 </pre>
 </div>
 </div>
@@ -30103,7 +30108,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The classes list isn&#39;t unique. It contains duplicated labels.
+<pre>`classes` must contain unique labels with no duplicates.
 </pre>
 </div>
 </div>
@@ -30133,7 +30138,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The type of input vectors is assumed to be a list or a NumPy array
+<pre>Input vectors must be provided as a list or a NumPy array.
 </pre>
 </div>
 </div>
@@ -30163,7 +30168,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Input vectors must have same length
+<pre>Input vectors must have the same length.
 </pre>
 </div>
 </div>
@@ -30196,7 +30201,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The sum of probability values must be one
+<pre>The sum of the probability values must equal 1.
 </pre>
 </div>
 </div>
@@ -30229,7 +30234,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The type of classes is assumed to be list
+<pre>`classes` must be provided as a list.
 </pre>
 </div>
 </div>
@@ -30262,7 +30267,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The classes don&#39;t match to actual_vector
+<pre>`classes` does not match the actual vector.
 </pre>
 </div>
 </div>
@@ -30295,7 +30300,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Number of the classes is lower than 2
+<pre>The number of classes must be at least 2.
 </pre>
 </div>
 </div>
@@ -30328,7 +30333,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The elements of the probability vector can only contain numeric values
+<pre>Probability vector elements must be numeric.
 </pre>
 </div>
 </div>
@@ -30362,7 +30367,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The type of thresholds is assumed to be list or NumPy array
+<pre>`thresholds` must be provided as a list or a NumPy array.
 </pre>
 </div>
 </div>
@@ -30396,7 +30401,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Number of the thresholds is lower than 2
+<pre>The number of thresholds must be at least 2.
 </pre>
 </div>
 </div>
@@ -30430,7 +30435,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The thresholds can only contain numeric values
+<pre>`thresholds` must contain only numeric values.
 </pre>
 </div>
 </div>
@@ -30463,7 +30468,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The classes list isn&#39;t unique. It contains duplicated labels.
+<pre>`classes` must contain unique labels with no duplicates.
 </pre>
 </div>
 </div>
@@ -30496,7 +30501,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Probability vector elements must have same length and equal to classes
+<pre>All elements of the probability vector must have the same length and match the number of classes.
 </pre>
 </div>
 </div>
@@ -30530,7 +30535,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The numeric integral method can only be selected between &#39;trapezoidal&#39; and &#39;midpoint&#39;!
+<pre>The integral method must be either &#39;trapezoidal&#39; or &#39;midpoint&#39;.
 </pre>
 </div>
 </div>
@@ -30560,7 +30565,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Class extraction from input failed. Input vectors should be a list of sets with unified types.
+<pre>Failed to extract classes from input. Input vectors should be a list of sets with unified types.
 </pre>
 </div>
 </div>
@@ -30591,7 +30596,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Given class name is not among problem&#39;s classes.
+<pre>The specified class name is not among the confusion matrix&#39;s classes.
 </pre>
 </div>
 </div>
@@ -30621,7 +30626,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Given index is out of vector&#39;s range.
+<pre>Index is out of range for the given vector.
 </pre>
 </div>
 </div>
@@ -30651,7 +30656,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The type of input vectors is assumed to be a list or a NumPy array
+<pre>Input vectors must be provided as a list or a NumPy array.
 </pre>
 </div>
 </div>
@@ -30681,7 +30686,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Input vectors must have same length
+<pre>Input vectors must have the same length.
 </pre>
 </div>
 </div>
@@ -30711,7 +30716,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Input vectors are empty
+<pre>Input vectors must not be empty.
 </pre>
 </div>
 </div>
@@ -30741,7 +30746,7 @@ Supported parameters : TPR,TNR,PPV,NPV,ACC,PLR,NLR,FPR,FNR,AUC,PRE,Kappa,Overall
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>The classes list isn&#39;t unique. It contains duplicated labels.
+<pre>`classes` must contain unique labels with no duplicates.
 </pre>
 </div>
 </div>

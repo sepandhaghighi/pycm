@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+### Changed
+- GitHub actions are limited to the `dev` and `master` branches
 ## [4.1] - 2024-10-17
 ### Added
 - 5 new distance/similarity

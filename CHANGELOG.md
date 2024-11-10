@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 ### Changed
+- PyPI badge in `README.md`
 - GitHub actions are limited to the `dev` and `master` branches
 ## [4.1] - 2024-10-17
 ### Added

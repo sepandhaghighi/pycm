@@ -31,7 +31,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 	</tr>
 	<tr>
 		<td align="center">PyPI Counter</td>
-		<td align="center"><a href="http://pepy.tech/project/pycm"><img src="http://pepy.tech/badge/pycm"></a></td>
+		<td align="center"><a href="https://pepy.tech/projects/pycm"><img src="https://static.pepy.tech/badge/pycm" alt="PyPI Downloads"></a></td>
 	</tr>
 	<tr>
 		<td align="center">Github Stars</td>

@@ -416,6 +416,16 @@ True
 >>> assert isclose(cm2.distance(metric=DistanceType.KuhnsI)[1], 0.005004425239483548, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm1.distance(metric=DistanceType.KuhnsII)[1], 0.49489795918367346, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm2.distance(metric=DistanceType.KuhnsII)[1], 0.32695578231292516, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm1.distance(metric=DistanceType.KuhnsIII)[1], 0.3307757885763001, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm2.distance(metric=DistanceType.KuhnsIII)[1], 0.21873141468207793, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm1.distance(metric=DistanceType.KuhnsIV)[1], 0.49489795918367346, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm2.distance(metric=DistanceType.KuhnsIV)[1], 0.3923469387755102, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm1.distance(metric=DistanceType.KuhnsV)[1], 0.497435897435897, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm2.distance(metric=DistanceType.KuhnsV)[1], 0.329477292202228, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm1.distance(metric=DistanceType.KuhnsVI)[1], 0.497435897435897, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm2.distance(metric=DistanceType.KuhnsVI)[1], 0.394865211810013, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm1.distance(metric=DistanceType.KuhnsVII)[1], 0.49489795918367346, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm2.distance(metric=DistanceType.KuhnsVII)[1], 0.3581621145590755, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> mlcm = MultiLabelCM(actual_vector=[{"cat", "bird"}, {"dog"}], predict_vector=[{"cat"}, {"dog", "bird"}], classes=["cat", "dog", "bird"]) # Verified Case -- (http://bitly.ws/GNq2)
 >>> mlcm.actual_vector_multihot
 [[1, 0, 1], [0, 1, 0]]

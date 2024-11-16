@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - 5 new distance/similarity
 	1. KuhnsIII
+	2. KuhnsIV
 ### Changed
 - PyPI badge in `README.md`
 - GitHub actions are limited to the `dev` and `master` branches

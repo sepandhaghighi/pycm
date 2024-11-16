@@ -72,6 +72,7 @@ class DistanceType(Enum):
     KuderRichardson = "KuderRichardson"
     KuhnsI = "KuhnsI"
     KuhnsII = "KuhnsII"
+    KuhnsIII = "KuhnsIII"
 
 
 def AMPLE_calc(TP, FP, FN, TN):
@@ -1336,6 +1337,30 @@ def KuhnsII_calc(TP, FP, FN, TN):
         return "None"
 
 
+def KuhnsIII_calc(TP, FP, FN, TN):
+    """
+    Calculate Kuhns III correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Kuhns III correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        delta = TP - ((TP + FP) * (TP + FN)) / n
+        part1 = 1 - TP / (2 * TP + FP + FN)
+        part2 = 2 * TP + FP + FN - (TP + FP) * (TP + FN) / n
+        return delta / (part1 * part2)
+    except Exception:
+        return "None"
+
+
 DISTANCE_MAPPER = {
     DistanceType.AMPLE: AMPLE_calc,
     DistanceType.Anderberg: Anderberg_calc,
@@ -1395,4 +1420,5 @@ DISTANCE_MAPPER = {
     DistanceType.KuderRichardson: KuderRichardson_calc,
     DistanceType.KuhnsI: KuhnsI_calc,
     DistanceType.KuhnsII: KuhnsII_calc,
+    DistanceType.KuhnsIII: KuhnsIII_calc,
 }

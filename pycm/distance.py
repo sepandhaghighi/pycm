@@ -72,6 +72,11 @@ class DistanceType(Enum):
     KuderRichardson = "KuderRichardson"
     KuhnsI = "KuhnsI"
     KuhnsII = "KuhnsII"
+    KuhnsIII = "KuhnsIII"
+    KuhnsIV = "KuhnsIV"
+    KuhnsV = "KuhnsV"
+    KuhnsVI = "KuhnsVI"
+    KuhnsVII = "KuhnsVII"
 
 
 def AMPLE_calc(TP, FP, FN, TN):
@@ -1336,6 +1341,124 @@ def KuhnsII_calc(TP, FP, FN, TN):
         return "None"
 
 
+def KuhnsIII_calc(TP, FP, FN, TN):
+    """
+    Calculate Kuhns III correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Kuhns III correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        delta = TP - ((TP + FP) * (TP + FN)) / n
+        part1 = 1 - TP / (2 * TP + FP + FN)
+        part2 = 2 * TP + FP + FN - (TP + FP) * (TP + FN) / n
+        return delta / (part1 * part2)
+    except Exception:
+        return "None"
+
+
+def KuhnsIV_calc(TP, FP, FN, TN):
+    """
+    Calculate Kuhns IV correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Kuhns IV correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        delta = TP - ((TP + FP) * (TP + FN)) / n
+        part1 = min(TP + FP, TP + FN)
+        return delta / part1
+    except Exception:
+        return "None"
+
+
+def KuhnsV_calc(TP, FP, FN, TN):
+    """
+    Calculate Kuhns V correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Kuhns V correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        delta = TP - ((TP + FP) * (TP + FN)) / n
+        part1 = (TP + FP) * (1 - (TP + FP) / n)
+        part2 = (TP + FN) * (1 - (TP + FN) / n)
+        return delta / max(part1, part2)
+    except Exception:
+        return "None"
+
+
+def KuhnsVI_calc(TP, FP, FN, TN):
+    """
+    Calculate Kuhns VI correlation.
+
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Kuhns VI correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        delta = TP - ((TP + FP) * (TP + FN)) / n
+        part1 = (TP + FP) * (1 - (TP + FP) / n)
+        part2 = (TP + FN) * (1 - (TP + FN) / n)
+        return delta / min(part1, part2)
+    except Exception:
+        return "None"
+
+
+def KuhnsVII_calc(TP, FP, FN, TN):
+    """
+    Calculate Kuhns VII correlation.
+    
+    :param TP: true positive
+    :type TP: int
+    :param TN: true negative
+    :type TN: int
+    :param FP: false positive
+    :type FP: int
+    :param FN: false negative
+    :type FN: int
+    :return: Kuhns VI correlation as float
+    """
+    try:
+        n = TP + FP + FN + TN
+        delta = TP - ((TP + FP) * (TP + FN)) / n
+        part1 = math.sqrt((TP + FP) * (TP + FN))
+        return delta / part1
+    except Exception:
+        return "None"
+
+
 DISTANCE_MAPPER = {
     DistanceType.AMPLE: AMPLE_calc,
     DistanceType.Anderberg: Anderberg_calc,
@@ -1395,4 +1518,9 @@ DISTANCE_MAPPER = {
     DistanceType.KuderRichardson: KuderRichardson_calc,
     DistanceType.KuhnsI: KuhnsI_calc,
     DistanceType.KuhnsII: KuhnsII_calc,
+    DistanceType.KuhnsIII: KuhnsIII_calc,
+    DistanceType.KuhnsIV: KuhnsIV_calc,
+    DistanceType.KuhnsV: KuhnsV_calc,
+    DistanceType.KuhnsVI: KuhnsVI_calc,
+    DistanceType.KuhnsVII: KuhnsVII_calc,
 }

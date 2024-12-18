@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Interpretation functions."""
 
+import numpy as np
+
 
 def Q_analysis(Q: float) -> str:
     """
@@ -9,6 +11,8 @@ def Q_analysis(Q: float) -> str:
     :param Q: Yule's Q
     """
     try:
+        if np.isnan(Q):
+            return "None"
         if Q < 0.25:
             return "Negligible"
         if Q >= 0.25 and Q < 0.5:
@@ -27,6 +31,8 @@ def MCC_analysis(MCC: float) -> str:
     :param MCC: Matthews correlation coefficient
     """
     try:
+        if np.isnan(MCC):
+            return "None"
         if MCC < 0.3:
             return "Negligible"
         if MCC >= 0.3 and MCC < 0.5:
@@ -47,6 +53,8 @@ def NLR_analysis(NLR: float) -> str:
     :param NLR: negative likelihood ratio
     """
     try:
+        if np.isnan(NLR):
+            return "None"
         if NLR < 0.1:
             return "Good"
         if NLR >= 0.1 and NLR < 0.2:
@@ -65,6 +73,8 @@ def V_analysis(V: float) -> str:
     :param V: Cramer's V
     """
     try:
+        if np.isnan(V):
+            return "None"
         if V < 0.1:
             return "Negligible"
         if V >= 0.1 and V < 0.2:
@@ -87,6 +97,8 @@ def PLR_analysis(PLR: float) -> str:
     :param PLR: positive likelihood ratio
     """
     try:
+        if np.isnan(PLR):
+            return "None"
         if PLR < 1:
             return "Negligible"
         if PLR >= 1 and PLR < 5:
@@ -105,6 +117,8 @@ def DP_analysis(DP: float) -> str:
     :param DP: discriminant power
     """
     try:
+        if np.isnan(DP):
+            return "None"
         if DP < 1:
             return "Poor"
         if DP >= 1 and DP < 2:
@@ -123,6 +137,8 @@ def AUC_analysis(AUC: float) -> str:
     :param AUC: area under the ROC curve
     """
     try:
+        if np.isnan(AUC):
+            return "None"
         if AUC < 0.6:
             return "Poor"
         if AUC >= 0.6 and AUC < 0.7:
@@ -143,6 +159,8 @@ def kappa_analysis_cicchetti(kappa: float) -> str:
     :param kappa: kappa number
     """
     try:
+        if np.isnan(kappa):
+            return "None"
         if kappa < 0.4:
             return "Poor"
         if kappa >= 0.4 and kappa < 0.59:
@@ -163,6 +181,8 @@ def kappa_analysis_koch(kappa: float) -> str:
     :param kappa: kappa number
     """
     try:
+        if np.isnan(kappa):
+            return "None"
         if kappa < 0:
             return "Poor"
         if kappa >= 0 and kappa < 0.2:
@@ -187,6 +207,8 @@ def kappa_analysis_fleiss(kappa: float) -> str:
     :param kappa: kappa number
     """
     try:
+        if np.isnan(kappa):
+            return "None"
         if kappa < 0.4:
             return "Poor"
         if kappa >= 0.4 and kappa < 0.75:
@@ -203,6 +225,8 @@ def kappa_analysis_altman(kappa: float) -> str:
     :param kappa: kappa number
     """
     try:
+        if np.isnan(kappa):
+            return "None"
         if kappa < 0.2:
             return "Poor"
         if kappa >= 0.20 and kappa < 0.4:
@@ -225,6 +249,8 @@ def lambda_analysis(lambda_: float) -> str:
     :param lambda_: lambda (A or B) value
     """
     try:
+        if np.isnan(lambda_):
+            return "None"
         if 0 < lambda_ < 0.2:
             return "Very Weak"
         if 0.2 <= lambda_ < 0.4:
@@ -249,6 +275,8 @@ def alpha_analysis(alpha: float) -> str:
     :param alpha: Krippendorff's alpha value
     """
     try:
+        if np.isnan(alpha):
+            return "None"
         if alpha < 0.667:
             return "Low"
         if 0.667 <= alpha < 0.8:
@@ -267,6 +295,8 @@ def pearson_C_analysis(pearson_C: float) -> str:
     :param pearson_C: Pearson's coefficient value
     """
     try:
+        if np.isnan(pearson_C):
+            return "None"
         if 0 < pearson_C < 0.1:
             return "Not Appreciable"
         if 0.1 <= pearson_C < 0.2:

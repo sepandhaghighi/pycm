@@ -623,6 +623,8 @@ True
 'Excellent'
 >>> AUC_analysis(1.0)
 'Excellent'
+>>> AUC_analysis(float('nan'))
+'None'
 >>> PC_AC1_calc(1, 1, 1)
 'None'
 >>> assert isclose(PC_AC1_calc({1: 123, 2: 2}, {1: 120, 2: 5}, {1: 125, 2: 125}), 0.05443200000000002, abs_tol=ABS_TOL, rel_tol=REL_TOL)

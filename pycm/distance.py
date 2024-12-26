@@ -1448,7 +1448,7 @@ def KuhnsVII_calc(TP, FP, FN, TN):
     :type FP: int
     :param FN: false negative
     :type FN: int
-    :return: Kuhns VI correlation as float
+    :return: Kuhns VII correlation as float
     """
     try:
         n = TP + FP + FN + TN

@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - GitHub actions are limited to the `dev` and `master` branches
 - `AUTHORS.md` updated
 - `README.md` modified
+- Document modified
 ## [4.1] - 2024-10-17
 ### Added
 - 5 new distance/similarity

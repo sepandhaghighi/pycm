@@ -3,6 +3,7 @@
 <h1>PyCM: Python Confusion Matrix</h1>
 <br/>
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/built%20with-Python3-green.svg" alt="built with Python3"></a>
+<a href="https://github.com/sepandhaghighi/pycm"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/sepandhaghighi/pycm"></a>
 <a href="/Document"><img src="https://img.shields.io/badge/doc-latest-orange.svg"></a>
 <a href="https://codecov.io/gh/sepandhaghighi/pycm"><img src="https://codecov.io/gh/sepandhaghighi/pycm/branch/master/graph/badge.svg"></a>
 <a href="https://badge.fury.io/py/pycm"><img src="https://badge.fury.io/py/pycm.svg" alt="PyPI version"></a>

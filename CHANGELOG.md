@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 	4. KuhnsVI
 	5. KuhnsVII
 ### Changed
+- Test system modified
 - PyPI badge in `README.md`
 - GitHub actions are limited to the `dev` and `master` branches
 - `AUTHORS.md` updated

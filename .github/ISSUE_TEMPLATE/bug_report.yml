@@ -86,6 +86,7 @@ body:
       label: PyCM version
       description: Which version of PyCM are you using?
       options:
+        - PyCM 4.2
         - PyCM 4.1
         - PyCM 4.0
         - PyCM 3.9

@@ -76,10 +76,10 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 ### PyPI
 
 - Check [Python Packaging User Guide](https://packaging.python.org/installing/)
-- Run `pip install pycm==4.1`
+- Run `pip install pycm==4.2`
 
 ### Source code
-- Download [Version 4.1](https://github.com/sepandhaghighi/pycm/archive/v4.1.zip) or [Latest Source](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
+- Download [Version 4.2](https://github.com/sepandhaghighi/pycm/archive/v4.2.zip) or [Latest Source](https://github.com/sepandhaghighi/pycm/archive/dev.zip)
 - Run `pip install .`
 
 ### Conda

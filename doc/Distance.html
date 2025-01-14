@@ -16500,6 +16500,311 @@ $$
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Kuhns-III">Kuhns III<a class="anchor-link" href="#Kuhns-III">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Kuhns III correlation <a href="#ref40">[40]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$corr_{KuhnsIII} =
+\frac{\delta(TP + FP, TP + FN)}
+{(1-\frac{TP}{2 \times TP + FP + FN})(2 \times TP + FP + FN-\frac{(TP + FP)(TP + FN)}{N})}
+$$$$
+\delta(TP + FP, TP + FN) = TP - \frac{(TP + FP) \times (TP + FN)}{N}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">KuhnsIII</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.4148148148148148, 1: 0.1388888888888889, 2: 0.08088235294117647}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 4.2</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Kuhns-IV">Kuhns IV<a class="anchor-link" href="#Kuhns-IV">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Kuhns IV correlation <a href="#ref40">[40]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$corr_{KuhnsIV} =
+\frac{\delta(TP + FP, TP + FN)}
+{\min(TP + FP, TP + FN)}
+$$$$
+\delta(TP + FP, TP + FN) = TP - \frac{(TP + FP) \times (TP + FN)}{N}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">KuhnsIV</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.5833333333333334, 1: 0.25, 2: 0.1}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 4.2</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Kuhns-V">Kuhns V<a class="anchor-link" href="#Kuhns-V">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Kuhns V correlation <a href="#ref40">[40]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$corr_{KuhnsV} =
+\frac{\delta(TP + FP, TP + FN)}
+{\max((TP+FP)(1-\frac{TP+FP}{N}), (TP+FN)(1-\frac{TP+FN}{N}))}
+$$$$
+\delta(TP + FP, TP + FN) = TP - \frac{(TP + FP) \times (TP + FN)}{N}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">KuhnsV</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.6000000000000001, 1: 0.2222222222222222, 2: 0.16666666666666666}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 4.2</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Kuhns-VI">Kuhns VI<a class="anchor-link" href="#Kuhns-VI">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Kuhns VI correlation <a href="#ref40">[40]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$corr_{KuhnsVI} =
+\frac{\delta(TP + FP, TP + FN)}
+{\min((TP+FP)(1-\frac{TP+FP}{N}), (TP+FN)(1-\frac{TP+FN}{N}))}
+$$$$
+\delta(TP + FP, TP + FN) = TP - \frac{(TP + FP) \times (TP + FN)}{N}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">KuhnsVI</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.7777777777777778, 1: 0.3, 2: 0.17142857142857146}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 4.2</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Kuhns-VII">Kuhns VII<a class="anchor-link" href="#Kuhns-VII">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Kuhns VII correlation <a href="#ref40">[40]</a>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$corr_{KuhnsVII} =
+\frac{\delta(TP + FP, TP + FN)}
+{\sqrt{(TP + FP) \times (TP + FN)}}
+$$$$
+\delta(TP + FP, TP + FN) = TP - \frac{(TP + FP) \times (TP + FN)}{N}
+$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">metric</span><span class="o">=</span><span class="n">DistanceType</span><span class="o">.</span><span class="n">KuhnsVII</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{0: 0.45184805705753195, 1: 0.20412414523193154, 2: 0.09128709291752768}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 4.2</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="References">References<a class="anchor-link" href="#References">&#182;</a></h2>
 </div>
 </div>

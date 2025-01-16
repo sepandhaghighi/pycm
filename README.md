@@ -494,13 +494,13 @@ Some parts of the infrastructure for this project are supported by:
 
 ## Cite
 
-If you use PyCM in your research, we would appreciate citations to the following paper :
+If you use PyCM in your research, we would appreciate citations to the following paper:
 
-<pre>
-Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A. (2018). PyCM: Multiclass confusion matrix library in Python. Journal of Open Source Software, 3(25), p.729.
-</pre>
-<pre>
 
+[Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A., 2018. PyCM: Multiclass confusion matrix library in Python. *Journal of Open Source Software*, 3(25), p.729.](https://joss.theoj.org/papers/10.21105/joss.00729)
+
+
+```bibtex
 @article{Haghighi2018,
   doi = {10.21105/joss.00729},
   url = {https://doi.org/10.21105/joss.00729},
@@ -514,8 +514,7 @@ Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A. (2018). PyCM: Multiclass
   title = {{PyCM}: Multiclass confusion matrix library in Python},
   journal = {Journal of Open Source Software}
 }
-
-</pre>
+```
 
 Download [PyCM.bib](http://www.pycm.io/PYCM.bib)
 

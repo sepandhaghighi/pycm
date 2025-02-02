@@ -271,7 +271,7 @@ def html_end(version):
     :type version: str
     :return: html_end as str
     """
-    return HTML_END_TEMPLATE.format(version)
+    return HTML_END_TEMPLATE.format(version=version)
 
 
 def pycm_help():

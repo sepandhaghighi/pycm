@@ -114,8 +114,8 @@ def html_table(
     result += '<td>Actual</td>\n'
     result += '<td>Predict\n'
     table_size = str((len(classes) + 1) * 7) + "em"
-    result += '<table style="border:1px solid black;border-collapse: collapse;height:{0};width:{0};">\n'\
-        .format(table_size)
+    result += '<table style="border:1px solid black;border-collapse: collapse;height:{size};width:{size};">\n'\
+        .format(size=table_size)
     result += '<tr style="text-align:center;">\n<td></td>\n'
     part_2 = ""
     for i in classes:
@@ -135,8 +135,8 @@ def html_table(
             back_color = html_table_color(table[i], item, rgb_color)
             if min(back_color) < 128:
                 color = "white"
-            part_2 += '<td style="background-color:rgb({0},{1},{2});color:{3};padding:10px;height:7em;width:7em;">'.format(
-                str(back_color[0]), str(back_color[1]), str(back_color[2]), color) + str(item) + '</td>\n'
+            part_2 += '<td style="background-color:rgb({r},{g},{b});color:{color};padding:10px;height:7em;width:7em;">'.format(
+                r=str(back_color[0]), g=str(back_color[1]), b=str(back_color[2]), color=color) + str(item) + '</td>\n'
         part_2 += "</tr>\n"
     result += '</tr>\n'
     part_2 += "</table>\n</td>\n</tr>\n</table>\n"

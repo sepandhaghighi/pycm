@@ -517,8 +517,8 @@ OVERALL_BENCHMARK_MAP = {
 
 RECOMMEND_BACKGROUND_COLOR = "aqua"
 DEFAULT_BACKGROUND_COLOR = "transparent"
-RECOMMEND_HTML_MESSAGE = '<span style="color:red;">Note 1</span> : Recommended statistics for this type of classification highlighted in <span style="color :{0};">{0}</span>'.format(
-    RECOMMEND_BACKGROUND_COLOR)
+RECOMMEND_HTML_MESSAGE = '<span style="color:red;">Note 1</span> : Recommended statistics for this type of classification highlighted in <span style="color :{color};">{color}</span>'.format(
+    color=RECOMMEND_BACKGROUND_COLOR)
 RECOMMEND_WARNING = ("The recommendation system assumes the input is the result of classification over the entire"
                      " dataset, not just a subset. If the confusion matrix is based on test data classification,"
                      " the recommendation may not be valid.")

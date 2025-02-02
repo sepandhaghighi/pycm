@@ -13,7 +13,7 @@ def html_init():
 
     :return: html_init as str
     """
-    return HTML_INIT_TEMPLATE.format(OG_DESCRIPTION, OG_IMAGE_URL)
+    return HTML_INIT_TEMPLATE.format(description=OG_DESCRIPTION, image_url=OG_IMAGE_URL)
 
 
 def html_dataset_type(is_binary, is_imbalanced):

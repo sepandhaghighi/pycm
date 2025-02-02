@@ -33,10 +33,10 @@ def html_dataset_type(is_binary, is_imbalanced):
         balance_type = "Imbalanced"
     if not is_binary:
         class_type = "Multi-Class Classification"
-    result += "<ul>\n<li>{0}</li>\n<li>{1}</li>\n</ul>\n".format(
-        class_type, balance_type)
-    result += "<p>{0}</p>\n".format(RECOMMEND_HTML_MESSAGE)
-    result += "<p>{0}</p>\n".format(RECOMMEND_HTML_MESSAGE2)
+    result += "<ul>\n<li>{class_type}</li>\n<li>{balance_type}</li>\n</ul>\n".format(
+        class_type=class_type, balance_type=balance_type)
+    result += "<p>{message}</p>\n".format(message=RECOMMEND_HTML_MESSAGE)
+    result += "<p>{message}</p>\n".format(message=RECOMMEND_HTML_MESSAGE2)
 
     return result
 

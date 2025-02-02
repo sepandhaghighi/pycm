@@ -182,12 +182,12 @@ def html_overall_stat(
         if i in recommended_list:
             background_color = RECOMMEND_BACKGROUND_COLOR
         result += '<tr style="text-align:center;">\n'
-        result += '<td style="border:1px solid black;padding:4px;text-align:left;background-color:{};"><a href="'.format(
-            background_color) + document_link + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
+        result += '<td style="border:1px solid black;padding:4px;text-align:left;background-color:{color};"><a href="'.format(
+            color=background_color) + document_link + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         if i in BENCHMARK_LIST:
             background_color = BENCHMARK_COLOR[i][overall_stat[i]]
-            result += '<td style="border:1px solid black;padding:4px;background-color:{};">'.format(
-                background_color)
+            result += '<td style="border:1px solid black;padding:4px;background-color:{color};">'.format(
+                color=background_color)
         else:
             result += '<td style="border:1px solid black;padding:4px;">'
         result += rounder(overall_stat[i], digit) + '</td>\n'
@@ -243,13 +243,13 @@ def html_class_stat(
         if i in recommended_list:
             background_color = RECOMMEND_BACKGROUND_COLOR
         result += '<tr style="text-align:center;border:1px solid black;border-collapse: collapse;">\n'
-        result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};"><a href="'.format(
-            background_color) + document_link + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
+        result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{color};"><a href="'.format(
+            color=background_color) + document_link + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         for j in classes:
             if i in BENCHMARK_LIST:
                 background_color = BENCHMARK_COLOR[i][class_stat[i][j]]
-                result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};">'.format(
-                    background_color)
+                result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{color};">'.format(
+                    color=background_color)
             else:
                 result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">'
             result += rounder(class_stat[i][j], digit) + '</td>\n'

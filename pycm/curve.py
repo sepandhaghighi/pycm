@@ -78,7 +78,7 @@ class Curve:
         self.auc = {}
         self.plot_x_axis = "FPR"
         self.plot_y_axis = "TPR"
-        self.title = "{0} per {1}".format(self.plot_x_axis, self.plot_y_axis)
+        self.title = "{x_axis} per {y_axis}".format(x_axis=self.plot_x_axis, y_axis=self.plot_y_axis)
 
     def area(self, method="trapezoidal"):
         """

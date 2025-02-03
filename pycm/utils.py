@@ -803,7 +803,7 @@ def deprecated(func):
         """
         warn(
             DEPRECATION_WARNING.format(
-                func.__name__),
+                name=func.__name__),
             category=DeprecationWarning,
             stacklevel=2)
         return func(*args, **kwargs)

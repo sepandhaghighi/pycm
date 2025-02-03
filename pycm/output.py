@@ -13,7 +13,7 @@ def html_init():
 
     :return: html_init as str
     """
-    return HTML_INIT_TEMPLATE.format(OG_DESCRIPTION, OG_IMAGE_URL)
+    return HTML_INIT_TEMPLATE.format(description=OG_DESCRIPTION, image_url=OG_IMAGE_URL)
 
 
 def html_dataset_type(is_binary, is_imbalanced):
@@ -33,10 +33,10 @@ def html_dataset_type(is_binary, is_imbalanced):
         balance_type = "Imbalanced"
     if not is_binary:
         class_type = "Multi-Class Classification"
-    result += "<ul>\n<li>{0}</li>\n<li>{1}</li>\n</ul>\n".format(
-        class_type, balance_type)
-    result += "<p>{0}</p>\n".format(RECOMMEND_HTML_MESSAGE)
-    result += "<p>{0}</p>\n".format(RECOMMEND_HTML_MESSAGE2)
+    result += "<ul>\n<li>{class_type}</li>\n<li>{balance_type}</li>\n</ul>\n".format(
+        class_type=class_type, balance_type=balance_type)
+    result += "<p>{message}</p>\n".format(message=RECOMMEND_HTML_MESSAGE)
+    result += "<p>{message}</p>\n".format(message=RECOMMEND_HTML_MESSAGE2)
 
     return result
 
@@ -114,8 +114,8 @@ def html_table(
     result += '<td>Actual</td>\n'
     result += '<td>Predict\n'
     table_size = str((len(classes) + 1) * 7) + "em"
-    result += '<table style="border:1px solid black;border-collapse: collapse;height:{0};width:{0};">\n'\
-        .format(table_size)
+    result += '<table style="border:1px solid black;border-collapse: collapse;height:{size};width:{size};">\n'\
+        .format(size=table_size)
     result += '<tr style="text-align:center;">\n<td></td>\n'
     part_2 = ""
     for i in classes:
@@ -135,8 +135,8 @@ def html_table(
             back_color = html_table_color(table[i], item, rgb_color)
             if min(back_color) < 128:
                 color = "white"
-            part_2 += '<td style="background-color:rgb({0},{1},{2});color:{3};padding:10px;height:7em;width:7em;">'.format(
-                str(back_color[0]), str(back_color[1]), str(back_color[2]), color) + str(item) + '</td>\n'
+            part_2 += '<td style="background-color:rgb({r},{g},{b});color:{color};padding:10px;height:7em;width:7em;">'.format(
+                r=str(back_color[0]), g=str(back_color[1]), b=str(back_color[2]), color=color) + str(item) + '</td>\n'
         part_2 += "</tr>\n"
     result += '</tr>\n'
     part_2 += "</table>\n</td>\n</tr>\n</table>\n"
@@ -182,12 +182,12 @@ def html_overall_stat(
         if i in recommended_list:
             background_color = RECOMMEND_BACKGROUND_COLOR
         result += '<tr style="text-align:center;">\n'
-        result += '<td style="border:1px solid black;padding:4px;text-align:left;background-color:{};"><a href="'.format(
-            background_color) + document_link + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
+        result += '<td style="border:1px solid black;padding:4px;text-align:left;background-color:{color};"><a href="'.format(
+            color=background_color) + document_link + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         if i in BENCHMARK_LIST:
             background_color = BENCHMARK_COLOR[i][overall_stat[i]]
-            result += '<td style="border:1px solid black;padding:4px;background-color:{};">'.format(
-                background_color)
+            result += '<td style="border:1px solid black;padding:4px;background-color:{color};">'.format(
+                color=background_color)
         else:
             result += '<td style="border:1px solid black;padding:4px;">'
         result += rounder(overall_stat[i], digit) + '</td>\n'
@@ -243,13 +243,13 @@ def html_class_stat(
         if i in recommended_list:
             background_color = RECOMMEND_BACKGROUND_COLOR
         result += '<tr style="text-align:center;border:1px solid black;border-collapse: collapse;">\n'
-        result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};"><a href="'.format(
-            background_color) + document_link + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
+        result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{color};"><a href="'.format(
+            color=background_color) + document_link + PARAMS_LINK[i] + '" style="text-decoration:None;">' + str(i) + '</a></td>\n'
         for j in classes:
             if i in BENCHMARK_LIST:
                 background_color = BENCHMARK_COLOR[i][class_stat[i][j]]
-                result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{};">'.format(
-                    background_color)
+                result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;background-color:{color};">'.format(
+                    color=background_color)
             else:
                 result += '<td style="border:1px solid black;padding:4px;border-collapse: collapse;">'
             result += rounder(class_stat[i][j], digit) + '</td>\n'
@@ -271,7 +271,7 @@ def html_end(version):
     :type version: str
     :return: html_end as str
     """
-    return HTML_END_TEMPLATE.format(version)
+    return HTML_END_TEMPLATE.format(version=version)
 
 
 def pycm_help():

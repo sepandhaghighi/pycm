@@ -1439,7 +1439,7 @@ def KuhnsVI_calc(TP, FP, FN, TN):
 def KuhnsVII_calc(TP, FP, FN, TN):
     """
     Calculate Kuhns VII correlation.
-    
+
     :param TP: true positive
     :type TP: int
     :param TN: true negative

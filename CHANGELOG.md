@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `README.md` modified
 - String templates modified
+### Removed
+- `html_init` function
+- `html_end` function
 ## [4.2] - 2025-01-14
 ### Added
 - 5 new distance/similarity

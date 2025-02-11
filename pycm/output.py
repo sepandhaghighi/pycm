@@ -7,15 +7,6 @@ from .utils import rounder, sort_char_num
 import webbrowser
 
 
-def html_init():
-    """
-    Return HTML report file first lines.
-
-    :return: html_init as str
-    """
-    return HTML_INIT_TEMPLATE.format(description=OG_DESCRIPTION, image_url=OG_IMAGE_URL)
-
-
 def html_dataset_type(is_binary, is_imbalanced):
     """
     Return HTML report file dataset type.
@@ -261,17 +252,6 @@ def html_class_stat(
         result += "</tr>\n"
     result += "</table>\n"
     return result
-
-
-def html_end(version):
-    """
-    Return HTML report file end lines.
-
-    :param version: pycm version
-    :type version: str
-    :return: html_end as str
-    """
-    return HTML_END_TEMPLATE.format(version=version)
 
 
 def pycm_help():

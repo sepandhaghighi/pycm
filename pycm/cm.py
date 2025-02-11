@@ -378,7 +378,7 @@ class ConfusionMatrix():
             if normalize:
                 table = self.normalized_table
             html_file = open(name + ".html", "w", encoding="utf-8")
-            html_file.write(html_init())
+            html_file.write(HTML_INIT_TEMPLATE.format(description=OG_DESCRIPTION, image_url=OG_IMAGE_URL))
             html_file.write(html_dataset_type(self.binary, self.imbalance))
             html_file.write(
                 html_table(
@@ -403,7 +403,7 @@ class ConfusionMatrix():
                     class_list,
                     self.recommended_list,
                     alt_link))
-            html_file.write(html_end(PYCM_VERSION))
+            html_file.write(HTML_END_TEMPLATE.format(version=PYCM_VERSION))
             html_file.close()
             if address:
                 message = os.path.join(

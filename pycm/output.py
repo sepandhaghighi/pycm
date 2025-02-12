@@ -51,15 +51,10 @@ def html_table_color(row, item, color=(0, 0, 0)):
     :type color: tuple
     :return: background color as list [R, G, B]
     """
-    result = [0, 0, 0]
     color_list = color_check(color)
-    max_color = max(color_list)
     back_color_index = 255 - int((item / (sum(list(row.values())) + 1)) * 255)
-    for i in range(3):
-        result[i] = back_color_index - (max_color - color_list[i])
-        if result[i] < 0:
-            result[i] = 0
-    return result
+    color_offset = back_color_index - max(color_list)
+    return [max(0, color_offset + c) for c in color_list]
 
 
 def html_table(

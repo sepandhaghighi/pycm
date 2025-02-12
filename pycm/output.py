@@ -32,14 +32,10 @@ def color_check(color):
     :type color: tuple
     :return: color as list
     """
-    if isinstance(color, (tuple, list)):
-        if all(map(lambda x: isinstance(x, int), color)):
-            if all(map(lambda x: x < 256, color)):
-                return list(color)
-    if isinstance(color, str):
-        color_lower = color.lower()
-        if color_lower in TABLE_COLOR:
-            return TABLE_COLOR[color_lower]
+    if isinstance(color, (tuple, list)) and all(map(lambda x: isinstance(x, int) and x < 256, color)):
+        return list(color)
+    if isinstance(color, str) and color.lower() in TABLE_COLOR:
+        return TABLE_COLOR[color.lower()]
     return [0, 0, 0]
 
 

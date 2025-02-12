@@ -17,19 +17,11 @@ def html_dataset_type(is_binary, is_imbalanced):
     :type is_imbalanced: bool
     :return: dataset_type as str
     """
-    result = "<h2>Dataset Type : </h2>\n"
-    balance_type = "Balanced"
-    class_type = "Binary Classification"
-    if is_imbalanced:
-        balance_type = "Imbalanced"
-    if not is_binary:
-        class_type = "Multi-Class Classification"
-    result += "<ul>\n<li>{class_type}</li>\n<li>{balance_type}</li>\n</ul>\n".format(
-        class_type=class_type, balance_type=balance_type)
-    result += "<p>{message}</p>\n".format(message=RECOMMEND_HTML_MESSAGE)
-    result += "<p>{message}</p>\n".format(message=RECOMMEND_HTML_MESSAGE2)
-
-    return result
+    return HTML_DATASET_TYPE_TEMPLATE.format(
+        balance_type="Imbalanced" if is_imbalanced else "Balanced",
+        class_type="Binary Classification" if is_binary else "Multi-Class Classification",
+        message1=RECOMMEND_HTML_MESSAGE,
+        message2=RECOMMEND_HTML_MESSAGE2)
 
 
 def color_check(color):

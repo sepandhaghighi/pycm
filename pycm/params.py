@@ -46,6 +46,16 @@ HTML_END_TEMPLATE = '''<p style="text-align:center;border-top:1px solid black;">
 </html>
 '''
 
+HTML_DATASET_TYPE_TEMPLATE = (
+    "<h2>Dataset Type : </h2>\n"
+    "<ul>\n"
+    "<li>{balance_type}</li>\n"
+    "<li>{class_type}</li>\n"
+    "</ul>\n"
+    "<p>{message1}</p>\n"
+    "<p>{message2}</p>\n"
+)
+
 PROBABILITY_SIZE_ERROR = "All elements of the probability vector must have the same length and match the number of classes."
 PROBABILITY_TYPE_ERROR = "Probability vector elements must be numeric."
 PROBABILITY_SUM_ERROR = "The sum of the probability values must equal 1."

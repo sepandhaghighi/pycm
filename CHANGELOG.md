@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Changed
+- HTML generator engine modified
 - `README.md` modified
 - String templates modified
 ### Removed

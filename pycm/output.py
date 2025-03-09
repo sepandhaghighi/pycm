@@ -17,19 +17,11 @@ def html_dataset_type(is_binary, is_imbalanced):
     :type is_imbalanced: bool
     :return: dataset_type as str
     """
-    result = "<h2>Dataset Type : </h2>\n"
-    balance_type = "Balanced"
-    class_type = "Binary Classification"
-    if is_imbalanced:
-        balance_type = "Imbalanced"
-    if not is_binary:
-        class_type = "Multi-Class Classification"
-    result += "<ul>\n<li>{class_type}</li>\n<li>{balance_type}</li>\n</ul>\n".format(
-        class_type=class_type, balance_type=balance_type)
-    result += "<p>{message}</p>\n".format(message=RECOMMEND_HTML_MESSAGE)
-    result += "<p>{message}</p>\n".format(message=RECOMMEND_HTML_MESSAGE2)
-
-    return result
+    return HTML_DATASET_TYPE_TEMPLATE.format(
+        balance_type="Imbalanced" if is_imbalanced else "Balanced",
+        class_type="Binary Classification" if is_binary else "Multi-Class Classification",
+        message1=RECOMMEND_HTML_MESSAGE,
+        message2=RECOMMEND_HTML_MESSAGE2)
 
 
 def color_check(color):
@@ -40,14 +32,10 @@ def color_check(color):
     :type color: tuple
     :return: color as list
     """
-    if isinstance(color, (tuple, list)):
-        if all(map(lambda x: isinstance(x, int), color)):
-            if all(map(lambda x: x < 256, color)):
-                return list(color)
-    if isinstance(color, str):
-        color_lower = color.lower()
-        if color_lower in TABLE_COLOR:
-            return TABLE_COLOR[color_lower]
+    if isinstance(color, (tuple, list)) and all(map(lambda x: isinstance(x, int) and x < 256, color)):
+        return list(color)
+    if isinstance(color, str) and color.lower() in TABLE_COLOR:
+        return TABLE_COLOR[color.lower()]
     return [0, 0, 0]
 
 
@@ -63,15 +51,10 @@ def html_table_color(row, item, color=(0, 0, 0)):
     :type color: tuple
     :return: background color as list [R, G, B]
     """
-    result = [0, 0, 0]
     color_list = color_check(color)
-    max_color = max(color_list)
     back_color_index = 255 - int((item / (sum(list(row.values())) + 1)) * 255)
-    for i in range(3):
-        result[i] = back_color_index - (max_color - color_list[i])
-        if result[i] < 0:
-            result[i] = 0
-    return result
+    color_offset = back_color_index - max(color_list)
+    return [max(0, color_offset + c) for c in color_list]
 
 
 def html_table(

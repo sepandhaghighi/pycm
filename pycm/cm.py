@@ -638,10 +638,10 @@ class ConfusionMatrix():
         :return: dissimilarity matrix as dict
         """
         result = {class_name: dict(zip(self.classes, [0] * len(self.classes))) for class_name in self.classes}
-        result_array = result.to_array()
+        matrix_array = self.to_array()
         for class_index_1, class_name_1 in enumerate(self.classes):
             for class_index_2, class_name_2 in enumerate(self.classes):
-                dist = int(sum(abs(result_array[class_index_1] - result_array[class_index_2])))
+                dist = int(sum(abs(matrix_array[class_index_1] - matrix_array[class_index_2])))
                 result[class_name_1][class_name_2] = dist
         return result
 

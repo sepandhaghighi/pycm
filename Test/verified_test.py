@@ -471,4 +471,7 @@ Actual
 1       0       1
 <BLANKLINE>
 <BLANKLINE>
+>>> cm = ConfusionMatrix(matrix={"R":{"R":4, "G":0, "B":6, "Y":0}, "G":{"R":0, "G":4, "B":6, "Y":0}, "B":{"R":0, "G":0, "B":7, "Y":3}, "Y":{"R":0, "G":0, "B":4, "Y":6}}) # Verified Case -- http://www.godbole.net/shantanu/pubs/autoconfmat.pdf
+>>> cm.dissimilarity_matrix() == {"R":{"R":0, "G":8, "B":8, "Y":12}, "G":{"R":8, "G":0, "B":8, "Y":12}, "B":{"R":8, "G":8, "B":0, "Y":6}, "Y":{"R":12, "G":12, "B":6, "Y":0}}
+True
 """

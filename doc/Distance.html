@@ -13013,6 +13013,19 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    /*This file contains any manual css for this page that needs to override the global styles.
+This is only required when different pages style the same element differently. This is just
+a hack to deal with our current css styles and no new styling should be added in this file.*/
+
+#ipython-main-app {
+    position: relative;
+}
+#jupyter-main-app {
+    position: relative;
+}
+
+    </style>
 
 
 <style type="text/css">
@@ -13025,6 +13038,8 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
+}div#notebook-container{
+  padding: 6ex 12ex 8ex 12ex;
 }@media print {
   div.cell {
     display: block;
@@ -13186,11 +13201,7 @@ $$sim_{AMPLE}=|\frac{TP}{TP+FP}-\frac{FN}{FN+TN}|$$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[3]:</div>
-
 
 
 
@@ -13248,11 +13259,7 @@ $$sim_{Anderberg} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[4]:</div>
-
 
 
 
@@ -13309,11 +13316,7 @@ $$corr_{AndresMarzo_\Delta} = \Delta =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[5]:</div>
-
 
 
 
@@ -13370,11 +13373,7 @@ $$sim_{BaroniUrbaniBuserI} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[6]:</div>
-
 
 
 
@@ -13431,11 +13430,7 @@ $$corr_{BaroniUrbaniBuserII} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[7]:</div>
-
 
 
 
@@ -13492,11 +13487,7 @@ $$dist_{BatageljBren} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
 
 
 
@@ -13553,11 +13544,7 @@ $$sim_{BaulieuI} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
 
 
 
@@ -13614,11 +13601,7 @@ $$sim_{BaulieuII} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[10]:</div>
-
 
 
 
@@ -13675,11 +13658,7 @@ $$sim_{BaulieuIII} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[11]:</div>
-
 
 
 
@@ -13735,11 +13714,7 @@ $$dist_{BaulieuIV} = \frac{FP+FN-(TP+\frac{1}{2})\times(TN+\frac{1}{2})\times TN
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[12]:</div>
-
 
 
 
@@ -13804,11 +13779,7 @@ $$dist_{BaulieuV} = \frac{FP+FN+1}{TP+FP+FN+1}$$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[13]:</div>
-
 
 
 
@@ -13864,11 +13835,7 @@ $$dist_{BaulieuVI} = \frac{FP+FN}{TP+FP+FN+1}$$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[14]:</div>
-
 
 
 
@@ -13924,11 +13891,7 @@ $$dist_{BaulieuVII} = \frac{FP+FN}{POP + TP \times (TP-4)^2}$$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[15]:</div>
-
 
 
 
@@ -13984,11 +13947,7 @@ $$dist_{BaulieuVIII} = \frac{(FP-FN)^2}{POP^2}$$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[16]:</div>
-
 
 
 
@@ -14044,11 +14003,7 @@ $$dist_{BaulieuIX} = \frac{FP+2 \times FN}{TP+FP+2 \times FN+TN}$$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[17]:</div>
-
 
 
 
@@ -14104,11 +14059,7 @@ $$dist_{BaulieuX} = \frac{FP+FN+max(FP,FN)}{POP+max(FP,FN)}$$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[18]:</div>
-
 
 
 
@@ -14164,11 +14115,7 @@ $$dist_{BaulieuXI} = \frac{FP+FN}{FP+FN+TN}$$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[19]:</div>
-
 
 
 
@@ -14224,11 +14171,7 @@ $$dist_{BaulieuXII} = \frac{FP+FN}{TP+FP+FN-1}$$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[20]:</div>
-
 
 
 
@@ -14284,11 +14227,7 @@ $$dist_{BaulieuXIII} = \frac{FP+FN}{TP+FP+FN+TP \times (TP-4)^2}$$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[21]:</div>
-
 
 
 
@@ -14344,11 +14283,7 @@ $$dist_{BaulieuXIV} = \frac{FP+2 \times FN}{TP+FP+2 \times FN}$$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[22]:</div>
-
 
 
 
@@ -14404,11 +14339,7 @@ $$dist_{BaulieuXV} = \frac{FP+FN+max(FP, FN)}{TP+FP+FN+max(FP, FN)}$$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[23]:</div>
-
 
 
 
@@ -14464,11 +14395,7 @@ $$corr_{BeniniI} = \frac{TP \times TN-FP \times FN}{(TP+FN)\times(FN+TN)}$$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[24]:</div>
-
 
 
 
@@ -14524,11 +14451,7 @@ $$corr_{BeniniII} = \frac{TP \times TN-FP \times FN}{min((TP+FN)\times(FN+TN), (
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[25]:</div>
-
 
 
 
@@ -14585,11 +14508,7 @@ $$sim_{Canberra} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[26]:</div>
-
 
 
 
@@ -14647,11 +14566,7 @@ $$sim_{Clement} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[27]:</div>
-
 
 
 
@@ -14708,11 +14623,7 @@ $$sim_{ConsonniTodeschiniI} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[28]:</div>
-
 
 
 
@@ -14769,11 +14680,7 @@ $$sim_{ConsonniTodeschiniII} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[29]:</div>
-
 
 
 
@@ -14830,11 +14737,7 @@ $$sim_{ConsonniTodeschiniIII} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[30]:</div>
-
 
 
 
@@ -14891,11 +14794,7 @@ $$sim_{ConsonniTodeschiniIV} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[31]:</div>
-
 
 
 
@@ -14952,11 +14851,7 @@ $$corr_{ConsonniTodeschiniV} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[32]:</div>
-
 
 
 
@@ -15013,11 +14908,7 @@ $$sim_{Dennis} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[33]:</div>
-
 
 
 
@@ -15074,11 +14965,7 @@ $$corr_{Digby} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[34]:</div>
-
 
 
 
@@ -15136,11 +15023,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[35]:</div>
-
 
 
 
@@ -15197,11 +15080,7 @@ $$sim_{Doolittle} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[36]:</div>
-
 
 
 
@@ -15258,11 +15137,7 @@ $$sim_{Eyraud} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[37]:</div>
-
 
 
 
@@ -15319,11 +15194,7 @@ $$sim_{FagerMcGowan} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[38]:</div>
-
 
 
 
@@ -15380,11 +15251,7 @@ $$sim_{Faith} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[39]:</div>
-
 
 
 
@@ -15441,11 +15308,7 @@ $$sim_{FleissLevinPaik} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[40]:</div>
-
 
 
 
@@ -15502,11 +15365,7 @@ $$sim_{ForbesI} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[41]:</div>
-
 
 
 
@@ -15563,11 +15422,7 @@ $$corr_{ForbesII} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[42]:</div>
-
 
 
 
@@ -15624,11 +15479,7 @@ $$sim_{Fossum} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[43]:</div>
-
 
 
 
@@ -15686,11 +15537,7 @@ ln \frac{POP^3}{2\pi (TP+FP)\times(TP+FN)\times(FP+TN)\times(FN+TN)} +
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[44]:</div>
-
 
 
 
@@ -15748,11 +15595,7 @@ $$sim_{Goodall} =\frac{2}{\pi} \sin^{-1}\Big(
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[45]:</div>
-
 
 
 
@@ -15811,11 +15654,7 @@ $$sim_{GK_\lambda} =
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[46]:</div>
-
 
 
 
@@ -15874,11 +15713,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[47]:</div>
-
 
 
 
@@ -15936,11 +15771,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[48]:</div>
-
 
 
 
@@ -15998,11 +15829,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[49]:</div>
-
 
 
 
@@ -16060,11 +15887,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[50]:</div>
-
 
 
 
@@ -16123,11 +15946,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[51]:</div>
-
 
 
 
@@ -16185,11 +16004,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[52]:</div>
-
 
 
 
@@ -16247,11 +16062,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[53]:</div>
-
 
 
 
@@ -16309,11 +16120,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[54]:</div>
-
 
 
 
@@ -16371,11 +16178,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[55]:</div>
-
 
 
 
@@ -16434,11 +16237,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[56]:</div>
-
 
 
 
@@ -16496,11 +16295,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[57]:</div>
-
 
 
 
@@ -16559,11 +16354,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[58]:</div>
-
 
 
 
@@ -16624,11 +16415,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[59]:</div>
-
 
 
 
@@ -16689,11 +16476,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[60]:</div>
-
 
 
 
@@ -16754,11 +16537,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[61]:</div>
-
 
 
 
@@ -16819,11 +16598,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[62]:</div>
-
 
 
 
@@ -16884,11 +16659,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[63]:</div>
-
 
 
 
@@ -16949,11 +16720,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[64]:</div>
-
 
 
 
@@ -17014,11 +16781,7 @@ $$
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[65]:</div>
-
 
 
 

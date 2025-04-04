@@ -13013,6 +13013,19 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
+<style type="text/css">
+    /*This file contains any manual css for this page that needs to override the global styles.
+This is only required when different pages style the same element differently. This is just
+a hack to deal with our current css styles and no new styling should be added in this file.*/
+
+#ipython-main-app {
+    position: relative;
+}
+#jupyter-main-app {
+    position: relative;
+}
+
+    </style>
 
 
 <style type="text/css">
@@ -13025,6 +13038,8 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
+}div#notebook-container{
+  padding: 6ex 12ex 8ex 12ex;
 }@media print {
   div.cell {
     display: block;
@@ -13145,11 +13160,7 @@ The iris dataset is a classic and very easy multi-class classification dataset.<
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
 
 <div class="output_subarea output_stream output_stderr output_text">
 <pre>Keyring is skipped due to an exception: invalid syntax (core.py, line 48)
@@ -13235,11 +13246,7 @@ The iris dataset is a classic and very easy multi-class classification dataset.<
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Predict  0        1        2        
@@ -13274,11 +13281,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Predict     0           1           2           
@@ -13313,11 +13316,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[8]:</div>
-
 
 
 
@@ -13346,11 +13345,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
 
 
 
@@ -13379,11 +13374,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[10]:</div>
-
 
 
 
@@ -13412,11 +13403,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[11]:</div>
-
 
 
 
@@ -13445,11 +13432,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[12]:</div>
-
 
 
 
@@ -13478,11 +13461,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[13]:</div>
-
 
 
 
@@ -13511,16 +13490,12 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[14]:</div>
-
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\doc\\Example1_files\\cm1.html&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\doc_html\\Example1_files\\cm1.html&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -13586,11 +13561,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Predict  0        1        2        
@@ -13625,11 +13596,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Predict      0            1            2            
@@ -13664,11 +13631,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[19]:</div>
-
 
 
 
@@ -13697,11 +13660,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[20]:</div>
-
 
 
 
@@ -13730,11 +13689,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[21]:</div>
-
 
 
 
@@ -13763,11 +13718,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[22]:</div>
-
 
 
 
@@ -13796,11 +13747,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[23]:</div>
-
 
 
 
@@ -13829,11 +13776,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[24]:</div>
-
 
 
 
@@ -13862,16 +13805,12 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[25]:</div>
-
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\doc\\Example1_files\\cm2.html&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\doc_html\\Example1_files\\cm2.html&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -13937,11 +13876,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Predict  0        1        2        
@@ -13976,11 +13911,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Predict       0             1             2             
@@ -14015,11 +13946,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[30]:</div>
-
 
 
 
@@ -14048,11 +13975,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[31]:</div>
-
 
 
 
@@ -14081,11 +14004,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[32]:</div>
-
 
 
 
@@ -14114,11 +14033,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[33]:</div>
-
 
 
 
@@ -14147,11 +14062,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[34]:</div>
-
 
 
 
@@ -14180,11 +14091,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[35]:</div>
-
 
 
 
@@ -14213,16 +14120,12 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[36]:</div>
-
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\doc\\Example1_files\\cm3.html&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\doc_html\\Example1_files\\cm3.html&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 
@@ -14263,11 +14166,7 @@ Actual
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Best : Decision tree
@@ -14300,16 +14199,12 @@ Rank   Name                Class-Score       Overall-Score
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
-
-    <div class="prompt output_prompt">Out[38]:</div>
-
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\doc\\Example1_files\\cp.comp&#39;,
+<pre>{&#39;Message&#39;: &#39;D:\\For Asus Laptop\\projects\\pycm\\doc_html\\Example1_files\\cp.comp&#39;,
  &#39;Status&#39;: True}</pre>
 </div>
 

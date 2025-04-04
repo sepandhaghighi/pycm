@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [4.3] - 2025-04-04
 ### Added
 - `dissimilarity_matrix` method
 ### Changed
@@ -775,7 +776,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v4.2...dev
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v4.3...dev
+[4.3]: https://github.com/sepandhaghighi/pycm/compare/v4.2...v4.3
 [4.2]: https://github.com/sepandhaghighi/pycm/compare/v4.1...v4.2
 [4.1]: https://github.com/sepandhaghighi/pycm/compare/v4.0...v4.1
 [4.0]: https://github.com/sepandhaghighi/pycm/compare/v3.9...v4.0

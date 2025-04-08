@@ -479,7 +479,7 @@ PyCM can be used online in interactive Jupyter Notebooks via the Binder or Colab
 
 [NLnet foundation](https://nlnet.nl) has supported the PyCM project from version **4.3** to **4.7** through the [NGI0 Commons](https://nlnet.nl/commonsfund/) Fund. This fund is set up by [NLnet foundation](https://nlnet.nl) with funding from the European Commission's [Next Generation Internet program](https://ngi.eu), administered by DG Communications Networks, Content, and Technology under grant agreement [**No 101135429**](https://nlnet.nl/project/PyCM-API/).
 
-<a href="https://nlnet.nl"><img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/NlNet.svg" height="50px" alt="NLnet foundation"></a> &nbsp;  <a href="https://nlnet.nl/assure"><img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/NGI0Core.svg" height="50px" alt="NGI0 Commons"></a>
+<a href="https://nlnet.nl"><img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/NlNet.svg" height="50px" alt="NLnet foundation"></a> &nbsp;  <a href="https://nlnet.nl/commonsfund/"><img src="https://github.com/sepandhaghighi/pycm/raw/master/Otherfiles/NGI0Core.svg" height="50px" alt="NGI0 Commons"></a>
 
 [NLnet foundation](https://nlnet.nl) has supported the PyCM project from version **3.6** to **4.0** through the [NGI Assure](https://nlnet.nl/assure) Fund. This fund is set up by [NLnet foundation](https://nlnet.nl) with funding from the European Commission's [Next Generation Internet program](https://ngi.eu), administered by DG Communications Networks, Content, and Technology under grant agreement [**No 957073**](https://nlnet.nl/project/PyCM/).
 

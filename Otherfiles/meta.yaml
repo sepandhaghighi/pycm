@@ -15,11 +15,11 @@ requirements:
     host:
         - pip
         - setuptools
-        - python >=3.6
+        - python >=3.7
     run:
         - art >=1.8
         - numpy >=1.9.0
-        - python >=3.6
+        - python >=3.7
 about:
     home: https://github.com/sepandhaghighi/pycm
     license: MIT

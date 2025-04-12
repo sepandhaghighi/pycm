@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `README.md` modified
 - Test system modified
+- Document modified
 - `Python 3.6` support dropped
 ## [4.3] - 2025-04-04
 ### Added

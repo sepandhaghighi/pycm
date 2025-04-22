@@ -5,7 +5,9 @@ This file contains a function to generate a random confusion matrix based on giv
 import numpy as np
 
 
-def _calculate_class_counts(class_percentages: list, total_population: int) -> np.ndarray:
+def _calculate_class_counts(
+    class_percentages: list, total_population: int
+) -> np.ndarray:
     """
     Calculate the number of samples for each class based on percentages and total population.
 
@@ -31,7 +33,9 @@ def _calculate_class_counts(class_percentages: list, total_population: int) -> n
     return class_counts
 
 
-def generate_confusion_matrix(class_percentages: list, total_population: int) -> np.ndarray:
+def generate_confusion_matrix(
+    class_percentages: list, total_population: int
+) -> np.ndarray:
     """
     Generate a random confusion matrix with given class percentages and total population.
 
@@ -53,8 +57,11 @@ def generate_confusion_matrix(class_percentages: list, total_population: int) ->
         if class_counts[i] == 0:
             continue
 
-        # Generate random distribution of predictions for this actual class
-        probs = np.random.dirichlet(np.ones(num_classes))
+        dirichlet_params = np.ones(num_classes)
+        dirichlet_params[i] *= 10  # Makes the i-th element likely the largest
+
+        # Generate probabilities where the i-th element is likely the largest
+        probs = np.random.dirichlet(dirichlet_params)
 
         # Calculate counts for each predicted class
         counts = (probs * class_counts[i]).astype(int)

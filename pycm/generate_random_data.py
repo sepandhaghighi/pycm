@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
-"""
-This file contains a function to generate a random confusion matrix based on given class percentages and total population.
-"""
+"""This file contains a function to generate a random confusion matrix."""
 import numpy as np
 from enum import Enum
 
 
 class Scenario(Enum):
+    """
+    Enum to represent different scenarios for generating class percentages.
+    - UNIFORM: All classes have equal representation.
+    - MAJORITY_CLASS: One class has a majority representation, others are minority.
+    - MINORITY_CLASS: One class has a minority representation, others are majority.
+    """
     UNIFORM = "uniform"
     MAJORITY_CLASS = "majority_class"
     MINORITY_CLASS = "minority_class"
@@ -53,7 +57,6 @@ def _calculate_class_counts(
     Returns:
         numpy.ndarray: Array of sample counts for each class
     """
-
     # Normalize percentages to ensure they sum to 1 (to handle floating point inaccuracies)
     normalized_percentages = np.array(class_percentages) / sum(class_percentages)
 

@@ -7,10 +7,12 @@ from enum import Enum
 class Scenario(Enum):
     """
     Enum to represent different scenarios for generating class percentages.
+
     - UNIFORM: All classes have equal representation.
     - MAJORITY_CLASS: One class has a majority representation, others are minority.
     - MINORITY_CLASS: One class has a minority representation, others are majority.
     """
+    
     UNIFORM = "uniform"
     MAJORITY_CLASS = "majority_class"
     MINORITY_CLASS = "minority_class"

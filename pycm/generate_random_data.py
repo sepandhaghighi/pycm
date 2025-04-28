@@ -82,6 +82,10 @@ def generate_confusion_matrix(
         numpy.ndarray: A confusion matrix where rows are actual classes and columns are predicted classes
     """
     num_classes = len(class_percentages)
+
+    if num_classes < 2:
+        raise ValueError("Number of classes must be at least 2.")
+
     class_counts = _calculate_class_counts(class_percentages, total_population)
 
     # Initialize confusion matrix
@@ -126,5 +130,7 @@ def generate_confusion_matrix_with_scenario(
     Returns:
         numpy.ndarray: A confusion matrix.
     """
+    if isinstance(scenario, str):
+        scenario = Scenario[scenario.upper()]
     class_percentages = _generate_class_percentages(num_classes, scenario)
     return generate_confusion_matrix(class_percentages, total_population)

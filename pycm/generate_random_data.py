@@ -18,16 +18,15 @@ class Scenario(Enum):
     MINORITY_CLASS = "minority_class"
 
 
-def _generate_class_percentages(num_classes: int, scenario: Scenario) -> list:
+def _generate_class_percentages(num_classes, scenario):
     """
     Generate class percentages based on the given scenario.
 
-    Args:
-        num_classes (int): Number of classes.
-        scenario (Scenario): The scenario to generate percentages for.
-
-    Returns:
-        list: List of percentages for each class.
+    :params num_classes: number of classes.
+    :type num_classes: int
+    :params scenario: the scenario to generate percentages for.
+    :type scenario: scenario
+    :return: list of percentages for each class.
     """
     if scenario == Scenario.UNIFORM:
         # Equal percentage for all classes
@@ -46,18 +45,15 @@ def _generate_class_percentages(num_classes: int, scenario: Scenario) -> list:
         raise ValueError("Invalid scenario")
 
 
-def _calculate_class_counts(
-    class_percentages: list, total_population: int
-) -> np.ndarray:
+def _calculate_class_counts(class_percentages, total_population):
     """
     Calculate the number of samples for each class based on percentages and total population.
 
-    Args:
-        class_percentages (list): List of percentages for each class (sum should be 100)
-        total_population (int): Total number of samples
-
-    Returns:
-        numpy.ndarray: Array of sample counts for each class
+    :param class_percentages: dict of percentages for each class (sum should be 100)
+    :type class_percentages: dict
+    :param total_population: total number of samples
+    :type total_population: int
+    :return: dictionary of sample counts for each class
     """
     # Normalize percentages to ensure they sum to 1 (to handle floating point inaccuracies)
     normalized_percentages = np.array(class_percentages) / sum(class_percentages)
@@ -73,18 +69,15 @@ def _calculate_class_counts(
     return class_counts
 
 
-def generate_confusion_matrix(
-    class_percentages: list, total_population: int
-) -> np.ndarray:
+def generate_confusion_matrix(class_percentages, total_population):
     """
     Generate a random confusion matrix with given class percentages and total population.
 
-    Args:
-        class_percentages (list): List of percentages for each class (sum should be 100)
-        total_population (int): Total number of samples in the confusion matrix
-
-    Returns:
-        numpy.ndarray: A confusion matrix where rows are actual classes and columns are predicted classes
+    :param class_percentages: dict or list of percentages for each class (sum should be 100)
+    :type class_percentages: dict | list
+    :param  total_population: total number of samples in the confusion matrix
+    :type total_population: int
+    :return: confusion matrix as a dictionary
     """
     num_classes = len(class_percentages)
 
@@ -122,18 +115,18 @@ def generate_confusion_matrix(
 
 
 def generate_confusion_matrix_with_scenario(
-    num_classes: int, total_population: int, scenario: Scenario = Scenario.UNIFORM
-) -> np.ndarray:
+    num_classes, total_population, scenario=Scenario.UNIFORM
+):
     """
     Generate a random confusion matrix based on the given scenario.
 
-    Args:
-        num_classes (int): Number of classes.
-        total_population (int): Total number of samples.
-        scenario (Scenario): The scenario to generate the confusion matrix for. Defaults to UNIFORM.
-
-    Returns:
-        numpy.ndarray: A confusion matrix.
+    :param num_classes: number of classes.
+    :type num_classes: int
+    :param total_population: total number of samples.
+    :type total_population: int
+    :param scenario: the scenario to generate the confusion matrix for. Defaults to UNIFORM.
+    :type scenario: Scenario
+    :return: confusion matrix as a dictionary.
     """
     if isinstance(scenario, str):
         scenario = Scenario[scenario.upper()]

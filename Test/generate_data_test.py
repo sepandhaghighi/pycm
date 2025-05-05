@@ -20,6 +20,10 @@
 Traceback (most recent call last):
     ...
 ValueError: Number of classes must be at least 2.
+>>> _generate_class_percentages(3, "invalid_scenario")
+Traceback (most recent call last):
+    ...
+ValueError: Invalid scenario
 
 # Test for _calculate_class_counts
 >>> _calculate_class_counts({0: 50, 1: 30, 2: 20}, 1000)

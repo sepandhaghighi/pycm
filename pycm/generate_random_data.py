@@ -28,13 +28,15 @@ def _generate_class_percentages(num_classes, scenario):
     :type scenario: scenario
     :return: list of percentages for each class.
     """
+    if num_classes < 2:
+        raise ValueError("Number of classes must be at least 2.")
     if scenario == Scenario.UNIFORM:
         # Equal percentage for all classes
         return [100 / num_classes] * num_classes
     elif scenario == Scenario.MAJORITY_CLASS:
         # One class has a majority class, others share the rest equally
         majority_percentage = (100 / num_classes) * 5
-        remaining_percentage = (100 - majority_percentage) / (num_classes - 1)
+        remaining_percentage = abs(100 - majority_percentage) / (num_classes - 1)
         return [majority_percentage] + [remaining_percentage] * (num_classes - 1)
     elif scenario == Scenario.MINORITY_CLASS:
         # One class has a minority percentage, others share the rest equally
@@ -55,18 +57,21 @@ def _calculate_class_counts(class_percentages, total_population):
     :type total_population: int
     :return: dictionary of sample counts for each class
     """
-    # Normalize percentages to ensure they sum to 1 (to handle floating point inaccuracies)
-    normalized_percentages = np.array(class_percentages) / sum(class_percentages)
+    classes = list(class_percentages.keys())
+    percentages = np.array(list(class_percentages.values()), dtype=float)
 
-    # Calculate the number of samples for each class
+    if len(classes) < 2:
+        raise ValueError("Number of classes must be at least 2.")
+
+    normalized_percentages = percentages / percentages.sum()
     class_counts = (normalized_percentages * total_population).astype(int)
 
-    # Handle any remaining counts due to rounding
-    remainder = total_population - sum(class_counts)
+    # Handle rounding errors
+    remainder = total_population - class_counts.sum()
     if remainder > 0:
         class_counts[np.argmax(normalized_percentages)] += remainder
 
-    return class_counts
+    return dict(zip(classes, class_counts.astype(int).tolist()))
 
 
 def generate_confusion_matrix(class_percentages, total_population):
@@ -79,37 +84,41 @@ def generate_confusion_matrix(class_percentages, total_population):
     :type total_population: int
     :return: confusion matrix as a dictionary
     """
+    if total_population <= 0:
+        raise ValueError("Total population must be positive.")
+    if isinstance(class_percentages, list):
+        class_percentages = dict(enumerate(class_percentages))
+
+    class_labels = list(class_percentages.keys())
     num_classes = len(class_percentages)
 
     if num_classes < 2:
         raise ValueError("Number of classes must be at least 2.")
 
     class_counts = _calculate_class_counts(class_percentages, total_population)
+    confusion_matrix = {
+        actual: {pred: 0 for pred in class_labels} for actual in class_labels
+    }
 
-    # Initialize confusion matrix
-    confusion_matrix = np.zeros((num_classes, num_classes), dtype=int)
-
-    # For each actual class (row)
-    for i in range(num_classes):
-        if class_counts[i] == 0:
+    for actual in class_labels:
+        count = class_counts[actual]
+        if count == 0:
             continue
 
         dirichlet_params = np.ones(num_classes)
-        dirichlet_params[i] *= 10  # Makes the i-th element likely the largest
+        actual_idx = class_labels.index(actual)
+        dirichlet_params[actual_idx] *= 10  # Bias toward correct class
 
-        # Generate probabilities where the i-th element is likely the largest
         probs = np.random.dirichlet(dirichlet_params)
+        predicted_counts = (probs * count).astype(int)
 
-        # Calculate counts for each predicted class
-        counts = (probs * class_counts[i]).astype(int)
-
-        # Handle any remaining counts due to rounding
-        remainder = class_counts[i] - sum(counts)
+        # Handle rounding remainder
+        remainder = count - predicted_counts.sum()
         if remainder > 0:
-            counts[np.argmax(probs)] += remainder
+            predicted_counts[np.argmax(probs)] += remainder
 
-        # Assign to confusion matrix
-        confusion_matrix[i, :] = counts
+        for pred_idx, pred_class in enumerate(class_labels):
+            confusion_matrix[actual][pred_class] = int(predicted_counts[pred_idx])
 
     return confusion_matrix
 

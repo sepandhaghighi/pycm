@@ -9,8 +9,8 @@ class Scenario(Enum):
     Enum to represent different scenarios for generating class percentages.
 
     - UNIFORM: All classes have equal representation.
-    - MAJORITY_CLASS: One class has a majority representation, others are minority.
-    - MINORITY_CLASS: One class has a minority representation, others are majority.
+    - MAJORITY_CLASS: Only one class has a majority representation, others are minority.
+    - MINORITY_CLASS: Only one class has a minority representation, others are majority.
     """
     
     UNIFORM = "uniform"
@@ -66,7 +66,6 @@ def _calculate_class_counts(class_percentages, total_population):
     normalized_percentages = percentages / percentages.sum()
     class_counts = (normalized_percentages * total_population).astype(int)
 
-    # Handle rounding errors
     remainder = total_population - class_counts.sum()
     if remainder > 0:
         class_counts[np.argmax(normalized_percentages)] += remainder
@@ -79,7 +78,7 @@ def generate_confusion_matrix(class_percentages, total_population):
     Generate a random confusion matrix with given class percentages and total population.
 
     :param class_percentages: dict or list of percentages for each class (sum should be 100)
-    :type class_percentages: dict | list
+    :type class_percentages: dict or list
     :param  total_population: total number of samples in the confusion matrix
     :type total_population: int
     :return: confusion matrix as a dictionary
@@ -112,7 +111,6 @@ def generate_confusion_matrix(class_percentages, total_population):
         probs = np.random.dirichlet(dirichlet_params)
         predicted_counts = (probs * count).astype(int)
 
-        # Handle rounding remainder
         remainder = count - predicted_counts.sum()
         if remainder > 0:
             predicted_counts[np.argmax(probs)] += remainder
@@ -133,7 +131,7 @@ def generate_confusion_matrix_with_scenario(
     :type num_classes: int
     :param total_population: total number of samples.
     :type total_population: int
-    :param scenario: the scenario to generate the confusion matrix for. Defaults to UNIFORM.
+    :param scenario: the scenario to generate the confusion matrix for.
     :type scenario: Scenario
     :return: confusion matrix as a dictionary.
     """

@@ -37,15 +37,16 @@ def _generate_class_percentages(num_classes, scenario):
         # One class has a majority class, others share the rest equally
         majority_percentage = (100 / num_classes) * 5
         remaining_percentage = abs(100 - majority_percentage) / (num_classes - 1)
-        return [majority_percentage] + [remaining_percentage] * (num_classes - 1)
+        raw_ratio_list = [majority_percentage] + [remaining_percentage] * (num_classes - 1)
     elif scenario == Scenario.MINORITY_CLASS:
         # One class has a minority percentage, others share the rest equally
         minority_percentage = (100 / num_classes) * 0.2
         remaining_percentage = (100 - minority_percentage) / (num_classes - 1)
-        return [minority_percentage] + [remaining_percentage] * (num_classes - 1)
+        raw_ratio_list = [minority_percentage] + [remaining_percentage] * (num_classes - 1)
     else:
         raise ValueError("Invalid scenario")
 
+    return list((100 * np.array(raw_ratio_list)) / np.sum(raw_ratio_list))
 
 def _calculate_class_counts(class_percentages, total_population):
     """

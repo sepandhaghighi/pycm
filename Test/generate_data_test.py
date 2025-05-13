@@ -59,5 +59,5 @@ ValueError: Total population must be positive.
 >>> generate_confusion_matrix_with_scenario(3, 1000, "invalid_scenario")  # Raises KeyError for invalid scenario
 Traceback (most recent call last):
     ...
-KeyError: 'INVALID_SCENARIO'
+ValueError: Invalid scenario. Must be one of ['uniform', 'majority_class', 'minority_class'].
 """

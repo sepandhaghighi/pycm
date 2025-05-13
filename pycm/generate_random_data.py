@@ -136,6 +136,9 @@ def generate_confusion_matrix_with_scenario(
     :return: confusion matrix as a dictionary.
     """
     if isinstance(scenario, str):
-        scenario = Scenario[scenario.upper()]
+        try:
+            scenario = Scenario[scenario.upper()]
+        except KeyError:
+            raise ValueError(f"Invalid scenario. Must be one of {[sen.value for sen in Scenario]}.")
     class_percentages = _generate_class_percentages(num_classes, scenario)
     return generate_confusion_matrix(class_percentages, total_population)

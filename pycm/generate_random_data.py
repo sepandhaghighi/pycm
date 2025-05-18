@@ -35,14 +35,10 @@ def _generate_class_percentages(num_classes, scenario):
         return [100 / num_classes] * num_classes
     elif scenario == Scenario.MAJORITY_CLASS:
         # One class has a majority class, others share the rest equally
-        majority_percentage = (100 / num_classes) * 5
-        remaining_percentage = abs(100 - majority_percentage) / (num_classes - 1)
-        raw_ratio_list = [majority_percentage] + [remaining_percentage] * (num_classes - 1)
+        raw_ratio_list = [5] + [1] * (num_classes - 1)
     elif scenario == Scenario.MINORITY_CLASS:
         # One class has a minority percentage, others share the rest equally
-        minority_percentage = (100 / num_classes) * 0.2
-        remaining_percentage = (100 - minority_percentage) / (num_classes - 1)
-        raw_ratio_list = [minority_percentage] + [remaining_percentage] * (num_classes - 1)
+        raw_ratio_list = [0.2] + [1] * (num_classes - 1)
     else:
         raise ValueError("Invalid scenario")
 

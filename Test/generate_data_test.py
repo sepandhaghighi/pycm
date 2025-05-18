@@ -15,7 +15,7 @@
 # Test for _generate_class_percentages
 >>> assert isclose(_generate_class_percentages(3, Scenario.UNIFORM)[0], 33.333333333333, abs_tol=ABS_TOL)
 >>> assert isclose(_generate_class_percentages(3, Scenario.MAJORITY_CLASS)[0], 71.428571428571, abs_tol=ABS_TOL)
->>> assert isclose(_generate_class_percentages(3, Scenario.MINORITY_CLASS)[0], 6.666666666666, abs_tol=ABS_TOL)
+>>> assert isclose(_generate_class_percentages(3, Scenario.MINORITY_CLASS)[0], 9.090909090909, abs_tol=ABS_TOL)
 >>> _generate_class_percentages(0, Scenario.UNIFORM)  # Raises ValueError for invalid num_classes
 Traceback (most recent call last):
     ...

@@ -5,7 +5,7 @@
 ...     _calculate_class_counts,
 ...     generate_confusion_matrix,
 ...     generate_confusion_matrix_with_scenario,
-...     Scenario
+...     ClassDistributionScenario
 ... )
 >>> import numpy as np
 >>> from math import isclose
@@ -13,10 +13,10 @@
 >>> REL_TOL = 0
 
 # Test for _generate_class_percentages
->>> assert isclose(_generate_class_percentages(3, Scenario.UNIFORM)[0], 33.333333333333, abs_tol=ABS_TOL)
->>> assert isclose(_generate_class_percentages(3, Scenario.MAJORITY_CLASS)[0], 71.428571428571, abs_tol=ABS_TOL)
->>> assert isclose(_generate_class_percentages(3, Scenario.MINORITY_CLASS)[0], 9.090909090909, abs_tol=ABS_TOL)
->>> _generate_class_percentages(0, Scenario.UNIFORM)  # Raises ValueError for invalid num_classes
+>>> assert isclose(_generate_class_percentages(3, ClassDistributionScenario.UNIFORM)[0], 33.333333333333, abs_tol=ABS_TOL)
+>>> assert isclose(_generate_class_percentages(3, ClassDistributionScenario.MAJORITY_CLASS)[0], 71.428571428571, abs_tol=ABS_TOL)
+>>> assert isclose(_generate_class_percentages(3, ClassDistributionScenario.MINORITY_CLASS)[0], 9.090909090909, abs_tol=ABS_TOL)
+>>> _generate_class_percentages(0, ClassDistributionScenario.UNIFORM)  # Raises ValueError for invalid num_classes
 Traceback (most recent call last):
     ...
 ValueError: Number of classes must be at least 2.
@@ -46,13 +46,13 @@ Traceback (most recent call last):
 ValueError: Total population must be positive.
 
 # Test for generate_confusion_matrix_with_scenario
->>> assert isclose(sum(generate_confusion_matrix_with_scenario(3, 1000, Scenario.UNIFORM)[0].values()), 333, abs_tol=1)
+>>> assert isclose(sum(generate_confusion_matrix_with_scenario(3, 1000, ClassDistributionScenario.UNIFORM)[0].values()), 333, abs_tol=1)
 >>> assert isclose(sum(generate_confusion_matrix_with_scenario(3, 1000, "uniform")[0].values()), 333, abs_tol=1)
->>> generate_confusion_matrix_with_scenario(1, 1000, Scenario.UNIFORM)  # Raises ValueError for num_classes < 2
+>>> generate_confusion_matrix_with_scenario(1, 1000, ClassDistributionScenario.UNIFORM)  # Raises ValueError for num_classes < 2
 Traceback (most recent call last):
     ...
 ValueError: Number of classes must be at least 2.
->>> generate_confusion_matrix_with_scenario(3, -1000, Scenario.UNIFORM)  # Raises ValueError for negative total_population
+>>> generate_confusion_matrix_with_scenario(3, -1000, ClassDistributionScenario.UNIFORM)  # Raises ValueError for negative total_population
 Traceback (most recent call last):
     ...
 ValueError: Total population must be positive.

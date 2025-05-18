@@ -4,7 +4,7 @@ import numpy as np
 from enum import Enum
 
 
-class Scenario(Enum):
+class ClassDistributionScenario(Enum):
     """
     Enum to represent different scenarios for generating class percentages.
 
@@ -30,13 +30,13 @@ def _generate_class_percentages(num_classes, scenario):
     """
     if num_classes < 2:
         raise ValueError("Number of classes must be at least 2.")
-    if scenario == Scenario.UNIFORM:
+    if scenario == ClassDistributionScenario.UNIFORM:
         # Equal percentage for all classes
         return [100 / num_classes] * num_classes
-    elif scenario == Scenario.MAJORITY_CLASS:
+    elif scenario == ClassDistributionScenario.MAJORITY_CLASS:
         # One class has a majority class, others share the rest equally
         raw_ratio_list = [5] + [1] * (num_classes - 1)
-    elif scenario == Scenario.MINORITY_CLASS:
+    elif scenario == ClassDistributionScenario.MINORITY_CLASS:
         # One class has a minority percentage, others share the rest equally
         raw_ratio_list = [0.2] + [1] * (num_classes - 1)
     else:
@@ -119,7 +119,7 @@ def generate_confusion_matrix(class_percentages, total_population):
 
 
 def generate_confusion_matrix_with_scenario(
-    num_classes, total_population, scenario=Scenario.UNIFORM
+    num_classes, total_population, scenario=ClassDistributionScenario.UNIFORM
 ):
     """
     Generate a random confusion matrix based on the given scenario.
@@ -129,13 +129,13 @@ def generate_confusion_matrix_with_scenario(
     :param total_population: total number of samples.
     :type total_population: int
     :param scenario: the scenario to generate the confusion matrix for.
-    :type scenario: Scenario
+    :type scenario: ClassDistributionScenario
     :return: confusion matrix as a dictionary.
     """
     if isinstance(scenario, str):
         try:
-            scenario = Scenario[scenario.upper()]
+            scenario = ClassDistributionScenario[scenario.upper()]
         except KeyError:
-            raise ValueError(f"Invalid scenario. Must be one of {[sen.value for sen in Scenario]}.")
+            raise ValueError(f"Invalid scenario. Must be one of {[sen.value for sen in ClassDistributionScenario]}.")
     class_percentages = _generate_class_percentages(num_classes, scenario)
     return generate_confusion_matrix(class_percentages, total_population)

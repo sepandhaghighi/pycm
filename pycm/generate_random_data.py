@@ -9,8 +9,8 @@ class ClassDistributionScenario(Enum):
     Enum to represent different scenarios for generating class percentages.
 
     - UNIFORM: All classes have equal representation.
-    - MAJORITY_CLASS: Only one class has a majority representation, others are minority.
-    - MINORITY_CLASS: Only one class has a minority representation, others are majority.
+    - MAJORITY_CLASS: Only one class has a majority representation, others share the rest equally.
+    - MINORITY_CLASS: Only one class has a minority representation, others share the rest equally.
     """
     
     UNIFORM = "uniform"
@@ -32,17 +32,15 @@ def _generate_class_percentages(num_classes, scenario):
         raise ValueError("Number of classes must be at least 2.")
     if scenario == ClassDistributionScenario.UNIFORM:
         # Equal percentage for all classes
-        return [100 / num_classes] * num_classes
+        raw_ratio_list = [1] * num_classes
     elif scenario == ClassDistributionScenario.MAJORITY_CLASS:
-        # One class has a majority class, others share the rest equally
         raw_ratio_list = [5] + [1] * (num_classes - 1)
     elif scenario == ClassDistributionScenario.MINORITY_CLASS:
-        # One class has a minority percentage, others share the rest equally
         raw_ratio_list = [0.2] + [1] * (num_classes - 1)
     else:
         raise ValueError("Invalid scenario")
 
-    return list((100 * np.array(raw_ratio_list)) / np.sum(raw_ratio_list))
+    return list(100 * np.array(raw_ratio_list) / np.sum(raw_ratio_list))
 
 def _calculate_class_counts(class_percentages, total_population):
     """

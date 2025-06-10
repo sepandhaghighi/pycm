@@ -15,6 +15,7 @@ from .ci import __CI_overall_handler__, __CI_class_handler__
 import os
 import json
 import numpy
+import time
 from warnings import warn
 
 
@@ -73,6 +74,12 @@ class ConfusionMatrix():
         :param metrics_off: metrics off flag
         :type metrics_off: bool
         """
+        self.timings = {
+            "matrix_creation": 0.0,
+            "class_metrics": 0.0,
+            "overall_metrics": 0.0
+        }
+        matrix_creation_start = time.perf_counter()
         self.actual_vector = actual_vector
         self.predict_vector = predict_vector
         self.metrics_off = metrics_off
@@ -97,9 +104,17 @@ class ConfusionMatrix():
             matrix_param = __obj_vector_handler__(
                 self, actual_vector, predict_vector, threshold, sample_weight, classes)
         __obj_assign_handler__(self, matrix_param)
+        matrix_creation_end = time.perf_counter()
+        self.timings["matrix_creation"] = matrix_creation_end - matrix_creation_start
         if not metrics_off:
+            class_metrics_start = time.perf_counter()
             __class_stat_init__(self)
+            class_metrics_end = time.perf_counter()
+            self.timings["class_metrics"] = class_metrics_end - class_metrics_start
+            overall_metrics_start = time.perf_counter()
             __overall_stat_init__(self)
+            overall_metrics_end = time.perf_counter()
+            self.timings["overall_metrics"] = overall_metrics_end - overall_metrics_start
             __imbalancement_handler__(self, is_imbalanced)
         self.binary = binary_check(self.classes)
         self.recommended_list = statistic_recommend(

@@ -183,17 +183,16 @@ class ConfusionMatrix():
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 
-
     def print_timings(self):
         """
         Print timings report.
 
         :return: None
         """
-        result = TIMINGS_TEMPLATE.format(matrix_creation = self.timings["matrix_creation"],
-                                         class_statistics = self.timings["class_statistics"],
-                                         overall_statistics = self.timings["overall_statistics"],
-                                         total = sum(self.timings.values()))
+        result = TIMINGS_TEMPLATE.format(matrix_creation=self.timings["matrix_creation"],
+                                         class_statistics=self.timings["class_statistics"],
+                                         overall_statistics=self.timings["overall_statistics"],
+                                         total=sum(self.timings.values()))
         print(result)
 
     @metrics_off_check

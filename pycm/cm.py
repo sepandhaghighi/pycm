@@ -77,7 +77,8 @@ class ConfusionMatrix():
         self.timings = {
             "matrix_creation": 0.0,
             "class_statistics": 0.0,
-            "overall_statistics": 0.0
+            "overall_statistics": 0.0,
+            "total": 0.0
         }
         matrix_creation_start = time.perf_counter()
         self.actual_vector = actual_vector
@@ -123,6 +124,7 @@ class ConfusionMatrix():
         self.sparse_normalized_matrix = None
         self.positions = None
         self.label_map = {x: x for x in self.classes}
+        self.timings["total"] = sum(self.timings.values())
 
     def print_matrix(self, one_vs_all=False, class_name=None, sparse=False):
         """
@@ -192,7 +194,7 @@ class ConfusionMatrix():
         result = TIMINGS_TEMPLATE.format(matrix_creation=self.timings["matrix_creation"],
                                          class_statistics=self.timings["class_statistics"],
                                          overall_statistics=self.timings["overall_statistics"],
-                                         total=sum(self.timings.values()))
+                                         total=self.timings["total"])
         print(result)
 
     @metrics_off_check

@@ -57,13 +57,13 @@ HTML_DATASET_TYPE_TEMPLATE = (
 )
 
 TIMINGS_TEMPLATE = """
-Matrix Creation: {matrix_creation} s
+Matrix Creation: {matrix_creation:.6f} s
 
-Class Statistics: {class_statistics} s
+Class Statistics: {class_statistics:.6f} s
 
-Overall Statistics: {overall_statistics} s
+Overall Statistics: {overall_statistics:.6f} s
 
-Total: {total} s
+Total: {total:.6f} s
 """
 
 PROBABILITY_SIZE_ERROR = "All elements of the probability vector must have the same length and match the number of classes."

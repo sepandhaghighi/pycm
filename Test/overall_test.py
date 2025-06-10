@@ -343,6 +343,16 @@ True
 True
 >>> cm.timings["total"] != 0
 True
+>>> cm.print_timings()
+<BLANKLINE>
+Matrix Creation: ... s
+<BLANKLINE>
+Class Statistics: ... s
+<BLANKLINE>
+Overall Statistics: ... s
+<BLANKLINE>
+Total: ... s
+<BLANKLINE>
 >>> assert isclose(cm.Y["L2"], 0.2222222222222221, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.CI("TPR")["L2"][0], 0.2721655269759087, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.CI("TPR", binom_method=None)["L2"][0], 0.2721655269759087, abs_tol=ABS_TOL, rel_tol=REL_TOL)
@@ -1686,6 +1696,16 @@ True
 True
 >>> cm.timings["total"] != 0
 True
+>>> cm.print_timings()
+<BLANKLINE>
+Matrix Creation: ... s
+<BLANKLINE>
+Class Statistics: ... s
+<BLANKLINE>
+Overall Statistics: ... s
+<BLANKLINE>
+Total: ... s
+<BLANKLINE>
 >>> assert isclose(cm.F_beta(1)[1], 0.8888888888888888, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.TI(0.1,0.1)[1], 0.9756097560975611, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.distance(DistanceType.Anderberg)[1], -0.1, abs_tol=ABS_TOL, rel_tol=REL_TOL)

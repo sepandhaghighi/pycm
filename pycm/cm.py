@@ -76,8 +76,8 @@ class ConfusionMatrix():
         """
         self.timings = {
             "matrix_creation": 0.0,
-            "class_metrics": 0.0,
-            "overall_metrics": 0.0
+            "class_statistics": 0.0,
+            "overall_statistics": 0.0
         }
         matrix_creation_start = time.perf_counter()
         self.actual_vector = actual_vector
@@ -107,14 +107,14 @@ class ConfusionMatrix():
         matrix_creation_end = time.perf_counter()
         self.timings["matrix_creation"] = matrix_creation_end - matrix_creation_start
         if not metrics_off:
-            class_metrics_start = time.perf_counter()
+            class_statistics_start = time.perf_counter()
             __class_stat_init__(self)
-            class_metrics_end = time.perf_counter()
-            self.timings["class_metrics"] = class_metrics_end - class_metrics_start
-            overall_metrics_start = time.perf_counter()
+            class_statistics_end = time.perf_counter()
+            self.timings["class_statistics"] = class_statistics_end - class_statistics_start
+            overall_statistics_start = time.perf_counter()
             __overall_stat_init__(self)
-            overall_metrics_end = time.perf_counter()
-            self.timings["overall_metrics"] = overall_metrics_end - overall_metrics_start
+            overall_statistics_end = time.perf_counter()
+            self.timings["overall_statistics"] = overall_statistics_end - overall_statistics_start
             __imbalancement_handler__(self, is_imbalanced)
         self.binary = binary_check(self.classes)
         self.recommended_list = statistic_recommend(
@@ -182,6 +182,19 @@ class ConfusionMatrix():
             print(table_print(classes, normalized_table))
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
+
+
+    def print_timings(self):
+        """
+        Print timings report.
+
+        :return: None
+        """
+        result = TIMINGS_TEMPLATE.format(matrix_creation = self.timings["matrix_creation"],
+                                         class_statistics = self.timings["class_statistics"],
+                                         overall_statistics = self.timings["overall_statistics"],
+                                         total = sum(self.timings.values()))
+        print(result)
 
     @metrics_off_check
     def stat(

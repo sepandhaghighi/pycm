@@ -56,6 +56,16 @@ HTML_DATASET_TYPE_TEMPLATE = (
     "<p>{message2}</p>\n"
 )
 
+TIMINGS_TEMPLATE = """
+Matrix Creation: {matrix_creation:.6f} s
+
+Class Statistics: {class_statistics:.6f} s
+
+Overall Statistics: {overall_statistics:.6f} s
+
+Total: {total:.6f} s
+"""
+
 PROBABILITY_SIZE_ERROR = "All elements of the probability vector must have the same length and match the number of classes."
 PROBABILITY_TYPE_ERROR = "Probability vector elements must be numeric."
 PROBABILITY_SUM_ERROR = "The sum of the probability values must equal 1."

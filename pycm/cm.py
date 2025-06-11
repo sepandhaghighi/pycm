@@ -15,6 +15,7 @@ from .ci import __CI_overall_handler__, __CI_class_handler__
 import os
 import json
 import numpy
+import time
 from warnings import warn
 
 
@@ -73,6 +74,13 @@ class ConfusionMatrix():
         :param metrics_off: metrics off flag
         :type metrics_off: bool
         """
+        self.timings = {
+            "matrix_creation": 0.0,
+            "class_statistics": 0.0,
+            "overall_statistics": 0.0,
+            "total": 0.0
+        }
+        matrix_creation_start = time.perf_counter()
         self.actual_vector = actual_vector
         self.predict_vector = predict_vector
         self.metrics_off = metrics_off
@@ -97,9 +105,17 @@ class ConfusionMatrix():
             matrix_param = __obj_vector_handler__(
                 self, actual_vector, predict_vector, threshold, sample_weight, classes)
         __obj_assign_handler__(self, matrix_param)
+        matrix_creation_end = time.perf_counter()
+        self.timings["matrix_creation"] = matrix_creation_end - matrix_creation_start
         if not metrics_off:
+            class_statistics_start = time.perf_counter()
             __class_stat_init__(self)
+            class_statistics_end = time.perf_counter()
+            self.timings["class_statistics"] = class_statistics_end - class_statistics_start
+            overall_statistics_start = time.perf_counter()
             __overall_stat_init__(self)
+            overall_statistics_end = time.perf_counter()
+            self.timings["overall_statistics"] = overall_statistics_end - overall_statistics_start
             __imbalancement_handler__(self, is_imbalanced)
         self.binary = binary_check(self.classes)
         self.recommended_list = statistic_recommend(
@@ -108,6 +124,7 @@ class ConfusionMatrix():
         self.sparse_normalized_matrix = None
         self.positions = None
         self.label_map = {x: x for x in self.classes}
+        self.timings["total"] = sum(self.timings.values())
 
     def print_matrix(self, one_vs_all=False, class_name=None, sparse=False):
         """
@@ -167,6 +184,18 @@ class ConfusionMatrix():
             print(table_print(classes, normalized_table))
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
+
+    def print_timings(self):
+        """
+        Print timings report.
+
+        :return: None
+        """
+        result = TIMINGS_TEMPLATE.format(matrix_creation=self.timings["matrix_creation"],
+                                         class_statistics=self.timings["class_statistics"],
+                                         overall_statistics=self.timings["overall_statistics"],
+                                         total=self.timings["total"])
+        print(result)
 
     @metrics_off_check
     def stat(

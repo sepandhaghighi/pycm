@@ -327,18 +327,18 @@ def LR_calc(item1, item2):
         return "None"
 
 
-def PRE_calc(P, POP):
+def proportion_calc(item1, item2):
     """
     Calculate Prevalence.
 
-    :param P: number of actual positives
-    :type P: int
-    :param POP: population or total number of samples
-    :type POP: int
-    :return: prevalence as float
+    :param item1: item1 in fractional expression
+    :type item1: int
+    :param item2: item2 in fractional expression
+    :type item2: int
+    :return: proportion as float
     """
     try:
-        result = P / POP
+        result = item1 / item2
         return result
     except (ZeroDivisionError, TypeError):
         return "None"
@@ -761,7 +761,7 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         result["PLR"][i] = LR_calc(result["TPR"][i], result["FPR"][i])
         result["NLR"][i] = LR_calc(result["FNR"][i], result["TNR"][i])
         result["DOR"][i] = LR_calc(result["PLR"][i], result["NLR"][i])
-        result["PRE"][i] = PRE_calc(result["P"][i], result["POP"][i])
+        result["PRE"][i] = proportion_calc(result["P"][i], result["POP"][i])
         result["G"][i] = G_calc(result["PPV"][i], result["TPR"][i])
         result["RACC"][i] = RACC_calc(
             result["TOP"][i], result["P"][i], result["POP"][i])

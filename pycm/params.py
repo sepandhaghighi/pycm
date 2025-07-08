@@ -618,7 +618,7 @@ PARAMS_DESCRIPTION = {
     "BB": "Braun-Blanquet similarity",
     "PR": "Positive rate",
     "TOPR": "Test outcome positive rate",
-    }
+}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",

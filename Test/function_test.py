@@ -143,43 +143,45 @@ Example : online_help("J") or online_help(2)
 93-PPV
 94-PPV Macro
 95-PPV Micro
-96-PRE
-97-Pearson C
-98-Phi-Squared
-99-Q
-100-QI
-101-RACC
-102-RACCU
-103-RCI
-104-RR
-105-Reference Entropy
-106-Response Entropy
-107-SOA1(Landis & Koch)
-108-SOA2(Fleiss)
-109-SOA3(Altman)
-110-SOA4(Cicchetti)
-111-SOA5(Cramer)
-112-SOA6(Matthews)
-113-SOA7(Lambda A)
-114-SOA8(Lambda B)
-115-SOA9(Krippendorff Alpha)
-116-SOA10(Pearson C)
-117-Scott PI
-118-Standard Error
-119-TN
-120-TNR
-121-TNR Macro
-122-TNR Micro
-123-TON
-124-TOP
-125-TP
-126-TPR
-127-TPR Macro
-128-TPR Micro
-129-Y
-130-Zero-one Loss
-131-dInd
-132-sInd
+96-PR
+97-PRE
+98-Pearson C
+99-Phi-Squared
+100-Q
+101-QI
+102-RACC
+103-RACCU
+104-RCI
+105-RR
+106-Reference Entropy
+107-Response Entropy
+108-SOA1(Landis & Koch)
+109-SOA2(Fleiss)
+110-SOA3(Altman)
+111-SOA4(Cicchetti)
+112-SOA5(Cramer)
+113-SOA6(Matthews)
+114-SOA7(Lambda A)
+115-SOA8(Lambda B)
+116-SOA9(Krippendorff Alpha)
+117-SOA10(Pearson C)
+118-Scott PI
+119-Standard Error
+120-TN
+121-TNR
+122-TNR Macro
+123-TNR Micro
+124-TON
+125-TOP
+126-TOPR
+127-TP
+128-TPR
+129-TPR Macro
+130-TPR Micro
+131-Y
+132-Zero-one Loss
+133-dInd
+134-sInd
 >>> online_help("J")
 ...
 >>> online_help("J", alt_link=True)
@@ -337,10 +339,10 @@ False
 'None'
 >>> MK_BM_calc(1, 2)
 2
->>> PRE_calc(None, 2)
+>>> proportion_calc(None, 2)
 'None'
->>> assert isclose(PRE_calc(1, 5), 0.2, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> PRE_calc(1, 0)
+>>> assert isclose(proportion_calc(1, 5), 0.2, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> proportion_calc(1, 0)
 'None'
 >>> G_calc(None, 2)
 'None'

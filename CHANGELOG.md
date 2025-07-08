@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `print_timings` method
+- Test outcome positive rate
+- Positive rate
 ### Changed
 - `README.md` modified
 - Test system modified

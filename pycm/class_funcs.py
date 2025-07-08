@@ -762,6 +762,8 @@ def class_statistics(TP, TN, FP, FN, classes, table):
         result["NLR"][i] = LR_calc(result["FNR"][i], result["TNR"][i])
         result["DOR"][i] = LR_calc(result["PLR"][i], result["NLR"][i])
         result["PRE"][i] = proportion_calc(result["P"][i], result["POP"][i])
+        result["PR"][i] = result["PRE"][i]
+        result["TOPR"][i] = proportion_calc(result["TOP"][i], result["POP"][i])
         result["G"][i] = G_calc(result["PPV"][i], result["TPR"][i])
         result["RACC"][i] = RACC_calc(
             result["TOP"][i], result["P"][i], result["POP"][i])

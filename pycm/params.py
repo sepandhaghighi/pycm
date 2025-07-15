@@ -164,8 +164,10 @@ CLASS_PARAMS = {
     "FN": "FN",
     "POP": "POP",
     "P": "P",
+    "PR": "PR",
     "N": "N",
     "TOP": "TOP",
+    "TOPR": "TOPR",
     "TON": "TON",
     "PRE": "PRE",
     "G": "G",
@@ -613,7 +615,10 @@ PARAMS_DESCRIPTION = {
     "AUPR": "Area under the PR curve",
     "ICSI": "Individual classification success index",
     "HD": "Hamming distance",
-    "BB": "Braun-Blanquet similarity"}
+    "BB": "Braun-Blanquet similarity",
+    "PR": "Positive rate",
+    "TOPR": "Test outcome positive rate",
+}
 
 PARAMS_LINK = {
     "TPR": "TPR-(True-positive-rate)",
@@ -744,6 +749,8 @@ PARAMS_LINK = {
     "Krippendorff Alpha": "Krippendorff's-alpha",
     "HD": "HD-(Hamming-distance)",
     "BB": "BB-(Braun-Blanquet-similarity)",
+    "PR": "PR-(Positive-rate)",
+    "TOPR": "TOPR-(Test-outcome-positive-rate)",
     "SOA7(Lambda A)": "SOA7-(Goodman-&-Kruskal's-lambda-A-benchmark)",
     "SOA8(Lambda B)": "SOA8-(Goodman-&-Kruskal's-lambda-B-benchmark)",
     "SOA9(Krippendorff Alpha)": "SOA9-(Krippendorff's-alpha-benchmark)",

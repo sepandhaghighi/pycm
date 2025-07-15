@@ -178,6 +178,7 @@ PLR(Positive likelihood ratio)                                    None          
 PLRI(Positive likelihood ratio interpretation)                    None          Good          Fair          None          None          None          None          Good          None          None
 POP(Population)                                                   13            13            13            13            13            13            13            13            13            13
 PPV(Precision or positive predictive value)                       1.0           0.5           0.5           1.0           1.0           1.0           1.0           0.5           1.0           1.0
+PR(Positive rate)                                                 0.07692       0.07692       0.15385       0.15385       0.07692       0.15385       0.07692       0.07692       0.07692       0.07692
 PRE(Prevalence)                                                   0.07692       0.07692       0.15385       0.15385       0.07692       0.15385       0.07692       0.07692       0.07692       0.07692
 Q(Yule Q - coefficient of colligation)                            None          None          0.81818       None          None          None          None          None          None          None
 QI(Yule Q interpretation)                                         None          None          Strong        None          None          None          None          None          None          None
@@ -187,6 +188,7 @@ TN(True negative/correct rejection)                               12            
 TNR(Specificity or true negative rate)                            1.0           0.91667       0.90909       1.0           1.0           1.0           1.0           0.91667       1.0           1.0
 TON(Test outcome negative)                                        12            11            11            12            12            12            12            11            12            12
 TOP(Test outcome positive)                                        1             2             2             1             1             1             1             2             1             1
+TOPR(Test outcome positive rate)                                  0.07692       0.15385       0.15385       0.07692       0.07692       0.07692       0.07692       0.15385       0.07692       0.07692
 TP(True positive/hit)                                             1             1             1             1             1             1             1             1             1             1
 TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           1.0           0.5           0.5           1.0           0.5           1.0           1.0           1.0           1.0
 Y(Youden index)                                                   1.0           0.91667       0.40909       0.5           1.0           0.5           1.0           0.91667       1.0           1.0
@@ -345,6 +347,7 @@ PLR(Positive likelihood ratio)                                    None          
 PLRI(Positive likelihood ratio interpretation)                    None          Good          Fair          None          None          None          None          Good          None          None
 POP(Population)                                                   13            13            13            13            13            13            13            13            13            13
 PPV(Precision or positive predictive value)                       1.0           0.5           0.5           1.0           1.0           1.0           1.0           0.5           1.0           1.0
+PR(Positive rate)                                                 0.07692       0.07692       0.15385       0.15385       0.07692       0.15385       0.07692       0.07692       0.07692       0.07692
 PRE(Prevalence)                                                   0.07692       0.07692       0.15385       0.15385       0.07692       0.15385       0.07692       0.07692       0.07692       0.07692
 Q(Yule Q - coefficient of colligation)                            None          None          0.81818       None          None          None          None          None          None          None
 QI(Yule Q interpretation)                                         None          None          Strong        None          None          None          None          None          None          None
@@ -354,6 +357,7 @@ TN(True negative/correct rejection)                               12            
 TNR(Specificity or true negative rate)                            1.0           0.91667       0.90909       1.0           1.0           1.0           1.0           0.91667       1.0           1.0
 TON(Test outcome negative)                                        12            11            11            12            12            12            12            11            12            12
 TOP(Test outcome positive)                                        1             2             2             1             1             1             1             2             1             1
+TOPR(Test outcome positive rate)                                  0.07692       0.15385       0.15385       0.07692       0.07692       0.07692       0.07692       0.15385       0.07692       0.07692
 TP(True positive/hit)                                             1             1             1             1             1             1             1             1             1             1
 TPR(Sensitivity, recall, hit rate, or true positive rate)         1.0           1.0           0.5           0.5           1.0           0.5           1.0           1.0           1.0           1.0
 Y(Youden index)                                                   1.0           0.91667       0.40909       0.5           1.0           0.5           1.0           0.91667       1.0           1.0
@@ -532,6 +536,7 @@ PLR(Positive likelihood ratio)                                    2.5           
 PLRI(Positive likelihood ratio interpretation)                    Poor          Good          Poor          None
 POP(Population)                                                   27            27            27            27
 PPV(Precision or positive predictive value)                       0.55556       0.8           0.69231       None
+PR(Positive rate)                                                 0.33333       0.22222       0.44444       0.0
 PRE(Prevalence)                                                   0.33333       0.22222       0.44444       0.0
 Q(Yule Q - coefficient of colligation)                            0.62791       0.95122       0.78378       None
 QI(Yule Q interpretation)                                         Moderate      Strong        Strong        None
@@ -541,6 +546,7 @@ TN(True negative/correct rejection)                               14            
 TNR(Specificity or true negative rate)                            0.77778       0.95238       0.73333       1.0
 TON(Test outcome negative)                                        18            22            14            27
 TOP(Test outcome positive)                                        9             5             13            0
+TOPR(Test outcome positive rate)                                  0.33333       0.18519       0.48148       0.0
 TP(True positive/hit)                                             5             4             9             0
 TPR(Sensitivity, recall, hit rate, or true positive rate)         0.55556       0.66667       0.75          None
 Y(Youden index)                                                   0.33333       0.61905       0.48333       None

@@ -7,10 +7,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `print_timings` method
+- Test outcome positive rate
+- Positive rate
 ### Changed
 - `README.md` modified
 - Test system modified
 - Document modified
+- `PRE_calc` function renamed to `proportion_calc`
 - `Python 3.6` support dropped
 ## [4.3] - 2025-04-04
 ### Added

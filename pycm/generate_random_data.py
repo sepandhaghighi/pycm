@@ -135,6 +135,7 @@ def generate_confusion_matrix_with_scenario(
         try:
             scenario = ClassDistributionScenario[scenario.upper()]
         except KeyError:
-            raise ValueError(f"Invalid scenario. Must be one of {[sen.value for sen in ClassDistributionScenario]}.")
+            raise ValueError("Invalid scenario. Must be one of {0}.".format(
+                [sen.value for sen in ClassDistributionScenario]))
     class_percentages = _generate_class_percentages(num_classes, scenario)
     return generate_confusion_matrix(class_percentages, total_population)

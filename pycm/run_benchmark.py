@@ -109,4 +109,3 @@ if __name__ == "__main__":
             results.append(result)
         df = pd.DataFrame(results)
         df.to_csv("pycm_benchmark_results.csv", index=False)
-        print("Benchmark results saved to 'pycm_benchmark_results.csv'.")

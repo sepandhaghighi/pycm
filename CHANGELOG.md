@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `print_timings` method
 - Test outcome positive rate
 - Positive rate
-- `report_benchmark` method
+- `report_benchmark` function
 ### Changed
 - `README.md` modified
 - Test system modified

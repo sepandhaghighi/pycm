@@ -2,7 +2,11 @@
 """This file contains a function to generate a random confusion matrix."""
 import numpy as np
 from enum import Enum
+from itertools import product
 
+from .cm import ConfusionMatrix
+from .params import BENCHMARK_REPORT_TEMPLATE
+from .params import BENCHMARK_CLASS_SIZES, BENCHMARK_POPULATION_SIZES
 
 class ClassDistributionScenario(Enum):
     """
@@ -139,3 +143,36 @@ def generate_confusion_matrix_with_scenario(
                 [sen.value for sen in ClassDistributionScenario]))
     class_percentages = _generate_class_percentages(num_classes, scenario)
     return generate_confusion_matrix(class_percentages, total_population)
+
+
+def report_benchmark(seed=None):
+    """
+    Benchmark the generation of a confusion matrix.
+
+    :param seed: random seed for reproducibility.
+    :type seed: int or None
+    :return: generated confusion matrix and timing information.
+    """
+    if seed is not None:
+        np.random.seed(seed)
+
+    Ns = BENCHMARK_POPULATION_SIZES
+    Ms = BENCHMARK_CLASS_SIZES
+    SCENARIOS = [s.value for s in ClassDistributionScenario]
+
+    for N, M, scenario in product(Ns, Ms, SCENARIOS):
+        confusion_matrix = generate_confusion_matrix_with_scenario(
+            num_classes=M,
+            total_population=N,
+            scenario=scenario
+        )
+        confusion_matrix = ConfusionMatrix(matrix=confusion_matrix)
+        print(BENCHMARK_REPORT_TEMPLATE.format(
+            num_classes=M,
+            total_population=N,
+            scenario=scenario,
+            timing_matrix_creation=confusion_matrix.timings.get("matrix_creation", None),
+            timing_class_statistics=confusion_matrix.timings.get("class_statistics", None),
+            timing_overall_statistics=confusion_matrix.timings.get("overall_statistics", None),
+            timing_total=confusion_matrix.timings.get("total", None),
+        ))

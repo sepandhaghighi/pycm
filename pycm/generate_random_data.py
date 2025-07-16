@@ -145,13 +145,13 @@ def generate_confusion_matrix_with_scenario(
     return generate_confusion_matrix(class_percentages, total_population)
 
 
-def report_benchmark(seed=None):
+def run_report_benchmark(seed=None):
     """
-    Benchmark the generation of a confusion matrix.
+    Benchmark the generation of a confusion matrix and print the report.
 
     :param seed: random seed for reproducibility.
     :type seed: int or None
-    :return: generated confusion matrix and timing information.
+    :return: None
     """
     if seed is not None:
         np.random.seed(seed)

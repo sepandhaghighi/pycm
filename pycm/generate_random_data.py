@@ -147,7 +147,7 @@ def generate_confusion_matrix_with_scenario(
 
 def run_report_benchmark(seed=None):
     """
-    Benchmark the generation of a confusion matrix and print the report.
+    Benchmark the generation of some confusion matrices and print the report.
 
     :param seed: random seed for reproducibility.
     :type seed: int or None

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """This file contains a function to generate a random confusion matrix."""
+from unicodedata import digit
 import numpy as np
 from enum import Enum
 from itertools import product
@@ -155,12 +156,14 @@ def generate_confusion_matrix_with_scenario(
                                      seed=seed)
 
 
-def run_report_benchmark(seed=None):
+def run_report_benchmark(seed=None, digits=10):
     """
     Benchmark the generation of some confusion matrices and print the report.
 
     :param seed: random seed for reproducibility.
     :type seed: int or None
+    :param digits: number of digits to round the timings to.
+    :type digits: int
     :return: None
     """
     Ns = BENCHMARK_POPULATION_SIZES
@@ -179,8 +182,8 @@ def run_report_benchmark(seed=None):
             num_classes=M,
             total_population=N,
             scenario=scenario,
-            timing_matrix_creation=confusion_matrix.timings.get("matrix_creation", None),
-            timing_class_statistics=confusion_matrix.timings.get("class_statistics", None),
-            timing_overall_statistics=confusion_matrix.timings.get("overall_statistics", None),
-            timing_total=confusion_matrix.timings.get("total", None),
+            timing_matrix_creation=round(confusion_matrix.timings.get("matrix_creation", None), digits),
+            timing_class_statistics=round(confusion_matrix.timings.get("class_statistics", None), digits),
+            timing_overall_statistics=round(confusion_matrix.timings.get("overall_statistics", None), digits),
+            timing_total=round(confusion_matrix.timings.get("total", None), digits),
         ))

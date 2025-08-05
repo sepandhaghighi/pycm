@@ -885,10 +885,10 @@ BENCHMARK_REPORT_TEMPLATE = """Number of classes: {num_classes}
 Population size: {total_population}
 Class distribution scenario: {scenario}
 Timing:
-    + Matrix creation: {timing_matrix_creation:.10f}s
-    + Class statistics: {timing_class_statistics:.10f}s
-    + Overall statistics: {timing_overall_statistics:.10f}s
-    + Total: {timing_total:.10f}s
+    + Matrix creation: {timing_matrix_creation}s
+    + Class statistics: {timing_class_statistics}s
+    + Overall statistics: {timing_overall_statistics}s
+    + Total: {timing_total}s
 ======================================================
 """
 

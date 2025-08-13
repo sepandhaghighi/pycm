@@ -879,6 +879,19 @@ BENCHMARK_COLOR = {
 
 BENCHMARK_LIST = list(BENCHMARK_COLOR)
 
+BENCHMARK_CLASS_SIZES = [2, 5, 10, 100, 1000]
+BENCHMARK_POPULATION_SIZES = [10, 100, 1000, 10000]
+BENCHMARK_REPORT_TEMPLATE = """Number of classes: {num_classes}
+Population size: {total_population}
+Class distribution scenario: {scenario}
+Timing:
+    + Matrix creation: {timing_matrix_creation}s
+    + Class statistics: {timing_class_statistics}s
+    + Overall statistics: {timing_overall_statistics}s
+    + Total: {timing_total}s
+======================================================
+"""
+
 
 TABLE_COLOR = {
     # Pink Colors

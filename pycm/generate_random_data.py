@@ -2,6 +2,11 @@
 """This file contains a function to generate a random confusion matrix."""
 import numpy as np
 from enum import Enum
+from itertools import product
+
+from .cm import ConfusionMatrix
+from .params import BENCHMARK_REPORT_TEMPLATE
+from .params import BENCHMARK_CLASS_SIZES, BENCHMARK_POPULATION_SIZES
 
 
 class ClassDistributionScenario(Enum):
@@ -69,7 +74,7 @@ def _calculate_class_counts(class_percentages, total_population):
     return dict(zip(classes, class_counts.astype(int).tolist()))
 
 
-def generate_confusion_matrix(class_percentages, total_population):
+def generate_confusion_matrix(class_percentages, total_population, seed=None):
     """
     Generate a random confusion matrix with given class percentages and total population.
 
@@ -77,8 +82,11 @@ def generate_confusion_matrix(class_percentages, total_population):
     :type class_percentages: dict or list
     :param  total_population: total number of samples in the confusion matrix
     :type total_population: int
+    :param seed: random seed for reproducibility
+    :type seed: int or None
     :return: confusion matrix as a dictionary
     """
+    np.random.seed(seed)
     if total_population <= 0:
         raise ValueError("Total population must be positive.")
     if isinstance(class_percentages, list):
@@ -118,8 +126,10 @@ def generate_confusion_matrix(class_percentages, total_population):
 
 
 def generate_confusion_matrix_with_scenario(
-    num_classes, total_population, scenario=ClassDistributionScenario.UNIFORM
-):
+        num_classes,
+        total_population,
+        scenario=ClassDistributionScenario.UNIFORM,
+        seed=None):
     """
     Generate a random confusion matrix based on the given scenario.
 
@@ -129,6 +139,8 @@ def generate_confusion_matrix_with_scenario(
     :type total_population: int
     :param scenario: the scenario to generate the confusion matrix for.
     :type scenario: ClassDistributionScenario
+    :param seed: random seed for reproducibility.
+    :type seed: int or None
     :return: confusion matrix as a dictionary.
     """
     if isinstance(scenario, str):
@@ -138,4 +150,39 @@ def generate_confusion_matrix_with_scenario(
             raise ValueError("Invalid scenario. Must be one of {0}.".format(
                 [sen.value for sen in ClassDistributionScenario]))
     class_percentages = _generate_class_percentages(num_classes, scenario)
-    return generate_confusion_matrix(class_percentages, total_population)
+    return generate_confusion_matrix(class_percentages=class_percentages,
+                                     total_population=total_population,
+                                     seed=seed)
+
+
+def run_report_benchmark(seed=None, digits=10):
+    """
+    Benchmark the generation of some confusion matrices and print the report.
+
+    :param seed: random seed for reproducibility.
+    :type seed: int or None
+    :param digits: number of digits to round the timings to.
+    :type digits: int
+    :return: None
+    """
+    Ns = BENCHMARK_POPULATION_SIZES
+    Ms = BENCHMARK_CLASS_SIZES
+    SCENARIOS = [s.value for s in ClassDistributionScenario]
+
+    for N, M, scenario in product(Ns, Ms, SCENARIOS):
+        confusion_matrix = generate_confusion_matrix_with_scenario(
+            num_classes=M,
+            total_population=N,
+            scenario=scenario,
+            seed=seed
+        )
+        confusion_matrix = ConfusionMatrix(matrix=confusion_matrix)
+        print(BENCHMARK_REPORT_TEMPLATE.format(
+            num_classes=M,
+            total_population=N,
+            scenario=scenario,
+            timing_matrix_creation=round(confusion_matrix.timings.get("matrix_creation", None), digits),
+            timing_class_statistics=round(confusion_matrix.timings.get("class_statistics", None), digits),
+            timing_overall_statistics=round(confusion_matrix.timings.get("overall_statistics", None), digits),
+            timing_total=round(confusion_matrix.timings.get("total", None), digits),
+        ))

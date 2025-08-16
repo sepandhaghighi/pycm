@@ -13121,7 +13121,7 @@ $( document ).ready(function(){
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Version-:-4.3-">Version : 4.3 <a class="tocSkip" /><a class="anchor-link" href="#Version-:-4.3-">&#182;</a></h3>
+<h3 id="Version-:-4.4-">Version : 4.4 <a class="tocSkip" /><a class="anchor-link" href="#Version-:-4.4-">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -13164,6 +13164,13 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>⚠️  PyCM 4.3 is the last version to support <strong>Python 3.6</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p>⚠️  PyCM 3.9 is the last version to support <strong>Python 3.5</strong></p>
 
 </div>
@@ -13187,7 +13194,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="PyPI">PyPI<a class="anchor-link" href="#PyPI">&#182;</a></h3><ul>
 <li>Check <a href="https://packaging.python.org/installing/">Python Packaging User Guide</a>     </li>
-<li>Run <code>pip install pycm==4.3</code></li>
+<li>Run <code>pip install pycm==4.4</code></li>
 </ul>
 
 </div>
@@ -13196,7 +13203,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Source-code">Source code<a class="anchor-link" href="#Source-code">&#182;</a></h3><ul>
-<li>Download <a href="https://github.com/sepandhaghighi/pycm/archive/v4.3.zip">Version 4.3</a> or <a href="https://github.com/sepandhaghighi/pycm/archive/dev.zip">Latest Source</a></li>
+<li>Download <a href="https://github.com/sepandhaghighi/pycm/archive/v4.4.zip">Version 4.4</a> or <a href="https://github.com/sepandhaghighi/pycm/archive/dev.zip">Latest Source</a></li>
 <li>Run <code>pip install .</code></li>
 </ul>
 
@@ -13223,7 +13230,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
 <li>Download and install <a href="https://www.mathworks.com/products/matlab.html">MATLAB</a> (&gt;=8.5, 64/32 bit)</li>
-<li>Download and install <a href="https://www.python.org/downloads/">Python3.x</a> (&gt;=3.6, 64/32 bit) <ul>
+<li>Download and install <a href="https://www.python.org/downloads/">Python3.x</a> (&gt;=3.7, 64/32 bit) <ul>
 <li>Select <code>Add to PATH</code> option</li>
 <li>Select <code>Install pip</code> option</li>
 </ul>
@@ -13523,6 +13530,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
  &#39;PLRI&#39;: {0: &#39;Poor&#39;, 1: &#39;Poor&#39;, 2: &#39;Poor&#39;},
  &#39;POP&#39;: {0: 12, 1: 12, 2: 12},
  &#39;PPV&#39;: {0: 0.6, 1: 0.5, 2: 0.6},
+ &#39;PR&#39;: {0: 0.25, 1: 0.25, 2: 0.5},
  &#39;PRE&#39;: {0: 0.25, 1: 0.25, 2: 0.5},
  &#39;Q&#39;: {0: &#39;None&#39;, 1: 0.6, 2: 0.3333333333333333},
  &#39;QI&#39;: {0: &#39;None&#39;, 1: &#39;Moderate&#39;, 2: &#39;Weak&#39;},
@@ -13536,6 +13544,9 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
  &#39;TNR&#39;: {0: 0.7777777777777778, 1: 0.8888888888888888, 2: 0.6666666666666666},
  &#39;TON&#39;: {0: 7, 1: 10, 2: 7},
  &#39;TOP&#39;: {0: 5, 1: 2, 2: 5},
+ &#39;TOPR&#39;: {0: 0.4166666666666667,
+  1: 0.16666666666666666,
+  2: 0.4166666666666667},
  &#39;TP&#39;: {0: 3, 1: 1, 2: 3},
  &#39;TPR&#39;: {0: 1.0, 1: 0.3333333333333333, 2: 0.5},
  &#39;Y&#39;: {0: 0.7777777777777777, 1: 0.2222222222222221, 2: 0.16666666666666652},
@@ -13987,7 +13998,7 @@ Actual
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-4.3-py3.5.egg\pycm\utils.py:399: RuntimeWarning: Specified classes are not a subset of the classes in the actual and predicted vectors.
+<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-4.4-py3.5.egg\pycm\utils.py:399: RuntimeWarning: Specified classes are not a subset of the classes in the actual and predicted vectors.
 </pre>
 </div>
 </div>
@@ -14314,6 +14325,7 @@ Actual
  &#39;PLRI&#39;: {0: &#39;Poor&#39;, 1: &#39;Poor&#39;, 2: &#39;Poor&#39;},
  &#39;POP&#39;: {0: 12, 1: 12, 2: 12},
  &#39;PPV&#39;: {0: 0.6, 1: 0.5, 2: 0.6},
+ &#39;PR&#39;: {0: 0.25, 1: 0.25, 2: 0.5},
  &#39;PRE&#39;: {0: 0.25, 1: 0.25, 2: 0.5},
  &#39;Q&#39;: {0: &#39;None&#39;, 1: 0.6, 2: 0.3333333333333333},
  &#39;QI&#39;: {0: &#39;None&#39;, 1: &#39;Moderate&#39;, 2: &#39;Weak&#39;},
@@ -14327,6 +14339,9 @@ Actual
  &#39;TNR&#39;: {0: 0.7777777777777778, 1: 0.8888888888888888, 2: 0.6666666666666666},
  &#39;TON&#39;: {0: 7, 1: 10, 2: 7},
  &#39;TOP&#39;: {0: 5, 1: 2, 2: 5},
+ &#39;TOPR&#39;: {0: 0.4166666666666667,
+  1: 0.16666666666666666,
+  2: 0.4166666666666667},
  &#39;TP&#39;: {0: 3, 1: 1, 2: 3},
  &#39;TPR&#39;: {0: 1.0, 1: 0.3333333333333333, 2: 0.5},
  &#39;Y&#39;: {0: 0.7777777777777777, 1: 0.2222222222222221, 2: 0.16666666666666652},
@@ -15178,6 +15193,7 @@ Actual
  &#39;PLRI&#39;: {0: &#39;None&#39;, 1: &#39;None&#39;, 2: &#39;None&#39;},
  &#39;POP&#39;: {0: &#39;None&#39;, 1: &#39;None&#39;, 2: &#39;None&#39;},
  &#39;PPV&#39;: {0: &#39;None&#39;, 1: &#39;None&#39;, 2: &#39;None&#39;},
+ &#39;PR&#39;: {0: &#39;None&#39;, 1: &#39;None&#39;, 2: &#39;None&#39;},
  &#39;PRE&#39;: {0: &#39;None&#39;, 1: &#39;None&#39;, 2: &#39;None&#39;},
  &#39;Q&#39;: {0: &#39;None&#39;, 1: &#39;None&#39;, 2: &#39;None&#39;},
  &#39;QI&#39;: {0: &#39;None&#39;, 1: &#39;None&#39;, 2: &#39;None&#39;},
@@ -15187,6 +15203,7 @@ Actual
  &#39;TNR&#39;: {0: &#39;None&#39;, 1: &#39;None&#39;, 2: &#39;None&#39;},
  &#39;TON&#39;: {0: &#39;None&#39;, 1: &#39;None&#39;, 2: &#39;None&#39;},
  &#39;TOP&#39;: {0: &#39;None&#39;, 1: &#39;None&#39;, 2: &#39;None&#39;},
+ &#39;TOPR&#39;: {0: &#39;None&#39;, 1: &#39;None&#39;, 2: &#39;None&#39;},
  &#39;TP&#39;: {0: &#39;None&#39;, 1: &#39;None&#39;, 2: &#39;None&#39;},
  &#39;TPR&#39;: {0: &#39;None&#39;, 1: &#39;None&#39;, 2: &#39;None&#39;},
  &#39;Y&#39;: {0: &#39;None&#39;, 1: &#39;None&#39;, 2: &#39;None&#39;},
@@ -15745,7 +15762,7 @@ Keyring is skipped due to an exception: invalid syntax (core.py, line 48)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x4ab8ab0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x4744310&gt;</pre>
 </div>
 
 </div>
@@ -15755,7 +15772,7 @@ Keyring is skipped due to an exception: invalid syntax (core.py, line 48)
 
 
 <div class="output_png output_subarea ">
-<img src="Document_files/Document_141_1.png"
+<img src="Document_files/Document_142_1.png"
 >
 </div>
 
@@ -15785,7 +15802,7 @@ Keyring is skipped due to an exception: invalid syntax (core.py, line 48)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x12b39eb0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x12812e90&gt;</pre>
 </div>
 
 </div>
@@ -15795,7 +15812,7 @@ Keyring is skipped due to an exception: invalid syntax (core.py, line 48)
 
 
 <div class="output_png output_subarea ">
-<img src="Document_files/Document_142_1.png"
+<img src="Document_files/Document_143_1.png"
 >
 </div>
 
@@ -15825,7 +15842,7 @@ Keyring is skipped due to an exception: invalid syntax (core.py, line 48)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x12ba9af0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1284e4b0&gt;</pre>
 </div>
 
 </div>
@@ -15835,7 +15852,7 @@ Keyring is skipped due to an exception: invalid syntax (core.py, line 48)
 
 
 <div class="output_png output_subarea ">
-<img src="Document_files/Document_143_1.png"
+<img src="Document_files/Document_144_1.png"
 >
 </div>
 
@@ -15865,7 +15882,7 @@ Keyring is skipped due to an exception: invalid syntax (core.py, line 48)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1daeacb0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1bf28c10&gt;</pre>
 </div>
 
 </div>
@@ -15875,7 +15892,7 @@ Keyring is skipped due to an exception: invalid syntax (core.py, line 48)
 
 
 <div class="output_png output_subarea ">
-<img src="Document_files/Document_144_1.png"
+<img src="Document_files/Document_145_1.png"
 >
 </div>
 
@@ -15905,7 +15922,7 @@ Keyring is skipped due to an exception: invalid syntax (core.py, line 48)
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x12b69930&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x12823210&gt;</pre>
 </div>
 
 </div>
@@ -15915,7 +15932,7 @@ Keyring is skipped due to an exception: invalid syntax (core.py, line 48)
 
 
 <div class="output_png output_subarea ">
-<img src="Document_files/Document_145_1.png"
+<img src="Document_files/Document_146_1.png"
 >
 </div>
 
@@ -16780,7 +16797,7 @@ The thresholds for which the TPR-FPR pairs are calculated can be either specifie
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1eb281d0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1cf668f0&gt;</pre>
 </div>
 
 </div>
@@ -16790,7 +16807,7 @@ The thresholds for which the TPR-FPR pairs are calculated can be either specifie
 
 
 <div class="output_png output_subarea ">
-<img src="Document_files/Document_201_1.png"
+<img src="Document_files/Document_202_1.png"
 >
 </div>
 
@@ -16848,7 +16865,7 @@ The thresholds for which the Precision-Recall pairs are calculated can be either
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-4.3-py3.5.egg\pycm\curve.py:382: RuntimeWarning: The curve contains non-numerical value(s).
+<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-4.4-py3.5.egg\pycm\curve.py:382: RuntimeWarning: The curve contains non-numerical value(s).
 </pre>
 </div>
 </div>
@@ -16887,7 +16904,7 @@ The thresholds for which the Precision-Recall pairs are calculated can be either
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1eb61cd0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1cf9dbd0&gt;</pre>
 </div>
 
 </div>
@@ -16897,7 +16914,7 @@ The thresholds for which the Precision-Recall pairs are calculated can be either
 
 
 <div class="output_png output_subarea ">
-<img src="Document_files/Document_206_1.png"
+<img src="Document_files/Document_207_1.png"
 >
 </div>
 
@@ -17144,43 +17161,45 @@ Example : online_help(&#34;J&#34;) or online_help(2)
 93-PPV
 94-PPV Macro
 95-PPV Micro
-96-PRE
-97-Pearson C
-98-Phi-Squared
-99-Q
-100-QI
-101-RACC
-102-RACCU
-103-RCI
-104-RR
-105-Reference Entropy
-106-Response Entropy
-107-SOA1(Landis &amp; Koch)
-108-SOA2(Fleiss)
-109-SOA3(Altman)
-110-SOA4(Cicchetti)
-111-SOA5(Cramer)
-112-SOA6(Matthews)
-113-SOA7(Lambda A)
-114-SOA8(Lambda B)
-115-SOA9(Krippendorff Alpha)
-116-SOA10(Pearson C)
-117-Scott PI
-118-Standard Error
-119-TN
-120-TNR
-121-TNR Macro
-122-TNR Micro
-123-TON
-124-TOP
-125-TP
-126-TPR
-127-TPR Macro
-128-TPR Micro
-129-Y
-130-Zero-one Loss
-131-dInd
-132-sInd
+96-PR
+97-PRE
+98-Pearson C
+99-Phi-Squared
+100-Q
+101-QI
+102-RACC
+103-RACCU
+104-RCI
+105-RR
+106-Reference Entropy
+107-Response Entropy
+108-SOA1(Landis &amp; Koch)
+109-SOA2(Fleiss)
+110-SOA3(Altman)
+111-SOA4(Cicchetti)
+112-SOA5(Cramer)
+113-SOA6(Matthews)
+114-SOA7(Lambda A)
+115-SOA8(Lambda B)
+116-SOA9(Krippendorff Alpha)
+117-SOA10(Pearson C)
+118-Scott PI
+119-Standard Error
+120-TN
+121-TNR
+122-TNR Macro
+123-TNR Micro
+124-TON
+125-TOP
+126-TOPR
+127-TP
+128-TPR
+129-TPR Macro
+130-TPR Micro
+131-Y
+132-Zero-one Loss
+133-dInd
+134-sInd
 </pre>
 </div>
 </div>
@@ -21963,6 +21982,119 @@ $$HD = FN + FP$$
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PR-(Positive-rate)">PR (Positive rate)<a class="anchor-link" href="#PR-(Positive-rate)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Proportion of actual instances belonging to the class in the dataset.</p>
+<p>Equals to <a href="#PRE-(Prevalence">Prevalence</a>)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$PR = \frac{P}{POP}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">PR</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;L1&#39;: 0.4166666666666667, &#39;L2&#39;: 0.16666666666666666, &#39;L3&#39;: 0.4166666666666667}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 4.4</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="TOPR-(Test-outcome-positive-rate)">TOPR (Test outcome positive rate)<a class="anchor-link" href="#TOPR-(Test-outcome-positive-rate)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Proportion of predicted instances assigned to the class by the model.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+$$TOPR = \frac{TOP}{POP}$$
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">cm</span><span class="o">.</span><span class="n">TOPR</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;L1&#39;: 0.25, &#39;L2&#39;: 0.25, &#39;L3&#39;: 0.5}</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 4.4</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Overall-statistics">Overall statistics<a class="anchor-link" href="#Overall-statistics">&#182;</a></h2>
 </div>
 </div>
@@ -22229,7 +22361,7 @@ $$Kappa_{Weighted}=\frac{P_a-P_e}{1-P_e}$$
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-4.3-py3.5.egg\pycm\cm.py:864: RuntimeWarning: Invalid weight format; the result is for unweighted kappa.
+<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-4.4-py3.5.egg\pycm\cm.py:893: RuntimeWarning: Invalid weight format; the result is for unweighted kappa.
 </pre>
 </div>
 </div>
@@ -26657,7 +26789,7 @@ $$\alpha_{Weighted}=\frac{P_a-P_e}{1-P_e}$$
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-4.3-py3.5.egg\pycm\cm.py:887: RuntimeWarning: Invalid weight format; the result is for unweighted alpha.
+<pre>C:\Users\Sepkjaer\AppData\Local\Programs\Python\Python35-32\lib\site-packages\pycm-4.4-py3.5.egg\pycm\cm.py:916: RuntimeWarning: Invalid weight format; the result is for unweighted alpha.
 </pre>
 </div>
 </div>
@@ -27293,6 +27425,7 @@ PLR(Positive likelihood ratio)                                    None          
 PLRI(Positive likelihood ratio interpretation)                    None          Poor          Poor          
 POP(Population)                                                   12            12            12            
 PPV(Precision or positive predictive value)                       1.0           0.33333       0.5           
+PR(Positive rate)                                                 0.41667       0.16667       0.41667       
 PRE(Prevalence)                                                   0.41667       0.16667       0.41667       
 Q(Yule Q - coefficient of colligation)                            None          0.6           0.33333       
 QI(Yule Q interpretation)                                         None          Moderate      Weak          
@@ -27302,6 +27435,7 @@ TN(True negative/correct rejection)                               7             
 TNR(Specificity or true negative rate)                            1.0           0.8           0.57143       
 TON(Test outcome negative)                                        9             9             6             
 TOP(Test outcome positive)                                        3             3             6             
+TOPR(Test outcome positive rate)                                  0.25          0.25          0.5           
 TP(True positive/hit)                                             3             1             3             
 TPR(Sensitivity, recall, hit rate, or true positive rate)         0.6           0.5           0.6           
 Y(Youden index)                                                   0.6           0.3           0.17143       
@@ -27835,6 +27969,7 @@ PLR(Positive likelihood ratio)                                    None          
 PLRI(Positive likelihood ratio interpretation)                    None          Poor          Poor          
 POP(Population)                                                   12            12            12            
 PPV(Precision or positive predictive value)                       1.0           0.33333       0.5           
+PR(Positive rate)                                                 0.41667       0.16667       0.41667       
 PRE(Prevalence)                                                   0.41667       0.16667       0.41667       
 Q(Yule Q - coefficient of colligation)                            None          0.6           0.33333       
 QI(Yule Q interpretation)                                         None          Moderate      Weak          
@@ -27844,6 +27979,7 @@ TN(True negative/correct rejection)                               7             
 TNR(Specificity or true negative rate)                            1.0           0.8           0.57143       
 TON(Test outcome negative)                                        9             9             6             
 TOP(Test outcome positive)                                        3             3             6             
+TOPR(Test outcome positive rate)                                  0.25          0.25          0.5           
 TP(True positive/hit)                                             3             1             3             
 TPR(Sensitivity, recall, hit rate, or true positive rate)         0.6           0.5           0.6           
 Y(Youden index)                                                   0.6           0.3           0.17143       
@@ -29463,6 +29599,733 @@ Rank  Name   Class-Score       Overall-Score
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
     <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 2.0</span> </li>
+</ul>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Benchmarking">Benchmarking<a class="anchor-link" href="#Benchmarking">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>PyCM offers a dedicated benchmarking method for performance analysis across different hardware. Using this utility, you can benchmark <code>pycm</code>'s runtime performance with the <code>run_report_benchmark</code> function. This allows users to measure the time required for various internal operations, such as generating a confusion matrix and calculating metrics, on their own hardware, using predefined test cases.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pycm</span> <span class="k">import</span> <span class="n">run_report_benchmark</span>
+<span class="n">run_report_benchmark</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Number of classes: 2
+Population size: 10
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 0.0003780738s
+    + Class statistics: 2.05432e-05s
+    + Overall statistics: 7.34814e-05s
+    + Total: 0.0004720984s
+======================================================
+
+Number of classes: 2
+Population size: 10
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 0.0003804441s
+    + Class statistics: 1.81728e-05s
+    + Overall statistics: 2.09383e-05s
+    + Total: 0.0004195552s
+======================================================
+
+Number of classes: 2
+Population size: 10
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 0.0002729874s
+    + Class statistics: 1.69876e-05s
+    + Overall statistics: 1.97531e-05s
+    + Total: 0.0003097282s
+======================================================
+
+Number of classes: 5
+Population size: 10
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 0.0005428144s
+    + Class statistics: 1.65926e-05s
+    + Overall statistics: 1.9358e-05s
+    + Total: 0.000578765s
+======================================================
+
+Number of classes: 5
+Population size: 10
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 0.0005412341s
+    + Class statistics: 1.65926e-05s
+    + Overall statistics: 1.9358e-05s
+    + Total: 0.0005771847s
+======================================================
+
+Number of classes: 5
+Population size: 10
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 0.0006012835s
+    + Class statistics: 1.69876e-05s
+    + Overall statistics: 1.97531e-05s
+    + Total: 0.0006380242s
+======================================================
+
+Number of classes: 10
+Population size: 10
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 0.001350715s
+    + Class statistics: 1.77778e-05s
+    + Overall statistics: 2.05432e-05s
+    + Total: 0.0013890359s
+======================================================
+
+Number of classes: 10
+Population size: 10
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 0.0010544189s
+    + Class statistics: 1.77778e-05s
+    + Overall statistics: 2.01481e-05s
+    + Total: 0.0010923448s
+======================================================
+
+Number of classes: 10
+Population size: 10
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 0.001035851s
+    + Class statistics: 1.69876e-05s
+    + Overall statistics: 1.97531e-05s
+    + Total: 0.0010725917s
+======================================================
+
+Number of classes: 100
+Population size: 10
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 0.0297216555s
+    + Class statistics: 2.21234e-05s
+    + Overall statistics: 2.33086e-05s
+    + Total: 0.0297670876s
+======================================================
+
+Number of classes: 100
+Population size: 10
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 0.0284491627s
+    + Class statistics: 2.21234e-05s
+    + Overall statistics: 2.37037e-05s
+    + Total: 0.0284949898s
+======================================================
+
+Number of classes: 100
+Population size: 10
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 0.0269088182s
+    + Class statistics: 2.84444e-05s
+    + Overall statistics: 2.48889e-05s
+    + Total: 0.0269621515s
+======================================================
+
+Number of classes: 1000
+Population size: 10
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 2.542049152s
+    + Class statistics: 3.99012e-05s
+    + Overall statistics: 3.99012e-05s
+    + Total: 2.5421289544s
+======================================================
+
+Number of classes: 1000
+Population size: 10
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 2.502238813s
+    + Class statistics: 2.44938e-05s
+    + Overall statistics: 2.48889e-05s
+    + Total: 2.5022881957s
+======================================================
+
+Number of classes: 1000
+Population size: 10
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 2.3775740227s
+    + Class statistics: 5.49135e-05s
+    + Overall statistics: 8.05925e-05s
+    + Total: 2.3777095287s
+======================================================
+
+Number of classes: 2
+Population size: 100
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 0.0014494803s
+    + Class statistics: 2.44938e-05s
+    + Overall statistics: 2.44938e-05s
+    + Total: 0.001498468s
+======================================================
+
+Number of classes: 2
+Population size: 100
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 0.0013293817s
+    + Class statistics: 2.40987e-05s
+    + Overall statistics: 2.37037e-05s
+    + Total: 0.0013771841s
+======================================================
+
+Number of classes: 2
+Population size: 100
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 0.0011508139s
+    + Class statistics: 2.01481e-05s
+    + Overall statistics: 2.13333e-05s
+    + Total: 0.0011922954s
+======================================================
+
+Number of classes: 5
+Population size: 100
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 0.0015423198s
+    + Class statistics: 3.39753e-05s
+    + Overall statistics: 2.25185e-05s
+    + Total: 0.0015988136s
+======================================================
+
+Number of classes: 5
+Population size: 100
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 0.0016118506s
+    + Class statistics: 5.72839e-05s
+    + Overall statistics: 5.68888e-05s
+    + Total: 0.0017260233s
+======================================================
+
+Number of classes: 5
+Population size: 100
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 0.0013601965s
+    + Class statistics: 1.97531e-05s
+    + Overall statistics: 2.21234e-05s
+    + Total: 0.001402073s
+======================================================
+
+Number of classes: 10
+Population size: 100
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 0.0020594552s
+    + Class statistics: 2.05432e-05s
+    + Overall statistics: 2.21234e-05s
+    + Total: 0.0021021218s
+======================================================
+
+Number of classes: 10
+Population size: 100
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 0.0022475044s
+    + Class statistics: 2.33086e-05s
+    + Overall statistics: 2.33086e-05s
+    + Total: 0.0022941216s
+======================================================
+
+Number of classes: 10
+Population size: 100
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 0.0022684427s
+    + Class statistics: 2.01481e-05s
+    + Overall statistics: 2.21234e-05s
+    + Total: 0.0023107142s
+======================================================
+
+Number of classes: 100
+Population size: 100
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 0.0503944293s
+    + Class statistics: 4.26666e-05s
+    + Overall statistics: 0.0001165431s
+    + Total: 0.0505536391s
+======================================================
+
+Number of classes: 100
+Population size: 100
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 0.0418970533s
+    + Class statistics: 6.4395e-05s
+    + Overall statistics: 5.88642e-05s
+    + Total: 0.0420203125s
+======================================================
+
+Number of classes: 100
+Population size: 100
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 0.0546765s
+    + Class statistics: 2.64691e-05s
+    + Overall statistics: 2.52839e-05s
+    + Total: 0.0547282531s
+======================================================
+
+Number of classes: 1000
+Population size: 100
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 2.7053529242s
+    + Class statistics: 2.60741e-05s
+    + Overall statistics: 4.26666e-05s
+    + Total: 2.7054216649s
+======================================================
+
+Number of classes: 1000
+Population size: 100
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 2.4304265241s
+    + Class statistics: 2.44938e-05s
+    + Overall statistics: 2.44938e-05s
+    + Total: 2.4304755117s
+======================================================
+
+Number of classes: 1000
+Population size: 100
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 2.242280895s
+    + Class statistics: 4.85926e-05s
+    + Overall statistics: 5.60987e-05s
+    + Total: 2.2423855863s
+======================================================
+
+Number of classes: 2
+Population size: 1000
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 0.1407256172s
+    + Class statistics: 2.40987e-05s
+    + Overall statistics: 2.33086e-05s
+    + Total: 0.1407730246s
+======================================================
+
+Number of classes: 2
+Population size: 1000
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 0.1389237421s
+    + Class statistics: 4.34568e-05s
+    + Overall statistics: 2.44938e-05s
+    + Total: 0.1389916926s
+======================================================
+
+Number of classes: 2
+Population size: 1000
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 0.1404913458s
+    + Class statistics: 2.88395e-05s
+    + Overall statistics: 3.16049e-05s
+    + Total: 0.1405517902s
+======================================================
+
+Number of classes: 5
+Population size: 1000
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 0.1292459226s
+    + Class statistics: 2.44938e-05s
+    + Overall statistics: 2.37037e-05s
+    + Total: 0.1292941201s
+======================================================
+
+Number of classes: 5
+Population size: 1000
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 0.1288733797s
+    + Class statistics: 2.52839e-05s
+    + Overall statistics: 2.29136e-05s
+    + Total: 0.1289215771s
+======================================================
+
+Number of classes: 5
+Population size: 1000
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 0.1225721501s
+    + Class statistics: 2.33086e-05s
+    + Overall statistics: 2.25185e-05s
+    + Total: 0.1226179772s
+======================================================
+
+Number of classes: 10
+Population size: 1000
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 0.092487038s
+    + Class statistics: 2.13333e-05s
+    + Overall statistics: 2.25185e-05s
+    + Total: 0.0925308899s
+======================================================
+
+Number of classes: 10
+Population size: 1000
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 0.0938476296s
+    + Class statistics: 2.40987e-05s
+    + Overall statistics: 2.29136e-05s
+    + Total: 0.0938946419s
+======================================================
+
+Number of classes: 10
+Population size: 1000
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 0.0924155319s
+    + Class statistics: 2.37037e-05s
+    + Overall statistics: 2.25185e-05s
+    + Total: 0.0924617541s
+======================================================
+
+Number of classes: 100
+Population size: 1000
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 0.1720753208s
+    + Class statistics: 2.33086e-05s
+    + Overall statistics: 2.37037e-05s
+    + Total: 0.1721223331s
+======================================================
+
+Number of classes: 100
+Population size: 1000
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 0.1710189266s
+    + Class statistics: 2.44938e-05s
+    + Overall statistics: 2.37037e-05s
+    + Total: 0.1710671241s
+======================================================
+
+Number of classes: 100
+Population size: 1000
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 0.1701185816s
+    + Class statistics: 2.33086e-05s
+    + Overall statistics: 6.36049e-05s
+    + Total: 0.1702054951s
+======================================================
+
+Number of classes: 1000
+Population size: 1000
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 4.0695746611s
+    + Class statistics: 2.29136e-05s
+    + Overall statistics: 2.33086e-05s
+    + Total: 4.0696208833s
+======================================================
+
+Number of classes: 1000
+Population size: 1000
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 2.6762546756s
+    + Class statistics: 4.74074e-05s
+    + Overall statistics: 6.00493e-05s
+    + Total: 2.6763621323s
+======================================================
+
+Number of classes: 1000
+Population size: 1000
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 4.4038653599s
+    + Class statistics: 2.37037e-05s
+    + Overall statistics: 2.40987e-05s
+    + Total: 4.4039131623s
+======================================================
+
+Number of classes: 2
+Population size: 10000
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 0.0040434536s
+    + Class statistics: 1.9358e-05s
+    + Overall statistics: 2.5679e-05s
+    + Total: 0.0040884906s
+======================================================
+
+Number of classes: 2
+Population size: 10000
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 0.0036361453s
+    + Class statistics: 1.65926e-05s
+    + Overall statistics: 1.85679e-05s
+    + Total: 0.0036713057s
+======================================================
+
+Number of classes: 2
+Population size: 10000
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 0.003846713s
+    + Class statistics: 1.73827e-05s
+    + Overall statistics: 1.85679e-05s
+    + Total: 0.0038826636s
+======================================================
+
+Number of classes: 5
+Population size: 10000
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 0.003936392s
+    + Class statistics: 1.61975e-05s
+    + Overall statistics: 1.85679e-05s
+    + Total: 0.0039711574s
+======================================================
+
+Number of classes: 5
+Population size: 10000
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 0.003968787s
+    + Class statistics: 1.69876e-05s
+    + Overall statistics: 1.9358e-05s
+    + Total: 0.0040051326s
+======================================================
+
+Number of classes: 5
+Population size: 10000
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 0.0044140212s
+    + Class statistics: 1.85679e-05s
+    + Overall statistics: 1.97531e-05s
+    + Total: 0.0044523422s
+======================================================
+
+Number of classes: 10
+Population size: 10000
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 0.0048292308s
+    + Class statistics: 1.73827e-05s
+    + Overall statistics: 1.89629e-05s
+    + Total: 0.0048655764s
+======================================================
+
+Number of classes: 10
+Population size: 10000
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 0.0048537246s
+    + Class statistics: 1.61975e-05s
+    + Overall statistics: 1.81728e-05s
+    + Total: 0.0048880949s
+======================================================
+
+Number of classes: 10
+Population size: 10000
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 0.0047190086s
+    + Class statistics: 1.61975e-05s
+    + Overall statistics: 1.81728e-05s
+    + Total: 0.004753379s
+======================================================
+
+Number of classes: 100
+Population size: 10000
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 0.0626508147s
+    + Class statistics: 4.74074e-05s
+    + Overall statistics: 5.57037e-05s
+    + Total: 0.0627539257s
+======================================================
+
+Number of classes: 100
+Population size: 10000
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 0.0637052336s
+    + Class statistics: 2.13333e-05s
+    + Overall statistics: 2.33086e-05s
+    + Total: 0.0637498756s
+======================================================
+
+Number of classes: 100
+Population size: 10000
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 0.0628301726s
+    + Class statistics: 2.09383e-05s
+    + Overall statistics: 2.25185e-05s
+    + Total: 0.0628736293s
+======================================================
+
+Number of classes: 1000
+Population size: 10000
+Class distribution scenario: uniform
+Timing:
+    + Matrix creation: 4.3522727093s
+    + Class statistics: 2.52839e-05s
+    + Overall statistics: 5.45185e-05s
+    + Total: 4.3523525117s
+======================================================
+
+Number of classes: 1000
+Population size: 10000
+Class distribution scenario: majority_class
+Timing:
+    + Matrix creation: 4.4666824955s
+    + Class statistics: 2.40987e-05s
+    + Overall statistics: 2.60741e-05s
+    + Total: 4.4667326683s
+======================================================
+
+Number of classes: 1000
+Population size: 10000
+Class distribution scenario: minority_class
+Timing:
+    + Matrix creation: 3.8734242975s
+    + Class statistics: 2.44938e-05s
+    + Overall statistics: 2.44938e-05s
+    + Total: 3.8734732852s
+======================================================
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The predefined test cases are offered as a set of predefined data distribution scenarios through the <code>ClassDistributionScenario</code> class. With this you can simulate class imbalance in various ways. The available options include:</p>
+<ul>
+<li><code>ClassDistributionScenario.UNIFORM</code>: All classes have equal frequency (balanced distribution).</li>
+<li><code>ClassDistributionScenario.MAJORITY_CLASS</code>: One class appears 5 times more frequently than the others, which have equal frequency.</li>
+<li><code>ClassDistributionScenario.MINORITY_CLASS</code>: One class appears 5 times less frequently than the others, which have equal frequency.</li>
+</ul>
+<p>You can generate random confusion matrices based on these scenarios using the following code:</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pycm</span> <span class="k">import</span> <span class="n">generate_confusion_matrix_with_scenario</span><span class="p">,</span> <span class="n">ClassDistributionScenario</span>
+
+<span class="k">for</span> <span class="n">scenario</span> <span class="ow">in</span> <span class="n">ClassDistributionScenario</span><span class="p">:</span>
+    <span class="n">rand_cm_dict</span> <span class="o">=</span> <span class="n">generate_confusion_matrix_with_scenario</span><span class="p">(</span>
+        <span class="n">num_classes</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+        <span class="n">total_population</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="n">scenario</span><span class="o">=</span><span class="n">scenario</span><span class="p">,</span>
+        <span class="n">seed</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">rand_cm</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="n">rand_cm_dict</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Confusion matrix generated with scenario </span><span class="si">{scenario_name}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">scenario_name</span><span class="o">=</span><span class="n">scenario</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+    <span class="n">rand_cm</span><span class="o">.</span><span class="n">print_matrix</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Confusion matrix generated with scenario UNIFORM
+Predict   0         1         2         
+Actual
+0         310       14        10        
+
+1         24        257       52        
+
+2         79        11        243       
+
+
+Confusion matrix generated with scenario MAJORITY_CLASS
+Predict   0         1         2         
+Actual
+0         662       32        22        
+
+1         10        110       22        
+
+2         33        4         105       
+
+
+Confusion matrix generated with scenario MINORITY_CLASS
+Predict   0         1         2         
+Actual
+0         84        4         2         
+
+1         33        352       71        
+
+2         108       15        331       
+
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+    <li><span style="color:red;">Notice </span> :  new in <span style="color:red;">version 4.4</span> </li>
 </ul>
 </div>
 </div>

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix module."""
-from __future__ import division
+from __future__ import division, annotations
+from typing import Union, List, Dict, Any, Tuple, Callable, Iterator, Optional
 from .errors import pycmVectorError, pycmMatrixError, pycmCIError, pycmAverageError, pycmPlotError
 from .handlers import __class_stat_init__, __overall_stat_init__
 from .handlers import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__, __obj_array_handler__
@@ -12,6 +13,8 @@ from .output import *
 from .utils import *
 from .params import *
 from .ci import __CI_overall_handler__, __CI_class_handler__
+import matplotlib.colors as Color
+import matplotlib.pyplot as plt
 import os
 import json
 import numpy
@@ -37,42 +40,31 @@ class ConfusionMatrix():
 
     def __init__(
             self,
-            actual_vector=None,
-            predict_vector=None,
-            matrix=None,
-            digit=5,
-            threshold=None,
-            file=None,
-            sample_weight=None,
-            transpose=False,
-            classes=None,
-            is_imbalanced=None,
-            metrics_off=False):
+            actual_vector: Union[List[Any], numpy.ndarray] = None,
+            predict_vector: Union[List[Any], numpy.ndarray] = None,
+            matrix: Union[Dict[str, Dict[str, int]], List[Union[int, float]], numpy.ndarray] = None,
+            digit: int = 5,
+            threshold: Optional[Callable] = None,
+            file: Optional[TextIOWrapper] = None,
+            sample_weight: Optional[Union[List[float], numpy.ndarray]] = None,
+            transpose: bool = False,
+            classes: Optional[List[Any]] = None,
+            is_imbalanced: Optional[bool] = None,
+            metrics_off: bool = False) -> None:
         """
         Init method.
 
         :param actual_vector: actual vector
-        :type actual_vector: python list or numpy array of any stringable objects
         :param predict_vector: vector of predictions
-        :type predict_vector: python list or numpy array of any stringable objects
         :param matrix: the confusion matrix
-        :type matrix: dict, list or numpy array
         :param digit: scale (number of fraction digits)(default value: 5)
-        :type digit: int
         :param threshold: activation threshold function
-        :type threshold: FunctionType (function or lambda)
         :param file: saved confusion matrix file object
-        :type file: (io.IOBase & file)
         :param sample_weight: sample weights list
-        :type sample_weight: list
         :param transpose: transpose flag
-        :type transpose: bool
         :param classes: ordered labels of classes
-        :type classes: list
         :param is_imbalanced: imbalance dataset flag
-        :type is_imbalanced: bool
         :param metrics_off: metrics off flag
-        :type metrics_off: bool
         """
         self.timings = {
             "matrix_creation": 0.0,
@@ -126,17 +118,16 @@ class ConfusionMatrix():
         self.label_map = {x: x for x in self.classes}
         self.timings["total"] = sum(self.timings.values())
 
-    def print_matrix(self, one_vs_all=False, class_name=None, sparse=False):
+    def print_matrix(self,
+                     one_vs_all: bool = False,
+                     class_name: Any = None,
+                     sparse: bool = False) -> None:
         """
         Print confusion matrix.
 
         :param one_vs_all: one-vs-all mode flag
-        :type one_vs_all: bool
         :param class_name: target class name for one-vs-all mode
-        :type class_name: any valid type
         :param sparse: sparse mode printing flag
-        :type sparse: bool
-        :return: None
         """
         classes = self.classes
         table = self.table
@@ -154,19 +145,15 @@ class ConfusionMatrix():
 
     def print_normalized_matrix(
             self,
-            one_vs_all=False,
-            class_name=None,
-            sparse=False):
+            one_vs_all: bool = False,
+            class_name: Any = None,
+            sparse: bool = False) -> None:
         """
         Print normalized confusion matrix.
 
         :param one_vs_all: one-vs-all mode flag
-        :type one_vs_all: bool
         :param class_name: target class name for one-vs-all mode
-        :type class_name: any valid type
         :param sparse: sparse mode printing flag
-        :type sparse: bool
-        :return: None
         """
         classes = self.classes
         table = self.table
@@ -185,12 +172,8 @@ class ConfusionMatrix():
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 
-    def print_timings(self):
-        """
-        Print timings report.
-
-        :return: None
-        """
+    def print_timings(self) -> None:
+        """Print timings report."""
         result = TIMINGS_TEMPLATE.format(matrix_creation=self.timings["matrix_creation"],
                                          class_statistics=self.timings["class_statistics"],
                                          overall_statistics=self.timings["overall_statistics"],
@@ -200,22 +183,17 @@ class ConfusionMatrix():
     @metrics_off_check
     def stat(
             self,
-            overall_param=None,
-            class_param=None,
-            class_name=None,
-            summary=False):
+            overall_param: Optional[List[str]] = None,
+            class_param: Optional[List[str]] = None,
+            class_name: Optional[List[Any]] = None,
+            summary: bool = False) -> None:
         """
         Print statistical measures table.
 
         :param overall_param: overall parameters list for print, Example: ["Kappa", "Scott PI"]
-        :type overall_param: list
         :param class_param: class parameters list for print, Example: ["TPR", "TNR", "AUC"]
-        :type class_param: list
         :param class_name: class name (a subset of confusion matrix classes), Example: [1, 2, 3]
-        :type class_name: list
         :param summary: summary mode flag
-        :type summary: bool
-        :return: None
         """
         classes = class_filter(self.classes, class_name)
         class_list = class_param
@@ -232,12 +210,8 @@ class ConfusionMatrix():
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 
-    def __str__(self):
-        """
-        Confusion matrix object string representation method.
-
-        :return: str representation (matrix + params)
-        """
+    def __str__(self) -> str:
+        """Confusion matrix object string representation method."""
         result = table_print(self.classes, self.table)
         result += "\n" * 4
         result += stat_print(self.classes, self.class_stat,
@@ -246,62 +220,46 @@ class ConfusionMatrix():
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
         return result
 
-    def __iter__(self):
-        """
-        Iterate through confusion matrix.
-
-        :return: None
-        """
+    def __iter__(self) -> Iterator[Tuple[Any, Dict[Any, int]]]:
+        """Iterate through confusion matrix."""
         for key in self.matrix:
             yield key, self.matrix[key]
 
-    def __contains__(self, class_name):
+    def __contains__(self, class_name: Any) -> bool:
         """
         Check if the confusion matrix contains the given class name.
 
         :param class_name: given class name
-        :param class_name: any valid type
-        :return: True if class_name is a class in confusion matrix
         """
         return class_name in self.classes
 
-    def __getitem__(self, class_name):
+    def __getitem__(self, class_name: Any) -> Dict[Any, int]:
         """
         Return the element(s) in the matrix corresponding to the given class name.
 
         :param class_name: given class name
-        :type class_name: any valid type
-        :return: the element(s) in matrix corresponding to the given class name
         """
         return self.matrix[class_name]
 
     def save_stat(
             self,
-            name,
-            address=True,
-            overall_param=None,
-            class_param=None,
-            class_name=None,
-            summary=False,
-            sparse=False):
+            name: str,
+            address: bool = True,
+            overall_param: Optional[List[str]] = None,
+            class_param: Optional[List[str]] = None,
+            class_name: Optional[List[Any]] = None,
+            summary: bool = False,
+            sparse: bool = False) -> Dict[str, Union[bool, str]]:
         """
-        Save the ConfusionMatrix object in .pycm (flat file format).
+        Save the ConfusionMatrix object in .pycm (flat file format) and return the result as a dictionary.
 
         :param name: filename
-        :type name: str
         :param address: flag for address return
-        :type address: bool
         :param overall_param: overall parameters list for save, Example: ["Kappa", "Scott PI"]
-        :type overall_param: list
         :param class_param: class parameters list for save, Example: ["TPR", "TNR", "AUC"]
-        :type class_param: list
         :param class_name: class name (subset of classes names), Example: [1, 2, 3]
-        :type class_name: list
         :param summary: summary mode flag
-        :type summary: bool
         :param sparse: sparse mode printing flag
-        :type sparse: bool
-        :return: saving address as dict {"Status":bool, "Message":str}
         """
         try:
             message = None
@@ -361,40 +319,29 @@ class ConfusionMatrix():
 
     def save_html(
             self,
-            name,
-            address=True,
-            overall_param=None,
-            class_param=None,
-            class_name=None,
-            color=(0, 0, 0),
-            normalize=False,
-            summary=False,
-            alt_link=False,
-            shortener=True):
+            name: str,
+            address: bool = True,
+            overall_param: Optional[List[str]] = None,
+            class_param: Optional[List[str]] = None,
+            class_name: Optional[List[Any]] = None,
+            color: Tuple[int, int, int] = (0, 0, 0),
+            normalize: bool = False,
+            summary: bool = False,
+            alt_link: bool = False,
+            shortener: bool = True) -> Dict[str, Union[bool, str]]:
         """
-        Save ConfusionMatrix in HTML file.
+        Save ConfusionMatrix in HTML file and return the result as a dictionary.
 
         :param name: filename
-        :type name: str
         :param address: flag for address return
-        :type address: bool
         :param overall_param: overall parameters list for save, Example: ["Kappa", "Scott PI"]
-        :type overall_param: list
         :param class_param: class parameters list for save, Example: ["TPR", "TNR", "AUC"]
-        :type class_param: list
         :param class_name: class name (subset of classes names), Example: [1, 2, 3]
-        :type class_name: list
         :param color: matrix color in RGB as (R, G, B)
-        :type color: tuple
         :param normalize: save normalize matrix flag
-        :type normalize: bool
         :param summary: summary mode flag
-        :type summary: bool
         :param alt_link: alternative link for document flag
-        :type alt_link: bool
         :param shortener: class name shortener flag
-        :type shortener: bool
-        :return: saving address as dict {"Status":bool, "Message":str}
         """
         try:
             class_list = class_param
@@ -443,34 +390,25 @@ class ConfusionMatrix():
 
     def save_csv(
             self,
-            name,
-            address=True,
-            class_param=None,
-            class_name=None,
-            matrix_save=True,
-            normalize=False,
-            summary=False,
-            header=False):
+            name: str,
+            address: bool = True,
+            class_param: Optional[List[str]] = None,
+            class_name: Optional[List[Any]] = None,
+            matrix_save: bool = True,
+            normalize: bool = False,
+            summary: bool = False,
+            header: bool = False) -> Dict[str, Union[bool, str]]:
         """
-        Save ConfusionMatrix in csv file.
+        Save ConfusionMatrix in csv file and return the result as a dictionary.
 
         :param name: filename
-        :type name: str
         :param address: flag for address return
-        :type address: bool
         :param class_param: class parameters list for save, Example: ["TPR", "TNR", "AUC"]
-        :type class_param: list
         :param class_name: class name (subset of classes names), Example: [1, 2, 3]
-        :type class_name: list
         :param matrix_save: save matrix flag
-        :type matrix_save: bool
         :param normalize: save normalize matrix flag
-        :type normalize: bool
         :param summary: summary mode flag
-        :type summary: bool
         :param header: add headers to csv file
-        :type header: bool
-        :return: saving address as dict {"Status":bool, "Message":str}
         """
         try:
             class_list = class_param
@@ -503,22 +441,17 @@ class ConfusionMatrix():
 
     def save_obj(
             self,
-            name,
-            address=True,
-            save_stat=False,
-            save_vector=True):
+            name: str,
+            address: bool = True,
+            save_stat: bool = False,
+            save_vector: bool = True) -> Dict[str, Union[bool, str]]:
         """
-        Save ConfusionMatrix object in .obj file.
+        Save ConfusionMatrix object in .obj file and return the result as a dictionary.
 
         :param name: filename
-        :type name: str
         :param address: flag for address return
-        :type address: bool
         :param save_stat: save statistics flag
-        :type save_stat: bool
         :param save_vector: save vectors flag
-        :type save_vector: bool
-        :return: saving address as dict {"Status":bool, "Message":str}
         """
         try:
             message = None
@@ -558,13 +491,11 @@ class ConfusionMatrix():
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
-    def F_beta(self, beta):
+    def F_beta(self, beta: float) -> Dict[str, float]:
         """
         Calculate FBeta score for all classes.
 
         :param beta: beta parameter
-        :type beta: float
-        :return: FBeta score for all classes as dict
         """
         try:
             F_dict = {}
@@ -579,12 +510,8 @@ class ConfusionMatrix():
             return {}
 
     @metrics_off_check
-    def sensitivity_index(self):
-        """
-        Calculate sensitivity index for all classes.
-
-        :return: sensitivity index for all classes as dict
-        """
+    def sensitivity_index(self) -> Dict[str, float]:
+        """Calculate sensitivity index for all classes."""
         sensitivity_index_dict = {}
         for i in self.classes:
             sensitivity_index_dict[i] = sensitivity_index_calc(
@@ -592,13 +519,11 @@ class ConfusionMatrix():
         return sensitivity_index_dict
 
     @metrics_off_check
-    def IBA_alpha(self, alpha):
+    def IBA_alpha(self, alpha: float) -> Dict[str, float]:
         """
         Calculate IBA_alpha score for all classes.
 
         :param alpha: alpha parameter
-        :type alpha: float
-        :return: IBA_alpha score for all classes as dict
         """
         try:
             IBA_dict = {}
@@ -608,15 +533,12 @@ class ConfusionMatrix():
         except Exception:
             return {}
 
-    def TI(self, alpha, beta):
+    def TI(self, alpha: float, beta: float) -> Dict[str, float]:
         """
         Calculate Tversky index.
 
         :param alpha: alpha coefficient
-        :type alpha: float
         :param beta: beta coefficient
-        :type beta: float
-        :return: TI as float
         """
         try:
             TI_dict = {}
@@ -628,13 +550,11 @@ class ConfusionMatrix():
             return {}
 
     @metrics_off_check
-    def NB(self, w=1):
+    def NB(self, w: float = 1.0) -> Dict[str, float]:
         """
         Calculate Net benefit for all classes.
 
         :param w: weight
-        :type w: float
-        :return: NB for all classes as dict
         """
         try:
             NB_dict = {}
@@ -644,13 +564,11 @@ class ConfusionMatrix():
         except Exception:
             return {}
 
-    def distance(self, metric):
+    def distance(self, metric: DistanceType) -> Dict[str, float]:
         """
         Calculate distance/similarity for all classes.
 
         :param metric: metric
-        :type metric: DistanceType
-        :return: result as dict
         """
         distance_dict = {}
         if not isinstance(metric, DistanceType):
@@ -660,12 +578,8 @@ class ConfusionMatrix():
                 TP=self.TP[i], FP=self.FP[i], FN=self.FN[i], TN=self.TN[i])
         return distance_dict
 
-    def dissimilarity_matrix(self):
-        """
-        Calculate dissimilarity matrix.
-
-        :return: dissimilarity matrix as dict
-        """
+    def dissimilarity_matrix(self) -> Dict[str, Dict[str, int]]:
+        """Calculate dissimilarity matrix."""
         result = {class_name: dict(zip(self.classes, [0] * len(self.classes))) for class_name in self.classes}
         matrix_array = self.to_array()
         for class_index_1, class_name_1 in enumerate(self.classes):
@@ -677,21 +591,17 @@ class ConfusionMatrix():
     @metrics_off_check
     def CI(
             self,
-            param,
-            alpha=0.05,
-            one_sided=False,
-            binom_method="normal-approx"):
+            param: str,
+            alpha: float = 0.05,
+            one_sided: bool = False,
+            binom_method: str = "normal-approx") -> Dict[str, Tuple[float, float]]:
         """
         Calculate CI.
 
         :param param: input parameter
-        :type param: str
         :param alpha: type I error
-        :type alpha: float
         :param one_sided: one-sided mode flag
-        :type one_sided: bool
         :param binom_method: binomial confidence intervals method
-        :type binom_method: str
         :return: CI
         """
         if isinstance(param, str):
@@ -718,72 +628,49 @@ class ConfusionMatrix():
             raise pycmCIError(CI_SUPPORT_ERROR)
         raise pycmCIError(CI_FORMAT_ERROR)
 
-    def __repr__(self):
-        """
-        Confusion matrix object representation method.
-
-        :return: representation as str
-        """
+    def __repr__(self) -> str:
+        """Confusion matrix object representation method."""
         return "pycm.ConfusionMatrix(classes: " + str(self.classes) + ")"
 
-    def __len__(self):
-        """
-        Confusion matrix object length method.
-
-        :return: length as int
-        """
+    def __len__(self) -> int:
+        """Confusion matrix object length method."""
         return len(self.classes)
 
-    def __eq__(self, other):
+    def __eq__(self, other: Any) -> bool:
         """
         Confusion matrix equal method.
 
         :param other: the other confusion matrix
-        :type other: ConfusionMatrix
-        :return: result as bool
         """
         if isinstance(other, ConfusionMatrix):
             return self.table == other.table
         return False
 
-    def __ne__(self, other):
+    def __ne__(self, other: Any) -> bool:
         """
         Confusion matrix not equal method.
 
         :param other: the other confusion matrix
-        :type other: ConfusionMatrix
-        :return: result as bool
         """
         return not self.__eq__(other)
 
-    def __copy__(self):
-        """
-        Create a copy of the confusion matrix.
-
-        :return: copy of the ConfusionMatrix object
-        """
+    def __copy__(self) -> ConfusionMatrix:
+        """Create a copy of the confusion matrix."""
         _class = self.__class__
         result = _class.__new__(_class)
         result.__dict__.update(self.__dict__)
         return result
 
-    def copy(self):
-        """
-        Create a copy of the confusion matrix.
-
-        :return: copy of the ConfusionMatrix object
-        """
+    def copy(self) -> ConfusionMatrix:
+        """Create a copy of the confusion matrix."""
         return self.__copy__()
 
-    def relabel(self, mapping, sort=False):
+    def relabel(self, mapping: Dict[Any, Any], sort: bool = False) -> None:
         """
         Rename the confusion matrix classes.
 
         :param mapping: mapping dictionary
-        :type mapping: dict
         :param sort: flag for sorting new classes
-        :type sort: bool
-        :return: None
         """
         if not isinstance(mapping, dict):
             raise pycmMatrixError(MAPPING_FORMAT_ERROR)
@@ -827,15 +714,12 @@ class ConfusionMatrix():
         __class_stat_init__(self)
 
     @metrics_off_check
-    def average(self, param, none_omit=False):
+    def average(self, param: str, none_omit: bool = False) -> Union[float, str]:
         """
         Calculate the average of the input parameter.
 
         :param param: input parameter
-        :type param: str
         :param none_omit: none items omitting flag
-        :type none_omit: bool
-        :return: average of the input parameter
         """
         return self.weighted_average(
             param=param,
@@ -843,17 +727,13 @@ class ConfusionMatrix():
             none_omit=none_omit)
 
     @metrics_off_check
-    def weighted_average(self, param, weight=None, none_omit=False):
+    def weighted_average(self, param: str, weight: Optional[Dict[Any, float]] = None, none_omit: bool = False) -> Union[float, str]:
         """
         Calculate the weighted average of the input parameter.
 
         :param param: input parameter
-        :type param: str
         :param weight: explicitly passes weights
-        :type weight:dict
         :param none_omit: none items omitting flag
-        :type none_omit: bool
-        :return: weighted average of the input parameter
         """
         selected_weight = self.P.copy()
         if weight is not None:
@@ -881,13 +761,11 @@ class ConfusionMatrix():
             return "None"
 
     @metrics_off_check
-    def weighted_kappa(self, weight=None):
+    def weighted_kappa(self, weight: Optional[Dict[Any, Dict[Any, float]]] = None) -> float:
         """
         Calculate weighted kappa.
 
         :param weight: weight matrix
-        :type weight: dict
-        :return: weighted kappa as float
         """
         if matrix_check(weight) is False:
             warn(WEIGHTED_KAPPA_WARNING, RuntimeWarning)
@@ -904,13 +782,11 @@ class ConfusionMatrix():
             weight)
 
     @metrics_off_check
-    def weighted_alpha(self, weight=None):
+    def weighted_alpha(self, weight: Optional[Dict[Any, Dict[Any, float]]] = None) -> float:
         """
         Calculate weighted Krippendorff's alpha.
 
         :param weight: weight matrix
-        :type weight: dict
-        :return: weighted alpha as float
         """
         if matrix_check(weight) is False:
             warn(WEIGHTED_ALPHA_WARNING, RuntimeWarning)
@@ -927,15 +803,12 @@ class ConfusionMatrix():
             weight)
 
     @metrics_off_check
-    def aickin_alpha(self, max_iter=200, epsilon=0.0001):
+    def aickin_alpha(self, max_iter: int = 200, epsilon: float = 0.0001) -> float:
         """
         Calculate Aickin's alpha.
 
         :param max_iter: maximum number of iterations
-        :type max_iter: int
         :param epsilon: difference threshold
-        :type epsilon: float
-        :return: Aickin's alpha as float
         """
         return alpha2_calc(
             self.TOP,
@@ -946,13 +819,11 @@ class ConfusionMatrix():
             max_iter,
             epsilon)
 
-    def brier_score(self, pos_class=None):
+    def brier_score(self, pos_class: Optional[Any] = None) -> float:
         """
         Calculate Brier score.
 
         :param pos_class: positive class name
-        :type pos_class: int/str
-        :return: Brier score as float
         """
         if self.prob_vector is None or not self.binary:
             raise pycmVectorError(BRIER_LOG_LOSS_PROB_ERROR)
@@ -965,15 +836,12 @@ class ConfusionMatrix():
             self.weights,
             pos_class)
 
-    def log_loss(self, normalize=True, pos_class=None):
+    def log_loss(self, normalize: bool = True, pos_class: Optional[Any] = None) -> float:
         """
         Calculate Log loss.
 
         :param normalize: normalization flag
-        :type normalize: bool
         :param pos_class: positive class name
-        :type pos_class: int/str
-        :return: Log loss as float
         """
         if self.prob_vector is None or not self.binary:
             raise pycmVectorError(BRIER_LOG_LOSS_PROB_ERROR)
@@ -987,12 +855,8 @@ class ConfusionMatrix():
             self.weights,
             pos_class)
 
-    def position(self):
-        """
-        Return indices of TP, FP, TN and FN in the predict_vector.
-
-        :return: TP, FP, TN, FN indices separated for each class as dictionary
-        """
+    def position(self) -> Dict[Any, Dict[str, List[int]]]:
+        """Return indices of TP, FP, TN and FN in the predict_vector."""
         if self.predict_vector is None or self.actual_vector is None:
             raise pycmVectorError(VECTOR_ONLY_ERROR)
         if self.positions is None:
@@ -1023,16 +887,13 @@ class ConfusionMatrix():
             self.positions = positions
         return self.positions
 
-    def to_array(self, normalized=False, one_vs_all=False, class_name=None):
+    def to_array(self, normalized: bool = False, one_vs_all: bool = False, class_name: Optional[Any] = None) -> numpy.ndarray:
         """
         Return the confusion matrix in form of a numpy array.
 
         :param normalized: a flag for getting normalized confusion matrix
-        :type normalized: bool
         :param one_vs_all: one-vs-all mode flag
-        :type one_vs_all: bool
         :param class_name: target class name for one-vs-all mode
-        :type class_name: any valid type
         :return: confusion matrix as a numpy.ndarray
         """
         classes = self.classes
@@ -1050,15 +911,12 @@ class ConfusionMatrix():
             array.append(row)
         return numpy.array(array)
 
-    def combine(self, other, metrics_off=False):
+    def combine(self, other: ConfusionMatrix, metrics_off: bool = False) -> ConfusionMatrix:
         """
         Return the combination of two confusion matrices.
 
         :param other: the other matrix that is going to be combined
-        :type other: pycm.ConfusionMatrix
         :param metrics_off: metrics off flag
-        :type metrics_off: bool
-        :return: the combination of two matrices as a new confusion matrix
         """
         if isinstance(other, ConfusionMatrix) is False:
             raise pycmMatrixError(COMBINE_TYPE_ERROR)
@@ -1068,31 +926,23 @@ class ConfusionMatrix():
 
     def plot(
             self,
-            normalized=False,
-            one_vs_all=False,
-            class_name=None,
-            title='Confusion Matrix',
-            number_label=False,
-            cmap=None,
-            plot_lib='matplotlib'):
+            normalized: bool = False,
+            one_vs_all: bool = False,
+            class_name: Optional[Any] = None,
+            title: str = 'Confusion Matrix',
+            number_label: bool = False,
+            cmap: Optional[Color.ListedColormap] = None,
+            plot_lib: str = 'matplotlib') -> plt.Axes:
         """
-        Plot confusion matrix.
+        Plot confusion matrix and return the plot axes.
 
         :param normalized: normalized flag for matrix
-        :type normalized: bool
         :param one_vs_all: one-vs-all mode flag
-        :type one_vs_all: bool
         :param class_name: target class name for one-vs-all mode
-        :type class_name: any valid type
         :param title: plot title
-        :type title: str
         :param number_label: number label flag
-        :type number_label: bool
         :param cmap: color map
-        :type cmap: matplotlib.colors.ListedColormap
         :param plot_lib: plotting library
-        :type plot_lib: str
-        :return: plot axes
         """
         matrix = self.to_array(
             normalized=normalized,

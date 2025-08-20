@@ -15,7 +15,7 @@ from warnings import warn
 from functools import wraps
 
 
-def list_check_equal(input_list: List) -> bool:
+def list_check_equal(input_list: List[Any]) -> bool:
     """
     Check equality of the input list items.
 
@@ -54,7 +54,7 @@ def rounder(input_number: Any, digit: int = 5) -> str:
     return str(input_number)
 
 
-def class_filter(classes: List, class_name: List) -> List:
+def class_filter(classes: List[Any], class_name: List[Any]) -> List[Any]:
     """
     Filter classes by comparing two lists.
 
@@ -100,7 +100,7 @@ def matrix_check(table: Dict[Any, Dict[Any, int]]) -> bool:
         return False
 
 
-def vector_filter(actual_vector: Union[List, numpy.ndarray], predict_vector: Union[List, numpy.ndarray]) -> Tuple[List, List]:
+def vector_filter(actual_vector: Union[List[Any], numpy.ndarray], predict_vector: Union[List[Any], numpy.ndarray]) -> Tuple[List[Any], List[Any]]:
     """
     Convert different type of items in vectors to str.
 
@@ -120,7 +120,7 @@ def vector_filter(actual_vector: Union[List, numpy.ndarray], predict_vector: Uni
     return actual_vector, predict_vector
 
 
-def class_check(vector: List) -> bool:
+def class_check(vector: List[Any]) -> bool:
     """
     Check if all items in the vector are of the same type.
 
@@ -143,13 +143,13 @@ def isfile(f: TextIOWrapper) -> bool:
         f, 'read')
 
 
-def one_vs_all_func(classes: List,
+def one_vs_all_func(classes: List[Any],
                     table: Dict[Any, Dict[Any, int]],
                     TP: Dict[Any, int],
                     TN: Dict[Any, int],
                     FP: Dict[Any, int],
                     FN: Dict[Any, int],
-                    class_name: Any) -> Tuple[List, Dict[Any, Dict[Any, int]]]:
+                    class_name: Any) -> Tuple[List[Any], Dict[Any, Dict[Any, int]]]:
     """
     Return one-vs-all confusion matrix as a tuple containing the list of classes and the confusion matrix table.
 
@@ -172,7 +172,7 @@ def one_vs_all_func(classes: List,
         return classes, table
 
 
-def normalized_table_calc(classes: List, table: Dict[Any, Dict[Any, int]]) -> Dict[Any, Dict[Any, float]]:
+def normalized_table_calc(classes: List[Any], table: Dict[Any, Dict[Any, int]]) -> Dict[Any, Dict[Any, float]]:
     """
     Return normalized confusion matrix.
 
@@ -203,7 +203,7 @@ def custom_rounder(input_number: float, p: int) -> float:
     return int(input_number * p + 0.5) / p
 
 
-def sparse_matrix_calc(classes: List, table: Dict[Any, Dict[Any, int]]) -> Tuple[Dict[Any, Dict[Any, int]], List, List]:
+def sparse_matrix_calc(classes: List[Any], table: Dict[Any, Dict[Any, int]]) -> Tuple[Dict[Any, Dict[Any, int]], List[Any], List[Any]]:
     """
     Return sparse confusion matrix and its classes.
 
@@ -231,7 +231,7 @@ def sparse_matrix_calc(classes: List, table: Dict[Any, Dict[Any, int]]) -> Tuple
     return sparse_table, actual_classes, predict_classes
 
 
-def transpose_func(classes: List, table: Dict[Any, Dict[Any, int]]) -> Dict[Any, Dict[Any, int]]:
+def transpose_func(classes: List[Any], table: Dict[Any, Dict[Any, int]]) -> Dict[Any, Dict[Any, int]]:
     """
     Return the transposed confusion matrix.
 
@@ -248,7 +248,7 @@ def transpose_func(classes: List, table: Dict[Any, Dict[Any, int]]) -> Dict[Any,
     return transposed_table
 
 
-def matrix_params_from_table(table: Dict[Any, Dict[Any, int]], classes: Optional[List] = None, transpose: bool = False) -> Tuple[List, Dict[Any, Dict[Any, int]], Dict[Any, int], Dict[Any, int], Dict[Any, int], Dict[Any, int]]:
+def matrix_params_from_table(table: Dict[Any, Dict[Any, int]], classes: Optional[List[Any]] = None, transpose: bool = False) -> Tuple[List[Any], Dict[Any, Dict[Any, int]], Dict[Any, int], Dict[Any, int], Dict[Any, int], Dict[Any, int]]:
     """
     Calculate TP, TN, FP, and FN from the input confusion matrix and return them.
 
@@ -286,10 +286,10 @@ def matrix_params_from_table(table: Dict[Any, Dict[Any, int]], classes: Optional
 
 
 def matrix_params_calc(
-        actual_vector: List,
-        predict_vector: List,
-        sample_weight: Optional[Union[List, numpy.ndarray]] = None,
-        classes: Optional[List] = None) -> Tuple[List, Dict[Any, Dict[Any, int]], Dict[Any, int], Dict[Any, int], Dict[Any, int], Dict[Any, int]]:
+        actual_vector: List[Any],
+        predict_vector: List[Any],
+        sample_weight: Optional[Union[List[float], numpy.ndarray]] = None,
+        classes: Optional[List[Any]] = None) -> Tuple[List[Any], Dict[Any, Dict[Any, int]], Dict[Any, int], Dict[Any, int], Dict[Any, int], Dict[Any, int]]:
     """
     Calculate true positive (TP), true negative (TN), false positive (FP), and false negative (FN) for each class and return them.
 
@@ -319,7 +319,7 @@ def matrix_params_calc(
     return classes_list, table, TP_dict, TN_dict, FP_dict, FN_dict
 
 
-def classes_filter(actual_vector: List, predict_vector: List, classes: Optional[List] = None) -> Tuple[List, List, List]:
+def classes_filter(actual_vector: List[Any], predict_vector: List[Any], classes: Optional[List[Any]] = None) -> Tuple[List[Any], List[Any], List[Any]]:
     """
     Return updated vectors and classes list.
 
@@ -374,7 +374,7 @@ def imbalance_check(P: Dict[Any, int]) -> bool:
     return is_imbalanced
 
 
-def binary_check(classes: List) -> bool:
+def binary_check(classes: List[Any]) -> bool:
     """
     Check if the problem is a binary classification.
 
@@ -399,7 +399,7 @@ def complement(input_number: float) -> Union[float, str]:
         return "None"
 
 
-def statistic_recommend(classes: List, imbalance: bool) -> List:
+def statistic_recommend(classes: List[Any], imbalance: bool) -> List:
     """
     Return recommend parameters which are more suitable due to the input dataset characteristics.
 
@@ -504,7 +504,7 @@ def axes_gen(
     return ax
 
 
-def polevl(x: float, coefs: list, n: int) -> float:
+def polevl(x: float, coefs: List[float], n: int) -> float:
     """
     Evaluate polynomial of degree n.
 
@@ -520,7 +520,7 @@ def polevl(x: float, coefs: list, n: int) -> float:
     return ans
 
 
-def p1evl(x: float, coefs: list, n: int) -> float:
+def p1evl(x: float, coefs: List[float], n: int) -> float:
     """
     Evaluate polynomial when coefficient of x^n is 1.
 
@@ -661,7 +661,7 @@ def metrics_off_check(func: Callable) -> Callable:
     :param func: input function
     """
     @wraps(func)
-    def inner_function(*args: List, **kwargs: Dict[str, Any]) -> Any:
+    def inner_function(*args: List[Any], **kwargs: Dict[str, Any]) -> Any:
         """
         Inner function which checks the metrics_off flag.
 
@@ -681,7 +681,7 @@ def deprecated(func: Callable) -> Callable:
     :param func: input function
     """
     @wraps(func)
-    def inner_function(*args: List, **kwargs: Dict[str, Any]) -> Any:
+    def inner_function(*args: List[Any], **kwargs: Dict[str, Any]) -> Any:
         """
         Inner function which emits a deprecation warning.
 

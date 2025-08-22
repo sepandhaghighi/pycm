@@ -79,19 +79,14 @@ class DistanceType(Enum):
     KuhnsVII = "KuhnsVII"
 
 
-def AMPLE_calc(TP, FP, FN, TN):
+def AMPLE_calc(TP: int, FP: int, FN: int, TN: int) -> float:
     """
-    Calculate AMPLE.
+    Calculate and return AMPLE.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: AMPLE as float
     """
     try:
         part1 = TP / (TP + FP)
@@ -101,19 +96,14 @@ def AMPLE_calc(TP, FP, FN, TN):
         return "None"
 
 
-def Anderberg_calc(TP, FP, FN, TN):
+def Anderberg_calc(TP: int, FP: int, FN: int, TN: int) -> float:
     """
-    Calculate Anderberg's D.
+    Calculate and return Anderberg's D.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Anderberg's D as float
     """
     try:
         part1 = max(TP, FP) + max(FN, TN) + max(TP, FN) + max(FP, TN)
@@ -124,19 +114,14 @@ def Anderberg_calc(TP, FP, FN, TN):
         return "None"
 
 
-def AndresMarzoDelta_calc(TP, FP, FN, TN):
+def AndresMarzoDelta_calc(TP: int, FP: int, FN: int, TN: int) -> float:
     """
-    Calculate Andres & Marzo's Delta.
+    Calculate and return Andres & Marzo's Delta.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Andres & Marzo's Delta as float
     """
     try:
         part1 = TP + TN - 2 * math.sqrt(FP * FN)
@@ -146,19 +131,14 @@ def AndresMarzoDelta_calc(TP, FP, FN, TN):
         return "None"
 
 
-def BaroniUrbaniBuserI_calc(TP, FP, FN, TN):
+def BaroniUrbaniBuserI_calc(TP: int, FP: int, FN: int, TN: int) -> float:
     """
-    Calculate Baroni-Urbani & Buser I.
+    Calculate and return Baroni-Urbani & Buser I.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Baroni-Urbani & Buser I as float
     """
     try:
         part1 = math.sqrt(TP * TN) + TP
@@ -168,19 +148,14 @@ def BaroniUrbaniBuserI_calc(TP, FP, FN, TN):
         return "None"
 
 
-def BaroniUrbaniBuserII_calc(TP, FP, FN, TN):
+def BaroniUrbaniBuserII_calc(TP: int, FP: int, FN: int, TN: int) -> float:
     """
-    Calculate Baroni-Urbani & Buser II.
+    Calculate and return Baroni-Urbani & Buser II.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Baroni-Urbani & Buser II as float
     """
     try:
         part1 = math.sqrt(TP * TN) + TP - FP - FN
@@ -190,19 +165,14 @@ def BaroniUrbaniBuserII_calc(TP, FP, FN, TN):
         return "None"
 
 
-def BatageljBren_calc(TP, FP, FN, TN):
+def BatageljBren_calc(TP: int, FP: int, FN: int, TN: int) -> float:
     """
-    Calculate Batagelj & Bren.
+    Calculate and return Batagelj & Bren.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Batagelj & Bren as float
     """
     try:
         return (FP * FN) / (TP * TN)

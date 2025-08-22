@@ -3,7 +3,6 @@
 from __future__ import division
 from typing import Union, List, Dict, Any, Tuple, Callable, Optional
 from io import TextIOWrapper
-import matplotlib.pyplot as plt
 import sys
 import math
 import numpy

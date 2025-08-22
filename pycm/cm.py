@@ -13,8 +13,6 @@ from .output import *
 from .utils import *
 from .params import *
 from .ci import __CI_overall_handler__, __CI_class_handler__
-import matplotlib.colors as Color
-import matplotlib.pyplot as plt
 import os
 import json
 import numpy
@@ -931,8 +929,8 @@ class ConfusionMatrix():
             class_name: Optional[Any] = None,
             title: str = 'Confusion Matrix',
             number_label: bool = False,
-            cmap: Optional[Color.ListedColormap] = None,
-            plot_lib: str = 'matplotlib') -> plt.Axes:
+            cmap: Optional["matplotlib.colors.Color.ListedColormap"] = None,
+            plot_lib: str = 'matplotlib') -> "matplotlib.pyplot.Axes":
         """
         Plot confusion matrix and return the plot axes.
 

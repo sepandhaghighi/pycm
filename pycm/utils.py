@@ -3,7 +3,6 @@
 from __future__ import division
 from typing import Union, List, Dict, Any, Tuple, Callable, Optional
 from io import TextIOWrapper
-import matplotlib.colors as Color
 import matplotlib.pyplot as plt
 import sys
 import math
@@ -436,7 +435,7 @@ def matrix_combine(matrix_1: Dict[Any, Dict[Any, int]], matrix_2: Dict[Any, Dict
     return result_matrix
 
 
-def add_number_label(ax: plt.Axes, classes: List[str], matrix: numpy.ndarray, cmap: Color.ListedColormap, plot_lib: str) -> None:
+def add_number_label(ax: "matplotlib.pyplot.Axes", classes: List[str], matrix: numpy.ndarray, cmap: "matplotlib.colors.Color.ListedColormap", plot_lib: str) -> None:
     """
     Add number labels to confusion matrix plot.
 
@@ -466,13 +465,13 @@ def add_number_label(ax: plt.Axes, classes: List[str], matrix: numpy.ndarray, cm
 
 
 def axes_gen(
-        ax: plt.Axes,
+        ax: "matplotlib.pyplot.Axes",
         classes: List[str],
         matrix: numpy.ndarray,
         title: str,
-        cmap: Color.ListedColormap,
+        cmap: "matplotlib.colors.Color.ListedColormap",
         number_label: bool,
-        plot_lib: str) -> plt.Axes:
+        plot_lib: str) -> "matplotlib.pyplot.Axes":
     """
     Add extra descriptions to axes and return the modified axes.
 

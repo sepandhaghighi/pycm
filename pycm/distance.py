@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Distance/Similarity functions."""
 from __future__ import division
+from typing import Union
 from enum import Enum
 import math
 
@@ -79,7 +80,7 @@ class DistanceType(Enum):
     KuhnsVII = "KuhnsVII"
 
 
-def AMPLE_calc(TP: int, FP: int, FN: int, TN: int) -> float:
+def AMPLE_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
     Calculate and return AMPLE.
 
@@ -96,7 +97,7 @@ def AMPLE_calc(TP: int, FP: int, FN: int, TN: int) -> float:
         return "None"
 
 
-def Anderberg_calc(TP: int, FP: int, FN: int, TN: int) -> float:
+def Anderberg_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
     Calculate and return Anderberg's D.
 
@@ -114,7 +115,7 @@ def Anderberg_calc(TP: int, FP: int, FN: int, TN: int) -> float:
         return "None"
 
 
-def AndresMarzoDelta_calc(TP: int, FP: int, FN: int, TN: int) -> float:
+def AndresMarzoDelta_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
     Calculate and return Andres & Marzo's Delta.
 
@@ -131,7 +132,7 @@ def AndresMarzoDelta_calc(TP: int, FP: int, FN: int, TN: int) -> float:
         return "None"
 
 
-def BaroniUrbaniBuserI_calc(TP: int, FP: int, FN: int, TN: int) -> float:
+def BaroniUrbaniBuserI_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
     Calculate and return Baroni-Urbani & Buser I.
 
@@ -148,7 +149,7 @@ def BaroniUrbaniBuserI_calc(TP: int, FP: int, FN: int, TN: int) -> float:
         return "None"
 
 
-def BaroniUrbaniBuserII_calc(TP: int, FP: int, FN: int, TN: int) -> float:
+def BaroniUrbaniBuserII_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
     Calculate and return Baroni-Urbani & Buser II.
 
@@ -165,7 +166,7 @@ def BaroniUrbaniBuserII_calc(TP: int, FP: int, FN: int, TN: int) -> float:
         return "None"
 
 
-def BatageljBren_calc(TP: int, FP: int, FN: int, TN: int) -> float:
+def BatageljBren_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
     Calculate and return Batagelj & Bren.
 
@@ -180,19 +181,14 @@ def BatageljBren_calc(TP: int, FP: int, FN: int, TN: int) -> float:
         return "None"
 
 
-def BaulieuI_calc(TP, FP, FN, TN):
+def BaulieuI_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Baulieu I.
+    Calculate and return Baulieu I.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Baulieu I as float
     """
     try:
         part1 = (TP + FP) * (TP + FN)
@@ -201,19 +197,14 @@ def BaulieuI_calc(TP, FP, FN, TN):
         return "None"
 
 
-def BaulieuII_calc(TP, FP, FN, TN):
+def BaulieuII_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Baulieu II.
+    Calculate and return Baulieu II.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Baulieu II as float
     """
     try:
         part1 = TP * TP * TN * TN
@@ -223,19 +214,14 @@ def BaulieuII_calc(TP, FP, FN, TN):
         return "None"
 
 
-def BaulieuIII_calc(TP, FP, FN, TN):
+def BaulieuIII_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Baulieu III.
+    Calculate and return Baulieu III.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Baulieu III as float
     """
     try:
         n = TP + FP + FN + TN
@@ -244,20 +230,14 @@ def BaulieuIII_calc(TP, FP, FN, TN):
     except Exception:
         return "None"
 
-
-def BaulieuIV_calc(TP, FP, FN, TN):
+def BaulieuIV_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Baulieu IV.
+    Calculate and return Baulieu IV.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Baulieu IV as float
     """
     try:
         n = TP + FP + FN + TN
@@ -267,19 +247,14 @@ def BaulieuIV_calc(TP, FP, FN, TN):
         return "None"
 
 
-def BaulieuV_calc(TP, FP, FN, TN):
+def BaulieuV_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Baulieu V.
+    Calculate and return Baulieu V.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Baulieu V as float
     """
     try:
         return (FP + FN + 1) / (TP + FP + FN + 1)
@@ -287,19 +262,14 @@ def BaulieuV_calc(TP, FP, FN, TN):
         return "None"
 
 
-def BaulieuVI_calc(TP, FP, FN, TN):
+def BaulieuVI_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Baulieu VI.
+    Calculate and return Baulieu VI.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Baulieu VI as float
     """
     try:
         return (FP + FN) / (TP + FP + FN + 1)
@@ -307,19 +277,14 @@ def BaulieuVI_calc(TP, FP, FN, TN):
         return "None"
 
 
-def BaulieuVII_calc(TP, FP, FN, TN):
+def BaulieuVII_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Baulieu VII.
+    Calculate and return Baulieu VII.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Baulieu VII as float
     """
     try:
         n = TP + FP + FN + TN
@@ -328,19 +293,14 @@ def BaulieuVII_calc(TP, FP, FN, TN):
         return "None"
 
 
-def BaulieuVIII_calc(TP, FP, FN, TN):
+def BaulieuVIII_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Baulieu VIII.
+    Calculate and return Baulieu VIII.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Baulieu VIII as float
     """
     try:
         n = TP + FP + FN + TN
@@ -349,19 +309,14 @@ def BaulieuVIII_calc(TP, FP, FN, TN):
         return "None"
 
 
-def BaulieuIX_calc(TP, FP, FN, TN):
+def BaulieuIX_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Baulieu IX.
+    Calculate and return Baulieu IX.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Baulieu IX as float
     """
     try:
         return (FP + 2 * FN) / (TP + FP + 2 * FN + TN)
@@ -369,19 +324,14 @@ def BaulieuIX_calc(TP, FP, FN, TN):
         return "None"
 
 
-def BaulieuX_calc(TP, FP, FN, TN):
+def BaulieuX_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Baulieu X.
+    Calculate and return Baulieu X.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Baulieu X as float
     """
     try:
         n = TP + FP + FN + TN
@@ -391,19 +341,14 @@ def BaulieuX_calc(TP, FP, FN, TN):
         return "None"
 
 
-def BaulieuXI_calc(TP, FP, FN, TN):
+def BaulieuXI_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Baulieu XI.
+    Calculate and return Baulieu XI.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Baulieu XI as float
     """
     try:
         return (FP + FN) / (FP + FN + TN)

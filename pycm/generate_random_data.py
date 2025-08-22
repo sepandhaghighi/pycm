@@ -71,7 +71,8 @@ def _calculate_class_counts(class_percentages: Dict[Any, float], total_populatio
     return dict(zip(classes, class_counts.astype(int).tolist()))
 
 
-def generate_confusion_matrix(class_percentages: Union[Dict[Any, float], List[float]], total_population: int, seed: Optional[int] = None) -> Dict[Any, Dict[Any, int]]:
+def generate_confusion_matrix(class_percentages: Union[Dict[Any, float], List[float]],
+                              total_population: int, seed: Optional[int] = None) -> Dict[Any, Dict[Any, int]]:
     """
     Generate a random confusion matrix with given class percentages and total population.
 

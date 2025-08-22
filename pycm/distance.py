@@ -230,6 +230,7 @@ def BaulieuIII_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     except Exception:
         return "None"
 
+
 def BaulieuIV_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
     Calculate and return Baulieu IV.

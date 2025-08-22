@@ -725,7 +725,8 @@ class ConfusionMatrix():
             none_omit=none_omit)
 
     @metrics_off_check
-    def weighted_average(self, param: str, weight: Optional[Dict[Any, float]] = None, none_omit: bool = False) -> Union[float, str]:
+    def weighted_average(self, param: str, weight: Optional[Dict[Any, float]]
+                         = None, none_omit: bool = False) -> Union[float, str]:
         """
         Calculate the weighted average of the input parameter.
 
@@ -885,7 +886,8 @@ class ConfusionMatrix():
             self.positions = positions
         return self.positions
 
-    def to_array(self, normalized: bool = False, one_vs_all: bool = False, class_name: Optional[Any] = None) -> numpy.ndarray:
+    def to_array(self, normalized: bool = False, one_vs_all: bool = False,
+                 class_name: Optional[Any] = None) -> numpy.ndarray:
         """
         Return the confusion matrix in form of a numpy array.
 

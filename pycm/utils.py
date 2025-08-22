@@ -98,7 +98,8 @@ def matrix_check(table: Dict[Any, Dict[Any, int]]) -> bool:
         return False
 
 
-def vector_filter(actual_vector: Union[List[Any], numpy.ndarray], predict_vector: Union[List[Any], numpy.ndarray]) -> Tuple[List[Any], List[Any]]:
+def vector_filter(actual_vector: Union[List[Any], numpy.ndarray],
+                  predict_vector: Union[List[Any], numpy.ndarray]) -> Tuple[List[Any], List[Any]]:
     """
     Convert different type of items in vectors to str.
 
@@ -201,7 +202,8 @@ def custom_rounder(input_number: float, p: int) -> float:
     return int(input_number * p + 0.5) / p
 
 
-def sparse_matrix_calc(classes: List[Any], table: Dict[Any, Dict[Any, int]]) -> Tuple[Dict[Any, Dict[Any, int]], List[Any], List[Any]]:
+def sparse_matrix_calc(classes: List[Any], table: Dict[Any, Dict[Any, int]]
+                       ) -> Tuple[Dict[Any, Dict[Any, int]], List[Any], List[Any]]:
     """
     Return sparse confusion matrix and its classes.
 
@@ -246,7 +248,22 @@ def transpose_func(classes: List[Any], table: Dict[Any, Dict[Any, int]]) -> Dict
     return transposed_table
 
 
-def matrix_params_from_table(table: Dict[Any, Dict[Any, int]], classes: Optional[List[Any]] = None, transpose: bool = False) -> Tuple[List[Any], Dict[Any, Dict[Any, int]], Dict[Any, int], Dict[Any, int], Dict[Any, int], Dict[Any, int]]:
+def matrix_params_from_table(table: Dict[Any,
+                                         Dict[Any,
+                                              int]],
+                             classes: Optional[List[Any]] = None,
+                             transpose: bool = False) -> Tuple[List[Any],
+                                                               Dict[Any,
+                                                                    Dict[Any,
+                                                                         int]],
+                                                               Dict[Any,
+                                                                    int],
+                                                               Dict[Any,
+                                                                    int],
+                                                               Dict[Any,
+                                                                    int],
+                                                               Dict[Any,
+                                                                    int]]:
     """
     Calculate TP, TN, FP, and FN from the input confusion matrix and return them.
 
@@ -317,7 +334,8 @@ def matrix_params_calc(
     return classes_list, table, TP_dict, TN_dict, FP_dict, FN_dict
 
 
-def classes_filter(actual_vector: List[Any], predict_vector: List[Any], classes: Optional[List[Any]] = None) -> Tuple[List[Any], List[Any], List[Any]]:
+def classes_filter(actual_vector: List[Any], predict_vector: List[Any],
+                   classes: Optional[List[Any]] = None) -> Tuple[List[Any], List[Any], List[Any]]:
     """
     Return updated vectors and classes list.
 
@@ -411,7 +429,8 @@ def statistic_recommend(classes: List[Any], imbalance: bool) -> List:
     return MULTICLASS_RECOMMEND
 
 
-def matrix_combine(matrix_1: Dict[Any, Dict[Any, int]], matrix_2: Dict[Any, Dict[Any, int]]) -> Dict[Any, Dict[Any, int]]:
+def matrix_combine(matrix_1: Dict[Any, Dict[Any, int]],
+                   matrix_2: Dict[Any, Dict[Any, int]]) -> Dict[Any, Dict[Any, int]]:
     """
     Return the combination of two confusion matrices.
 
@@ -434,7 +453,12 @@ def matrix_combine(matrix_1: Dict[Any, Dict[Any, int]], matrix_2: Dict[Any, Dict
     return result_matrix
 
 
-def add_number_label(ax: "matplotlib.pyplot.Axes", classes: List[str], matrix: numpy.ndarray, cmap: "matplotlib.colors.Color.ListedColormap", plot_lib: str) -> None:
+def add_number_label(
+        ax: "matplotlib.pyplot.Axes",
+        classes: List[str],
+        matrix: numpy.ndarray,
+        cmap: "matplotlib.colors.Color.ListedColormap",
+        plot_lib: str) -> None:
     """
     Add number labels to confusion matrix plot.
 

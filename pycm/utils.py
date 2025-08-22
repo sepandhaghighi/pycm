@@ -566,7 +566,7 @@ def ndtri(y: float) -> float:
     return x
 
 
-def inv_erf(z: float) -> float:
+def inv_erf(z: float) -> Union[float, str]:
     """
     Inverse error function.
 

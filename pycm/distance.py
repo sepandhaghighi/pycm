@@ -1107,7 +1107,7 @@ def KuhnsV_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
         return "None"
 
 
-def KuhnsVI_calc(TP, FP, FN, TN):
+def KuhnsVI_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
     Calculate and return Kuhns VI correlation.
 
@@ -1126,7 +1126,7 @@ def KuhnsVI_calc(TP, FP, FN, TN):
         return "None"
 
 
-def KuhnsVII_calc(TP, FP, FN, TN):
+def KuhnsVII_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
     Calculate and return Kuhns VII correlation.
 

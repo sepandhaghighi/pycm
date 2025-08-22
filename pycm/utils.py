@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Utility module."""
 from __future__ import division
+from typing import Union, List, Dict, Any, Tuple, Callable, Optional
+from io import TextIOWrapper
 import sys
 import math
 import numpy
@@ -11,25 +13,17 @@ from warnings import warn
 from functools import wraps
 
 
-def list_check_equal(input_list):
+def list_check_equal(input_list: List[Any]) -> bool:
     """
     Check equality of the input list items.
 
     :param input_list: input list
-    :type input_list: list
-    :return: result as bool
     """
     return input_list[1:] == input_list[:-1]
 
 
-def isfloat(value):
-    """
-    Check input for float conversion.
-
-    :param value: input value
-    :type value: str
-    :return: result as bool (True: input_value is a number, False: otherwise)
-    """
+def isfloat(value: str) -> bool:
+    """Check if the input string can be converted to a float."""
     try:
         float(value)
         return True
@@ -37,15 +31,12 @@ def isfloat(value):
         return False
 
 
-def rounder(input_number, digit=5):
+def rounder(input_number: Any, digit: int = 5) -> str:
     """
     Round the input number and convert it to str.
 
     :param input_number: input number
-    :type input_number: anything
     :param digit: scale (number of fraction digits)(default value: 5)
-    :type digit: int
-    :return: round number as str
     """
     if isinstance(input_number, tuple):
         tuple_list = list(input_number)
@@ -61,15 +52,12 @@ def rounder(input_number, digit=5):
     return str(input_number)
 
 
-def class_filter(classes, class_name):
+def class_filter(classes: List[Any], class_name: List[Any]) -> List[Any]:
     """
     Filter classes by comparing two lists.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param class_name: subset of classes list
-    :type class_name: list
-    :return: filtered classes as list
     """
     result_classes = classes
     if isinstance(class_name, list):
@@ -78,13 +66,11 @@ def class_filter(classes, class_name):
     return result_classes
 
 
-def vector_check(vector):
+def vector_check(vector: List) -> bool:
     """
-    Check input vector items type.
+    Check if all items in the input vector are non-negative integers.
 
     :param vector: input vector
-    :type vector: list
-    :return: bool
     """
     for i in vector:
         if isinstance(i, (int, numpy.integer)) is False:
@@ -94,13 +80,11 @@ def vector_check(vector):
     return True
 
 
-def matrix_check(table):
+def matrix_check(table: Dict[Any, Dict[Any, int]]) -> bool:
     """
     Check input matrix format.
 
     :param table: input confusion matrix
-    :type table: dict
-    :return: bool
     """
     try:
         if len(table) == 0:
@@ -114,15 +98,13 @@ def matrix_check(table):
         return False
 
 
-def vector_filter(actual_vector, predict_vector):
+def vector_filter(actual_vector: Union[List[Any], numpy.ndarray],
+                  predict_vector: Union[List[Any], numpy.ndarray]) -> Tuple[List[Any], List[Any]]:
     """
     Convert different type of items in vectors to str.
 
     :param actual_vector: actual values
-    :type actual_vector: list
     :param predict_vector: vector of predictions
-    :type predict_vector: list
-    :return: new actual and predict vectors
     """
     if isinstance(actual_vector, numpy.ndarray):
         actual_vector = actual_vector.tolist()
@@ -133,17 +115,15 @@ def vector_filter(actual_vector, predict_vector):
     temp.extend(predict_vector)
     types = set(map(type, temp))
     if len(types) > 1 or len(set(temp)) == 1:
-        return [list(map(str, actual_vector)), list(map(str, predict_vector))]
-    return [actual_vector, predict_vector]
+        return list(map(str, actual_vector)), list(map(str, predict_vector))
+    return actual_vector, predict_vector
 
 
-def class_check(vector):
+def class_check(vector: List[Any]) -> bool:
     """
-    Check different items in matrix classes.
+    Check if all items in the vector are of the same type.
 
     :param vector: input vector
-    :type vector: list
-    :return: bool
     """
     for i in vector:
         if not isinstance(i, type(vector[0])):
@@ -151,38 +131,34 @@ def class_check(vector):
     return True
 
 
-def isfile(f):
+def isfile(f: TextIOWrapper) -> bool:
     """
     Check file object in python 2.7 & 3.x.
 
     :param f: input object
-    :type f: file object
-    :return: file type check as boolean
     """
     return isinstance(
         f, file) if sys.version_info[0] == 2 else hasattr(
         f, 'read')
 
 
-def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
+def one_vs_all_func(classes: List[Any],
+                    table: Dict[Any, Dict[Any, int]],
+                    TP: Dict[Any, int],
+                    TN: Dict[Any, int],
+                    FP: Dict[Any, int],
+                    FN: Dict[Any, int],
+                    class_name: Any) -> Tuple[List[Any], Dict[Any, Dict[Any, int]]]:
     """
-    One-vs-all mode handler.
+    Return one-vs-all confusion matrix as a tuple containing the list of classes and the confusion matrix table.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param table: input confusion matrix
-    :type table: dict
     :param TP: true positive
-    :type TP: dict
     :param TN: true negative
-    :type TN: dict
     :param FP: false positive
-    :type FP: dict
     :param FN: false negative
-    :type FN: dict
     :param class_name: target class name for one-vs-all mode
-    :type class_name: any valid type
-    :return: [classes, table ] as list
     """
     try:
         report_classes = [str(class_name), "~"]
@@ -190,20 +166,17 @@ def one_vs_all_func(classes, table, TP, TN, FP, FN, class_name):
                                           "~": FN[class_name]},
                         "~": {str(class_name): FP[class_name],
                               "~": TN[class_name]}}
-        return [report_classes, report_table]
+        return report_classes, report_table
     except Exception:
-        return [classes, table]
+        return classes, table
 
 
-def normalized_table_calc(classes, table):
+def normalized_table_calc(classes: List[Any], table: Dict[Any, Dict[Any, int]]) -> Dict[Any, Dict[Any, float]]:
     """
     Return normalized confusion matrix.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param table: input confusion matrix
-    :type table: dict
-    :return: normalized table as dict
     """
     normalized_table = {}
     p = float(10**5)
@@ -218,28 +191,24 @@ def normalized_table_calc(classes, table):
     return normalized_table
 
 
-def custom_rounder(input_number, p):
+def custom_rounder(input_number: float, p: int) -> float:
     """
     Return round of the input number respected to the digit.
 
     :param input_number: number that should be round
-    :type input_number: float
     :param p: 10 powered by number of digits that wanted to be rounded to
-    :type p: int
     :return: rounded number in float
     """
     return int(input_number * p + 0.5) / p
 
 
-def sparse_matrix_calc(classes, table):
+def sparse_matrix_calc(classes: List[Any], table: Dict[Any, Dict[Any, int]]
+                       ) -> Tuple[Dict[Any, Dict[Any, int]], List[Any], List[Any]]:
     """
     Return sparse confusion matrix and its classes.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param table: input confusion matrix
-    :type table: dict
-    :return: a list containing 3 dicts [sparse_table, actual_classes, predict_classes]
     """
     sparse_table = {}
     for key in table:
@@ -259,18 +228,15 @@ def sparse_matrix_calc(classes, table):
             for row in actual_classes:
                 del sparse_table[row][x]
             predict_classes.remove(x)
-    return [sparse_table, actual_classes, predict_classes]
+    return sparse_table, actual_classes, predict_classes
 
 
-def transpose_func(classes, table):
+def transpose_func(classes: List[Any], table: Dict[Any, Dict[Any, int]]) -> Dict[Any, Dict[Any, int]]:
     """
-    Transpose table.
+    Return the transposed confusion matrix.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param table: input confusion matrix
-    :type table: dict
-    :return: transposed table as dict
     """
     transposed_table = {k: table[k].copy() for k in classes}
     for i, item1 in enumerate(classes):
@@ -282,17 +248,28 @@ def transpose_func(classes, table):
     return transposed_table
 
 
-def matrix_params_from_table(table, classes=None, transpose=False):
+def matrix_params_from_table(table: Dict[Any,
+                                         Dict[Any,
+                                              int]],
+                             classes: Optional[List[Any]] = None,
+                             transpose: bool = False) -> Tuple[List[Any],
+                                                               Dict[Any,
+                                                                    Dict[Any,
+                                                                         int]],
+                                                               Dict[Any,
+                                                                    int],
+                                                               Dict[Any,
+                                                                    int],
+                                                               Dict[Any,
+                                                                    int],
+                                                               Dict[Any,
+                                                                    int]]:
     """
-    Calculate TP, TN, FP, and FN from the input confusion matrix.
+    Calculate TP, TN, FP, and FN from the input confusion matrix and return them.
 
     :param table: input confusion matrix
-    :type table: dict
     :param classes: ordered labels of classes
-    :type classes: list
     :param transpose: transpose flag
-    :type transpose: bool
-    :return: [classes_list, table, TP, TN, FP, FN]
     """
     if classes is None:
         classes = sorted(table)
@@ -320,26 +297,21 @@ def matrix_params_from_table(table, classes=None, transpose=False):
         FN_dict = FP_dict
         FP_dict = temp
         table_temp = transpose_func(classes, table)
-    return [classes, table_temp, TP_dict, TN_dict, FP_dict, FN_dict]
+    return classes, table_temp, TP_dict, TN_dict, FP_dict, FN_dict
 
 
 def matrix_params_calc(
-        actual_vector,
-        predict_vector,
-        sample_weight,
-        classes=None):
+        actual_vector: List[Any],
+        predict_vector: List[Any],
+        sample_weight: Optional[Union[List[float], numpy.ndarray]] = None,
+        classes: Optional[List[Any]] = None) -> Tuple[List[Any], Dict[Any, Dict[Any, int]], Dict[Any, int], Dict[Any, int], Dict[Any, int], Dict[Any, int]]:
     """
-    Calculate true positive (TP), true negative (TN), false positive (FP), and false negative (FN) for each class.
+    Calculate true positive (TP), true negative (TN), false positive (FP), and false negative (FN) for each class and return them.
 
     :param actual_vector: actual values
-    :type actual_vector: list
     :param predict_vector: vector of predictions
-    :type predict_vector: list
     :param sample_weight: sample weights list
-    :type sample_weight: list
     :param classes: ordered labels of classes
-    :type classes: list
-    :return: [classes_list, table, TP, TN, FP, FN]
     """
     [actual_vector, predict_vector] = vector_filter(
         actual_vector, predict_vector)
@@ -358,22 +330,18 @@ def matrix_params_calc(
             table[item][predict_vector[index]] += 1 * weight_vector[index]
         except KeyError:
             continue
-    [_, _, TP_dict, TN_dict, FP_dict,
-        FN_dict] = matrix_params_from_table(table, classes_list)
-    return [classes_list, table, TP_dict, TN_dict, FP_dict, FN_dict]
+    _, _, TP_dict, TN_dict, FP_dict, FN_dict = matrix_params_from_table(table, classes_list)
+    return classes_list, table, TP_dict, TN_dict, FP_dict, FN_dict
 
 
-def classes_filter(actual_vector, predict_vector, classes=None):
+def classes_filter(actual_vector: List[Any], predict_vector: List[Any],
+                   classes: Optional[List[Any]] = None) -> Tuple[List[Any], List[Any], List[Any]]:
     """
     Return updated vectors and classes list.
 
     :param actual_vector: actual values
-    :type actual_vector: list
     :param predict_vector: vector of predictions
-    :type predict_vector: list
     :param classes: ordered labels of classes
-    :type classes: list
-    :return: [actual_vector, predict_vector, classes_list]
     """
     classes_list = set(actual_vector).union(set(predict_vector))
     if len(classes_list) == 1:
@@ -381,7 +349,7 @@ def classes_filter(actual_vector, predict_vector, classes=None):
     classes_list = sorted(classes_list)
     if isinstance(classes, list):
         if len(classes) == 0:
-            return [actual_vector, predict_vector, classes]
+            return actual_vector, predict_vector, classes
         classes, _ = vector_filter(classes, [])
         classes_from_vectors = classes_list
         if isinstance(
@@ -400,16 +368,14 @@ def classes_filter(actual_vector, predict_vector, classes=None):
         classes_list = classes
     elif classes is not None:
         warn(CLASSES_TYPE_WARNING, RuntimeWarning)
-    return [actual_vector, predict_vector, classes_list]
+    return actual_vector, predict_vector, classes_list
 
 
-def imbalance_check(P):
+def imbalance_check(P: Dict[Any, int]) -> bool:
     """
     Check if the dataset is imbalanced.
 
     :param P: number of actual positives per class
-    :type P: dict
-    :return: is_imbalanced as bool
     """
     p_list = list(P.values())
     max_value = max(p_list)
@@ -424,13 +390,11 @@ def imbalance_check(P):
     return is_imbalanced
 
 
-def binary_check(classes):
+def binary_check(classes: List[Any]) -> bool:
     """
     Check if the problem is a binary classification.
 
     :param classes: confusion matrix classes
-    :type classes: list
-    :return: is_binary as bool
     """
     num_classes = len(classes)
     is_binary = False
@@ -439,13 +403,11 @@ def binary_check(classes):
     return is_binary
 
 
-def complement(input_number):
+def complement(input_number: float) -> Union[float, str]:
     """
-    Calculate complement of input number.
+    Return the complement of the input number.
 
     :param input_number: input number
-    :type input_number: float
-    :return: complement as float
     """
     try:
         return 1 - input_number
@@ -453,15 +415,12 @@ def complement(input_number):
         return "None"
 
 
-def statistic_recommend(classes, imbalance):
+def statistic_recommend(classes: List[Any], imbalance: bool) -> List:
     """
     Return recommend parameters which are more suitable due to the input dataset characteristics.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param imbalance: imbalance flag (True: imbalance, False: balance)
-    :type imbalance: bool
-    :return: recommendation metrics as list
     """
     if imbalance:
         return IMBALANCED_RECOMMEND
@@ -470,21 +429,19 @@ def statistic_recommend(classes, imbalance):
     return MULTICLASS_RECOMMEND
 
 
-def matrix_combine(matrix_1, matrix_2):
+def matrix_combine(matrix_1: Dict[Any, Dict[Any, int]],
+                   matrix_2: Dict[Any, Dict[Any, int]]) -> Dict[Any, Dict[Any, int]]:
     """
     Return the combination of two confusion matrices.
 
     :param matrix_1: first matrix that is going to be combined.
-    :type matrix_1: dict
     :param matrix_2: second matrix that is going to be combined.
-    :type matrix_2: dict
-    :return: the combination of two matrices as a dict of dicts
     """
-    result_matrix = {}
+    result_matrix: Dict[Any, Dict[Any, int]] = {}
     classes_1, classes_2 = matrix_1.keys(), matrix_2.keys()
     classes = set(classes_1).union(set(classes_2))
     for class_1 in classes:
-        temp_dict = {}
+        temp_dict: Dict[Any, int] = {}
         for class_2 in classes:
             tmp = 0
             if class_1 in classes_1 and class_2 in classes_1:
@@ -496,21 +453,20 @@ def matrix_combine(matrix_1, matrix_2):
     return result_matrix
 
 
-def add_number_label(ax, classes, matrix, cmap, plot_lib):
+def add_number_label(
+        ax: "matplotlib.pyplot.Axes",
+        classes: List[str],
+        matrix: numpy.ndarray,
+        cmap: "matplotlib.colors.Color.ListedColormap",
+        plot_lib: str) -> None:
     """
     Add number labels to confusion matrix plot.
 
     :param ax: confusion matrix axes
-    :type ax: matplotlib.axes
     :param classes: confusion matrix classes
-    :type classes: list
     :param matrix: the confusion matrix in array form
-    :type matrix: numpy.array
     :param cmap: color map
-    :type cmap: matplotlib.colors.ListedColormap
     :param plot_lib: plotting library
-    :type plot_lib: str
-    :return: None
     """
     diff_matrix = float(matrix.max()) - matrix
     diff_matrix_max = float(diff_matrix.max())
@@ -532,31 +488,23 @@ def add_number_label(ax, classes, matrix, cmap, plot_lib):
 
 
 def axes_gen(
-        ax,
-        classes,
-        matrix,
-        title,
-        cmap,
-        number_label,
-        plot_lib):
+        ax: "matplotlib.pyplot.Axes",
+        classes: List[str],
+        matrix: numpy.ndarray,
+        title: str,
+        cmap: "matplotlib.colors.Color.ListedColormap",
+        number_label: bool,
+        plot_lib: str) -> "matplotlib.pyplot.Axes":
     """
-    Add extra descriptions to axes.
+    Add extra descriptions to axes and return the modified axes.
 
     :param ax: confusion matrix axes
-    :type ax: matplotlib.axes
     :param classes: confusion matrix classes
-    :type classes: list
     :param matrix: the confusion matrix in array form
-    :type matrix: numpy.array
     :param title: plot title
-    :type title: str
     :param cmap: color map
-    :type cmap: matplotlib.colors.ListedColormap
     :param number_label: number label flag
-    :type number_label: bool
     :param plot_lib: plotting library
-    :type plot_lib: str
-    :return: changed axes
     """
     ax.set_title(title)
     positions = list(range(len(classes)))
@@ -578,17 +526,13 @@ def axes_gen(
     return ax
 
 
-def polevl(x, coefs, n):
+def polevl(x: float, coefs: List[float], n: int) -> float:
     """
     Evaluate polynomial of degree n.
 
     :param x: polynomial variable
-    :type x: float
     :param coefs: polynomial coefficients
-    :type coefs: list
     :param n: degree
-    :type n: int
-    :return: result as float
     """
     ans = 0
     power = len(coefs) - 1
@@ -598,28 +542,22 @@ def polevl(x, coefs, n):
     return ans
 
 
-def p1evl(x, coefs, n):
+def p1evl(x: float, coefs: List[float], n: int) -> float:
     """
     Evaluate polynomial when coefficient of x^n is 1.
 
     :param x: polynomial variable
-    :type x: float
     :param coefs: polynomial coefficients
-    :type coefs: list
     :param n: degree
-    :type n: int
-    :return: result as float
     """
     return polevl(x, [1] + coefs, n)
 
 
-def ndtri(y):
+def ndtri(y: float) -> float:
     """
     Return the argument x for which the area under the Gaussian probability density function (integrated from minus infinity to x) is equal to y.
 
     :param y: function input
-    :type y: float
-    :return: ndtri as float
     """
     s2pi = 2.50662827463100050242
     code = 1
@@ -650,13 +588,11 @@ def ndtri(y):
     return x
 
 
-def inv_erf(z):
+def inv_erf(z: float) -> Union[float, str]:
     """
     Inverse error function.
 
     :param z: function input
-    :type z: float
-    :return: result as float
     """
     if z <= -1 or z >= 1:
         return "None"
@@ -666,17 +602,13 @@ def inv_erf(z):
     return result
 
 
-def normal_quantile(p, mean=0, std=1):
+def normal_quantile(p: float, mean: float = 0, std: float = 1) -> float:
     """
     Calculate normal distribution quantile.
 
     :param p: probability
-    :type p: float
     :param mean: mean
-    :type mean: float
     :param std: standard deviation
-    :type std: float
-    :return: normal distribution quantile as float
     """
     try:
         return mean + std * math.sqrt(2) * inv_erf((2 * p) - 1)
@@ -684,19 +616,14 @@ def normal_quantile(p, mean=0, std=1):
         return "None"
 
 
-def threshold_func(item, class_index, classes, threshold):
+def threshold_func(item: List[float], class_index: int, classes: List[str], threshold: float) -> str:
     """
-    Threshold function.
+    Select class name based on the threshold value.
 
-    :param item: probability item
-    :type item: list
-    :param class_index: class index
-    :type classes: int
-    :param classes: ordered labels of classes
-    :type classes: list
-    :param threshold: threshold value
-    :type threshold: float
-    :return: selected class name
+    :param item: list of probabilities for each class
+    :param class_index: index of the class to check
+    :param classes: ordered list of class labels
+    :param threshold: threshold for class selection
     """
     class_name = classes[class_index]
     if item[class_index] >= threshold:
@@ -706,26 +633,22 @@ def threshold_func(item, class_index, classes, threshold):
     return _classes[0]
 
 
-def thresholds_calc(probs):
+def thresholds_calc(probs: Union[List[float], numpy.ndarray]) -> List[float]:
     """
-    Calculate thresholds from probabilities vector.
+    Return the thresholds from the probability vector.
 
     :param probs: probabilities
-    :type probs: list or numpy array
-    :return: thresholds as list
     """
     thresholds = numpy.ravel(probs)
     thresholds = sorted(set(thresholds.tolist()))
     return thresholds
 
 
-def char_num_transformer(input_item):
+def char_num_transformer(input_item: str) -> List[Tuple[str, Union[int, bool], Union[str, bool]]]:
     """
     Transform the input string to a proper key for char-num sorting.
 
     :param input_item: input item
-    :type input_item: str
-    :return: key as tuple
     """
     return [(input_item, False, False) if not re.findall(r'\d+', input_item)
             else (input_item[:re.search(r'\d+', input_item).start()],
@@ -733,48 +656,39 @@ def char_num_transformer(input_item):
                   input_item[re.search(r'\d+', input_item).end():])]
 
 
-def sort_char_num(input_list):
+def sort_char_num(input_list: List[str]) -> List[str]:
     """
-    Sort a list of strings first alphabetically and then numerically.
+    Return a sorted list of strings first alphabetically and then numerically.
 
     :param input_list: input list of strings
-    :type input_list: iterable
-    :return: a sorted list of strings
     """
     return sorted(input_list, key=char_num_transformer)
 
 
-def vector_serializer(vector):
+def vector_serializer(vector: Union[List, numpy.ndarray]) -> List:
     """
-    Return given vector in serializable mode.
+    Return given vector in a serializable format.
 
     :param vector: the given vector
-    :type: list or numpy array
-    :retun: a serializable format of vector
     """
     if isinstance(vector, numpy.ndarray):
         vector = vector.tolist()
     return vector
 
 
-def metrics_off_check(func):
+def metrics_off_check(func: Callable) -> Callable:
     """
     Check metrics_off flag decorator.
 
     :param func: input function
-    :type func: function
-    :return: inner function
     """
     @wraps(func)
-    def inner_function(*args, **kwargs):
+    def inner_function(*args: List[Any], **kwargs: Dict[str, Any]) -> Any:
         """
-        Inner function.
+        Inner function which checks the metrics_off flag.
 
         :param args: non-keyword arguments
-        :type args: list
         :param kwargs: keyword arguments
-        :type kwargs: dict
-        :return: modified function result
         """
         if args[0].metrics_off:
             raise pycmMatrixError(METRICS_OFF_ERROR)
@@ -782,24 +696,19 @@ def metrics_off_check(func):
     return inner_function
 
 
-def deprecated(func):
+def deprecated(func: Callable) -> Callable:
     """
     Send a warning regarding function's deprecation.
 
     :param func: input function
-    :type func: function
-    :return: inner function
     """
     @wraps(func)
-    def inner_function(*args, **kwargs):
+    def inner_function(*args: List[Any], **kwargs: Dict[str, Any]) -> Any:
         """
-        Inner function.
+        Inner function which emits a deprecation warning.
 
         :param args: non-keyword arguments
-        :type args: list
         :param kwargs: keyword arguments
-        :type kwargs: dict
-        :return: modified function result
         """
         warn(
             DEPRECATION_WARNING.format(

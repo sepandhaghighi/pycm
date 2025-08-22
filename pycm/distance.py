@@ -356,19 +356,14 @@ def BaulieuXI_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
         return "None"
 
 
-def BaulieuXII_calc(TP, FP, FN, TN):
+def BaulieuXII_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Baulieu XII.
+    Calculate and return Baulieu XII.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Baulieu XII as float
     """
     try:
         return (FP + FN) / (TP + FP + FN - 1)
@@ -376,19 +371,14 @@ def BaulieuXII_calc(TP, FP, FN, TN):
         return "None"
 
 
-def BaulieuXIII_calc(TP, FP, FN, TN):
+def BaulieuXIII_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Baulieu XIII.
+    Calculate and return Baulieu XIII.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Baulieu XIII as float
     """
     try:
         part2 = TP + FP + FN + TP * (TP - 4) * (TP - 4)
@@ -397,19 +387,14 @@ def BaulieuXIII_calc(TP, FP, FN, TN):
         return "None"
 
 
-def BaulieuXIV_calc(TP, FP, FN, TN):
+def BaulieuXIV_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Baulieu XIV.
+    Calculate and return Baulieu XIV.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Baulieu XIV as float
     """
     try:
         return (FP + 2 * FN) / (TP + FP + 2 * FN)
@@ -417,19 +402,14 @@ def BaulieuXIV_calc(TP, FP, FN, TN):
         return "None"
 
 
-def BaulieuXV_calc(TP, FP, FN, TN):
+def BaulieuXV_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Baulieu XV.
+    Calculate and return Baulieu XV.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Baulieu XV as float
     """
     try:
         max_bc = max(FP, FN)
@@ -438,19 +418,14 @@ def BaulieuXV_calc(TP, FP, FN, TN):
         return "None"
 
 
-def BeniniI_calc(TP, FP, FN, TN):
+def BeniniI_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Benini I correlation.
+    Calculate and return Benini I correlation.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Benini I correlation as float
     """
     try:
         return (TP * TN - FP * FN) / ((TP + FN) * (FN + TN))
@@ -458,19 +433,14 @@ def BeniniI_calc(TP, FP, FN, TN):
         return "None"
 
 
-def BeniniII_calc(TP, FP, FN, TN):
+def BeniniII_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Benini II correlation.
+    Calculate and return Benini II correlation.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Benini II correlation as float
     """
     try:
         part2 = min((TP + FN) * (FN + TN), (TP + FP) * (FP + TN))
@@ -479,19 +449,14 @@ def BeniniII_calc(TP, FP, FN, TN):
         return "None"
 
 
-def Canberra_calc(TP, FP, FN, TN):
+def Canberra_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Canberra distance.
+    Calculate and return Canberra distance.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Canberra distance as float
     """
     try:
         return (FP + FN) / ((TP + FP) + (TP + FN))
@@ -499,19 +464,14 @@ def Canberra_calc(TP, FP, FN, TN):
         return "None"
 
 
-def Clement_calc(TP, FP, FN, TN):
+def Clement_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Clement similarity.
+    Calculate and return Clement similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Clement similarity as float
     """
     try:
         n = TP + FP + FN + TN
@@ -522,19 +482,14 @@ def Clement_calc(TP, FP, FN, TN):
         return "None"
 
 
-def ConsonniTodeschiniI_calc(TP, FP, FN, TN):
+def ConsonniTodeschiniI_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Consonni & Todeschini I similarity.
+    Calculate and return Consonni & Todeschini I similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Consonni & Todeschini I similarity as float
     """
     try:
         n = TP + FP + FN + TN
@@ -543,19 +498,14 @@ def ConsonniTodeschiniI_calc(TP, FP, FN, TN):
         return "None"
 
 
-def ConsonniTodeschiniII_calc(TP, FP, FN, TN):
+def ConsonniTodeschiniII_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Consonni & Todeschini II similarity.
+    Calculate and return Consonni & Todeschini II similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Consonni & Todeschini II similarity as float
     """
     try:
         n = TP + FP + FN + TN
@@ -565,19 +515,14 @@ def ConsonniTodeschiniII_calc(TP, FP, FN, TN):
         return "None"
 
 
-def ConsonniTodeschiniIII_calc(TP, FP, FN, TN):
+def ConsonniTodeschiniIII_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Consonni & Todeschini III similarity.
+    Calculate and return Consonni & Todeschini III similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Consonni & Todeschini III similarity as float
     """
     try:
         n = TP + FP + FN + TN
@@ -586,19 +531,14 @@ def ConsonniTodeschiniIII_calc(TP, FP, FN, TN):
         return "None"
 
 
-def ConsonniTodeschiniIV_calc(TP, FP, FN, TN):
+def ConsonniTodeschiniIV_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Consonni & Todeschini IV similarity.
+    Calculate and return Consonni & Todeschini IV similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Consonni & Todeschini IV similarity as float
     """
     try:
         return math.log(1 + TP) / math.log(1 + TP + FP + FN)
@@ -606,19 +546,14 @@ def ConsonniTodeschiniIV_calc(TP, FP, FN, TN):
         return "None"
 
 
-def ConsonniTodeschiniV_calc(TP, FP, FN, TN):
+def ConsonniTodeschiniV_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Consonni & Todeschini V similarity.
+    Calculate and return Consonni & Todeschini V similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Consonni & Todeschini V similarity as float
     """
     try:
         n = TP + FP + FN + TN
@@ -629,19 +564,14 @@ def ConsonniTodeschiniV_calc(TP, FP, FN, TN):
         return "None"
 
 
-def Dennis_calc(TP, FP, FN, TN):
+def Dennis_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Dennis similarity.
+    Calculate and return Dennis similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Dennis similarity as float
     """
     try:
         n = TP + FP + FN + TN
@@ -651,19 +581,14 @@ def Dennis_calc(TP, FP, FN, TN):
         return "None"
 
 
-def Digby_calc(TP, FP, FN, TN):
+def Digby_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Digby correlation.
+    Calculate and return Digby correlation.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Digby correlation as float
     """
     try:
         part1 = (TP * TN) ** 0.75
@@ -673,19 +598,14 @@ def Digby_calc(TP, FP, FN, TN):
         return "None"
 
 
-def Dispersion_calc(TP, FP, FN, TN):
+def Dispersion_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Dispersion correlation.
+    Calculate and return Dispersion correlation.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Dispersion correlation as float
     """
     try:
         n = TP + FP + FN + TN
@@ -696,19 +616,14 @@ def Dispersion_calc(TP, FP, FN, TN):
         return "None"
 
 
-def Doolittle_calc(TP, FP, FN, TN):
+def Doolittle_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Doolittle similarity.
+    Calculate and return Doolittle similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Doolittle similarity as float
     """
     try:
         n = TP + FP + FN + TN
@@ -719,19 +634,14 @@ def Doolittle_calc(TP, FP, FN, TN):
         return "None"
 
 
-def Eyraud_calc(TP, FP, FN, TN):
+def Eyraud_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Eyraud similarity.
+    Calculate and return Eyraud similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Eyraud similarity as float
     """
     try:
         part1 = (TP + FP) * (TP + FN)
@@ -741,19 +651,14 @@ def Eyraud_calc(TP, FP, FN, TN):
         return "None"
 
 
-def FagerMcGowan_calc(TP, FP, FN, TN):
+def FagerMcGowan_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Fager & McGowan similarity.
+    Calculate and return Fager & McGowan similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Fager & McGowan similarity as float
     """
     try:
         part1 = math.sqrt((TP + FP) * (TP + FN))
@@ -763,19 +668,14 @@ def FagerMcGowan_calc(TP, FP, FN, TN):
         return "None"
 
 
-def Faith_calc(TP, FP, FN, TN):
+def Faith_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Faith similarity.
+    Calculate and return Faith similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Faith similarity as float
     """
     try:
         n = TP + FP + FN + TN
@@ -784,19 +684,14 @@ def Faith_calc(TP, FP, FN, TN):
         return "None"
 
 
-def FleissLevinPaik_calc(TP, FP, FN, TN):
+def FleissLevinPaik_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Fleiss-Levin-Paik similarity.
+    Calculate and return Fleiss-Levin-Paik similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Fleiss-Levin-Paik similarity as float
     """
     try:
         part1 = 2 * TN
@@ -805,19 +700,14 @@ def FleissLevinPaik_calc(TP, FP, FN, TN):
         return "None"
 
 
-def ForbesI_calc(TP, FP, FN, TN):
+def ForbesI_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Forbes I similarity.
+    Calculate and return Forbes I similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Forbes I similarity as float
     """
     try:
         n = TP + FP + FN + TN
@@ -827,19 +717,14 @@ def ForbesI_calc(TP, FP, FN, TN):
         return "None"
 
 
-def ForbesII_calc(TP, FP, FN, TN):
+def ForbesII_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Forbes II correlation.
+    Calculate and return Forbes II correlation.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Forbes II correlation as float
     """
     try:
         n = TP + FP + FN + TN
@@ -851,19 +736,14 @@ def ForbesII_calc(TP, FP, FN, TN):
         return "None"
 
 
-def Fossum_calc(TP, FP, FN, TN):
+def Fossum_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Fossum similarity.
+    Calculate and return Fossum similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Fossum similarity as float
     """
     try:
         n = TP + FP + FN + TN
@@ -874,19 +754,14 @@ def Fossum_calc(TP, FP, FN, TN):
         return "None"
 
 
-def GilbertWells_calc(TP, FP, FN, TN):
+def GilbertWells_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Gilbert & Wells similarity.
+    Calculate and return Gilbert & Wells similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Gilbert & Wells similarity as float
     """
     try:
         n = TP + FP + FN + TN
@@ -901,19 +776,14 @@ def GilbertWells_calc(TP, FP, FN, TN):
         return "None"
 
 
-def Goodall_calc(TP, FP, FN, TN):
+def Goodall_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Goodall similarity.
+    Calculate and return Goodall similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Goodall similarity as float
     """
     try:
         n = TP + FP + FN + TN
@@ -923,19 +793,14 @@ def Goodall_calc(TP, FP, FN, TN):
         return "None"
 
 
-def GoodmanKruskalLambda_calc(TP, FP, FN, TN):
+def GoodmanKruskalLambda_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Goodman & Kruskal's Lambda similarity.
+    Calculate and return Goodman & Kruskal's Lambda similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Goodman & Kruskal's Lambda similarity as float
     """
     try:
         n = TP + FP + FN + TN
@@ -946,19 +811,14 @@ def GoodmanKruskalLambda_calc(TP, FP, FN, TN):
         return "None"
 
 
-def GoodmanKruskalLambdaR_calc(TP, FP, FN, TN):
+def GoodmanKruskalLambdaR_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Goodman & Kruskal Lambda-r correlation.
+    Calculate and return Goodman & Kruskal Lambda-r correlation.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Goodman & Kruskal Lambda-r correlation as float
     """
     try:
         n = TP + FP + FN + TN
@@ -968,19 +828,14 @@ def GoodmanKruskalLambdaR_calc(TP, FP, FN, TN):
         return "None"
 
 
-def GuttmanLambdaA_calc(TP, FP, FN, TN):
+def GuttmanLambdaA_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Guttman's Lambda A similarity.
+    Calculate and return Guttman's Lambda A similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Guttman's Lambda A similarity as float
     """
     try:
         n = TP + FP + FN + TN
@@ -991,19 +846,14 @@ def GuttmanLambdaA_calc(TP, FP, FN, TN):
         return "None"
 
 
-def GuttmanLambdaB_calc(TP, FP, FN, TN):
+def GuttmanLambdaB_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Guttman's Lambda B similarity.
+    Calculate and return Guttman's Lambda B similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Guttman's Lambda B similarity as float
     """
     try:
         n = TP + FP + FN + TN
@@ -1014,19 +864,14 @@ def GuttmanLambdaB_calc(TP, FP, FN, TN):
         return "None"
 
 
-def Hamann_calc(TP, FP, FN, TN):
+def Hamann_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Hamann correlation.
+    Calculate and return Hamann correlation.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Hamann correlation as float
     """
     try:
         n = TP + FP + FN + TN
@@ -1036,19 +881,14 @@ def Hamann_calc(TP, FP, FN, TN):
         return "None"
 
 
-def HarrisLahey_calc(TP, FP, FN, TN):
+def HarrisLahey_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Harris & Lahey similarity.
+    Calculate and return Harris & Lahey similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Harris & Lahey similarity as float
     """
     try:
         n = TP + FP + FN + TN
@@ -1061,19 +901,14 @@ def HarrisLahey_calc(TP, FP, FN, TN):
         return "None"
 
 
-def HawkinsDotson_calc(TP, FP, FN, TN):
+def HawkinsDotson_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Hawkins & Dotson similarity.
+    Calculate and return Hawkins & Dotson similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Hawkins & Dotson similarity as float
     """
     try:
         return 0.5 * ((TP / (TP + FP + FN)) + (TN / (TN + FN + FP)))
@@ -1081,19 +916,14 @@ def HawkinsDotson_calc(TP, FP, FN, TN):
         return "None"
 
 
-def KendallTau_calc(TP, FP, FN, TN):
+def KendallTau_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Kendall's Tau correlation.
+    Calculate and return Kendall's Tau correlation.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Kendall's Tau correlation as float
     """
     try:
         n = TP + FP + FN + TN
@@ -1102,19 +932,14 @@ def KendallTau_calc(TP, FP, FN, TN):
         return "None"
 
 
-def KentFosterI_calc(TP, FP, FN, TN):
+def KentFosterI_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Kent & Foster I similarity.
+    Calculate and return Kent & Foster I similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Kent & Foster I similarity as float
     """
     try:
         part1 = ((TP + FP) * (TP + FN)) / (TP + FP + FN)
@@ -1123,19 +948,14 @@ def KentFosterI_calc(TP, FP, FN, TN):
         return "None"
 
 
-def KentFosterII_calc(TP, FP, FN, TN):
+def KentFosterII_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Kent & Foster II similarity.
+    Calculate and return Kent & Foster II similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Kent & Foster II similarity as float
     """
     try:
         part1 = ((TN + FP) * (TN + FN)) / (TN + FP + FN)
@@ -1144,19 +964,14 @@ def KentFosterII_calc(TP, FP, FN, TN):
         return "None"
 
 
-def KoppenI_calc(TP, FP, FN, TN):
+def KoppenI_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Koppen I correlation.
+    Calculate and return Koppen I correlation.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Koppen I correlation as float
     """
     try:
         part1 = (2 * TP + FP + FN) / 2
@@ -1168,19 +983,14 @@ def KoppenI_calc(TP, FP, FN, TN):
         return "None"
 
 
-def KoppenII_calc(TP, FP, FN, TN):
+def KoppenII_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Koppen II similarity.
+    Calculate and return Koppen II similarity.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Koppen II similarity as float
     """
     try:
         return TP + (FP + FN) / 2
@@ -1188,19 +998,14 @@ def KoppenII_calc(TP, FP, FN, TN):
         return "None"
 
 
-def KuderRichardson_calc(TP, FP, FN, TN):
+def KuderRichardson_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Kuder & Richardson correlation.
+    Calculate and return Kuder & Richardson correlation.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Kuder & Richardson correlation as float
     """
     try:
         part1 = 4 * (TP * TN - FP * FN)
@@ -1211,19 +1016,14 @@ def KuderRichardson_calc(TP, FP, FN, TN):
         return "None"
 
 
-def KuhnsI_calc(TP, FP, FN, TN):
+def KuhnsI_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Kuhns I correlation.
+    Calculate and return Kuhns I correlation.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Kuhns I correlation as float
     """
     try:
         n = TP + FP + FN + TN
@@ -1233,19 +1033,14 @@ def KuhnsI_calc(TP, FP, FN, TN):
         return "None"
 
 
-def KuhnsII_calc(TP, FP, FN, TN):
+def KuhnsII_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Kuhns II correlation.
+    Calculate and return Kuhns II correlation.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Kuhns II correlation as float
     """
     try:
         n = TP + FP + FN + TN
@@ -1256,19 +1051,14 @@ def KuhnsII_calc(TP, FP, FN, TN):
         return "None"
 
 
-def KuhnsIII_calc(TP, FP, FN, TN):
+def KuhnsIII_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Kuhns III correlation.
+    Calculate and return Kuhns III correlation.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Kuhns III correlation as float
     """
     try:
         n = TP + FP + FN + TN
@@ -1280,19 +1070,14 @@ def KuhnsIII_calc(TP, FP, FN, TN):
         return "None"
 
 
-def KuhnsIV_calc(TP, FP, FN, TN):
+def KuhnsIV_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Kuhns IV correlation.
+    Calculate and return Kuhns IV correlation.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Kuhns IV correlation as float
     """
     try:
         n = TP + FP + FN + TN
@@ -1303,19 +1088,14 @@ def KuhnsIV_calc(TP, FP, FN, TN):
         return "None"
 
 
-def KuhnsV_calc(TP, FP, FN, TN):
+def KuhnsV_calc(TP: int, FP: int, FN: int, TN: int) -> Union[float, str]:
     """
-    Calculate Kuhns V correlation.
+    Calculate and return Kuhns V correlation.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Kuhns V correlation as float
     """
     try:
         n = TP + FP + FN + TN
@@ -1329,17 +1109,12 @@ def KuhnsV_calc(TP, FP, FN, TN):
 
 def KuhnsVI_calc(TP, FP, FN, TN):
     """
-    Calculate Kuhns VI correlation.
+    Calculate and return Kuhns VI correlation.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Kuhns VI correlation as float
     """
     try:
         n = TP + FP + FN + TN
@@ -1353,17 +1128,12 @@ def KuhnsVI_calc(TP, FP, FN, TN):
 
 def KuhnsVII_calc(TP, FP, FN, TN):
     """
-    Calculate Kuhns VII correlation.
+    Calculate and return Kuhns VII correlation.
 
     :param TP: true positive
-    :type TP: int
     :param TN: true negative
-    :type TN: int
     :param FP: false positive
-    :type FP: int
     :param FN: false negative
-    :type FN: int
-    :return: Kuhns VII correlation as float
     """
     try:
         n = TP + FP + FN + TN

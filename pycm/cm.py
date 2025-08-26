@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix module."""
 from __future__ import division, annotations
-from typing import Union, List, Dict, Any, Tuple, Callable, Iterator, Optional
+from typing import Union, List, Dict, Any, Tuple, Callable, Generator, Optional
 from .errors import pycmVectorError, pycmMatrixError, pycmCIError, pycmAverageError, pycmPlotError
 from .handlers import __class_stat_init__, __overall_stat_init__
 from .handlers import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__, __obj_array_handler__
@@ -218,7 +218,7 @@ class ConfusionMatrix():
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
         return result
 
-    def __iter__(self) -> Iterator[Tuple[Any, Dict[Any, int]]]:
+    def __iter__(self) -> Generator[Tuple[Any, Dict[Any, int]], None, None]:
         """Iterate through confusion matrix."""
         for key in self.matrix:
             yield key, self.matrix[key]

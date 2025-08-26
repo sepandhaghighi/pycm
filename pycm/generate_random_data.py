@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """This file contains a function to generate a random confusion matrix."""
-from typing import Union, List, Dict, Any, Tuple, Callable, Iterator, Optional
+from typing import Union, List, Dict, Any, Optional
 import numpy as np
 from enum import Enum
 from itertools import product

@@ -38,9 +38,9 @@ class ConfusionMatrix():
 
     def __init__(
             self,
-            actual_vector: Union[List[Any], numpy.ndarray] = None,
-            predict_vector: Union[List[Any], numpy.ndarray] = None,
-            matrix: Union[Dict[str, Dict[str, int]], List[Union[int, float]], numpy.ndarray] = None,
+            actual_vector: Optional[Union[List[Any], numpy.ndarray]] = None,
+            predict_vector: Optional[Union[List[Any], numpy.ndarray]] = None,
+            matrix: Optional[Union[Dict[str, Dict[str, int]], List[List[int]], numpy.ndarray]] = None,
             digit: int = 5,
             threshold: Optional[Callable] = None,
             file: Optional[TextIOWrapper] = None,
@@ -600,7 +600,6 @@ class ConfusionMatrix():
         :param alpha: type I error
         :param one_sided: one-sided mode flag
         :param binom_method: binomial confidence intervals method
-        :return: CI
         """
         if isinstance(param, str):
             method = "normal-approx"

@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 - Python typing features added to modules
+- Test system modified
 ## [4.4] - 2025-08-16
 ### Added
 - `print_timings` method

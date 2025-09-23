@@ -210,7 +210,6 @@ def __compare_weight_handler__(compare: "pycm.Compare", weight: Dict[str, float]
 
     :param compare: Compare
     :param weight: input weight
-    :type weight: dict
     :param weight_type: input weight type
     """
     valid_dict = {

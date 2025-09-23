@@ -77,7 +77,7 @@ def LR_SE_calc(item1: int, item2: int, item3: int, item4: int) -> Union[float, s
         return "None"
 
 
-def LR_CI_calc(mean: float, SE: float, CV:float = 1.96) -> Tuple[Union[float, str], Union[float, str]]:
+def LR_CI_calc(mean: float, SE: float, CV: float = 1.96) -> Tuple[Union[float, str], Union[float, str]]:
     """
     Calculate confidence interval for likelihood ratio +/- using log method.
 
@@ -139,7 +139,8 @@ def kappa_SE_calc(PA: float, PE: float, POP: int) -> Union[float, str]:
         return "None"
 
 
-def __CI_class_handler__(cm: "pycm.ConfusionMatrix", param: str, CV: float, binom_method: str = "normal-approx") -> dict:
+def __CI_class_handler__(cm: "pycm.ConfusionMatrix", param: str, CV: float,
+                         binom_method: str = "normal-approx") -> dict:
     """
     Handle CI calculation for class parameters.
 
@@ -185,7 +186,8 @@ def __CI_class_handler__(cm: "pycm.ConfusionMatrix", param: str, CV: float, bino
     return result
 
 
-def __CI_overall_handler__(cm: "pycm.ConfusionMatrix", param: str, CV: float, binom_method: str = "normal-approx") -> List[Union[float, tuple]]:
+def __CI_overall_handler__(cm: "pycm.ConfusionMatrix", param: str, CV: float,
+                           binom_method: str = "normal-approx") -> List[Union[float, tuple]]:
     """
     Handle CI calculation for overall parameters.
 

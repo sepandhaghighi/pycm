@@ -289,7 +289,8 @@ def csv_matrix_print(classes: List[Any], table: Dict[str, Dict[str, int]], heade
     return result[:-1]
 
 
-def csv_print(classes: List[Any], class_stat: Dict[str, Dict[str, Union[float, int, str]]], digit: int=5, class_param: Optional[List[str]]=None) -> str:
+def csv_print(classes: List[Any], class_stat: Dict[str, Dict[str, Union[float, int, str]]],
+              digit: int=5, class_param: Optional[List[str]]=None) -> str:
     """
     Return csv file data.
 

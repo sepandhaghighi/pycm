@@ -217,7 +217,11 @@ class PRCurve(Curve):
         return "pycm.PRCurve(classes: " + str(self.classes) + ")"
 
 
-def __curve_validation__(curve: "pycm.Curve", actual_vector: Union[List[Any], numpy.ndarray], probs: Union[List[float], numpy.ndarray]) -> None:
+def __curve_validation__(curve: "pycm.Curve",
+                         actual_vector: Union[List[Any],
+                                              numpy.ndarray],
+                         probs: Union[List[float],
+                                      numpy.ndarray]) -> None:
     """
     Curve input validation.
 
@@ -239,7 +243,14 @@ def __curve_validation__(curve: "pycm.Curve", actual_vector: Union[List[Any], nu
     curve.probs = probs
 
 
-def __plot_validation__(curve: "pycm.Curve", classes: List[Any], area: bool, area_method: str, colors: List[str], markers: List[str]) -> Tuple["matplotlib.pyplot.Figure", "matplotlib.pyplot.Axes", List[str]]:
+def __plot_validation__(curve: "pycm.Curve",
+                        classes: List[Any],
+                        area: bool,
+                        area_method: str,
+                        colors: List[str],
+                        markers: List[str]) -> Tuple["matplotlib.pyplot.Figure",
+                                                     "matplotlib.pyplot.Axes",
+                                                     List[str]]:
     """
     Plot input validation.
 
@@ -334,7 +345,8 @@ def __curve_data_filter__(curve: "pycm.Curve") -> None:
         warn(CURVE_NONE_WARNING, RuntimeWarning)
 
 
-def __trapezoidal_numeric_integral__(x: Union[List[float], numpy.ndarray], y: Union[List[float], numpy.ndarray]) -> float:
+def __trapezoidal_numeric_integral__(x: Union[List[float], numpy.ndarray],
+                                     y: Union[List[float], numpy.ndarray]) -> float:
     """
     Compute numeric integral using the trapezoidal rule.
 

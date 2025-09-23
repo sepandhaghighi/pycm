@@ -217,7 +217,7 @@ class PRCurve(Curve):
         return "pycm.PRCurve(classes: " + str(self.classes) + ")"
 
 
-def __curve_validation__(curve: pycm.Curve, actual_vector: Union[List[Any], numpy.ndarray], probs: Union[List[float], numpy.ndarray]) -> None:
+def __curve_validation__(curve: "pycm.Curve", actual_vector: Union[List[Any], numpy.ndarray], probs: Union[List[float], numpy.ndarray]) -> None:
     """
     Curve input validation.
 
@@ -239,7 +239,7 @@ def __curve_validation__(curve: pycm.Curve, actual_vector: Union[List[Any], nump
     curve.probs = probs
 
 
-def __plot_validation__(curve: pycm.Curve, classes: List[Any], area: bool, area_method: str, colors: List[str], markers: List[str]) -> Tuple["matplotlib.pyplot.Figure", "matplotlib.pyplot.Axes", List[str]]:
+def __plot_validation__(curve: "pycm.Curve", classes: List[Any], area: bool, area_method: str, colors: List[str], markers: List[str]) -> Tuple["matplotlib.pyplot.Figure", "matplotlib.pyplot.Axes", List[str]]:
     """
     Plot input validation.
 
@@ -266,7 +266,7 @@ def __plot_validation__(curve: pycm.Curve, classes: List[Any], area: bool, area_
     return fig, ax, classes
 
 
-def __curve_classes_handler__(curve: pycm.Curve, classes: List[Any]) -> None:
+def __curve_classes_handler__(curve: "pycm.Curve", classes: List[Any]) -> None:
     """
     Handle conditions for curve classes.
 
@@ -290,7 +290,7 @@ def __curve_classes_handler__(curve: pycm.Curve, classes: List[Any]) -> None:
         curve.classes = list(map(str, curve.classes))
 
 
-def __curve_thresholds_handler__(curve: pycm.Curve, thresholds: Union[List[float], numpy.ndarray]) -> None:
+def __curve_thresholds_handler__(curve: "pycm.Curve", thresholds: Union[List[float], numpy.ndarray]) -> None:
     """
     Handle conditions for thresholds.
 
@@ -312,7 +312,7 @@ def __curve_thresholds_handler__(curve: pycm.Curve, thresholds: Union[List[float
         curve.thresholds = sorted(curve.thresholds)
 
 
-def __curve_data_filter__(curve: pycm.Curve) -> None:
+def __curve_data_filter__(curve: "pycm.Curve") -> None:
     """
     Eliminate and refine the points at which the curve is undefined.
 

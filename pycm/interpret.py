@@ -2,13 +2,11 @@
 """Interpretation functions."""
 
 
-def Q_analysis(Q):
+def Q_analysis(Q: float) -> str:
     """
     Analysis Q(Yule's Q) with interpretation table.
 
     :param Q: Yule's Q
-    :type Q: float
-    :return: interpretation result as str
     """
     try:
         if Q < 0.25:
@@ -22,13 +20,11 @@ def Q_analysis(Q):
         return "None"
 
 
-def MCC_analysis(MCC):
+def MCC_analysis(MCC: float) -> str:
     """
     Analysis MCC(Matthews correlation coefficient) with interpretation table.
 
     :param MCC: Matthews correlation coefficient
-    :type MCC: float
-    :return: interpretation result as str
     """
     try:
         if MCC < 0.3:
@@ -44,13 +40,11 @@ def MCC_analysis(MCC):
         return "None"
 
 
-def NLR_analysis(NLR):
+def NLR_analysis(NLR: float) -> str:
     """
     Analysis NLR(Negative likelihood ratio) with interpretation table.
 
     :param NLR: negative likelihood ratio
-    :type NLR: float
-    :return: interpretation result as str
     """
     try:
         if NLR < 0.1:
@@ -64,13 +58,11 @@ def NLR_analysis(NLR):
         return "None"
 
 
-def V_analysis(V):
+def V_analysis(V: float) -> str:
     """
     Analysis Cramer's V with interpretation table.
 
     :param V: Cramer's V
-    :type V: float
-    :return: interpretation result as str
     """
     try:
         if V < 0.1:
@@ -88,13 +80,11 @@ def V_analysis(V):
         return "None"
 
 
-def PLR_analysis(PLR):
+def PLR_analysis(PLR: float) -> str:
     """
     Analysis PLR(Positive likelihood ratio) with interpretation table.
 
     :param PLR: positive likelihood ratio
-    :type PLR : float
-    :return: interpretation result as str
     """
     try:
         if PLR < 1:
@@ -108,13 +98,11 @@ def PLR_analysis(PLR):
         return "None"
 
 
-def DP_analysis(DP):
+def DP_analysis(DP: float) -> str:
     """
     Analysis DP with interpretation table.
 
     :param DP: discriminant power
-    :type DP : float
-    :return: interpretation result as str
     """
     try:
         if DP < 1:
@@ -128,13 +116,11 @@ def DP_analysis(DP):
         return "None"
 
 
-def AUC_analysis(AUC):
+def AUC_analysis(AUC: float) -> str:
     """
     Analysis AUC with interpretation table.
 
     :param AUC: area under the ROC curve
-    :type AUC : float
-    :return: interpretation result as str
     """
     try:
         if AUC < 0.6:
@@ -150,13 +136,11 @@ def AUC_analysis(AUC):
         return "None"
 
 
-def kappa_analysis_cicchetti(kappa):
+def kappa_analysis_cicchetti(kappa: float) -> str:
     """
     Analysis kappa number with Cicchetti benchmark.
 
     :param kappa: kappa number
-    :type kappa : float
-    :return: strength of agreement as str
     """
     try:
         if kappa < 0.4:
@@ -172,13 +156,11 @@ def kappa_analysis_cicchetti(kappa):
         return "None"
 
 
-def kappa_analysis_koch(kappa):
+def kappa_analysis_koch(kappa: float) -> str:
     """
     Analysis kappa number with Landis-Koch benchmark.
 
     :param kappa: kappa number
-    :type kappa : float
-    :return: strength of agreement as str
     """
     try:
         if kappa < 0:
@@ -198,13 +180,11 @@ def kappa_analysis_koch(kappa):
         return "None"
 
 
-def kappa_analysis_fleiss(kappa):
+def kappa_analysis_fleiss(kappa: float) -> str:
     """
     Analysis kappa number with Fleiss benchmark.
 
     :param kappa: kappa number
-    :type kappa : float
-    :return: strength of agreement as str
     """
     try:
         if kappa < 0.4:
@@ -216,13 +196,11 @@ def kappa_analysis_fleiss(kappa):
         return "None"
 
 
-def kappa_analysis_altman(kappa):
+def kappa_analysis_altman(kappa: float) -> str:
     """
     Analysis kappa number with Altman benchmark.
 
     :param kappa: kappa number
-    :type kappa : float
-    :return: strength of agreement as str
     """
     try:
         if kappa < 0.2:
@@ -240,13 +218,11 @@ def kappa_analysis_altman(kappa):
         return "None"
 
 
-def lambda_analysis(lambda_):
+def lambda_analysis(lambda_: float) -> str:
     """
     Analysis of lambda (A or B) value with interpretation table.
 
     :param lambda_: lambda (A or B) value
-    :type lambda_ : float
-    :return: interpretation result as str
     """
     try:
         if 0 < lambda_ < 0.2:
@@ -266,13 +242,11 @@ def lambda_analysis(lambda_):
         return "None"
 
 
-def alpha_analysis(alpha):
+def alpha_analysis(alpha: float) -> str:
     """
     Analysis of Krippendorff's alpha value with interpretation table.
 
     :param alpha: Krippendorff's alpha value
-    :type alpha: float
-    :return: interpretation result as str
     """
     try:
         if alpha < 0.667:
@@ -286,13 +260,11 @@ def alpha_analysis(alpha):
         return "None"
 
 
-def pearson_C_analysis(pearson_C):
+def pearson_C_analysis(pearson_C: float) -> str:
     """
     Analysis of Pearson's coefficient value with interpretation table.
 
     :param pearson_C: Pearson's coefficient value
-    :type pearson_C: float
-    :return: interpretation result as str
     """
     try:
         if 0 < pearson_C < 0.1:

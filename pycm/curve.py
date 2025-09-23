@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Curve module."""
 from __future__ import division
-from typing import List, Tuple, Optional, Union, Any
+from typing import List, Tuple, Dict, Optional, Union, Any
 from .errors import pycmCurveError, pycmPlotError
 from .utils import threshold_func, thresholds_calc, isfloat
 from .params import *

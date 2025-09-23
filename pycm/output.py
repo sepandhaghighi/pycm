@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Outputs functions."""
 from __future__ import division
-from typing import List, Dict, Tuple, Any, Optional
+from typing import List, Dict, Tuple, Any, Optional, Union
 from functools import partial
 from .params import *
 from .utils import rounder, sort_char_num

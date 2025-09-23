@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Compare module."""
 from __future__ import division
+from typing import Dict, Optional, Union
 from .errors import pycmCompareError
 from .output import *
 from .utils import *
@@ -35,27 +36,21 @@ class Compare():
 
     def __init__(
             self,
-            cm_dict,
-            by_class=False,
-            class_weight=None,
-            class_benchmark_weight=None,
-            overall_benchmark_weight=None,
-            digit=5):
+            cm_dict: Dict[str, pycm.ConfusionMatrix],
+            by_class: bool=False,
+            class_weight: Optional[dict]=None,
+            class_benchmark_weight: Optional[dict]=None,
+            overall_benchmark_weight: Optional[dict]=None,
+            digit: int=5) -> None:
         """
         Init method.
 
         :param cm_dict: dictionary of confusion matrices
-        :type cm_dict: dict
         :param by_class: compare by class flag
-        :type by_class: bool
         :param class_weight: class weights
-        :type class_weight: dict
         :param class_benchmark_weight: class benchmark weights
-        :type class_benchmark_weight: dict
         :param overall_benchmark_weight: overall benchmark weights
-        :type overall_benchmark_weight: dict
         :param digit: scale (number of fraction digits)(default value: 5)
-        :type digit: int
         """
         self.scores = None
         self.sorted = None
@@ -85,28 +80,21 @@ class Compare():
         else:
             warn(COMPARE_RESULT_WARNING, RuntimeWarning)
 
-    def print_report(self):
-        """
-        Print Compare report.
-
-        :return: None
-        """
+    def print_report(self) -> None:
+        """Print Compare report."""
         report = compare_report_print(
             self.sorted, self.scores, self.best_name)
         print(report)
 
     def save_report(
             self,
-            name,
-            address=True):
+            name: str,
+            address: bool=True) -> Dict[str, Union[bool, str]]:
         """
         Save Compare report in .comp (flat file format).
 
         :param name: filename
-        :type name: str
         :param address: flag for address return
-        :type address: bool
-        :return: saving address as dict {"Status": bool, "Message": str}
         """
         try:
             message = None
@@ -122,34 +110,23 @@ class Compare():
         except Exception as e:
             return {"Status": False, "Message": str(e)}
 
-    def __repr__(self):
-        """
-        Compare object representation method.
-
-        :return: representation as str
-        """
+    def __repr__(self) -> str:
+        """Compare object representation method."""
         return "pycm.Compare(classes: " + str(self.classes) + ")"
 
-    def __str__(self):
-        """
-        Compare object string representation method.
-
-        :return: representation as str
-        """
+    def __str__(self) -> str:
+        """Compare object string representation method."""
         report = compare_report_print(
             self.sorted, self.scores, self.best_name)
         return report
 
 
-def __compare_class_handler__(compare, cm_dict):
+def __compare_class_handler__(compare: pycm.Compare, cm_dict: Dict[str, pycm.ConfusionMatrix]) -> None:
     """
     Handle class score of Compare class.
 
     :param compare: Compare
-    :type compare: pycm.Compare object
     :param cm_dict: dictionary of confusion matrices
-    :type cm_dict: dict
-    :return: None
     """
     class_weight_sum = sum(compare.class_weight.values())
     class_benchmark_weight_sum = sum(compare.class_benchmark_weight.values())
@@ -167,15 +144,12 @@ def __compare_class_handler__(compare, cm_dict):
                     compare.scores[cm_name]["class"] += score
 
 
-def __compare_overall_handler__(compare, cm_dict):
+def __compare_overall_handler__(compare: pycm.Compare, cm_dict: Dict[str, pycm.ConfusionMatrix]) -> None:
     """
     Handle overall score of Compare class.
 
     :param compare: Compare
-    :type compare: pycm.Compare object
     :param cm_dict: dictionary of confusion matrices
-    :type cm_dict: dict
-    :return: None
     """
     overall_benchmark_weight_sum = sum(
         compare.overall_benchmark_weight.values())
@@ -192,15 +166,12 @@ def __compare_overall_handler__(compare, cm_dict):
                 compare.scores[cm_name]["overall"] += score
 
 
-def __compare_rounder__(compare, cm_dict):
+def __compare_rounder__(compare: pycm.Compare, cm_dict: Dict[str, pycm.ConfusionMatrix]) -> None:
     """
     Round Compare.scores .
 
     :param compare: Compare
-    :type compare: pycm.Compare object
     :param cm_dict: dictionary of confusion matrices
-    :type cm_dict: dict
-    :return: None
     """
     for cm_name in cm_dict:
         compare.scores[cm_name]["overall"] = numpy.around(
@@ -209,13 +180,11 @@ def __compare_rounder__(compare, cm_dict):
             compare.scores[cm_name]["class"], compare.digit)
 
 
-def __compare_sort_handler__(compare):
+def __compare_sort_handler__(compare: pycm.Compare) -> Tuple[str, str]:
     """
     Handle sorting of scores.
 
     :param compare: Compare
-    :type compare: pycm.Compare object
-    :return: (max_overall_name,max_class_name) as tuple
     """
     sorted_by_class = sorted(
         compare.scores,
@@ -235,17 +204,14 @@ def __compare_sort_handler__(compare):
     return (max_overall_name, max_class_name)
 
 
-def __compare_weight_handler__(compare, weight, weight_type):
+def __compare_weight_handler__(compare: pycm.Compare, weight: Dict[str, float], weight_type: str) -> None:
     """
     Handle different weights validation.
 
     :param compare: Compare
-    :type compare: pycm.Compare object
     :param weight: input weight
     :type weight: dict
     :param weight_type: input weight type
-    :type weight_type: str
-    :return: None
     """
     valid_dict = {
         "class_weight": compare.classes,
@@ -274,28 +240,21 @@ def __compare_weight_handler__(compare, weight, weight_type):
 
 
 def __compare_assign_handler__(
-        compare,
-        cm_dict,
-        class_weight,
-        class_benchmark_weight,
-        overall_benchmark_weight,
-        digit):
+        compare: pycm.Compare,
+        cm_dict: Dict[str, pycm.ConfusionMatrix],
+        class_weight: Dict[str, float],
+        class_benchmark_weight: Dict[str, float],
+        overall_benchmark_weight: Dict[str, float],
+        digit: int) -> None:
     """
     Assign basic parameters to Compare.
 
     :param compare: Compare
-    :type compare: pycm.Compare object
     :param cm_dict: dictionary of confusion matrices
-    :type cm_dict: dict
     :param class_weight: class weights
-    :type class_weight: dict
     :param class_benchmark_weight: class benchmark weights
-    :type class_benchmark_weight: dict
     :param overall_benchmark_weight: overall benchmark weights
-    :type overall_benchmark_weight: dict
     :param digit: scale (number of fraction digits)(default value: 5)
-    :type digit: int
-    :return: None
     """
     if not isinstance(cm_dict, dict):
         raise pycmCompareError(COMPARE_FORMAT_ERROR)

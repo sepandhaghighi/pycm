@@ -7,15 +7,12 @@ from .utils import rounder, sort_char_num
 import webbrowser
 
 
-def html_dataset_type(is_binary, is_imbalanced):
+def html_dataset_type(is_binary: bool, is_imbalanced: bool) -> str:
     """
     Return HTML report file dataset type.
 
     :param is_binary: is_binary flag (True: binary, False: multi-class)
-    :type is_binary: bool
     :param is_imbalanced: is_imbalanced flag (True: imbalance, False: balance)
-    :type is_imbalanced: bool
-    :return: dataset_type as str
     """
     return HTML_DATASET_TYPE_TEMPLATE.format(
         balance_type="Imbalanced" if is_imbalanced else "Balanced",
@@ -24,13 +21,11 @@ def html_dataset_type(is_binary, is_imbalanced):
         message2=RECOMMEND_HTML_MESSAGE2)
 
 
-def color_check(color):
+def color_check(color: Any) -> List[int]:
     """
     Check input color format.
 
     :param color: input color
-    :type color: tuple
-    :return: color as list
     """
     if isinstance(color, (tuple, list)) and all(map(lambda x: isinstance(x, int) and x < 256, color)):
         return list(color)
@@ -39,17 +34,13 @@ def color_check(color):
     return [0, 0, 0]
 
 
-def html_table_color(row, item, color=(0, 0, 0)):
+def html_table_color(row: dict, item: int, color: Tuple[int, int, int]=(0, 0, 0)) -> List[int]:
     """
     Return background color of each cell of the table.
 
     :param row: row dictionary
-    :type row: dict
     :param item: cell number
-    :type item: int
     :param color: input color
-    :type color: tuple
-    :return: background color as list [R, G, B]
     """
     color_list = color_check(color)
     back_color_index = 255 - int((item / (sum(list(row.values())) + 1)) * 255)
@@ -58,25 +49,19 @@ def html_table_color(row, item, color=(0, 0, 0)):
 
 
 def html_table(
-        classes,
-        table,
-        rgb_color,
-        normalize=False,
-        shortener=True):
+        classes: List[Any],
+        table: Dict[str, Dict[str, int]],
+        rgb_color: Tuple[int, int, int],
+        normalize: bool=False,
+        shortener: bool=True) -> str:
     """
     Return the confusion matrix of the HTML report file.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param table: input confusion matrix
-    :type table: dict
     :param rgb_color: input color
-    :type rgb_color: tuple
     :param normalize: save normalized matrix flag
-    :type normalize: bool
     :param shortener: class name shortener flag
-    :type shortener: bool
-    :return: html_table as str
     """
     result = ""
     result += "<h2>Confusion Matrix "
@@ -119,25 +104,19 @@ def html_table(
 
 
 def html_overall_stat(
-        overall_stat,
-        digit=5,
-        overall_param=None,
-        recommended_list=(),
-        alt_link=False):
+        overall_stat: Dict[str, Union[float, int, str]],
+        digit: int=5,
+        overall_param: Optional[List[str]]=None,
+        recommended_list: Union[list, tuple]=(),
+        alt_link: bool=False) -> str:
     """
     Return the overall stats of HTML report file.
 
     :param overall_stat: overall stats
-    :type overall_stat: dict
     :param digit: scale (number of fraction digits)(default value: 5)
-    :type digit: int
     :param overall_param: overall parameters list for print, Example: ["Kappa", "Scott PI"]
-    :type overall_param: list
     :param recommended_list: recommended statistics list
-    :type recommended_list: list or tuple
     :param alt_link: alternative link for document flag
-    :type alt_link: bool
-    :return: html_overall_stat as str
     """
     document_link = DOCUMENT_ADR
     if alt_link:
@@ -171,28 +150,21 @@ def html_overall_stat(
 
 
 def html_class_stat(
-        classes,
-        class_stat,
-        digit=5,
-        class_param=None,
-        recommended_list=(),
-        alt_link=False):
+        classes: List[Any],
+        class_stat: Dict[str, Dict[str, Union[float, int, str]]],
+        digit: int=5,
+        class_param: Optional[List[str]]=None,
+        recommended_list: Union[list, tuple]=(),
+        alt_link: bool=False) -> str:
     """
     Return the class-based stats of HTML report file.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param class_stat: class stat
-    :type class_stat:dict
     :param digit: scale (number of fraction digits)(default value: 5)
-    :type digit: int
     :param class_param: class parameters list for print, Example: ["TPR", "TNR", "AUC"]
-    :type class_param: list
     :param recommended_list: recommended statistics list
-    :type recommended_list: list or tuple
     :param alt_link: alternative link for document flag
-    :type alt_link: bool
-    :return: html_class_stat as str
     """
     document_link = DOCUMENT_ADR
     if alt_link:
@@ -237,26 +209,19 @@ def html_class_stat(
     return result
 
 
-def pycm_help():
-    """
-    Print pycm details.
-
-    :return: None
-    """
+def pycm_help() -> None:
+    """Print pycm details."""
     print(OVERVIEW)
     print("Repo : https://github.com/sepandhaghighi/pycm")
     print("Webpage : https://www.pycm.io")
 
 
-def table_print(classes, table):
+def table_print(classes: List[Any], table: Dict[str, Dict[str, int]]) -> str:
     """
     Return printable confusion matrix.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param table: input confusion matrix
-    :type table: dict
-    :return: printable table as str
     """
     classes_len = len(classes)
     table_list = []
@@ -275,13 +240,11 @@ def table_print(classes, table):
     return result
 
 
-def sparse_table_print(sparse_matrix):
+def sparse_table_print(sparse_matrix: Tuple[Dict[Any, Dict[Any, int]], List[Any], List[Any]]) -> str:
     """
     Return printable confusion matrix in sparse mode.
 
     :param sparse_matrix: list of the sparse matrix and it's classes
-    :type sparse_matrix: list
-    :return: printable table as str
     """
     [sparse_table, actual_classes, predict_classes] = sparse_matrix
     predict_classes.sort()
@@ -303,17 +266,13 @@ def sparse_table_print(sparse_matrix):
     return result
 
 
-def csv_matrix_print(classes, table, header=False):
+def csv_matrix_print(classes: List[Any], table: Dict[str, Dict[str, int]], header: bool=False) -> str:
     """
     Return matrix as csv data.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param table: input confusion matrix
-    :type table: dict
     :param header: add headers to csv file
-    :type header: bool
-    :return:
     """
     result = ""
     header_section = ""
@@ -329,19 +288,14 @@ def csv_matrix_print(classes, table, header=False):
     return result[:-1]
 
 
-def csv_print(classes, class_stat, digit=5, class_param=None):
+def csv_print(classes: List[Any], class_stat: Dict[str, Dict[str, Union[float, int, str]]], digit: int=5, class_param: Optional[List[str]]=None) -> str:
     """
     Return csv file data.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param class_stat: statistic result for each class
-    :type class_stat:dict
     :param digit: scale (number of fraction digits)(default value: 5)
-    :type digit: int
     :param class_param: class parameters list for print, Example: ["TPR", "TNR", "AUC"]
-    :type class_param: list
-    :return: csv file data as str
     """
     result = "Class"
     for item in classes:
@@ -361,28 +315,21 @@ def csv_print(classes, class_stat, digit=5, class_param=None):
 
 
 def stat_print(
-        classes,
-        class_stat,
-        overall_stat,
-        digit=5,
-        overall_param=None,
-        class_param=None):
+        classes: List[Any],
+        class_stat: Dict[str, Dict[str, Union[float, int, str]]],
+        overall_stat: Dict[str, Union[float, int, str]],
+        digit: int=5,
+        overall_param: Optional[List[str]]=None,
+        class_param: Optional[List[str]]=None) -> str:
     """
     Return printable statistics table.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param class_stat: statistic result for each class
-    :type class_stat: dict
     :param overall_stat: overall statistic result
-    :type overall_stat:dict
     :param digit: scale (number of fraction digits)(default value: 5)
-    :type digit: int
     :param overall_param: overall parameters list for print, Example: ["Kappa", "Scott PI"]
-    :type overall_param: list
     :param class_param: class parameters list for print, Example: ["TPR", "TNR", "AUC"]
-    :type class_param: list
-    :return: printable result as str
     """
     shift = max(map(len, PARAMS_DESCRIPTION.values())) + 5
     classes_len = len(classes)
@@ -419,17 +366,13 @@ def stat_print(
     return result
 
 
-def compare_report_print(sorted_list, scores, best_name):
+def compare_report_print(sorted_list: List[str], scores: Dict[str, float], best_name: str) -> str:
     """
     Return compare report.
 
     :param sorted_list: sorted list of confusion matrices
-    :type sorted_list: list
     :param scores: scores of confusion matrices
-    :type scores: dict
     :param best_name: best confusion matrix name
-    :type best_name: str
-    :return: printable result as str
     """
     title_items = ["Rank", "Name", "Class-Score", "Overall-Score"]
     class_scores_len = map(lambda x: len(
@@ -457,15 +400,12 @@ def compare_report_print(sorted_list, scores, best_name):
     return result
 
 
-def online_help(param=None, alt_link=False):
+def online_help(param: Optional[Union[str, int]]=None, alt_link: bool=False) -> None:
     """
     Open online document in web browser.
 
     :param param: input parameter
-    :type param: int or str
     :param alt_link: alternative link for document flag
-    :type alt_link: bool
-    :return: None
     """
     try:
         document_link = DOCUMENT_ADR

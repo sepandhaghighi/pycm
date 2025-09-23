@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Curve module."""
-from __future__ import division
+from __future__ import division, annotations
 from typing import List, Tuple, Dict, Optional, Union, Any
 from .errors import pycmCurveError, pycmPlotError
 from .utils import threshold_func, thresholds_calc, isfloat
@@ -217,7 +217,7 @@ class PRCurve(Curve):
         return "pycm.PRCurve(classes: " + str(self.classes) + ")"
 
 
-def __curve_validation__(curve: "pycm.Curve",
+def __curve_validation__(curve: Curve,
                          actual_vector: Union[List[Any],
                                               numpy.ndarray],
                          probs: Union[List[float],
@@ -243,7 +243,7 @@ def __curve_validation__(curve: "pycm.Curve",
     curve.probs = probs
 
 
-def __plot_validation__(curve: "pycm.Curve",
+def __plot_validation__(curve: Curve,
                         classes: List[Any],
                         area: bool,
                         area_method: str,
@@ -277,7 +277,7 @@ def __plot_validation__(curve: "pycm.Curve",
     return fig, ax, classes
 
 
-def __curve_classes_handler__(curve: "pycm.Curve", classes: List[Any]) -> None:
+def __curve_classes_handler__(curve: Curve, classes: List[Any]) -> None:
     """
     Handle conditions for curve classes.
 
@@ -301,7 +301,7 @@ def __curve_classes_handler__(curve: "pycm.Curve", classes: List[Any]) -> None:
         curve.classes = list(map(str, curve.classes))
 
 
-def __curve_thresholds_handler__(curve: "pycm.Curve", thresholds: Union[List[float], numpy.ndarray]) -> None:
+def __curve_thresholds_handler__(curve: Curve, thresholds: Union[List[float], numpy.ndarray]) -> None:
     """
     Handle conditions for thresholds.
 
@@ -323,7 +323,7 @@ def __curve_thresholds_handler__(curve: "pycm.Curve", thresholds: Union[List[flo
         curve.thresholds = sorted(curve.thresholds)
 
 
-def __curve_data_filter__(curve: "pycm.Curve") -> None:
+def __curve_data_filter__(curve: Curve) -> None:
     """
     Eliminate and refine the points at which the curve is undefined.
 

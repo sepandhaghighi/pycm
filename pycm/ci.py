@@ -1,20 +1,17 @@
 # -*- coding: utf-8 -*-
 """Class statistics functions."""
 from __future__ import division
+from typing import List, Tuple, Union
 import math
 
 
-def CI_calc_agresti(item1, item2, CV=1.96):
+def CI_calc_agresti(item1: float, item2: int, CV: float = 1.96) -> Tuple[Union[float, str], Union[float, str]]:
     """
     Calculate confidence interval using Agresti-Coull method.
 
     :param item1: parameter
-    :type  item1: float
     :param item2: number of observations
-    :type item2: int
     :param CV: critical value
-    :type CV:float
-    :return: confidence interval as tuple
     """
     try:
         item3 = item2 * item1
@@ -27,17 +24,13 @@ def CI_calc_agresti(item1, item2, CV=1.96):
         return ("None", "None")
 
 
-def CI_calc_wilson(item1, item2, CV=1.96):
+def CI_calc_wilson(item1: float, item2: int, CV: float = 1.96) -> Tuple[Union[float, str], Union[float, str]]:
     """
     Calculate confidence interval using Wilson method.
 
     :param item1: parameter
-    :type  item1: float
     :param item2: number of observations
-    :type item2: int
     :param CV: critical value
-    :type CV:float
-    :return: confidence interval as tuple
     """
     try:
         mean = (item1 + ((CV**2) / (2 * item2))) / (1 + (CV**2) / item2)
@@ -51,17 +44,13 @@ def CI_calc_wilson(item1, item2, CV=1.96):
         return ("None", "None")
 
 
-def AUC_SE_calc(AUC, P, N):
+def AUC_SE_calc(AUC: float, P: int, N: int) -> Union[float, str]:
     """
     Calculate AUC standard error.
 
     :param AUC: AUC value
-    :type AUC: float
     :param P: number of actual positives
-    :type P: int
     :param N: number of actual negatives
-    :type N: int
-    :return: standard error as float
     """
     try:
         q0 = AUC * (1 - AUC)
@@ -73,19 +62,14 @@ def AUC_SE_calc(AUC, P, N):
         return "None"
 
 
-def LR_SE_calc(item1, item2, item3, item4):
+def LR_SE_calc(item1: int, item2: int, item3: int, item4: int) -> Union[float, str]:
     """
     Calculate likelihood ratio +/- standard error.
 
     :param item1: true positive or false negative (TP or FN)
-    :type item1: int
     :param item2: number of actual positives (P)
-    :type item2: int
     :param item3: false positive or true negative (FP or TN)
-    :type item3: int
     :param item4: number of actual negatives (N)
-    :type item4: int
-    :return: standard error as float
     """
     try:
         return math.sqrt((1 / item1) - (1 / item2) + (1 / item3) - (1 / item4))
@@ -93,17 +77,13 @@ def LR_SE_calc(item1, item2, item3, item4):
         return "None"
 
 
-def LR_CI_calc(mean, SE, CV=1.96):
+def LR_CI_calc(mean: float, SE: float, CV:float = 1.96) -> Tuple[Union[float, str], Union[float, str]]:
     """
     Calculate confidence interval for likelihood ratio +/- using log method.
 
     :param mean: mean of data
-    :type mean: float
     :param SE: standard error of data
-    :type SE: float
     :param CV: critical value
-    :type CV:float
-    :return: confidence interval as tuple
     """
     try:
         CI_down = math.exp(math.log(mean) - CV * SE)
@@ -113,17 +93,13 @@ def LR_CI_calc(mean, SE, CV=1.96):
         return ("None", "None")
 
 
-def CI_calc(mean, SE, CV=1.96):
+def CI_calc(mean: float, SE: float, CV: float=1.96) -> Tuple[Union[float, str], Union[float, str]]:
     """
     Calculate confidence interval.
 
     :param mean: mean of data
-    :type mean: float
     :param SE: standard error of data
-    :type SE: float
     :param CV: critical value
-    :type CV:float
-    :return: confidence interval as tuple
     """
     try:
         CI_down = mean - CV * SE
@@ -133,15 +109,12 @@ def CI_calc(mean, SE, CV=1.96):
         return ("None", "None")
 
 
-def SE_calc(item1, item2):
+def SE_calc(item1: float, item2: int) -> Union[float, str]:
     """
     Calculate standard error with binomial distribution.
 
     :param item1: parameter
-    :type  item1: float
     :param item2: number of observations
-    :type item2: int
-    :return: standard error as float
     """
     try:
         return math.sqrt(
@@ -150,17 +123,14 @@ def SE_calc(item1, item2):
         return "None"
 
 
-def kappa_SE_calc(PA, PE, POP):
+def kappa_SE_calc(PA: float, PE: float, POP: int) -> Union[float, str]:
     """
     Calculate kappa standard error.
 
     :param PA: observed agreement among raters (overall accuracy)
-    :type PA: float
     :param PE: hypothetical probability of chance agreement (random accuracy)
-    :type PE: float
     :param POP: population or total number of samples
-    :type POP:int
-    :return: kappa standard error as float
+
     """
     try:
         result = math.sqrt((PA * (1 - PA)) / (POP * ((1 - PE)**2)))
@@ -169,19 +139,14 @@ def kappa_SE_calc(PA, PE, POP):
         return "None"
 
 
-def __CI_class_handler__(cm, param, CV, binom_method="normal-approx"):
+def __CI_class_handler__(cm: pycm.ConfusionMatrix, param: str, CV: float, binom_method: str = "normal-approx") -> dict:
     """
     Handle CI calculation for class parameters.
 
     :param cm: confusion matrix
-    :type cm: pycm.ConfusionMatrix object
     :param param: input parameter
-    :type param: str
     :param CV: critical value
-    :type CV: float
     :param binom_method: binomial confidence interval method
-    :type binom_method: str
-    :return: result as dictionary
     """
     result = {}
     item1 = cm.class_stat[param]
@@ -220,19 +185,14 @@ def __CI_class_handler__(cm, param, CV, binom_method="normal-approx"):
     return result
 
 
-def __CI_overall_handler__(cm, param, CV, binom_method="normal-approx"):
+def __CI_overall_handler__(cm: pycm.ConfusionMatrix, param: str, CV: float, binom_method: str = "normal-approx") -> List[Union[float, tuple]]:
     """
     Handle CI calculation for overall parameters.
 
     :param cm: confusion matrix
-    :type cm: pycm.ConfusionMatrix object
     :param param: input parameter
-    :type param: str
     :param CV: critical value
-    :type CV: float
     :param binom_method: binomial confidence interval method
-    :type binom_method: str
-    :return: result as list [SE, (CI_DOWN, DI_UP)]
     """
     result = []
     population = list(cm.POP.values())[0]

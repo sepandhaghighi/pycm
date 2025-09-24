@@ -253,17 +253,11 @@ def matrix_params_from_table(table: Dict[Any,
                                               int]],
                              classes: Optional[List[Any]] = None,
                              transpose: bool = False) -> Tuple[List[Any],
-                                                               Dict[Any,
-                                                                    Dict[Any,
-                                                                         int]],
-                                                               Dict[Any,
-                                                                    int],
-                                                               Dict[Any,
-                                                                    int],
-                                                               Dict[Any,
-                                                                    int],
-                                                               Dict[Any,
-                                                                    int]]:
+                                                               Dict[Any, Dict[Any, int]],
+                                                               Dict[Any, int],
+                                                               Dict[Any, int],
+                                                               Dict[Any, int],
+                                                               Dict[Any, int]]:
     """
     Calculate TP, TN, FP, and FN from the input confusion matrix and return them.
 

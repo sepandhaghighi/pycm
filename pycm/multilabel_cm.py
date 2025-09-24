@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """MultiLabelCM module."""
-from __future__ import division
+from __future__ import division, annotations
+from typing import List, Set, Any, Union
 from .errors import pycmVectorError, pycmMultiLabelError
 from .params import *
 from .cm import ConfusionMatrix
@@ -20,21 +21,17 @@ class MultiLabelCM():
 
     def __init__(
             self,
-            actual_vector,
-            predict_vector,
-            sample_weight=None,
-            classes=None):
+            actual_vector: Union[List[Set[Any]], numpy.ndarray],
+            predict_vector: Union[List[Set[Any]], numpy.ndarray],
+            sample_weight: Union[List[float], numpy.ndarray] = None,
+            classes: List[Any] = None) -> None:
         """
         Init method.
 
         :param actual_vector: actual vector
-        :type actual_vector: python list or numpy array of sets
         :param predict_vector: vector of predictions
-        :type predict_vector: python list or numpy array of sets
         :param sample_weight: sample weights list
-        :type sample_weight: python list or numpy array
         :param classes: ordered labels of classes
-        :type classes: list
         """
         self.actual_vector = actual_vector
         self.actual_vector_multihot = []
@@ -53,13 +50,11 @@ class MultiLabelCM():
         __mlcm_assign_classes__(self, classes)
         __mlcm_vectors_filter__(self)
 
-    def get_cm_by_class(self, class_name):
+    def get_cm_by_class(self, class_name: Any) -> ConfusionMatrix:
         """
         Return confusion matrices based on classes.
 
         :param class_name: target class name for confusion matrix
-        :type class_name: any valid type
-        :return: confusion matrix corresponding to the given class name
         """
         if class_name not in self.classwise_cms:
             try:
@@ -80,13 +75,11 @@ class MultiLabelCM():
             return cm
         return self.classwise_cms[class_name]
 
-    def get_cm_by_sample(self, index):
+    def get_cm_by_sample(self, index: int) -> ConfusionMatrix:
         """
         Return confusion matrices based on samples.
 
         :param index: sample index for confusion matrix
-        :type index: int
-        :return: confusion matrix corresponding to the given sample number
         """
         if index < 0 or index >= len(self.actual_vector):
             raise pycmMultiLabelError(VECTOR_INDEX_ERROR)
@@ -99,51 +92,33 @@ class MultiLabelCM():
             return cm
         return self.samplewise_cms[index]
 
-    def __str__(self):
-        """
-        Multilabel confusion matrix object string representation method.
-
-        :return: representation as str
-        """
+    def __str__(self) -> str:
+        """Multilabel confusion matrix object string representation method."""
         return self.__repr__()
 
-    def __repr__(self):
-        """
-        Multilabel confusion matrix object representation method.
-
-        :return: representation as str
-        """
+    def __repr__(self) -> str:
+        """Multilabel confusion matrix object representation method."""
         return "pycm.MultiLabelCM(classes: " + str(self.classes) + ")"
 
-    def __len__(self):
-        """
-        Multilabel confusion matrix object length method.
-
-        :return: length as int
-        """
+    def __len__(self) -> int:
+        """Multilabel confusion matrix object length method."""
         return len(self.classes)
 
 
 def __mlcm_vector_handler__(
-        mlcm,
-        actual_vector,
-        predict_vector,
-        sample_weight,
-        classes):
+        mlcm: MultiLabelCM,
+        actual_vector: Union[List[Set[Any]], numpy.ndarray],
+        predict_vector: Union[List[Set[Any]], numpy.ndarray],
+        sample_weight: Union[List[float], numpy.ndarray],
+        classes: List[Any]) -> None:
     """
     Handle multilabel object conditions for vectors.
 
     :param mlcm: multilabel confusion matrix
-    :type mlcm: pycm.MultiLabelCM object
     :param actual_vector: actual vector
-    :type actual_vector: python list or numpy array of sets
     :param predict_vector: vector of predictions
-    :type predict_vector: python list or numpy array of sets
     :param sample_weight: sample weights list
-    :type sample_weight: python list or numpy array
     :param classes: ordered labels of classes
-    :type classes: list
-    :return: None
     """
     if not isinstance(actual_vector, (list, numpy.ndarray)) or not \
             isinstance(predict_vector, (list, numpy.ndarray)):
@@ -163,16 +138,13 @@ def __mlcm_vector_handler__(
 
 
 def __mlcm_assign_classes__(
-        mlcm,
-        classes):
+        mlcm: MultiLabelCM,
+        classes: List[Any]) -> None:
     """
     Assign multilabel object class.
 
     :param mlcm: multilabel confusion matrix
-    :type mlcm: pycm.MultiLabelCM object
     :param classes: ordered labels of classes
-    :type classes: list
-    :return: None
     """
     mlcm.classes = classes
     if classes is None:
@@ -183,15 +155,11 @@ def __mlcm_assign_classes__(
                     *mlcm.predict_vector)))
 
 
-def __mlcm_vectors_filter__(mlcm):
+def __mlcm_vectors_filter__(mlcm: MultiLabelCM) -> None:
     """
     Normalize multilabel object vectors.
 
     :param mlcm: multilabel confusion matrix
-    :type mlcm: pycm.MultiLabelCM object
-    :param classes: ordered labels of classes
-    :type classes: list
-    :return: None
     """
     mlcm.actual_vector_multihot = [__set_to_multihot__(
         x, mlcm.classes) for x in mlcm.actual_vector]
@@ -199,15 +167,12 @@ def __mlcm_vectors_filter__(mlcm):
         x, mlcm.classes) for x in mlcm.predict_vector]
 
 
-def __set_to_multihot__(input_set, classes):
+def __set_to_multihot__(input_set: Set[Any], classes: List[Any]) -> List[int]:
     """
     Convert a set into a multi-hot vector based in classes.
 
     :param input_set: input set
-    :type input_set: set
     :param classes: ordered labels of classes
-    :type classes: list
-    :return: multi-hot vector as a list
     """
     result = [0] * len(classes)
     for i, x in enumerate(classes):

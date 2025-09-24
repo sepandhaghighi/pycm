@@ -885,7 +885,7 @@ def overall_random_accuracy_calc(item: Dict[Any, float]) -> Union[float, str]:
         return "None"
 
 
-def overall_statistics(**kwargs: Dict[str, Any]) -> Dict[str, Union[float, Tuple[float, float], int, str]]:
+def overall_statistics(**kwargs: Any) -> Dict[str, Union[float, Tuple[float, float], int, str]]:
     """
     Return Overall statistics.
 

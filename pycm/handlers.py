@@ -45,7 +45,14 @@ def __imbalancement_handler__(cm: "pycm.ConfusionMatrix", is_imbalanced: bool) -
         cm.imbalance = is_imbalanced
 
 
-def __obj_assign_handler__(cm: "pycm.ConfusionMatrix", matrix_param: Dict[int, Any]) -> None:
+def __obj_assign_handler__(
+        cm: "pycm.ConfusionMatrix",
+        matrix_param: Tuple[List[Any],
+                            Dict[Any, Dict[Any, int]],
+                            Dict[Any, int],
+                            Dict[Any, int],
+                            Dict[Any, int],
+                            Dict[Any, int]]) -> None:
     """
     Assign basic parameters to the input confusion matrix.
 

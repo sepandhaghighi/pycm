@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix handlers."""
 from __future__ import division
+from typing import Dict, IO
 from .class_funcs import class_statistics
 from .errors import pycmVectorError, pycmMatrixError
 from .overall_funcs import overall_statistics
@@ -11,39 +12,32 @@ import types
 import numpy
 
 
-def __class_stat_init__(cm):
+def __class_stat_init__(cm: "pycm.ConfusionMatrix") -> None:
     """
     Init individual class stats.
 
     :param cm: confusion matrix
-    :type cm: pycm.ConfusionMatrix object
-    :return: None
     """
     for stat, field_name in CLASS_PARAMS.items():
         setattr(cm, field_name, cm.class_stat[stat])
 
 
-def __overall_stat_init__(cm):
+def __overall_stat_init__(cm: "pycm.ConfusionMatrix") -> None:
     """
     Init individual overall stats.
 
     :param cm: confusion matrix
-    :type cm: pycm.ConfusionMatrix object
-    :return: None
     """
     for stat, field_name in OVERALL_PARAMS.items():
         setattr(cm, field_name, cm.overall_stat[stat])
 
 
-def __imbalancement_handler__(cm, is_imbalanced):
+def __imbalancement_handler__(cm: "pycm.ConfusionMatrix", is_imbalanced: bool) -> None:
     """
     Check if the confusion matrix is imbalanced.
 
     :param cm: confusion matrix
-    :type cm: pycm.ConfusionMatrix object
     :param is_imbalanced: is imbalanced flag passed to __init__
-    :type is_imbalanced: bool
-    :return: None
     """
     if cm.imbalance is None:
         if is_imbalanced is None:
@@ -51,15 +45,12 @@ def __imbalancement_handler__(cm, is_imbalanced):
         cm.imbalance = is_imbalanced
 
 
-def __obj_assign_handler__(cm, matrix_param):
+def __obj_assign_handler__(cm: "pycm.ConfusionMatrix", matrix_param: Dict[int, Any]) -> None:
     """
     Assign basic parameters to the input confusion matrix.
 
     :param cm: confusion matrix
-    :type cm: pycm.ConfusionMatrix object
     :param matrix_param: matrix parameters
-    :type matrix_param: dict
-    :return: None
     """
     cm.classes = matrix_param[0]
     cm.table = matrix_param[1]
@@ -109,15 +100,17 @@ def __obj_assign_handler__(cm, matrix_param):
             zip(OVERALL_PARAMS.keys(), len(OVERALL_PARAMS) * ["None"]))
 
 
-def __obj_file_handler__(cm, file):
+def __obj_file_handler__(cm: "pycm.ConfusionMatrix", file: IO) -> Tuple[List[Any],
+                                                                        Dict[Any, Dict[Any, int]],
+                                                                        Dict[Any, int],
+                                                                        Dict[Any, int],
+                                                                        Dict[Any, int],
+                                                                        Dict[Any, int]]:
     """
     Handle object conditions for the input file.
 
     :param cm: confusion matrix
-    :type cm: pycm.ConfusionMatrix object
     :param file: saved confusion matrix file object
-    :type file: (io.IOBase & file)
-    :return: matrix parameters as list
     """
     obj_data = json.load(file)
     if obj_data["Actual-Vector"] is not None and obj_data[
@@ -147,17 +140,21 @@ def __obj_file_handler__(cm, file):
     return matrix_param
 
 
-def __obj_matrix_handler__(matrix, classes, transpose):
+def __obj_matrix_handler__(
+        matrix: Dict[Any, Dict[Any, int]],
+        classes: List[Any],
+        transpose: bool) -> Tuple[List[Any],
+                            Dict[Any, Dict[Any, int]],
+                            Dict[Any, int],
+                            Dict[Any, int],
+                            Dict[Any, int],
+                            Dict[Any, int]]:
     """
     Handle object conditions for the matrix.
 
     :param matrix: the confusion matrix in dict form
-    :type matrix: dict
     :param classes: ordered labels of classes
-    :type classes: list
     :param transpose: transpose flag
-    :type transpose: bool
-    :return: matrix parameters as list
     """
     if matrix_check(matrix):
         if class_check(list(matrix)) is False:
@@ -169,17 +166,21 @@ def __obj_matrix_handler__(matrix, classes, transpose):
     return matrix_param
 
 
-def __obj_array_handler__(array, classes, transpose):
+def __obj_array_handler__(
+        array: Union[List[List[int]], numpy.ndarray],
+        classes: List[Any],
+        transpose: bool) -> Tuple[List[Any],
+                            Dict[Any, Dict[Any, int]],
+                            Dict[Any, int],
+                            Dict[Any, int],
+                            Dict[Any, int],
+                            Dict[Any, int]]:
     """
     Handle object conditions for the array.
 
     :param matrix: the confusion matrix in array form
-    :type matrix: list or np.array
     :param classes: ordered labels of classes
-    :type classes: list
     :param transpose: transpose flag
-    :type transpose: bool
-    :return: matrix parameters as list
     """
     if classes is not None and len(set(classes)) != len(classes):
         raise pycmMatrixError(VECTOR_UNIQUE_CLASS_ERROR)
@@ -194,28 +195,26 @@ def __obj_array_handler__(array, classes, transpose):
 
 
 def __obj_vector_handler__(
-        cm,
-        actual_vector,
-        predict_vector,
-        threshold,
-        sample_weight,
-        classes):
+        cm: "pycm.ConfusionMatrix",
+        actual_vector: Union[List[Any], numpy.ndarray],
+        predict_vector: Union[List[Any], numpy.ndarray],
+        threshold: Callable,
+        sample_weight: Union[List[Any], numpy.ndarray],
+        classes: List[Any]) -> Tuple[List[Any],
+                               Dict[Any, Dict[Any, int]],
+                               Dict[Any, int],
+                               Dict[Any, int],
+                               Dict[Any, int],
+                               Dict[Any, int]]:
     """
     Handle object conditions for vectors.
 
     :param cm: confusion matrix
-    :type cm: pycm.ConfusionMatrix object
     :param actual_vector: actual vector
-    :type actual_vector: python list or numpy array of any stringable objects
     :param predict_vector: vector of predictions
-    :type predict_vector: python list or numpy array of any stringable objects
     :param threshold: activation threshold function
-    :type threshold: FunctionType (function or lambda)
     :param sample_weight: sample weights list
-    :type sample_weight: list
     :param classes: ordered labels of classes
-    :type classes: list
-    :return: matrix parameters as list
     """
     if isinstance(threshold, types.FunctionType):
         cm.prob_vector = predict_vector

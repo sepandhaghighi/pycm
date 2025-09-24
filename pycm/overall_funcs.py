@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Overall statistics functions."""
 from __future__ import division
+from typing import List, Dict, Tuple, Union, Any
 import math
 import operator as op
 from functools import reduce
@@ -10,28 +11,21 @@ from .utils import complement
 
 
 def log_loss_calc(
-        classes,
-        prob_vector,
-        actual_vector,
-        normalize=True,
-        sample_weight=None,
-        pos_class=None):
+        classes: List[Any],
+        prob_vector: List[float],
+        actual_vector: List[int],
+        normalize: bool = True,
+        sample_weight: List[float] = None,
+        pos_class: Union[int, str] = None) -> Union[float, str]:
     """
     Calculate Log loss.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param prob_vector: probability vector
-    :type prob_vector: python list or numpy array
     :param actual_vector: actual vector
-    :type actual_vector: python list or numpy array
     :param normalize: normalization flag
-    :type normalize: bool
     :param sample_weight: sample weights list
-    :type sample_weight: list
     :param pos_class: positive class name
-    :type pos_class: int/str
-    :return: Log loss as float
     """
     try:
         vector_length = len(actual_vector)
@@ -55,25 +49,19 @@ def log_loss_calc(
 
 
 def brier_score_calc(
-        classes,
-        prob_vector,
-        actual_vector,
-        sample_weight=None,
-        pos_class=None):
+        classes: List[Any],
+        prob_vector: List[float],
+        actual_vector: List[int],
+        sample_weight: List[float] = None,
+        pos_class: Union[int, str] = None) -> Union[float, str]:
     """
     Calculate Brier score.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param prob_vector: probability vector
-    :type prob_vector: python list or numpy array
     :param actual_vector: actual vector
-    :type actual_vector: python list or numpy array
     :param sample_weight: sample weights list
-    :type sample_weight: list
     :param pos_class: positive class name
-    :type pos_class: int/str
-    :return: Brier score as float
     """
     try:
         vector_length = len(actual_vector)
@@ -94,25 +82,24 @@ def brier_score_calc(
         return "None"
 
 
-def alpha2_calc(TOP, P, ACC, POP, classes, max_iter=200, epsilon=0.0001):
+def alpha2_calc(
+        TOP: Dict[Any, int],
+        P: Dict[Any, int],
+        ACC: float,
+        POP: Dict[Any, int],
+        classes: List[Any],
+        max_iter: int = 200,
+        epsilon: float = 0.0001) -> Union[float, str]:
     """
     Calculate Aickin's alpha.
 
     :param TOP: number of positives in predict vector per class
-    :type TOP: dict
     :param P: number of actual positives per class
-    :type P: dict
     :param ACC: accuracy
-    :type ACC: float
     :param POP: population or total number of samples per class
-    :type POP: dict
     :param classes: confusion matrix classes
-    :type classes: list
     :param max_iter: maximum iteration
-    :type max_iter: int
     :param epsilon: difference threshold
-    :type epsilon: float
-    :return: Aickin's alpha as float
     """
     try:
         p_A = {i: TOP[i] / POP[i] for i in classes}
@@ -138,17 +125,13 @@ def alpha2_calc(TOP, P, ACC, POP, classes, max_iter=200, epsilon=0.0001):
         return "None"
 
 
-def alpha_calc(RACC, ACC, POP):
+def alpha_calc(RACC: float, ACC: float, POP: int) -> Union[float, str]:
     """
     Calculate Unweighted Krippendorff's alpha.
 
     :param RACC: random accuracy
-    :type RACC: float
     :param ACC: accuracy
-    :type ACC: float
     :param POP: population or total number of samples
-    :type POP: int
-    :return: unweighted alpha as float
     """
     try:
         epsi = 1 / (2 * POP)
@@ -159,23 +142,22 @@ def alpha_calc(RACC, ACC, POP):
         return "None"
 
 
-def weighted_alpha_calc(classes, table, P, TOP, POP, weight):
+def weighted_alpha_calc(
+        classes: List[Any],
+        table: Dict[Any, Dict[Any, int]],
+        P: Dict[Any, int],
+        TOP: Dict[Any, int],
+        POP: Dict[Any, int],
+        weight: Dict[Any, Dict[Any, float]]) -> Union[float, str]:
     """
     Calculate Weighted Krippendorff's alpha.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param table: input confusion matrix
-    :type table: dict
     :param P: number of actual positives per class
-    :type P: dict
     :param TOP: number of positives in predict vector per class
-    :type TOP: dict
     :param POP: population or total number of samples per class
-    :type POP: dict
     :param weight: weight matrix
-    :type weight: dict
-    :return: weighted alpha as float
     """
     p_e = 0
     p_a = 0
@@ -195,19 +177,18 @@ def weighted_alpha_calc(classes, table, P, TOP, POP, weight):
         return "None"
 
 
-def B_calc(classes, TP, TOP, P):
+def B_calc(
+        classes: List[Any],
+        TP: Dict[Any, int],
+        TOP: Dict[Any, int],
+        P: Dict[Any, int]) -> Union[float, str]:
     """
     Calculate Bangdiwala's B (B).
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param TP: true positive
-    :type TP: dict
     :param TOP: number of positives in predict vector per class
-    :type TOP: dict
     :param P: number of actual positives per class
-    :type P: dict
-    :return: B as float
     """
     try:
         up = 0
@@ -221,21 +202,20 @@ def B_calc(classes, TP, TOP, P):
         return "None"
 
 
-def ARI_calc(classes, table, TOP, P, POP):
+def ARI_calc(
+        classes: List[Any],
+        table: Dict[Any, Dict[Any, int]],
+        TOP: Dict[Any, int],
+        P: Dict[Any, int],
+        POP: int) -> Union[float, str]:
     """
     Calculate Adjusted Rand index (ARI).
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param table: input confusion matrix
-    :type table: dict
     :param TOP: number of positives in predict vector per class
-    :type TOP: dict
     :param P: number of actual positives per class
-    :type P: dict
     :param POP: population or total number of samples
-    :type POP: int
-    :return: ARI as float
     """
     try:
         table_sum = 0
@@ -254,15 +234,12 @@ def ARI_calc(classes, table, TOP, P, POP):
         return "None"
 
 
-def pearson_C_calc(chi_square, POP):
+def pearson_C_calc(chi_square: float, POP: int) -> Union[float, str]:
     """
     Calculate Pearson's C (C).
 
     :param chi_square: chi squared
-    :type chi_square: float
     :param POP: population or total number of samples
-    :type POP: int
-    :return: C as float
     """
     try:
         C = math.sqrt(chi_square / (POP + chi_square))
@@ -271,15 +248,12 @@ def pearson_C_calc(chi_square, POP):
         return "None"
 
 
-def RCI_calc(mutual_information, reference_entropy):
+def RCI_calc(mutual_information: float, reference_entropy: float) -> Union[float, str]:
     """
     Calculate Relative classifier information (RCI).
 
     :param mutual_information: mutual information
-    :type mutual_information: float
     :param reference_entropy: reference entropy
-    :type reference_entropy: float
-    :return: RCI as float
     """
     try:
         return mutual_information / reference_entropy
@@ -287,19 +261,18 @@ def RCI_calc(mutual_information, reference_entropy):
         return "None"
 
 
-def AUNP_calc(classes, P, POP, AUC_dict):
+def AUNP_calc(
+        classes: List[Any],
+        P: Dict[Any, int],
+        POP: Dict[Any, int],
+        AUC_dict: Dict[Any, float]) -> Union[float, str]:
     """
     Calculate AUNP.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param P: number of actual positives per class
-    :type P: dict
     :param POP: population or total number of samples per class
-    :type POP: dict
     :param AUC_dict: Area under the ROC curve (AUC) for each class
-    :type AUC_dict: dict
-    :return: AUNP as float
     """
     try:
         result = 0
@@ -310,19 +283,18 @@ def AUNP_calc(classes, P, POP, AUC_dict):
         return "None"
 
 
-def CBA_calc(classes, table, TOP, P):
+def CBA_calc(
+        classes: List[Any],
+        table: Dict[Any, Dict[Any, int]],
+        TOP: Dict[Any, int],
+        P: Dict[Any, int]) -> Union[float, str]:
     """
     Calculate Class balance accuracy (CBA).
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param table: input confusion matrix
-    :type table: dict
     :param TOP: number of positives in predict vector per class
-    :type TOP: dict
     :param P: number of actual positives per class
-    :type P: dict
-    :return: CBA as float
     """
     try:
         result = 0
@@ -334,15 +306,12 @@ def CBA_calc(classes, table, TOP, P):
         return "None"
 
 
-def RR_calc(classes, TOP):
+def RR_calc(classes: List[Any], TOP: Dict[Any, int]) -> Union[float, str]:
     """
     Calculate Global performance index (RR).
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param TOP: number of positives in predict vector per class
-    :type TOP: dict
-    :return: RR as float
     """
     try:
         class_number = len(classes)
@@ -352,19 +321,18 @@ def RR_calc(classes, TOP):
         return "None"
 
 
-def overall_MCC_calc(classes, table, TOP, P):
+def overall_MCC_calc(
+        classes: List[Any],
+        table: Dict[Any, Dict[Any, int]],
+        TOP: Dict[Any, int],
+        P: Dict[Any, int]) -> Union[float, str]:
     """
     Calculate Overall_MCC.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param table: input confusion matrix
-    :type table: dict
     :param TOP: number of positives in predict vector per class
-    :type TOP: dict
     :param P: number of actual positives per class
-    :type P: dict
-    :return: Overall_MCC as float
     """
     try:
         cov_x_y = 0
@@ -380,23 +348,22 @@ def overall_MCC_calc(classes, table, TOP, P):
         return "None"
 
 
-def convex_combination(classes, TP, TOP, P, class_name, modified=False):
+def convex_combination(
+        classes: List[Any],
+        TP: Dict[Any, int],
+        TOP: Dict[Any, int],
+        P: Dict[Any, int],
+        class_name: Any,
+        modified: bool = False) -> Union[float, str]:
     """
     Calculate Overall_CEN coefficient.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param TP: true positive
-    :type TP: dict
     :param TOP: number of positives in predict vector per class
-    :type TOP: dict
     :param P: number of actual positives per class
-    :type P: dict
     :param class_name: reviewed class name
-    :type class_name: any valid type
     :param modified: modified mode flag
-    :type modified: bool
-    :return: Overall_CEN coefficient as float
     """
     try:
         class_number = len(classes)
@@ -415,23 +382,22 @@ def convex_combination(classes, TP, TOP, P, class_name, modified=False):
         return "None"
 
 
-def overall_CEN_calc(classes, TP, TOP, P, CEN_dict, modified=False):
+def overall_CEN_calc(
+        classes: List[Any],
+        TP: Dict[Any, int],
+        TOP: Dict[Any, int],
+        P: Dict[Any, int],
+        CEN_dict: Dict[Any, float],
+        modified: bool = False) -> Union[float, str]:
     """
     Calculate Overall_CEN (Overall confusion entropy).
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param TP: true positive
-    :type TP: dict
     :param TOP: number of positives in predict vector per class
-    :type TOP: dict
     :param P: number of actual positives per class
-    :type P: dict
     :param CEN_dict: CEN dictionary for each class
-    :type CEN_dict: dict
     :param modified: modified mode flag
-    :type modified: bool
-    :return: Overall_CEN(MCEN) as float
     """
     try:
         result = 0
@@ -443,15 +409,12 @@ def overall_CEN_calc(classes, TP, TOP, P, CEN_dict, modified=False):
         return "None"
 
 
-def ncr(n, r):
+def ncr(n: int, r: int) -> int:
     """
     Calculate the combination of n and r.
 
     :param n: n
-    :type n: int
     :param r: r
-    :type r :int
-    :return: the combination of n and r as int
     """
     if r > n:
         return 0
@@ -461,17 +424,16 @@ def ncr(n, r):
     return numer // denom
 
 
-def p_value_calc(TP, POP, NIR):
+def p_value_calc(
+        TP: Dict[Any, int],
+        POP: int,
+        NIR: float) -> Union[float, str]:
     """
     Calculate p_value.
 
     :param TP: true positive
-    :type TP: dict
     :param POP: population or total number of samples
-    :type POP: int
     :param NIR: no information rate
-    :type NIR: float
-    :return: p_value as float
     """
     try:
         n = POP
@@ -485,15 +447,12 @@ def p_value_calc(TP, POP, NIR):
         return "None"
 
 
-def NIR_calc(P, POP):
+def NIR_calc(P: Dict[Any, int], POP: int) -> Union[float, str]:
     """
     Calculate No information rate (NIR).
 
     :param P: number of actual positives per class
-    :type P: dict
     :param POP: population or total number of samples
-    :type POP: int
-    :return: NIR as float
     """
     try:
         max_P = max(list(P.values()))
@@ -503,15 +462,12 @@ def NIR_calc(P, POP):
         return "None"
 
 
-def hamming_calc(TP, POP):
+def hamming_calc(TP: Dict[Any, int], POP: int) -> Union[float, str]:
     """
     Calculate Hamming loss.
 
     :param TP: true positive
-    :type TP: dict
     :param POP: population or total number of samples
-    :type POP: int
-    :return: Hamming loss as float
     """
     try:
         length = POP
@@ -520,15 +476,12 @@ def hamming_calc(TP, POP):
         return "None"
 
 
-def zero_one_loss_calc(TP, POP):
+def zero_one_loss_calc(TP: Dict[Any, int], POP: int) -> Union[int, str]:
     """
     Calculate Zero-one loss.
 
     :param TP: true Positive
-    :type TP: dict
     :param POP: population or total number of samples
-    :type POP: int
-    :return: Zero-one loss as integer
     """
     try:
         length = POP
@@ -537,15 +490,12 @@ def zero_one_loss_calc(TP, POP):
         return "None"
 
 
-def entropy_calc(item, POP):
+def entropy_calc(item: Dict[Any, int], POP: Dict[Any, int]) -> Union[float, str]:
     """
     Calculate Reference and Response likelihood.
 
     :param item: number of positives in actual or predict vector per class (P or TOP)
-    :type item: dict
     :param POP: population or total number of samples per class
-    :type POP: dict
-    :return: Reference or Response likelihood as float
     """
     try:
         result = 0
@@ -558,23 +508,22 @@ def entropy_calc(item, POP):
         return "None"
 
 
-def weighted_kappa_calc(classes, table, P, TOP, POP, weight):
+def weighted_kappa_calc(
+        classes: List[Any],
+        table: Dict[Any, Dict[Any, int]],
+        P: Dict[Any, int],
+        TOP: Dict[Any, int],
+        POP: Dict[Any, int],
+        weight: Dict[Any, Dict[Any, float]]) -> Union[float, str]:
     """
     Calculate Weighted kappa.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param table: input confusion matrix
-    :type table: dict
     :param P: number of actual positives per class
-    :type P: dict
     :param TOP: number of positives in predict vector per class
-    :type TOP: dict
     :param POP: population or total number of samples per class
-    :type POP: dict
     :param weight: weight matrix
-    :type weight: dict
-    :return: Weighted kappa as float
     """
     p_e = 0
     p_a = 0
@@ -591,13 +540,11 @@ def weighted_kappa_calc(classes, table, P, TOP, POP, weight):
         return "None"
 
 
-def kappa_no_prevalence_calc(overall_accuracy):
+def kappa_no_prevalence_calc(overall_accuracy: float) -> Union[float, str]:
     """
     Calculate Kappa no prevalence.
 
     :param overall_accuracy: overall accuracy
-    :type overall_accuracy: float
-    :return: Kappa no prevalence as float
     """
     try:
         result = 2 * overall_accuracy - 1
@@ -606,17 +553,13 @@ def kappa_no_prevalence_calc(overall_accuracy):
         return "None"
 
 
-def cross_entropy_calc(TOP, P, POP):
+def cross_entropy_calc(TOP: Dict[Any, int], P: Dict[Any, int], POP: Dict[Any, int]) -> Union[float, str]:
     """
     Calculate Cross entropy.
 
     :param TOP: number of positives in predict vector per class
-    :type TOP: dict
     :param P: number of actual positives per class
-    :type P: dict
     :param POP: population or total number of samples per class
-    :type POP: dict
-    :return: cross entropy as float
     """
     try:
         result = 0
@@ -631,17 +574,16 @@ def cross_entropy_calc(TOP, P, POP):
         return "None"
 
 
-def joint_entropy_calc(classes, table, POP):
+def joint_entropy_calc(
+        classes: List[Any],
+        table: Dict[Any, Dict[Any, int]],
+        POP: Dict[Any, int]) -> Union[float, str]:
     """
     Calculate Joint entropy.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param table: input confusion matrix
-    :type table: dict
     :param POP: population or total number of samples per class
-    :type POP: dict
-    :return: joint entropy as float
     """
     try:
         result = 0
@@ -655,19 +597,18 @@ def joint_entropy_calc(classes, table, POP):
         return "None"
 
 
-def conditional_entropy_calc(classes, table, P, POP):
+def conditional_entropy_calc(
+        classes: List[Any],
+        table: Dict[Any, Dict[Any, int]],
+        P: Dict[Any, int],
+        POP: Dict[Any, int]) -> Union[float, str]:
     """
     Calculate Conditional entropy.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param table: input confusion matrix
-    :type table: dict
     :param P: number of actual positives per class
-    :type P: dict
     :param POP: population or total number of samples per class
-    :type POP: dict
-    :return: conditional entropy as float
     """
     try:
         result = 0
@@ -685,15 +626,12 @@ def conditional_entropy_calc(classes, table, P, POP):
         return "None"
 
 
-def mutual_information_calc(response_entropy, conditional_entropy):
+def mutual_information_calc(response_entropy: float, conditional_entropy: float) -> Union[float, str]:
     """
     Calculate Mutual information.
 
     :param response_entropy: response entropy
-    :type response_entropy: float
     :param conditional_entropy: conditional entropy
-    :type conditional_entropy: float
-    :return: mutual information as float
     """
     try:
         return response_entropy - conditional_entropy
@@ -701,17 +639,13 @@ def mutual_information_calc(response_entropy, conditional_entropy):
         return "None"
 
 
-def kl_divergence_calc(P, TOP, POP):
+def kl_divergence_calc(P: Dict[Any, int], TOP: Dict[Any, int], POP: Dict[Any, int]) -> Union[float, str]:
     """
     Calculate Kullback-Liebler (KL) divergence.
 
     :param P: number of actual positives per class
-    :type P: dict
     :param TOP: number of positives in predict vector per class
-    :type TOP: dict
     :param POP: population or total number of samples per class
-    :type POP: dict
-    :return: KL divergence as float
     """
     try:
         result = 0
@@ -725,19 +659,14 @@ def kl_divergence_calc(P, TOP, POP):
         return "None"
 
 
-def lambda_B_calc(classes, table, TOP, POP):
+def lambda_B_calc(classes: List[Any], table: Dict[Any, Dict[Any, int]], TOP: Dict[Any, int], POP: int) -> Union[float, str]:
     """
     Calculate Goodman and Kruskal's lambda B.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param table: input confusion matrix
-    :type table: dict
     :param TOP: number of positives in predict vector per class
-    :type TOP: dict
     :param POP: population or total number of samples
-    :type POP: int
-    :return: Goodman and Kruskal's lambda B as float
     """
     try:
         result = 0
@@ -751,19 +680,14 @@ def lambda_B_calc(classes, table, TOP, POP):
         return "None"
 
 
-def lambda_A_calc(classes, table, P, POP):
+def lambda_A_calc(classes: List[Any], table: Dict[Any, Dict[Any, int]], P: Dict[Any, int], POP: int) -> Union[float, str]:
     """
     Calculate Goodman and Kruskal's lambda A.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param table: input confusion matrix
-    :type table: dict
     :param P: number of actual positives per class
-    :type P: dict
     :param POP: population or total number of samples
-    :type POP: int
-    :return: Goodman and Kruskal's lambda A as float
     """
     try:
         result = 0
@@ -780,21 +704,20 @@ def lambda_A_calc(classes, table, P, POP):
         return "None"
 
 
-def chi_square_calc(classes, table, TOP, P, POP):
+def chi_square_calc(
+        classes: List[Any],
+        table: Dict[Any, Dict[Any, int]],
+        TOP: Dict[Any, int],
+        P: Dict[Any, int],
+        POP: Dict[Any, int]) -> Union[float, str]:
     """
     Calculate Chi-squared.
 
     :param classes: confusion matrix classes
-    :type classes: list
     :param table: input confusion matrix
-    :type table: dict
     :param TOP: number of positives in predict vector per class
-    :type TOP: dict
     :param P: number of actual positives per class
-    :type P: dict
     :param POP: population or total number of samples per class
-    :type POP: dict
-    :return: chi-squared as float
     """
     try:
         result = 0
@@ -807,15 +730,12 @@ def chi_square_calc(classes, table, TOP, P, POP):
         return "None"
 
 
-def phi_square_calc(chi_square, POP):
+def phi_square_calc(chi_square: float, POP: int) -> Union[float, str]:
     """
     Calculate Phi-squared.
 
     :param chi_square: chi squared
-    :type chi_square: float
     :param POP: population or total number of samples
-    :type POP: int
-    :return: phi_squared as float
     """
     try:
         return chi_square / POP
@@ -823,15 +743,12 @@ def phi_square_calc(chi_square, POP):
         return "None"
 
 
-def cramers_V_calc(phi_square, classes):
+def cramers_V_calc(phi_square: float, classes: List[Any]) -> Union[float, str]:
     """
     Calculate Cramer's V.
 
     :param phi_square: phi_squared
-    :type phi_square: float
     :param classes: confusion matrix classes
-    :type classes: list
-    :return: Cramer's V as float
     """
     try:
         return math.sqrt((phi_square / (len(classes) - 1)))
@@ -839,13 +756,11 @@ def cramers_V_calc(phi_square, classes):
         return "None"
 
 
-def DF_calc(classes):
+def DF_calc(classes: List[Any]) -> Union[int, str]:
     """
     Calculate Chi-squared degree of freedom (DF).
 
     :param classes: confusion matrix classes
-    :type classes: list
-    :return: DF as int
     """
     try:
         return (len(classes) - 1)**2
@@ -853,15 +768,12 @@ def DF_calc(classes):
         return "None"
 
 
-def reliability_calc(RACC, ACC):
+def reliability_calc(RACC: float, ACC: float) -> Union[float, str]:
     """
     Calculate Reliability.
 
     :param RACC: random accuracy
-    :type RACC: float
     :param ACC: accuracy
-    :type ACC: float
-    :return: reliability as float
     """
     try:
         result = (ACC - RACC) / (1 - RACC)
@@ -870,7 +782,7 @@ def reliability_calc(RACC, ACC):
         return "None"
 
 
-def micro_calc(item1, item2):
+def micro_calc(item1: Dict[Any, int], item2: Dict[Any, int]) -> Union[float, str]:
     """
     Calculate TPR, TNR, PPV, NPV, FNR, FPR, or F1 micro.
 
@@ -878,7 +790,6 @@ def micro_calc(item1, item2):
     :type item1:dict
     :param item2: item2 in micro averaging
     :type item2: dict
-    :return: PPV, NPV, TPR, TNR, FNR, FPR, or F1 micro as float
     """
     try:
         item1_sum = sum(item1.values())
@@ -888,13 +799,11 @@ def micro_calc(item1, item2):
         return "None"
 
 
-def macro_calc(item):
+def macro_calc(item: Dict[Any, int]) -> Union[float, str]:
     """
     Calculate PPV_Macro, NPV_Macro, and TPR_Macro.
 
     :param item: True positive rate (TPR) or Positive predictive value (PPV)
-    :type item:dict
-    :return: PPV_Macro, NPV_Macro, or TPR_Macro as float
     """
     try:
         item_sum = sum(item.values())
@@ -904,17 +813,13 @@ def macro_calc(item):
         return "None"
 
 
-def PC_AC1_calc(P, TOP, POP):
+def PC_AC1_calc(P: Dict[Any, int], TOP: Dict[Any, int], POP: Dict[Any, int]) -> Union[float, str]:
     """
     Calculate Percent chance agreement for Gwet's AC1.
 
     :param P: number of actual positives per class
-    :type P: dict
     :param TOP: number of positives in predict vector per class
-    :type TOP: dict
     :param POP: population or total number of samples per class
-    :type POP:dict
-    :return: percent chance agreement as float
     """
     try:
         result = 0
@@ -928,13 +833,11 @@ def PC_AC1_calc(P, TOP, POP):
         return "None"
 
 
-def PC_S_calc(classes):
+def PC_S_calc(classes: List[Any]) -> Union[float, str]:
     """
     Calculate Percent chance agreement for Bennett-et-al.'s-S-score.
 
     :param classes: confusion matrix classes
-    :type classes: list
-    :return: percent chance agreement as float
     """
     try:
         return 1 / (len(classes))
@@ -942,13 +845,11 @@ def PC_S_calc(classes):
         return "None"
 
 
-def overall_jaccard_index_calc(jaccard_list):
+def overall_jaccard_index_calc(jaccard_list: List[float]) -> Union[Tuple[float, float], str]:
     """
     Calculate Overall Jaccard index.
 
     :param jaccard_list: list of Jaccard index for each class
-    :type jaccard_list: list
-    :return: (Jaccard_sum, Jaccard_mean) as tuple
     """
     try:
         jaccard_sum = sum(jaccard_list)
@@ -958,15 +859,12 @@ def overall_jaccard_index_calc(jaccard_list):
         return "None"
 
 
-def overall_accuracy_calc(TP, POP):
+def overall_accuracy_calc(TP: Dict[Any, int], POP: int) -> Union[float, str]:
     """
     Calculate Overall accuracy.
 
     :param TP: true positive
-    :type TP: dict
     :param POP: population or total number of samples
-    :type POP:int
-    :return: overall_accuracy as float
     """
     try:
         overall_accuracy = sum(TP.values()) / POP
@@ -975,13 +873,11 @@ def overall_accuracy_calc(TP, POP):
         return "None"
 
 
-def overall_random_accuracy_calc(item):
+def overall_random_accuracy_calc(item: Dict[Any, float]) -> Union[float, str]:
     """
     Calculate Overall random accuracy.
 
     :param item: random accuracy or random accuracy unbiased
-    :type item: dict
-    :return: overall random accuracy as float
     """
     try:
         return sum(item.values())
@@ -989,7 +885,7 @@ def overall_random_accuracy_calc(item):
         return "None"
 
 
-def overall_statistics(**kwargs):
+def overall_statistics(**kwargs: Dict[str, Any]) -> Dict[str, Union[float, Tuple[float, float], int, str]]:
     """
     Return Overall statistics.
 

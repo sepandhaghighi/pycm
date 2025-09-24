@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """MultiLabelCM module."""
 from __future__ import division, annotations
-from typing import List, Set, Any, Union
+from typing import List, Set, Any, Union, Optional
 from .errors import pycmVectorError, pycmMultiLabelError
 from .params import *
 from .cm import ConfusionMatrix
@@ -23,8 +23,8 @@ class MultiLabelCM():
             self,
             actual_vector: Union[List[Set[Any]], numpy.ndarray],
             predict_vector: Union[List[Set[Any]], numpy.ndarray],
-            sample_weight: Union[List[float], numpy.ndarray] = None,
-            classes: List[Any] = None) -> None:
+            sample_weight: Optional[Union[List[float], numpy.ndarray]] = None,
+            classes: Optional[List[Any]] = None) -> None:
         """
         Init method.
 

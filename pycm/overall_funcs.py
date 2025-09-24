@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Overall statistics functions."""
 from __future__ import division
-from typing import List, Dict, Tuple, Union, Any
+from typing import List, Dict, Tuple, Union, Any, Optional
 import math
 import operator as op
 from functools import reduce
@@ -15,8 +15,8 @@ def log_loss_calc(
         prob_vector: List[float],
         actual_vector: List[int],
         normalize: bool = True,
-        sample_weight: List[float] = None,
-        pos_class: Union[int, str] = None) -> Union[float, str]:
+        sample_weight: Optional[List[float]] = None,
+        pos_class: Optional[Union[int, str]] = None) -> Union[float, str]:
     """
     Calculate Log loss.
 
@@ -52,8 +52,8 @@ def brier_score_calc(
         classes: List[Any],
         prob_vector: List[float],
         actual_vector: List[int],
-        sample_weight: List[float] = None,
-        pos_class: Union[int, str] = None) -> Union[float, str]:
+        sample_weight: Optional[List[float]] = None,
+        pos_class: Optional[Union[int, str]] = None) -> Union[float, str]:
     """
     Calculate Brier score.
 

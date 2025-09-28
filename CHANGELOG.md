@@ -8,6 +8,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - Python typing features added to modules
 - Test system modified
+### Added
+- `optimal_thresholds` method in `ROCCurve` class
 ## [4.4] - 2025-08-16
 ### Added
 - `print_timings` method

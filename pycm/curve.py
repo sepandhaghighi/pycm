@@ -190,8 +190,10 @@ class ROCCurve(Curve):
 
     def optimal_thresholds(self) -> Dict[Any, float]:
         """
-        Get optimal thresholds for each class based on "Closest to (0,1)" criterion (also known as the Euclidean
-        distance method or Youden's J statistic equivalent). The formula for calculating the distance is:
+        Get optimal thresholds for each class.
+
+        The optimal threshold is calculated based on "Closest to (0,1)" criterion (also known as the Euclidean distance
+        method or Youden's J statistic equivalent). The formula for calculating the distance is:
         $optimal_cut_point = argmin_c √[(1-TPR(c))² + (FPR(c))²]$
         """
         optimal_thresholds = {}

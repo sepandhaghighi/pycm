@@ -161,6 +161,11 @@ class ROCCurve(Curve):
     0.75
     >>> auc_trp[2]
     0.75
+    >>> optimal_thr = crv.optimal_thresholds()
+    >>> optimal_thr[1]
+    0.35
+    >>> optimal_thr[2]
+    0.2
     """
 
     def __init__(self, *args: list, **kwargs: dict) -> None:
@@ -182,6 +187,24 @@ class ROCCurve(Curve):
     def __repr__(self) -> str:
         """Representation method."""
         return "pycm.ROCCurve(classes: " + str(self.classes) + ")"
+
+    def optimal_thresholds(self) -> Dict[Any, float]:
+        """
+        Get optimal thresholds for each class based on "Closest to (0,1)" criterion (also known as the Euclidean
+        distance method or Youden's J statistic equivalent). The formula for calculating the distance is:
+        $optimal_cut_point = argmin_c √[(1-TPR(c))² + (FPR(c))²]$
+        """
+        optimal_thresholds = {}
+        for c in self.classes:
+            distances = []
+            for i in range(len(self.data[c][self.plot_x_axis])):
+                fpr = self.data[c][self.plot_x_axis][i]
+                tpr = self.data[c][self.plot_y_axis][i]
+                distance = numpy.sqrt(fpr ** 2 + (1 - tpr) ** 2)
+                distances.append(distance)
+            min_index = numpy.argmin(distances)
+            optimal_thresholds[c] = self.thresholds[min_index]
+        return optimal_thresholds
 
 
 class PRCurve(Curve):

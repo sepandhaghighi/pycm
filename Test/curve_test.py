@@ -76,6 +76,13 @@ False
 'FPR'
 >>> crv.plot_y_axis
 'TPR'
+>>> op_thr = crv.optimal_thresholds()
+>>> op_thr[0]
+0.01
+>>> op_thr[1]
+0.6
+>>> op_thr[2]
+0.35
 >>> crv = PRCurve(actual_vector=np.array([0, 1, 1, 2, 2]), probs=np.array([[0.01, 0.09, 0.9], [0.01, 0.09, 0.9], [0.1, 0.3, 0.6], [0.2, 0.35, 0.45], [0.1, 0.7, 0.2]]), classes=[0, 2, 1])
 >>> crv
 pycm.PRCurve(classes: [0, 2, 1])

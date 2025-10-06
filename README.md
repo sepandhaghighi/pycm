@@ -345,7 +345,7 @@ Class2       0            10
 >>> optimal_thresholds[2]
 0.2
 ```
-⚠️ Starting from `version 4.5`, the `optimal_thresholds()` method is available to calculate class-specific optimal cut-points using the "Closest to (0,1)" criterion. This method finds the threshold for each class that minimizes the Euclidean distance to the perfect classifier point (0,1) in ROC space.
+ℹ️ Starting from `version 4.5`, the `optimal_thresholds()` method is available to calculate class-specific optimal cut-points using the "Closest to (0,1)" criterion. This method finds the threshold for each class that minimizes the Euclidean distance to the perfect classifier point (0,1) in ROC space.
 
 ### Precision-Recall curve
 

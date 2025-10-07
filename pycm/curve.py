@@ -200,7 +200,7 @@ class ROCCurve(Curve):
         for c in self.classes:
             fpr = numpy.array(self.data[c][self.plot_x_axis])
             tpr = numpy.array(self.data[c][self.plot_y_axis])
-            distances = numpy.sqrt(fpr ** 2 + (1 - tpr) ** 2).tolist()
+            distances = numpy.sqrt(fpr ** 2 + (1 - tpr) ** 2)
             min_index = numpy.argmin(distances)
             optimal_thresholds[c] = self.thresholds[min_index]
         return optimal_thresholds

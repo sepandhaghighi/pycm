@@ -197,7 +197,6 @@ def custom_rounder(input_number: float, p: int) -> float:
 
     :param input_number: number that should be round
     :param p: 10 powered by number of digits that wanted to be rounded to
-    :return: rounded number in float
     """
     return int(input_number * p + 0.5) / p
 
@@ -431,11 +430,11 @@ def matrix_combine(matrix_1: Dict[Any, Dict[Any, int]],
     :param matrix_1: first matrix that is going to be combined.
     :param matrix_2: second matrix that is going to be combined.
     """
-    result_matrix: Dict[Any, Dict[Any, int]] = {}
+    result_matrix = {}
     classes_1, classes_2 = matrix_1.keys(), matrix_2.keys()
     classes = set(classes_1).union(set(classes_2))
     for class_1 in classes:
-        temp_dict: Dict[Any, int] = {}
+        temp_dict = {}
         for class_2 in classes:
             tmp = 0
             if class_1 in classes_1 and class_2 in classes_1:

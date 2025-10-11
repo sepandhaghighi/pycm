@@ -893,7 +893,6 @@ class ConfusionMatrix():
         :param normalized: a flag for getting normalized confusion matrix
         :param one_vs_all: one-vs-all mode flag
         :param class_name: target class name for one-vs-all mode
-        :return: confusion matrix as a numpy.ndarray
         """
         classes = self.classes
         table = self.table

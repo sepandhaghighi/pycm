@@ -787,9 +787,7 @@ def micro_calc(item1: Dict[Any, int], item2: Dict[Any, int]) -> Union[float, str
     Calculate TPR, TNR, PPV, NPV, FNR, FPR, or F1 micro.
 
     :param item1: item1 in micro averaging
-    :type item1:dict
     :param item2: item2 in micro averaging
-    :type item2: dict
     """
     try:
         item1_sum = sum(item1.values())
@@ -890,8 +888,6 @@ def overall_statistics(**kwargs: Any) -> Dict[str, Union[float, Tuple[float, flo
     Return Overall statistics.
 
     :param kwargs: inputs
-    :type kwargs: dict
-    :return: overall statistics as dict
     """
     result = {}
     POP = kwargs["POP"]

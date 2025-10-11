@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Compare module."""
-from __future__ import division, annotations
+from __future__ import division
 from typing import Dict, Optional, Union
 from .errors import pycmCompareError
 from .output import *
@@ -36,7 +36,7 @@ class Compare():
 
     def __init__(
             self,
-            cm_dict: Dict[str, ConfusionMatrix],
+            cm_dict: Dict[str, "ConfusionMatrix"],
             by_class: bool=False,
             class_weight: Optional[dict]=None,
             class_benchmark_weight: Optional[dict]=None,
@@ -121,7 +121,7 @@ class Compare():
         return report
 
 
-def __compare_class_handler__(compare: Compare, cm_dict: Dict[str, ConfusionMatrix]) -> None:
+def __compare_class_handler__(compare: "Compare", cm_dict: Dict[str, "ConfusionMatrix"]) -> None:
     """
     Handle class score of Compare class.
 
@@ -144,7 +144,7 @@ def __compare_class_handler__(compare: Compare, cm_dict: Dict[str, ConfusionMatr
                     compare.scores[cm_name]["class"] += score
 
 
-def __compare_overall_handler__(compare: Compare, cm_dict: Dict[str, ConfusionMatrix]) -> None:
+def __compare_overall_handler__(compare: "Compare", cm_dict: Dict[str, "ConfusionMatrix"]) -> None:
     """
     Handle overall score of Compare class.
 
@@ -166,7 +166,7 @@ def __compare_overall_handler__(compare: Compare, cm_dict: Dict[str, ConfusionMa
                 compare.scores[cm_name]["overall"] += score
 
 
-def __compare_rounder__(compare: Compare, cm_dict: Dict[str, ConfusionMatrix]) -> None:
+def __compare_rounder__(compare: "Compare", cm_dict: Dict[str, "ConfusionMatrix"]) -> None:
     """
     Round Compare.scores .
 
@@ -180,7 +180,7 @@ def __compare_rounder__(compare: Compare, cm_dict: Dict[str, ConfusionMatrix]) -
             compare.scores[cm_name]["class"], compare.digit)
 
 
-def __compare_sort_handler__(compare: Compare) -> Tuple[str, str]:
+def __compare_sort_handler__(compare: "Compare") -> Tuple[str, str]:
     """
     Handle sorting of scores.
 
@@ -204,7 +204,7 @@ def __compare_sort_handler__(compare: Compare) -> Tuple[str, str]:
     return (max_overall_name, max_class_name)
 
 
-def __compare_weight_handler__(compare: Compare, weight: Dict[str, float], weight_type: str) -> None:
+def __compare_weight_handler__(compare: "Compare", weight: Dict[str, float], weight_type: str) -> None:
     """
     Handle different weights validation.
 
@@ -239,8 +239,8 @@ def __compare_weight_handler__(compare: Compare, weight: Dict[str, float], weigh
 
 
 def __compare_assign_handler__(
-        compare: Compare,
-        cm_dict: Dict[str, ConfusionMatrix],
+        compare: "Compare",
+        cm_dict: Dict[str, "ConfusionMatrix"],
         class_weight: Dict[str, float],
         class_benchmark_weight: Dict[str, float],
         overall_benchmark_weight: Dict[str, float],

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """MultiLabelCM module."""
-from __future__ import division, annotations
+from __future__ import division
 from typing import List, Set, Any, Union, Optional
 from .errors import pycmVectorError, pycmMultiLabelError
 from .params import *
@@ -50,7 +50,7 @@ class MultiLabelCM():
         __mlcm_assign_classes__(self, classes)
         __mlcm_vectors_filter__(self)
 
-    def get_cm_by_class(self, class_name: Any) -> ConfusionMatrix:
+    def get_cm_by_class(self, class_name: Any) -> "ConfusionMatrix":
         """
         Return confusion matrices based on classes.
 
@@ -75,7 +75,7 @@ class MultiLabelCM():
             return cm
         return self.classwise_cms[class_name]
 
-    def get_cm_by_sample(self, index: int) -> ConfusionMatrix:
+    def get_cm_by_sample(self, index: int) -> "ConfusionMatrix":
         """
         Return confusion matrices based on samples.
 
@@ -106,7 +106,7 @@ class MultiLabelCM():
 
 
 def __mlcm_vector_handler__(
-        mlcm: MultiLabelCM,
+        mlcm: "MultiLabelCM",
         actual_vector: Union[List[Set[Any]], numpy.ndarray],
         predict_vector: Union[List[Set[Any]], numpy.ndarray],
         sample_weight: Union[List[float], numpy.ndarray],
@@ -138,7 +138,7 @@ def __mlcm_vector_handler__(
 
 
 def __mlcm_assign_classes__(
-        mlcm: MultiLabelCM,
+        mlcm: "MultiLabelCM",
         classes: List[Any]) -> None:
     """
     Assign multilabel object class.
@@ -155,7 +155,7 @@ def __mlcm_assign_classes__(
                     *mlcm.predict_vector)))
 
 
-def __mlcm_vectors_filter__(mlcm: MultiLabelCM) -> None:
+def __mlcm_vectors_filter__(mlcm: "MultiLabelCM") -> None:
     """
     Normalize multilabel object vectors.
 

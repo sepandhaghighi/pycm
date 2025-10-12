@@ -37,14 +37,14 @@ def read_description() -> str:
 setup(
     name='pycm',
     packages=['pycm'],
-    version='4.4',
+    version='4.5',
     description='Multi-class confusion matrix library in Python',
     long_description=read_description(),
     long_description_content_type='text/markdown',
     author='PyCM Development Team',
     author_email='info@pycm.io',
     url='https://github.com/sepandhaghighi/pycm',
-    download_url='https://github.com/sepandhaghighi/pycm/tarball/v4.4',
+    download_url='https://github.com/sepandhaghighi/pycm/tarball/v4.5',
     keywords="confusion-matrix python3 python machine_learning ML",
     project_urls={
         'Webpage': 'https://www.pycm.io',

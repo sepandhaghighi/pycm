@@ -5,6 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+## [4.5] - 2025-10-14
 ### Added
 - `optimal_thresholds` method in `ROCCurve` class
 ### Changed
@@ -793,7 +794,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - TPR
 - documents and `README.md`
 
-[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v4.4...dev
+[Unreleased]: https://github.com/sepandhaghighi/pycm/compare/v4.5...dev
+[4.5]: https://github.com/sepandhaghighi/pycm/compare/v4.4...v4.5
 [4.4]: https://github.com/sepandhaghighi/pycm/compare/v4.3...v4.4
 [4.3]: https://github.com/sepandhaghighi/pycm/compare/v4.2...v4.3
 [4.2]: https://github.com/sepandhaghighi/pycm/compare/v4.1...v4.2

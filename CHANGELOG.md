@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- `Python 3.14` added to `test.yml`
 ## [4.5] - 2025-10-15
 ### Added
 - `optimal_thresholds` method in `ROCCurve` class

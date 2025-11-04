@@ -131,6 +131,7 @@ CLASSES_WARNING = "Specified classes are not a subset of the classes in the actu
 CLASSES_TYPE_WARNING = "Classes is neither a list nor None, so it will be ignored."
 
 CURVE_NONE_WARNING = "The curve contains non-numerical value(s)."
+CURVE_AXIS_ERROR = "`x_axis` and `y_axis` must be class parameters or `thresholds`."
 
 DEPRECATION_WARNING = "`{name}` is deprecated and may be removed in future releases."
 

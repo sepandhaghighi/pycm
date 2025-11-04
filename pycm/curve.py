@@ -42,7 +42,9 @@ class Curve:
             probs: Union[List[float], numpy.ndarray],
             classes: List[Any],
             thresholds: Optional[Union[List[float], numpy.ndarray]]=None,
-            sample_weight: Optional[Union[List[float], numpy.ndarray]]=None) -> None:
+            sample_weight: Optional[Union[List[float], numpy.ndarray]]=None,
+            x_axis: str="FPR",
+            y_axis: str="TPR") -> None:
         """
         Init method.
 
@@ -51,15 +53,19 @@ class Curve:
         :param classes: ordered labels of classes
         :param thresholds: thresholds list
         :param sample_weight: sample weights list
+        :param x_axis: x axis
+        :param y_axis: y axis
         """
         self.data = {}
         self.thresholds = []
         self.binary = False
-        __curve_validation__(self, actual_vector, probs)
+        self.plot_x_axis = x_axis
+        self.plot_y_axis = y_axis
+        __curve_validation__(self, actual_vector, probs, x_axis, y_axis)
         __curve_classes_handler__(self, classes)
         __curve_thresholds_handler__(self, thresholds)
         for c_index, c in enumerate(self.classes):
-            data_temp = {item: [] for item in CURVE_PARAMS}
+            data_temp = {self.plot_x_axis: [], self.plot_y_axis: []}
             for t in self.thresholds:
                 def lambda_fun(x): return threshold_func(
                     x, c_index, self.classes, t)
@@ -68,12 +74,16 @@ class Curve:
                     predict_vector=self.probs,
                     threshold=lambda_fun,
                     sample_weight=sample_weight)
-                for item in CURVE_PARAMS:
-                    data_temp[item].append(getattr(cm, item)[c])
+                if self.plot_x_axis != "THRESHOLDS":
+                    data_temp[self.plot_x_axis].append(getattr(cm, self.plot_x_axis)[c])
+                else:
+                    data_temp[self.plot_x_axis].append(t)
+                if self.plot_y_axis != "THRESHOLDS":
+                    data_temp[self.plot_y_axis].append(getattr(cm, self.plot_y_axis)[c])
+                else:
+                    data_temp[self.plot_y_axis].append(t)
             self.data[c] = data_temp
         self.auc = {}
-        self.plot_x_axis = "FPR"
-        self.plot_y_axis = "TPR"
         self.title = "{x_axis} per {y_axis}".format(x_axis=self.plot_x_axis, y_axis=self.plot_y_axis)
 
     def area(self, method: str="trapezoidal") -> Dict[str, float]:
@@ -243,13 +253,17 @@ def __curve_validation__(curve: Curve,
                          actual_vector: Union[List[Any],
                                               numpy.ndarray],
                          probs: Union[List[float],
-                                      numpy.ndarray]) -> None:
+                                      numpy.ndarray],
+                         x_axis: str,
+                         y_axis: str) -> None:
     """
     Curve input validation.
 
     :param curve: curve
     :param actual_vector: actual vector
     :param probs: probabilities
+    :param x_axis: x axis
+    :param y_axis: y axis
     """
     for item in [actual_vector, probs]:
         if not isinstance(item, (list, numpy.ndarray)):
@@ -261,6 +275,11 @@ def __curve_validation__(curve: Curve,
             raise pycmCurveError(PROBABILITY_TYPE_ERROR)
         if abs(sum(item) - 1) > 0.001:
             raise pycmCurveError(PROBABILITY_SUM_ERROR)
+    valid_axis = set(CLASS_PARAMS) - set(CLASS_BENCHMARK_LIST) + {"THRESHOLDS"}
+    if x_axis.upper() not in valid_axis or y_axis not in valid_axis:
+        raise pycmCurveError(CURVE_AXIS_ERROR)
+    curve.plot_x_axis = x_axis.upper()
+    curve.plot_y_axis = y_axis.upper()
     curve.actual_vector = actual_vector
     curve.probs = probs
 

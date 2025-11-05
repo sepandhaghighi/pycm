@@ -178,16 +178,23 @@ class ROCCurve(Curve):
     0.2
     """
 
-    def __init__(self, *args: list, **kwargs: dict) -> None:
+    def __init__(
+            self,
+            actual_vector: Union[List[Any], numpy.ndarray],
+            probs: Union[List[float], numpy.ndarray],
+            classes: List[Any],
+            thresholds: Optional[Union[List[float], numpy.ndarray]]=None,
+            sample_weight: Optional[Union[List[float], numpy.ndarray]]=None,) -> None:
         """
         Init method.
 
-        :param args: positional arguments
-        :param kwargs: keyword arguments
+        :param actual_vector: actual vector
+        :param probs: probabilities
+        :param classes: ordered labels of classes
+        :param thresholds: thresholds list
+        :param sample_weight: sample weights list
         """
-        super().__init__(*args, **kwargs)
-        self.plot_x_axis = "FPR"
-        self.plot_y_axis = "TPR"
+        super().__init__(actual_vector=actual_vector, probs=probs, classes=classes, thresholds=thresholds, sample_weight=sample_weight, x_axis="FPR", y_axis="TPR")
         self.title = "ROC Curve"
         __curve_data_filter__(self)
         for c in self.classes:
@@ -231,16 +238,23 @@ class PRCurve(Curve):
     0.29166666666666663
     """
 
-    def __init__(self, *args: list, **kwargs: dict) -> None:
+    def __init__(
+            self,
+            actual_vector: Union[List[Any], numpy.ndarray],
+            probs: Union[List[float], numpy.ndarray],
+            classes: List[Any],
+            thresholds: Optional[Union[List[float], numpy.ndarray]] = None,
+            sample_weight: Optional[Union[List[float], numpy.ndarray]] = None, ) -> None:
         """
         Init method.
 
-        :param args: positional arguments
-        :param kwargs: keyword arguments
+        :param actual_vector: actual vector
+        :param probs: probabilities
+        :param classes: ordered labels of classes
+        :param thresholds: thresholds list
+        :param sample_weight: sample weights list
         """
-        super().__init__(*args, **kwargs)
-        self.plot_x_axis = "TPR"
-        self.plot_y_axis = "PPV"
+        super().__init__(actual_vector=actual_vector, probs=probs, classes=classes, thresholds=thresholds, sample_weight=sample_weight, x_axis="TPR", y_axis="PPV")
         self.title = "PR Curve"
         __curve_data_filter__(self)
 

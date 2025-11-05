@@ -290,7 +290,7 @@ def __curve_validation__(curve: Curve,
         if abs(sum(item) - 1) > 0.001:
             raise pycmCurveError(PROBABILITY_SUM_ERROR)
     valid_axis_list = set(CLASS_PARAMS) - set(CLASS_BENCHMARK_LIST)
-    valid_axis_list = valid_axis_list.update({"THRESHOLDS"})
+    valid_axis_list.update({"THRESHOLDS"})
     if x_axis.upper() not in valid_axis_list or y_axis not in valid_axis_list:
         raise pycmCurveError(CURVE_AXIS_ERROR)
     curve.plot_x_axis = x_axis.upper()

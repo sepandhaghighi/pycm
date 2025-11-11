@@ -74,11 +74,11 @@ class Curve:
                     predict_vector=self.probs,
                     threshold=lambda_fun,
                     sample_weight=sample_weight)
-                if self.plot_x_axis != "THRESHOLDS":
+                if self.plot_x_axis != "thresholds":
                     data_temp[self.plot_x_axis].append(getattr(cm, self.plot_x_axis)[c])
                 else:
                     data_temp[self.plot_x_axis].append(t)
-                if self.plot_y_axis != "THRESHOLDS":
+                if self.plot_y_axis != "thresholds":
                     data_temp[self.plot_y_axis].append(getattr(cm, self.plot_y_axis)[c])
                 else:
                     data_temp[self.plot_y_axis].append(t)
@@ -290,11 +290,11 @@ def __curve_validation__(curve: Curve,
         if abs(sum(item) - 1) > 0.001:
             raise pycmCurveError(PROBABILITY_SUM_ERROR)
     valid_axis_list = set(CLASS_PARAMS) - set(CLASS_BENCHMARK_LIST)
-    valid_axis_list.update({"THRESHOLDS"})
-    if x_axis.upper() not in valid_axis_list or y_axis not in valid_axis_list:
+    valid_axis_list.update({"thresholds"})
+    if x_axis not in valid_axis_list or y_axis not in valid_axis_list:
         raise pycmCurveError(CURVE_AXIS_ERROR)
-    curve.plot_x_axis = x_axis.upper()
-    curve.plot_y_axis = y_axis.upper()
+    curve.plot_x_axis = x_axis
+    curve.plot_y_axis = y_axis
     curve.actual_vector = actual_vector
     curve.probs = probs
 

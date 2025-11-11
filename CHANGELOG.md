@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Changed
 - `Python 3.14` added to `test.yml`
+- `x_axis` parameter added to `Curve` class
+- `y_axis` parameter added to `Curve` class
 ## [4.5] - 2025-10-15
 ### Added
 - `optimal_thresholds` method in `ROCCurve` class

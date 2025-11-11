@@ -231,6 +231,14 @@ pycm.errors.pycmCurveError: All elements of the probability vector must have the
 Traceback (most recent call last):
         ...
 pycm.errors.pycmCurveError: The integral method must be either 'trapezoidal' or 'midpoint'.
+>>> crv = Curve(actual_vector=np.array([1, 1, 2, 2]), probs=np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1], x_axis="FFF")
+Traceback (most recent call last):
+        ...
+pycm.errors.pycmCurveError: `x_axis` and `y_axis` must be class parameters or `thresholds`.
+>>> crv = Curve(actual_vector=np.array([1, 1, 2, 2]), probs=np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1], y_axis="FFF")
+Traceback (most recent call last):
+        ...
+pycm.errors.pycmCurveError: `x_axis` and `y_axis` must be class parameters or `thresholds`.
 >>> cm = ConfusionMatrix(y_actu, y_pred, metrics_off=True)
 >>> cm.stat()
 Traceback (most recent call last):

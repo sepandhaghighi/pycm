@@ -23,6 +23,23 @@ True
 True
 >>> abs(crv.area(method="midpoint")[2] - 0.75) < 0.001
 True
+>>> crv = Curve(actual_vector=np.array([1, 1, 2, 2]), probs=np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1], y_axis="F1", x_axis="thresholds")
+>>> crv
+pycm.Curve(classes: [2, 1])
+>>> crv.binary
+True
+>>> crv.classes
+[2, 1]
+>>> crv.thresholds
+[0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
+>>> crv.data[2]["F1"]
+[0.6666666666666666, 0.8, 0.8, 0.5, 0.6666666666666666, 0.6666666666666666, 0.6666666666666666, 0.0]
+>>> crv.data[1]["F1"]
+[0.6666666666666666, 0.6666666666666666, 0.8, 0.8, 0.8, 0.5, 0.6666666666666666, 0.6666666666666666]
+>>> crv.data[2]["thresholds"] == crv.thresholds
+True
+>>> crv.data[1]["thresholds"] == crv.thresholds
+True
 >>> crv = Curve(actual_vector=[1, 1, "2", "2"], probs=np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[1, "2"])
 >>> crv.classes
 ['1', '2']

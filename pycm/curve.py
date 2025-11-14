@@ -184,7 +184,7 @@ class ROCCurve(Curve):
             probs: Union[List[float], numpy.ndarray],
             classes: List[Any],
             thresholds: Optional[Union[List[float], numpy.ndarray]]=None,
-            sample_weight: Optional[Union[List[float], numpy.ndarray]]=None,) -> None:
+            sample_weight: Optional[Union[List[float], numpy.ndarray]]=None) -> None:
         """
         Init method.
 
@@ -244,7 +244,7 @@ class PRCurve(Curve):
             probs: Union[List[float], numpy.ndarray],
             classes: List[Any],
             thresholds: Optional[Union[List[float], numpy.ndarray]] = None,
-            sample_weight: Optional[Union[List[float], numpy.ndarray]] = None, ) -> None:
+            sample_weight: Optional[Union[List[float], numpy.ndarray]] = None) -> None:
         """
         Init method.
 

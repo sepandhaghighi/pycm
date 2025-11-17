@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [Unreleased]
 ### Added
 - `PCurve` class
+- `RCurve` class
 ### Changed
 - `Python 3.14` added to `test.yml`
 - `x_axis` parameter added to `Curve` class

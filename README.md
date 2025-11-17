@@ -361,6 +361,20 @@ Class2       0            10
 >>> auc_trp[2]
 0.29166666666666663
 ```
+### Precision curve
+
+`PCurve`, added in `version 4.6`, is devised to compute the Precision curve in which the Y axis represents the Precision, and the X axis represents the discrimination thresholds applied to a classifier. Thus, the ideal point is located at the top left of the curve, and a larger area under the curve represents better performance. Precision curve is a graphical representation of binary classifiers' performance. In PyCM, `PCurve` binarizes the output based on the "One vs. Rest" strategy to provide an extension of this curve for multi-class classifiers. Getting the actual labels vector, the target probability estimates of the positive classes, and the list of ordered labels of classes, this method is able to compute and plot Precision per different discrimination thresholds and compute the area under the curve.
+
+```pycon
+>>> crv = PCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
+>>> crv.thresholds
+[0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
+>>> auc_trp = crv.area()
+>>> auc_trp[1]
+0.5708333333333333
+>>> auc_trp[2]
+0.5625
+```
 
 ### Parameter recommender
 

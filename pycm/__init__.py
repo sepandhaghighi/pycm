@@ -7,7 +7,7 @@ from .distance import DistanceType
 from .cm import ConfusionMatrix
 from .compare import Compare
 from .multilabel_cm import MultiLabelCM
-from .curve import Curve, ROCCurve, PRCurve, PCurve, RCurve
+from .curve import Curve, ROCCurve, PRCurve, PCurve, RCurve, F1Curve
 from .generate_random_data import generate_confusion_matrix, generate_confusion_matrix_with_scenario
 from .generate_random_data import ClassDistributionScenario, run_report_benchmark
 __version__ = PYCM_VERSION

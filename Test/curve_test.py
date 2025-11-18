@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
->>> from pycm import Curve, ROCCurve, PRCurve, PCurve, RCurve
+>>> from pycm import Curve, ROCCurve, PRCurve, PCurve, RCurve, F1Curve
 >>> import numpy as np
 >>> crv = Curve(actual_vector=np.array([1, 1, 2, 2]), probs=np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
 >>> crv
@@ -195,4 +195,21 @@ False
 'thresholds'
 >>> crv.plot_y_axis
 'TPR'
+>>> crv = F1Curve(actual_vector=np.array([0, 1, 1, 2, 2]), probs=np.array([[0.01, 0.09, 0.9], [0.01, 0.09, 0.9], [0.1, 0.3, 0.6], [0.2, 0.35, 0.45], [0.1, 0.7, 0.2]]), classes=[0, 2, 1])
+>>> crv
+pycm.F1Curve(classes: [0, 2, 1])
+>>> crv.classes
+[0, 2, 1]
+>>> crv.data[2]["thresholds"]
+[0.01, 0.09, 0.1, 0.2, 0.3, 0.35, 0.45, 0.6, 0.7, 0.9]
+>>> crv.data[1]["thresholds"]
+[0.01, 0.09, 0.1, 0.2, 0.3, 0.35, 0.45, 0.6, 0.7, 0.9]
+>>> crv.data[0]["thresholds"]
+[0.01, 0.09, 0.1, 0.2, 0.3, 0.35, 0.45, 0.6, 0.7, 0.9]
+>>> crv.title
+'F1 Curve'
+>>> crv.plot_x_axis
+'thresholds'
+>>> crv.plot_y_axis
+'F1'
 """

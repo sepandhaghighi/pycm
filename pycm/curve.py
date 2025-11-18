@@ -342,6 +342,46 @@ class RCurve(Curve):
         """Representation method."""
         return "pycm.RCurve(classes: " + str(self.classes) + ")"
 
+class F1Curve(Curve):
+    """
+    Recall-Curve class.
+
+    >>> import numpy as np
+    >>> crv = F1Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])
+    >>> crv.thresholds
+    [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
+    >>> auc_trp = crv.area()
+    >>> auc_trp[1]
+    0.5633333333333334
+    >>> auc_trp[2]
+    0.5091666666666667
+    """
+
+    def __init__(
+            self,
+            actual_vector: Union[List[Any], numpy.ndarray],
+            probs: Union[List[float], numpy.ndarray],
+            classes: List[Any],
+            thresholds: Optional[Union[List[float], numpy.ndarray]] = None,
+            sample_weight: Optional[Union[List[float], numpy.ndarray]] = None) -> None:
+        """
+        Init method.
+
+        :param actual_vector: actual vector
+        :param probs: probabilities
+        :param classes: ordered labels of classes
+        :param thresholds: thresholds list
+        :param sample_weight: sample weights list
+        """
+        super().__init__(actual_vector=actual_vector, probs=probs, classes=classes, thresholds=thresholds,
+                         sample_weight=sample_weight, x_axis="thresholds", y_axis="F1")
+        self.title = "F1 Curve"
+        __curve_data_filter__(self)
+
+    def __repr__(self) -> str:
+        """Representation method."""
+        return "pycm.F1Curve(classes: " + str(self.classes) + ")"
+
 def __curve_validation__(curve: Curve,
                          actual_vector: Union[List[Any],
                                               numpy.ndarray],

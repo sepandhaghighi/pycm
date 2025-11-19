@@ -344,7 +344,7 @@ class RCurve(Curve):
 
 class F1Curve(Curve):
     """
-    Recall-Curve class.
+    F1-Curve class.
 
     >>> import numpy as np
     >>> crv = F1Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])

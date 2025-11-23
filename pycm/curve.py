@@ -134,7 +134,7 @@ class Curve:
         ax.set_ylabel(self.plot_y_axis)
         fig.suptitle(self.title)
         from matplotlib.ticker import FuncFormatter
-        formatter = FuncFormatter(lambda x, _: "{:.3f}".format(x))
+        formatter = FuncFormatter(lambda x, _: "{:.3g}".format(x))
         ax.xaxis.set_major_formatter(formatter)
         ax.yaxis.set_major_formatter(formatter)
         for c_index, c in enumerate(classes):

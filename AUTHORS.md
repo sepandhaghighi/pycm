@@ -18,3 +18,4 @@
 - [@the-lay](https://github.com/the-lay)
 - [@lewiuberg](https://github.com/lewiuberg)
 - [@AHReccese](https://github.com/AHReccese)
+- [@fhausmann](https://github.com/fhausmann)

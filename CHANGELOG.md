@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `y_axis` parameter added to `Curve` class
 - `Curve` class axis precision bug fixed
 - Document modified
+- Add float castings to prevent overflow errors
 ## [4.5] - 2025-10-15
 ### Added
 - `optimal_thresholds` method in `ROCCurve` class

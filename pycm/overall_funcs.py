@@ -194,8 +194,8 @@ def B_calc(
         up = 0
         down = 0
         for i in classes:
-            up += TP[i]**2
-            down += TOP[i] * P[i]
+            up += float(TP[i])**2
+            down += float(TOP[i]) * float(P[i])
         B = up / down
         return B
     except Exception:
@@ -340,9 +340,9 @@ def overall_MCC_calc(
         cov_y_y = 0
         matrix_sum = sum(list(TOP.values()))
         for i in classes:
-            cov_x_x += TOP[i] * (matrix_sum - TOP[i])
-            cov_y_y += P[i] * (matrix_sum - P[i])
-            cov_x_y += (table[i][i] * matrix_sum - P[i] * TOP[i])
+            cov_x_x += float(TOP[i]) * (matrix_sum - float(TOP[i]))
+            cov_y_y += float(P[i]) * (matrix_sum - float(P[i]))
+            cov_x_y += (float(table[i][i]) * matrix_sum - float(P[i]) * float(TOP[i]))
         return cov_x_y / (math.sqrt(cov_y_y * cov_x_x))
     except Exception:
         return "None"
@@ -723,7 +723,7 @@ def chi_square_calc(
         result = 0
         for i in classes:
             for j in classes:
-                expected = (TOP[j] * P[i]) / (POP[i])
+                expected = (float(TOP[j]) * float(P[i])) / (float(POP[i]))
                 result += ((table[i][j] - expected)**2) / expected
         return result
     except Exception:

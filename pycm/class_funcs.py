@@ -62,6 +62,9 @@ def OOC_calc(TP: int, TOP: int, P: int) -> Union[float, str]:
     :param TOP: number of positives in predict vector
     :param P: number of actual positives
     """
+    TP = float(TP)
+    TOP = float(TOP)
+    P = float(P)
     try:
         OOC = TP / (math.sqrt(TOP * P))
         return OOC
@@ -148,6 +151,13 @@ def Q_calc(TP: int, TN: int, FP: int, FN: int) -> Union[float, str]:
     :param FN: false negative
     """
     try:
+        TP = float(TP)
+        TN = float(TN)
+        FP = float(FP)
+        FN = float(FN)
+    except ValueError:
+        return "None"
+    try:
         OR = (TP * TN) / (FP * FN)
         result = (OR - 1) / (OR + 1)
         return result
@@ -207,6 +217,9 @@ def F_calc(TP: int, FP: int, FN: int, beta: float) -> Union[float, str]:
     :param FN: false negative
     :param beta: beta coefficient
     """
+    TP = float(TP)
+    FP = float(FP)
+    FN = float(FN)
     try:
         result = ((1 + (beta)**2) * TP) / \
             ((1 + (beta)**2) * TP + FP + (beta**2) * FN)
@@ -224,6 +237,10 @@ def MCC_calc(TP: int, TN: int, FP: int, FN: int) -> Union[float, str]:
     :param FP: false positive
     :param FN: false negative
     """
+    TP = float(TP)
+    TN = float(TN)
+    FP = float(FP)
+    FN = float(FN)
     try:
         result = (TP * TN - FP * FN) / \
             (math.sqrt((TP + FP) * (TP + FN) * (TN + FP) * (TN + FN)))
@@ -296,6 +313,9 @@ def RACC_calc(TOP: int, P: int, POP: int) -> Union[float, str]:
     :param P: number of actual positives
     :param POP: population or total number of samples
     """
+    TOP = float(TOP)
+    P = float(P)
+    POP = float(POP)
     try:
         result = (TOP * P) / ((POP) ** 2)
         return result

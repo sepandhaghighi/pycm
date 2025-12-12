@@ -9,6 +9,7 @@ import numpy
 import re
 from .params import *
 from .errors import pycmMatrixError
+import warnings
 from warnings import warn
 from functools import wraps
 
@@ -247,6 +248,40 @@ def transpose_func(classes: List[Any], table: Dict[Any, Dict[Any, int]]) -> Dict
     return transposed_table
 
 
+def _check_overflow_warning(warning: warnings.WarningMessage) -> bool:
+    """
+    Check if a warning is an overflow warning.
+
+    :param warning: warning to be checked
+    """
+    return issubclass(warning.category, RuntimeWarning) and "overflow" in str(warning.message)
+
+
+def check_overflow(func):
+    """
+    Check for integer overflow.
+
+    :param func: input function
+    """
+    @wraps(func)
+    def overflow_check(*args, **kwargs):
+        """
+        Inner function which checks for integer overflow.
+
+        :param args: non-keyword arguments
+        :param kwargs: keyword arguments
+        """
+        with warnings.catch_warnings(record=True) as warns:
+            result = func(*args, **kwargs)
+            for warning in warns:
+                if _check_overflow_warning(warning):
+                    raise OverflowError(
+                        "The number of elements in your confusion matrix is to large. This is not supported.")
+        return result
+    return overflow_check
+
+
+@check_overflow
 def matrix_params_from_table(table: Dict[Any,
                                          Dict[Any,
                                               int]],

@@ -1767,4 +1767,10 @@ Zero       2          0
 >>> assert isclose(cm.overall_stat["Chi-Squared"], 7.499999999999999e+17, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.overall_stat["Overall MCC"], -0.5, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.overall_stat["Bangdiwala B"], 0.19999999999999998, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> maxval = 50e17
+>>> matrix = np.array([[maxval,maxval],[maxval,2]]).astype(int)
+>>> cm = ConfusionMatrix(matrix=matrix)
+Traceback (most recent call last):
+ ...
+OverflowError: The number of elements in your confusion matrix is to large. This is not supported.
 """

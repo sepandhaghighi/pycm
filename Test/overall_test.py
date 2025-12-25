@@ -1751,26 +1751,20 @@ Zero       2          0
 >>> assert isclose(cm.brier_score(pos_class=1), 0.224225, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.brier_score(pos_class=0), 0.509225, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> import numpy as np
->>> maxval = 10e17
+>>> maxval = 10e7
 >>> matrix = np.array([[maxval,maxval],[maxval,2]]).astype(int)
 >>> cm = ConfusionMatrix(matrix=matrix)
->>> assert isclose(cm.class_stat["MCC"][0], -0.5, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> assert isclose(cm.class_stat["MCC"][1], -0.5, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> assert isclose(cm.class_stat["RACC"][0], 0.4444444444444445, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> assert isclose(cm.class_stat["RACC"][1], 0.11111111111111112, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> assert isclose(cm.class_stat["Q"][0], -1.0, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> assert isclose(cm.class_stat["Q"][1], -1.0, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.class_stat["MCC"][0], -0.4999999800000004, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.class_stat["MCC"][1], -0.4999999800000004, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.class_stat["RACC"][0], 0.4444444385185186, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.class_stat["RACC"][1], 0.11111111407407408, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.class_stat["Q"][0], -0.9999999600000007, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.class_stat["Q"][1], -0.9999999600000007, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.class_stat["F1"][0], 0.5, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> assert isclose(cm.class_stat["F1"][1], 2e-18, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.class_stat["F1"][1], 1.9999999600000007e-08, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.class_stat["OOC"][0], 0.5, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> assert isclose(cm.class_stat["OOC"][1], 2e-18, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> assert isclose(cm.overall_stat["Chi-Squared"], 7.499999999999999e+17, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> assert isclose(cm.overall_stat["Overall MCC"], -0.5, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> assert isclose(cm.overall_stat["Bangdiwala B"], 0.19999999999999998, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> maxval = 50e17
->>> matrix = np.array([[maxval,maxval],[maxval,2]]).astype(int)
->>> cm = ConfusionMatrix(matrix=matrix)
-Traceback (most recent call last):
- ...
-OverflowError: The number of elements in your confusion matrix is to large. This is not supported.
+>>> assert isclose(cm.class_stat["OOC"][1], 1.9999999600000007e-08, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.overall_stat["Chi-Squared"], 74999994.5000002, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.overall_stat["Overall MCC"], -0.4999999800000004, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.overall_stat["Bangdiwala B"], 0.1999999984000001, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 """

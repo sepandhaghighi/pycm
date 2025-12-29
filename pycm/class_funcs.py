@@ -201,6 +201,10 @@ def ACC_calc(TP: int, TN: int, FP: int, FN: int) -> Union[float, str]:
     :param FP: false positive
     :param FN: false negative
     """
+    TP = float(TP)
+    TN = float(TN)
+    FN = float(FN)
+    FP = float(FP)
     try:
         result = (TP + TN) / (TP + TN + FN + FP)
         return result

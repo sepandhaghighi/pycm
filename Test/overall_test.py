@@ -1756,6 +1756,8 @@ Zero       2          0
 >>> cm = ConfusionMatrix(matrix=matrix)
 >>> assert isclose(cm.class_stat["MCC"][0], -0.4999999800000004, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.class_stat["MCC"][1], -0.4999999800000004, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.class_stat["ACC"][0], 0.33333333777777774, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.class_stat["ACC"][1], 0.33333333777777774, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.class_stat["RACC"][0], 0.4444444385185186, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.class_stat["RACC"][1], 0.11111111407407408, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.class_stat["Q"][0], -0.9999999600000007, abs_tol=ABS_TOL, rel_tol=REL_TOL)

@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `Curve` class axis precision bug fixed
 - Document modified
 - Integer overflow bug fixed
+- `numpy.trapz` deprecation bug fixed
 - Test system modified
 ## [4.5] - 2025-10-15
 ### Added

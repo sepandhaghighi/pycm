@@ -513,8 +513,12 @@ True
 'Negligible'
 >>> Q_analysis(0.75)
 'Strong'
+>>> Q_analysis(float('nan'))
+'None'
 >>> MCC_analysis(0.9)
 'Very Strong'
+>>> MCC_analysis(float('nan'))
+'None'
 >>> V_analysis(0.8)
 'Very Strong'
 >>> kappa_analysis_fleiss(0.75)
@@ -532,6 +536,8 @@ True
 >>> kappa_analysis_koch(0.8)
 'Almost Perfect'
 >>> kappa_analysis_koch(1.2)
+'None'
+>>> kappa_analysis_koch(float('nan'))
 'None'
 >>> kappa_analysis_fleiss(0.4)
 'Intermediate to Good'
@@ -563,6 +569,8 @@ True
 'Excellent'
 >>> kappa_analysis_cicchetti(1.2)
 'None'
+>>> kappa_analysis_cicchetti(float('nan'))
+'None'
 >>> lambda_analysis(0)
 'None'
 >>> lambda_analysis(0.1)
@@ -577,12 +585,16 @@ True
 'Very Strong'
 >>> lambda_analysis(1)
 'Perfect'
+>>> lambda_analysis(float('nan'))
+'None'
 >>> alpha_analysis(0)
 'Low'
 >>> alpha_analysis(0.667)
 'Tentative'
 >>> alpha_analysis(0.8)
 'High'
+>>> alpha_analysis(float('nan'))
+'None'
 >>> pearson_C_analysis(0)
 'None'
 >>> pearson_C_analysis(0.05)
@@ -593,6 +605,8 @@ True
 'Medium'
 >>> pearson_C_analysis(0.3)
 'Strong'
+>>> pearson_C_analysis(float('nan'))
+'None'
 >>> PLR_analysis("None")
 'None'
 >>> PLR_analysis(1)
@@ -611,6 +625,8 @@ True
 'Fair'
 >>> DP_analysis(10)
 'Good'
+>>> DP_analysis(float('nan'))
+'None'
 >>> AUC_analysis(0.5)
 'Poor'
 >>> AUC_analysis(0.65)

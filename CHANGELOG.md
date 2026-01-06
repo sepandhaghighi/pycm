@@ -18,6 +18,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Integer overflow bug fixed
 - `numpy.trapz` deprecation bug fixed
 - Test system modified
+- Report None for all interpretation metrics for nan values
 ## [4.5] - 2025-10-15
 ### Added
 - `optimal_thresholds` method in `ROCCurve` class

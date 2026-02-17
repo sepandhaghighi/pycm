@@ -97,8 +97,8 @@ class Curve:
             x = numpy.array(self.data[c][self.plot_x_axis], dtype=float)
             y = numpy.array(self.data[c][self.plot_y_axis], dtype=float)
             if self.augment_endpoints:
-                x = numpy.concatenate(([0.0], x))
-                y = numpy.concatenate(([0.0], y))
+                x = numpy.concatenate((x, [0.0]))
+                y = numpy.concatenate((y, [0.0]))
             dx = numpy.diff(x)
             if numpy.any(dx < 0) and numpy.any(dx > 0):
                 sort_indices = numpy.argsort(x, kind="mergesort")

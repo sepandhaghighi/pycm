@@ -97,8 +97,8 @@ class Curve:
             x = numpy.array(self.data[c][self.plot_x_axis], dtype=float)
             y = numpy.array(self.data[c][self.plot_y_axis], dtype=float)
             if self.augment_endpoints:
-                x = numpy.concatenate(([0.0], x, [1.0]))
-                y = numpy.concatenate(([0.0], y, [1.0]))
+                x = numpy.concatenate(([0.0], x))
+                y = numpy.concatenate(([0.0], y))
             dx = numpy.diff(x)
             if numpy.any(dx < 0) and numpy.any(dx > 0):
                 sort_indices = numpy.argsort(x, kind="mergesort")
@@ -176,9 +176,9 @@ class ROCCurve(Curve):
     [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
     >>> auc_trp = crv.area()
     >>> auc_trp[1]
-    0.625
+    0.75
     >>> auc_trp[2]
-    0.625
+    0.75
     >>> optimal_thr = crv.optimal_thresholds()
     >>> optimal_thr[1]
     0.35

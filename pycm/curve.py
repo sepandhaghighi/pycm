@@ -59,6 +59,7 @@ class Curve:
         self.data = {}
         self.thresholds = []
         self.binary = False
+        self.augment_endpoints = False
         self.plot_x_axis = x_axis
         self.plot_y_axis = y_axis
         __curve_validation__(self, actual_vector, probs, x_axis, y_axis)
@@ -93,8 +94,11 @@ class Curve:
         :param method: numerical integral technique (trapezoidal or midpoint)
         """
         for c in self.classes:
-            x = self.data[c][self.plot_x_axis]
-            y = self.data[c][self.plot_y_axis]
+            x = numpy.array(self.data[c][self.plot_x_axis], dtype=float)
+            y = numpy.array(self.data[c][self.plot_y_axis], dtype=float)
+            if self.augment_endpoints:
+                x = numpy.concatenate(([0.0], x, [1.0]))
+                y = numpy.concatenate(([0.0], y, [1.0]))
             dx = numpy.diff(x)
             if numpy.any(dx < 0) and numpy.any(dx > 0):
                 sort_indices = numpy.argsort(x, kind="mergesort")

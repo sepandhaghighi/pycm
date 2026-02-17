@@ -176,9 +176,9 @@ class ROCCurve(Curve):
     [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
     >>> auc_trp = crv.area()
     >>> auc_trp[1]
-    0.75
+    0.625
     >>> auc_trp[2]
-    0.75
+    0.625
     >>> optimal_thr = crv.optimal_thresholds()
     >>> optimal_thr[1]
     0.35

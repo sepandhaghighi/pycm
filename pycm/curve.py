@@ -59,7 +59,7 @@ class Curve:
         self.data = {}
         self.thresholds = []
         self.binary = False
-        self.augment_endpoints = False
+        self.augment_endpoint = False
         self.plot_x_axis = x_axis
         self.plot_y_axis = y_axis
         __curve_validation__(self, actual_vector, probs, x_axis, y_axis)
@@ -96,7 +96,7 @@ class Curve:
         for c in self.classes:
             x = numpy.array(self.data[c][self.plot_x_axis], dtype=float)
             y = numpy.array(self.data[c][self.plot_y_axis], dtype=float)
-            if self.augment_endpoints:
+            if self.augment_endpoint:
                 x = numpy.concatenate((x, [0.0]))
                 y = numpy.concatenate((y, [0.0]))
             dx = numpy.diff(x)
@@ -203,7 +203,7 @@ class ROCCurve(Curve):
         :param sample_weight: sample weights list
         """
         super().__init__(actual_vector=actual_vector, probs=probs, classes=classes, thresholds=thresholds, sample_weight=sample_weight, x_axis="FPR", y_axis="TPR")
-        self.augment_endpoints = True
+        self.augment_endpoint = True
         self.title = "ROC Curve"
         __curve_data_filter__(self)
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """PyCM modules."""
 from .params import PYCM_VERSION, OVERALL_BENCHMARK_LIST, CLASS_BENCHMARK_LIST
-from .errors import *
+from .errors import pycmVectorError, pycmMatrixError, pycmCIError, pycmAverageError, pycmCompareError, pycmPlotError, pycmCurveError, pycmMultiLabelError
 from .output import pycm_help, online_help
 from .distance import DistanceType
 from .cm import ConfusionMatrix
@@ -11,3 +11,8 @@ from .curve import Curve, ROCCurve, PRCurve, PCurve, RCurve, F1Curve
 from .generate_random_data import generate_confusion_matrix, generate_confusion_matrix_with_scenario
 from .generate_random_data import ClassDistributionScenario, run_report_benchmark
 __version__ = PYCM_VERSION
+
+__all__ = ["OVERALL_BENCHMARK_LIST", "CLASS_BENCHMARK_LIST", "pycm_help", "online_help", "DistanceType",
+"ConfusionMatrix", "Compare", "MultiLabelCM", "Curve", "ROCCurve", "PRCurve", "PCurve", "RCurve", "F1Curve",
+"generate_confusion_matrix", "generate_confusion_matrix_with_scenario", "ClassDistributionScenario", "run_report_benchmark",
+"pycmVectorError", "pycmMatrixError", "pycmCIError", "pycmAverageError", "pycmCompareError", "pycmPlotError", "pycmCurveError", "pycmMultiLabelError"]

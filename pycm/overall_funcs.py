@@ -659,7 +659,8 @@ def kl_divergence_calc(P: Dict[Any, int], TOP: Dict[Any, int], POP: Dict[Any, in
         return "None"
 
 
-def lambda_B_calc(classes: List[Any], table: Dict[Any, Dict[Any, int]], TOP: Dict[Any, int], POP: int) -> Union[float, str]:
+def lambda_B_calc(classes: List[Any], table: Dict[Any, Dict[Any, int]],
+                  TOP: Dict[Any, int], POP: int) -> Union[float, str]:
     """
     Calculate Goodman and Kruskal's lambda B.
 
@@ -680,7 +681,8 @@ def lambda_B_calc(classes: List[Any], table: Dict[Any, Dict[Any, int]], TOP: Dic
         return "None"
 
 
-def lambda_A_calc(classes: List[Any], table: Dict[Any, Dict[Any, int]], P: Dict[Any, int], POP: int) -> Union[float, str]:
+def lambda_A_calc(classes: List[Any], table: Dict[Any, Dict[Any, int]],
+                  P: Dict[Any, int], POP: int) -> Union[float, str]:
     """
     Calculate Goodman and Kruskal's lambda A.
 

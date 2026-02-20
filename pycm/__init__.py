@@ -12,7 +12,30 @@ from .generate_random_data import generate_confusion_matrix, generate_confusion_
 from .generate_random_data import ClassDistributionScenario, run_report_benchmark
 __version__ = PYCM_VERSION
 
-__all__ = ["OVERALL_BENCHMARK_LIST", "CLASS_BENCHMARK_LIST", "pycm_help", "online_help", "DistanceType",
-"ConfusionMatrix", "Compare", "MultiLabelCM", "Curve", "ROCCurve", "PRCurve", "PCurve", "RCurve", "F1Curve",
-"generate_confusion_matrix", "generate_confusion_matrix_with_scenario", "ClassDistributionScenario", "run_report_benchmark",
-"pycmVectorError", "pycmMatrixError", "pycmCIError", "pycmAverageError", "pycmCompareError", "pycmPlotError", "pycmCurveError", "pycmMultiLabelError"]
+__all__ = [
+    "OVERALL_BENCHMARK_LIST",
+    "CLASS_BENCHMARK_LIST",
+    "pycm_help",
+    "online_help",
+    "DistanceType",
+    "ConfusionMatrix",
+    "Compare",
+    "MultiLabelCM",
+    "Curve",
+    "ROCCurve",
+    "PRCurve",
+    "PCurve",
+    "RCurve",
+    "F1Curve",
+    "generate_confusion_matrix",
+    "generate_confusion_matrix_with_scenario",
+    "ClassDistributionScenario",
+    "run_report_benchmark",
+    "pycmVectorError",
+    "pycmMatrixError",
+    "pycmCIError",
+    "pycmAverageError",
+    "pycmCompareError",
+    "pycmPlotError",
+    "pycmCurveError",
+    "pycmMultiLabelError"]

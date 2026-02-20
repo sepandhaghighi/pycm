@@ -93,7 +93,7 @@ def LR_CI_calc(mean: float, SE: float, CV: float = 1.96) -> Tuple[Union[float, s
         return ("None", "None")
 
 
-def CI_calc(mean: float, SE: float, CV: float=1.96) -> Tuple[Union[float, str], Union[float, str]]:
+def CI_calc(mean: float, SE: float, CV: float = 1.96) -> Tuple[Union[float, str], Union[float, str]]:
     """
     Calculate confidence interval.
 

@@ -41,10 +41,10 @@ class Curve:
             actual_vector: Union[List[Any], numpy.ndarray],
             probs: Union[List[float], numpy.ndarray],
             classes: List[Any],
-            thresholds: Optional[Union[List[float], numpy.ndarray]]=None,
-            sample_weight: Optional[Union[List[float], numpy.ndarray]]=None,
-            x_axis: str="FPR",
-            y_axis: str="TPR") -> None:
+            thresholds: Optional[Union[List[float], numpy.ndarray]] = None,
+            sample_weight: Optional[Union[List[float], numpy.ndarray]] = None,
+            x_axis: str = "FPR",
+            y_axis: str = "TPR") -> None:
         """
         Init method.
 
@@ -87,7 +87,7 @@ class Curve:
         self.auc = {}
         self.title = "{x_axis} per {y_axis}".format(x_axis=self.plot_x_axis, y_axis=self.plot_y_axis)
 
-    def area(self, method: str="trapezoidal") -> Dict[str, float]:
+    def area(self, method: str = "trapezoidal") -> Dict[str, float]:
         """
         Compute Area Under Curve (AUC) using trapezoidal or midpoint numerical integral technique.
 
@@ -116,12 +116,12 @@ class Curve:
 
     def plot(
             self,
-            classes: Optional[List[Any]]=None,
-            area: bool=False,
-            area_method: str="trapezoidal",
-            colors: Optional[List[str]]=None,
-            markers: Optional[List[str]]=None,
-            linewidth: float=1) -> "matplotlib.pyplot.Axes":
+            classes: Optional[List[Any]] = None,
+            area: bool = False,
+            area_method: str = "trapezoidal",
+            colors: Optional[List[str]] = None,
+            markers: Optional[List[str]] = None,
+            linewidth: float = 1) -> "matplotlib.pyplot.Axes":
         """
         Plot the given curve.
 
@@ -191,8 +191,8 @@ class ROCCurve(Curve):
             actual_vector: Union[List[Any], numpy.ndarray],
             probs: Union[List[float], numpy.ndarray],
             classes: List[Any],
-            thresholds: Optional[Union[List[float], numpy.ndarray]]=None,
-            sample_weight: Optional[Union[List[float], numpy.ndarray]]=None) -> None:
+            thresholds: Optional[Union[List[float], numpy.ndarray]] = None,
+            sample_weight: Optional[Union[List[float], numpy.ndarray]] = None) -> None:
         """
         Init method.
 
@@ -202,7 +202,14 @@ class ROCCurve(Curve):
         :param thresholds: thresholds list
         :param sample_weight: sample weights list
         """
-        super().__init__(actual_vector=actual_vector, probs=probs, classes=classes, thresholds=thresholds, sample_weight=sample_weight, x_axis="FPR", y_axis="TPR")
+        super().__init__(
+            actual_vector=actual_vector,
+            probs=probs,
+            classes=classes,
+            thresholds=thresholds,
+            sample_weight=sample_weight,
+            x_axis="FPR",
+            y_axis="TPR")
         self.augment_endpoint = True
         self.title = "ROC Curve"
         __curve_data_filter__(self)
@@ -260,13 +267,21 @@ class PRCurve(Curve):
         :param thresholds: thresholds list
         :param sample_weight: sample weights list
         """
-        super().__init__(actual_vector=actual_vector, probs=probs, classes=classes, thresholds=thresholds, sample_weight=sample_weight, x_axis="TPR", y_axis="PPV")
+        super().__init__(
+            actual_vector=actual_vector,
+            probs=probs,
+            classes=classes,
+            thresholds=thresholds,
+            sample_weight=sample_weight,
+            x_axis="TPR",
+            y_axis="PPV")
         self.title = "PR Curve"
         __curve_data_filter__(self)
 
     def __repr__(self) -> str:
         """Representation method."""
         return "pycm.PRCurve(classes: " + str(self.classes) + ")"
+
 
 class PCurve(Curve):
     """
@@ -308,6 +323,7 @@ class PCurve(Curve):
         """Representation method."""
         return "pycm.PCurve(classes: " + str(self.classes) + ")"
 
+
 class RCurve(Curve):
     """
     Recall-Curve class.
@@ -348,6 +364,7 @@ class RCurve(Curve):
         """Representation method."""
         return "pycm.RCurve(classes: " + str(self.classes) + ")"
 
+
 class F1Curve(Curve):
     """
     F1-Curve class.
@@ -387,6 +404,7 @@ class F1Curve(Curve):
     def __repr__(self) -> str:
         """Representation method."""
         return "pycm.F1Curve(classes: " + str(self.classes) + ")"
+
 
 def __curve_validation__(curve: Curve,
                          actual_vector: Union[List[Any],

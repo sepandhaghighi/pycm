@@ -148,14 +148,14 @@ def __obj_file_handler__(cm: "pycm.ConfusionMatrix", file: IO) -> Tuple[List[Any
 
 
 def __obj_matrix_handler__(
-        matrix: Dict[Any, Dict[Any, int]],
-        classes: List[Any],
-        transpose: bool) -> Tuple[List[Any],
-                            Dict[Any, Dict[Any, int]],
-                            Dict[Any, int],
-                            Dict[Any, int],
-                            Dict[Any, int],
-                            Dict[Any, int]]:
+    matrix: Dict[Any, Dict[Any, int]],
+    classes: List[Any],
+    transpose: bool) -> Tuple[List[Any],
+                              Dict[Any, Dict[Any, int]],
+                              Dict[Any, int],
+                              Dict[Any, int],
+                              Dict[Any, int],
+                              Dict[Any, int]]:
     """
     Handle object conditions for the matrix.
 
@@ -174,14 +174,14 @@ def __obj_matrix_handler__(
 
 
 def __obj_array_handler__(
-        array: Union[List[List[int]], numpy.ndarray],
-        classes: List[Any],
-        transpose: bool) -> Tuple[List[Any],
-                            Dict[Any, Dict[Any, int]],
-                            Dict[Any, int],
-                            Dict[Any, int],
-                            Dict[Any, int],
-                            Dict[Any, int]]:
+    array: Union[List[List[int]], numpy.ndarray],
+    classes: List[Any],
+    transpose: bool) -> Tuple[List[Any],
+                              Dict[Any, Dict[Any, int]],
+                              Dict[Any, int],
+                              Dict[Any, int],
+                              Dict[Any, int],
+                              Dict[Any, int]]:
     """
     Handle object conditions for the array.
 
@@ -202,17 +202,17 @@ def __obj_array_handler__(
 
 
 def __obj_vector_handler__(
-        cm: "pycm.ConfusionMatrix",
-        actual_vector: Union[List[Any], numpy.ndarray],
-        predict_vector: Union[List[Any], numpy.ndarray],
-        threshold: Callable,
-        sample_weight: Union[List[Any], numpy.ndarray],
-        classes: List[Any]) -> Tuple[List[Any],
-                               Dict[Any, Dict[Any, int]],
-                               Dict[Any, int],
-                               Dict[Any, int],
-                               Dict[Any, int],
-                               Dict[Any, int]]:
+    cm: "pycm.ConfusionMatrix",
+    actual_vector: Union[List[Any], numpy.ndarray],
+    predict_vector: Union[List[Any], numpy.ndarray],
+    threshold: Callable,
+    sample_weight: Union[List[Any], numpy.ndarray],
+    classes: List[Any]) -> Tuple[List[Any],
+                                 Dict[Any, Dict[Any, int]],
+                                 Dict[Any, int],
+                                 Dict[Any, int],
+                                 Dict[Any, int],
+                                 Dict[Any, int]]:
     """
     Handle object conditions for vectors.
 

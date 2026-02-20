@@ -35,7 +35,7 @@ def color_check(color: Any) -> List[int]:
     return [0, 0, 0]
 
 
-def html_table_color(row: dict, item: int, color: Tuple[int, int, int]=(0, 0, 0)) -> List[int]:
+def html_table_color(row: dict, item: int, color: Tuple[int, int, int] = (0, 0, 0)) -> List[int]:
     """
     Return background color of each cell of the table.
 
@@ -53,8 +53,8 @@ def html_table(
         classes: List[Any],
         table: Dict[str, Dict[str, int]],
         rgb_color: Tuple[int, int, int],
-        normalize: bool=False,
-        shortener: bool=True) -> str:
+        normalize: bool = False,
+        shortener: bool = True) -> str:
     """
     Return the confusion matrix of the HTML report file.
 
@@ -106,10 +106,10 @@ def html_table(
 
 def html_overall_stat(
         overall_stat: Dict[str, Union[float, int, str]],
-        digit: int=5,
-        overall_param: Optional[List[str]]=None,
-        recommended_list: Union[list, tuple]=(),
-        alt_link: bool=False) -> str:
+        digit: int = 5,
+        overall_param: Optional[List[str]] = None,
+        recommended_list: Union[list, tuple] = (),
+        alt_link: bool = False) -> str:
     """
     Return the overall stats of HTML report file.
 
@@ -153,10 +153,10 @@ def html_overall_stat(
 def html_class_stat(
         classes: List[Any],
         class_stat: Dict[str, Dict[str, Union[float, int, str]]],
-        digit: int=5,
-        class_param: Optional[List[str]]=None,
-        recommended_list: Union[list, tuple]=(),
-        alt_link: bool=False) -> str:
+        digit: int = 5,
+        class_param: Optional[List[str]] = None,
+        recommended_list: Union[list, tuple] = (),
+        alt_link: bool = False) -> str:
     """
     Return the class-based stats of HTML report file.
 
@@ -267,7 +267,7 @@ def sparse_table_print(sparse_matrix: Tuple[Dict[Any, Dict[Any, int]], List[Any]
     return result
 
 
-def csv_matrix_print(classes: List[Any], table: Dict[str, Dict[str, int]], header: bool=False) -> str:
+def csv_matrix_print(classes: List[Any], table: Dict[str, Dict[str, int]], header: bool = False) -> str:
     """
     Return matrix as csv data.
 
@@ -290,7 +290,7 @@ def csv_matrix_print(classes: List[Any], table: Dict[str, Dict[str, int]], heade
 
 
 def csv_print(classes: List[Any], class_stat: Dict[str, Dict[str, Union[float, int, str]]],
-              digit: int=5, class_param: Optional[List[str]]=None) -> str:
+              digit: int = 5, class_param: Optional[List[str]] = None) -> str:
     """
     Return csv file data.
 
@@ -320,9 +320,9 @@ def stat_print(
         classes: List[Any],
         class_stat: Dict[str, Dict[str, Union[float, int, str]]],
         overall_stat: Dict[str, Union[float, int, str]],
-        digit: int=5,
-        overall_param: Optional[List[str]]=None,
-        class_param: Optional[List[str]]=None) -> str:
+        digit: int = 5,
+        overall_param: Optional[List[str]] = None,
+        class_param: Optional[List[str]] = None) -> str:
     """
     Return printable statistics table.
 
@@ -402,7 +402,7 @@ def compare_report_print(sorted_list: List[str], scores: Dict[str, float], best_
     return result
 
 
-def online_help(param: Optional[Union[str, int]]=None, alt_link: bool=False) -> None:
+def online_help(param: Optional[Union[str, int]] = None, alt_link: bool = False) -> None:
     """
     Open online document in web browser.
 

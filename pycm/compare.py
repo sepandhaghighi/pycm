@@ -37,11 +37,11 @@ class Compare():
     def __init__(
             self,
             cm_dict: Dict[str, "ConfusionMatrix"],
-            by_class: bool=False,
-            class_weight: Optional[dict]=None,
-            class_benchmark_weight: Optional[dict]=None,
-            overall_benchmark_weight: Optional[dict]=None,
-            digit: int=5) -> None:
+            by_class: bool = False,
+            class_weight: Optional[dict] = None,
+            class_benchmark_weight: Optional[dict] = None,
+            overall_benchmark_weight: Optional[dict] = None,
+            digit: int = 5) -> None:
         """
         Init method.
 
@@ -89,7 +89,7 @@ class Compare():
     def save_report(
             self,
             name: str,
-            address: bool=True) -> Dict[str, Union[bool, str]]:
+            address: bool = True) -> Dict[str, Union[bool, str]]:
         """
         Save Compare report in .comp (flat file format).
 

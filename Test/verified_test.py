@@ -8,7 +8,7 @@
 >>> ABS_TOL = 1e-12
 >>> REL_TOL = 0
 >>> assert isclose(NIR_calc({'Class2': 804, 'Class1': 196}, 1000), 0.804, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case - (Caret package)
->>> cm = ConfusionMatrix([2, 0, 2, 2, 0, 1], [0, 0, 2, 2, 0, 2]) # Verified Case - (https: //bit.ly/38nfMha)
+>>> cm = ConfusionMatrix([2, 0, 2, 2, 0, 1], [0, 0, 2, 2, 0, 2]) # Verified Case - (https://bit.ly/38nfMha)
 >>> cm.print_matrix()
 Predict 0       1       2
 Actual
@@ -19,7 +19,7 @@ Actual
 2       1       0       2
 <BLANKLINE>
 <BLANKLINE>
->>> cm = ConfusionMatrix(matrix={0: {0: 3, 1: 1}, 1: {0: 4, 1: 2}})   # Verified Case - (https: //bit.ly/2DHQvjn)
+>>> cm = ConfusionMatrix(matrix={0: {0: 3, 1: 1}, 1: {0: 4, 1: 2}})   # Verified Case - (https://bit.ly/2DHQvjn)
 >>> assert isclose(cm.LS[1], 1.1111111111111112, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.LS[0], 1.0714285714285714, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm = ConfusionMatrix(matrix={"Class1": {"Class1": 183, "Class2": 13}, "Class2": {"Class1": 141, "Class2": 663}})  # Verified Case - (Caret package)
@@ -53,11 +53,11 @@ Actual
 >>> assert isclose(cm.DP[1], 0.770700985610517, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.Y[1], 0.627145631592811, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.BM[1], 0.627145631592811, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> cm = ConfusionMatrix(matrix={1: {1: 60, 2: 9, 3: 1, 4: 0, 5: 0, 6: 0}, 2: {1: 23, 2: 48, 3: 0, 4: 2, 5: 2, 6: 1}, 3: {1: 11, 2: 5, 3: 1, 4: 0, 5: 0, 6: 0}, 4: {1: 0, 2: 2, 3: 0, 4: 7, 5: 1, 6: 3}, 5: {1: 2, 2: 1, 3: 0, 4: 0, 5: 4, 6: 2}, 6: {1: 1, 2: 2, 3: 0, 4: 2, 5: 1, 6: 23}}) # Verified Case - (https: //bit.ly/2YdvM01)
+>>> cm = ConfusionMatrix(matrix={1: {1: 60, 2: 9, 3: 1, 4: 0, 5: 0, 6: 0}, 2: {1: 23, 2: 48, 3: 0, 4: 2, 5: 2, 6: 1}, 3: {1: 11, 2: 5, 3: 1, 4: 0, 5: 0, 6: 0}, 4: {1: 0, 2: 2, 3: 0, 4: 7, 5: 1, 6: 3}, 5: {1: 2, 2: 1, 3: 0, 4: 0, 5: 4, 6: 2}, 6: {1: 1, 2: 2, 3: 0, 4: 2, 5: 1, 6: 23}}) # Verified Case - (https://bit.ly/2YdvM01)
 >>> cm.AM[1]
 27
 >>> assert isclose(cm.BCD[1], 0.0630841121495327, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> cm = ConfusionMatrix(matrix={1: {1: 9, 2: 3, 3: 0}, 2: {1: 3, 2: 5, 3: 1}, 3: {1: 1, 2: 1, 3: 4}}) # Verified Case -- (https: //bit.ly/2r80R9t)
+>>> cm = ConfusionMatrix(matrix={1: {1: 9, 2: 3, 3: 0}, 2: {1: 3, 2: 5, 3: 1}, 3: {1: 1, 2: 1, 3: 4}}) # Verified Case -- (https://bit.ly/2r80R9t)
 >>> assert isclose(cm.CI95[0], 0.48885185570907297, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.CI95[1], 0.8444814776242603, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.SE, 0.09072184232530289, abs_tol=ABS_TOL, rel_tol=REL_TOL)
@@ -88,12 +88,12 @@ Actual
 >>> assert isclose(cm.IBA_alpha(0.5)[1], 0.41800000000000004, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.IBA_alpha(0.1)[1], 0.5016, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.GM[1], 0.722841614740048, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> cm = ConfusionMatrix(matrix={1: {1: 22, 0: 18}, 0: {1: 2, 0: 14}}) # Verified Case - (https: //bit.ly/2LiCZXB)
+>>> cm = ConfusionMatrix(matrix={1: {1: 22, 0: 18}, 0: {1: 2, 0: 14}}) # Verified Case - (https://bit.ly/2LiCZXB)
 >>> assert isclose(cm.C, 0.36170212765957444, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.Chi_Squared, 8.429166666666667, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> cm = ConfusionMatrix(matrix={0: {0: 42, 1: 7}, 1: {1: 114, 0: 203}}) # Verified Case - (https: //bit.ly/2LiCZXB)
+>>> cm = ConfusionMatrix(matrix={0: {0: 42, 1: 7}, 1: {1: 114, 0: 203}}) # Verified Case - (https://bit.ly/2LiCZXB)
 >>> assert isclose(cm.Q[0], 0.5422773393461104, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> cm = ConfusionMatrix(matrix={0: {0: 27, 1: 10}, 1: {0: 16, 1: 15}})  # Verified Case - (https: //bit.ly/2skyjKG)
+>>> cm = ConfusionMatrix(matrix={0: {0: 27, 1: 10}, 1: {0: 16, 1: 15}})  # Verified Case - (https://bit.ly/2skyjKG)
 >>> assert isclose(cm.Q[0], 0.4336283185840708, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm.QI[0]
 'Weak'
@@ -123,7 +123,7 @@ True
 >>> assert isclose(cm.TI(alpha=2, beta=8)[1], 0.7777777777777778, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.TI(alpha=2, beta=8)[0], 0.8064516129032258, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 
->>> cm = ConfusionMatrix(matrix={1: {1: 22, 0: 54}, 0: {1: 1, 0: 57}}, transpose=True) # Verified Case -- (https: //bit.ly/34KcVfB)
+>>> cm = ConfusionMatrix(matrix={1: {1: 22, 0: 54}, 0: {1: 1, 0: 57}}, transpose=True) # Verified Case -- (https://bit.ly/34KcVfB)
 >>> assert isclose(cm.TPR[1], 0.9565217391304348, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.CI("TPR", 0.05)[1][1][0], 0.8731774862637585, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.CI("TPR", 0.05)[1][1][1], 1.0398659919971112, abs_tol=ABS_TOL, rel_tol=REL_TOL)
@@ -176,7 +176,7 @@ True
 >>> assert isclose(cm.CI("Overall ACC", binom_method="agresti-coull")[1][0], 0.5048603506825172, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.CI("Overall ACC", binom_method="wilson")[1][1], 0.6692157009292735, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.CI("Overall ACC", binom_method="wilson")[1][0], 0.5048971938717156, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> SE = AUC_SE_calc(0.88915, 279, 527) # Verified Case -- (https: //bit.ly/2qblMrE)
+>>> SE = AUC_SE_calc(0.88915, 279, 527) # Verified Case -- (https://bit.ly/2qblMrE)
 >>> assert isclose(SE, 0.011116012490627622, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(CI_calc(0.88915, SE)[0], 0.8673626155183699, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(CI_calc(0.88915, SE)[1], 0.9109373844816301, abs_tol=ABS_TOL, rel_tol=REL_TOL)
@@ -188,22 +188,22 @@ True
 >>> cm.POP[1]
 3264
 >>> assert isclose(cm.NB(w=0.059)[1], 0.022073223039215686, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> cm = ConfusionMatrix(matrix={1: {1: 3, 2: 0, 3: 1}, 2: {1: 1, 2: 2, 3: 1}, 3: {1: 0, 2: 2, 3: 2}})  # Verified Case -- (https: //bit.ly/2ur7Rj4)
+>>> cm = ConfusionMatrix(matrix={1: {1: 3, 2: 0, 3: 1}, 2: {1: 1, 2: 2, 3: 1}, 3: {1: 0, 2: 2, 3: 2}})  # Verified Case -- (https://bit.ly/2ur7Rj4)
 >>> assert isclose(cm.ARI, 0.08333333333333333, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> cm = ConfusionMatrix([0, 0, 1, 1], [0, 0, 1, 1]) # Verified Case -- (https: //bit.ly/30PNzvL)
+>>> cm = ConfusionMatrix([0, 0, 1, 1], [0, 0, 1, 1]) # Verified Case -- (https://bit.ly/30PNzvL)
 >>> assert isclose(cm.ARI, 1.0, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> cm = ConfusionMatrix([0, 0, 1, 2], [0, 0, 1, 1]) # Verified Case -- (https: //bit.ly/30PNzvL)
+>>> cm = ConfusionMatrix([0, 0, 1, 2], [0, 0, 1, 1]) # Verified Case -- (https://bit.ly/30PNzvL)
 >>> assert isclose(cm.ARI, 0.5714285714285715, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> cm = ConfusionMatrix([0, 1, 2, 0, 1, 2], [0, 2, 1, 0, 0, 1]) # Verified Case -- (https: //bit.ly/3egZBEG)
+>>> cm = ConfusionMatrix([0, 1, 2, 0, 1, 2], [0, 2, 1, 0, 0, 1]) # Verified Case -- (https://bit.ly/3egZBEG)
 >>> assert isclose(cm.weighted_average("F1"), 0.26666666666666666, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> cm = ConfusionMatrix([0, 1, 2, 2, 2], [0, 0, 2, 2, 1]) # Verified Case -- (https: //bit.ly/2yidCBo)
+>>> cm = ConfusionMatrix([0, 1, 2, 2, 2], [0, 0, 2, 2, 1]) # Verified Case -- (https://bit.ly/2yidCBo)
 >>> assert isclose(cm.average("PPV"), 0.5, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.average("TPR"), 0.5555555555555555, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.average("F1"), 0.4888888888888889, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.weighted_average("PPV"), 0.7, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.weighted_average("TPR"), 0.6, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.weighted_average("F1"), 0.6133333333333334, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> cm = ConfusionMatrix(matrix={"often": {"often": 16, "seldom": 6, "never": 2}, "seldom": {"often": 4, "seldom": 10, "never": 1}, "never": {"often": 3, "seldom": 0, "never": 8}}) # Verified Case -- (https: //bit.ly/3btZm7z)
+>>> cm = ConfusionMatrix(matrix={"often": {"often": 16, "seldom": 6, "never": 2}, "seldom": {"often": 4, "seldom": 10, "never": 1}, "never": {"often": 3, "seldom": 0, "never": 8}}) # Verified Case -- (https://bit.ly/3btZm7z)
 >>> weighted_kappa = cm.weighted_kappa(weight={"often": {"often": 0, "seldom": 1, "never": 2}, "seldom": {"often": 1, "seldom": 0, "never": 1}, "never": {"often": 2, "seldom": 1, "never": 0}})
 >>> assert isclose(weighted_kappa, 0.5009505703422054, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> weighted_kappa = cm.weighted_kappa(weight={"often": {"often": 0, "seldom": 1, "never": 1}, "seldom": {"often": 1, "seldom": 0, "never": 1}, "never": {"often": 1, "seldom": 1, "never": 0}})
@@ -212,7 +212,7 @@ True
 >>> assert isclose(cm.B, 0.6896551724137931, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm = ConfusionMatrix(matrix={1: {1: 10, 2: 10, 3: 0}, 2: {1: 10, 2: 10, 3: 0}, 3: {1: 0, 2: 0, 3: 60}}) # Verified Case -- (Warrens, Raadt, 2019)
 >>> assert isclose(cm.B, 0.8636363636363636, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> cm = ConfusionMatrix(matrix={1: {1: 13, 2: 0, 3: 0}, 2: {1: 0, 2: 20, 3: 7}, 3: {1: 0, 2: 4, 3: 56}}) # Verified Case -- (https: //bit.ly/3fWUuKF)
+>>> cm = ConfusionMatrix(matrix={1: {1: 13, 2: 0, 3: 0}, 2: {1: 0, 2: 20, 3: 7}, 3: {1: 0, 2: 4, 3: 56}}) # Verified Case -- (https://bit.ly/3fWUuKF)
 >>> assert isclose(cm.Alpha, 0.7972584977308513, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> weighted_alpha = cm.weighted_alpha(weight={1: {1: 0, 2: 1, 3: 1}, 2: {1: 1, 2: 0, 3: 1}, 3: {1: 1, 2: 1, 3: 0}})
 >>> assert isclose(weighted_alpha, 0.7972584977308516, abs_tol=ABS_TOL, rel_tol=REL_TOL)
@@ -221,21 +221,21 @@ True
 >>> assert isclose(cm.AC1, 0.8493305482313461, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm = ConfusionMatrix(matrix={1: {1: 55, 2: 10, 3: 2}, 2: {1: 6, 2: 4, 3: 10}, 3: {1: 2, 2: 5, 3: 6}}) # Verified Case -- (Gwet, Kilem L. Handbook of inter-rater reliability, 2014)
 >>> assert isclose(cm.aickin_alpha(), 0.40455288947232665, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> cm = ConfusionMatrix(matrix={1: {1: 60, 0: 40}, 0: {0: 80, 1: 20}}) # Verified Case -- (https: //bit.ly/3ooCi0t)
+>>> cm = ConfusionMatrix(matrix={1: {1: 60, 0: 40}, 0: {0: 80, 1: 20}}) # Verified Case -- (https://bit.ly/3ooCi0t)
 >>> assert isclose(cm.sensitivity_index()[1], 1.094968336708714, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> y_true = np.array([0, 1, 1, 0])
 >>> y_true_categorical = np.array(["spam", "ham", "ham", "spam"])
 >>> y_prob = np.array([0.1, 0.9, 0.8, 0.3])
->>> cm1 = ConfusionMatrix(y_true, y_prob, threshold=lambda x: 1) # Verified Case -- (https: //bit.ly/3n8Uo7R)
+>>> cm1 = ConfusionMatrix(y_true, y_prob, threshold=lambda x: 1) # Verified Case -- (https://bit.ly/3n8Uo7R)
 >>> assert isclose(cm1.brier_score(), 0.03749999999999999, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm1.brier_score(pos_class=1), 0.03749999999999999, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> cm2 = ConfusionMatrix(y_true, 1-y_prob, threshold=lambda x: 1) # Verified Case -- (https: //bit.ly/3n8Uo7R)
+>>> cm2 = ConfusionMatrix(y_true, 1-y_prob, threshold=lambda x: 1) # Verified Case -- (https://bit.ly/3n8Uo7R)
 >>> assert isclose(cm2.brier_score(pos_class=0), 0.0375, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> cm3 = ConfusionMatrix(y_true_categorical, y_prob, threshold=lambda x: "ham") # Verified Case -- (https: //bit.ly/3n8Uo7R)
+>>> cm3 = ConfusionMatrix(y_true_categorical, y_prob, threshold=lambda x: "ham") # Verified Case -- (https://bit.ly/3n8Uo7R)
 >>> assert isclose(cm3.brier_score(pos_class="ham"), 0.03749999999999999, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm4 = ConfusionMatrix(y_true, y_prob, sample_weight=[2, 2, 3, 3], threshold=lambda x: 1)
 >>> assert isclose(cm4.brier_score(), 0.043, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> cm5 = ConfusionMatrix(y_true, np.array(y_prob) > 0.5, threshold=lambda x: 1) # Verified Case -- (https: //bit.ly/3n8Uo7R)
+>>> cm5 = ConfusionMatrix(y_true, np.array(y_prob) > 0.5, threshold=lambda x: 1) # Verified Case -- (https://bit.ly/3n8Uo7R)
 >>> assert isclose(cm5.brier_score(), 0.0, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> y_true = np.array([0, 1, 1, 0])
 >>> y_true_categorical = np.array(["spam", "ham", "ham", "spam"])
@@ -253,30 +253,30 @@ True
 >>> assert isclose(cm4.log_loss(normalize=False), 2.383221464851297, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> y1 = [1, 1, 0, 0, 0, 1]
 >>> y2 = [1, 0, 1, 1, 0, 1]
->>> cm1 = ConfusionMatrix(y1, y2) # Verified Case -- (https: //bit.ly/3OWrZ00)
+>>> cm1 = ConfusionMatrix(y1, y2) # Verified Case -- (https://bit.ly/3OWrZ00)
 >>> cm1.HD[1]
 3
 >>> cm1.HD[0]
 3
 >>> y1 = [1, 1, 0, 1, 0, 0, 1, 1, 1, 1]
 >>> y2 = [1, 0, 1, 1, 0, 1, 0, 1, 0, 1]
->>> cm2 = ConfusionMatrix(y1, y2) # Verified Case -- (https: //bit.ly/3zVWUoV)
+>>> cm2 = ConfusionMatrix(y1, y2) # Verified Case -- (https://bit.ly/3zVWUoV)
 >>> cm2.HD[1]
 5
 >>> cm2.HD[0]
 5
->>> cm1 = ConfusionMatrix(matrix = {1: {1: 2, 0: 2}, 0: {0: 778, 1: 2}})  # Verified Case -- (https: //bit.ly/3BVdNBp)
+>>> cm1 = ConfusionMatrix(matrix = {1: {1: 2, 0: 2}, 0: {0: 778, 1: 2}})  # Verified Case -- (https://bit.ly/3BVdNBp)
 >>> assert isclose(cm1.BB[1], 0.5, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> cm2 = ConfusionMatrix(matrix = {1: {1: 2, 0: 3}, 0: {0: 775, 1: 4}})  # Verified Case -- (https: //bit.ly/3BVdNBp)
+>>> cm2 = ConfusionMatrix(matrix = {1: {1: 2, 0: 3}, 0: {0: 775, 1: 4}})  # Verified Case -- (https://bit.ly/3BVdNBp)
 >>> assert isclose(cm2.BB[1], 0.3333333333333333, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> crv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])  # Verified Case -- (https: //bit.ly/3MIMk9z)
+>>> crv = Curve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1])  # Verified Case -- (https://bit.ly/3MIMk9z)
 >>> crv.thresholds
 [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
 >>> crv.data[2]["TPR"]
 [1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 0.5, 0.0]
 >>> crv.data[2]["FPR"]
 [1.0, 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.0]
->>> crv = ROCCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1]) # Verified Case -- (https: //bit.ly/2Hqg0Ix)
+>>> crv = ROCCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1]) # Verified Case -- (https://bit.ly/2Hqg0Ix)
 >>> crv.thresholds
 [0.1, 0.2, 0.35, 0.4, 0.6, 0.65, 0.8, 0.9]
 >>> crv.data[2]["TPR"]
@@ -289,17 +289,17 @@ True
 True
 >>> abs(crv.area(method="midpoint")[2]-0.75) < 0.001
 True
->>> crv = PRCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1]) # Verified Case -- (https: //bit.ly/2PqUeKx)
+>>> crv = PRCurve(actual_vector = np.array([1, 1, 2, 2]), probs = np.array([[0.1, 0.9], [0.4, 0.6], [0.35, 0.65], [0.8, 0.2]]), classes=[2, 1]) # Verified Case -- (https://bit.ly/2PqUeKx)
 >>> crv.data[2]["TPR"]
 [1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 0.5]
 >>> crv.data[2]["PPV"]
 [0.5, 0.6666666666666666, 0.6666666666666666, 0.5, 1.0, 1.0, 1.0]
->>> abs(crv.area()[2] - 0.2916) < 0.001      # Verified Case -- (https: //bit.ly/2Hqg0Ix)
+>>> abs(crv.area()[2] - 0.2916) < 0.001      # Verified Case -- (https://bit.ly/2Hqg0Ix)
 True
 >>> abs(crv.area(method="midpoint")[2] - 0.2916) < 0.001
 True
->>> cm1 = ConfusionMatrix(matrix = {1: {1: 2, 0: 2}, 0: {0: 778, 1: 2}})  # Verified Case -- (https: //bit.ly/3vVMWRT)
->>> cm2 = ConfusionMatrix(matrix = {1: {1: 2, 0: 3}, 0: {0: 775, 1: 4}})  # Verified Case -- (https: //bit.ly/3vVMWRT)
+>>> cm1 = ConfusionMatrix(matrix = {1: {1: 2, 0: 2}, 0: {0: 778, 1: 2}})  # Verified Case -- (https://bit.ly/3vVMWRT)
+>>> cm2 = ConfusionMatrix(matrix = {1: {1: 2, 0: 3}, 0: {0: 775, 1: 4}})  # Verified Case -- (https://bit.ly/3vVMWRT)
 >>> assert isclose(cm1.distance(metric=DistanceType.AMPLE)[1], 0.49743589743589745, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm2.distance(metric=DistanceType.AMPLE)[1], 0.32947729220222793, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm1.distance(metric=DistanceType.Anderberg)[1], 0.0, abs_tol=ABS_TOL, rel_tol=REL_TOL)

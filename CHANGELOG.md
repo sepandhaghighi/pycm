@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `Curve` class axis precision bug fixed
 - `ROCCurve` class `area` method bug fixed
 - Document modified
+- Document build system updated
 - Integer overflow bug fixed
 - `numpy.trapz` deprecation bug fixed
 - Test system modified

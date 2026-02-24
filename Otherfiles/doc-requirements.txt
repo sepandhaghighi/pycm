@@ -1,3 +1,4 @@
+notebook>=7
 art>=1.8
 nbconvert>=7
 nbformat>=5.9

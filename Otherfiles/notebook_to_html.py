@@ -25,7 +25,7 @@ OUTPUT_FOLDER_PATH = "doc"
 DOCUMENTS_FOLDER_PATH = "Document"
 
 
-def export_notebook(notebook_name, use_lab_template=True):
+def export_notebook(notebook_name: str, use_lab_template: bool = True):
     notebook_path = os.path.join(
         DOCUMENTS_FOLDER_PATH, notebook_name + NOTEBOOK_EXTENSION
     )

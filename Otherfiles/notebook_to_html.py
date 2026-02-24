@@ -40,7 +40,6 @@ def export_notebook(notebook_name, use_lab_template=True):
 
     shutil.copy(notebook_path, notebook_copy_path)
 
-
     ep = ExecutePreprocessor(timeout=6000, kernel_name="python3")
 
     with open(notebook_copy_path, "r", encoding="utf-8") as f:
@@ -50,7 +49,6 @@ def export_notebook(notebook_name, use_lab_template=True):
 
     with open(notebook_copy_path, "w", encoding="utf-8") as f:
         nbformat.write(nb, f)
-
 
     c = Config()
     c.TagRemovePreprocessor.remove_cell_tags = ("html_hide",)

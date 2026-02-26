@@ -1,7 +1,7 @@
 
 # PyCM Release Instructions
 
-**Last Update: 2024-10-11**
+**Last Update: 2026-02-26**
 
 1. Create the `release` branch under `dev`
 2. Update all version tags
@@ -11,6 +11,7 @@
 	4. `Otherfiles/meta.yaml`
 	5. `pycm/params.py`
 	6. `Document/Document.ipynb`
+	7. `SECURITY.md`
 3. Update `CHANGELOG.md`
 	1. Add a new header under `Unreleased` section (Example: `## [0.1] - 2022-08-17`)
 	2. Add a new compare link to the end of the file (Example: `[0.2]: https://github.com/sepandhaghighi/pycm/compare/v0.1...v0.2`)
@@ -18,7 +19,7 @@
 4. Update `.github/ISSUE_TEMPLATE/bug_report.yml`
    1. Add new version tag to `PyCM version` dropbox options
 5. Update Document
-	1. Run `Otherfiles/notebook_run.py` (requirements: `Otherfiles/doc-requirements.txt`, Python <= 3.9)
+	1. Run `Otherfiles/notebook_run.py` (requirements: `Otherfiles/doc-requirements.txt`)
 6. Create a PR from `release` to `dev`
 	1. Title: `Version x.x` (Example: `Version 0.1`)
 	2. Tag all related issues
@@ -43,7 +44,7 @@
 11. Close milestone
 12. Close project
 13. Generate HTML files
-	1. Run `Otherfiles/notebook_to_html.py` (requirements: `Otherfiles/doc-requirements.txt`, Python <= 3.9)
+	1. Run `Otherfiles/notebook_to_html.py` (requirements: `Otherfiles/doc-requirements.txt`)
 	2. Copy `doc` folder for the next steps
 14. Update website
 	1. `git checkout gh-pages`

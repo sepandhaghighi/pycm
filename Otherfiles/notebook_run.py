@@ -39,6 +39,9 @@ if __name__ == "__main__":
         with open(path + EXTENSION, "r", encoding="utf-8") as f:
             nb = nbformat.read(f, as_version=4)
             ep.preprocess(nb, {'metadata': {'path': 'Document/'}})
+        for cell in nb.cells:
+            if "execution" in cell.get("metadata", {}):
+                del cell["metadata"]["execution"]
         with open(path + EXTENSION, 'w', encoding='utf-8') as f:
             nbformat.write(nb, f)
         print("\t{0}.{1} [OK]".format(str(index + 1), notebook))

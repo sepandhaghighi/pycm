@@ -1,16 +1,92 @@
 <!DOCTYPE html>
-<html>
-<head><meta charset="utf-8" />
 
-<title>Example6</title>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-
+<html lang="en">
+<head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script><script type="module">
+  import mermaid from 'https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.10.0/mermaid.esm.min.mjs';
+  
+  mermaid.initialize({ startOnLoad: true });
+</script>
 <style type="text/css">
-    /*!
+  pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #ffffcc }
+.highlight { background: #f8f8f8; }
+.highlight .c { color: #3D7B7B; font-style: italic } /* Comment */
+.highlight .err { border: 1px solid #F00 } /* Error */
+.highlight .k { color: #008000; font-weight: bold } /* Keyword */
+.highlight .o { color: #666 } /* Operator */
+.highlight .ch { color: #3D7B7B; font-style: italic } /* Comment.Hashbang */
+.highlight .cm { color: #3D7B7B; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #9C6500 } /* Comment.Preproc */
+.highlight .cpf { color: #3D7B7B; font-style: italic } /* Comment.PreprocFile */
+.highlight .c1 { color: #3D7B7B; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #3D7B7B; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #E40000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #008400 } /* Generic.Inserted */
+.highlight .go { color: #717171 } /* Generic.Output */
+.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #04D } /* Generic.Traceback */
+.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #008000 } /* Keyword.Pseudo */
+.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #B00040 } /* Keyword.Type */
+.highlight .m { color: #666 } /* Literal.Number */
+.highlight .s { color: #BA2121 } /* Literal.String */
+.highlight .na { color: #687822 } /* Name.Attribute */
+.highlight .nb { color: #008000 } /* Name.Builtin */
+.highlight .nc { color: #00F; font-weight: bold } /* Name.Class */
+.highlight .no { color: #800 } /* Name.Constant */
+.highlight .nd { color: #A2F } /* Name.Decorator */
+.highlight .ni { color: #717171; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #CB3F38; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #00F } /* Name.Function */
+.highlight .nl { color: #767600 } /* Name.Label */
+.highlight .nn { color: #00F; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
+.highlight .nv { color: #19177C } /* Name.Variable */
+.highlight .ow { color: #A2F; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #BBB } /* Text.Whitespace */
+.highlight .mb { color: #666 } /* Literal.Number.Bin */
+.highlight .mf { color: #666 } /* Literal.Number.Float */
+.highlight .mh { color: #666 } /* Literal.Number.Hex */
+.highlight .mi { color: #666 } /* Literal.Number.Integer */
+.highlight .mo { color: #666 } /* Literal.Number.Oct */
+.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
+.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
+.highlight .sc { color: #BA2121 } /* Literal.String.Char */
+.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
+.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
+.highlight .se { color: #AA5D1F; font-weight: bold } /* Literal.String.Escape */
+.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
+.highlight .si { color: #A45A77; font-weight: bold } /* Literal.String.Interpol */
+.highlight .sx { color: #008000 } /* Literal.String.Other */
+.highlight .sr { color: #A45A77 } /* Literal.String.Regex */
+.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
+.highlight .ss { color: #19177C } /* Literal.String.Symbol */
+.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #00F } /* Name.Function.Magic */
+.highlight .vc { color: #19177C } /* Name.Variable.Class */
+.highlight .vg { color: #19177C } /* Name.Variable.Global */
+.highlight .vi { color: #19177C } /* Name.Variable.Instance */
+.highlight .vm { color: #19177C } /* Name.Variable.Magic */
+.highlight .il { color: #666 } /* Literal.Number.Integer.Long */
+  </style>
+<style type="text/css">
+/*!
 *
 * Twitter Bootstrap
 *
@@ -12944,90 +13020,7 @@ ul.typeahead-list  > li > a.pull-right {
 .terminal-app #terminado-container {
   margin-top: 20px;
 }
-/*# sourceMappingURL=style.min.css.map */
-    </style>
-<style type="text/css">
-    .highlight .hll { background-color: #ffffcc }
-.highlight  { background: #f8f8f8; }
-.highlight .c { color: #408080; font-style: italic } /* Comment */
-.highlight .err { border: 1px solid #FF0000 } /* Error */
-.highlight .k { color: #008000; font-weight: bold } /* Keyword */
-.highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
-.highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
-.highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
-.highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
-.highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
-.highlight .gd { color: #A00000 } /* Generic.Deleted */
-.highlight .ge { font-style: italic } /* Generic.Emph */
-.highlight .gr { color: #FF0000 } /* Generic.Error */
-.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
-.highlight .gi { color: #00A000 } /* Generic.Inserted */
-.highlight .go { color: #888888 } /* Generic.Output */
-.highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
-.highlight .gs { font-weight: bold } /* Generic.Strong */
-.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
-.highlight .gt { color: #0044DD } /* Generic.Traceback */
-.highlight .kc { color: #008000; font-weight: bold } /* Keyword.Constant */
-.highlight .kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
-.highlight .kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
-.highlight .kp { color: #008000 } /* Keyword.Pseudo */
-.highlight .kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
-.highlight .kt { color: #B00040 } /* Keyword.Type */
-.highlight .m { color: #666666 } /* Literal.Number */
-.highlight .s { color: #BA2121 } /* Literal.String */
-.highlight .na { color: #7D9029 } /* Name.Attribute */
-.highlight .nb { color: #008000 } /* Name.Builtin */
-.highlight .nc { color: #0000FF; font-weight: bold } /* Name.Class */
-.highlight .no { color: #880000 } /* Name.Constant */
-.highlight .nd { color: #AA22FF } /* Name.Decorator */
-.highlight .ni { color: #999999; font-weight: bold } /* Name.Entity */
-.highlight .ne { color: #D2413A; font-weight: bold } /* Name.Exception */
-.highlight .nf { color: #0000FF } /* Name.Function */
-.highlight .nl { color: #A0A000 } /* Name.Label */
-.highlight .nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
-.highlight .nt { color: #008000; font-weight: bold } /* Name.Tag */
-.highlight .nv { color: #19177C } /* Name.Variable */
-.highlight .ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
-.highlight .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight .mb { color: #666666 } /* Literal.Number.Bin */
-.highlight .mf { color: #666666 } /* Literal.Number.Float */
-.highlight .mh { color: #666666 } /* Literal.Number.Hex */
-.highlight .mi { color: #666666 } /* Literal.Number.Integer */
-.highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
-.highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
-.highlight .s2 { color: #BA2121 } /* Literal.String.Double */
-.highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
-.highlight .sh { color: #BA2121 } /* Literal.String.Heredoc */
-.highlight .si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
-.highlight .sx { color: #008000 } /* Literal.String.Other */
-.highlight .sr { color: #BB6688 } /* Literal.String.Regex */
-.highlight .s1 { color: #BA2121 } /* Literal.String.Single */
-.highlight .ss { color: #19177C } /* Literal.String.Symbol */
-.highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .vc { color: #19177C } /* Name.Variable.Class */
-.highlight .vg { color: #19177C } /* Name.Variable.Global */
-.highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
-    </style>
-<style type="text/css">
-    /*This file contains any manual css for this page that needs to override the global styles.
-This is only required when different pages style the same element differently. This is just
-a hack to deal with our current css styles and no new styling should be added in this file.*/
-
-#ipython-main-app {
-    position: relative;
-}
-#jupyter-main-app {
-    position: relative;
-}
-
-    </style>
-
-
+/*# sourceMappingURL=style.min.css.map */</style>
 <style type="text/css">
 /* Overrides of notebook CSS for static HTML export */
 body {
@@ -13038,153 +13031,152 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}div#notebook-container{
-  padding: 6ex 12ex 8ex 12ex;
 }@media print {
+  body {
+    margin: 0;
+  }
   div.cell {
     display: block;
     page-break-inside: avoid;
-  } 
-  div.output_wrapper { 
-    display: block;
-    page-break-inside: avoid; 
   }
-  div.output { 
+  div.output_wrapper {
     display: block;
-    page-break-inside: avoid; 
+    page-break-inside: avoid;
+  }
+  div.output {
+    display: block;
+    page-break-inside: avoid;
   }
 }
 </style>
-
-<!-- Custom stylesheet, it must be in the same directory as the html file -->
-<link rel="stylesheet" href="custom.css">
-
-<!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS_HTML"></script>
-    <!-- MathJax configuration -->
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-            processEnvironments: true
-        },
-        // Center justify equations in code and markdown cells. Elsewhere
-        // we use CSS to left justify single line equations in code cells.
-        displayAlign: 'center',
-        "HTML-CSS": {
-            styles: {'.MathJax_Display': {"margin": 0}},
-            linebreaks: { automatic: true }
-        }
-    });
-    </script>
-    <!-- End of mathjax configuration --></head>
-<body>
-  <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML-full,Safe"> </script>
+<!-- MathJax configuration -->
+<script type="text/x-mathjax-config">
+    init_mathjax = function() {
+        if (window.MathJax) {
+        // MathJax loaded
+            MathJax.Hub.Config({
+                TeX: {
+                    equationNumbers: {
+                    autoNumber: "AMS",
+                    useLabelIds: true
+                    }
+                },
+                tex2jax: {
+                    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                    processEscapes: true,
+                    processEnvironments: true
+                },
+                displayAlign: 'center',
+                messageStyle: 'none',
+                CommonHTML: {
+                    linebreaks: {
+                    automatic: true
+                    }
+                }
+            });
 
+            MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+    }
+    init_mathjax();
+    </script>
+<!-- End of mathjax configuration --></head>
+<body>
+<main>
+<div class="border-box-sizing" id="notebook" tabindex="-1">
+<div class="container" id="notebook-container">
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p  style="z-index: 101;background: #fde073;text-align: center;line-height: 2.5;overflow: hidden;font-size:22px;">Please <a href="https://www.pycm.io/doc/#Cite" target="_blank">cite us</a> if you use the software</p>
+<p style="z-index: 101;background: #fde073;text-align: center;line-height: 2.5;overflow: hidden;font-size:22px;">Please <a href="https://www.pycm.io/doc/#Cite" target="_blank">cite us</a> if you use the software</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Example-6-(Unbalanced-data)">Example-6 (Unbalanced data)<a class="anchor-link" href="#Example-6-(Unbalanced-data)">&#182;</a></h1>
+<h1 id="Example-6-(Unbalanced-data)">Example-6 (Unbalanced data)<a class="anchor-link" href="#Example-6-(Unbalanced-data)">¶</a></h1>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Environment-check">Environment check<a class="anchor-link" href="#Environment-check">&#182;</a></h2>
+<h2 id="Environment-check">Environment check<a class="anchor-link" href="#Environment-check">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Checking that the notebook is running on Google Colab or not.</p>
-
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 <span class="k">try</span><span class="p">:</span>
-  <span class="kn">import</span> <span class="nn">google.colab</span>
-  <span class="o">!{</span>sys.executable<span class="o">}</span> -m pip -q -q install pycm
+  <span class="kn">import</span><span class="w"> </span><span class="nn">google.colab</span>
+  <span class="o">!{</span>sys.executable<span class="o">}</span><span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>-q<span class="w"> </span>-q<span class="w"> </span>install<span class="w"> </span>pycm
 <span class="k">except</span><span class="p">:</span>
   <span class="k">pass</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Binary-classification-for-unbalanced-data">Binary classification for unbalanced data<a class="anchor-link" href="#Binary-classification-for-unbalanced-data">&#182;</a></h2>
+<h2 id="Binary-classification-for-unbalanced-data">Binary classification for unbalanced data<a class="anchor-link" href="#Binary-classification-for-unbalanced-data">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pycm</span> <span class="k">import</span> <span class="n">ConfusionMatrix</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pycm</span><span class="w"> </span><span class="kn">import</span> <span class="n">ConfusionMatrix</span>
 </pre></div>
-
-    </div>
 </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Case1-(Both-classes-have-a-good-result)">Case1 (Both classes have a good result)<a class="anchor-link" href="#Case1-(Both-classes-have-a-good-result)">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$Case_1=\begin{bmatrix}26900 &amp; 40 \\25 &amp; 500 \end{bmatrix}$$
+<h3 id="Case1-(Both-classes-have-a-good-result)">Case1 (Both classes have a good result)<a class="anchor-link" href="#Case1-(Both-classes-have-a-good-result)">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_1=\begin{bmatrix}26900 &amp; 40 \\25 &amp; 500 \end{bmatrix}$$</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case1</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">26900</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">}})</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">case1</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">26900</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">500</span><span class="p">}})</span>
 <span class="n">case1</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'ACC:'</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCC:'</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'CEN:'</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCEN:'</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'DP:'</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Kappa:'</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'RCI:'</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'SOA1:'</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Predict       Class1        Class2        
 Actual
@@ -13193,60 +13185,54 @@ Class1        0.99852       0.00148
 Class2        0.04762       0.95238       
 
 
-ACC: {&#39;Class2&#39;: 0.9976333515383216, &#39;Class1&#39;: 0.9976333515383216}
-MCC: {&#39;Class2&#39;: 0.9378574017402594, &#39;Class1&#39;: 0.9378574017402594}
-CEN: {&#39;Class2&#39;: 0.30489006849060607, &#39;Class1&#39;: 0.012858728415908176}
-MCEN: {&#39;Class2&#39;: 0.46949279678726225, &#39;Class1&#39;: 0.023280122318969122}
-DP: {&#39;Class2&#39;: 2.276283896527635, &#39;Class1&#39;: 2.276283896527635}
+ACC: {'Class1': 0.9976333515383216, 'Class2': 0.9976333515383216}
+MCC: {'Class1': 0.9378574017402594, 'Class2': 0.9378574017402594}
+CEN: {'Class1': 0.012858728415908176, 'Class2': 0.30489006849060607}
+MCEN: {'Class1': 0.023280122318969122, 'Class2': 0.46949279678726225}
+DP: {'Class1': 2.276283896527635, 'Class2': 2.276283896527635}
 Kappa: 0.9377606597584491
 RCI: 0.8682877002417864
 SOA1: Almost Perfect
 </pre>
 </div>
 </div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Case2-(The-first-class-has-a-good-result)">Case2 (The first class has a good result)<a class="anchor-link" href="#Case2-(The-first-class-has-a-good-result)">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$Case_2=\begin{bmatrix}26900 &amp; 40 \\500 &amp; 25 \end{bmatrix}$$
+<h3 id="Case2-(The-first-class-has-a-good-result)">Case2 (The first class has a good result)<a class="anchor-link" href="#Case2-(The-first-class-has-a-good-result)">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_2=\begin{bmatrix}26900 &amp; 40 \\500 &amp; 25 \end{bmatrix}$$</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case2</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">29600</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">}})</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">case2</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">29600</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">40</span><span class="p">},</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">25</span><span class="p">}})</span>
 <span class="n">case2</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'ACC:'</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCC:'</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'CEN:'</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCEN:'</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'DP:'</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Kappa:'</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'RCI:'</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'SOA1:'</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Predict       Class1        Class2        
 Actual
@@ -13255,60 +13241,54 @@ Class1        0.99865       0.00135
 Class2        0.95238       0.04762       
 
 
-ACC: {&#39;Class2&#39;: 0.982098458478369, &#39;Class1&#39;: 0.982098458478369}
-MCC: {&#39;Class2&#39;: 0.13048897476798949, &#39;Class1&#39;: 0.13048897476798949}
-CEN: {&#39;Class2&#39;: 0.4655917826576813, &#39;Class1&#39;: 0.06481573363174531}
-MCEN: {&#39;Class2&#39;: 0.4264929996758212, &#39;Class1&#39;: 0.11078640690031397}
-DP: {&#39;Class2&#39;: 0.864594924328404, &#39;Class1&#39;: 0.864594924328404}
+ACC: {'Class1': 0.982098458478369, 'Class2': 0.982098458478369}
+MCC: {'Class1': 0.13048897476798949, 'Class2': 0.13048897476798949}
+CEN: {'Class1': 0.06481573363174531, 'Class2': 0.4655917826576813}
+MCEN: {'Class1': 0.11078640690031397, 'Class2': 0.4264929996758212}
+DP: {'Class1': 0.864594924328404, 'Class2': 0.864594924328404}
 Kappa: 0.08122239707598865
 RCI: 0.022375346499017443
 SOA1: Slight
 </pre>
 </div>
 </div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Case3-(Second-class-has-a-good-result-)">Case3 (Second class has a good result )<a class="anchor-link" href="#Case3-(Second-class-has-a-good-result-)">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$Case_3=\begin{bmatrix}40 &amp; 26900 \\25 &amp; 500 \end{bmatrix}$$
+<h3 id="Case3-(Second-class-has-a-good-result-)">Case3 (Second class has a good result )<a class="anchor-link" href="#Case3-(Second-class-has-a-good-result-)">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_3=\begin{bmatrix}40 &amp; 26900 \\25 &amp; 500 \end{bmatrix}$$</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case3</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">26900</span><span class="p">},</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">}})</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">case3</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="o">=</span><span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">26900</span><span class="p">},</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">500</span><span class="p">}})</span>
 <span class="n">case3</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'ACC:'</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCC:'</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'CEN:'</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCEN:'</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'DP:'</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Kappa:'</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'RCI:'</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'SOA1:'</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Predict       Class1        Class2        
 Actual
@@ -13317,71 +13297,65 @@ Class1        0.00148       0.99852
 Class2        0.04762       0.95238       
 
 
-ACC: {&#39;Class2&#39;: 0.019661387220098307, &#39;Class1&#39;: 0.019661387220098307}
-MCC: {&#39;Class2&#39;: -0.13000800945464058, &#39;Class1&#39;: -0.13000800945464058}
-CEN: {&#39;Class2&#39;: 0.06103563616795208, &#39;Class1&#39;: 0.014927427128936136}
-MCEN: {&#39;Class2&#39;: 0.03655796690365652, &#39;Class1&#39;: 0.01281422838054554}
-DP: {&#39;Class2&#39;: -0.8416930356875597, &#39;Class1&#39;: -0.8416930356875597}
+ACC: {'Class1': 0.019661387220098307, 'Class2': 0.019661387220098307}
+MCC: {'Class1': -0.13000800945464058, 'Class2': -0.13000800945464058}
+CEN: {'Class1': 0.014927427128936136, 'Class2': 0.06103563616795208}
+MCEN: {'Class1': 0.01281422838054554, 'Class2': 0.03655796690365652}
+DP: {'Class1': -0.8416930356875597, 'Class2': -0.8416930356875597}
 Kappa: -0.0017678372492452412
 RCI: 0.02192606003351106
 SOA1: Poor
 </pre>
 </div>
 </div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Multi-class-classification-for-unbalanced-data">Multi-class classification for unbalanced data<a class="anchor-link" href="#Multi-class-classification-for-unbalanced-data">&#182;</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Case1-(All-classes-have-good-result--and-are-unbalanced)">Case1 (All classes have good result  and are unbalanced)<a class="anchor-link" href="#Case1-(All-classes-have-good-result--and-are-unbalanced)">&#182;</a></h3>
+<h2 id="Multi-class-classification-for-unbalanced-data">Multi-class classification for unbalanced data<a class="anchor-link" href="#Multi-class-classification-for-unbalanced-data">¶</a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$Case_1=\begin{bmatrix}4 &amp; 0 &amp;0&amp;1 \\0 &amp; 4&amp;1&amp;0\\0&amp;1&amp;4&amp;0\\0&amp;0&amp;1&amp;4000 \end{bmatrix}$$
+<h3 id="Case1-(All-classes-have-good-result--and-are-unbalanced)">Case1 (All classes have good result  and are unbalanced)<a class="anchor-link" href="#Case1-(All-classes-have-good-result--and-are-unbalanced)">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_1=\begin{bmatrix}4 &amp; 0 &amp;0&amp;1 \\0 &amp; 4&amp;1&amp;0\\0&amp;1&amp;4&amp;0\\0&amp;0&amp;1&amp;4000 \end{bmatrix}$$</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case1</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">case1</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
     <span class="n">matrix</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
-        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
-        <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">40000</span><span class="p">}})</span>
+        <span class="s2">"Class1"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">"Class2"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+        <span class="s2">"Class3"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">0</span><span class="p">},</span>
+        <span class="s2">"Class4"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">40000</span><span class="p">}})</span>
 <span class="n">case1</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'ACC:'</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCC:'</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'CEN:'</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCEN:'</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'DP:'</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Kappa:'</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'RCI:'</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'SOA1:'</span><span class="p">,</span> <span class="n">case1</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Predict       Class1        Class2        Class3        Class4        
 Actual
@@ -13394,65 +13368,59 @@ Class3        0.0           0.2           0.8           0.0
 Class4        0.0           0.0           2e-05         0.99998       
 
 
-ACC: {&#39;Class2&#39;: 0.9999500199920032, &#39;Class4&#39;: 0.9999500199920032, &#39;Class3&#39;: 0.9999250299880048, &#39;Class1&#39;: 0.9999750099960016}
-MCC: {&#39;Class2&#39;: 0.7999750068731099, &#39;Class4&#39;: 0.9333083339583177, &#39;Class3&#39;: 0.7302602381427055, &#39;Class1&#39;: 0.8944160139432883}
-CEN: {&#39;Class2&#39;: 0.25701944178769376, &#39;Class4&#39;: 0.0001575200922489127, &#39;Class3&#39;: 0.3649884090288471, &#39;Class1&#39;: 0.13625493172565745}
-MCEN: {&#39;Class2&#39;: 0.3333333333333333, &#39;Class4&#39;: 0.00029569133318617423, &#39;Class3&#39;: 0.4654427710721536, &#39;Class1&#39;: 0.17964888034078544}
-DP: {&#39;Class2&#39;: 2.869241573973406, &#39;Class4&#39;: 3.1691421556058055, &#39;Class3&#39;: 2.7032690544190636, &#39;Class1&#39;: &#39;None&#39;}
+ACC: {'Class1': 0.9999750099960016, 'Class2': 0.9999500199920032, 'Class3': 0.9999250299880048, 'Class4': 0.9999500199920032}
+MCC: {'Class1': 0.8944160139432883, 'Class2': 0.7999750068731099, 'Class3': 0.7302602381427055, 'Class4': 0.9333083339583177}
+CEN: {'Class1': 0.13625493172565745, 'Class2': 0.25701944178769376, 'Class3': 0.3649884090288471, 'Class4': 0.0001575200922489127}
+MCEN: {'Class1': 0.17964888034078544, 'Class2': 0.3333333333333333, 'Class3': 0.4654427710721536, 'Class4': 0.00029569133318617423}
+DP: {'Class1': 'None', 'Class2': 2.869241573973406, 'Class3': 2.7032690544190636, 'Class4': 3.1691421556058055}
 Kappa: 0.8666333383326446
-RCI: 0.8711441699127427
+RCI: 0.8711441699127425
 SOA1: Almost Perfect
 </pre>
 </div>
 </div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Case2-(All-classes-have-same-result-and-are-balanced)">Case2 (All classes have same result and are balanced)<a class="anchor-link" href="#Case2-(All-classes-have-same-result-and-are-balanced)">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$Case_2=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\\1&amp;1&amp;1&amp;1 \end{bmatrix}$$
+<h3 id="Case2-(All-classes-have-same-result-and-are-balanced)">Case2 (All classes have same result and are balanced)<a class="anchor-link" href="#Case2-(All-classes-have-same-result-and-are-balanced)">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_2=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\\1&amp;1&amp;1&amp;1 \end{bmatrix}$$</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case2</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">case2</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
     <span class="n">matrix</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}})</span>
+        <span class="s2">"Class1"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">"Class2"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">"Class3"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">"Class4"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">}})</span>
 <span class="n">case2</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'ACC:'</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCC:'</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'CEN:'</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCEN:'</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'DP:'</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Kappa:'</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'RCI:'</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'SOA1:'</span><span class="p">,</span> <span class="n">case2</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Predict      Class1       Class2       Class3       Class4       
 Actual
@@ -13465,65 +13433,59 @@ Class3       0.25         0.25         0.25         0.25
 Class4       0.25         0.25         0.25         0.25         
 
 
-ACC: {&#39;Class2&#39;: 0.625, &#39;Class4&#39;: 0.625, &#39;Class3&#39;: 0.625, &#39;Class1&#39;: 0.625}
-MCC: {&#39;Class2&#39;: 0.0, &#39;Class4&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class1&#39;: 0.0}
-CEN: {&#39;Class2&#39;: 0.8704188162777186, &#39;Class4&#39;: 0.8704188162777186, &#39;Class3&#39;: 0.8704188162777186, &#39;Class1&#39;: 0.8704188162777186}
-MCEN: {&#39;Class2&#39;: 0.9308855421443073, &#39;Class4&#39;: 0.9308855421443073, &#39;Class3&#39;: 0.9308855421443073, &#39;Class1&#39;: 0.9308855421443073}
-DP: {&#39;Class2&#39;: 0.0, &#39;Class4&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class1&#39;: 0.0}
+ACC: {'Class1': 0.625, 'Class2': 0.625, 'Class3': 0.625, 'Class4': 0.625}
+MCC: {'Class1': 0.0, 'Class2': 0.0, 'Class3': 0.0, 'Class4': 0.0}
+CEN: {'Class1': 0.8704188162777186, 'Class2': 0.8704188162777186, 'Class3': 0.8704188162777186, 'Class4': 0.8704188162777186}
+MCEN: {'Class1': 0.9308855421443073, 'Class2': 0.9308855421443073, 'Class3': 0.9308855421443073, 'Class4': 0.9308855421443073}
+DP: {'Class1': 0.0, 'Class2': 0.0, 'Class3': 0.0, 'Class4': 0.0}
 Kappa: 0.0
 RCI: 0.0
 SOA1: Slight
 </pre>
 </div>
 </div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Case3-(A-class-has-a-bad-result-and-is-a-bit-unbalanced)">Case3 (A class has a bad result and is a bit unbalanced)<a class="anchor-link" href="#Case3-(A-class-has-a-bad-result-and-is-a-bit-unbalanced)">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$Case_3=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\\10&amp;1&amp;1&amp;1 \end{bmatrix}$$
+<h3 id="Case3-(A-class-has-a-bad-result-and-is-a-bit-unbalanced)">Case3 (A class has a bad result and is a bit unbalanced)<a class="anchor-link" href="#Case3-(A-class-has-a-bad-result-and-is-a-bit-unbalanced)">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_3=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\\10&amp;1&amp;1&amp;1 \end{bmatrix}$$</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case3</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">case3</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
     <span class="n">matrix</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}})</span>
+        <span class="s2">"Class1"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">"Class2"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">"Class3"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">"Class4"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">}})</span>
 <span class="n">case3</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'ACC:'</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCC:'</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'CEN:'</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCEN:'</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'DP:'</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Kappa:'</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'RCI:'</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'SOA1:'</span><span class="p">,</span> <span class="n">case3</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Predict       Class1        Class2        Class3        Class4        
 Actual
@@ -13536,65 +13498,59 @@ Class3        0.25          0.25          0.25          0.25
 Class4        0.76923       0.07692       0.07692       0.07692       
 
 
-ACC: {&#39;Class2&#39;: 0.76, &#39;Class4&#39;: 0.4, &#39;Class3&#39;: 0.76, &#39;Class1&#39;: 0.4}
-MCC: {&#39;Class2&#39;: 0.10714285714285714, &#39;Class4&#39;: -0.2358640882624316, &#39;Class3&#39;: 0.10714285714285714, &#39;Class1&#39;: -0.2358640882624316}
-CEN: {&#39;Class2&#39;: 0.8704188162777186, &#39;Class4&#39;: 0.6392779429225796, &#39;Class3&#39;: 0.8704188162777186, &#39;Class1&#39;: 0.6392779429225794}
-MCEN: {&#39;Class2&#39;: 0.9308855421443073, &#39;Class4&#39;: 0.647512271542988, &#39;Class3&#39;: 0.9308855421443073, &#39;Class1&#39;: 0.647512271542988}
-DP: {&#39;Class2&#39;: 0.16596653499824943, &#39;Class4&#39;: -0.3319330699964992, &#39;Class3&#39;: 0.16596653499824943, &#39;Class1&#39;: -0.33193306999649924}
+ACC: {'Class1': 0.4, 'Class2': 0.76, 'Class3': 0.76, 'Class4': 0.4}
+MCC: {'Class1': -0.2358640882624316, 'Class2': 0.10714285714285714, 'Class3': 0.10714285714285714, 'Class4': -0.2358640882624316}
+CEN: {'Class1': 0.6392779429225794, 'Class2': 0.8704188162777186, 'Class3': 0.8704188162777186, 'Class4': 0.6392779429225796}
+MCEN: {'Class1': 0.647512271542988, 'Class2': 0.9308855421443073, 'Class3': 0.9308855421443073, 'Class4': 0.647512271542988}
+DP: {'Class1': -0.33193306999649924, 'Class2': 0.16596653499824943, 'Class3': 0.16596653499824943, 'Class4': -0.3319330699964992}
 Kappa: -0.07361963190184047
-RCI: 0.11603030564493627
+RCI: 0.11603030564493641
 SOA1: Poor
 </pre>
 </div>
 </div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Case4-(A-class-is-very-unbalaned-and-get-bad-result)">Case4 (A class is very unbalaned and get bad result)<a class="anchor-link" href="#Case4-(A-class-is-very-unbalaned-and-get-bad-result)">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$Case_4=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\\10000&amp;1&amp;1&amp;1 \end{bmatrix}$$
+<h3 id="Case4-(A-class-is-very-unbalaned-and-get-bad-result)">Case4 (A class is very unbalaned and get bad result)<a class="anchor-link" href="#Case4-(A-class-is-very-unbalaned-and-get-bad-result)">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_4=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\\10000&amp;1&amp;1&amp;1 \end{bmatrix}$$</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case4</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">case4</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
     <span class="n">matrix</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}})</span>
+        <span class="s2">"Class1"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">"Class2"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">"Class3"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">"Class4"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">}})</span>
 <span class="n">case3</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'ACC:'</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCC:'</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'CEN:'</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCEN:'</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'DP:'</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Kappa:'</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'RCI:'</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'SOA1:'</span><span class="p">,</span> <span class="n">case4</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Predict       Class1        Class2        Class3        Class4        
 Actual
@@ -13607,65 +13563,59 @@ Class3        0.25          0.25          0.25          0.25
 Class4        0.76923       0.07692       0.07692       0.07692       
 
 
-ACC: {&#39;Class2&#39;: 0.999400898652022, &#39;Class4&#39;: 0.000998502246630055, &#39;Class3&#39;: 0.999400898652022, &#39;Class1&#39;: 0.000998502246630055}
-MCC: {&#39;Class2&#39;: 0.24970032963739885, &#39;Class4&#39;: -0.43266656861311537, &#39;Class3&#39;: 0.24970032963739885, &#39;Class1&#39;: -0.43266656861311537}
-CEN: {&#39;Class2&#39;: 0.8704188162777186, &#39;Class4&#39;: 0.0029588592520426657, &#39;Class3&#39;: 0.8704188162777186, &#39;Class1&#39;: 0.0029588592520426657}
-MCEN: {&#39;Class2&#39;: 0.9308855421443073, &#39;Class4&#39;: 0.002903385725603509, &#39;Class3&#39;: 0.9308855421443073, &#39;Class1&#39;: 0.002903385725603509}
-DP: {&#39;Class2&#39;: 1.6794055876913858, &#39;Class4&#39;: -1.9423127303715728, &#39;Class3&#39;: 1.6794055876913858, &#39;Class1&#39;: -1.9423127303715728}
+ACC: {'Class1': 0.000998502246630055, 'Class2': 0.999400898652022, 'Class3': 0.999400898652022, 'Class4': 0.000998502246630055}
+MCC: {'Class1': -0.43266656861311537, 'Class2': 0.24970032963739885, 'Class3': 0.24970032963739885, 'Class4': -0.43266656861311537}
+CEN: {'Class1': 0.0029588592520426657, 'Class2': 0.8704188162777186, 'Class3': 0.8704188162777186, 'Class4': 0.0029588592520426657}
+MCEN: {'Class1': 0.002903385725603509, 'Class2': 0.9308855421443073, 'Class3': 0.9308855421443073, 'Class4': 0.002903385725603509}
+DP: {'Class1': -1.9423127303715728, 'Class2': 1.6794055876913858, 'Class3': 1.6794055876913858, 'Class4': -1.9423127303715728}
 Kappa: -0.0003990813465900262
-RCI: 0.5536610475678804
+RCI: 0.5536610475678805
 SOA1: Poor
 </pre>
 </div>
 </div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Case5-(A-class-is-very-unbalaned-and-get-bad-result)">Case5 (A class is very unbalaned and get bad result)<a class="anchor-link" href="#Case5-(A-class-is-very-unbalaned-and-get-bad-result)">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$Case_5=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\\10&amp;10&amp;10&amp;10 \end{bmatrix}$$
+<h3 id="Case5-(A-class-is-very-unbalaned-and-get-bad-result)">Case5 (A class is very unbalaned and get bad result)<a class="anchor-link" href="#Case5-(A-class-is-very-unbalaned-and-get-bad-result)">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_5=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\\10&amp;10&amp;10&amp;10 \end{bmatrix}$$</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case5</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">case5</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
     <span class="n">matrix</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">}})</span>
+        <span class="s2">"Class1"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">"Class2"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">"Class3"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">"Class4"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">10</span><span class="p">}})</span>
 <span class="n">case5</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'ACC:'</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCC:'</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'CEN:'</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCEN:'</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'DP:'</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Kappa:'</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'RCI:'</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'SOA1:'</span><span class="p">,</span> <span class="n">case5</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Predict      Class1       Class2       Class3       Class4       
 Actual
@@ -13678,65 +13628,59 @@ Class3       0.25         0.25         0.25         0.25
 Class4       0.25         0.25         0.25         0.25         
 
 
-ACC: {&#39;Class2&#39;: 0.7115384615384616, &#39;Class4&#39;: 0.36538461538461536, &#39;Class3&#39;: 0.7115384615384616, &#39;Class1&#39;: 0.7115384615384616}
-MCC: {&#39;Class2&#39;: 0.0, &#39;Class4&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class1&#39;: 0.0}
-CEN: {&#39;Class2&#39;: 0.6392779429225794, &#39;Class4&#39;: 0.6522742127953861, &#39;Class3&#39;: 0.6392779429225794, &#39;Class1&#39;: 0.6392779429225794}
-MCEN: {&#39;Class2&#39;: 0.647512271542988, &#39;Class4&#39;: 0.7144082229288313, &#39;Class3&#39;: 0.647512271542988, &#39;Class1&#39;: 0.647512271542988}
-DP: {&#39;Class2&#39;: 0.0, &#39;Class4&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class1&#39;: 0.0}
+ACC: {'Class1': 0.7115384615384616, 'Class2': 0.7115384615384616, 'Class3': 0.7115384615384616, 'Class4': 0.36538461538461536}
+MCC: {'Class1': 0.0, 'Class2': 0.0, 'Class3': 0.0, 'Class4': 0.0}
+CEN: {'Class1': 0.6392779429225794, 'Class2': 0.6392779429225794, 'Class3': 0.6392779429225794, 'Class4': 0.6522742127953861}
+MCEN: {'Class1': 0.647512271542988, 'Class2': 0.647512271542988, 'Class3': 0.647512271542988, 'Class4': 0.7144082229288313}
+DP: {'Class1': 0.0, 'Class2': 0.0, 'Class3': 0.0, 'Class4': 0.0}
 Kappa: 0.0
 RCI: 0.0
 SOA1: Slight
 </pre>
 </div>
 </div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Case6-(A-class-is-very-unbalaned-and-get-bad-result)">Case6 (A class is very unbalaned and get bad result)<a class="anchor-link" href="#Case6-(A-class-is-very-unbalaned-and-get-bad-result)">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-$$Case_6=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\\10000&amp;10000&amp;10000&amp;10000 \end{bmatrix}$$
+<h3 id="Case6-(A-class-is-very-unbalaned-and-get-bad-result)">Case6 (A class is very unbalaned and get bad result)<a class="anchor-link" href="#Case6-(A-class-is-very-unbalaned-and-get-bad-result)">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$$Case_6=\begin{bmatrix}1 &amp; 1 &amp;1&amp;1 \\1 &amp; 1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\\10000&amp;10000&amp;10000&amp;10000 \end{bmatrix}$$</p>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">case6</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
+<div class="input_area">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">case6</span> <span class="o">=</span> <span class="n">ConfusionMatrix</span><span class="p">(</span>
     <span class="n">matrix</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
-        <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Class1&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;Class2&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;Class3&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;Class4&quot;</span><span class="p">:</span> <span class="mi">10000</span><span class="p">}})</span>
+        <span class="s2">"Class1"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">"Class2"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">"Class3"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">"Class4"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"Class1"</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">"Class2"</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">"Class3"</span><span class="p">:</span> <span class="mi">10000</span><span class="p">,</span> <span class="s2">"Class4"</span><span class="p">:</span> <span class="mi">10000</span><span class="p">}})</span>
 <span class="n">case6</span><span class="o">.</span><span class="n">print_normalized_matrix</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ACC:&#39;</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCC:&#39;</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;CEN:&#39;</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MCEN:&#39;</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DP:&#39;</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kappa:&#39;</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RCI:&#39;</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;SOA1:&#39;</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'ACC:'</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">ACC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCC:'</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">MCC</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'CEN:'</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">CEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'MCEN:'</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">MCEN</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'DP:'</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">DP</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Kappa:'</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">Kappa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'RCI:'</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">RCI</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'SOA1:'</span><span class="p">,</span> <span class="n">case6</span><span class="o">.</span><span class="n">SOA1</span><span class="p">)</span>
 </pre></div>
-
-    </div>
 </div>
 </div>
-
+</div>
 <div class="output_wrapper">
 <div class="output">
-
 <div class="output_area">
-
+<div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Predict      Class1       Class2       Class3       Class4       
 Actual
@@ -13749,43 +13693,34 @@ Class3       0.25         0.25         0.25         0.25
 Class4       0.25         0.25         0.25         0.25         
 
 
-ACC: {&#39;Class2&#39;: 0.7499500149955014, &#39;Class4&#39;: 0.25014995501349596, &#39;Class3&#39;: 0.7499500149955014, &#39;Class1&#39;: 0.7499500149955014}
-MCC: {&#39;Class2&#39;: 0.0, &#39;Class4&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class1&#39;: 0.0}
-CEN: {&#39;Class2&#39;: 0.0029588592520426657, &#39;Class4&#39;: 0.539296694603886, &#39;Class3&#39;: 0.0029588592520426657, &#39;Class1&#39;: 0.0029588592520426657}
-MCEN: {&#39;Class2&#39;: 0.002903385725603509, &#39;Class4&#39;: 0.580710610324597, &#39;Class3&#39;: 0.002903385725603509, &#39;Class1&#39;: 0.002903385725603509}
-DP: {&#39;Class2&#39;: 0.0, &#39;Class4&#39;: 0.0, &#39;Class3&#39;: 0.0, &#39;Class1&#39;: 0.0}
+ACC: {'Class1': 0.7499500149955014, 'Class2': 0.7499500149955014, 'Class3': 0.7499500149955014, 'Class4': 0.25014995501349596}
+MCC: {'Class1': 0.0, 'Class2': 0.0, 'Class3': 0.0, 'Class4': 0.0}
+CEN: {'Class1': 0.0029588592520426657, 'Class2': 0.0029588592520426657, 'Class3': 0.0029588592520426657, 'Class4': 0.539296694603886}
+MCEN: {'Class1': 0.002903385725603509, 'Class2': 0.002903385725603509, 'Class3': 0.002903385725603509, 'Class4': 0.580710610324597}
+DP: {'Class1': 0.0, 'Class2': 0.0, 'Class3': 0.0, 'Class4': 0.0}
 Kappa: 0.0
 RCI: 0.0
 SOA1: Slight
 </pre>
 </div>
 </div>
-
 </div>
 </div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><script type="text/javascript">
+<script type="text/javascript">
 var sc_project=12845182; 
 var sc_invisible=1; 
 var sc_security="001dde8f"; 
-</script></p>
-<p><script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js" async></script></p>
-<noscript><div class="statcounter"><a title="Web Analytics"
-href="https://statcounter.com/" target="_blank"><img class="statcounter"
-src="https://c.statcounter.com/12845182/0/001dde8f/1/" alt="Web Analytics"
-referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
+</script>
+<script async="" src="https://www.statcounter.com/counter/counter.js" type="text/javascript"></script>
+<p><noscript><div class="statcounter"><a href="https://statcounter.com/" target="_blank" title="Web Analytics"><img alt="Web Analytics" class="statcounter" referrerpolicy="no-referrer-when-downgrade" src="https://c.statcounter.com/12845182/0/001dde8f/1/"/></a></div></noscript></p>
 </div>
 </div>
 </div>
-    </div>
-  </div>
+</div>
+</div>
+</main>
 </body>
-
- 
-
-
 </html>

@@ -547,7 +547,7 @@ Some parts of the infrastructure for this project are supported by:
 
 ## Cite
 
-If you use PyCM in your research, we would appreciate citations to the following paper:
+If you use PyCM in your research, we would appreciate citations to the following papers:
 
 
 [Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A., 2018. PyCM: Multiclass confusion matrix library in Python. *Journal of Open Source Software*, 3(25), p.729.](https://joss.theoj.org/papers/10.21105/joss.00729)
@@ -566,6 +566,20 @@ If you use PyCM in your research, we would appreciate citations to the following
   author = {Sepand Haghighi and Masoomeh Jasemi and Shaahin Hessabi and Alireza Zolanvari},
   title = {{PyCM}: Multiclass confusion matrix library in Python},
   journal = {Journal of Open Source Software}
+}
+```
+
+[Sabouri, S., Zolanvari, A. and Haghighi, S., 2026. Comparing Classifiers: A Case Study Using PyCM. *arXiv preprint arXiv:2602.13482.*](https://arxiv.org/pdf/2602.13482)
+
+```bibtex
+@article{sabouri2026comparingclassifierscasestudy,
+    title={Comparing Classifiers: A Case Study Using PyCM}, 
+    author={Sadra Sabouri and Alireza Zolanvari and Sepand Haghighi},
+    year={2026},
+    eprint={2602.13482},
+    archivePrefix={arXiv},
+    primaryClass={cs.LG},
+    url={https://arxiv.org/abs/2602.13482}, 
 }
 ```
 

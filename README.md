@@ -583,9 +583,9 @@ If you use PyCM in your research, we would appreciate citations to the following
 }
 ```
 
-Download [Paper.bib](http://www.pycm.io/paper.bib)
+Download [JOSS Paper BibTeX](http://www.pycm.io/paper.bib)
 
-Download [Tutorial.bib](http://www.pycm.io/tutorial.bib)
+Download [Case Study BibTeX](http://www.pycm.io/casestudy.bib)
 
 
 ## Show your support

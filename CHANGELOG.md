@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `README.md` modified
 - Document modified
+- Test system modified
 ## [4.6] - 2026-03-09
 ### Added
 - `PCurve` class

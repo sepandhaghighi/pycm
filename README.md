@@ -583,18 +583,10 @@ If you use PyCM in your research, we would appreciate citations to the following
 }
 ```
 
-Download [PyCM.bib](http://www.pycm.io/PYCM.bib)
+Download [Paper.bib](http://www.pycm.io/paper.bib)
 
-<table>
-	<tr> 
-		<td align="center">JOSS</td>
-		<td align="center"><a href="https://doi.org/10.21105/joss.00729"><img src="http://joss.theoj.org/papers/10.21105/joss.00729/status.svg"></a></td>
-	</tr>
-	<tr>
-		<td align="center">Zenodo</td>
-		<td align="center"><a href="https://doi.org/10.5281/zenodo.1157173"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1157173.svg" alt="DOI"></a></td>
-	</tr>
-</table>
+Download [Tutorial.bib](http://www.pycm.io/tutorial.bib)
+
 
 ## Show your support
 

@@ -36,9 +36,10 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at
 data scientists that need a broad array of metrics for predictive models
 and an accurate evaluation of large variety of classifiers.
 <BLANKLINE>
-If you use PyCM in your research, we would appreciate citations to the following paper :
+If you use PyCM in your research, we would appreciate citations to the following papers:
 <BLANKLINE>
-https://doi.org/10.21105/joss.00729
+1. https://doi.org/10.21105/joss.00729
+2. https://doi.org/10.48550/arXiv.2602.13482
 <BLANKLINE>
 <BLANKLINE>
 Repo : https://github.com/sepandhaghighi/pycm

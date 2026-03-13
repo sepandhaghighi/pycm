@@ -547,7 +547,7 @@ Some parts of the infrastructure for this project are supported by:
 
 ## Cite
 
-If you use PyCM in your research, we would appreciate citations to the following paper:
+If you use PyCM in your research, we would appreciate citations to the following papers:
 
 
 [Haghighi, S., Jasemi, M., Hessabi, S. and Zolanvari, A., 2018. PyCM: Multiclass confusion matrix library in Python. *Journal of Open Source Software*, 3(25), p.729.](https://joss.theoj.org/papers/10.21105/joss.00729)
@@ -569,18 +569,24 @@ If you use PyCM in your research, we would appreciate citations to the following
 }
 ```
 
-Download [PyCM.bib](http://www.pycm.io/PYCM.bib)
+[Sabouri, S., Zolanvari, A. and Haghighi, S., 2026. Comparing Classifiers: A Case Study Using PyCM. *arXiv preprint arXiv:2602.13482.*](https://arxiv.org/pdf/2602.13482)
 
-<table>
-	<tr> 
-		<td align="center">JOSS</td>
-		<td align="center"><a href="https://doi.org/10.21105/joss.00729"><img src="http://joss.theoj.org/papers/10.21105/joss.00729/status.svg"></a></td>
-	</tr>
-	<tr>
-		<td align="center">Zenodo</td>
-		<td align="center"><a href="https://doi.org/10.5281/zenodo.1157173"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.1157173.svg" alt="DOI"></a></td>
-	</tr>
-</table>
+```bibtex
+@article{sabouri2026comparingclassifierscasestudy,
+    title={Comparing Classifiers: A Case Study Using PyCM}, 
+    author={Sadra Sabouri and Alireza Zolanvari and Sepand Haghighi},
+    year={2026},
+    eprint={2602.13482},
+    archivePrefix={arXiv},
+    primaryClass={cs.LG},
+    url={https://arxiv.org/abs/2602.13482}, 
+}
+```
+
+Download [JOSS Paper BibTeX](http://www.pycm.io/paper.bib)
+
+Download [Case Study BibTeX](http://www.pycm.io/casestudy.bib)
+
 
 ## Show your support
 

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PyCM References Links</title>
+    <script>
+        const links = {
+            1: "https://google.com",
+            2: "https://www.pycm.io"
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const n = params.get("n");
+
+        window.onload = function () {
+            if (n && links[n]) {
+                window.location.replace(links[n]);
+            } else {
+                document.getElementById("message").textContent = "Invalid or missing reference link.";
+            }
+        };
+    </script>
+</head>
+<body style="text-align:center;">
+    <p id="message">Redirecting...</p>
+</body>
+</html>

@@ -6,5 +6,5 @@ setuptools>=40.8.0
 vulture>=1.0
 bandit>=1.5.1
 pydocstyle>=3.0.0
-matplotlib>=3.0.0
+matplotlib>=3.9.4
 seaborn>=0.9.1

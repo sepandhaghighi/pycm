@@ -3,7 +3,7 @@ numpy==2.2.4
 pytest>=4.3.1
 pytest-cov>=2.6.1
 setuptools>=40.8.0
-vulture>=1.0
+vulture>=2.16
 bandit>=1.5.1
 pydocstyle>=3.0.0
 matplotlib>=3.0.0

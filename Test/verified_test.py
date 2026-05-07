@@ -426,7 +426,7 @@ True
 >>> assert isclose(cm2.distance(metric=DistanceType.KuhnsVI)[1], 0.394865211810013, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm1.distance(metric=DistanceType.KuhnsVII)[1], 0.49489795918367346, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm2.distance(metric=DistanceType.KuhnsVII)[1], 0.3581621145590755, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> mlcm = MultiLabelCM(actual_vector=[{"cat", "bird"}, {"dog"}], predict_vector=[{"cat"}, {"dog", "bird"}], classes=["cat", "dog", "bird"]) # Verified Case -- (https://pycm.io/ref?n=24)  Not implemented yet to point to:https://scikit-learn.org/stable/modules/generated/sklearn.metrics.multilabel_confusion_matrix.html
+>>> mlcm = MultiLabelCM(actual_vector=[{"cat", "bird"}, {"dog"}], predict_vector=[{"cat"}, {"dog", "bird"}], classes=["cat", "dog", "bird"]) # Verified Case -- (https://pycm.io/ref?n=24)
 >>> mlcm.actual_vector_multihot
 [[1, 0, 1], [0, 1, 0]]
 >>> mlcm.predict_vector_multihot

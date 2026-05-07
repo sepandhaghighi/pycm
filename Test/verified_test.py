@@ -294,7 +294,7 @@ True
 [1.0, 1.0, 1.0, 0.5, 0.5, 0.5, 0.5]
 >>> crv.data[2]["PPV"]
 [0.5, 0.6666666666666666, 0.6666666666666666, 0.5, 1.0, 1.0, 1.0]
->>> abs(crv.area()[2] - 0.2916) < 0.001      # Verified Case -- (https://pycm.io/ref?n=21)
+>>> abs(crv.area()[2] - 0.2916) < 0.001      # Verified Case -- (ToDo: add ref link)
 True
 >>> abs(crv.area(method="midpoint")[2] - 0.2916) < 0.001
 True

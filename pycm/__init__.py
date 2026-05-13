@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """PyCM modules."""
 from .params import PYCM_VERSION, OVERALL_BENCHMARK_LIST, CLASS_BENCHMARK_LIST
-from .errors import pycmVectorError, pycmMatrixError, pycmCIError, pycmAverageError, pycmCompareError, pycmPlotError, pycmCurveError, pycmMultiLabelError
+from .errors import pycmError, pycmVectorError, pycmMatrixError, pycmCIError, pycmAverageError, pycmCompareError, pycmPlotError, pycmCurveError, pycmMultiLabelError
 from .output import pycm_help, online_help
 from .distance import DistanceType
 from .cm import ConfusionMatrix
@@ -31,6 +31,7 @@ __all__ = [
     "generate_confusion_matrix_with_scenario",
     "ClassDistributionScenario",
     "run_report_benchmark",
+    "pycmError",
     "pycmVectorError",
     "pycmMatrixError",
     "pycmCIError",

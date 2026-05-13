@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix, Compare and CI errors."""
 
+class pycmError(Exception):
+    """Base error class."""
+
+    pass
+
 
 class pycmVectorError(Exception):
     """Vector error class."""

@@ -7,49 +7,49 @@ class pycmError(Exception):
     pass
 
 
-class pycmVectorError(Exception):
+class pycmVectorError(pycmError):
     """Vector error class."""
 
     pass
 
 
-class pycmMatrixError(Exception):
+class pycmMatrixError(pycmError):
     """Matrix error class."""
 
     pass
 
 
-class pycmCIError(Exception):
+class pycmCIError(pycmError):
     """CI error class."""
 
     pass
 
 
-class pycmAverageError(Exception):
+class pycmAverageError(pycmError):
     """Average error class."""
 
     pass
 
 
-class pycmCompareError(Exception):
+class pycmCompareError(pycmError):
     """Compare error class."""
 
     pass
 
 
-class pycmPlotError(Exception):
+class pycmPlotError(pycmError):
     """Plot error class."""
 
     pass
 
 
-class pycmCurveError(Exception):
+class pycmCurveError(pycmError):
     """Curve error class."""
 
     pass
 
 
-class pycmMultiLabelError(Exception):
+class pycmMultiLabelError(pycmError):
     """Multilabel error class."""
 
     pass

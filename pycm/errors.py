@@ -1,50 +1,55 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix, Compare and CI errors."""
 
+class pycmError(Exception):
+    """Base error class."""
 
-class pycmVectorError(Exception):
+    pass
+
+
+class pycmVectorError(pycmError):
     """Vector error class."""
 
     pass
 
 
-class pycmMatrixError(Exception):
+class pycmMatrixError(pycmError):
     """Matrix error class."""
 
     pass
 
 
-class pycmCIError(Exception):
+class pycmCIError(pycmError):
     """CI error class."""
 
     pass
 
 
-class pycmAverageError(Exception):
+class pycmAverageError(pycmError):
     """Average error class."""
 
     pass
 
 
-class pycmCompareError(Exception):
+class pycmCompareError(pycmError):
     """Compare error class."""
 
     pass
 
 
-class pycmPlotError(Exception):
+class pycmPlotError(pycmError):
     """Plot error class."""
 
     pass
 
 
-class pycmCurveError(Exception):
+class pycmCurveError(pycmError):
     """Curve error class."""
 
     pass
 
 
-class pycmMultiLabelError(Exception):
+class pycmMultiLabelError(pycmError):
     """Multilabel error class."""
 
     pass

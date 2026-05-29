@@ -253,7 +253,7 @@ True
 >>> assert isclose(cm4.log_loss(normalize=False), 2.383221464851297, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> y1 = [1, 1, 0, 0, 0, 1]
 >>> y2 = [1, 0, 1, 1, 0, 1]
->>> cm1 = ConfusionMatrix(y1, y2) # Verified Case -- (https://pycm.io/ref?n=18)
+>>> cm1 = ConfusionMatrix(y1, y2) # Verified Case -- (https://pycm.io/ref?n=25)
 >>> cm1.HD[1]
 3
 >>> cm1.HD[0]

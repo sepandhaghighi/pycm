@@ -160,10 +160,10 @@ True
 >>> assert isclose(cm.CI("ACC", alpha=0.05, one_sided=False)[1][1][1], 0.6728424118161956, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm.CI("Overall ACC")[1][1] == cm.CI("ACC", alpha=0.05, one_sided=False)[1][1][1]
 True
->>> assert isclose(cm.CI("FPR", 0.05)[1][1][1], 0.5794699910796607, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> assert isclose(cm.CI("FPR", 0.05)[1][1][0], 0.39350298189331234, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> assert isclose(cm.CI("FNR", 0.05)[1][1][1], 0.12682251373624154, abs_tol=ABS_TOL, rel_tol=REL_TOL)
->>> assert isclose(cm.CI("FNR", 0.05)[1][1][0], -0.039865991997111175, abs_tol=ABS_TOL, rel_tol=REL_TOL)
+>>> assert isclose(cm.CI("FPR", 0.05)[1][1][1], 0.5794699910796607, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=32)
+>>> assert isclose(cm.CI("FPR", 0.05)[1][1][0], 0.39350298189331234, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=32)
+>>> assert isclose(cm.CI("FNR", 0.05)[1][1][1], 0.12682251373624154, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=33)
+>>> assert isclose(cm.CI("FNR", 0.05)[1][1][0], -0.039865991997111175, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=33)
 >>> assert isclose(cm.CI("AUC")[1][1][0], 0.6361359326673304, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.CI("AUC")[1][1][1], 0.8338993199766178, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.CI("PRE")[1][1][0], 0.10779717474937288, abs_tol=ABS_TOL, rel_tol=REL_TOL)

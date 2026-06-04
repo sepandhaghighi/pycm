@@ -137,8 +137,8 @@ True
 True
 >>> cm.CI("Kappa", 0.05)[1]==cm.Kappa_CI
 True
->>> assert isclose(cm.CI("TPR", 0.01)[1][1][1], 1.0660599000409237, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=29)
 >>> assert isclose(cm.CI("TPR", 0.01)[1][1][0], 0.8469835782199459, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=29)
+>>> assert isclose(cm.CI("TPR", 0.01)[1][1][1], 1.0660599000409237, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=29)
 >>> assert isclose(cm.CI("TPR", 0.02)[1][1][0], 0.8576142227182464, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=30)
 >>> assert isclose(cm.CI("TPR", 0.02)[1][1][1], 1.0554292555426232, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=30)
 >>> assert isclose(cm.CI("TPR", 0.1)[1][1][0], 0.8865720983316171, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=31)
@@ -160,10 +160,10 @@ True
 >>> assert isclose(cm.CI("ACC", alpha=0.05, one_sided=False)[1][1][1], 0.6728424118161956, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> cm.CI("Overall ACC")[1][1] == cm.CI("ACC", alpha=0.05, one_sided=False)[1][1][1]
 True
->>> assert isclose(cm.CI("FPR", 0.05)[1][1][1], 0.5794699910796607, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=32)
 >>> assert isclose(cm.CI("FPR", 0.05)[1][1][0], 0.39350298189331234, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=32)
->>> assert isclose(cm.CI("FNR", 0.05)[1][1][1], 0.12682251373624154, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=33)
+>>> assert isclose(cm.CI("FPR", 0.05)[1][1][1], 0.5794699910796607, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=32)
 >>> assert isclose(cm.CI("FNR", 0.05)[1][1][0], -0.039865991997111175, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=33)
+>>> assert isclose(cm.CI("FNR", 0.05)[1][1][1], 0.12682251373624154, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=33)
 >>> assert isclose(cm.CI("AUC")[1][1][0], 0.6361359326673304, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.CI("AUC")[1][1][1], 0.8338993199766178, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm.CI("PRE")[1][1][0], 0.10779717474937288, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=34)
@@ -172,10 +172,10 @@ True
 >>> assert isclose(cm.CI("PRE", binom_method="wilson")[1][1][1], 0.2444033995169354, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=35)
 >>> assert isclose(cm.CI("PRE", binom_method="agresti-coull")[1][1][0], 0.11654591925873323, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=36)
 >>> assert isclose(cm.CI("PRE", binom_method="agresti-coull")[1][1][1], 0.2450401331376406, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=36)
->>> assert isclose(cm.CI("Overall ACC", binom_method="agresti-coull")[1][1], 0.6692525441184717, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=37)
 >>> assert isclose(cm.CI("Overall ACC", binom_method="agresti-coull")[1][0], 0.5048603506825172, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=37)
->>> assert isclose(cm.CI("Overall ACC", binom_method="wilson")[1][1], 0.6692157009292735, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=38)
+>>> assert isclose(cm.CI("Overall ACC", binom_method="agresti-coull")[1][1], 0.6692525441184717, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=37)
 >>> assert isclose(cm.CI("Overall ACC", binom_method="wilson")[1][0], 0.5048971938717156, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=38)
+>>> assert isclose(cm.CI("Overall ACC", binom_method="wilson")[1][1], 0.6692157009292735, abs_tol=ABS_TOL, rel_tol=REL_TOL) # Verified Case -- (https://pycm.io/ref?n=38)
 >>> SE = AUC_SE_calc(0.88915, 279, 527) # Verified Case -- (https://pycm.io/ref?n=8)
 >>> assert isclose(SE, 0.011116012490627622, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(CI_calc(0.88915, SE)[0], 0.8673626155183699, abs_tol=ABS_TOL, rel_tol=REL_TOL)

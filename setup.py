@@ -1,17 +1,9 @@
 # -*- coding: utf-8 -*-
 """Setup module."""
-from typing import List
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
-
-
-def get_requires() -> List[str]:
-    """Read requirements.txt."""
-    requirements = open("requirements.txt", "r").read()
-    return list(filter(lambda x: x != "", requirements.split()))
-
 
 def read_description() -> str:
     """Read README.md and CHANGELOG.md."""
@@ -51,7 +43,10 @@ setup(
         'Source': 'https://github.com/sepandhaghighi/pycm',
         'Discord': 'https://discord.com/invite/zqpU2b3J3f',
     },
-    install_requires=get_requires(),
+    install_requires=[
+        'art>=1.8',
+        'numpy>=1.9.0'
+    ],
     python_requires='>=3.7',
     classifiers=[
         'Development Status :: 5 - Production/Stable',

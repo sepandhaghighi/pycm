@@ -41,16 +41,15 @@ jobs:
       run: |
         python -m pycm test
         python -m pycm
-    - name: Test requirements Installation
+    - name: Dev requirements Installation
       run: |
-        python Otherfiles/requirements-splitter.py
-        pip install --upgrade --upgrade-strategy=only-if-needed -r test-requirements.txt
+        pip install --upgrade --upgrade-strategy=only-if-needed -r requirements-dev.txt
     - name: Test with pytest (Basic)
       run: |
         python -m pytest --cov=pycm --cov-report=term --ignore-glob=Test/plot_test.py
     - name: Plot requirements Installation
       run: |
-        pip install --upgrade --upgrade-strategy=only-if-needed -r plot-requirements.txt
+        pip install --upgrade --upgrade-strategy=only-if-needed -r requirements-plot.txt
     - name: Test with pytest (+Plot)
       run: |
         python -m pytest --cov=pycm --cov-report=term --ignore-glob=Test/plot_error_test.py
@@ -60,7 +59,7 @@ jobs:
       if: matrix.python-version == env.TEST_PYTHON_VERSION
     - name: Notebook check
       run: |
-        pip install --upgrade --upgrade-strategy=only-if-needed -r Otherfiles/doc-requirements.txt
+        pip install --upgrade --upgrade-strategy=only-if-needed -r Otherfiles/requirements-doc.txt
         python Otherfiles/notebook_run.py
       if: matrix.python-version == env.TEST_PYTHON_VERSION && matrix.os == env.TEST_OS
     - name: Other tests

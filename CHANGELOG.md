@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Document modified
 - Test system modified
 - Relocate shortlinks to `pycm.io` domain
+- Dependencies structure modified
 ## [4.6] - 2026-03-09
 ### Added
 - `PCurve` class

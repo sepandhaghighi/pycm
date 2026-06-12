@@ -76,6 +76,24 @@ jobs:
           fail_ci_if_error: true
           token: ${{ secrets.CODECOV_TOKEN }}
       if: matrix.python-version == env.TEST_PYTHON_VERSION && matrix.os == env.TEST_OS
+    - name: Build package
+      run: |
+          python -m build
+    - name: Check package metadata
+      run: |
+          twine check dist/*
+    - name: Wheel smoke test
+      shell: bash
+      run: |
+          pip uninstall -y pycm
+          pip install dist/*.whl
+          mkdir wheel_test
+          cd wheel_test
+          python -c "from pycm import *"
+          python -m pycm test
+          python -m pycm
+          pycm
     - name: cProfile
       run: |
           python -m cProfile -s cumtime pycm/profile.py
+    

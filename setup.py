@@ -1,9 +1,6 @@
 # -*- coding: utf-8 -*-
 """Setup module."""
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup
 
 def read_description() -> str:
     """Read README.md and CHANGELOG.md."""

@@ -42,7 +42,6 @@ jobs:
         python -c "from pycm import *"
         python -m pycm test
         python -m pycm
-        pycm
     - name: Dev requirements Installation
       run: |
         pip install --upgrade --upgrade-strategy=only-if-needed -r requirements-dev.txt
@@ -92,7 +91,6 @@ jobs:
           python -c "from pycm import *"
           python -m pycm test
           python -m pycm
-          pycm
     - name: cProfile
       run: |
           python -m cProfile -s cumtime pycm/profile.py

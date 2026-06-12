@@ -37,10 +37,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install .
-    - name: First test
+    - name: Smoke test
       run: |
+        python -c "from pycm import *"
         python -m pycm test
         python -m pycm
+        pycm
     - name: Dev requirements Installation
       run: |
         pip install --upgrade --upgrade-strategy=only-if-needed -r requirements-dev.txt

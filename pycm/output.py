@@ -217,19 +217,26 @@ def pycm_help() -> None:
     print("Webpage : https://www.pycm.io")
 
 
-def table_print(classes: List[Any], table: Dict[str, Dict[str, int]]) -> str:
+def table_print(classes: List[Any], table: Dict[str, Dict[str, int]], digit: Optional[int] = None) -> str:
     """
     Return printable confusion matrix.
 
     :param classes: confusion matrix classes
     :param table: input confusion matrix
+    :param digit: number of decimal places for float values (default: None, use str())
     """
+    def fmt(v: Any) -> str:
+        """Format a cell value, rounding floats when digit is given."""
+        if digit is not None and isinstance(v, float):
+            return rounder(v, digit)
+        return str(v)
+
     classes_len = len(classes)
     table_list = []
     for key in classes:
         table_list.extend(list(table[key].values()))
     table_list.extend(classes)
-    table_max_length = max(map(len, map(str, table_list)))
+    table_max_length = max(map(len, map(fmt, table_list)))
     shift = "%-" + str(7 + table_max_length) + "s"
     result = shift % "Predict" + shift * \
         classes_len % tuple(map(str, classes)) + "\n"
@@ -237,7 +244,7 @@ def table_print(classes: List[Any], table: Dict[str, Dict[str, int]]) -> str:
     for key in classes:
         row = [table[key][i] for i in classes]
         result += shift % str(key) + \
-            shift * classes_len % tuple(map(str, row)) + "\n\n"
+            shift * classes_len % tuple(map(fmt, row)) + "\n\n"
     return result
 
 

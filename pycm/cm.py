@@ -166,7 +166,7 @@ class ConfusionMatrix():
                     classes, normalized_table)
             print(sparse_table_print(self.sparse_normalized_matrix))
         else:
-            print(table_print(classes, normalized_table))
+            print(table_print(classes, normalized_table, self.digit))
         if len(classes) >= CLASS_NUMBER_THRESHOLD:
             warn(CLASS_NUMBER_WARNING, RuntimeWarning)
 

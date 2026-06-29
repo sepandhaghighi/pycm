@@ -5,4 +5,4 @@ vulture>=1.0
 bandit>=1.5.1
 pydocstyle>=6.3.0
 build>=1.1.1
-twine>=4.0.2
+twine>=6.2.0

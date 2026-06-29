@@ -1,2 +1,2 @@
-matplotlib>=3.0.0
+matplotlib>=3.10.9
 seaborn>=0.9.1

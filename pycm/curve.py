@@ -430,7 +430,7 @@ def __curve_validation__(curve: Curve,
     for item in probs:
         if not all(map(isfloat, item)):
             raise pycmCurveError(PROBABILITY_TYPE_ERROR)
-        if abs(sum(item) - 1) > 0.001:
+        if not numpy.isclose(sum(item), 1.0, atol=1e-3):
             raise pycmCurveError(PROBABILITY_SUM_ERROR)
     valid_axis_list = set(CLASS_PARAMS) - set(CLASS_BENCHMARK_LIST)
     valid_axis_list.update({"thresholds"})

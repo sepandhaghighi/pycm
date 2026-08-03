@@ -8,7 +8,10 @@ from .params import *
 from .cm import ConfusionMatrix
 from warnings import warn
 import numpy
-
+try:
+    _TRAPEZOID_FUNC = numpy.trapezoid
+except AttributeError:
+    _TRAPEZOID_FUNC = numpy.trapz
 
 class Curve:
     """
@@ -552,11 +555,7 @@ def __trapezoidal_numeric_integral__(x: Union[List[float], numpy.ndarray],
     :param x: the x coordinate of the curve
     :param y: the y coordinate of the curve
     """
-    try:
-        trapezoid_function = numpy.trapezoid
-    except AttributeError:
-        trapezoid_function = numpy.trapz
-    area = trapezoid_function(y, x)
+    area = _TRAPEZOID_FUNC(y, x)
     if isinstance(area, numpy.memmap):
         area = area.dtype.type(area)
     return abs(float(area))

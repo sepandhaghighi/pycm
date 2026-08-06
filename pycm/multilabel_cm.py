@@ -41,14 +41,14 @@ class MultiLabelCM():
         self.classes = None
         self.classwise_cms = {}
         self.samplewise_cms = {}
-        __mlcm_vector_handler__(
+        _mlcm_vector_handler(
             self,
             actual_vector,
             predict_vector,
             sample_weight,
             classes)
-        __mlcm_assign_classes__(self, classes)
-        __mlcm_vectors_filter__(self)
+        _mlcm_assign_classes(self, classes)
+        _mlcm_vectors_filter(self)
 
     def get_cm_by_class(self, class_name: Any) -> "ConfusionMatrix":
         """
@@ -105,7 +105,7 @@ class MultiLabelCM():
         return len(self.classes)
 
 
-def __mlcm_vector_handler__(
+def _mlcm_vector_handler(
         mlcm: "MultiLabelCM",
         actual_vector: Union[List[Set[Any]], numpy.ndarray],
         predict_vector: Union[List[Set[Any]], numpy.ndarray],
@@ -137,7 +137,7 @@ def __mlcm_vector_handler__(
         mlcm.weights = sample_weight
 
 
-def __mlcm_assign_classes__(
+def _mlcm_assign_classes(
         mlcm: "MultiLabelCM",
         classes: List[Any]) -> None:
     """
@@ -155,19 +155,19 @@ def __mlcm_assign_classes__(
                     *mlcm.predict_vector)))
 
 
-def __mlcm_vectors_filter__(mlcm: "MultiLabelCM") -> None:
+def _mlcm_vectors_filter(mlcm: "MultiLabelCM") -> None:
     """
     Normalize multilabel object vectors.
 
     :param mlcm: multilabel confusion matrix
     """
-    mlcm.actual_vector_multihot = [__set_to_multihot__(
+    mlcm.actual_vector_multihot = [_set_to_multihot(
         x, mlcm.classes) for x in mlcm.actual_vector]
-    mlcm.predict_vector_multihot = [__set_to_multihot__(
+    mlcm.predict_vector_multihot = [_set_to_multihot(
         x, mlcm.classes) for x in mlcm.predict_vector]
 
 
-def __set_to_multihot__(input_set: Set[Any], classes: List[Any]) -> List[int]:
+def _set_to_multihot(input_set: Set[Any], classes: List[Any]) -> List[int]:
     """
     Convert a set into a multi-hot vector based in classes.
 

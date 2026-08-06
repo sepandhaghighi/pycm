@@ -65,9 +65,9 @@ class Curve:
         self.augment_endpoint = False
         self.plot_x_axis = x_axis
         self.plot_y_axis = y_axis
-        __curve_validation__(self, actual_vector, probs, x_axis, y_axis)
-        __curve_classes_handler__(self, classes)
-        __curve_thresholds_handler__(self, thresholds)
+        _curve_validation(self, actual_vector, probs, x_axis, y_axis)
+        _curve_classes_handler(self, classes)
+        _curve_thresholds_handler(self, thresholds)
         for c_index, c in enumerate(self.classes):
             data_temp = {self.plot_x_axis: [], self.plot_y_axis: []}
             for t in self.thresholds:
@@ -110,9 +110,9 @@ class Curve:
                 self.data[c][self.plot_y_axis] = y = numpy.array(y)[
                     sort_indices].tolist()
             if method == "trapezoidal":
-                self.auc[c] = __trapezoidal_numeric_integral__(x, y)
+                self.auc[c] = _trapezoidal_numeric_integral(x, y)
             elif method == "midpoint":
-                self.auc[c] = __midpoint_numeric_integral__(x, y)
+                self.auc[c] = _midpoint_numeric_integral(x, y)
             else:
                 raise pycmCurveError(AREA_METHOD_ERROR)
         return self.auc
@@ -135,7 +135,7 @@ class Curve:
         :param markers: plot marker
         :param linewidth: plot line width
         """
-        fig, ax, classes = __plot_validation__(
+        fig, ax, classes = _plot_validation(
             self, classes, area, area_method, colors, markers)
         ax.set_xlabel(self.plot_x_axis)
         ax.set_ylabel(self.plot_y_axis)
@@ -215,7 +215,7 @@ class ROCCurve(Curve):
             y_axis="TPR")
         self.augment_endpoint = True
         self.title = "ROC Curve"
-        __curve_data_filter__(self)
+        _curve_data_filter(self)
 
     def __repr__(self) -> str:
         """Representation method."""
@@ -279,7 +279,7 @@ class PRCurve(Curve):
             x_axis="TPR",
             y_axis="PPV")
         self.title = "PR Curve"
-        __curve_data_filter__(self)
+        _curve_data_filter(self)
 
     def __repr__(self) -> str:
         """Representation method."""
@@ -320,7 +320,7 @@ class PCurve(Curve):
         super().__init__(actual_vector=actual_vector, probs=probs, classes=classes, thresholds=thresholds,
                          sample_weight=sample_weight, x_axis="thresholds", y_axis="PPV")
         self.title = "P Curve"
-        __curve_data_filter__(self)
+        _curve_data_filter(self)
 
     def __repr__(self) -> str:
         """Representation method."""
@@ -361,7 +361,7 @@ class RCurve(Curve):
         super().__init__(actual_vector=actual_vector, probs=probs, classes=classes, thresholds=thresholds,
                          sample_weight=sample_weight, x_axis="thresholds", y_axis="TPR")
         self.title = "R Curve"
-        __curve_data_filter__(self)
+        _curve_data_filter(self)
 
     def __repr__(self) -> str:
         """Representation method."""
@@ -402,14 +402,14 @@ class F1Curve(Curve):
         super().__init__(actual_vector=actual_vector, probs=probs, classes=classes, thresholds=thresholds,
                          sample_weight=sample_weight, x_axis="thresholds", y_axis="F1")
         self.title = "F1 Curve"
-        __curve_data_filter__(self)
+        _curve_data_filter(self)
 
     def __repr__(self) -> str:
         """Representation method."""
         return "pycm.F1Curve(classes: " + str(self.classes) + ")"
 
 
-def __curve_validation__(curve: Curve,
+def _curve_validation(curve: Curve,
                          actual_vector: Union[List[Any],
                                               numpy.ndarray],
                          probs: Union[List[float],
@@ -445,7 +445,7 @@ def __curve_validation__(curve: Curve,
     curve.probs = probs
 
 
-def __plot_validation__(curve: "Curve",
+def _plot_validation(curve: "Curve",
                         classes: List[Any],
                         area: bool,
                         area_method: str,
@@ -479,7 +479,7 @@ def __plot_validation__(curve: "Curve",
     return fig, ax, classes
 
 
-def __curve_classes_handler__(curve: "Curve", classes: List[Any]) -> None:
+def _curve_classes_handler(curve: "Curve", classes: List[Any]) -> None:
     """
     Handle conditions for curve classes.
 
@@ -503,7 +503,7 @@ def __curve_classes_handler__(curve: "Curve", classes: List[Any]) -> None:
         curve.classes = list(map(str, curve.classes))
 
 
-def __curve_thresholds_handler__(curve: "Curve", thresholds: Union[List[float], numpy.ndarray]) -> None:
+def _curve_thresholds_handler(curve: "Curve", thresholds: Union[List[float], numpy.ndarray]) -> None:
     """
     Handle conditions for thresholds.
 
@@ -525,7 +525,7 @@ def __curve_thresholds_handler__(curve: "Curve", thresholds: Union[List[float], 
         curve.thresholds = sorted(curve.thresholds)
 
 
-def __curve_data_filter__(curve: "Curve") -> None:
+def _curve_data_filter(curve: "Curve") -> None:
     """
     Eliminate and refine the points at which the curve is undefined.
 
@@ -547,7 +547,7 @@ def __curve_data_filter__(curve: "Curve") -> None:
         warn(CURVE_NONE_WARNING, RuntimeWarning)
 
 
-def __trapezoidal_numeric_integral__(x: Union[List[float], numpy.ndarray],
+def _trapezoidal_numeric_integral(x: Union[List[float], numpy.ndarray],
                                      y: Union[List[float], numpy.ndarray]) -> float:
     """
     Compute numeric integral using the trapezoidal rule.
@@ -561,7 +561,7 @@ def __trapezoidal_numeric_integral__(x: Union[List[float], numpy.ndarray],
     return abs(float(area))
 
 
-def __midpoint_numeric_integral__(x: Union[List[float], numpy.ndarray], y: Union[List[float], numpy.ndarray]) -> float:
+def _midpoint_numeric_integral(x: Union[List[float], numpy.ndarray], y: Union[List[float], numpy.ndarray]) -> float:
     """
     Compute numeric integral using the midpoint rule.
 

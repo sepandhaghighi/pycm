@@ -3,16 +3,16 @@
 from __future__ import division
 from typing import Union, List, Dict, Any, Tuple, Callable, Generator, Optional
 from .errors import pycmVectorError, pycmMatrixError, pycmCIError, pycmAverageError, pycmPlotError
-from .handlers import __class_stat_init__, __overall_stat_init__
-from .handlers import __obj_assign_handler__, __obj_file_handler__, __obj_matrix_handler__, __obj_vector_handler__, __obj_array_handler__
-from .handlers import __imbalancement_handler__
+from .handlers import _class_stat_init, _overall_stat_init
+from .handlers import _obj_assign_handler, _obj_file_handler, _obj_matrix_handler, _obj_vector_handler, _obj_array_handler
+from .handlers import _imbalancement_handler
 from .class_funcs import F_calc, IBA_calc, TI_calc, NB_calc, sensitivity_index_calc
 from .overall_funcs import weighted_kappa_calc, weighted_alpha_calc, alpha2_calc, brier_score_calc, log_loss_calc
 from .distance import DistanceType, DISTANCE_MAPPER
 from .output import *
 from .utils import *
 from .params import *
-from .ci import __CI_overall_handler__, __CI_class_handler__
+from .ci import _CI_overall_handler, _CI_class_handler
 import os
 import json
 import numpy
@@ -84,29 +84,29 @@ class ConfusionMatrix():
         else:
             self.transpose = False
         if isfile(file):
-            matrix_param = __obj_file_handler__(self, file)
+            matrix_param = _obj_file_handler(self, file)
         elif isinstance(matrix, dict):
-            matrix_param = __obj_matrix_handler__(
+            matrix_param = _obj_matrix_handler(
                 matrix, classes, self.transpose)
         elif isinstance(matrix, (list, numpy.ndarray)):
-            matrix_param = __obj_array_handler__(
+            matrix_param = _obj_array_handler(
                 matrix, classes, self.transpose)
         else:
-            matrix_param = __obj_vector_handler__(
+            matrix_param = _obj_vector_handler(
                 self, actual_vector, predict_vector, threshold, sample_weight, classes)
-        __obj_assign_handler__(self, matrix_param)
+        _obj_assign_handler(self, matrix_param)
         matrix_creation_end = time.perf_counter()
         self.timings["matrix_creation"] = matrix_creation_end - matrix_creation_start
         if not metrics_off:
             class_statistics_start = time.perf_counter()
-            __class_stat_init__(self)
+            _class_stat_init(self)
             class_statistics_end = time.perf_counter()
             self.timings["class_statistics"] = class_statistics_end - class_statistics_start
             overall_statistics_start = time.perf_counter()
-            __overall_stat_init__(self)
+            _overall_stat_init(self)
             overall_statistics_end = time.perf_counter()
             self.timings["overall_statistics"] = overall_statistics_end - overall_statistics_start
-            __imbalancement_handler__(self, is_imbalanced)
+            _imbalancement_handler(self, is_imbalanced)
         self.binary = binary_check(self.classes)
         self.recommended_list = statistic_recommend(
             self.classes, self.imbalance)
@@ -619,9 +619,9 @@ class ConfusionMatrix():
                     warn(CI_ALPHA_TWO_SIDE_WARNING, RuntimeWarning)
             param_u = param.upper()
             if param_u in CI_CLASS_LIST:
-                return __CI_class_handler__(self, param_u, CV, method)
+                return _CI_class_handler(self, param_u, CV, method)
             if param in CI_OVERALL_LIST:
-                return __CI_overall_handler__(self, param, CV, method)
+                return _CI_overall_handler(self, param, CV, method)
             raise pycmCIError(CI_SUPPORT_ERROR)
         raise pycmCIError(CI_FORMAT_ERROR)
 
@@ -708,7 +708,7 @@ class ConfusionMatrix():
         self.TN = self.class_stat["TN"]
         self.FP = self.class_stat["FP"]
         self.FN = self.class_stat["FN"]
-        __class_stat_init__(self)
+        _class_stat_init(self)
 
     @metrics_off_check
     def average(self, param: str, none_omit: bool = False) -> Union[float, str]:

@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Changed
 - `__trapezoidal_numeric_integral__` function updated
 - Curve validation modified
+- Internal functions renamed
 - `README.md` modified
 - Document modified
 - Test system modified

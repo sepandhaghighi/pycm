@@ -12,7 +12,7 @@ import types
 import numpy
 
 
-def __class_stat_init__(cm: "pycm.ConfusionMatrix") -> None:
+def _class_stat_init(cm: "pycm.ConfusionMatrix") -> None:
     """
     Init individual class stats.
 
@@ -22,7 +22,7 @@ def __class_stat_init__(cm: "pycm.ConfusionMatrix") -> None:
         setattr(cm, field_name, cm.class_stat[stat])
 
 
-def __overall_stat_init__(cm: "pycm.ConfusionMatrix") -> None:
+def _overall_stat_init(cm: "pycm.ConfusionMatrix") -> None:
     """
     Init individual overall stats.
 
@@ -32,7 +32,7 @@ def __overall_stat_init__(cm: "pycm.ConfusionMatrix") -> None:
         setattr(cm, field_name, cm.overall_stat[stat])
 
 
-def __imbalancement_handler__(cm: "pycm.ConfusionMatrix", is_imbalanced: bool) -> None:
+def _imbalancement_handler(cm: "pycm.ConfusionMatrix", is_imbalanced: bool) -> None:
     """
     Check if the confusion matrix is imbalanced.
 
@@ -45,7 +45,7 @@ def __imbalancement_handler__(cm: "pycm.ConfusionMatrix", is_imbalanced: bool) -
         cm.imbalance = is_imbalanced
 
 
-def __obj_assign_handler__(
+def _obj_assign_handler(
         cm: "pycm.ConfusionMatrix",
         matrix_param: Tuple[List[Any],
                             Dict[Any, Dict[Any, int]],
@@ -107,7 +107,7 @@ def __obj_assign_handler__(
             zip(OVERALL_PARAMS.keys(), len(OVERALL_PARAMS) * ["None"]))
 
 
-def __obj_file_handler__(cm: "pycm.ConfusionMatrix", file: IO) -> Tuple[List[Any],
+def _obj_file_handler(cm: "pycm.ConfusionMatrix", file: IO) -> Tuple[List[Any],
                                                                         Dict[Any, Dict[Any, int]],
                                                                         Dict[Any, int],
                                                                         Dict[Any, int],
@@ -147,7 +147,7 @@ def __obj_file_handler__(cm: "pycm.ConfusionMatrix", file: IO) -> Tuple[List[Any
     return matrix_param
 
 
-def __obj_matrix_handler__(
+def _obj_matrix_handler(
     matrix: Dict[Any, Dict[Any, int]],
     classes: List[Any],
     transpose: bool) -> Tuple[List[Any],
@@ -173,7 +173,7 @@ def __obj_matrix_handler__(
     return matrix_param
 
 
-def __obj_array_handler__(
+def _obj_array_handler(
     array: Union[List[List[int]], numpy.ndarray],
     classes: List[Any],
     transpose: bool) -> Tuple[List[Any],
@@ -198,10 +198,10 @@ def __obj_array_handler__(
     matrix = {}
     for i in range(len(array)):
         matrix[classes[i]] = {classes[j]: x for j, x in enumerate(array[i])}
-    return __obj_matrix_handler__(matrix, classes, transpose)
+    return _obj_matrix_handler(matrix, classes, transpose)
 
 
-def __obj_vector_handler__(
+def _obj_vector_handler(
     cm: "pycm.ConfusionMatrix",
     actual_vector: Union[List[Any], numpy.ndarray],
     predict_vector: Union[List[Any], numpy.ndarray],

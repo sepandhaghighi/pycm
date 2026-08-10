@@ -139,7 +139,7 @@ def kappa_SE_calc(PA: float, PE: float, POP: int) -> Union[float, str]:
         return "None"
 
 
-def __CI_class_handler__(cm: "pycm.ConfusionMatrix", param: str, CV: float,
+def _CI_class_handler(cm: "pycm.ConfusionMatrix", param: str, CV: float,
                          binom_method: str = "normal-approx") -> dict:
     """
     Handle CI calculation for class parameters.
@@ -186,7 +186,7 @@ def __CI_class_handler__(cm: "pycm.ConfusionMatrix", param: str, CV: float,
     return result
 
 
-def __CI_overall_handler__(cm: "pycm.ConfusionMatrix", param: str, CV: float,
+def _CI_overall_handler(cm: "pycm.ConfusionMatrix", param: str, CV: float,
                            binom_method: str = "normal-approx") -> List[Union[float, tuple]]:
     """
     Handle CI calculation for overall parameters.

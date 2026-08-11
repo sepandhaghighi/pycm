@@ -174,8 +174,4 @@ def _set_to_multihot(input_set: Set[Any], classes: List[Any]) -> List[int]:
     :param input_set: input set
     :param classes: ordered labels of classes
     """
-    result = [0] * len(classes)
-    for i, x in enumerate(classes):
-        if x in input_set:
-            result[i] = 1
-    return result
+    return [int(x in input_set) for x in classes]

@@ -269,45 +269,44 @@ class ConfusionMatrix():
                 overall_list = SUMMARY_OVERALL
             classes = self.classes
             table = self.table
-            file = open(name + ".pycm", "w", encoding="utf-8")
-            if sparse is True:
-                if self.sparse_matrix is None:
-                    self.sparse_matrix = sparse_matrix_calc(classes, table)
-                matrix = "Matrix : \n\n" + \
-                    sparse_table_print(self.sparse_matrix) + "\n\n"
-                if self.sparse_normalized_matrix is None:
-                    self.sparse_normalized_matrix = sparse_matrix_calc(
-                        classes, self.normalized_table)
-                normalized_matrix = "Normalized Matrix : \n\n" + \
-                    sparse_table_print(self.sparse_normalized_matrix) + "\n\n"
-            else:
-                matrix = "Matrix : \n\n" + table_print(self.classes,
-                                                       self.table) + "\n\n"
-                normalized_matrix = "Normalized Matrix : \n\n" + \
-                                    table_print(self.classes,
-                                                self.normalized_table) + "\n\n"
-            one_vs_all = "\nOne-Vs-All : \n\n"
-            for c in self.classes:
-                one_vs_all += str(c) + "-Vs-All : \n\n"
-                [classes, table] = one_vs_all_func(self.classes, self.table,
-                                                   self.TP, self.TN, self.FP,
-                                                   self.FN, c)
-                one_vs_all += table_print(classes, table) + "\n\n"
-            classes = class_filter(self.classes, class_name)
-            stat = stat_print(
-                classes,
-                self.class_stat,
-                self.overall_stat,
-                self.digit, overall_list, class_list)
-            if len(self.classes) >= CLASS_NUMBER_THRESHOLD:
-                warning_message = "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"
-            file.write(
-                matrix +
-                normalized_matrix +
-                stat +
-                one_vs_all +
-                warning_message)
-            file.close()
+            with open(name + ".pycm", "w", encoding="utf-8") as file:
+                if sparse is True:
+                    if self.sparse_matrix is None:
+                        self.sparse_matrix = sparse_matrix_calc(classes, table)
+                    matrix = "Matrix : \n\n" + \
+                        sparse_table_print(self.sparse_matrix) + "\n\n"
+                    if self.sparse_normalized_matrix is None:
+                        self.sparse_normalized_matrix = sparse_matrix_calc(
+                            classes, self.normalized_table)
+                    normalized_matrix = "Normalized Matrix : \n\n" + \
+                        sparse_table_print(self.sparse_normalized_matrix) + "\n\n"
+                else:
+                    matrix = "Matrix : \n\n" + table_print(self.classes,
+                                                        self.table) + "\n\n"
+                    normalized_matrix = "Normalized Matrix : \n\n" + \
+                                        table_print(self.classes,
+                                                    self.normalized_table) + "\n\n"
+                one_vs_all = "\nOne-Vs-All : \n\n"
+                for c in self.classes:
+                    one_vs_all += str(c) + "-Vs-All : \n\n"
+                    [classes, table] = one_vs_all_func(self.classes, self.table,
+                                                    self.TP, self.TN, self.FP,
+                                                    self.FN, c)
+                    one_vs_all += table_print(classes, table) + "\n\n"
+                classes = class_filter(self.classes, class_name)
+                stat = stat_print(
+                    classes,
+                    self.class_stat,
+                    self.overall_stat,
+                    self.digit, overall_list, class_list)
+                if len(self.classes) >= CLASS_NUMBER_THRESHOLD:
+                    warning_message = "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"
+                file.write(
+                    matrix +
+                    normalized_matrix +
+                    stat +
+                    one_vs_all +
+                    warning_message)
             if address:
                 message = os.path.join(
                     os.getcwd(), name + ".pycm")  # pragma: no cover
@@ -351,34 +350,33 @@ class ConfusionMatrix():
             table = self.table
             if normalize:
                 table = self.normalized_table
-            html_file = open(name + ".html", "w", encoding="utf-8")
-            html_file.write(HTML_INIT_TEMPLATE.format(description=OG_DESCRIPTION, image_url=OG_IMAGE_URL))
-            html_file.write(html_dataset_type(self.binary, self.imbalance))
-            html_file.write(
-                html_table(
-                    self.classes,
-                    table,
-                    color,
-                    normalize,
-                    shortener))
-            html_file.write(
-                html_overall_stat(
-                    self.overall_stat,
-                    self.digit,
-                    overall_list,
-                    self.recommended_list,
-                    alt_link))
-            class_stat_classes = class_filter(self.classes, class_name)
-            html_file.write(
-                html_class_stat(
-                    class_stat_classes,
-                    self.class_stat,
-                    self.digit,
-                    class_list,
-                    self.recommended_list,
-                    alt_link))
-            html_file.write(HTML_END_TEMPLATE.format(version=PYCM_VERSION))
-            html_file.close()
+            with open(name + ".html", "w", encoding="utf-8") as html_file:
+                html_file.write(HTML_INIT_TEMPLATE.format(description=OG_DESCRIPTION, image_url=OG_IMAGE_URL))
+                html_file.write(html_dataset_type(self.binary, self.imbalance))
+                html_file.write(
+                    html_table(
+                        self.classes,
+                        table,
+                        color,
+                        normalize,
+                        shortener))
+                html_file.write(
+                    html_overall_stat(
+                        self.overall_stat,
+                        self.digit,
+                        overall_list,
+                        self.recommended_list,
+                        alt_link))
+                class_stat_classes = class_filter(self.classes, class_name)
+                html_file.write(
+                    html_class_stat(
+                        class_stat_classes,
+                        self.class_stat,
+                        self.digit,
+                        class_list,
+                        self.recommended_list,
+                        alt_link))
+                html_file.write(HTML_END_TEMPLATE.format(version=PYCM_VERSION))
             if address:
                 message = os.path.join(
                     os.getcwd(), name + ".html")  # pragma: no cover
@@ -414,22 +412,20 @@ class ConfusionMatrix():
                 class_list = SUMMARY_CLASS
             message = None
             classes = class_filter(self.classes, class_name)
-            csv_file = open(name + ".csv", "w", encoding="utf-8")
-            csv_data = csv_print(
-                classes,
-                self.class_stat,
-                self.digit,
-                class_list)
-            csv_file.write(csv_data)
+            with open(name + ".csv", "w", encoding="utf-8") as csv_file:
+                csv_data = csv_print(
+                    classes,
+                    self.class_stat,
+                    self.digit,
+                    class_list)
+                csv_file.write(csv_data)
             if matrix_save:
                 matrix = self.table
                 if normalize:
                     matrix = self.normalized_table
-                csv_matrix_file = open(
-                    name + "_matrix" + ".csv", "w", encoding="utf-8")
-                csv_matrix_data = csv_matrix_print(
-                    self.classes, matrix, header=header)
-                csv_matrix_file.write(csv_matrix_data)
+                with open(name + "_matrix" + ".csv", "w", encoding="utf-8") as csv_matrix_file:
+                    csv_matrix_data = csv_matrix_print(self.classes, matrix, header=header)
+                    csv_matrix_file.write(csv_matrix_data)
             if address:
                 message = os.path.join(
                     os.getcwd(), name + ".csv")  # pragma: no cover
@@ -453,7 +449,6 @@ class ConfusionMatrix():
         """
         try:
             message = None
-            obj_file = open(name + ".obj", "w")
             actual_vector_temp = self.actual_vector
             predict_vector_temp = self.predict_vector
             prob_vector_temp = self.prob_vector
@@ -481,7 +476,8 @@ class ConfusionMatrix():
                 dump_dict["Predict-Vector"] = None
                 dump_dict["Prob-Vector"] = None
                 dump_dict["Sample-Weight"] = None
-            json.dump(dump_dict, obj_file)
+            with open(name + ".obj", "w") as obj_file:
+                json.dump(dump_dict, obj_file)
             if address:
                 message = os.path.join(
                     os.getcwd(), name + ".obj")  # pragma: no cover

@@ -269,38 +269,38 @@ class ConfusionMatrix():
                 overall_list = SUMMARY_OVERALL
             classes = self.classes
             table = self.table
+            if sparse is True:
+                if self.sparse_matrix is None:
+                    self.sparse_matrix = sparse_matrix_calc(classes, table)
+                matrix = "Matrix : \n\n" + \
+                    sparse_table_print(self.sparse_matrix) + "\n\n"
+                if self.sparse_normalized_matrix is None:
+                    self.sparse_normalized_matrix = sparse_matrix_calc(
+                        classes, self.normalized_table)
+                normalized_matrix = "Normalized Matrix : \n\n" + \
+                    sparse_table_print(self.sparse_normalized_matrix) + "\n\n"
+            else:
+                matrix = "Matrix : \n\n" + table_print(self.classes,
+                                                    self.table) + "\n\n"
+                normalized_matrix = "Normalized Matrix : \n\n" + \
+                                    table_print(self.classes,
+                                                self.normalized_table) + "\n\n"
+            one_vs_all = "\nOne-Vs-All : \n\n"
+            for c in self.classes:
+                one_vs_all += str(c) + "-Vs-All : \n\n"
+                [classes, table] = one_vs_all_func(self.classes, self.table,
+                                                self.TP, self.TN, self.FP,
+                                                self.FN, c)
+                one_vs_all += table_print(classes, table) + "\n\n"
+            classes = class_filter(self.classes, class_name)
+            stat = stat_print(
+                classes,
+                self.class_stat,
+                self.overall_stat,
+                self.digit, overall_list, class_list)
+            if len(self.classes) >= CLASS_NUMBER_THRESHOLD:
+                warning_message = "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"
             with open(name + ".pycm", "w", encoding="utf-8") as file:
-                if sparse is True:
-                    if self.sparse_matrix is None:
-                        self.sparse_matrix = sparse_matrix_calc(classes, table)
-                    matrix = "Matrix : \n\n" + \
-                        sparse_table_print(self.sparse_matrix) + "\n\n"
-                    if self.sparse_normalized_matrix is None:
-                        self.sparse_normalized_matrix = sparse_matrix_calc(
-                            classes, self.normalized_table)
-                    normalized_matrix = "Normalized Matrix : \n\n" + \
-                        sparse_table_print(self.sparse_normalized_matrix) + "\n\n"
-                else:
-                    matrix = "Matrix : \n\n" + table_print(self.classes,
-                                                        self.table) + "\n\n"
-                    normalized_matrix = "Normalized Matrix : \n\n" + \
-                                        table_print(self.classes,
-                                                    self.normalized_table) + "\n\n"
-                one_vs_all = "\nOne-Vs-All : \n\n"
-                for c in self.classes:
-                    one_vs_all += str(c) + "-Vs-All : \n\n"
-                    [classes, table] = one_vs_all_func(self.classes, self.table,
-                                                    self.TP, self.TN, self.FP,
-                                                    self.FN, c)
-                    one_vs_all += table_print(classes, table) + "\n\n"
-                classes = class_filter(self.classes, class_name)
-                stat = stat_print(
-                    classes,
-                    self.class_stat,
-                    self.overall_stat,
-                    self.digit, overall_list, class_list)
-                if len(self.classes) >= CLASS_NUMBER_THRESHOLD:
-                    warning_message = "\n" + "Warning : " + CLASS_NUMBER_WARNING + "\n"
                 file.write(
                     matrix +
                     normalized_matrix +

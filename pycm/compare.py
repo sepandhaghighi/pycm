@@ -98,11 +98,10 @@ class Compare():
         """
         try:
             message = None
-            file = open(name + ".comp", "w")
-            report = compare_report_print(
-                self.sorted, self.scores, self.best_name)
-            file.write(report)
-            file.close()
+            with open(name + ".comp", "w") as file:
+                report = compare_report_print(
+                    self.sorted, self.scores, self.best_name)
+                file.write(report)
             if address:
                 message = os.path.join(
                     os.getcwd(), name + ".comp")  # pragma: no cover

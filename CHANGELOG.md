@@ -17,6 +17,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Test system modified
 - Relocate shortlinks to `pycm.io` domain
 - Dependencies structure modified
+- `Compare` class `save_report` method modified
+- `ConfusionMatrix` class `save_stat` method modified
+- `ConfusionMatrix` class `save_html` method modified
+- `ConfusionMatrix` class `save_csv` method modified
+- `ConfusionMatrix` class `save_obj` method modified
 ## [4.6] - 2026-03-09
 ### Added
 - `PCurve` class

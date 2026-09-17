@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """Utility module."""
 from __future__ import division
-from typing import Union, List, Dict, Any, Tuple, Callable, Optional
-from io import TextIOWrapper
+from typing import Union, List, Dict, Any, Tuple, Callable, Optional, TextIO
 import sys
 import math
 import numpy
@@ -131,7 +130,7 @@ def class_check(vector: List[Any]) -> bool:
     return True
 
 
-def isfile(f: TextIOWrapper) -> bool:
+def isfile(f: TextIO) -> bool:
     """
     Check file object in python 2.7 & 3.x.
 

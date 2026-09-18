@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Compare module."""
 from __future__ import division
-from typing import Dict, Optional, Union
+from typing import Dict, Tuple, Optional, Union
 from .errors import pycmCompareError
 from .output import *
 from .utils import *

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """ConfusionMatrix module."""
 from __future__ import division
-from typing import Union, List, Dict, Any, Tuple, Callable, Generator, Optional
+from typing import Union, List, Dict, Any, Tuple, Callable, Generator, Optional, TextIO
 from .errors import pycmVectorError, pycmMatrixError, pycmCIError, pycmAverageError, pycmPlotError
 from .handlers import _class_stat_init, _overall_stat_init
 from .handlers import _obj_assign_handler, _obj_file_handler, _obj_matrix_handler, _obj_vector_handler, _obj_array_handler
@@ -43,7 +43,7 @@ class ConfusionMatrix():
             matrix: Optional[Union[Dict[str, Dict[str, int]], List[List[int]], numpy.ndarray]] = None,
             digit: int = 5,
             threshold: Optional[Callable] = None,
-            file: Optional[TextIOWrapper] = None,
+            file: Optional[TextIO] = None,
             sample_weight: Optional[Union[List[float], numpy.ndarray]] = None,
             transpose: bool = False,
             classes: Optional[List[Any]] = None,

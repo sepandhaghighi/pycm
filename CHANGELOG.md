@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Added
 - `pycmError` class
 ### Changed
+- Typing modified
 - `__trapezoidal_numeric_integral__` function updated
 - `_set_to_multihot` function updated
 - Curve validation modified

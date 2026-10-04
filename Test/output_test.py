@@ -2,6 +2,8 @@
 """
 >>> from pycm import *
 >>> from math import isclose
+>>> from unittest.mock import patch
+>>> import io
 >>> import os
 >>> import json
 >>> import numpy as np
@@ -10,8 +12,6 @@
 >>> y_test = np.array([600, 200, 200, 200, 200, 200, 200, 200, 500, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 200])
 >>> y_pred = np.array([100, 200, 200, 100, 100, 200, 200, 200, 100, 200, 500, 100, 100, 100, 100, 100, 100, 100, 500, 200])
 >>> cm=ConfusionMatrix(y_test, y_pred)
->>> import io
->>> from unittest.mock import patch
 >>> class FailingStream(io.StringIO):
 ...     def write(self, text):
 ...         raise OSError("simulated write failure")

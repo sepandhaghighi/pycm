@@ -10,7 +10,6 @@
 
 # Other Contributors
 ----------
-- [@GreedyC](https://github.com/GreedyC)
 - [@soheeyang](https://github.com/soheeyang)
 - [@mahi97](https://github.com/mahi97)
 - [@cclauss](https://github.com/cclauss)
@@ -20,3 +19,4 @@
 - [@lewiuberg](https://github.com/lewiuberg)
 - [@AHReccese](https://github.com/AHReccese)
 - [@fhausmann](https://github.com/fhausmann)
+- [@GreedyC](https://github.com/GreedyC)

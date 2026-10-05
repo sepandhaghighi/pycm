@@ -19,3 +19,4 @@
 - [@lewiuberg](https://github.com/lewiuberg)
 - [@AHReccese](https://github.com/AHReccese)
 - [@fhausmann](https://github.com/fhausmann)
+- [@GreedyC](https://github.com/GreedyC)

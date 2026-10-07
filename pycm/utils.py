@@ -450,7 +450,8 @@ def add_number_label(
         classes: List[str],
         matrix: numpy.ndarray,
         cmap: "matplotlib.colors.Color.ListedColormap",
-        plot_lib: str) -> None:
+        plot_lib: str,
+        digit: Optional[int] = None) -> None:
     """
     Add number labels to confusion matrix plot.
 
@@ -459,6 +460,7 @@ def add_number_label(
     :param matrix: the confusion matrix in array form
     :param cmap: color map
     :param plot_lib: plotting library
+    :param digit: scale for number labels
     """
     diff_matrix = float(matrix.max()) - matrix
     diff_matrix_max = float(diff_matrix.max())
@@ -473,7 +475,7 @@ def add_number_label(
                 y += 0.5
             ax.text(x,
                     y,
-                    str(matrix[i][j]),
+                    str(matrix[i][j]) if digit is None else rounder(matrix[i][j], digit),
                     horizontalalignment='center',
                     verticalalignment='center',
                     color=color)
@@ -486,7 +488,8 @@ def axes_gen(
         title: str,
         cmap: "matplotlib.colors.Color.ListedColormap",
         number_label: bool,
-        plot_lib: str) -> "matplotlib.pyplot.Axes":
+        plot_lib: str,
+        digit: Optional[int] = None) -> "matplotlib.pyplot.Axes":
     """
     Add extra descriptions to axes and return the modified axes.
 
@@ -497,6 +500,7 @@ def axes_gen(
     :param cmap: color map
     :param number_label: number label flag
     :param plot_lib: plotting library
+    :param digit: scale for number labels
     """
     ax.set_title(title)
     positions = list(range(len(classes)))
@@ -514,7 +518,8 @@ def axes_gen(
             classes,
             matrix,
             cmap,
-            plot_lib)
+            plot_lib,
+            digit)
     return ax
 
 

@@ -2,7 +2,6 @@
 """Version-check script."""
 import os
 import sys
-import codecs
 Failed = 0
 PYCM_VERSION = "4.6"
 
@@ -60,8 +59,8 @@ def print_result(failed: bool = False) -> None:
 if __name__ == "__main__":
     for file_name in FILES:
         try:
-            file_content = codecs.open(
-                file_name, "r", "utf-8", 'ignore').read()
+            with open(file_name, "r", encoding="utf-8", errors="ignore") as file:
+                file_content = file.read()
             for test_item in FILES[file_name]:
                 if file_content.find(test_item.format(PYCM_VERSION)) == -1:
                     print("Incorrect version tag in " + file_name)

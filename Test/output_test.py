@@ -117,7 +117,8 @@ True
 >>> save_obj=cm.save_obj("test_no_vectors", address=False, save_vector=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
->>> cm_file=ConfusionMatrix(file=open("test.obj", "r"))
+>>> with open("test.obj", "r") as f:
+...     cm_file=ConfusionMatrix(file=f)
 >>> print(cm_file)
 Predict          100    200    500    600
 Actual
@@ -274,22 +275,26 @@ Y(Youden index)                                                   None          
 dInd(Distance index)                                              None          0.67315       0.66926       1.0
 sInd(Similarity index)                                            None          0.52401       0.52676       0.29289
 <BLANKLINE>
->>> cm_stat_file=ConfusionMatrix(file=open("test_stat.obj", "r"))
->>> cm_no_vectors_file=ConfusionMatrix(file=open("test_no_vectors.obj", "r"))
+>>> with open("test_stat.obj", "r") as f:
+...     cm_stat_file=ConfusionMatrix(file=f)
+>>> with open("test_no_vectors.obj", "r") as f:
+...     cm_no_vectors_file=ConfusionMatrix(file=f)
 >>> cm_stat_file==cm_file
 True
 >>> cm.imbalance == cm_file.imbalance
 True
 >>> cm_no_vectors_file==cm_file
 True
->>> cm_no_vectors_dict = json.load(open("test_no_vectors.obj", "r"))
+>>> with open("test_no_vectors.obj", "r") as f:
+...     cm_no_vectors_dict = json.load(f)
 >>> cm_no_vectors_dict["Actual-Vector"] == None
 True
 >>> cm_no_vectors_dict["Predict-Vector"] == None
 True
 >>> cm_no_vectors_dict["Prob-Vector"] == None
 True
->>> cm_stat_dict = json.load(open("test_stat.obj", "r"))
+>>> with open("test_stat.obj", "r") as f:
+...     cm_stat_dict = json.load(f)
 >>> cm_stat_dict["Class-Stat"]["MCC"] != None
 True
 >>> cm_stat_dict["Overall-Stat"]["Overall MCC"] != None
@@ -305,7 +310,8 @@ True
 >>> save_obj=cm_6.save_obj("test2", address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
->>> cm_file_2=ConfusionMatrix(file=open("test2.obj", "r"))
+>>> with open("test2.obj", "r") as f:
+...     cm_file_2=ConfusionMatrix(file=f)
 >>> cm_file_2.prob_vector
 [0.87, 0.34, 0.9, 0.12]
 >>> cm_file_2.prob_vector == cm_6.prob_vector
@@ -321,7 +327,8 @@ True
 >>> save_obj=cm_7.save_obj("test2", address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
->>> cm_file_2=ConfusionMatrix(file=open("test2.obj", "r"))
+>>> with open("test2.obj", "r") as f:
+...     cm_file_2=ConfusionMatrix(file=f)
 >>> cm_file_2.prob_vector
 [0.87, 0.34, 0.9, 0.12]
 >>> cm_file_2.prob_vector == cm_7.prob_vector.tolist()
@@ -347,12 +354,14 @@ True
 >>> save_obj=cm.save_obj("test3", address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
->>> cm_file_3=ConfusionMatrix(file=open("test3.obj", "r"))
+>>> with open("test3.obj", "r") as f:
+...     cm_file_3=ConfusionMatrix(file=f)
 >>> cm = ConfusionMatrix(y_actu, y_pred, sample_weight=np.array([2, 2, 2, 2, 3, 1, 1, 2, 2, 1, 1, 2]))
 >>> save_obj=cm.save_obj("test3_np", address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
->>> cm_file_3_np=ConfusionMatrix(file=open("test3_np.obj", "r"))
+>>> with open("test3_np.obj", "r") as f:
+...     cm_file_3_np=ConfusionMatrix(file=f)
 >>> cm_file_3_np == cm_file_3
 True
 >>> cm_file_3.print_matrix()
@@ -510,7 +519,8 @@ True
 >>> save_obj = cm.save_obj("/asdasd, qweqwe.eo/", address=False)
 >>> save_obj=={'Status': False, 'Message': "[Errno 2] No such file or directory: '/asdasd, qweqwe.eo/.obj'"}
 True
->>> cm_file=ConfusionMatrix(file=open("test4.obj", "r"))
+>>> with open("test4.obj", "r") as f:
+...     cm_file=ConfusionMatrix(file=f)
 >>> assert isclose(cm_file.DP[1], 0.770700985610517, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm_file.Y[1], 0.627145631592811, abs_tol=ABS_TOL, rel_tol=REL_TOL)
 >>> assert isclose(cm_file.BM[1], 0.627145631592811, abs_tol=ABS_TOL, rel_tol=REL_TOL)
@@ -520,21 +530,27 @@ True
 True
 >>> cm.normalized_matrix == cm_file.normalized_matrix
 True
->>> json.dump({"Actual-Vector": None, "Digit": 5, "Predict-Vector": None, "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}, "Transpose": True, "Sample-Weight": None}, open("test5.obj", "w"))
->>> cm_file=ConfusionMatrix(file=open("test5.obj", "r"))
+>>> with open("test5.obj", "w") as f:
+...     json.dump({"Actual-Vector": None, "Digit": 5, "Predict-Vector": None, "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}, "Transpose": True, "Sample-Weight": None}, f)
+>>> with open("test5.obj", "r") as f:
+...     cm_file=ConfusionMatrix(file=f)
 >>> cm_file.transpose
 True
 >>> cm_file.matrix == {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}
 True
->>> json.dump({"Actual-Vector": None, "Digit": 5, "Predict-Vector": None, "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}}, open("test6.obj", "w"))
->>> cm_file=ConfusionMatrix(file=open("test6.obj", "r"))
+>>> with open("test6.obj", "w") as f:
+...     json.dump({"Actual-Vector": None, "Digit": 5, "Predict-Vector": None, "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}}, f)
+>>> with open("test6.obj", "r") as f:
+...     cm_file=ConfusionMatrix(file=f)
 >>> cm_file.weights
 >>> cm_file.transpose
 False
 >>> cm_file.matrix == {'1': {'1': 1, '2': 1, '0': 0}, '2': {'1': 2, '2': 3, '0': 0}, '0': {'1': 0, '2': 2, '0': 3}}
 True
->>> json.dump({"Actual-Vector": ['1', '1', '2', '2', '2', '2', '2', '0', '0', '0', '0', '0'], "Digit": 5, "Predict-Vector": ['1', '2', '1', '1', '2', '2', '2', '2', '2', '0', '0', '0'], "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}}, open("test7.obj", "w"))
->>> cm_file=ConfusionMatrix(file=open("test7.obj", "r"))
+>>> with open("test7.obj", "w") as f:
+...     json.dump({"Actual-Vector": ['1', '1', '2', '2', '2', '2', '2', '0', '0', '0', '0', '0'], "Digit": 5, "Predict-Vector": ['1', '2', '1', '1', '2', '2', '2', '2', '2', '0', '0', '0'], "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}}, f)
+>>> with open("test7.obj", "r") as f:
+...     cm_file=ConfusionMatrix(file=f)
 >>> cm_file.weights
 >>> cm_file.transpose
 False
@@ -546,8 +562,10 @@ True
 True
 >>> cm_file.predict_vector == ['1', '2', '1', '1', '2', '2', '2', '2', '2', '0', '0', '0']
 True
->>> json.dump({"Actual-Vector": ['1', '1', '2', '2', '2', '2', '2', '0', '0', '0', '0', '0'], "Digit": 5, "Predict-Vector": ['1', '2', '1', '1', '2', '2', '2', '2', '2', '0', '0', '0'], "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}, "Imbalanced": True}, open("test8.obj", "w"))
->>> cm_file=ConfusionMatrix(file=open("test8.obj", "r"))
+>>> with open("test8.obj", "w") as f:
+...     json.dump({"Actual-Vector": ['1', '1', '2', '2', '2', '2', '2', '0', '0', '0', '0', '0'], "Digit": 5, "Predict-Vector": ['1', '2', '1', '1', '2', '2', '2', '2', '2', '0', '0', '0'], "Matrix": {"0": {"0": 3, "1": 0, "2": 2}, "1": {"0": 0, "1": 1, "2": 1}, "2": {"0": 0, "1": 2, "2": 3}}, "Imbalanced": True}, f)
+>>> with open("test8.obj", "r") as f:
+...     cm_file=ConfusionMatrix(file=f)
 >>> cm_file.imbalance
 True
 >>> cm_comp1 = ConfusionMatrix(matrix={0: {0: 2, 1: 50, 2: 6}, 1: {0: 5, 1: 50, 2: 3}, 2: {0: 1, 1: 7, 2: 50}})
@@ -593,7 +611,8 @@ True
 >>> save_obj = cm.save_obj("test_metrics_off", address=False)
 >>> save_obj=={'Status': True, 'Message': None}
 True
->>> cm_file_metrics_off = ConfusionMatrix(file=open("test_metrics_off.obj", "r"), metrics_off=True)
+>>> with open("test_metrics_off.obj", "r") as f:
+...     cm_file_metrics_off = ConfusionMatrix(file=f, metrics_off=True)
 >>> print(cm_file_metrics_off)
 Predict   100       200       500       600
 Actual

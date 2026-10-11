@@ -9,7 +9,8 @@ except ImportError:
 
 def get_requires() -> List[str]:
     """Read requirements.txt."""
-    requirements = open("requirements.txt", "r").read()
+    with open("requirements.txt", "r") as requirements_file:
+        requirements = requirements_file.read()
     return list(filter(lambda x: x != "", requirements.split()))
 
 

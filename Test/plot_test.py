@@ -270,4 +270,40 @@ array([0, 1, 2])
 [Text(0, 0, '0'), Text(0, 1, '1'), Text(0, 2, '2')]
 >>> list(ax.texts)
 []
+>>> plt.close('all')
+>>> matrix = {0: {0: 1, 1: 2}, 1: {0: 0, 1: 5}}
+>>> cm = ConfusionMatrix(matrix=matrix, digit=2)
+>>> for plot_lib in ('matplotlib', 'seaborn'):
+...     ax = cm.plot(normalized=True, number_label=True, plot_lib=plot_lib)
+...     print([text.get_text() for text in ax.texts])
+...     plt.close(ax.figure)
+['0.33', '0.67', '0.0', '1.0']
+['0.33', '0.67', '0.0', '1.0']
+>>> cm.to_array(normalized=True)
+array([[0.33333, 0.66667],
+       [0.     , 1.     ]])
+>>> for plot_lib in ('matplotlib', 'seaborn'):
+...     ax = cm.plot(normalized=True, one_vs_all=True, class_name=0, number_label=True, plot_lib=plot_lib)
+...     print([text.get_text() for text in ax.texts])
+...     plt.close(ax.figure)
+['0.33', '0.67', '0.0', '1.0']
+['0.33', '0.67', '0.0', '1.0']
+>>> cm.digit = 0
+>>> for plot_lib in ('matplotlib', 'seaborn'):
+...     ax = cm.plot(normalized=True, number_label=True, plot_lib=plot_lib)
+...     print([text.get_text() for text in ax.texts])
+...     plt.close(ax.figure)
+['0.0', '1.0', '0.0', '1.0']
+['0.0', '1.0', '0.0', '1.0']
+>>> for plot_lib in ('matplotlib', 'seaborn'):
+...     ax = cm.plot(number_label=True, plot_lib=plot_lib)
+...     print([text.get_text() for text in ax.texts])
+...     plt.close(ax.figure)
+['1', '2', '0', '5']
+['1', '2', '0', '5']
+>>> cm = ConfusionMatrix(matrix=matrix)
+>>> ax = cm.plot(normalized=True, number_label=True)
+>>> [text.get_text() for text in ax.texts]
+['0.33333', '0.66667', '0.0', '1.0']
+>>> plt.close(ax.figure)
 """

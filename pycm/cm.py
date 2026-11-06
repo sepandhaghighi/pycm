@@ -968,7 +968,8 @@ class ConfusionMatrix():
                 title,
                 cmap,
                 number_label,
-                plot_lib)
+                plot_lib,
+                self.digit if normalized else None)
         plt.imshow(matrix, cmap=cmap)
         plt.colorbar()
         return axes_gen(
@@ -978,4 +979,5 @@ class ConfusionMatrix():
             title,
             cmap,
             number_label,
-            plot_lib)
+            plot_lib,
+            self.digit if normalized else None)

@@ -307,6 +307,8 @@ Class2       0            10
 
 `plot` method is added in `version 3.0` in order to plot a confusion matrix using Matplotlib or Seaborn.
 
+When `normalized=True` and `number_label=True`, number labels use the confusion matrix's `digit` precision.
+
 ```pycon
 >>> cm.plot()
 ```

@@ -5,6 +5,7 @@ updates:
   exclude-paths:
       - "requirements-dev.txt"
       - "setup.py"
+      - "pyproject.toml"
   schedule:
     interval: weekly
     time: "01:30"

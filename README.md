@@ -66,11 +66,14 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 ## Installation
 
-⚠️  PyCM 4.3 is the last version to support **Python 3.6**
+> [!WARNING]
+> PyCM 4.3 is the last version to support **Python 3.6**
 
-⚠️  PyCM 3.9 is the last version to support **Python 3.5**
+> [!WARNING]
+> PyCM 3.9 is the last version to support **Python 3.5**
 
-⚠️  PyCM 2.4 is the last version to support **Python 2.7** & **Python 3.4**
+> [!WARNING]
+> PyCM 2.4 is the last version to support **Python 2.7** & **Python 3.4**
 
 ⚠️  Plotting capability requires **Matplotlib (>= 3.0.0)** or **Seaborn (>= 0.9.1)**
 

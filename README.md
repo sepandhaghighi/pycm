@@ -91,7 +91,7 @@ PyCM is the swiss-army knife of confusion matrices, targeted mainly at data scie
 
 - Check [Conda Managing Package](https://conda.io/)
 - Update Conda using `conda update conda`
-- Run `conda install -c sepandhaghighi pycm`
+- Run `conda install sepandhaghighi::pycm`
 
 ### MATLAB
 

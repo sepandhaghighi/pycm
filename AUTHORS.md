@@ -20,3 +20,4 @@
 - [@AHReccese](https://github.com/AHReccese)
 - [@fhausmann](https://github.com/fhausmann)
 - [@GreedyC](https://github.com/GreedyC)
+- [@anticipate218](https://github.com/anticipate218)

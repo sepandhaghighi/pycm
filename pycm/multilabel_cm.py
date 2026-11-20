@@ -79,15 +79,20 @@ class MultiLabelCM():
         """
         Return confusion matrices based on samples.
 
+        The selected sample's weight applies to each of its label decisions.
+
         :param index: sample index for confusion matrix
         """
         if index < 0 or index >= len(self.actual_vector):
             raise pycmMultiLabelError(VECTOR_INDEX_ERROR)
         if index not in self.samplewise_cms:
+            sample_weight = None
+            if self.weights is not None and len(self.weights) == len(self.actual_vector):
+                sample_weight = numpy.repeat(self.weights[index], len(self.classes))
             cm = ConfusionMatrix(
                 self.actual_vector_multihot[index],
                 self.predict_vector_multihot[index],
-                sample_weight=self.weights)
+                sample_weight=sample_weight)
             self.samplewise_cms[index] = cm
             return cm
         return self.samplewise_cms[index]

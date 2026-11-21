@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 """
 >>> from math import isclose
->>> from unittest.mock import patch
 >>> from pycm import *
 >>> from pycm.distance import DISTANCE_MAPPER
 >>> import os
 >>> import json
 >>> import numpy as np
+>>> from unittest.mock import patch
 >>> ABS_TOL = 1e-12
 >>> REL_TOL = 0
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]

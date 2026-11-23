@@ -6,6 +6,7 @@
 >>> import os
 >>> import json
 >>> import numpy as np
+>>> from unittest.mock import patch
 >>> ABS_TOL = 1e-12
 >>> REL_TOL = 0
 >>> y_actu = [2, 0, 2, 2, 0, 1, 1, 2, 2, 0, 1, 2]
@@ -183,12 +184,15 @@ Example : online_help("J") or online_help(2)
 132-Zero-one Loss
 133-dInd
 134-sInd
->>> online_help("J")
-...
->>> online_help("J", alt_link=True)
-...
->>> online_help(4)
-...
+>>> with patch("pycm.output.webbrowser.open_new_tab") as mock_browser:
+...     online_help("J")
+...     mock_browser.assert_called_once()
+>>> with patch("pycm.output.webbrowser.open_new_tab") as mock_browser:
+...     online_help("J", alt_link=True)
+...     mock_browser.assert_called_once()
+>>> with patch("pycm.output.webbrowser.open_new_tab") as mock_browser:
+...     online_help(4)
+...     mock_browser.assert_called_once()
 >>> from pycm.output import *
 >>> from pycm.overall_funcs import *
 >>> from pycm.class_funcs import *

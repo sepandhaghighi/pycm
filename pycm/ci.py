@@ -56,7 +56,7 @@ def AUC_SE_calc(AUC: float, P: int, N: int) -> Union[float, str]:
         q0 = AUC * (1 - AUC)
         q1 = (AUC / (2 - AUC)) - AUC**2
         q2 = ((2 * (AUC**2)) / (1 + AUC)) - AUC**2
-        result = math.sqrt((q0 + (N - 1) * q1 + (P - 1) * q2) / (P * N))
+        result = math.sqrt((q0 + (P - 1) * q1 + (N - 1) * q2) / (P * N))
         return result
     except Exception:
         return "None"
